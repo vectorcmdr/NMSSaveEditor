@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<inventory>
+  <difficulty id="High">
+    <stacksize group="Default" product="5" substance="9999"/>
+    <stacksize group="Personal" product="10" substance="9999"/>
+    <stacksize group="PersonalCargo" product="10" substance="9999"/>
+    <stacksize group="Ship" product="10" substance="9999"/>
+    <stacksize group="ShipCargo" product="10" substance="9999"/>
+    <stacksize group="Freighter" product="20" substance="9999"/>
+    <stacksize group="FreighterCargo" product="20" substance="9999"/>
+    <stacksize group="Vehicle" product="10" substance="9999"/>
+    <stacksize group="Chest" product="20" substance="9999"/>
+    <stacksize group="BaseCapsule" product="100" substance="9999"/>
+    <stacksize group="MaintenanceObject" product="10" substance="9999"/>
+    <stacksize group="UIPopup" product="1" substance="9999"/>
+    <stacksize group="SeasonTransfer" product="20" substance="9999"/>
+  </difficulty>
+  <difficulty id="Normal">
+    <stacksize group="Default" product="5" substance="500"/>
+    <stacksize group="Personal" product="10" substance="500"/>
+    <stacksize group="PersonalCargo" product="10" substance="500"/>
+    <stacksize group="Ship" product="10" substance="1000"/>
+    <stacksize group="ShipCargo" product="10" substance="1000"/>
+    <stacksize group="Freighter" product="10" substance="2000"/>
+    <stacksize group="FreighterCargo" product="20" substance="2000"/>
+    <stacksize group="Vehicle" product="10" substance="1000"/>
+    <stacksize group="Chest" product="20" substance="1000"/>
+    <stacksize group="BaseCapsule" product="100" substance="2000"/>
+    <stacksize group="MaintenanceObject" product="10" substance="250"/>
+    <stacksize group="UIPopup" product="1" substance="250"/>
+    <stacksize group="SeasonTransfer" product="20" substance="9999"/>
+  </difficulty>
+  <difficulty id="Low">
+    <stacksize group="Default" product="3" substance="150"/>
+    <stacksize group="Personal" product="3" substance="300"/>
+    <stacksize group="PersonalCargo" product="5" substance="300"/>
+    <stacksize group="Ship" product="3" substance="300"/>
+    <stacksize group="ShipCargo" product="5" substance="750"/>
+    <stacksize group="Freighter" product="5" substance="750"/>
+    <stacksize group="FreighterCargo" product="10" substance="750"/>
+    <stacksize group="Vehicle" product="3" substance="300"/>
+    <stacksize group="Chest" product="10" substance="1000"/>
+    <stacksize group="BaseCapsule" product="50" substance="1250"/>
+    <stacksize group="MaintenanceObject" product="5" substance="150"/>
+    <stacksize group="UIPopup" product="1" substance="150"/>
+    <stacksize group="SeasonTransfer" product="20" substance="9999"/>
+  </difficulty>
+</inventory>
