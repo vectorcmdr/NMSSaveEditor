@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.9.6
+Created-By: 1.8.0_181-b13 (Oracle Corporation)
+Built-By: Brendon
+Implementation-Vendor: GoatFungus
+Implementation-Title: No Man's Sky Save Editor
+Implementation-Version: 1.19.1
+Main-Class: nomanssave.Application
+

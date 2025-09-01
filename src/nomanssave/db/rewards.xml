@@ -1,0 +1,602 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<rewards>
+  <season id="^EXPD_EGG_19" name="Mecha-Mouse Egg"/>
+  <season id="^EXPD_TITLE19" name="Title: 'Shipwright'"/>
+  <season id="^EXPD_BANNER19" name="Corvette Banner"/>
+  <season id="^EXPD_DECAL19" name="Corvette Decal"/>
+  <season id="^B_TUR_B" name="Deadeye Cannon"/>
+  <season id="^SHIP_PLASMA" name="Plasma Starship Trail"/>
+  <season id="^JETS_RUIN" name="Vigilant Trail"/>
+  <season id="^EXPD_POSTER19C" name="Big Rig Poster"/>
+  <season id="^EXPD_POSTER19B" name="&quot;Built to Last&quot; Poster"/>
+  <season id="^EXPD_POSTER19A" name="Corvette Blueprint Poster"/>
+  <season id="^STONE_HAT" name="Living Stone Helmet"/>
+  <season id="^STONE_TORSO" name="Living Stone Chestpiece"/>
+  <season id="^STONE_ARMOUR" name="Living Stone Armour"/>
+  <season id="^STONE_GLOVES" name="Living Stone Gloves"/>
+  <season id="^STONE_LEGS" name="Living Stone Legplates"/>
+  <season id="^STONE_BOOTS" name="Living Stone Boots"/>
+  <season id="^EXPD_TITLE18" name="TITLE: 'Excavator'"/>
+  <season id="^EXPD_DECAL18" name="Relics Decal"/>
+  <season id="^EXPD_BANNER18" name="Relics Banner"/>
+  <season id="^EXPD_STONE_PACK" name="Living Stone Hardpack"/>
+  <season id="^EXPD_STAFF_18" name="Basilisk Crown"/>
+  <season id="^EXPD_EGG_18" name="Fossilised Egg"/>
+  <season id="^EXPD_POSTER18C" name="Spirals Poster"/>
+  <season id="^EXPD_POSTER18B" name="Taxonomy Poster"/>
+  <season id="^EXPD_POSTER18A" name="Fluid Dynamics Poster"/>
+  <season id="^EXPD_SHIP17" name="The Wraith"/>
+  <season id="^EXPD_TITLE17" name="Title: 'Surveyor of Worlds'"/>
+  <season id="^EXPD_DECAL17" name="Titan Decal"/>
+  <season id="^EXPD_BANNER17" name="Titan Banner"/>
+  <season id="^EXPD_STAFF_17" name="Pillar of Titan"/>
+  <season id="^EXPD_CAPE17" name="Surveyor's Cape"/>
+  <season id="^EXPD_SHIPMAT17" name="Titan Stripes"/>
+  <season id="^EXPD_POSTER17A" name="Gas Giant Poster"/>
+  <season id="^EXPD_POSTER17B" name="Depth Warning Poster"/>
+  <season id="^EXPD_POSTER17C" name="Cartographer's Chart"/>
+  <season id="^EXPD_SHIP16" name="Boundary Herald"/>
+  <season id="^EXPD_EGG_16" name="Glowing Egg"/>
+  <season id="^EXPD_S16_HAT" name="Boundary Horror Mandibles"/>
+  <season id="^S16_HEATER" name="Anomaly Seal"/>
+  <season id="^JETS_SQUID" name="Ink-Stained Trail"/>
+  <season id="^EXPD_POSTER16A" name="Boundary Anomaly Poster"/>
+  <season id="^EXPD_POSTER16B" name="Portal Breach Poster"/>
+  <season id="^EXPD_POSTER16C" name="Glyph Poster"/>
+  <season id="^EXPD_TITLE16" name="Title: 'The Haunted'"/>
+  <season id="^EXPD_BANNER16" name="Cursed Banner"/>
+  <season id="^EXPD_DECAL16" name="Cursed Decal"/>
+  <season id="^EXPD_FISH_PACK" name="Aquarius Flight Pack"/>
+  <season id="^EXPD_S15_LASER" name="Lost Angler's Rig"/>
+  <season id="^EXPD_S15_ARMOUR" name="Deep-Sea Armour"/>
+  <season id="^EXPD_S15_HAT" name="Deep-Sea Helmet"/>
+  <season id="^EXPD_S15_LEGS" name="Deep-Sea Leggings"/>
+  <season id="^EXPD_S15_BOOTS" name="Deep-Sea Flippers"/>
+  <season id="^EXPD_POSTER15A" name="Gone Fishin' Poster"/>
+  <season id="^EXPD_POSTER15B" name="Sea Chart Poster"/>
+  <season id="^EXPD_POSTER15C" name="Bounty of the Sea Poster"/>
+  <season id="^EXPD_TITLE15" name="Title: 'The Fisher'"/>
+  <season id="^EXPD_BANNER15" name="Aquarius Banner"/>
+  <season id="^BOBBLE_OCTO" name="Tentacled Figurine"/>
+  <season id="^EXPD_DECAL15" name="Aquarius Decal"/>
+  <season id="^EXPD_EGG_14" name="Grub Cocoon" unlock="true"/>
+  <season id="^EXPED_BUG_PACK" name="Chitin Flight Pack"/>
+  <season id="^EXPED_BUG_ARMOR" name="Chitin Exoskeleton"/>
+  <season id="^EXPED_BUG_HAT" name="Chitin Mandibles"/>
+  <season id="^EXPED_BUG_GLOVE" name="Chitin Gauntlets"/>
+  <season id="^EXPED_BUG_BOOTS" name="Chitin Spurs"/>
+  <season id="^EXPD_POSTER14A" name="Swarmsong Poster"/>
+  <season id="^EXPD_POSTER14B" name="Brood Mother Poster"/>
+  <season id="^EXPD_POSTER14C" name="Bug Hunt Poster"/>
+  <season id="^BLD_BUGHEAD1" name="Monstrous Trophy"/>
+  <season id="^BLD_BUGHEAD2" name="Mounted Mandibles"/>
+  <season id="^BLD_BUGHEAD3" name="Broodling Trophy"/>
+  <season id="^BLD_BUGHEAD4" name="Vile Taxidermy"/>
+  <season id="^BLD_BUGHEAD5" name="Prized Exoskeleton"/>
+  <season id="^EXPD_TITLE14" name="Title: 'Broodling'"/>
+  <season id="^EXPD_DECAL14" name="Liquidator Decal"/>
+  <season id="^EXPD_BANNER14" name="Liquidator Banner"/>
+  <season id="^EXPD_TITLE13" name="Title: 'Drifter'"/>
+  <season id="^EXPD_DECAL13" name="Adrift Decal"/>
+  <season id="^EXPD_BANNER13" name="Adrift Banner"/>
+  <season id="^EXPD_SHIP13" name="Iron Vulture"/>
+  <season id="^EXPD_SHIP_METAL" name="Iron Panels"/>
+  <season id="^EXPD_GHOSTFRIG" name="Ship of the Damned"/>
+  <season id="^EXPD_EGG_13" name="Appalling Egg"/>
+  <season id="^EXPD_SHIPMAT13" name="Stealth Paint"/>
+  <season id="^BLD_SHIPBREAK1" name="Ruined Starship"/>
+  <season id="^BLD_SHIPBREAK2" name="Unsalvageable Wreck"/>
+  <season id="^BLD_SHIPBREAK3" name="Broken Vessel"/>
+  <season id="^BLD_SHIPBREAK4" name="Damaged Starship"/>
+  <season id="^BLD_SHIPBREAK5" name="Starship Remnants"/>
+  <season id="^EXPD_POSTER13C" name="Isolation Poster"/>
+  <season id="^EXPD_POSTER13B" name="Alone in the Dark Poster"/>
+  <season id="^EXPD_POSTER13A" name="Meditation Poster"/>
+  <season id="^EXPD_BANNER12" name="Omega Banner"/>
+  <season id="^EXPD_TITLE12" name="Title: 'Starborn'"/>
+  <season id="^EXPD_DECAL12" name="Omega Decal"/>
+  <season id="^EXPD_SHIP12" name="Starborn Runner"/>
+  <season id="^EXPD_ATLASPACK" name="Atlas Flightpack"/>
+  <season id="^EXPD_ATLASSTAFF" name="Atlas Sceptre"/>
+  <season id="^EXPD_ATLASHELM" name="Atlas Headshield"/>
+  <season id="^EXPD_POSTER12C" name="Starborn Poster"/>
+  <season id="^EXPD_POSTER12B" name="Interface Poster"/>
+  <season id="^EXPD_POSTER12A" name="Remembrance Poster"/>
+  <season id="^EXPD_EGG_11" name="Construct 'Egg'"/>
+  <season id="^EXPD_BANNER11" name="Voyagers Banner"/>
+  <season id="^EXPD_TITLE11" name="Title: 'The Intrepid'"/>
+  <season id="^EXPD_DECAL11" name="Voyagers Decal"/>
+  <season id="^BLD_BUI_HEAD" name="Construct 'Skull'"/>
+  <season id="^BLD_BUI_HAND" name="Construct Digits"/>
+  <season id="^BLD_BUI_TENT" name="Ragged Tent"/>
+  <season id="^EXPD_PETCUST11" name="Mechanical Paw"/>
+  <season id="^EXPD_POSTER11C" name="Open Horizons Poster"/>
+  <season id="^EXPD_POSTER11B" name="Anomalous Wonder Poster"/>
+  <season id="^EXPD_POSTER11A" name="Navigators Poster"/>
+  <season id="^JETS_ELECTRIC" name="Electric Jetpack Trail"/>
+  <season id="^S10_PART1A" name="Construct Head: Atlantid"/>
+  <season id="^S10_PART1B" name="Construct Head: Crimson"/>
+  <season id="^S10_PART2" name="Construct Hands"/>
+  <season id="^S10_PART3" name="Construct Chest"/>
+  <season id="^S10_PART4" name="Construct Feet"/>
+  <season id="^S10_PART5" name="Construct Legs"/>
+  <season id="^EXPD_BANNER10" name="Singularity Banner"/>
+  <season id="^EXPD_DECAL10" name="Singularity Decal"/>
+  <season id="^EXPD_TITLE10" name="Title: 'The Construct'"/>
+  <season id="^SPEC_ROCKETHAT" name="Wayfarer's Helm"/>
+  <season id="^BLD_CRYS_DRONE" name="Crystallised Drone"/>
+  <season id="^JETS_CORRUPT" name="Discordant Trail"/>
+  <season id="^FREI_TRAIL_RED" name="Crimson Freighter Trail"/>
+  <season id="^EXPD_POSTER10C" name="Construct Poster"/>
+  <season id="^EXPD_POSTER10B" name="Atlantid Poster"/>
+  <season id="^EXPD_POSTER10A" name="Atlas Poster"/>
+  <season id="^EXPD_SHIP09" name="Utopia Speeder"/>
+  <season id="^EXPD_BANNER09" name="Utopia Expedition Banner"/>
+  <season id="^EXPD_DECAL09" name="Utopia Expedition Decal"/>
+  <season id="^EXPD_TITLE09" name="Title: 'Utopia Dignitary'"/>
+  <season id="^EXPD_EGG_09" name="Robo-Warden Egg"/>
+  <season id="^SPEC_BUCKETHELM" name="Fearsome Visor"/>
+  <season id="^BLD_HOLOGEK" name="Holographic Friend"/>
+  <season id="^EXPD_POSTER09C" name="Planetary Base Poster"/>
+  <season id="^EXPD_POSTER09B" name="Night Squad Poster"/>
+  <season id="^EXPD_POSTER09A" name="Factions Poster"/>
+  <season id="^EXPD_EGG_08" name="Helios Egg"/>
+  <season id="^EXPD_BANNER08" name="Polestar Expedition Banner"/>
+  <season id="^EXPD_DECAL08" name="Polestar Expedition Decal"/>
+  <season id="^EXPD_TITLE08" name="Title: 'The Seeker'"/>
+  <season id="^EXPD_CAPE08" name="Fleet Commander's Cape"/>
+  <season id="^BLD_DATASIGN" name="Data Display Unit"/>
+  <season id="^BLD_FIREPIT" name="Flaming Barrel"/>
+  <season id="^BLD_MAPTUBE" name="Navigation Archive"/>
+  <season id="^FREI_TRAIL_GRAV" name="High-Gravity Freighter Trail"/>
+  <season id="^EXPD_POSTER08C" name="Heavy Shipping Poster"/>
+  <season id="^EXPD_POSTER08B" name="Polestar Poster"/>
+  <season id="^EXPD_POSTER08A" name="Pilgrim Poster"/>
+  <season id="^EXPD_BIOFRIG" name="Organic Frigate"/>
+  <season id="^EXPD_BANNER07" name="Leviathan Expedition Banner"/>
+  <season id="^EXPD_DECAL07" name="Leviathan Expedition Decal"/>
+  <season id="^EXPD_TITLE07" name="Title: 'Looper'"/>
+  <season id="^BLD_MINI_BIOFRI" name="Organic Frigate Calf"/>
+  <season id="^EXPD_CAPE07" name="Whalestalker Cloak"/>
+  <season id="^SHIP_ROGUE" name="Temporal Starship Trail"/>
+  <season id="^EXPD_POSTER07C" name="Timesplice Poster"/>
+  <season id="^EXPD_POSTER07B" name="The Loop Poster"/>
+  <season id="^EXPD_POSTER07A" name="Leviathan Poster"/>
+  <season id="^EXPD_CAPE06" name="Outlaw Cape"/>
+  <season id="^EXPD_BANNER06" name="Blighted Expedition Banner"/>
+  <season id="^EXPD_DECAL06" name="Blighted Expedition Decal"/>
+  <season id="^EXPD_TITLE06" name="Title: 'Hunter of the Blight'"/>
+  <season id="^EXPD_CUBE_06" name="Wayward Cube"/>
+  <season id="^EXPD_ODD_EGG" name="Void Egg"/>
+  <season id="^EXPD_FLAG_06E" name="Viridian Flag"/>
+  <season id="^EXPD_FLAG_06D" name="Orbital Flag"/>
+  <season id="^EXPD_FLAG_06C" name="Heraldry Flag"/>
+  <season id="^EXPD_FLAG_06B" name="Unity Flag"/>
+  <season id="^EXPD_FLAG_06A" name="Piracy Flag"/>
+  <season id="^EXPD_POSTER06C" name="Resbur XIII Poster"/>
+  <season id="^EXPD_POSTER06B" name="Outlaw Poster"/>
+  <season id="^EXPD_POSTER06A" name="Dread Captain Fahng Poster"/>
+  <season id="^SHIP_PIRATE" name="Sputtering Starship Trail"/>
+  <season id="^EXPD_EGG_05" name="Quad Egg"/>
+  <season id="^EXPD_BANNER05" name="Exobiology Expedition Banner"/>
+  <season id="^EXPD_DECAL05" name="Exobiology Expedition Decal"/>
+  <season id="^EXPD_TITLE05" name="Title: 'Exobiologist'"/>
+  <season id="^EXPD_BACKPACK05" name="Exotic Wingpack"/>
+  <season id="^EXPD_PETCUST05" name="Exotic Armour"/>
+  <season id="^EXPD_POSTER05C" name="Territories Poster"/>
+  <season id="^EXPD_POSTER05B" name="Abyssal Poster"/>
+  <season id="^EXPD_POSTER05A" name="Solstice Poster"/>
+  <season id="^JETS_SENT" name="Reality Glitch Trail"/>
+  <season id="^EXPD_EGG_04" name="Sandworm Egg"/>
+  <season id="^EXPD_BANNER04" name="Emergence Expedition Banner"/>
+  <season id="^EXPD_DECAL04" name="Emergence Expedition Decal"/>
+  <season id="^EXPD_TITLE04" name="Title: 'Worm Lord'"/>
+  <season id="^EXPD_WORMHAT" name="Feasting Casque"/>
+  <season id="^BLD_SKULL" name="Titanic Trophy"/>
+  <season id="^JETS_WORM" name="Ghastly Trail"/>
+  <season id="^EXPD_FIREPACK04" name="Flesh Launcher Pack"/>
+  <season id="^EXPD_EGG_03" name="Whispering Companion Egg"/>
+  <season id="^EXPD_BANNER03" name="Cartographers Expedition Banner"/>
+  <season id="^EXPD_DECAL03" name="Cartographers Expedition Decal"/>
+  <season id="^EXPD_TITLE03" name="Title: 'Globemaster'"/>
+  <season id="^BASE_CAVE1" name="Saucer Fungus"/>
+  <season id="^BASE_CAVE2" name="Cave Creeper"/>
+  <season id="^BASE_CAVE3" name="Troglotulip"/>
+  <season id="^BASE_CAVE4" name="Veined Flat Caps"/>
+  <season id="^BASE_CAVE5" name="Fingery Deposit"/>
+  <season id="^BLD_FLYJAR" name="Bio-Lantern"/>
+  <season id="^BLD_PLANET_HOLO" name="Holographic Chart Projector"/>
+  <season id="^JETS_BUBBLE" name="Jetpack Bubble Trail"/>
+  <season id="^EXPD_SPEC02" name="SSV Normandy SR1" unlock="true"/>
+  <season id="^EXPD_BANNER02" name="Beachhead Expedition Banner" unlock="true"/>
+  <season id="^EXPD_DECAL02" name="Beachhead Expedition Decal" unlock="true"/>
+  <season id="^EXPD_TITLE02A" name="Title: 'Renegade'" unlock="true"/>
+  <season id="^EXPD_TITLE02B" name="Title: 'Paragon'" unlock="true"/>
+  <season id="^MYSTERY_TRACKER" name="Historiographical Dosimeter"/>
+  <season id="^EXPD_SHIP01" name="Golden Vector"/>
+  <season id="^EXPD_BANNER01" name="Pioneers Expedition Banner"/>
+  <season id="^EXPD_DECAL01" name="Pioneers Expedition Decal"/>
+  <season id="^EXPD_TITLE01" name="Title: 'Pioneer'"/>
+  <season id="^EXPD_BACKPACK01" name="Streamlined Jetpack Unit"/>
+  <season id="^EXPD_HELMET01" name="Golden First Spawn Battle Mask"/>
+  <season id="^BLD_EXPD_BASE01" name="Pioneers Expedition Flag"/>
+  <season id="^EXPD_FIREPACK01" name="Atlas Firework Pack"/>
+  <twitch id="^TWITCH_346" name="Pawprints Decal"/>
+  <twitch id="^TWITCH_347" name="Awakenings Decal"/>
+  <twitch id="^TWITCH_348" name="To The Stars Decal"/>
+  <twitch id="^TWITCH_349" name="Ribbon Grass"/>
+  <twitch id="^TWITCH_350" name="Cloven Paw Grass"/>
+  <twitch id="^TWITCH_351" name="Atlas Firework Pack"/>
+  <twitch id="^TWITCH_352" name="Atlas Firework Pack"/>
+  <twitch id="^TWITCH_353" name="Atlas Firework Pack"/>
+  <twitch id="^TWITCH_354" name="Atlas Firework Pack"/>
+  <twitch id="^TWITCH_355" name="Atlas Firework Pack"/>
+  <twitch id="^TWITCH_356" name="Covered Silos"/>
+  <twitch id="^TWITCH_357" name="Looping Grass"/>
+  <twitch id="^TWITCH_358" name="Aquatic Colony"/>
+  <twitch id="^TWITCH_359" name="Ice Atlas Statue"/>
+  <twitch id="^TWITCH_360" name="Classic Chair"/>
+  <twitch id="^TWITCH_361" name="Hologram: Multi-Tool"/>
+  <twitch id="^TWITCH_362" name="Hologram: System"/>
+  <twitch id="^TWITCH_363" name="Festive Jetpack Trail"/>
+  <twitch id="^TWITCH_364" name="Whalestalker Cloak"/>
+  <twitch id="^TWITCH_365" name="Holographic Friend"/>
+  <twitch id="^TWITCH_366" name="Kalimskyv's Raycast Analyser"/>
+  <twitch id="^TWITCH_367" name="Negative Ion Puncher"/>
+  <twitch id="^TWITCH_368" name="G. Lyconatae Egg"/>
+  <twitch id="^TWITCH_369" name="Gleaming Light Injector"/>
+  <twitch id="^TWITCH_370" name="A. Chilinjosa Egg"/>
+  <twitch id="^TWITCH_371" name="Sword of the Ribetsus"/>
+  <twitch id="^TWITCH_372" name="Bukaidor Prospector XII"/>
+  <twitch id="^TWITCH_373" name="Magnificent Omen T09"/>
+  <twitch id="^TWITCH_374" name="Oomoribe's Halcyon War-Spear"/>
+  <twitch id="^TWITCH_375" name="Speedy Noichir V"/>
+  <twitch id="^TWITCH_316" name="Atlas Poster"/>
+  <twitch id="^TWITCH_317" name="Atlantid Poster"/>
+  <twitch id="^TWITCH_318" name="Construct Poster"/>
+  <twitch id="^TWITCH_319" name="Outlaw System Decal"/>
+  <twitch id="^TWITCH_320" name="Blue System Decal"/>
+  <twitch id="^TWITCH_321" name="Ribbon Firework Pack"/>
+  <twitch id="^TWITCH_322" name="Ribbon Firework Pack"/>
+  <twitch id="^TWITCH_323" name="Ribbon Firework Pack"/>
+  <twitch id="^TWITCH_324" name="Ribbon Firework Pack"/>
+  <twitch id="^TWITCH_325" name="Ribbon Firework Pack"/>
+  <twitch id="^TWITCH_326" name="Coleopterology Decal"/>
+  <twitch id="^TWITCH_327" name="Fluttering Decal"/>
+  <twitch id="^TWITCH_328" name="Flatblade Grass"/>
+  <twitch id="^TWITCH_329" name="Strip Coral"/>
+  <twitch id="^TWITCH_330" name="&quot;The Black Hole in the Wall&quot; Sign"/>
+  <twitch id="^TWITCH_331" name="Hologram: Blob"/>
+  <twitch id="^TWITCH_332" name="Hologram: Frigate"/>
+  <twitch id="^TWITCH_333" name="Scorching Jetpack Trail"/>
+  <twitch id="^TWITCH_334" name="Geometric Cape"/>
+  <twitch id="^TWITCH_335" name="Hologram: Starship"/>
+  <twitch id="^TWITCH_336" name="E. Leoloxostii Egg"/>
+  <twitch id="^TWITCH_337" name="R. Somnadadum Egg"/>
+  <twitch id="^TWITCH_338" name="Legacy of Thought"/>
+  <twitch id="^TWITCH_339" name="Art of Storms"/>
+  <twitch id="^TWITCH_340" name="Improvised Volodov Clarifier"/>
+  <twitch id="^TWITCH_341" name="Otenba's Airborne Gambit"/>
+  <twitch id="^TWITCH_342" name="Buyamak Liberator XIII"/>
+  <twitch id="^TWITCH_343" name="Taganon of Gravity"/>
+  <twitch id="^TWITCH_344" name="Toontu SJ3"/>
+  <twitch id="^TWITCH_345" name="The Forge of the Gek"/>
+  <twitch id="^TWITCH_286" name="Factions Poster"/>
+  <twitch id="^TWITCH_287" name="Night Squad Poster"/>
+  <twitch id="^TWITCH_288" name="Planetary Base Poster"/>
+  <twitch id="^TWITCH_289" name="Universal Heartbeat Decal"/>
+  <twitch id="^TWITCH_290" name="Blue Flight Decal"/>
+  <twitch id="^TWITCH_291" name="Slithering Firework Pack"/>
+  <twitch id="^TWITCH_292" name="Slithering Firework Pack"/>
+  <twitch id="^TWITCH_293" name="Slithering Firework Pack"/>
+  <twitch id="^TWITCH_294" name="Slithering Firework Pack"/>
+  <twitch id="^TWITCH_295" name="Slithering Firework Pack"/>
+  <twitch id="^TWITCH_296" name="Worm Hunt I Decal"/>
+  <twitch id="^TWITCH_297" name="Worm Hunt II Decal"/>
+  <twitch id="^TWITCH_298" name="Worm Hunt III Decal"/>
+  <twitch id="^TWITCH_299" name="Worm Hunt IV Decal"/>
+  <twitch id="^TWITCH_300" name="Worm Hunt V Decal"/>
+  <twitch id="^TWITCH_301" name="Short Spikegrass"/>
+  <twitch id="^TWITCH_302" name="Illuminated Pot"/>
+  <twitch id="^TWITCH_303" name="Titan Worm Cape"/>
+  <twitch id="^TWITCH_304" name="Antimatter Freighter Trail"/>
+  <twitch id="^TWITCH_305" name="&quot;Ship and Pilot&quot; Sign"/>
+  <twitch id="^TWITCH_306" name="Pillar of the Dance"/>
+  <twitch id="^TWITCH_307" name="Harbinger of the Stars"/>
+  <twitch id="^TWITCH_308" name="V. Slashuzaneus Egg"/>
+  <twitch id="^TWITCH_309" name="Darny's Oxide Entangler"/>
+  <twitch id="^TWITCH_310" name="Quad Egg"/>
+  <twitch id="^TWITCH_311" name="Nidaitai's Pride HM3"/>
+  <twitch id="^TWITCH_312" name="The Departure of Fire"/>
+  <twitch id="^TWITCH_313" name="Oroza's Abyssal Coup"/>
+  <twitch id="^TWITCH_314" name="Iobana LW1"/>
+  <twitch id="^TWITCH_315" name="Limitless Master PH1"/>
+  <twitch id="^TWITCH_256" name="ByteBeat Poster"/>
+  <twitch id="^TWITCH_257" name="Voyage Poster"/>
+  <twitch id="^TWITCH_258" name="Atlas Seed Poster"/>
+  <twitch id="^TWITCH_259" name="Utopia Poster"/>
+  <twitch id="^TWITCH_260" name="Space Anomaly Decal"/>
+  <twitch id="^TWITCH_261" name="Titan Firework Pack"/>
+  <twitch id="^TWITCH_262" name="Titan Firework Pack"/>
+  <twitch id="^TWITCH_263" name="Titan Firework Pack"/>
+  <twitch id="^TWITCH_264" name="Titan Firework Pack"/>
+  <twitch id="^TWITCH_265" name="Titan Firework Pack"/>
+  <twitch id="^TWITCH_266" name="Blue Stargaze Decal"/>
+  <twitch id="^TWITCH_267" name="Red Strider Decal"/>
+  <twitch id="^TWITCH_268" name="Landed Ship Decal"/>
+  <twitch id="^TWITCH_269" name="Purple Galactic Core Decal"/>
+  <twitch id="^TWITCH_270" name="Lost Bathysphere Decal"/>
+  <twitch id="^TWITCH_271" name="Urchin Flowers"/>
+  <twitch id="^TWITCH_272" name="Eternal Eye Flowers"/>
+  <twitch id="^TWITCH_273" name="&quot;Euclid Moonrise&quot; Sign"/>
+  <twitch id="^TWITCH_274" name="High-Gravity Freighter Trail"/>
+  <twitch id="^TWITCH_275" name="Armoured Anemone"/>
+  <twitch id="^TWITCH_276" name="Inertial Focuser NL4-0/9"/>
+  <twitch id="^TWITCH_277" name="Defiance of the Horizon Y-74B-O"/>
+  <twitch id="^TWITCH_278" name="I. Protoubnea Egg"/>
+  <twitch id="^TWITCH_279" name="Kiss of Clarity"/>
+  <twitch id="^TWITCH_280" name="F. Graspaeeum Egg"/>
+  <twitch id="^TWITCH_281" name="Gravity Nemesis RE5"/>
+  <twitch id="^TWITCH_282" name="Ultimate Falcon UD7"/>
+  <twitch id="^TWITCH_283" name="Iiyaw JU4"/>
+  <twitch id="^TWITCH_284" name="Iasayasu's Halcyon Surveyor"/>
+  <twitch id="^TWITCH_285" name="Nabaeto of the Void"/>
+  <twitch id="^TWITCH_226" name="Cosmic Flight Poster"/>
+  <twitch id="^TWITCH_227" name="Orbital Poster"/>
+  <twitch id="^TWITCH_228" name="Ship Catalogue Poster"/>
+  <twitch id="^TWITCH_229" name="Departure Poster"/>
+  <twitch id="^TWITCH_230" name="Diplomacy Poster"/>
+  <twitch id="^TWITCH_231" name="Celebratory Firework Pack"/>
+  <twitch id="^TWITCH_232" name="Celebratory Firework Pack"/>
+  <twitch id="^TWITCH_233" name="Celebratory Firework Pack"/>
+  <twitch id="^TWITCH_234" name="Celebratory Firework Pack"/>
+  <twitch id="^TWITCH_235" name="Celebratory Firework Pack"/>
+  <twitch id="^TWITCH_236" name="Holographic Chart Projector"/>
+  <twitch id="^TWITCH_237" name="Wayward Cube"/>
+  <twitch id="^TWITCH_238" name="Navigation Archive"/>
+  <twitch id="^TWITCH_239" name="Flaming Barrel"/>
+  <twitch id="^TWITCH_240" name="Organic Frigate Calf"/>
+  <twitch id="^TWITCH_241" name="Tall Spikegrass"/>
+  <twitch id="^TWITCH_242" name="Reality Glitch Trail"/>
+  <twitch id="^TWITCH_243" name="Nighttongue Flowers"/>
+  <twitch id="^TWITCH_244" name="Golden Freighter Trail"/>
+  <twitch id="^TWITCH_245" name="Exotic Wingpack"/>
+  <twitch id="^TWITCH_246" name="Obedience of the Dance"/>
+  <twitch id="^TWITCH_247" name="Loop of Lachinos-XVI"/>
+  <twitch id="^TWITCH_248" name="X. Larvadoagera Egg"/>
+  <twitch id="^TWITCH_249" name="Destroyer of the Horizon 45P/98T"/>
+  <twitch id="^TWITCH_250" name="Helios Egg"/>
+  <twitch id="^TWITCH_251" name="Razawag of the Abyss"/>
+  <twitch id="^TWITCH_252" name="Okoroza Peacemaker X"/>
+  <twitch id="^TWITCH_253" name="Stellar Nojuku XV"/>
+  <twitch id="^TWITCH_254" name="Iyosh's Colourless Flight"/>
+  <twitch id="^TWITCH_255" name="Visionary Eagle QL9"/>
+  <twitch id="^TWITCH_191" name="Remixed Firework Pack"/>
+  <twitch id="^TWITCH_192" name="Remixed Firework Pack"/>
+  <twitch id="^TWITCH_193" name="Remixed Firework Pack"/>
+  <twitch id="^TWITCH_194" name="Remixed Firework Pack"/>
+  <twitch id="^TWITCH_195" name="Remixed Firework Pack"/>
+  <twitch id="^TWITCH_196" name="The Loop Poster"/>
+  <twitch id="^TWITCH_197" name="Timesplice Poster"/>
+  <twitch id="^TWITCH_198" name="Pilgrim Poster"/>
+  <twitch id="^TWITCH_199" name="Polestar Poster"/>
+  <twitch id="^TWITCH_200" name="Heavy Shipping Poster"/>
+  <twitch id="^TWITCH_201" name="Antimatter Observation Orb"/>
+  <twitch id="^TWITCH_202" name="Synthesis Core"/>
+  <twitch id="^TWITCH_203" name="Bubble Vat"/>
+  <twitch id="^TWITCH_204" name="Bio-Lantern"/>
+  <twitch id="^TWITCH_205" name="Titanic Trophy"/>
+  <twitch id="^TWITCH_206" name="Piracy Flag"/>
+  <twitch id="^TWITCH_207" name="Unity Flag"/>
+  <twitch id="^TWITCH_208" name="Heraldry Flag"/>
+  <twitch id="^TWITCH_209" name="Orbital Flag"/>
+  <twitch id="^TWITCH_210" name="Viridian Flag"/>
+  <twitch id="^TWITCH_211" name="Energy Coil"/>
+  <twitch id="^TWITCH_212" name="Temporal Starship Trail"/>
+  <twitch id="^TWITCH_213" name="Exotic Armour"/>
+  <twitch id="^TWITCH_214" name="Sputtering Starship Trail"/>
+  <twitch id="^TWITCH_215" name="Feasting Casque"/>
+  <twitch id="^TWITCH_216" name="E. Pantheibea Egg"/>
+  <twitch id="^TWITCH_217" name="Hand-made Light Capacitor"/>
+  <twitch id="^TWITCH_218" name="I. Bearicatea Egg"/>
+  <twitch id="^TWITCH_219" name="Touch of Silence 8-T"/>
+  <twitch id="^TWITCH_220" name="Sandworm Egg"/>
+  <twitch id="^TWITCH_221" name="Ikawaji's Defeat"/>
+  <twitch id="^TWITCH_222" name="The Ashes of Devastation"/>
+  <twitch id="^TWITCH_223" name="Morozawa's Ultimate Hand"/>
+  <twitch id="^TWITCH_224" name="TV2 Aebashi"/>
+  <twitch id="^TWITCH_225" name="Tahama's Limitless Regret"/>
+  <twitch id="^TWITCH_190" name="Final Ashes PL4"/>
+  <twitch id="^TWITCH_189" name="Habika BF3"/>
+  <twitch id="^TWITCH_188" name="The Son of the Sun"/>
+  <twitch id="^TWITCH_187" name="Inzakita's Folly PY9"/>
+  <twitch id="^TWITCH_186" name="Hiwamiha of Destiny"/>
+  <twitch id="^TWITCH_185" name="Whispering Companion Egg"/>
+  <twitch id="^TWITCH_184" name="O. Crabubireus Egg"/>
+  <twitch id="^TWITCH_183" name="Z. Speltwireum Egg"/>
+  <twitch id="^TWITCH_182" name="Whispers of the Abyss 4-F33-QP4"/>
+  <twitch id="^TWITCH_181" name="Yauza's Quantum Tuner"/>
+  <twitch id="^TWITCH_180" name="Armoured Chestpiece"/>
+  <twitch id="^TWITCH_179" name="Armoured Leggings"/>
+  <twitch id="^TWITCH_178" name="Armoured ExoGloves"/>
+  <twitch id="^TWITCH_177" name="Armoured Shoulderpads"/>
+  <twitch id="^TWITCH_176" name="Armoured Boots"/>
+  <twitch id="^TWITCH_175" name="Specialist Polo Banner"/>
+  <twitch id="^TWITCH_174" name="Tentacled Banner"/>
+  <twitch id="^TWITCH_173" name="Priest Entity Nada Banner"/>
+  <twitch id="^TWITCH_172" name="Banner Of The Blob"/>
+  <twitch id="^TWITCH_171" name="Fine And Tasty Banner"/>
+  <twitch id="^TWITCH_170" name="Holographic Globe Gadget"/>
+  <twitch id="^TWITCH_169" name="Pocket Reality Generator"/>
+  <twitch id="^TWITCH_168" name="Ancient Conifer"/>
+  <twitch id="^TWITCH_167" name="Frozen Planter"/>
+  <twitch id="^TWITCH_166" name="Hardy Shrub"/>
+  <twitch id="^TWITCH_165" name="Assorted Firework Pack"/>
+  <twitch id="^TWITCH_164" name="Assorted Firework Pack"/>
+  <twitch id="^TWITCH_163" name="Assorted Firework Pack"/>
+  <twitch id="^TWITCH_162" name="Assorted Firework Pack"/>
+  <twitch id="^TWITCH_161" name="Assorted Firework Pack"/>
+  <twitch id="^TWITCH_160" name="Leviathan Poster"/>
+  <twitch id="^TWITCH_159" name="Resbur XIII Poster"/>
+  <twitch id="^TWITCH_158" name="Outlaw Poster"/>
+  <twitch id="^TWITCH_157" name="Dread Captain Fahng Poster"/>
+  <twitch id="^TWITCH_156" name="Solstice Poster"/>
+  <twitch id="^TWITCH_155" name="Atlas Firework Pack"/>
+  <twitch id="^TWITCH_154" name="Atlas Firework Pack"/>
+  <twitch id="^TWITCH_153" name="Atlas Firework Pack"/>
+  <twitch id="^TWITCH_152" name="Atlas Firework Pack"/>
+  <twitch id="^TWITCH_151" name="Atlas Firework Pack"/>
+  <twitch id="^TWITCH_150" name="Ozone Auditor Mark XI"/>
+  <twitch id="^TWITCH_149" name="Isotope Tuner Mark XVII"/>
+  <twitch id="^TWITCH_148" name="Memories of the Abyss Z80-10L-N"/>
+  <twitch id="^TWITCH_147" name="H. Oakarboe Egg"/>
+  <twitch id="^TWITCH_146" name="H. Skipwhae Egg"/>
+  <twitch id="^TWITCH_145" name="MS4 Maiseha"/>
+  <twitch id="^TWITCH_144" name="The Nemesis of the Korvax"/>
+  <twitch id="^TWITCH_143" name="Sesakis's Gamble HX8"/>
+  <twitch id="^TWITCH_142" name="End of the Kumiok"/>
+  <twitch id="^TWITCH_141" name="Moganonj's Infinite Protector"/>
+  <twitch id="^TWITCH_140" name="Exosuit Backpack"/>
+  <twitch id="^TWITCH_139" name="Horrific Flesh-Helmet"/>
+  <twitch id="^TWITCH_138" name="Iteration: Eos Visage"/>
+  <twitch id="^TWITCH_137" name="Iteration: Hesperus Visage"/>
+  <twitch id="^TWITCH_136" name="Iteration: Ares Visage"/>
+  <twitch id="^TWITCH_135" name="Horrific Decal"/>
+  <twitch id="^TWITCH_134" name="Tentacled Decal"/>
+  <twitch id="^TWITCH_133" name="Warning Decal"/>
+  <twitch id="^TWITCH_132" name="Null Decal"/>
+  <twitch id="^TWITCH_131" name="Artemis Decal"/>
+  <twitch id="^TWITCH_130" name="Silver Walker Statue"/>
+  <twitch id="^TWITCH_129" name="Wriggling Companion"/>
+  <twitch id="^TWITCH_128" name="Tentacle Spire"/>
+  <twitch id="^TWITCH_127" name="Watchful Protrusion"/>
+  <twitch id="^TWITCH_126" name="Blistering Mushroom"/>
+  <twitch id="^TWITCH_125" name="Abyssal Poster"/>
+  <twitch id="^TWITCH_124" name="Territories Poster"/>
+  <twitch id="^TWITCH_123" name="Friend-Entity Poster"/>
+  <twitch id="^TWITCH_122" name="Counterfeit Pass Poster"/>
+  <twitch id="^TWITCH_121" name="Atlas Cake Poster"/>
+  <twitch id="^TWITCH_120" name="Boribets's Voyage YZ7"/>
+  <twitch id="^TWITCH_119" name="UB7 Datebaya"/>
+  <twitch id="^TWITCH_118" name="Prime Voice TU7"/>
+  <twitch id="^TWITCH_117" name="Final Iuranono II"/>
+  <twitch id="^TWITCH_116" name="Neyam's Lucent Conqueror"/>
+  <twitch id="^TWITCH_115" name="D. Gentalium Egg"/>
+  <twitch id="^TWITCH_114" name="Z. Petalpoemeum Egg"/>
+  <twitch id="^TWITCH_113" name="J. Xenoaryii Egg"/>
+  <twitch id="^TWITCH_112" name="W. Fregaeiosus Egg"/>
+  <twitch id="^TWITCH_111" name="O. Tigeraeumis Egg"/>
+  <twitch id="^TWITCH_110" name="Iteration: Perses Visage"/>
+  <twitch id="^TWITCH_109" name="Iteration: Tethys Visage"/>
+  <twitch id="^TWITCH_108" name="Iteration: Hyperion Visage"/>
+  <twitch id="^TWITCH_107" name="Streamlined Jetpack Unit"/>
+  <twitch id="^TWITCH_106" name="Golden First Spawn Battle Mask"/>
+  <twitch id="^TWITCH_105" name="Bubble Duct"/>
+  <twitch id="^TWITCH_104" name="Draped Canvas"/>
+  <twitch id="^TWITCH_103" name="Asymmetrical Sails"/>
+  <twitch id="^TWITCH_102" name="Offset Sails"/>
+  <twitch id="^TWITCH_101" name="Full Sail"/>
+  <twitch id="^TWITCH_100" name="Fingery Deposit"/>
+  <twitch id="^TWITCH_099" name="Veined Flat Caps"/>
+  <twitch id="^TWITCH_098" name="Troglotulip"/>
+  <twitch id="^TWITCH_097" name="Cave Creeper"/>
+  <twitch id="^TWITCH_096" name="Saucer Fungus"/>
+  <twitch id="^TWITCH_095" name="Deluxe Firework Pack"/>
+  <twitch id="^TWITCH_094" name="Deluxe Firework Pack"/>
+  <twitch id="^TWITCH_093" name="Deluxe Firework Pack"/>
+  <twitch id="^TWITCH_092" name="Deluxe Firework Pack"/>
+  <twitch id="^TWITCH_091" name="Deluxe Firework Pack"/>
+  <twitch id="^TWITCH_090" name="Ghastly Trail"/>
+  <twitch id="^TWITCH_089" name="Jetpack Bubble Trail"/>
+  <twitch id="^TWITCH_088" name="Milk? Poster"/>
+  <twitch id="^TWITCH_087" name="Anomalous Home Poster"/>
+  <twitch id="^TWITCH_086" name="Black &amp; Gold Traveller Poster"/>
+  <twitch id="^TWITCH_085" name="RGB Firework Pack"/>
+  <twitch id="^TWITCH_084" name="RGB Firework Pack"/>
+  <twitch id="^TWITCH_083" name="RGB Firework Pack"/>
+  <twitch id="^TWITCH_082" name="RGB Firework Pack"/>
+  <twitch id="^TWITCH_081" name="RGB Firework Pack"/>
+  <twitch id="^TWITCH_080" name="Iteration: Helios Visage"/>
+  <twitch id="^TWITCH_079" name="Iteration: Selene Visage"/>
+  <twitch id="^TWITCH_078" name="Iteration: Cronus Visage"/>
+  <twitch id="^TWITCH_077" name="Iteration: Mercury Visage"/>
+  <twitch id="^TWITCH_076" name="First Spawn Battle Mask"/>
+  <twitch id="^TWITCH_075" name="Silver Atlas Statue"/>
+  <twitch id="^TWITCH_074" name="Expanding Cube Gadget"/>
+  <twitch id="^TWITCH_073" name="Silver Astronaut Statue"/>
+  <twitch id="^TWITCH_072" name="Archaic Habitation Heater"/>
+  <twitch id="^TWITCH_071" name="Movement Tracker"/>
+  <twitch id="^TWITCH_070" name="Polo Decal"/>
+  <twitch id="^TWITCH_069" name="Nada Decal"/>
+  <twitch id="^TWITCH_068" name="Hand of Approval Decal"/>
+  <twitch id="^TWITCH_067" name="Anomaly Decal"/>
+  <twitch id="^TWITCH_066" name="Apollo Decal"/>
+  <twitch id="^TWITCH_065" name="Green Jetpack Trail"/>
+  <twitch id="^TWITCH_064" name="Red Jetpack Trail"/>
+  <twitch id="^TWITCH_063" name="Chromatic Starship Trail"/>
+  <twitch id="^TWITCH_062" name="Stealth Starship Trail"/>
+  <twitch id="^TWITCH_061" name="Blue Jetpack Trail"/>
+  <twitch id="^TWITCH_060" name="Hazard Decal"/>
+  <twitch id="^TWITCH_059" name="-null- Figurine"/>
+  <twitch id="^TWITCH_058" name="Disbelief"/>
+  <twitch id="^TWITCH_057" name="Distant Gaze"/>
+  <twitch id="^TWITCH_056" name="Ha!"/>
+  <twitch id="^TWITCH_051" name="P. Sheptefalae Egg"/>
+  <twitch id="^TWITCH_052" name="J. Croconakeum Egg"/>
+  <twitch id="^TWITCH_053" name="G. Oestridinzeus Egg"/>
+  <twitch id="^TWITCH_054" name="V. Pentaamqum Egg"/>
+  <twitch id="^TWITCH_055" name="Z. Falynascria Egg"/>
+  <twitch id="^TWITCH_046" name="VV5 Ariyaz"/>
+  <twitch id="^TWITCH_047" name="Jirishi's Prospect"/>
+  <twitch id="^TWITCH_048" name="Hadach's Discovery KH3"/>
+  <twitch id="^TWITCH_049" name="Ultimate Sleep LO1"/>
+  <twitch id="^TWITCH_050" name="Hiwamiha of Destiny"/>
+  <twitch id="^TWITCH_038" name="Iteration: Gemini Visage"/>
+  <twitch id="^TWITCH_037" name="Iteration: Ariadne Visage"/>
+  <twitch id="^TWITCH_035" name="Blazing Orbit Helmet"/>
+  <twitch id="^TWITCH_036" name="Eye of the Korvax Helmet"/>
+  <twitch id="^TWITCH_034" name="Atlas Figurine"/>
+  <twitch id="^TWITCH_033" name="Nada Figurine"/>
+  <twitch id="^TWITCH_032" name="Polo Figurine"/>
+  <twitch id="^TWITCH_031" name="Artemis Figurine"/>
+  <twitch id="^TWITCH_030" name="Small Aquarium"/>
+  <twitch id="^TWITCH_029" name="Robotic Companion"/>
+  <twitch id="^TWITCH_028" name="Terrarium"/>
+  <twitch id="^TWITCH_027" name="Gold Astronaut Statue"/>
+  <twitch id="^TWITCH_009" name="Rainbow Jetpack Trail"/>
+  <twitch id="^TWITCH_001" name="RGB Firework Pack"/>
+  <twitch id="^TWITCH_002" name="RGB Firework Pack"/>
+  <twitch id="^TWITCH_003" name="RGB Firework Pack"/>
+  <twitch id="^TWITCH_044" name="RGB Firework Pack"/>
+  <twitch id="^TWITCH_045" name="RGB Firework Pack"/>
+  <twitch id="^TWITCH_039" name="Multi-Tool Upgrade Pack"/>
+  <twitch id="^TWITCH_040" name="Multi-Tool Upgrade Pack"/>
+  <twitch id="^TWITCH_041" name="Multi-Tool Upgrade Pack"/>
+  <twitch id="^TWITCH_042" name="Multi-Tool Upgrade Pack"/>
+  <twitch id="^TWITCH_043" name="Multi-Tool Upgrade Pack"/>
+  <twitch id="^TWITCH_014" name="Rounded Laser"/>
+  <twitch id="^TWITCH_004" name="Mind Blown"/>
+  <twitch id="^TWITCH_005" name="Celebrate!"/>
+  <twitch id="^TWITCH_007" name="Wonder"/>
+  <twitch id="^TWITCH_008" name="No Problem"/>
+  <twitch id="^TWITCH_006" name="Heroic Pose"/>
+  <twitch id="^TWITCH_010" name="Golden Starship Trail"/>
+  <twitch id="^TWITCH_012" name="Cadmium Starship Trail"/>
+  <twitch id="^TWITCH_013" name="Emeril Starship Trail"/>
+  <twitch id="^TWITCH_011" name="Antimatter Jetpack Trail"/>
+  <twitch id="^TWITCH_015" name="Apollo Figurine"/>
+  <twitch id="^TWITCH_016" name="Sparse Horizon Helmet"/>
+  <twitch id="^TWITCH_017" name="Eokai's Prime Inquirer"/>
+  <twitch id="^TWITCH_019" name="Hoshis HP7"/>
+  <twitch id="^TWITCH_020" name="Nemesis of the Kudama"/>
+  <twitch id="^TWITCH_021" name="Ultimate Pride JB2"/>
+  <twitch id="^TWITCH_022" name="Prime Song JZ4"/>
+  <twitch id="^TWITCH_018" name="Quantum Harmoniser Mark IV"/>
+  <twitch id="^TWITCH_023" name="Loop Scoop Mark IV"/>
+  <twitch id="^TWITCH_024" name="Arc Capacitor W/17l-15P"/>
+  <twitch id="^TWITCH_025" name="Hunevar's Dream Charger"/>
+  <twitch id="^TWITCH_026" name="Imperfect Loop Reflector"/>
+  <platform id="^TGA_SHIP1" name="Starborn Phoenix"/>
+  <platform id="^SW_PREORDER" name="Horizon Vector NX"/>
+  <platform id="^SW_PREORDER2" name="Infinite Neon Mark XXII"/>
+</rewards>
