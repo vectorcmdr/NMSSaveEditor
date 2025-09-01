@@ -1,5 +1,9 @@
 # Change Log
 
+## 1.19.1 - Update (1 September 2025)
+- Updated additional missing name mappings for NMS 6.0 (Voyagers).
+- Change Corvette ship parts from Building Part to Customisation Parts to restore inventory search.
+
 ## 1.19.0 - Update (30 August 2025)
 
 - Updated name mappings for NMS 6.0 (Voyagers).
