@@ -42,7 +42,7 @@ import javax.swing.KeyStroke;
 import javax.swing.SwingUtilities;
 
 public class Application {
-   public static final String VERSION = "1.19.0";
+   public static final String VERSION = "1.19.1";
    public static final String RELEASE = "VOYAGERS";
    private static final String J = "https://github.com/goatfungus/NMSSaveEditor";
    private static final String K = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_";
