@@ -32,12 +32,12 @@ public class a extends JDialog {
          StyleConstants.setBold(var4, true);
          SimpleAttributeSet var5 = new SimpleAttributeSet();
          var3.insertString(var3.getLength(), "No Man's Sky Save Editor\n\n", var4);
-         var3.insertString(var3.getLength(), "Version: 1.19.1", var5);
+         var3.insertString(var3.getLength(), "Version: 1.19.2", var5);
          var3.insertString(var3.getLength(), "by GoatFungus\n\n", var5);
          var3.insertString(var3.getLength(), "For further information visit:\n", var5);
          var3.insertString(var3.getLength(), "https://github.com/goatfungus/NMSSaveEditor", var5);
       } catch (BadLocationException var6) {
-         var2.setText("No Man's Sky Save EditorVersion: 1.19.1by GoatFungusFor further information visit:https://github.com/goatfungus/NMSSaveEditor");
+         var2.setText("No Man's Sky Save EditorVersion: 1.19.2by GoatFungusFor further information visit:https://github.com/goatfungus/NMSSaveEditor");
       }
 
       var2.setEditable(false);
