@@ -1,5 +1,8 @@
 # Change Log
 
+## 1.19.3 - Update (3 September 2025)
+- Update corvette part stack size for NMS 6.03.
+
 ## 1.19.2 - Update (3 September 2025)
 - Correct additional Corvette parts types.
 
