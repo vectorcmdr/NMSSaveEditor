@@ -13187,7 +13187,7 @@ Assemble a corvette at the dedicated Corvette Workshop aboard any Space Station.
 
 Assemble a corvette at the dedicated Corvette Workshop aboard any Space Station.</description>
   </product>
-  <product category="CUSTOMISATION_PART" icon="PRODUCT-B_TUR_B.PNG" id="^B_TUR_B" multiplier="5" name="Deadeye Cannon" special="true" subtitle="Corvette Weapon System">
+  <product category="CUSTOMISATION_PART" icon="PRODUCT-B_TUR_B.PNG" id="^B_TUR_B" multiplier="5" name="Deadeye Cannon" subtitle="Corvette Weapon System">
     <requirement id="^MIRROR" quantity="2"/>
     <requirement id="^SHIPCHARGE" quantity="1"/>
     <requirement id="^CASING" quantity="5"/>
