@@ -14962,6 +14962,47 @@ Assemble a corvette at the dedicated Corvette Workshop aboard any Space Station.
 
 Assemble a corvette at the dedicated Corvette Workshop aboard any Space Station.</description>
   </product>
+  <product category="CUSTOMISATION_PART" icon="PRODUCT-B_STR_N_NE.PNG" id="^B_STR_N_NE" multiplier="5" name="Thermal Grille Cap" subtitle="Corvette External Plating">
+    <description>A piece of hull cowling for a Corvette-class starship, designed to streamline and protect core ship components.
+
+Assemble a corvette at the dedicated Corvette Workshop aboard any Space Station.</description>
+  </product>
+  <product category="CUSTOMISATION_PART" icon="PRODUCT-B_STR_N_NE.PNG" id="^B_STR_N_NE1" multiplier="5" name="Thermal Grille Cap" subtitle="Corvette External Plating">
+    <description>A piece of hull cowling for a Corvette-class starship, designed to streamline and protect core ship components.
+
+Assemble a corvette at the dedicated Corvette Workshop aboard any Space Station.</description>
+  </product>
+  <product category="CUSTOMISATION_PART" icon="PRODUCT-B_STR_N_NE.PNG" id="^B_STR_N_NE2" multiplier="5" name="Thermal Grille Cap" subtitle="Corvette External Plating">
+    <description>A piece of hull cowling for a Corvette-class starship, designed to streamline and protect core ship components.
+
+Assemble a corvette at the dedicated Corvette Workshop aboard any Space Station.</description>
+  </product>
+  <product category="CUSTOMISATION_PART" icon="PRODUCT-B_STR_N_NE.PNG" id="^B_STR_N_NE3" multiplier="5" name="Thermal Grille Cap" subtitle="Corvette External Plating">
+    <description>A piece of hull cowling for a Corvette-class starship, designed to streamline and protect core ship components.
+
+Assemble a corvette at the dedicated Corvette Workshop aboard any Space Station.</description>
+  </product>
+
+  <product category="CUSTOMISATION_PART" icon="PRODUCT-B_STR_N_NE.PNG" id="^B_STR_N_NW" multiplier="5" name="Thermal Grille Cap" subtitle="Corvette External Plating">
+    <description>A piece of hull cowling for a Corvette-class starship, designed to streamline and protect core ship components.
+
+Assemble a corvette at the dedicated Corvette Workshop aboard any Space Station.</description>
+  </product>
+  <product category="CUSTOMISATION_PART" icon="PRODUCT-B_STR_N_NE.PNG" id="^B_STR_N_NW1" multiplier="5" name="Thermal Grille Cap" subtitle="Corvette External Plating">
+    <description>A piece of hull cowling for a Corvette-class starship, designed to streamline and protect core ship components.
+
+Assemble a corvette at the dedicated Corvette Workshop aboard any Space Station.</description>
+  </product>
+  <product category="CUSTOMISATION_PART" icon="PRODUCT-B_STR_N_NE.PNG" id="^B_STR_N_NW2" multiplier="5" name="Thermal Grille Cap" subtitle="Corvette External Plating">
+    <description>A piece of hull cowling for a Corvette-class starship, designed to streamline and protect core ship components.
+
+Assemble a corvette at the dedicated Corvette Workshop aboard any Space Station.</description>
+  </product>
+  <product category="CUSTOMISATION_PART" icon="PRODUCT-B_STR_N_NE.PNG" id="^B_STR_N_NW3" multiplier="5" name="Thermal Grille Cap" subtitle="Corvette External Plating">
+    <description>A piece of hull cowling for a Corvette-class starship, designed to streamline and protect core ship components.
+
+Assemble a corvette at the dedicated Corvette Workshop aboard any Space Station.</description>
+  </product>
   <product category="CUSTOMISATION_PART" icon="PRODUCT-B_STR_N_N.PNG" id="^B_STR_N_N" multiplier="5" name="Thermal Grille" subtitle="Corvette External Plating">
     <description>A piece of hull cowling for a Corvette-class starship, designed to streamline and protect core ship components.
 
