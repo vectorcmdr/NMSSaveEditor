@@ -1,5 +1,8 @@
 # Change Log
 
+## 1.19.4 - Update (5 September 2025)
+- Add second Vesper Diffuser version to Corvette part list.
+
 ## 1.19.3 - Update (3 September 2025)
 - Update corvette part stack size for NMS 6.03.
 
