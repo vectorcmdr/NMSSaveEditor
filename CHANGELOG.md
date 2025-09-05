@@ -1,5 +1,8 @@
 # Change Log
 
+## 1.19.5 - Update (5 September 2025)
+- Added Thermal Grille Cap to Corvette part list.
+
 ## 1.19.4 - Update (5 September 2025)
 - Add second Vesper Diffuser version to Corvette part list.
 
