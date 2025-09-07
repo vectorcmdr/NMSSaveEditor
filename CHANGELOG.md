@@ -1,5 +1,8 @@
 # Change Log
 
+## 1.19.6 - Update (8 September 2025)
+- Added expedition 19 mappings.
+
 ## 1.19.5 - Update (5 September 2025)
 - Added Thermal Grille Cap to Corvette part list.
 
