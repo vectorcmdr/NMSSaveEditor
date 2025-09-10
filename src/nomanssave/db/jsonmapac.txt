@@ -156,3 +156,8 @@ biK	SuitVoice
 Lcv	PlayerVoice
 q:O	PS5ProVRPSSR
 >oI	UnderwaterDepthOfFieldStrength
+>W7	CustomBindingsMac
+Jxp	CustomBindingsPC
+MyN	CustomBindingsPlaystation
+jSo	CustomBindingsSwitch
+ilV	CustomBindingsXbox
