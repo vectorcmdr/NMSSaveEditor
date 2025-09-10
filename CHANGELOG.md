@@ -1,5 +1,8 @@
 # Change Log
 
+## 1.19.7 - Update (10 September 2025)
+- Added 6.05 experimental mappings.
+
 ## 1.19.6 - Update (8 September 2025)
 - Added expedition 19 mappings.
 
