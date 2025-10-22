@@ -1128,3 +1128,11 @@ DTD	NeverPinnable
 eSZ	FoodBonusStat
 N=w	StatsType
 <:g	FoodBonusStatAmount
+@eC	ForceBlackHolesAtPartyUAs
+0Is	AltBossRewards
+UMx	NeedsSpecificCreature
+j=k	SystemNeedsRelicPlanet
+iG6	SystemNeedsNonGasGiant
+FyV	OverrideStartingUAScreenFilter
+8cR	StartingUAScreenFilter
+G:p	ScreenFilter
