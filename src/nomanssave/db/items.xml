@@ -13223,8 +13223,63 @@ Assemble a corvette at the dedicated Corvette Workshop aboard any Space Station.
 
 Assemble a corvette at the dedicated Corvette Workshop aboard any Space Station.</description>
   </product>
-  <product category="CUSTOMISATION_PART" icon="PRODUCT-B_SHL_D.PNG" id="^B_SHL_D" multiplier="5" name="BLD_BIG_SHL_D_NAME_L" subtitle="Corvette Shield Generator">
+  <product category="CUSTOMISATION_PART" icon="PRODUCT-B_SHL_D.PNG" id="^B_SHL_D" multiplier="5" name="Defence Field" subtitle="Corvette Shield Generator">
     <description>A shield generator system for a Corvette-class starship.
+
+Assemble a corvette at the dedicated Corvette Workshop aboard any Space Station.</description>
+  </product>
+  <product category="CUSTOMISATION_PART" icon="PRODUCT-B_STR_W_NETB.PNG" id="^B_STR_W_NETB" multiplier="5" name="Vesper Diffuser Rim" subtitle="Corvette External Plating">
+    <description>A piece of hull cowling for a Corvette-class starship, designed to streamline and protect core ship components.
+
+Assemble a corvette at the dedicated Corvette Workshop aboard any Space Station.</description>
+  </product>
+  <product category="CUSTOMISATION_PART" icon="PRODUCT-B_STR_V_NETB.PNG" id="^B_STR_V_NETB" multiplier="5" name="Hardframe Diffuser Rim" subtitle="Corvette External Plating">
+    <description>A piece of hull cowling for a Corvette-class starship, designed to streamline and protect core ship components.
+
+Assemble a corvette at the dedicated Corvette Workshop aboard any Space Station.</description>
+  </product>
+  <product category="CUSTOMISATION_PART" icon="PRODUCT-B_TRU_G.PNG" id="^B_TRU_G" multiplier="5" name="Firebox Thruster" subtitle="Corvette Rear Thruster">
+    <description>A rear thruster for a Corvette-class starship, delivering propulsion during atmospheric and deep-space flight.
+
+Assemble a corvette at the dedicated Corvette Workshop aboard any Space Station.</description>
+  </product>
+  <product category="CUSTOMISATION_PART" icon="PRODUCT-B_TRU_H.PNG" id="^B_TRU_H" multiplier="5" name="Longshore Thruster" subtitle="Corvette Rear Thruster">
+    <description>A rear thruster for a Corvette-class starship, delivering propulsion during atmospheric and deep-space flight.
+
+Assemble a corvette at the dedicated Corvette Workshop aboard any Space Station.</description>
+  </product>
+  <product category="CUSTOMISATION_PART" icon="PRODUCT-B_TRU_F.PNG" id="^B_TRU_F" multiplier="5" name="Twin Sublight Jets" subtitle="Corvette Rear Thruster">
+    <description>A rear thruster for a Corvette-class starship, delivering propulsion during atmospheric and deep-space flight.
+
+Assemble a corvette at the dedicated Corvette Workshop aboard any Space Station.</description>
+  </product>
+  <product category="CUSTOMISATION_PART" icon="PRODUCT-B_STR_Y_NETB.PNG" id="^B_STR_Y_NETB" multiplier="5" name="Speedbird Nacelle Rim" subtitle="Corvette External Plating">
+    <description>A piece of hull cowling for a Corvette-class starship, designed to streamline and protect core ship components.
+
+Assemble a corvette at the dedicated Corvette Workshop aboard any Space Station.</description>
+  </product>
+  <product category="CUSTOMISATION_PART" icon="PRODUCT-B_LND_C.PNG" id="^B_LND_C" multiplier="5" name="Hydraulic Legs" subtitle="Corvette Landing Gear">
+    <description>An advanced landing system for a Corvette-class starship, compatible with both standard interstellar docks and planetary descents alike.
+
+Assemble a corvette at the dedicated Corvette Workshop aboard any Space Station.</description>
+  </product>
+  <product category="CUSTOMISATION_PART" icon="PRODUCT-B_STR_U_NETB.PNG" id="^B_STR_U_NETB" multiplier="5" name="Engine Cover Rim" subtitle="Corvette External Plating">
+    <description>A piece of hull cowling for a Corvette-class starship, designed to streamline and protect core ship components.
+
+Assemble a corvette at the dedicated Corvette Workshop aboard any Space Station.</description>
+  </product>
+  <product category="CUSTOMISATION_PART" icon="PRODUCT-B_STR_T_NETB.PNG" id="^B_STR_T_NETB" multiplier="5" name="Fuel Pod Cover Rim" subtitle="Corvette External Plating">
+    <description>A piece of hull cowling for a Corvette-class starship, designed to streamline and protect core ship components.
+
+Assemble a corvette at the dedicated Corvette Workshop aboard any Space Station.</description>
+  </product>
+  <product category="CUSTOMISATION_PART" icon="PRODUCT-B_STR_X_NETB.PNG" id="^B_STR_X_NETB" multiplier="5" name="Speedbird Dome Rim" subtitle="Corvette External Plating">
+    <description>A piece of hull cowling for a Corvette-class starship, designed to streamline and protect core ship components.
+
+Assemble a corvette at the dedicated Corvette Workshop aboard any Space Station.</description>
+  </product>
+  <product category="CUSTOMISATION_PART" icon="PRODUCT-B_TRU_E.PNG" id="^B_TRU_E" multiplier="5" name="Widebody Thruster" subtitle="Corvette Rear Thruster">
+    <description>A rear thruster for a Corvette-class starship, delivering propulsion during atmospheric and deep-space flight.
 
 Assemble a corvette at the dedicated Corvette Workshop aboard any Space Station.</description>
   </product>
