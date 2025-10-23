@@ -1131,7 +1131,7 @@ N=w	StatsType
 @eC	ForceBlackHolesAtPartyUAs
 0Is	AltBossRewards
 UMx	NeedsSpecificCreature
-j=k	SystemNeedsRelicPlanet
+j=K	SystemNeedsRelicPlanet
 iG6	SystemNeedsNonGasGiant
 FyV	OverrideStartingUAScreenFilter
 8cR	StartingUAScreenFilter
