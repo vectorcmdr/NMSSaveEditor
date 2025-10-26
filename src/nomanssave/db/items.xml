@@ -745,6 +745,11 @@ Select in the Inventory (INVENTORY) and use FE_ALT1 to examine the contents. No 
 
 Select the Detector and use Begin Scan (FE_ALT1) to begin the location process.</description>
   </product>
+  <product category="CURIOSITY" icon="PRODUCT-BIGGS_POI_LOC.PNG" id="^BIGGS_POI_LOC" multiplier="5" name="Debris Rangefinder" subtitle="Deep-Space Salvage Locator">
+    <description>A single-use device for locating the wreckage of starships in deep space.
+
+Select the Rangefinder and use Scan for Debris (FE_ALT1) to begin the location process.</description>
+  </product>
   <product category="CURIOSITY" icon="PRODUCT-ABAND_LOCATOR.PNG" id="^ABAND_LOCATOR" multiplier="5" name="Emergency Signal Scanner" subtitle="Coordinate Data">
     <description>A single-use receiver that scans for distress signals on freighter frequencies. Derelict or abandoned freighters often contain high-value salvage.
 

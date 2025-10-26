@@ -1,9 +1,12 @@
 # Change Log
 
-## 1.19.9 - Update (24/10/2025)
+## 1.19.10 - Update (27 October 2025)
+- Added Debris Rangefinder from 6.10 (Breach) to items list.
+
+## 1.19.9 - Update (24 October 2025)
 - Added initial support for new corvette parts from base game (not expedition rewards) for 6.10 (Breach).
 
-## 1.19.8 - Update (23/10/2025)
+## 1.19.8 - Update (23 October 2025)
 - Added mappings for NMS 6.10 (Breach).
 
 ## 1.19.7 - Update (10 September 2025)
