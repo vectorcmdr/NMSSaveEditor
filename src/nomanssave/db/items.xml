@@ -3411,6 +3411,13 @@ A ramshackle ship exhaust nozzle, hand-assembled in an emergency by an outlaw. H
 
 Install this technology in your starship inventory to change the appearance of the engine exhaust trails.</description>
   </product>
+  <product category="CUSTOMISATION_PART" icon="PRODUCT-SHIP_ATLAS.PNG" id="^SHIP_ATLAS" multiplier="1" name="Aeron Starship Trail" special="true" subtitle="Starship Exhaust Override">
+    <description>An exclusive Starship Exhaust Modifier.
+
+This engine modification injects the Starship exhaust trail with an arterial streak of crimson.
+
+Install this technology in your starship inventory to change the appearance of the engine exhaust trails.</description>
+  </product>
   <product category="BUILDING_PART" icon="PRODUCT-EXPD_POSTER06A.PNG" id="^EXPD_POSTER06A" multiplier="1" name="Dread Captain Fahng Poster" special="true" subtitle="Decoration">
     <requirement id="^FUEL1" quantity="25"/>
     <description>An exclusive piece of self-adhesive, crease-proof wall art.
@@ -15543,6 +15550,51 @@ Assemble a corvette at the dedicated Corvette Workshop aboard any Space Station.
     <description>An exterior attachment for a Corvette-class starship.
 
 Assemble a corvette at the dedicated Corvette Workshop aboard any Space Station.</description>
+  </product>
+  <product category="CUSTOMISATION_PART" icon="PRODUCT-B_DECO_T.PNG" id="^B_DECO_T" multiplier="5" name="Aeron Pyramid" subtitle="Corvette Hull Attachment">
+    <description>The geometry of this component is ancient and unmistakable, shaped by the crimson heartbeat of the universe itself.
+
+This piece of hull cowling can be used to assemble a corvette at the dedicated Corvette Workshop aboard any Space Station.</description>
+  </product>
+  <product category="CUSTOMISATION_PART" icon="PRODUCT-B_DECO_S.PNG" id="^B_DECO_S" multiplier="5" name="Aeron Pillar" subtitle="Corvette Hull Attachment">
+    <description>The geometry of this component is ancient and unmistakable, shaped by the crimson heartbeat of the universe itself.
+
+This piece of hull cowling can be used to assemble a corvette at the dedicated Corvette Workshop aboard any Space Station.</description>
+  </product>
+  <product category="CUSTOMISATION_PART" icon="PRODUCT-B_DECO_Q_0.PNG" id="^B_DECO_Q_0" multiplier="5" name="Aeron Diffuser" subtitle="Corvette Hull Attachment">
+    <description>The geometry of this component is ancient and unmistakable, shaped by the crimson heartbeat of the universe itself.
+
+This piece of hull cowling can be used to assemble a corvette at the dedicated Corvette Workshop aboard any Space Station.</description>
+  </product>
+  <product category="CUSTOMISATION_PART" icon="PRODUCT-B_DECO_R.PNG" id="^B_DECO_R" multiplier="5" name="Aeron Cowling" subtitle="Corvette Hull Attachment">
+    <description>The geometry of this component is ancient and unmistakable, shaped by the crimson heartbeat of the universe itself.
+
+This piece of hull cowling can be used to assemble a corvette at the dedicated Corvette Workshop aboard any Space Station.</description>
+  </product>
+  <product category="CUSTOMISATION_PART" icon="PRODUCT-B_WNG_Q.PNG" id="^B_WNG_Q" multiplier="5" name="Wings of Aeron" subtitle="Corvette Flight Stabliser">
+    <description>The geometry of this component is ancient and unmistakable, shaped by the crimson heartbeat of the universe itself.
+
+This wing module can be used to assemble a corvette at the dedicated Corvette Workshop aboard any Space Station.</description>
+  </product>
+  <product category="CUSTOMISATION_PART" icon="PRODUCT-B_WNG_R.PNG" id="^B_WNG_R" multiplier="5" name="Aeron Blade" subtitle="Corvette Flight Stabliser">
+    <description>The geometry of this component is ancient and unmistakable, shaped by the crimson heartbeat of the universe itself.
+
+This wing module can be used to assemble a corvette at the dedicated Corvette Workshop aboard any Space Station.</description>
+  </product>
+  <product category="CUSTOMISATION_PART" icon="PRODUCT-B_WNG_P.PNG" id="^B_WNG_P" multiplier="5" name="Aeron Drive" subtitle="Corvette Main Engine">
+    <description>The geometry of this component is ancient and unmistakable, shaped by the crimson heartbeat of the universe itself.
+
+This main engine can be used to assemble a corvette at the dedicated Corvette Workshop aboard any Space Station.</description>
+  </product>
+  <product category="CUSTOMISATION_PART" icon="PRODUCT-B_STR_AA_N.PNG" id="^B_STR_AA_N" multiplier="5" name="Aeron Winglet" subtitle="Corvette External Attachment">
+    <description>The geometry of this component is ancient and unmistakable, shaped by the crimson heartbeat of the universe itself.
+
+This piece of hull cowling can be used to assemble a corvette at the dedicated Corvette Workshop aboard any Space Station.</description>
+  </product>
+  <product category="CUSTOMISATION_PART" icon="PRODUCT-B_SHL_E.PNG" id="^B_SHL_E" multiplier="5" name="Aeron Powershield" subtitle="Corvette Shield Generator">
+    <description>The geometry of this component is ancient and unmistakable, shaped by the crimson heartbeat of the universe itself.
+
+This shield generator can be used to assemble a corvette at the dedicated Corvette Workshop aboard any Space Station.</description>
   </product>
   <product category="BUILDING_PART" icon="PRODUCT-FOUNDATION.PNG" id="^FOUNDATION" multiplier="0" name="Foundation" subtitle="Construction module">
     <requirement id="^LAND2" quantity="100"/>
