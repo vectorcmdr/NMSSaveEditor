@@ -42,8 +42,8 @@ import javax.swing.KeyStroke;
 import javax.swing.SwingUtilities;
 
 public class Application {
-   public static final String VERSION = "1.19.3";
-   public static final String RELEASE = "VOYAGERS";
+   public static final String VERSION = "1.19.11";
+   public static final String RELEASE = "BREACH";
    private static final String J = "https://github.com/goatfungus/NMSSaveEditor";
    private static final String K = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_";
    private static Application L;
