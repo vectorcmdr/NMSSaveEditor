@@ -1,5 +1,8 @@
 # Change Log
 
+## 1.19.11 - Update (29 October 2025)
+- Added Aeron corvette parts from EXP20/6.10 (Breach) to items list.
+
 ## 1.19.10 - Update (27 October 2025)
 - Added Debris Rangefinder from 6.10 (Breach) to items list.
 
