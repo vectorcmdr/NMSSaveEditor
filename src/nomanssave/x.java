@@ -45,7 +45,7 @@ class x extends Thread {
          }
 
          hc.debug("Latest version: \"" + var12 + "\"");
-         hc.debug("Current version: \"1.19.3\"");
+         hc.debug("Current version: \"1.19.11\"");
          if (!"1.19.3".equals(var12)) {
             EventQueue.invokeLater(new y(this, this.ba));
          }
