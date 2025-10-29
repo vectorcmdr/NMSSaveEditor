@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <rewards>
+  <season id="^EXPD_BANNER20" name="Breach Banner"/>
+  <season id="^EXPD_TITLE20" name="Title: 'The Celestial'"/>
+  <season id="^EXPD_DECAL20" name="Breach Decal"/>
+  <season id="^EXPD_POSTER20A" name="Siren of The Stars Poster"/>
+  <season id="^EXPD_POSTER20B" name="Eternal Serpents Poster"/>
+  <season id="^EXPD_POSTER20C" name="Event Horizon Poster"/>
+  <season id="^SHIP_ATLAS" name="Aeron Trail"/>
+  <season id="^B_DECO_T" name="Aeron Pyramid"/>
+  <season id="^B_DECO_S" name="Aeron Pillar"/>
+  <season id="^B_DECO_Q_0" name="Aeron Diffuser"/>
+  <season id="^B_DECO_R" name="Aeron Cowling"/>
+  <season id="^B_WNG_Q" name="Wings of Aeron"/>
+  <season id="^B_WNG_R" name="Aeron Blade"/>
+  <season id="^B_WNG_P" name="Aeron Drive"/>
+  <season id="^B_STR_AA_N" name="Aeron Winglet"/>
+  <season id="^B_SHL_E" name="Aeron Powershield"/>
   <season id="^EXPD_EGG_19" name="Mecha-Mouse Egg"/>
   <season id="^EXPD_TITLE19" name="Title: 'Shipwright'"/>
   <season id="^EXPD_BANNER19" name="Corvette Banner"/>
