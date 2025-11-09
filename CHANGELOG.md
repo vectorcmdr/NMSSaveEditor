@@ -1,5 +1,8 @@
 # Change Log
 
+## 1.19.14 - Update (9 November 2025)
+- Renamed Elixir of Blood items to add glyph number.
+
 ## 1.19.13 - Update (9 November 2025)
 - Fix for Aeron Trail from EXP20/6.10 (Breach).
 
