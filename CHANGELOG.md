@@ -1,5 +1,8 @@
 # Change Log
 
+## 1.19.13 - Update (9 November 2025)
+- Fix for Aeron Trail from EXP20/6.10 (Breach).
+
 ## 1.19.12 - Update (29 October 2025)
 - Added rewards unlocks from EXP20/6.10 (Breach).
 
