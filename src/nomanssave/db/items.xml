@@ -21776,6 +21776,15 @@ Install to an Inventory Slot to decorate your ship's interior.</description>
 
 Install to an Inventory Slot to decorate your ship's interior.</description>
   </technology>
+  <technology category="ALLSHIPS" icon="TECHNOLOGY-T_SHIP_ATLAS.PNG" id="^T_SHIP_ATLAS" name="Aeron Starship Trail" subtitle="Starship Exhaust Modifier">
+    <requirement id="^LAND1" quantity="10"/>
+    <description>An exclusive Starship Exhaust Modifier.
+
+This engine modification injects the Starship exhaust trail with an arterial streak of crimson.
+
+Install this technology in your starship inventory to change the appearance of the engine exhaust trails.</description>
+    <techbox icon="TECHBOX-UTILITY.PNG" id="^8080CEA839DF" template="^U_TECHPACK_CORE"/>
+  </technology>
   <technology category="ALLSHIPS" icon="TECHNOLOGY-T_SHIP_RAINBOW.PNG" id="^T_SHIP_RAINBOW" name="Chromatic Starship Trail" subtitle="Starship Exhaust Override">
     <requirement id="^LAND1" quantity="10"/>
     <description>An exclusive Starship Exhaust Modifier.

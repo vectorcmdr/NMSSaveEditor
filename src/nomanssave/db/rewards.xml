@@ -6,7 +6,7 @@
   <season id="^EXPD_POSTER20A" name="Siren of The Stars Poster"/>
   <season id="^EXPD_POSTER20B" name="Eternal Serpents Poster"/>
   <season id="^EXPD_POSTER20C" name="Event Horizon Poster"/>
-  <season id="^SHIP_ATLAS" name="Aeron Trail"/>
+  <season id="^T_SHIP_ATLAS" name="Aeron Trail"/>
   <season id="^B_DECO_T" name="Aeron Pyramid"/>
   <season id="^B_DECO_S" name="Aeron Pillar"/>
   <season id="^B_DECO_Q_0" name="Aeron Diffuser"/>
