@@ -2661,7 +2661,7 @@ Consume the elixir with FE_ALT1 or inject it directly into the Anomaly Suppresso
 
 Consume the elixir with FE_ALT1 to reveal the location of nearby portals.</description>
   </product>
-  <product category="CURIOSITY" icon="PRODUCT-MESSAGE_JUICE.PNG" id="^MESSAGE_JUICE" multiplier="1" name="Elixir of Blood&lt;IMG&gt;PR_10&lt;&gt;" subtitle="Otherworldly Concoction">
+  <product category="CURIOSITY" icon="PRODUCT-MESSAGE_JUICE.PNG" id="^MESSAGE_JUICE" multiplier="1" name="Elixir of Blood (Glyph 11)" subtitle="Otherworldly Concoction">
     <requirement id="^CREATURE1" quantity="15"/>
     <requirement id="^ROBOT1" quantity="15"/>
     <requirement id="^ASTEROID2" quantity="20"/>
@@ -2677,7 +2677,7 @@ Present the elixir at a portal, or consume it with FE_ALT1 to commune with those
 
 Consume the elixir with FE_ALT1. Beware what lurks in the deep water...</description>
   </product>
-  <product category="CURIOSITY" icon="PRODUCT-MESSAGE_JUICE1.PNG" id="^MESSAGE_JUICE1" multiplier="1" name="Elixir of Blood&lt;IMG&gt;PR_4&lt;&gt;" subtitle="Otherworldly Concoction">
+  <product category="CURIOSITY" icon="PRODUCT-MESSAGE_JUICE1.PNG" id="^MESSAGE_JUICE1" multiplier="1" name="Elixir of Blood (Glyph 5)" subtitle="Otherworldly Concoction">
     <requirement id="^CREATURE1" quantity="15"/>
     <requirement id="^STORM_CRYSTAL" quantity="1"/>
     <requirement id="^ASTEROID2" quantity="20"/>
@@ -2687,7 +2687,7 @@ A shape forms in the surface, impossible and yet unmistakeable: PR_4.
 
 Present the elixir at a portal, or consume it with FE_ALT1 to commune with those beyond the boundaries of reality.</description>
   </product>
-  <product category="CURIOSITY" icon="PRODUCT-MESSAGE_JUICE2.PNG" id="^MESSAGE_JUICE2" multiplier="1" name="Elixir of Blood&lt;IMG&gt;PR_9&lt;&gt;" subtitle="Otherworldly Concoction">
+  <product category="CURIOSITY" icon="PRODUCT-MESSAGE_JUICE2.PNG" id="^MESSAGE_JUICE2" multiplier="1" name="Elixir of Blood (Glyph 10)" subtitle="Otherworldly Concoction">
     <requirement id="^CREATURE1" quantity="15"/>
     <requirement id="^STELLAR2" quantity="15"/>
     <requirement id="^ASTEROID2" quantity="20"/>
@@ -2697,7 +2697,7 @@ A shape forms in the surface, impossible and yet unmistakeable: PR_9.
 
 Present the elixir at a portal, or consume it with FE_ALT1 to commune with those beyond the boundaries of reality.</description>
   </product>
-  <product category="CURIOSITY" icon="PRODUCT-MESSAGE_JUICE3.PNG" id="^MESSAGE_JUICE3" multiplier="1" name="Elixir of Blood&lt;IMG&gt;PR_11&lt;&gt;" subtitle="Otherworldly Concoction">
+  <product category="CURIOSITY" icon="PRODUCT-MESSAGE_JUICE3.PNG" id="^MESSAGE_JUICE3" multiplier="1" name="Elixir of Blood (Glyph 12)" subtitle="Otherworldly Concoction">
     <requirement id="^CREATURE1" quantity="15"/>
     <requirement id="^ROBOT2" quantity="15"/>
     <requirement id="^ASTEROID2" quantity="20"/>
@@ -2707,7 +2707,7 @@ A shape forms in the surface, impossible and yet unmistakeable: PR_11.
 
 Present the elixir at a portal, or consume it with FE_ALT1 to commune with those beyond the boundaries of reality.</description>
   </product>
-  <product category="CURIOSITY" icon="PRODUCT-MESSAGE_JUICE4.PNG" id="^MESSAGE_JUICE4" multiplier="1" name="Elixir of Blood&lt;IMG&gt;PR_0&lt;&gt;" subtitle="Otherworldly Concoction">
+  <product category="CURIOSITY" icon="PRODUCT-MESSAGE_JUICE4.PNG" id="^MESSAGE_JUICE4" multiplier="1" name="Elixir of Blood (Glyph 1)" subtitle="Otherworldly Concoction">
     <requirement id="^CREATURE1" quantity="15"/>
     <requirement id="^SQUIDFRAG" quantity="25"/>
     <requirement id="^ASTEROID2" quantity="20"/>
