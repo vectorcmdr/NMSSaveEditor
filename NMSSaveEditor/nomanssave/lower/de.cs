@@ -8,7 +8,7 @@ namespace NMSSaveEditor
 {
 
 public class de : ListModel {
-   dd gW;
+   public dd gW;
 
    public de(dd var1) {
       this.gW = var1;

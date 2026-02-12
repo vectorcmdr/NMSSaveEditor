@@ -8,7 +8,7 @@ namespace NMSSaveEditor
 
 public class fZ : ft {
    public int lT;
-   fT mN;
+   public fT mN;
 
    public fZ(fT var1, int var2) {
       this.mN = var1;

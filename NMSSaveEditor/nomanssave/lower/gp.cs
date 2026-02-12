@@ -7,6 +7,7 @@ namespace NMSSaveEditor
 {
 
 public class gp {
+   public string Name => getName();
    public int index;
    public eY oR;
 
@@ -115,7 +116,7 @@ public class gp {
          var3.f(0);
       }
 
-      var3.a(var1, new Integer(var2));
+      var3.a(var1, ((int)(var2)));
    }
 
    public er ar(int var1) {
@@ -141,7 +142,7 @@ public class gp {
    }
 
    public void @as(int var1) {
-      this.oR.b("TotalNumberOfExpeditions", (object)(new Integer(var1)));
+      this.oR.b("TotalNumberOfExpeditions", (object)(((int)(var1))));
    }
 
    public int dd() {
@@ -149,7 +150,7 @@ public class gp {
    }
 
    public void at(int var1) {
-      this.oR.b("TotalNumberOfSuccessfulEvents", (object)(new Integer(var1)));
+      this.oR.b("TotalNumberOfSuccessfulEvents", (object)(((int)(var1))));
    }
 
    public int de() {
@@ -157,7 +158,7 @@ public class gp {
    }
 
    public void au(int var1) {
-      this.oR.b("TotalNumberOfFailedEvents", (object)(new Integer(var1)));
+      this.oR.b("TotalNumberOfFailedEvents", (object)(((int)(var1))));
    }
 
    public int df() {
@@ -165,7 +166,7 @@ public class gp {
    }
 
    public void av(int var1) {
-      this.oR.b("NumberOfTimesDamaged", (object)(new Integer(var1)));
+      this.oR.b("NumberOfTimesDamaged", (object)(((int)(var1))));
    }
 
    public int dg() {
@@ -173,7 +174,7 @@ public class gp {
    }
 
    public void aw(int var1) {
-      this.oR.b("RepairsMade", (object)(new Integer(var1)));
+      this.oR.b("RepairsMade", (object)(((int)(var1))));
    }
 
    public int dh() {
@@ -181,7 +182,7 @@ public class gp {
    }
 
    public void ax(int var1) {
-      this.oR.b("DamageTaken", (object)(new Integer(var1)));
+      this.oR.b("DamageTaken", (object)(((int)(var1))));
    }
 
    public string toString() {

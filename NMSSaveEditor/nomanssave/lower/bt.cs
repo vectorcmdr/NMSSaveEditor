@@ -7,7 +7,7 @@ namespace NMSSaveEditor
 {
 
 public class bt : ActionListener {
-   bl er;
+   public bl er;
    public Application bv;
 
    public bt(bl var1, Application var2) {

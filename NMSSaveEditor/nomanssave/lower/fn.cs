@@ -8,6 +8,9 @@ namespace NMSSaveEditor
 {
 
 public sealed class fn {
+   public static fn[] Values() { return new fn[] { lm, ln, lo, lp, lq, lr, ls, lt, S, T, i }; }
+   public static fn valueOf(string name) { foreach (var v in Values()) if (v.ToString() == name) return v; return null; }
+
    public static readonly fn lm = new fn();
    public static readonly fn ln = new fn();
    public static readonly fn lo = new fn();

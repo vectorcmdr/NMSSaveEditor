@@ -6,6 +6,7 @@ using System.Text;
 namespace NMSSaveEditor
 {
 public class gw : gv {
+   public string Name => getName();
    public eY oI;
 
    public gw(eY var1, eY var2) {

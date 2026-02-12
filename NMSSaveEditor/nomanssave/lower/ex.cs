@@ -6,6 +6,9 @@ using System.Text;
 namespace NMSSaveEditor
 {
 public sealed class ex {
+   public static ex[] Values() { return new ex[] { iL, iM, iN, iO, iP, iQ, iR, iS, iT, iU, iV, iW, iX, iY, iZ, ja, jb, jc, jd, je, jf, jg, jh, ji, jj, jk, jl, jm, jn, jo, jp, jq, jr, js, jt, ju, jv, jw, jx, jy, jz, jA, jB }; }
+   public static ex valueOf(string name) { foreach (var v in Values()) if (v.ToString() == name) return v; return null; }
+
    public static readonly ex iL = new ex("Fuel");
    public static readonly ex iM = new ex("Metal");
    public static readonly ex iN = new ex("Catalyst");

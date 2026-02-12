@@ -6,7 +6,7 @@ using System.Text;
 namespace NMSSaveEditor
 {
 public class fB : fH, fr {
-   fA ma;
+   public fA ma;
 
    public fB(fA var1) {
       base(var1, "savedata00.hg", true);

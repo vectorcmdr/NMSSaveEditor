@@ -50,7 +50,7 @@ public class hc {
    public static void k(FileInfo var0) {
       FileStream var1;
       try {
-         var1 = new FileStream(var0);
+         var1 = new FileStream((var0).ToString(), System.IO.FileMode.Open);
          Process.GetCurrentProcess().addShutdownHook(new Thread(() => {
             close();
          }));

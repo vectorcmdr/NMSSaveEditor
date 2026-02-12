@@ -9,7 +9,7 @@ namespace NMSSaveEditor
 {
 
 public class cG : TextAction, ClipboardOwner {
-   cy gg;
+   public cy gg;
 
    public cG(cy var1) {
       base("Copy From Clipboard");

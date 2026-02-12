@@ -10,8 +10,8 @@ namespace NMSSaveEditor
 
 public class eR : ey {
    public string kc;
-   eA kn;
-   eQ ko;
+   public eA kn;
+   public eQ ko;
 
    public eR(eQ var1, Element var2) {
       base(var2.getAttribute("id"));

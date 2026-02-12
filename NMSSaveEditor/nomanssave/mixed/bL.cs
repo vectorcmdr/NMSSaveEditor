@@ -8,8 +8,8 @@ namespace NMSSaveEditor
 {
 
 public class bL : TextBox {
-   bK eB;
-   bE ey;
+   public bK eB;
+   public bE ey;
 
    public bL(bE var1, bK var2, bool var3) {
       this.ey = var1;

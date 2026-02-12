@@ -24,7 +24,7 @@ public class X : Panel {
    public gj[] bT;
 
    public X(Application var1) {
-      TableLayoutPanel var2 = new TableLayoutPanel(1, 3);
+      TableLayoutPanel var2 = new TableLayoutPanel();
       this.SuspendLayout(); // TODO: set layout var2);
       ba var3 = new ba(new int[]{aH.cJ, 0});
       this.Add(var3);
@@ -47,7 +47,7 @@ public class X : Panel {
       var3.a("Species Seed", (Control)this.bL);
       this.bM = new ag(this);
       var3.a("Genus Seed", (Control)this.bM);
-      this.bN = new CheckBox("Predator");
+      this.bN = new CheckBox() { Text = "Predator" };
       this.bN.Enabled = (false);
       this.bN.Click += (new ah(this));
       var3.a(null, (Control)this.bN);
@@ -71,13 +71,13 @@ public class X : Panel {
       var3.a("Type", (Control)this.bP);
       var3.Y();
       Panel var4 = new Panel();
-      this.bQ = new Button("Delete");
+      this.bQ = new Button() { Text = "Delete" };
       this.bQ.Click += (new ai(this, var1));
       var4.Add(this.bQ);
-      this.bR = new Button("Export");
+      this.bR = new Button() { Text = "Export" };
       this.bR.Click += (new Z(this, var1));
       var4.Add(this.bR);
-      this.bS = new Button("Import");
+      this.bS = new Button() { Text = "Import" };
       this.bS.Click += (new aa(this, var1));
       var4.Add(this.bS);
       var3.a(var4);

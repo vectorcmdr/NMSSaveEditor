@@ -29,7 +29,7 @@ public class gC {
    }
 
    public void aB(int var1) {
-      this.oI.b("ShipHealth", (object)(new Integer(var1)));
+      this.oI.b("ShipHealth", (object)(((int)(var1))));
    }
 
    public int dN() {
@@ -37,7 +37,7 @@ public class gC {
    }
 
    public void aC(int var1) {
-      this.oI.b("ShipShield", (object)(new Integer(var1)));
+      this.oI.b("ShipShield", (object)(((int)(var1))));
    }
 }
 

@@ -41,7 +41,7 @@ public class fJ : fq {
       fl.a(this, var1);
    }
 
-   protected void finalize() {
+   public void finalize() {
       fl.b(this);
    }
 

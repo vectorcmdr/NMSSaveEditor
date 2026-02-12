@@ -8,8 +8,10 @@ namespace NMSSaveEditor
 {
 
 public class fM : fQ, fs {
-   fn me;
-   fJ mt;
+   public DateTime LastWriteTimeUtc => DateTimeOffset.FromUnixTimeMilliseconds(lastModified()).UtcDateTime;
+   public string Name => getName();
+   public fn me;
+   public fJ mt;
 
    public fM(fJ var1, int var2) {
       base(var1, var2 == 0 ? "save.hg" : "save" + (var2 + 1) + ".hg", var2, true);
@@ -41,8 +43,8 @@ public class fM : fQ, fs {
 
    public void cm() {
       this.a(this.lO == 0 ? "backup" : "backup" + (this.lO + 1), this.me, this.Name, this.getDescription());
-      (new FileInfo(fJ.a(this.mt), this.filename)).Delete();
-      (new FileInfo(fJ.a(this.mt), "mf_" + this.filename)).Delete();
+      (new FileInfo(System.IO.Path.Combine((fJ.a(this.mt)).ToString(), (this.filename).ToString()))).Delete();
+      (new FileInfo(System.IO.Path.Combine((fJ.a(this.mt)).ToString(), ("mf_" + this.filename).ToString()))).Delete();
    }
 
    public string b(eY var1) {

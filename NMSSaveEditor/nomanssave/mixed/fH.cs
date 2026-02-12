@@ -10,14 +10,14 @@ namespace NMSSaveEditor
 
 public class fH {
    public FileInfo mh;
-   byte[] lK;
-   fA ma;
+   public byte[] lK;
+   public fA ma;
 
    public fH(fA var1, string var2, bool var3) {
       this.ma = var1;
-      this.mh = new FileInfo(fA.a(var1), var2);
+      this.mh = new FileInfo(System.IO.Path.Combine((fA.a(var1)).ToString(), (var2).ToString()));
       if (var3) {
-         FileStream var4 = new FileStream(this.mh);
+         FileStream var4 = new FileStream((this.mh).ToString(), System.IO.FileMode.Open);
 
          try {
             this.lK = new byte[112];
@@ -37,7 +37,7 @@ public class fH {
 
    public byte[] readBytes() {
       long var1 = (255L & (long)this.lK[95]) << 24 | (255L & (long)this.lK[94]) << 16 | (255L & (long)this.lK[93]) << 8 | 255L & (long)this.lK[92];
-      FileStream var3 = new FileStream(new FileInfo(fA.a(this.ma), this.K()));
+      FileStream var3 = new FileStream((new FileInfo(System.IO.Path.Combine((fA.a(this.ma).ToString(), System.IO.FileMode.Open)).ToString(), (this.K().ToString()))));
 
       byte[] var6;
       try {
@@ -54,7 +54,7 @@ public class fH {
 
    public byte[] ah(int var1) {
       long var2 = (255L & (long)this.lK[95]) << 24 | (255L & (long)this.lK[94]) << 16 | (255L & (long)this.lK[93]) << 8 | 255L & (long)this.lK[92];
-      FileStream var4 = new FileStream(new FileInfo(fA.a(this.ma), this.K()));
+      FileStream var4 = new FileStream((new FileInfo(System.IO.Path.Combine((fA.a(this.ma).ToString(), System.IO.FileMode.Open)).ToString(), (this.K().ToString()))));
 
       byte[] var7;
       try {
@@ -75,7 +75,7 @@ public class fH {
       this.lK[93] = (byte)(var1.Length >> 8);
       this.lK[94] = (byte)(var1.Length >> 16);
       this.lK[95] = (byte)(var1.Length >> 24);
-      FileStream var2 = new FileStream(new FileInfo(fA.a(this.ma), this.K()));
+      FileStream var2 = new FileStream((new FileInfo(System.IO.Path.Combine((fA.a(this.ma).ToString(), System.IO.FileMode.Open)).ToString(), (this.K().ToString()))));
 
       try {
          var2.Write(this.lK);
@@ -103,14 +103,14 @@ public class fH {
       }
 
       string var6 = var1 + "." + DateTimeOffset.UtcNow.ToUnixTimeMilliseconds() + ".zip";
-      FileInfo var7 = new FileInfo(aH.cG, var6);
-      ZipOutputStream var8 = new ZipOutputStream(new FileStream(var7));
+      FileInfo var7 = new FileInfo(System.IO.Path.Combine((aH.cG).ToString(), (var6).ToString()));
+      ZipOutputStream var8 = new ZipOutputStream(new FileStream((var7).ToString(), System.IO.FileMode.Open));
 
       try {
          byte[] var10 = new byte[4096];
          ZipEntry var11 = new ZipEntry(this.mh.Name);
          var8.putNextEntry(var11);
-         FileStream var12 = new FileStream(this.mh);
+         FileStream var12 = new FileStream((this.mh).ToString(), System.IO.FileMode.Open);
 
          int var9;
          try {

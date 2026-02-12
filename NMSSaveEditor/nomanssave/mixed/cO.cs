@@ -7,7 +7,7 @@ namespace NMSSaveEditor
 {
 
 public class cO : object {
-   cN gt;
+   public cN gt;
    public Class gu;
 
    public cO(cN var1, Class var2) {

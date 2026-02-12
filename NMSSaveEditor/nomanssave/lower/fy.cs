@@ -8,7 +8,7 @@ namespace NMSSaveEditor
 
 public class fy : ft {
    public int lT;
-   fu lJ;
+   public fu lJ;
 
    public fy(fu var1, int var2) {
       this.lJ = var1;

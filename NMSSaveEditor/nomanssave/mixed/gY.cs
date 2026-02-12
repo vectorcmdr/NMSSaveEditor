@@ -9,7 +9,7 @@ namespace NMSSaveEditor
 
 public class gY : Stream {
    public int sc;
-   gX sd;
+   public gX sd;
 
    public gY(gX var1, int var2) {
       this.sd = var1;

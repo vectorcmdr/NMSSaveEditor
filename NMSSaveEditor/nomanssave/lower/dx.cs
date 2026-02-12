@@ -8,7 +8,7 @@ namespace NMSSaveEditor
 {
 
 public class dx : ActionListener {
-   du hp;
+   public du hp;
    public gF hq;
 
    public dx(du var1, gF var2) {

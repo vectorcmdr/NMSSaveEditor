@@ -30,8 +30,8 @@ public class cT : JFileChooser {
       Panel var1 = new Panel();
       var1.SuspendLayout(); // TODO: set layout new BoxLayout(var1, 1));
       var1.Padding = new Padding(0); /* setBorder */ //(null /* EmptyBorder */);
-      var1.Add(new Label("Export Options:"));
-      this.fO = new CheckBox("Products/Substances");
+      var1.Add(new Label() { Text = "Export Options:" });
+      this.fO = new CheckBox() { Text = "Products/Substances" };
       var1.Add(this.fO);
       this.setAccessory(var1);
       /* TODO: port from Java - addPropertyChangeListener for lookAndFeel */

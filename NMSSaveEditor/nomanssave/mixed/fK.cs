@@ -6,7 +6,7 @@ using System.Text;
 namespace NMSSaveEditor
 {
 public class fK : fQ, fr {
-   fJ mt;
+   public fJ mt;
 
    public fK(fJ var1) {
       base(var1, "accountdata.hg", -1, true);

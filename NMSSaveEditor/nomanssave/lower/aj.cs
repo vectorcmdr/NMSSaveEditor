@@ -29,31 +29,31 @@ public class aj : Form {
       this/* setModal */(true);
       Panel var2 = new Panel();
       this.setContentPane(var2);
-      var2.SuspendLayout(); // TODO: set layout new TableLayoutPanel(0, 0));
+      var2.SuspendLayout(); // TODO: set layout new TableLayoutPanel());
       Panel var3 = new Panel();
       // TODO: var3.SuspendLayout(); // TODO: set layout /* FormLayout */ null, FormFactory.LABEL_COMPONENT_GAP_COLSPEC, ColumnSpec.decode("default:grow"), FormFactory.LABEL_COMPONENT_GAP_COLSPEC, ColumnSpec.decode("100px"), FormFactory.LABEL_COMPONENT_GAP_COLSPEC}, new RowSpec[]{FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, RowSpec.decode("bottom:10px"), FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC}));
-      Label var4 = new Label("Search:");
+      Label var4 = new Label() { Text = "Search:" };
       // TODO: var4.putClientProperty(...);
       var3.Controls.Add(var4);
       this.m = new TextBox();
       var3.Add(this.m, "4, 2, fill, default");
-      Button var5 = new Button("Search");
+      Button var5 = new Button() { Text = "Search" };
       var5.Click += (new ak(this));
       var3.Controls.Add(var5);
-      Label var6 = new Label("Coordinate Location:");
+      Label var6 = new Label() { Text = "Coordinate Location:" };
       // TODO: var6.putClientProperty(...);
       var3.Controls.Add(var6);
-      Label var7 = new Label("Galaxy:");
+      Label var7 = new Label() { Text = "Galaxy:" };
       var3.Controls.Add(var7);
       this.bX = new ComboBox();
       this.bX.DataSource = (new al(this));
       var3.Add(this.bX, "4, 8, 3, 1, fill, default");
-      Label var8 = new Label("Galactic Addr:");
+      Label var8 = new Label() { Text = "Galactic Addr:" };
       var3.Controls.Add(var8);
       this.bY = new TextBox();
       this.bY.setEditable(false);
       var3.Add(this.bY, "4, 10, 3, 1, fill, default");
-      Label var9 = new Label("Portal Addr:");
+      Label var9 = new Label() { Text = "Portal Addr:" };
       var3.Controls.Add(var9);
       this.bZ = new TextBox();
       this.bZ.setEditable(false);
@@ -82,11 +82,11 @@ public class aj : Form {
       Panel var14 = new Panel();
       var14.SuspendLayout(); // TODO: set layout new FlowLayoutPanel(2));
       var2.Controls.Add(var14);
-      Button var12 = new Button("Save / Warp");
+      Button var12 = new Button() { Text = "Save / Warp" };
       var12.Click += (new am(this));
       var14.Add(var12);
       this.getRootPane().setDefaultButton(var12);
-      Button var13 = new Button("Cancel");
+      Button var13 = new Button() { Text = "Cancel" };
       var13.Click += (new an(this));
       var14.Add(var13);
       this.getRootPane().registerKeyboardAction(new ao(this), /* KeyStroke */ Keys.None /* (27, 0) */, 2);
@@ -128,16 +128,16 @@ public class aj : Form {
    static TextBox a(aj var0) {
       return var0.m;
    }
-   static ComboBox b(aj var0) {
+   public static ComboBox b(aj var0) {
       return var0.bX;
    }
    static void a(aj var0, hl var1) {
       var0.cc = var1;
    }
-   static void c(aj var0) {
+   public static void c(aj var0) {
       var0.P();
    }
-   static List<object> Q() {
+   public static List<object> Q() {
       return bW;
    }
    static void a(aj var0, bool var1) {

@@ -16,14 +16,14 @@ public class ec : ba {
    public ComboBox ih;
    public G hO;
    public G ii;
-   eb ij;
+   public eb ij;
 
    public ec(eb var1, int var2) {
       base(aH.cH, aH.cH * 2);
       this.ij = var1;
       this.index = var2;
       this.k("Wingman " + (var2 + 1));
-      this.@if = new CheckBox("Enabled");
+      this.@if = new CheckBox() { Text = "Enabled" };
       this.@if.Click += (new ed(this, var2));
       this.a(null, this.@if);
       this.Padding = new Padding(0); /* setBorder */ //(new LineBorder(Color.DARK_GRAY));

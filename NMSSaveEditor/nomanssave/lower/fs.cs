@@ -6,6 +6,8 @@ using System.Text;
 namespace NMSSaveEditor
 {
 public interface fs {
+   public string Name => getName();
+   public DateTime LastWriteTimeUtc => DateTimeOffset.FromUnixTimeMilliseconds(lastModified()).UtcDateTime;
    public string K();
 
    public fn L();

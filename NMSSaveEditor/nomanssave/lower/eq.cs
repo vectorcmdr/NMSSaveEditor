@@ -8,7 +8,7 @@ namespace NMSSaveEditor
 
 public class eq : object {
    public gO iz;
-   ep iA;
+   public ep iA;
 
    public eq(ep var1) {
       this.iA = var1;

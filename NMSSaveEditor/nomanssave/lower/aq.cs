@@ -7,7 +7,7 @@ namespace NMSSaveEditor
 {
 
 public class aq : object {
-   ap cu;
+   public ap cu;
 
    public aq(ap var1) {
       this.cu = var1;

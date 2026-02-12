@@ -8,7 +8,7 @@ namespace NMSSaveEditor
 {
 
 public class cF : AbstractAction {
-   cy gg;
+   public cy gg;
 
    public cF(cy var1) {
       this.gg = var1;

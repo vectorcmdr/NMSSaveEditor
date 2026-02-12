@@ -6,7 +6,7 @@ using System.Text;
 namespace NMSSaveEditor
 {
 public class aN : G {
-   aJ dj;
+   public aJ dj;
    public Application bv;
 
    public aN(aJ var1, Application var2) {
@@ -14,7 +14,7 @@ public class aN : G {
       this.bv = var2;
    }
 
-   protected override string g(string var1) {
+   public override string g(string var1) {
       if (aJ.a(this.dj) == null) {
          return "";
       } else {

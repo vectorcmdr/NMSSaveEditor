@@ -8,7 +8,7 @@ namespace NMSSaveEditor
 {
 
 public class dV : ActionListener {
-   dN ia;
+   public dN ia;
    public Application bv;
 
    public dV(dN var1, Application var2) {

@@ -8,8 +8,8 @@ namespace NMSSaveEditor
 
 public class bC : object {
    public int ev;
-   er eu;
-   bl er;
+   public er eu;
+   public bl er;
 
    public bC(bl var1, int var2) {
       this.er = var1;

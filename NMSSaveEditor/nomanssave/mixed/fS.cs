@@ -8,6 +8,8 @@ namespace NMSSaveEditor
 {
 
 public class fS {
+   public DateTime LastWriteTimeUtc => DateTimeOffset.FromUnixTimeMilliseconds(lastModified()).UtcDateTime;
+   public string Name => getName();
    public FileInfo mh;
    public int lL;
    public int version;
@@ -28,7 +30,7 @@ public class fS {
       object var2 = null;
 
       try {
-         FileStream var3 = new FileStream(this.mh);
+         FileStream var3 = new FileStream((this.mh).ToString(), System.IO.FileMode.Open);
 
          try {
             this.read(var3);
@@ -106,7 +108,7 @@ public class fS {
       object var2 = null;
 
       try {
-         FileStream var3 = new FileStream(this.mh);
+         FileStream var3 = new FileStream((this.mh).ToString(), System.IO.FileMode.Open);
 
          try {
             this.Write(var3);

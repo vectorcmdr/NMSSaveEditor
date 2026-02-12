@@ -22,7 +22,7 @@ public class dz : Form {
       this/* setModal */(true);
       Panel var2 = new Panel();
       this.setContentPane(var2);
-      var2.SuspendLayout(); // TODO: set layout new TableLayoutPanel(0, 0));
+      var2.SuspendLayout(); // TODO: set layout new TableLayoutPanel());
       Panel var3 = new Panel();
       this.hr = new ListBox();
       this.hr.setSelectionMode(0);
@@ -32,11 +32,11 @@ public class dz : Form {
       Panel var4 = new Panel();
       var4.SuspendLayout(); // TODO: set layout new FlowLayoutPanel(2));
       var2.Controls.Add(var4);
-      Button var5 = new Button("Replace/Save");
+      Button var5 = new Button() { Text = "Replace/Save" };
       var5.Click += (new dB(this));
       var4.Add(var5);
       this.getRootPane().setDefaultButton(var5);
-      Button var6 = new Button("Cancel");
+      Button var6 = new Button() { Text = "Cancel" };
       var6.Click += (new dC(this));
       var4.Add(var6);
       this.getRootPane().registerKeyboardAction(new dD(this), /* KeyStroke */ Keys.None /* (27, 0) */, 2);

@@ -9,7 +9,7 @@ namespace NMSSaveEditor
 
 public class cI : TreeModel {
    public List<object> gh;
-   cy gg;
+   public cy gg;
 
    public cI(cy var1) {
       this.gg = var1;

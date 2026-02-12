@@ -10,7 +10,7 @@ namespace NMSSaveEditor
 {
 
 public class y : Runnable {
-   x bb;
+   public x bb;
    public bool ba;
 
    public y(x var1, bool var2) {
@@ -36,7 +36,7 @@ public class y : Runnable {
                URLConnection var5 = var4.openConnection();
                int var6 = var5.getContentLength();
                Stream var7 = var5.getInputStream();
-               FileStream var8 = new FileStream(var3);
+               FileStream var8 = new FileStream((var3).ToString(), System.IO.FileMode.Open);
 
                try {
                   int var10;

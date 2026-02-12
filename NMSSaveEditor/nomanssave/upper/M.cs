@@ -12,7 +12,7 @@ public class M : G {
       this.bt = var1;
    }
 
-   protected override string g(string var1) {
+   public override string g(string var1) {
       gf var2 = (gf)I.j(this.bt).SelectedItem;
       if (var2 == null) {
          return "";

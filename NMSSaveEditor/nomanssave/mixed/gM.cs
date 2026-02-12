@@ -6,6 +6,7 @@ using System.Text;
 namespace NMSSaveEditor
 {
 public class gM {
+   public bool Enabled => isEnabled();
    public eV rH;
    public eY rI;
    public int index;

@@ -11,7 +11,7 @@ public class eQ : ey {
    public static string gc = "0123456789ABCDEFabcdef";
    public bool jY;
    public string name;
-   ex jZ;
+   public ex jZ;
    public bool special;
    public Integer ka;
    public string jM;
@@ -19,7 +19,7 @@ public class eQ : ey {
    public int kd;
    public string description;
    public List<object> ke;
-   eR km;
+   public eR km;
 
    public eQ(Element var1, bool var2) {
       base(var1.getAttribute("id"));
@@ -37,7 +37,7 @@ public class eQ : ey {
       }
 
       this.special = var1.hasAttribute("special") ? Boolean.valueOf(var1.getAttribute("special")) : false;
-      this.ka = var1.hasAttribute("chargeable") ? new Integer(var1.getAttribute("chargeable")) : null;
+      this.ka = var1.hasAttribute("chargeable") ? ((int)(var1.getAttribute("chargeable"))) : null;
       this.jM = var1.getAttribute("subtitle");
       this.kc = var1.hasAttribute("icon") ? var1.getAttribute("icon") : null;
       if (var1.hasAttribute("multiplier")) {

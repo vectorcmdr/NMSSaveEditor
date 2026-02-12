@@ -7,7 +7,7 @@ namespace NMSSaveEditor
 {
 public class eZ : fc {
    public int index;
-   eY kL;
+   public eY kL;
 
    public eZ(eY var1, int var2, fc var3) {
       base(var1, var3);
@@ -15,7 +15,7 @@ public class eZ : fc {
       this.index = var2;
    }
 
-   protected override object a(Class var1, bool var2) {
+   public override object a(Class var1, bool var2) {
       if (this.kN == null) {
          throw new Exception("Unexpected path");
       } else {
@@ -46,7 +46,7 @@ public class eZ : fc {
       }
    }
 
-   protected override object getValue() {
+   public override object getValue() {
       if (this.kN == null) {
          throw new Exception("Unexpected path");
       } else {
@@ -55,7 +55,7 @@ public class eZ : fc {
       }
    }
 
-   protected override object a(object var1, bool var2) {
+   public override object a(object var1, bool var2) {
       if (this.kN == null) {
          throw new Exception("Unexpected path");
       } else {
@@ -69,7 +69,7 @@ public class eZ : fc {
       }
    }
 
-   protected override object bG() {
+   public override object bG() {
       if (this.kN == null) {
          throw new Exception("Unexpected path");
       } else {
@@ -78,7 +78,7 @@ public class eZ : fc {
       }
    }
 
-   protected override eY e(eY var1) {
+   public override eY e(eY var1) {
       if (this.kN == null) {
          throw new Exception("Unexpected path");
       } else {

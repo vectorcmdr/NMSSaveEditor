@@ -10,8 +10,13 @@ public class eV {
    public static int kB = 10;
    public static int kC = 10;
    public int length;
-   object[] values;
+   public int Length { get => length; set => length = value; }
+   public int Count => length;
+   public object[] values;
    public object kD;
+
+   public void Add(object var1) => add(var1);
+   public void Add(int var1, object var2) => add(var1, var2);
 
    public static eV D(string var0) {
       return fh.R(var0);

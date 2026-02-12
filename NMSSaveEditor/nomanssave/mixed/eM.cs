@@ -9,6 +9,7 @@ namespace NMSSaveEditor
 {
 
 public class eM {
+   public string Name => getName();
    public string id;
    public string name;
    public string description;

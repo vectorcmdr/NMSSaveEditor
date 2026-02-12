@@ -9,7 +9,7 @@ namespace NMSSaveEditor
 
 public class hn : Stream {
    public int sc;
-   hm sW;
+   public hm sW;
 
    public hn(hm var1, int var2) {
       this.sW = var1;

@@ -7,7 +7,7 @@ namespace NMSSaveEditor
 {
 
 public class ck : object {
-   cg fF;
+   public cg fF;
 
    public ck(cg var1) {
       this.fF = var1;

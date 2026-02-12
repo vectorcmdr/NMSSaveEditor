@@ -36,49 +36,49 @@ public class cg : Form {
       this/* setModal */(true);
       Panel var2 = new Panel();
       // TODO: var2.SuspendLayout(); // TODO: set layout /* FormLayout */ null, FormFactory.LABEL_COMPONENT_GAP_COLSPEC, ColumnSpec.decode("default:grow"), FormFactory.LABEL_COMPONENT_GAP_COLSPEC, ColumnSpec.decode("100px"), FormFactory.LABEL_COMPONENT_GAP_COLSPEC}, new RowSpec[]{FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, RowSpec.decode("64px"), FormFactory.LINE_GAP_ROWSPEC, RowSpec.decode("default:grow"), FormFactory.LINE_GAP_ROWSPEC}));
-      var2.Add(new Label("Type:"), "2, 2, left, center");
+      var2.Add(new Label() { Text = "Type:" }, "2, 2, left, center");
       this.fn = new TextBox();
       this.fn.setEditable(false);
       var2.Add(this.fn, "4, 2, fill, default");
-      this.fo = new Label("");
+      this.fo = new Label() { Text = "" };
       var2.Add(this.fo, "6, 2, 1, 7, center, fill");
-      var2.Add(new Label("Category:"), "2, 4, left, center");
+      var2.Add(new Label() { Text = "Category:" }, "2, 4, left, center");
       this.fp = new TextBox();
       this.fp.setEditable(false);
       var2.Add(this.fp, "4, 4, fill, default");
-      var2.Add(new Label("Name:"), "2, 6, left, center");
+      var2.Add(new Label() { Text = "Name:" }, "2, 6, left, center");
       this.fq = new TextBox();
       this.fq.setEditable(false);
       var2.Add(this.fq, "4, 6, fill, default");
-      var2.Add(new Label("ID:"), "2, 8, left, center");
+      var2.Add(new Label() { Text = "ID:" }, "2, 8, left, center");
       Panel var3 = new Panel();
       // TODO: var3.SuspendLayout(); // TODO: set layout /* FormLayout */ null, FormFactory.DEFAULT_COLSPEC, ColumnSpec.decode("100px")}, new RowSpec[]{FormFactory.DEFAULT_ROWSPEC}));
       this.fs = new TextBox();
       this.fs.setEditable(false);
       var3.Add(this.fs, "1, 1");
-      this.fr = new Label("#");
+      this.fr = new Label() { Text = "#" };
       var3.Add(this.fr, "2, 1");
       this.ft = new ch(this);
       this.ft.setEditable(false);
       var3.Add(this.ft, "3, 1");
       var2.Controls.Add(var3);
-      this.fu = new Label("Quantity:");
+      this.fu = new Label() { Text = "Quantity:" };
       var2.Add(this.fu, "2, 10, left, center");
       var3 = new Panel();
       // TODO: var3.SuspendLayout(); // TODO: set layout /* FormLayout */ null, FormFactory.DEFAULT_COLSPEC, ColumnSpec.decode("100px")}, new RowSpec[]{FormFactory.DEFAULT_ROWSPEC}));
       this.fv = new ci(this);
       this.fv.setEditable(false);
       var3.Add(this.fv, "1, 1");
-      var3.Add(new Label("/"), "2, 1");
+      var3.Add(new Label() { Text = "/" }, "2, 1");
       this.fw = new TextBox();
       this.fw.setEditable(false);
       var3.Add(this.fw, "3, 1");
       var2.Controls.Add(var3);
-      var2.Add(new Label("Subtitle:"), "2, 12, left, center");
+      var2.Add(new Label() { Text = "Subtitle:" }, "2, 12, left, center");
       this.fx = new TextBox();
       this.fx.setEditable(false);
       var2.Add(this.fx, "4, 12, 3, 1, fill, default");
-      var2.Add(new Label("Build Cost:"), "2, 14, left, top");
+      var2.Add(new Label() { Text = "Build Cost:" }, "2, 14, left, top");
       Panel var4 = new Panel();
       var4.Padding = new Padding(0); /* setBorder */ //(this.fx.getBorder());
       var4.setBackground(this.fx.getBackground());
@@ -89,7 +89,7 @@ public class cg : Form {
       this.fy.setFont(this.fx.getFont());
       var4.setViewportView(this.fy);
       var2.Controls.Add(var4);
-      var2.Add(new Label("Description:"), "2, 16, left, top");
+      var2.Add(new Label() { Text = "Description:" }, "2, 16, left, top");
       this.fz = new TextBox();
       this.fz.setEditable(false);
       this.fz.setWrapStyleWord(true);
@@ -137,7 +137,7 @@ public class cg : Form {
 
          try {
             int var9 = hf.b(var4, 0, 99999);
-            this.fC = new Integer(var9);
+            this.fC = ((int)(var9));
             this.ft.setEditable(true);
          } catch (Exception var7) {
             hc.warn("Error detected in item id: " + var2);
@@ -199,25 +199,25 @@ public class cg : Form {
    static Integer a(cg var0) {
       return var0.fC;
    }
-   static gQ b(cg var0) {
+   public static gQ b(cg var0) {
       return var0.fB;
    }
-   static ey c(cg var0) {
+   public static ey c(cg var0) {
       return var0.fA;
    }
    static void a(cg var0, Integer var1) {
       var0.fC = var1;
    }
-   static Integer d(cg var0) {
+   public static Integer d(cg var0) {
       return var0.fD;
    }
-   static void b(cg var0, Integer var1) {
+   public static void b(cg var0, Integer var1) {
       var0.fD = var1;
    }
-   static G e(cg var0) {
+   public static G e(cg var0) {
       return var0.ft;
    }
-   static G f(cg var0) {
+   public static G f(cg var0) {
       return var0.fv;
    }
 }

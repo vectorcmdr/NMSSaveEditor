@@ -9,9 +9,9 @@ namespace NMSSaveEditor
 public class gT {
    public static int rT = 12;
    public static double rU = 0.1D;
-   private readonly double[] rV;
-   private readonly double[] rW;
-   private readonly double[] rX;
+   public readonly double[] rV;
+   public readonly double[] rW;
+   public readonly double[] rX;
 
    public static double[] b(double[] var0) {
       double var1 = Math.Sqrt(var0[0] * var0[0] + var0[1] * var0[1] + var0[2] * var0[2]);

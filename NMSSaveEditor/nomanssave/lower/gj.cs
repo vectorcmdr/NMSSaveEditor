@@ -8,6 +8,7 @@ namespace NMSSaveEditor
 {
 
 public class gj {
+   public string Name => getName();
    public gl nF;
    public int index;
    public eY bf;
@@ -75,7 +76,7 @@ public class gj {
             object var7 = null;
 
             try {
-               ff var8 = new ff(new FileStream(var1));
+               ff var8 = new ff(new FileStream((var1).ToString(), System.IO.FileMode.Open));
 
                try {
                   if (var15 == null) {
@@ -132,7 +133,7 @@ public class gj {
       object var3 = null;
 
       try {
-         fj var4 = new fj(new FileStream(var1));
+         fj var4 = new fj(new FileStream((var1).ToString(), System.IO.FileMode.Open));
 
          try {
             eY var5 = this.bf.bE();

@@ -23,7 +23,7 @@ public class bS : Panel {
    public ToolStripMenuItem fh;
    public ToolStripMenuItem fi;
    public ToolStripMenuItem fj;
-   bO eX;
+   public bO eX;
 
    public bS(bO var1, int var2, int var3) {
       this.eX = var1;
@@ -230,7 +230,7 @@ public class bS : Panel {
    }
 
    public void a(Image var1, int var2, int var3) {
-      Label var4 = new Label(var1);
+      Label var4 = new Label() { Text = var1 };
       var4.Size = (new Size(var2, var2));
       GridBagConstraints var5 = new GridBagConstraints();
       var5.anchor = 10;

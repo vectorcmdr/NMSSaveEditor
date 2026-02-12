@@ -72,6 +72,12 @@ namespace NMSSaveEditor
     // Java Integer wrapper
     public class Integer
     {
+        public int _value;
+        public Integer() { }
+        public Integer(int v) { _value = v; }
+        public Integer(string s) { _value = int.Parse(s); }
+        public static implicit operator int(Integer i) => i._value;
+        public static implicit operator Integer(int i) => new Integer(i);
         public static Type TYPE = typeof(int);
         public static int parseInt(string s) { return int.Parse(s); }
         public static int parseInt(string s, int radix) { return Convert.ToInt32(s, radix); }
@@ -80,6 +86,7 @@ namespace NMSSaveEditor
         public static int numberOfLeadingZeros(int i) { if (i == 0) return 32; int n = 0; if ((i & 0xFFFF0000) == 0) { n += 16; i <<= 16; } if ((i & 0xFF000000) == 0) { n += 8; i <<= 8; } if ((i & 0xF0000000) == 0) { n += 4; i <<= 4; } if ((i & 0xC0000000) == 0) { n += 2; i <<= 2; } if ((i & 0x80000000) == 0) { n += 1; } return n; }
         public static int MAX_VALUE = int.MaxValue;
         public static int MIN_VALUE = int.MinValue;
+        public override string ToString() => _value.ToString();
     }
 
     // Java Number
@@ -89,6 +96,10 @@ namespace NMSSaveEditor
         public virtual long longValue() { return 0; }
         public virtual float floatValue() { return 0; }
         public virtual double doubleValue() { return 0; }
+        public static implicit operator Number(int i) => new NumberWrapper(i, i, i, i);
+        public static implicit operator Number(long l) => new NumberWrapper((int)l, l, l, l);
+        public static implicit operator Number(double d) => new NumberWrapper((int)d, (long)d, (float)d, d);
+        public static implicit operator Number(float f) => new NumberWrapper((int)f, (long)f, f, f);
     }
 
     // Java Long wrapper

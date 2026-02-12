@@ -8,9 +8,11 @@ namespace NMSSaveEditor
 {
 
 public class fD : fH, fs {
+   public DateTime LastWriteTimeUtc => DateTimeOffset.FromUnixTimeMilliseconds(lastModified()).UtcDateTime;
+   public new string Name => getName();
    public int lO;
-   fn me;
-   fA ma;
+   public fn me;
+   public fA ma;
 
    public fD(fA var1, int var2) {
       base(var1, "savedata" + (var2 < 8 ? "0" : "") + Integer.toString(var2 + 2) + ".hg", true);

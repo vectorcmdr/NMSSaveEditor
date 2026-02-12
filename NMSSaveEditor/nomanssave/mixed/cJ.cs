@@ -6,11 +6,12 @@ using System.Text;
 namespace NMSSaveEditor
 {
 public class cJ {
-   cJ gi;
+   public string Text => getText();
+   public cJ gi;
    public int gj;
    public string name;
    public object value;
-   cy gg;
+   public cy gg;
 
    public cJ(cy var1, cJ var2, int var3, string var4, object var5) {
       this.gg = var1;

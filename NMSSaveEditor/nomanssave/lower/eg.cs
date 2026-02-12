@@ -7,7 +7,7 @@ namespace NMSSaveEditor
 {
 
 public class eg : object {
-   ec ik;
+   public ec ik;
    public int il;
 
    public eg(ec var1, int var2) {

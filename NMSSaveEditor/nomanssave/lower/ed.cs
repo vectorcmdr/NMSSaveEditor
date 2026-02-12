@@ -8,7 +8,7 @@ namespace NMSSaveEditor
 {
 
 public class ed : ActionListener {
-   ec ik;
+   public ec ik;
    public int il;
 
    public ed(ec var1, int var2) {

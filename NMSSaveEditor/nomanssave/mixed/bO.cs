@@ -31,11 +31,11 @@ public class bO : Panel, eo {
 
    static bO() {
       eE = Color.Gray;
-      eF = new Color(255, 240, 240);
-      eG = new Color(255, 255, 240);
-      eH = new Color(240, 255, 250);
-      eI = new Color(240, 250, 255);
-      eJ = new Color(240, 255, 255);
+      eF = Color.FromArgb(255, 240, 240);
+      eG = Color.FromArgb(255, 255, 240);
+      eH = Color.FromArgb(240, 255, 250);
+      eI = Color.FromArgb(240, 250, 255);
+      eJ = Color.FromArgb(240, 255, 255);
       eK = Color.White;
       eL = Color.Black;
       eM = Color.Yellow;
@@ -65,7 +65,7 @@ public class bO : Panel, eo {
       this.eT.DataSource = (new bP(this));
       this.eT.setRenderer(new bQ(this));
       var2.Add(this.eT);
-      this.eU = new Button("Resize Inventory");
+      this.eU = new Button() { Text = "Resize Inventory" };
       this.eU.Hide();
       this.eU.Click += (new bR(this));
       var2.Add(this.eU);

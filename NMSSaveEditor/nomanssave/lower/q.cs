@@ -7,7 +7,7 @@ namespace NMSSaveEditor
 {
 
 public class q : object {
-   p I;
+   public p I;
 
    public q(p var1) {
       this.I = var1;

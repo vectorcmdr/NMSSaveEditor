@@ -8,7 +8,7 @@ namespace NMSSaveEditor
 
 public class fg {
    public static System.Text.Encoding kT = System.Text.Encoding.GetEncoding("Windows-1252");
-   byte[] bytes;
+   public byte[] bytes;
 
    public fg(byte[] var1) {
       this.bytes = var1;

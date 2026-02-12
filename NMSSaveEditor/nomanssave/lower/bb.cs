@@ -8,7 +8,7 @@ namespace NMSSaveEditor
 {
 
 public class bb : ActionListener {
-   ba dB;
+   public ba dB;
    public G dC;
 
    public bb(ba var1, G var2) {

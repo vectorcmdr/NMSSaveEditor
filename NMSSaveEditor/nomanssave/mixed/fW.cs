@@ -17,7 +17,7 @@ public class fW {
    public long timestamp;
    public long mV;
    public long mW;
-   fT mN;
+   public fT mN;
 
    public fW(fT var1, Stream var2) {
       this.mN = var1;

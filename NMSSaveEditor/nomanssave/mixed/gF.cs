@@ -7,7 +7,7 @@ namespace NMSSaveEditor
 {
 public class gF : gQ {
    public eY kM;
-   gE rf;
+   public gE rf;
 
    public gF(gE var1, eY var2) {
       this.rf = var1;

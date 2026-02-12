@@ -11,15 +11,15 @@ namespace NMSSaveEditor
 public class fQ {
    public string filename;
    public int lO;
-   fI mx;
-   fJ mt;
+   public fI mx;
+   public fJ mt;
 
    public fQ(fJ var1, string var2, int var3, bool var4) {
       this.mt = var1;
       this.filename = var2;
       this.lO = var3;
       if (var4) {
-         FileStream var5 = new FileStream(new FileInfo(fJ.a(var1), "mf_" + var2));
+         FileStream var5 = new FileStream((new FileInfo(System.IO.Path.Combine((fJ.a(var1).ToString(), System.IO.FileMode.Open)).ToString(), ("mf_" + var2).ToString())));
 
          int var7;
          try {
@@ -57,14 +57,14 @@ public class fQ {
    }
 
    public long lastModified() {
-      return (new FileInfo(fJ.a(this.mt), "mf_" + this.filename)).LastWriteTimeUtc.Ticks;
+      return (new FileInfo(System.IO.Path.Combine((fJ.a(this.mt)).ToString(), ("mf_" + this.filename).ToString()))).LastWriteTimeUtc.Ticks;
    }
 
    public eY a(eG param1) {
    }
 
    public byte[] ah(int var1) {
-      object var2 = new FileStream(new FileInfo(fJ.a(this.mt), this.filename));
+      object var2 = new FileStream((new FileInfo(System.IO.Path.Combine((fJ.a(this.mt).ToString(), System.IO.FileMode.Open)).ToString(), (this.filename).ToString())));
 
       try {
          MemoryStream var3 = new MemoryStream();
@@ -94,8 +94,8 @@ public class fQ {
    }
 
    public void a(string var1, fn var2, string var3, string var4) {
-      FileInfo var5 = new FileInfo(fJ.a(this.mt), "mf_" + this.filename);
-      FileInfo var6 = new FileInfo(fJ.a(this.mt), this.filename);
+      FileInfo var5 = new FileInfo(System.IO.Path.Combine((fJ.a(this.mt)).ToString(), ("mf_" + this.filename).ToString()));
+      FileInfo var6 = new FileInfo(System.IO.Path.Combine((fJ.a(this.mt)).ToString(), (this.filename).ToString()));
       Dictionary<string, string> var7 = new Dictionary<string, string>();
       var7.setProperty("ArchiveNumber", Integer.toString(this.lO));
       var7.setProperty("ManifestFile", "mf_" + this.filename);
@@ -114,14 +114,14 @@ public class fQ {
       }
 
       string var8 = var1 + "." + DateTimeOffset.UtcNow.ToUnixTimeMilliseconds() + ".zip";
-      FileInfo var9 = new FileInfo(aH.cG, var8);
-      ZipOutputStream var10 = new ZipOutputStream(new FileStream(var9));
+      FileInfo var9 = new FileInfo(System.IO.Path.Combine((aH.cG).ToString(), (var8).ToString()));
+      ZipOutputStream var10 = new ZipOutputStream(new FileStream((var9).ToString(), System.IO.FileMode.Open));
 
       try {
          byte[] var12 = new byte[1024];
          ZipEntry var13 = new ZipEntry(var5.Name);
          var10.putNextEntry(var13);
-         FileStream var14 = new FileStream(var5);
+         FileStream var14 = new FileStream((var5).ToString(), System.IO.FileMode.Open);
 
          int var11;
          try {
@@ -134,7 +134,7 @@ public class fQ {
 
          var13 = new ZipEntry(var6.Name);
          var10.putNextEntry(var13);
-         FileStream var15 = new FileStream(var6);
+         FileStream var15 = new FileStream((var6).ToString(), System.IO.FileMode.Open);
 
          try {
             while((var11 = var15.read(var12)) >= 0) {
@@ -182,7 +182,7 @@ public class fQ {
 
       byte[] var35 = var3.toByteArray();
       int var36 = 0;
-      object var37 = new FileStream(new FileInfo(fJ.a(this.mt), this.filename));
+      object var37 = new FileStream((new FileInfo(System.IO.Path.Combine((fJ.a(this.mt).ToString(), System.IO.FileMode.Open)).ToString(), (this.filename).ToString())));
 
       try {
          if (var2) {
@@ -217,7 +217,7 @@ public class fQ {
       this.mx.f(var8);
       this.mx.ak(var36);
       this.mx.aj(var35.Length);
-      FileStream var38 = new FileStream(new FileInfo(fJ.a(this.mt), "mf_" + this.filename));
+      FileStream var38 = new FileStream((new FileInfo(System.IO.Path.Combine((fJ.a(this.mt).ToString(), System.IO.FileMode.Open)).ToString(), ("mf_" + this.filename).ToString())));
 
       try {
          var38.Write(this.mx.encode());

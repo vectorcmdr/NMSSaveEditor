@@ -120,7 +120,7 @@ public class hk {
    }
 
    public static byte[] l(FileInfo var0) {
-      FileStream var1 = new FileStream(var0);
+      FileStream var1 = new FileStream((var0).ToString(), System.IO.FileMode.Open);
 
       byte[] var3;
       try {

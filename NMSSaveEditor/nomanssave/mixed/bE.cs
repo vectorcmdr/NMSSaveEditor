@@ -10,11 +10,11 @@ namespace NMSSaveEditor
 public class bE : Panel {
    public static int ew = 0;
    public static int TYPE_DOUBLE = 1;
-   private readonly bN[] ex = new bN[3];
+   public readonly bN[] ex = new bN[3];
    public gz cp;
 
    public bE(Application var1) {
-      TableLayoutPanel var2 = new TableLayoutPanel(1, 3, 10, 0);
+      TableLayoutPanel var2 = new TableLayoutPanel();
       this.SuspendLayout(); // TODO: set layout var2);
       this.ex[0] = new bN(this);
       this.Add(this.ex[0]);

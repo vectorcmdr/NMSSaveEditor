@@ -7,14 +7,14 @@ namespace NMSSaveEditor
 {
 public class dM : G {
    public gG hH;
-   dE hE;
+   public dE hE;
 
    public dM(dE var1, gG var2) {
       this.hE = var1;
       this.hH = var2;
    }
 
-   protected override string g(string var1) {
+   public override string g(string var1) {
       gE var2 = (gE)dE.a(this.hE).SelectedItem;
       if (var2 == null) {
          return "";

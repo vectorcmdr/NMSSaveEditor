@@ -9,6 +9,7 @@ namespace NMSSaveEditor
 {
 
 public class eI {
+   public string Name => getName();
    public static int kf = 0;
    public static int kg = 1;
    public static int kh = 2;

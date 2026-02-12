@@ -7,8 +7,8 @@ namespace NMSSaveEditor
 {
 
 public class aE : object {
-   aI cA;
-   aD cB;
+   public aI cA;
+   public aD cB;
 
    public aE(aD var1) {
       this.cB = var1;

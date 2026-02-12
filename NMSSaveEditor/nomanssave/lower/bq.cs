@@ -6,13 +6,13 @@ using System.Text;
 namespace NMSSaveEditor
 {
 public class bq : G {
-   bl er;
+   public bl er;
 
    public bq(bl var1) {
       this.er = var1;
    }
 
-   protected override string g(string var1) {
+   public override string g(string var1) {
       if (bl.b(this.er) < 0) {
          return "";
       } else {

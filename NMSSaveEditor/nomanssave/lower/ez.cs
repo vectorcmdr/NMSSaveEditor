@@ -10,7 +10,7 @@ namespace NMSSaveEditor
 public class ez {
    public string id;
    public int jK;
-   ey jL;
+   public ey jL;
 
    public ez(ey var1, Element var2) {
       this.jL = var1;

@@ -6,6 +6,9 @@ using System.Text;
 namespace NMSSaveEditor
 {
 public sealed class aI {
+   public static aI[] Values() { return new aI[] { cN, cO, cP, cQ, cR, cS }; }
+   public static aI valueOf(string name) { foreach (var v in Values()) if (v.ToString() == name) return v; return null; }
+
    public static readonly aI cN = new aI("Light");
    public static readonly aI cO = new aI("Dark");
    public static readonly aI cP = new aI("IntelliJ");

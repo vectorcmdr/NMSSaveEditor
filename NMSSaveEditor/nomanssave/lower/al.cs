@@ -8,7 +8,7 @@ namespace NMSSaveEditor
 
 public class al : object {
    public string ch;
-   aj cg;
+   public aj cg;
 
    public al(aj var1) {
       this.cg = var1;

@@ -144,7 +144,7 @@ public class cW : Panel, CaretListener {
       return var3.getElementIndex(var1) == var3.getElementIndex(var2);
    }
 
-   protected string B(int var1) {
+   public string B(int var1) {
       Element var2 = this.gB.getDocument().getDefaultRootElement();
       int var3 = var2.getElementIndex(var1);
       Element var4 = var2.getElement(var3);

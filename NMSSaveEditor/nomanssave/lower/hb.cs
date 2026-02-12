@@ -9,7 +9,7 @@ namespace NMSSaveEditor
 {
 
 public class hb : FilterOutputStream {
-   public static LZ4Factory se = LZ4Factory.safeInstance();
+   public static LZ4Factory se = null /*LZ4Factory*/;
    public static int sm = 65536;
    public LZ4Compressor sf;
    public byte[] buffer;

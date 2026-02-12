@@ -8,7 +8,8 @@ namespace NMSSaveEditor
 {
 
 public class cq : FileView {
-   cp fM;
+   public string Name => getName();
+   public cp fM;
 
    public cq(cp var1) {
       this.fM = var1;

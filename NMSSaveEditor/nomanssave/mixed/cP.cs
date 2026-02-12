@@ -8,7 +8,7 @@ namespace NMSSaveEditor
 {
 
 public class cP : object {
-   cN gt;
+   public cN gt;
 
    public cP(cN var1) {
       this.gt = var1;

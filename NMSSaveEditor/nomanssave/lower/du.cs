@@ -9,11 +9,11 @@ namespace NMSSaveEditor
 {
 
 public class du : Panel {
-   gF hm;
+   public gF hm;
    public ToolStripMenuItem fh;
    public ToolStripMenuItem hn;
    public ToolStripMenuItem fe;
-   dt ho;
+   public dt ho;
 
    public du(dt var1, gF var2) {
       this.ho = var1;
@@ -62,7 +62,7 @@ public class du : Panel {
          Label var9;
          GridBagConstraints var10;
          if (var7 != null) {
-            var9 = new Label(var7);
+            var9 = new Label() { Text = var7 };
             var9.Size = (new Size(var5, var5));
             var10 = new GridBagConstraints();
             var10.anchor = 10;

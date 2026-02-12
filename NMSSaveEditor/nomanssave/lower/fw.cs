@@ -9,7 +9,7 @@ namespace NMSSaveEditor
 
 public class fw {
    public fn be;
-   byte[] lK;
+   public byte[] lK;
    public int lL;
    public int lM;
    public int lN;
@@ -20,7 +20,7 @@ public class fw {
    public int lQ;
    public int lR;
    public int lS;
-   fu lJ;
+   public fu lJ;
 
    public fw(fu var1, Stream var2) {
       this.lJ = var1;
@@ -80,7 +80,7 @@ public class fw {
       if (!this.isValid()) {
          return null;
       } else {
-         FileStream var1 = new FileStream(fu.b(this.lJ));
+         FileStream var1 = new FileStream((fu.b(this.lJ).ToString(), System.IO.FileMode.Open));
 
          byte[] var8;
          try {
@@ -126,10 +126,10 @@ public class fw {
          } else {
             long var25 = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
             FileInfo var5 = new FileInfo(fu.b(this.lJ).Directory, "~" + fu.b(this.lJ).Name);
-            FileStream var6 = new FileStream(var5);
+            FileStream var6 = new FileStream((var5).ToString(), System.IO.FileMode.Open);
 
             try {
-               FileStream var7 = new FileStream(fu.b(this.lJ));
+               FileStream var7 = new FileStream((fu.b(this.lJ).ToString(), System.IO.FileMode.Open));
 
                try {
                   Console.WriteLine("Reading header");

@@ -8,8 +8,9 @@ namespace NMSSaveEditor
 {
 
 public class fx : fs {
-   fw lI;
-   fu lJ;
+   public DateTime LastWriteTimeUtc => DateTimeOffset.FromUnixTimeMilliseconds(lastModified()).UtcDateTime;
+   public fw lI;
+   public fu lJ;
 
    public fx(fu var1, fw var2) {
       this.lJ = var1;

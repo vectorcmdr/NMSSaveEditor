@@ -9,7 +9,7 @@ namespace NMSSaveEditor
 {
 
 public class bM : FocusListener {
-   bL eC;
+   public bL eC;
    public bK eD;
 
    public bM(bL var1, bK var2) {

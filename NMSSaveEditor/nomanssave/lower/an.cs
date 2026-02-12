@@ -8,7 +8,7 @@ namespace NMSSaveEditor
 {
 
 public class an : ActionListener {
-   aj cg;
+   public aj cg;
 
    public an(aj var1) {
       this.cg = var1;

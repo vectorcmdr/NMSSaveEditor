@@ -9,7 +9,7 @@ namespace NMSSaveEditor
 {
 
 public class ga : FileFilter {
-   fZ nb;
+   public fZ nb;
    public List<object> mg;
 
    public ga(fZ var1, List<object> var2) {

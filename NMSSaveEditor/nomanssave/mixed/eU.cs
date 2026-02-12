@@ -6,6 +6,9 @@ using System.Text;
 namespace NMSSaveEditor
 {
 public sealed class eU {
+   public static eU[] Values() { return new eU[] { kr, ks, kt, ku, kv, kw, kx, ky, kz, C }; }
+   public static eU valueOf(string name) { foreach (var v in Values()) if (v.ToString() == name) return v; return null; }
+
    public static readonly eU kr = new eU("Gek");
    public static readonly eU ks = new eU("Vy'keen");
    public static readonly eU kt = new eU("Korvax");

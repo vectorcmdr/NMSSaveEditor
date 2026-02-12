@@ -8,7 +8,7 @@ namespace NMSSaveEditor
 {
 
 public class ek : FileFilter {
-   ej @is;
+   public ej @is;
 
    public ek(ej var1) {
       this.@is = var1;

@@ -7,6 +7,7 @@ namespace NMSSaveEditor
 {
 
 public class gm {
+   public string Name => getName();
    public eY oI;
    public List<object> gT;
    public gn oJ;

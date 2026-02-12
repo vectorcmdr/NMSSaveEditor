@@ -8,7 +8,7 @@ namespace NMSSaveEditor
 {
 
 public class cA : DefaultTreeCellRenderer {
-   cy gg;
+   public cy gg;
 
    public cA(cy var1) {
       this.gg = var1;

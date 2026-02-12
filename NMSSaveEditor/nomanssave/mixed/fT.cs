@@ -58,7 +58,7 @@ public class fT : fq {
       fl.a(this, this.lX);
    }
 
-   protected void finalize() {
+   public void finalize() {
       fl.b(this);
    }
 
@@ -72,7 +72,7 @@ public class fT : fq {
 
    public void cr() {
       hc.info("Reading Container Index");
-      FileStream var1 = new FileStream(new FileInfo(this.lX, "containers.index"));
+      FileStream var1 = new FileStream((new FileInfo(System.IO.Path.Combine((this.lX).ToString(), System.IO.FileMode.Open).ToString(), ("containers.index").ToString())));
 
       try {
          this.header = hk.readInt(var1);
@@ -129,7 +129,7 @@ public class fT : fq {
    }
 
    public void cs() {
-      FileStream var1 = new FileStream(new FileInfo(this.lX, "containers.index"));
+      FileStream var1 = new FileStream((new FileInfo(System.IO.Path.Combine((this.lX).ToString(), System.IO.FileMode.Open).ToString(), ("containers.index").ToString())));
 
       try {
          hk.a(var1, this.header);
@@ -180,7 +180,7 @@ public class fT : fq {
             var4 = (fW)var5.Current;
          }
 
-         var2 = new FileInfo(this.lX, var3);
+         var2 = new FileInfo(System.IO.Path.Combine((this.lX).ToString(), (var3).ToString()));
          var1 &= var2.Exists;
       } while(!var1);
 

@@ -13,10 +13,12 @@ public class eY {
    public static int kC = 10;
    public static Pattern kH = Pattern.compile("[^\"\\.\\[\\]]+");
    public int length = 0;
-   string[] names = new string[10];
-   object[] values = new object[10];
+   public int Length { get => length; set => length = value; }
+   public int Count => length;
+   public string[] names = new string[10];
+   public object[] values = new object[10];
    public object kD;
-   fe kI;
+   public fe kI;
    public Dictionary<object, object> kJ = new Dictionary<object, object>();
    public static Pattern kK = Pattern.compile("([^\\.\\[\\]]+)|(?:\\.([^\\.\\[\\]]+))|(?:\\[(\\d+)\\])");
 
@@ -121,6 +123,9 @@ public class eY {
          return null;
       }
    }
+
+   public object Put(string var1, object var2) => put(var1, var2);
+   public void Clear() => clear();
 
    public object put(string var1, object var2) {
       if (var1 == null) {
@@ -495,7 +500,7 @@ public class eY {
       object var3 = null;
 
       try {
-         FileStream var4 = new FileStream(var1);
+         FileStream var4 = new FileStream((var1).ToString(), System.IO.FileMode.Open);
 
          try {
             string var5 = fh.b(this, true);
@@ -523,7 +528,7 @@ public class eY {
       object var3 = null;
 
       try {
-         FileStream var4 = new FileStream(var1);
+         FileStream var4 = new FileStream((var1).ToString(), System.IO.FileMode.Open);
 
          try {
             string var5 = new string(hk.g(var4), StandardCharsets.UTF_8);

@@ -9,7 +9,7 @@ namespace NMSSaveEditor
 {
 
 public class cz : ComponentAdapter {
-   cy gg;
+   public cy gg;
 
    public cz(cy var1) {
       this.gg = var1;

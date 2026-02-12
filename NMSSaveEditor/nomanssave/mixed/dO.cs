@@ -8,7 +8,7 @@ namespace NMSSaveEditor
 
 public class dO : object {
    public gH hZ;
-   dN ia;
+   public dN ia;
    public Application bv;
 
    public dO(dN var1, Application var2) {

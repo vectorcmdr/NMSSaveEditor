@@ -8,7 +8,7 @@ namespace NMSSaveEditor
 {
 
 public class dJ : ComboBox {
-   dE hE;
+   public dE hE;
 
    public dJ(dE var1) {
       this.hE = var1;

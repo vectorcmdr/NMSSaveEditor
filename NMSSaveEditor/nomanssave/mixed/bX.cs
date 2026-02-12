@@ -8,7 +8,7 @@ namespace NMSSaveEditor
 {
 
 public class bX : object {
-   bS fk;
+   public bS fk;
    public int fl;
    public int fm;
 

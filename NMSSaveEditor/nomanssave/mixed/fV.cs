@@ -9,20 +9,21 @@ namespace NMSSaveEditor
 {
 
 public class fV : fs {
-   fW mO;
+   public string Name => getName();
+   public fW mO;
    public int mb;
    public FileInfo mc;
    public string mP;
-   fS mQ;
+   public fS mQ;
    public string mR;
    public string mS;
-   fn be;
-   fT mN;
+   public fn be;
+   public fT mN;
 
    public fV(fT var1, string var2, int var3) {
       this.mN = var1;
       this.mb = var3;
-      this.mc = new FileInfo(aH.cG, var2);
+      this.mc = new FileInfo(System.IO.Path.Combine((aH.cG).ToString(), (var2).ToString()));
       ZipFile var4 = new ZipFile(this.mc);
 
       try {

@@ -8,7 +8,7 @@ namespace NMSSaveEditor
 {
 
 public class bN : ba {
-   bE ey;
+   public bE ey;
 
    public bN(bE var1) {
       base(aH.cJ, 0);

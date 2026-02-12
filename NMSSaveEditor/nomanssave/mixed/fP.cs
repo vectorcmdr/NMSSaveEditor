@@ -7,7 +7,7 @@ namespace NMSSaveEditor
 {
 
 public class fP : IComparer<object> {
-   fN mw;
+   public fN mw;
 
    public fP(fN var1) {
       this.mw = var1;

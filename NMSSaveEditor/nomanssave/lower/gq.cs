@@ -6,6 +6,9 @@ using System.Text;
 namespace NMSSaveEditor
 {
 public sealed class gq {
+   public static gq[] Values() { return new gq[] { oS, oT, oU, oV, oW, oX, oY, oZ, pa, pb, pc }; }
+   public static gq valueOf(string name) { foreach (var v in Values()) if (v.ToString() == name) return v; return null; }
+
    public static readonly gq oS = new gq("Combat");
    public static readonly gq oT = new gq("Exploration");
    public static readonly gq oU = new gq("Industry");

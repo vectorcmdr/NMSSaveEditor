@@ -98,7 +98,7 @@ public class aH {
          object var2 = null;
 
          try {
-            FileStream var3 = new FileStream(cC);
+            FileStream var3 = new FileStream((cC).ToString(), System.IO.FileMode.Open);
 
             try {
                var3.Write(var0.GetBytes());
@@ -151,16 +151,16 @@ public class aH {
       }
 
       cD = var1;
-      cC = new FileInfo(var1, "NMSSaveEditor.conf");
-      cE = new FileInfo(var1, "bases");
-      cF = new FileInfo(var1, "exported");
-      cG = new FileInfo(var1, "backups");
+      cC = new FileInfo(System.IO.Path.Combine((var1).ToString(), ("NMSSaveEditor.conf").ToString()));
+      cE = new FileInfo(System.IO.Path.Combine((var1).ToString(), ("bases").ToString()));
+      cF = new FileInfo(System.IO.Path.Combine((var1).ToString(), ("exported").ToString()));
+      cG = new FileInfo(System.IO.Path.Combine((var1).ToString(), ("backups").ToString()));
       if (!cG.Exists && !cG.Create()) {
          Console.WriteLine("Error: cannot create backups folder");
          Environment.Exit(1);
       }
 
-      hc.k(new FileInfo(var1, "NMSSaveEditor.log"));
+      hc.k(new FileInfo(System.IO.Path.Combine((var1).ToString(), ("NMSSaveEditor.log").ToString())));
       hc.debug("Java Vendor: " + Environment.GetEnvironmentVariable("java.vendor"));
       hc.debug("Java Version: " + Environment.GetEnvironmentVariable("java.version"));
       hc.debug("Java Architecture: " + Environment.GetEnvironmentVariable("os.arch"));
@@ -175,7 +175,7 @@ public class aH {
                cK = eY.E(Encoding.UTF8.GetString());
             } else {
                Dictionary<string, string> var3 = new Dictionary<string, string>();
-               FileStream var4 = new FileStream(cC);
+               FileStream var4 = new FileStream((cC).ToString(), System.IO.FileMode.Open);
 
                try {
                   var3.load(var4);

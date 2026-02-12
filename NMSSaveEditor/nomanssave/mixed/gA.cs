@@ -8,7 +8,7 @@ namespace NMSSaveEditor
 
 public class gA {
    public eS rd;
-   gz re;
+   public gz re;
 
    public gA(gz var1, eS var2) {
       this.re = var1;

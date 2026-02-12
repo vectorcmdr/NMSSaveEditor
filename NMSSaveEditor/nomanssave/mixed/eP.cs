@@ -9,7 +9,7 @@ namespace NMSSaveEditor
 
 public class eP : ey {
    public string name;
-   ex jZ;
+   public ex jZ;
    public bool special;
    public Integer ka;
    public string jM;
@@ -24,7 +24,7 @@ public class eP : ey {
       this.name = var1.getAttribute("name");
       this.jZ = ex.valueOf(var1.getAttribute("category"));
       this.special = var1.hasAttribute("special") ? Boolean.valueOf(var1.getAttribute("special")) : false;
-      this.ka = var1.hasAttribute("chargeable") ? new Integer(var1.getAttribute("chargeable")) : null;
+      this.ka = var1.hasAttribute("chargeable") ? ((int)(var1.getAttribute("chargeable"))) : null;
       this.jM = var1.getAttribute("subtitle");
       this.kb = var1.hasAttribute("cooking") ? Boolean.valueOf(var1.getAttribute("cooking")) : false;
       this.kc = var1.hasAttribute("icon") ? var1.getAttribute("icon") : null;

@@ -6,9 +6,9 @@ using System.Text;
 namespace NMSSaveEditor
 {
 public class bJ : G {
-   gs ez;
+   public gs ez;
    public int type;
-   bE ey;
+   public bE ey;
    public static int[] eA;
 
    public bJ(bE var1, gs var2, bool var3) {
@@ -25,7 +25,7 @@ public class bJ : G {
       this.Enabled = (var3);
    }
 
-   protected override string g(string var1) {
+   public override string g(string var1) {
       if (bE.a(this.ey) == null) {
          return "";
       } else {

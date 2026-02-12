@@ -8,7 +8,7 @@ namespace NMSSaveEditor
 {
 
 public class aB : DefaultTableCellRenderer {
-   ap cu;
+   public ap cu;
 
    public aB(ap var1) {
       this.cu = var1;

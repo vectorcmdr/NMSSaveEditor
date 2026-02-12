@@ -9,7 +9,7 @@ namespace NMSSaveEditor
 {
 
 public class bR : ActionListener {
-   bO eX;
+   public bO eX;
 
    public bR(bO var1) {
       this.eX = var1;

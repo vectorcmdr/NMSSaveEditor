@@ -8,7 +8,7 @@ namespace NMSSaveEditor
 {
 
 public class dA : ListModel {
-   dz hu;
+   public dz hu;
 
    public dA(dz var1) {
       this.hu = var1;

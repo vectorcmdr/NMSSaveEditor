@@ -9,6 +9,7 @@ namespace NMSSaveEditor
 {
 
 public class gt {
+   public string Name => getName();
    public static int pW = 1;
    public static int pX = 2;
    public static int pY = 4;
@@ -348,13 +349,13 @@ public class gt {
          bool var8 = false;
          if (this.width != var1.width) {
             this.width = var1.width;
-            this.qt.b("Width", (object)(new Integer(this.width)));
+            this.qt.b("Width", (object)(((int)(this.width))));
             var8 = true;
          }
 
          if (this.height != var1.height) {
             this.height = var1.height;
-            this.qt.b("Height", (object)(new Integer(this.height)));
+            this.qt.b("Height", (object)(((int)(this.height))));
             var8 = true;
          }
 
@@ -366,13 +367,13 @@ public class gt {
       bool var1 = false;
       if (this.width < this.qz[0].Length) {
          this.width = this.qz[0].Length;
-         this.qt.b("Width", (object)(new Integer(this.width)));
+         this.qt.b("Width", (object)(((int)(this.width))));
          var1 = true;
       }
 
       if (this.height < this.qz.Length) {
          this.height = this.qz.Length;
-         this.qt.b("Height", (object)(new Integer(this.height)));
+         this.qt.b("Height", (object)(((int)(this.height))));
          var1 = true;
       }
 
@@ -564,7 +565,7 @@ public class gt {
                      if (var13 < var14) {
                         var15 = var6 > var14 - var13 ? var14 - var13 : var6;
                         hc.info("  added to existing stack: " + var15);
-                        var3.qy[var11][var12].b("Amount", (object)(new Integer(var13 + var15)));
+                        var3.qy[var11][var12].b("Amount", (object)(((int)(var13 + var15))));
                         var6 -= var15;
                         var10 = true;
                         if (var6 == 0) {
@@ -636,7 +637,7 @@ public class gt {
                this.qy[var2][var1] = null;
             } else {
                hc.info("  remainder: " + var6);
-               this.qy[var2][var1].b("Amount", (object)(new Integer(var6)));
+               this.qy[var2][var1].b("Amount", (object)(((int)(var6))));
             }
 
             return true;
@@ -678,7 +679,7 @@ public class gt {
                   if (var7 < var8) {
                      int var9 = var2 > var8 - var7 ? var8 - var7 : var2;
                      hc.info("  added to existing stack: " + var9);
-                     this.qy[var5][var6].b("Amount", (object)(new Integer(var7 + var9)));
+                     this.qy[var5][var6].b("Amount", (object)(((int)(var7 + var9))));
                      var2 -= var9;
                      if (var2 == 0) {
                         break;
@@ -762,8 +763,8 @@ public class gt {
       eY var11 = gR.az("slot");
       var11.b("Type.InventoryType", (object)var3);
       var11.b("Id", var4);
-      var11.b("Amount", (object)(new Integer(var5)));
-      var11.b("MaxAmount", (object)(new Integer(var6)));
+      var11.b("Amount", (object)(((int)(var5))));
+      var11.b("MaxAmount", (object)(((int)(var6))));
       var11.b("DamageFactor", (object)(new Double(var7)));
       var11.b("FullyInstalled", (object)(new Boolean(var9)));
       var11.b("Index.X", (object)var1);
@@ -1092,7 +1093,7 @@ public class gt {
          for(int var4 = 0; var4 < this.qy[var3].Length; ++var4) {
             int var1;
             if (this.qy[var3][var4] != null && "Technology".Equals(this.qy[var3][var4].getValueAsString("Type.InventoryType")) && this.qy[var3][var4].J("Amount") >= 0 && (var1 = this.qy[var3][var4].J("MaxAmount")) > 0) {
-               this.qy[var3][var4].b("Amount", (object)(new Integer(var1)));
+               this.qy[var3][var4].b("Amount", (object)(((int)(var1))));
                var2 = true;
             }
          }
@@ -1108,7 +1109,7 @@ public class gt {
          for(int var4 = 0; var4 < this.qy[var3].Length; ++var4) {
             int var1;
             if (this.qy[var3][var4] != null && !"Technology".Equals(this.qy[var3][var4].getValueAsString("Type.InventoryType")) && (var1 = this.qy[var3][var4].J("MaxAmount")) > 1) {
-               this.qy[var3][var4].b("Amount", (object)(new Integer(var1)));
+               this.qy[var3][var4].b("Amount", (object)(((int)(var1))));
                var2 = true;
             }
          }

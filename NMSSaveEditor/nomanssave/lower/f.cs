@@ -8,8 +8,8 @@ namespace NMSSaveEditor
 {
 
 public class f : DataGridView {
-   eV g;
-   c h;
+   public eV g;
+   public c h;
 
    public f(c var1, Application var2, Supplier var3, Function var4) {
       this.h = var1;
@@ -18,7 +18,7 @@ public class f : DataGridView {
       this.setCellSelectionEnabled(false);
       this.getColumnModel().setColumnMargin(2);
       this.DataSource = (var5);
-      object var6 = new object(var5);
+      object var6 = ((object)(var5));
       var6.setSortable(2, false);
       this.setRowSorter(var6);
       this.getTableHeader().getColumnModel().getColumn(0).setHeaderRenderer(new e(2));

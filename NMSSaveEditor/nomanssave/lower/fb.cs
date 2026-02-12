@@ -7,7 +7,7 @@ namespace NMSSaveEditor
 {
 public class fb : fc {
    public string name;
-   eY kL;
+   public eY kL;
 
    public fb(eY var1, string var2, fc var3) {
       base(var1, var3);
@@ -15,7 +15,7 @@ public class fb : fc {
       this.name = var2;
    }
 
-   protected override object a(Class var1, bool var2) {
+   public override object a(Class var1, bool var2) {
       eY var3;
       if (this.kN == null) {
          var3 = this.kL;
@@ -45,7 +45,7 @@ public class fb : fc {
       }
    }
 
-   protected override object getValue() {
+   public override object getValue() {
       eY var1;
       if (this.kN == null) {
          var1 = this.kL;
@@ -56,7 +56,7 @@ public class fb : fc {
       return var1[this.name];
    }
 
-   protected override object a(object var1, bool var2) {
+   public override object a(object var1, bool var2) {
       eY var3;
       if (this.kN == null) {
          var3 = this.kL;
@@ -67,7 +67,7 @@ public class fb : fc {
       return var3.Put(this.name, var1);
    }
 
-   protected override object bG() {
+   public override object bG() {
       eY var1;
       if (this.kN == null) {
          var1 = this.kL;
@@ -78,7 +78,7 @@ public class fb : fc {
       return var1.F(this.name);
    }
 
-   protected override eY e(eY var1) {
+   public override eY e(eY var1) {
       eY var2;
       if (this.kN == null) {
          var2 = this.kL;

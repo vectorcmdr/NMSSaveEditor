@@ -7,7 +7,7 @@ namespace NMSSaveEditor
 {
 
 public class df : object {
-   dd gW;
+   public dd gW;
 
    public df(dd var1) {
       this.gW = var1;

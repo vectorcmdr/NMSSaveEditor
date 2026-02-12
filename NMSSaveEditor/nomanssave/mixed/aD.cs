@@ -29,10 +29,10 @@ public class aD : Form {
       var2.Y();
       Panel var3 = new Panel();
       var2.a(var3);
-      Button var4 = new Button("Apply");
+      Button var4 = new Button() { Text = "Apply" };
       var4.Click += (new aF(this));
       var3.Add(var4);
-      Button var5 = new Button("Cancel");
+      Button var5 = new Button() { Text = "Cancel" };
       var5.Click += (new aG(this));
       var3.Add(var5);
       this.setContentPane(var2);

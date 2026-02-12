@@ -8,7 +8,8 @@ namespace NMSSaveEditor
 {
 
 public class cL : FileView {
-   cK gl;
+   public string Name => getName();
+   public cK gl;
 
    public cL(cK var1) {
       this.gl = var1;

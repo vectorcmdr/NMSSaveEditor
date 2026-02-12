@@ -6,13 +6,13 @@ using System.Text;
 namespace NMSSaveEditor
 {
 public class ci : G {
-   cg fF;
+   public cg fF;
 
    public ci(cg var1) {
       this.fF = var1;
    }
 
-   protected override string g(string var1) {
+   public override string g(string var1) {
       if (cg.d(this.fF) == null) {
          return "";
       } else {
@@ -20,7 +20,7 @@ public class ci : G {
             int var2 = hf.b(var1, 1, cg.b(this.fF).dB());
             if (cg.d(this.fF) != var2) {
                cg.b(this.fF).aA(var2);
-               cg.b(this.fF, new Integer(var2));
+               cg.b(this.fF, ((int)(var2)));
             }
          } catch (Exception var3) {
          }

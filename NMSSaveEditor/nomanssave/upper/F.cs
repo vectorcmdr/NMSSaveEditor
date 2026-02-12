@@ -10,8 +10,8 @@ namespace NMSSaveEditor
 public class F : fs {
    public string filename;
    public long bd;
-   fn be;
-   eY bf;
+   public fn be;
+   public eY bf;
    public Application aZ;
 
    public F(Application var1, string var2, long var3, fn var5, eY var6) {

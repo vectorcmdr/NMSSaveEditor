@@ -8,7 +8,7 @@ namespace NMSSaveEditor
 
 public class cZ : object {
    public gg gQ;
-   cY gR;
+   public cY gR;
 
    public cZ(cY var1) {
       this.gR = var1;

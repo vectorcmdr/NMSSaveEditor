@@ -7,8 +7,8 @@ namespace NMSSaveEditor
 {
 
 public class bB : object {
-   er eu;
-   bl er;
+   public er eu;
+   public bl er;
 
    public bB(bl var1) {
       this.er = var1;

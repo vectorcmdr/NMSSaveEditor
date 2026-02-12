@@ -7,8 +7,9 @@ namespace NMSSaveEditor
 {
 
 public class gf {
-   eY nj;
-   ge nk;
+   public string Name => getName();
+   public eY nj;
+   public ge nk;
 
    public gf(ge var1, eY var2) {
       this.nk = var1;

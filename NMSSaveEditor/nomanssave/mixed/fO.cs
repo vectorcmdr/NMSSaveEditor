@@ -9,7 +9,7 @@ namespace NMSSaveEditor
 {
 
 public class fO : FileFilter {
-   fN mw;
+   public fN mw;
    public List<object> mg;
 
    public fO(fN var1, List<object> var2) {

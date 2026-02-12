@@ -7,7 +7,7 @@ namespace NMSSaveEditor
 {
 public class cQ {
    public string value;
-   cN gt;
+   public cN gt;
 
    public cQ(cN var1, string var2) {
       this.gt = var1;

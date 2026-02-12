@@ -8,7 +8,7 @@ namespace NMSSaveEditor
 {
 
 public class dL : object {
-   dJ hG;
+   public dJ hG;
 
    public dL(dJ var1) {
       this.hG = var1;

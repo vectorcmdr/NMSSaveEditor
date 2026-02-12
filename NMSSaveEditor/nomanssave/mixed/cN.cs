@@ -10,7 +10,7 @@ namespace NMSSaveEditor
 
 public class cN : ComboBox {
    public bool gm;
-   private readonly Enum[] gn;
+   public readonly Enum[] gn;
    public List<object> go;
    public cR gp;
    public object gq;
@@ -19,7 +19,7 @@ public class cN : ComboBox {
 
    static cN() {
       gr = Color.Red;
-      gs = new Color(255, 100, 100);
+      gs = Color.FromArgb(255, 100, 100);
    }
 
    public cN(Class var1) {

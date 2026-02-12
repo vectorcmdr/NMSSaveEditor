@@ -58,10 +58,10 @@ public class bd : em {
       this.bm.Enabled = (false);
       this.a("Items", this.bm);
       Panel var2 = new Panel();
-      this.bn = new Button("Backup");
+      this.bn = new Button() { Text = "Backup" };
       this.bn.Click += (new bj(this, var1));
       var2.Add(this.bn);
-      this.bo = new Button("Restore");
+      this.bo = new Button() { Text = "Restore" };
       this.bo.Click += (new bk(this, var1));
       var2.Add(this.bo);
       this.a((Control)var2);

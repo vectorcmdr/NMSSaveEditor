@@ -7,7 +7,7 @@ namespace NMSSaveEditor
 {
 public class gu : gQ {
    public eY qD;
-   gt qE;
+   public gt qE;
 
    public gu(gt var1, eY var2) {
       this.qE = var1;
@@ -31,7 +31,7 @@ public class gu : gQ {
    }
 
    public void aA(int var1) {
-      this.qD.b("Amount", (object)(new Integer(var1)));
+      this.qD.b("Amount", (object)(((int)(var1))));
    }
 
    public int dB() {

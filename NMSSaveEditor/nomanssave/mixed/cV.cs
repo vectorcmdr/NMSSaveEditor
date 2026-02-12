@@ -8,7 +8,7 @@ namespace NMSSaveEditor
 {
 
 public class cV : FileFilter {
-   cT gw;
+   public cT gw;
 
    public cV(cT var1) {
       this.gw = var1;

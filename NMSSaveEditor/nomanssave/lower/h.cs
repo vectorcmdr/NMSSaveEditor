@@ -29,31 +29,31 @@ public class h : Form {
       this/* setModal */(true);
       Panel var2 = new Panel();
       this.setContentPane(var2);
-      var2.SuspendLayout(); // TODO: set layout new TableLayoutPanel(0, 0));
+      var2.SuspendLayout(); // TODO: set layout new TableLayoutPanel());
       Panel var3 = new Panel();
       // TODO: var3.SuspendLayout(); // TODO: set layout /* FormLayout */ null, FormFactory.LABEL_COMPONENT_GAP_COLSPEC, ColumnSpec.decode("280px"), FormFactory.LABEL_COMPONENT_GAP_COLSPEC}, new RowSpec[]{FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC}));
-      Label var4 = new Label("Search:");
+      Label var4 = new Label() { Text = "Search:" };
       var3.Controls.Add(var4);
       Panel var5 = new Panel();
-      var5.SuspendLayout(); // TODO: set layout new TableLayoutPanel(0, 0));
+      var5.SuspendLayout(); // TODO: set layout new TableLayoutPanel());
       this.m = new TextBox();
       this.m.Text = ("");
       var5.Add(this.m, "Center");
-      this.n = new Button("Search");
+      this.n = new Button() { Text = "Search" };
       this.n.Click += (new i(this));
       var5.Add(this.n, "East");
       var3.Controls.Add(var5);
-      Label var6 = new Label("Type:");
+      Label var6 = new Label() { Text = "Type:" };
       var3.Controls.Add(var6);
       this.o = new ComboBox();
       this.o.DataSource = (new j(this));
       var3.Add(this.o, "4, 4, fill, default");
-      Label var7 = new Label("Category:");
+      Label var7 = new Label() { Text = "Category:" };
       var3.Controls.Add(var7);
       this.p = new ComboBox();
       this.p.DataSource = (new k(this));
       var3.Add(this.p, "4, 6, fill, default");
-      Label var8 = new Label("Item:");
+      Label var8 = new Label() { Text = "Item:" };
       var3.Controls.Add(var8);
       this.q = new ComboBox();
       this.q.DataSource = (new l(this));
@@ -62,11 +62,11 @@ public class h : Form {
       Panel var9 = new Panel();
       var9.SuspendLayout(); // TODO: set layout new FlowLayoutPanel(2));
       var2.Controls.Add(var9);
-      Button var10 = new Button("Save");
+      Button var10 = new Button() { Text = "Save" };
       var10.Click += (new m(this));
       var9.Add(var10);
       this.getRootPane().setDefaultButton(var10);
-      Button var11 = new Button("Cancel");
+      Button var11 = new Button() { Text = "Cancel" };
       var11.Click += (new n(this));
       var9.Add(var11);
       this.getRootPane().registerKeyboardAction(new o(this), /* KeyStroke */ Keys.None /* (27, 0) */, 2);
@@ -136,25 +136,25 @@ public class h : Form {
    static void c(h var0) {
       var0.a();
    }
-   static List<object> d(h var0) {
+   public static List<object> d(h var0) {
       return var0.s;
    }
-   static List<object> e(h var0) {
+   public static List<object> e(h var0) {
       return var0.t;
    }
-   static void f(h var0) {
+   public static void f(h var0) {
       var0.b();
    }
-   static List<object> g(h var0) {
+   public static List<object> g(h var0) {
       return var0.u;
    }
    static void h_impl(h var0) {
       var0.c();
    }
-   static List<object> i(h var0) {
+   public static List<object> i(h var0) {
       return var0.v;
    }
-   static ComboBox j(h var0) {
+   public static ComboBox j(h var0) {
       return var0.q;
    }
    static void a(h var0, ey var1) {

@@ -7,7 +7,7 @@ namespace NMSSaveEditor
 {
 
 public class dI : object {
-   dE hE;
+   public dE hE;
 
    public dI(dE var1) {
       this.hE = var1;

@@ -9,6 +9,7 @@ namespace NMSSaveEditor
 {
 
 public class eS {
+   public string Text => getText();
    public string id;
    public string text;
    public Dictionary<object, object> kp;

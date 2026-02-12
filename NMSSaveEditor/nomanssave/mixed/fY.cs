@@ -9,10 +9,12 @@ namespace NMSSaveEditor
 {
 
 public class fY : fX, fs {
+   public DateTime LastWriteTimeUtc => DateTimeOffset.FromUnixTimeMilliseconds(lastModified()).UtcDateTime;
+   public string Name => getName();
    public int lO;
-   fn me;
+   public fn me;
    public string na;
-   fT mN;
+   public fT mN;
 
    public fY(fT var1, int var2) {
       base(var1, "Slot" + (var2 / 2 + 1) + (var2 % 2 == 0 ? "Auto" : "Manual"));

@@ -6,13 +6,13 @@ using System.Text;
 namespace NMSSaveEditor
 {
 public class dH : G {
-   dE hE;
+   public dE hE;
 
    public dH(dE var1) {
       this.hE = var1;
    }
 
-   protected override string g(string var1) {
+   public override string g(string var1) {
       gE var2 = (gE)dE.a(this.hE).SelectedItem;
       if (var2 == null) {
          return "";

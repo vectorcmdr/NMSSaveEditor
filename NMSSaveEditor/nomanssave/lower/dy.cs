@@ -8,7 +8,7 @@ namespace NMSSaveEditor
 {
 
 public class dy : object {
-   du hp;
+   public du hp;
    public gF hq;
 
    public dy(du var1, gF var2) {

@@ -354,12 +354,12 @@ public class Application {
       cT var3 = cT.aC();
       string var4 = a(var1.Name, "Ship");
       var3.setCurrentDirectory(var2);
-      var3.setSelectedFile(new FileInfo(var2, var4));
+      var3.setSelectedFile(new FileInfo(System.IO.Path.Combine((var2).ToString(), (var4).ToString())));
       if (var3.showSaveDialog(this.N) == 0) {
          try {
             FileInfo var5 = var3.getSelectedFile();
             if (!var5.Name.EndsWith(".sh0")) {
-               var5 = new FileInfo(var5.Directory, var5.Name + ".sh0");
+               var5 = new FileInfo(System.IO.Path.Combine((var5.Directory).ToString(), (var5.Name + ".sh0").ToString()));
             }
 
             var1.a(var5, var3.aw());
@@ -383,12 +383,12 @@ public class Application {
       cv var3 = cv.ax();
       string var4 = a(var1.Name, "Weapon");
       var3.setCurrentDirectory(var2);
-      var3.setSelectedFile(new FileInfo(var2, var4));
+      var3.setSelectedFile(new FileInfo(System.IO.Path.Combine((var2).ToString(), (var4).ToString())));
       if (var3.showSaveDialog(this.N) == 0) {
          try {
             FileInfo var5 = var3.getSelectedFile();
             if (!var5.Name.EndsWith(".wp0")) {
-               var5 = new FileInfo(var5.Directory, var5.Name + ".wp0");
+               var5 = new FileInfo(System.IO.Path.Combine((var5.Directory).ToString(), (var5.Name + ".wp0").ToString()));
             }
 
             var1.j(var5);
@@ -413,12 +413,12 @@ public class Application {
       cp var4 = cp.at();
       string var5 = a(var1.Name, var1.cL().name());
       var4.setCurrentDirectory(var2);
-      var4.setSelectedFile(new FileInfo(var2, var5));
+      var4.setSelectedFile(new FileInfo(System.IO.Path.Combine((var2).ToString(), (var5).ToString())));
       if (var4.showSaveDialog(this.N) == 0) {
          try {
             FileInfo var6 = var4.getSelectedFile();
             if (!var6.Name.EndsWith(var3)) {
-               var6 = new FileInfo(var6.Directory, var6.Name + var3);
+               var6 = new FileInfo(System.IO.Path.Combine((var6.Directory).ToString(), (var6.Name + var3).ToString()));
             }
 
             var1.j(var6);
@@ -523,12 +523,12 @@ public class Application {
       cl var3 = cl.ar();
       string var4 = a(var1.Name, "Base");
       var3.setCurrentDirectory(var2);
-      var3.setSelectedFile(new FileInfo(var2, var4));
+      var3.setSelectedFile(new FileInfo(System.IO.Path.Combine((var2).ToString(), (var4).ToString())));
       if (var3.showSaveDialog(this.N) == 0) {
          try {
             FileInfo var5 = var3.getSelectedFile();
             if (!var5.Name.EndsWith(".pb3")) {
-               var5 = new FileInfo(var5.Directory, var5.Name + ".pb3");
+               var5 = new FileInfo(System.IO.Path.Combine((var5.Directory).ToString(), (var5.Name + ".pb3").ToString()));
             }
 
             if (var5.Exists && MessageBox.Show(this.N, "Are you sure you want to overwrite this existing backup file?", "Confirm", 2) != 0) {
@@ -587,12 +587,12 @@ public class Application {
          cs var4 = cs.av();
          string var5 = a(var2.Name, "Freighter");
          var4.setCurrentDirectory(var3);
-         var4.setSelectedFile(new FileInfo(var3, var5));
+         var4.setSelectedFile(new FileInfo(System.IO.Path.Combine((var3).ToString(), (var5).ToString())));
          if (var4.showSaveDialog(this.N) == 0) {
             try {
                FileInfo var6 = var4.getSelectedFile();
                if (!var6.Name.EndsWith(".fb3")) {
-                  var6 = new FileInfo(var6.Directory, var6.Name + ".fb3");
+                  var6 = new FileInfo(System.IO.Path.Combine((var6.Directory).ToString(), (var6.Name + ".fb3").ToString()));
                }
 
                if (var6.Exists && MessageBox.Show(this.N, "Are you sure you want to overwrite this existing backup file?", "Confirm", 2) != 0) {
@@ -1275,12 +1275,12 @@ public class Application {
       cK var1 = cK.aA();
       string var2 = this.aI[this.aJ].K() + ".json";
       var1.setCurrentDirectory(nomanssave.aH.cF);
-      var1.setSelectedFile(new FileInfo(nomanssave.aH.cF, var2));
+      var1.setSelectedFile(new FileInfo(System.IO.Path.Combine((nomanssave.aH.cF).ToString(), (var2).ToString())));
       if (var1.showSaveDialog(this.N) == 0) {
          try {
             FileInfo var3 = var1.getSelectedFile();
             if (!var3.Name.EndsWith(".json")) {
-               var3 = new FileInfo(var3.Directory, var3.Name + ".json");
+               var3 = new FileInfo(System.IO.Path.Combine((var3.Directory).ToString(), (var3.Name + ".json").ToString()));
             }
 
             if (var3.Exists && MessageBox.Show(this.N, "Are you sure you want to overwrite this existing JSON file?", "Confirm", 2) != 0) {
@@ -1498,7 +1498,7 @@ public class Application {
 
       for(int var3 = 0; var3 < var2.Count; ++var3) {
          eV var4 = var2.V(var3).d("AllFrigateIndices");
-         if (var4.hasValue(new Integer(var1))) {
+         if (var4.hasValue(((int)(var1)))) {
             return true;
          }
       }
@@ -1513,7 +1513,7 @@ public class Application {
       int var4;
       for(var4 = 0; var4 < var3.Count; ++var4) {
          eV var5 = var3.V(var4).d("AllFrigateIndices");
-         if (var5.hasValue(new Integer(var1))) {
+         if (var5.hasValue(((int)(var1)))) {
             this.c("This frigate is currently on a mission and cannot be deleted!");
             return gp.d(var2);
          }
@@ -1638,10 +1638,10 @@ public class Application {
             eY var10 = var8.V(var9);
             if ("^MAINT_FARM5".Equals(var10.getValueAsString("Id"))) {
                if ((var4 = var10.J("MaxAmount")) > 0 && var10.J("Amount") < var4) {
-                  var10.b("Amount", (object)(new Integer(var4)));
+                  var10.b("Amount", (object)(((int)(var4))));
                }
 
-               var11.b("LastUpdateTimestamp", (object)(new Integer(var1)));
+               var11.b("LastUpdateTimestamp", (object)(((int)(var1))));
                this.aL = true;
                --var2;
             }
@@ -1667,7 +1667,7 @@ public class Application {
       this.N/* setDefaultCloseOperation */(3);
       this.N.addWindowListener(new B(this));
       this.N.addComponentListener(new C(this));
-      this.O = new TabControl(1);
+      this.O = new TabControl();
       this.N.Add(this.O, "Center");
       ba var3 = new ba(new int[]{nomanssave.aH.cH, nomanssave.aH.cI, 0});
       this.O.addTab("Main", (Icon)null, var3, null);
@@ -1699,19 +1699,19 @@ public class Application {
       var3.Y();
       Panel var4 = new Panel();
       var4.SuspendLayout(); // TODO: set layout new FlowLayoutPanel(0, 0, 0));
-      this.W = new Button("Reload");
+      this.W = new Button() { Text = "Reload" };
       this.W.Enabled = (false);
       this.W.Click += ((var1x) => {
          this.l();
       });
       var4.Add(this.W);
-      this.X = new Button("Save Changes");
+      this.X = new Button() { Text = "Save Changes" };
       this.X.Enabled = (false);
       this.X.Click += ((var1x) => {
          this.n();
       });
       var4.Add(this.X);
-      this.Y = new Button("Save As");
+      this.Y = new Button() { Text = "Save As" };
       this.Y.Enabled = (false);
       this.Y.Click += ((var1x) => {
          this.o();

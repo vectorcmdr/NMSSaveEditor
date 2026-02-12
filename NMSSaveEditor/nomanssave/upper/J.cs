@@ -7,7 +7,7 @@ namespace NMSSaveEditor
 {
 
 public class J : object {
-   gh bs;
+   public gh bs;
    public I bt;
 
    public J(I var1) {

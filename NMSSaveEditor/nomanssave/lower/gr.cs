@@ -6,6 +6,9 @@ using System.Text;
 namespace NMSSaveEditor
 {
 public sealed class gr {
+   public static gr[] Values() { return new gr[] { pf, pg, ph, pi, pj, pk, pl, pm, pn, po, an }; }
+   public static gr valueOf(string name) { foreach (var v in Values()) if (v.ToString() == name) return v; return null; }
+
    public static readonly gr pf = new gr("Combat", false);
    public static readonly gr pg = new gr("Exploration", false);
    public static readonly gr ph = new gr("Mining", false);

@@ -20,7 +20,7 @@ public abstract class G : TextBox {
       this.Text = (this.g(var1));
    }
 
-   protected abstract string g(string var1);
+   public abstract string g(string var1);
 }
 
 }

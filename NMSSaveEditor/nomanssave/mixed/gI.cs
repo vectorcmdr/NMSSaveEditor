@@ -7,7 +7,7 @@ namespace NMSSaveEditor
 {
 
 public class gI : gt {
-   gH rq;
+   public gH rq;
    public bool rr;
    public int il;
 

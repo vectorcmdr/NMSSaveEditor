@@ -7,14 +7,14 @@ namespace NMSSaveEditor
 {
 public class bA : G {
    public int index;
-   bl er;
+   public bl er;
 
    public bA(bl var1, int var2) {
       this.er = var1;
       this.index = var2;
    }
 
-   protected override string g(string var1) {
+   public override string g(string var1) {
       if (bl.b(this.er) < 0) {
          return "";
       } else {

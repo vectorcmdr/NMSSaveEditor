@@ -12,14 +12,14 @@ public class fC : fs {
    public int mb;
    public FileInfo mc;
    public string md;
-   byte[] lK;
-   fn be;
-   fA ma;
+   public byte[] lK;
+   public fn be;
+   public fA ma;
 
    public fC(fA var1, string var2, int var3) {
       this.ma = var1;
       this.mb = var3;
-      this.mc = new FileInfo(aH.cG, var2);
+      this.mc = new FileInfo(System.IO.Path.Combine((aH.cG).ToString(), (var2).ToString()));
       ZipFile var4 = new ZipFile(this.mc);
 
       try {

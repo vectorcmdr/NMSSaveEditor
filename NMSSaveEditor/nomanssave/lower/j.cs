@@ -8,7 +8,7 @@ namespace NMSSaveEditor
 
 public class j : object {
    public eB A;
-   h z;
+   public h z;
 
    public j(h var1) {
       this.z = var1;

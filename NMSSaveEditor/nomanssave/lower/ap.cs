@@ -12,7 +12,7 @@ public class ap : Panel {
    public object cj;
    public DataGridView ck;
    public object cl;
-   private readonly CheckBox[] cm;
+   public readonly CheckBox[] cm;
    public DataGridView cn;
    public object co;
    public gz cp;
@@ -22,12 +22,12 @@ public class ap : Panel {
    public List<object> ct = new List<object>();
 
    public ap(Application var1) {
-      TableLayoutPanel var2 = new TableLayoutPanel(2, 2);
+      TableLayoutPanel var2 = new TableLayoutPanel();
       this.SuspendLayout(); // TODO: set layout var2);
       Panel var3 = new Panel();
       this.Add(var3);
       // TODO: var3.SuspendLayout(); // TODO: set layout /* FormLayout */ null, FormFactory.LABEL_COMPONENT_GAP_COLSPEC}, new RowSpec[]{FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, RowSpec.decode("200px:grow"), FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC}));
-      Label var4 = new Label("Known Technology");
+      Label var4 = new Label() { Text = "Known Technology" };
       // TODO: var4.putClientProperty(...);
       var3.Controls.Add(var4);
       Panel var5 = new Panel();
@@ -37,7 +37,7 @@ public class ap : Panel {
       this.ci.DataSource = (new aq(this));
       this.ci.getColumnModel().getColumn(0).setMaxWidth(24);
       this.ci.getColumnModel().getColumn(0).setCellRenderer(new aB(this, (aB)null));
-      this.cj = new object(this.ci.DataSource);
+      this.cj = ((object)(this.ci.DataSource));
       this.cj.setSortable(0, false);
       this.ci.setRowSorter(this.cj);
       var5.setViewportView(this.ci);
@@ -55,7 +55,7 @@ public class ap : Panel {
       Panel var9 = new Panel();
       this.Add(var9);
       // TODO: var9.SuspendLayout(); // TODO: set layout /* FormLayout */ null, FormFactory.LABEL_COMPONENT_GAP_COLSPEC}, new RowSpec[]{FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, RowSpec.decode("200px:grow"), FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC}));
-      var4 = new Label("Known Products");
+      var4 = new Label() { Text = "Known Products" };
       // TODO: var4.putClientProperty(...);
       var9.Controls.Add(var4);
       Panel var10 = new Panel();
@@ -65,7 +65,7 @@ public class ap : Panel {
       this.ck.DataSource = (new au(this));
       this.ck.getColumnModel().getColumn(0).setMaxWidth(24);
       this.ck.getColumnModel().getColumn(0).setCellRenderer(new aB(this, (aB)null));
-      this.cl = new object(this.ck.DataSource);
+      this.cl = ((object)(this.ck.DataSource));
       this.cl.setSortable(0, false);
       this.ck.setRowSorter(this.cl);
       var10.setViewportView(this.ck);
@@ -83,7 +83,7 @@ public class ap : Panel {
       Panel var13 = new Panel();
       this.Add(var13);
       // TODO: var13.SuspendLayout(); // TODO: set layout /* FormLayout */ null, FormFactory.LABEL_COMPONENT_GAP_COLSPEC}, new RowSpec[]{FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, RowSpec.decode("200px:grow"), FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC}));
-      var4 = new Label("Known Words");
+      var4 = new Label() { Text = "Known Words" };
       // TODO: var4.putClientProperty(...);
       var13.Controls.Add(var4);
       Panel var14 = new Panel();
@@ -105,7 +105,7 @@ public class ap : Panel {
          this.cn.getColumnModel().getColumn(var16).setCellRenderer(new aC());
       }
 
-      this.co = new object(this.cn.DataSource);
+      this.co = ((object)(this.cn.DataSource));
 
       for(var16 = 2; var16 < this.cn.DataSource.getColumnCount(); ++var16) {
          this.co.setSortable(var16, false);
@@ -127,7 +127,7 @@ public class ap : Panel {
       Panel var18 = new Panel();
       this.Add(var18);
       // TODO: var18.SuspendLayout(); // TODO: set layout /* FormLayout */ null, FormFactory.LABEL_COMPONENT_GAP_COLSPEC}, new RowSpec[]{FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC}));
-      var4 = new Label("Known Glyphs");
+      var4 = new Label() { Text = "Known Glyphs" };
       // TODO: var4.putClientProperty(...);
       var18.Controls.Add(var4);
       Panel var19 = new Panel();
@@ -144,9 +144,9 @@ public class ap : Panel {
          this.cm[var20].Click += (new ar(this));
          Image var23 = Application.a("UI-GLYPH" + (var20 + 1) + ".PNG");
          if (var23 == null) {
-            var4 = new Label(Integer.toString(var20 + 1));
+            var4 = new Label() { Text = Integer.toString(var20 + 1) };
          } else {
-            var4 = new Label(var23);
+            var4 = new Label() { Text = var23 };
          }
 
          var19.Add(this.cm[var20], var21 + ", " + var22);
@@ -214,34 +214,34 @@ public class ap : Panel {
    static eV a(ap var0) {
       return var0.cq;
    }
-   static object b(ap var0) {
+   public static object b(ap var0) {
       return var0.cj;
    }
-   static DataGridView c(ap var0) {
+   public static DataGridView c(ap var0) {
       return var0.ci;
    }
-   static List<object> d(ap var0) {
+   public static List<object> d(ap var0) {
       return var0.ct;
    }
-   static eV e(ap var0) {
+   public static eV e(ap var0) {
       return var0.cs;
    }
-   static eV f(ap var0) {
+   public static eV f(ap var0) {
       return var0.cr;
    }
-   static object g(ap var0) {
+   public static object g(ap var0) {
       return var0.cl;
    }
-   static DataGridView h(ap var0) {
+   public static DataGridView h(ap var0) {
       return var0.ck;
    }
-   static gz i(ap var0) {
+   public static gz i(ap var0) {
       return var0.cp;
    }
-   static DataGridView j(ap var0) {
+   public static DataGridView j(ap var0) {
       return var0.cn;
    }
-   static void k(ap var0) {
+   public static void k(ap var0) {
       var0.R();
    }
 }

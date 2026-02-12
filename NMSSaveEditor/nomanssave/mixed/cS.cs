@@ -8,7 +8,7 @@ namespace NMSSaveEditor
 public class cS : gD {
    public string filename;
    public int index;
-   cN gt;
+   public cN gt;
 
    public cS(cN var1, string var2) {
       this.gt = var1;

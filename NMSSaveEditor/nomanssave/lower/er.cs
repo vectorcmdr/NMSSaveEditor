@@ -9,13 +9,14 @@ namespace NMSSaveEditor
 {
 
 public class er {
+   public string Name => getName();
    public string id;
    public string name;
-   gq iB;
+   public gq iB;
    public int iC;
-   gr iD;
+   public gr iD;
    public bool iE;
-   gr[] iF;
+   public gr[] iF;
    public static List<object> iG = new List<object>();
 
    static er() {

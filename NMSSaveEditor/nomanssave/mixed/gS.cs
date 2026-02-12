@@ -54,7 +54,7 @@ public class gS {
       IvParameterSpec var20 = new IvParameterSpec(var19);
       Cipher var21 = Cipher.getInstance("AES/CBC/PKCS5Padding");
       var21.init(1, var18, var20);
-      object var22 = new FileStream(var2);
+      object var22 = new FileStream((var2).ToString(), System.IO.FileMode.Open);
 
       try {
          ((Stream)var22).Write(lA);
@@ -91,7 +91,7 @@ public class gS {
    }
 
    public static void b(eY var0, Dictionary<object, object> var1, FileInfo var2) {
-      object var4 = new FileStream(var2);
+      object var4 = new FileStream((var2).ToString(), System.IO.FileMode.Open);
 
       int var3;
       eV var5;

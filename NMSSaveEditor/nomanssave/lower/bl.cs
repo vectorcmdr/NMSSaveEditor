@@ -39,7 +39,7 @@ public class bl : Panel, eo {
    public int eq;
 
    public bl(Application var1) {
-      TableLayoutPanel var2 = new TableLayoutPanel(1, 3);
+      TableLayoutPanel var2 = new TableLayoutPanel();
       this.SuspendLayout(); // TODO: set layout var2);
       Panel var3 = new Panel();
       var3.setMinimumSize(new Size(300, 0));
@@ -49,11 +49,11 @@ public class bl : Panel, eo {
       var4.SuspendLayout(); // TODO: set layout new TableLayoutPanel());
       var4.Controls.Add(var3);
       Panel var5 = new Panel();
-      this.bQ = new Button("Delete");
+      this.bQ = new Button() { Text = "Delete" };
       this.bQ.Enabled = (false);
       this.bQ.Click += (new bm(this, var1));
       var5.Add(this.bQ);
-      this.dS = new Button("Copy");
+      this.dS = new Button() { Text = "Copy" };
       this.dS.Enabled = (false);
       this.dS.Click += (new br(this, var1));
       var5.Add(this.dS);
@@ -114,9 +114,9 @@ public class bl : Panel, eo {
       this.dT.Y();
       Panel var7 = new Panel();
       // TODO: var7.SuspendLayout(); // TODO: set layout /* FormLayout */ null);
-      this.el = new Label("");
+      this.el = new Label() { Text = "" };
       var7.Add(this.el, "2,1");
-      this.em = new Button("Repair");
+      this.em = new Button() { Text = "Repair" };
       this.em.Click += (new bz(this));
       Panel var8 = new Panel();
       var8.Add(this.em);

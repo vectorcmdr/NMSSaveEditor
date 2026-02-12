@@ -9,7 +9,7 @@ namespace NMSSaveEditor
 {
 
 public class aR : FocusListener {
-   aQ dr;
+   public aQ dr;
 
    public aR(aQ var1) {
       this.dr = var1;

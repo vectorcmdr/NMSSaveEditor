@@ -6,7 +6,7 @@ using System.Text;
 namespace NMSSaveEditor
 {
 public class ei : G {
-   ec ik;
+   public ec ik;
    public int il;
 
    public ei(ec var1, int var2) {
@@ -14,7 +14,7 @@ public class ei : G {
       this.il = var2;
    }
 
-   protected override string g(string var1) {
+   public override string g(string var1) {
       try {
          int var2 = int.Parse(var1);
          if (var2 != eb.a(ec.h(this.ik))[this.il].eh()) {

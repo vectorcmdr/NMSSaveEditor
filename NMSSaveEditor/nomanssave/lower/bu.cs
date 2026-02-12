@@ -8,7 +8,7 @@ namespace NMSSaveEditor
 {
 
 public class bu : Runnable {
-   bt es;
+   public bt es;
    public Application bv;
 
    public bu(bt var1, Application var2) {

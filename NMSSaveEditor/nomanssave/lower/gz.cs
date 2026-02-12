@@ -131,7 +131,7 @@ public class gz {
    }
 
    public void e(long var1) {
-      this.oI.b("Units", (object)(new Integer((int)var1)));
+      this.oI.b("Units", (object)((int)(var1)));
    }
 
    public long dK() {
@@ -139,7 +139,7 @@ public class gz {
    }
 
    public void f(long var1) {
-      this.oI.b("Nanites", (object)(new Integer((int)var1)));
+      this.oI.b("Nanites", (object)((int)(var1)));
    }
 
    public long dL() {
@@ -147,7 +147,7 @@ public class gz {
    }
 
    public void g(long var1) {
-      this.oI.b("Specials", (object)(new Integer((int)var1)));
+      this.oI.b("Specials", (object)((int)(var1)));
    }
 
    public int dM() {
@@ -155,7 +155,7 @@ public class gz {
    }
 
    public void aB(int var1) {
-      this.oI.b("Health", (object)(new Integer(var1)));
+      this.oI.b("Health", (object)(((int)(var1))));
    }
 
    public int dN() {
@@ -163,7 +163,7 @@ public class gz {
    }
 
    public void aC(int var1) {
-      this.oI.b("Shield", (object)(new Integer(var1)));
+      this.oI.b("Shield", (object)(((int)(var1))));
    }
 
    public int dO() {
@@ -171,7 +171,7 @@ public class gz {
    }
 
    public void aD(int var1) {
-      this.oI.b("Energy", (object)(new Integer(var1)));
+      this.oI.b("Energy", (object)(((int)(var1))));
    }
 
    public List<object> cC() {
@@ -183,7 +183,7 @@ public class gz {
    }
 
    public void aE(int var1) {
-      this.oI.b("KnownPortalRunes", (object)(new Integer(var1)));
+      this.oI.b("KnownPortalRunes", (object)(((int)(var1))));
    }
 
    public eV dQ() {
@@ -292,7 +292,7 @@ public class gz {
    public void g(double var1) {
       long var3 = Math.Round(var1 * 900.0D);
       if (var3 >= 0L && var3 <= 2147483647L) {
-         this.oI.b("HazardTimeAlive", (object)(new Integer((int)var3)));
+         this.oI.b("HazardTimeAlive", (object)((int)(var3)));
       } else {
          throw new Exception("Stat value out of range");
       }
@@ -317,7 +317,7 @@ public class gz {
          for(int var4 = 0; var4 < this.rb.Count; ++var4) {
             var3 = this.rb.V(var4);
             if (var3.getValueAsString("Id").Equals(var1.id)) {
-               var3.b("Value.IntValue", (object)(new Integer(var2)));
+               var3.b("Value.IntValue", (object)(((int)(var2))));
                return;
             }
          }
@@ -325,7 +325,7 @@ public class gz {
          var3 = new eY();
          var3.b("Id", (object)var1.id);
          eY var5 = new eY();
-         var5.b("IntValue", (object)(new Integer(var2)));
+         var5.b("IntValue", (object)(((int)(var2))));
          var5.b("FloatValue", (object)(new Double(0.0D)));
          var5.b("Denominator", (object)(new Double(0.0D)));
          var3.b("Value", (object)var5);
@@ -360,7 +360,7 @@ public class gz {
          var4 = new eY();
          var4.b("Id", (object)var1.id);
          eY var6 = new eY();
-         var6.b("IntValue", (object)(new Integer(0)));
+         var6.b("IntValue", (object)(((int)(0))));
          var6.b("FloatValue", (object)(new Double(var2)));
          var6.b("Denominator", (object)(new Double(0.0D)));
          var4.b("Value", (object)var6);

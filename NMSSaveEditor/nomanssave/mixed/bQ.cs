@@ -8,7 +8,7 @@ namespace NMSSaveEditor
 {
 
 public class bQ : object {
-   bO eX;
+   public bO eX;
 
    public bQ(bO var1) {
       this.eX = var1;

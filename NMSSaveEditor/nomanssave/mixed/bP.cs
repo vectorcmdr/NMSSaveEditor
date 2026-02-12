@@ -7,7 +7,7 @@ namespace NMSSaveEditor
 {
 
 public class bP : object {
-   bO eX;
+   public bO eX;
 
    public bP(bO var1) {
       this.eX = var1;

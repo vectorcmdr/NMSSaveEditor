@@ -7,7 +7,7 @@ namespace NMSSaveEditor
 {
 
 public class gJ : gt {
-   gH rq;
+   public gH rq;
    public int il;
 
    public gJ(gH var1, Function var2, eY var3, int var4, int var5, int var6, bool var7, bool var8, int var9) {

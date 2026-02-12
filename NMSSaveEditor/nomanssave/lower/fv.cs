@@ -8,8 +8,8 @@ namespace NMSSaveEditor
 {
 
 public class fv : fr {
-   fw lI;
-   fu lJ;
+   public fw lI;
+   public fu lJ;
 
    public fv(fu var1, fw var2) {
       this.lJ = var1;

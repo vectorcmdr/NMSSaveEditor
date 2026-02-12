@@ -7,7 +7,7 @@ namespace NMSSaveEditor
 {
 
 public class g : object {
-   f i;
+   public f i;
    public Supplier j;
    public Function k;
 

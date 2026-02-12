@@ -57,7 +57,7 @@ public class cy : Form, TreeSelectionListener {
       this.fY.setViewportView(this.fX);
       Panel var4 = new Panel();
       var4.SuspendLayout(); // TODO: set layout new TableLayoutPanel());
-      this.fU = new Button("Validate");
+      this.fU = new Button() { Text = "Validate" };
       this.fU.Click += (new cC(this));
       var4.Add(this.fU, "North");
       var4.Add(this.fW, "Center");

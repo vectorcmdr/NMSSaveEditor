@@ -8,6 +8,7 @@ namespace NMSSaveEditor
 {
 
 public class ba : Panel {
+   public object dA; // FormLayout stub
    // TODO: private FormLayout dA;
 
    public ba() {
@@ -46,14 +47,14 @@ public class ba : Panel {
       }
 
       var3 = this.dA.getColumnCount() - 2;
-      Label var4 = new Label(var1);
+      Label var4 = new Label() { Text = var1 };
       // TODO: var4.putClientProperty(...);
       if (var2 == null) {
          this.Add(var4, "2, " + (this.dA.getRowCount() - 1) + ", " + var3 + ", 1, left, default");
       } else {
          Panel var5 = new Panel();
          var5.SuspendLayout(); // TODO: set layout new FlowLayoutPanel(0, 0, 0));
-         var5.Add(new Label(var2));
+         var5.Add(new Label() { Text = var2 });
          var5.Add(var4);
          this.Add(var5, "2, " + (this.dA.getRowCount() - 1) + ", " + var3 + ", 1, left, default");
       }
@@ -72,7 +73,7 @@ public class ba : Panel {
       }
 
       var2 = this.dA.getColumnCount() - 2;
-      Label var3 = new Label(var1);
+      Label var3 = new Label() { Text = var1 };
       this.Add(var3, "2, " + (this.dA.getRowCount() - 1) + ", " + var2 + ", 1, left, default");
    }
 
@@ -112,10 +113,10 @@ public class ba : Panel {
 
    public void a(string var1, G var2) {
       Panel var3 = new Panel();
-      var3.SuspendLayout(); // TODO: set layout new TableLayoutPanel(0, 0));
+      var3.SuspendLayout(); // TODO: set layout new TableLayoutPanel());
       Panel var4 = new Panel();
       var4.SuspendLayout(); // TODO: set layout new FlowLayoutPanel(2, 0, 0));
-      Button var5 = new Button("Generate");
+      Button var5 = new Button() { Text = "Generate" };
       var5.Enabled = (var2.Enabled);
       var5.Click += (new bb(this, var2));
       var2.addPropertyChangeListener("enabled", new bc(this, var5, var2));

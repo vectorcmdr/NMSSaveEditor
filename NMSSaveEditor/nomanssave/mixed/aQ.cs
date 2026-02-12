@@ -25,15 +25,15 @@ public class aQ : Form {
       this/* setModal */(true);
       Panel var2 = new Panel();
       this.setContentPane(var2);
-      var2.SuspendLayout(); // TODO: set layout new TableLayoutPanel(0, 0));
+      var2.SuspendLayout(); // TODO: set layout new TableLayoutPanel());
       Panel var3 = new Panel();
       // TODO: var3.SuspendLayout(); // TODO: set layout /* FormLayout */ null, FormFactory.LABEL_COMPONENT_GAP_COLSPEC, ColumnSpec.decode("250px"), FormFactory.LABEL_COMPONENT_GAP_COLSPEC}, new RowSpec[]{FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC}));
-      Label var4 = new Label("Width:");
+      Label var4 = new Label() { Text = "Width:" };
       var3.Controls.Add(var4);
       this.@do = new TextBox();
       this.@do.addFocusListener(new aR(this));
       var3.Add(this.@do, "4, 2, fill, default");
-      Label var5 = new Label("Height:");
+      Label var5 = new Label() { Text = "Height:" };
       var3.Controls.Add(var5);
       this.dp = new TextBox();
       this.dp.addFocusListener(new aS(this));
@@ -42,11 +42,11 @@ public class aQ : Form {
       Panel var6 = new Panel();
       var6.SuspendLayout(); // TODO: set layout new FlowLayoutPanel(2));
       var2.Controls.Add(var6);
-      Button var7 = new Button("Save");
+      Button var7 = new Button() { Text = "Save" };
       var7.Click += (new aT(this));
       var6.Add(var7);
       this.getRootPane().setDefaultButton(var7);
-      Button var8 = new Button("Cancel");
+      Button var8 = new Button() { Text = "Cancel" };
       var8.Click += (new aU(this));
       var6.Add(var8);
       this.getRootPane().registerKeyboardAction(new aV(this), /* KeyStroke */ Keys.None /* (27, 0) */, 2);
@@ -76,16 +76,16 @@ public class aQ : Form {
    static TextBox a(aQ var0) {
       return var0.@do;
    }
-   static Size b(aQ var0) {
+   public static Size b(aQ var0) {
       return var0.dk;
    }
-   static Size c(aQ var0) {
+   public static Size c(aQ var0) {
       return var0.dl;
    }
-   static Size d(aQ var0) {
+   public static Size d(aQ var0) {
       return var0.dm;
    }
-   static TextBox e(aQ var0) {
+   public static TextBox e(aQ var0) {
       return var0.dp;
    }
    static void a(aQ var0, Size var1) {

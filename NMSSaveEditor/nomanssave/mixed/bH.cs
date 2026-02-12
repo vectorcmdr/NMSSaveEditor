@@ -6,7 +6,7 @@ using System.Text;
 namespace NMSSaveEditor
 {
 public class bH : bK {
-   bE ey;
+   public bE ey;
 
    public bH(bE var1) {
       this.ey = var1;

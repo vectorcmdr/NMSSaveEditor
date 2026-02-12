@@ -9,12 +9,12 @@ namespace NMSSaveEditor
 {
 
 public abstract class fX {
-   fW mO;
+   public fW mO;
    public FileInfo mX;
    public FileInfo mY;
-   fS mZ;
+   public fS mZ;
    public int mode;
-   fT mN;
+   public fT mN;
 
    public fX(fT var1, fV var2) {
       this.mN = var1;
@@ -24,7 +24,7 @@ public abstract class fX {
          int var5 = ((fW)fT.c(var1)[var4]).name.CompareTo(var2.mO.name);
          if (var5 == 0) {
             fW var6 = (fW)fT.c(var1).Remove(var4);
-            fT.i(new FileInfo(fT.d(var1), var6.mU));
+            fT.i(new FileInfo(System.IO.Path.Combine((fT.d(var1)).ToString(), (var6.mU).ToString())));
          }
 
          if (var5 >= 0) {
@@ -34,14 +34,14 @@ public abstract class fX {
       }
 
       this.mO = new fW(var1, var2.mO);
-      FileInfo var9 = new FileInfo(fT.d(var1), this.mO.mU);
+      FileInfo var9 = new FileInfo(System.IO.Path.Combine((fT.d(var1)).ToString(), (this.mO.mU).ToString()));
       if (!var9.Create()) {
          throw new IOException("Unable to create container path");
       } else {
-         this.mX = new FileInfo(var9, "container." + this.mO.mT);
-         this.mZ = new fS(new FileInfo(var9, var2.mP));
-         this.mY = new FileInfo(var9, var2.mR);
-         FileStream var10 = new FileStream(this.mX);
+         this.mX = new FileInfo(System.IO.Path.Combine((var9).ToString(), ("container." + this.mO.mT).ToString()));
+         this.mZ = new fS(new FileInfo(System.IO.Path.Combine((var9).ToString(), (var2.mP).ToString())));
+         this.mY = new FileInfo(System.IO.Path.Combine((var9).ToString(), (var2.mR).ToString()));
+         FileStream var10 = new FileStream((this.mX).ToString(), System.IO.FileMode.Open);
 
          try {
             var2.a(var10);
@@ -56,15 +56,15 @@ public abstract class fX {
    public fX(fT var1, string var2) {
       this.mN = var1;
       this.mO = fT.a(var1, var2);
-      FileInfo var3 = new FileInfo(fT.d(var1), this.mO.mU);
+      FileInfo var3 = new FileInfo(System.IO.Path.Combine((fT.d(var1)).ToString(), (this.mO.mU).ToString()));
       if (!var3.Attributes.HasFlag(FileAttributes.Directory)) {
          throw new FileNotFoundException(this.mO.mU);
       } else {
-         this.mX = new FileInfo(var3, "container." + this.mO.mT);
+         this.mX = new FileInfo(System.IO.Path.Combine((var3).ToString(), ("container." + this.mO.mT).ToString()));
          hc.info(this.mO.filename);
          FileInfo var4 = null;
          FileInfo var5 = null;
-         FileStream var6 = new FileStream(this.mX);
+         FileStream var6 = new FileStream((this.mX).ToString(), System.IO.FileMode.Open);
 
          try {
             int var7 = hk.readInt(var6);
@@ -82,16 +82,16 @@ public abstract class fX {
                }
 
                if (var10.Equals("data")) {
-                  var4 = new FileInfo(var3, var11);
+                  var4 = new FileInfo(System.IO.Path.Combine((var3).ToString(), (var11).ToString()));
                   if (!var4.Exists) {
-                     var4 = new FileInfo(var3, var12);
+                     var4 = new FileInfo(System.IO.Path.Combine((var3).ToString(), (var12).ToString()));
                   }
                }
 
                if (var10.Equals("meta")) {
-                  var5 = new FileInfo(var3, var11);
+                  var5 = new FileInfo(System.IO.Path.Combine((var3).ToString(), (var11).ToString()));
                   if (!var5.Exists) {
-                     var5 = new FileInfo(var3, var12);
+                     var5 = new FileInfo(System.IO.Path.Combine((var3).ToString(), (var12).ToString()));
                   }
                }
             }
@@ -119,7 +119,7 @@ public abstract class fX {
    }
 
    public Stream getInputStream() {
-      Stream var1 = fT.b(new FileStream(this.mY), this.mZ.ch());
+      Stream var1 = fT.b(new FileStream((this.mY).ToString(), System.IO.FileMode.Open), this.mZ.ch());
       if (var1 is gX) {
          this.mode = fT.cv();
       } else if (var1 is hm) {
@@ -132,7 +132,7 @@ public abstract class fX {
    }
 
    public Stream getOutputStream() {
-      FileStream var1 = new FileStream(this.mY);
+      FileStream var1 = new FileStream((this.mY).ToString(), System.IO.FileMode.Open);
 
       try {
          if (this.mode == fT.cv()) {
@@ -316,8 +316,8 @@ public abstract class fX {
 
       var3.setProperty("IndexData", this.mO.cz());
       string var4 = var1 + "." + DateTimeOffset.UtcNow.ToUnixTimeMilliseconds() + ".zip";
-      FileInfo var5 = new FileInfo(aH.cG, var4);
-      ZipOutputStream var6 = new ZipOutputStream(new FileStream(var5));
+      FileInfo var5 = new FileInfo(System.IO.Path.Combine((aH.cG).ToString(), (var4).ToString()));
+      ZipOutputStream var6 = new ZipOutputStream(new FileStream((var5).ToString(), System.IO.FileMode.Open));
 
       try {
          ZipEntry var8 = new ZipEntry(this.mZ.Name);
@@ -326,7 +326,7 @@ public abstract class fX {
          var8 = new ZipEntry(this.mY.Name);
          var6.putNextEntry(var8);
          byte[] var9 = new byte[1024];
-         FileStream var10 = new FileStream(this.mY);
+         FileStream var10 = new FileStream((this.mY).ToString(), System.IO.FileMode.Open);
 
          int var7;
          try {
@@ -339,7 +339,7 @@ public abstract class fX {
 
          var8 = new ZipEntry(this.mX.Name);
          var6.putNextEntry(var8);
-         var10 = new FileStream(this.mX);
+         var10 = new FileStream((this.mX).ToString(), System.IO.FileMode.Open);
 
          try {
             while((var7 = var10.read(var9)) > 0) {

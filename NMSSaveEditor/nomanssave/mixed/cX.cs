@@ -8,7 +8,7 @@ namespace NMSSaveEditor
 {
 
 public class cX : Runnable {
-   cW gL;
+   public cW gL;
 
    public cX(cW var1) {
       this.gL = var1;
