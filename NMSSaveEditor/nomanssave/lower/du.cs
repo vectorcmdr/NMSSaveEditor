@@ -18,7 +18,7 @@ public class du : Panel {
    public du(dt var1, gF var2) {
       this.ho = var1;
       this.hm = var2;
-      int var3 = SystemInformation.getInt("Inventory.gridSize");
+      int var3 = 0 /* UIManager.getInt("Inventory.gridSize") */;
       Size var4 = new Size(var3, var3);
       this.setBackground(bO.eK);
       this.setMinimumSize(var4);
@@ -43,7 +43,7 @@ public class du : Panel {
 
    public void aM() {
       this.RemoveAll();
-      int var1 = SystemInformation.getInt("Inventory.gridSize");
+      int var1 = 0 /* UIManager.getInt("Inventory.gridSize") */;
       Size var2 = new Size(var1, var1);
       this.setBackground(bO.eK);
       this.setMinimumSize(var2);
@@ -55,7 +55,7 @@ public class du : Panel {
          this.fh.Enabled = (this.hm.dA() > 0);
          ey var3 = ey.d(this.hm.dz());
          string var4 = var3 == null ? this.hm.ei() : var3.Name;
-         int var5 = SystemInformation.getInt("Inventory.iconSize");
+         int var5 = 0 /* UIManager.getInt("Inventory.iconSize") */;
          Font var6 = /* UIManager.getFont */ SystemFonts.DefaultFont; //("Inventory.font");
          Image var7 = var3 == null ? null : var3.c(var5, var5);
          int var8 = 0;

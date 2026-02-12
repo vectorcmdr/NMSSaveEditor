@@ -195,7 +195,7 @@ public class fI {
          }
 
          if (var5[0] != 4008636094L) {
-            throw new IOException("Invalid metadata header: " + Long.toHexString(var5[0]));
+            throw new IOException("Invalid metadata header: " + (var5[0]).ToString("X"));
          } else {
             var13 = (int)var5[1];
             if (!ai(var13)) {

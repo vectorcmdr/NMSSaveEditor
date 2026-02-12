@@ -293,9 +293,9 @@ public class aH {
          cH = 120;
          cI = 350;
          cJ = 200;
-         SystemInformation.Put("Inventory.font", (object)null);
-         SystemInformation.Put("Inventory.gridSize", 200);
-         SystemInformation.Put("Inventory.iconSize", 64);
+         /* UIManager.put("Inventory.font", (object) */null);
+         /* UIManager.put("Inventory.gridSize", 200) */;
+         /* UIManager.put("Inventory.iconSize", 64) */;
       } else {
          double var4 = cK.L("InventoryScaling");
          if (var4 <= 0.0D) {
@@ -323,9 +323,9 @@ public class aH {
             var12 = (int)((double)var12 * 1.5D);
          }
 
-         SystemInformation.Put("Inventory.font", var7);
-         SystemInformation.Put("Inventory.gridSize", var10);
-         SystemInformation.Put("Inventory.iconSize", var12);
+         /* UIManager.put("Inventory.font", var7) */;
+         /* UIManager.put("Inventory.gridSize", var10) */;
+         /* UIManager.put("Inventory.iconSize", var12) */;
       }
 
    }

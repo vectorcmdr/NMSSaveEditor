@@ -30,17 +30,17 @@ public class bO : Panel, eo {
    public gt eW;
 
    static bO() {
-      eE = Color.GRAY;
+      eE = Color.Gray;
       eF = new Color(255, 240, 240);
       eG = new Color(255, 255, 240);
       eH = new Color(240, 255, 250);
       eI = new Color(240, 250, 255);
       eJ = new Color(240, 255, 255);
-      eK = Color.WHITE;
-      eL = Color.BLACK;
-      eM = Color.YELLOW;
-      eN = Color.RED;
-      eO = Color.BLACK;
+      eK = Color.White;
+      eL = Color.Black;
+      eM = Color.Yellow;
+      eN = Color.Red;
+      eO = Color.Black;
       eP = null /* LineBorder */;
       eQ = null /* CompoundBorder */;
    }
@@ -52,7 +52,7 @@ public class bO : Panel, eo {
       var2.SuspendLayout(); // TODO: set layout new FlowLayoutPanel());
       this.eS = new Panel();
       this.eS.SuspendLayout(); // TODO: set layout new GridBagLayout());
-      int var3 = SystemInformation.getInt("Inventory.gridSize");
+      int var3 = 0 /* UIManager.getInt("Inventory.gridSize") */;
       this.Size = (new Size(var3 * 10 + 20, var3 * 8 + 50));
       this.Controls.Add(var2);
       Panel var4 = new Panel();
@@ -70,7 +70,7 @@ public class bO : Panel, eo {
       this.eU.Click += (new bR(this));
       var2.Add(this.eU);
       en.a(this);
-      SystemInformation.addPropertyChangeListener((var1x) => {
+      /* addPropertyChangeListener((var1x) */ => {
          if ("lookAndFeel".Equals(var1x.getPropertyName())) {
             System.Windows.Forms.Application.Run(this.af);
          }
@@ -159,7 +159,7 @@ public class bO : Panel, eo {
       lock(this.eS.getTreeLock()) {
          this.eS.RemoveAll();
          if (this.eW != null) {
-            int var2 = SystemInformation.getInt("Inventory.gridSize");
+            int var2 = 0 /* UIManager.getInt("Inventory.gridSize") */;
             Size var3 = new Size(var2, var2);
 
             for(int var4 = 0; var4 < this.eW.Height; ++var4) {

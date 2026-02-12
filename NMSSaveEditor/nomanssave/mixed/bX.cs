@@ -20,7 +20,7 @@ public class bX : object {
 
    public void mouseReleased(MouseEventArgs var1) {
       if (bO.a(bS.j(this.fk)).h(this.fl, this.fm) && !bO.a(bS.j(this.fk)).l(this.fl, this.fm)) {
-         int var2 = SystemInformation.getInt("Inventory.gridSize");
+         int var2 = 0 /* UIManager.getInt("Inventory.gridSize") */;
          int var3 = this.fl + (int)Math.Floor((double)var1.Left / (double)var2);
          int var4 = this.fm + (int)Math.Floor((double)var1.Top / (double)var2);
          if (var3 >= 0 && var3 < bO.a(bS.j(this.fk)).Width) {

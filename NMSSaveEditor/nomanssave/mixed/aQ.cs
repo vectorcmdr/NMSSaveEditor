@@ -67,7 +67,7 @@ public class aQ : Form {
 
    public static Size a(Container var0, Size var1, Size var2, Size var3) {
       if (dq == null) {
-         Frame var4 = MessageBox.getFrameForComponent(var0);
+         Frame var4 = null;
          dq = new aQ(var4);
       }
 

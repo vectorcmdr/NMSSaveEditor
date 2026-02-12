@@ -16,7 +16,7 @@ public class aB : DefaultTableCellRenderer {
 
    public override object getTableCellRendererComponent(object table, object value, bool isSelected, bool hasFocus, int row, int column) {
       DataGridView var1 = (DataGridView)table;
-      Label var7 = (Label)base.getTableCellRendererComponent(var1, "", isSelected, hasFocus, row, column);
+      Label var7 = (Label)this.getTableCellRendererComponent(/*base*/var1, "", isSelected, hasFocus, row, column);
       var7.setIcon((Image)value);
       return var7;
    }

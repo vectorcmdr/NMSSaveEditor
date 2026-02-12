@@ -68,7 +68,7 @@ public class Q : Form {
 
    public static W a(Container var0, W var1, int var2, int var3) {
       if (bC == null) {
-         Frame var4 = MessageBox.getFrameForComponent(var0);
+         Frame var4 = null;
          bC = new Q(var4);
       }
 

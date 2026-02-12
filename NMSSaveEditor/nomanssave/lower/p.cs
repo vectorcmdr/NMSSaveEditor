@@ -59,7 +59,7 @@ public class p : Form {
 
    public static string[] b(Container var0) {
       if (H == null) {
-         Frame var1 = MessageBox.getFrameForComponent(var0);
+         Frame var1 = null;
          H = new p(var1);
       }
 
@@ -70,7 +70,7 @@ public class p : Form {
 
    public static string[] c(Container var0) {
       if (H == null) {
-         Frame var1 = MessageBox.getFrameForComponent(var0);
+         Frame var1 = null;
          H = new p(var1);
       }
 

@@ -20,7 +20,7 @@ public class gf {
       if (var1 is string) {
          return (string)var1;
       } else {
-         return var1 is Number ? "0x" + Long.toHexString(((Number)var1).longValue()) : null;
+         return var1 is Number ? "0x" + (((Number).ToString("X")var1).longValue()) : null;
       }
    }
 

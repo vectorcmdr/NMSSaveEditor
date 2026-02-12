@@ -77,11 +77,11 @@ public class bu : Runnable {
          bl.x(bt.a(this.es)).Text = (Integer.toString(bl.c(bt.a(this.es))[bl.b(bt.a(this.es))].df()));
          if (this.bv.j(bl.c(bt.a(this.es))[bl.b(bt.a(this.es))].getIndex())) {
             bl.y(bt.a(this.es)).Text = ("Status: On Mission");
-            bl.y(bt.a(this.es)).setForeground(Color.BLUE);
+            bl.y(bt.a(this.es)).setForeground(Color.Blue);
             bl.z(bt.a(this.es)).Hide();
          } else if (bl.c(bt.a(this.es))[bl.b(bt.a(this.es))].dh() > 0) {
             bl.y(bt.a(this.es)).Text = ("Status: Damaged!");
-            bl.y(bt.a(this.es)).setForeground(Color.RED);
+            bl.y(bt.a(this.es)).setForeground(Color.Red);
             bl.z(bt.a(this.es)).Show();
          } else {
             bl.y(bt.a(this.es)).Text = ("");

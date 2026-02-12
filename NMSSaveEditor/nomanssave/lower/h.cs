@@ -118,7 +118,7 @@ public class h : Form {
 
    public static ey a(Container var0, int var1) {
       if (w == null) {
-         Frame var2 = MessageBox.getFrameForComponent(var0);
+         Frame var2 = null;
          w = new h(var2);
       }
 

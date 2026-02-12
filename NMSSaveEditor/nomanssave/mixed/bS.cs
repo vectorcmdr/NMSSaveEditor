@@ -140,7 +140,7 @@ public class bS : Panel {
                var2 = ey.d(var1.dz());
                var3 = var2 is eQ && var1.dC() != 0.0D;
                var4 = var2 == null ? bO.b(var1.dz()) : var2.Name;
-               int var5 = SystemInformation.getInt("Inventory.iconSize");
+               int var5 = 0 /* UIManager.getInt("Inventory.iconSize") */;
                Image var6 = var2 == null ? null : var2.c(var5, var5);
                int var7 = 0;
                if (var6 != null) {
@@ -210,7 +210,7 @@ public class bS : Panel {
 
                this.fe.Enabled = (var2 != null);
                string var10 = var2 == null ? bO.b(var1.dz()) : var2.Name;
-               int var11 = SystemInformation.getInt("Inventory.iconSize");
+               int var11 = 0 /* UIManager.getInt("Inventory.iconSize") */;
                Image var13 = var2 == null ? null : var2.c(var11, var11);
                int var12 = 0;
                if (var13 != null) {
@@ -251,7 +251,7 @@ public class bS : Panel {
       GridBagConstraints var5 = new GridBagConstraints();
       var5.anchor = 10;
       var5.fill = 0;
-      int var6 = SystemInformation.getInt("Inventory.iconSize");
+      int var6 = 0 /* UIManager.getInt("Inventory.iconSize") */;
       var5.insets = new Padding(var2 == 0 ? var6 + 10 : 0, 0, 0, 0);
       var5.gridx = 0;
       var5.gridy = var2;

@@ -19,7 +19,7 @@ public class i : ActionListener {
       h.a(this.z, ey.b(h.b(this.z), var2));
       h.c(this.z);
       if (h.d(this.z).Count == 0) {
-         MessageBox.showOptionDialog(this.z, "Item not found.", "Warning", 0, 2, (Icon)null, new object[]{"OK"}, (object)null);
+         0 /* showOptionDialog(this.z, "Item not found.", "Warning", 0, 2, (Icon) */null, new object[]{"OK"}, (object)null);
       }
 
    }

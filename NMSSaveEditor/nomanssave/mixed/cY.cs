@@ -60,7 +60,7 @@ public class cY : Form {
 
    public static int a(Container var0, List<object> var1) {
       if (gP == null) {
-         Frame var2 = MessageBox.getFrameForComponent(var0);
+         Frame var2 = null;
          gP = new cY(var2);
       }
 

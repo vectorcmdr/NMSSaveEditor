@@ -190,7 +190,7 @@ public class cg : Form {
 
    public static void a(Container var0, gQ var1) {
       if (fE == null) {
-         Frame var2 = MessageBox.getFrameForComponent(var0);
+         Frame var2 = null;
          fE = new cg(var2);
       }
 

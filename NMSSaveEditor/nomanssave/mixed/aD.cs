@@ -54,7 +54,7 @@ public class aD : Form {
 
    public static bool d(Container var0) {
       if (cz == null) {
-         Frame var1 = MessageBox.getFrameForComponent(var0);
+         Frame var1 = null;
          cz = new aD(var1);
       }
 

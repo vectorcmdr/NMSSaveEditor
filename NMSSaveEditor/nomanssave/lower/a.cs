@@ -42,7 +42,7 @@ public class a : Form {
 
    public static void a_init(Container var0) {
       if (a == null) {
-         Frame var1 = MessageBox.getFrameForComponent(var0);
+         Frame var1 = null;
          a = new a(var1);
       }
 

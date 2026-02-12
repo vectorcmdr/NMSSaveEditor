@@ -22,7 +22,7 @@ public class ej : JFileChooser {
       this.setFileFilter(new ek(this));
       this.setFileView(new el(this));
       this.setDialogTitle("Choose Save Path");
-      SystemInformation.addPropertyChangeListener((var1) => {
+      /* addPropertyChangeListener((var1) */ => {
          if ("lookAndFeel".Equals(var1.getPropertyName())) {
             Control.updateComponentTreeUI(this);
          }

@@ -27,7 +27,7 @@ public class cl : JFileChooser {
       this.setFileFilter(new cn(this));
       this.addChoosableFileFilter(new co(this));
       this.setDialogTitle("Choose Backup FileInfo");
-      SystemInformation.addPropertyChangeListener((var1) => {
+      /* addPropertyChangeListener((var1) */ => {
          if ("lookAndFeel".Equals(var1.getPropertyName())) {
             Control.updateComponentTreeUI(this);
          }

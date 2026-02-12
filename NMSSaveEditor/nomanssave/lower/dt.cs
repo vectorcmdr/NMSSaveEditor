@@ -19,7 +19,7 @@ public class dt : ba {
       this.eS = new Panel();
       this.eS.SuspendLayout(); // TODO: set layout new GridBagLayout());
       this.a((Control)this.eS);
-      SystemInformation.addPropertyChangeListener((var1x) => {
+      /* addPropertyChangeListener((var1x) */ => {
          if ("lookAndFeel".Equals(var1x.getPropertyName())) {
             System.Windows.Forms.Application.Run(this.aL);
          }

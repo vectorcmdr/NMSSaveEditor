@@ -55,7 +55,7 @@ public class dd : Form {
 
    public static int a(Container var0, List<object> var1, int var2) {
       if (gV == null) {
-         Frame var3 = MessageBox.getFrameForComponent(var0);
+         Frame var3 = null;
          gV = new dd(var3);
       }
 

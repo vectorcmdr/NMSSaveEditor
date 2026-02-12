@@ -24,7 +24,7 @@ public abstract class ey {
       Stream var1 = typeof(Application).GetManifestResourceStream("db/items.xml");
       if (var1 != null) {
          try {
-            Document var2 = XmlDocument.newInstance().newDocumentBuilder().parse(var1);
+            Document var2 = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(var1);
             var0 = var2.getDocumentElement();
          } catch (Exception var7) {
          } catch (Exception var8) {

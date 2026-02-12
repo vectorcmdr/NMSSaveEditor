@@ -54,7 +54,7 @@ public class dz : Form {
 
    public static int a(Container var0, ft[] var1, int var2) {
       if (ht == null) {
-         Frame var3 = MessageBox.getFrameForComponent(var0);
+         Frame var3 = null;
          ht = new dz(var3);
       }
 

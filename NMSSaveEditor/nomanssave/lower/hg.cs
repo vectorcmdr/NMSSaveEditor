@@ -29,7 +29,7 @@ public class hg {
    }
 
    public string toString() {
-      return "0x" + Long.toHexString(this.sw).ToUpper();
+      return "0x" + (this.sw).ToString("X").ToUpper();
    }
 }
 

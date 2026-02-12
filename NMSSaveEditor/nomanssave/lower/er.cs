@@ -22,7 +22,7 @@ public class er {
       Stream var0 = typeof(Application).GetManifestResourceStream("db/frigates.xml");
       if (var0 != null) {
          try {
-            Document var1 = XmlDocument.newInstance().newDocumentBuilder().parse(var0);
+            Document var1 = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(var0);
             Element var2 = var1.getDocumentElement();
             XmlNodeList var3 = var2.getChildNodes();
 

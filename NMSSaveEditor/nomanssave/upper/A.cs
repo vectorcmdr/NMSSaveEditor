@@ -17,7 +17,7 @@ public class A : Runnable {
    }
 
    public void run() {
-      MessageBox.showOptionDialog(Application.h(this.aZ), this.bc, "Warning", 0, 2, (Icon)null, new object[]{"OK"}, (object)null);
+      0 /* showOptionDialog(Application.h(this.aZ) */, this.bc, "Warning", 0, 2, (Icon)null, new object[]{"OK"}, (object)null);
    }
 }
 

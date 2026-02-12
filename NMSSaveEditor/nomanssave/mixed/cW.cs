@@ -26,7 +26,7 @@ public class cW : Panel, CaretListener {
    public Dictionary<object, object> gK;
 
    static cW() {
-      gA = new MatteBorder(0, 0, 0, 2, Color.GRAY);
+      gA = new MatteBorder(0, 0, 0, 2, Color.Gray);
    }
 
    public cW(JTextComponent var1) {
@@ -37,7 +37,7 @@ public class cW : Panel, CaretListener {
       this.gB = var1;
       this.setFont(var1.getFont());
       this.y(5);
-      this.a(Color.RED);
+      this.a(Color.Red);
       this.a(1.0F);
       this.z(var2);
       var1.getDocument().addDocumentListener(this);

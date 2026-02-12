@@ -34,7 +34,7 @@ public class cs : JFileChooser {
       this.fO = new CheckBox("Products/Substances");
       var1.Add(this.fO);
       this.setAccessory(var1);
-      SystemInformation.addPropertyChangeListener((var1x) => {
+      /* addPropertyChangeListener((var1x) */ => {
          if ("lookAndFeel".Equals(var1x.getPropertyName())) {
             Control.updateComponentTreeUI(this);
          }

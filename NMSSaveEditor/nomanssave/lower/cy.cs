@@ -207,7 +207,7 @@ public class cy : Form, TreeSelectionListener {
                   ((cI)this.fV.DataSource).a(this.fZ);
                }
             } catch (eX var3) {
-               MessageBox.showOptionDialog(this, "Error on line #" + var3.getLineNumber() + ": " + var3.getMessage(), "Error", 0, 0, (Icon)null, new object[]{"Cancel"}, (object)null);
+               0 /* showOptionDialog(this, "Error on line #" + var3.getLineNumber() */ + ": " + var3.getMessage(), "Error", 0, 0, (Icon)null, new object[]{"Cancel"}, (object)null);
                this.fX.setCaretPosition(var3.bD());
                this.fX.Focus();
                return;

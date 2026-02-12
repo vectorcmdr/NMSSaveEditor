@@ -18,7 +18,7 @@ public class cN : ComboBox {
    public static Color gs;
 
    static cN() {
-      gr = Color.RED;
+      gr = Color.Red;
       gs = new Color(255, 100, 100);
    }
 

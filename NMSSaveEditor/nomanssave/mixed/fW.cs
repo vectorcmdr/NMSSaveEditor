@@ -43,7 +43,7 @@ public class fW {
          hc.debug("    timestamp: " + new DateTime(this.timestamp));
          this.mV = hk.f(var2);
          if (this.mV != 0L) {
-            hc.debug("    unknown2: " + Long.toHexString(this.mV));
+            hc.debug("    unknown2: " + (this.mV).ToString("X"));
          }
 
          this.mW = hk.f(var2);

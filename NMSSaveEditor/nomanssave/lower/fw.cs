@@ -64,7 +64,7 @@ public class fw {
       Console.WriteLine("  archiveNumber = " + this.lO + " 0x" + Convert.ToString(this.lO) + " " + Integer.toBinaryString(this.lO));
       Console.WriteLine("  modified = " + new DateTime(this.bd));
       Console.WriteLine("  length = " + this.Length);
-      Console.WriteLine("  startPos = 0x" + Long.toHexString(this.lP));
+      Console.WriteLine("  startPos = 0x" + (this.lP).ToString("X"));
       Console.WriteLine("  valid = " + this.lQ);
       if (this.lR != 0) {
          Console.WriteLine("  unknown3 = " + this.lR + " 0x" + Convert.ToString(this.lR) + " " + Integer.toBinaryString(this.lR) + " date:" + new DateTime(1000L * (long)this.lR));

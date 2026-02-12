@@ -26,7 +26,7 @@ public class cv : JFileChooser {
       this.setFileView(new cw(this));
       this.setFileFilter(new cx(this));
       this.setDialogTitle("Choose Weapon Export FileInfo");
-      SystemInformation.addPropertyChangeListener((var1) => {
+      /* addPropertyChangeListener((var1) */ => {
          if ("lookAndFeel".Equals(var1.getPropertyName())) {
             Control.updateComponentTreeUI(this);
          }

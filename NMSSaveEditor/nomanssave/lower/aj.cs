@@ -59,7 +59,7 @@ public class aj : Form {
       this.bZ.setEditable(false);
       var3.Add(this.bZ, "4, 12, 3, 1, fill, default");
       Panel var10 = new Panel();
-      var10.setBackground(Color.GRAY);
+      var10.setBackground(Color.Gray);
       var10.Padding = new Padding(0); /* setBorder */ //(new LineBorder(Color.DARK_GRAY));
       var10.SuspendLayout(); // TODO: set layout new FlowLayoutPanel(1, 5, 5));
       var10.setMinimumSize(new Size(449, 42));
@@ -119,7 +119,7 @@ public class aj : Form {
 
    public static hl a(Container var0, hl var1) {
       if (cf == null) {
-         Frame var2 = MessageBox.getFrameForComponent(var0);
+         Frame var2 = null;
          cf = new aj(var2);
       }
 
