@@ -117,15 +117,15 @@ public class bd : em {
          this.dI.m(var1.cW());
          this.dJ.Text = (var1.cU());
          this.dK.Text = (var1.cV());
-         this.dL.Text = (Double.toString(var1.cX()));
-         this.dM.Text = (Double.toString(var1.cY()));
+         this.dL.Text = ((var1.cX().ToString()));
+         this.dM.Text = ((var1.cY().ToString()));
          gn var2 = var1.cZ();
          if (var2 == null) {
             this.bm.Text = ("");
             this.bn.Enabled = (false);
             this.bo.Enabled = (false);
          } else {
-            this.bm.Text = (Integer.toString(var2.cG()));
+            this.bm.Text = ((var2.cG().ToString()));
             this.bn.Enabled = (true);
             this.bo.Enabled = (true);
          }

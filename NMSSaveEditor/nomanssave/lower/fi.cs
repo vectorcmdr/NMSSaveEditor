@@ -45,7 +45,7 @@ public fi(string var1) : base(var1) {
 
    public int a(Predicate<object> var1) {
       try {
-         this.mark(1);
+         // this.mark(1) - C# streams use Position property
          int var2 = base.ReadByte();
          if (var2 >= 0 && var1.test(var2)) {
             if (var2 == 10) {
@@ -55,7 +55,7 @@ public fi(string var1) : base(var1) {
             ++this.kG;
             return var2;
          } else {
-            this.reset();
+            // this.reset() - C# streams use Position property
             return -1;
          }
       } catch (IOException var3) {

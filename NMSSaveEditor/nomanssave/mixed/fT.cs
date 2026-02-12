@@ -209,7 +209,7 @@ public class fT : fq {
 
    public int W(string var1) {
       Matcher var2 = lV.matcher(var1);
-      return !var2.System.Text.RegularExpressions.Regex.IsMatch() ? -1 : int.Parse(var2.group(1));
+      return !var2.matches() ? -1 : int.Parse(var2.group(1));
    }
 
    public static int an(int var0) {

@@ -18,7 +18,7 @@ public class dd : Form {
 public dd(Frame var1) : base(var1) {
       this.Size = new Size(300, 300);
       this.FormBorderStyle = FormBorderStyle.FixedDialog; //(false);
-      this.setModalExclusionType(/* ModalExclusionType */ 0);
+      // setModalExclusionType not available in WinForms
       this.Text = ("Move Item");
       this/* setModal */(true);
       Panel var2 = new Panel();
@@ -28,7 +28,7 @@ public dd(Frame var1) : base(var1) {
       this.gS = new ListBox();
       this.gS.setSelectionMode(0);
       this.gS.DataSource = (new de(this));
-      this.gS.addMouseListener(new df(this));
+      this.// gS.addMouseListener - use MouseClick event instead
       var3.setViewportView(this.gS);
       var2.Add(var3);
       Panel var4 = new Panel();

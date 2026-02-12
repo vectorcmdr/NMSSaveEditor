@@ -47,9 +47,9 @@ public class dk : object {
          dj.c(this.hl).m(this.hk.cT());
          dj.d(this.hl).m(this.hk.cW());
          dj.e(this.hl).Text = (this.hk.cK());
-         dj.f(this.hl).Text = (Double.toString(this.hk.dF()));
-         dj.g(this.hl).Text = (Double.toString(this.hk.dG()));
-         dj.h(this.hl).Text = (Double.toString(this.hk.dH()));
+         dj.f(this.hl).Text = ((this.hk.dF().ToString()));
+         dj.g(this.hl).Text = ((this.hk.dG().ToString()));
+         dj.h(this.hl).Text = ((this.hk.dH().ToString()));
          dj.i(this.hl).a(new List<object> { this.hk.dE() });
       }
    }

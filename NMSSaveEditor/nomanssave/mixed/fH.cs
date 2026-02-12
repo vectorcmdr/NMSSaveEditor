@@ -91,9 +91,9 @@ public class fH {
    public void a(string var1, fn var2, string var3, string var4) {
       Dictionary<string, string> var5 = new Dictionary<string, string>();
       var5.setProperty("StorageFile", this.mh.Name);
-      var5.setProperty("LastModified", Long.toString(this.mh.LastWriteTimeUtc.Ticks));
+      var5.setProperty("LastModified", (this.mh.LastWriteTimeUtc.Ticks).ToString());
       if (var2 != null) {
-         var5.setProperty("GameMode", var2.name());
+         var5.setProperty("GameMode", var2.Name);
       }
 
       if (var3 != null) {

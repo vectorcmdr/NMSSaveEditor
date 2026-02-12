@@ -121,7 +121,7 @@ public class ba : Panel {
       Button var5 = new Button() { Text = "Generate" };
       var5.Enabled = (var2.Enabled);
       var5.Click += (new bb(this, var2));
-      var2.addPropertyChangeListener("enabled", new bc(this, var5, var2));
+      // var2.addPropertyChangeListener - use property events instead
       var4.Add(var5);
       var3.Controls.Add(var2);
       var3.Controls.Add(var4);

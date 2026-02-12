@@ -101,7 +101,7 @@ public class fw {
                throw new IOException("short read");
             }
 
-            var8 = var2.toByteArray();
+            var8 = var2.ToArray();
          } finally {
             var1.Close();
          }

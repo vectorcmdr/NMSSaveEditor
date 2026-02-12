@@ -123,7 +123,7 @@ public class hc {
    }
 
    public static string d(string var0, string var1) {
-      for(int var2 = 0; var2 < var0.length(); ++var2) {
+      for(int var2 = 0; var2 < var0.Length; ++var2) {
          if (!char.IsWhiteSpace(var0[var2])) {
             return var0.Substring(0, var2) + var1 + var0.Substring(var2);
          }

@@ -79,7 +79,7 @@ public class gp {
          var1 = 3;
       }
 
-      return gN.Values[var1].name();
+      return gN.Values[var1].Name;
    }
 
    public string cU() {
@@ -189,7 +189,7 @@ public class gp {
 
    public string toString() {
       string var1 = this.Name;
-      if (var1 != null && var1.length() != 0) {
+      if (var1 != null && var1.Length != 0) {
          return var1;
       } else {
          gr var2 = this.da();

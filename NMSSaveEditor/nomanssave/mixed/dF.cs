@@ -48,7 +48,7 @@ public class dF : object {
          dE.d(this.hE).Text = (this.hD.cK());
 
          for(var2 = 0; var2 < dE.e(this.hE).Length; ++var2) {
-            dE.e(this.hE)[var2].Text = (Integer.toString(this.hD.aq(var2)));
+            dE.e(this.hE)[var2].Text = ((this.hD.aq(var2).ToString()));
          }
 
          dE.f(this.hE).a(this.hD.dX());

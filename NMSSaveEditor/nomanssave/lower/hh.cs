@@ -1119,7 +1119,7 @@ public class hh {
    }
 
    public static long a(CharSequence var0, long[] var1) {
-      return b((CharSequence)var0, 0, var0.length(), var1);
+      return b((CharSequence)var0, 0, var0.Length, var1);
    }
 
    public long[] b(CharSequence var1, int var2, int var3) {
@@ -1129,7 +1129,7 @@ public class hh {
    }
 
    public long[] a(CharSequence var1) {
-      return this.b((CharSequence)var1, 0, var1.length());
+      return this.b((CharSequence)var1, 0, var1.Length);
    }
 
    public static long a(long[] var0, long[] var1) {

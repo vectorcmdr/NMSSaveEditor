@@ -162,7 +162,7 @@ public class gS {
                   var15.Write(var16, 0, var17);
                }
 
-               var5 = ff.c(var15.toByteArray());
+               var5 = ff.c(var15.ToArray());
             } else {
                var0.b("UserData", (object)hk.readInt((Stream)var4));
                var11 = hk.readInt((Stream)var4);

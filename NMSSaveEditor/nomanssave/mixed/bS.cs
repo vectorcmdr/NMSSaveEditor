@@ -78,7 +78,7 @@ public class bS : Panel {
       var4.Add(this.fj);
       this.setComponentPopupMenu(var4);
       this.Padding = new Padding(0); /* setBorder */ //(bO.eP);
-      this.addMouseListener(new bX(this, var2, var3));
+      // this.addMouseListener - use MouseClick event instead
       this.aq();
    }
 

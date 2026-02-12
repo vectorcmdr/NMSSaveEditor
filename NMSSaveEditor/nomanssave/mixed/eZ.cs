@@ -16,7 +16,7 @@ public class eZ : fc {
       this.index = var2;
    }
 
-   public override object a(Type var1, bool var2) {
+   public override object a(Class var1, bool var2) {
       if (this.kN == null) {
          throw new Exception("Unexpected path");
       } else {

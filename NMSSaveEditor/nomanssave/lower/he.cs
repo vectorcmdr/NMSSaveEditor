@@ -27,11 +27,11 @@ public class he : Stream {
          if (hc.en() != null) {
             lock(hc.en()) {
                hc.en().Write(this.st.GetBytes(System.Text.Encoding.UTF8));
-               hc.en().Write(this.su.toByteArray());
+               hc.en().Write(this.su.ToArray());
             }
          }
 
-         this.su.reset();
+         // this.su.reset() - C# streams use Position property
       }
 
    }
@@ -47,11 +47,11 @@ public class he : Stream {
             if (hc.en() != null) {
                lock(hc.en()) {
                   hc.en().Write(this.st.GetBytes(System.Text.Encoding.UTF8));
-                  hc.en().Write(this.su.toByteArray());
+                  hc.en().Write(this.su.ToArray());
                }
             }
 
-            this.su.reset();
+            // this.su.reset() - C# streams use Position property
             var3 -= var4 + 1;
             var2 = var4 + 1;
             var4 = -1;
@@ -67,11 +67,11 @@ public class he : Stream {
          if (hc.en() != null) {
             lock(hc.en()) {
                hc.en().Write(this.st.GetBytes(System.Text.Encoding.UTF8));
-               hc.en().Write(this.su.toByteArray());
+               hc.en().Write(this.su.ToArray());
             }
          }
 
-         this.su.reset();
+         // this.su.reset() - C# streams use Position property
       }
 
    }

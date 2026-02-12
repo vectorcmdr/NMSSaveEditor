@@ -32,7 +32,7 @@ public class cg : Form {
 
 public cg(Frame var1) : base(var1) {
       this.Size = new Size(600, 480);
-      this.setModalExclusionType(/* ModalExclusionType */ 0);
+      // setModalExclusionType not available in WinForms
       this.Text = ("Item Details");
       this/* setModal */(true);
       Panel var2 = new Panel();
@@ -101,7 +101,7 @@ public cg(Frame var1) : base(var1) {
       var2.Add(this.fz, "4, 16, 3, 1, fill, fill");
       this.setContentPane(var2);
       this.getRootPane().registerKeyboardAction(new cj(this), /* KeyStroke */ Keys.None /* (27, 0) */, 2);
-      this.addWindowListener(new ck(this));
+      // this.addWindowListener - use FormClosing event instead
    }
 
    public void a(gQ var1) {
@@ -155,14 +155,14 @@ public cg(Frame var1) : base(var1) {
       if (var3.Equals("Technology") && var1.dA() >= 0 && var1.dA() < var1.dB()) {
          this.fu.Text = ("Charge:");
          this.fD = var1.dA();
-         this.fv.Text = (Integer.toString(var1.dA()));
-         this.fw.Text = (Integer.toString(var1.dB()));
+         this.fv.Text = ((var1.dA().ToString()));
+         this.fw.Text = ((var1.dB().ToString()));
          this.fv.setEditable(true);
       } else if ((var3.Equals("Product") || var3.Equals("Substance")) && var1.dB() > 1) {
          this.fu.Text = ("Quantity:");
          this.fD = var1.dA();
-         this.fv.Text = (Integer.toString(var1.dA()));
-         this.fw.Text = (Integer.toString(var1.dB()));
+         this.fv.Text = ((var1.dA().ToString()));
+         this.fw.Text = ((var1.dB().ToString()));
          this.fv.setEditable(true);
       } else {
          this.fu.Text = ("Quantity:");
@@ -178,7 +178,7 @@ public cg(Frame var1) : base(var1) {
          ey var1 = ey.d(var0.getID());
          return var1 != null ? var1.Name + " (x" + var0.bo() + ")" : var0.getID() + " (x" + var0.bo() + ")";
       }).collect(Collectors.joining("\n"));
-      if (var4.length() == 0) {
+      if (var4.Length == 0) {
          var4 = "N/A";
       }
 

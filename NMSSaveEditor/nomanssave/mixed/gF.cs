@@ -18,7 +18,7 @@ public class gF : gQ {
 
    public bool isValid() {
       string var1 = this.kM.getValueAsString("ElementId");
-      return var1 != null && var1.length() > 1;
+      return var1 != null && var1.Length > 1;
    }
 
    public string getType() {

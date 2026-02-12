@@ -36,7 +36,7 @@ public class fJ : fq {
             this.ms[var3] = new fM(this, var3);
          } catch (FileNotFoundException var7) {
          } catch (IOException var8) {
-            hc.a("cannot read file metadata: mf_save" + (var3 == 0 ? "" : Integer.toString(var3 + 1)) + ".hg", var8);
+            hc.a("cannot read file metadata: mf_save" + (var3 == 0 ? "" : (var3 + 1).ToString()) + ".hg", var8);
          }
       }
 
@@ -64,7 +64,7 @@ public class fJ : fq {
       }
 
       Matcher var2 = lV.matcher(var1);
-      if (var2.System.Text.RegularExpressions.Regex.IsMatch()) {
+      if (var2.matches()) {
          int var3 = var2.group(1).length() == 0 ? 0 : int.Parse(var2.group(1)) - 1;
 
          try {
@@ -75,7 +75,7 @@ public class fJ : fq {
             hc.info("Save file deleted from storage: " + var1);
          } catch (IOException var8) {
             this.ms[var3] = null;
-            hc.a("cannot read file metadata: mf_save" + (var3 == 0 ? "" : Integer.toString(var3 + 1)) + ".hg", var8);
+            hc.a("cannot read file metadata: mf_save" + (var3 == 0 ? "" : (var3 + 1).ToString()) + ".hg", var8);
          }
 
          this.lE.a(this, var3 / 2, var1);
@@ -103,7 +103,7 @@ public class fJ : fq {
 
    public int W(string var1) {
       Matcher var2 = lV.matcher(var1);
-      if (!var2.System.Text.RegularExpressions.Regex.IsMatch()) {
+      if (!var2.matches()) {
          return -1;
       } else {
          int var3 = var2.group(1).length() == 0 ? 0 : int.Parse(var2.group(1)) - 1;
@@ -148,7 +148,7 @@ public class fJ : fq {
       var2.Write(var0, 0, var0.Length);
       var2.Write(var1, 0, var1.Length);
       long[] var3 = new long[]{96176015842230784L, -8446744073709551617L};
-      hh.a(var2.toByteArray(), var3);
+      hh.a(var2.ToArray(), var3);
       long[] var4 = new long[]{var3[0] & 4294967295L, var3[0] >>> 32 & 4294967295L, var3[1] & 4294967295L, var3[1] >>> 32 & 4294967295L};
       return a(var4, 0, 4);
    }

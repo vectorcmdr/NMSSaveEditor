@@ -46,7 +46,7 @@ public class hk {
       int var3;
       int var4;
       int var5;
-      for(var2 = 0; var2 + 4 <= var0.length(); var2 += 4) {
+      for(var2 = 0; var2 + 4 <= var0.Length; var2 += 4) {
          var3 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/".IndexOf(var0[var2]);
          var4 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/".IndexOf(var0[var2 + 1]);
          var5 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/".IndexOf(var0[var2 + 2]);
@@ -60,7 +60,7 @@ public class hk {
          var1.Write((3 & var5) << 6 | var6);
       }
 
-      if (var2 + 3 == var0.length()) {
+      if (var2 + 3 == var0.Length) {
          var3 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/".IndexOf(var0[var2]);
          var4 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/".IndexOf(var0[var2 + 1]);
          var5 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/".IndexOf(var0[var2 + 2]);
@@ -72,7 +72,7 @@ public class hk {
          var1.Write((15 & var4) << 4 | var5 >> 2);
       }
 
-      if (var2 + 2 == var0.length()) {
+      if (var2 + 2 == var0.Length) {
          var3 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/".IndexOf(var0[var2]);
          var4 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/".IndexOf(var0[var2 + 1]);
          if (var3 < 0 || var4 < 0) {
@@ -82,10 +82,10 @@ public class hk {
          var1.Write(var3 << 2 | var4 >> 4);
       }
 
-      if (var2 + 1 == var0.length()) {
+      if (var2 + 1 == var0.Length) {
          throw new Exception("Unfinished base64 data");
       } else {
-         return var1.toByteArray();
+         return var1.ToArray();
       }
    }
 
@@ -141,7 +141,7 @@ public class hk {
          var1.Write(var2, 0, var3);
       }
 
-      return var1.toByteArray();
+      return var1.ToArray();
    }
 
    public static void readFully(Stream var0, byte[] var1) {

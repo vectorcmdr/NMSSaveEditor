@@ -102,7 +102,7 @@ public abstract class fX {
          }
 
          if (var4 != null && var5 != null) {
-            long var16 = var5.length() + var4.length();
+            long var16 = var5.Length + var4.Length;
             if (this.mO.mW != var16) {
                throw new IOException("data size mismatch: " + this.mO.mW);
             } else {
@@ -239,7 +239,7 @@ public abstract class fX {
          throw var3;
       }
 
-      return var2.toByteArray();
+      return var2.ToArray();
    }
 
    public void h(eY var1) {
@@ -270,7 +270,7 @@ public abstract class fX {
          throw var4;
       }
 
-      byte[] var28 = var3.toByteArray();
+      byte[] var28 = var3.ToArray();
       this.mZ.aj(var28.Length);
       var5 = null;
       var6 = null;
@@ -300,10 +300,10 @@ public abstract class fX {
          throw var5;
       }
 
-      this.mZ.ak((int)this.mY.length());
+      this.mZ.ak((int)this.mY.Length);
       this.mZ.Write();
       this.mO.timestamp = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
-      this.mO.mW = this.mY.length() + this.mZ.length();
+      this.mO.mW = this.mY.Length + this.mZ.Length;
       fT.e(this.mN);
    }
 
@@ -313,7 +313,7 @@ public abstract class fX {
       var3.setProperty("DataFile", this.mY.Name);
       var3.setProperty("ContainerFile", this.mX.Name);
       if (var2 != null) {
-         var3.setProperty("GameMode", var2.name());
+         var3.setProperty("GameMode", var2.Name);
       }
 
       var3.setProperty("IndexData", this.mO.cz());

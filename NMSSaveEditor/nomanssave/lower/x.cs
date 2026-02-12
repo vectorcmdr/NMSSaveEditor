@@ -41,9 +41,9 @@ public class x : JavaThread {
 
          string var12 = new string(var9, 0, var9.Length);
          if (var12.EndsWith("\r\n")) {
-            var12 = var12.Substring(0, var12.length() - 2);
+            var12 = var12.Substring(0, var12.Length - 2);
          } else if (var12.EndsWith("\n")) {
-            var12 = var12.Substring(0, var12.length() - 1);
+            var12 = var12.Substring(0, var12.Length - 1);
          }
 
          hc.debug("Latest version: \"" + var12 + "\"");

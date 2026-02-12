@@ -193,8 +193,8 @@ public class dN : em {
          this.hQ.Text = ("");
          this.hR.Text = ("");
       } else {
-         this.hQ.Text = (Long.toString((long)var2.dM()));
-         this.hR.Text = (Long.toString((long)var2.dN()));
+         this.hQ.Text = ((long)var2.dM()).ToString();
+         this.hR.Text = ((long)var2.dN()).ToString();
       }
 
       this.hK.Refresh();

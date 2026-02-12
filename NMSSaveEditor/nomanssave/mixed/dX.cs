@@ -26,9 +26,9 @@ public class dX : G {
                dN.o(this.ia).aC(var3);
             }
 
-            return Integer.toString(var3);
+            return (var3).ToString();
          } catch (Exception var4) {
-            return Integer.toString(var2);
+            return (var2).ToString();
          }
       }
    }

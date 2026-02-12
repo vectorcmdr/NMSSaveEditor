@@ -107,38 +107,38 @@ public class gT {
    }
 
    public void a(double[] var1, StringBuilder var2, StringBuilder var3, StringBuilder var4, int var5) {
-      int var6 = var2.length();
+      int var6 = var2.Length;
       var2.Append(a(var1[0], var5));
       var3.Append(a(var1[1], var5));
       var4.Append(a(var1[2], var5));
-      int var7 = Math.Max(Math.Max(var2.length(), var3.length()), var4.length());
+      int var7 = Math.Max(Math.Max(var2.Length, var3.Length), var4.Length);
 
-      while(var2.length() < var7) {
+      while(var2.Length < var7) {
          var2.Insert(var6, ' ');
       }
 
-      while(var3.length() < var7) {
+      while(var3.Length < var7) {
          var3.Insert(var6, ' ');
       }
 
-      while(var4.length() < var7) {
+      while(var4.Length < var7) {
          var4.Insert(var6, ' ');
       }
 
    }
 
    public void a(StringBuilder var1, StringBuilder var2, StringBuilder var3, int var4) {
-      int var5 = Math.Max(Math.Max(var1.length(), var2.length()), var3.length());
+      int var5 = Math.Max(Math.Max(var1.Length, var2.Length), var3.Length);
 
-      while(var1.length() < var5) {
+      while(var1.Length < var5) {
          var1.Append(' ');
       }
 
-      while(var2.length() < var5) {
+      while(var2.Length < var5) {
          var2.Append(' ');
       }
 
-      while(var3.length() < var5) {
+      while(var3.Length < var5) {
          var3.Append(' ');
       }
 
@@ -216,7 +216,7 @@ public class gT {
             return var4;
          } else {
             while(var4.EndsWith("0") && !var4.EndsWith(".0")) {
-               var4 = var4.Substring(0, var4.length() - 1);
+               var4 = var4.Substring(0, var4.Length - 1);
             }
 
             return var4;

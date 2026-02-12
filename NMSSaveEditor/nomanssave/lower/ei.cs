@@ -25,7 +25,7 @@ public class ei : G {
 
          return var1;
       } catch (Exception var3) {
-         return Integer.toString(eb.a(ec.h(this.ik))[this.il].eh());
+         return (eb.a(ec.h(this.ik).ToString())[this.il].eh());
       }
    }
 }

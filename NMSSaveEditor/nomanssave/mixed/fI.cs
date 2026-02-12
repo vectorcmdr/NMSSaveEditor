@@ -170,7 +170,7 @@ public class fI {
 
          var8 = var5.Length - 1;
          long var9 = (long)(var0 + 2) ^ 337824652L;
-         byte[] var11 = "NAESEVADNAYRTNRG".getBytes("US-ASCII");
+         byte[] var11 = "NAESEVADNAYRTNRG".getBytes(Encoding.ASCII);
          long[] var12 = g(var11);
          var12[0] = rotateLeft(var9, 13) * 5L + 3864292196L & 4294967295L;
 
@@ -214,7 +214,7 @@ public class fI {
 
    public byte[] encode() {
       long var1 = (long)(this.lO + 2) ^ 337824652L;
-      byte[] var3 = "NAESEVADNAYRTNRG".getBytes("US-ASCII");
+      byte[] var3 = "NAESEVADNAYRTNRG".getBytes(Encoding.ASCII);
       long[] var4 = g(var3);
       var4[0] = rotateLeft(var1, 13) * 5L + 3864292196L & 4294967295L;
       long[] var5 = g(this.data);
@@ -345,7 +345,7 @@ public class fI {
             var1.Append(Environment.NewLine);
 
             string var5;
-            for(var5 = Convert.ToString((var4 + 1 + var3) / 16, 16) + "0"; var5.length() < 8; var5 = "0" + var5) {
+            for(var5 = Convert.ToString((var4 + 1 + var3) / 16, 16) + "0"; var5.Length < 8; var5 = "0" + var5) {
             }
 
             var1.Append(var5 + "    ");
@@ -369,8 +369,8 @@ public class fI {
          }
       }
 
-      if (var2.length() > 0) {
-         while(var2.length() < 16) {
+      if (var2.Length > 0) {
+         while(var2.Length < 16) {
             var1.Append("   ");
             var2.Append(" ");
          }

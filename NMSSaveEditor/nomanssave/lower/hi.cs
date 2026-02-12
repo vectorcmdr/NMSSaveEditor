@@ -38,7 +38,7 @@ public class hi {
       if (var3 != null && var3.Count != 0) {
          for(int var4 = 0; var4 < var3.Count; ++var4) {
             eY var5 = var3.V(var4);
-            if (Long.toString(var0).Equals(var5.getValueAsString("steamid"))) {
+            if ((var0).ToString().Equals(var5.getValueAsString("steamid"))) {
                return var5.getValueAsString("personaname");
             }
          }
@@ -65,7 +65,7 @@ public class hi {
          throw new EOFException();
       } else {
          string var7 = var1.getContentEncoding();
-         string var8 = new string(var5, var7 == null ? "UTF-8" : var7);
+         string var8 = new string(var5, var7 == null ? Encoding.UTF8 : var7);
          return eY.E(var8);
       }
    }

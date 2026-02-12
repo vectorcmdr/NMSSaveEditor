@@ -44,7 +44,7 @@ public class cW : Panel, CaretListener {
       this.z(var2);
       var1.getDocument().addDocumentListener(this);
       var1.addCaretListener(this);
-      var1.addPropertyChangeListener("font", this);
+      // var1.addPropertyChangeListener - use property events instead
    }
 
    public bool aD() {
@@ -98,7 +98,7 @@ public class cW : Panel, CaretListener {
       int var3 = Math.Max(Convert.ToString(var2).length(), this.gG);
       if (this.gH != var3) {
          this.gH = var3;
-         FontMetrics var4 = this.getFontMetrics(this.getFont());
+         FontMetrics var4 = Graphics.FromHwnd(IntPtr.Zero).MeasureString("M", this.getFont());
          int var5 = var4.charWidth('0') * var3;
          Padding var6 = this.getInsets();
          int var7 = var6.left + var6.right + var5;
@@ -112,12 +112,12 @@ public class cW : Panel, CaretListener {
 
    public void paintComponent(Graphics var1) {
       base.paintComponent(var1);
-      FontMetrics var2 = this.gB.getFontMetrics(this.gB.getFont());
+      FontMetrics var2 = this.Graphics.FromHwnd(IntPtr.Zero).MeasureString("M", this.gB.getFont());
       Padding var3 = this.getInsets();
       int var4 = this.getSize().width - var3.left - var3.right;
       Rectangle var5 = var1.getClipBounds();
-      int var6 = this.gB.viewToModel(new Point(0, var5.y));
-      int var7 = this.gB.viewToModel(new Point(0, var5.y + var5.height));
+      int var6 = this.gB.GetCharIndexFromPosition(new Point(0, var5.Y));
+      int var7 = this.gB.GetCharIndexFromPosition(new Point(0, var5.Y + var5.Height));
 
       while(var6 <= var7) {
          try {
@@ -182,7 +182,7 @@ public class cW : Panel, CaretListener {
             FontMetrics var16 = (FontMetrics)this.gK[var15];
             if (var16 == null) {
                Font var17 = new Font(var13, 0, var14);
-               var16 = this.gB.getFontMetrics(var17);
+               var16 = this.Graphics.FromHwnd(IntPtr.Zero).MeasureString("M", var17);
                this.gK.Put(var15, var16);
             }
 

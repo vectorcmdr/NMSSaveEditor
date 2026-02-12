@@ -21,7 +21,7 @@ public class aQ : Form {
 
 public aQ(Frame var1) : base(var1) {
       this.FormBorderStyle = FormBorderStyle.FixedDialog; //(false);
-      this.setModalExclusionType(/* ModalExclusionType */ 0);
+      // setModalExclusionType not available in WinForms
       this.Text = ("Expand Inventory");
       this/* setModal */(true);
       Panel var2 = new Panel();
@@ -58,8 +58,8 @@ public aQ(Frame var1) : base(var1) {
       this.dk = var1;
       this.dl = var2;
       this.dm = var3;
-      this.@do.Text = (Integer.toString(var1.width));
-      this.dp.Text = (Integer.toString(var1.height));
+      this.@do.Text = ((var1.width).ToString());
+      this.dp.Text = ((var1.height).ToString());
       this.dn = null;
       this.StartPosition = FormStartPosition.CenterParent; //(this.DirectoryName);
       this.Show();

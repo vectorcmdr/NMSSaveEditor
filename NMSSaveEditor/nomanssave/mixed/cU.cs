@@ -24,7 +24,7 @@ public class cU : FileView {
 
    public string getName(FileInfo var1) {
       string var2 = var1.Name;
-      return var2.EndsWith(".sh0") ? var2.Substring(0, var2.length() - 4) : var2;
+      return var2.EndsWith(".sh0") ? var2.Substring(0, var2.Length - 4) : var2;
    }
 }
 

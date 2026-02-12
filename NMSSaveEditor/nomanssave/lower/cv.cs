@@ -23,8 +23,8 @@ public class cv : JFileChooser {
    }
 
    public cv() {
-      this.setFileSelectionMode(0);
-      this.setAcceptAllFileFilterUsed(false);
+      // this.setFileSelectionMode - WinForms uses separate dialog types
+      // this.setAcceptAllFileFilterUsed - not needed in WinForms
       this.setFileView(new cw(this));
       this.setFileFilter(new cx(this));
       this.setDialogTitle("Choose Weapon Export FileInfo");

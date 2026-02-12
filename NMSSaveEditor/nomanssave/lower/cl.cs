@@ -23,8 +23,8 @@ public class cl : JFileChooser {
    }
 
    public cl() {
-      this.setFileSelectionMode(0);
-      this.setAcceptAllFileFilterUsed(false);
+      // this.setFileSelectionMode - WinForms uses separate dialog types
+      // this.setAcceptAllFileFilterUsed - not needed in WinForms
       this.setFileView(new cm(this));
       this.setFileFilter(new cn(this));
       this.addChoosableFileFilter(new co(this));

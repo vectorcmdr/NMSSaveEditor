@@ -38,7 +38,7 @@ public class fA : fq {
          } catch (FileNotFoundException var9) {
          } catch (IOException var10) {
             int var5 = var3 + 2;
-            string var6 = "savedata" + (var5 < 10 ? "0" : "") + Integer.toString(var5) + ".hg";
+            string var6 = "savedata" + (var5 < 10 ? "0" : "") + (var5).ToString() + ".hg";
             hc.a("cannot read file metadata: " + var6, var10);
          }
       }
@@ -122,7 +122,7 @@ public class fA : fq {
          throw var2;
       }
 
-      return var1.toByteArray();
+      return var1.ToArray();
    }
 
    public FileInfo bS() {
@@ -145,7 +145,7 @@ public class fA : fq {
 
    public int W(string var1) {
       Matcher var2 = lV.matcher(var1);
-      if (!var2.System.Text.RegularExpressions.Regex.IsMatch()) {
+      if (!var2.matches()) {
          return -1;
       } else {
          int var3 = int.Parse(var2.group(1)) - 2;

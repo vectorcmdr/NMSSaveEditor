@@ -16,7 +16,7 @@ public class fb : fc {
       this.name = var2;
    }
 
-   public override object a(Type var1, bool var2) {
+   public override object a(Class var1, bool var2) {
       eY var3;
       if (this.kN == null) {
          var3 = this.kL;
@@ -24,7 +24,7 @@ public class fb : fc {
          var3 = (eY)this.kN.a(typeof(eY), var2);
       }
 
-      int var4 = var3.indexOf(this.name);
+      int var4 = var3.IndexOf(this.name);
       if (var4 < 0) {
          if (!var2) {
             throw new fd((fd)null);

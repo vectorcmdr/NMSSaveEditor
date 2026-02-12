@@ -42,6 +42,8 @@ namespace NMSSaveEditor
         public static int getClickCount(this MouseEventArgs e) => e.Clicks;
         public static int getX(this MouseEventArgs e) => e.X;
         public static int getY(this MouseEventArgs e) => e.Y;
+        public static Point getPoint(this MouseEventArgs e) => e.Location;
+        public static object getSource(this MouseEventArgs e) => null;
         
         // MemoryStream
         public static void reset(this MemoryStream ms) => ms.Position = 0;
@@ -56,6 +58,7 @@ namespace NMSSaveEditor
         // EventArgs  
         public static object getNewValue(this EventArgs e) => null;
         public static object getOldValue(this EventArgs e) => null;
+        public static object getSource(this EventArgs e) => null;
         
         // Class
         public static object cast(this Type t, object obj) => obj;
@@ -79,20 +82,94 @@ namespace NMSSaveEditor
         // JTree  
         public static object DataSource(this JTree t) => null;
         
-        // Matcher extensions now in JavaCompat.cs
-        
         // Generic object extensions for dynamic-like dispatch
         public static void allRowsChanged(this object o) { }
         public static void setColumnMargin(this object o, int margin) { }
-        public static object getID(this object o) => null;
         public static void dA(this object o) { }
         public static object bb(this object o) => o;
         public static object bc(this object o) => o;
-        public static object id(this object o) => o;
         public static object ay(this object o) => o;
         public static object dv(this object o) => null;
         public static object getRootPane(this object o) => null;
+        
+        // TextBox Swing compat extensions
+        public static void setLineWrap(this TextBox tb, bool wrap) { tb.WordWrap = wrap; }
+        public static void setWrapStyleWord(this TextBox tb, bool wrap) { }
+        public static void setTabSize(this TextBox tb, int size) { }
+        public static int getSelectionStart(this TextBox tb) => tb.SelectionStart;
+        public static int getSelectionEnd(this TextBox tb) => tb.SelectionStart + tb.SelectionLength;
+        public static object getHighlighter(this TextBox tb) => new Highlighter();
+        
+        // Panel/Form extensions
+        public static Point getLocation(this Control c) => c.Location;
+        public static Size getSize(this Control c) => c.Size;
+        public static void setComponentPopupMenu(this Control c, object menu) { }
+        public static void addComponentListener(this Control c, object listener) { }
+        public static void addMouseListener(this Control c, object listener) { }
+        public static void addPropertyChangeListener(this Control c, object listener) { }
+        public static void addPropertyChangeListener(this Control c, string prop, object listener) { }
+        public static void addWindowListener(this Form f, object listener) { }
+        public static FontMetrics getFontMetrics(this Control c, Font f) => new FontMetrics(f);
+        
+        // Graphics extensions
+        public static void setColor(this Graphics g, Color c) { }
+        public static void fillRect(this Graphics g, int x, int y, int w, int h) { g.FillRectangle(new SolidBrush(Color.White), x, y, w, h); }
+        public static void drawString(this Graphics g, string s, int x, int y) { g.DrawString(s, SystemFonts.DefaultFont, Brushes.Black, x, y); }
+        public static void drawLine(this Graphics g, int x1, int y1, int x2, int y2) { g.DrawLine(Pens.Black, x1, y1, x2, y2); }
+        public static Rectangle getClipBounds(this Graphics g) => Rectangle.Ceiling(g.ClipBounds);
+        
+        // Form extensions
+        public static void setDefaultCloseOperation(this Form f, int op) { }
+        public static Padding getInsets(this Control c) => c.Padding;
+        
+        // LogRecord  
+        public static object getThrown(this LogRecord lr) => null;
+        
+        // Stream mark/reset
+        public static void mark(this Stream s, int limit) { if (s.CanSeek) { } }
+        
+        // JTree extensions
+        public static void setSelectionRow(this JTree t, int row) { }
+        
+        // ComboBox
+        public static void hidePopup(this ComboBox cb) { cb.DroppedDown = false; }
+        
+        // JFileChooser compat
+        public static void setFileSelectionMode(this object o, int mode) { }
+        public static void setAcceptAllFileFilterUsed(this object o, bool used) { }
+        public static void setAccessory(this object o, object accessory) { }
+        public static void setSelectedFile(this object o, object file) { }
+        
+        // setCellSelectionEnabled for DataGridView
+        public static void setCellSelectionEnabled(this DataGridView dgv, bool enabled) { }
+        
+        // WatchService
+        public static void register(this object o, object dir, params object[] events) { }
+        
+        // JTextComponent modelToView
+        public static Rectangle modelToView(this TextBox tb, int pos) => new Rectangle(0, 0, 1, 1);
+        
+        // ToolStripMenuItem setMnemonic
+        public static void setMnemonic(this ToolStripMenuItem item, char c) { }
+        
+        // Element getElementCount
+        public static int getElementCount(this Element e) => e.getChildNodes()?.getLength() ?? 0;
     }
+    
+    // Highlighter stub
+    public class Highlighter
+    {
+        public void removeAllHighlights() { }
+        public object addHighlight(int start, int end, object painter) => null;
+    }
+    
+    // FontMetrics defined in JavaExtensions.cs
+    
+    // LogRecord defined in JavaExtensions.cs
+    
+    // WatchService defined in JavaExtensions.cs
+    
+    // WatchKey defined in JavaExtensions.cs
 }
 
 namespace NMSSaveEditor
@@ -123,7 +200,9 @@ namespace NMSSaveEditor
         public static void setMaximumSize(this Control c, Size s) => c.MaximumSize = s;
         public static object getBounds(this Control c) => c.Bounds;
         public static object getAccessory(this object c) => null;
-        public static object getInsets(this object c) => new Padding(0);
+        
+        // String decode
+        public static byte[] decode(this string s) => Convert.FromBase64String(s);
     }
 }
 
@@ -139,6 +218,9 @@ namespace NMSSaveEditor
         // Java InputStream.read(byte[]) -> reads into array
         public static int Read(this Stream s, byte[] buf) => s.Read(buf, 0, buf.Length);
         
+        // Java ReadByte compat
+        public static int ReadByte(this Stream s) => s.ReadByte();
+        
         // Java String(byte[], String encoding) pattern
         public static string GetString(this Encoding enc, byte[] bytes) => enc.GetString(bytes);
         public static string GetString(this Encoding enc, byte[] bytes, int offset, int length) => enc.GetString(bytes, offset, length);
@@ -152,4 +234,5 @@ namespace NMSSaveEditor
         public static FileInfo ToFileInfo(this DirectoryInfo di) => new FileInfo(di.FullName);
     }
     
+    // StandardWatchEventKinds defined in JavaExtensions.cs
 }

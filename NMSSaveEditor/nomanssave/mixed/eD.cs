@@ -21,14 +21,14 @@ public eD(Stream var1, string var2) : base((eE)null) {
       try {
          while((var5 = var4.ReadLine()) != null) {
             try {
-               if (var5.length() != 0) {
+               if (var5.Length != 0) {
                   int var9 = var5.IndexOf("\t");
                   if (var9 < 0) {
                      hc.debug("Mapping not available: " + var5);
                      var3.Add(var5);
                   } else {
                      string var6 = var5.Substring(0, var9);
-                     string var7 = var5.Substring(var9 + 1, var5.length());
+                     string var7 = var5.Substring(var9 + 1, var5.Length);
                      eF var8;
                      if ((var8 = this.t(var6)) != null) {
                         if (!var7.Equals(var8.name)) {

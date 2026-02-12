@@ -19,8 +19,8 @@ public class ej : JFileChooser {
    public static ej ir = null;
 
    public ej() {
-      this.setFileSelectionMode(2);
-      this.setAcceptAllFileFilterUsed(false);
+      // this.setFileSelectionMode - WinForms uses separate dialog types
+      // this.setAcceptAllFileFilterUsed - not needed in WinForms
       this.setFileFilter(new ek(this));
       this.setFileView(new el(this));
       this.setDialogTitle("Choose Save Path");
@@ -29,7 +29,7 @@ public class ej : JFileChooser {
 
    public string a(FileInfo var1) {
       Matcher var2 = iq.matcher(var1.Name);
-      if (var2.System.Text.RegularExpressions.Regex.IsMatch()) {
+      if (var2.matches()) {
          long var3 = long.Parse(var2.group(1));
          return hi.h(var3);
       } else {

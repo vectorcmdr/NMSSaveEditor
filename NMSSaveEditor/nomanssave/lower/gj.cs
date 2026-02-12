@@ -189,7 +189,7 @@ public class gj {
 
    public void ab(string var1) {
       eV var2 = this.bf.d("CreatureSecondarySeed");
-      if (var1 != null && var1.length() != 0) {
+      if (var1 != null && var1.Length != 0) {
          var2.a(0, true);
          var2.a(1, var1);
       } else {
@@ -241,7 +241,7 @@ public class gj {
 
    public string toString() {
       string var1 = this.Name;
-      return var1 != null && var1.length() != 0 ? var1 : this.nF.name() + " [" + this.index + "]";
+      return var1 != null && var1.Length != 0 ? var1 : this.nF.Name + " [" + this.index + "]";
    }
 }
 

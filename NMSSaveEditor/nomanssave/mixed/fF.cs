@@ -19,7 +19,7 @@ public class fF : FileFilter {
 
    public bool accept(FileInfo var1) {
       Matcher var2 = fA.cb().matcher(var1.Name);
-      if (var2.System.Text.RegularExpressions.Regex.IsMatch()) {
+      if (var2.matches()) {
          int var3 = var2.group(1).length() == 0 ? 0 : int.Parse(var2.group(1)) - 1;
          if (var3 / 2 == this.mf.lT) {
             try {

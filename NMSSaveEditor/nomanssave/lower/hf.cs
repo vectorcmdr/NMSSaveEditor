@@ -8,12 +8,12 @@ namespace NMSSaveEditor
 public class hf {
    public static int b(string var0, int var1, int var2) {
       var0 = var0.Trim();
-      if (var0.length() == 0) {
+      if (var0.Length == 0) {
          throw new Exception("No digits found");
       } else {
          long var3 = 0L;
 
-         for(int var6 = 0; var6 < var0.length(); ++var6) {
+         for(int var6 = 0; var6 < var0.Length; ++var6) {
             var3 *= 10L;
             char var5 = var0[var6];
             if (var5 < '0' || var5 > '9') {
@@ -36,12 +36,12 @@ public class hf {
 
    public static long a(string var0, long var1, long var3) {
       var0 = var0.Trim();
-      if (var0.length() == 0) {
+      if (var0.Length == 0) {
          throw new Exception("No digits found");
       } else {
          long var5 = 0L;
 
-         for(int var8 = 0; var8 < var0.length(); ++var8) {
+         for(int var8 = 0; var8 < var0.Length; ++var8) {
             var5 *= 10L;
             char var7 = var0[var8];
             if (var7 < '0' || var7 > '9') {

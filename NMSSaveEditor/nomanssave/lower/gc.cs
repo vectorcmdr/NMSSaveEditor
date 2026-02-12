@@ -53,15 +53,15 @@ public class gc {
    }
 
    public static void a(Stream var0, string var1) {
-      if (var1.length() > 32) {
+      if (var1.Length > 32) {
          throw new IOException("invalid container path");
       } else {
-         while(var1.length() < 32) {
+         while(var1.Length < 32) {
             var1 = "0" + var1;
          }
 
          var1 = var1.ToLower();
-         byte[] var2 = new byte[]{(byte)int.Parse(var1.Substring(6, 8), 16), (byte)int.Parse(var1.Substring(4, 6), 16), (byte)int.Parse(var1.Substring(2, 4), 16), (byte)int.Parse(var1.Substring(0, 2), 16), (byte)int.Parse(var1.Substring(10, 12), 16), (byte)int.Parse(var1.Substring(8, 10), 16), (byte)int.Parse(var1.Substring(14, 16), 16), (byte)int.Parse(var1.Substring(12, 14), 16), (byte)int.Parse(var1.Substring(16, 18), 16), (byte)int.Parse(var1.Substring(18, 20), 16), (byte)int.Parse(var1.Substring(20, 22), 16), (byte)int.Parse(var1.Substring(22, 24), 16), (byte)int.Parse(var1.Substring(24, 26), 16), (byte)int.Parse(var1.Substring(26, 28), 16), (byte)int.Parse(var1.Substring(28, 30), 16), (byte)int.Parse(var1.Substring(30, 32), 16)};
+         byte[] var2 = new byte[]{(byte)int.Parse(var1.Substring(6, 8), 16), (byte)int.Parse(var1.Substring(4, 6), 16), (byte)int.Parse(var1.Substring(2, 4), 16), (byte)int.Parse(var1.Substring(0, 2), 16), (byte)int.Parse(var1.Substring(10, 12), 16), (byte)int.Parse(var1.Substring(8, 10), 16), (byte)int.Parse(var1.Substring(14, System.Globalization.NumberStyles.HexNumber), 16), (byte)int.Parse(var1.Substring(12, 14), 16), (byte)int.Parse(var1.Substring(16, 18), 16), (byte)int.Parse(var1.Substring(18, 20), 16), (byte)int.Parse(var1.Substring(20, 22), 16), (byte)int.Parse(var1.Substring(22, 24), 16), (byte)int.Parse(var1.Substring(24, 26), 16), (byte)int.Parse(var1.Substring(26, 28), 16), (byte)int.Parse(var1.Substring(28, 30), 16), (byte)int.Parse(var1.Substring(30, 32), 16)};
          var0.Write(var2);
       }
    }
@@ -86,7 +86,7 @@ public class gc {
    }
 
    public static void b(Stream var0, string var1) {
-      hk.a(var0, var1.length());
+      hk.a(var0, var1.Length);
       var0.Write(var1.getBytes("UTF-16LE"));
    }
 
@@ -109,7 +109,7 @@ public class gc {
       for(var2 = 0; var2 < var1.Length && var1[var2] != 0; ++var2) {
       }
 
-      return new string(var1, 0, var2, "UTF-8");
+      return new string(var1, 0, var2, Encoding.UTF8);
    }
 
    public static void c(Stream var0, string var1) {

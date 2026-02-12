@@ -39,7 +39,7 @@ public class du : Panel {
       this.fh.Click += (new dx(this, var2));
       var5.Add(this.fh);
       this.setComponentPopupMenu(var5);
-      this.addMouseListener(new dy(this, var2));
+      // this.addMouseListener - use MouseClick event instead
       this.aM();
    }
 
@@ -92,7 +92,7 @@ public class du : Panel {
          var9.setFont(var6);
          var9.setBackground((Color)null);
          var9.Padding = new Padding(0); /* setBorder */ //((Border)null);
-         var9.Text = (Integer.toString(this.hm.dA()) + "/" + Integer.toString(this.hm.dB()));
+         var9.Text = ((this.hm.dA().ToString()) + "/" + (this.hm.dB().ToString()));
          var9.setForeground(bO.eO);
          var10 = new GridBagConstraints();
          var10.anchor = 10;

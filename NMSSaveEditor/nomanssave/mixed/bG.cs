@@ -23,7 +23,7 @@ public class bG : bK {
    }
 
    public string ab() {
-      return Integer.toString(bE.a(this.ey).b(eU.kr));
+      return (bE.a(this.ey).ToString().b(eU.kr));
    }
 
    public void l(string var1) {

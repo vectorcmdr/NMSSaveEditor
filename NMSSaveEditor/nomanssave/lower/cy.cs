@@ -36,7 +36,7 @@ public cy(Application var1) : base(var1.g()) {
       var2.height = aH.a("JSONEditor.Height", 700);
       this.Bounds = new Rectangle(var2);
       this/* setDefaultCloseOperation */(0);
-      this.setModalExclusionType(/* ModalExclusionType */ 0);
+      // setModalExclusionType not available in WinForms
       this.Text = ("JSON Editor (Advanced Users Only)");
       this/* setModal */(true);
       this.addComponentListener(new cz(this));
@@ -61,12 +61,12 @@ public cy(Application var1) : base(var1.g()) {
       this.fU = new Button() { Text = "Validate" };
       this.fU.Click += (new cC(this));
       var4.Add(this.fU, "North");
-      var4.Add(this.fW, "Center");
+      var4.Controls.Add(this.fW);
       JSplitPane var5 = new JSplitPane(1, var4, this.fY);
       var5.setDividerLocation(aH.a("JSONEditor.Divider", 280));
-      var5.addPropertyChangeListener("dividerLocation", new cD(this));
+      // var5.addPropertyChangeListener - use property events instead
       this.setContentPane(var5);
-      this.addWindowListener(new cE(this));
+      // this.addWindowListener - use FormClosing event instead
       cF var6 = new cF(this);
       /* TODO: port from Java - this.fV.getInputMap().Put(KeyStroke.getKeyStroke(70, 2), "find"); */
       this.fV.getActionMap().Put("find", var6);
@@ -95,7 +95,7 @@ public cy(Application var1) : base(var1.g()) {
          }
       }
 
-      this.fV.setSelectionRow(var3);
+      /* this.fV.setSelectionRow(var3); */
       this.gb = false;
       this.fV.Show();
       this.fU.Hide();
@@ -200,7 +200,7 @@ public cy(Application var1) : base(var1.g()) {
          if (this.ga && this.fZ != null) {
             try {
                string var2 = this.fX.Text.Trim();
-               if (var2.length() == 0 && MessageBox.Show(this, "The JSON data has been deleted, do you wish to apply these changes to the save file?", this.Text, 0) == 0) {
+               if (var2.Length == 0 && MessageBox.Show(this, "The JSON data has been deleted, do you wish to apply these changes to the save file?", this.Text, 0) == 0) {
                   this.fZ.Remove();
                   ((cI)this.fV.DataSource).a(this.fZ.gi);
                } else if (MessageBox.Show(this, "The JSON data has changed, do you wish to apply these changes to the save file?", this.Text, 0) == 0) {
@@ -236,12 +236,12 @@ public cy(Application var1) : base(var1.g()) {
          Highlighter var6 = this.fX.getHighlighter();
          var6.removeAllHighlights();
          Color var7 = /* UIManager.getColor */ SystemColors.Control; //("JSONEditor.hiliteColor");
-         DefaultHighlightPainter var8 = new DefaultHighlightPainter(var7);
+         object /*DefaultHighlightPainter*/ var8 = new object /*DefaultHighlightPainter*/(var7);
          int var9 = -1;
 
          while((var9 = var5.IndexOf(var1, var9 + 1)) >= 0) {
             try {
-               var6.addHighlight(var9, var9 + var1.length(), var8);
+               var6.addHighlight(var9, var9 + var1.Length, var8);
             } catch (Exception var11) {
             }
          }
@@ -255,15 +255,15 @@ public cy(Application var1) : base(var1.g()) {
       int var12 = this.fX.getCaretPosition();
       int var13 = -1;
       if (var2) {
-         if (var12 > var1.length()) {
-            var13 = var5.LastIndexOf(var1, var12 - var1.length() - 1);
+         if (var12 > var1.Length) {
+            var13 = var5.LastIndexOf(var1, var12 - var1.Length - 1);
          }
 
          if (var13 < 0 && var4) {
             var13 = var5.LastIndexOf(var1);
          }
       } else {
-         if (var12 < var5.length() - 1) {
+         if (var12 < var5.Length - 1) {
             var13 = var5.IndexOf(var1, var12 + 1);
          }
 
@@ -277,7 +277,7 @@ public cy(Application var1) : base(var1.g()) {
       } else {
          this.fX.setCaretPosition(var13);
          this.fX.setSelectionStart(var13);
-         this.fX.setSelectionEnd(var13 + var1.length());
+         this.fX.setSelectionEnd(var13 + var1.Length);
       }
 
    }

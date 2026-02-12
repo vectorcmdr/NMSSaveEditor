@@ -117,7 +117,7 @@ public class fC : fs {
          throw var2;
       }
 
-      return fA.b(var1.toByteArray(), eG.jV);
+      return fA.b(var1.ToArray(), eG.jV);
    }
 
    public string b(eY var1) {

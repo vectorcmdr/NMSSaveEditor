@@ -76,7 +76,7 @@ public class bE : Panel {
    public void B() {
       int var1 = this.cp.bx();
       this.cp.a(gs.pP, var1);
-      this.a(gs.pP, Integer.toString(var1));
+      this.a(gs.pP, (var1).ToString());
    }
 
    public void C() {
@@ -85,7 +85,7 @@ public class bE : Panel {
       if ((long)var3 < var1) {
          var3 = (int)Math.Min(var1, 2147483647L);
          this.cp.a(gs.pQ, var3);
-         this.a(gs.pQ, Integer.toString(var3));
+         this.a(gs.pQ, (var3).ToString());
       }
 
    }

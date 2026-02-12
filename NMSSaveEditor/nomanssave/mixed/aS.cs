@@ -35,7 +35,7 @@ public class aS : FocusListener {
          var2 = aQ.b(this.dr).height;
       }
 
-      aQ.e(this.dr).Text = (Integer.toString(var2));
+      aQ.e(this.dr).Text = ((var2).ToString());
    }
 }
 

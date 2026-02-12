@@ -119,7 +119,7 @@ public class fq {
 
    public ft[] bV() {
       return bU().Where((var0) => {
-         return !var0.isEmpty();
+         return !var0.Count == 0;
       }).ToArray();
    }
 

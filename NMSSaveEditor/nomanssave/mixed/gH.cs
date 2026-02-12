@@ -100,7 +100,7 @@ public class gH {
    public static Function a(gH var0, string[] var1) {
       return (var2) => {
          string var3 = var0.Name;
-         if (var3 == null || var3.length() == 0) {
+         if (var3 == null || var3.Length == 0) {
             var3 = "Ship [" + var0.index + "]";
          }
 
@@ -327,7 +327,7 @@ public class gH {
 
    public string toString() {
       string var1 = this.Name;
-      if (var1 != null && var1.length() != 0) {
+      if (var1 != null && var1.Length != 0) {
          return var1;
       } else {
          gL var2 = gL.aw(this.cT());

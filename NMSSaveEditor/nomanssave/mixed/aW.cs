@@ -20,7 +20,7 @@ public class aW : Form {
 public aW(cy var1) : base(var1) {
       this.Size = new Size(400, 250);
       this.FormBorderStyle = FormBorderStyle.FixedDialog; //(false);
-      this.setModalExclusionType(/* ModalExclusionType */ 0);
+      // setModalExclusionType not available in WinForms
       this.Text = ("Find");
       this/* setModal */(true);
       Panel var2 = new Panel();
@@ -58,12 +58,12 @@ public aW(cy var1) : base(var1) {
       var8.SuspendLayout(); // TODO: set layout new FlowLayoutPanel(2));
       var2.Controls.Add(var8);
       Button var9 = new Button() { Text = "Find" };
-      var9.setMnemonic(10);
+      // var9.setMnemonic - not directly available in WinForms
       var9.Click += (new aX(this, var1));
       var8.Add(var9);
       this.getRootPane().setDefaultButton(var9);
       Button var10 = new Button() { Text = "Cancel" };
-      var10.setMnemonic(27);
+      // var10.setMnemonic - not directly available in WinForms
       var10.Click += (new aY(this));
       var8.Add(var10);
       this.getRootPane().registerKeyboardAction(new aZ(this), /* KeyStroke */ Keys.None /* (27, 0) */, 2);
@@ -81,7 +81,7 @@ public aW(cy var1) : base(var1) {
       }
 
       dx.ds.setSelectionStart(0);
-      dx.ds.setSelectionEnd(dx.ds.Text.length());
+      dx.ds.setSelectionEnd(dx.ds.Text.Length);
       dx.ds.Focus();
       dx.Show();
    }

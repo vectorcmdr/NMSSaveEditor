@@ -62,7 +62,7 @@ public class gM {
 
    public void ax(string var1) {
       eV var2 = this.rI.d("NPCResource.Seed");
-      if (var1 != null && var1.length() != 0) {
+      if (var1 != null && var1.Length != 0) {
          var2.a(0, true);
          var2.a(1, var1);
       } else {
@@ -87,7 +87,7 @@ public class gM {
 
    public void ay(string var1) {
       eV var2 = this.rI.d("ShipResource.Seed");
-      if (var1 != null && var1.length() != 0) {
+      if (var1 != null && var1.Length != 0) {
          var2.a(0, true);
          var2.a(1, var1);
       } else {

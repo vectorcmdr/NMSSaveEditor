@@ -35,7 +35,7 @@ public class R : FocusListener {
          var2 = Q.c(this.bD).bE;
       }
 
-      Q.a(this.bD).Text = (Integer.toString(var2));
+      Q.a(this.bD).Text = ((var2).ToString());
    }
 }
 

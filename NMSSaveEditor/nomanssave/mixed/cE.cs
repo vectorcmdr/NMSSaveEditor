@@ -21,7 +21,7 @@ public class cE : object {
       if (cy.g(this.gg) && cy.d(this.gg) != null) {
          try {
             string var3 = cy.c(this.gg).Text.Trim();
-            if (var3.length() == 0 && MessageBox.Show(this.gg, "The JSON data has been deleted, do you wish to apply these changes to the save file?", this.gg.Text, 0) == 0) {
+            if (var3.Length == 0 && MessageBox.Show(this.gg, "The JSON data has been deleted, do you wish to apply these changes to the save file?", this.gg.Text, 0) == 0) {
                cy.d(this.gg).Remove();
             } else if (MessageBox.Show(this.gg, "The JSON data has changed, do you wish to apply these changes to the save file?", this.gg.Text, 0) == 0) {
                cy.d(this.gg).Text = (var3);

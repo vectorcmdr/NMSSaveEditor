@@ -18,7 +18,7 @@ public class aD : Form {
 
 public aD(Frame var1) : base(var1) {
       this.setMinimumSize(new Size(400, 10));
-      this.setModalExclusionType(/* ModalExclusionType */ 0);
+      // setModalExclusionType not available in WinForms
       this.Text = ("Editor Settings");
       this/* setModal */(true);
       ba var2 = new ba();
@@ -43,10 +43,10 @@ public aD(Frame var1) : base(var1) {
    public bool S() {
       string var1 = aH.getProperty("LookAndFeel");
       aI var2 = (aI)Stream.of(aI.Values).filter((var1x) => {
-         return var1x.name().Equals(var1);
+         return var1x.Name.Equals(var1);
       }).findFirst().orElse(aI.cN);
       this.cw.SelectedItem = (var2);
-      this.cx.Text = (Double.toString(aH.a("InventoryScaling", 1.0D)));
+      this.cx.Text = ((aH.a("InventoryScaling", 1.0D).ToString()));
       this.StartPosition = FormStartPosition.CenterParent; //(this.DirectoryName);
       this.cy = false;
       this.Show();

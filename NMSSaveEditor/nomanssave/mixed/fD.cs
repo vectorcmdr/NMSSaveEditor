@@ -16,7 +16,7 @@ public class fD : fH, fs {
    public fn me;
    public fA ma;
 
-public fD(fA var1, int var2) : base(var1, "savedata" + (var2 < 8 ? "0" : "") + Integer.toString(var2 + 2) + ".hg", true) {
+public fD(fA var1, int var2) : base(var1, "savedata" + (var2 < 8 ? "0" : "") + (var2 + 2).ToString() + ".hg", true) {
       this.ma = var1;
       this.lO = var2;
 
@@ -29,7 +29,7 @@ public fD(fA var1, int var2) : base(var1, "savedata" + (var2 < 8 ? "0" : "") + I
 
    }
 
-public fD(fA var1, int var2, byte[] var3, eY var4) : base(var1, "savedata" + (var2 < 8 ? "0" : "") + Integer.toString(var2 + 2) + ".hg", false) {
+public fD(fA var1, int var2, byte[] var3, eY var4) : base(var1, "savedata" + (var2 < 8 ? "0" : "") + (var2 + 2).ToString() + ".hg", false) {
       this.ma = var1;
       this.lO = var2;
       this.lK = var3;

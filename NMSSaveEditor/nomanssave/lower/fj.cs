@@ -44,7 +44,7 @@ public class fj : Closeable {
          throw var2;
       }
 
-      return var1.toByteArray();
+      return var1.ToArray();
    }
 
    public static byte[] g(eY var0) {
@@ -73,7 +73,7 @@ public class fj : Closeable {
          throw var2;
       }
 
-      return var1.toByteArray();
+      return var1.ToArray();
    }
 
    public static byte[] b(eV var0) {
@@ -102,7 +102,7 @@ public class fj : Closeable {
          throw var2;
       }
 
-      return var1.toByteArray();
+      return var1.ToArray();
    }
 
    public fj(Stream var1) {
@@ -173,7 +173,7 @@ public class fj : Closeable {
    public void c(fg var1) {
       this.lh.Write(34);
       byte[] var5;
-      int var4 = (var5 = var1.toByteArray()).Length;
+      int var4 = (var5 = var1.ToArray()).Length;
 
       for(int var3 = 0; var3 < var4; ++var3) {
          byte var2 = var5[var3];

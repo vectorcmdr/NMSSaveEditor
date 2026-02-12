@@ -41,7 +41,7 @@ public class L : object {
          I.h(this.bt).Enabled = (false);
          I.i(this.bt).Enabled = (false);
       } else {
-         I.e(this.bt).Text = (Integer.toString(this.bu.cG()));
+         I.e(this.bt).Text = ((this.bu.cG().ToString()));
          I.f(this.bt).Text = (this.bu.Name);
          I.f(this.bt).Enabled = (true);
          I.g(this.bt).Enabled = (true);

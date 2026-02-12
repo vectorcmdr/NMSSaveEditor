@@ -33,8 +33,8 @@ public class gW {
          }
       }
 
-      if (var2.length() > 0) {
-         while(var2.length() < 16) {
+      if (var2.Length > 0) {
+         while(var2.Length < 16) {
             var1.Append("  ");
             var2.Append(" ");
          }

@@ -45,8 +45,8 @@ public class eM {
       this.id = var1.getAttribute("id");
       this.name = var1.getAttribute("name");
       this.description = var1.getAttribute("description");
-      this.iE = Boolean.parseBoolean(var1.getAttribute("beneficial"));
-      this.jY = Boolean.parseBoolean(var1.getAttribute("procedural"));
+      this.iE = bool.Parse(var1.getAttribute("beneficial"));
+      this.jY = bool.Parse(var1.getAttribute("procedural"));
    }
 
    public string getID() {

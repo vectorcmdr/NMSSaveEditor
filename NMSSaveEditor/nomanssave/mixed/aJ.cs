@@ -78,12 +78,12 @@ public class aJ : em {
          this.dh.a(new List<object>());
       } else {
          this.di = var1;
-         this.db.Text = (Long.toString(var1.dJ()));
-         this.dc.Text = (Long.toString(var1.dK()));
-         this.dd.Text = (Long.toString(var1.dL()));
-         this.de.Text = (Integer.toString(var1.dM()));
-         this.df.Text = (Integer.toString(var1.dN()));
-         this.dg.Text = (Integer.toString(var1.dO()));
+         this.db.Text = ((var1.dJ().ToString()));
+         this.dc.Text = ((var1.dK().ToString()));
+         this.dd.Text = ((var1.dL().ToString()));
+         this.de.Text = ((var1.dM().ToString()));
+         this.df.Text = ((var1.dN().ToString()));
+         this.dg.Text = ((var1.dO().ToString()));
          this.dh.a(var1.cC());
       }
 

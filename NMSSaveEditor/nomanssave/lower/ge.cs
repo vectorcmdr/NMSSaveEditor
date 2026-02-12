@@ -20,7 +20,7 @@ public class ge {
    public static Function ap(int var0) {
       return (var1) => {
          string var2 = var1.Name;
-         if (var2 == null || var2.length() == 0 || "BLD_STORAGE_NAME".Equals(var2)) {
+         if (var2 == null || var2.Length == 0 || "BLD_STORAGE_NAME".Equals(var2)) {
             var2 = "Chest " + var0;
          }
 

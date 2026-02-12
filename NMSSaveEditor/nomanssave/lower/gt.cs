@@ -994,11 +994,11 @@ public class gt {
          var1.Append(var0.ToString());
       }
 
-      if (var1.length() > 10) {
-         var1.delete(10, var1.length());
+      if (var1.Length > 10) {
+         var1.delete(10, var1.Length);
       }
 
-      while(var1.length() < 11) {
+      while(var1.Length < 11) {
          var1.Append(' ');
       }
 
@@ -1053,7 +1053,7 @@ public class gt {
                if (var4 < 0) {
                   var1.print("           |");
                } else {
-                  var1.print(l(Integer.toString(var4) + "/" + Integer.toString(u(this.qy[var2][var3]))) + "|");
+                  var1.print(l((var4).ToString() + "/" + (u(this.qy[var2][var3]).ToString())) + "|");
                }
             } else {
                var1.print("           |");

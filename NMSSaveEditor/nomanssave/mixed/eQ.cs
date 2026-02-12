@@ -95,7 +95,7 @@ public eQ(Element var1, bool var2) : base(var1.getAttribute("id")) {
       return !this.jY && this.special;
    }
 
-   public override Integer bf() {
+   public override int? bf() {
       return this.ka;
    }
 
@@ -128,7 +128,7 @@ public eQ(Element var1, bool var2) : base(var1.getAttribute("id")) {
    }
 
    public string toString() {
-      return this.name.length() == 0 ? this.id : this.name;
+      return this.name.Length == 0 ? this.id : this.name;
    }
 }
 

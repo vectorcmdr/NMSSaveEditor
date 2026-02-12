@@ -583,7 +583,7 @@ public class ff : Closeable {
          }
       }
 
-      return var1.toByteArray();
+      return var1.ToArray();
    }
 
    public string bN() {

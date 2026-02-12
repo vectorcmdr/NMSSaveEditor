@@ -20,7 +20,7 @@ public class Q : Form {
 
 public Q(Frame var1) : base(var1) {
       this.FormBorderStyle = FormBorderStyle.FixedDialog; //(false);
-      this.setModalExclusionType(/* ModalExclusionType */ 0);
+      // setModalExclusionType not available in WinForms
       this.Text = ("Change Stack Sizes");
       this/* setModal */(true);
       Panel var2 = new Panel();
@@ -59,8 +59,8 @@ public Q(Frame var1) : base(var1) {
       this.bw = var1;
       this.bx = var2;
       this.by = var3;
-      this.bA.Text = (Integer.toString(var1.bE));
-      this.bB.Text = (Integer.toString(var1.bF));
+      this.bA.Text = ((var1.bE).ToString());
+      this.bB.Text = ((var1.bF).ToString());
       this.bz = null;
       this.StartPosition = FormStartPosition.CenterParent; //(this.DirectoryName);
       this.Show();

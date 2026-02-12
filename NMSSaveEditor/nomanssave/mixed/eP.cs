@@ -79,7 +79,7 @@ public eP(Element var1) : base(var1.getAttribute("id")) {
       return this.special;
    }
 
-   public override Integer bf() {
+   public override int? bf() {
       return this.ka;
    }
 
@@ -108,7 +108,7 @@ public eP(Element var1) : base(var1.getAttribute("id")) {
    }
 
    public string toString() {
-      return this.name.length() == 0 ? this.id : this.name;
+      return this.name.Length == 0 ? this.id : this.name;
    }
 }
 

@@ -20,7 +20,7 @@ public class aX : ActionListener {
 
    public void actionPerformed(EventArgs var1) {
       string var2 = aW.a(this.dy).Text;
-      if (var2.length() > 0) {
+      if (var2.Length > 0) {
          this.dz.a(var2, aW.b(this.dy).Checked, aW.c(this.dy).Checked, aW.d(this.dy).Checked);
       }
 

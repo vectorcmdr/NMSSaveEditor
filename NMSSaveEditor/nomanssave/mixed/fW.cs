@@ -85,7 +85,7 @@ public class fW {
    public string cz() {
       MemoryStream var1 = new MemoryStream();
       this.Write(var1);
-      return hk.k(var1.toByteArray());
+      return hk.k(var1.ToArray());
    }
 }
 

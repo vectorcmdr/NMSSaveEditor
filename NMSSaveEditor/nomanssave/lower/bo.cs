@@ -26,9 +26,9 @@ public class bo : G {
                bl.c(this.er)[bl.b(this.er)].at(var3);
             }
 
-            return Integer.toString(var3);
+            return (var3).ToString();
          } catch (Exception var4) {
-            return Integer.toString(var2);
+            return (var2).ToString();
          }
       }
    }

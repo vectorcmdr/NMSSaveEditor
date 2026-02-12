@@ -44,7 +44,7 @@ public class cO : object {
                if (cN.d(this.gt)) {
                   cN.c(this.gt).setSelectedValue(((gD)cN.b(this.gt)).K());
                } else if (cN.b(this.gt) is Enum) {
-                  cN.c(this.gt).setSelectedValue(((Enum)cN.b(this.gt)).name());
+                  cN.c(this.gt).setSelectedValue(((Enum)cN.b(this.gt)).Name);
                } else {
                   cN.c(this.gt).setSelectedValue(cN.b(this.gt).ToString());
                }

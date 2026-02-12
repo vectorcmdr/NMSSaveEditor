@@ -41,7 +41,7 @@ public class aa : ActionListener {
 
          var4[var3] = var2;
          X.a(this.bV, var4);
-         hc.info("Imported " + var2.cL().name().ToLower() + ": " + var2.getIndex());
+         hc.info("Imported " + var2.cL().Name.ToLower() + ": " + var2.getIndex());
          X.k(this.bV).SelectedIndex = (var3);
          X.k(this.bV).Refresh();
       }

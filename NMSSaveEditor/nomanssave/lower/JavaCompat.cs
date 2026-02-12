@@ -42,8 +42,17 @@ namespace NMSSaveEditor
         private string _input;
         private Match _match;
         public int _lastIndex;
+        public string Input => _input;
+        public string Pattern => _regex?.ToString() ?? "";
+        public bool hitEnd => _match != null && (_match.Index + _match.Length >= _input.Length);
         public Matcher(Regex regex, string input) { _regex = regex; _input = input; }
-        public bool find() { _match = _regex.Match(_input); _lastIndex = _match?.Index ?? 0; return _match.Success; }
+        public bool find() { 
+            if (_match != null && _match.Success) { _match = _match.NextMatch(); }
+            else { _match = _regex.Match(_input); }
+            _lastIndex = _match?.Index ?? 0; 
+            return _match.Success; 
+        }
+        public bool Matches() { return matches(); }
         public bool matches() { _match = _regex.Match(_input); return _match.Success && _match.Value == _input; }
         public string group() { return _match?.Value; }
         public string group(int i) { return _match?.Groups[i]?.Value; }
@@ -67,9 +76,14 @@ namespace NMSSaveEditor
         public Class() { }
         public Class(Type t) { _type = t; }
         public string getName() { return _type?.FullName ?? ""; }
+        public string Name => getName();
         public string getSimpleName() { return _type?.Name ?? ""; }
         public bool isAssignableFrom(Class other) { return true; }
+        public bool IsInstanceOfType(object obj) { return _type?.IsInstanceOfType(obj) ?? false; }
         public object[] getEnumConstants() { return _type != null ? Enum.GetValues(_type) as object[] : new object[0]; }
+        public System.Reflection.FieldInfo getDeclaredField(string name) { return _type?.GetField(name, System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.Static); }
+        public System.Reflection.MethodInfo getDeclaredMethod(string name, params Type[] paramTypes) { return _type?.GetMethod(name, System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.Static); }
+        public object cast(object obj) { return obj; }
         public static implicit operator Class(Type t) { return new Class(t); }
     }
 

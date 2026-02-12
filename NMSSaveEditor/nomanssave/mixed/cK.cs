@@ -22,8 +22,8 @@ public class cK : JFileChooser {
    }
 
    public cK() {
-      this.setFileSelectionMode(0);
-      this.setAcceptAllFileFilterUsed(false);
+      // this.setFileSelectionMode - WinForms uses separate dialog types
+      // this.setAcceptAllFileFilterUsed - not needed in WinForms
       this.setFileView(new cL(this));
       this.setFileFilter(new cM(this));
       this.setDialogTitle("Choose JSON FileInfo");

@@ -26,9 +26,9 @@ public class aP : G {
                aJ.a(this.dj).g(var4);
             }
 
-            return Long.toString(var4);
+            return (var4).ToString();
          } catch (Exception var6) {
-            return Long.toString(var2);
+            return (var2).ToString();
          }
       }
    }

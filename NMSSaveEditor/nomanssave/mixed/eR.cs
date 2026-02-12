@@ -26,7 +26,7 @@ public eR(eQ var1, Element var2) : base(var2.getAttribute("id")) {
    }
 
    public object M(int var1) {
-      if (this.id.length() == 13 && this.id[0] == '^') {
+      if (this.id.Length == 13 && this.id[0] == '^') {
          if (var1 >= 0 && var1 < 100000) {
             MemoryStream var2 = new MemoryStream();
             var2.Write(94);
@@ -58,7 +58,7 @@ public eR(eQ var1, Element var2) : base(var2.getAttribute("id")) {
                var2.Write("0123456789ABCDEFabcdef"[var4]);
             }
 
-            return new fg(var2.toByteArray());
+            return new fg(var2.ToArray());
          } else {
             throw new Exception("Cannot create ID: invalid proc");
          }
@@ -99,7 +99,7 @@ public eR(eQ var1, Element var2) : base(var2.getAttribute("id")) {
       return false;
    }
 
-   public override Integer bf() {
+   public override int? bf() {
       return null;
    }
 
@@ -128,7 +128,7 @@ public eR(eQ var1, Element var2) : base(var2.getAttribute("id")) {
    }
 
    public string toString() {
-      return this.ko.name.length() == 0 ? this.id : this.ko.name;
+      return this.ko.name.Length == 0 ? this.id : this.ko.name;
    }
 }
 

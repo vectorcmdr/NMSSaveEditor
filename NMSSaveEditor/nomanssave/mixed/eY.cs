@@ -97,7 +97,7 @@ public class eY {
    public bool contains(string var1) {
       if (var1 == null) {
          throw new NullReferenceException();
-      } else if (!kH.matcher(var1).System.Text.RegularExpressions.Regex.IsMatch()) {
+      } else if (!kH.matcher(var1).matches()) {
          throw new Exception("Invalid name: " + var1);
       } else {
          for(int var2 = 0; var2 < this.Length; ++var2) {
@@ -132,7 +132,7 @@ public class eY {
    public object put(string var1, object var2) {
       if (var1 == null) {
          throw new NullReferenceException();
-      } else if (!kH.matcher(var1).System.Text.RegularExpressions.Regex.IsMatch()) {
+      } else if (!kH.matcher(var1).matches()) {
          throw new Exception("Invalid name: " + var1);
       } else if (var2 != null && !fh.a(var2.GetType())) {
          throw new Exception("Unsupported type: " + var2.GetType().getSimpleName());
@@ -169,7 +169,7 @@ public class eY {
    public object F(string var1) {
       if (var1 == null) {
          throw new NullReferenceException();
-      } else if (!kH.matcher(var1).System.Text.RegularExpressions.Regex.IsMatch()) {
+      } else if (!kH.matcher(var1).matches()) {
          throw new Exception("Invalid name: " + var1);
       } else {
          for(int var2 = 0; var2 < this.Length; ++var2) {
@@ -302,7 +302,7 @@ public class eY {
          });
       }
 
-      string var4 = var1.length() == 0 ? "" : "." + var1;
+      string var4 = var1.Length == 0 ? "" : "." + var1;
       if (this.kD is eY) {
          ((eY)this.kD).a(this, var4, var2, var3);
       }
@@ -396,7 +396,7 @@ public class eY {
          return (string)this.getValue(var1);
       } else {
          string var3;
-         for(var3 = ((Number)var2).longValue().ToString("X"); var3.length() < 16; var3 = "0" + var3) {
+         for(var3 = ((Number)var2).longValue().ToString("X"); var3.Length < 16; var3 = "0" + var3) {
          }
 
          return "0x" + var3.ToUpper();

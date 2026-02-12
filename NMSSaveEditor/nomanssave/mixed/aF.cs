@@ -19,7 +19,7 @@ public class aF : ActionListener {
    public void actionPerformed(EventArgs var1) {
       string var2 = aH.getProperty("LookAndFeel");
       aI var3 = (aI)Stream.of(aI.Values).filter((var1x) => {
-         return var1x.name().Equals(var2);
+         return var1x.Name.Equals(var2);
       }).findFirst().orElse(aI.cN);
       aI var4 = (aI)aD.a(this.cB).SelectedItem;
       aD.a(this.cB, false);
@@ -29,7 +29,7 @@ public class aF : ActionListener {
             aD.a(this.cB, true);
          }
       } else if (var3 == null || var3 != var4) {
-         aH.setProperty("LookAndFeel", var4.name());
+         aH.setProperty("LookAndFeel", var4.Name);
          aD.a(this.cB, true);
       }
 

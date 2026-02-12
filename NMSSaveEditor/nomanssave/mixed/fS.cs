@@ -88,12 +88,12 @@ public class fS {
 
          this.mB = null;
          this.name = gc.e(var1);
-         if (this.name.length() != 0) {
+         if (this.name.Length != 0) {
             hc.debug("  name: " + this.name);
          }
 
          this.description = gc.e(var1);
-         if (this.description.length() != 0) {
+         if (this.description.Length != 0) {
             hc.debug("  description: " + this.description);
          }
       }
@@ -151,7 +151,7 @@ public class fS {
    public byte[] co() {
       MemoryStream var1 = new MemoryStream();
       this.Write(var1);
-      return var1.toByteArray();
+      return var1.ToArray();
    }
 
    public bool cp() {
@@ -213,7 +213,7 @@ public class fS {
    }
 
    public long length() {
-      return this.mh.length();
+      return this.mh.Length;
    }
 
    public void a(fS var1) {

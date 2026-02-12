@@ -57,10 +57,10 @@ public class dO : object {
          dN.f(this.ia).Checked = (var2 != null && var2.ab(this.hZ.getIndex()));
          dN.f(this.ia).Enabled = (true);
          dN.g(this.ia).Enabled = (true);
-         dN.h(this.ia).Text = (Double.toString(this.hZ.dF()));
-         dN.i(this.ia).Text = (Double.toString(this.hZ.eb()));
-         dN.j(this.ia).Text = (Double.toString(this.hZ.cX()));
-         dN.k(this.ia).Text = (Double.toString(this.hZ.ec()));
+         dN.h(this.ia).Text = ((this.hZ.dF().ToString()));
+         dN.i(this.ia).Text = ((this.hZ.eb().ToString()));
+         dN.j(this.ia).Text = ((this.hZ.cX().ToString()));
+         dN.k(this.ia).Text = ((this.hZ.ec().ToString()));
          dN.l(this.ia).a(this.hZ.cC());
          dN.m(this.ia).Enabled = (false);
          dN.n(this.ia).Enabled = (false);

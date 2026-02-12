@@ -26,9 +26,9 @@ public class bi : G {
                bd.a(this.dP).b(var4);
             }
 
-            return Double.toString(var4);
+            return (var4).ToString();
          } catch (Exception var6) {
-            return Double.toString(var2);
+            return (var2).ToString();
          }
       }
    }

@@ -34,10 +34,10 @@ public class bJ : G {
          string var2;
          switch(this.type) {
          case 0:
-            var2 = Integer.toString(bE.a(this.ey).a(this.ez));
+            var2 = (bE.a(this.ey).ToString().a(this.ez));
             break;
          case 1:
-            var2 = Double.toString(bE.a(this.ey).b(this.ez));
+            var2 = (bE.a(this.ey).ToString().b(this.ez));
             break;
          default:
             return "";
@@ -52,25 +52,25 @@ public class bJ : G {
                case 0:
                   var3 = hf.b(var1, 0, int.MaxValue);
                   bE.a(this.ey).a(this.ez, var3);
-                  var1 = Integer.toString(var3);
+                  var1 = (var3).ToString();
                   break;
                case 1:
                   double var4 = double.Parse(var1);
                   bE.a(this.ey).a(this.ez, var4);
-                  var1 = Double.toString(var4);
+                  var1 = (var4).ToString();
                }
 
                bE.a(this.ey, this.ez, var1);
                if (this.ez == gs.pL || this.ez == gs.pM) {
                   var3 = bE.a(this.ey).a(gs.pL) + bE.a(this.ey).a(gs.pM);
                   bE.a(this.ey).a(gs.pR, var3);
-                  bE.a(this.ey, gs.pR, Integer.toString(var3));
+                  bE.a(this.ey, gs.pR, (var3).ToString());
                }
 
                if (this.ez == gs.pI || this.ez == gs.pK || this.ez == gs.pJ) {
                   var3 = bE.a(this.ey).a(gs.pI) + bE.a(this.ey).a(gs.pK) + bE.a(this.ey).a(gs.pJ);
                   bE.a(this.ey).a(gs.pS, var3);
-                  bE.a(this.ey, gs.pS, Integer.toString(var3));
+                  bE.a(this.ey, gs.pS, (var3).ToString());
                }
 
                return var1;
@@ -88,10 +88,10 @@ public class bJ : G {
       } else {
          switch(this.type) {
          case 0:
-            var1 = Integer.toString(bE.a(this.ey).a(this.ez));
+            var1 = (bE.a(this.ey).ToString().a(this.ez));
             break;
          case 1:
-            var1 = Double.toString(bE.a(this.ey).b(this.ez));
+            var1 = (bE.a(this.ey).ToString().b(this.ez));
             break;
          default:
             var1 = "";

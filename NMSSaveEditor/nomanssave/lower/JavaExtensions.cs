@@ -471,7 +471,7 @@ namespace NMSSaveEditor
     {
         public static Encoding UTF_8 = Encoding.UTF8;
         public static Encoding US_ASCII = Encoding.ASCII;
-        public static Encoding ISO_8859_1 = Encoding.GetEncoding("ISO-8859-1");
+        public static Encoding ISO_8859_1 = Encoding.GetEncoding(Encoding.Latin1);
     }
 
     // Java InputStreamReader/OutputStreamWriter
@@ -936,7 +936,7 @@ namespace NMSSaveEditor
         public static long lastModified(this DirectoryInfo di) => di.LastWriteTimeUtc.Ticks;
         
         // Matcher fix
-        public static bool System.Text.RegularExpressions.Regex.IsMatch(this Matcher m) => m.matches();
+        // Matcher.IsMatch already available via matches()
         
         // Level
         public static int intValue(this Level l) => 0;

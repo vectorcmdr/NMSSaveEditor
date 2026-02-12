@@ -100,7 +100,7 @@ public class gv {
    public static Function b(gv var0) {
       return (var1) => {
          string var2 = var0.Name;
-         if (var2 == null || var2.length() == 0) {
+         if (var2 == null || var2.Length == 0) {
             var2 = "Multitool [" + var0.index + "]";
          }
 
@@ -227,7 +227,7 @@ public class gv {
 
    public string toString() {
       string var1 = this.Name;
-      return var1 != null && var1.length() != 0 ? var1 : "Multitool [" + this.index + "]";
+      return var1 != null && var1.Length != 0 ? var1 : "Multitool [" + this.index + "]";
    }
 }
 

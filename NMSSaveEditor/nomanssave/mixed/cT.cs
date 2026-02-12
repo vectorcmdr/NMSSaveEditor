@@ -24,8 +24,8 @@ public class cT : JFileChooser {
    }
 
    public cT() {
-      this.setFileSelectionMode(0);
-      this.setAcceptAllFileFilterUsed(false);
+      // this.setFileSelectionMode - WinForms uses separate dialog types
+      // this.setAcceptAllFileFilterUsed - not needed in WinForms
       this.setFileView(new cU(this));
       this.setFileFilter(new cV(this));
       this.setDialogTitle("Choose Ship Export FileInfo");

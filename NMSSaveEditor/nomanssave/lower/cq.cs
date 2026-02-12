@@ -29,9 +29,9 @@ public class cq : FileView {
    public string getName(FileInfo var1) {
       string var2 = var1.Name;
       if (var2.EndsWith(".pet")) {
-         return var2.Substring(0, var2.length() - 4);
+         return var2.Substring(0, var2.Length - 4);
       } else {
-         return var2.EndsWith(".egg") ? var2.Substring(0, var2.length() - 4) : var2;
+         return var2.EndsWith(".egg") ? var2.Substring(0, var2.Length - 4) : var2;
       }
    }
 }

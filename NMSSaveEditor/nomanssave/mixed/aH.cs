@@ -257,7 +257,7 @@ public class aH {
    public static void V() {
       string var0 = cK.getValueAsString("LookAndFeel");
       aI var1 = (aI)Stream.of(aI.Values).filter((var1x) => {
-         return var1x.name().Equals(var0);
+         return var1x.Name.Equals(var0);
       }).findFirst().orElse(aI.cN);
 
       try {
@@ -309,11 +309,11 @@ public class aH {
          int var6 = (int)Math.Round((double)var3.getSize() * var4);
          Font var7 = new Font(var3.Name, 0, var6);
          Canvas var8 = new Canvas();
-         FontMetrics var9 = var8.getFontMetrics(var3);
+         FontMetrics var9 = Graphics.FromHwnd(IntPtr.Zero).MeasureString("M", var3);
          cH = var9.stringWidth("MMMMMMMMMM");
          cI = var9.stringWidth("MMMMMMMMMMMMMMMMMMMMMMMMMMMMM");
          cJ = var9.stringWidth("MMMMMMMMMMMMMMMMM");
-         var9 = var8.getFontMetrics(var7);
+         var9 = Graphics.FromHwnd(IntPtr.Zero).MeasureString("M", var7);
          int var10 = var9.stringWidth("MMMMMMMMMMM");
          int var11 = var10 - (var9.Height * 2 + 8);
 

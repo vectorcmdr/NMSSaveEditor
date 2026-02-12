@@ -61,7 +61,7 @@ public gw(eY var1, eY var2) : base(0, (eY)null, var2) {
 
    public string toString() {
       string var1 = this.Name;
-      return var1 != null && var1.length() != 0 ? var1 : "Multitool";
+      return var1 != null && var1.Length != 0 ? var1 : "Multitool";
    }
 }
 

@@ -87,7 +87,7 @@ public class fQ {
                }
             }
 
-            byte[] var7 = var3.toByteArray();
+            byte[] var7 = var3.ToArray();
             return var7;
          }
       } finally {
@@ -99,12 +99,12 @@ public class fQ {
       FileInfo var5 = new FileInfo(System.IO.Path.Combine((fJ.a(this.mt)).ToString(), ("mf_" + this.filename).ToString()));
       FileInfo var6 = new FileInfo(System.IO.Path.Combine((fJ.a(this.mt)).ToString(), (this.filename).ToString()));
       Dictionary<string, string> var7 = new Dictionary<string, string>();
-      var7.setProperty("ArchiveNumber", Integer.toString(this.lO));
+      var7.setProperty("ArchiveNumber", (this.lO).ToString());
       var7.setProperty("ManifestFile", "mf_" + this.filename);
       var7.setProperty("StorageFile", this.filename);
-      var7.setProperty("LastModified", Long.toString(var5.LastWriteTimeUtc.Ticks));
+      var7.setProperty("LastModified", (var5.LastWriteTimeUtc.Ticks).ToString());
       if (var2 != null) {
-         var7.setProperty("GameMode", var2.name());
+         var7.setProperty("GameMode", var2.Name);
       }
 
       if (var3 != null) {
@@ -182,7 +182,7 @@ public class fQ {
          throw var4;
       }
 
-      byte[] var35 = var3.toByteArray();
+      byte[] var35 = var3.ToArray();
       int var36 = 0;
       object var37 = new FileStream((new FileInfo(System.IO.Path.Combine((fJ.a(this.mt).ToString(), System.IO.FileMode.Open)).ToString(), (this.filename).ToString())));
 

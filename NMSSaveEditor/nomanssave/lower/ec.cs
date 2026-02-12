@@ -53,7 +53,7 @@ public ec(eb var1, int var2) : base(aH.cH, aH.cH * 2) {
       this.hO.Enabled = (eb.a(this.ij)[this.index].Enabled);
       this.hO.Text = (eb.a(this.ij)[this.index].eg());
       this.ii.Enabled = (eb.a(this.ij)[this.index].Enabled);
-      this.ii.Text = (Integer.toString(eb.a(this.ij)[this.index].eh()));
+      this.ii.Text = ((eb.a(this.ij).ToString()[this.index].eh()));
    }
    public static CheckBox a(ec var0) {
       return var0.@if;

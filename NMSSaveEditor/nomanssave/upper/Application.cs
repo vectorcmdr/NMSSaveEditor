@@ -99,7 +99,7 @@ public class Application {
       } else {
          StringBuilder var2 = new StringBuilder();
 
-         for(int var4 = 0; var4 < var0.length(); ++var4) {
+         for(int var4 = 0; var4 < var0.Length; ++var4) {
             char var3 = var0[var4];
             if ("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_".IndexOf(var3) >= 0) {
                var2.Append(var3);
@@ -108,7 +108,7 @@ public class Application {
             }
          }
 
-         return var2.length() != 0 ? var2.ToString() : var1;
+         return var2.Length != 0 ? var2.ToString() : var1;
       }
    }
 
@@ -409,9 +409,9 @@ public class Application {
          var2 = NMSSaveEditor.aH.cD;
       }
 
-      string var3 = "." + var1.cL().name().ToLower();
+      string var3 = "." + var1.cL().Name.ToLower();
       cp var4 = cp.at();
-      string var5 = a(var1.Name, var1.cL().name());
+      string var5 = a(var1.Name, var1.cL().Name);
       var4.setCurrentDirectory(var2);
       var4.setSelectedFile(new FileInfo(System.IO.Path.Combine((var2).ToString(), (var5).ToString())));
       if (var4.showSaveDialog(this.N) == 0) {
@@ -1392,7 +1392,7 @@ public class Application {
 
          for(int var3 = 0; var3 < var4; ++var3) {
             var2 = var5[var3];
-            if (var1.Equals(var2.name())) {
+            if (var1.Equals(var2.Name)) {
                return var2;
             }
          }
@@ -1661,12 +1661,12 @@ public class Application {
       var2.height = NMSSaveEditor.aH.a("MainFrame.Height", 700);
       this.N.Bounds = new Rectangle(var2);
       this.N/* setDefaultCloseOperation */(3);
-      this.N.addWindowListener(new B(this));
+      // this.N.addWindowListener - use FormClosing event instead
       this.N.addComponentListener(new C(this));
       this.O = new TabControl();
-      this.N.Add(this.O, "Center");
+      this.N.Controls.Add(this.O);
       ba var3 = new ba(new int[]{NMSSaveEditor.aH.cH, NMSSaveEditor.aH.cI, 0});
-      this.O.addTab("Main", (Icon)null, var3, null);
+      this.O.TabPages.Add(new TabPage("Main") {{ Tag = var3 }});
       var3.k("FileInfo Details");
       this.P = new Label();
       this.P.Text = (this.aF == null ? "" : fq.c(this.aF));
@@ -1715,43 +1715,43 @@ public class Application {
       var4.Add(this.Y);
       var3.a(null, var4, 2);
       this.@as = new aJ(this);
-      this.O.addTab("Exosuit", (Icon)null, this.@as, null);
+      this.O.TabPages.Add(new TabPage("Exosuit") {{ Tag = this.@as }});
       this.O.setEnabledAt(1, false);
       this.at = new dj(this);
-      this.O.addTab("Multitool", (Icon)null, this.at, null);
+      this.O.TabPages.Add(new TabPage("Multitool") {{ Tag = this.at }});
       this.O.setEnabledAt(2, false);
       this.au = new dN(this);
-      this.O.addTab("Ships", (Icon)null, this.au, null);
+      this.O.TabPages.Add(new TabPage("Ships") {{ Tag = this.au }});
       this.O.setEnabledAt(3, false);
       this.av = new eb(this);
-      this.O.addTab("Squadron", (Icon)null, this.av, null);
+      this.O.TabPages.Add(new TabPage("Squadron") {{ Tag = this.av }});
       this.O.setEnabledAt(4, false);
       this.aw = new bd(this);
-      this.O.addTab("Freighter", (Icon)null, this.aw, null);
+      this.O.TabPages.Add(new TabPage("Freighter") {{ Tag = this.aw }});
       this.O.setEnabledAt(5, false);
       this.ax = new bl(this);
-      this.O.addTab("Frigates", (Icon)null, this.ax, null);
+      this.O.TabPages.Add(new TabPage("Frigates") {{ Tag = this.ax }});
       this.O.setEnabledAt(6, false);
       this.ay = new ep(this);
-      this.O.addTab("Vehicles", (Icon)null, this.ay, null);
+      this.O.TabPages.Add(new TabPage("Vehicles") {{ Tag = this.ay }});
       this.O.setEnabledAt(7, false);
       this.az = new X(this);
-      this.O.addTab("Companions", (Icon)null, this.az, null);
+      this.O.TabPages.Add(new TabPage("Companions") {{ Tag = this.az }});
       this.O.setEnabledAt(8, false);
       this.aA = new I(this);
-      this.O.addTab("Bases & Storage", (Icon)null, this.aA, null);
+      this.O.TabPages.Add(new TabPage("Bases & Storage") {{ Tag = this.aA }});
       this.O.setEnabledAt(9, false);
       this.aB = new dE(this);
-      this.O.addTab("Settlements", (Icon)null, this.aB, null);
+      this.O.TabPages.Add(new TabPage("Settlements") {{ Tag = this.aB }});
       this.O.setEnabledAt(10, false);
       this.aC = new ap(this);
-      this.O.addTab("Discovery", (Icon)null, this.aC, null);
+      this.O.TabPages.Add(new TabPage("Discovery") {{ Tag = this.aC }});
       this.O.setEnabledAt(11, false);
       this.aD = new bE(this);
-      this.O.addTab("Milestones / Reputation", (Icon)null, this.aD, null);
+      this.O.TabPages.Add(new TabPage("Milestones / Reputation") {{ Tag = this.aD }});
       this.O.setEnabledAt(12, false);
       this.aE = new c(this);
-      this.O.addTab("Account", (Icon)null, this.aE, null);
+      this.O.TabPages.Add(new TabPage("Account") {{ Tag = this.aE }});
       this.O.setEnabledAt(13, false);
       this.O.addChangeListener((var1x) => {
          if (this.O.SelectedIndex == 12) {

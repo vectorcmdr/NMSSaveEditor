@@ -25,7 +25,7 @@ public class h : Form {
 
 public h(Frame var1) : base(var1) {
       this.FormBorderStyle = FormBorderStyle.FixedDialog; //(false);
-      this.setModalExclusionType(/* ModalExclusionType */ 0);
+      // setModalExclusionType not available in WinForms
       this.Text = ("Add Item");
       this/* setModal */(true);
       Panel var2 = new Panel();
@@ -34,12 +34,12 @@ public h(Frame var1) : base(var1) {
       Panel var3 = new Panel();
       // TODO: var3.SuspendLayout(); // TODO: set layout /* FormLayout */ null, FormFactory.LABEL_COMPONENT_GAP_COLSPEC, ColumnSpec.decode("280px"), FormFactory.LABEL_COMPONENT_GAP_COLSPEC}, new RowSpec[]{FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC}));
       Label var4 = new Label() { Text = "Search:" };
-      var3.Controls.Add(var4);
+      var3.Controls.Controls.Add(var4);
       Panel var5 = new Panel();
       var5.SuspendLayout(); // TODO: set layout new TableLayoutPanel());
       this.m = new TextBox();
       this.m.Text = ("");
-      var5.Add(this.m, "Center");
+      var5.Add(this.m);
       this.n = new Button() { Text = "Search" };
       this.n.Click += (new i(this));
       var5.Add(this.n, "East");
@@ -76,7 +76,7 @@ public h(Frame var1) : base(var1) {
 
    public void a() {
       this.t = (List<object>)this.s.stream().map(ey.ba).distinct().sorted((var0, var1) => {
-         return var0.name().CompareTo(var1.name());
+         return var0.Name.CompareTo(var1.Name);
       }).collect(Collectors.toList());
       this.o.SelectedIndex = (this.t.Count == 1 ? 0 : -1);
       this.o.Refresh();
@@ -88,7 +88,7 @@ public h(Frame var1) : base(var1) {
       this.u = (List<object>)this.s.stream().filter((var1x) => {
          return var1x.ba() == var1;
       }).map(ey.bc).distinct().sorted((var0, var1x) => {
-         return var0.name().CompareTo(var1x.name());
+         return var0.Name.CompareTo(var1x.Name);
       }).collect(Collectors.toList());
       this.p.SelectedIndex = (this.u.Count == 1 ? 0 : -1);
       this.p.Refresh();

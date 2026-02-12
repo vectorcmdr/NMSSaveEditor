@@ -29,9 +29,9 @@ public class dM : G {
                var2.e(this.hH.ordinal(), var4);
             }
 
-            return Integer.toString(var4);
+            return (var4).ToString();
          } catch (Exception var5) {
-            return Integer.toString(var3);
+            return (var3).ToString();
          }
       }
    }

@@ -45,7 +45,7 @@ public class cN : ComboBox {
                   var2 = var3;
                   break;
                }
-            } else if (var3.name().Equals(var1)) {
+            } else if (var3.Name.Equals(var1)) {
                var2 = var3;
                break;
             }

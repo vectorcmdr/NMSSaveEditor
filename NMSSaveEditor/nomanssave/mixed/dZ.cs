@@ -27,9 +27,9 @@ public class dZ : G {
                var2.h(var5);
             }
 
-            return Double.toString(var5);
+            return (var5).ToString();
          } catch (Exception var7) {
-            return Double.toString(var3);
+            return (var3).ToString();
          }
       }
    }

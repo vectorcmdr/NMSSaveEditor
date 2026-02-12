@@ -166,7 +166,7 @@ public class fh {
    public static string a(fg var0) {
       StringBuilder var1 = new StringBuilder();
       byte[] var5;
-      int var4 = (var5 = var0.toByteArray()).Length;
+      int var4 = (var5 = var0.ToArray()).Length;
 
       for(int var3 = 0; var3 < var4; ++var3) {
          byte var2 = var5[var3];
@@ -612,7 +612,7 @@ public class fh {
             }
          }
 
-         return var1 != null ? var1.ToString() : new fg(var2.toByteArray());
+         return var1 != null ? var1.ToString() : new fg(var2.ToArray());
       } catch (eX var4) {
          throw var4;
       } catch (IOException var5) {
@@ -657,7 +657,7 @@ public class fh {
             }
          }
 
-         return new fg(var1.toByteArray());
+         return new fg(var1.ToArray());
       }
    }
 

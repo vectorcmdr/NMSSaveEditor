@@ -23,7 +23,7 @@ public class hl {
    public static long aE(string var0) {
       long var1 = 0L;
 
-      for(int var4 = 0; var4 < var0.length(); ++var4) {
+      for(int var4 = 0; var4 < var0.Length; ++var4) {
          char var3 = var0[var4];
          var1 <<= 4;
          if (var3 >= 'A' && var3 <= 'F') {
@@ -57,7 +57,7 @@ public class hl {
    public static hl e(string var0, int var1) {
       Matcher var2;
       long var3;
-      if ((var2 = sP.matcher(var0)).System.Text.RegularExpressions.Regex.IsMatch()) {
+      if ((var2 = sP.matcher(var0)).matches()) {
          var3 = aE(var2.group(1)) - 2047L;
          if (var3 > 2047L) {
             throw new Exception("Invalid galactic coordinates");
@@ -79,7 +79,7 @@ public class hl {
                }
             }
          }
-      } else if (sO.matcher(var0).System.Text.RegularExpressions.Regex.IsMatch()) {
+      } else if (sO.matcher(var0).matches()) {
          var3 = aE(var0);
          int var5 = b(var3 >> 44, 4);
          int var6 = b(var3 >> 32, 12);
@@ -101,7 +101,7 @@ public class hl {
       } else if (var0 is string) {
          string var5 = (string)var0;
          Matcher var2;
-         if ((var2 = sN.matcher(var5)).System.Text.RegularExpressions.Regex.IsMatch()) {
+         if ((var2 = sN.matcher(var5)).matches()) {
             long var3 = aE(var2.group(1));
             return new hl(var3);
          } else {
@@ -231,25 +231,25 @@ public class hl {
       var1.Append(Convert.ToString(this.sQ & 15, 16));
       var1.Append(Convert.ToString(this.sR & 4095, 16));
 
-      while(var1.length() < 4) {
+      while(var1.Length < 4) {
          var1.Insert(1, '0');
       }
 
       var1.Append(Convert.ToString(this.sT & 255, 16));
 
-      while(var1.length() < 6) {
+      while(var1.Length < 6) {
          var1.Insert(4, '0');
       }
 
       var1.Append(Convert.ToString(this.sU & 4095, 16));
 
-      while(var1.length() < 9) {
+      while(var1.Length < 9) {
          var1.Insert(6, '0');
       }
 
       var1.Append(Convert.ToString(this.sV & 4095, 16));
 
-      while(var1.length() < 12) {
+      while(var1.Length < 12) {
          var1.Insert(9, '0');
       }
 
@@ -260,28 +260,28 @@ public class hl {
       StringBuilder var1 = new StringBuilder();
       var1.Append(Convert.ToString(this.sV + 2047, 16));
 
-      while(var1.length() < 4) {
+      while(var1.Length < 4) {
          var1.Insert(0, '0');
       }
 
       var1.Append(':');
       var1.Append(Convert.ToString(this.sT + 127, 16));
 
-      while(var1.length() < 9) {
+      while(var1.Length < 9) {
          var1.Insert(5, '0');
       }
 
       var1.Append(':');
       var1.Append(Convert.ToString(this.sU + 2047, 16));
 
-      while(var1.length() < 14) {
+      while(var1.Length < 14) {
          var1.Insert(10, '0');
       }
 
       var1.Append(':');
       var1.Append(Convert.ToString(this.sQ << 12 | this.sR, 16));
 
-      while(var1.length() < 19) {
+      while(var1.Length < 19) {
          var1.Insert(15, '0');
       }
 

@@ -19,7 +19,7 @@ public class gm {
    }
 
    public static bool isEmpty(string var0) {
-      return var0 == null || var0.length() == 0;
+      return var0 == null || var0.Length == 0;
    }
 
    public static Function a(gm var0, string var1) {
@@ -118,7 +118,7 @@ public class gm {
       }
 
       var2.a(0, Boolean.TRUE);
-      var2.a(1, var1.length() == 0 ? "0x0" : var1);
+      var2.a(1, var1.Length == 0 ? "0x0" : var1);
    }
 
    public string cV() {
@@ -183,7 +183,7 @@ public class gm {
 
    public string toString() {
       string var1 = this.Name;
-      return var1 != null && var1.length() != 0 ? var1 : "Freighter";
+      return var1 != null && var1.Length != 0 ? var1 : "Freighter";
    }
 }
 

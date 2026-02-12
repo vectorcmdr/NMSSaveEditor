@@ -104,7 +104,7 @@ public class fx : fs {
          throw var3;
       }
 
-      this.lI.d(var2.toByteArray());
+      this.lI.d(var2.ToArray());
       return this.K();
    }
 

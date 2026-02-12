@@ -75,9 +75,9 @@ public class fu : fq {
                var4 = this.lF[var8].lP;
                byte[] var9 = new byte[20];
                int var10 = var3.read(var9);
-               string var11 = new string(var9, 0, var10, "ISO-8859-1");
+               string var11 = new string(var9, 0, var10, Encoding.Latin1);
                Matcher var12 = lC.matcher(var11);
-               if (var12.System.Text.RegularExpressions.Regex.IsMatch()) {
+               if (var12.matches()) {
                   try {
                      this.lF[var8].be = ag(int.Parse(var12.group(1)));
                   } catch (Exception var17) {

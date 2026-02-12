@@ -65,7 +65,7 @@ public class bu : Runnable {
          bl.o(bt.a(this.es)).Text = (bl.c(bt.a(this.es))[bl.b(bt.a(this.es))].cV());
 
          for(var1 = 0; var1 < bl.d(bt.a(this.es)).Length; ++var1) {
-            bl.d(bt.a(this.es))[var1].Text = (Integer.toString(bl.c(bt.a(this.es))[bl.b(bt.a(this.es))].aq(var1)));
+            bl.d(bt.a(this.es))[var1].Text = ((bl.c(bt.a(this.es).ToString())[bl.b(bt.a(this.es))].aq(var1)));
          }
 
          bl.p(bt.a(this.es)).SelectedItem = (bl.c(bt.a(this.es))[bl.b(bt.a(this.es))].ar(0));
@@ -73,10 +73,10 @@ public class bu : Runnable {
          bl.r(bt.a(this.es)).SelectedItem = (bl.c(bt.a(this.es))[bl.b(bt.a(this.es))].ar(2));
          bl.s(bt.a(this.es)).SelectedItem = (bl.c(bt.a(this.es))[bl.b(bt.a(this.es))].ar(3));
          bl.t(bt.a(this.es)).SelectedItem = (bl.c(bt.a(this.es))[bl.b(bt.a(this.es))].ar(4));
-         bl.u(bt.a(this.es)).Text = (Integer.toString(bl.c(bt.a(this.es))[bl.b(bt.a(this.es))].dc()));
-         bl.v(bt.a(this.es)).Text = (Integer.toString(bl.c(bt.a(this.es))[bl.b(bt.a(this.es))].dd()));
-         bl.w(bt.a(this.es)).Text = (Integer.toString(bl.c(bt.a(this.es))[bl.b(bt.a(this.es))].de()));
-         bl.x(bt.a(this.es)).Text = (Integer.toString(bl.c(bt.a(this.es))[bl.b(bt.a(this.es))].df()));
+         bl.u(bt.a(this.es)).Text = ((bl.c(bt.a(this.es).ToString())[bl.b(bt.a(this.es))].dc()));
+         bl.v(bt.a(this.es)).Text = ((bl.c(bt.a(this.es).ToString())[bl.b(bt.a(this.es))].dd()));
+         bl.w(bt.a(this.es)).Text = ((bl.c(bt.a(this.es).ToString())[bl.b(bt.a(this.es))].de()));
+         bl.x(bt.a(this.es)).Text = ((bl.c(bt.a(this.es).ToString())[bl.b(bt.a(this.es))].df()));
          if (this.bv.j(bl.c(bt.a(this.es))[bl.b(bt.a(this.es))].getIndex())) {
             bl.y(bt.a(this.es)).Text = ("Status: On Mission");
             bl.y(bt.a(this.es)).setForeground(Color.Blue);
