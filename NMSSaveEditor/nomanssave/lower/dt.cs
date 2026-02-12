@@ -21,7 +21,7 @@ public class dt : ba {
       this.k("Production");
       this.eS = new Panel();
       this.eS.SetLayout(new GridBagLayout());
-      this.a((JComponent)this.eS);
+      this.a((Control)this.eS);
       UIManager.addPropertyChangeListener((var1x) => {
          if ("lookAndFeel".Equals(var1x.getPropertyName())) {
             JavaCompat.InvokeLater(this.aL);

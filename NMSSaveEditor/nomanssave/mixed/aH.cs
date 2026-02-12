@@ -125,7 +125,7 @@ public class aH {
          if (var0 && var2.getFile().EndsWith(".jar")) {
             var1 = Paths.Get(var2.toURI()).toFile().Directory;
          } else {
-            var1 = (new File(".")).getCanonicalFile();
+            var1 = (new FileInfo(".")).getCanonicalFile();
          }
       } catch (URISyntaxException var20) {
          Console.WriteLine("Error: cannot find working directory");
@@ -141,15 +141,15 @@ public class aH {
          Environment.Exit(1);
       }
        cD = var1;
-      cC = new File(var1, "NMSSaveEditor.conf");
-      cE = new File(var1, "bases");
-      cF = new File(var1, "exported");
-      cG = new File(var1, "backups");
+      cC = new FileInfo(var1, "NMSSaveEditor.conf");
+      cE = new FileInfo(var1, "bases");
+      cF = new FileInfo(var1, "exported");
+      cG = new FileInfo(var1, "backups");
       if (!cG.Exists && !cG.Create()) {
          Console.WriteLine("Error: cannot create backups folder");
          Environment.Exit(1);
       }
-       hc.k(new File(var1, "NMSSaveEditor.log"));
+       hc.k(new FileInfo(var1, "NMSSaveEditor.log"));
       hc.debug("Java Vendor: " + System.getProperty("java.vendor"));
       hc.debug("Java Version: " + System.getProperty("java.version"));
       hc.debug("Java Architecture: " + System.getProperty("os.arch"));
@@ -243,30 +243,30 @@ public class aH {
          switch(W()[var1.ordinal()]) {
          case 1:
          default:
-            var2 = new FlatLightLaf();
+            var2 = null /* FlatLaf not needed */;
             break;
          case 2:
-            var2 = new FlatDarkLaf();
+            var2 = null /* FlatLaf not needed */;
             break;
          case 3:
-            var2 = new FlatIntelliJLaf();
+            var2 = null /* FlatLaf not needed */;
             break;
          case 4:
-            var2 = new FlatDarculaLaf();
+            var2 = null /* FlatLaf not needed */;
             break;
          case 5:
-            var2 = new FlatMacLightLaf();
+            var2 = null /* FlatLaf not needed */;
             break;
          case 6:
-            var2 = new FlatMacDarkLaf();
+            var2 = null /* FlatLaf not needed */;
          }
-          UIManager.setLookAndFeel((LookAndFeel)var2);
+          /* L&F not needed in WinForms */
       } catch (UnsupportedLookAndFeelException var13) {
          hc.a("Could not set look and feel: " + var1, var13);
          return;
       }
-       hc.debug("Look and Feel: " + UIManager.getLookAndFeel().Name);
-      Font var3 = UIManager.getFont("Label.font");
+       hc.debug("Look and Feel: WinForms");
+      Font var3 = SystemFonts.DefaultFont;
       if (var3 == null) {
          cH = 120;
          cI = 350;

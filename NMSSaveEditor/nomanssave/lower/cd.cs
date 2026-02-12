@@ -28,7 +28,7 @@ public class cd : ActionListener {
    public void actionPerformed(ActionEvent var1) {
       gu var2 = bO.a(bS.j(this.fk)).f(this.fl, this.fm);
       if (var2 != null) {
-         cg.a((Container)bS.j(this.fk), (gQ)var2);
+         cg.a((Control)bS.j(this.fk), (gQ)var2);
          bS.c(this.fk);
       }
     }

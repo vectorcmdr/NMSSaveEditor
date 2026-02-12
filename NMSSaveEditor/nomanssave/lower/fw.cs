@@ -122,7 +122,7 @@ public class fw {
             throw new IOException("header not valid");
          } else {
             long var25 = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
-            FileInfo var5 = new File(fu.b(this.lJ).Directory, "~" + fu.b(this.lJ).Name);
+            FileInfo var5 = new FileInfo(fu.b(this.lJ).Directory, "~" + fu.b(this.lJ).Name);
             FileStream var6 = new FileStream(var5);
              try {
                FileStream var7 = new FileStream(fu.b(this.lJ));

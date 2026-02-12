@@ -15,9 +15,10 @@ public class fi : StringReader {
    public int kF = 1;
    public int kG = 0;
 
-   public fi(string var1) {
-      // base(var1);
+   public fi(string var1) : base(var1) {
    }
+
+   public int ReadByte() { return base.Read(); }
 
    public int bI() {
       int var1;
@@ -32,7 +33,7 @@ public class fi : StringReader {
    public int read() {
       int var1;
       try {
-         var1 = base.ReadByte();
+         var1 = base.Read();
       } catch (IOException var3) {
          throw new eX("stream error", var3, this.kF, this.kG);
       }
@@ -46,7 +47,7 @@ public class fi : StringReader {
    public int a(Predicate var1) {
       try {
          this.mark(1);
-         int var2 = base.ReadByte();
+         int var2 = base.Read();
          if (var2 >= 0 && var1.test(var2)) {
             if (var2 == 10) {
                ++this.kF;

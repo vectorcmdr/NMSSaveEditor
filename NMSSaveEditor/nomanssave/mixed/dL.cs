@@ -27,14 +27,14 @@ public class dL : DefaultListCellRenderer {
          eM var7 = (eM)var2;
          if (var7.aW()) {
             if (var4) {
-               var6.SetBackground(UIManager.getColor("Settlement.positivePerkHighlight"));
+               var6.SetBackground(SystemColors.Control);
             } else {
-               var6.SetForeground(UIManager.getColor("Settlement.positivePerkColor"));
+               var6.SetForeground(SystemColors.Control);
             }
          } else if (var4) {
-            var6.SetBackground(UIManager.getColor("Settlement.negativePerkHighlight"));
+            var6.SetBackground(SystemColors.Control);
          } else {
-            var6.SetForeground(UIManager.getColor("Settlement.negativePerkColor"));
+            var6.SetForeground(SystemColors.Control);
          }
       }
        return var6;

@@ -22,7 +22,7 @@ public class du : Panel {
    public du(dt var1, gF var2) {
       this.ho = var1;
       this.hm = var2;
-      int var3 = UIManager.getInt("Inventory.gridSize");
+      int var3 = 0;
       Size var4 = new Size(var3, var3);
       this.SetBackground(bO.eK);
       this.SetMinimumSize(var4);
@@ -47,7 +47,7 @@ public class du : Panel {
 
    public void aM() {
       this.Controls.Clear();
-      int var1 = UIManager.getInt("Inventory.gridSize");
+      int var1 = 0;
       Size var2 = new Size(var1, var1);
       this.SetBackground(bO.eK);
       this.SetMinimumSize(var2);
@@ -59,8 +59,8 @@ public class du : Panel {
          this.fh.SetEnabled(this.hm.dA() > 0);
          ey var3 = ey.d(this.hm.dz());
          string var4 = var3 == null ? this.hm.ei() : var3.Name;
-         int var5 = UIManager.getInt("Inventory.iconSize");
-         Font var6 = UIManager.getFont("Inventory.font");
+         int var5 = 0;
+         Font var6 = SystemFonts.DefaultFont;
          Image var7 = var3 == null ? null : var3.c(var5, var5);
          int var8 = 0;
          Label var9;

@@ -32,13 +32,13 @@ public class eI {
              for(int var4 = 0; var4 < var3.Count; ++var4) {
                XmlNode var5 = var3.Item(var4);
                if (var5 is XmlElement && var5.Name.Equals("season")) {
-                  ki.Add(new eI((System.Xml.XmlElement)var5, 0));
+                  ki.Add(new eI((XmlElement)var5, 0));
                }
                 if (var5 is XmlElement && var5.Name.Equals("twitch")) {
-                  kj.Add(new eI((System.Xml.XmlElement)var5, 1));
+                  kj.Add(new eI((XmlElement)var5, 1));
                }
                 if (var5 is XmlElement && var5.Name.Equals("platform")) {
-                  kk.Add(new eI((System.Xml.XmlElement)var5, 2));
+                  kk.Add(new eI((XmlElement)var5, 2));
                }
             }
          } catch (ParserConfigurationException var6) {
@@ -90,11 +90,11 @@ public class eI {
    }
 
    public static Iterable bt() {
-      return UnmodifiableList(ki);
+      return new List<object>(ki);
    }
 
    public static Iterable bu() {
-      return UnmodifiableList(kj);
+      return new List<object>(kj);
    }
 }
 

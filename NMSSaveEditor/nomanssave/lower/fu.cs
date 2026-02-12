@@ -29,7 +29,7 @@ public class fu : fq {
       }
    }
     public fu(FileInfo var1, fR var2) {
-      this.lD = var1.IsFile() ? var1 : new File(var1, "memory.dat");
+      this.lD = var1.IsFile() ? var1 : new FileInfo(var1, "memory.dat");
       this.lE = var2;
       Console.WriteLine(this.lD.FullName);
       FileStream var3 = new FileStream(this.lD);
@@ -115,7 +115,7 @@ public class fu : fq {
       var1.Equals(this.lD.Name);
    }
     public static void main(string[] var0) {
-      new fu(new File("D:\\Temp\\PS4_NEW"), (fR)null);
+      new fu(new FileInfo("D:\\Temp\\PS4_NEW"), (fR)null);
    }
     public static bool a(byte[] var0, byte[] var1) {
       for(int var2 = 0; var2 < var0.Length; ++var2) {

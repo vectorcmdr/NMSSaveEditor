@@ -24,7 +24,7 @@ public class dy : MouseAdapter {
 
    public void mouseClicked(MouseEvent var1) {
       if (var1.getClickCount() == 2 && this.hq != null) {
-         cg.a((Container)du.d(this.hp), (gQ)this.hq);
+         cg.a((Control)du.d(this.hp), (gQ)this.hq);
          du.c(this.hp);
       }
     }

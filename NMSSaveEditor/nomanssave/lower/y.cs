@@ -33,7 +33,7 @@ public class y : Runnable {
          if (var2 == 0) {
             Application.h(x.a(this.bb)).Dispose();
             hc.info("Starting download...");
-            FileInfo var3 = new File("~NMSSaveEditor.dl");
+            FileInfo var3 = new FileInfo("~NMSSaveEditor.dl");
              try {
                URL var4 = new URL("https://github.com/goatfungus/NMSSaveEditor/raw/master/NMSSaveEditor.jar");
                URLConnection var5 = var4.openConnection();

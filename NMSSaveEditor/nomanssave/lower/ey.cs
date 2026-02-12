@@ -39,26 +39,26 @@ public class ey {
           for(int var4 = 0; var4 < var3.Count; ++var4) {
             XmlNode var5 = var3.Item(var4);
             if (var5 is XmlElement && var5.Name.Equals("product-template")) {
-               var10.Add(new eA((System.Xml.XmlElement)var5));
+               var10.Add(new eA((XmlElement)var5));
             }
          }
       }
-       jI = UnmodifiableList(var10);
+       jI = new List<object>(var10);
       List<object> var11 = new List<object>();
       if (var0 != null) {
          XmlNodeList var12 = var0.ChildNodes;
           for(int var14 = 0; var14 < var12.Count; ++var14) {
             XmlNode var6 = var12.Item(var14);
             if (var6 is XmlElement && var6.Name.Equals("substance")) {
-               var11.Add(new eP((System.Xml.XmlElement)var6));
+               var11.Add(new eP((XmlElement)var6));
             } else if (var6 is XmlElement && var6.Name.Equals("product")) {
-               var11.Add(new eH((System.Xml.XmlElement)var6, false));
+               var11.Add(new eH((XmlElement)var6, false));
             } else if (var6 is XmlElement && var6.Name.Equals("procedural-product")) {
-               var11.Add(new eH((System.Xml.XmlElement)var6, true));
+               var11.Add(new eH((XmlElement)var6, true));
             } else if (var6 is XmlElement && var6.Name.Equals("technology")) {
-               var11.Add(new eQ((System.Xml.XmlElement)var6, false));
+               var11.Add(new eQ((XmlElement)var6, false));
             } else if (var6 is XmlElement && var6.Name.Equals("procedural-technology")) {
-               var11.Add(new eQ((System.Xml.XmlElement)var6, true));
+               var11.Add(new eQ((XmlElement)var6, true));
             }
          }
       }
@@ -73,7 +73,7 @@ public class ey {
       var13.sort((var0x, var1x) => {
          return var0x.Name.CompareTo(var1x.Name);
       });
-      jJ = UnmodifiableList(var11);
+      jJ = new List<object>(var11);
    }
 
    public ey(string var1) {

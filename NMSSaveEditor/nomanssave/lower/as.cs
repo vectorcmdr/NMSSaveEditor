@@ -20,7 +20,7 @@ public class @as : ActionListener {
    }
 
    public void actionPerformed(ActionEvent var1) {
-      string[] var2 = p.b((Container)this.cu);
+      string[] var2 = p.b((Control)this.cu);
       bool var3 = false;
        for(int var4 = 0; var4 < var2.Length; ++var4) {
          if (!ap.a(this.cu).hasValue(var2[var4])) {

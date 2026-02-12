@@ -66,7 +66,7 @@ public class bd : em {
       this.bo = new Button("Restore");
       this.bo.AddActionListener(new bk(this, var1));
       var2.Add(this.bo);
-      this.a((JComponent)var2);
+      this.a((Control)var2);
       this.dN = new bO(var1);
       this.b(this.dN);
    }

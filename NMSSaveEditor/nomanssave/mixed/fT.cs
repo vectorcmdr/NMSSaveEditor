@@ -66,7 +66,7 @@ public class fT : fq {
    }
     public void cr() {
       hc.info("Reading Container Index");
-      FileStream var1 = new FileStream(new File(this.lX, "containers.index"));
+      FileStream var1 = new FileStream(new FileInfo(this.lX, "containers.index"));
        try {
          this.header = hk.readInt(var1);
          hc.debug("  header: " + this.header);
@@ -112,7 +112,7 @@ public class fT : fq {
       }
     }
     public void cs() {
-      FileStream var1 = new FileStream(new File(this.lX, "containers.index"));
+      FileStream var1 = new FileStream(new FileInfo(this.lX, "containers.index"));
        try {
          hk.a(var1, this.header);
          hk.a(var1, this.mI.Count);
@@ -154,7 +154,7 @@ public class fT : fq {
          for(IEnumerator<object> var5 = this.mI.GetEnumerator(); var5.MoveNext(); var1 &= var4.mU.Equals(var3)) {
             var4 = (fW)var5.Current;
          }
-          var2 = new File(this.lX, var3);
+          var2 = new FileInfo(this.lX, var3);
          var1 &= var2.Exists;
       } while(!var1);
        if (!var2.Create()) {

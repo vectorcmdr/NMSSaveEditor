@@ -20,7 +20,7 @@ public class ev : List<object> {
        for(int var3 = 0; var3 < var2.Count; ++var3) {
          XmlNode var4 = var2.Item(var3);
          if (var4 is XmlElement && var4.Name.Equals("stacksize")) {
-            this.Add(new ew((System.Xml.XmlElement)var4));
+            this.Add(new ew((XmlElement)var4));
          }
       }
     }

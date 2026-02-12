@@ -68,7 +68,7 @@ public class gm {
        if (var4 != null) {
          var14.Add(new gt(a(this, var6), var4, var9, 8, 6, false, true));
       }
-       this.gT = UnmodifiableList(var14);
+       this.gT = new List<object>(var14);
       eV var15 = var1.d("PersistentPlayerBases");
       eY var17 = null;
        for(int var18 = 0; var18 < var15.Count; ++var18) {

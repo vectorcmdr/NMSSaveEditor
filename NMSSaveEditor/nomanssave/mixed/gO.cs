@@ -75,7 +75,7 @@ public class gO {
       if (var4 != null) {
          var12.Add(new gt(a(this, "Technology"), var4, var5, var9, var10, true, false, false, false));
       }
-       this.gT = UnmodifiableList(var12);
+       this.gT = new List<object>(var12);
    }
 
    public gO(eY var1, eY var2) {
@@ -91,7 +91,7 @@ public class gO {
       byte var4 = 6;
       List<object> var5 = new List<object>();
       var5.Add(new gt(a(this, "Cold Storage"), var2, 2048, var3, var4, false, false, true, false));
-      this.gT = UnmodifiableList(var5);
+      this.gT = new List<object>(var5);
    }
 
    public string getType() {

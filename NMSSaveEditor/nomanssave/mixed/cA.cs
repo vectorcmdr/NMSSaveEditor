@@ -24,11 +24,11 @@ public class cA : DefaultTreeCellRenderer {
       if (((cJ)var2).gi == null) {
          var8.setIcon(Application.a("UI-FILEICON.PNG", 20, 20));
       } else if (var5) {
-         var8.setIcon(UIManager.getIcon("Tree.leafIcon"));
+         var8.setIcon(null);
       } else if (var4) {
-         var8.setIcon(UIManager.getIcon("Tree.openIcon"));
+         var8.setIcon(null);
       } else {
-         var8.setIcon(UIManager.getIcon("Tree.closedIcon"));
+         var8.setIcon(null);
       }
        return var8;
    }

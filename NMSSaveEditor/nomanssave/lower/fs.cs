@@ -29,6 +29,10 @@ public interface fs {
    public string getDescription() {
       return null;
    }
+
+   public DateTime LastWriteTimeUtc { get => DateTime.MinValue; }
+   public string Name { get => getName(); }
+   public long Length { get => 0; }
 }
 
 }

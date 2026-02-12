@@ -54,7 +54,7 @@ public class eQ : ey {
        for(int var9 = 0; var9 < var6.Count; ++var9) {
          XmlNode var7 = var6.Item(var9);
          if (var7 is Element) {
-            XmlElement var8 = (System.Xml.XmlElement)var7;
+            XmlElement var8 = (XmlElement)var7;
             if (var8.Name.Equals("description")) {
                var3 = a(var8);
             } else if (var8.Name.Equals("requirement")) {
@@ -65,7 +65,7 @@ public class eQ : ey {
          }
       }
        this.description = var3;
-      this.ke = UnmodifiableList(var4);
+      this.ke = new List<object>(var4);
       this.km = var5;
    }
 

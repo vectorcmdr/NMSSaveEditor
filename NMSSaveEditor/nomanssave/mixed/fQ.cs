@@ -23,7 +23,7 @@ public class fQ {
       this.filename = var2;
       this.lO = var3;
       if (var4) {
-         FileStream var5 = new FileStream(new File(fJ.a(var1), "mf_" + var2));
+         FileStream var5 = new FileStream(new FileInfo(fJ.a(var1), "mf_" + var2));
           int var7;
          try {
             hc.info("Reading metadata for " + var2);
@@ -56,7 +56,7 @@ public class fQ {
    }
 
    public long lastModified() {
-      return (new File(fJ.a(this.mt), "mf_" + this.filename)).LastWriteTimeUtc.Ticks;
+      return (new FileInfo(fJ.a(this.mt), "mf_" + this.filename)).LastWriteTimeUtc.Ticks;
    }
 
    public eY a(eG param1) {
@@ -64,7 +64,7 @@ public class fQ {
    }
 
    public byte[] ah(int var1) {
-      Object var2 = new FileStream(new File(fJ.a(this.mt), this.filename));
+      Object var2 = new FileStream(new FileInfo(fJ.a(this.mt), this.filename));
        try {
          MemoryStream var3 = new MemoryStream();
          byte[] var4 = new byte[1024];
@@ -91,8 +91,8 @@ public class fQ {
    }
 
    public void a(string var1, fn var2, string var3, string var4) {
-      FileInfo var5 = new File(fJ.a(this.mt), "mf_" + this.filename);
-      FileInfo var6 = new File(fJ.a(this.mt), this.filename);
+      FileInfo var5 = new FileInfo(fJ.a(this.mt), "mf_" + this.filename);
+      FileInfo var6 = new FileInfo(fJ.a(this.mt), this.filename);
       Properties var7 = new Properties();
       var7.setProperty("ArchiveNumber", Convert.ToString(this.lO));
       var7.setProperty("ManifestFile", "mf_" + this.filename);
@@ -108,7 +108,7 @@ public class fQ {
          var7.setProperty("Description", var4);
       }
        string var8 = var1 + "." + DateTimeOffset.UtcNow.ToUnixTimeMilliseconds() + ".zip";
-      FileInfo var9 = new File(aH.cG, var8);
+      FileInfo var9 = new FileInfo(aH.cG, var8);
       ZipOutputStream var10 = new ZipOutputStream(new FileStream(var9));
        try {
          byte[] var12 = new byte[1024];
@@ -165,7 +165,7 @@ public class fQ {
       }
        byte[] var35 = var3.toByteArray();
       int var36 = 0;
-      Object var37 = new FileStream(new File(fJ.a(this.mt), this.filename));
+      Object var37 = new FileStream(new FileInfo(fJ.a(this.mt), this.filename));
        try {
          if (var2) {
             var37 = new gZ((Stream)var37);
@@ -195,7 +195,7 @@ public class fQ {
       this.mx.f(var8);
       this.mx.ak(var36);
       this.mx.aj(var35.Length);
-      FileStream var38 = new FileStream(new File(fJ.a(this.mt), "mf_" + this.filename));
+      FileStream var38 = new FileStream(new FileInfo(fJ.a(this.mt), "mf_" + this.filename));
        try {
          var38.Write(this.mx.encode());
       } finally {

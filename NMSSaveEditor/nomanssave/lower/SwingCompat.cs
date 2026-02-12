@@ -72,15 +72,15 @@ namespace NMSSaveEditor
         public static int QUESTION_MESSAGE = 3;
         public static int PLAIN_MESSAGE = -1;
     }
-    public static class UIManager
-    {
-        public static int getInt(string key) => 0;
-        public static Font getFont(string key) => null;
-        public static Color getColor(string key) => Color.Black;
-        public static object get(string key) => null;
-        public static void put(string key, object value) {}
-        public static void setLookAndFeel(string className) {}
-    }
+//    public static class UIManager
+//    {
+//        public static int getInt(string key) => 0;
+//        public static Font getFont(string key) => null;
+//        public static Color getColor(string key) => Color.Black;
+//        public static object get(string key) => null;
+//        public static void put(string key, object value) {}
+//        public static void setLookAndFeel(string className) {}
+//    }
     public static class BorderFactory
     {
         public static object createEmptyBorder(int t, int l, int b, int r) => null;

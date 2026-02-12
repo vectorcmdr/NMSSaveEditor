@@ -573,18 +573,39 @@ public class StringBuffer {
     private System.Text.StringBuilder sb = new System.Text.StringBuilder();
     public StringBuffer() {}
     public StringBuffer(string s) { sb = new System.Text.StringBuilder(s); }
+    public StringBuffer(int capacity) { sb = new System.Text.StringBuilder(capacity); }
     public StringBuffer append(object o) { sb.Append(o); return this; }
     public StringBuffer append(string s) { sb.Append(s); return this; }
     public StringBuffer append(char c) { sb.Append(c); return this; }
+    public StringBuffer append(int i) { sb.Append(i); return this; }
+    public StringBuffer append(long l) { sb.Append(l); return this; }
+    public StringBuffer append(double d) { sb.Append(d); return this; }
+    public StringBuffer append(bool b) { sb.Append(b); return this; }
+    public StringBuffer Append(object o) { sb.Append(o); return this; }
+    public StringBuffer Append(string s) { sb.Append(s); return this; }
+    public StringBuffer Append(char c) { sb.Append(c); return this; }
+    public StringBuffer Append(int i) { sb.Append(i); return this; }
+    public StringBuffer Append(long l) { sb.Append(l); return this; }
+    public StringBuffer Append(double d) { sb.Append(d); return this; }
+    public StringBuffer Append(bool b) { sb.Append(b); return this; }
     public int length() { return sb.Length; }
+    public int Length => sb.Length;
     public char charAt(int i) { return sb[i]; }
     public void setCharAt(int i, char c) { sb[i] = c; }
     public StringBuffer delete(int start, int end) { sb.Remove(start, end - start); return this; }
     public StringBuffer insert(int offset, string s) { sb.Insert(offset, s); return this; }
+    public StringBuffer insert(int offset, char c) { sb.Insert(offset, c); return this; }
+    public StringBuffer Insert(int offset, string s) { sb.Insert(offset, s); return this; }
     public StringBuffer replace(int start, int end, string s) { sb.Remove(start, end - start); sb.Insert(start, s); return this; }
+    public int indexOf(string s) { return sb.ToString().IndexOf(s); }
+    public int indexOf(string s, int start) { return sb.ToString().IndexOf(s, start); }
+    public int lastIndexOf(string s) { return sb.ToString().LastIndexOf(s); }
     public override string ToString() { return sb.ToString(); }
+    public string toString() { return sb.ToString(); }
     public string substring(int start) { return sb.ToString(start, sb.Length - start); }
     public string substring(int start, int end) { return sb.ToString(start, end - start); }
+    public void deleteCharAt(int i) { sb.Remove(i, 1); }
+    public void setLength(int len) { sb.Length = len; }
 }
 
 public interface DocumentEvent {

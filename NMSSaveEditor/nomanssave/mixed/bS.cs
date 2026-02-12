@@ -143,7 +143,7 @@ public class bS : Panel {
                var2 = ey.d(var1.dz());
                var3 = var2 is eQ && var1.dC() != 0.0;
                var4 = var2 == null ? bO.b(var1.dz()) : var2.Name;
-               int var5 = UIManager.getInt("Inventory.iconSize");
+               int var5 = 0;
                Image var6 = var2 == null ? null : var2.c(var5, var5);
                int var7 = 0;
                if (var6 != null) {
@@ -210,7 +210,7 @@ public class bS : Panel {
                }
                 this.fe.setEnabled(var2 != null);
                string var10 = var2 == null ? bO.b(var1.dz()) : var2.Name;
-               int var11 = UIManager.getInt("Inventory.iconSize");
+               int var11 = 0;
                Image var13 = var2 == null ? null : var2.c(var11, var11);
                int var12 = 0;
                if (var13 != null) {
@@ -241,7 +241,7 @@ public class bS : Panel {
 
    public void a(string var1, int var2, Color var3) {
       Label var4 = new Label();
-      var4.setFont(UIManager.getFont("Inventory.font"));
+      var4.setFont(SystemFonts.DefaultFont);
       var4.setBackground(Color.Empty);
       var4.setBorder((object)null);
       var4.setText(var1);
@@ -249,7 +249,7 @@ public class bS : Panel {
       GridBagConstraints var5 = new GridBagConstraints();
       var5.anchor = 10;
       var5.fill = 0;
-      int var6 = UIManager.getInt("Inventory.iconSize");
+      int var6 = 0;
       var5.insets = new Insets(var2 == 0 ? var6 + 10 : 0, 0, 0, 0);
       var5.gridx = 0;
       var5.gridy = var2;

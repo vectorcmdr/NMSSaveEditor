@@ -26,7 +26,7 @@ public class eA {
        for(int var5 = 0; var5 < var3.Count; ++var5) {
          XmlNode var4 = var3.Item(var5);
          if (var4 is Element) {
-            var1 = (System.Xml.XmlElement)var4;
+            var1 = (XmlElement)var4;
             if (var1.Name.Equals("description")) {
                var2 = ey.a(var1);
             }

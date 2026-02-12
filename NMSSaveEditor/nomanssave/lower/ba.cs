@@ -121,7 +121,7 @@ public class ba : Panel {
       var4.Add(var5);
       var3.Add(var2, "Center");
       var3.Add(var4, "South");
-      this.a(var1, (JComponent)var3);
+      this.a(var1, (Control)var3);
    }
 
    public void a(JComponent var1) {

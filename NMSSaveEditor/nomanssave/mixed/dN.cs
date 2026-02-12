@@ -41,7 +41,7 @@ public class dN : em {
       this.hK.SetModel(new dO(this, var1));
       this.a("Ship", true, this.hK);
       this.hL = new dT(this);
-      this.a((string)"Name", (JComponent)this.hL);
+      this.a((string)"Name", (Control)this.hL);
       this.hM = new cN(typeof(gL));
       this.hM.a((var2x) => {
          gH var3 = (gH)this.hK.GetModel().SelectedItem;
@@ -57,7 +57,7 @@ public class dN : em {
             this.hK.updateUI();
          }
        });
-      this.a((string)"Type", (JComponent)this.hM);
+      this.a((string)"Type", (Control)this.hM);
       this.hN = new cN(typeof(gN));
       this.hN.a((var1x) => {
          gH var2 = (gH)this.hK.GetModel().SelectedItem;
@@ -65,26 +65,26 @@ public class dN : em {
             var2.aj(var1x);
          }
        });
-      this.a((string)"Class", (JComponent)this.hN);
+      this.a((string)"Class", (Control)this.hN);
       this.hO = new dU(this);
       this.a((string)"Seed", (G)this.hO);
       this.hP = new CheckBox("Use Old Colours");
       this.hP.SetEnabled(false);
       this.hP.AddActionListener(new dV(this, var1));
-      this.a((string)null, (JComponent)this.hP);
+      this.a((string)null, (Control)this.hP);
       this.k("Base Stats");
       this.hQ = new dW(this);
-      this.a((string)"Health", (JComponent)this.hQ);
+      this.a((string)"Health", (Control)this.hQ);
       this.hR = new dX(this);
-      this.a((string)"Shield", (JComponent)this.hR);
+      this.a((string)"Shield", (Control)this.hR);
       this.hS = new dY(this);
-      this.a((string)"Damage", (JComponent)this.hS);
+      this.a((string)"Damage", (Control)this.hS);
       this.hT = new dZ(this);
-      this.a((string)"Shields", (JComponent)this.hT);
+      this.a((string)"Shields", (Control)this.hT);
       this.hU = new ea(this);
-      this.a((string)"Hyperdrive", (JComponent)this.hU);
+      this.a((string)"Hyperdrive", (Control)this.hU);
       this.hV = new dP(this);
-      this.a((string)"Maneuverability", (JComponent)this.hV);
+      this.a((string)"Maneuverability", (Control)this.hV);
       this.Y();
       Panel var2 = new Panel();
       this.bQ = new Button("Delete Ship");
@@ -96,7 +96,7 @@ public class dN : em {
       this.bS = new Button("Import");
       this.bS.AddActionListener(new dS(this, var1));
       var2.Add(this.bS);
-      this.a((JComponent)var2);
+      this.a((Control)var2);
       this.hW = new bO(var1);
       this.b(this.hW);
    }

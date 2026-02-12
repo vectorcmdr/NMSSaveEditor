@@ -73,22 +73,22 @@ public class bl : Panel, eo {
       this.Add(this.dT);
       this.dT.k("Frigate Info");
       this.dU = new bv(this);
-      this.dT.a("Name", (JComponent)this.dU);
+      this.dT.a("Name", (Control)this.dU);
       this.dV = new ComboBox();
       this.dV.SetModel(new bw(this));
-      this.dT.a("Type", (JComponent)this.dV);
+      this.dT.a("Type", (Control)this.dV);
       this.dW = new TextBox();
       this.dW.setEditable(false);
-      this.dT.a("Class", (JComponent)this.dW);
+      this.dT.a("Class", (Control)this.dW);
       this.dX = new cN(typeof(gd));
       this.dX.a((var1x) => {
          if (this.eq >= 0) {
             this.ep[this.eq].am(var1x);
          }
        });
-      this.dT.a("NPC Race", (JComponent)this.dX);
+      this.dT.a("NPC Race", (Control)this.dX);
       this.dY = new bx(this);
-      this.dT.a("Home Seed", (JComponent)this.dY);
+      this.dT.a("Home Seed", (Control)this.dY);
       this.dZ = new by(this);
       this.dT.a("Model Seed", this.dZ);
       this.dT.k("Traits");
@@ -131,18 +131,18 @@ public class bl : Panel, eo {
       this.ea = new G[gq.Values.Length];
        for(int var9 = 0; var9 < this.ea.Length; ++var9) {
          this.ea[var9] = new bA(this, var9, (bA)null);
-         this.eb.a(gq.Values[var9].ToString(), (JComponent)this.ea[var9]);
+         this.eb.a(gq.Values[var9].ToString(), (Control)this.ea[var9]);
       }
        this.eb.Y();
       this.eb.k("Totals");
       this.eh = new bn(this);
-      this.eb.a("Expeditions", (JComponent)this.eh);
+      this.eb.a("Expeditions", (Control)this.eh);
       this.ei = new bo(this);
-      this.eb.a("Successful", (JComponent)this.ei);
+      this.eb.a("Successful", (Control)this.ei);
       this.ej = new bp(this);
-      this.eb.a("Failed", (JComponent)this.ej);
+      this.eb.a("Failed", (Control)this.ej);
       this.ek = new bq(this);
-      this.eb.a("Damaged", (JComponent)this.ek);
+      this.eb.a("Damaged", (Control)this.ek);
       NMSSaveEditor.en.a(this);
    }
 

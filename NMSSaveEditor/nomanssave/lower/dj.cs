@@ -33,7 +33,7 @@ public class dj : em {
       this.ha.SetModel(new dk(this));
       this.a("Multitool", true, this.ha);
       this.hb = new dl(this);
-      this.a((string)"Name", (JComponent)this.hb);
+      this.a((string)"Name", (Control)this.hb);
       this.hc = new cN(typeof(gx));
       this.hc.a((var1x) => {
          gv var2 = (gv)this.ha.SelectedItem;
@@ -41,7 +41,7 @@ public class dj : em {
             var2.ag(var1x);
          }
        });
-      this.a((string)"Type", (JComponent)this.hc);
+      this.a((string)"Type", (Control)this.hc);
       this.hd = new cN(typeof(gN));
       this.hd.a((var1x) => {
          gv var2 = (gv)this.ha.SelectedItem;
@@ -49,16 +49,16 @@ public class dj : em {
             var2.aj(var1x);
          }
        });
-      this.a((string)"Class", (JComponent)this.hd);
+      this.a((string)"Class", (Control)this.hd);
       this.he = new dm(this);
       this.a((string)"Seed", (G)this.he);
       this.k("Base Stats");
       this.hf = new dn(this);
-      this.a((string)"Damage", (JComponent)this.hf);
+      this.a((string)"Damage", (Control)this.hf);
       this.hg = new @do(this);
-      this.a((string)"Mining", (JComponent)this.hg);
+      this.a((string)"Mining", (Control)this.hg);
       this.hh = new dp(this);
-      this.a((string)"Scan", (JComponent)this.hh);
+      this.a((string)"Scan", (Control)this.hh);
       this.Y();
       Panel var2 = new Panel();
       this.bQ = new Button("Delete Multitool");
@@ -70,7 +70,7 @@ public class dj : em {
       this.bS = new Button("Import");
       this.bS.AddActionListener(new ds(this, var1));
       var2.Add(this.bS);
-      this.a((JComponent)var2);
+      this.a((Control)var2);
       this.hi = new bO(var1);
       this.b(this.hi);
    }

@@ -31,7 +31,7 @@ public class er {
              for(int var4 = 0; var4 < var3.Count; ++var4) {
                XmlNode var5 = var3.Item(var4);
                if (var5 is XmlElement && var5.Name.Equals("trait")) {
-                  iG.Add(new er((System.Xml.XmlElement)var5));
+                  iG.Add(new er((XmlElement)var5));
                }
             }
          } catch (ParserConfigurationException var6) {

@@ -51,7 +51,7 @@ public class ge {
       if (var14 != null) {
          var4.Add(new gt(cB(), var14, 36352, var2, var3, false, false));
       }
-       this.gT = UnmodifiableList(var4);
+       this.gT = new List<object>(var4);
       List<object> var6 = new List<object>();
       eV var7 = var1.d("NPCWorkers");
       string var8 = "";
@@ -77,7 +77,7 @@ public class ge {
              var6.Add(new gh(this, var8, var9, (gh)null));
          }
       }
-       this.nh = UnmodifiableList(var6);
+       this.nh = new List<object>(var6);
       List<object> var15 = new List<object>();
       eV var11 = var1.d("PersistentPlayerBases");
        for(int var13 = 0; var13 < var11.Count; ++var13) {
@@ -86,7 +86,7 @@ public class ge {
             var15.Add(new gf(this, var12, (gf)null));
          }
       }
-       this.ni = UnmodifiableList(var15);
+       this.ni = new List<object>(var15);
    }
 
    public List<object> cC() {

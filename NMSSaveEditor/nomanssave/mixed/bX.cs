@@ -27,7 +27,7 @@ public class bX : MouseAdapter {
 
    public void mouseReleased(MouseEvent var1) {
       if (bO.a(bS.j(this.fk)).h(this.fl, this.fm) && !bO.a(bS.j(this.fk)).l(this.fl, this.fm)) {
-         int var2 = UIManager.getInt("Inventory.gridSize");
+         int var2 = 0;
          int var3 = this.fl + (int)Math.Floor((double)var1.getX() / (double)var2);
          int var4 = this.fm + (int)Math.Floor((double)var1.getY() / (double)var2);
          if (var3 >= 0 && var3 < bO.a(bS.j(this.fk)).Width) {
@@ -53,7 +53,7 @@ public class bX : MouseAdapter {
       if (var1.getClickCount() == 2) {
          gu var2 = bO.a(bS.j(this.fk)).f(this.fl, this.fm);
          if (var2 != null) {
-            cg.a((Container)bS.j(this.fk), (gQ)var2);
+            cg.a((Control)bS.j(this.fk), (gQ)var2);
             bS.c(this.fk);
          }
       }

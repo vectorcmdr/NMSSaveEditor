@@ -43,7 +43,7 @@ public class eP : ey {
        for(int var6 = 0; var6 < var3.Count; ++var6) {
          XmlNode var4 = var3.Item(var6);
          if (var4 is Element) {
-            var1 = (System.Xml.XmlElement)var4;
+            var1 = (XmlElement)var4;
             if (var1.Name.Equals("description")) {
                var2 = a(var1);
             } else if (var1.Name.Equals("requirement")) {
@@ -52,7 +52,7 @@ public class eP : ey {
          }
       }
        this.description = var2;
-      this.ke = UnmodifiableList(var5);
+      this.ke = new List<object>(var5);
    }
 
    public eB ba() {

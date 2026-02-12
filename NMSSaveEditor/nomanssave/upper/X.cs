@@ -40,21 +40,21 @@ public class X : Panel {
       this.bH = new ComboBox();
       this.bH.SetModel(new ab(this));
       this.bH.SetEnabled(false);
-      var3.a("Type", (JComponent)this.bH);
+      var3.a("Type", (Control)this.bH);
       this.bI = new ac(this);
-      var3.a("Name", (JComponent)this.bI);
+      var3.a("Name", (Control)this.bI);
       this.bJ = new ad(this);
       var3.a("Creature Seed", this.bJ);
       this.bK = new ae(this);
-      var3.a("Secondary Seed", (JComponent)this.bK);
+      var3.a("Secondary Seed", (Control)this.bK);
       this.bL = new af(this);
-      var3.a("Species Seed", (JComponent)this.bL);
+      var3.a("Species Seed", (Control)this.bL);
       this.bM = new ag(this);
-      var3.a("Genus Seed", (JComponent)this.bM);
+      var3.a("Genus Seed", (Control)this.bM);
       this.bN = new CheckBox("Predator");
       this.bN.SetEnabled(false);
       this.bN.AddActionListener(new ah(this));
-      var3.a((string)null, (JComponent)this.bN);
+      var3.a((string)null, (Control)this.bN);
       this.bO = new cN(typeof(gi));
       this.bO.a((var1x) => {
          gj var2 = (gj)this.bG.SelectedItem;
@@ -62,7 +62,7 @@ public class X : Panel {
             var2.ae(var1x);
          }
        });
-      var3.a("Biome", (JComponent)this.bO);
+      var3.a("Biome", (Control)this.bO);
       this.bP = new cN(typeof(gk));
       this.bP.a((var1x) => {
          gj var2 = (gj)this.bG.SelectedItem;
@@ -70,7 +70,7 @@ public class X : Panel {
             var2.af(var1x);
          }
        });
-      var3.a("Type", (JComponent)this.bP);
+      var3.a("Type", (Control)this.bP);
       var3.Y();
       Panel var4 = new Panel();
       this.bQ = new Button("Delete");

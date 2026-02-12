@@ -30,14 +30,14 @@ public class bD : DefaultListCellRenderer {
          Label var8 = (Label)var6;
          if (var9.aW()) {
             if (var4) {
-               var8.SetBackground(UIManager.getColor("Frigate.positiveTraitHighlight"));
+               var8.SetBackground(SystemColors.Control);
             } else {
-               var8.SetForeground(UIManager.getColor("Frigate.positiveTraitColor"));
+               var8.SetForeground(SystemColors.Control);
             }
          } else if (var4) {
-            var8.SetBackground(UIManager.getColor("Frigate.negativeTraitHighlight"));
+            var8.SetBackground(SystemColors.Control);
          } else {
-            var8.SetForeground(UIManager.getColor("Frigate.negativeTraitColor"));
+            var8.SetForeground(SystemColors.Control);
          }
       }
        return var6;

@@ -105,7 +105,7 @@ public class cy : Form, TreeSelectionListener {
    public static string ay() {
       string var0;
       try {
-         var0 = (string)Toolkit.getDefaultToolkit().getSystemClipboard().getData(DataFlavor.stringFlavor);
+         var0 = (string)Toolkit.getDefaultToolkit().getSystemClipboard().getData(DataFormats.Text);
       } catch (Exception var4) {
          hc.error("Could not retrieve clipboard contents", var4);
          return "";
@@ -226,7 +226,7 @@ public class cy : Form, TreeSelectionListener {
       if (!this.gf.Equals(var1)) {
          Highlighter var6 = this.fX.getHighlighter();
          var6.removeAllHighlights();
-         Color var7 = UIManager.getColor("JSONEditor.hiliteColor");
+         Color var7 = SystemColors.Control;
          DefaultHighlightPainter var8 = new DefaultHighlightPainter(var7);
          int var9 = -1;
           while((var9 = var5.IndexOf(var1, var9 + 1)) >= 0) {

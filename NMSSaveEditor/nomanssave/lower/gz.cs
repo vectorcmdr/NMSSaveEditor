@@ -119,7 +119,7 @@ public class gz {
        if (var5 != null) {
          var17.Add(new gt(au(var19), var5, var24, 8, 6, false, true));
       }
-       this.gT = UnmodifiableList(var17);
+       this.gT = new List<object>(var17);
    }
 
    public long dJ() {

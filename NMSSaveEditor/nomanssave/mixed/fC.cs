@@ -23,7 +23,7 @@ public class fC : fs {
    public fC(fA var1, string var2, int var3) {
       this.ma = var1;
       this.mb = var3;
-      this.mc = new File(aH.cG, var2);
+      this.mc = new FileInfo(aH.cG, var2);
       ZipFile var4 = new ZipFile(this.mc);
        try {
          ZipEntry var5 = var4.getEntry("saveinfo.txt");

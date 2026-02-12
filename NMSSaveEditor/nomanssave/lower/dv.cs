@@ -24,7 +24,7 @@ public class dv : ActionListener {
 
    public void actionPerformed(ActionEvent var1) {
       if (this.hq != null) {
-         cg.a((Container)du.d(this.hp), (gQ)this.hq);
+         cg.a((Control)du.d(this.hp), (gQ)this.hq);
          du.c(this.hp);
       }
     }

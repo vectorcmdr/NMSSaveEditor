@@ -322,6 +322,19 @@ public class eV {
    public Object clone() {
       return this.bA();
    }
+
+   // Capitalized aliases for Java compatibility
+   public void Add(Object var1) { add(var1); }
+   public void Add(int var1, Object var2) { add(var1, var2); }
+   public Object Remove(int var1) { return remove(var1); }
+   public Object Get(int var1) { return get(var1); }
+   public Object Set(int var1, Object var2) { return set(var1, var2); }
+   public int Size() { return size(); }
+   public int IndexOf(Object var1) { return indexOf(var1); }
+   public void Clear() { clear(); }
+   public Object Item(int var1) { return get(var1); }
+   public string Name { get => bz(); }
+   public IEnumerable<Object> Entries { get { for (int i = 0; i < Length; i++) yield return values[i]; } }
 }
 
 }

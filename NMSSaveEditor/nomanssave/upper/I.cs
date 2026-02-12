@@ -52,7 +52,7 @@ public class I : em {
       this.bp = new Button("Move Base Computer");
       this.bp.AddActionListener(new P(this, var1));
       var2.Add(this.bp);
-      this.a((JComponent)var2);
+      this.a((Control)var2);
       this.bq = new bO(var1);
       this.b(this.bq);
    }

@@ -29,7 +29,7 @@ public class eM {
              for(int var4 = 0; var4 < var3.Count; ++var4) {
                XmlNode var5 = var3.Item(var4);
                if (var5 is XmlElement && var5.Name.Equals("perk")) {
-                  kl.Add(new eM((System.Xml.XmlElement)var5));
+                  kl.Add(new eM((XmlElement)var5));
                }
             }
          } catch (ParserConfigurationException var6) {

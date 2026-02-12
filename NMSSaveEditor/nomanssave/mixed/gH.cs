@@ -132,7 +132,7 @@ public class gH {
        if (var5 != null) {
          var15.Add(new gK(this, a(this, var8), var5, var9, 8, 6, false, true, var1));
       }
-       this.gT = UnmodifiableList(var15);
+       this.gT = new List<object>(var15);
    }
 
    public void a(FileInfo var1, bool var2) {

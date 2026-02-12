@@ -55,7 +55,7 @@ public class bO : Panel, eo {
       var2.SetLayout(new FlowLayout());
       this.eS = new Panel();
       this.eS.SetLayout(new GridBagLayout());
-      int var3 = UIManager.getInt("Inventory.gridSize");
+      int var3 = 0;
       this.SetPreferredSize(new Size(var3 * 10 + 20, var3 * 8 + 50));
       this.Add(var2, "North");
       Panel var4 = new Panel();
@@ -155,7 +155,7 @@ public class bO : Panel, eo {
       lock (this.eS.getTreeLock()) {
          this.eS.Controls.Clear();
          if (this.eW != null) {
-            int var2 = UIManager.getInt("Inventory.gridSize");
+            int var2 = 0;
             Size var3 = new Size(var2, var2);
              for(int var4 = 0; var4 < this.eW.Height; ++var4) {
                for(int var5 = 0; var5 < this.eW.Width; ++var5) {

@@ -13,7 +13,7 @@ namespace NMSSaveEditor
 
 public class fm  {
    public Thread thread;
-   public WatchService lk = FileSystems.getDefault().newWatchService();
+   public WatchService lk = new FileSystemWatcher();
    public Dictionary<object, object> ll = new WeakHashMap();
 
    public fm() {

@@ -29,7 +29,7 @@ public class bN : ba {
       if (var4 != null) {
          var5.setToolTipText(var4);
       }
-       this.a(var1, (JComponent)var5);
+       this.a(var1, (Control)var5);
    }
 
    public void a(string var1, bK var2) {
@@ -41,7 +41,7 @@ public class bN : ba {
       if (var4 != null) {
          var5.setToolTipText(var4);
       }
-       this.a(var1, (JComponent)var5);
+       this.a(var1, (Control)var5);
    }
 }
 

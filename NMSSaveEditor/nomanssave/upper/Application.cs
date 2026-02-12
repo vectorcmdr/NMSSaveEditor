@@ -289,7 +289,7 @@ public class Application {
       this.aX = new u(this);
       string var2 = NMSSaveEditor.aH.getProperty("GameStorage");
       string var3 = NMSSaveEditor.aH.getProperty("GameSaveDir");
-      this.aF = var3 == null ? null : fq.a(var2, new File(var3), this.aX);
+      this.aF = var3 == null ? null : fq.a(var2, new FileInfo(var3), this.aX);
       if (this.aF == null) {
          this.aG = new ft[0];
          this.aH = -1;
@@ -337,12 +337,12 @@ public class Application {
        cT var3 = cT.aC();
       string var4 = a(var1.Name, "Ship");
       var3.setCurrentDirectory(var2);
-      var3.setSelectedFile(new File(var2, var4));
+      var3.setSelectedFile(new FileInfo(var2, var4));
       if (var3.showSaveDialog(this.N) == 0) {
          try {
             FileInfo var5 = var3.getSelectedFile();
             if (!var5.Name.EndsWith(".sh0")) {
-               var5 = new File(var5.Directory, var5.Name + ".sh0");
+               var5 = new FileInfo(var5.Directory, var5.Name + ".sh0");
             }
              var1.a(var5, var3.aw());
          } catch (Exception var6) {
@@ -363,12 +363,12 @@ public class Application {
        cv var3 = cv.ax();
       string var4 = a(var1.Name, "Weapon");
       var3.setCurrentDirectory(var2);
-      var3.setSelectedFile(new File(var2, var4));
+      var3.setSelectedFile(new FileInfo(var2, var4));
       if (var3.showSaveDialog(this.N) == 0) {
          try {
             FileInfo var5 = var3.getSelectedFile();
             if (!var5.Name.EndsWith(".wp0")) {
-               var5 = new File(var5.Directory, var5.Name + ".wp0");
+               var5 = new FileInfo(var5.Directory, var5.Name + ".wp0");
             }
              var1.j(var5);
          } catch (Exception var6) {
@@ -390,12 +390,12 @@ public class Application {
       cp var4 = cp.at();
       string var5 = a(var1.Name, var1.cL().ToString());
       var4.setCurrentDirectory(var2);
-      var4.setSelectedFile(new File(var2, var5));
+      var4.setSelectedFile(new FileInfo(var2, var5));
       if (var4.showSaveDialog(this.N) == 0) {
          try {
             FileInfo var6 = var4.getSelectedFile();
             if (!var6.Name.EndsWith(var3)) {
-               var6 = new File(var6.Directory, var6.Name + var3);
+               var6 = new FileInfo(var6.Directory, var6.Name + var3);
             }
              var1.j(var6);
          } catch (Exception var7) {
@@ -494,12 +494,12 @@ public class Application {
        cl var3 = cl.ar();
       string var4 = a(var1.Name, "Base");
       var3.setCurrentDirectory(var2);
-      var3.setSelectedFile(new File(var2, var4));
+      var3.setSelectedFile(new FileInfo(var2, var4));
       if (var3.showSaveDialog(this.N) == 0) {
          try {
             FileInfo var5 = var3.getSelectedFile();
             if (!var5.Name.EndsWith(".pb3")) {
-               var5 = new File(var5.Directory, var5.Name + ".pb3");
+               var5 = new FileInfo(var5.Directory, var5.Name + ".pb3");
             }
              if (var5.Exists && MessageBox.Show("Are you sure you want to overwrite this existing backup file?".ToString(), "Confirm".ToString(), MessageBoxButtons.YesNo) != 0) {
                return;
@@ -552,12 +552,12 @@ public class Application {
           cs var4 = cs.av();
          string var5 = a(var2.Name, "Freighter");
          var4.setCurrentDirectory(var3);
-         var4.setSelectedFile(new File(var3, var5));
+         var4.setSelectedFile(new FileInfo(var3, var5));
          if (var4.showSaveDialog(this.N) == 0) {
             try {
                FileInfo var6 = var4.getSelectedFile();
                if (!var6.Name.EndsWith(".fb3")) {
-                  var6 = new File(var6.Directory, var6.Name + ".fb3");
+                  var6 = new FileInfo(var6.Directory, var6.Name + ".fb3");
                }
                 if (var6.Exists && MessageBox.Show("Are you sure you want to overwrite this existing backup file?".ToString(), "Confirm".ToString(), MessageBoxButtons.YesNo) != 0) {
                   return;
@@ -1079,7 +1079,7 @@ public class Application {
    public void p() {
       eY var1 = this.aK.H("PlayerStateData.UniverseAddress");
       hl var2 = hl.n(var1);
-      if ((var2 = NMSSaveEditor.aj.a((Container)this.N, var2)) != null) {
+      if ((var2 = NMSSaveEditor.aj.a((Control)this.N, var2)) != null) {
          var2.aL(0);
          this.aK.b("PlayerStateData.UniverseAddress", (Object)var2.ew());
          this.aK.b("PlayerStateData.PreviousUniverseAddress", (Object)var1);
@@ -1173,12 +1173,12 @@ public class Application {
       cK var1 = cK.aA();
       string var2 = this.aI[this.aJ].K() + ".json";
       var1.setCurrentDirectory(NMSSaveEditor.aH.cF);
-      var1.setSelectedFile(new File(NMSSaveEditor.aH.cF, var2));
+      var1.setSelectedFile(new FileInfo(NMSSaveEditor.aH.cF, var2));
       if (var1.showSaveDialog(this.N) == 0) {
          try {
             FileInfo var3 = var1.getSelectedFile();
             if (!var3.Name.EndsWith(".json")) {
-               var3 = new File(var3.Directory, var3.Name + ".json");
+               var3 = new FileInfo(var3.Directory, var3.Name + ".json");
             }
              if (var3.Exists && MessageBox.Show("Are you sure you want to overwrite this existing JSON file?".ToString(), "Confirm".ToString(), MessageBoxButtons.YesNo) != 0) {
                return;
@@ -1563,12 +1563,12 @@ public class Application {
       this.R = new ComboBox();
       this.R.SetModel(new D(this));
       this.R.SetEnabled(this.aF != null);
-      var3.a("Game Slot", (JComponent)this.R);
+      var3.a("Game Slot", (Control)this.R);
       this.S = new ComboBox();
       this.S.setEditable(false);
       this.S.SetModel(new E(this));
       this.S.SetEnabled(this.aF != null);
-      var3.a("Save File", (JComponent)this.S);
+      var3.a("Save File", (Control)this.S);
       this.T = new Label();
       this.T.SetText("(no file selected)");
       var3.a("Modified", this.T, 2);
@@ -1803,7 +1803,7 @@ public class Application {
          this.s();
       });
       var25.Add(var26);
-      var5.Add(Box.createHorizontalGlue());
+      var5.Add(new Panel() { Dock = DockStyle.Fill });
       ToolStripMenuItem var23 = new ToolStripMenuItem("Help");
       var5.Add(var23);
       ToolStripMenuItem var24 = new ToolStripMenuItem("About");

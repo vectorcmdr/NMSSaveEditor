@@ -541,6 +541,21 @@ public class eY {
    public static Pattern bF() {
       return kH;
    }
+
+   // Capitalized aliases for Java compatibility
+   public int Count { get => length; set => length = value; }
+   public Object Get(string var1) { return get(var1); }
+   public Object Put(string var1, Object var2) { return put(var1, var2); }
+   public Object Remove(string var1) { return F(var1); }
+   public Object Remove(int var1) { return remove(var1); }
+   public bool Contains(string var1) { return contains(var1); }
+   public int Size() { return size(); }
+   public int IndexOf(string var1) { return indexOf(var1); }
+   public string Name { get => bz(); }
+   public IEnumerable<string> Names { get { for (int i = 0; i < length; i++) yield return names[i]; } }
+   public IEnumerable<Object> Entries { get { for (int i = 0; i < length; i++) yield return values[i]; } }
+   public Object Item(string var1) { return get(var1); }
+   public object DocumentElement { get => this; }
 }
 
 }

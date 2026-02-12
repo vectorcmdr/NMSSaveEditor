@@ -26,9 +26,9 @@ public class aD : Form {
       ba var2 = new ba();
       this.cw = new ComboBox();
       this.cw.SetModel(new aE(this));
-      var2.a("Look & Feel", (JComponent)this.cw);
+      var2.a("Look & Feel", (Control)this.cw);
       this.cx = new TextBox();
-      var2.a("Inventory Scale", (JComponent)this.cx);
+      var2.a("Inventory Scale", (Control)this.cx);
       var2.Y();
       Panel var3 = new Panel();
       var2.a(var3);

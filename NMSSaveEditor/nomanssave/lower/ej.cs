@@ -52,9 +52,9 @@ public class ej  {
          }
           ir.setCurrentDirectory(var0);
       } else {
-         FileInfo var1 = new File(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile));
-         FileInfo var2 = new File(var1, "AppData\\Roaming\\HelloGames\\NMS");
-         FileInfo var3 = new File(var1, "AppData\\Local\\Packages\\HelloGames.NoMansSky_bs190hzg1sesy\\SystemAppData");
+         FileInfo var1 = new FileInfo(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile));
+         FileInfo var2 = new FileInfo(var1, "AppData\\Roaming\\HelloGames\\NMS");
+         FileInfo var3 = new FileInfo(var1, "AppData\\Local\\Packages\\HelloGames.NoMansSky_bs190hzg1sesy\\SystemAppData");
          if (var2.IsDirectory()) {
             ir.setCurrentDirectory(var2);
          } else if (var3.IsDirectory()) {

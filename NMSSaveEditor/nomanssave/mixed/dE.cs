@@ -40,7 +40,7 @@ public class dE : Panel {
       this.hx.SetModel(new dF(this));
       this.hv.a("Settlement", true, this.hx);
       this.hy = new dG(this);
-      this.hv.a("Name", (JComponent)this.hy);
+      this.hv.a("Name", (Control)this.hy);
       this.hz = new dH(this);
       this.hv.a("Seed", this.hz);
       this.hv.Y();
@@ -48,7 +48,7 @@ public class dE : Panel {
       this.ea = new G[gG.Values.Length];
        for(int var4 = 0; var4 < this.ea.Length; ++var4) {
          this.ea[var4] = new dM(this, gG.Values[var4], (dM)null);
-         this.hv.a(gG.Values[var4].ToString(), (JComponent)this.ea[var4]);
+         this.hv.a(gG.Values[var4].ToString(), (Control)this.ea[var4]);
       }
        this.hw = new ba();
       var3 = new GridBagConstraints();
