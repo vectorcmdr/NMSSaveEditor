@@ -196,7 +196,7 @@ public class gT {
          return "NaN";
       } else {
          BigDecimal var3 = new BigDecimal(var0);
-         var3 = var3.setScale(var2, RoundingMode.HALF_UP);
+         var3 = var3.setScale(var2, /* RoundingMode */ 0);
          return var3.toPlainString();
       }
    }
@@ -208,7 +208,7 @@ public class gT {
          return "NaN";
       } else {
          BigDecimal var3 = new BigDecimal(var0);
-         var3 = var3.setScale(var2, RoundingMode.HALF_UP);
+         var3 = var3.setScale(var2, /* RoundingMode */ 0);
          string var4 = var3.toPlainString();
          if (var2 <= 0) {
             return var4;

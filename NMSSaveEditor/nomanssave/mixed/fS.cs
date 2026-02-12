@@ -26,7 +26,7 @@ public class fS {
    }
 
    public void cn() {
-      Throwable var1 = null;
+      Exception var1 = null;
       object var2 = null;
 
       try {
@@ -41,7 +41,7 @@ public class fS {
 
          }
 
-      } catch (Throwable var9) {
+      } catch (Exception var9) {
          if (var1 == null) {
             var1 = var9;
          } else if (var1 != var9) {
@@ -104,7 +104,7 @@ public class fS {
    }
 
    public void write() {
-      Throwable var1 = null;
+      Exception var1 = null;
       object var2 = null;
 
       try {
@@ -119,7 +119,7 @@ public class fS {
 
          }
 
-      } catch (Throwable var9) {
+      } catch (Exception var9) {
          if (var1 == null) {
             var1 = var9;
          } else if (var1 != var9) {

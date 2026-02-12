@@ -17,7 +17,7 @@ public class aD : Form {
    public aD(Frame var1) {
       base(var1);
       this.setMinimumSize(new Size(400, 10));
-      this.setModalExclusionType(ModalExclusionType.APPLICATION_EXCLUDE);
+      this.setModalExclusionType(/* ModalExclusionType */ 0);
       this.Text = ("Editor Settings");
       this/* setModal */(true);
       ba var2 = new ba();

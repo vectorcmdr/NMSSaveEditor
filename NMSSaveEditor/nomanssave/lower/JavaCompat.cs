@@ -184,25 +184,59 @@ namespace NMSSaveEditor
     }
 
     // Java Element (XML)
-    public class Element
+    // Java DOM Node - wraps XmlNode
+    public class Node
     {
-        public virtual string getAttribute(string name) { return ""; }
-        public virtual void setAttribute(string name, string value) { }
-        public virtual string getTagName() { return ""; }
-        public virtual string getTextContent() { return ""; }
-        public virtual void setTextContent(string text) { }
-        public virtual NodeList getElementsByTagName(string name) { return new NodeList(); }
-        public virtual NodeList getChildNodes() { return new NodeList(); }
-        public virtual Element getParentNode() { return null; }
+        public static short ELEMENT_NODE = 1;
+        public static short TEXT_NODE = 3;
+        public static short CDATA_SECTION_NODE = 4;
+        public static short COMMENT_NODE = 8;
+        public System.Xml.XmlNode _xmlNode;
+        public Node() { }
+        public Node(System.Xml.XmlNode n) { _xmlNode = n; }
+        public virtual string getNodeName() { return _xmlNode?.Name ?? ""; }
+        public virtual string getNodeValue() { return _xmlNode?.Value ?? ""; }
+        public virtual string getTextContent() { return _xmlNode?.InnerText ?? ""; }
+        public virtual void setTextContent(string text) { if (_xmlNode != null) _xmlNode.InnerText = text; }
+        public virtual int getNodeType() { return _xmlNode != null ? (int)_xmlNode.NodeType : 0; }
+        public virtual NodeList getChildNodes() { return _xmlNode != null ? new NodeList(_xmlNode.ChildNodes) : new NodeList(); }
+        public virtual Node getParentNode() { return _xmlNode?.ParentNode != null ? new Node(_xmlNode.ParentNode) : null; }
         public virtual void appendChild(object child) { }
         public virtual void removeChild(object child) { }
+        public virtual bool hasChildNodes() { return _xmlNode?.HasChildNodes ?? false; }
+        public static implicit operator Node(System.Xml.XmlNode n) => n != null ? new Node(n) : null;
+        public static implicit operator System.Xml.XmlNode(Node n) => n?._xmlNode;
+    }
+
+    public class Element : Node
+    {
+        public Element() { }
+        public Element(System.Xml.XmlNode n) : base(n) { }
+        public virtual string getAttribute(string name) { return (_xmlNode as System.Xml.XmlElement)?.GetAttribute(name) ?? ""; }
+        public virtual void setAttribute(string name, string value) { (_xmlNode as System.Xml.XmlElement)?.SetAttribute(name, value); }
+        public virtual string getTagName() { return _xmlNode?.Name ?? ""; }
+        public override string getTextContent() { return _xmlNode?.InnerText ?? ""; }
+        public override void setTextContent(string text) { if (_xmlNode != null) _xmlNode.InnerText = text; }
+        public virtual NodeList getElementsByTagName(string name) { return _xmlNode is System.Xml.XmlElement el ? new NodeList(el.GetElementsByTagName(name)) : new NodeList(); }
+        public new virtual NodeList getChildNodes() { return _xmlNode != null ? new NodeList(_xmlNode.ChildNodes) : new NodeList(); }
+        public new virtual Element getParentNode() { return _xmlNode?.ParentNode != null ? new Element(_xmlNode.ParentNode) : null; }
+        public override void appendChild(object child) { }
+        public override void removeChild(object child) { }
+        public static implicit operator Element(System.Xml.XmlNode n) => n != null ? new Element(n) : null;
     }
 
     public class NodeList
     {
+        private System.Xml.XmlNodeList _xmlNodeList;
         private List<Element> items = new List<Element>();
-        public int getLength() { return items.Count; }
-        public Element item(int index) { return items[index]; }
+        public NodeList() { }
+        public NodeList(System.Xml.XmlNodeList nl) { _xmlNodeList = nl; }
+        public int getLength() { return _xmlNodeList?.Count ?? items.Count; }
+        public int Length => getLength();
+        public int Count => getLength();
+        public Element item(int index) { return _xmlNodeList != null ? new Element(_xmlNodeList[index]) : items[index]; }
+        public static implicit operator NodeList(System.Xml.XmlNodeList nl) => nl != null ? new NodeList(nl) : null;
+        public static implicit operator System.Xml.XmlNodeList(NodeList nl) => nl?._xmlNodeList;
     }
 
     // Java File types

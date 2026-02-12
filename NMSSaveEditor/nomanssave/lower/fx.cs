@@ -27,19 +27,19 @@ public class fx : fs {
 
    public eY M() {
       byte[] var1 = this.lI.ca();
-      Throwable var2 = null;
+      Exception var2 = null;
       object var3 = null;
 
       try {
          ff var4 = new ff(new MemoryStream(var1), 2);
 
-         Throwable var10000;
+         Exception var10000;
          label173: {
             eY var17;
             bool var10001;
             try {
                var17 = var4.a(eG.jV);
-            } catch (Throwable var15) {
+            } catch (Exception var15) {
                var10000 = var15;
                var10001 = false;
                goto label173;
@@ -52,7 +52,7 @@ public class fx : fs {
             label162:
             try {
                return var17;
-            } catch (Throwable var14) {
+            } catch (Exception var14) {
                var10000 = var14;
                var10001 = false;
                goto label162;
@@ -65,7 +65,7 @@ public class fx : fs {
          }
 
          throw var2;
-      } catch (Throwable var16) {
+      } catch (Exception var16) {
          if (var2 == null) {
             var2 = var16;
          } else if (var2 != var16) {
@@ -78,7 +78,7 @@ public class fx : fs {
 
    public string b(eY var1) {
       MemoryStream var2 = new MemoryStream();
-      Throwable var3 = null;
+      Exception var3 = null;
       object var4 = null;
 
       try {
@@ -92,7 +92,7 @@ public class fx : fs {
             }
 
          }
-      } catch (Throwable var11) {
+      } catch (Exception var11) {
          if (var3 == null) {
             var3 = var11;
          } else if (var3 != var11) {

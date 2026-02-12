@@ -143,12 +143,12 @@ public class bl : Panel, eo {
       this.eb.a("Failed", (Control)this.ej);
       this.ek = new bq(this);
       this.eb.a("Damaged", (Control)this.ek);
-      nomanssave.en.a(this);
+      NMSSaveEditor.en.a(this);
    }
 
    public void a(bool var1) {
       if (this.dR.getSelectedRow() >= 0) {
-         this.dS.Enabled = (this.ep.Length < 30 || nomanssave.en.aS());
+         this.dS.Enabled = (this.ep.Length < 30 || NMSSaveEditor.en.aS());
       }
 
    }

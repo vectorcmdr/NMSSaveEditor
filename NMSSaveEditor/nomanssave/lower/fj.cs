@@ -18,7 +18,7 @@ public class fj : Closeable {
 
    public static byte[] j(object var0) {
       MemoryStream var1 = new MemoryStream();
-      Throwable var2 = null;
+      Exception var2 = null;
       object var3 = null;
 
       try {
@@ -32,7 +32,7 @@ public class fj : Closeable {
             }
 
          }
-      } catch (Throwable var10) {
+      } catch (Exception var10) {
          if (var2 == null) {
             var2 = var10;
          } else if (var2 != var10) {
@@ -47,7 +47,7 @@ public class fj : Closeable {
 
    public static byte[] g(eY var0) {
       MemoryStream var1 = new MemoryStream();
-      Throwable var2 = null;
+      Exception var2 = null;
       object var3 = null;
 
       try {
@@ -61,7 +61,7 @@ public class fj : Closeable {
             }
 
          }
-      } catch (Throwable var10) {
+      } catch (Exception var10) {
          if (var2 == null) {
             var2 = var10;
          } else if (var2 != var10) {
@@ -76,7 +76,7 @@ public class fj : Closeable {
 
    public static byte[] b(eV var0) {
       MemoryStream var1 = new MemoryStream();
-      Throwable var2 = null;
+      Exception var2 = null;
       object var3 = null;
 
       try {
@@ -90,7 +90,7 @@ public class fj : Closeable {
             }
 
          }
-      } catch (Throwable var10) {
+      } catch (Exception var10) {
          if (var2 == null) {
             var2 = var10;
          } else if (var2 != var10) {

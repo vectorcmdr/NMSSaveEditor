@@ -124,7 +124,7 @@ public class Application {
          var2 = false;
       }
 
-      nomanssave.aH.init(!var2);
+      NMSSaveEditor.aH.init(!var2);
       hc.info("Starting Editor...");
       (new Thread(() => {
          cK.aA();
@@ -138,7 +138,7 @@ public class Application {
          Stream var2 = typeof(Application).GetManifestResourceStream("icons/" + var0);
          if (var2 != null) {
             try {
-               var1 = ImageIO.read(var2);
+               var1 = System.Drawing.Image.FromStream(var2);
                M.Put(var0, var1);
             } catch (IOException var4) {
                hc.info("Error loading icon: " + var0);
@@ -157,7 +157,7 @@ public class Application {
          Stream var4 = typeof(Application).GetManifestResourceStream("icons/" + var0);
          if (var4 != null) {
             try {
-               var3 = ImageIO.read(var4);
+               var3 = System.Drawing.Image.FromStream(var4);
                M.Put(var0, var3);
             } catch (IOException var6) {
                hc.info("Error loading icon: " + var0);
@@ -300,8 +300,8 @@ public class Application {
          }
       };
       this.aX = new u(this);
-      string var2 = nomanssave.aH.getProperty("GameStorage");
-      string var3 = nomanssave.aH.getProperty("GameSaveDir");
+      string var2 = NMSSaveEditor.aH.getProperty("GameStorage");
+      string var3 = NMSSaveEditor.aH.getProperty("GameSaveDir");
       this.aF = var3 == null ? null : fq.a(var2, new FileInfo(var3), this.aX);
       if (this.aF == null) {
          this.aG = new ft[0];
@@ -317,7 +317,7 @@ public class Application {
          this.aJ = -1;
          if (var2 == null) {
             var2 = fq.c(this.aF);
-            nomanssave.aH.setProperty("GameStorage", var2);
+            NMSSaveEditor.aH.setProperty("GameStorage", var2);
          }
 
          hc.debug("Storage: " + var2);
@@ -346,9 +346,9 @@ public class Application {
    }
 
    public void a(gH var1) {
-      FileInfo var2 = nomanssave.aH.cF;
+      FileInfo var2 = NMSSaveEditor.aH.cF;
       if (!var2.Exists && !var2.Create()) {
-         var2 = nomanssave.aH.cD;
+         var2 = NMSSaveEditor.aH.cD;
       }
 
       cT var3 = cT.aC();
@@ -375,9 +375,9 @@ public class Application {
    }
 
    public void a(gv var1) {
-      FileInfo var2 = nomanssave.aH.cF;
+      FileInfo var2 = NMSSaveEditor.aH.cF;
       if (!var2.Exists && !var2.Create()) {
-         var2 = nomanssave.aH.cD;
+         var2 = NMSSaveEditor.aH.cD;
       }
 
       cv var3 = cv.ax();
@@ -404,9 +404,9 @@ public class Application {
    }
 
    public void a(gj var1) {
-      FileInfo var2 = nomanssave.aH.cF;
+      FileInfo var2 = NMSSaveEditor.aH.cF;
       if (!var2.Exists && !var2.Create()) {
-         var2 = nomanssave.aH.cD;
+         var2 = NMSSaveEditor.aH.cD;
       }
 
       string var3 = "." + var1.cL().name().ToLower();
@@ -436,7 +436,7 @@ public class Application {
    public gH h() {
       eY var1;
       if (this.aK != null && (var1 = this.aK.H("PlayerStateData")) != null) {
-         FileInfo var2 = nomanssave.aH.cF.Exists ? nomanssave.aH.cF : nomanssave.aH.cD;
+         FileInfo var2 = NMSSaveEditor.aH.cF.Exists ? NMSSaveEditor.aH.cF : NMSSaveEditor.aH.cD;
          cT var3 = cT.aC();
          var3.setCurrentDirectory(var2);
          if (var3.showOpenDialog(this.N) == 0) {
@@ -463,7 +463,7 @@ public class Application {
    public gv i() {
       eY var1;
       if (this.aK != null && (var1 = this.aK.H("PlayerStateData")) != null) {
-         FileInfo var2 = nomanssave.aH.cF.Exists ? nomanssave.aH.cF : nomanssave.aH.cD;
+         FileInfo var2 = NMSSaveEditor.aH.cF.Exists ? NMSSaveEditor.aH.cF : NMSSaveEditor.aH.cD;
          cv var3 = cv.ax();
          var3.setCurrentDirectory(var2);
          if (var3.showOpenDialog(this.N) == 0) {
@@ -490,7 +490,7 @@ public class Application {
    public gj j() {
       eY var1;
       if (this.aK != null && (var1 = this.aK.H("PlayerStateData")) != null) {
-         FileInfo var2 = nomanssave.aH.cF.Exists ? nomanssave.aH.cF : nomanssave.aH.cD;
+         FileInfo var2 = NMSSaveEditor.aH.cF.Exists ? NMSSaveEditor.aH.cF : NMSSaveEditor.aH.cD;
          cp var3 = cp.at();
          var3.setCurrentDirectory(var2);
          if (var3.showOpenDialog(this.N) == 0) {
@@ -515,9 +515,9 @@ public class Application {
    }
 
    public void a(gf var1) {
-      FileInfo var2 = nomanssave.aH.cE;
+      FileInfo var2 = NMSSaveEditor.aH.cE;
       if (!var2.Exists && !var2.Create()) {
-         var2 = nomanssave.aH.cD;
+         var2 = NMSSaveEditor.aH.cD;
       }
 
       cl var3 = cl.ar();
@@ -551,7 +551,7 @@ public class Application {
    }
 
    public bool b(gf var1) {
-      FileInfo var2 = nomanssave.aH.cE.Exists ? nomanssave.aH.cE : nomanssave.aH.cD;
+      FileInfo var2 = NMSSaveEditor.aH.cE.Exists ? NMSSaveEditor.aH.cE : NMSSaveEditor.aH.cD;
       cl var3 = cl.ar();
       var3.setCurrentDirectory(var2);
       if (var3.showOpenDialog(this.N) == 0) {
@@ -579,9 +579,9 @@ public class Application {
    public void a(gm var1) {
       gn var2 = var1.cZ();
       if (var2 != null) {
-         FileInfo var3 = nomanssave.aH.cE;
+         FileInfo var3 = NMSSaveEditor.aH.cE;
          if (!var3.Exists && !var3.Create()) {
-            var3 = nomanssave.aH.cD;
+            var3 = NMSSaveEditor.aH.cD;
          }
 
          cs var4 = cs.av();
@@ -657,7 +657,7 @@ public class Application {
       if (var2 == null) {
          return false;
       } else {
-         FileInfo var3 = nomanssave.aH.cE.Exists ? nomanssave.aH.cE : nomanssave.aH.cD;
+         FileInfo var3 = NMSSaveEditor.aH.cE.Exists ? NMSSaveEditor.aH.cE : NMSSaveEditor.aH.cD;
          cs var4 = cs.av();
          var4.setCurrentDirectory(var3);
          if (var4.showOpenDialog(this.N) == 0) {
@@ -785,8 +785,8 @@ public class Application {
             this.Q.Text = ("(none)");
          } else {
             string var4 = fq.c(this.aF);
-            nomanssave.aH.setProperty("GameStorage", var4);
-            nomanssave.aH.setProperty("GameSaveDir", this.aF.bS().FullName);
+            NMSSaveEditor.aH.setProperty("GameStorage", var4);
+            NMSSaveEditor.aH.setProperty("GameSaveDir", this.aF.bS().FullName);
             hc.debug("Storage: " + var4);
             hc.debug("Save Path: " + this.aF.bS().FullName);
             this.aG = this.aF.bV();
@@ -1177,7 +1177,7 @@ public class Application {
    public void p() {
       eY var1 = this.aK.H("PlayerStateData.UniverseAddress");
       hl var2 = hl.n(var1);
-      if ((var2 = nomanssave.aj.a((Container)this.N, var2)) != null) {
+      if ((var2 = NMSSaveEditor.aj.a((Container)this.N, var2)) != null) {
          var2.aL(0);
          this.aK.b("PlayerStateData.UniverseAddress", (object)var2.ew());
          this.aK.b("PlayerStateData.PreviousUniverseAddress", (object)var1);
@@ -1221,8 +1221,8 @@ public class Application {
    }
 
    public void s() {
-      if (nomanssave.aD.d(this.N)) {
-         nomanssave.aH.V();
+      if (NMSSaveEditor.aD.d(this.N)) {
+         NMSSaveEditor.aH.V();
          a((Window)this.N);
       }
 
@@ -1274,8 +1274,8 @@ public class Application {
       hc.info("Exporting JSON...");
       cK var1 = cK.aA();
       string var2 = this.aI[this.aJ].K() + ".json";
-      var1.setCurrentDirectory(nomanssave.aH.cF);
-      var1.setSelectedFile(new FileInfo(System.IO.Path.Combine((nomanssave.aH.cF).ToString(), (var2).ToString())));
+      var1.setCurrentDirectory(NMSSaveEditor.aH.cF);
+      var1.setSelectedFile(new FileInfo(System.IO.Path.Combine((NMSSaveEditor.aH.cF).ToString(), (var2).ToString())));
       if (var1.showSaveDialog(this.N) == 0) {
          try {
             FileInfo var3 = var1.getSelectedFile();
@@ -1299,7 +1299,7 @@ public class Application {
    public void v() {
       hc.info("Importing JSON...");
       cK var1 = cK.aA();
-      var1.setCurrentDirectory(nomanssave.aH.cF);
+      var1.setCurrentDirectory(NMSSaveEditor.aH.cF);
       if (var1.showOpenDialog(this.N) == 0) {
          try {
             if (MessageBox.Show(this.N, "Are you sure you want to update your current save data?", "Confirm", 2) != 0) {
@@ -1659,17 +1659,17 @@ public class Application {
 
       this.N.Text = ("No Man's Sky Save Editor - 1.19.14 (BREACH)");
       Rectangle var2 = new Rectangle(100, 100, 1100, 720);
-      var2.x = nomanssave.aH.a("MainFrame.X", 100);
-      var2.y = nomanssave.aH.a("MainFrame.Y", 100);
-      var2.width = nomanssave.aH.a("MainFrame.Width", 1000);
-      var2.height = nomanssave.aH.a("MainFrame.Height", 700);
+      var2.x = NMSSaveEditor.aH.a("MainFrame.X", 100);
+      var2.y = NMSSaveEditor.aH.a("MainFrame.Y", 100);
+      var2.width = NMSSaveEditor.aH.a("MainFrame.Width", 1000);
+      var2.height = NMSSaveEditor.aH.a("MainFrame.Height", 700);
       this.N.Bounds = new Rectangle(var2);
       this.N/* setDefaultCloseOperation */(3);
       this.N.addWindowListener(new B(this));
       this.N.addComponentListener(new C(this));
       this.O = new TabControl();
       this.N.Add(this.O, "Center");
-      ba var3 = new ba(new int[]{nomanssave.aH.cH, nomanssave.aH.cI, 0});
+      ba var3 = new ba(new int[]{NMSSaveEditor.aH.cH, NMSSaveEditor.aH.cI, 0});
       this.O.addTab("Main", (Icon)null, var3, null);
       var3.k("FileInfo Details");
       this.P = new Label();

@@ -18,7 +18,7 @@ public class p : Form {
       base(var1);
       this.Size = new Size(aH.cI * 2, aH.cI + aH.cH);
       this.FormBorderStyle = FormBorderStyle.FixedDialog; //(false);
-      this.setModalExclusionType(ModalExclusionType.APPLICATION_EXCLUDE);
+      this.setModalExclusionType(/* ModalExclusionType */ 0);
       this/* setModal */(true);
       Panel var2 = new Panel();
       this.setContentPane(var2);

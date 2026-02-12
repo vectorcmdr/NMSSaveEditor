@@ -19,7 +19,7 @@ public class Q : Form {
    public Q(Frame var1) {
       base(var1);
       this.FormBorderStyle = FormBorderStyle.FixedDialog; //(false);
-      this.setModalExclusionType(ModalExclusionType.APPLICATION_EXCLUDE);
+      this.setModalExclusionType(/* ModalExclusionType */ 0);
       this.Text = ("Change Stack Sizes");
       this/* setModal */(true);
       Panel var2 = new Panel();

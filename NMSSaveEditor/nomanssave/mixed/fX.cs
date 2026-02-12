@@ -154,19 +154,19 @@ public abstract class fX {
    }
 
    public eY a(eG var1) {
-      Throwable var2 = null;
+      Exception var2 = null;
       object var3 = null;
 
       try {
          ff var4 = new ff(this.getInputStream(), 2);
 
-         Throwable var10000;
+         Exception var10000;
          label173: {
             eY var17;
             bool var10001;
             try {
                var17 = var4.a(var1);
-            } catch (Throwable var15) {
+            } catch (Exception var15) {
                var10000 = var15;
                var10001 = false;
                goto label173;
@@ -179,7 +179,7 @@ public abstract class fX {
             label162:
             try {
                return var17;
-            } catch (Throwable var14) {
+            } catch (Exception var14) {
                var10000 = var14;
                var10001 = false;
                goto label162;
@@ -192,7 +192,7 @@ public abstract class fX {
          }
 
          throw var2;
-      } catch (Throwable var16) {
+      } catch (Exception var16) {
          if (var2 == null) {
             var2 = var16;
          } else if (var2 != var16) {
@@ -205,7 +205,7 @@ public abstract class fX {
 
    public byte[] ah(int var1) {
       MemoryStream var2 = new MemoryStream();
-      Throwable var3 = null;
+      Exception var3 = null;
       object var4 = null;
 
       try {
@@ -227,7 +227,7 @@ public abstract class fX {
             }
 
          }
-      } catch (Throwable var13) {
+      } catch (Exception var13) {
          if (var3 == null) {
             var3 = var13;
          } else if (var3 != var13) {
@@ -243,8 +243,8 @@ public abstract class fX {
    public void h(eY var1) {
       bool var2 = this.mode == fT.cw();
       MemoryStream var3 = new MemoryStream();
-      Throwable var4 = null;
-      Throwable var5 = null;
+      Exception var4 = null;
+      Exception var5 = null;
 
       fj var6;
       try {
@@ -258,7 +258,7 @@ public abstract class fX {
             }
 
          }
-      } catch (Throwable var25) {
+      } catch (Exception var25) {
          if (var4 == null) {
             var4 = var25;
          } else if (var4 != var25) {
@@ -288,7 +288,7 @@ public abstract class fX {
             }
 
          }
-      } catch (Throwable var27) {
+      } catch (Exception var27) {
          if (var5 == null) {
             var5 = var27;
          } else if (var5 != var27) {

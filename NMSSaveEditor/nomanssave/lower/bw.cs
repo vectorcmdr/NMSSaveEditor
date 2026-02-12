@@ -30,8 +30,8 @@ public class bw : object {
 
    public void setSelectedItem(object var1) {
       this.et = (gr)var1;
-      bl.a(this.er, bl.b(this.er) < 0 ? null : nomanssave.er.a(this.et));
-      bl.b(this.er, bl.b(this.er) < 0 ? null : nomanssave.er.b(this.et));
+      bl.a(this.er, bl.b(this.er) < 0 ? null : NMSSaveEditor.er.a(this.et));
+      bl.b(this.er, bl.b(this.er) < 0 ? null : NMSSaveEditor.er.b(this.et));
       if (bl.b(this.er) >= 0 && this.et != null && !this.et.Equals(bl.c(this.er)[bl.b(this.er)].da())) {
          bl.c(this.er)[bl.b(this.er)].c(this.et);
          if (bl.a(this.er) != null && bl.a(this.er).Length > 0) {

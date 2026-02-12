@@ -16,7 +16,7 @@ public class cY : Form {
    public cY(Frame var1) {
       base(var1);
       this.FormBorderStyle = FormBorderStyle.FixedDialog; //(false);
-      this.setModalExclusionType(ModalExclusionType.APPLICATION_EXCLUDE);
+      this.setModalExclusionType(/* ModalExclusionType */ 0);
       this.Text = ("Move Base Computer");
       this/* setModal */(true);
       Panel var2 = new Panel();

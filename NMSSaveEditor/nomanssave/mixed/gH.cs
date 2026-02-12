@@ -49,7 +49,7 @@ public class gH {
             throw new Exception("Ship cannot be imported to current file!");
          } else {
             eY var14 = gR.az("ship");
-            Throwable var15 = null;
+            Exception var15 = null;
             eV var6 = null;
 
             try {
@@ -67,7 +67,7 @@ public class gH {
                   }
 
                }
-            } catch (Throwable var13) {
+            } catch (Exception var13) {
                if (var15 == null) {
                   var15 = var13;
                } else if (var15 != var13) {
@@ -146,7 +146,7 @@ public class gH {
    }
 
    public void a(FileInfo var1, bool var2) {
-      Throwable var3 = null;
+      Exception var3 = null;
       object var4 = null;
 
       try {
@@ -184,7 +184,7 @@ public class gH {
 
          }
 
-      } catch (Throwable var15) {
+      } catch (Exception var15) {
          if (var3 == null) {
             var3 = var15;
          } else if (var3 != var15) {

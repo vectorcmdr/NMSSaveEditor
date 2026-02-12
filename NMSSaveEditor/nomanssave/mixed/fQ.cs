@@ -156,7 +156,7 @@ public class fQ {
 
    public void a(eY var1, bool var2) {
       MemoryStream var3 = new MemoryStream();
-      Throwable var4 = null;
+      Exception var4 = null;
       object var5 = null;
 
       try {
@@ -170,7 +170,7 @@ public class fQ {
             }
 
          }
-      } catch (Throwable var33) {
+      } catch (Exception var33) {
          if (var4 == null) {
             var4 = var33;
          } else if (var4 != var33) {

@@ -24,7 +24,7 @@ public class aj : Form {
    public aj(Frame var1) {
       base(var1);
       this.FormBorderStyle = FormBorderStyle.FixedDialog; //(false);
-      this.setModalExclusionType(ModalExclusionType.APPLICATION_EXCLUDE);
+      this.setModalExclusionType(/* ModalExclusionType */ 0);
       this.Text = ("Coordinate Viewer");
       this/* setModal */(true);
       Panel var2 = new Panel();

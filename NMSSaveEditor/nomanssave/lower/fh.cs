@@ -332,13 +332,13 @@ public class fh {
    }
 
    public static eY Q(string var0) {
-      Throwable var1 = null;
+      Exception var1 = null;
       object var2 = null;
 
       try {
          fi var3 = new fi(var0);
 
-         Throwable var10000;
+         Exception var10000;
          label213: {
             eY var17;
             bool var10001;
@@ -353,7 +353,7 @@ public class fh {
                }
 
                var17 = var4;
-            } catch (Throwable var15) {
+            } catch (Exception var15) {
                var10000 = var15;
                var10001 = false;
                goto label213;
@@ -366,7 +366,7 @@ public class fh {
             label197:
             try {
                return var17;
-            } catch (Throwable var14) {
+            } catch (Exception var14) {
                var10000 = var14;
                var10001 = false;
                goto label197;
@@ -379,7 +379,7 @@ public class fh {
          }
 
          throw var1;
-      } catch (Throwable var16) {
+      } catch (Exception var16) {
          if (var1 == null) {
             var1 = var16;
          } else if (var1 != var16) {
@@ -424,13 +424,13 @@ public class fh {
    }
 
    public static eV R(string var0) {
-      Throwable var1 = null;
+      Exception var1 = null;
       object var2 = null;
 
       try {
          fi var3 = new fi(var0);
 
-         Throwable var10000;
+         Exception var10000;
          label213: {
             eV var17;
             bool var10001;
@@ -445,7 +445,7 @@ public class fh {
                }
 
                var17 = var4;
-            } catch (Throwable var15) {
+            } catch (Exception var15) {
                var10000 = var15;
                var10001 = false;
                goto label213;
@@ -458,7 +458,7 @@ public class fh {
             label197:
             try {
                return var17;
-            } catch (Throwable var14) {
+            } catch (Exception var14) {
                var10000 = var14;
                var10001 = false;
                goto label197;
@@ -471,7 +471,7 @@ public class fh {
          }
 
          throw var1;
-      } catch (Throwable var16) {
+      } catch (Exception var16) {
          if (var1 == null) {
             var1 = var16;
          } else if (var1 != var16) {

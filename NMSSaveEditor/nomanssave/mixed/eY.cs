@@ -496,7 +496,7 @@ public class eY {
    }
 
    public void c(FileInfo var1) {
-      Throwable var2 = null;
+      Exception var2 = null;
       object var3 = null;
 
       try {
@@ -512,7 +512,7 @@ public class eY {
 
          }
 
-      } catch (Throwable var11) {
+      } catch (Exception var11) {
          if (var2 == null) {
             var2 = var11;
          } else if (var2 != var11) {
@@ -524,7 +524,7 @@ public class eY {
    }
 
    public void d(FileInfo var1) {
-      Throwable var2 = null;
+      Exception var2 = null;
       object var3 = null;
 
       try {
@@ -545,7 +545,7 @@ public class eY {
 
          }
 
-      } catch (Throwable var12) {
+      } catch (Exception var12) {
          if (var2 == null) {
             var2 = var12;
          } else if (var2 != var12) {

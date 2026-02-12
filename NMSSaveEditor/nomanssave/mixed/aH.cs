@@ -94,7 +94,7 @@ public class aH {
       string var0 = fh.b(cK, true);
 
       try {
-         Throwable var1 = null;
+         Exception var1 = null;
          object var2 = null;
 
          try {
@@ -109,7 +109,7 @@ public class aH {
                }
 
             }
-         } catch (Throwable var11) {
+         } catch (Exception var11) {
             if (var1 == null) {
                var1 = var11;
             } else if (var1 != var11) {

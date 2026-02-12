@@ -74,7 +74,7 @@ public class fC : fs {
 
    public eY M() {
       MemoryStream var1 = new MemoryStream();
-      Throwable var2 = null;
+      Exception var2 = null;
       object var3 = null;
 
       try {
@@ -105,7 +105,7 @@ public class fC : fs {
             }
 
          }
-      } catch (Throwable var21) {
+      } catch (Exception var21) {
          if (var2 == null) {
             var2 = var21;
          } else if (var2 != var21) {

@@ -781,20 +781,7 @@ namespace NMSSaveEditor
         public EmptyBorder(int top, int left, int bottom, int right) { }
     }
 
-    // Java Node (XML DOM)
-    public class Node
-    {
-        public static short ELEMENT_NODE = 1;
-        public static short TEXT_NODE = 3;
-        public static short CDATA_SECTION_NODE = 4;
-        public static short COMMENT_NODE = 8;
-        public virtual string getNodeName() => "";
-        public virtual short getNodeType() => 0;
-        public virtual string getNodeValue() => "";
-        public virtual NodeList getChildNodes() => new NodeList();
-        public virtual Element getParentNode() => null;
-        public virtual bool hasChildNodes() => false;
-    }
+    // Node class is now in JavaCompat.cs with XmlNode wrapping
 
     // Java Logging Level
     public class Level

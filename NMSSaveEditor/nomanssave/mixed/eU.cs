@@ -32,7 +32,7 @@ public sealed class eU {
 
    public static eU C(string var0) {
       eU[] var4;
-      int var3 = (var4 = values()).Length;
+      int var3 = (var4 = Values()).Length;
 
       for(int var2 = 0; var2 < var3; ++var2) {
          eU var1 = var4[var2];

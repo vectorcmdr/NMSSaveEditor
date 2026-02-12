@@ -13,7 +13,7 @@ public class a : Form {
    public a(Frame var1) {
       base(var1);
       this.FormBorderStyle = FormBorderStyle.FixedDialog; //(false);
-      this.setModalExclusionType(ModalExclusionType.APPLICATION_EXCLUDE);
+      this.setModalExclusionType(/* ModalExclusionType */ 0);
       this.Text = ("About Save Editor");
       this/* setModal */(true);
       JTextPane var2 = new JTextPane();
@@ -23,7 +23,7 @@ public class a : Form {
       try {
          StyledDocument var3 = (StyledDocument)var2.getDocument();
          SimpleAttributeSet var4 = new SimpleAttributeSet();
-         StyleConstants.setBold(var4, true);
+         /* StyleConstants */;
          SimpleAttributeSet var5 = new SimpleAttributeSet();
          var3.insertString(var3.getLength(), "No Man's Sky Save Editor\n\n", var4);
          var3.insertString(var3.getLength(), "Version: 1.19.14", var5);

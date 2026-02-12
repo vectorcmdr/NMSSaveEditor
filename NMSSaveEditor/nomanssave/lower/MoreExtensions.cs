@@ -128,3 +128,30 @@ namespace NMSSaveEditor
         public static object getInsets(this object c) => new Padding(0);
     }
 }
+
+namespace NMSSaveEditor
+{
+    public static class StreamExtensions
+    {
+        // Java OutputStream.write(int) -> writes single byte
+        public static void Write(this Stream s, int b) => s.WriteByte((byte)b);
+        // Java OutputStream.write(byte[]) -> writes full array
+        public static void Write(this Stream s, byte[] buf) => s.Write(buf, 0, buf.Length);
+        
+        // Java InputStream.read(byte[]) -> reads into array
+        public static int Read(this Stream s, byte[] buf) => s.Read(buf, 0, buf.Length);
+        
+        // Java String(byte[], String encoding) pattern
+        public static string GetString(this Encoding enc, byte[] bytes) => enc.GetString(bytes);
+        public static string GetString(this Encoding enc, byte[] bytes, int offset, int length) => enc.GetString(bytes, offset, length);
+        
+        // FileInfo -> string implicit
+        public static string getPath(this FileInfo fi) => fi.FullName;
+        public static string getAbsolutePath(this FileInfo fi) => fi.FullName;
+        public static string getCanonicalPath(this FileInfo fi) => fi.FullName;
+        
+        // DirectoryInfo -> FileInfo
+        public static FileInfo ToFileInfo(this DirectoryInfo di) => new FileInfo(di.FullName);
+    }
+    
+}

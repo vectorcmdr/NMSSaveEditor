@@ -17,7 +17,7 @@ public class dz : Form {
       base(var1);
       this.Size = new Size(300, 400);
       this.FormBorderStyle = FormBorderStyle.FixedDialog; //(false);
-      this.setModalExclusionType(ModalExclusionType.APPLICATION_EXCLUDE);
+      this.setModalExclusionType(/* ModalExclusionType */ 0);
       this.Text = ("Save FileInfo As");
       this/* setModal */(true);
       Panel var2 = new Panel();

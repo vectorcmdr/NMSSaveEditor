@@ -49,7 +49,7 @@ public class gv {
             throw new Exception("Weapon cannot be imported to current file!");
          } else {
             eY var14 = gR.az("multitool");
-            Throwable var15 = null;
+            Exception var15 = null;
             eV var6 = null;
 
             try {
@@ -67,7 +67,7 @@ public class gv {
                   }
 
                }
-            } catch (Throwable var13) {
+            } catch (Exception var13) {
                if (var15 == null) {
                   var15 = var13;
                } else if (var15 != var13) {
@@ -120,7 +120,7 @@ public class gv {
    }
 
    public void j(FileInfo var1) {
-      Throwable var2 = null;
+      Exception var2 = null;
       object var3 = null;
 
       try {
@@ -136,7 +136,7 @@ public class gv {
 
          }
 
-      } catch (Throwable var11) {
+      } catch (Exception var11) {
          if (var2 == null) {
             var2 = var11;
          } else if (var2 != var11) {

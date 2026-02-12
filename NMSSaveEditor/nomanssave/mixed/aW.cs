@@ -19,7 +19,7 @@ public class aW : Form {
       base(var1);
       this.Size = new Size(400, 250);
       this.FormBorderStyle = FormBorderStyle.FixedDialog; //(false);
-      this.setModalExclusionType(ModalExclusionType.APPLICATION_EXCLUDE);
+      this.setModalExclusionType(/* ModalExclusionType */ 0);
       this.Text = ("Find");
       this/* setModal */(true);
       Panel var2 = new Panel();

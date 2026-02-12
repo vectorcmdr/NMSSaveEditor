@@ -15,7 +15,7 @@ public class hc {
    public static int sr;
 
    static hc() {
-      Logger var0 = LogManager.getLogManager().getLogger("");
+      Logger var0 = /* LogManager */ null.getLogger("");
       Handler[] var1 = var0.getHandlers();
 
       for(int var2 = 0; var2 < var1.Length; ++var2) {
@@ -42,7 +42,7 @@ public class hc {
          Field var6 = var5.getDeclaredField("logger");
          Long var7 = (Long)var4.invoke(var2, var6);
          var3.invoke(var2, var5, var7, null);
-      } catch (Throwable var8) {
+      } catch (Exception var8) {
       }
 
    }
@@ -83,7 +83,7 @@ public class hc {
 
    }
 
-   public static void debug(string var0, Throwable var1) {
+   public static void debug(string var0, Exception var1) {
       if (sq != null) {
          lock(sq) {
             sq.println("[DEBUG] " + var0.Trim());
@@ -106,7 +106,7 @@ public class hc {
 
    }
 
-   public static void info(string var0, Throwable var1) {
+   public static void info(string var0, Exception var1) {
       so.println(var0);
       if (sq != null) {
          lock(sq) {
@@ -140,7 +140,7 @@ public class hc {
 
    }
 
-   public static void a(string var0, Throwable var1) {
+   public static void a(string var0, Exception var1) {
       so.println(d(var0, "WARNING: "));
       if (sq != null) {
          lock(sq) {
@@ -154,7 +154,7 @@ public class hc {
 
    }
 
-   public static void error(string var0, Throwable var1) {
+   public static void error(string var0, Exception var1) {
       sp.println(d(var0, "ERROR: "));
       if (sq != null) {
          lock(sq) {

@@ -20,7 +20,7 @@ public class aQ : Form {
    public aQ(Frame var1) {
       base(var1);
       this.FormBorderStyle = FormBorderStyle.FixedDialog; //(false);
-      this.setModalExclusionType(ModalExclusionType.APPLICATION_EXCLUDE);
+      this.setModalExclusionType(/* ModalExclusionType */ 0);
       this.Text = ("Expand Inventory");
       this/* setModal */(true);
       Panel var2 = new Panel();

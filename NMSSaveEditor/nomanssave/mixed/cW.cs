@@ -130,7 +130,7 @@ public class cW : Panel, CaretListener {
             int var10 = this.b(var4, var9) + var3.left;
             int var11 = this.a(var6, var2);
             var1.drawString(var8, var10, var11);
-            var6 = Utilities.getRowEnd(this.gB, var6) + 1;
+            var6 = 0; /* Utilities.getRowEnd(this.gB, var6) + 1 */;
          } catch (Exception var12) {
             break;
          }

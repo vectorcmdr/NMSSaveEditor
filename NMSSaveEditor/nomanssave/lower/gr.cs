@@ -38,9 +38,9 @@ public sealed class gr {
    }
 
    public static gr an(string var0) {
-      for(int var1 = 0; var1 < values().Length; ++var1) {
-         if (var0.Equals(values()[var1].name)) {
-            return values()[var1];
+      for(int var1 = 0; var1 < Values().Length; ++var1) {
+         if (var0.Equals(Values()[var1].name)) {
+            return Values()[var1];
          }
       }
 

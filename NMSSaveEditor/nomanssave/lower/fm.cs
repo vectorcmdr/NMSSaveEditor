@@ -8,7 +8,7 @@ namespace NMSSaveEditor
 {
 
 public class fm : JavaThread {
-   public WatchService lk = FileSystems.getDefault().newWatchService();
+   public WatchService lk = /* FileSystems */ null.newWatchService();
    public Dictionary<object, object> ll = new WeakHashMap();
 
    public fm() {
@@ -64,7 +64,7 @@ public class fm : JavaThread {
                      break;
                   }
 
-                  var3 = this.lk.poll(500L, TimeUnit.MILLISECONDS);
+                  var3 = this.lk.poll(500L, /* TimeUnit */ 1);
                } while(var3 != null);
 
                lock(fl.bQ()) {

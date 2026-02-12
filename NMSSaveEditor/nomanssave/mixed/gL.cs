@@ -46,9 +46,9 @@ public sealed class gL : gD {
    }
 
    public static gL aw(string var0) {
-      for(int var1 = 0; var1 < values().Length; ++var1) {
-         if (var0.Equals(values()[var1].filename)) {
-            return values()[var1];
+      for(int var1 = 0; var1 < Values().Length; ++var1) {
+         if (var0.Equals(Values()[var1].filename)) {
+            return Values()[var1];
          }
       }
 

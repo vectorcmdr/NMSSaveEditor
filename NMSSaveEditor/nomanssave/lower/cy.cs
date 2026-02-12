@@ -35,7 +35,7 @@ public class cy : Form, TreeSelectionListener {
       var2.height = aH.a("JSONEditor.Height", 700);
       this.Bounds = new Rectangle(var2);
       this/* setDefaultCloseOperation */(0);
-      this.setModalExclusionType(ModalExclusionType.APPLICATION_EXCLUDE);
+      this.setModalExclusionType(/* ModalExclusionType */ 0);
       this.Text = ("JSON Editor (Advanced Users Only)");
       this/* setModal */(true);
       this.addComponentListener(new cz(this));
@@ -105,7 +105,7 @@ public class cy : Form, TreeSelectionListener {
    public static string ay() {
       string var0;
       try {
-         var0 = (string)Toolkit.getDefaultToolkit().getSystemClipboard().getData(DataFlavor.stringFlavor);
+         var0 = (string)Toolkit.getDefaultToolkit().getSystemClipboard().getData(/* DataFlavor */ null);
       } catch (Exception var4) {
          hc.error("Could not retrieve clipboard contents", var4);
          return "";

@@ -24,7 +24,7 @@ public class h : Form {
    public h(Frame var1) {
       base(var1);
       this.FormBorderStyle = FormBorderStyle.FixedDialog; //(false);
-      this.setModalExclusionType(ModalExclusionType.APPLICATION_EXCLUDE);
+      this.setModalExclusionType(/* ModalExclusionType */ 0);
       this.Text = ("Add Item");
       this/* setModal */(true);
       Panel var2 = new Panel();

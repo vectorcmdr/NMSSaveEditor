@@ -31,7 +31,7 @@ public class cg : Form {
    public cg(Frame var1) {
       base(var1);
       this.Size = new Size(600, 480);
-      this.setModalExclusionType(ModalExclusionType.APPLICATION_EXCLUDE);
+      this.setModalExclusionType(/* ModalExclusionType */ 0);
       this.Text = ("Item Details");
       this/* setModal */(true);
       Panel var2 = new Panel();

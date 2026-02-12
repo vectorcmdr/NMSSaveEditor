@@ -45,19 +45,19 @@ public class fA : fq {
    }
 
    public static eY a(byte[] var0, eG var1) {
-      Throwable var2 = null;
+      Exception var2 = null;
       object var3 = null;
 
       try {
          ff var4 = new ff(new MemoryStream(var0), 2);
 
-         Throwable var10000;
+         Exception var10000;
          label173: {
             eY var17;
             bool var10001;
             try {
                var17 = var4.a(var1);
-            } catch (Throwable var15) {
+            } catch (Exception var15) {
                var10000 = var15;
                var10001 = false;
                goto label173;
@@ -70,7 +70,7 @@ public class fA : fq {
             label162:
             try {
                return var17;
-            } catch (Throwable var14) {
+            } catch (Exception var14) {
                var10000 = var14;
                var10001 = false;
                goto label162;
@@ -83,7 +83,7 @@ public class fA : fq {
          }
 
          throw var2;
-      } catch (Throwable var16) {
+      } catch (Exception var16) {
          if (var2 == null) {
             var2 = var16;
          } else if (var2 != var16) {
@@ -96,7 +96,7 @@ public class fA : fq {
 
    public static byte[] g(eY var0) {
       MemoryStream var1 = new MemoryStream();
-      Throwable var2 = null;
+      Exception var2 = null;
       object var3 = null;
 
       try {
@@ -110,7 +110,7 @@ public class fA : fq {
             }
 
          }
-      } catch (Throwable var10) {
+      } catch (Exception var10) {
          if (var2 == null) {
             var2 = var10;
          } else if (var2 != var10) {

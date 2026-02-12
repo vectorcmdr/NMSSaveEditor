@@ -72,7 +72,7 @@ public class gj {
             throw new Exception("Companion cannot be imported to current file!");
          } else {
             eY var15 = gR.az("companion");
-            Throwable var16 = null;
+            Exception var16 = null;
             object var7 = null;
 
             try {
@@ -90,7 +90,7 @@ public class gj {
                   }
 
                }
-            } catch (Throwable var14) {
+            } catch (Exception var14) {
                if (var16 == null) {
                   var16 = var14;
                } else if (var16 != var14) {
@@ -129,7 +129,7 @@ public class gj {
    }
 
    public void j(FileInfo var1) {
-      Throwable var2 = null;
+      Exception var2 = null;
       object var3 = null;
 
       try {
@@ -145,7 +145,7 @@ public class gj {
 
          }
 
-      } catch (Throwable var11) {
+      } catch (Exception var11) {
          if (var2 == null) {
             var2 = var11;
          } else if (var2 != var11) {

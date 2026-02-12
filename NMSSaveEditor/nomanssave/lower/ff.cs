@@ -588,7 +588,7 @@ public class ff : Closeable {
       byte[] var1 = this.bM();
 
       try {
-         return this.kS.decode(ByteBuffer.wrap(var1)).ToString();
+         return this.kS.decode(/* ByteBuffer.wrap */ (var1)).ToString();
       } catch (CharacterCodingException var3) {
          throw new eX("Invalid string");
       }
@@ -598,7 +598,7 @@ public class ff : Closeable {
       byte[] var1 = this.bM();
 
       try {
-         return this.kS.decode(ByteBuffer.wrap(var1)).ToString();
+         return this.kS.decode(/* ByteBuffer.wrap */ (var1)).ToString();
       } catch (CharacterCodingException var3) {
          return new fg(var1);
       }
