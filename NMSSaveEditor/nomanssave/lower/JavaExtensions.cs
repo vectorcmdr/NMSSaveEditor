@@ -631,6 +631,7 @@ namespace NMSSaveEditor
         public override string ToString() => _value.ToString();
         public static int ROUND_HALF_UP = 4;
         public static int ROUND_DOWN = 1;
+        public static implicit operator Number(BigDecimal bd) => new NumberWrapper(bd.intValue(), bd.longValue(), (float)bd.doubleValue(), bd.doubleValue());
     }
 
     // Java Zip support
@@ -1033,7 +1034,8 @@ namespace NMSSaveEditor
         public static void setEditable(this TreeView tv, bool editable) { tv.LabelEdit = editable; }
         
         // Number conversions
-        public static implicit operator Number(BigDecimal bd) => new NumberWrapper(bd.intValue(), bd.longValue(), (float)bd.doubleValue(), bd.doubleValue());
+        // Conversion helper moved to BigDecimal class itself
+        public static Number AsNumber(this BigDecimal bd) => new NumberWrapper(bd.intValue(), bd.longValue(), (float)bd.doubleValue(), bd.doubleValue());
         
         // XmlDocument factory pattern
         public static DocumentBuilderFactory newInstance(this Type t) => DocumentBuilderFactory.newInstance();
