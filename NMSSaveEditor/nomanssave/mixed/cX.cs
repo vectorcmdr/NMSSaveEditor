@@ -18,12 +18,12 @@ public class cX : Runnable {
 
    public void run() {
       try {
-         int var1 = cW.a(this.gL).getDocument().getLength();
-         Rectangle var2 = cW.a(this.gL).modelToView(var1);
-         if (var2 != null && var2.y != cW.b(this.gL)) {
+         // PORT_TODO: int var1 = cW.a(this.gL).getDocument().getLength();
+         // PORT_TODO: Rectangle var2 = cW.a(this.gL).modelToView(var1);
+         if (true) { // PORT_TODO: original condition had errors
             cW.c(this.gL);
             this.gL.Invalidate();
-            cW.a(this.gL, var2.y);
+            // PORT_TODO: cW.a(this.gL, var2.y);
          }
       } catch (Exception var3) {
       }

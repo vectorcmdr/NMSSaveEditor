@@ -25,7 +25,7 @@ public class hi {
       }
 
       try {
-         var2.join(500L);
+         // PORT_TODO: var2.join(500L);
       } catch (InterruptedException var4) {
       }
 
@@ -64,9 +64,9 @@ public class hi {
       if (var2 > 0) {
          throw new EOFException();
       } else {
-         string var7 = var1.getContentEncoding();
-         string var8 = new string(var5, var7 == null ? Encoding.UTF8 : var7);
-         return eY.E(var8);
+         // PORT_TODO: string var7 = var1.getContentEncoding();
+         // PORT_TODO: string var8 = new string(var5, var7 == null ? Encoding.UTF8 : var7);
+         // PORT_TODO: return eY.E(var8);
       }
    }
    public static Dictionary<object, object> ep() {

@@ -26,7 +26,7 @@ public class he : Stream {
       if (var1 == 10) {
          if (hc.en() != null) {
             lock(hc.en()) {
-               hc.en().Write(this.st.GetBytes(System.Text.Encoding.UTF8));
+               // PORT_TODO: hc.en().Write(this.st.GetBytes(System.Text.Encoding.UTF8));
                hc.en().Write(this.su.ToArray());
             }
          }
@@ -38,7 +38,7 @@ public class he : Stream {
 
    public void write(byte[] var1, int var2, int var3) {
       if (this.ss != null) {
-         this.ss.Write(var1, var2, var3);
+         // PORT_TODO: this.ss.Write(var1, var2, var3);
       }
 
       for(int var4 = 0; var4 < var3; ++var4) {
@@ -46,7 +46,7 @@ public class he : Stream {
             this.su.Write(var1, var2, var4 + 1);
             if (hc.en() != null) {
                lock(hc.en()) {
-                  hc.en().Write(this.st.GetBytes(System.Text.Encoding.UTF8));
+                  // PORT_TODO: hc.en().Write(this.st.GetBytes(System.Text.Encoding.UTF8));
                   hc.en().Write(this.su.ToArray());
                }
             }
@@ -62,11 +62,11 @@ public class he : Stream {
    }
 
    public void flush() {
-      if (this.su.Count > 0) {
-         this.su.Write(Environment.NewLine.GetBytes(System.Text.Encoding.UTF8));
+      if (true) { // PORT_TODO: original condition had errors
+         // PORT_TODO: this.su.Write(Environment.NewLine.GetBytes(System.Text.Encoding.UTF8));
          if (hc.en() != null) {
             lock(hc.en()) {
-               hc.en().Write(this.st.GetBytes(System.Text.Encoding.UTF8));
+               // PORT_TODO: hc.en().Write(this.st.GetBytes(System.Text.Encoding.UTF8));
                hc.en().Write(this.su.ToArray());
             }
          }

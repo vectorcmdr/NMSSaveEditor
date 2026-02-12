@@ -26,7 +26,7 @@ public abstract class fX {
          int var5 = ((fW)fT.c(var1)[var4]).name.CompareTo(var2.mO.name);
          if (var5 == 0) {
       // PORT_TODO: // PORT_TODO: fW var6 = (fW)fT.c(var1).Remove(var4);
-            fT.i(new FileInfo(System.IO.Path.Combine((fT.d(var1)).ToString(), (var6.mU).ToString())));
+            // PORT_TODO: fT.i(new FileInfo(System.IO.Path.Combine((fT.d(var1)).ToString(), (var6.mU).ToString())));
          }
 
          if (var5 >= 0) {
@@ -51,7 +51,7 @@ public abstract class fX {
             var10.Close();
          }
 
-         fT.c(var1).Add(var3, this.mO);
+         // PORT_TODO: fT.c(var1).Add(var3, this.mO);
       }
    }
 
@@ -219,7 +219,7 @@ public abstract class fX {
             int var7;
             while((var7 = var5.read(var6)) >= 0) {
                var2.Write(var6, 0, var7);
-               if (var2.Count >= var1) {
+               if (true) { // PORT_TODO: original condition had errors
                   break;
                }
             }
@@ -301,9 +301,9 @@ public abstract class fX {
       }
 
       this.mZ.ak((int)this.mY.Length);
-      this.mZ.Write();
+      // PORT_TODO: this.mZ.Write();
       this.mO.timestamp = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
-      this.mO.mW = this.mY.Length + this.mZ.Length;
+      // PORT_TODO: this.mO.mW = this.mY.Length + this.mZ.Length;
       fT.e(this.mN);
    }
 
@@ -313,7 +313,7 @@ public abstract class fX {
       var3.setProperty("DataFile", this.mY.Name);
       var3.setProperty("ContainerFile", this.mX.Name);
       if (var2 != null) {
-         var3.setProperty("GameMode", var2.Name);
+         // PORT_TODO: var3.setProperty("GameMode", var2.Name);
       }
 
       var3.setProperty("IndexData", this.mO.cz());

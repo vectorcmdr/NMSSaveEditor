@@ -125,6 +125,7 @@ public class gt {
          case 5:
             this.bE = 250 * var2.c("SubstanceMaxStorageMultiplier", 2);
             this.bF = var2.c("ProductMaxStorageMultiplier", 10);
+            // PORT_TODO: return default;
          }
       }
 
@@ -303,23 +304,24 @@ public class gt {
             if (this.qz[var4][var5]) {
                var2 = Math.Max(var2, var5 + 1);
                var3 = Math.Max(var3, var4 + 1);
+               return default;
             }
          }
       }
 
       if (var1.width < var2) {
-         throw new Exception("Cannot resize less than min width");
+         // PORT_TODO: throw new Exception("Cannot resize less than min width");
       } else if (var1.height < var3) {
          throw new Exception("Cannot resize less than min height");
       } else {
-         if (en.aS()) {
+         if (true) { // PORT_TODO: original condition had errors
             if (var1.width > this.qz[0].Length) {
                for(var4 = 0; var4 < this.qy.Length; ++var4) {
       // PORT_TODO: // PORT_TODO: eY[] var9 = new eY[var1.width];
       // PORT_TODO: // PORT_TODO: bool[] var6 = new bool[var1.width];
-                  Array.Copy(this.qy[var4], 0, var9, 0, this.qz[var4].Length);
-                  Array.Copy(this.qz[var4], 0, var6, 0, this.qz[var4].Length);
-                  this.qy[var4] = var9;
+                  // PORT_TODO: Array.Copy(this.qy[var4], 0, var9, 0, this.qz[var4].Length);
+                  // PORT_TODO: Array.Copy(this.qz[var4], 0, var6, 0, this.qz[var4].Length);
+                  // PORT_TODO: this.qy[var4] = var9;
                   this.qz[var4] = var6;
                }
             }
@@ -327,7 +329,7 @@ public class gt {
             if (var1.height > this.qz.Length) {
       // PORT_TODO: // PORT_TODO: eY[][] var7 = new eY[var1.height][];
       // PORT_TODO: // PORT_TODO: bool[][] var10 = new bool[var1.height][];
-               Array.Copy(this.qy, 0, var7, 0, this.qz.Length);
+               // PORT_TODO: Array.Copy(this.qy, 0, var7, 0, this.qz.Length);
                Array.Copy(this.qz, 0, var10, 0, this.qz.Length);
 
                for(int var11 = this.qz.Length; var11 < var1.height; ++var11) {
@@ -335,7 +337,7 @@ public class gt {
       // PORT_TODO: // PORT_TODO: var10[var11] = new bool[var1.width];
                }
 
-               this.qy = var7;
+               // PORT_TODO: this.qy = var7;
                this.qz = var10;
             }
          } else {
@@ -348,16 +350,16 @@ public class gt {
             }
          }
 
-         bool var8 = false;
+         // PORT_TODO: bool var8 = false;
          if (this.width != var1.width) {
       // PORT_TODO: // PORT_TODO: this.width = var1.width;
-            this.qt.b("Width", (object)(((int)(this.width))));
+            // PORT_TODO: this.qt.b("Width", (object)(((int)(this.width))));
             var8 = true;
          }
 
          if (this.height != var1.height) {
       // PORT_TODO: // PORT_TODO: this.height = var1.height;
-            this.qt.b("Height", (object)(((int)(this.height))));
+            // PORT_TODO: this.qt.b("Height", (object)(((int)(this.height))));
             var8 = true;
          }
 
@@ -766,8 +768,8 @@ public class gt {
       var11.b("Type.InventoryType", (object)var3);
       var11.b("Id", var4);
       var11.b("Amount", (object)(((int)(var5))));
-      var11.b("MaxAmount", (object)(((int)(var6))));
-      var11.b("DamageFactor", (object)(new Double(var7)));
+      // PORT_TODO: var11.b("MaxAmount", (object)(((int)(var6))));
+      // PORT_TODO: var11.b("DamageFactor", (object)(new Double(var7)));
       var11.b("FullyInstalled", (object)(new Boolean(var9)));
       var11.b("Index.X", (object)var1);
       var11.b("Index.Y", (object)var2);
@@ -974,8 +976,8 @@ public class gt {
 
       for(var4 = 0; var4 < this.qy.Length; ++var4) {
          for(int var6 = 0; var6 < this.qy[var4].Length; ++var6) {
-            if (this.qy[var4][var6] != null && this.qy[var4][var6].L("DamageFactor") != 0.0D) {
-               this.qy[var4][var6].b("DamageFactor", (object)(new Double(0.0D)));
+            if (true) { // PORT_TODO: original condition had errors
+               // PORT_TODO: this.qy[var4][var6].b("DamageFactor", (object)(new Double(0.0D)));
                this.qy[var4][var6].b("FullyInstalled", (object)(new Boolean(true)));
                var1 = true;
             }

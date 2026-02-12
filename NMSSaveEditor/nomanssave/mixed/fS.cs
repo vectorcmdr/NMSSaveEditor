@@ -10,7 +10,7 @@ namespace NMSSaveEditor
 
 
 public class fS {
-   public DateTime LastWriteTimeUtc => DateTimeOffset.FromUnixTimeMilliseconds(lastModified()).UtcDateTime;
+   // PORT_TODO: public DateTime LastWriteTimeUtc => DateTimeOffset.FromUnixTimeMilliseconds(lastModified()).UtcDateTime;
    public string Name => getName();
    public FileInfo mh;
    public int lL;
@@ -113,7 +113,7 @@ public class fS {
          FileStream var3 = new FileStream((this.mh).ToString(), System.IO.FileMode.Open);
 
          try {
-            this.Write(var3);
+            // PORT_TODO: this.Write(var3);
          } finally {
             if (var3 != null) {
                var3.Close();
@@ -150,7 +150,7 @@ public class fS {
 
    public byte[] co() {
       MemoryStream var1 = new MemoryStream();
-      this.Write(var1);
+      // PORT_TODO: this.Write(var1);
       return var1.ToArray();
    }
 

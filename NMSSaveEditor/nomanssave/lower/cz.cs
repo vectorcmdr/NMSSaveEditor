@@ -18,15 +18,15 @@ public class cz : ComponentAdapter {
    }
 
    public void componentMoved(ComponentEvent var1) {
-      Point var2 = this.gg.getBounds().getLocation();
-      aH.b("JSONEditor.X", var2.x);
-      aH.b("JSONEditor.Y", var2.y);
+      // PORT_TODO: Point var2 = this.gg.getBounds().getLocation();
+      // PORT_TODO: aH.b("JSONEditor.X", var2.x);
+      // PORT_TODO: aH.b("JSONEditor.Y", var2.y);
    }
 
    public void componentResized(ComponentEvent var1) {
-      Size var2 = this.gg.getBounds().getSize();
-      aH.b("JSONEditor.Width", var2.width);
-      aH.b("JSONEditor.Height", var2.height);
+      // PORT_TODO: Size var2 = this.gg.getBounds().getSize();
+      // PORT_TODO: aH.b("JSONEditor.Width", var2.width);
+      // PORT_TODO: aH.b("JSONEditor.Height", var2.height);
    }
 }
 

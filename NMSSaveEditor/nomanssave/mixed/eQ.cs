@@ -37,7 +37,7 @@ public eQ(Element var1, bool var2) : base(var1.getAttribute("id")) {
          throw new Exception("Error in tech: " + this.id, var10);
       }
 
-      this.special = var1.hasAttribute("special") ? Boolean.valueOf(var1.getAttribute("special")) : false;
+      // PORT_TODO: this.special = var1.hasAttribute("special") ? Boolean.valueOf(var1.getAttribute("special")) : false;
       // PORT_TODO: // PORT_TODO: this.ka = var1.hasAttribute("chargeable") ? ((int)(var1.getAttribute("chargeable"))) : null;
       this.jM = var1.getAttribute("subtitle");
       this.kc = var1.hasAttribute("icon") ? var1.getAttribute("icon") : null;
@@ -57,7 +57,7 @@ public eQ(Element var1, bool var2) : base(var1.getAttribute("id")) {
          if (var7 is Element) {
             Element var8 = (Element)var7;
             if (var8.getNodeName().Equals("description")) {
-               var3 = a(var8);
+               // PORT_TODO: var3 = a(var8);
             } else if (var8.getNodeName().Equals("requirement")) {
                var4.Add(new ez(this, var8));
             } else if (var8.getNodeName().Equals("techbox")) {

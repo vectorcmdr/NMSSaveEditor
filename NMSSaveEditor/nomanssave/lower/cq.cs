@@ -10,7 +10,7 @@ namespace NMSSaveEditor
 
 
 public class cq : FileView {
-   public string Name => getName();
+   // PORT_TODO: public string Name => getName();
    public cp fM;
 
    public cq(cp var1) {
@@ -20,9 +20,10 @@ public class cq : FileView {
    public Icon getIcon(FileInfo var1) {
       string var2 = var1.Name;
       if (var2.EndsWith(".pet")) {
-         return cp.@as();
+         // PORT_TODO: return cp.@as();
       } else {
-         return (Icon)(var2.EndsWith(".egg") ? cp.au() : base.getIcon(var1));
+         // PORT_TODO: return (Icon)(var2.EndsWith(".egg") ? cp.au() : base.getIcon(var1));
+         return default;
       }
    }
 

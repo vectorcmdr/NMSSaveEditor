@@ -62,13 +62,13 @@ public class dj : em {
       this.Y();
       Panel var2 = new Panel();
       this.bQ = new Button() { Text = "Delete Multitool" };
-      this.bQ.Click += (new dq(this, var1));
+      // PORT_TODO: this.bQ.Click += (new dq(this, var1));
       var2.Add(this.bQ);
       this.bR = new Button() { Text = "Export" };
-      this.bR.Click += (new dr(this, var1));
+      // PORT_TODO: this.bR.Click += (new dr(this, var1));
       var2.Add(this.bR);
       this.bS = new Button() { Text = "Import" };
-      this.bS.Click += (new ds(this, var1));
+      // PORT_TODO: this.bS.Click += (new ds(this, var1));
       var2.Add(this.bS);
       this.a((Control)var2);
       this.hi = new bO(var1);

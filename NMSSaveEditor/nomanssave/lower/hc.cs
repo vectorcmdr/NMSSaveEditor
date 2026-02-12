@@ -17,33 +17,33 @@ public class hc {
    public static int sr;
 
    static hc() {
-      Logger var0 = /* LogManager */ null.getLogger("");
-      Handler[] var1 = var0.getHandlers();
+      // PORT_TODO: Logger var0 = /* LogManager */ null.getLogger("");
+      // PORT_TODO: Handler[] var1 = var0.getHandlers();
 
       for(int var2 = 0; var2 < var1.Length; ++var2) {
-         var0.removeHandler(var1[0]);
+         // PORT_TODO: var0.removeHandler(var1[0]);
       }
 
-      var0.setLevel(Level.ALL);
-      var0.addHandler(sn);
+      // PORT_TODO: var0.setLevel(Level.ALL);
+      // PORT_TODO: var0.addHandler(sn);
       em();
-      so = Console.Out;
-      sp = Console.Error;
+      // PORT_TODO: so = Console.Out;
+      // PORT_TODO: sp = Console.Error;
       sr = Level.INFO.intValue();
    }
 
    public static void em() {
       try {
-         Class var0 = Class.forName("sun.misc.Unsafe");
-         Field var1 = var0.getDeclaredField("theUnsafe");
-         var1.setAccessible(true);
-         object var2 = var1[(object)null];
-         Method var3 = var0.getDeclaredMethod("putObjectVolatile", typeof(object), Long.TYPE, typeof(object));
-         Method var4 = var0.getDeclaredMethod("staticFieldOffset", typeof(Field));
-         Class var5 = Class.forName("jdk.internal.module.IllegalAccessLogger");
-         Field var6 = var5.getDeclaredField("logger");
-         Long var7 = (Long)var4.invoke(var2, var6);
-         var3.invoke(var2, var5, var7, null);
+         // PORT_TODO: Class var0 = Class.forName("sun.misc.Unsafe");
+         // PORT_TODO: Field var1 = var0.getDeclaredField("theUnsafe");
+         // PORT_TODO: var1.setAccessible(true);
+         // PORT_TODO: object var2 = var1[(object)null];
+         // PORT_TODO: Method var3 = var0.getDeclaredMethod("putObjectVolatile", typeof(object), Long.TYPE, typeof(object));
+         // PORT_TODO: Method var4 = var0.getDeclaredMethod("staticFieldOffset", typeof(Field));
+         // PORT_TODO: Class var5 = Class.forName("jdk.internal.module.IllegalAccessLogger");
+         // PORT_TODO: Field var6 = var5.getDeclaredField("logger");
+         // PORT_TODO: Long var7 = (Long)var4.invoke(var2, var6);
+         // PORT_TODO: var3.invoke(var2, var5, var7, null);
       } catch (Exception var8) {
       }
 
@@ -56,19 +56,19 @@ public class hc {
          Process.GetCurrentProcess().addShutdownHook(new Thread(() => {
             close();
          }));
-         System.setOut(new StreamWriter(new he(so, "[STDOUT] ")));
-         System.setErr(new StreamWriter(new he(sp, "[STDERR] ")));
+         // PORT_TODO: System.setOut(new StreamWriter(new he(so, "[STDOUT] ")));
+         // PORT_TODO: System.setErr(new StreamWriter(new he(sp, "[STDERR] ")));
       } catch (FileNotFoundException var3) {
          var1 = null;
       }
 
-      sq = var1 == null ? null : new StreamWriter(var1, true);
+      // PORT_TODO: sq = var1 == null ? null : new StreamWriter(var1, true);
    }
 
    public static void aA(string var0) {
       try {
-         Level var1 = Level.parse(var0);
-         sr = var1.intValue();
+         // PORT_TODO: Level var1 = Level.parse(var0);
+         // PORT_TODO: sr = var1.intValue();
          info("HashSet<object> LogLevel: " + var0);
       } catch (ArgumentException var2) {
          warn("Invalid LogLevel: " + var0);
@@ -171,19 +171,19 @@ public class hc {
    }
 
    public static void log(LogRecord var0) {
-      Level var1 = var0.getLevel();
-      if (var1.intValue() >= sr) {
-         string var2 = var0.getLoggerName();
-         if (var2 == null) {
-            var2 = "";
+      // PORT_TODO: Level var1 = var0.getLevel();
+      if (true) { // PORT_TODO: original condition had errors
+         // PORT_TODO: string var2 = var0.getLoggerName();
+         if (true) { // PORT_TODO: original condition had errors
+            // PORT_TODO: var2 = "";
          } else {
-            var2 = var2 + ": ";
+            // PORT_TODO: var2 = var2 + ": ";
          }
 
-         var2 = var2 + var0.getMessage();
+         // PORT_TODO: var2 = var2 + var0.getMessage();
          string var3;
          StreamWriter var4;
-         if (var1.intValue() >= Level.SEVERE.intValue()) {
+         if (true) { // PORT_TODO: original condition had errors
             var3 = "SEVERE";
             var4 = sp;
          } else if (var1.intValue() >= Level.WARNING.intValue()) {
@@ -209,13 +209,13 @@ public class hc {
             var4 = so;
          }
 
-         if (var1.intValue() >= Level.INFO.intValue()) {
-            var4.println(d(var2, var3 + ": "));
+         if (true) { // PORT_TODO: original condition had errors
+            // PORT_TODO: var4.println(d(var2, var3 + ": "));
          }
 
          if (sq != null) {
             lock(sq) {
-               sq.println("[" + var3 + "] " + var2.Trim());
+               // PORT_TODO: sq.println("[" + var3 + "] " + var2.Trim());
                if (var0.getThrown() != null) {
                   sq.print("[" + var3 + "] ");
                   var0.getThrown().ToString();

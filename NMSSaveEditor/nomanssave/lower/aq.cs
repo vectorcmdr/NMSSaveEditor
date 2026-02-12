@@ -52,7 +52,7 @@ public class aq : object {
       case 0:
          return var4 == null ? null : var4.N(3);
       case 1:
-         return var4 == null ? "" : var4.Name;
+         // PORT_TODO: return var4 == null ? "" : var4.Name;
       case 2:
          return var4 == null ? "" : var4.bc().ToString();
       case 3:

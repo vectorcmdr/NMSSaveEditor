@@ -23,9 +23,9 @@ public class aR : FocusListener {
    public void focusLost(FocusEvent var1) {
       int var2;
       try {
-         var2 = int.Parse(aQ.a(this.dr).Text);
-         if (var2 != aQ.b(this.dr).width) {
-            if (var2 < aQ.c(this.dr).width) {
+         // PORT_TODO: var2 = int.Parse(aQ.a(this.dr).Text);
+         if (true) { // PORT_TODO: original condition had errors
+            if (true) { // PORT_TODO: original condition had errors
       // PORT_TODO: // PORT_TODO: var2 = aQ.c(this.dr).width;
             } else if (var2 > aQ.d(this.dr).width && !en.aS()) {
       // PORT_TODO: // PORT_TODO: var2 = aQ.d(this.dr).width;
@@ -35,7 +35,7 @@ public class aR : FocusListener {
       // PORT_TODO: // PORT_TODO: var2 = aQ.b(this.dr).width;
       }
 
-      aQ.a(this.dr).Text = ((var2).ToString());
+      // PORT_TODO: aQ.a(this.dr).Text = ((var2).ToString());
    }
 }
 

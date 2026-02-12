@@ -17,9 +17,9 @@ public class i : ActionListener {
    }
 
    public void actionPerformed(EventArgs var1) {
-      string var2 = h.a(this.z).Text;
-      h.a(this.z, ey.b(h.b(this.z), var2));
-      h.c(this.z);
+      // PORT_TODO: string var2 = h.a(this.z).Text;
+      // PORT_TODO: h.a(this.z, ey.b(h.b(this.z), var2));
+      // PORT_TODO: h.c(this.z);
       if (h.d(this.z).Count == 0) {
          MessageBox.Show("Item not found.", "Warning");
       }

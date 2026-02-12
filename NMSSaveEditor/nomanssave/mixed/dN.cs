@@ -71,7 +71,7 @@ public class dN : em {
       this.a((string)"Seed", (G)this.hO);
       this.hP = new CheckBox() { Text = "Use Old Colours" };
       this.hP.Enabled = (false);
-      this.hP.Click += (new dV(this, var1));
+      // PORT_TODO: this.hP.Click += (new dV(this, var1));
       this.a(null, (Control)this.hP);
       this.k("Base Stats");
       this.hQ = new dW(this);
@@ -89,13 +89,13 @@ public class dN : em {
       this.Y();
       Panel var2 = new Panel();
       this.bQ = new Button() { Text = "Delete Ship" };
-      this.bQ.Click += (new dQ(this, var1));
+      // PORT_TODO: this.bQ.Click += (new dQ(this, var1));
       var2.Add(this.bQ);
       this.bR = new Button() { Text = "Export" };
-      this.bR.Click += (new dR(this, var1));
+      // PORT_TODO: this.bR.Click += (new dR(this, var1));
       var2.Add(this.bR);
       this.bS = new Button() { Text = "Import" };
-      this.bS.Click += (new dS(this, var1));
+      // PORT_TODO: this.bS.Click += (new dS(this, var1));
       var2.Add(this.bS);
       this.a((Control)var2);
       this.hW = new bO(var1);
@@ -105,11 +105,11 @@ public class dN : em {
    public void w() {
       for(int var1 = 0; var1 < this.hX.Length; ++var1) {
          this.hX[var1].cC().stream().forEach((var1x) => {
-            if (var1x.dt()) {
+            if (true) { // PORT_TODO: original condition had errors
                hc.info(var1x + ": technology recharged");
             }
 
-            this.hW.a(var1x);
+            // PORT_TODO: this.hW.a(var1x);
          });
       }
 
@@ -118,11 +118,11 @@ public class dN : em {
    public void x() {
       for(int var1 = 0; var1 < this.hX.Length; ++var1) {
          this.hX[var1].cC().stream().forEach((var1x) => {
-            if (var1x.du()) {
+            if (true) { // PORT_TODO: original condition had errors
                hc.info(var1x + ": items refilled");
             }
 
-            this.hW.a(var1x);
+            // PORT_TODO: this.hW.a(var1x);
          });
       }
 
@@ -131,11 +131,11 @@ public class dN : em {
    public void y() {
       for(int var1 = 0; var1 < this.hX.Length; ++var1) {
          this.hX[var1].cC().stream().forEach((var1x) => {
-            if (var1x.dv()) {
+            if (true) { // PORT_TODO: original condition had errors
                hc.info(var1x + ": all slots enabled");
             }
 
-            this.hW.a(var1x);
+            // PORT_TODO: this.hW.a(var1x);
          });
       }
 
@@ -144,11 +144,11 @@ public class dN : em {
    public void z() {
       for(int var1 = 0; var1 < this.hX.Length; ++var1) {
          this.hX[var1].cC().stream().forEach((var1x) => {
-            if (var1x.ds()) {
+            if (true) { // PORT_TODO: original condition had errors
                hc.info(var1x + ": all slots repaired");
             }
 
-            this.hW.a(var1x);
+            // PORT_TODO: this.hW.a(var1x);
          });
       }
 
@@ -157,11 +157,11 @@ public class dN : em {
    public void A() {
       for(int var1 = 0; var1 < this.hX.Length; ++var1) {
          this.hX[var1].cC().stream().forEach((var1x) => {
-            if (var1x.dl()) {
+            if (true) { // PORT_TODO: original condition had errors
                hc.info(var1x + ": inventory expanded");
             }
 
-            this.hW.a(var1x);
+            // PORT_TODO: this.hW.a(var1x);
          });
       }
 

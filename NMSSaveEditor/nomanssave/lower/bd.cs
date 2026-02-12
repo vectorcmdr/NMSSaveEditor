@@ -61,10 +61,10 @@ public class bd : em {
       this.a("Items", this.bm);
       Panel var2 = new Panel();
       this.bn = new Button() { Text = "Backup" };
-      this.bn.Click += (new bj(this, var1));
+      // PORT_TODO: this.bn.Click += (new bj(this, var1));
       var2.Add(this.bn);
       this.bo = new Button() { Text = "Restore" };
-      this.bo.Click += (new bk(this, var1));
+      // PORT_TODO: this.bo.Click += (new bk(this, var1));
       var2.Add(this.bo);
       this.a((Control)var2);
       this.dN = new bO(var1);

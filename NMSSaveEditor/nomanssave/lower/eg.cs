@@ -18,11 +18,12 @@ public class eg : object {
    }
 
    public int getSize() {
-      return gL.Values.Length;
+      // PORT_TODO: return gL.Values.Length;
+      return default;
    }
 
    public gL I(int var1) {
-      return gL.Values[var1];
+      // PORT_TODO: return gL.Values[var1];
    }
 
    public void addListDataListener(EventHandler var1) {

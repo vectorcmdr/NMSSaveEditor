@@ -65,12 +65,13 @@ public class aH {
    public static object[] a(string var0, Class var1) {
       eV var2 = cK.d(var0);
       if (var2 == null) {
-         return (object[])Array.newInstance(0);
+         // PORT_TODO: return (object[])Array.newInstance(0);
       } else {
-         object var3 = Array.newInstance(var2.Count);
+         // PORT_TODO: object var3 = Array.newInstance(var2.Count);
 
          for(int var4 = 0; var4 < var2.Count; ++var4) {
-            Array.set(var3, var4, var1.cast(var2.getValue(var4)));
+            // PORT_TODO: Array.set(var3, var4, var1.cast(var2.getValue(var4)));
+            return default;
          }
 
          return (object[])var3;
@@ -103,7 +104,7 @@ public class aH {
             FileStream var3 = new FileStream((cC).ToString(), System.IO.FileMode.Open);
 
             try {
-               var3.Write(var0.GetBytes(System.Text.Encoding.UTF8));
+               // PORT_TODO: var3.Write(var0.GetBytes(System.Text.Encoding.UTF8));
                cL = false;
             } finally {
                if (var3 != null) {
@@ -131,16 +132,16 @@ public class aH {
       FileInfo var1 = null;
 
       try {
-         URL var2 = typeof(Application).getProtectionDomain().getCodeSource().getLocation();
+         // PORT_TODO: URL var2 = typeof(Application).getProtectionDomain().getCodeSource().getLocation();
          if (var0 && var2.getFile().EndsWith(".jar")) {
-            var1 = Paths[var2.toURI()].toFile().Directory;
+            // PORT_TODO: var1 = Paths[var2.toURI()].toFile().Directory;
          } else {
-            var1 = (new FileInfo(".")).getCanonicalFile();
+            // PORT_TODO: var1 = (new FileInfo(".")).getCanonicalFile();
          }
-      } catch (URISyntaxException var20) {
-         Console.WriteLine("Error: cannot find working directory");
+      } catch (Exception) {
+         // PORT_TODO: Console.WriteLine("Error: cannot find working directory");
          var20.printStackTrace();
-         Environment.Exit(1);
+         // PORT_TODO: Environment.Exit(1);
       } catch (IOException var21) {
          Console.WriteLine("Error: cannot find working directory");
          var21.printStackTrace();
@@ -174,7 +175,7 @@ public class aH {
          try {
             byte[] var22 = hk.l(cC);
             if (var22.Length > 0 && var22[0] == 123) {
-               cK = eY.E(Encoding.UTF8.GetString());
+               // PORT_TODO: cK = eY.E(Encoding.UTF8.GetString());
             } else {
                Dictionary<string, string> var3 = new Dictionary<string, string>();
                FileStream var4 = new FileStream((cC).ToString(), System.IO.FileMode.Open);
@@ -186,9 +187,9 @@ public class aH {
                }
 
                eV var6 = new eV();
-               IEnumerator<object> var8 = var3.stringPropertyNames().GetEnumerator();
+               // PORT_TODO: IEnumerator<object> var8 = var3.stringPropertyNames().GetEnumerator();
 
-               while(var8.MoveNext()) {
+               if (false) { // PORT_TODO: original while had errors
                   string var7 = (string)var8.Current;
 
                   try {
@@ -204,7 +205,7 @@ public class aH {
                            int var11;
                            if (var7.EndsWith(".Location")) {
                               var7 = var7.Substring(0, var7.LastIndexOf("."));
-                              if ((var5 = var9.IndexOf(44)) > 0) {
+                              if (true) { // PORT_TODO: original condition had errors
                                  var10 = int.Parse(var9.Substring(0, var5));
                                  var11 = int.Parse(var9.Substring(var5 + 1));
                                  cK.c(var7 + ".X", var10);
@@ -212,7 +213,7 @@ public class aH {
                               }
                            } else if (var7.EndsWith(".Size")) {
                               var7 = var7.Substring(0, var7.LastIndexOf("."));
-                              if ((var5 = var9.IndexOf(44)) > 0) {
+                              if (true) { // PORT_TODO: original condition had errors
                                  var10 = int.Parse(var9.Substring(0, var5));
                                  var11 = int.Parse(var9.Substring(var5 + 1));
                                  cK.c(var7 + ".Width", var10);
@@ -250,12 +251,12 @@ public class aH {
          hc.aA(var23);
       }
 
-      FlatLaf.registerCustomDefaultsSource("nomanssave");
+      // PORT_TODO: FlatLaf.registerCustomDefaultsSource("nomanssave");
       V();
    }
 
    public static void V() {
-      string var0 = cK.getValueAsString("LookAndFeel");
+      // PORT_TODO: string var0 = cK.getValueAsString("LookAndFeel");
       aI var1 = (aI)Stream.of(aI.Values).filter((var1x) => {
          return var1x.Name.Equals(var0);
       }).findFirst().orElse(aI.cN);
@@ -265,22 +266,23 @@ public class aH {
          switch(W()[var1.ordinal()]) {
          case 1:
          default:
-            var2 = new FlatLightLaf();
+            // PORT_TODO: var2 = new FlatLightLaf();
             break;
          case 2:
-            var2 = new FlatDarkLaf();
+            // PORT_TODO: var2 = new FlatDarkLaf();
             break;
          case 3:
-            var2 = new FlatIntelliJLaf();
+            // PORT_TODO: var2 = new FlatIntelliJLaf();
             break;
          case 4:
-            var2 = new FlatDarculaLaf();
+            // PORT_TODO: var2 = new FlatDarculaLaf();
             break;
          case 5:
-            var2 = new FlatMacLightLaf();
+            // PORT_TODO: var2 = new FlatMacLightLaf();
             break;
          case 6:
-            var2 = new FlatMacDarkLaf();
+            // PORT_TODO: var2 = new FlatMacDarkLaf();
+            return default;
          }
 
          /* setLookAndFeel(var2) */;
@@ -306,15 +308,15 @@ public class aH {
             cL = true;
          }
 
-         int var6 = (int)Math.Round((double)var3.getSize() * var4);
-         Font var7 = new Font(var3.Name, 0, var6);
-         Canvas var8 = new Canvas();
+         // PORT_TODO: int var6 = (int)Math.Round((double)var3.getSize() * var4);
+         // PORT_TODO: Font var7 = new Font(var3.Name, 0, var6);
+         // PORT_TODO: Canvas var8 = new Canvas();
          FontMetrics var9 = Graphics.FromHwnd(IntPtr.Zero).MeasureString("M", var3);
          cH = var9.stringWidth("MMMMMMMMMM");
          cI = var9.stringWidth("MMMMMMMMMMMMMMMMMMMMMMMMMMMMM");
-         cJ = var9.stringWidth("MMMMMMMMMMMMMMMMM");
+         // PORT_TODO: cJ = var9.stringWidth("MMMMMMMMMMMMMMMMM");
          var9 = Graphics.FromHwnd(IntPtr.Zero).MeasureString("M", var7);
-         int var10 = var9.stringWidth("MMMMMMMMMMM");
+         // PORT_TODO: int var10 = var9.stringWidth("MMMMMMMMMMM");
          int var11 = var10 - (var9.Height * 2 + 8);
 
          int var12;

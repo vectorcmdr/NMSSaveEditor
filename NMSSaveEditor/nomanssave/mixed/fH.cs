@@ -39,16 +39,16 @@ public class fH {
 
    public byte[] readBytes() {
       long var1 = (255L & (long)this.lK[95]) << 24 | (255L & (long)this.lK[94]) << 16 | (255L & (long)this.lK[93]) << 8 | 255L & (long)this.lK[92];
-      FileStream var3 = new FileStream((new FileInfo(System.IO.Path.Combine((fA.a(this.ma).ToString(), System.IO.FileMode.Open)).ToString(), (this.K().ToString()))));
+      // PORT_TODO: FileStream var3 = new FileStream((new FileInfo(System.IO.Path.Combine((fA.a(this.ma).ToString(), System.IO.FileMode.Open)).ToString(), (this.K().ToString()))));
 
       byte[] var6;
       try {
          byte[] var4 = new byte[(int)var1];
-         var3.skip(112L);
-         hk.readFully(var3, var4);
+         // PORT_TODO: var3.skip(112L);
+         // PORT_TODO: hk.readFully(var3, var4);
          var6 = var4;
       } finally {
-         var3.Close();
+         // PORT_TODO: var3.Close();
       }
 
       return var6;
@@ -56,17 +56,17 @@ public class fH {
 
    public byte[] ah(int var1) {
       long var2 = (255L & (long)this.lK[95]) << 24 | (255L & (long)this.lK[94]) << 16 | (255L & (long)this.lK[93]) << 8 | 255L & (long)this.lK[92];
-      FileStream var4 = new FileStream((new FileInfo(System.IO.Path.Combine((fA.a(this.ma).ToString(), System.IO.FileMode.Open)).ToString(), (this.K().ToString()))));
+      // PORT_TODO: FileStream var4 = new FileStream((new FileInfo(System.IO.Path.Combine((fA.a(this.ma).ToString(), System.IO.FileMode.Open)).ToString(), (this.K().ToString()))));
 
       byte[] var7;
       try {
          var1 = (int)Math.Min((long)var1, var2);
          byte[] var5 = new byte[var1];
-         var4.skip(112L);
-         hk.readFully(var4, var5);
+         // PORT_TODO: var4.skip(112L);
+         // PORT_TODO: hk.readFully(var4, var5);
          var7 = var5;
       } finally {
-         var4.Close();
+         // PORT_TODO: var4.Close();
       }
 
       return var7;
@@ -77,13 +77,13 @@ public class fH {
       this.lK[93] = (byte)(var1.Length >> 8);
       this.lK[94] = (byte)(var1.Length >> 16);
       this.lK[95] = (byte)(var1.Length >> 24);
-      FileStream var2 = new FileStream((new FileInfo(System.IO.Path.Combine((fA.a(this.ma).ToString(), System.IO.FileMode.Open)).ToString(), (this.K().ToString()))));
+      // PORT_TODO: FileStream var2 = new FileStream((new FileInfo(System.IO.Path.Combine((fA.a(this.ma).ToString(), System.IO.FileMode.Open)).ToString(), (this.K().ToString()))));
 
       try {
-         var2.Write(this.lK);
-         var2.Write(var1);
+         // PORT_TODO: var2.Write(this.lK);
+         // PORT_TODO: var2.Write(var1);
       } finally {
-         var2.Close();
+         // PORT_TODO: var2.Close();
       }
 
    }
@@ -93,7 +93,7 @@ public class fH {
       var5.setProperty("StorageFile", this.mh.Name);
       var5.setProperty("LastModified", (this.mh.LastWriteTimeUtc.Ticks).ToString());
       if (var2 != null) {
-         var5.setProperty("GameMode", var2.Name);
+         // PORT_TODO: var5.setProperty("GameMode", var2.Name);
       }
 
       if (var3 != null) {

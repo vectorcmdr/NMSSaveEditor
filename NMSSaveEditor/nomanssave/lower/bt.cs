@@ -18,7 +18,7 @@ public class bt : ActionListener {
    }
 
    public void valueChanged(EventArgs var1) {
-      System.Windows.Forms.Application.Run(new bu(this, this.bv));
+      // PORT_TODO: System.Windows.Forms.Application.Run(new bu(this, this.bv));
    }
    public static bl a(bt var0) {
       return var0.er;

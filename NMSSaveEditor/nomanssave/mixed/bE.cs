@@ -92,8 +92,8 @@ public class bE : Panel {
       for(int var2 = 0; var2 < this.ex.Length; ++var2) {
          for(int var3 = 0; var3 < this.ex[var2].Controls.Count; ++var3) {
             Component var1 = (Component)this.ex[var2].Controls[var3];
-            if (var1 is bL && ((bL)var1).eB.isSpecial()) {
-               ((bL)var1).ac();
+            if (true) { // PORT_TODO: original condition had errors
+               // PORT_TODO: ((bL)var1).ac();
             }
          }
       }
@@ -103,8 +103,8 @@ public class bE : Panel {
       for(int var4 = 0; var4 < this.ex.Length; ++var4) {
          for(int var5 = 0; var5 < this.ex[var4].Controls.Count; ++var5) {
             Component var3 = (Component)this.ex[var4].Controls[var5];
-            if (var3 is bJ && ((bJ)var3).ez == var1) {
-               ((bJ)var3).Text = var2;
+            if (true) { // PORT_TODO: original condition had errors
+               // PORT_TODO: ((bJ)var3).Text = var2;
             }
          }
       }
@@ -117,9 +117,9 @@ public class bE : Panel {
          for(int var4 = 0; var4 < this.ex[var3].Controls.Count; ++var4) {
             Component var2 = (Component)this.ex[var3].Controls[var4];
             if (var2 is bJ) {
-               ((bJ)var2).ac();
+               // PORT_TODO: ((bJ)var2).ac();
             } else if (var2 is bL) {
-               ((bL)var2).ac();
+               // PORT_TODO: ((bL)var2).ac();
             }
          }
       }

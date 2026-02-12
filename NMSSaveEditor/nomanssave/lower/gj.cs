@@ -48,15 +48,15 @@ public class gj {
 
    public static gj a(eY var0, FileInfo var1) {
       eV var2 = null;
-      gl var3 = null;
+      // PORT_TODO: gl var3 = null;
       if (var1.Name.EndsWith(".pet")) {
          var2 = var0.d("Pets");
-         var3 = gl.oF;
+         // PORT_TODO: var3 = gl.oF;
       }
 
       if (var1.Name.EndsWith(".egg")) {
          var2 = var0.d("Eggs");
-         var3 = gl.oG;
+         // PORT_TODO: var3 = gl.oG;
       }
 
       if (var2 != null && var2.Count != 0) {
@@ -105,7 +105,7 @@ public class gj {
             eV var17 = var15.d("CreatureSeed");
             if (var17 != null && var17.ab(0)) {
                var2.a(var4, var15);
-               return new gj(var3, var4, var15);
+               // PORT_TODO: return new gj(var3, var4, var15);
             } else {
                throw new Exception("Invalid creature data");
             }
@@ -126,7 +126,7 @@ public class gj {
    }
 
    public void cm() {
-      this.bf.d("CreatureSeed").a(0, Boolean.FALSE);
+      // PORT_TODO: this.bf.d("CreatureSeed").a(0, Boolean.FALSE);
       this.bf.d("CreatureSeed").a(1, "0x0");
    }
 
@@ -241,7 +241,8 @@ public class gj {
 
    public string toString() {
       string var1 = this.Name;
-      return var1 != null && var1.Length != 0 ? var1 : this.nF.Name + " [" + this.index + "]";
+      // PORT_TODO: return var1 != null && var1.Length != 0 ? var1 : this.nF.Name + " [" + this.index + "]";
+      return default;
    }
 }
 

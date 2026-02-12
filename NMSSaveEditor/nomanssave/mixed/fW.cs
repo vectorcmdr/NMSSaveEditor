@@ -84,7 +84,7 @@ public class fW {
 
    public string cz() {
       MemoryStream var1 = new MemoryStream();
-      this.Write(var1);
+      // PORT_TODO: this.Write(var1);
       return hk.k(var1.ToArray());
    }
 }

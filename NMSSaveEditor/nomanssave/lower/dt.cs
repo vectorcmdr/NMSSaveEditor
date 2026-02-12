@@ -26,17 +26,17 @@ public dt(Application var1) : base(aH.cJ, 0) {
    public void aL() {
       lock(this.eS.getTreeLock()) {
          Component[] var5;
-         int var4 = (var5 = this.eS.getComponents()).Length;
+         // PORT_TODO: int var4 = (var5 = this.eS.getComponents()).Length;
          int var3 = 0;
 
          while(true) {
-            if (var3 >= var4) {
+            if (true) { // PORT_TODO: original condition had errors
                break;
             }
 
-            Component var2 = var5[var3];
+            // PORT_TODO: Component var2 = var5[var3];
       // PORT_TODO: // PORT_TODO: du var6 = (du)var2;
-            du.c(var6);
+            // PORT_TODO: du.c(var6);
             ++var3;
          }
       }
@@ -47,7 +47,7 @@ public dt(Application var1) : base(aH.cJ, 0) {
 
    public void a(gF[] var1) {
       lock(this.eS.getTreeLock()) {
-         this.eS.RemoveAll();
+         // PORT_TODO: this.eS.RemoveAll();
          int var3 = 0;
 
          while(true) {
@@ -71,9 +71,9 @@ public dt(Application var1) : base(aH.cJ, 0) {
    }
 
    public void a(du var1) {
-      ey var2 = h.a(this, 28160);
-      if (var2 != null) {
-         var1.hm.m(var2.aZ());
+      // PORT_TODO: ey var2 = h.a(this, 28160);
+      if (true) { // PORT_TODO: original condition had errors
+         // PORT_TODO: var1.hm.m(var2.aZ());
          var1.hm.aA(0);
          du.c(var1);
       }
@@ -86,9 +86,9 @@ public dt(Application var1) : base(aH.cJ, 0) {
          this.eR.c("Item details not found!");
       } else {
          List<object> var3 = this.eR.g(3584);
-         int var4 = dd.a(this, var3, -1);
-         if (var4 != -1) {
-            gt var5 = (gt)var3[var4];
+         // PORT_TODO: int var4 = dd.a(this, var3, -1);
+         if (true) { // PORT_TODO: original condition had errors
+            // PORT_TODO: gt var5 = (gt)var3[var4];
             int var6 = var1.hm.dA();
             ey var7 = ey.d(var1.hm.dz());
             var6 = var5.a(var7, var6);

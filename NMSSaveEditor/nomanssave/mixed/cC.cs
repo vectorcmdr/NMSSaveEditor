@@ -20,7 +20,7 @@ public class cC : ActionListener {
       string var2 = cy.c(this.gg).Text.Trim();
 
       try {
-         cy.d(this.gg).Text = (var2);
+         // PORT_TODO: cy.d(this.gg).Text = (var2);
       // PORT_TODO: // PORT_TODO: ((cI)cy.e(this.gg).DataSource).a(cy.d(this.gg));
          cy.e(this.gg).setSelectionRow(0);
          cy.e(this.gg).Show();

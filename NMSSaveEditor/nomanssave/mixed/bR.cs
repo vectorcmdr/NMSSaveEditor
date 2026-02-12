@@ -19,8 +19,8 @@ public class bR : ActionListener {
 
    public void actionPerformed(EventArgs var1) {
       if (bO.a(this.eX) != null) {
-         Size var2 = aQ.a(this.eX, bO.a(this.eX).getSize(), bO.a(this.eX).dm(), bO.a(this.eX).dn());
-         if (var2 != null && bO.a(this.eX).a(var2)) {
+         // PORT_TODO: Size var2 = aQ.a(this.eX, bO.a(this.eX).getSize(), bO.a(this.eX).dm(), bO.a(this.eX).dn());
+         if (true) { // PORT_TODO: original condition had errors
             bO.c(this.eX);
          }
 

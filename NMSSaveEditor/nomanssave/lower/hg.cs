@@ -17,8 +17,8 @@ public class hg {
       if (!var0.StartsWith("0x")) {
          throw new Exception("Invalid seed: " + var0);
       } else {
-         long var1 = Long.parseUnsignedLong(var0.Substring(2), 16);
-         return new hg(var1);
+         // PORT_TODO: long var1 = Long.parseUnsignedLong(var0.Substring(2), 16);
+         // PORT_TODO: return new hg(var1);
       }
    }
 

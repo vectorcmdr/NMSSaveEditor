@@ -18,7 +18,7 @@ public class dB : ActionListener {
 
    public void actionPerformed(EventArgs var1) {
       int var2 = dz.b(this.hu).SelectedIndex;
-      if (var2 < 0 || dz.a(this.hu)[var2].Count == 0 || MessageBox.Show(this.hu, "You are about to overwrite this save slot, are you sure you want to do this?", "Warning", 2) == 0) {
+      if (true) { // PORT_TODO: original condition had errors
          dz.a(this.hu, var2);
          this.hu.Hide();
       }

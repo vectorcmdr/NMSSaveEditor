@@ -39,13 +39,13 @@ public cY(Frame var1) : base(var1) {
       var6.SuspendLayout(); // TODO: set layout new FlowLayoutPanel(2));
       var2.Controls.Add(var6);
       Button var7 = new Button() { Text = "Save" };
-      var7.Click += (new da(this));
+      // PORT_TODO: var7.Click += (new da(this));
       var6.Add(var7);
       this.getRootPane().setDefaultButton(var7);
       Button var8 = new Button() { Text = "Cancel" };
-      var8.Click += (new db(this));
+      // PORT_TODO: var8.Click += (new db(this));
       var6.Add(var8);
-      this.getRootPane().registerKeyboardAction(new dc(this), /* KeyStroke */ Keys.None /* (27, 0) */, 2);
+      // PORT_TODO: this.getRootPane().registerKeyboardAction(new dc(this), /* KeyStroke */ Keys.None /* (27, 0) */, 2);
       this.PerformLayout();
    }
 

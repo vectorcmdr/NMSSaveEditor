@@ -21,14 +21,15 @@ public class cA : DefaultTreeCellRenderer {
       if (((cJ)var2).gi == null) {
          var8.setIcon(Application.a("UI-FILEICON.PNG", 20, 20));
       } else if (var5) {
-         var8.setIcon(SystemInformation.getIcon("Tree.leafIcon"));
+         // PORT_TODO: var8.setIcon(SystemInformation.getIcon("Tree.leafIcon"));
       } else if (var4) {
-         var8.setIcon(SystemInformation.getIcon("Tree.openIcon"));
+         // PORT_TODO: var8.setIcon(SystemInformation.getIcon("Tree.openIcon"));
       } else {
-         var8.setIcon(SystemInformation.getIcon("Tree.closedIcon"));
+         // PORT_TODO: var8.setIcon(SystemInformation.getIcon("Tree.closedIcon"));
+         return default;
       }
 
-      return var8;
+      // PORT_TODO: return var8;
    }
 }
 

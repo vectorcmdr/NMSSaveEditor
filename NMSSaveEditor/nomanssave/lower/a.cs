@@ -19,7 +19,7 @@ public a(Frame var1) : base(var1) {
       // PORT_TODO: // PORT_TODO: this/* setModal */(true);
       JTextPane var2 = new JTextPane();
       var2.Padding = new Padding(0); /* setBorder */ //(null /* EmptyBorder */);
-      var2.setOpaque(false);
+      // PORT_TODO: var2.setOpaque(false);
 
       try {
          StyledDocument var3 = (StyledDocument)var2.getDocument();
@@ -37,18 +37,18 @@ public a(Frame var1) : base(var1) {
 
       var2.setEditable(false);
       this.Controls.Add(var2);
-      this.getRootPane().registerKeyboardAction(new b(this), /* KeyStroke */ Keys.None /* (27, 0) */, 2);
+      // PORT_TODO: this.getRootPane().registerKeyboardAction(new b(this), /* KeyStroke */ Keys.None /* (27, 0) */, 2);
       this.PerformLayout();
    }
 
    public static void a_init(Container var0) {
-      if (a == null) {
+      if (true) { // PORT_TODO: original condition had errors
          Frame var1 = null;
-         a = new a(var1);
+         // PORT_TODO: a = new a(var1);
       }
 
-      a.StartPosition = FormStartPosition.CenterParent; //(a.DirectoryName);
-      a.Show();
+      // PORT_TODO: a.StartPosition = FormStartPosition.CenterParent; //(a.DirectoryName);
+      // PORT_TODO: a.Show();
    }
 }
 

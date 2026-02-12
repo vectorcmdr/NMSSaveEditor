@@ -471,7 +471,7 @@ namespace NMSSaveEditor
     {
         public static Encoding UTF_8 = Encoding.UTF8;
         public static Encoding US_ASCII = Encoding.ASCII;
-        public static Encoding ISO_8859_1 = Encoding.GetEncoding(Encoding.Latin1);
+        // PORT_TODO: public static Encoding ISO_8859_1 = Encoding.GetEncoding(Encoding.Latin1);
     }
 
     // Java InputStreamReader/OutputStreamWriter

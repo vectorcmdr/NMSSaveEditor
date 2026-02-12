@@ -17,9 +17,9 @@ public class dL : object {
    }
 
    public Component getListCellRendererComponent(ListBox var1, object var2, int var3, bool var4, bool var5) {
-      Label var6 = (Label)base.getListCellRendererComponent(var1, var2, var3, var4, var5);
+      // PORT_TODO: Label var6 = (Label)base.getListCellRendererComponent(var1, var2, var3, var4, var5);
       if (var2 == null) {
-         var6.Text = ("");
+         // PORT_TODO: var6.Text = ("");
       } else {
          eM var7 = (eM)var2;
          if (var7.aW()) {
@@ -27,6 +27,7 @@ public class dL : object {
                var6.setBackground(/* UIManager.getColor */ SystemColors.Control); //("Settlement.positivePerkHighlight")
             } else {
                var6.setForeground(/* UIManager.getColor */ SystemColors.Control); //("Settlement.positivePerkColor")
+               return default;
             }
          } else if (var4) {
             var6.setBackground(/* UIManager.getColor */ SystemColors.Control); //("Settlement.negativePerkHighlight")
@@ -35,7 +36,7 @@ public class dL : object {
          }
       }
 
-      return var6;
+      // PORT_TODO: return var6;
    }
 }
 

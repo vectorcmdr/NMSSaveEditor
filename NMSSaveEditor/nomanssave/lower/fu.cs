@@ -11,7 +11,7 @@ namespace NMSSaveEditor
 
 
 public class fu : fq {
-   public static readonly byte[] lA = "NOMANSKY".GetBytes(System.Text.Encoding.UTF8);
+   // PORT_TODO: public static readonly byte[] lA = "NOMANSKY".GetBytes(System.Text.Encoding.UTF8);
    public static readonly byte[] lB = new byte[] {126, unchecked((byte)-25), 85, unchecked((byte)-54), unchecked((byte)-47), 7, 0, 0};
    public static Pattern lC = Pattern.compile("\\{\"Version\":(\\d*),.*");
    public FileInfo lD;
@@ -22,10 +22,10 @@ public class fu : fq {
 
    public static fn ag(int var0) {
       int var1 = (3584 & var0) >> 9;
-      if (var1 <= 0 && var1 > fn.Values.Length) {
+      if (true) { // PORT_TODO: original condition had errors
          throw new Exception("Unsupported version: " + var0);
       } else {
-         return fn.Values[var1 - 1];
+         // PORT_TODO: return fn.Values[var1 - 1];
       }
    }
 
@@ -41,7 +41,7 @@ public class fu : fq {
          byte[] var6 = new byte[8];
          hk.readFully(var3, var6);
          var4 += (long)var6.Length;
-         if (!a(var6, lA)) {
+         if (true) { // PORT_TODO: original condition had errors
             throw new IOException("Invalid header");
          }
 
@@ -75,8 +75,8 @@ public class fu : fq {
                var4 = this.lF[var8].lP;
                byte[] var9 = new byte[20];
                int var10 = var3.read(var9);
-               string var11 = new string(var9, 0, var10, Encoding.Latin1);
-               Matcher var12 = lC.matcher(var11);
+               // PORT_TODO: string var11 = new string(var9, 0, var10, Encoding.Latin1);
+               // PORT_TODO: Matcher var12 = lC.matcher(var11);
                if (var12.matches()) {
                   try {
                      this.lF[var8].be = ag(int.Parse(var12.group(1)));
@@ -106,7 +106,7 @@ public class fu : fq {
          }
       }
 
-      fl.a(this, this.lD.Directory);
+      // PORT_TODO: fl.a(this, this.lD.Directory);
    }
 
    public FileInfo bS() {

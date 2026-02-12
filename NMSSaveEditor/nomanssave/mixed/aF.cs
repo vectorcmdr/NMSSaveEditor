@@ -29,7 +29,7 @@ public class aF : ActionListener {
             aD.a(this.cB, true);
          }
       } else if (var3 == null || var3 != var4) {
-         aH.setProperty("LookAndFeel", var4.Name);
+         // PORT_TODO: aH.setProperty("LookAndFeel", var4.Name);
          aD.a(this.cB, true);
       }
 

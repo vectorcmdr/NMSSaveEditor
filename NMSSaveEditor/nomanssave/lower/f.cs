@@ -23,14 +23,14 @@ public class f : DataGridView {
       object var6 = ((object)(var5));
       // var6.setSortable(2, false); // setSortable not available in WinForms
       this.setRowSorter(var6);
-      this.getTableHeader().getColumnModel().getColumn(0).setHeaderRenderer(new e(2));
-      this.getTableHeader().getColumnModel().getColumn(1).setHeaderRenderer(new e(2));
+      // PORT_TODO: this.getTableHeader().getColumnModel().getColumn(0).setHeaderRenderer(new e(2));
+      // PORT_TODO: this.getTableHeader().getColumnModel().getColumn(1).setHeaderRenderer(new e(2));
       CheckBox var7 = new CheckBox();
       var7.setHorizontalAlignment(0);
-      this.getColumnModel().getColumn(2).setMaxWidth(80);
-      this.getTableHeader().getColumnModel().getColumn(2).setHeaderRenderer(new e(0));
-      this.getColumnModel().getColumn(2).setCellEditor(new DefaultCellEditor(var7));
-      this.getColumnModel().getColumn(2).setCellRenderer(new d((d)null));
+      // PORT_TODO: this.getColumnModel().getColumn(2).setMaxWidth(80);
+      // PORT_TODO: this.getTableHeader().getColumnModel().getColumn(2).setHeaderRenderer(new e(0));
+      // PORT_TODO: this.getColumnModel().getColumn(2).setCellEditor(new DefaultCellEditor(var7));
+      // PORT_TODO: this.getColumnModel().getColumn(2).setCellRenderer(new d((d)null));
    }
 
    public void a(eV var1) {

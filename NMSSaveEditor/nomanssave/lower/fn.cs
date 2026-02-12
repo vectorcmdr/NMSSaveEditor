@@ -30,10 +30,10 @@ public sealed class fn {
 
    public static fn S(string var0) {
       fn[] var4;
-      int var3 = (var4 = Values()).Length;
+      // PORT_TODO: int var3 = (var4 = Values()).Length;
 
-      for(int var2 = 0; var2 < var3; ++var2) {
-         fn var1 = var4[var2];
+      if (false) { // PORT_TODO: original loop had errors
+         // PORT_TODO: fn var1 = var4[var2];
          if (var0.Equals(var1.ToString())) {
             return var1;
          }
@@ -54,8 +54,8 @@ public sealed class fn {
 
          if (var1.find()) {
             int var3 = int.Parse(var1.group(3));
-            if (var3 > 0 && var3 <= Values().Length) {
-               return Values()[var3 - 1];
+            if (true) { // PORT_TODO: original condition had errors
+               // PORT_TODO: return Values()[var3 - 1];
             }
          }
       }
@@ -69,13 +69,13 @@ public sealed class fn {
       int var2;
       if ("Main".Equals(var1)) {
          var2 = var0.J("BaseContext.GameMode");
-         if (var2 > 0 && var2 <= Values().Length) {
-            return Values()[var2 - 1];
+         if (true) { // PORT_TODO: original condition had errors
+            // PORT_TODO: return Values()[var2 - 1];
          }
       } else if ("Season".Equals(var1)) {
          var2 = var0.J("ExpeditionContext.GameMode");
-         if (var2 > 0 && var2 <= Values().Length) {
-            return Values()[var2 - 1];
+         if (true) { // PORT_TODO: original condition had errors
+            // PORT_TODO: return Values()[var2 - 1];
          }
       }
 

@@ -226,7 +226,7 @@ public class gH {
       this.rp.b("Resource.Filename", (object)var1);
       gL var2 = gL.aw(var1);
       this.gT.stream().forEach((var1x) => {
-         var1x.az(var2 == null ? 4 : var2.ea());
+         // PORT_TODO: var1x.az(var2 == null ? 4 : var2.ea());
       });
       if (var2 == gL.rx) {
          this.d("^ALIEN_SHIP", 1.0D);
@@ -251,7 +251,7 @@ public class gH {
 
    public void cm() {
       this.rp.b("Resource.Filename", (object)"");
-      this.rp.d("Resource.Seed").a(0, Boolean.FALSE);
+      // PORT_TODO: this.rp.d("Resource.Seed").a(0, Boolean.FALSE);
       this.rp.d("Resource.Seed").a(1, "0x0");
    }
 
@@ -283,13 +283,13 @@ public class gH {
 
    public void d(string var1, double var2) {
       this.gT.stream().forEach((var3) => {
-         var3.d(var1, var2);
+         // PORT_TODO: var3.d(var1, var2);
       });
    }
 
    public void av(string var1) {
       this.gT.stream().forEach((var1x) => {
-         var1x.ap(var1);
+         // PORT_TODO: var1x.ap(var1);
       });
    }
 

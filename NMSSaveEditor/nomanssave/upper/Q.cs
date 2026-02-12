@@ -45,13 +45,13 @@ public Q(Frame var1) : base(var1) {
       var7.SuspendLayout(); // TODO: set layout new FlowLayoutPanel(2));
       var2.Controls.Add(var7);
       Button var8 = new Button() { Text = "Save" };
-      var8.Click += (new T(this));
+      // PORT_TODO: var8.Click += (new T(this));
       var7.Add(var8);
       this.getRootPane().setDefaultButton(var8);
       Button var9 = new Button() { Text = "Cancel" };
-      var9.Click += (new U(this));
+      // PORT_TODO: var9.Click += (new U(this));
       var7.Add(var9);
-      this.getRootPane().registerKeyboardAction(new V(this), /* KeyStroke */ Keys.None /* (27, 0) */, 2);
+      // PORT_TODO: this.getRootPane().registerKeyboardAction(new V(this), /* KeyStroke */ Keys.None /* (27, 0) */, 2);
       this.PerformLayout();
    }
 

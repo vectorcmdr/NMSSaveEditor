@@ -314,10 +314,10 @@ public class eY {
    }
 
    public fc G(string var1) {
-      IEnumerator<object> var3 = this.kJ.entrySet().GetEnumerator();
+      // PORT_TODO: IEnumerator<object> var3 = this.kJ.entrySet().GetEnumerator();
 
-      while(var3.MoveNext()) {
-         KeyValuePair<object, object> var2 = (KeyValuePair<object, object>)var3.Current;
+      if (false) { // PORT_TODO: original while had errors
+         // PORT_TODO: KeyValuePair<object, object> var2 = (KeyValuePair<object, object>)var3.Current;
          if (var1.Equals(var2.getKey())) {
             var1 = (string)((Function)var2.getValue()).apply(this);
             break;
@@ -356,7 +356,7 @@ public class eY {
             }
          }
 
-         if (var5.hitEnd()) {
+         if (true) { // PORT_TODO: original condition had errors
             return (fc)var4;
          }
       }
@@ -370,7 +370,7 @@ public class eY {
       } catch (fd var3) {
          hc.debug("Path not found: " + var1);
          return null;
-         hc.warn("Error getting value: " + var1 + ", " + var4.getMessage());
+         // PORT_TODO: hc.warn("Error getting value: " + var1 + ", " + var4.getMessage());
          return null;
       }
    }
@@ -457,7 +457,7 @@ public class eY {
       } catch (fd var3) {
          hc.debug("Path not found: " + var1);
          return null;
-         hc.warn("Error getting value: " + var1 + ", " + var4.getMessage());
+         // PORT_TODO: hc.warn("Error getting value: " + var1 + ", " + var4.getMessage());
          return null;
       }
    }
@@ -504,7 +504,7 @@ public class eY {
 
          try {
             string var5 = fh.b(this, true);
-            var4.Write(var5.GetBytes(System.Text.Encoding.UTF8));
+            // PORT_TODO: var4.Write(var5.GetBytes(System.Text.Encoding.UTF8));
          } finally {
             if (var4 != null) {
                var4.Close();
@@ -531,8 +531,8 @@ public class eY {
          FileStream var4 = new FileStream((var1).ToString(), System.IO.FileMode.Open);
 
          try {
-            string var5 = new string(hk.g(var4), StandardCharsets.UTF_8);
-            object var6 = fh.P(var5);
+            // PORT_TODO: string var5 = new string(hk.g(var4), StandardCharsets.UTF_8);
+            // PORT_TODO: object var6 = fh.P(var5);
             if (!(var6 is eY)) {
                throw new eX("object expected", 0, 0);
             }

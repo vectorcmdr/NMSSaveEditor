@@ -36,7 +36,7 @@ public class fE : ft {
          var1.Add(fA.b(this.ma)[this.lT * 2 + 1]);
       }
 
-      aH.cG.listFiles(new fF(this, var1));
+      // PORT_TODO: aH.cG.listFiles(new fF(this, var1));
       var1.Sort(new fG(this));
       return var1.Cast<fs>().ToArray();
    }

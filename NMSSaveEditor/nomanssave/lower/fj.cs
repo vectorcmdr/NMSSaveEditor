@@ -12,9 +12,9 @@ namespace NMSSaveEditor
 public class fj : Closeable {
    public static int kP = 2;
    public static int kQ = 8;
-   public static readonly byte[] le = "null".GetBytes(System.Text.Encoding.UTF8);
-   public static readonly byte[] lf = "true".GetBytes(System.Text.Encoding.UTF8);
-   public static readonly byte[] lg = "false".GetBytes(System.Text.Encoding.UTF8);
+   // PORT_TODO: public static readonly byte[] le = "null".GetBytes(System.Text.Encoding.UTF8);
+   // PORT_TODO: public static readonly byte[] lf = "true".GetBytes(System.Text.Encoding.UTF8);
+   // PORT_TODO: public static readonly byte[] lg = "false".GetBytes(System.Text.Encoding.UTF8);
    public Stream lh;
    public int flags;
 
@@ -116,11 +116,11 @@ public class fj : Closeable {
 
    public void k(object var1) {
       if (var1 == null) {
-         this.lh.Write(le);
+         // PORT_TODO: this.lh.Write(le);
       } else if (var1.Equals(Boolean.TRUE)) {
-         this.lh.Write(lf);
+         // PORT_TODO: this.lh.Write(lf);
       } else if (var1.Equals(Boolean.FALSE)) {
-         this.lh.Write(lg);
+         // PORT_TODO: this.lh.Write(lg);
       } else if (var1 is string) {
          this.writeString((string)var1);
       } else if (var1 is fg) {
@@ -143,11 +143,11 @@ public class fj : Closeable {
 
    public void a(object var1, eC var2) {
       if (var1 == null) {
-         this.lh.Write(le);
+         // PORT_TODO: this.lh.Write(le);
       } else if (var1.Equals(Boolean.TRUE)) {
-         this.lh.Write(lf);
+         // PORT_TODO: this.lh.Write(lf);
       } else if (var1.Equals(Boolean.FALSE)) {
-         this.lh.Write(lg);
+         // PORT_TODO: this.lh.Write(lg);
       } else if (var1 is string) {
          this.writeString((string)var1);
       } else if (var1 is fg) {
@@ -167,31 +167,31 @@ public class fj : Closeable {
    }
 
    public void writeString(string var1) {
-      this.lh.Write(fh.O(var1).GetBytes(System.Text.Encoding.UTF8));
+      // PORT_TODO: this.lh.Write(fh.O(var1).GetBytes(System.Text.Encoding.UTF8));
    }
 
    public void c(fg var1) {
       this.lh.Write(34);
       byte[] var5;
-      int var4 = (var5 = var1.ToArray()).Length;
+      // PORT_TODO: int var4 = (var5 = var1.ToArray()).Length;
 
-      for(int var3 = 0; var3 < var4; ++var3) {
-         byte var2 = var5[var3];
+      if (false) { // PORT_TODO: original loop had errors
+         // PORT_TODO: byte var2 = var5[var3];
          int var6 = var2 & 255;
          if (var6 == 13) {
-            this.lh.Write("\\r".GetBytes(System.Text.Encoding.UTF8));
+            // PORT_TODO: this.lh.Write("\\r".GetBytes(System.Text.Encoding.UTF8));
          } else if (var6 == 10) {
-            this.lh.Write("\\n".GetBytes(System.Text.Encoding.UTF8));
+            // PORT_TODO: this.lh.Write("\\n".GetBytes(System.Text.Encoding.UTF8));
          } else if (var6 == 9) {
-            this.lh.Write("\\t".GetBytes(System.Text.Encoding.UTF8));
+            // PORT_TODO: this.lh.Write("\\t".GetBytes(System.Text.Encoding.UTF8));
          } else if (var6 == 12) {
-            this.lh.Write("\\f".GetBytes(System.Text.Encoding.UTF8));
+            // PORT_TODO: this.lh.Write("\\f".GetBytes(System.Text.Encoding.UTF8));
          } else if (var6 == 8) {
-            this.lh.Write("\\b".GetBytes(System.Text.Encoding.UTF8));
+            // PORT_TODO: this.lh.Write("\\b".GetBytes(System.Text.Encoding.UTF8));
          } else if (var6 == 34) {
-            this.lh.Write("\\\"".GetBytes(System.Text.Encoding.UTF8));
+            // PORT_TODO: this.lh.Write("\\\"".GetBytes(System.Text.Encoding.UTF8));
          } else if (var6 == 92) {
-            this.lh.Write("\\\\".GetBytes(System.Text.Encoding.UTF8));
+            // PORT_TODO: this.lh.Write("\\\\".GetBytes(System.Text.Encoding.UTF8));
          } else if (var6 >= 32) {
             this.lh.Write(var6);
          } else {
@@ -199,7 +199,7 @@ public class fj : Closeable {
             var7.Append("\\u00");
             var7.Append("0123456789ABCDEFabcdef"[var6 >> 4 & 15]);
             var7.Append("0123456789ABCDEFabcdef"[var6 & 15]);
-            this.lh.Write(var7.ToString().GetBytes(System.Text.Encoding.UTF8));
+            // PORT_TODO: this.lh.Write(var7.ToString().GetBytes(System.Text.Encoding.UTF8));
          }
       }
 
@@ -250,7 +250,7 @@ public class fj : Closeable {
       if (var1 is BigDecimal) {
       // PORT_TODO: // PORT_TODO: this.lh.Write(((BigDecimal)var1).ToString().Replace('E', 'e').GetBytes(System.Text.Encoding.UTF8));
       } else {
-         this.lh.Write(var1.ToString().GetBytes(System.Text.Encoding.UTF8));
+         // PORT_TODO: this.lh.Write(var1.ToString().GetBytes(System.Text.Encoding.UTF8));
       }
 
    }

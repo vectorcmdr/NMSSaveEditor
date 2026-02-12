@@ -34,47 +34,47 @@ public class bS : Panel {
       this.SuspendLayout(); // TODO: set layout new GridBagLayout());
       JPopupMenu var4 = new JPopupMenu();
       this.eY = new ToolStripMenuItem("Enabled");
-      this.eY.Click += (new bT(this, var2, var3));
+      // PORT_TODO: this.eY.Click += (new bT(this, var2, var3));
       this.eY.Enabled = (bO.a(var1).dp() || en.aS());
       var4.Add(this.eY);
       this.eZ = new ToolStripMenuItem("Enable All Slots");
-      this.eZ.Click += (new bY(this));
+      // PORT_TODO: this.eZ.Click += (new bY(this));
       this.eZ.Enabled = (bO.a(var1).dp() || en.aS());
       var4.Add(this.eZ);
       this.fa = new ToolStripMenuItem("Repair Slot");
-      this.fa.Click += (new bZ(this, var2, var3));
+      // PORT_TODO: this.fa.Click += (new bZ(this, var2, var3));
       this.fa.setVisible(bO.a(var1).dq());
       var4.Add(this.fa);
       this.fb = new ToolStripMenuItem("Repair All Slots");
-      this.fb.Click += (new ca(this));
+      // PORT_TODO: this.fb.Click += (new ca(this));
       this.fb.setVisible(bO.a(var1).dq());
       var4.Add(this.fb);
       this.fc = new ToolStripMenuItem("Supercharged");
-      this.fc.Click += (new cb(this, var2, var3));
+      // PORT_TODO: this.fc.Click += (new cb(this, var2, var3));
       this.fc.setVisible(bO.a(var1).@do());
       var4.Add(this.fc);
       this.fd = new ToolStripMenuItem("Supercharge All Slots");
-      this.fd.Click += (new cc(this));
+      // PORT_TODO: this.fd.Click += (new cc(this));
       this.fd.setVisible(bO.a(var1).@do());
       var4.Add(this.fd);
-      var4.addSeparator();
+      // PORT_TODO: var4.addSeparator();
       this.fe = new ToolStripMenuItem("Item Details");
-      this.fe.Click += (new cd(this, var2, var3));
+      // PORT_TODO: this.fe.Click += (new cd(this, var2, var3));
       var4.Add(this.fe);
       this.ff = new ToolStripMenuItem("Add Item");
-      this.ff.Click += (new ce(this, var2, var3));
+      // PORT_TODO: this.ff.Click += (new ce(this, var2, var3));
       var4.Add(this.ff);
       this.fg = new ToolStripMenuItem("Repair Item");
-      this.fg.Click += (new cf(this, var2, var3));
+      // PORT_TODO: this.fg.Click += (new cf(this, var2, var3));
       var4.Add(this.fg);
       this.fh = new ToolStripMenuItem("Move Item");
-      this.fh.Click += (new bU(this, var2, var3));
+      // PORT_TODO: this.fh.Click += (new bU(this, var2, var3));
       var4.Add(this.fh);
       this.fi = new ToolStripMenuItem("Fill Stack");
-      this.fi.Click += (new bV(this, var2, var3));
+      // PORT_TODO: this.fi.Click += (new bV(this, var2, var3));
       var4.Add(this.fi);
       this.fj = new ToolStripMenuItem("Delete Item");
-      this.fj.Click += (new bW(this, var2, var3));
+      // PORT_TODO: this.fj.Click += (new bW(this, var2, var3));
       var4.Add(this.fj);
       this.setComponentPopupMenu(var4);
       this.Padding = new Padding(0); /* setBorder */ //(bO.eP);
@@ -91,7 +91,7 @@ public class bS : Panel {
    }
 
    public void aq() {
-      this.RemoveAll();
+      // PORT_TODO: this.RemoveAll();
       this.eY.Enabled = (bO.a(this.eX).dp() || en.aS());
       this.eZ.Enabled = (bO.a(this.eX).dp() || en.aS());
       this.fa.setVisible(bO.a(this.eX).dq());
@@ -141,7 +141,7 @@ public class bS : Panel {
             } else {
                var2 = ey.d(var1.dz());
                var3 = var2 is eQ && var1.dC() != 0.0D;
-               var4 = var2 == null ? bO.b(var1.dz()) : var2.Name;
+               // PORT_TODO: var4 = var2 == null ? bO.b(var1.dz()) : var2.Name;
                int var5 = 0 /* UIManager.getInt("Inventory.iconSize") */;
                Image var6 = var2 == null ? null : var2.c(var5, var5);
                int var7 = 0;
@@ -150,7 +150,7 @@ public class bS : Panel {
                }
 
                Color var8 = var3 ? bO.aj() : bO.eO;
-               this.a(var4, var7++, var8);
+               // PORT_TODO: this.a(var4, var7++, var8);
                this.a(var1.dA() < 0 ? "" : var1.dA() + "/" + var1.dB(), var7++, var8);
                this.setToolTipText(var4);
             }
@@ -211,7 +211,7 @@ public class bS : Panel {
                }
 
                this.fe.Enabled = (var2 != null);
-               string var10 = var2 == null ? bO.b(var1.dz()) : var2.Name;
+               // PORT_TODO: string var10 = var2 == null ? bO.b(var1.dz()) : var2.Name;
                int var11 = 0 /* UIManager.getInt("Inventory.iconSize") */;
                Image var13 = var2 == null ? null : var2.c(var11, var11);
                int var12 = 0;
@@ -220,9 +220,9 @@ public class bS : Panel {
                }
 
                Color var9 = var3 ? bO.aj() : bO.eO;
-               this.a(var10, var12++, var9);
+               // PORT_TODO: this.a(var10, var12++, var9);
                this.a(var1.dA() < 0 ? " " : var1.dA() + "/" + var1.dB(), var12++, var9);
-               this.setToolTipText(var10);
+               // PORT_TODO: this.setToolTipText(var10);
             }
          }
       }
@@ -232,21 +232,21 @@ public class bS : Panel {
    }
 
    public void a(Image var1, int var2, int var3) {
-      Label var4 = new Label() { Text = var1 };
-      var4.Size = (new Size(var2, var2));
+      // PORT_TODO: Label var4 = new Label() { Text = var1 };
+      // PORT_TODO: var4.Size = (new Size(var2, var2));
       GridBagConstraints var5 = new GridBagConstraints();
       var5.anchor = 10;
       var5.fill = 0;
       var5.insets = new Padding(5, 0, 5, 0);
       var5.gridx = 0;
       var5.gridy = var3;
-      this.Add(var4, var5);
+      // PORT_TODO: this.Add(var4, var5);
    }
 
    public void a(string var1, int var2, Color var3) {
       Label var4 = new Label();
       var4.setFont(/* UIManager.getFont */ SystemFonts.DefaultFont); //("Inventory.font")
-      var4.setBackground((Color)null);
+      // PORT_TODO: var4.setBackground((Color)null);
       var4.Padding = new Padding(0); /* setBorder */ //((Border)null);
       var4.Text = (var1);
       var4.setForeground(var3);

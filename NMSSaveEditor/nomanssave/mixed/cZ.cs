@@ -18,11 +18,12 @@ public class cZ : object {
    }
 
    public int getSize() {
-      return cY.a(this.gR).Count;
+      // PORT_TODO: return cY.a(this.gR).Count;
+      return default;
    }
 
    public gg C(int var1) {
-      return (gg)cY.a(this.gR)[var1];
+      // PORT_TODO: return (gg)cY.a(this.gR)[var1];
    }
 
    public void addListDataListener(EventHandler var1) {

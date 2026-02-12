@@ -34,14 +34,14 @@ public h(Frame var1) : base(var1) {
       Panel var3 = new Panel();
       // TODO: var3.SuspendLayout(); // TODO: set layout /* FormLayout */ null, FormFactory.LABEL_COMPONENT_GAP_COLSPEC, ColumnSpec.decode("280px"), FormFactory.LABEL_COMPONENT_GAP_COLSPEC}, new RowSpec[]{FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC}));
       Label var4 = new Label() { Text = "Search:" };
-      var3.Controls.Controls.Add(var4);
+      // PORT_TODO: var3.Controls.Controls.Add(var4);
       Panel var5 = new Panel();
       var5.SuspendLayout(); // TODO: set layout new TableLayoutPanel());
       this.m = new TextBox();
       this.m.Text = ("");
       var5.Add(this.m);
       this.n = new Button() { Text = "Search" };
-      this.n.Click += (new i(this));
+      // PORT_TODO: this.n.Click += (new i(this));
       var5.Add(this.n, "East");
       var3.Controls.Add(var5);
       Label var6 = new Label() { Text = "Type:" };
@@ -64,13 +64,13 @@ public h(Frame var1) : base(var1) {
       var9.SuspendLayout(); // TODO: set layout new FlowLayoutPanel(2));
       var2.Controls.Add(var9);
       Button var10 = new Button() { Text = "Save" };
-      var10.Click += (new m(this));
+      // PORT_TODO: var10.Click += (new m(this));
       var9.Add(var10);
       this.getRootPane().setDefaultButton(var10);
       Button var11 = new Button() { Text = "Cancel" };
-      var11.Click += (new n(this));
+      // PORT_TODO: var11.Click += (new n(this));
       var9.Add(var11);
-      this.getRootPane().registerKeyboardAction(new o(this), /* KeyStroke */ Keys.None /* (27, 0) */, 2);
+      // PORT_TODO: this.getRootPane().registerKeyboardAction(new o(this), /* KeyStroke */ Keys.None /* (27, 0) */, 2);
       this.PerformLayout();
    }
 
@@ -99,7 +99,7 @@ public h(Frame var1) : base(var1) {
       eB var1 = (eB)this.o.SelectedItem;
       ex var2 = (ex)this.p.SelectedItem;
       this.v = (List<object>)this.s.stream().filter((var2x) => {
-         return var2x.ba() == var1 && var2x.bc() == var2 && (var2 != ex.iZ || !var2x.be());
+         // PORT_TODO: return var2x.ba() == var1 && var2x.bc() == var2 && (var2 != ex.iZ || !var2x.be());
       }).sorted((var0, var1x) => {
          return var0.Name.CompareTo(var1x.Name);
       }).collect(Collectors.toList());

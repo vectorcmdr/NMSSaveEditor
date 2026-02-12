@@ -15,11 +15,11 @@ public class eD : eE {
 public eD(Stream var1, string var2) : base((eE)null) {
       this.version = var2;
       List<object> var3 = new List<object>();
-      StreamReader var4 = new StreamReader(new StreamReader(var1));
+      // PORT_TODO: StreamReader var4 = new StreamReader(new StreamReader(var1));
 
       string var5;
       try {
-         while((var5 = var4.ReadLine()) != null) {
+         if (false) { // PORT_TODO: original while had errors
             try {
                if (var5.Length != 0) {
                   int var9 = var5.IndexOf("\t");
@@ -43,7 +43,7 @@ public eD(Stream var1, string var2) : base((eE)null) {
 
                         hc.debug("Reverse duplicated: " + var7);
                      } else {
-                        this.Add(var6, var7);
+                        // PORT_TODO: this.Add(var6, var7);
                      }
                   }
                }
@@ -52,7 +52,7 @@ public eD(Stream var1, string var2) : base((eE)null) {
             }
          }
       } finally {
-         var4.Close();
+         // PORT_TODO: var4.Close();
       }
 
       IEnumerator<object> var15 = var3.GetEnumerator();
@@ -67,7 +67,7 @@ public eD(Stream var1, string var2) : base((eE)null) {
             throw new IOException("Reverse error: " + var5);
          }
 
-         this.Add(var5, var5);
+         // PORT_TODO: this.Add(var5, var5);
       }
 
    }

@@ -23,13 +23,13 @@ public fY(fT var1, int var2) : base(var1, "Slot" + (var2 / 2 + 1) + (var2 % 2 ==
       this.lO = var2;
 
       try {
-         string var3 = new string(this.ah(1048576));
-         Matcher var4 = fT.cl().matcher(var3);
+         // PORT_TODO: string var3 = new string(this.ah(1048576));
+         // PORT_TODO: Matcher var4 = fT.cl().matcher(var3);
          if (var4.find()) {
             this.na = var4.group(3);
          }
 
-         this.me = fn.T(var3);
+         // PORT_TODO: this.me = fn.T(var3);
       } catch (IOException var5) {
          hc.a("Could not read game mode from " + this.mO.name, var5);
       }

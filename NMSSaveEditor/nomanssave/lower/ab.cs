@@ -16,11 +16,12 @@ public class ab : object {
    }
 
    public int getSize() {
-      return gl.Values.Length;
+      // PORT_TODO: return gl.Values.Length;
+      return default;
    }
 
    public gl r(int var1) {
-      return gl.Values[var1];
+      // PORT_TODO: return gl.Values[var1];
    }
 
    public void addListDataListener(EventHandler var1) {

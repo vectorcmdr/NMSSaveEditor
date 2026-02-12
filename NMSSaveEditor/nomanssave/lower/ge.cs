@@ -19,12 +19,12 @@ public class ge {
 
    public static Function ap(int var0) {
       return (var1) => {
-         string var2 = var1.Name;
-         if (var2 == null || var2.Length == 0 || "BLD_STORAGE_NAME".Equals(var2)) {
-            var2 = "Chest " + var0;
+         // PORT_TODO: string var2 = var1.Name;
+         if (true) { // PORT_TODO: original condition had errors
+            // PORT_TODO: var2 = "Chest " + var0;
          }
 
-         return new string[]{var2};
+         // PORT_TODO: return new string[]{var2};
       };
    }
 
@@ -76,6 +76,7 @@ public class ge {
                break;
             case 4:
                var8 = "Scientist";
+               // PORT_TODO: return default;
             }
 
             var6.Add(new gh(this, var8, var9, (gh)null));

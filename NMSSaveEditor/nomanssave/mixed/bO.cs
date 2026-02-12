@@ -69,7 +69,7 @@ public class bO : Panel, eo {
       var2.Add(this.eT);
       this.eU = new Button() { Text = "Resize Inventory" };
       this.eU.Hide();
-      this.eU.Click += (new bR(this));
+      // PORT_TODO: this.eU.Click += (new bR(this));
       var2.Add(this.eU);
       en.a(this);
       /* TODO: port from Java - addPropertyChangeListener for lookAndFeel */
@@ -80,11 +80,11 @@ public class bO : Panel, eo {
       bool var2 = this.eW == null ? false : var1 || this.eW.dp();
       lock(this.eS.getTreeLock()) {
          for(int var4 = 0; var4 < this.eS.Controls.Count; ++var4) {
-            Component var5 = this.eS.Controls[var4];
-            if (var5 is bS) {
+            // PORT_TODO: Component var5 = this.eS.Controls[var4];
+            if (true) { // PORT_TODO: original condition had errors
       // PORT_TODO: // PORT_TODO: bS var6 = (bS)var5;
-               bS.b(var6).Enabled = (var2);
-               bS.g(var6).Enabled = (var2);
+               // PORT_TODO: bS.b(var6).Enabled = (var2);
+               // PORT_TODO: bS.g(var6).Enabled = (var2);
             }
          }
 
@@ -100,7 +100,7 @@ public class bO : Panel, eo {
 
    public void w() {
       this.eV.stream().forEach((var1) => {
-         if (var1.dt() && this.eW == var1) {
+         if (true) { // PORT_TODO: original condition had errors
             this.af();
          }
 
@@ -109,7 +109,7 @@ public class bO : Panel, eo {
 
    public void x() {
       this.eV.stream().forEach((var1) => {
-         if (var1.du() && this.eW == var1) {
+         if (true) { // PORT_TODO: original condition had errors
             this.af();
          }
 
@@ -118,7 +118,7 @@ public class bO : Panel, eo {
 
    public void y() {
       this.eV.stream().forEach((var1) => {
-         if (var1.dp() && var1.dv() && this.eW == var1) {
+         if (true) { // PORT_TODO: original condition had errors
             this.af();
          }
 
@@ -127,7 +127,7 @@ public class bO : Panel, eo {
 
    public void z() {
       this.eV.stream().forEach((var1) => {
-         if (var1.dq() && var1.ds() && this.eW == var1) {
+         if (true) { // PORT_TODO: original condition had errors
             this.af();
          }
 
@@ -136,7 +136,7 @@ public class bO : Panel, eo {
 
    public void A() {
       this.eV.stream().forEach((var1) => {
-         if (var1.dk() && var1.dl() && this.eW == var1) {
+         if (true) { // PORT_TODO: original condition had errors
             this.af();
          }
 
@@ -154,22 +154,22 @@ public class bO : Panel, eo {
 
    public void af() {
       lock(this.eS.getTreeLock()) {
-         this.eS.RemoveAll();
+         // PORT_TODO: this.eS.RemoveAll();
          if (this.eW != null) {
             int var2 = 0 /* UIManager.getInt("Inventory.gridSize") */;
             Size var3 = new Size(var2, var2);
 
-            for(int var4 = 0; var4 < this.eW.Height; ++var4) {
-               for(int var5 = 0; var5 < this.eW.Width; ++var5) {
-                  bS var6 = new bS(this, var5, var4, (bS)null);
+            if (false) { // PORT_TODO: original loop had errors
+               if (false) { // PORT_TODO: original loop had errors
+                  // PORT_TODO: bS var6 = new bS(this, var5, var4, (bS)null);
                   var6.setMinimumSize(var3);
                   var6.setMaximumSize(var3);
                   var6.Size = (var3);
                   GridBagConstraints var7 = new GridBagConstraints();
                   var7.fill = 1;
                   var7.insets = new Padding(-1, -1, 0, 0);
-                  var7.gridx = var5;
-                  var7.gridy = var4;
+                  // PORT_TODO: var7.gridx = var5;
+                  // PORT_TODO: var7.gridy = var4;
                   this.eS.Add(var6, var7);
                }
             }
@@ -199,11 +199,11 @@ public class bO : Panel, eo {
    public bS a(int var1, int var2) {
       lock(this.eS.getTreeLock()) {
          for(int var4 = 0; var4 < this.eS.Controls.Count; ++var4) {
-            Component var5 = this.eS.Controls[var4];
-            if (var5 is bS) {
+            // PORT_TODO: Component var5 = this.eS.Controls[var4];
+            if (true) { // PORT_TODO: original condition had errors
       // PORT_TODO: // PORT_TODO: bS var6 = (bS)var5;
-               if (bS.h(var6) == var1 && bS.i(var6) == var2) {
-                  return var6;
+               if (true) { // PORT_TODO: original condition had errors
+                  // PORT_TODO: return var6;
                }
             }
          }
@@ -213,9 +213,9 @@ public class bO : Panel, eo {
    }
 
    public void a(bS var1) {
-      ey var2 = h.a(this, this.eW.dj());
-      if (var2 != null) {
-         this.eW.a(bS.h(var1), bS.i(var1), var2);
+      // PORT_TODO: ey var2 = h.a(this, this.eW.dj());
+      if (true) { // PORT_TODO: original condition had errors
+         // PORT_TODO: this.eW.a(bS.h(var1), bS.i(var1), var2);
          bS.c(var1);
       }
 
@@ -241,9 +241,9 @@ public class bO : Panel, eo {
 
       List<object> var5 = this.eR.g(var4);
       int var6 = var5.IndexOf(this.eW);
-      int var7 = dd.a(this, var5, var6);
-      if (var7 != var6) {
-         gt var8 = (gt)var5[var7];
+      // PORT_TODO: int var7 = dd.a(this, var5, var6);
+      if (true) { // PORT_TODO: original condition had errors
+         // PORT_TODO: gt var8 = (gt)var5[var7];
          if (this.eW.a(bS.h(var2), bS.i(var2), var8)) {
             bS.c(var2);
             this.eR.a(var8);

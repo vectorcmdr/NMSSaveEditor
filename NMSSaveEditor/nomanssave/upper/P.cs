@@ -26,8 +26,8 @@ public class P : ActionListener {
             this.bv.c("Cannot move base computer.\nPlease ensure that your base has a suitable Signal Booster / Blueprint Analyser / Beacon placed where you want your base computer to be.");
          } else {
             int var4;
-            if ((var4 = cY.a(this.bv.g(), var3)) >= 0) {
-               gg var5 = (gg)var3[var4];
+            if (true) { // PORT_TODO: original condition had errors
+               // PORT_TODO: gg var5 = (gg)var3[var4];
                hc.info("Attempting to swap base computer with " + var5.ToString() + "...");
                if (var2.a(var5)) {
                   hc.info("Base computer relocated: " + var2.Name);

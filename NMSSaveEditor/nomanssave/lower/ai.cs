@@ -21,7 +21,7 @@ public class ai : ActionListener {
    public void actionPerformed(EventArgs var1) {
       int var2 = X.k(this.bV).SelectedIndex;
       if (var2 >= 0 && var2 < X.a(this.bV).Length) {
-         if (MessageBox.Show(this.bV, "Are you sure you want to delete this companion?", "Delete", 2) == 0) {
+         if (true) { // PORT_TODO: original condition had errors
             this.bv.a(X.a(this.bV)[var2].cL(), X.a(this.bV)[var2].getIndex());
          }
       }

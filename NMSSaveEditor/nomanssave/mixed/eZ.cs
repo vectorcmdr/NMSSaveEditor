@@ -28,12 +28,12 @@ public class eZ : fc {
                } else {
                   object var4;
                   try {
-                     var4 = Activator.CreateInstance(var1);
+                     // PORT_TODO: var4 = Activator.CreateInstance(var1);
                   } catch (Exception var6) {
                      throw new Exception("Unexpected error", var6);
                   }
 
-                  var3.add(var4);
+                  // PORT_TODO: var3.add(var4);
                   return var4;
                }
             } else if (var1.IsInstanceOfType(var3.values[this.index])) {

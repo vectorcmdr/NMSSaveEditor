@@ -24,8 +24,8 @@ public class aS : FocusListener {
       int var2;
       try {
          var2 = int.Parse(aQ.e(this.dr).Text);
-         if (var2 != aQ.b(this.dr).height) {
-            if (var2 < aQ.c(this.dr).height) {
+         if (true) { // PORT_TODO: original condition had errors
+            if (true) { // PORT_TODO: original condition had errors
       // PORT_TODO: // PORT_TODO: var2 = aQ.c(this.dr).height;
             } else if (var2 > aQ.d(this.dr).height && !en.aS()) {
       // PORT_TODO: // PORT_TODO: var2 = aQ.d(this.dr).height;
@@ -35,7 +35,7 @@ public class aS : FocusListener {
       // PORT_TODO: // PORT_TODO: var2 = aQ.b(this.dr).height;
       }
 
-      aQ.e(this.dr).Text = ((var2).ToString());
+      // PORT_TODO: aQ.e(this.dr).Text = ((var2).ToString());
    }
 }
 

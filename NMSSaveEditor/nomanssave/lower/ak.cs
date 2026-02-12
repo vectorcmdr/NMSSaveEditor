@@ -18,7 +18,7 @@ public class ak : ActionListener {
 
    public void actionPerformed(EventArgs var1) {
       try {
-         aj.a(this.cg, hl.e(aj.a(this.cg).Text.Trim(), aj.b(this.cg).SelectedIndex));
+         // PORT_TODO: aj.a(this.cg, hl.e(aj.a(this.cg).Text.Trim(), aj.b(this.cg).SelectedIndex));
          aj.c(this.cg);
       } catch (Exception var3) {
          MessageBox.Show("Invalid address value, please try again.", "Error");

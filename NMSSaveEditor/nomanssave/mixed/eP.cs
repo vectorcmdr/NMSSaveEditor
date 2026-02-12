@@ -24,10 +24,10 @@ public class eP : ey {
 public eP(Element var1) : base(var1.getAttribute("id")) {
       this.name = var1.getAttribute("name");
       this.jZ = ex.valueOf(var1.getAttribute("category"));
-      this.special = var1.hasAttribute("special") ? Boolean.valueOf(var1.getAttribute("special")) : false;
+      // PORT_TODO: this.special = var1.hasAttribute("special") ? Boolean.valueOf(var1.getAttribute("special")) : false;
       // PORT_TODO: // PORT_TODO: this.ka = var1.hasAttribute("chargeable") ? ((int)(var1.getAttribute("chargeable"))) : null;
       this.jM = var1.getAttribute("subtitle");
-      this.kb = var1.hasAttribute("cooking") ? Boolean.valueOf(var1.getAttribute("cooking")) : false;
+      // PORT_TODO: this.kb = var1.hasAttribute("cooking") ? Boolean.valueOf(var1.getAttribute("cooking")) : false;
       this.kc = var1.hasAttribute("icon") ? var1.getAttribute("icon") : null;
       if (var1.hasAttribute("multiplier")) {
          this.kd = int.Parse(var1.getAttribute("multiplier"));
@@ -44,7 +44,7 @@ public eP(Element var1) : base(var1.getAttribute("id")) {
          if (var4 is Element) {
             var1 = (Element)var4;
             if (var1.getNodeName().Equals("description")) {
-               var2 = a(var1);
+               // PORT_TODO: var2 = a(var1);
             } else if (var1.getNodeName().Equals("requirement")) {
                var5.Add(new ez(this, var1));
             }

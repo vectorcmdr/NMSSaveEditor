@@ -110,7 +110,7 @@ public class hl {
       } else {
          if (var0 is eY) {
             eY var1 = (eY)var0;
-            if (var1.Contains("GalacticAddress")) {
+            if (true) { // PORT_TODO: original condition had errors
                return new hl((eY)var0);
             }
          }

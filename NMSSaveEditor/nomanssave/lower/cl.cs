@@ -27,7 +27,7 @@ public class cl : JFileChooser {
       // this.setAcceptAllFileFilterUsed - not needed in WinForms
       this.setFileView(new cm(this));
       this.setFileFilter(new cn(this));
-      this.addChoosableFileFilter(new co(this));
+      // PORT_TODO: this.addChoosableFileFilter(new co(this));
       this.setDialogTitle("Choose Backup FileInfo");
       /* TODO: port from Java - addPropertyChangeListener for lookAndFeel */
    }

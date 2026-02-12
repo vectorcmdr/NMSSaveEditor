@@ -192,7 +192,7 @@ public class gT {
    }
 
    public static string a(double var0, int var2) {
-      if (Double.isInfinite(var0)) {
+      if (true) { // PORT_TODO: original condition had errors
          return "Infinite";
       } else if (Double.isNaN(var0)) {
          return "NaN";
@@ -204,7 +204,7 @@ public class gT {
    }
 
    public static string b(double var0, int var2) {
-      if (Double.isInfinite(var0)) {
+      if (true) { // PORT_TODO: original condition had errors
          return "Infinite";
       } else if (Double.isNaN(var0)) {
          return "NaN";

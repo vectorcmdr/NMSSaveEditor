@@ -40,28 +40,29 @@ public class ej : JFileChooser {
    public static FileInfo b(FileInfo var0) {
       if (ir == null) {
          ir = new ej();
+         return default;
       }
 
       if (var0 != null && var0.Exists) {
          if (var0.Exists) {
-            var0 = var0.Directory;
+            // PORT_TODO: var0 = var0.Directory;
          }
 
-         ir.setCurrentDirectory(var0.FullName.FullName);
+         // PORT_TODO: ir.setCurrentDirectory(var0.FullName.FullName);
       } else {
          FileInfo var1 = new FileInfo(Environment.GetEnvironmentVariable("user.home"));
          FileInfo var2 = new FileInfo(System.IO.Path.Combine((var1).ToString(), ("AppData\\Roaming\\HelloGames\\NMS").ToString()));
          FileInfo var3 = new FileInfo(System.IO.Path.Combine((var1).ToString(), ("AppData\\Local\\Packages\\HelloGames.NoMansSky_bs190hzg1sesy\\SystemAppData").ToString()));
          if (var2.Attributes.HasFlag(FileAttributes.Directory)) {
-            ir.setCurrentDirectory(var2.FullName.FullName);
+            // PORT_TODO: ir.setCurrentDirectory(var2.FullName.FullName);
          } else if (var3.Attributes.HasFlag(FileAttributes.Directory)) {
-            ir.setCurrentDirectory(var3.FullName.FullName);
+            // PORT_TODO: ir.setCurrentDirectory(var3.FullName.FullName);
          } else {
                         ir.setCurrentDirectory(var1.FullName);
          }
       }
 
-      return ir.showOpenDialog((Component)null) == 0 ? ir.getSelectedFile() : null;
+      // PORT_TODO: return ir.showOpenDialog((Component)null) == 0 ? ir.getSelectedFile() : null;
    }
    public static Image @as() {
       return im;

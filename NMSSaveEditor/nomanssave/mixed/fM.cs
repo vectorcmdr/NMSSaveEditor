@@ -19,8 +19,8 @@ public fM(fJ var1, int var2) : base(var1, var2 == 0 ? "save.hg" : "save" + (var2
       this.mt = var1;
 
       try {
-         string var3 = new string(this.ah(65536));
-         this.me = fn.T(var3);
+         // PORT_TODO: string var3 = new string(this.ah(65536));
+         // PORT_TODO: this.me = fn.T(var3);
       } catch (IOException var4) {
          hc.a("Could not read game mode from " + this.filename, var4);
       }

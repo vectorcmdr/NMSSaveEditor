@@ -42,8 +42,8 @@ public aW(cy var1) : base(var1) {
       this.dw = new RadioButton() { Text = "Backward" };
       var5.Add(this.dw);
       object var6 = new object();
-      var6.Add(this.dv);
-      var6.Add(this.dw);
+      // PORT_TODO: var6.Add(this.dv);
+      // PORT_TODO: var6.Add(this.dw);
       var3.Controls.Add(var5);
       Panel var7 = new Panel();
       var7.SuspendLayout(); // TODO: set layout new TableLayoutPanel());
@@ -59,14 +59,14 @@ public aW(cy var1) : base(var1) {
       var2.Controls.Add(var8);
       Button var9 = new Button() { Text = "Find" };
       // var9.setMnemonic - not directly available in WinForms
-      var9.Click += (new aX(this, var1));
+      // PORT_TODO: var9.Click += (new aX(this, var1));
       var8.Add(var9);
       this.getRootPane().setDefaultButton(var9);
       Button var10 = new Button() { Text = "Cancel" };
       // var10.setMnemonic - not directly available in WinForms
-      var10.Click += (new aY(this));
+      // PORT_TODO: var10.Click += (new aY(this));
       var8.Add(var10);
-      this.getRootPane().registerKeyboardAction(new aZ(this), /* KeyStroke */ Keys.None /* (27, 0) */, 2);
+      // PORT_TODO: this.getRootPane().registerKeyboardAction(new aZ(this), /* KeyStroke */ Keys.None /* (27, 0) */, 2);
       this.PerformLayout();
    }
 

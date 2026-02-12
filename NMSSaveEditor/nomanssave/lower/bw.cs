@@ -17,11 +17,12 @@ public class bw : object {
    }
 
    public int getSize() {
-      return gr.Values.Length;
+      // PORT_TODO: return gr.Values.Length;
+      return default;
    }
 
    public gr u(int var1) {
-      return gr.Values[var1];
+      // PORT_TODO: return gr.Values[var1];
    }
 
    public void addListDataListener(EventHandler var1) {

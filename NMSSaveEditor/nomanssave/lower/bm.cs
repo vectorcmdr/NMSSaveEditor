@@ -20,7 +20,7 @@ public class bm : ActionListener {
 
    public void actionPerformed(EventArgs var1) {
       if (bl.b(this.er) >= 0) {
-         if (MessageBox.Show(this.er, "Are you sure you want to delete this frigate?", "Delete", 2) == 0) {
+         if (true) { // PORT_TODO: original condition had errors
             bl.a(this.er, this.bv.k(bl.c(this.er)[bl.b(this.er)].getIndex()));
             if (bl.c(this.er).Length > 0) {
                bl.e(this.er).setRowSelectionInterval(0, 0);

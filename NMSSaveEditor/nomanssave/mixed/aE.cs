@@ -18,11 +18,12 @@ public class aE : object {
    }
 
    public int getSize() {
-      return aI.Values.Length;
+      // PORT_TODO: return aI.Values.Length;
+      return default;
    }
 
    public aI t(int var1) {
-      return aI.Values[var1];
+      // PORT_TODO: return aI.Values[var1];
    }
 
    public void addListDataListener(EventHandler var1) {

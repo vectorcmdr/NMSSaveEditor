@@ -51,7 +51,7 @@ public class X : Panel {
       var3.a("Genus Seed", (Control)this.bM);
       this.bN = new CheckBox() { Text = "Predator" };
       this.bN.Enabled = (false);
-      this.bN.Click += (new ah(this));
+      // PORT_TODO: this.bN.Click += (new ah(this));
       var3.a(null, (Control)this.bN);
       this.bO = new cN(typeof(gi));
       this.bO.a((var1x) => {
@@ -74,13 +74,13 @@ public class X : Panel {
       var3.Y();
       Panel var4 = new Panel();
       this.bQ = new Button() { Text = "Delete" };
-      this.bQ.Click += (new ai(this, var1));
+      // PORT_TODO: this.bQ.Click += (new ai(this, var1));
       var4.Add(this.bQ);
       this.bR = new Button() { Text = "Export" };
-      this.bR.Click += (new Z(this, var1));
+      // PORT_TODO: this.bR.Click += (new Z(this, var1));
       var4.Add(this.bR);
       this.bS = new Button() { Text = "Import" };
-      this.bS.Click += (new aa(this, var1));
+      // PORT_TODO: this.bS.Click += (new aa(this, var1));
       var4.Add(this.bS);
       var3.a(var4);
    }

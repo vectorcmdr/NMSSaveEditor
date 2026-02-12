@@ -21,8 +21,8 @@ public class cb : ActionListener {
    }
 
    public void actionPerformed(EventArgs var1) {
-      bool var2 = bS.d(this.fk).getState();
-      bO.a(bS.j(this.fk)).a(this.fl, this.fm, var2);
+      // PORT_TODO: bool var2 = bS.d(this.fk).getState();
+      // PORT_TODO: bO.a(bS.j(this.fk)).a(this.fl, this.fm, var2);
       bS.c(this.fk);
    }
 }

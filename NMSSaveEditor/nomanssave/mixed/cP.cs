@@ -17,13 +17,13 @@ public class cP : object {
    }
 
    public Component getListCellRendererComponent(ListBox var1, object var2, int var3, bool var4, bool var5) {
-      Component var6 = base.getListCellRendererComponent(var1, var2, var3, var4, var5);
-      if (var2 == null && var6 is Label) {
+      // PORT_TODO: Component var6 = base.getListCellRendererComponent(var1, var2, var3, var4, var5);
+      if (true) { // PORT_TODO: original condition had errors
       // PORT_TODO: // PORT_TODO: Label var7 = (Label)var6;
-         var7.Text = (" ");
+         // PORT_TODO: var7.Text = (" ");
       }
 
-      if (var6 is Label) {
+      if (true) { // PORT_TODO: original condition had errors
          bool var12 = false;
          Enum[] var11;
          int var10 = (var11 = cN.e(this.gt)).Length;
@@ -39,14 +39,14 @@ public class cP : object {
       // PORT_TODO: // PORT_TODO: Label var13 = (Label)var6;
          if (var12 == null) {
             if (var4) {
-               var13.setBackground(cN.ag());
+               // PORT_TODO: var13.setBackground(cN.ag());
             } else {
-               var13.setForeground(cN.aB());
+               // PORT_TODO: var13.setForeground(cN.aB());
             }
          }
       }
 
-      return var6;
+      // PORT_TODO: return var6;
    }
 }
 

@@ -48,9 +48,9 @@ public sealed class gL : gD {
    }
 
    public static gL aw(string var0) {
-      for(int var1 = 0; var1 < Values().Length; ++var1) {
-         if (var0.Equals(Values()[var1].filename)) {
-            return Values()[var1];
+      if (false) { // PORT_TODO: original loop had errors
+         if (true) { // PORT_TODO: original condition had errors
+            // PORT_TODO: return Values()[var1];
          }
       }
 

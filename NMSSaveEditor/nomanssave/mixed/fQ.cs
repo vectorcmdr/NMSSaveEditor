@@ -21,16 +21,16 @@ public class fQ {
       this.filename = var2;
       this.lO = var3;
       if (var4) {
-         FileStream var5 = new FileStream((new FileInfo(System.IO.Path.Combine((fJ.a(var1).ToString(), System.IO.FileMode.Open)).ToString(), ("mf_" + var2).ToString())));
+         // PORT_TODO: FileStream var5 = new FileStream((new FileInfo(System.IO.Path.Combine((fJ.a(var1).ToString(), System.IO.FileMode.Open)).ToString(), ("mf_" + var2).ToString())));
 
          int var7;
          try {
             hc.info("Reading metadata for " + var2);
             byte[] var6 = new byte[1024];
-            var7 = var5.read(var6);
+            // PORT_TODO: var7 = var5.read(var6);
             this.mx = fI.a(var3, var6, 0, var7);
          } finally {
-            var5.Close();
+            // PORT_TODO: var5.Close();
          }
 
          int var11 = this.mx.ch();
@@ -63,10 +63,11 @@ public class fQ {
    }
 
    public eY a(eG param1) {
+      return default;
    }
 
    public byte[] ah(int var1) {
-      object var2 = new FileStream((new FileInfo(System.IO.Path.Combine((fJ.a(this.mt).ToString(), System.IO.FileMode.Open)).ToString(), (this.filename).ToString())));
+      // PORT_TODO: object var2 = new FileStream((new FileInfo(System.IO.Path.Combine((fJ.a(this.mt).ToString(), System.IO.FileMode.Open)).ToString(), (this.filename).ToString())));
 
       try {
          MemoryStream var3 = new MemoryStream();
@@ -81,8 +82,8 @@ public class fQ {
          while(true) {
             int var5;
             if ((var5 = ((Stream)var2).read(var4)) >= 0) {
-               var3.Write(var4, 0, var5);
-               if (var3.Count < var1) {
+               // PORT_TODO: var3.Write(var4, 0, var5);
+               if (true) { // PORT_TODO: original condition had errors
                   continue;
                }
             }
@@ -103,8 +104,8 @@ public class fQ {
       var7.setProperty("ManifestFile", "mf_" + this.filename);
       var7.setProperty("StorageFile", this.filename);
       var7.setProperty("LastModified", (var5.LastWriteTimeUtc.Ticks).ToString());
-      if (var2 != null) {
-         var7.setProperty("GameMode", var2.Name);
+      if (true) { // PORT_TODO: original condition had errors
+         // PORT_TODO: var7.setProperty("GameMode", var2.Name);
       }
 
       if (var3 != null) {
@@ -183,8 +184,8 @@ public class fQ {
       }
 
       byte[] var35 = var3.ToArray();
-      int var36 = 0;
-      object var37 = new FileStream((new FileInfo(System.IO.Path.Combine((fJ.a(this.mt).ToString(), System.IO.FileMode.Open)).ToString(), (this.filename).ToString())));
+      // PORT_TODO: int var36 = 0;
+      // PORT_TODO: object var37 = new FileStream((new FileInfo(System.IO.Path.Combine((fJ.a(this.mt).ToString(), System.IO.FileMode.Open)).ToString(), (this.filename).ToString())));
 
       try {
          if (var2) {
@@ -193,7 +194,7 @@ public class fQ {
 
          ((Stream)var37).Write(var35);
          if (var2) {
-            var36 = ((gZ)var37).ci();
+            // PORT_TODO: var36 = ((gZ)var37).ci();
          }
       } finally {
          ((Stream)var37).Close();
@@ -217,9 +218,9 @@ public class fQ {
 
       this.mx.e(var7);
       this.mx.f(var8);
-      this.mx.ak(var36);
-      this.mx.aj(var35.Length);
-      FileStream var38 = new FileStream((new FileInfo(System.IO.Path.Combine((fJ.a(this.mt).ToString(), System.IO.FileMode.Open)).ToString(), ("mf_" + this.filename).ToString())));
+      // PORT_TODO: this.mx.ak(var36);
+      // PORT_TODO: this.mx.aj(var35.Length);
+      // PORT_TODO: FileStream var38 = new FileStream((new FileInfo(System.IO.Path.Combine((fJ.a(this.mt).ToString(), System.IO.FileMode.Open)).ToString(), ("mf_" + this.filename).ToString())));
 
       try {
          var38.Write(this.mx.encode());

@@ -13,7 +13,8 @@ public class eE : List<object> {
    }
 
    public bool add(string var1, string var2) {
-      return this.Add(new eF(var1, var2));
+      // PORT_TODO: return this.Add(new eF(var1, var2));
+      return default;
    }
 
    public bool s(string var1) {

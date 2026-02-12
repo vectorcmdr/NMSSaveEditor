@@ -22,9 +22,9 @@ public class cE : object {
          try {
             string var3 = cy.c(this.gg).Text.Trim();
             if (var3.Length == 0 && MessageBox.Show(this.gg, "The JSON data has been deleted, do you wish to apply these changes to the save file?", this.gg.Text, 0) == 0) {
-               cy.d(this.gg).Remove();
+               // PORT_TODO: cy.d(this.gg).Remove();
             } else if (MessageBox.Show(this.gg, "The JSON data has changed, do you wish to apply these changes to the save file?", this.gg.Text, 0) == 0) {
-               cy.d(this.gg).Text = (var3);
+               // PORT_TODO: cy.d(this.gg).Text = (var3);
             }
          } catch (eX var4) {
             MessageBox.Show("Error on line #" + var4.getLineNumber() + ": " + var4.getMessage(), "Error");

@@ -56,7 +56,7 @@ public class ba : Panel {
       } else {
          Panel var5 = new Panel();
          var5.SuspendLayout(); // TODO: set layout new FlowLayoutPanel(0, 0, 0));
-         var5.Add(new Label() { Text = var2 });
+         // PORT_TODO: var5.Add(new Label() { Text = var2 });
          var5.Add(var4);
          this.Add(var5, "2, " + (this.dA.getRowCount() - 1) + ", " + var3 + ", 1, left, default");
       }
@@ -102,12 +102,12 @@ public class ba : Panel {
       // TODO: this.dA.appendRow(FormFactory.LINE_GAP_ROWSPEC);
       int var5 = this.dA.getRowCount() - 1;
       if (var1 != null) {
-         Label var6 = new Label(var1 + ":");
+         // PORT_TODO: Label var6 = new Label(var1 + ":");
          if (var2) {
             // TODO: var6.putClientProperty(...);
          }
 
-         this.Add(var6, "2, " + var5 + ", left, default");
+         // PORT_TODO: this.Add(var6, "2, " + var5 + ", left, default");
       }
 
       this.Add(var3, "4, " + var5 + ", " + var4 + ", 1, fill, default");
@@ -120,7 +120,7 @@ public class ba : Panel {
       var4.SuspendLayout(); // TODO: set layout new FlowLayoutPanel(2, 0, 0));
       Button var5 = new Button() { Text = "Generate" };
       var5.Enabled = (var2.Enabled);
-      var5.Click += (new bb(this, var2));
+      // PORT_TODO: var5.Click += (new bb(this, var2));
       // var2.addPropertyChangeListener - use property events instead
       var4.Add(var5);
       var3.Controls.Add(var2);

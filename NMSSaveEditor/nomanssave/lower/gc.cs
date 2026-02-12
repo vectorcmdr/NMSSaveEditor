@@ -62,7 +62,7 @@ public class gc {
 
          var1 = var1.ToLower();
       // PORT_TODO: // PORT_TODO: // PORT_TODO: // PORT_TODO: // PORT_TODO: // PORT_TODO: // PORT_TODO: // PORT_TODO: // PORT_TODO: // PORT_TODO: // PORT_TODO: // PORT_TODO: // PORT_TODO: // PORT_TODO: // PORT_TODO: // PORT_TODO: // PORT_TODO: // PORT_TODO: // PORT_TODO: // PORT_TODO: // PORT_TODO: // PORT_TODO: // PORT_TODO: // PORT_TODO: // PORT_TODO: // PORT_TODO: // PORT_TODO: // PORT_TODO: // PORT_TODO: // PORT_TODO: byte[] var2 = new byte[]{(byte)int.Parse(var1.Substring(6, 8), 16), (byte)int.Parse(var1.Substring(4, 6), 16), (byte)int.Parse(var1.Substring(2, 4), 16), (byte)int.Parse(var1.Substring(0, 2), 16), (byte)int.Parse(var1.Substring(10, 12), 16), (byte)int.Parse(var1.Substring(8, 10), 16), (byte)int.Parse(var1.Substring(14, System.Globalization.NumberStyles.HexNumber), 16), (byte)int.Parse(var1.Substring(12, 14), 16), (byte)int.Parse(var1.Substring(16, 18), 16), (byte)int.Parse(var1.Substring(18, 20), 16), (byte)int.Parse(var1.Substring(20, 22), 16), (byte)int.Parse(var1.Substring(22, 24), 16), (byte)int.Parse(var1.Substring(24, 26), 16), (byte)int.Parse(var1.Substring(26, 28), 16), (byte)int.Parse(var1.Substring(28, 30), 16), (byte)int.Parse(var1.Substring(30, 32), 16)};
-         var0.Write(var2);
+         // PORT_TODO: var0.Write(var2);
       }
    }
 
@@ -81,7 +81,8 @@ public class gc {
       } else {
          byte[] var2 = new byte[var1 * 2];
          hk.readFully(var0, var2);
-         return new string(var2, "UTF-16LE");
+         // PORT_TODO: return new string(var2, "UTF-16LE");
+         return default;
       }
    }
 
@@ -98,7 +99,7 @@ public class gc {
       for(var2 = 0; var2 < var1.Length && (var1[var2] != 0 || var1[var2 + 1] != 0); var2 += 2) {
       }
 
-      return new string(var1, 0, var2, "UTF-16LE");
+      // PORT_TODO: return new string(var1, 0, var2, "UTF-16LE");
    }
 
    public static string e(Stream var0) {
@@ -109,15 +110,15 @@ public class gc {
       for(var2 = 0; var2 < var1.Length && var1[var2] != 0; ++var2) {
       }
 
-      return new string(var1, 0, var2, Encoding.UTF8);
+      // PORT_TODO: return new string(var1, 0, var2, Encoding.UTF8);
    }
 
    public static void c(Stream var0, string var1) {
-      byte[] var2 = var1.GetBytes(System.Text.Encoding.UTF8);
+      // PORT_TODO: byte[] var2 = var1.GetBytes(System.Text.Encoding.UTF8);
       if (var2.Length < 128) {
-         byte[] var3 = new byte[128];
-         Array.Copy(var2, 0, var3, 0, var2.Length);
-         var3[var2.Length] = 0;
+         // PORT_TODO: byte[] var3 = new byte[128];
+         // PORT_TODO: Array.Copy(var2, 0, var3, 0, var2.Length);
+         // PORT_TODO: var3[var2.Length] = 0;
          var2 = var3;
       }
 

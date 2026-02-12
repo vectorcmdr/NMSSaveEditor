@@ -86,7 +86,7 @@ public cg(Frame var1) : base(var1) {
       this.fy = new TextBox();
       this.fy.setEditable(false);
       this.fy.Padding = new Padding(0); /* setBorder */ //((Border)null);
-      this.fy.setBackground((Color)null);
+      // PORT_TODO: this.fy.setBackground((Color)null);
       this.fy.setFont(this.fx.getFont());
       var4.setViewportView(this.fy);
       var2.Controls.Add(var4);
@@ -100,7 +100,7 @@ public cg(Frame var1) : base(var1) {
       this.fz.setFont(this.fx.getFont());
       var2.Add(this.fz, "4, 16, 3, 1, fill, fill");
       this.setContentPane(var2);
-      this.getRootPane().registerKeyboardAction(new cj(this), /* KeyStroke */ Keys.None /* (27, 0) */, 2);
+      // PORT_TODO: this.getRootPane().registerKeyboardAction(new cj(this), /* KeyStroke */ Keys.None /* (27, 0) */, 2);
       // this.addWindowListener - use FormClosing event instead
    }
 
@@ -119,13 +119,13 @@ public cg(Frame var1) : base(var1) {
          int var6;
          if (var2 is fg) {
             fg var5 = (fg)var2;
-            var6 = var5.IndexOf(35);
-            if (var6 >= 0) {
-               var4 = var5.Substring(var6 + 1);
+            // PORT_TODO: var6 = var5.IndexOf(35);
+            if (true) { // PORT_TODO: original condition had errors
+               // PORT_TODO: var4 = var5.Substring(var6 + 1);
             }
          } else {
             string var8 = var2.ToString();
-            var6 = var8.IndexOf(35);
+            // PORT_TODO: var6 = var8.IndexOf(35);
             if (var6 >= 0) {
                var4 = var8.Substring(var6 + 1);
             }
@@ -171,12 +171,12 @@ public cg(Frame var1) : base(var1) {
          this.fv.setEditable(false);
       }
 
-      this.fq.Text = (this.fA == null ? "[Unknown]" : this.fA.Name);
+      // PORT_TODO: this.fq.Text = (this.fA == null ? "[Unknown]" : this.fA.Name);
       this.fp.Text = (this.fA == null ? "[Unknown]" : this.fA.bc().ToString());
       this.fx.Text = (this.fA == null ? "" : this.fA.bg());
       var4 = this.fA == null ? "" : (string)this.fA.bk().stream().map((var0) => {
-         ey var1 = ey.d(var0.getID());
-         return var1 != null ? var1.Name + " (x" + var0.bo() + ")" : var0.getID() + " (x" + var0.bo() + ")";
+         // PORT_TODO: ey var1 = ey.d(var0.getID());
+         // PORT_TODO: return var1 != null ? var1.Name + " (x" + var0.bo() + ")" : var0.getID() + " (x" + var0.bo() + ")";
       }).collect(Collectors.joining("\n"));
       if (var4.Length == 0) {
          var4 = "N/A";

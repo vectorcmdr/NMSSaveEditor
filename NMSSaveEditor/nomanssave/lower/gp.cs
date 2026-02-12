@@ -68,6 +68,7 @@ public class gp {
          er var5 = er.o(var4);
          if (var5 != null && var5.aW()) {
             ++var1;
+            return default;
          }
       }
 
@@ -79,7 +80,7 @@ public class gp {
          var1 = 3;
       }
 
-      return gN.Values[var1].Name;
+      // PORT_TODO: return gN.Values[var1].Name;
    }
 
    public string cU() {

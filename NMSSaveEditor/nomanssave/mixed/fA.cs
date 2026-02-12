@@ -11,7 +11,7 @@ namespace NMSSaveEditor
 
 
 public class fA : fq {
-   public static readonly byte[] lA = "NOMANSKY".GetBytes(System.Text.Encoding.UTF8);
+   // PORT_TODO: public static readonly byte[] lA = "NOMANSKY".GetBytes(System.Text.Encoding.UTF8);
    public static Pattern lV = Pattern.compile("savedata(\\d{2})\\.hg", 2);
    public static Pattern lW = Pattern.compile("ps4_backup(\\d*)\\.\\d*\\.zip", 2);
    public FileInfo lX;
@@ -191,7 +191,7 @@ public class fA : fq {
       return var0.lX;
    }
    public static byte[] bY() {
-      return lA;
+      // PORT_TODO: return lA;
    }
    public static eY b(byte[] var0, eG var1) {
       return a(var0, var1);

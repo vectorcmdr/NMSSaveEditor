@@ -84,7 +84,8 @@ public eR(eQ var1, Element var2) : base(var2.getAttribute("id")) {
    }
 
    public override string getName() {
-      return this.kn.a(this.y);
+      // PORT_TODO: return this.kn.a(this.y);
+      return default;
    }
 
    public override ex bc() {
@@ -104,7 +105,7 @@ public eR(eQ var1, Element var2) : base(var2.getAttribute("id")) {
    }
 
    public override string bg() {
-      return this.kn.b(this.y);
+      // PORT_TODO: return this.kn.b(this.y);
    }
 
    public override bool bh() {
@@ -120,7 +121,7 @@ public eR(eQ var1, Element var2) : base(var2.getAttribute("id")) {
    }
 
    public override string getDescription() {
-      return this.kn.c(this.y);
+      // PORT_TODO: return this.kn.c(this.y);
    }
 
    public override List<object> bk() {

@@ -21,7 +21,7 @@ public class ed : ActionListener {
    public void actionPerformed(EventArgs var1) {
       if (ec.a(this.ik).Checked ^ eb.a(ec.h(this.ik))[this.il].Enabled) {
          bool var2 = ec.a(this.ik).Checked;
-         eb.a(ec.h(this.ik))[this.il].Enabled = (var2);
+         // PORT_TODO: eb.a(ec.h(this.ik))[this.il].Enabled = (var2);
          ec.b(this.ik).Enabled = (var2);
          ec.c(this.ik).Enabled = (var2);
          ec.d(this.ik).Enabled = (var2);

@@ -33,7 +33,7 @@ public class k : object {
 
    public void setSelectedItem(object var1) {
       this.B = (ex)var1;
-      h.h(this.z);
+      // PORT_TODO: h.h(this.z);
    }
 
    public object getSelectedItem() {

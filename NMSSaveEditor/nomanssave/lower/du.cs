@@ -30,13 +30,13 @@ public class du : Panel {
       this.Padding = new Padding(0); /* setBorder */ //(bO.eP);
       JPopupMenu var5 = new JPopupMenu();
       this.fe = new ToolStripMenuItem("Item Details");
-      this.fe.Click += (new dv(this, var2));
+      // PORT_TODO: this.fe.Click += (new dv(this, var2));
       var5.Add(this.fe);
       this.hn = new ToolStripMenuItem("Change Item");
-      this.hn.Click += (new dw(this, var2));
+      // PORT_TODO: this.hn.Click += (new dw(this, var2));
       var5.Add(this.hn);
       this.fh = new ToolStripMenuItem("Move Item");
-      this.fh.Click += (new dx(this, var2));
+      // PORT_TODO: this.fh.Click += (new dx(this, var2));
       var5.Add(this.fh);
       this.setComponentPopupMenu(var5);
       // this.addMouseListener - use MouseClick event instead
@@ -44,7 +44,7 @@ public class du : Panel {
    }
 
    public void aM() {
-      this.RemoveAll();
+      // PORT_TODO: this.RemoveAll();
       int var1 = 0 /* UIManager.getInt("Inventory.gridSize") */;
       Size var2 = new Size(var1, var1);
       this.setBackground(bO.eK);
@@ -56,7 +56,7 @@ public class du : Panel {
          this.hn.Enabled = (true);
          this.fh.Enabled = (this.hm.dA() > 0);
          ey var3 = ey.d(this.hm.dz());
-         string var4 = var3 == null ? this.hm.ei() : var3.Name;
+         // PORT_TODO: string var4 = var3 == null ? this.hm.ei() : var3.Name;
          int var5 = 0 /* UIManager.getInt("Inventory.iconSize") */;
          Font var6 = /* UIManager.getFont */ SystemFonts.DefaultFont; //("Inventory.font");
          Image var7 = var3 == null ? null : var3.c(var5, var5);
@@ -64,8 +64,8 @@ public class du : Panel {
          Label var9;
          GridBagConstraints var10;
          if (var7 != null) {
-            var9 = new Label() { Text = var7 };
-            var9.Size = (new Size(var5, var5));
+            // PORT_TODO: var9 = new Label() { Text = var7 };
+            // PORT_TODO: var9.Size = (new Size(var5, var5));
             var10 = new GridBagConstraints();
             var10.anchor = 10;
             var10.fill = 0;
@@ -77,9 +77,9 @@ public class du : Panel {
 
          var9 = new Label();
          var9.setFont(var6);
-         var9.setBackground((Color)null);
+         // PORT_TODO: var9.setBackground((Color)null);
          var9.Padding = new Padding(0); /* setBorder */ //((Border)null);
-         var9.Text = (var4);
+         // PORT_TODO: var9.Text = (var4);
          var9.setForeground(bO.eO);
          var10 = new GridBagConstraints();
          var10.anchor = 10;
@@ -90,7 +90,7 @@ public class du : Panel {
          this.Add(var9, var10);
          var9 = new Label();
          var9.setFont(var6);
-         var9.setBackground((Color)null);
+         // PORT_TODO: var9.setBackground((Color)null);
          var9.Padding = new Padding(0); /* setBorder */ //((Border)null);
          var9.Text = ((this.hm.dA().ToString()) + "/" + (this.hm.dB().ToString()));
          var9.setForeground(bO.eO);

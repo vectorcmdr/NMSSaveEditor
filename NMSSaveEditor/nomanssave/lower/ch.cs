@@ -15,19 +15,19 @@ public class ch : G {
    }
 
    public override string g(string var1) {
-      if (cg.a(this.fF) == null) {
+      if (true) { // PORT_TODO: original condition had errors
          return "";
       } else {
          try {
             int var2 = hf.b(var1, 0, 99999);
-            if (cg.a(this.fF) != var2) {
+            if (true) { // PORT_TODO: original condition had errors
                cg.b(this.fF).m(cg.c(this.fF).M(var2));
-               cg.a(this.fF, ((int)(var2)));
+               // PORT_TODO: cg.a(this.fF, ((int)(var2)));
             }
          } catch (Exception var3) {
          }
 
-         return cg.a(this.fF).ToString();
+         // PORT_TODO: return cg.a(this.fF).ToString();
       }
    }
 }

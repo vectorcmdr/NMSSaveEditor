@@ -11,7 +11,7 @@ namespace NMSSaveEditor
 
 public class fD : fH, fs {
    public DateTime LastWriteTimeUtc => DateTimeOffset.FromUnixTimeMilliseconds(lastModified()).UtcDateTime;
-   public new string Name => getName();
+   // PORT_TODO: public new string Name => getName();
    public int lO;
    public fn me;
    public fA ma;
@@ -21,8 +21,8 @@ public fD(fA var1, int var2) : base(var1, "savedata" + (var2 < 8 ? "0" : "") + (
       this.lO = var2;
 
       try {
-         string var3 = new string(this.ah(65536));
-         this.me = fn.T(var3);
+         // PORT_TODO: string var3 = new string(this.ah(65536));
+         // PORT_TODO: this.me = fn.T(var3);
       } catch (IOException var4) {
          hc.a("Could not read game mode from " + this.mh.Name, var4);
       }
@@ -46,7 +46,7 @@ public fD(fA var1, int var2, byte[] var3, eY var4) : base(var1, "savedata" + (va
    }
 
    public string b(eY var1) {
-      this.a(this.lO == 0 ? "ps4_backup" : "ps4_backup" + (this.lO + 1), this.me, this.Name, this.getDescription());
+      // PORT_TODO: this.a(this.lO == 0 ? "ps4_backup" : "ps4_backup" + (this.lO + 1), this.me, this.Name, this.getDescription());
       this.writeBytes(fA.l(var1));
       return this.K();
    }

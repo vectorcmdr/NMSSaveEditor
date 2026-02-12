@@ -18,7 +18,7 @@ public class aT : ActionListener {
    }
 
    public void actionPerformed(EventArgs var1) {
-      aQ.a(this.dr, new Size(int.Parse(aQ.a(this.dr).Text), int.Parse(aQ.e(this.dr).Text)));
+      // PORT_TODO: aQ.a(this.dr, new Size(int.Parse(aQ.a(this.dr).Text), int.Parse(aQ.e(this.dr).Text)));
       this.dr.Hide();
    }
 }

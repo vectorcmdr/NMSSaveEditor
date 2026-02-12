@@ -14,7 +14,7 @@ public class aQ : Form {
    public Size dk;
    public Size dl;
    public Size dm;
-   public Size dn = null;
+   // PORT_TODO: public Size dn = null;
    public TextBox @do;
    public TextBox dp;
    public static aQ dq;
@@ -44,13 +44,13 @@ public aQ(Frame var1) : base(var1) {
       var6.SuspendLayout(); // TODO: set layout new FlowLayoutPanel(2));
       var2.Controls.Add(var6);
       Button var7 = new Button() { Text = "Save" };
-      var7.Click += (new aT(this));
+      // PORT_TODO: var7.Click += (new aT(this));
       var6.Add(var7);
       this.getRootPane().setDefaultButton(var7);
       Button var8 = new Button() { Text = "Cancel" };
-      var8.Click += (new aU(this));
+      // PORT_TODO: var8.Click += (new aU(this));
       var6.Add(var8);
-      this.getRootPane().registerKeyboardAction(new aV(this), /* KeyStroke */ Keys.None /* (27, 0) */, 2);
+      // PORT_TODO: this.getRootPane().registerKeyboardAction(new aV(this), /* KeyStroke */ Keys.None /* (27, 0) */, 2);
       this.PerformLayout();
    }
 
@@ -58,12 +58,12 @@ public aQ(Frame var1) : base(var1) {
       this.dk = var1;
       this.dl = var2;
       this.dm = var3;
-      this.@do.Text = ((var1.width).ToString());
-      this.dp.Text = ((var1.height).ToString());
-      this.dn = null;
+      // PORT_TODO: this.@do.Text = ((var1.width).ToString());
+      // PORT_TODO: this.dp.Text = ((var1.height).ToString());
+      // PORT_TODO: this.dn = null;
       this.StartPosition = FormStartPosition.CenterParent; //(this.DirectoryName);
       this.Show();
-      return this.dn;
+      // PORT_TODO: return this.dn;
    }
 
    public static Size a(Container var0, Size var1, Size var2, Size var3) {
@@ -90,7 +90,7 @@ public aQ(Frame var1) : base(var1) {
       return var0.dp;
    }
    static void a(aQ var0, Size var1) {
-      var0.dn = var1;
+      // PORT_TODO: var0.dn = var1;
    }
 }
 

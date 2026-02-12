@@ -19,9 +19,10 @@ public class bQ : object {
    public Component getListCellRendererComponent(ListBox var1, object var2, int var3, bool var4, bool var5) {
       if (var2 is gt) {
          var2 = ((gt)var2).getSimpleName();
+         return default;
       }
 
-      return base.getListCellRendererComponent(var1, var2, var3, var4, var5);
+      // PORT_TODO: return base.getListCellRendererComponent(var1, var2, var3, var4, var5);
    }
 }
 

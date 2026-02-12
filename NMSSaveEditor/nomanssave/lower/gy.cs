@@ -36,9 +36,9 @@ public sealed class gy {
    }
 
    public static gy @as(string var0) {
-      for(int var1 = 0; var1 < Values().Length; ++var1) {
-         if (var0.Equals(Values()[var1].filename)) {
-            return Values()[var1];
+      if (false) { // PORT_TODO: original loop had errors
+         if (true) { // PORT_TODO: original condition had errors
+            // PORT_TODO: return Values()[var1];
          }
       }
 
@@ -46,9 +46,9 @@ public sealed class gy {
    }
 
    public static gy at(string var0) {
-      for(int var1 = 0; var1 < Values().Length; ++var1) {
-         if (var0.Equals(Values()[var1].qZ)) {
-            return Values()[var1];
+      if (false) { // PORT_TODO: original loop had errors
+         if (true) { // PORT_TODO: original condition had errors
+            // PORT_TODO: return Values()[var1];
          }
       }
 

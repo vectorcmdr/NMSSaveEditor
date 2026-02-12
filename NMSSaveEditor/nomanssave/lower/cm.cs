@@ -10,7 +10,7 @@ namespace NMSSaveEditor
 
 
 public class cm : FileView {
-   public string Name => getName();
+   // PORT_TODO: public string Name => getName();
    public cl fI;
 
    public cm(cl var1) {
@@ -19,7 +19,8 @@ public class cm : FileView {
 
    public Icon getIcon(FileInfo var1) {
       string var2 = var1.Name;
-      return (Icon)(!var2.EndsWith(".pb3") && !var2.EndsWith(".pb0") ? base.getIcon(var1) : cl.@as());
+      // PORT_TODO: return (Icon)(!var2.EndsWith(".pb3") && !var2.EndsWith(".pb0") ? base.getIcon(var1) : cl.@as());
+      return default;
    }
 
    public string getName(FileInfo var1) {

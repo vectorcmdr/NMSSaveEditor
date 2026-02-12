@@ -244,7 +244,8 @@ public class eV {
    }
 
    public object getValue(int var1) {
-      return this[var1];
+      // PORT_TODO: return this[var1];
+      return default;
    }
 
    public eY V(int var1) {
@@ -289,20 +290,20 @@ public class eV {
    }
 
    public bool hasValue(object var1) {
-      return this.IndexOf(var1) >= 0;
+      // PORT_TODO: return this.IndexOf(var1) >= 0;
    }
 
    public bool ac(int var1) {
-      this.Remove(var1);
+      // PORT_TODO: this.Remove(var1);
       return true;
    }
 
    public bool g(object var1) {
-      int var2 = this.IndexOf(var1);
+      // PORT_TODO: int var2 = this.IndexOf(var1);
       if (var2 < 0) {
          return false;
       } else {
-         this.Remove(var2);
+         // PORT_TODO: this.Remove(var2);
          return true;
       }
    }
@@ -317,7 +318,7 @@ public class eV {
          }
       }
 
-      return Arrays.stream(var1, 0, var2);
+      // PORT_TODO: return Arrays.stream(var1, 0, var2);
    }
    public object clone() {
       return this.bA();

@@ -17,7 +17,7 @@ public class hj : JavaThread {
       this.sK = var1;
       this.sL = aH.getProperty("KnownPlayers." + var1);
       hi.ep().Put(var1, this);
-      this.Start();
+      // PORT_TODO: this.Start();
    }
 
    public void run() {

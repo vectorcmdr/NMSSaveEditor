@@ -18,9 +18,9 @@ public cG(cy var1) : base("Copy From Clipboard") {
    }
 
    public void actionPerformed(EventArgs var1) {
-      string var2 = ((TextBox)var1.getSource()).getSelectedText();
-      if (var2 != null) {
-         cy.b(var2, this);
+      // PORT_TODO: string var2 = ((TextBox)var1.getSource()).getSelectedText();
+      if (true) { // PORT_TODO: original condition had errors
+         // PORT_TODO: cy.b(var2, this);
       }
 
    }

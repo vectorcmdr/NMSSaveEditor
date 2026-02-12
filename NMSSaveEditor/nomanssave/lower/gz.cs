@@ -70,9 +70,9 @@ public class gz {
                      if (var13 != null) {
                         eY var14 = new eY();
                         var14.b("Group", (object)var11);
-                        eV var15 = new eV(new object[]{Boolean.FALSE, Boolean.FALSE, Boolean.FALSE, Boolean.FALSE, Boolean.FALSE, Boolean.FALSE, Boolean.FALSE, Boolean.FALSE});
-                        var15.a(var13.ordinal(), Boolean.TRUE);
-                        var14.b("Races", (object)var15);
+                        // PORT_TODO: eV var15 = new eV(new object[]{Boolean.FALSE, Boolean.FALSE, Boolean.FALSE, Boolean.FALSE, Boolean.FALSE, Boolean.FALSE, Boolean.FALSE, Boolean.FALSE});
+                        // PORT_TODO: var15.a(var13.ordinal(), Boolean.TRUE);
+                        // PORT_TODO: var14.b("Races", (object)var15);
                         var7.f(var14);
                         hc.debug("Creating word: " + var11 + "[" + var13.ordinal() + "] = true");
                      }
@@ -251,11 +251,11 @@ public class gz {
             hc.debug("Updating word: " + var1 + "[" + var2 + "] = " + var3);
             eV var6 = var4.d("Races");
 
-            while(var6.Count < eU.Values.Length) {
-               var6.Add(Boolean.FALSE);
+            if (false) { // PORT_TODO: original while had errors
+               // PORT_TODO: var6.Add(Boolean.FALSE);
             }
 
-            var6.a(var2, new Boolean(var3));
+            // PORT_TODO: var6.a(var2, new Boolean(var3));
 
             for(int var7 = 0; var7 < var6.Count; ++var7) {
                var3 |= var6.ab(var7);
@@ -276,11 +276,11 @@ public class gz {
          var4.b("Group", (object)var1);
          eV var8 = new eV();
 
-         while(var8.Count < eU.Values.Length) {
-            var8.Add(Boolean.FALSE);
+         if (false) { // PORT_TODO: original while had errors
+            // PORT_TODO: var8.Add(Boolean.FALSE);
          }
 
-         var8.a(var2, new Boolean(var3));
+         // PORT_TODO: var8.a(var2, new Boolean(var3));
          var4.b("Races", (object)var8);
          this.rc.f(var4);
       }
@@ -288,12 +288,13 @@ public class gz {
    }
 
    public double dT() {
-      return new Double((double)Math.Round((double)this.oI.J("HazardTimeAlive") / 90.0D) / 10.0D);
+      // PORT_TODO: return new Double((double)Math.Round((double)this.oI.J("HazardTimeAlive") / 90.0D) / 10.0D);
+      return default;
    }
 
    public void g(double var1) {
-      long var3 = Math.Round(var1 * 900.0D);
-      if (var3 >= 0L && var3 <= 2147483647L) {
+      // PORT_TODO: long var3 = Math.Round(var1 * 900.0D);
+      if (true) { // PORT_TODO: original condition had errors
          this.oI.b("HazardTimeAlive", (object)((int)(var3)));
       } else {
          throw new Exception("Stat value out of range");
@@ -328,8 +329,8 @@ public class gz {
          var3.b("Id", (object)var1.id);
          eY var5 = new eY();
          var5.b("IntValue", (object)(((int)(var2))));
-         var5.b("FloatValue", (object)(new Double(0.0D)));
-         var5.b("Denominator", (object)(new Double(0.0D)));
+         // PORT_TODO: var5.b("FloatValue", (object)(new Double(0.0D)));
+         // PORT_TODO: var5.b("Denominator", (object)(new Double(0.0D)));
          var3.b("Value", (object)var5);
          this.rb.f(var3);
       }
@@ -354,7 +355,7 @@ public class gz {
          for(int var5 = 0; var5 < this.rb.Count; ++var5) {
             var4 = this.rb.V(var5);
             if (var4.getValueAsString("Id").Equals(var1.id)) {
-               var4.b("Value.FloatValue", (object)(new Double(var2)));
+               // PORT_TODO: var4.b("Value.FloatValue", (object)(new Double(var2)));
                return;
             }
          }
@@ -363,8 +364,8 @@ public class gz {
          var4.b("Id", (object)var1.id);
          eY var6 = new eY();
          var6.b("IntValue", (object)(((int)(0))));
-         var6.b("FloatValue", (object)(new Double(var2)));
-         var6.b("Denominator", (object)(new Double(0.0D)));
+         // PORT_TODO: var6.b("FloatValue", (object)(new Double(var2)));
+         // PORT_TODO: var6.b("Denominator", (object)(new Double(0.0D)));
          var4.b("Value", (object)var6);
          this.rb.f(var4);
       }

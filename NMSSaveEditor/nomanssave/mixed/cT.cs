@@ -44,12 +44,12 @@ public class cT : JFileChooser {
    }
 
    public int showSaveDialog(Component var1) {
-      this.getAccessory().Show();
+      // PORT_TODO: this.getAccessory().Show();
       return base.showSaveDialog(var1);
    }
 
    public int showOpenDialog(Component var1) {
-      this.getAccessory().Hide();
+      // PORT_TODO: this.getAccessory().Hide();
       return base.showOpenDialog(var1);
    }
    public static Image @as() {

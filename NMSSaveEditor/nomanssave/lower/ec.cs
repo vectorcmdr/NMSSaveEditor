@@ -25,7 +25,7 @@ public ec(eb var1, int var2) : base(aH.cH, aH.cH * 2) {
       this.index = var2;
       this.k("Wingman " + (var2 + 1));
       this.@if = new CheckBox() { Text = "Enabled" };
-      this.@if.Click += (new ed(this, var2));
+      // PORT_TODO: this.@if.Click += (new ed(this, var2));
       this.a(null, this.@if);
       this.Padding = new Padding(0); /* setBorder */ //(new LineBorder(Color.DARK_GRAY));
       this.ig = new ComboBox();
@@ -53,7 +53,7 @@ public ec(eb var1, int var2) : base(aH.cH, aH.cH * 2) {
       this.hO.Enabled = (eb.a(this.ij)[this.index].Enabled);
       this.hO.Text = (eb.a(this.ij)[this.index].eg());
       this.ii.Enabled = (eb.a(this.ij)[this.index].Enabled);
-      this.ii.Text = ((eb.a(this.ij).ToString()[this.index].eh()));
+      // PORT_TODO: this.ii.Text = ((eb.a(this.ij).ToString()[this.index].eh()));
    }
    public static CheckBox a(ec var0) {
       return var0.@if;

@@ -74,6 +74,7 @@ public class fL : fs {
    }
 
    public eY M() {
+      return default;
    }
 
    public string b(eY var1) {

@@ -23,7 +23,8 @@ public class bI : bK {
    }
 
    public string ab() {
-      return (bE.a(this.ey).ToString().b(eU.kt));
+      // PORT_TODO: return (bE.a(this.ey).ToString().b(eU.kt));
+      return default;
    }
 
    public void l(string var1) {

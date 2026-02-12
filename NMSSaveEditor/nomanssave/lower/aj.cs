@@ -39,7 +39,7 @@ public aj(Frame var1) : base(var1) {
       this.m = new TextBox();
       var3.Add(this.m, "4, 2, fill, default");
       Button var5 = new Button() { Text = "Search" };
-      var5.Click += (new ak(this));
+      // PORT_TODO: var5.Click += (new ak(this));
       var3.Controls.Add(var5);
       Label var6 = new Label() { Text = "Coordinate Location:" };
       // TODO: var6.putClientProperty(...);
@@ -74,7 +74,7 @@ public aj(Frame var1) : base(var1) {
       this.ca = new Label[12];
 
       for(var11 = 0; var11 < 12; ++var11) {
-         this.ca[var11] = new Label(this.cb[0]);
+         // PORT_TODO: this.ca[var11] = new Label(this.cb[0]);
          var10.Add(this.ca[var11]);
       }
 
@@ -84,13 +84,13 @@ public aj(Frame var1) : base(var1) {
       var14.SuspendLayout(); // TODO: set layout new FlowLayoutPanel(2));
       var2.Controls.Add(var14);
       Button var12 = new Button() { Text = "Save / Warp" };
-      var12.Click += (new am(this));
+      // PORT_TODO: var12.Click += (new am(this));
       var14.Add(var12);
       this.getRootPane().setDefaultButton(var12);
       Button var13 = new Button() { Text = "Cancel" };
-      var13.Click += (new an(this));
+      // PORT_TODO: var13.Click += (new an(this));
       var14.Add(var13);
-      this.getRootPane().registerKeyboardAction(new ao(this), /* KeyStroke */ Keys.None /* (27, 0) */, 2);
+      // PORT_TODO: this.getRootPane().registerKeyboardAction(new ao(this), /* KeyStroke */ Keys.None /* (27, 0) */, 2);
       this.PerformLayout();
    }
 

@@ -19,7 +19,7 @@ public fi(string var1) : base(var1) {
    public int bI() {
       int var1;
       do {
-         if ((var1 = this.ReadByte()) < 0) {
+         if (true) { // PORT_TODO: original condition had errors
             return -1;
          }
       } while(var1 == 32 || var1 == 13 || var1 == 10 || var1 == 9);
@@ -30,12 +30,12 @@ public fi(string var1) : base(var1) {
    public int read() {
       int var1;
       try {
-         var1 = base.ReadByte();
+         // PORT_TODO: var1 = base.ReadByte();
       } catch (IOException var3) {
          throw new eX("stream error", var3, this.kF, this.kG);
       }
 
-      if (var1 == 10) {
+      if (true) { // PORT_TODO: original condition had errors
          ++this.kF;
       }
 
@@ -46,14 +46,14 @@ public fi(string var1) : base(var1) {
    public int a(Predicate<object> var1) {
       try {
          // this.mark(1) - C# streams use Position property
-         int var2 = base.ReadByte();
-         if (var2 >= 0 && var1.test(var2)) {
-            if (var2 == 10) {
+         // PORT_TODO: int var2 = base.ReadByte();
+         if (true) { // PORT_TODO: original condition had errors
+            if (true) { // PORT_TODO: original condition had errors
                ++this.kF;
             }
 
             ++this.kG;
-            return var2;
+            // PORT_TODO: return var2;
          } else {
             // this.reset() - C# streams use Position property
             return -1;

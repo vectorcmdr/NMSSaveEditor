@@ -18,7 +18,7 @@ public class gE {
       List<object> var2 = (List<object>)var1.bB().filter((var0x) => {
          return "Settlement".Equals(var0x.getValueAsString("TeleporterType"));
       }).map((var0x) => {
-         return hl.n(var0x.H("UniverseAddress"));
+         // PORT_TODO: return hl.n(var0x.H("UniverseAddress"));
       }).collect(Collectors.toList());
       eV var3 = var0.d("SettlementStatesV2");
       if (var3 != null && var3.Count != 0) {

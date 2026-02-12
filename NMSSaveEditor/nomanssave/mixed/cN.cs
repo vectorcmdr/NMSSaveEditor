@@ -63,7 +63,7 @@ public class cN : ComboBox {
       }
 
       this.gq = var2;
-      this.selectedItemChanged();
+      // PORT_TODO: this.selectedItemChanged();
       this.Refresh();
    }
 

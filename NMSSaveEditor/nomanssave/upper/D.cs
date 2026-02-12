@@ -34,8 +34,8 @@ public class D : object {
       int var2;
       if (Application.i(this.aZ)) {
          Application.n(this.aZ).hidePopup();
-         var2 = MessageBox.Show(Application.h(this.aZ), "Save data before switching slots?", "Save", 1);
-         if (var2 == 0) {
+         // PORT_TODO: var2 = MessageBox.Show(Application.h(this.aZ), "Save data before switching slots?", "Save", 1);
+         if (true) { // PORT_TODO: original condition had errors
             Application.k(this.aZ);
          } else {
             if (var2 == 2) {

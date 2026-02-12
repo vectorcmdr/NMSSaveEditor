@@ -26,7 +26,7 @@ public class eA {
          if (var4 is Element) {
             var1 = (Element)var4;
             if (var1.getNodeName().Equals("description")) {
-               var2 = ey.a(var1);
+               // PORT_TODO: var2 = ey.a(var1);
             }
          }
       }
@@ -38,9 +38,9 @@ public class eA {
       StringBuilder var3 = new StringBuilder();
       int var4 = 0;
 
-      for(Matcher var5 = ey.bn().matcher(var1); var5.find(); var4 = var5.end()) {
-         var3.Append(var1.Substring(var4, var5.Start()));
-         var3.Append((string)var2.apply(var5.group(1)));
+      if (false) { // PORT_TODO: original loop had errors
+         // PORT_TODO: var3.Append(var1.Substring(var4, var5.Start()));
+         // PORT_TODO: var3.Append((string)var2.apply(var5.group(1)));
       }
 
       var3.Append(var1.Substring(var4));

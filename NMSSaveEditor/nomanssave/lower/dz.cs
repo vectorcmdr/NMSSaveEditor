@@ -26,7 +26,7 @@ public dz(Frame var1) : base(var1) {
       var2.SuspendLayout(); // TODO: set layout new TableLayoutPanel());
       Panel var3 = new Panel();
       this.hr = new ListBox();
-      this.hr.setSelectionMode(0);
+      // PORT_TODO: this.hr.setSelectionMode(0);
       this.hr.DataSource = (new dA(this));
       var3.setViewportView(this.hr);
       var2.Add(var3);
@@ -34,13 +34,13 @@ public dz(Frame var1) : base(var1) {
       var4.SuspendLayout(); // TODO: set layout new FlowLayoutPanel(2));
       var2.Controls.Add(var4);
       Button var5 = new Button() { Text = "Replace/Save" };
-      var5.Click += (new dB(this));
+      // PORT_TODO: var5.Click += (new dB(this));
       var4.Add(var5);
       this.getRootPane().setDefaultButton(var5);
       Button var6 = new Button() { Text = "Cancel" };
-      var6.Click += (new dC(this));
+      // PORT_TODO: var6.Click += (new dC(this));
       var4.Add(var6);
-      this.getRootPane().registerKeyboardAction(new dD(this), /* KeyStroke */ Keys.None /* (27, 0) */, 2);
+      // PORT_TODO: this.getRootPane().registerKeyboardAction(new dD(this), /* KeyStroke */ Keys.None /* (27, 0) */, 2);
    }
 
    public int a(ft[] var1, int var2) {

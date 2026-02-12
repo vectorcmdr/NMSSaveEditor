@@ -42,13 +42,13 @@ public class I : em {
       this.a("Items", this.bm);
       Panel var2 = new Panel();
       this.bn = new Button() { Text = "Backup" };
-      this.bn.Click += (new N(this, var1));
+      // PORT_TODO: this.bn.Click += (new N(this, var1));
       var2.Add(this.bn);
       this.bo = new Button() { Text = "Restore" };
-      this.bo.Click += (new O(this, var1));
+      // PORT_TODO: this.bo.Click += (new O(this, var1));
       var2.Add(this.bo);
       this.bp = new Button() { Text = "Move Base Computer" };
-      this.bp.Click += (new P(this, var1));
+      // PORT_TODO: this.bp.Click += (new P(this, var1));
       var2.Add(this.bp);
       this.a((Control)var2);
       this.bq = new bO(var1);

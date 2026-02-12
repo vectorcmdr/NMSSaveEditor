@@ -10,7 +10,7 @@ namespace NMSSaveEditor
 
 
 public class el : FileView {
-   public string Name => getName();
+   // PORT_TODO: public string Name => getName();
    public ej @is;
 
    public el(ej var1) {
@@ -22,13 +22,14 @@ public class el : FileView {
       if (var1.Exists) {
          var2 = var1.Name;
          if (var2.EndsWith(".hg") && !var2.StartsWith("mf_")) {
-            return ej.@as();
+            // PORT_TODO: return ej.@as();
          } else {
-            return var2.Equals("containers.index") ? ej.au() : null;
+            // PORT_TODO: return var2.Equals("containers.index") ? ej.au() : null;
+            return default;
          }
       } else {
          var2 = ej.a(this.@is, var1);
-         return var2 == null ? null : ej.aR();
+         // PORT_TODO: return var2 == null ? null : ej.aR();
       }
    }
 

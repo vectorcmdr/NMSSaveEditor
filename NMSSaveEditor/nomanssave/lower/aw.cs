@@ -25,11 +25,11 @@ public class aw : ActionListener {
          string var6 = (string)ap.d(this.cu)[var5];
          ap.d(this.cu).Remove(var5);
 
-         while((var5 = ap.e(this.cu).IndexOf(var6)) >= 0) {
+         if (false) { // PORT_TODO: original while had errors
             ap.e(this.cu).ac(var5);
          }
 
-         while((var5 = ap.f(this.cu).IndexOf(var6)) >= 0) {
+         if (false) { // PORT_TODO: original while had errors
             ap.f(this.cu).ac(var5);
          }
 
@@ -38,7 +38,7 @@ public class aw : ActionListener {
 
       if (var3) {
          ap.h(this.cu).clearSelection();
-         ap.g(this.cu).sort();
+         // PORT_TODO: ap.g(this.cu).sort();
          ap.h(this.cu).Refresh();
       }
 

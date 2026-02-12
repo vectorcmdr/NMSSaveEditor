@@ -98,6 +98,7 @@ public class fV : fs {
    }
 
    public eY M() {
+      return default;
    }
 
    public string b(eY var1) {

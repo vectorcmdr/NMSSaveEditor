@@ -22,7 +22,7 @@ public class am : ActionListener {
          MessageBox.Show("Invalid galaxy selected, please try again.", "Error");
       } else {
          if (MessageBox.Show("This will warp your character and ship to the specified system (not the portal itself).", "Confirm", MessageBoxButtons.OKCancel) == DialogResult.OK) {
-            aj.a(this.cg, true);
+            // PORT_TODO: aj.a(this.cg, true);
             this.cg.Hide();
          }
 

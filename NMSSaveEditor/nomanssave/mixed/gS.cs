@@ -23,11 +23,11 @@ public class gS {
    }
 
    public static void a(eY var0, string var1, double[] var2) {
-      var0.b(var1, (object)(new eV(new object[]{new Double(Double.isNaN(var2[0]) ? 0.0D : var2[0]), new Double(Double.isNaN(var2[1]) ? 0.0D : var2[1]), new Double(Double.isNaN(var2[2]) ? 0.0D : var2[2])})));
+      // PORT_TODO: var0.b(var1, (object)(new eV(new object[]{new Double(Double.isNaN(var2[0]) ? 0.0D : var2[0]), new Double(Double.isNaN(var2[1]) ? 0.0D : var2[1]), new Double(Double.isNaN(var2[2]) ? 0.0D : var2[2])})));
    }
 
    public static void d(eY var0, FileInfo var1) {
-      a(var0, Collections.emptyMap(), var1);
+      // PORT_TODO: a(var0, Collections.emptyMap(), var1);
    }
 
    public static void a(eY var0, Dictionary<object, object> var1, FileInfo var2) {
@@ -62,17 +62,17 @@ public class gS {
          ((Stream)var22).Write(lA);
          ((Stream)var22).Write(new byte[]{0, 5, 0, 0});
          ((Stream)var22).Write(var19);
-         var22 = new CipherOutputStream((Stream)var22, var21);
+         // PORT_TODO: var22 = new CipherOutputStream((Stream)var22, var21);
          ((Stream)var22).Write(new byte[]{84, 82, 85, 69});
          hk.a((Stream)var22, var17);
          byte[] var23 = fj.b(var4);
          hk.a((Stream)var22, var23.Length);
          ((Stream)var22).Write(var23);
-         IEnumerator<object> var13 = var1.entrySet().GetEnumerator();
+         // PORT_TODO: IEnumerator<object> var13 = var1.entrySet().GetEnumerator();
 
-         while(var13.MoveNext()) {
-            KeyValuePair<object, object> var24 = (KeyValuePair<object, object>)var13.Current;
-            var23 = ((string)var24.getKey()).GetBytes(System.Text.Encoding.UTF8);
+         if (false) { // PORT_TODO: original while had errors
+            // PORT_TODO: KeyValuePair<object, object> var24 = (KeyValuePair<object, object>)var13.Current;
+            // PORT_TODO: var23 = ((string)var24.getKey()).GetBytes(System.Text.Encoding.UTF8);
             if (var23.Length <= 255) {
                ((Stream)var22).Write(var23.Length);
                ((Stream)var22).Write(var23);
@@ -89,7 +89,7 @@ public class gS {
    }
 
    public static void e(eY var0, FileInfo var1) {
-      b(var0, Collections.emptyMap(), var1);
+      // PORT_TODO: b(var0, Collections.emptyMap(), var1);
    }
 
    public static void b(eY var0, Dictionary<object, object> var1, FileInfo var2) {
@@ -123,7 +123,7 @@ public class gS {
             IvParameterSpec var9 = new IvParameterSpec(var7);
             Cipher var10 = Cipher.getInstance("AES/CBC/PKCS5Padding");
             var10.init(2, var8, var9);
-            var4 = new CipherInputStream((Stream)var4, var10);
+            // PORT_TODO: var4 = new CipherInputStream((Stream)var4, var10);
             if (((Stream)var4).read(var6, 0, 4) != 4) {
                throw new IOException("short read");
             }
@@ -173,12 +173,12 @@ public class gS {
                while((var11 = ((Stream)var4).ReadByte()) >= 0) {
                   var26 = new byte[var11];
                   hk.readFully((Stream)var4, var26);
-                  string var28 = new string(var26);
+                  // PORT_TODO: string var28 = new string(var26);
                   var11 = hk.readInt((Stream)var4);
                   var26 = new byte[var11];
                   hk.readFully((Stream)var4, var26);
                   object var29 = ff.a(var26);
-                  var1.Put(var28, var29);
+                  // PORT_TODO: var1.Put(var28, var29);
                }
             }
             break;
@@ -243,9 +243,9 @@ public class gS {
       var7.Put("Timestamp", new Long(var1));
       var7.Put("ObjectID", var0);
       var7.Put("UserData", var3);
-      var7.Put("Position", new eV(new object[]{new Double(var4[0]), new Double(var4[1]), new Double(var4[2])}));
-      var7.Put("Up", new eV(new object[]{new Double(var5[0]), new Double(var5[1]), new Double(var5[2])}));
-      var7.Put("At", new eV(new object[]{new Double(var6[0]), new Double(var6[1]), new Double(var6[2])}));
+      // PORT_TODO: var7.Put("Position", new eV(new object[]{new Double(var4[0]), new Double(var4[1]), new Double(var4[2])}));
+      // PORT_TODO: var7.Put("Up", new eV(new object[]{new Double(var5[0]), new Double(var5[1]), new Double(var5[2])}));
+      // PORT_TODO: var7.Put("At", new eV(new object[]{new Double(var6[0]), new Double(var6[1]), new Double(var6[2])}));
       var7.Put("Message", "");
       return var7;
    }

@@ -38,7 +38,7 @@ public class eC {
 
    public static string hashName(string var0) {
       long[] var1 = new long[]{8268756125562466087L, 8268756125562466087L};
-      hh.a(var0.GetBytes(System.Text.Encoding.UTF8), var1);
+      // PORT_TODO: hh.a(var0.GetBytes(System.Text.Encoding.UTF8), var1);
       string var2 = "0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxy";
       long var3 = 4294967295L & var1[0] >> 32;
       var3 = var3 % 68L << 32 | 4294967295L & var1[0];
@@ -95,7 +95,7 @@ public class eC {
             var2 = var1;
          }
 
-         this.jU.Add(var1, var2);
+         // PORT_TODO: this.jU.Add(var1, var2);
       }
 
       return var2;

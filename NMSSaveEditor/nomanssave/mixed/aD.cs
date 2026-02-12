@@ -31,10 +31,10 @@ public aD(Frame var1) : base(var1) {
       Panel var3 = new Panel();
       var2.a(var3);
       Button var4 = new Button() { Text = "Apply" };
-      var4.Click += (new aF(this));
+      // PORT_TODO: var4.Click += (new aF(this));
       var3.Add(var4);
       Button var5 = new Button() { Text = "Cancel" };
-      var5.Click += (new aG(this));
+      // PORT_TODO: var5.Click += (new aG(this));
       var3.Add(var5);
       this.setContentPane(var2);
       this.PerformLayout();

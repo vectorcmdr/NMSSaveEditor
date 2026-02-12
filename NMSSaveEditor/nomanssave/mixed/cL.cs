@@ -10,7 +10,7 @@ namespace NMSSaveEditor
 
 
 public class cL : FileView {
-   public string Name => getName();
+   // PORT_TODO: public string Name => getName();
    public cK gl;
 
    public cL(cK var1) {

@@ -17,7 +17,7 @@ public class da : ActionListener {
    }
 
    public void actionPerformed(EventArgs var1) {
-      cY.a(this.gR, cY.b(this.gR).SelectedIndex);
+      // PORT_TODO: cY.a(this.gR, cY.b(this.gR).SelectedIndex);
       this.gR.Hide();
    }
 }

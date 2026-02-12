@@ -81,11 +81,11 @@ public ha(Stream var1, int var2) : base(var1) {
                var4 = var2;
                this.aJ(var2);
 
-               while((var1 = base.read(this.buffer, this.sg, var4)) > 0) {
+               if (false) { // PORT_TODO: original while had errors
                   this.sg += var1;
                   var4 -= var1;
                   if (var4 == 0) {
-                     break;
+                     // PORT_TODO: break;
                   }
                }
 

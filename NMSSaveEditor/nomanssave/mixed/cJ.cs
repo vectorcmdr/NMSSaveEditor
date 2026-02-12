@@ -37,9 +37,10 @@ public class cJ {
       if (this.value == null) {
          return 0;
       } else if (this.value is eY) {
-         return ((eY)this.value).names().Count;
+         // PORT_TODO: return ((eY)this.value).names().Count;
       } else {
          return this.value is eV ? ((eV)this.value).Count : 0;
+         return default;
       }
    }
 
@@ -47,8 +48,8 @@ public class cJ {
       if (this.value == null) {
          throw new Exception("No children for null");
       } else if (this.value is eY) {
-         string var4 = (string)((eY)this.value).names()[var1];
-         object var3 = ((eY)this.value).getValue(var4);
+         // PORT_TODO: string var4 = (string)((eY)this.value).names()[var1];
+         // PORT_TODO: object var3 = ((eY)this.value).getValue(var4);
          return new cJ(this.gg, this, var1, var4, var3);
       } else if (this.value is eV) {
          object var2 = ((eV)this.value).getValue(var1);
@@ -68,7 +69,7 @@ public class cJ {
 
    public string getText() {
       return fh.a(this.value, 1, (var0) => {
-         return var0 < 128;
+         // PORT_TODO: return var0 < 128;
       });
    }
 

@@ -82,17 +82,17 @@ public class fw {
       if (!this.isValid()) {
          return null;
       } else {
-         FileStream var1 = new FileStream((fu.b(this.lJ).ToString(), System.IO.FileMode.Open));
+         // PORT_TODO: FileStream var1 = new FileStream((fu.b(this.lJ).ToString(), System.IO.FileMode.Open));
 
          byte[] var8;
          try {
-            var1.skip(this.lP);
+            // PORT_TODO: var1.skip(this.lP);
             MemoryStream var2 = new MemoryStream();
             byte[] var3 = new byte[4096];
             long var4 = this.length;
 
             int var6;
-            while(var4 > 0L && (var6 = var1.read(var3, 0, (int)Math.Min((long)var3.Length, var4))) > 0) {
+            if (false) { // PORT_TODO: original while had errors
                var4 -= (long)var6;
                var2.Write(var3, 0, var6);
             }
@@ -103,7 +103,7 @@ public class fw {
 
             var8 = var2.ToArray();
          } finally {
-            var1.Close();
+            // PORT_TODO: var1.Close();
          }
 
          return var8;
@@ -127,18 +127,18 @@ public class fw {
             throw new IOException("header not valid");
          } else {
             long var25 = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
-            FileInfo var5 = new FileInfo(fu.b(this.lJ).Directory, "~" + fu.b(this.lJ).Name);
-            FileStream var6 = new FileStream((var5).ToString(), System.IO.FileMode.Open);
+            // PORT_TODO: FileInfo var5 = new FileInfo(fu.b(this.lJ).Directory, "~" + fu.b(this.lJ).Name);
+            // PORT_TODO: FileStream var6 = new FileStream((var5).ToString(), System.IO.FileMode.Open);
 
             try {
-               FileStream var7 = new FileStream((fu.b(this.lJ).ToString(), System.IO.FileMode.Open));
+               // PORT_TODO: FileStream var7 = new FileStream((fu.b(this.lJ).ToString(), System.IO.FileMode.Open));
 
                try {
                   Console.WriteLine("Reading header");
                   byte[] var8 = new byte[64];
-                  hk.readFully(var7, var8);
+                  // PORT_TODO: hk.readFully(var7, var8);
                   var6.Write(var8);
-                  long var9 = (long)var1.length - fu.c(this.lJ)[var2].length;
+                  // PORT_TODO: long var9 = (long)var1.length - fu.c(this.lJ)[var2].length;
                   long var11 = 64L;
 
                   int var13;
@@ -146,21 +146,21 @@ public class fw {
                   for(var13 = 0; var13 < var2; ++var13) {
                      if (fu.c(this.lJ)[var13].lP < fu.c(this.lJ)[var2].lP) {
                         var10000 = fu.c(this.lJ)[var13];
-                        var10000.lP += var9;
+                        // PORT_TODO: var10000.lP += var9;
                      }
 
                      var11 += (long)fu.c(this.lJ)[var13].a(var6);
                   }
 
                   var6.Write(fu.bY());
-                  fu.c(this.lJ)[var2].length = (long)var1.length;
+                  // PORT_TODO: fu.c(this.lJ)[var2].length = (long)var1.length;
                   fu.c(this.lJ)[var2].bd = var25;
                   var11 += (long)fu.c(this.lJ)[var2].a(var6);
 
                   for(var13 = var2 + 1; var13 < fu.c(this.lJ).Length; ++var13) {
                      if (fu.c(this.lJ)[var13].lP < fu.c(this.lJ)[var2].lP) {
                         var10000 = fu.c(this.lJ)[var13];
-                        var10000.lP += var9;
+                        // PORT_TODO: var10000.lP += var9;
                      }
 
                      var11 += (long)fu.c(this.lJ)[var13].a(var6);
@@ -170,7 +170,7 @@ public class fw {
 
                   byte[] var15;
                   int var16;
-                  for(var15 = new byte[4096]; var26 > 0L && (var16 = var7.read(var15, 0, (int)Math.Min((long)var15.Length, var26))) > 0; var26 -= (long)var16) {
+                  if (false) { // PORT_TODO: original loop had errors
                      var6.Write(var15, 0, var16);
                      var11 += (long)var16;
                   }
@@ -182,18 +182,18 @@ public class fw {
                   var6.Write(var1);
                   long var27 = var11 + (long)var1.Length;
 
-                  for(var26 = (long)var1.Length - var9; var26 > 0L && (var16 = var7.read(var15, 0, (int)Math.Min((long)var15.Length, var26))) > 0; var26 -= (long)var16) {
+                  if (false) { // PORT_TODO: original loop had errors
                   }
 
                   if (var26 > 0L) {
                      throw new IOException("short read");
                   }
 
-                  while((var16 = var7.read(var15)) > 0) {
+                  if (false) { // PORT_TODO: original while had errors
                      var6.Write(var15, 0, var16);
                   }
                } finally {
-                  var7.Close();
+                  // PORT_TODO: var7.Close();
                }
             } finally {
                var6.Close();

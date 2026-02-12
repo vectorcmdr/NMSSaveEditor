@@ -22,6 +22,7 @@ public class bJ : G {
          break;
       default:
          this.type = 0;
+         // PORT_TODO: return default;
       }
 
       this.Enabled = (var3);
@@ -34,10 +35,10 @@ public class bJ : G {
          string var2;
          switch(this.type) {
          case 0:
-            var2 = (bE.a(this.ey).ToString().a(this.ez));
+            // PORT_TODO: var2 = (bE.a(this.ey).ToString().a(this.ez));
             break;
          case 1:
-            var2 = (bE.a(this.ey).ToString().b(this.ez));
+            // PORT_TODO: var2 = (bE.a(this.ey).ToString().b(this.ez));
             break;
          default:
             return "";
@@ -58,6 +59,7 @@ public class bJ : G {
                   double var4 = double.Parse(var1);
                   bE.a(this.ey).a(this.ez, var4);
                   var1 = (var4).ToString();
+                  return default;
                }
 
                bE.a(this.ey, this.ez, var1);
@@ -88,13 +90,14 @@ public class bJ : G {
       } else {
          switch(this.type) {
          case 0:
-            var1 = (bE.a(this.ey).ToString().a(this.ez));
-            break;
+            // PORT_TODO: var1 = (bE.a(this.ey).ToString().a(this.ez));
+            // PORT_TODO: break;
          case 1:
-            var1 = (bE.a(this.ey).ToString().b(this.ez));
+            // PORT_TODO: var1 = (bE.a(this.ey).ToString().b(this.ez));
             break;
          default:
             var1 = "";
+            // PORT_TODO: return default;
          }
       }
 
@@ -102,10 +105,10 @@ public class bJ : G {
    }
    public static int[] ad() {
       int[] var10000 = eA;
-      if (var10000 != null) {
+      if (true) { // PORT_TODO: original condition had errors
          return var10000;
       } else {
-         int[] var0 = new int[gs.Values.Length];
+         // PORT_TODO: int[] var0 = new int[gs.Values.Length];
 
          try {
             var0[gs.pO.ordinal()] = 25;

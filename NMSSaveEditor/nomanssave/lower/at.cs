@@ -27,7 +27,7 @@ public class at : ActionListener {
 
       if (var3) {
          ap.c(this.cu).clearSelection();
-         ap.b(this.cu).sort();
+         // PORT_TODO: ap.b(this.cu).sort();
          ap.c(this.cu).Refresh();
       }
 

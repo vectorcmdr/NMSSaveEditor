@@ -44,11 +44,11 @@ public class dE : Panel {
       this.hv.a("Seed", this.hz);
       this.hv.Y();
       this.hv.k("Stats");
-      this.ea = new G[gG.Values.Length];
+      // PORT_TODO: this.ea = new G[gG.Values.Length];
 
       for(int var4 = 0; var4 < this.ea.Length; ++var4) {
-         this.ea[var4] = new dM(this, gG.Values[var4], (dM)null);
-         this.hv.a(gG.Values[var4].ToString(), (Control)this.ea[var4]);
+         // PORT_TODO: this.ea[var4] = new dM(this, gG.Values[var4], (dM)null);
+         // PORT_TODO: this.hv.a(gG.Values[var4].ToString(), (Control)this.ea[var4]);
       }
 
       this.hw = new ba();
@@ -64,7 +64,7 @@ public class dE : Panel {
       this.hA = new DataGridView();
       this.hA.setCellSelectionEnabled(false);
       this.hA.DataSource = (new dI(this));
-      this.hA.getColumnModel().getColumn(1).setCellEditor(new DefaultCellEditor(new dJ(this)));
+      // PORT_TODO: this.hA.getColumnModel().getColumn(1).setCellEditor(new DefaultCellEditor(new dJ(this)));
       var5.setViewportView(this.hA);
       this.hB = new dt(var1);
       var3 = new GridBagConstraints();

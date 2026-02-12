@@ -50,6 +50,8 @@ public class hh {
          break;
       default:
          return var3;
+         return default;
+         return default;
       }
    }
 
@@ -324,6 +326,7 @@ public class hh {
                break;
             case 11:
                var26 += var32;
+               return default;
             }
          }
 
@@ -419,10 +422,10 @@ public class hh {
       switch(var2) {
       case 3:
          var3 += (long)var0[var1 + 2] << 32;
-         break;
+         // PORT_TODO: break;
       case 2:
          var3 += (long)var0[var1 + 1] << 16;
-         break;
+         // PORT_TODO: break;
       case 1:
          var3 += (long)var0[var1];
          break;
@@ -702,6 +705,7 @@ public class hh {
                break;
             case 11:
                var26 += var32;
+               return default;
             }
          }
 
@@ -925,7 +929,8 @@ public class hh {
       var4 = var4 << 63 | var4 >>> 1;
       var6 += var4;
       var3[0] = var4;
-      var3[1] = var6;
+      // PORT_TODO: var3[1] = var6;
+      return default;
    }
 
    public static long b(long[] var0, int var1, int var2, long[] var3) {
@@ -1115,7 +1120,7 @@ public class hh {
    }
 
    public long[] j(byte[] var1) {
-      return this.c(var1, 0, var1.Length);
+      // PORT_TODO: return this.c(var1, 0, var1.Length);
    }
 
    public static long a(CharSequence var0, long[] var1) {
@@ -1125,7 +1130,7 @@ public class hh {
    public long[] b(CharSequence var1, int var2, int var3) {
       long[] var4 = new long[]{this.sG, this.sH};
       b(var1, var2, var3, var4);
-      return var4;
+      // PORT_TODO: return var4;
    }
 
    public long[] a(CharSequence var1) {

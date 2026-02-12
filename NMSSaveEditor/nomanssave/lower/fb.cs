@@ -24,23 +24,23 @@ public class fb : fc {
          var3 = (eY)this.kN.a(typeof(eY), var2);
       }
 
-      int var4 = var3.IndexOf(this.name);
-      if (var4 < 0) {
+      // PORT_TODO: int var4 = var3.IndexOf(this.name);
+      if (true) { // PORT_TODO: original condition had errors
          if (!var2) {
             throw new fd((fd)null);
          } else {
             object var5;
             try {
-               var5 = Activator.CreateInstance(var1);
+               // PORT_TODO: var5 = Activator.CreateInstance(var1);
             } catch (Exception var7) {
                throw new Exception("Unexpected error", var7);
             }
 
-            var3.put(this.name, var5);
+            // PORT_TODO: var3.put(this.name, var5);
             return var5;
          }
       } else if (var1.IsInstanceOfType(var3.values[var4])) {
-         return var3.values[var4];
+         // PORT_TODO: return var3.values[var4];
       } else {
          throw new Exception("Unexpected path");
       }

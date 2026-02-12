@@ -23,7 +23,8 @@ public class fg {
    }
 
    public int indexOf(int var1) {
-      return this.IndexOf(var1, 0);
+      // PORT_TODO: return this.IndexOf(var1, 0);
+      return default;
    }
 
    public int indexOf(int var1, int var2) {
@@ -37,11 +38,11 @@ public class fg {
    }
 
    public string substring(int var1) {
-      return this.Substring(var1, this.bytes.Length - var1);
+      // PORT_TODO: return this.Substring(var1, this.bytes.Length - var1);
    }
 
    public string substring(int var1, int var2) {
-      return new string(this.bytes, var1, var2, kT);
+      // PORT_TODO: return new string(this.bytes, var1, var2, kT);
    }
 
    public string bP() {
@@ -92,7 +93,7 @@ public class fg {
    }
 
    public string toString() {
-      return new string(this.bytes, kT);
+      // PORT_TODO: return new string(this.bytes, kT);
    }
 }
 

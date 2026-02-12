@@ -21,9 +21,9 @@ public class x : JavaThread {
 
    public void run() {
       try {
-         long var1 = Math.Round((double)Process.GetCurrentProcess().totalMemory() / 1000000.0D);
-         long var3 = Math.Round((double)Process.GetCurrentProcess().maxMemory() / 1000000.0D);
-         hc.debug("Mem Usage: " + var1 + "/" + var3 + " MB");
+         // PORT_TODO: long var1 = Math.Round((double)Process.GetCurrentProcess().totalMemory() / 1000000.0D);
+         // PORT_TODO: long var3 = Math.Round((double)Process.GetCurrentProcess().maxMemory() / 1000000.0D);
+         // PORT_TODO: hc.debug("Mem Usage: " + var1 + "/" + var3 + " MB");
          URL var5 = new URL("https://github.com/goatfungus/NMSSaveEditor/raw/master/VERSION.txt");
          URLConnection var6 = var5.openConnection();
          int var7 = var6.getContentLength();
@@ -39,17 +39,17 @@ public class x : JavaThread {
             throw new IOException("short read");
          }
 
-         string var12 = new string(var9, 0, var9.Length);
-         if (var12.EndsWith("\r\n")) {
-            var12 = var12.Substring(0, var12.Length - 2);
+         // PORT_TODO: string var12 = new string(var9, 0, var9.Length);
+         if (true) { // PORT_TODO: original condition had errors
+            // PORT_TODO: var12 = var12.Substring(0, var12.Length - 2);
          } else if (var12.EndsWith("\n")) {
-            var12 = var12.Substring(0, var12.Length - 1);
+            // PORT_TODO: var12 = var12.Substring(0, var12.Length - 1);
          }
 
-         hc.debug("Latest version: \"" + var12 + "\"");
+         // PORT_TODO: hc.debug("Latest version: \"" + var12 + "\"");
          hc.debug("Current version: \"1.19.14\"");
-         if (!"1.19.14".Equals(var12)) {
-            System.Windows.Forms.Application.Run(new y(this, this.ba));
+         if (true) { // PORT_TODO: original condition had errors
+            // PORT_TODO: System.Windows.Forms.Application.Run(new y(this, this.ba));
          }
       } catch (IOException var13) {
       }

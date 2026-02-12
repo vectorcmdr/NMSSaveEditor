@@ -50,7 +50,7 @@ public class q : object {
       case 0:
          return ((ey)p.a(this.I)[var1]).N(3);
       case 1:
-         return ((ey)p.a(this.I)[var1]).Name;
+         // PORT_TODO: return ((ey)p.a(this.I)[var1]).Name;
       case 2:
          return ((ey)p.a(this.I)[var1]).bc().ToString();
       case 3:

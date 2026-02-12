@@ -10,23 +10,23 @@ namespace NMSSaveEditor
 
 
 public class fm : JavaThread {
-   public WatchService lk = /* FileSystems */ null.newWatchService();
-   public Dictionary<object, object> ll = new WeakHashMap();
+   // PORT_TODO: public WatchService lk = /* FileSystems */ null.newWatchService();
+   // PORT_TODO: public Dictionary<object, object> ll = new WeakHashMap();
 
    public fm() {
-      this.IsBackground = (true);
-      this.Start();
+      // PORT_TODO: this.IsBackground = (true);
+      // PORT_TODO: this.Start();
    }
 
    public void a(fq var1, FileInfo var2) {
-      WatchKey var3 = var2.toPath().register(this.lk, StandardWatchEventKinds.ENTRY_CREATE, StandardWatchEventKinds.ENTRY_DELETE, StandardWatchEventKinds.ENTRY_MODIFY);
-      this.ll.Put(var1, var3);
+      // PORT_TODO: WatchKey var3 = var2.toPath().register(this.lk, StandardWatchEventKinds.ENTRY_CREATE, StandardWatchEventKinds.ENTRY_DELETE, StandardWatchEventKinds.ENTRY_MODIFY);
+      // PORT_TODO: this.ll.Put(var1, var3);
    }
 
    public void b(fq var1) {
       // PORT_TODO: // PORT_TODO: WatchKey var2 = (WatchKey)this.ll.Remove(var1);
-      if (var2 != null) {
-         var2.cancel();
+      if (true) { // PORT_TODO: original condition had errors
+         // PORT_TODO: var2.cancel();
       }
 
    }
@@ -37,24 +37,24 @@ public class fm : JavaThread {
             Dictionary<object, object> var1 = new Dictionary<object, object>();
 
             while(true) {
-               WatchKey var3 = this.lk.take();
+               // PORT_TODO: WatchKey var3 = this.lk.take();
 
-               Kind var6;
+               // PORT_TODO: Kind var6;
                do {
                   object var2;
-                  if (var1.ContainsKey(var3)) {
-                     var2 = (List<object>)var1[var3];
+                  if (true) { // PORT_TODO: original condition had errors
+                     // PORT_TODO: var2 = (List<object>)var1[var3];
                   } else {
                      var2 = new List<object>();
-                     var1.Put(var3, var2);
+                     // PORT_TODO: var1.Put(var3, var2);
                   }
 
-                  IEnumerator<object> var5 = var3.pollEvents().GetEnumerator();
+                  // PORT_TODO: IEnumerator<object> var5 = var3.pollEvents().GetEnumerator();
 
                   while(var5.MoveNext()) {
                      WatchEvent var4 = (WatchEvent)var5.Current;
-                     var6 = var4.kind();
-                     if (var6 != StandardWatchEventKinds.OVERFLOW) {
+                     // PORT_TODO: var6 = var4.kind();
+                     if (true) { // PORT_TODO: original condition had errors
                         string var7 = var4.context().ToString();
                         if (!((List<object>)var2).Contains(var7)) {
                            ((List<object>)var2).Add(var7);
@@ -62,45 +62,45 @@ public class fm : JavaThread {
                      }
                   }
 
-                  if (!var3.reset()) {
+                  if (true) { // PORT_TODO: original condition had errors
                      break;
                   }
 
-                  var3 = this.lk.poll(500L, /* TimeUnit */ 1);
-               } while(var3 != null);
+                  // PORT_TODO: var3 = this.lk.poll(500L, /* TimeUnit */ 1);
+               // PORT_TODO: } while(var3 != null);
 
                lock(fl.bQ()) {
                   bool var23 = false;
-                  IEnumerator<object> var8 = var1.entrySet().GetEnumerator();
+                  // PORT_TODO: IEnumerator<object> var8 = var1.entrySet().GetEnumerator();
 
                   label156:
                   while(true) {
-                     if (!var8.MoveNext()) {
-                        var6 = null;
+                     if (true) { // PORT_TODO: original condition had errors
+                        // PORT_TODO: var6 = null;
                         break;
                      }
 
-                     KeyValuePair<object, object> var25 = (KeyValuePair<object, object>)var8.Current;
-                     var3 = (WatchKey)var25.getKey();
+                     // PORT_TODO: KeyValuePair<object, object> var25 = (KeyValuePair<object, object>)var8.Current;
+                     // PORT_TODO: var3 = (WatchKey)var25.getKey();
                      List<object> var22 = (List<object>)var25.getValue();
                      var23 = false;
-                     IEnumerator<object> var10 = this.ll.entrySet().GetEnumerator();
+                     // PORT_TODO: IEnumerator<object> var10 = this.ll.entrySet().GetEnumerator();
 
                      while(true) {
                         KeyValuePair<object, object> var9;
                         fq var24;
                         do {
                            do {
-                              if (!var10.MoveNext()) {
+                              if (true) { // PORT_TODO: original condition had errors
                                  if (var23 == null) {
-                                    var3.cancel();
+                                    // PORT_TODO: var3.cancel();
                                  }
                                  goto label156;
                               }
 
-                              var9 = (KeyValuePair<object, object>)var10.Current;
-                           } while(var9.getValue() != var3);
-                        } while((var24 = (fq)var9.getKey()) == null);
+                                                         // PORT_TODO: var9 = (KeyValuePair<object, object>)var10.Current;
+                           } while(false); // PORT_TODO: original: while(var9.getValue() != var3);
+                        } while(false); // PORT_TODO: original: while((var24 = (fq)var9.getKey()) == null);
 
                         var23 = true;
                         IEnumerator<object> var12 = var22.GetEnumerator();
@@ -116,7 +116,7 @@ public class fm : JavaThread {
                var1.Clear();
             }
          } finally {
-            this.lk.Close();
+            // PORT_TODO: this.lk.Close();
          }
       } catch (InterruptedException var20) {
       } catch (IOException var21) {

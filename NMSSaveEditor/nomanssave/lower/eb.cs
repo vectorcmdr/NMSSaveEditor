@@ -34,7 +34,7 @@ public class eb : em {
       this.ic = var1;
 
       for(int var2 = var1.Length; var2 < this.ib.Length; ++var2) {
-         this.Remove(this.ib[var2]);
+         // PORT_TODO: this.Remove(this.ib[var2]);
       }
 
       byte var6;

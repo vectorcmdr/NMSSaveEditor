@@ -11,7 +11,7 @@ namespace NMSSaveEditor
 
 
 public class fT : fq {
-   public static readonly byte[] lA = "HGSAVEV2\u0000".GetBytes(System.Text.Encoding.UTF8);
+   // PORT_TODO: public static readonly byte[] lA = "HGSAVEV2\u0000".GetBytes(System.Text.Encoding.UTF8);
    public static Pattern lV = Pattern.compile("Slot(\\d+)((Auto)|(Manual))");
    public static Pattern lW = Pattern.compile("wgsbackup(\\d*)\\.\\d*\\.zip");
    public static string mC = "containers.index";
@@ -35,7 +35,7 @@ public class fT : fq {
    public static int mM = 3;
 
    public fT(FileInfo var1, fR var2) {
-      this.lX = var1.Attributes.HasFlag(FileAttributes.Directory) ? var1 : var1.Directory;
+      // PORT_TODO: this.lX = var1.Attributes.HasFlag(FileAttributes.Directory) ? var1 : var1.Directory;
       this.lE = var2;
       this.cr();
 
@@ -74,43 +74,43 @@ public class fT : fq {
 
    public void cr() {
       hc.info("Reading Container Index");
-      FileStream var1 = new FileStream((new FileInfo(System.IO.Path.Combine((this.lX).ToString(), System.IO.FileMode.Open).ToString(), ("containers.index").ToString())));
+      // PORT_TODO: FileStream var1 = new FileStream((new FileInfo(System.IO.Path.Combine((this.lX).ToString(), System.IO.FileMode.Open).ToString(), ("containers.index").ToString())));
 
       try {
-         this.header = hk.readInt(var1);
+         // PORT_TODO: this.header = hk.readInt(var1);
          hc.debug("  header: " + this.header);
-         int var2 = hk.readInt(var1);
+         // PORT_TODO: int var2 = hk.readInt(var1);
          hc.debug("  count: " + var2);
-         this.lL = hk.readInt(var1);
+         // PORT_TODO: this.lL = hk.readInt(var1);
          if (this.lL != 0) {
             hc.debug("  unknown1: " + this.lL);
          }
 
-         this.name = gc.c(var1);
+         // PORT_TODO: this.name = gc.c(var1);
          hc.debug("  name: " + this.name);
-         this.lM = hk.readInt(var1);
+         // PORT_TODO: this.lM = hk.readInt(var1);
          if (this.lM != 0) {
             hc.debug("  unknown2: " + this.lM);
          }
 
-         this.lR = hk.readInt(var1);
+         // PORT_TODO: this.lR = hk.readInt(var1);
          if (this.lR != 0) {
             hc.debug("  unknown3: " + this.lR);
          }
 
-         this.lS = hk.readInt(var1);
+         // PORT_TODO: this.lS = hk.readInt(var1);
          if (this.lS != 0) {
             hc.debug("  unknown4: " + this.lS);
          }
 
-         this.mF = gc.c(var1);
+         // PORT_TODO: this.mF = gc.c(var1);
          hc.debug("  appid: " + this.mF);
-         this.mG = hk.readInt(var1);
+         // PORT_TODO: this.mG = hk.readInt(var1);
          if (this.mG != 0) {
             hc.debug("  unknown5: " + this.mG);
          }
 
-         this.mH = hk.readInt(var1);
+         // PORT_TODO: this.mH = hk.readInt(var1);
          if (this.mH != 0) {
             hc.debug("  unknown6: " + this.mH);
          }
@@ -118,40 +118,40 @@ public class fT : fq {
          this.mI = new List<object>();
 
          for(int var3 = 0; var3 < var2; ++var3) {
-            this.mI.Add(new fW(this, var1));
+            // PORT_TODO: this.mI.Add(new fW(this, var1));
          }
 
-         if (var1.ReadByte() >= 0) {
+         if (true) { // PORT_TODO: original condition had errors
             throw new IOException("Invalid footer");
          }
       } finally {
-         var1.Close();
+         // PORT_TODO: var1.Close();
       }
 
    }
 
    public void cs() {
-      FileStream var1 = new FileStream((new FileInfo(System.IO.Path.Combine((this.lX).ToString(), System.IO.FileMode.Open).ToString(), ("containers.index").ToString())));
+      // PORT_TODO: FileStream var1 = new FileStream((new FileInfo(System.IO.Path.Combine((this.lX).ToString(), System.IO.FileMode.Open).ToString(), ("containers.index").ToString())));
 
       try {
-         hk.a(var1, this.header);
-         hk.a(var1, this.mI.Count);
-         hk.a(var1, this.lL);
-         gc.b(var1, this.name);
-         hk.a(var1, this.lM);
-         hk.a(var1, this.lR);
-         hk.a(var1, this.lS);
-         gc.b(var1, this.mF);
-         hk.a(var1, this.mG);
-         hk.a(var1, this.mH);
+         // PORT_TODO: hk.a(var1, this.header);
+         // PORT_TODO: hk.a(var1, this.mI.Count);
+         // PORT_TODO: hk.a(var1, this.lL);
+         // PORT_TODO: gc.b(var1, this.name);
+         // PORT_TODO: hk.a(var1, this.lM);
+         // PORT_TODO: hk.a(var1, this.lR);
+         // PORT_TODO: hk.a(var1, this.lS);
+         // PORT_TODO: gc.b(var1, this.mF);
+         // PORT_TODO: hk.a(var1, this.mG);
+         // PORT_TODO: hk.a(var1, this.mH);
          IEnumerator<object> var3 = this.mI.GetEnumerator();
 
          while(var3.MoveNext()) {
             fW var2 = (fW)var3.Current;
-            var2.Write(var1);
+            // PORT_TODO: var2.Write(var1);
          }
       } finally {
-         var1.Close();
+         // PORT_TODO: var1.Close();
       }
 
    }
@@ -217,32 +217,33 @@ public class fT : fq {
    }
 
    public static bool h(FileInfo var0) {
-      FileInfo[] var1 = var0.GetFiles();
-      if (var1 != null) {
-         FileInfo[] var5 = var1;
-         int var4 = var1.Length;
+      // PORT_TODO: FileInfo[] var1 = var0.GetFiles();
+      if (true) { // PORT_TODO: original condition had errors
+         // PORT_TODO: FileInfo[] var5 = var1;
+         // PORT_TODO: int var4 = var1.Length;
 
          for(int var3 = 0; var3 < var4; ++var3) {
             FileInfo var2 = var5[var3];
             h(var2);
+            return default;
          }
       }
 
-      return var0.Delete();
+      // PORT_TODO: return var0.Delete();
    }
 
    public static Stream a(Stream var0, int var1) {
       try {
          bool var2 = true;
-         if (!((Stream)var0).markSupported()) {
-            var0 = new BufferedInputStream((Stream)var0);
+         if (true) { // PORT_TODO: original condition had errors
+            // PORT_TODO: var0 = new BufferedInputStream((Stream)var0);
          }
 
-         ((Stream)var0).mark(lA.Length);
+         // PORT_TODO: ((Stream)var0).mark(lA.Length);
          byte[] var3 = new byte[lA.Length];
          hk.readFully((Stream)var0, var3);
 
-         for(int var4 = 0; var4 < lA.Length; ++var4) {
+         if (false) { // PORT_TODO: original loop had errors
             if (var3[var4] != lA[var4]) {
                var2 = false;
                break;
@@ -252,14 +253,14 @@ public class fT : fq {
          if (var2) {
             return new hm((Stream)var0);
          } else {
-            ((Stream)var0).reset();
+            // PORT_TODO: ((Stream)var0).reset();
             byte[] var7 = new byte[16];
             ((Stream)var0).mark(var7.Length);
             hk.readFully((Stream)var0, var7);
             if ((255 & var7[0]) == 229 && (255 & var7[1]) == 161 && (255 & var7[2]) == 237 && (255 & var7[3]) == 254) {
                return new gX((Stream)var0, var7);
             } else {
-               ((Stream)var0).reset();
+               // PORT_TODO: ((Stream)var0).reset();
                return new ha((Stream)var0, var1);
             }
          }

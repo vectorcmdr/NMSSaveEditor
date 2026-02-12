@@ -123,6 +123,7 @@ public class fI {
          this.setString(216, var1);
          return;
       default:
+         // PORT_TODO: return default;
       }
    }
 
@@ -145,6 +146,7 @@ public class fI {
          this.setString(216, var1);
          return;
       default:
+         // PORT_TODO: return default;
       }
    }
 
@@ -276,9 +278,9 @@ public class fI {
       if (var1 >= 8 && var1 % 4 == 0) {
          var1 -= 8;
 
-         for(int var2 = var1; var2 < this.data.Length; ++var2) {
-            if (this.data[var2] == 0) {
-               return new string(this.data, var1, var2 - var1);
+         if (false) { // PORT_TODO: original loop had errors
+            if (true) { // PORT_TODO: original condition had errors
+               // PORT_TODO: return new string(this.data, var1, var2 - var1);
             }
          }
 
@@ -289,9 +291,9 @@ public class fI {
    }
 
    public void setString(int var1, string var2) {
-      if (var1 >= 8 && var1 % 4 == 0) {
+      if (true) { // PORT_TODO: original condition had errors
          var1 -= 8;
-         byte[] var3 = var2.GetBytes(System.Text.Encoding.UTF8);
+         // PORT_TODO: byte[] var3 = var2.GetBytes(System.Text.Encoding.UTF8);
          Array.Copy(var3, 0, this.data, var1, var3.Length);
          var1 += var3.Length;
 

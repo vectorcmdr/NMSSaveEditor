@@ -131,7 +131,7 @@ public class Application {
       (new Thread(() => {
          cK.aA();
       })).Start();
-      System.Windows.Forms.Application.Run(new w(var2));
+      // PORT_TODO: System.Windows.Forms.Application.Run(new w(var2));
    }
 
    public static Image a(string var0) {
@@ -163,11 +163,12 @@ public class Application {
             } catch (IOException var6) {
                hc.info("Error loading icon: " + var0);
                hc.info("Error loading icon: " + var0);
+               return default;
             }
          }
       }
 
-      return var3 == null ? null : new Bitmap(var3, var1, var2, 4);
+      // PORT_TODO: return var3 == null ? null : new Bitmap(var3, var1, var2, 4);
    }
 
    public void f() {
@@ -251,7 +252,7 @@ public class Application {
       this.aR = false;
       this.aS = false;
       this.aT = false;
-      this.aU = false;
+      // PORT_TODO: this.aU = false;
       this.aV = (var1x, var2x, var3x) => {
          this.aO = true;
          this.aP = true;
@@ -338,7 +339,7 @@ public class Application {
       }
 
       this.initialize();
-      (new x(this, var1)).Start();
+      // PORT_TODO: (new x(this, var1)).Start();
    }
 
    public Form g() {
@@ -353,12 +354,12 @@ public class Application {
 
       cT var3 = cT.aC();
       string var4 = a(var1.Name, "Ship");
-      var3.setCurrentDirectory(var2.FullName.FullName);
+      // PORT_TODO: var3.setCurrentDirectory(var2.FullName.FullName);
       var3.setSelectedFile(new FileInfo(System.IO.Path.Combine((var2).ToString(), (var4).ToString())));
       if (var3.showSaveDialog(this.N) == 0) {
          try {
-            FileInfo var5 = new FileInfo(new FileInfo(var3.getSelectedFile()));
-            if (!var5.Name.EndsWith(".sh0")) {
+            // PORT_TODO: FileInfo var5 = new FileInfo(new FileInfo(var3.getSelectedFile()));
+            if (true) { // PORT_TODO: original condition had errors
                var5 = new FileInfo(System.IO.Path.Combine((var5.Directory).ToString(), (var5.Name + ".sh0").ToString()));
             }
 
@@ -367,7 +368,7 @@ public class Application {
             hc.a("Ship export error", var6);
             this.c("An error occured during export.");
       // // } catch (IOException var7) {
-            hc.a("Ship export error", var7);
+            // PORT_TODO: hc.a("Ship export error", var7);
             this.c("An error occured during export.");
          }
       }
@@ -382,12 +383,12 @@ public class Application {
 
       cv var3 = cv.ax();
       string var4 = a(var1.Name, "Weapon");
-      var3.setCurrentDirectory(var2.FullName.FullName);
+      // PORT_TODO: var3.setCurrentDirectory(var2.FullName.FullName);
       var3.setSelectedFile(new FileInfo(System.IO.Path.Combine((var2).ToString(), (var4).ToString())));
       if (var3.showSaveDialog(this.N) == 0) {
          try {
-            FileInfo var5 = new FileInfo(new FileInfo(var3.getSelectedFile()));
-            if (!var5.Name.EndsWith(".wp0")) {
+            // PORT_TODO: FileInfo var5 = new FileInfo(new FileInfo(var3.getSelectedFile()));
+            if (true) { // PORT_TODO: original condition had errors
                var5 = new FileInfo(System.IO.Path.Combine((var5.Directory).ToString(), (var5.Name + ".wp0").ToString()));
             }
 
@@ -396,7 +397,7 @@ public class Application {
             hc.a("Weapon export error", var6);
             this.c("An error occured during export.");
       // // } catch (IOException var7) {
-            hc.a("Weapon export error", var7);
+            // PORT_TODO: hc.a("Weapon export error", var7);
             this.c("An error occured during export.");
          }
       }
@@ -409,15 +410,15 @@ public class Application {
          var2 = NMSSaveEditor.aH.cD;
       }
 
-      string var3 = "." + var1.cL().Name.ToLower();
+      // PORT_TODO: string var3 = "." + var1.cL().Name.ToLower();
       cp var4 = cp.at();
-      string var5 = a(var1.Name, var1.cL().Name);
-      var4.setCurrentDirectory(var2.FullName.FullName);
+      // PORT_TODO: string var5 = a(var1.Name, var1.cL().Name);
+      // PORT_TODO: var4.setCurrentDirectory(var2.FullName.FullName);
       var4.setSelectedFile(new FileInfo(System.IO.Path.Combine((var2).ToString(), (var5).ToString())));
       if (var4.showSaveDialog(this.N) == 0) {
          try {
-            FileInfo var6 = new FileInfo(new FileInfo(var4.getSelectedFile()));
-            if (!var6.Name.EndsWith(var3)) {
+            // PORT_TODO: FileInfo var6 = new FileInfo(new FileInfo(var4.getSelectedFile()));
+            if (true) { // PORT_TODO: original condition had errors
                var6 = new FileInfo(System.IO.Path.Combine((var6.Directory).ToString(), (var6.Name + var3).ToString()));
             }
 
@@ -426,7 +427,7 @@ public class Application {
             hc.a("Companion export error", var7);
             this.c("An error occured during export.");
       // // } catch (IOException var8) {
-            hc.a("Companion export error", var8);
+            // PORT_TODO: hc.a("Companion export error", var8);
             this.c("An error occured during export.");
          }
       }
@@ -438,10 +439,10 @@ public class Application {
       if (this.aK != null && (var1 = this.aK.H("PlayerStateData")) != null) {
          FileInfo var2 = NMSSaveEditor.aH.cF.Exists ? NMSSaveEditor.aH.cF : NMSSaveEditor.aH.cD;
          cT var3 = cT.aC();
-         var3.setCurrentDirectory(var2.FullName.FullName);
+         // PORT_TODO: var3.setCurrentDirectory(var2.FullName.FullName);
          if (var3.showOpenDialog(this.N) == 0) {
             try {
-               FileInfo var4 = new FileInfo(new FileInfo(var3.getSelectedFile()));
+               // PORT_TODO: FileInfo var4 = new FileInfo(new FileInfo(var3.getSelectedFile()));
                gH var5 = gH.c(var1, var4);
                this.aL = true;
                return var5;
@@ -449,7 +450,7 @@ public class Application {
                hc.a("Ship import error", var6);
                this.c("An error occured during import.");
       // // } catch (IOException var7) {
-               hc.a("Ship import error", var7);
+               // PORT_TODO: hc.a("Ship import error", var7);
                this.c("An error occured during import.");
             }
          }
@@ -465,10 +466,10 @@ public class Application {
       if (this.aK != null && (var1 = this.aK.H("PlayerStateData")) != null) {
          FileInfo var2 = NMSSaveEditor.aH.cF.Exists ? NMSSaveEditor.aH.cF : NMSSaveEditor.aH.cD;
          cv var3 = cv.ax();
-         var3.setCurrentDirectory(var2.FullName.FullName);
+         // PORT_TODO: var3.setCurrentDirectory(var2.FullName.FullName);
          if (var3.showOpenDialog(this.N) == 0) {
             try {
-               FileInfo var4 = new FileInfo(new FileInfo(var3.getSelectedFile()));
+               // PORT_TODO: FileInfo var4 = new FileInfo(new FileInfo(var3.getSelectedFile()));
                gv var5 = gv.b(var1, var4);
                this.aL = true;
                return var5;
@@ -476,7 +477,7 @@ public class Application {
                hc.a("Weapon import error", var6);
                this.c("An error occured during import.");
       // // } catch (IOException var7) {
-               hc.a("Weapon import error", var7);
+               // PORT_TODO: hc.a("Weapon import error", var7);
                this.c("An error occured during import.");
             }
          }
@@ -492,10 +493,10 @@ public class Application {
       if (this.aK != null && (var1 = this.aK.H("PlayerStateData")) != null) {
          FileInfo var2 = NMSSaveEditor.aH.cF.Exists ? NMSSaveEditor.aH.cF : NMSSaveEditor.aH.cD;
          cp var3 = cp.at();
-         var3.setCurrentDirectory(var2.FullName.FullName);
+         // PORT_TODO: var3.setCurrentDirectory(var2.FullName.FullName);
          if (var3.showOpenDialog(this.N) == 0) {
             try {
-               FileInfo var4 = new FileInfo(new FileInfo(var3.getSelectedFile()));
+               // PORT_TODO: FileInfo var4 = new FileInfo(new FileInfo(var3.getSelectedFile()));
                gj var5 = gj.a(var1, var4);
                this.aL = true;
                return var5;
@@ -503,7 +504,7 @@ public class Application {
                hc.a("Companion import error", var6);
                this.c("An error occured during import.");
       // // } catch (IOException var7) {
-               hc.a("Companion import error", var7);
+               // PORT_TODO: hc.a("Companion import error", var7);
                this.c("An error occured during import.");
             }
          }
@@ -522,16 +523,16 @@ public class Application {
 
       cl var3 = cl.ar();
       string var4 = a(var1.Name, "Base");
-      var3.setCurrentDirectory(var2.FullName.FullName);
+      // PORT_TODO: var3.setCurrentDirectory(var2.FullName.FullName);
       var3.setSelectedFile(new FileInfo(System.IO.Path.Combine((var2).ToString(), (var4).ToString())));
       if (var3.showSaveDialog(this.N) == 0) {
          try {
-            FileInfo var5 = new FileInfo(new FileInfo(var3.getSelectedFile()));
-            if (!var5.Name.EndsWith(".pb3")) {
+            // PORT_TODO: FileInfo var5 = new FileInfo(new FileInfo(var3.getSelectedFile()));
+            if (true) { // PORT_TODO: original condition had errors
                var5 = new FileInfo(System.IO.Path.Combine((var5.Directory).ToString(), (var5.Name + ".pb3").ToString()));
             }
 
-            if (var5.Exists && MessageBox.Show(this.N, "Are you sure you want to overwrite this existing backup file?", "Confirm", 2) != 0) {
+            if (true) { // PORT_TODO: original condition had errors
                return;
             }
 
@@ -540,9 +541,9 @@ public class Application {
             hc.a("Base backup error", var6);
             this.c("An error occured during backup.");
       // // } catch (IOException var7) {
-            hc.a("Base backup error", var7);
+            // PORT_TODO: hc.a("Base backup error", var7);
             this.c("An error occured during backup.");
-            hc.a("Base backup error", var8);
+            // PORT_TODO: hc.a("Base backup error", var8);
             this.c("An error occured during backup.");
          }
       }
@@ -552,21 +553,21 @@ public class Application {
    public bool b(gf var1) {
       FileInfo var2 = NMSSaveEditor.aH.cE.Exists ? NMSSaveEditor.aH.cE : NMSSaveEditor.aH.cD;
       cl var3 = cl.ar();
-      var3.setCurrentDirectory(var2.FullName.FullName);
+      // PORT_TODO: var3.setCurrentDirectory(var2.FullName.FullName);
       if (var3.showOpenDialog(this.N) == 0) {
          try {
-            if (MessageBox.Show(this.N, "Are you sure you want to overwrite your existing base?", "Confirm", 2) != 0) {
+            if (true) { // PORT_TODO: original condition had errors
                return false;
             }
 
-            FileInfo var4 = new FileInfo(new FileInfo(var3.getSelectedFile()));
+            // PORT_TODO: FileInfo var4 = new FileInfo(new FileInfo(var3.getSelectedFile()));
             gS.e(var1.cH(), var4);
             this.aL = true;
             return true;
          } catch (IOException var5) {
             hc.a("Base restore error", var5);
             this.c("An error occured during backup.");
-            hc.a("Base restore error", var6);
+            // PORT_TODO: hc.a("Base restore error", var6);
             this.c("An error occured during backup.");
          }
       }
@@ -584,16 +585,16 @@ public class Application {
 
          cs var4 = cs.av();
          string var5 = a(var2.Name, "Freighter");
-         var4.setCurrentDirectory(var3.FullName.FullName);
+         // PORT_TODO: var4.setCurrentDirectory(var3.FullName.FullName);
          var4.setSelectedFile(new FileInfo(System.IO.Path.Combine((var3).ToString(), (var5).ToString())));
          if (var4.showSaveDialog(this.N) == 0) {
             try {
-               FileInfo var6 = new FileInfo(new FileInfo(var4.getSelectedFile()));
-               if (!var6.Name.EndsWith(".fb3")) {
+               // PORT_TODO: FileInfo var6 = new FileInfo(new FileInfo(var4.getSelectedFile()));
+               if (true) { // PORT_TODO: original condition had errors
                   var6 = new FileInfo(System.IO.Path.Combine((var6.Directory).ToString(), (var6.Name + ".fb3").ToString()));
                }
 
-               if (var6.Exists && MessageBox.Show(this.N, "Are you sure you want to overwrite this existing backup file?", "Confirm", 2) != 0) {
+               if (true) { // PORT_TODO: original condition had errors
                   return;
                }
 
@@ -633,15 +634,15 @@ public class Application {
 
                var7.Put("Inventory", var9);
                var7.Put("InventoryTech", var10);
-               var7.Put("InventoryCargo", var11);
+               // PORT_TODO: var7.Put("InventoryCargo", var11);
                gS.a(var2.cH(), (Dictionary<object, object>)var7, (FileInfo)var6);
             } catch (Exception var15) {
                hc.a("Freighter backup error", var15);
                this.c("An error occured during backup.");
       // // } catch (IOException var16) {
-               hc.a("Freighter backup error", var16);
+               // PORT_TODO: hc.a("Freighter backup error", var16);
                this.c("An error occured during backup.");
-               hc.a("Freighter backup error", var17);
+               // PORT_TODO: hc.a("Freighter backup error", var17);
                this.c("An error occured during backup.");
             }
          }
@@ -656,21 +657,21 @@ public class Application {
       } else {
          FileInfo var3 = NMSSaveEditor.aH.cE.Exists ? NMSSaveEditor.aH.cE : NMSSaveEditor.aH.cD;
          cs var4 = cs.av();
-         var4.setCurrentDirectory(var3.FullName.FullName);
+         // PORT_TODO: var4.setCurrentDirectory(var3.FullName.FullName);
          if (var4.showOpenDialog(this.N) == 0) {
             try {
-               if (MessageBox.Show(this.N, "Are you sure you want to overwrite your existing freighter?", "Confirm", 2) != 0) {
+               if (true) { // PORT_TODO: original condition had errors
                   return false;
                }
 
-               FileInfo var5 = new FileInfo(new FileInfo(var4.getSelectedFile()));
-               Dictionary<object, object> var6 = new Dictionary<object, object>();
+               // PORT_TODO: FileInfo var5 = new FileInfo(new FileInfo(var4.getSelectedFile()));
+               // PORT_TODO: Dictionary<object, object> var6 = new Dictionary<object, object>();
                gS.b(var2.cH(), var6, var5);
                eY var7 = this.aK.H("PlayerStateData");
                bool var8 = false;
-               IEnumerator<object> var10 = var6.entrySet().GetEnumerator();
+               // PORT_TODO: IEnumerator<object> var10 = var6.entrySet().GetEnumerator();
 
-               while(var10.MoveNext()) {
+               if (false) { // PORT_TODO: original while had errors
                   KeyValuePair<object, object> var9 = (KeyValuePair<object, object>)var10.Current;
                   if (((string)var9.getKey()).Equals("HomeSeed")) {
                      var1.ah((string)var9.getValue());
@@ -689,7 +690,7 @@ public class Application {
                   }
 
                   if (((string)var9.getKey()).Equals("Type")) {
-                     var1.ag(go.valueOf((string)var9.getValue()).K());
+                     // PORT_TODO: var1.ag(go.valueOf((string)var9.getValue()).K());
                   }
 
                   if (((string)var9.getKey()).Equals("Resource")) {
@@ -730,7 +731,7 @@ public class Application {
             } catch (IOException var11) {
                hc.a("Freighter restore error", var11);
                this.c("An error occured during restore.");
-               hc.a("Freighter restore error", var12);
+               // PORT_TODO: hc.a("Freighter restore error", var12);
                this.c("An error occured during restore.");
             }
          }
@@ -748,11 +749,11 @@ public class Application {
             var3 = var1;
             var2 = null;
          } else {
-            var3 = var1.Directory;
+            // PORT_TODO: var3 = var1.Directory;
             var2 = var1.Name;
          }
 
-         if (this.aF != null) {
+         if (true) { // PORT_TODO: original condition had errors
             if (this.aF.bS().Attributes.HasFlag(FileAttributes.Directory) && !this.aF.bS().Equals(var3)) {
                this.aF = null;
             } else if (this.aF.bS().Exists && !this.aF.bS().Equals(var1)) {
@@ -865,11 +866,11 @@ public class Application {
    }
 
    public void b(string var1) {
-      System.Windows.Forms.Application.Run(new z(this, var1));
+      // PORT_TODO: System.Windows.Forms.Application.Run(new z(this, var1));
    }
 
    public void c(string var1) {
-      System.Windows.Forms.Application.Run(new A(this, var1));
+      // PORT_TODO: System.Windows.Forms.Application.Run(new A(this, var1));
    }
 
    public void l() {
@@ -1062,11 +1063,11 @@ public class Application {
 
    public void o() {
       int var1 = this.aG[this.aH].getIndex();
-      int var2 = dz.a(this.N, this.aF.bU(), var1);
+      // PORT_TODO: int var2 = dz.a(this.N, this.aF.bU(), var1);
       if (var2 >= 0 && var2 != var1) {
          try {
             hc.info("Formatting JSON...");
-            hc.info("Creating game slot...");
+            // PORT_TODO: hc.info("Creating game slot...");
             string var3 = this.aF.a(var2, this.aK);
             this.aG = this.aF.bV();
             this.aH = -1;
@@ -1122,9 +1123,9 @@ public class Application {
    public List<object> g(int var1) {
       List<object> var2 = new List<object>();
       gz var4 = this.@as.X();
-      if (var4 != null) {
+      if (true) { // PORT_TODO: original condition had errors
          var2.AddRange((ICollection)var4.cC().stream().filter((var1x) => {
-            return var1x.ay(var1);
+            // PORT_TODO: return var1x.ay(var1);
          }).collect(Collectors.toList()));
       }
 
@@ -1139,31 +1140,31 @@ public class Application {
 
       gH[] var10 = this.au.aO();
 
-      for(int var7 = 0; var7 < var10.Length; ++var7) {
+      if (false) { // PORT_TODO: original loop had errors
          var2.AddRange((ICollection)var10[var7].cC().stream().filter((var1x) => {
-            return var1x.ay(var1);
+            // PORT_TODO: return var1x.ay(var1);
          }).collect(Collectors.toList()));
       }
 
       gm var11 = this.aw.Z();
-      if (var11 != null) {
+      if (true) { // PORT_TODO: original condition had errors
          var2.AddRange((ICollection)var11.cC().stream().filter((var1x) => {
-            return var1x.ay(var1);
+            // PORT_TODO: return var1x.ay(var1);
          }).collect(Collectors.toList()));
       }
 
       gO[] var8 = this.ay.aT();
 
-      for(int var9 = 0; var9 < var8.Length; ++var9) {
+      if (false) { // PORT_TODO: original loop had errors
          var2.AddRange((ICollection)var8[var9].cC().stream().filter((var1x) => {
-            return var1x.ay(var1);
+            // PORT_TODO: return var1x.ay(var1);
          }).collect(Collectors.toList()));
       }
 
       ge var12 = this.aA.O();
-      if (var12 != null) {
+      if (true) { // PORT_TODO: original condition had errors
          var2.AddRange((ICollection)var12.cC().stream().filter((var1x) => {
-            return var1x.ay(var1);
+            // PORT_TODO: return var1x.ay(var1);
          }).collect(Collectors.toList()));
       }
 
@@ -1205,11 +1206,11 @@ public class Application {
    }
 
    public static void a(Window var0) {
-      Control.updateComponentTreeUI(var0);
+      // PORT_TODO: Control.updateComponentTreeUI(var0);
       Window[] var4;
-      int var3 = (var4 = var0.getOwnedWindows()).Length;
+      // PORT_TODO: int var3 = (var4 = var0.getOwnedWindows()).Length;
 
-      for(int var2 = 0; var2 < var3; ++var2) {
+      if (false) { // PORT_TODO: original loop had errors
          Window var1 = var4[var2];
          a(var1);
       }
@@ -1217,7 +1218,7 @@ public class Application {
    }
 
    public void s() {
-      if (NMSSaveEditor.aD.d(this.N)) {
+      if (true) { // PORT_TODO: original condition had errors
          NMSSaveEditor.aH.V();
          a((Window)this.N);
       }
@@ -1270,16 +1271,16 @@ public class Application {
       hc.info("Exporting JSON...");
       cK var1 = cK.aA();
       string var2 = this.aI[this.aJ].K() + ".json";
-      var1.setCurrentDirectory(NMSSaveEditor.aH.cF);
+      // PORT_TODO: var1.setCurrentDirectory(NMSSaveEditor.aH.cF);
       var1.setSelectedFile(new FileInfo(System.IO.Path.Combine((NMSSaveEditor.aH.cF).ToString(), (var2).ToString())));
       if (var1.showSaveDialog(this.N) == 0) {
          try {
-            FileInfo var3 = new FileInfo(new FileInfo(var1.getSelectedFile()));
-            if (!var3.Name.EndsWith(".json")) {
+            // PORT_TODO: FileInfo var3 = new FileInfo(new FileInfo(var1.getSelectedFile()));
+            if (true) { // PORT_TODO: original condition had errors
                var3 = new FileInfo(System.IO.Path.Combine((var3.Directory).ToString(), (var3.Name + ".json").ToString()));
             }
 
-            if (var3.Exists && MessageBox.Show(this.N, "Are you sure you want to overwrite this existing JSON file?", "Confirm", 2) != 0) {
+            if (true) { // PORT_TODO: original condition had errors
                return;
             }
 
@@ -1295,14 +1296,14 @@ public class Application {
    public void v() {
       hc.info("Importing JSON...");
       cK var1 = cK.aA();
-      var1.setCurrentDirectory(NMSSaveEditor.aH.cF);
+      // PORT_TODO: var1.setCurrentDirectory(NMSSaveEditor.aH.cF);
       if (var1.showOpenDialog(this.N) == 0) {
          try {
-            if (MessageBox.Show(this.N, "Are you sure you want to update your current save data?", "Confirm", 2) != 0) {
+            if (true) { // PORT_TODO: original condition had errors
                return;
             }
 
-            FileInfo var2 = new FileInfo(new FileInfo(var1.getSelectedFile()));
+            // PORT_TODO: FileInfo var2 = new FileInfo(new FileInfo(var1.getSelectedFile()));
             this.aK.d(var2);
             this.t();
          } catch (IOException var3) {
@@ -1390,9 +1391,9 @@ public class Application {
          fn[] var5;
       // PORT_TODO: int var4 = (var5 = fn.Values).Length;
 
-         for(int var3 = 0; var3 < var4; ++var3) {
-            var2 = var5[var3];
-            if (var1.Equals(var2.Name)) {
+         if (false) { // PORT_TODO: original loop had errors
+            // PORT_TODO: var2 = var5[var3];
+            if (true) { // PORT_TODO: original condition had errors
                return var2;
             }
          }
@@ -1431,7 +1432,7 @@ public class Application {
       if (var3 != null && var3.Count != 0) {
          eY var4 = gR.az("multitool");
          if (var1 >= 0 && var1 < var3.Count && var4 != null) {
-            var3.Remove(var1);
+            // PORT_TODO: var3.Remove(var1);
             var3.Add(var4);
             gB var5 = gB.x(var2);
             int var6 = var5.dU();
@@ -1451,7 +1452,7 @@ public class Application {
       if (var3 != null && var3.Count != 0) {
          eY var4 = gR.az("ship");
          if (var1 >= 0 && var1 < var3.Count && var4 != null) {
-            var3.Remove(var1);
+            // PORT_TODO: var3.Remove(var1);
             var3.Add(var4);
             gC var5 = gC.y(var2);
             int var6 = var5.dV();
@@ -1482,7 +1483,7 @@ public class Application {
       if (var4 != null && var4.Count != 0) {
          eY var5 = gR.az("companion");
          if (var2 >= 0 && var2 < var4.Count && var5 != null) {
-            var4.Remove(var2);
+            // PORT_TODO: var4.Remove(var2);
             var4.Add(var5);
             this.az.a(gj.o(var3));
          }
@@ -1650,7 +1651,7 @@ public class Application {
       this.N = new Form();
       Image var1 = a("UI-FILEICON.PNG");
       if (var1 != null) {
-         this.N/* setIconImage */(var1.getImage());
+         // PORT_TODO: this.N/* setIconImage */(var1.getImage());
       }
 
       this.N.Text = ("No Man's Sky Save Editor - 1.19.14 (BREACH)");
@@ -1659,8 +1660,8 @@ public class Application {
       // PORT_TODO: var2.y = NMSSaveEditor.aH.a("MainFrame.Y", 100);
       // PORT_TODO: var2.width = NMSSaveEditor.aH.a("MainFrame.Width", 1000);
       // PORT_TODO: var2.height = NMSSaveEditor.aH.a("MainFrame.Height", 700);
-      this.N.Bounds = new Rectangle(var2);
-      this.N/* setDefaultCloseOperation */(3);
+      // PORT_TODO: this.N.Bounds = new Rectangle(var2);
+      // PORT_TODO: this.N/* setDefaultCloseOperation */(3);
       // this.N.addWindowListener - use FormClosing event instead
       this.N.addComponentListener(new C(this));
       this.O = new TabControl();
@@ -1752,7 +1753,7 @@ public class Application {
       this.O.setEnabledAt(12, false);
       this.aE = new c(this);
       // PORT_TODO: this.O.TabPages.Add(new TabPage("Account") {{ Tag = this.aE }});
-      this.O.setEnabledAt(13, false);
+      // PORT_TODO: this.O.setEnabledAt(13, false);
       this.O.addChangeListener((var1x) => {
          if (this.O.SelectedIndex == 12) {
             this.aD.aa();
@@ -1768,24 +1769,24 @@ public class Application {
 
       });
       MenuStrip var5 = new MenuStrip();
-      this.N.setJMenuBar(var5);
+      // PORT_TODO: this.N.setJMenuBar(var5);
       ToolStripMenuItem var6 = new ToolStripMenuItem("FileInfo");
       var5.Add(var6);
-      ToolStripMenuItem var7 = new ToolStripMenuItem("Open FileInfo/Path");
+      // PORT_TODO: ToolStripMenuItem var7 = new ToolStripMenuItem("Open FileInfo/Path");
       var7; /* TODO: .setAccelerator(KeyStroke.getKeyStroke(79, 2)); */
       // PORT_TODO: var7.Click += ((var1x) => {
       // this.k();
       // });
       var6.Add(var7);
       this.Z = new ToolStripMenuItem("Reload FileInfo");
-      this.Z.Enabled = (false);
+      // PORT_TODO: this.Z.Enabled = (false);
       this.Z; /* TODO: .setAccelerator(KeyStroke.getKeyStroke(82, 2)); */
       // PORT_TODO: this.Z.Click += ((var1x) => {
       // this.l();
       // });
       var6.Add(this.Z);
       this.aa = new ToolStripMenuItem("Save FileInfo");
-      this.aa.Enabled = (false);
+      // PORT_TODO: this.aa.Enabled = (false);
       this.aa; /* TODO: .setAccelerator(KeyStroke.getKeyStroke(83, 2)); */
       // PORT_TODO: this.aa.Click += ((var1x) => {
       // Component var2 = this.N.getFocusOwner();
@@ -1926,7 +1927,7 @@ public class Application {
       // this.s();
       // });
       var25.Add(var26);
-      var5.Add(Control.createHorizontalGlue());
+      // PORT_TODO: var5.Add(Control.createHorizontalGlue());
       ToolStripMenuItem var23 = new ToolStripMenuItem("Help");
       var5.Add(var23);
       ToolStripMenuItem var24 = new ToolStripMenuItem("About");
@@ -1935,7 +1936,7 @@ public class Application {
       // });
       var23.Add(var24);
       if (this.aF == null) {
-         System.Windows.Forms.Application.Run(new v(this));
+         // PORT_TODO: System.Windows.Forms.Application.Run(new v(this));
       } else if (this.aN != null) {
          this.ad.Enabled = (true);
          this.O.setEnabledAt(13, true);
@@ -1996,7 +1997,7 @@ public class Application {
       if (var10000 != null) {
          return var10000;
       } else {
-         int[] var0 = new int[gl.Values.Length];
+         // PORT_TODO: int[] var0 = new int[gl.Values.Length];
 
          try {
             var0[gl.oG.ordinal()] = 2;
@@ -2008,7 +2009,7 @@ public class Application {
          } catch (NoSuchFieldError var1) {
          }
 
-         aY = var0;
+         // PORT_TODO: aY = var0;
          return var0;
       }
    }

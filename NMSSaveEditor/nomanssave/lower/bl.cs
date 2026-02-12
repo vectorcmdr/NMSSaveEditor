@@ -53,19 +53,19 @@ public class bl : Panel, eo {
       Panel var5 = new Panel();
       this.bQ = new Button() { Text = "Delete" };
       this.bQ.Enabled = (false);
-      this.bQ.Click += (new bm(this, var1));
+      // PORT_TODO: this.bQ.Click += (new bm(this, var1));
       var5.Add(this.bQ);
       this.dS = new Button() { Text = "Copy" };
       this.dS.Enabled = (false);
-      this.dS.Click += (new br(this, var1));
+      // PORT_TODO: this.dS.Click += (new br(this, var1));
       var5.Add(this.dS);
       var4.Controls.Add(var5);
       this.Add(var4);
       this.dR = new DataGridView();
       this.dR.setSelectionMode(0);
       this.dR.DataSource = (new bs(this));
-      this.dR.getColumnModel().getColumn(2).setMaxWidth(60);
-      this.dR.getSelectionModel().addListSelectionListener(new bt(this, var1));
+      // PORT_TODO: this.dR.getColumnModel().getColumn(2).setMaxWidth(60);
+      // PORT_TODO: this.dR.getSelectionModel().addListSelectionListener(new bt(this, var1));
       var3.setViewportView(this.dR);
       this.dT = new ba(new int[]{aH.cJ, 0});
       this.dT.Hide();
@@ -119,7 +119,7 @@ public class bl : Panel, eo {
       this.el = new Label() { Text = "" };
       var7.Add(this.el, "2,1");
       this.em = new Button() { Text = "Repair" };
-      this.em.Click += (new bz(this));
+      // PORT_TODO: this.em.Click += (new bz(this));
       Panel var8 = new Panel();
       var8.Add(this.em);
       var7.Controls.Add(var8);
@@ -128,11 +128,11 @@ public class bl : Panel, eo {
       this.eb.Hide();
       this.Add(this.eb);
       this.eb.k("Stats");
-      this.ea = new G[gq.Values.Length];
+      // PORT_TODO: this.ea = new G[gq.Values.Length];
 
       for(int var9 = 0; var9 < this.ea.Length; ++var9) {
          this.ea[var9] = new bA(this, var9, (bA)null);
-         this.eb.a(gq.Values[var9].ToString(), (Control)this.ea[var9]);
+         // PORT_TODO: this.eb.a(gq.Values[var9].ToString(), (Control)this.ea[var9]);
       }
 
       this.eb.Y();

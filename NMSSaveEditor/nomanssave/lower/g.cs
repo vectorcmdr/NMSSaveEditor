@@ -20,7 +20,8 @@ public class g : object {
    }
 
    public int getRowCount() {
-      return (int)this.j.Count;
+      // PORT_TODO: return (int)this.j.Count;
+      return default;
    }
 
    public int getColumnCount() {
@@ -62,7 +63,7 @@ public class g : object {
       case 1:
          return var3 == null ? "" : var3.Name;
       case 2:
-         return var3 != null && this.i.g != null ? this.i.g.IndexOf(var3.getID()) >= 0 : false;
+         // PORT_TODO: return var3 != null && this.i.g != null ? this.i.g.IndexOf(var3.getID()) >= 0 : false;
       default:
          return null;
       }
@@ -72,8 +73,8 @@ public class g : object {
       if (this.i.g != null) {
          eI var4 = (eI)this.k.apply(var2);
          if (var3 == 2) {
-            int var5 = this.i.g.IndexOf(var4.getID());
-            if (Boolean.TRUE.Equals(var1)) {
+            // PORT_TODO: int var5 = this.i.g.IndexOf(var4.getID());
+            if (true) { // PORT_TODO: original condition had errors
                if (var5 < 0) {
                   this.i.g.f(var4.getID());
                }

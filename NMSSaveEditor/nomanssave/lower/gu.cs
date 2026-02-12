@@ -45,7 +45,7 @@ public class gu : gQ {
    }
 
    public void c(double var1) {
-      this.qD.b("DamageFactor", (object)(new Double(var1)));
+      // PORT_TODO: this.qD.b("DamageFactor", (object)(new Double(var1)));
    }
 
    public bool dD() {
@@ -53,7 +53,7 @@ public class gu : gQ {
    }
 
    public void e(bool var1) {
-      this.qD.b("FullyInstalled", (object)(new Boolean(var1)));
+      // PORT_TODO: this.qD.b("FullyInstalled", (object)(new Boolean(var1)));
    }
    public gu(gt var1, eY var2, gu var3) {
       // PORT_TODO: // PORT_TODO: this(var1, var2);

@@ -38,7 +38,8 @@ public class cI : TreeModel {
    }
 
    public int getIndexOfChild(object var1, object var2) {
-      return ((cJ)var1).IndexOf(var2);
+      // PORT_TODO: return ((cJ)var1).IndexOf(var2);
+      return default;
    }
 
    public void addTreeModelListener(TreeModelListener var1) {
@@ -54,7 +55,7 @@ public class cI : TreeModel {
       var2.Add(var1);
 
       while((var1 = var1.gi) != null) {
-         var2.Add(0, var1);
+         // PORT_TODO: var2.Add(0, var1);
       }
 
       TreeModelEvent var3 = new TreeModelEvent(this, var2.ToArray());

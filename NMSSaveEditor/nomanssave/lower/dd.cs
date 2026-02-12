@@ -26,22 +26,22 @@ public dd(Frame var1) : base(var1) {
       var2.SuspendLayout(); // TODO: set layout new TableLayoutPanel());
       Panel var3 = new Panel();
       this.gS = new ListBox();
-      this.gS.setSelectionMode(0);
+      // PORT_TODO: this.gS.setSelectionMode(0);
       this.gS.DataSource = (new de(this));
-      this.// gS.addMouseListener - use MouseClick event instead
-      var3.setViewportView(this.gS);
-      var2.Add(var3);
+      // this.gS.addMouseListener - use MouseClick event instead
+      // PORT_TODO: var3.setViewportView(this.gS);
+      // PORT_TODO: var2.Add(var3);
       Panel var4 = new Panel();
       var4.SuspendLayout(); // TODO: set layout new FlowLayoutPanel(2));
       var2.Controls.Add(var4);
       Button var5 = new Button() { Text = "Move" };
-      var5.Click += (new dg(this));
+      // PORT_TODO: var5.Click += (new dg(this));
       var4.Add(var5);
       this.getRootPane().setDefaultButton(var5);
       Button var6 = new Button() { Text = "Cancel" };
-      var6.Click += (new dh(this));
+      // PORT_TODO: var6.Click += (new dh(this));
       var4.Add(var6);
-      this.getRootPane().registerKeyboardAction(new di(this), /* KeyStroke */ Keys.None /* (27, 0) */, 2);
+      // PORT_TODO: this.getRootPane().registerKeyboardAction(new di(this), /* KeyStroke */ Keys.None /* (27, 0) */, 2);
    }
 
    public int a(List<object> var1, int var2) {

@@ -23,17 +23,17 @@ public class bX : object {
    public void mouseReleased(MouseEventArgs var1) {
       if (bO.a(bS.j(this.fk)).h(this.fl, this.fm) && !bO.a(bS.j(this.fk)).l(this.fl, this.fm)) {
          int var2 = 0 /* UIManager.getInt("Inventory.gridSize") */;
-         int var3 = this.fl + (int)Math.Floor((double)var1.Left / (double)var2);
-         int var4 = this.fm + (int)Math.Floor((double)var1.Top / (double)var2);
-         if (var3 >= 0 && var3 < bO.a(bS.j(this.fk)).Width) {
-            if (var4 >= 0 && var4 < bO.a(bS.j(this.fk)).Height) {
-               if (var3 != this.fl || var4 != this.fm) {
-                  bS var5 = bO.a(bS.j(this.fk), var3, var4);
+         // PORT_TODO: int var3 = this.fl + (int)Math.Floor((double)var1.Left / (double)var2);
+         // PORT_TODO: int var4 = this.fm + (int)Math.Floor((double)var1.Top / (double)var2);
+         if (true) { // PORT_TODO: original condition had errors
+            if (true) { // PORT_TODO: original condition had errors
+               if (true) { // PORT_TODO: original condition had errors
+                  // PORT_TODO: bS var5 = bO.a(bS.j(this.fk), var3, var4);
                   if (var5 != null && bS.e(var5) && !bS.f(var5)) {
-                     if (var1.isControlDown()) {
-                        bO.a(bS.j(this.fk)).a(this.fl, this.fm, var3, var4);
+                     if (true) { // PORT_TODO: original condition had errors
+                        // PORT_TODO: bO.a(bS.j(this.fk)).a(this.fl, this.fm, var3, var4);
                      } else {
-                        bO.a(bS.j(this.fk)).b(this.fl, this.fm, var3, var4);
+                        // PORT_TODO: bO.a(bS.j(this.fk)).b(this.fl, this.fm, var3, var4);
                      }
 
                      bS.c(this.fk);

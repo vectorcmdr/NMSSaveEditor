@@ -222,7 +222,7 @@ public class gv {
    }
 
    public void cm() {
-      this.qF.b("Seed", (object)(new eV(new object[]{Boolean.FALSE, "0x0"})));
+      // PORT_TODO: this.qF.b("Seed", (object)(new eV(new object[]{Boolean.FALSE, "0x0"})));
    }
 
    public string toString() {

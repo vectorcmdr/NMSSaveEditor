@@ -21,11 +21,12 @@ public class ei : G {
          int var2 = int.Parse(var1);
          if (var2 != eb.a(ec.h(this.ik))[this.il].eh()) {
             eb.a(ec.h(this.ik))[this.il].aI(var2);
+            return default;
          }
 
          return var1;
       } catch (Exception var3) {
-         return (eb.a(ec.h(this.ik).ToString())[this.il].eh());
+         // PORT_TODO: return (eb.a(ec.h(this.ik).ToString())[this.il].eh());
       }
    }
 }

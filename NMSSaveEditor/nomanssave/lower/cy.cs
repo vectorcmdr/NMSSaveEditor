@@ -34,7 +34,7 @@ public cy(Application var1) : base(var1.g()) {
       // PORT_TODO: // PORT_TODO: var2.y = aH.a("JSONEditor.Y", var3.y + 10);
       // PORT_TODO: // PORT_TODO: var2.width = aH.a("JSONEditor.Width", 1000);
       // PORT_TODO: // PORT_TODO: var2.height = aH.a("JSONEditor.Height", 700);
-      this.Bounds = new Rectangle(var2);
+      // PORT_TODO: this.Bounds = new Rectangle(var2);
       // PORT_TODO: // PORT_TODO: this/* setDefaultCloseOperation */(0);
       // setModalExclusionType not available in WinForms
       this.Text = ("JSON Editor (Advanced Users Only)");
@@ -50,16 +50,16 @@ public cy(Application var1) : base(var1.g()) {
       // TODO: fX.putClientProperty(...);
       this.fX.setEditable(false);
       this.fX.setTabSize(4);
-      this.fX.getActionMap().Put("copy-to-clipboard", new cG(this));
-      this.fX.getActionMap().Put("paste-from-clipboard", new cH(this));
+      // PORT_TODO: this.fX.getActionMap().Put("copy-to-clipboard", new cG(this));
+      // PORT_TODO: this.fX.getActionMap().Put("paste-from-clipboard", new cH(this));
       this.fX.getDocument().addDocumentListener(new cB(this));
       this.fY = new Panel();
-      this.fY.setRowHeaderView(new cW(this.fX));
+      // PORT_TODO: this.fY.setRowHeaderView(new cW(this.fX));
       this.fY.setViewportView(this.fX);
       Panel var4 = new Panel();
       var4.SuspendLayout(); // TODO: set layout new TableLayoutPanel());
       this.fU = new Button() { Text = "Validate" };
-      this.fU.Click += (new cC(this));
+      // PORT_TODO: this.fU.Click += (new cC(this));
       var4.Add(this.fU, "North");
       var4.Controls.Add(this.fW);
       JSplitPane var5 = new JSplitPane(1, var4, this.fY);
@@ -69,9 +69,9 @@ public cy(Application var1) : base(var1.g()) {
       // this.addWindowListener - use FormClosing event instead
       cF var6 = new cF(this);
       /* TODO: port from Java - this.fV.getInputMap().Put(KeyStroke.getKeyStroke(70, 2), "find"); */
-      this.fV.getActionMap().Put("find", var6);
+      // PORT_TODO: this.fV.getActionMap().Put("find", var6);
       /* TODO: port from Java - this.fX.getInputMap().Put(KeyStroke.getKeyStroke(70, 2), "find"); */
-      this.fX.getActionMap().Put("find", var6);
+      // PORT_TODO: this.fX.getActionMap().Put("find", var6);
    }
 
    public bool a(string var1, eY var2) {
@@ -84,12 +84,12 @@ public cy(Application var1) : base(var1.g()) {
       this.fV.Refresh();
       int var3 = 0;
       int var4 = 0;
-      IEnumerator<object> var6 = var2.names().GetEnumerator();
+      // PORT_TODO: IEnumerator<object> var6 = var2.names().GetEnumerator();
 
-      while(var6.MoveNext()) {
-         string var5 = (string)var6.Current;
+      if (false) { // PORT_TODO: original while had errors
+         // PORT_TODO: string var5 = (string)var6.Current;
          ++var4;
-         if (var2[var5] is eY) {
+         if (true) { // PORT_TODO: original condition had errors
             var3 = var4;
             break;
          }
@@ -106,14 +106,14 @@ public cy(Application var1) : base(var1.g()) {
    public static string ay() {
       string var0;
       try {
-         var0 = (string)Toolkit.getDefaultToolkit().getSystemClipboard().getData(/* DataFlavor */ null);
+         // PORT_TODO: var0 = (string)Toolkit.getDefaultToolkit().getSystemClipboard().getData(/* DataFlavor */ null);
       } catch (Exception var4) {
          hc.error("Could not retrieve clipboard contents", var4);
          return "";
       }
 
       StringBuilder var1 = new StringBuilder();
-      char[] var2 = var0.ToCharArray();
+      // PORT_TODO: char[] var2 = var0.ToCharArray();
 
       for(int var3 = 0; var3 < var2.Length; ++var3) {
          if (var2[var3] != '\r' && var2[var3] != '\n' && var2[var3] != '\t') {
@@ -183,8 +183,8 @@ public cy(Application var1) : base(var1.g()) {
       }
 
       StringSelection var8 = new StringSelection(var2.ToString());
-      Clipboard var6 = Toolkit.getDefaultToolkit().getSystemClipboard();
-      var6.setContents(var8, var1);
+      // PORT_TODO: Clipboard var6 = Toolkit.getDefaultToolkit().getSystemClipboard();
+      // PORT_TODO: var6.setContents(var8, var1);
    }
 
    public static bool a(Application var0, string var1, eY var2) {
@@ -201,10 +201,10 @@ public cy(Application var1) : base(var1.g()) {
             try {
                string var2 = this.fX.Text.Trim();
                if (var2.Length == 0 && MessageBox.Show(this, "The JSON data has been deleted, do you wish to apply these changes to the save file?", this.Text, 0) == 0) {
-                  this.fZ.Remove();
+                  // PORT_TODO: this.fZ.Remove();
       // PORT_TODO: // PORT_TODO: ((cI)this.fV.DataSource).a(this.fZ.gi);
                } else if (MessageBox.Show(this, "The JSON data has changed, do you wish to apply these changes to the save file?", this.Text, 0) == 0) {
-                  this.fZ.Text = (var2);
+                  // PORT_TODO: this.fZ.Text = (var2);
       // PORT_TODO: // PORT_TODO: ((cI)this.fV.DataSource).a(this.fZ);
                }
             } catch (eX var3) {
@@ -215,7 +215,7 @@ public cy(Application var1) : base(var1.g()) {
             }
          }
 
-         this.fZ = (cJ)this.fV.getLastSelectedPathComponent();
+         // PORT_TODO: this.fZ = (cJ)this.fV.getLastSelectedPathComponent();
          if (this.fZ == null) {
             this.fX.Text = ("");
             this.fX.setEditable(false);
@@ -233,15 +233,15 @@ public cy(Application var1) : base(var1.g()) {
    public void a(string var1, bool var2, bool var3, bool var4) {
       string var5 = this.fX.Text;
       if (!this.gf.Equals(var1)) {
-         Highlighter var6 = this.fX.getHighlighter();
-         var6.removeAllHighlights();
+         // PORT_TODO: Highlighter var6 = this.fX.getHighlighter();
+         // PORT_TODO: var6.removeAllHighlights();
          Color var7 = /* UIManager.getColor */ SystemColors.Control; //("JSONEditor.hiliteColor");
-         object /*DefaultHighlightPainter*/ var8 = new object /*DefaultHighlightPainter*/(var7);
+         // PORT_TODO: object /*DefaultHighlightPainter*/ var8 = new object /*DefaultHighlightPainter*/(var7);
          int var9 = -1;
 
          while((var9 = var5.IndexOf(var1, var9 + 1)) >= 0) {
             try {
-               var6.addHighlight(var9, var9 + var1.Length, var8);
+               // PORT_TODO: var6.addHighlight(var9, var9 + var1.Length, var8);
             } catch (Exception var11) {
             }
          }

@@ -19,7 +19,7 @@ public cH(cy var1) : base("Paste From Clipboard") {
 
    public void actionPerformed(EventArgs var1) {
       string var2 = cy.az();
-      ((TextBox)var1.getSource()).replaceSelection(var2);
+      // PORT_TODO: ((TextBox)var1.getSource()).replaceSelection(var2);
    }
 
    public void lostOwnership(object var1, Transferable var2) {

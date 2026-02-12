@@ -66,15 +66,15 @@ public class fq {
                }
             } else {
                if (var0.Name.Equals("containers.index", StringComparison.OrdinalIgnoreCase)) {
-                  return new fT(var0.Directory, var1);
+                  // PORT_TODO: return new fT(var0.Directory, var1);
                }
 
                if (var0.Name.Equals("accountdata.hg", StringComparison.OrdinalIgnoreCase) || Regex.IsMatch(var0.Name.ToLower(), "^save\\d*.hg$")) {
-                  return new fJ(var0.Directory, var1);
+                  // PORT_TODO: return new fJ(var0.Directory, var1);
                }
 
                if (Regex.IsMatch(var0.Name.ToLower(), "^savedata\\d{2}.hg$")) {
-                  return new fA(var0.Directory, var1);
+                  // PORT_TODO: return new fA(var0.Directory, var1);
                }
             }
          } catch (IOException var3) {
@@ -119,7 +119,7 @@ public class fq {
 
    public ft[] bV() {
       return bU().Where((var0) => {
-         return !var0.Count == 0;
+         // PORT_TODO: return !var0.Count == 0;
       }).ToArray();
    }
 

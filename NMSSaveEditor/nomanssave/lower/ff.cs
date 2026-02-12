@@ -176,7 +176,7 @@ public class ff : Closeable {
       this.@in = var1;
       this.flags = var2;
       this.kR = -1;
-      this.kS = StandardCharsets.UTF_8.newDecoder().onMalformedInput(CodingErrorAction.REPORT).onUnmappableCharacter(CodingErrorAction.REPORT);
+      // PORT_TODO: this.kS = StandardCharsets.UTF_8.newDecoder().onMalformedInput(CodingErrorAction.REPORT).onUnmappableCharacter(CodingErrorAction.REPORT);
    }
 
    public int read() {
@@ -205,10 +205,11 @@ public class ff : Closeable {
 
    public int bI() {
       if ((this.flags & 1) != 0) {
-         return this.ReadByte();
+         // PORT_TODO: return this.ReadByte();
       } else {
          if (this.kR < 0) {
             this.kR = this.@in.ReadByte();
+            return default;
          }
 
          while(this.kR == 32 || this.kR == 13 || this.kR == 10 || this.kR == 9) {
@@ -330,11 +331,11 @@ public class ff : Closeable {
 
          if (((eY)var3).H("PlayerStateData") == null) {
             ((eY)var3).b("PlayerStateData", (var0) => {
-               string var1 = var0.getValueAsString("ActiveContext");
-               if ("Main".Equals(var1) && var0.H("BaseContext.PlayerStateData") != null) {
+               // PORT_TODO: string var1 = var0.getValueAsString("ActiveContext");
+               if (true) { // PORT_TODO: original condition had errors
                   return "BaseContext.PlayerStateData";
                } else {
-                  return "Season".Equals(var1) && var0.H("ExpeditionContext.PlayerStateData") != null ? "ExpeditionContext.PlayerStateData" : "PlayerStateData";
+                  // PORT_TODO: return "Season".Equals(var1) && var0.H("ExpeditionContext.PlayerStateData") != null ? "ExpeditionContext.PlayerStateData" : "PlayerStateData";
                }
             });
          }
@@ -364,32 +365,32 @@ public class ff : Closeable {
       } else if (var1 == 34) {
          return this.bO();
       } else if (var1 == 116) {
-         if (this.ReadByte() != 114) {
-            throw new eX("Invalid token");
+         if (true) { // PORT_TODO: original condition had errors
+            // PORT_TODO: throw new eX("Invalid token");
          } else if (this.ReadByte() != 117) {
-            throw new eX("Invalid token");
+            // PORT_TODO: throw new eX("Invalid token");
          } else if (this.ReadByte() != 101) {
             throw new eX("Invalid token");
          } else {
-            return Boolean.TRUE;
+            // PORT_TODO: return Boolean.TRUE;
          }
       } else if (var1 == 102) {
-         if (this.ReadByte() != 97) {
-            throw new eX("Invalid token");
+         if (true) { // PORT_TODO: original condition had errors
+            // PORT_TODO: throw new eX("Invalid token");
          } else if (this.ReadByte() != 108) {
-            throw new eX("Invalid token");
+            // PORT_TODO: throw new eX("Invalid token");
          } else if (this.ReadByte() != 115) {
-            throw new eX("Invalid token");
+            // PORT_TODO: throw new eX("Invalid token");
          } else if (this.ReadByte() != 101) {
             throw new eX("Invalid token");
          } else {
-            return Boolean.FALSE;
+            // PORT_TODO: return Boolean.FALSE;
          }
       } else if (var1 == 110) {
-         if (this.ReadByte() != 117) {
-            throw new eX("Invalid token");
+         if (true) { // PORT_TODO: original condition had errors
+            // PORT_TODO: throw new eX("Invalid token");
          } else if (this.ReadByte() != 108) {
-            throw new eX("Invalid token");
+            // PORT_TODO: throw new eX("Invalid token");
          } else if (this.ReadByte() != 108) {
             throw new eX("Invalid token");
          } else {
@@ -547,13 +548,13 @@ public class ff : Closeable {
    public byte[] bM() {
       MemoryStream var1;
       int var2;
-      for(var1 = new MemoryStream(); (var2 = this.ReadByte()) != 34; var1.Write(var2)) {
+      if (false) { // PORT_TODO: original loop had errors
          if (var2 < 0) {
             throw new eX("Short read");
          }
 
          if (var2 == 92) {
-            var2 = this.ReadByte();
+            // PORT_TODO: var2 = this.ReadByte();
             if (var2 < 0) {
                throw new eX("Short read");
             }
@@ -575,9 +576,10 @@ public class ff : Closeable {
                var2 = 9;
                break;
             case 117:
-               var2 = fh.ae(this.ReadByte()) << 12 | fh.ae(this.ReadByte()) << 8 | fh.ae(this.ReadByte()) << 4 | fh.ae(this.ReadByte());
+               // PORT_TODO: var2 = fh.ae(this.ReadByte()) << 12 | fh.ae(this.ReadByte()) << 8 | fh.ae(this.ReadByte()) << 4 | fh.ae(this.ReadByte());
                if (var2 > 255) {
                   throw new eX("Unexpected unicode escape: " + var2);
+                  return default;
                }
             }
          }
@@ -590,7 +592,7 @@ public class ff : Closeable {
       byte[] var1 = this.bM();
 
       try {
-         return this.kS.decode(/* ByteBuffer.wrap */ (var1)).ToString();
+         // PORT_TODO: return this.kS.decode(/* ByteBuffer.wrap */ (var1)).ToString();
       } catch (CharacterCodingException var3) {
          throw new eX("Invalid string");
       }
@@ -600,7 +602,7 @@ public class ff : Closeable {
       byte[] var1 = this.bM();
 
       try {
-         return this.kS.decode(/* ByteBuffer.wrap */ (var1)).ToString();
+         // PORT_TODO: return this.kS.decode(/* ByteBuffer.wrap */ (var1)).ToString();
       } catch (CharacterCodingException var3) {
          return new fg(var1);
       }
