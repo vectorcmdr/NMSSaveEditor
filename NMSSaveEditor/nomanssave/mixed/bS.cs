@@ -29,7 +29,7 @@ class bS : Panel {
       this.eX = var1;
       this.x = var2;
       this.y = var3;
-      this.LayoutEnginenew GridBagLayout());
+      this.SuspendLayout(); // TODO: set layout new GridBagLayout());
       JPopupMenu var4 = new JPopupMenu();
       this.eY = new ToolStripMenuItem("Enabled");
       this.eY.Click += (new bT(this, var2, var3));
@@ -75,7 +75,7 @@ class bS : Panel {
       this.fj.Click += (new bW(this, var2, var3));
       var4.Add(this.fj);
       this.setComponentPopupMenu(var4);
-      this.setBorder(bO.eP);
+      this.Padding = new Padding(0); /* setBorder */ //(bO.eP);
       this.addMouseListener(new bX(this, var2, var3));
       this.aq();
    }
@@ -105,9 +105,9 @@ class bS : Panel {
          this.fi.Hide();
          this.fj.Hide();
          this.fc.Hide();
-         this.setBorder(bO.eP);
+         this.Padding = new Padding(0); /* setBorder */ //(bO.eP);
          this.setBackground(bO.ag());
-         this.setToolTipText((string)null);
+         this.setToolTipText(null);
       } else {
          gu var1;
          ey var2;
@@ -125,17 +125,17 @@ class bS : Panel {
             this.fj.Hide();
             this.fc.setVisible(bO.a(this.eX).@do());
             if (bO.a(this.eX).k(this.x, this.y)) {
-               this.setBorder(bO.ah());
+               this.Padding = new Padding(0); /* setBorder */ //(bO.ah());
                this.fc.setState(true);
             } else {
-               this.setBorder(bO.eP);
+               this.Padding = new Padding(0); /* setBorder */ //(bO.eP);
                this.fc.setState(false);
             }
 
             this.setBackground(bO.ai());
             var1 = bO.a(this.eX).f(this.x, this.y);
             if (var1 == null) {
-               this.setToolTipText((string)null);
+               this.setToolTipText(null);
             } else {
                var2 = ey.d(var1.dz());
                var3 = var2 is eQ && var1.dC() != 0.0D;
@@ -157,10 +157,10 @@ class bS : Panel {
             this.fa.Enabled = (false);
             this.fc.setVisible(bO.a(this.eX).@do());
             if (bO.a(this.eX).k(this.x, this.y)) {
-               this.setBorder(bO.ah());
+               this.Padding = new Padding(0); /* setBorder */ //(bO.ah());
                this.fc.setState(true);
             } else {
-               this.setBorder(bO.eP);
+               this.Padding = new Padding(0); /* setBorder */ //(bO.eP);
                this.fc.setState(false);
             }
 
@@ -174,7 +174,7 @@ class bS : Panel {
                this.fi.Hide();
                this.fj.Hide();
                this.setBackground(bO.eK);
-               this.setToolTipText((string)null);
+               this.setToolTipText(null);
             } else {
                var2 = ey.d(var1.dz());
                var3 = var2 is eQ && var1.dC() != 0.0D;
@@ -243,9 +243,9 @@ class bS : Panel {
 
    private void a(string var1, int var2, Color var3) {
       Label var4 = new Label();
-      var4.setFont(SystemInformation.getFont("Inventory.font"));
+      var4.setFont(/* UIManager.getFont */ SystemFonts.DefaultFont; //("Inventory.font"));
       var4.setBackground((Color)null);
-      var4.setBorder((Border)null);
+      var4.Padding = new Padding(0); /* setBorder */ //((Border)null);
       var4.Text = (var1);
       var4.setForeground(var3);
       GridBagConstraints var5 = new GridBagConstraints();

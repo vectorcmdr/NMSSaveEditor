@@ -40,14 +40,14 @@ public class bl : Panel, eo {
 
    bl(Application var1) {
       TableLayoutPanel var2 = new TableLayoutPanel(1, 3);
-      this.LayoutEnginevar2);
+      this.SuspendLayout(); // TODO: set layout var2);
       Panel var3 = new Panel();
       var3.setMinimumSize(new Size(300, 0));
       var3.setMaximumSize(new Size(300, int.MaxValue));
       var3.Size = (new Size(300, 0));
       Panel var4 = new Panel();
-      var4.LayoutEnginenew TableLayoutPanel());
-      var4.Add(var3, "Center");
+      var4.SuspendLayout(); // TODO: set layout new TableLayoutPanel());
+      var4.Controls.Add(var3);
       Panel var5 = new Panel();
       this.bQ = new Button("Delete");
       this.bQ.Enabled = (false);
@@ -57,7 +57,7 @@ public class bl : Panel, eo {
       this.dS.Enabled = (false);
       this.dS.Click += (new br(this, var1));
       var5.Add(this.dS);
-      var4.Add(var5, "South");
+      var4.Controls.Add(var5);
       this.Add(var4);
       this.dR = new DataGridView();
       this.dR.setSelectionMode(0);
@@ -113,14 +113,14 @@ public class bl : Panel, eo {
       this.dT.a(this.eg);
       this.dT.Y();
       Panel var7 = new Panel();
-      var7.LayoutEnginenew FormLayout(new ColumnSpec[]{FormFactory.GLUE_COLSPEC, FormFactory.DEFAULT_COLSPEC, FormFactory.GLUE_COLSPEC}, new RowSpec[]{FormFactory.DEFAULT_ROWSPEC, FormFactory.DEFAULT_ROWSPEC}));
+      // TODO: var7.SuspendLayout(); // TODO: set layout /* FormLayout */ null);
       this.el = new Label("");
       var7.Add(this.el, "2,1");
       this.em = new Button("Repair");
       this.em.Click += (new bz(this));
       Panel var8 = new Panel();
       var8.Add(this.em);
-      var7.Add(var8, "2,2");
+      var7.Controls.Add(var8);
       this.dT.a(var7);
       this.eb = new ba(new int[]{aH.cJ, 0});
       this.eb.Hide();

@@ -60,7 +60,7 @@ public class cW : Panel, EventHandler, CaretListener, EventHandler {
    public void y(int var1) {
       this.gD = var1;
       EmptyBorder var2 = new EmptyBorder(0, var1, 0, var1);
-      this.setBorder(new CompoundBorder(gA, var2));
+      this.Padding = new Padding(0); /* setBorder */ //(new CompoundBorder(gA, var2));
       this.gH = 0;
       this.aI();
    }

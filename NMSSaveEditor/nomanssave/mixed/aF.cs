@@ -23,7 +23,7 @@ class aF : EventHandler {
       aD.a(this.cB, false);
       if (var4 == null) {
          if (var3 != null) {
-            aH.setProperty("LookAndFeel", (string)null);
+            aH.setProperty("LookAndFeel", null);
             aD.a(this.cB, true);
          }
       } else if (var3 == null || var3 != var4) {

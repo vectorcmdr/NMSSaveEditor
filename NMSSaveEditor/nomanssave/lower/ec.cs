@@ -25,8 +25,8 @@ class ec : ba {
       this.k("Wingman " + (var2 + 1));
       this.@if = new CheckBox("Enabled");
       this.@if.Click += (new ed(this, var2));
-      this.a((string)null, this.@if);
-      this.setBorder(new LineBorder(Color.DARK_GRAY));
+      this.a(null, this.@if);
+      this.Padding = new Padding(0); /* setBorder */ //(new LineBorder(Color.DARK_GRAY));
       this.ig = new ComboBox();
       this.ig.DataSource = (new ee(this, var2));
       this.a("NPC Race", this.ig);

@@ -23,7 +23,7 @@ public class eb : em {
       var2.rowHeights = new int[3];
       var2.columnWeights = new double[]{0.0D, 0.0D, 0.0D, 0.0D, Double.MIN_VALUE};
       var2.rowWeights = new double[]{0.0D, 0.0D, Double.MIN_VALUE};
-      this.LayoutEnginevar2);
+      this.SuspendLayout(); // TODO: set layout var2);
       this.ic = new gM[0];
       this.ib = new ec[0];
    }

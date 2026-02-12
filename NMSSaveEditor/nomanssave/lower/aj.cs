@@ -29,39 +29,39 @@ public class aj : Form {
       this/* setModal */(true);
       Panel var2 = new Panel();
       this.setContentPane(var2);
-      var2.LayoutEnginenew TableLayoutPanel(0, 0));
+      var2.SuspendLayout(); // TODO: set layout new TableLayoutPanel(0, 0));
       Panel var3 = new Panel();
-      var3.LayoutEnginenew FormLayout(new ColumnSpec[]{FormFactory.LABEL_COMPONENT_GAP_COLSPEC, ColumnSpec.decode("100px"), FormFactory.LABEL_COMPONENT_GAP_COLSPEC, ColumnSpec.decode("default:grow"), FormFactory.LABEL_COMPONENT_GAP_COLSPEC, ColumnSpec.decode("100px"), FormFactory.LABEL_COMPONENT_GAP_COLSPEC}, new RowSpec[]{FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, RowSpec.decode("bottom:10px"), FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC}));
+      // TODO: var3.SuspendLayout(); // TODO: set layout /* FormLayout */ null, FormFactory.LABEL_COMPONENT_GAP_COLSPEC, ColumnSpec.decode("default:grow"), FormFactory.LABEL_COMPONENT_GAP_COLSPEC, ColumnSpec.decode("100px"), FormFactory.LABEL_COMPONENT_GAP_COLSPEC}, new RowSpec[]{FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, RowSpec.decode("bottom:10px"), FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC}));
       Label var4 = new Label("Search:");
-      var4.putClientProperty("FlatLaf.styleClass", "semibold");
-      var3.Add(var4, "2, 2, left, center");
+      // TODO: var4.putClientProperty(...);
+      var3.Controls.Add(var4);
       this.m = new TextBox();
       var3.Add(this.m, "4, 2, fill, default");
       Button var5 = new Button("Search");
       var5.Click += (new ak(this));
-      var3.Add(var5, "6, 2, fill, fill");
+      var3.Controls.Add(var5);
       Label var6 = new Label("Coordinate Location:");
-      var6.putClientProperty("FlatLaf.styleClass", "semibold");
-      var3.Add(var6, "2, 6, 5, 1, left, center");
+      // TODO: var6.putClientProperty(...);
+      var3.Controls.Add(var6);
       Label var7 = new Label("Galaxy:");
-      var3.Add(var7, "2, 8, left, center");
+      var3.Controls.Add(var7);
       this.bX = new ComboBox();
       this.bX.DataSource = (new al(this));
       var3.Add(this.bX, "4, 8, 3, 1, fill, default");
       Label var8 = new Label("Galactic Addr:");
-      var3.Add(var8, "2, 10, left, center");
+      var3.Controls.Add(var8);
       this.bY = new TextBox();
       this.bY.setEditable(false);
       var3.Add(this.bY, "4, 10, 3, 1, fill, default");
       Label var9 = new Label("Portal Addr:");
-      var3.Add(var9, "2, 12, left, center");
+      var3.Controls.Add(var9);
       this.bZ = new TextBox();
       this.bZ.setEditable(false);
       var3.Add(this.bZ, "4, 12, 3, 1, fill, default");
       Panel var10 = new Panel();
       var10.setBackground(Color.GRAY);
-      var10.setBorder(new LineBorder(Color.DARK_GRAY));
-      var10.LayoutEnginenew FlowLayoutPanel(1, 5, 5));
+      var10.Padding = new Padding(0); /* setBorder */ //(new LineBorder(Color.DARK_GRAY));
+      var10.SuspendLayout(); // TODO: set layout new FlowLayoutPanel(1, 5, 5));
       var10.setMinimumSize(new Size(449, 42));
       this.cb = new Image[16];
 
@@ -77,11 +77,11 @@ public class aj : Form {
          var10.Add(this.ca[var11]);
       }
 
-      var3.Add(var10, "2, 14, 5, 1, fill, fill");
+      var3.Controls.Add(var10);
       var2.Add(var3);
       Panel var14 = new Panel();
-      var14.LayoutEnginenew FlowLayoutPanel(2));
-      var2.Add(var14, "South");
+      var14.SuspendLayout(); // TODO: set layout new FlowLayoutPanel(2));
+      var2.Controls.Add(var14);
       Button var12 = new Button("Save / Warp");
       var12.Click += (new am(this));
       var14.Add(var12);
@@ -89,7 +89,7 @@ public class aj : Form {
       Button var13 = new Button("Cancel");
       var13.Click += (new an(this));
       var14.Add(var13);
-      this.getRootPane().registerKeyboardAction(new ao(this), Keys.getKeyStroke(27, 0), 2);
+      this.getRootPane().registerKeyboardAction(new ao(this), /* KeyStroke */ Keys.None; //(27, 0), 2);
       this.PerformLayout();
    }
 

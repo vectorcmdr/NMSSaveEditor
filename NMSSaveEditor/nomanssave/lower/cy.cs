@@ -46,7 +46,7 @@ public class cy : Form, TreeSelectionListener {
       this.fW = new Panel();
       this.fW.setViewportView(this.fV);
       this.fX = new TextBox();
-      this.fX.putClientProperty("FlatLaf.styleClass", "monospaced");
+      this.// TODO: fX.putClientProperty(...);
       this.fX.setEditable(false);
       this.fX.setTabSize(4);
       this.fX.getActionMap().Put("copy-to-clipboard", new cG(this));
@@ -56,7 +56,7 @@ public class cy : Form, TreeSelectionListener {
       this.fY.setRowHeaderView(new cW(this.fX));
       this.fY.setViewportView(this.fX);
       Panel var4 = new Panel();
-      var4.LayoutEnginenew TableLayoutPanel());
+      var4.SuspendLayout(); // TODO: set layout new TableLayoutPanel());
       this.fU = new Button("Validate");
       this.fU.Click += (new cC(this));
       var4.Add(this.fU, "North");
@@ -67,9 +67,9 @@ public class cy : Form, TreeSelectionListener {
       this.setContentPane(var5);
       this.addWindowListener(new cE(this));
       cF var6 = new cF(this);
-      this.fV.getInputMap().Put(Keys.getKeyStroke(70, 2), "find");
+      this.fV.getInputMap().Put(/* KeyStroke */ Keys.None; //(70, 2), "find");
       this.fV.getActionMap().Put("find", var6);
-      this.fX.getInputMap().Put(Keys.getKeyStroke(70, 2), "find");
+      this.fX.getInputMap().Put(/* KeyStroke */ Keys.None; //(70, 2), "find");
       this.fX.getActionMap().Put("find", var6);
    }
 
@@ -234,7 +234,7 @@ public class cy : Form, TreeSelectionListener {
       if (!this.gf.Equals(var1)) {
          Highlighter var6 = this.fX.getHighlighter();
          var6.removeAllHighlights();
-         Color var7 = SystemInformation.getColor("JSONEditor.hiliteColor");
+         Color var7 = /* UIManager.getColor */ SystemColors.Control; //("JSONEditor.hiliteColor");
          DefaultHighlightPainter var8 = new DefaultHighlightPainter(var7);
          int var9 = -1;
 

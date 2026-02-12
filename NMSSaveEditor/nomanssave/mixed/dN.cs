@@ -70,7 +70,7 @@ public class dN : em {
       this.hP = new CheckBox("Use Old Colours");
       this.hP.Enabled = (false);
       this.hP.Click += (new dV(this, var1));
-      this.a((string)null, (Control)this.hP);
+      this.a(null, (Control)this.hP);
       this.k("Base Stats");
       this.hQ = new dW(this);
       this.a((string)"Health", (Control)this.hQ);

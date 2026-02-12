@@ -23,15 +23,15 @@ public class ap : Panel {
 
    ap(Application var1) {
       TableLayoutPanel var2 = new TableLayoutPanel(2, 2);
-      this.LayoutEnginevar2);
+      this.SuspendLayout(); // TODO: set layout var2);
       Panel var3 = new Panel();
       this.Add(var3);
-      var3.LayoutEnginenew FormLayout(new ColumnSpec[]{FormFactory.LABEL_COMPONENT_GAP_COLSPEC, ColumnSpec.decode("default:grow"), FormFactory.LABEL_COMPONENT_GAP_COLSPEC}, new RowSpec[]{FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, RowSpec.decode("200px:grow"), FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC}));
+      // TODO: var3.SuspendLayout(); // TODO: set layout /* FormLayout */ null, FormFactory.LABEL_COMPONENT_GAP_COLSPEC}, new RowSpec[]{FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, RowSpec.decode("200px:grow"), FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC}));
       Label var4 = new Label("Known Technology");
-      var4.putClientProperty("FlatLaf.styleClass", "semibold");
-      var3.Add(var4, "2, 2");
+      // TODO: var4.putClientProperty(...);
+      var3.Controls.Add(var4);
       Panel var5 = new Panel();
-      var3.Add(var5, "2, 4, fill, fill");
+      var3.Controls.Add(var5);
       this.ci = new DataGridView();
       this.ci.setSelectionMode(2);
       this.ci.DataSource = (new aq(this));
@@ -42,8 +42,8 @@ public class ap : Panel {
       this.ci.setRowSorter(this.cj);
       var5.setViewportView(this.ci);
       Panel var6 = new Panel();
-      var6.LayoutEnginenew FlowLayoutPanel());
-      var3.Add(var6, "2, 6, fill, default");
+      var6.SuspendLayout(); // TODO: set layout new FlowLayoutPanel());
+      var3.Controls.Add(var6);
       Button var7 = new Button();
       var7.Text = ("Add Technology");
       var7.Click += (new @as(this));
@@ -54,12 +54,12 @@ public class ap : Panel {
       var6.Add(var8);
       Panel var9 = new Panel();
       this.Add(var9);
-      var9.LayoutEnginenew FormLayout(new ColumnSpec[]{FormFactory.LABEL_COMPONENT_GAP_COLSPEC, ColumnSpec.decode("default:grow"), FormFactory.LABEL_COMPONENT_GAP_COLSPEC}, new RowSpec[]{FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, RowSpec.decode("200px:grow"), FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC}));
+      // TODO: var9.SuspendLayout(); // TODO: set layout /* FormLayout */ null, FormFactory.LABEL_COMPONENT_GAP_COLSPEC}, new RowSpec[]{FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, RowSpec.decode("200px:grow"), FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC}));
       var4 = new Label("Known Products");
-      var4.putClientProperty("FlatLaf.styleClass", "semibold");
-      var9.Add(var4, "2, 2");
+      // TODO: var4.putClientProperty(...);
+      var9.Controls.Add(var4);
       Panel var10 = new Panel();
-      var9.Add(var10, "2, 4, fill, fill");
+      var9.Controls.Add(var10);
       this.ck = new DataGridView();
       this.ck.setSelectionMode(2);
       this.ck.DataSource = (new au(this));
@@ -70,8 +70,8 @@ public class ap : Panel {
       this.ck.setRowSorter(this.cl);
       var10.setViewportView(this.ck);
       var6 = new Panel();
-      var6.LayoutEnginenew FlowLayoutPanel());
-      var9.Add(var6, "2, 6, fill, default");
+      var6.SuspendLayout(); // TODO: set layout new FlowLayoutPanel());
+      var9.Controls.Add(var6);
       Button var11 = new Button();
       var11.Text = ("Add Product");
       var11.Click += (new av(this));
@@ -82,12 +82,12 @@ public class ap : Panel {
       var6.Add(var12);
       Panel var13 = new Panel();
       this.Add(var13);
-      var13.LayoutEnginenew FormLayout(new ColumnSpec[]{FormFactory.LABEL_COMPONENT_GAP_COLSPEC, ColumnSpec.decode("default:grow"), FormFactory.LABEL_COMPONENT_GAP_COLSPEC}, new RowSpec[]{FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, RowSpec.decode("200px:grow"), FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC}));
+      // TODO: var13.SuspendLayout(); // TODO: set layout /* FormLayout */ null, FormFactory.LABEL_COMPONENT_GAP_COLSPEC}, new RowSpec[]{FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, RowSpec.decode("200px:grow"), FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC}));
       var4 = new Label("Known Words");
-      var4.putClientProperty("FlatLaf.styleClass", "semibold");
-      var13.Add(var4, "2, 2");
+      // TODO: var4.putClientProperty(...);
+      var13.Controls.Add(var4);
       Panel var14 = new Panel();
-      var13.Add(var14, "2, 4, fill, fill");
+      var13.Controls.Add(var14);
       this.cn = new DataGridView();
       this.cn.setCellSelectionEnabled(false);
       this.cn.getColumnModel().setColumnMargin(2);
@@ -114,8 +114,8 @@ public class ap : Panel {
       this.cn.setRowSorter(this.co);
       var14.setViewportView(this.cn);
       var6 = new Panel();
-      var6.LayoutEnginenew FlowLayoutPanel());
-      var13.Add(var6, "2, 6, fill, default");
+      var6.SuspendLayout(); // TODO: set layout new FlowLayoutPanel());
+      var13.Controls.Add(var6);
       Button var24 = new Button();
       var24.Text = ("Learn All");
       var24.Click += (new ay(this));
@@ -126,14 +126,14 @@ public class ap : Panel {
       var6.Add(var17);
       Panel var18 = new Panel();
       this.Add(var18);
-      var18.LayoutEnginenew FormLayout(new ColumnSpec[]{FormFactory.LABEL_COMPONENT_GAP_COLSPEC, ColumnSpec.decode("default:grow"), FormFactory.LABEL_COMPONENT_GAP_COLSPEC}, new RowSpec[]{FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC}));
+      // TODO: var18.SuspendLayout(); // TODO: set layout /* FormLayout */ null, FormFactory.LABEL_COMPONENT_GAP_COLSPEC}, new RowSpec[]{FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC}));
       var4 = new Label("Known Glyphs");
-      var4.putClientProperty("FlatLaf.styleClass", "semibold");
-      var18.Add(var4, "2, 2");
+      // TODO: var4.putClientProperty(...);
+      var18.Controls.Add(var4);
       Panel var19 = new Panel();
-      var19.putClientProperty("FlatLaf.styleClass", "glyphs");
-      var18.Add(var19, "2, 4, fill, fill");
-      var19.LayoutEnginenew FormLayout(new ColumnSpec[]{FormFactory.LABEL_COMPONENT_GAP_COLSPEC, FormFactory.DEFAULT_COLSPEC, FormFactory.DEFAULT_COLSPEC, FormFactory.LABEL_COMPONENT_GAP_COLSPEC, FormFactory.DEFAULT_COLSPEC, FormFactory.DEFAULT_COLSPEC, FormFactory.LABEL_COMPONENT_GAP_COLSPEC, FormFactory.DEFAULT_COLSPEC, FormFactory.DEFAULT_COLSPEC, FormFactory.LABEL_COMPONENT_GAP_COLSPEC, FormFactory.DEFAULT_COLSPEC, FormFactory.DEFAULT_COLSPEC}, new RowSpec[]{FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC}));
+      // TODO: var19.putClientProperty(...);
+      var18.Controls.Add(var19);
+      // TODO: var19.SuspendLayout(); // TODO: set layout /* FormLayout */ null);
       this.cm = new CheckBox[16];
 
       for(int var20 = 0; var20 < 16; ++var20) {

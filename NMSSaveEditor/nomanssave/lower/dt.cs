@@ -17,7 +17,7 @@ public class dt : ba {
       this.eR = var1;
       this.k("Production");
       this.eS = new Panel();
-      this.eS.LayoutEnginenew GridBagLayout());
+      this.eS.SuspendLayout(); // TODO: set layout new GridBagLayout());
       this.a((Control)this.eS);
       SystemInformation.addPropertyChangeListener((var1x) => {
          if ("lookAndFeel".Equals(var1x.getPropertyName())) {

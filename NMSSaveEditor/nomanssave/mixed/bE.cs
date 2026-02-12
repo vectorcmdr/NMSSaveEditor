@@ -15,7 +15,7 @@ public class bE : Panel {
 
    bE(Application var1) {
       TableLayoutPanel var2 = new TableLayoutPanel(1, 3, 10, 0);
-      this.LayoutEnginevar2);
+      this.SuspendLayout(); // TODO: set layout var2);
       this.ex[0] = new bN(this);
       this.Add(this.ex[0]);
       this.ex[1] = new bN(this);

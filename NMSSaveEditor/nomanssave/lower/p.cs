@@ -22,7 +22,7 @@ public class p : Form {
       this/* setModal */(true);
       Panel var2 = new Panel();
       this.setContentPane(var2);
-      var2.LayoutEnginenew TableLayoutPanel(0, 0));
+      var2.SuspendLayout(); // TODO: set layout new TableLayoutPanel(0, 0));
       Panel var3 = new Panel();
       this.D = new DataGridView();
       this.D.setSelectionMode(2);
@@ -34,8 +34,8 @@ public class p : Form {
       var3.setViewportView(this.D);
       var2.Add(var3);
       Panel var4 = new Panel();
-      var4.LayoutEnginenew FlowLayoutPanel(2));
-      var2.Add(var4, "South");
+      var4.SuspendLayout(); // TODO: set layout new FlowLayoutPanel(2));
+      var2.Controls.Add(var4);
       Button var5 = new Button("Add");
       var5.Click += (new r(this));
       var4.Add(var5);
@@ -43,7 +43,7 @@ public class p : Form {
       Button var6 = new Button("Cancel");
       var6.Click += (new s(this));
       var4.Add(var6);
-      this.getRootPane().registerKeyboardAction(new t(this), Keys.getKeyStroke(27, 0), 2);
+      this.getRootPane().registerKeyboardAction(new t(this), /* KeyStroke */ Keys.None; //(27, 0), 2);
    }
 
    private string[] d() {

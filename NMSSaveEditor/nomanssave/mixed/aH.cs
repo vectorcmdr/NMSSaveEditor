@@ -281,14 +281,14 @@ public class aH {
             var2 = new FlatMacDarkLaf();
          }
 
-         SystemInformation.setLookAndFeel((LookAndFeel)var2);
+         /* setLookAndFeel */var2);
       } catch (UnsupportedLookAndFeelException var13) {
          hc.a("Could not set look and feel: " + var1, var13);
          return;
       }
 
-      hc.debug("Look and Feel: " + SystemInformation.getLookAndFeel().Name);
-      Font var3 = SystemInformation.getFont("Label.font");
+      hc.debug("Look and Feel: " + /* L&F */ null.Name);
+      Font var3 = /* UIManager.getFont */ SystemFonts.DefaultFont; //("Label.font");
       if (var3 == null) {
          cH = 120;
          cI = 350;

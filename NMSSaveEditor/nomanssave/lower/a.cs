@@ -17,7 +17,7 @@ public class a : Form {
       this.Text = ("About Save Editor");
       this/* setModal */(true);
       JTextPane var2 = new JTextPane();
-      var2.setBorder(object.createEmptyBorder(10, 10, 10, 10));
+      var2.Padding = new Padding(0); /* setBorder */ //(null /* EmptyBorder */);
       var2.setOpaque(false);
 
       try {
@@ -35,8 +35,8 @@ public class a : Form {
       }
 
       var2.setEditable(false);
-      this.Add(var2, "Center");
-      this.getRootPane().registerKeyboardAction(new b(this), Keys.getKeyStroke(27, 0), 2);
+      this.Controls.Add(var2);
+      this.getRootPane().registerKeyboardAction(new b(this), /* KeyStroke */ Keys.None; //(27, 0), 2);
       this.PerformLayout();
    }
 

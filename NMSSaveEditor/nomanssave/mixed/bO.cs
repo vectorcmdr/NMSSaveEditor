@@ -41,24 +41,24 @@ public class bO : Panel, eo {
       eM = Color.YELLOW;
       eN = Color.RED;
       eO = Color.BLACK;
-      eP = object.createLineBorder(eL, 1);
-      eQ = object.createCompoundBorder(eP, object.createLineBorder(eM, 2));
+      eP = null /* LineBorder */;
+      eQ = null /* CompoundBorder */;
    }
 
    bO(Application var1) {
       this.eR = var1;
-      this.LayoutEnginenew TableLayoutPanel());
+      this.SuspendLayout(); // TODO: set layout new TableLayoutPanel());
       Panel var2 = new Panel();
-      var2.LayoutEnginenew FlowLayoutPanel());
+      var2.SuspendLayout(); // TODO: set layout new FlowLayoutPanel());
       this.eS = new Panel();
-      this.eS.LayoutEnginenew GridBagLayout());
+      this.eS.SuspendLayout(); // TODO: set layout new GridBagLayout());
       int var3 = SystemInformation.getInt("Inventory.gridSize");
       this.Size = (new Size(var3 * 10 + 20, var3 * 8 + 50));
-      this.Add(var2, "North");
+      this.Controls.Add(var2);
       Panel var4 = new Panel();
       var4.setViewportView(this.eS);
-      var4.setBorder(new LineBorder(eL));
-      this.Add(var4, "Center");
+      var4.Padding = new Padding(0); /* setBorder */ //(new LineBorder(eL));
+      this.Controls.Add(var4);
       this.eV = new List<object>();
       this.eT = new ComboBox();
       this.eT.Hide();

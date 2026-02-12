@@ -25,7 +25,7 @@ public class X : Panel {
 
    X(Application var1) {
       TableLayoutPanel var2 = new TableLayoutPanel(1, 3);
-      this.LayoutEnginevar2);
+      this.SuspendLayout(); // TODO: set layout var2);
       ba var3 = new ba(new int[]{aH.cJ, 0});
       this.Add(var3);
       this.Add(new Panel());
@@ -50,7 +50,7 @@ public class X : Panel {
       this.bN = new CheckBox("Predator");
       this.bN.Enabled = (false);
       this.bN.Click += (new ah(this));
-      var3.a((string)null, (Control)this.bN);
+      var3.a(null, (Control)this.bN);
       this.bO = new cN(typeof(gi));
       this.bO.a((var1x) => {
          gj var2 = (gj)this.bG.SelectedItem;

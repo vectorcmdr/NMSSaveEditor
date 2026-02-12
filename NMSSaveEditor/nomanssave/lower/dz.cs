@@ -22,7 +22,7 @@ public class dz : Form {
       this/* setModal */(true);
       Panel var2 = new Panel();
       this.setContentPane(var2);
-      var2.LayoutEnginenew TableLayoutPanel(0, 0));
+      var2.SuspendLayout(); // TODO: set layout new TableLayoutPanel(0, 0));
       Panel var3 = new Panel();
       this.hr = new ListBox();
       this.hr.setSelectionMode(0);
@@ -30,8 +30,8 @@ public class dz : Form {
       var3.setViewportView(this.hr);
       var2.Add(var3);
       Panel var4 = new Panel();
-      var4.LayoutEnginenew FlowLayoutPanel(2));
-      var2.Add(var4, "South");
+      var4.SuspendLayout(); // TODO: set layout new FlowLayoutPanel(2));
+      var2.Controls.Add(var4);
       Button var5 = new Button("Replace/Save");
       var5.Click += (new dB(this));
       var4.Add(var5);
@@ -39,7 +39,7 @@ public class dz : Form {
       Button var6 = new Button("Cancel");
       var6.Click += (new dC(this));
       var4.Add(var6);
-      this.getRootPane().registerKeyboardAction(new dD(this), Keys.getKeyStroke(27, 0), 2);
+      this.getRootPane().registerKeyboardAction(new dD(this), /* KeyStroke */ Keys.None; //(27, 0), 2);
    }
 
    private int a(ft[] var1, int var2) {

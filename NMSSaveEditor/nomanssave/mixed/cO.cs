@@ -36,7 +36,7 @@ class cO : object {
          Control.invokeLater(() => {
             if (cN.b(this.gt) == null) {
                if (var2 != null) {
-                  cN.c(this.gt).setSelectedValue((string)null);
+                  cN.c(this.gt).setSelectedValue(null);
                }
             } else if (var2 == null || !cN.b(this.gt).Equals(var2)) {
                if (cN.d(this.gt)) {

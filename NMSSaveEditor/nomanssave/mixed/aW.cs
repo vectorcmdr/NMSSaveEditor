@@ -24,17 +24,17 @@ public class aW : Form {
       this/* setModal */(true);
       Panel var2 = new Panel();
       this.setContentPane(var2);
-      var2.LayoutEnginenew TableLayoutPanel(0, 0));
+      var2.SuspendLayout(); // TODO: set layout new TableLayoutPanel(0, 0));
       Panel var3 = new Panel();
-      var3.LayoutEnginenew FormLayout(new ColumnSpec[]{FormFactory.LABEL_COMPONENT_GAP_COLSPEC, ColumnSpec.decode("100px"), FormFactory.LABEL_COMPONENT_GAP_COLSPEC, ColumnSpec.decode("250px"), FormFactory.LABEL_COMPONENT_GAP_COLSPEC}, new RowSpec[]{FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC}));
+      // TODO: var3.SuspendLayout(); // TODO: set layout /* FormLayout */ null, FormFactory.LABEL_COMPONENT_GAP_COLSPEC, ColumnSpec.decode("250px"), FormFactory.LABEL_COMPONENT_GAP_COLSPEC}, new RowSpec[]{FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC}));
       Label var4 = new Label("Find:");
-      var3.Add(var4, "2, 2, left, center");
+      var3.Controls.Add(var4);
       this.ds = new TextBox();
       var3.Add(this.ds, "4, 2, fill, default");
       var2.Add(var3);
       Panel var5 = new Panel();
-      var5.LayoutEnginenew TableLayoutPanel(1, 2));
-      var5.setBorder(object.createCompoundBorder(object.createTitledBorder("Direction"), object.createEmptyBorder(5, 5, 5, 5)));
+      var5.SuspendLayout(); // TODO: set layout new TableLayoutPanel(1, 2));
+      var5.Padding = new Padding(0); /* setBorder */ //(null /* CompoundBorder */);
       this.dv = new RadioButton("Forward");
       this.dv.Checked = (true);
       var5.Add(this.dv);
@@ -43,19 +43,19 @@ public class aW : Form {
       object var6 = new object();
       var6.Add(this.dv);
       var6.Add(this.dw);
-      var3.Add(var5, "2, 4, 3, 1");
+      var3.Controls.Add(var5);
       Panel var7 = new Panel();
-      var7.LayoutEnginenew TableLayoutPanel(1, 2));
-      var7.setBorder(object.createCompoundBorder(object.createTitledBorder("Options"), object.createEmptyBorder(5, 5, 5, 5)));
+      var7.SuspendLayout(); // TODO: set layout new TableLayoutPanel(1, 2));
+      var7.Padding = new Padding(0); /* setBorder */ //(null /* CompoundBorder */);
       this.dt = new CheckBox("Case Sensitive");
       this.dt.Checked = (true);
       var7.Add(this.dt);
       this.du = new CheckBox("Wrap Search");
       var7.Add(this.du);
-      var3.Add(var7, "2, 6, 3, 1");
+      var3.Controls.Add(var7);
       Panel var8 = new Panel();
-      var8.LayoutEnginenew FlowLayoutPanel(2));
-      var2.Add(var8, "South");
+      var8.SuspendLayout(); // TODO: set layout new FlowLayoutPanel(2));
+      var2.Controls.Add(var8);
       Button var9 = new Button("Find");
       var9.setMnemonic(10);
       var9.Click += (new aX(this, var1));
@@ -65,7 +65,7 @@ public class aW : Form {
       var10.setMnemonic(27);
       var10.Click += (new aY(this));
       var8.Add(var10);
-      this.getRootPane().registerKeyboardAction(new aZ(this), Keys.getKeyStroke(27, 0), 2);
+      this.getRootPane().registerKeyboardAction(new aZ(this), /* KeyStroke */ Keys.None; //(27, 0), 2);
       this.PerformLayout();
    }
 

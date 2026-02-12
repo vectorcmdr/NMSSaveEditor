@@ -24,8 +24,8 @@ class du : Panel {
       this.setMinimumSize(var4);
       this.setMaximumSize(var4);
       this.Size = (var4);
-      this.LayoutEnginenew GridBagLayout());
-      this.setBorder(bO.eP);
+      this.SuspendLayout(); // TODO: set layout new GridBagLayout());
+      this.Padding = new Padding(0); /* setBorder */ //(bO.eP);
       JPopupMenu var5 = new JPopupMenu();
       this.fe = new ToolStripMenuItem("Item Details");
       this.fe.Click += (new dv(this, var2));
@@ -56,7 +56,7 @@ class du : Panel {
          ey var3 = ey.d(this.hm.dz());
          string var4 = var3 == null ? this.hm.ei() : var3.Name;
          int var5 = SystemInformation.getInt("Inventory.iconSize");
-         Font var6 = SystemInformation.getFont("Inventory.font");
+         Font var6 = /* UIManager.getFont */ SystemFonts.DefaultFont; //("Inventory.font");
          Image var7 = var3 == null ? null : var3.c(var5, var5);
          int var8 = 0;
          Label var9;
@@ -76,7 +76,7 @@ class du : Panel {
          var9 = new Label();
          var9.setFont(var6);
          var9.setBackground((Color)null);
-         var9.setBorder((Border)null);
+         var9.Padding = new Padding(0); /* setBorder */ //((Border)null);
          var9.Text = (var4);
          var9.setForeground(bO.eO);
          var10 = new GridBagConstraints();
@@ -89,7 +89,7 @@ class du : Panel {
          var9 = new Label();
          var9.setFont(var6);
          var9.setBackground((Color)null);
-         var9.setBorder((Border)null);
+         var9.Padding = new Padding(0); /* setBorder */ //((Border)null);
          var9.Text = (Integer.toString(this.hm.dA()) + "/" + Integer.toString(this.hm.dB()));
          var9.setForeground(bO.eO);
          var10 = new GridBagConstraints();

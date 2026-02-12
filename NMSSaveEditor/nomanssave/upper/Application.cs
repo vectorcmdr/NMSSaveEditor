@@ -148,7 +148,7 @@ public class Application {
          }
       }
 
-      return var1 == null ? null : new Image(var1);
+      return var1 == null ? null : var1;
    }
 
    public static Image a(string var0, int var1, int var2) {
@@ -167,7 +167,7 @@ public class Application {
          }
       }
 
-      return var3 == null ? null : new Image(var3.getScaledInstance(var1, var2, 4));
+      return var3 == null ? null : new Bitmap(var3, var1, var2, 4));
    }
 
    private void f() {
@@ -1672,7 +1672,7 @@ public class Application {
       this.O = new TabControl(1);
       this.N.Add(this.O, "Center");
       ba var3 = new ba(new int[]{nomanssave.aH.cH, nomanssave.aH.cI, 0});
-      this.O.addTab("Main", (Icon)null, var3, (string)null);
+      this.O.addTab("Main", (Icon)null, var3, null);
       var3.k("File Details");
       this.P = new Label();
       this.P.Text = (this.aF == null ? "" : fq.c(this.aF));
@@ -1700,7 +1700,7 @@ public class Application {
       var3.a("Description", this.V, 2);
       var3.Y();
       Panel var4 = new Panel();
-      var4.LayoutEnginenew FlowLayoutPanel(0, 0, 0));
+      var4.SuspendLayout(); // TODO: set layout new FlowLayoutPanel(0, 0, 0));
       this.W = new Button("Reload");
       this.W.Enabled = (false);
       this.W.Click += ((var1x) => {
@@ -1719,45 +1719,45 @@ public class Application {
          this.o();
       });
       var4.Add(this.Y);
-      var3.a((string)null, var4, 2);
+      var3.a(null, var4, 2);
       this.@as = new aJ(this);
-      this.O.addTab("Exosuit", (Icon)null, this.@as, (string)null);
+      this.O.addTab("Exosuit", (Icon)null, this.@as, null);
       this.O.setEnabledAt(1, false);
       this.at = new dj(this);
-      this.O.addTab("Multitool", (Icon)null, this.at, (string)null);
+      this.O.addTab("Multitool", (Icon)null, this.at, null);
       this.O.setEnabledAt(2, false);
       this.au = new dN(this);
-      this.O.addTab("Ships", (Icon)null, this.au, (string)null);
+      this.O.addTab("Ships", (Icon)null, this.au, null);
       this.O.setEnabledAt(3, false);
       this.av = new eb(this);
-      this.O.addTab("Squadron", (Icon)null, this.av, (string)null);
+      this.O.addTab("Squadron", (Icon)null, this.av, null);
       this.O.setEnabledAt(4, false);
       this.aw = new bd(this);
-      this.O.addTab("Freighter", (Icon)null, this.aw, (string)null);
+      this.O.addTab("Freighter", (Icon)null, this.aw, null);
       this.O.setEnabledAt(5, false);
       this.ax = new bl(this);
-      this.O.addTab("Frigates", (Icon)null, this.ax, (string)null);
+      this.O.addTab("Frigates", (Icon)null, this.ax, null);
       this.O.setEnabledAt(6, false);
       this.ay = new ep(this);
-      this.O.addTab("Vehicles", (Icon)null, this.ay, (string)null);
+      this.O.addTab("Vehicles", (Icon)null, this.ay, null);
       this.O.setEnabledAt(7, false);
       this.az = new X(this);
-      this.O.addTab("Companions", (Icon)null, this.az, (string)null);
+      this.O.addTab("Companions", (Icon)null, this.az, null);
       this.O.setEnabledAt(8, false);
       this.aA = new I(this);
-      this.O.addTab("Bases & Storage", (Icon)null, this.aA, (string)null);
+      this.O.addTab("Bases & Storage", (Icon)null, this.aA, null);
       this.O.setEnabledAt(9, false);
       this.aB = new dE(this);
-      this.O.addTab("Settlements", (Icon)null, this.aB, (string)null);
+      this.O.addTab("Settlements", (Icon)null, this.aB, null);
       this.O.setEnabledAt(10, false);
       this.aC = new ap(this);
-      this.O.addTab("Discovery", (Icon)null, this.aC, (string)null);
+      this.O.addTab("Discovery", (Icon)null, this.aC, null);
       this.O.setEnabledAt(11, false);
       this.aD = new bE(this);
-      this.O.addTab("Milestones / Reputation", (Icon)null, this.aD, (string)null);
+      this.O.addTab("Milestones / Reputation", (Icon)null, this.aD, null);
       this.O.setEnabledAt(12, false);
       this.aE = new c(this);
-      this.O.addTab("Account", (Icon)null, this.aE, (string)null);
+      this.O.addTab("Account", (Icon)null, this.aE, null);
       this.O.setEnabledAt(13, false);
       this.O.addChangeListener((var1x) => {
          if (this.O.SelectedIndex == 12) {
@@ -1778,21 +1778,21 @@ public class Application {
       ToolStripMenuItem var6 = new ToolStripMenuItem("File");
       var5.Add(var6);
       ToolStripMenuItem var7 = new ToolStripMenuItem("Open File/Path");
-      var7.setAccelerator(Keys.getKeyStroke(79, 2));
+      var7.setAccelerator(/* KeyStroke */ Keys.None; //(79, 2));
       var7.Click += ((var1x) => {
          this.k();
       });
       var6.Add(var7);
       this.Z = new ToolStripMenuItem("Reload File");
       this.Z.Enabled = (false);
-      this.Z.setAccelerator(Keys.getKeyStroke(82, 2));
+      this.Z.setAccelerator(/* KeyStroke */ Keys.None; //(82, 2));
       this.Z.Click += ((var1x) => {
          this.l();
       });
       var6.Add(this.Z);
       this.aa = new ToolStripMenuItem("Save File");
       this.aa.Enabled = (false);
-      this.aa.setAccelerator(Keys.getKeyStroke(83, 2));
+      this.aa.setAccelerator(/* KeyStroke */ Keys.None; //(83, 2));
       this.aa.Click += ((var1x) => {
          Component var2 = this.N.getFocusOwner();
          if (var2 is G) {

@@ -28,8 +28,8 @@ public class cs : OpenFileDialog {
       this.setFileFilter(new cu(this));
       this.setDialogTitle("Choose Backup File");
       Panel var1 = new Panel();
-      var1.LayoutEnginenew BoxLayout(var1, 1));
-      var1.setBorder(object.createEmptyBorder(2, 5, 2, 2));
+      var1.SuspendLayout(); // TODO: set layout new BoxLayout(var1, 1));
+      var1.Padding = new Padding(0); /* setBorder */ //(null /* EmptyBorder */);
       var1.Add(new Label("Export Options:"));
       this.fO = new CheckBox("Products/Substances");
       var1.Add(this.fO);

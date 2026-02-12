@@ -18,7 +18,7 @@ class fB : fH, fr {
    }
 
    public void k(eY var1) {
-      this.a("ps4_accountdata", (fn)null, (string)null, (string)null);
+      this.a("ps4_accountdata", (fn)null, null, null);
       this.writeBytes(fA.l(var1));
    }
 }

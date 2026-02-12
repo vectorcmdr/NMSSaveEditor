@@ -6,15 +6,14 @@ using System.Text;
 namespace NMSSaveEditor
 {
 public sealed class gy {
-   public static readonly gy qU = new gy("Fourth Race", (string)null, "MODELS/COMMON/PLAYER/PLAYERCHARACTER/NPCFOURTH.SCENE.MBIN");
-   public static readonly gy qV = new gy("Vy’keen (Old)", (string)null, "MODELS/PLANETS/NPCS/WARRIOR/WARRIOR.SCENE.MBIN");
-   public static readonly gy qW = new gy("Korvax (Old)", (string)null, "MODELS/PLANETS/NPCS/EXPLORER/EXPLORERIPAD.SCENE.MBIN");
-   public static readonly gy qX = new gy("Gek (Old)", (string)null, "MODELS/PLANETS/NPCS/LOWERORDER/LOWERORDER.SCENE.MBIN");
    public static readonly gy qR = new gy("Vy’keen", "Warriors", "MODELS/COMMON/PLAYER/PLAYERCHARACTER/NPCVYKEEN.SCENE.MBIN");
    public static readonly gy qS = new gy("Korvax", "Explorers", "MODELS/COMMON/PLAYER/PLAYERCHARACTER/NPCKORVAX.SCENE.MBIN");
    public static readonly gy qT = new gy("Gek", "Traders", "MODELS/COMMON/PLAYER/PLAYERCHARACTER/NPCGEK.SCENE.MBIN");
-
-   public static readonly gy qY = new gy("Fourth Race (Old)", (string)null, "MODELS/PLANETS/NPCS/FOURTHRACE/FOURTHRACE.SCENE.MBIN");
+   public static readonly gy qU = new gy("Fourth Race", null, "MODELS/COMMON/PLAYER/PLAYERCHARACTER/NPCFOURTH.SCENE.MBIN");
+   public static readonly gy qV = new gy("Vy’keen (Old)", null, "MODELS/PLANETS/NPCS/WARRIOR/WARRIOR.SCENE.MBIN");
+   public static readonly gy qW = new gy("Korvax (Old)", null, "MODELS/PLANETS/NPCS/EXPLORER/EXPLORERIPAD.SCENE.MBIN");
+   public static readonly gy qX = new gy("Gek (Old)", null, "MODELS/PLANETS/NPCS/LOWERORDER/LOWERORDER.SCENE.MBIN");
+   public static readonly gy qY = new gy("Fourth Race (Old)", null, "MODELS/PLANETS/NPCS/FOURTHRACE/FOURTHRACE.SCENE.MBIN");
 
    private string name;
    private string qZ;

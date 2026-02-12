@@ -16,7 +16,7 @@ class bN : ba {
    }
 
    void a(string var1, gs var2) {
-      this.a(var1, (gs)var2, true, (string)null);
+      this.a(var1, (gs)var2, true, null);
    }
 
    void a(string var1, gs var2, bool var3, string var4) {
@@ -29,7 +29,7 @@ class bN : ba {
    }
 
    void a(string var1, bK var2) {
-      this.a(var1, (bK)var2, true, (string)null);
+      this.a(var1, (bK)var2, true, null);
    }
 
    void a(string var1, bK var2, bool var3, string var4) {

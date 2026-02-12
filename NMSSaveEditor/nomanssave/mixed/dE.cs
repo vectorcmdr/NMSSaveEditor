@@ -25,7 +25,7 @@ public class dE : Panel {
       var2.rowHeights = new int[1];
       var2.columnWeights = new double[]{0.0D, 0.0D, 1.0D};
       var2.rowWeights = new double[]{1.0D};
-      this.LayoutEnginevar2);
+      this.SuspendLayout(); // TODO: set layout var2);
       this.hv = new ba();
       GridBagConstraints var3 = new GridBagConstraints();
       var3.insets = new Padding(0, 0, 0, 0);

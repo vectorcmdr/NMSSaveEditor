@@ -21,22 +21,22 @@ public class cY : Form {
       this/* setModal */(true);
       Panel var2 = new Panel();
       this.setContentPane(var2);
-      var2.LayoutEnginenew TableLayoutPanel(0, 0));
+      var2.SuspendLayout(); // TODO: set layout new TableLayoutPanel(0, 0));
       Panel var3 = new Panel();
-      var3.LayoutEnginenew FlowLayoutPanel(0));
+      var3.SuspendLayout(); // TODO: set layout new FlowLayoutPanel(0));
       var3.Add(new Label("Please select a base part to swap your base computer with."));
-      var2.Add(var3, "North");
+      var2.Controls.Add(var3);
       Panel var4 = new Panel();
-      var4.LayoutEnginenew FormLayout(new ColumnSpec[]{FormFactory.LABEL_COMPONENT_GAP_COLSPEC, ColumnSpec.decode("100px"), FormFactory.LABEL_COMPONENT_GAP_COLSPEC, ColumnSpec.decode("250px"), FormFactory.LABEL_COMPONENT_GAP_COLSPEC}, new RowSpec[]{FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC}));
+      // TODO: var4.SuspendLayout(); // TODO: set layout /* FormLayout */ null, FormFactory.LABEL_COMPONENT_GAP_COLSPEC, ColumnSpec.decode("250px"), FormFactory.LABEL_COMPONENT_GAP_COLSPEC}, new RowSpec[]{FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC}));
       Label var5 = new Label("Base Part:");
-      var4.Add(var5, "2, 2, left, center");
+      var4.Controls.Add(var5);
       this.gM = new ComboBox();
       this.gM.DataSource = (new cZ(this));
       var4.Add(this.gM, "4, 2, fill, default");
-      var2.Add(var4, "Center");
+      var2.Controls.Add(var4);
       Panel var6 = new Panel();
-      var6.LayoutEnginenew FlowLayoutPanel(2));
-      var2.Add(var6, "South");
+      var6.SuspendLayout(); // TODO: set layout new FlowLayoutPanel(2));
+      var2.Controls.Add(var6);
       Button var7 = new Button("Save");
       var7.Click += (new da(this));
       var6.Add(var7);
@@ -44,7 +44,7 @@ public class cY : Form {
       Button var8 = new Button("Cancel");
       var8.Click += (new db(this));
       var6.Add(var8);
-      this.getRootPane().registerKeyboardAction(new dc(this), Keys.getKeyStroke(27, 0), 2);
+      this.getRootPane().registerKeyboardAction(new dc(this), /* KeyStroke */ Keys.None; //(27, 0), 2);
       this.PerformLayout();
    }
 
