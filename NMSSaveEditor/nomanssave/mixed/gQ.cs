@@ -16,7 +16,7 @@ public interface gQ {
 
    Object dz();
 
-   default string ei() {
+   string ei() {
       Object var1 = this.dz();
       return var1 is fg ? ((fg)var1).bP() : var1.ToString();
    }

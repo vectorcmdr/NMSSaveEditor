@@ -50,7 +50,7 @@ public class ap : Panel {
       var3.Add(var6, "2, 6, fill, default");
       Button var7 = new Button();
       var7.SetText("Add Technology");
-      var7.AddActionListener(new as(this));
+      var7.AddActionListener(new @as(this));
       var6.Add(var7);
       Button var8 = new Button();
       var8.SetText("Remove Selected");

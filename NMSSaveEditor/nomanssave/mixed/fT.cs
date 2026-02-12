@@ -210,7 +210,7 @@ public class fT : fq {
 
    public int W(string var1) {
       Matcher var2 = lV.Match(var1);
-      return !var2.Matches() ? -1 : int.Parse(var2.Groups[1));
+      return !var2.Matches() ? -1 : int.Parse(var2.Groups[1]);
    }
 
    private static int an(int var0) {

@@ -21,7 +21,7 @@ public class cU : FileView {
 
    public Image getIcon(FileInfo var1) {
       string var2 = var1.Name;
-      return (Icon)(var2.EndsWith(".sh0") ? cT.as() : base.getIcon(var1));
+      return (Icon)(var2.EndsWith(".sh0") ? cT.@as() : base.getIcon(var1));
    }
 
    public string getName(FileInfo var1) {

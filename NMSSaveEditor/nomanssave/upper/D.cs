@@ -50,7 +50,7 @@ public class D : ComboBoxModel {
       }
 
       var2 = -1;
-      (Application.n(this.aZ)) {
+lock(Application.n(this.aZ)) {
          int var4 = 0;
 
          while(var4 < Application.d(this.aZ).length) {

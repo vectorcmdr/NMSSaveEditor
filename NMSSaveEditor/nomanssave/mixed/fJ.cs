@@ -66,7 +66,7 @@ public class fJ : fq {
 
       Matcher var2 = lV.Match(var1);
       if (var2.Matches()) {
-         int var3 = var2.Groups[1).Length == 0 ? 0 : int.Parse(var2.Groups[1)) - 1;
+         int var3 = var2.Groups[1].Length == 0 ? 0 : int.Parse(var2.Groups[1]) - 1;
 
          try {
             this.ms[var3] = new fM(this, var3);
@@ -107,7 +107,7 @@ public class fJ : fq {
       if (!var2.Matches()) {
          return -1;
       } else {
-         int var3 = var2.Groups[1).Length == 0 ? 0 : int.Parse(var2.Groups[1)) - 1;
+         int var3 = var2.Groups[1].Length == 0 ? 0 : int.Parse(var2.Groups[1]) - 1;
          return var3 / 2;
       }
    }

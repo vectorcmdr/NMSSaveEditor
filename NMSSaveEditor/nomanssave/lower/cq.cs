@@ -22,7 +22,7 @@ public class cq : FileView {
    public Image getIcon(FileInfo var1) {
       string var2 = var1.Name;
       if (var2.EndsWith(".pet")) {
-         return cp.as();
+         return cp.@as();
       } else {
          return (Icon)(var2.EndsWith(".egg") ? cp.au() : base.getIcon(var1));
       }

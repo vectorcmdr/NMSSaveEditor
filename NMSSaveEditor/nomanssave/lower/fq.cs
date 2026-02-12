@@ -117,7 +117,7 @@ public interface fq {
 
    ft[] bU();
 
-   default ft[] bV() {
+   ft[] bV() {
       return (ft[])new List<object> {this.bU()).filter((var0) => {
          return !var0.Length == 0;
       }).ToArray((var0) => {
@@ -127,11 +127,11 @@ public interface fq {
 
    int W(string var1);
 
-   default bool bW() {
+   bool bW() {
       return false;
    }
 
-   default string a(int var1, eY var2) {
+   string a(int var1, eY var2) {
       throw new IOException("cannot create slot " + (var1 + 1));
    }
 

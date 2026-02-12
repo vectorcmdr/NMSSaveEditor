@@ -80,7 +80,7 @@ public class fu : fq {
                Matcher var12 = lC.Match(var11);
                if (var12.Matches()) {
                   try {
-                     this.lF[var8].be = ag(int.Parse(var12.Groups[1)));
+                     this.lF[var8].be = ag(int.Parse(var12.Groups[1]));
                   } catch (Exception var17) {
                   }
                }

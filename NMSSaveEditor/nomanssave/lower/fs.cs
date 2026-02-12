@@ -22,11 +22,11 @@ public interface fs {
 
    long lastModified();
 
-   default string getName() {
+   string getName() {
       return null;
    }
 
-   default string getDescription() {
+   string getDescription() {
       return null;
    }
 }

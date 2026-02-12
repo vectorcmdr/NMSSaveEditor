@@ -21,7 +21,7 @@ public class cm : FileView {
 
    public Image getIcon(FileInfo var1) {
       string var2 = var1.Name;
-      return (Icon)(!var2.EndsWith(".pb3") && !var2.EndsWith(".pb0") ? base.getIcon(var1) : cl.as());
+      return (Icon)(!var2.EndsWith(".pb3") && !var2.EndsWith(".pb0") ? base.getIcon(var1) : cl.@as());
    }
 
    public string getName(FileInfo var1) {

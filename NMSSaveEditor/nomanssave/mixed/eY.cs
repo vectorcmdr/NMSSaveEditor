@@ -319,7 +319,7 @@ public class eY {
             break;
          }
 
-         if (var1.StartsWith((string)var2.getKey() + ".") || var1.StartsWith((string)var2.getKey() + "[")) {
+         if (var1.StartsWith((string)var2.getKey() + ".") || var1.StartsWith((string)var2.getKey() + "["]) {
             var1 = (string)((Function)var2.getValue()).apply(this) + var1.Substring(((string)var2.getKey()).Length);
             break;
          }
@@ -329,26 +329,26 @@ public class eY {
       if (var5.Success && var5.start() == 0) {
          int var6 = var5.end();
          Object var4;
-         if (var5.Groups[1) != null) {
-            var4 = new fb(this, var5.Groups[1), (fc)null);
+         if (var5.Groups[1] != null) {
+            var4 = new fb(this, var5.Groups[1], (fc)null);
          } else {
-            if (var5.Groups[3) == null) {
+            if (var5.Groups[3] == null) {
                throw new Exception("Invalid path");
             }
 
-            var4 = new eZ(this, int.Parse(var5.Groups[3)), (fc)null);
+            var4 = new eZ(this, int.Parse(var5.Groups[3]), (fc)null);
          }
 
          while(var5.Success && var5.start() == var6) {
             var6 = var5.end();
-            if (var5.Groups[2) != null) {
-               var4 = new fb(this, var5.Groups[2), (fc)var4);
+            if (var5.Groups[2] != null) {
+               var4 = new fb(this, var5.Groups[2], (fc)var4);
             } else {
-               if (var5.Groups[3) == null) {
+               if (var5.Groups[3] == null) {
                   throw new Exception("Invalid path");
                }
 
-               var4 = new eZ(this, int.Parse(var5.Groups[3)), (fc)var4);
+               var4 = new eZ(this, int.Parse(var5.Groups[3]), (fc)var4);
             }
          }
 

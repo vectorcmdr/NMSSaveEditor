@@ -149,7 +149,7 @@ public class fA : fq {
       if (!var2.Matches()) {
          return -1;
       } else {
-         int var3 = int.Parse(var2.Groups[1)) - 2;
+         int var3 = int.Parse(var2.Groups[1]) - 2;
          return var3 >= 0 ? var3 / 2 : -1;
       }
    }
@@ -157,7 +157,7 @@ public class fA : fq {
    public void X(string var1) {
       Matcher var2 = lV.Match(var1);
       if (var2.Matches()) {
-         int var3 = int.Parse(var2.Groups[1)) - 2;
+         int var3 = int.Parse(var2.Groups[1]) - 2;
          if (var3 == -2) {
             try {
                this.lY = new fB(this);

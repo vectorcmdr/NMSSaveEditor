@@ -15,7 +15,7 @@ public class as : ActionListener {
    // $FF: synthetic field
    ap cu;
 
-   as(ap var1) {
+   @as(ap var1) {
       this.cu = var1;
    }
 

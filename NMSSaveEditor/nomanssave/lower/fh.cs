@@ -109,7 +109,7 @@ public class fh {
 
    private static string a(eV var0, string var1, bool var2, Predicate var3) {
       StringBuilder var4 = new StringBuilder();
-      var4.append('[');
+      var4.append('['];
 
       for(int var5 = 0; var5 < var0.length; ++var5) {
          if (var5 > 0) {
@@ -195,8 +195,8 @@ public class fh {
             var1.append(Character.toString((char)var6));
          } else {
             var1.append("\\x");
-            var1.append("0123456789ABCDEFabcdef"[var6 >> 4 & 15));
-            var1.append("0123456789ABCDEFabcdef"[var6 & 15));
+            var1.append("0123456789ABCDEFabcdef"[var6 >> 4 & 15]);
+            var1.append("0123456789ABCDEFabcdef"[var6 & 15]);
          }
       }
 
@@ -236,10 +236,10 @@ public class fh {
             var2.append(Character.toString(var3));
          } else {
             var2.append("\\u");
-            var2.append("0123456789ABCDEFabcdef"[var3 >> 12 & 15));
-            var2.append("0123456789ABCDEFabcdef"[var3 >> 8 & 15));
-            var2.append("0123456789ABCDEFabcdef"[var3 >> 4 & 15));
-            var2.append("0123456789ABCDEFabcdef"[var3 & 15));
+            var2.append("0123456789ABCDEFabcdef"[var3 >> 12 & 15]);
+            var2.append("0123456789ABCDEFabcdef"[var3 >> 8 & 15]);
+            var2.append("0123456789ABCDEFabcdef"[var3 >> 4 & 15]);
+            var2.append("0123456789ABCDEFabcdef"[var3 & 15]);
          }
       }
 

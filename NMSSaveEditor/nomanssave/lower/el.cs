@@ -13,10 +13,10 @@ namespace NMSSaveEditor
 
 public class el : FileView {
    // $FF: synthetic field
-   ej is;
+   ej @is;
 
    el(ej var1) {
-      this.is = var1;
+      this.@is = var1;
    }
 
    public Image getIcon(FileInfo var1) {
@@ -24,12 +24,12 @@ public class el : FileView {
       if (var1.IsFile()) {
          var2 = var1.Name;
          if (var2.EndsWith(".hg") && !var2.StartsWith("mf_")) {
-            return ej.as();
+            return ej.@as();
          } else {
             return var2.Equals("containers.index") ? ej.au() : null;
          }
       } else {
-         var2 = ej.a(this.is, var1);
+         var2 = ej.a(this.@is, var1);
          return var2 == null ? null : ej.aR();
       }
    }
@@ -38,7 +38,7 @@ public class el : FileView {
       if (var1.IsFile()) {
          return var1.Name;
       } else {
-         string var2 = ej.a(this.is, var1);
+         string var2 = ej.a(this.@is, var1);
          return var2 == null ? var1.Name : "[" + var2 + "] " + var1.Name;
       }
    }

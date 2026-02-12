@@ -29,7 +29,7 @@ public class eR : ey {
    }
 
    public Object M(int var1) {
-      if (this.id.Length == 13 && this.id[0) == '^') {
+      if (this.id.Length == 13 && this.id[0] == '^') {
          if (var1 >= 0 && var1 < 100000) {
             MemoryStream var2 = new MemoryStream();
             var2.Write(94);
@@ -37,8 +37,8 @@ public class eR : ey {
             int var3;
             int var4;
             for(var3 = 0; var3 < 6; ++var3) {
-               var4 = "0123456789ABCDEFabcdef".IndexOf(this.id[var3 * 2 + 1));
-               int var5 = "0123456789ABCDEFabcdef".IndexOf(this.id[var3 * 2 + 2));
+               var4 = "0123456789ABCDEFabcdef".IndexOf(this.id[var3 * 2 + 1]);
+               int var5 = "0123456789ABCDEFabcdef".IndexOf(this.id[var3 * 2 + 2]);
                if (var4 < 0 || var5 < 0) {
                   throw new Exception("Cannot create ID: invalid hex");
                }
@@ -58,7 +58,7 @@ public class eR : ey {
 
             for(var3 = 100000; var3 > 1; var3 /= 10) {
                var4 = var1 * 10 / var3 % 10;
-               var2.Write("0123456789ABCDEFabcdef"[var4));
+               var2.Write("0123456789ABCDEFabcdef"[var4]);
             }
 
             return new fg(var2.toByteArray());

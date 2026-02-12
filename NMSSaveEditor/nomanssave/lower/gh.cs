@@ -24,7 +24,7 @@ public class gh {
    }
 
    public gy cJ() {
-      return gy.as(this.nn.getValueAsString("ResourceElement.Filename"));
+      return gy.@as(this.nn.getValueAsString("ResourceElement.Filename"));
    }
 
    public string cK() {

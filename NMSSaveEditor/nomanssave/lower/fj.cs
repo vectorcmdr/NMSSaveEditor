@@ -199,8 +199,8 @@ public class fj : Closeable {
          } else {
             StringBuffer var7 = new StringBuffer();
             var7.append("\\u00");
-            var7.append("0123456789ABCDEFabcdef"[var6 >> 4 & 15));
-            var7.append("0123456789ABCDEFabcdef"[var6 & 15));
+            var7.append("0123456789ABCDEFabcdef"[var6 >> 4 & 15]);
+            var7.append("0123456789ABCDEFabcdef"[var6 & 15]);
             this.lh.Write(var7.ToString().GetBytes(StandardCharsets.UTF_8));
          }
       }

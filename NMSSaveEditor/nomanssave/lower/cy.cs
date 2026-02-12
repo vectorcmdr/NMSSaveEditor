@@ -130,10 +130,10 @@ public class cy : Form, TreeSelectionListener {
                var1.append(var2[var3]);
             } else {
                var1.append("\\u");
-               var1.append("0123456789ABCDEFabcdef"[var2[var3] >> 12 & 15));
-               var1.append("0123456789ABCDEFabcdef"[var2[var3] >> 8 & 15));
-               var1.append("0123456789ABCDEFabcdef"[var2[var3] >> 4 & 15));
-               var1.append("0123456789ABCDEFabcdef"[var2[var3] & 15));
+               var1.append("0123456789ABCDEFabcdef"[var2[var3] >> 12 & 15]);
+               var1.append("0123456789ABCDEFabcdef"[var2[var3] >> 8 & 15]);
+               var1.append("0123456789ABCDEFabcdef"[var2[var3] >> 4 & 15]);
+               var1.append("0123456789ABCDEFabcdef"[var2[var3] & 15]);
             }
          } else {
             var1.append(var2[var3]);

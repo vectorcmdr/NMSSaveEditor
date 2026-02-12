@@ -26,7 +26,7 @@ public class hl {
       long var1 = 0L;
 
       for(int var4 = 0; var4 < var0.Length; ++var4) {
-         char var3 = var0[var4);
+         char var3 = var0[var4];
          var1 <<= 4;
          if (var3 >= 'A' && var3 <= 'F') {
             var1 |= (long)(var3 - 55);
@@ -60,19 +60,19 @@ public class hl {
       Matcher var2;
       long var3;
       if ((var2 = sP.Match(var0)).Matches()) {
-         var3 = aE(var2.Groups[1)) - 2047L;
+         var3 = aE(var2.Groups[1]) - 2047L;
          if (var3 > 2047L) {
             throw new Exception("Invalid galactic coordinates");
          } else {
-            long var11 = aE(var2.Groups[2)) - 127L;
+            long var11 = aE(var2.Groups[2]) - 127L;
             if (var11 > 127L) {
                throw new Exception("Invalid galactic coordinates");
             } else {
-               long var12 = aE(var2.Groups[3)) - 2047L;
+               long var12 = aE(var2.Groups[3]) - 2047L;
                if (var12 > 2047L) {
                   throw new Exception("Invalid galactic coordinates");
                } else {
-                  long var13 = aE(var2.Groups[4));
+                  long var13 = aE(var2.Groups[4]);
                   if (var13 > 65535L) {
                      throw new Exception("Invalid galactic coordinates");
                   } else {
@@ -104,7 +104,7 @@ public class hl {
          string var5 = (string)var0;
          Matcher var2;
          if ((var2 = sN.Match(var5)).Matches()) {
-            long var3 = aE(var2.Groups[1));
+            long var3 = aE(var2.Groups[1]);
             return new hl(var3);
          } else {
             return e(var5, 0);

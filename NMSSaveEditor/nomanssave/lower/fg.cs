@@ -65,8 +65,8 @@ public class fg {
          } else if (var2) {
             var1.append((char)var4);
          } else {
-            var1.append("0123456789ABCDEFabcdef"[(this.bytes[var3] & 240) >> 4));
-            var1.append("0123456789ABCDEFabcdef"[this.bytes[var3] & 15));
+            var1.append("0123456789ABCDEFabcdef"[(this.bytes[var3] & 240) >> 4]);
+            var1.append("0123456789ABCDEFabcdef"[this.bytes[var3] & 15]);
          }
       }
 

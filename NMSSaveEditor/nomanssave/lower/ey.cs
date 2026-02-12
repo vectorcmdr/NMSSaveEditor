@@ -101,7 +101,7 @@ public abstract class ey {
    }
 
    public Object aZ() {
-      if (this.id.Length >= 2 && this.id[0) == '^') {
+      if (this.id.Length >= 2 && this.id[0] == '^') {
          if (this.bb()) {
             int var1 = (int)Math.Floor(new Random().NextDouble() * 100000.0D);
             return this.id + "#" + L(var1);
@@ -114,7 +114,7 @@ public abstract class ey {
    }
 
    public Object M(int var1) {
-      if (this.id.Length >= 2 && this.id[0) == '^') {
+      if (this.id.Length >= 2 && this.id[0] == '^') {
          if (this.bb()) {
             if (var1 >= 0 && var1 < 100000) {
                return this.id + "#" + L(var1);

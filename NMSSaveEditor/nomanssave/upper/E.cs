@@ -46,7 +46,7 @@ public class E : ComboBoxModel {
       }
 
       var2 = -1;
-      (Application.n(this.aZ)) {
+      lock(Application.n(this.aZ)) {
          int var4 = 0;
 
          for(int var5 = 0; var5 < Application.f(this.aZ).length; ++var5) {

@@ -25,7 +25,7 @@ public class fF : FileFilter {
    public bool accept(FileInfo var1) {
       Matcher var2 = fA.cb().Match(var1.Name);
       if (var2.Matches()) {
-         int var3 = var2.Groups[1).Length == 0 ? 0 : int.Parse(var2.Groups[1)) - 1;
+         int var3 = var2.Groups[1].Length == 0 ? 0 : int.Parse(var2.Groups[1]) - 1;
          if (var3 / 2 == this.mf.lT) {
             try {
                this.mg.Add(new fC(fE.a(this.mf), var1.Name, var3));

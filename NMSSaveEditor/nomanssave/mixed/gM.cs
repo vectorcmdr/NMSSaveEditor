@@ -51,7 +51,7 @@ public class gM {
    }
 
    public gy ed() {
-      return gy.as(this.rI.getValueAsString("NPCResource.Filename"));
+      return gy.@as(this.rI.getValueAsString("NPCResource.Filename"));
    }
 
    public void a(gy var1) {

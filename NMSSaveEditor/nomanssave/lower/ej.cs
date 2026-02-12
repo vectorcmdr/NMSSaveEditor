@@ -35,7 +35,7 @@ public class ej : OpenFileDialog {
    private string a(FileInfo var1) {
       Matcher var2 = iq.Match(var1.Name);
       if (var2.Matches()) {
-         long var3 = long.Parse(var2.Groups[1));
+         long var3 = long.Parse(var2.Groups[1]);
          return hi.h(var3);
       } else {
          return null;
@@ -70,7 +70,7 @@ public class ej : OpenFileDialog {
    }
 
    // $FF: synthetic method
-   static Image as() {
+   static Image @as() {
       return im;
    }
 

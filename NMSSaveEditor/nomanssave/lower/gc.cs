@@ -50,8 +50,8 @@ public class gc {
    private static void a(byte var0, StringBuilder var1) {
       int var2 = (240 & var0) >> 4;
       int var3 = 15 & var0;
-      var1.append("0123456789ABCDEF"[var2));
-      var1.append("0123456789ABCDEF"[var3));
+      var1.append("0123456789ABCDEF"[var2]);
+      var1.append("0123456789ABCDEF"[var3]);
    }
 
    public static void a(Stream var0, string var1) {

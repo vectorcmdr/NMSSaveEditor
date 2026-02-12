@@ -61,7 +61,7 @@ public class cs : OpenFileDialog {
    }
 
    // $FF: synthetic method
-   static Image as() {
+   static Image @as() {
       return fH;
    }
 }

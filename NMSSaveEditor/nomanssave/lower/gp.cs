@@ -145,7 +145,7 @@ public class gp {
       return this.oR.J("TotalNumberOfExpeditions");
    }
 
-   public void as(int var1) {
+   public void @as(int var1) {
       this.oR.b("TotalNumberOfExpeditions", (Object)(new Integer(var1)));
    }
 

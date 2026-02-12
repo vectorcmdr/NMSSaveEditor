@@ -27,7 +27,7 @@ public class fY : fX, fs {
          string var3 = new string(this.ah(1048576));
          Matcher var4 = fT.cl().Match(var3);
          if (var4.Success) {
-            this.na = var4.Groups[3);
+            this.na = var4.Groups[3];
          }
 
          this.me = fn.T(var3);

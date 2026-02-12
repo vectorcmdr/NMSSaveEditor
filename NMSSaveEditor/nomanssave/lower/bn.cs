@@ -28,7 +28,7 @@ public class bn : G {
          try {
             int var3 = hf.b(var1, 0, int.MaxValue);
             if (var3 != var2) {
-               bl.c(this.er)[bl.b(this.er)].as(var3);
+               bl.c(this.er)[bl.b(this.er)].@as(var3);
             }
 
             return Convert.ToString(var3);
