@@ -18,18 +18,38 @@ public class eS {
    public static List<object> kq = new List<object>();
 
    static eS() {
-      Stream var0 = typeof(Application).GetManifestResourceStream("db/words.xml");
+      Stream var0 = typeof(Application).Assembly.GetManifestResourceStream("NMSSaveEditor.Resources.db.words.xml");
       if (var0 != null) {
          try {
-            Document var1 = DocumentBuilderFactory.newInstance(object>();
-      XmlNodeList var2 = var1.getElementsByTagName("group");
+            XmlDocument doc = new XmlDocument();
+            doc.Load(var0);
+            XmlElement var2 = doc.DocumentElement;
+            XmlNodeList var3 = var2.ChildNodes;
 
-      for(int var3 = 0; var3 < var2.getLength(); ++var3) {
-         Element var4 = (Element)var2.item(var3);
-         string var5 = var4.getAttribute("group");
-         eU var6 = eU.C(var4.getAttribute("race"));
+            for(int var4 = 0; var4 < var3.Count; ++var4) {
+               XmlNode var5 = var3[var4];
+               if (var5 is XmlElement && var5.Name.Equals("word")) {
+                  kq.Add(new eS((XmlElement)var5));
+               }
+            }
+         } catch (Exception) { }
+      }
+
+      kq.Sort(new eT());
+   }
+
+   public eS(XmlElement var1) {
+      this.id = ((XmlElement)var1).GetAttribute("id");
+      this.text = ((XmlElement)var1).GetAttribute("text");
+      this.kp = new Dictionary<object, object>();
+      XmlNodeList var2 = ((XmlElement)var1).GetElementsByTagName("group");
+
+      for(int var3 = 0; var3 < var2.Count; ++var3) {
+         XmlElement var4 = (XmlElement)var2[var3];
+         string var5 = var4.GetAttribute("group");
+         eU var6 = eU.C(var4.GetAttribute("race"));
          if (var6 != null) {
-            this.kp.Put(var5, var6);
+            this.kp[var5] = var6;
          }
       }
 
@@ -43,12 +63,12 @@ public class eS {
       return this.text;
    }
 
-   public Iterable bw() {
-      return Collections.unmodifiableSet(this.kp.Keys);
+   public IEnumerable<object> bw() {
+      return new List<object>(this.kp.Keys);
    }
 
    public eU z(string var1) {
-      return (eU)this.kp[var1];
+      return this.kp.ContainsKey(var1) ? (eU)this.kp[var1] : null;
    }
 
    public bool a(eU var1) {
@@ -89,7 +109,7 @@ public class eS {
       return (eS)kq[var0];
    }
 
-   public static Iterable by() {
+   public static IEnumerable<object> by() {
       return new List<object>(kq);
    }
 }
