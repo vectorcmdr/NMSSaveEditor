@@ -108,21 +108,25 @@ public partial class JsonObject
         }
     }
 
-    // Type-safe getters
-    public JsonObject? GetObject(string name) => Get(name) as JsonObject;
-    public JsonArray? GetArray(string name) => Get(name) as JsonArray;
-    public string? GetString(string name) => Get(name) as string;
-    public int GetInt(string name) => Convert.ToInt32(Get(name));
-    public long GetLong(string name) => Convert.ToInt64(Get(name));
-    public double GetDouble(string name) => Convert.ToDouble(Get(name));
-    public bool GetBool(string name) => Convert.ToBoolean(Get(name));
-    public decimal GetDecimal(string name) => Convert.ToDecimal(Get(name));
+    // Type-safe getters - use GetValue for path/transform support
+    public JsonObject? GetObject(string name) => GetValue(name) as JsonObject;
+    public JsonArray? GetArray(string name) => GetValue(name) as JsonArray;
+    public string? GetString(string name) => GetValue(name) as string;
+    public int GetInt(string name) => Convert.ToInt32(GetValue(name));
+    public long GetLong(string name) => Convert.ToInt64(GetValue(name));
+    public double GetDouble(string name) => Convert.ToDouble(GetValue(name));
+    public bool GetBool(string name) => Convert.ToBoolean(GetValue(name));
+    public decimal GetDecimal(string name) => Convert.ToDecimal(GetValue(name));
 
     // Path-based access (ported from Java getValue method)
+    // Supports dotted paths like "PlayerStateData.Health" and transforms
     public object? GetValue(string path)
     {
+        // Check transforms first (port of Java G() method)
+        string resolvedPath = ResolveTransforms(path);
+
         object? current = this;
-        var matches = PathPattern().Matches(path);
+        var matches = PathPattern().Matches(resolvedPath);
         foreach (Match match in matches)
         {
             if (current is null) return null;
@@ -139,6 +143,25 @@ public partial class JsonObject
                 return null;
         }
         return current;
+    }
+
+    private string ResolveTransforms(string path)
+    {
+        foreach (var kvp in _transforms)
+        {
+            if (path == kvp.Key)
+            {
+                var result = kvp.Value(this);
+                if (result is string s) return s;
+            }
+            else if (path.StartsWith(kvp.Key + ".") || path.StartsWith(kvp.Key + "["))
+            {
+                var result = kvp.Value(this);
+                if (result is string s)
+                    return s + path.Substring(kvp.Key.Length);
+            }
+        }
+        return path;
     }
 
     public JsonObject DeepClone()

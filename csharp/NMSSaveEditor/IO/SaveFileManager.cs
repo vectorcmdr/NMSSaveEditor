@@ -80,7 +80,26 @@ public class SaveFileManager
             json = System.Text.Encoding.UTF8.GetString(fileData);
         }
 
-        return JsonObject.Parse(json);
+        var result = JsonObject.Parse(json);
+
+        // Register the PlayerStateData context transform (port of Java ff.a(eG))
+        // NMS saves nest PlayerStateData under BaseContext or ExpeditionContext
+        // depending on the ActiveContext field
+        if (result.Get("PlayerStateData") == null)
+        {
+            result.RegisterTransform("PlayerStateData", obj =>
+            {
+                if (obj is not JsonObject root) return "PlayerStateData";
+                var activeContext = root.Get("ActiveContext") as string;
+                if (activeContext == "Main" && root.GetValue("BaseContext.PlayerStateData") != null)
+                    return "BaseContext.PlayerStateData";
+                if (activeContext == "Season" && root.GetValue("ExpeditionContext.PlayerStateData") != null)
+                    return "ExpeditionContext.PlayerStateData";
+                return "PlayerStateData";
+            });
+        }
+
+        return result;
     }
 
     /// <summary>
