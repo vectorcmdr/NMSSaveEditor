@@ -11,7 +11,7 @@ public class fd : Exception {
    public fd() {
    }
    public fd(fd var1) {
-      this();
+      // PORT_TODO: // PORT_TODO: this();
    }
 }
 

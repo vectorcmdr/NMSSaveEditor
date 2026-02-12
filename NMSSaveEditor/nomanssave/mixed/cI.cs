@@ -67,7 +67,7 @@ public class cI : TreeModel {
 
    }
    public cI(cy var1, cI var2) {
-      this(var1);
+      // PORT_TODO: // PORT_TODO: this(var1);
    }
 }
 

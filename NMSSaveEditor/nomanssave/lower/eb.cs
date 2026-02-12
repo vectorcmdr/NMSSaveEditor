@@ -21,10 +21,10 @@ public class eb : em {
 
    public eb(Application var1) {
       GridBagLayout var2 = new GridBagLayout();
-      var2.columnWidths = new int[]{aH.cI, aH.cI, aH.cI, aH.cI, 0};
-      var2.rowHeights = new int[3];
-      var2.columnWeights = new double[]{0.0D, 0.0D, 0.0D, 0.0D, Double.MIN_VALUE};
-      var2.rowWeights = new double[]{0.0D, 0.0D, Double.MIN_VALUE};
+      // PORT_TODO: // PORT_TODO: var2.columnWidths = new int[]{aH.cI, aH.cI, aH.cI, aH.cI, 0};
+      // PORT_TODO: // PORT_TODO: var2.rowHeights = new int[3];
+      // PORT_TODO: // PORT_TODO: var2.columnWeights = new double[]{0.0D, 0.0D, 0.0D, 0.0D, Double.MIN_VALUE};
+      // PORT_TODO: // PORT_TODO: var2.rowWeights = new double[]{0.0D, 0.0D, Double.MIN_VALUE};
       this.SuspendLayout(); // TODO: set layout var2);
       this.ic = new gM[0];
       this.ib = new ec[0];

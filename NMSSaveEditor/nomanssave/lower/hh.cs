@@ -1096,7 +1096,7 @@ public class hh {
    }
 
    public hh() {
-      this(0L, 0L);
+      // PORT_TODO: // PORT_TODO: this(0L, 0L);
    }
 
    public hh(long var1, long var3) {

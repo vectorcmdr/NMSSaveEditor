@@ -16,7 +16,7 @@ public a(Frame var1) : base(var1) {
       this.FormBorderStyle = FormBorderStyle.FixedDialog; //(false);
       // setModalExclusionType not available in WinForms
       this.Text = ("About Save Editor");
-      this/* setModal */(true);
+      // PORT_TODO: // PORT_TODO: this/* setModal */(true);
       JTextPane var2 = new JTextPane();
       var2.Padding = new Padding(0); /* setBorder */ //(null /* EmptyBorder */);
       var2.setOpaque(false);

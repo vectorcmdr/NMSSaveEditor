@@ -54,7 +54,7 @@ public class hn : Stream {
       }
    }
    public hn(hm var1, int var2, hn var3) {
-      this(var1, var2);
+      // PORT_TODO: // PORT_TODO: this(var1, var2);
    }
 
    // Stream abstract member stubs

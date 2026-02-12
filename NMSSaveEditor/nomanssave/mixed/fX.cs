@@ -25,7 +25,7 @@ public abstract class fX {
       for(int var4 = 0; var4 < fT.c(var1).Count; ++var4) {
          int var5 = ((fW)fT.c(var1)[var4]).name.CompareTo(var2.mO.name);
          if (var5 == 0) {
-            fW var6 = (fW)fT.c(var1).Remove(var4);
+      // PORT_TODO: // PORT_TODO: fW var6 = (fW)fT.c(var1).Remove(var4);
             fT.i(new FileInfo(System.IO.Path.Combine((fT.d(var1)).ToString(), (var6.mU).ToString())));
          }
 

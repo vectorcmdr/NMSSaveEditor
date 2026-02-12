@@ -15,10 +15,10 @@ public class em : Panel {
 
    public em() {
       GridBagLayout var1 = new GridBagLayout();
-      var1.columnWidths = new int[]{aH.cI, 0, 0};
-      var1.rowHeights = new int[1];
-      var1.columnWeights = new double[]{0.0D, 1.0D, Double.MIN_VALUE};
-      var1.rowWeights = new double[]{1.0D};
+      // PORT_TODO: // PORT_TODO: var1.columnWidths = new int[]{aH.cI, 0, 0};
+      // PORT_TODO: // PORT_TODO: var1.rowHeights = new int[1];
+      // PORT_TODO: // PORT_TODO: var1.columnWeights = new double[]{0.0D, 1.0D, Double.MIN_VALUE};
+      // PORT_TODO: // PORT_TODO: var1.rowWeights = new double[]{1.0D};
       this.SuspendLayout(); // TODO: set layout var1);
       this.it = new ba();
       GridBagConstraints var2 = new GridBagConstraints();

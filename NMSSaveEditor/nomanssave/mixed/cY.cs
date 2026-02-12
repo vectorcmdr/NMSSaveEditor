@@ -19,7 +19,7 @@ public cY(Frame var1) : base(var1) {
       this.FormBorderStyle = FormBorderStyle.FixedDialog; //(false);
       // setModalExclusionType not available in WinForms
       this.Text = ("Move Base Computer");
-      this/* setModal */(true);
+      // PORT_TODO: // PORT_TODO: this/* setModal */(true);
       Panel var2 = new Panel();
       this.setContentPane(var2);
       var2.SuspendLayout(); // TODO: set layout new TableLayoutPanel());

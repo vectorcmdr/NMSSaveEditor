@@ -64,10 +64,10 @@ public class eE : List<object> {
       return null;
    }
    public eE(eE var1) {
-      this();
+      // PORT_TODO: // PORT_TODO: this();
    }
    public eE(eE var1, eE var2) {
-      this();
+      // PORT_TODO: // PORT_TODO: this();
    }
 }
 

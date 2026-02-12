@@ -47,17 +47,17 @@ public class ej : JFileChooser {
             var0 = var0.Directory;
          }
 
-         ir.setCurrentDirectory(var0);
+         ir.setCurrentDirectory(var0.FullName.FullName);
       } else {
          FileInfo var1 = new FileInfo(Environment.GetEnvironmentVariable("user.home"));
          FileInfo var2 = new FileInfo(System.IO.Path.Combine((var1).ToString(), ("AppData\\Roaming\\HelloGames\\NMS").ToString()));
          FileInfo var3 = new FileInfo(System.IO.Path.Combine((var1).ToString(), ("AppData\\Local\\Packages\\HelloGames.NoMansSky_bs190hzg1sesy\\SystemAppData").ToString()));
          if (var2.Attributes.HasFlag(FileAttributes.Directory)) {
-            ir.setCurrentDirectory(var2);
+            ir.setCurrentDirectory(var2.FullName.FullName);
          } else if (var3.Attributes.HasFlag(FileAttributes.Directory)) {
-            ir.setCurrentDirectory(var3);
+            ir.setCurrentDirectory(var3.FullName.FullName);
          } else {
-            ir.setCurrentDirectory(var1);
+            ir.setCurrentDirectory(var1.FullName.FullName);
          }
       }
 

@@ -82,7 +82,7 @@ public class bO : Panel, eo {
          for(int var4 = 0; var4 < this.eS.Controls.Count; ++var4) {
             Component var5 = this.eS.Controls[var4];
             if (var5 is bS) {
-               bS var6 = (bS)var5;
+      // PORT_TODO: // PORT_TODO: bS var6 = (bS)var5;
                bS.b(var6).Enabled = (var2);
                bS.g(var6).Enabled = (var2);
             }
@@ -201,7 +201,7 @@ public class bO : Panel, eo {
          for(int var4 = 0; var4 < this.eS.Controls.Count; ++var4) {
             Component var5 = this.eS.Controls[var4];
             if (var5 is bS) {
-               bS var6 = (bS)var5;
+      // PORT_TODO: // PORT_TODO: bS var6 = (bS)var5;
                if (bS.h(var6) == var1 && bS.i(var6) == var2) {
                   return var6;
                }

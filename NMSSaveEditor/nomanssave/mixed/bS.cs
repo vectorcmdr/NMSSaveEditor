@@ -278,7 +278,7 @@ public class bS : Panel {
       return var0.eZ;
    }
    public bS(bO var1, int var2, int var3, bS var4) {
-      this(var1, var2, var3);
+      // PORT_TODO: // PORT_TODO: this(var1, var2, var3);
    }
    public static int h(bS var0) {
       return var0.x;

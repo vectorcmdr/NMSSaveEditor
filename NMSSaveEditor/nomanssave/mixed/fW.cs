@@ -54,7 +54,7 @@ public class fW {
    }
 
    public fW(fT var1, string var2) {
-      this(var1, (Stream)(new MemoryStream(hk.aD(var2))));
+      // PORT_TODO: // PORT_TODO: this(var1, (Stream)(new MemoryStream(hk.aD(var2))));
    }
 
    public fW(fT var1, fW var2) {

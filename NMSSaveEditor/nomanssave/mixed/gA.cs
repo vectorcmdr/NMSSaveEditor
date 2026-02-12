@@ -46,7 +46,7 @@ public class gA {
 
    }
    public gA(gz var1, eS var2, gA var3) {
-      this(var1, var2);
+      // PORT_TODO: // PORT_TODO: this(var1, var2);
    }
 }
 

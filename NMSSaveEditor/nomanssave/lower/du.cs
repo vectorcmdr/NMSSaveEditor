@@ -114,7 +114,7 @@ public class du : Panel {
       var0.aM();
    }
    public du(dt var1, gF var2, du var3) {
-      this(var1, var2);
+      // PORT_TODO: // PORT_TODO: this(var1, var2);
    }
    public static dt d(du var0) {
       return var0.ho;

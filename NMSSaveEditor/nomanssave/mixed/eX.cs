@@ -14,7 +14,7 @@ public class eX : IOException {
    public int kG;
 
    public eX(string var1) {
-      this(var1, 1, 0);
+      // PORT_TODO: // PORT_TODO: this(var1, 1, 0);
    }
 
 public eX(string var1, int var2, int var3) : base(var1) {

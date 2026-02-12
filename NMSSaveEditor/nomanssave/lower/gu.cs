@@ -56,7 +56,7 @@ public class gu : gQ {
       this.qD.b("FullyInstalled", (object)(new Boolean(var1)));
    }
    public gu(gt var1, eY var2, gu var3) {
-      this(var1, var2);
+      // PORT_TODO: // PORT_TODO: this(var1, var2);
    }
 }
 

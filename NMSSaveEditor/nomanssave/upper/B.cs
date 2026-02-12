@@ -18,7 +18,7 @@ public class B : object {
 
    public void windowClosing(FormClosedEventArgs var1) {
       if (Application.i(this.aZ) || Application.j(this.aZ)) {
-         int var2 = MessageBox.Show(Application.h(this.aZ), "Save data before closing?", "Save", 0);
+         int var2 = (int)(int)MessageBox.Show(Application.h(this.aZ), "Save data before closing?", "Save", 0);
          if (var2 == 0) {
             if (Application.i(this.aZ)) {
                Application.k(this.aZ);

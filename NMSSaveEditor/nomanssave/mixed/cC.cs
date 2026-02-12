@@ -21,7 +21,7 @@ public class cC : ActionListener {
 
       try {
          cy.d(this.gg).Text = (var2);
-         ((cI)cy.e(this.gg).DataSource).a(cy.d(this.gg));
+      // PORT_TODO: // PORT_TODO: ((cI)cy.e(this.gg).DataSource).a(cy.d(this.gg));
          cy.e(this.gg).setSelectionRow(0);
          cy.e(this.gg).Show();
          cy.f(this.gg).Hide();

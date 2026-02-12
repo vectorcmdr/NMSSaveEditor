@@ -47,7 +47,7 @@ public class gF : gQ {
       return 999;
    }
    public gF(gE var1, eY var2, gF var3) {
-      this(var1, var2);
+      // PORT_TODO: // PORT_TODO: this(var1, var2);
    }
 }
 

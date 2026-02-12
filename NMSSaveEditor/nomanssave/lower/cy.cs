@@ -30,18 +30,18 @@ public class cy : Form, TreeSelectionListener {
 public cy(Application var1) : base(var1.g()) {
       Rectangle var2 = new Rectangle(100, 100, 1000, 700);
       Point var3 = var1.g().getLocation();
-      var2.x = aH.a("JSONEditor.X", var3.x + 10);
-      var2.y = aH.a("JSONEditor.Y", var3.y + 10);
-      var2.width = aH.a("JSONEditor.Width", 1000);
-      var2.height = aH.a("JSONEditor.Height", 700);
+      // PORT_TODO: // PORT_TODO: var2.x = aH.a("JSONEditor.X", var3.x + 10);
+      // PORT_TODO: // PORT_TODO: var2.y = aH.a("JSONEditor.Y", var3.y + 10);
+      // PORT_TODO: // PORT_TODO: var2.width = aH.a("JSONEditor.Width", 1000);
+      // PORT_TODO: // PORT_TODO: var2.height = aH.a("JSONEditor.Height", 700);
       this.Bounds = new Rectangle(var2);
-      this/* setDefaultCloseOperation */(0);
+      // PORT_TODO: // PORT_TODO: this/* setDefaultCloseOperation */(0);
       // setModalExclusionType not available in WinForms
       this.Text = ("JSON Editor (Advanced Users Only)");
-      this/* setModal */(true);
+      // PORT_TODO: // PORT_TODO: this/* setModal */(true);
       this.addComponentListener(new cz(this));
       this.fV = new JTree();
-      this.fV.DataSource = (new cI(this, (cI)null));
+      // PORT_TODO: // PORT_TODO: this.fV.DataSource = (new cI(this, (cI)null));
       this.fV.setCellRenderer(new cA(this));
       this.fV.addTreeSelectionListener(this);
       this.fW = new Panel();
@@ -202,10 +202,10 @@ public cy(Application var1) : base(var1.g()) {
                string var2 = this.fX.Text.Trim();
                if (var2.Length == 0 && MessageBox.Show(this, "The JSON data has been deleted, do you wish to apply these changes to the save file?", this.Text, 0) == 0) {
                   this.fZ.Remove();
-                  ((cI)this.fV.DataSource).a(this.fZ.gi);
+      // PORT_TODO: // PORT_TODO: ((cI)this.fV.DataSource).a(this.fZ.gi);
                } else if (MessageBox.Show(this, "The JSON data has changed, do you wish to apply these changes to the save file?", this.Text, 0) == 0) {
                   this.fZ.Text = (var2);
-                  ((cI)this.fV.DataSource).a(this.fZ);
+      // PORT_TODO: // PORT_TODO: ((cI)this.fV.DataSource).a(this.fZ);
                }
             } catch (eX var3) {
                MessageBox.Show("Error on line #" + var3.getLineNumber() + ": " + var3.getMessage(), "Error");

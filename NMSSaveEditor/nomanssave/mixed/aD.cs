@@ -20,7 +20,7 @@ public aD(Frame var1) : base(var1) {
       this.setMinimumSize(new Size(400, 10));
       // setModalExclusionType not available in WinForms
       this.Text = ("Editor Settings");
-      this/* setModal */(true);
+      // PORT_TODO: // PORT_TODO: this/* setModal */(true);
       ba var2 = new ba();
       this.cw = new ComboBox();
       this.cw.DataSource = (new aE(this));

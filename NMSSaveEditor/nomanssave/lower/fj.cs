@@ -106,7 +106,7 @@ public class fj : Closeable {
    }
 
    public fj(Stream var1) {
-      this(var1, 0);
+      // PORT_TODO: // PORT_TODO: this(var1, 0);
    }
 
    public fj(Stream var1, int var2) {
@@ -248,7 +248,7 @@ public class fj : Closeable {
 
    public void a(Number var1) {
       if (var1 is BigDecimal) {
-         this.lh.Write(((BigDecimal)var1).ToString().Replace('E', 'e').GetBytes(System.Text.Encoding.UTF8));
+      // PORT_TODO: // PORT_TODO: this.lh.Write(((BigDecimal)var1).ToString().Replace('E', 'e').GetBytes(System.Text.Encoding.UTF8));
       } else {
          this.lh.Write(var1.ToString().GetBytes(System.Text.Encoding.UTF8));
       }

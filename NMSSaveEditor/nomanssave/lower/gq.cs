@@ -28,7 +28,7 @@ public sealed class gq {
    public int pd;
 
    public gq(string var3) {
-      this(var3, 1);
+      // PORT_TODO: // PORT_TODO: this(var3, 1);
    }
 
    public gq(string var3, int var4) {

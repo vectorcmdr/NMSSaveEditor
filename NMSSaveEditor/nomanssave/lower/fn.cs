@@ -10,7 +10,7 @@ namespace NMSSaveEditor
 
 
 public sealed class fn {
-   public static fn[] Values() { return new fn[] { lm, ln, lo, lp, lq, lr, ls, lt, S, T, i }; }
+      // PORT_TODO: // PORT_TODO: // PORT_TODO: // PORT_TODO: // PORT_TODO: // PORT_TODO: public static fn[] Values() { return new fn[] { lm, ln, lo, lp, lq, lr, ls, lt, S, T, i }; }
    public static fn valueOf(string name) { foreach (var v in Values()) if (v.ToString() == name) return v; return null; }
 
    public static readonly fn lm = new fn();

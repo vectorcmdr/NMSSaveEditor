@@ -27,7 +27,7 @@ public class y : Runnable {
          MessageBox.Show(var1, "New Version Available");
       } else {
          var1 = var1 + "Would you like to download and install? (will require app restart)";
-         int var2 = MessageBox.Show(Application.h(x.a(this.bb)), var1, "New Version Available", 0);
+         int var2 = (int)(int)MessageBox.Show(Application.h(x.a(this.bb)), var1, "New Version Available", 0);
          if (var2 == 0) {
             Application.h(x.a(this.bb)).Dispose();
             hc.info("Starting download...");

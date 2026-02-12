@@ -20,7 +20,7 @@ public class dy : object {
 
    public void mouseClicked(MouseEventArgs var1) {
       if (var1.getClickCount() == 2 && this.hq != null) {
-         cg.a((Container)du.d(this.hp), (gQ)this.hq);
+      // PORT_TODO: // PORT_TODO: cg.a((Container)du.d(this.hp), (gQ)this.hq);
          du.c(this.hp);
       }
 

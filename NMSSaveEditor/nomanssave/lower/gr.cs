@@ -8,7 +8,7 @@ namespace NMSSaveEditor
 
 
 public sealed class gr {
-   public static gr[] Values() { return new gr[] { pf, pg, ph, pi, pj, pk, pl, pm, pn, po, an }; }
+      // PORT_TODO: // PORT_TODO: public static gr[] Values() { return new gr[] { pf, pg, ph, pi, pj, pk, pl, pm, pn, po, an }; }
    public static gr valueOf(string name) { foreach (var v in Values()) if (v.ToString() == name) return v; return null; }
 
    public static readonly gr pf = new gr("Combat", false);

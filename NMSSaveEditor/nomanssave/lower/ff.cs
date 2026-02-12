@@ -169,7 +169,7 @@ public class ff : Closeable {
    }
 
    public ff(Stream var1) {
-      this(var1, 0);
+      // PORT_TODO: // PORT_TODO: this(var1, 0);
    }
 
    public ff(Stream var1, int var2) {

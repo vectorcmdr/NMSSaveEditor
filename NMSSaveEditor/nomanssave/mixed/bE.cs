@@ -7,23 +7,21 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
-
-
 public class bE : Panel {
    public static int ew = 0;
    public static int TYPE_DOUBLE = 1;
-   public readonly bN[] ex = new bN[3];
+   public bN[] ex = new bN[3];
    public gz cp;
 
    public bE(Application var1) {
       TableLayoutPanel var2 = new TableLayoutPanel();
-      this.SuspendLayout(); // TODO: set layout var2);
+      // this.setLayout(var2) - WinForms layout
       this.ex[0] = new bN(this);
-      this.Add(this.ex[0]);
+      this.Controls.Add(this.ex[0]);
       this.ex[1] = new bN(this);
-      this.Add(this.ex[1]);
+      this.Controls.Add(this.ex[1]);
       this.ex[2] = new bN(this);
-      this.Add(this.ex[2]);
+      this.Controls.Add(this.ex[2]);
       this.ex[0].a("Milestones", (Image)Application.a("UI-MILESTONES.PNG", 32, 32));
       this.ex[0].a("On Foot Exploration", gs.pN);
       this.ex[0].a("Alien Colonist Encounters", gs.pO);
@@ -76,7 +74,7 @@ public class bE : Panel {
    public void B() {
       int var1 = this.cp.bx();
       this.cp.a(gs.pP, var1);
-      this.a(gs.pP, (var1).ToString());
+      this.a(gs.pP, var1.ToString());
    }
 
    public void C() {
@@ -85,7 +83,7 @@ public class bE : Panel {
       if ((long)var3 < var1) {
          var3 = (int)Math.Min(var1, 2147483647L);
          this.cp.a(gs.pQ, var3);
-         this.a(gs.pQ, (var3).ToString());
+         this.a(gs.pQ, var3.ToString());
       }
 
    }
@@ -93,7 +91,7 @@ public class bE : Panel {
    public void aa() {
       for(int var2 = 0; var2 < this.ex.Length; ++var2) {
          for(int var3 = 0; var3 < this.ex[var2].Controls.Count; ++var3) {
-            Component var1 = this.ex[var2].Controls[var3];
+            Component var1 = (Component)this.ex[var2].Controls[var3];
             if (var1 is bL && ((bL)var1).eB.isSpecial()) {
                ((bL)var1).ac();
             }
@@ -105,9 +103,9 @@ public class bE : Panel {
    public void a(gs var1, string var2) {
       for(int var4 = 0; var4 < this.ex.Length; ++var4) {
          for(int var5 = 0; var5 < this.ex[var4].Controls.Count; ++var5) {
-            Component var3 = this.ex[var4].Controls[var5];
+            Component var3 = (Component)this.ex[var4].Controls[var5];
             if (var3 is bJ && ((bJ)var3).ez == var1) {
-               ((bJ)var3).Text = (var2);
+               ((bJ)var3).Text = var2;
             }
          }
       }
@@ -119,7 +117,7 @@ public class bE : Panel {
 
       for(int var3 = 0; var3 < this.ex.Length; ++var3) {
          for(int var4 = 0; var4 < this.ex[var3].Controls.Count; ++var4) {
-            Component var2 = this.ex[var3].Controls[var4];
+            Component var2 = (Component)this.ex[var3].Controls[var4];
             if (var2 is bJ) {
                ((bJ)var2).ac();
             } else if (var2 is bL) {
@@ -129,14 +127,14 @@ public class bE : Panel {
       }
 
    }
+
    public static gz a(bE var0) {
       return var0.cp;
    }
+
    public static void a(bE var0, gs var1, string var2) {
       var0.a(var1, var2);
    }
 }
-
-
 
 }

@@ -33,7 +33,7 @@ public class fw {
       this.lN = hk.readInt(var2);
       this.lO = hk.readInt(var2);
       this.bd = 1000L * (long)hk.readInt(var2);
-      this.Length = 4294967295L & (long)hk.readInt(var2);
+      this.length = 4294967295L & (long)hk.readInt(var2);
       this.lP = 4294967295L & (long)hk.readInt(var2);
       this.lQ = hk.readInt(var2);
       this.lR = hk.readInt(var2);
@@ -51,7 +51,7 @@ public class fw {
       hk.a(var1, this.lN);
       hk.a(var1, this.lO);
       hk.a(var1, (int)(this.bd / 1000L));
-      hk.a(var1, (int)this.Length);
+      hk.a(var1, (int)this.length);
       hk.a(var1, (int)this.lP);
       hk.a(var1, this.lQ);
       hk.a(var1, this.lR);
@@ -65,7 +65,7 @@ public class fw {
       Console.WriteLine("  fileType = " + this.lN + " 0x" + Convert.ToString(this.lN) + " " + Integer.toBinaryString(this.lN));
       Console.WriteLine("  archiveNumber = " + this.lO + " 0x" + Convert.ToString(this.lO) + " " + Integer.toBinaryString(this.lO));
       Console.WriteLine("  modified = " + new DateTime(this.bd));
-      Console.WriteLine("  length = " + this.Length);
+      Console.WriteLine("  length = " + this.length);
       Console.WriteLine("  startPos = 0x" + (this.lP).ToString("X"));
       Console.WriteLine("  valid = " + this.lQ);
       if (this.lR != 0) {
@@ -89,7 +89,7 @@ public class fw {
             var1.skip(this.lP);
             MemoryStream var2 = new MemoryStream();
             byte[] var3 = new byte[4096];
-            long var4 = this.Length;
+            long var4 = this.length;
 
             int var6;
             while(var4 > 0L && (var6 = var1.read(var3, 0, (int)Math.Min((long)var3.Length, var4))) > 0) {
@@ -138,7 +138,7 @@ public class fw {
                   byte[] var8 = new byte[64];
                   hk.readFully(var7, var8);
                   var6.Write(var8);
-                  long var9 = (long)var1.Length - fu.c(this.lJ)[var2].Length;
+                  long var9 = (long)var1.length - fu.c(this.lJ)[var2].length;
                   long var11 = 64L;
 
                   int var13;
@@ -153,7 +153,7 @@ public class fw {
                   }
 
                   var6.Write(fu.bY());
-                  fu.c(this.lJ)[var2].Length = (long)var1.Length;
+                  fu.c(this.lJ)[var2].length = (long)var1.length;
                   fu.c(this.lJ)[var2].bd = var25;
                   var11 += (long)fu.c(this.lJ)[var2].a(var6);
 

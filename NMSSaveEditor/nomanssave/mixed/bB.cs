@@ -75,7 +75,7 @@ public class bB : object {
       return this.v(var1);
    }
    public bB(bl var1, bB var2) {
-      this(var1);
+      // PORT_TODO: // PORT_TODO: this(var1);
    }
 }
 

@@ -36,7 +36,7 @@ public class dM : G {
       }
    }
    public dM(dE var1, gG var2, dM var3) {
-      this(var1, var2);
+      // PORT_TODO: // PORT_TODO: this(var1, var2);
    }
 }
 

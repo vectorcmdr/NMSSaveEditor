@@ -23,10 +23,10 @@ public class dE : Panel {
 
    public dE(Application var1) {
       GridBagLayout var2 = new GridBagLayout();
-      var2.columnWidths = new int[]{aH.cI, 0, 0};
-      var2.rowHeights = new int[1];
-      var2.columnWeights = new double[]{0.0D, 0.0D, 1.0D};
-      var2.rowWeights = new double[]{1.0D};
+      // PORT_TODO: // PORT_TODO: var2.columnWidths = new int[]{aH.cI, 0, 0};
+      // PORT_TODO: // PORT_TODO: var2.rowHeights = new int[1];
+      // PORT_TODO: // PORT_TODO: var2.columnWeights = new double[]{0.0D, 0.0D, 1.0D};
+      // PORT_TODO: // PORT_TODO: var2.rowWeights = new double[]{1.0D};
       this.SuspendLayout(); // TODO: set layout var2);
       this.hv = new ba();
       GridBagConstraints var3 = new GridBagConstraints();

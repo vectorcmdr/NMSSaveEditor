@@ -26,13 +26,13 @@ public class aR : FocusListener {
          var2 = int.Parse(aQ.a(this.dr).Text);
          if (var2 != aQ.b(this.dr).width) {
             if (var2 < aQ.c(this.dr).width) {
-               var2 = aQ.c(this.dr).width;
+      // PORT_TODO: // PORT_TODO: var2 = aQ.c(this.dr).width;
             } else if (var2 > aQ.d(this.dr).width && !en.aS()) {
-               var2 = aQ.d(this.dr).width;
+      // PORT_TODO: // PORT_TODO: var2 = aQ.d(this.dr).width;
             }
          }
       } catch (Exception var4) {
-         var2 = aQ.b(this.dr).width;
+      // PORT_TODO: // PORT_TODO: var2 = aQ.b(this.dr).width;
       }
 
       aQ.a(this.dr).Text = ((var2).ToString());

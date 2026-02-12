@@ -34,7 +34,7 @@ public class gh {
       return this.name;
    }
    public gh(ge var1, string var2, eY var3, gh var4) {
-      this(var1, var2, var3);
+      // PORT_TODO: // PORT_TODO: this(var1, var2, var3);
    }
 }
 

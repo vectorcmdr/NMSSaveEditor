@@ -35,7 +35,7 @@ public class bA : G {
       }
    }
    public bA(bl var1, int var2, bA var3) {
-      this(var1, var2);
+      // PORT_TODO: // PORT_TODO: this(var1, var2);
    }
 }
 

@@ -49,7 +49,7 @@ public class bX : object {
       if (var1.getClickCount() == 2) {
          gu var2 = bO.a(bS.j(this.fk)).f(this.fl, this.fm);
          if (var2 != null) {
-            cg.a((Container)bS.j(this.fk), (gQ)var2);
+      // PORT_TODO: // PORT_TODO: cg.a((Container)bS.j(this.fk), (gQ)var2);
             bS.c(this.fk);
          }
       }

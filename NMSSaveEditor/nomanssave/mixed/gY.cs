@@ -54,7 +54,7 @@ public class gY : Stream {
       }
    }
    public gY(gX var1, int var2, gY var3) {
-      this(var1, var2);
+      // PORT_TODO: // PORT_TODO: this(var1, var2);
    }
 
    // Stream abstract member stubs

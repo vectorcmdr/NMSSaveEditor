@@ -38,7 +38,7 @@ public eQ(Element var1, bool var2) : base(var1.getAttribute("id")) {
       }
 
       this.special = var1.hasAttribute("special") ? Boolean.valueOf(var1.getAttribute("special")) : false;
-      this.ka = var1.hasAttribute("chargeable") ? ((int)(var1.getAttribute("chargeable"))) : null;
+      // PORT_TODO: // PORT_TODO: this.ka = var1.hasAttribute("chargeable") ? ((int)(var1.getAttribute("chargeable"))) : null;
       this.jM = var1.getAttribute("subtitle");
       this.kc = var1.hasAttribute("icon") ? var1.getAttribute("icon") : null;
       if (var1.hasAttribute("multiplier")) {

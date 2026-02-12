@@ -24,7 +24,7 @@ public class fm : JavaThread {
    }
 
    public void b(fq var1) {
-      WatchKey var2 = (WatchKey)this.ll.Remove(var1);
+      // PORT_TODO: // PORT_TODO: WatchKey var2 = (WatchKey)this.ll.Remove(var1);
       if (var2 != null) {
          var2.cancel();
       }

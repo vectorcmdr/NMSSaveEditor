@@ -95,7 +95,7 @@ public class gt {
    }
 
    public gt(Function var1, eY var2, int var3, int var4, int var5, bool var6, bool var7) {
-      this(var1, var2, var3, var4, var5, var6, var7, true, true);
+      // PORT_TODO: // PORT_TODO: this(var1, var2, var3, var4, var5, var6, var7, true, true);
    }
 
    public gt(Function var1, eY var2, int var3, int var4, int var5, bool var6, bool var7, bool var8, bool var9) {
@@ -315,8 +315,8 @@ public class gt {
          if (en.aS()) {
             if (var1.width > this.qz[0].Length) {
                for(var4 = 0; var4 < this.qy.Length; ++var4) {
-                  eY[] var9 = new eY[var1.width];
-                  bool[] var6 = new bool[var1.width];
+      // PORT_TODO: // PORT_TODO: eY[] var9 = new eY[var1.width];
+      // PORT_TODO: // PORT_TODO: bool[] var6 = new bool[var1.width];
                   Array.Copy(this.qy[var4], 0, var9, 0, this.qz[var4].Length);
                   Array.Copy(this.qz[var4], 0, var6, 0, this.qz[var4].Length);
                   this.qy[var4] = var9;
@@ -325,14 +325,14 @@ public class gt {
             }
 
             if (var1.height > this.qz.Length) {
-               eY[][] var7 = new eY[var1.height][];
-               bool[][] var10 = new bool[var1.height][];
+      // PORT_TODO: // PORT_TODO: eY[][] var7 = new eY[var1.height][];
+      // PORT_TODO: // PORT_TODO: bool[][] var10 = new bool[var1.height][];
                Array.Copy(this.qy, 0, var7, 0, this.qz.Length);
                Array.Copy(this.qz, 0, var10, 0, this.qz.Length);
 
                for(int var11 = this.qz.Length; var11 < var1.height; ++var11) {
-                  var7[var11] = new eY[var1.width];
-                  var10[var11] = new bool[var1.width];
+      // PORT_TODO: // PORT_TODO: var7[var11] = new eY[var1.width];
+      // PORT_TODO: // PORT_TODO: var10[var11] = new bool[var1.width];
                }
 
                this.qy = var7;
@@ -350,13 +350,13 @@ public class gt {
 
          bool var8 = false;
          if (this.width != var1.width) {
-            this.width = var1.width;
+      // PORT_TODO: // PORT_TODO: this.width = var1.width;
             this.qt.b("Width", (object)(((int)(this.width))));
             var8 = true;
          }
 
          if (this.height != var1.height) {
-            this.height = var1.height;
+      // PORT_TODO: // PORT_TODO: this.height = var1.height;
             this.qt.b("Height", (object)(((int)(this.height))));
             var8 = true;
          }

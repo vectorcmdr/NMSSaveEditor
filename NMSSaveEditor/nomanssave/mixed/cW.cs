@@ -32,7 +32,7 @@ public class cW : Panel, CaretListener {
    }
 
    public cW(JTextComponent var1) {
-      this(var1, 3);
+      // PORT_TODO: // PORT_TODO: this(var1, 3);
    }
 
    public cW(JTextComponent var1, int var2) {

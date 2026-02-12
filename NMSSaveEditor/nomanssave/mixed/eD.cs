@@ -76,7 +76,7 @@ public eD(Stream var1, string var2) : base((eE)null) {
       return this.version;
    }
    public eD(Stream var1, string var2, eD var3) {
-      this(var1, var2);
+      // PORT_TODO: // PORT_TODO: this(var1, var2);
    }
 }
 

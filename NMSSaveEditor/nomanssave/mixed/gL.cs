@@ -8,7 +8,7 @@ namespace NMSSaveEditor
 
 
 public sealed class gL : gD {
-   public static gL[] Values() { return new gL[] { rs, rt, ru, rv, rw, rx, ry, rz, rA, rB, rC, rD, rE, aw }; }
+      // PORT_TODO: // PORT_TODO: public static gL[] Values() { return new gL[] { rs, rt, ru, rv, rw, rx, ry, rz, rA, rB, rC, rD, rE, aw }; }
    public static gL valueOf(string name) { foreach (var v in Values()) if (v.ToString() == name) return v; return null; }
 
    public static readonly gL rs = new gL("Hauler", "MODELS/COMMON/SPACECRAFT/DROPSHIPS/DROPSHIP_PROC.SCENE.MBIN", 4);
