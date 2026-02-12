@@ -27,12 +27,7 @@ public class cp : JFileChooser {
       this.setFileView(new cq(this));
       this.setFileFilter(new cr(this));
       this.setDialogTitle("Choose Companion Export FileInfo");
-      /* addPropertyChangeListener((var1) */ => {
-         if ("lookAndFeel".Equals(var1.getPropertyName())) {
-            Control.updateComponentTreeUI(this);
-         }
-
-      });
+      /* TODO: port from Java - addPropertyChangeListener for lookAndFeel */
    }
    public static Image @as() {
       return fK;

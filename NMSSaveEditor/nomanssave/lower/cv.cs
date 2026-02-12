@@ -26,12 +26,7 @@ public class cv : JFileChooser {
       this.setFileView(new cw(this));
       this.setFileFilter(new cx(this));
       this.setDialogTitle("Choose Weapon Export FileInfo");
-      /* addPropertyChangeListener((var1) */ => {
-         if ("lookAndFeel".Equals(var1.getPropertyName())) {
-            Control.updateComponentTreeUI(this);
-         }
-
-      });
+      /* TODO: port from Java - addPropertyChangeListener for lookAndFeel */
    }
    public static Image @as() {
       return fH;

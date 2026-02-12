@@ -25,7 +25,7 @@ public class cE : object {
                cy.d(this.gg).Text = (var3);
             }
          } catch (eX var4) {
-            0 /* showOptionDialog(this.gg, "Error on line #" + var4.getLineNumber() */ + ": " + var4.getMessage(), "Error", 0, 0, (Icon)null, new object[]{"Cancel"}, (object)null);
+            MessageBox.Show("Error on line #" + var4.getLineNumber() + ": " + var4.getMessage(), "Error");
             cy.c(this.gg).setCaretPosition(var4.bD());
             cy.c(this.gg).Focus();
             var2 = false;

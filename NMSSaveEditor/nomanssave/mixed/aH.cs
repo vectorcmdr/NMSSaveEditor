@@ -293,7 +293,7 @@ public class aH {
          cH = 120;
          cI = 350;
          cJ = 200;
-         /* UIManager.put("Inventory.font", (object) */null);
+         /* UIManager.put("Inventory.font", (object)null) */;
          /* UIManager.put("Inventory.gridSize", 200) */;
          /* UIManager.put("Inventory.iconSize", 64) */;
       } else {

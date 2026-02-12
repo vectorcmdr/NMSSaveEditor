@@ -27,12 +27,7 @@ public class cl : JFileChooser {
       this.setFileFilter(new cn(this));
       this.addChoosableFileFilter(new co(this));
       this.setDialogTitle("Choose Backup FileInfo");
-      /* addPropertyChangeListener((var1) */ => {
-         if ("lookAndFeel".Equals(var1.getPropertyName())) {
-            Control.updateComponentTreeUI(this);
-         }
-
-      });
+      /* TODO: port from Java - addPropertyChangeListener for lookAndFeel */
    }
    public static Image @as() {
       return fH;

@@ -20,7 +20,7 @@ public class gf {
       if (var1 is string) {
          return (string)var1;
       } else {
-         return var1 is Number ? "0x" + (((Number).ToString("X")var1).longValue()) : null;
+         return var1 is Number ? "0x" + ((Number)var1).longValue().ToString("X") : null;
       }
    }
 
@@ -59,8 +59,7 @@ public class gf {
    public string toString() {
       return this.nj.getValueAsString("Name");
    }
-   public gf(ge var1, eY var2, gf var3) {
-      this(var1, var2);
+   public gf(ge var1, eY var2, gf var3) : this(var1, var2) {
    }
 }
 

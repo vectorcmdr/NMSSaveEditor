@@ -70,12 +70,7 @@ public class bO : Panel, eo {
       this.eU.Click += (new bR(this));
       var2.Add(this.eU);
       en.a(this);
-      /* addPropertyChangeListener((var1x) */ => {
-         if ("lookAndFeel".Equals(var1x.getPropertyName())) {
-            System.Windows.Forms.Application.Run(this.af);
-         }
-
-      });
+      /* TODO: port from Java - addPropertyChangeListener for lookAndFeel */
    }
 
    public void a(bool var1) {

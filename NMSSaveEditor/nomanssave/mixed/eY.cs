@@ -390,7 +390,7 @@ public class eY {
          return (string)this.getValue(var1);
       } else {
          string var3;
-         for(var3 = (((Number).ToString("X")var2).longValue()); var3.length() < 16; var3 = "0" + var3) {
+         for(var3 = ((Number)var2).longValue().ToString("X"); var3.length() < 16; var3 = "0" + var3) {
          }
 
          return "0x" + var3.ToUpper();
