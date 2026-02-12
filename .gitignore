@@ -1,0 +1,10 @@
+# .NET build artifacts
+csharp/**/bin/
+csharp/**/obj/
+csharp/**/.vs/
+csharp/**/*.user
+
+# IDE
+.idea/
+*.suo
+*.userprefs

@@ -1,0 +1,14 @@
+{
+	"Type": {
+		"InventoryType": "Substance"
+	},
+	"Id": "^FUEL1",
+	"Amount": 60,
+	"MaxAmount": 500,
+	"DamageFactor": 0.0,
+	"FullyInstalled": true,
+	"Index": {
+		"X": 0,
+		"Y": 0
+	}
+}

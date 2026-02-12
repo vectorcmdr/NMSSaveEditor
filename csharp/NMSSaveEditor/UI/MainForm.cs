@@ -227,7 +227,7 @@ public class MainForm : Form
             _saveButton.Enabled = true;
             foreach (ToolStripItem item in ((ToolStripMenuItem)_menuStrip.Items[0]).DropDownItems)
             {
-                if (item is ToolStripMenuItem mi && (mi.Text.StartsWith("&Save") || mi.Text.StartsWith("Save")))
+                if (item is ToolStripMenuItem mi && (mi.Text?.StartsWith("&Save") == true || mi.Text?.StartsWith("Save") == true))
                     mi.Enabled = true;
             }
             foreach (ToolStripItem item in ((ToolStripMenuItem)_menuStrip.Items[1]).DropDownItems)
