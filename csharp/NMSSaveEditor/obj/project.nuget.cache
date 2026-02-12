@@ -1,13 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "yWdEi5CUahQ=",
+  "dgSpecHash": "zH+M4ba1jZ4=",
   "success": true,
   "projectFilePath": "/home/runner/work/NMSSaveEditor/NMSSaveEditor/csharp/NMSSaveEditor/NMSSaveEditor.csproj",
   "expectedPackageFiles": [
-    "/home/runner/work/NMSSaveEditor/.codeql-scratch/dbs/csharp/working/packages/microsoft.netcore.app.ref/10.0.2/microsoft.netcore.app.ref.10.0.2.nupkg.sha512",
-    "/home/runner/work/NMSSaveEditor/.codeql-scratch/dbs/csharp/working/packages/microsoft.windowsdesktop.app.ref/10.0.2/microsoft.windowsdesktop.app.ref.10.0.2.nupkg.sha512",
-    "/home/runner/work/NMSSaveEditor/.codeql-scratch/dbs/csharp/working/packages/microsoft.aspnetcore.app.ref/10.0.2/microsoft.aspnetcore.app.ref.10.0.2.nupkg.sha512",
-    "/home/runner/work/NMSSaveEditor/.codeql-scratch/dbs/csharp/working/packages/microsoft.netcore.app.host.win-x64/10.0.2/microsoft.netcore.app.host.win-x64.10.0.2.nupkg.sha512"
+    "/home/runner/.nuget/packages/microsoft.windowsdesktop.app.ref/10.0.2/microsoft.windowsdesktop.app.ref.10.0.2.nupkg.sha512",
+    "/home/runner/.nuget/packages/microsoft.netcore.app.host.win-x64/10.0.2/microsoft.netcore.app.host.win-x64.10.0.2.nupkg.sha512"
   ],
   "logs": []
 }
