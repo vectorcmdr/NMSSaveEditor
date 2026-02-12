@@ -69,8 +69,7 @@ public class hi {
          // PORT_TODO: string var8 = new string(var5, var7 == null ? Encoding.UTF8 : var7);
          // PORT_TODO: return eY.E(var8);
       }
-      return default; // PORT_TODO: auto-added
-      return default; // PORT_TODO: auto-added
+      return default;
    }
    public static Dictionary<object, object> ep() {
       return sJ;

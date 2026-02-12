@@ -53,8 +53,7 @@ public class hh {
          return default;
          return default;
       }
-      return 0; // PORT_TODO: auto-added
-      return 0; // PORT_TODO: auto-added
+      return 0L;
    }
 
    public static void a(byte[] var0, int var1, int var2, long[] var3) {
@@ -413,8 +412,7 @@ public class hh {
             return var4;
          }
       }
-      return 0; // PORT_TODO: auto-added
-      return 0; // PORT_TODO: auto-added
+      return 0L;
    }
 
    public static long a(CharSequence var0, int var1) {
@@ -440,8 +438,7 @@ public class hh {
       default:
          return var3;
       }
-      return 0; // PORT_TODO: auto-added
-      return 0; // PORT_TODO: auto-added
+      return 0L;
    }
 
    public static void a(CharSequence var0, int var1, int var2, long[] var3) {
@@ -800,8 +797,7 @@ public class hh {
             return var4;
          }
       }
-      return 0; // PORT_TODO: auto-added
-      return 0; // PORT_TODO: auto-added
+      return 0L;
    }
 
    public static void a(long[] var0, int var1, int var2, long[] var3) {
@@ -1110,8 +1106,7 @@ public class hh {
             return var4;
          }
       }
-      return 0; // PORT_TODO: auto-added
-      return 0; // PORT_TODO: auto-added
+      return 0L;
    }
 
    public hh() {

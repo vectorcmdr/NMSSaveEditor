@@ -381,8 +381,7 @@ public class gt {
 // PORT_TODO: 
          // PORT_TODO: return var8;
       // PORT_TODO: }
-      return false; // PORT_TODO: auto-added
-      return false; // PORT_TODO: auto-added
+      return false;
    }
 
    public bool dl() {

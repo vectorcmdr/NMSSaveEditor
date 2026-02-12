@@ -25,8 +25,7 @@ public class cq : FileView {
          // PORT_TODO: return (Icon)(var2.EndsWith(".egg") ? cp.au() : base.getIcon(var1));
          return default;
       }
-      return default; // PORT_TODO: auto-added
-      return default; // PORT_TODO: auto-added
+      return default;
    }
 
    public string getName(FileInfo var1) {

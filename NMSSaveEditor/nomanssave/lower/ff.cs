@@ -224,8 +224,7 @@ public class ff : Closeable {
             return -1;
          }
       }
-      return 0; // PORT_TODO: auto-added
-      return 0; // PORT_TODO: auto-added
+      return 0;
    }
 
    public void Dispose() { close(); }
@@ -403,8 +402,6 @@ public class ff : Closeable {
       } else {
          return this.ad(var1);
       }
-      return default; // PORT_TODO: auto-added
-      return default; // PORT_TODO: auto-added
    }
 
    public Number ad(int var1) {
@@ -601,8 +598,7 @@ public class ff : Closeable {
        } catch (Exception var3) {
          throw new eX("Invalid string");
       }
-      return null; // PORT_TODO: auto-added
-      return null; // PORT_TODO: auto-added
+      return null;
    }
 
    public object bO() {
@@ -613,8 +609,7 @@ public class ff : Closeable {
        } catch (Exception var3) {
          return new fg(var1);
       }
-      return default; // PORT_TODO: auto-added
-      return default; // PORT_TODO: auto-added
+      return default;
    }
 }
 

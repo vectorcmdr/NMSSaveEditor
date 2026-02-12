@@ -114,8 +114,7 @@ public class gj {
       } else {
          throw new Exception("Companion cannot be imported to current file!");
       }
-      return default; // PORT_TODO: auto-added
-      return default; // PORT_TODO: auto-added
+      return default;
    }
 
    public gj(gl var1, int var2, eY var3) {

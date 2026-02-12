@@ -62,8 +62,7 @@ public fi(string var1) : base(var1) {
       } catch (IOException var3) {
          throw new eX("stream error", var3, this.kF, this.kG);
       }
-      return 0; // PORT_TODO: auto-added
-      return 0; // PORT_TODO: auto-added
+      return 0;
    }
    public static int a(fi var0, Predicate<object> var1) {
       return var0.a(var1);

@@ -20,8 +20,7 @@ public class hg {
          // PORT_TODO: long var1 = Long.parseUnsignedLong(var0.Substring(2), 16);
          // PORT_TODO: return new hg(var1);
       }
-      return default; // PORT_TODO: auto-added
-      return default; // PORT_TODO: auto-added
+      return default;
    }
 
    public static hg eo() {

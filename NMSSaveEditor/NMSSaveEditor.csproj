@@ -4,7 +4,7 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net10.0-windows</TargetFramework>
     <Nullable>disable</Nullable>
-    <NoWarn>CS0108;CS0114;CS0162;CS0168;CS0219;CS0414;CS0649;CS0693;CS8600;CS8601;CS8602;CS8603;CS8604;CS8618;CS8625;CS8767;WFO1001</NoWarn>
+    <NoWarn>CS0108;CS0114;CS0162;CS0164;CS0168;CS0184;CS0219;CS0414;CS0472;CS0649;CS0693;CS8073;CS8981;CS8600;CS8601;CS8602;CS8603;CS8604;CS8618;CS8625;CS8767;CA2200;WFO1001</NoWarn>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
     <EnableWindowsTargeting>true</EnableWindowsTargeting>
