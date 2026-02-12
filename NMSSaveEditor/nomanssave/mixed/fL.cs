@@ -42,7 +42,7 @@ public class fL : fs {
          }
 
          string var7 = var6.getProperty("GameMode");
-         this.be = var7 == null ? null : fn.valueOf(var7);
+         // PORT_TODO: this.be = var7 == null ? null : fn.valueOf(var7);
          this.mv = var6.getProperty("SaveName");
          this.description = var6.getProperty("Description");
       } catch (FormatException var11) {

@@ -24,6 +24,7 @@ public class cZ : object {
 
    public gg C(int var1) {
       // PORT_TODO: return (gg)cY.a(this.gR)[var1];
+      return default;
    }
 
    public void addListDataListener(EventHandler var1) {

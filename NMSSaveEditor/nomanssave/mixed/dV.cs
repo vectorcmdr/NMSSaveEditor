@@ -19,16 +19,16 @@ public class dV : ActionListener {
    }
 
    public void actionPerformed(EventArgs var1) {
-      gH var2 = (gH)dN.p(this.ia).SelectedItem;
-      if (var2 != null) {
-         eV var3 = this.bv.d("PlayerStateData.ShipUsesLegacyColours");
-         if (var3 != null) {
-            if (dN.f(this.ia).Checked ^ var3.ab(var2.getIndex())) {
-               var3.a(var2.getIndex(), dN.f(this.ia).Checked);
-            }
+      // PORT_TODO: gH var2 = (gH)dN.p(this.ia).SelectedItem;
+      // PORT_TODO: if (var2 != null) {
+         // PORT_TODO: eV var3 = this.bv.d("PlayerStateData.ShipUsesLegacyColours");
+         // PORT_TODO: if (var3 != null) {
+            // PORT_TODO: if (dN.f(this.ia).Checked ^ var3.ab(var2.getIndex())) {
+               // PORT_TODO: var3.a(var2.getIndex(), dN.f(this.ia).Checked);
+            // PORT_TODO: }
 
-         }
-      }
+         // PORT_TODO: }
+      // PORT_TODO: }
    }
 }
 

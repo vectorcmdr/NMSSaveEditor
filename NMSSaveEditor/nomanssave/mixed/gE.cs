@@ -14,7 +14,7 @@ public class gE {
    public eY bf;
 
    public static gE[] z(eY var0) {
-      eV var1 = var0.d("TeleportEndpoints");
+      // PORT_TODO: eV var1 = var0.d("TeleportEndpoints");
       // PORT_TODO: List<object> var2 = (List<object>)var1.bB().filter((var0x) => {
          // PORT_TODO: return "Settlement".Equals(var0x.getValueAsString("TeleporterType"));
       // PORT_TODO: }).map((var0x) => {
@@ -51,63 +51,70 @@ public class gE {
    }
 
    public string getName() {
-      return this.bf.getValueAsString("Name");
+      // PORT_TODO: return this.bf.getValueAsString("Name");
+      return default;
    }
 
    public void setName(string var1) {
-      this.bf.b("Name", (object)var1);
+      // PORT_TODO: this.bf.b("Name", (object)var1);
    }
 
    public int aq(int var1) {
-      return this.bf.d("Stats").Y(var1);
+      // PORT_TODO: return this.bf.d("Stats").Y(var1);
+      return 0;
    }
 
    public void e(int var1, int var2) {
-      this.bf.d("Stats").a(var1, var2);
+      // PORT_TODO: this.bf.d("Stats").a(var1, var2);
    }
 
    public int a(gG var1) {
-      return this.bf.d("Stats").Y(var1.ordinal());
+      // PORT_TODO: return this.bf.d("Stats").Y(var1.ordinal());
+      return 0;
    }
 
    public void a(gG var1, int var2) {
-      this.bf.d("Stats").a(var1.ordinal(), var2);
+      // PORT_TODO: this.bf.d("Stats").a(var1.ordinal(), var2);
    }
 
    public int dW() {
-      return this.bf.d("Perks").Count;
+      // PORT_TODO: return this.bf.d("Perks").Count;
+      return 0;
    }
 
    public string aH(int var1) {
-      return this.bf.d("Perks").X(var1);
+      // PORT_TODO: return this.bf.d("Perks").X(var1);
+      return default;
    }
 
    public void c(int var1, string var2) {
-      this.bf.d("Perks").a(var1, var2);
+      // PORT_TODO: this.bf.d("Perks").a(var1, var2);
    }
 
    public string cK() {
-      return this.bf.I("SeedValue");
+      // PORT_TODO: return this.bf.I("SeedValue");
+      return default;
    }
 
    public void aa(string var1) {
-      this.bf.b("SeedValue", (object)var1);
+      // PORT_TODO: this.bf.b("SeedValue", (object)var1);
    }
 
    public gF[] dX() {
-      eV var1 = this.bf.d("ProductionState");
-      if (var1 == null) {
-         return new gF[0];
-      } else {
-         List<object> var2 = new List<object>();
+      // PORT_TODO: eV var1 = this.bf.d("ProductionState");
+      // PORT_TODO: if (var1 == null) {
+         // PORT_TODO: return new gF[0];
+      // PORT_TODO: } else {
+         // PORT_TODO: List<object> var2 = new List<object>();
 
-         for(int var3 = 0; var3 < var1.Count; ++var3) {
-            eY var4 = var1.V(var3);
-            var2.Add(new gF(this, var4, (gF)null));
-         }
+         // PORT_TODO: for(int var3 = 0; var3 < var1.Count; ++var3) {
+            // PORT_TODO: eY var4 = var1.V(var3);
+            // PORT_TODO: var2.Add(new gF(this, var4, (gF)null));
+         // PORT_TODO: }
 
-         return (gF[])var2.ToArray();
-      }
+         // PORT_TODO: return (gF[])var2.ToArray();
+      // PORT_TODO: }
+      return null;
    }
 
    public string toString() {

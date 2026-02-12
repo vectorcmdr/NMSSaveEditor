@@ -291,6 +291,7 @@ public class eV {
 
    public bool hasValue(object var1) {
       // PORT_TODO: return this.IndexOf(var1) >= 0;
+      return false;
    }
 
    public bool ac(int var1) {
@@ -307,6 +308,7 @@ public class eV {
          // PORT_TODO: this.Remove(var2);
          // PORT_TODO: return true;
       // PORT_TODO: }
+      return false;
    }
 
    public Stream bB() {
@@ -320,6 +322,7 @@ public class eV {
       }
 
       // PORT_TODO: return Arrays.stream(var1, 0, var2);
+      return default;
    }
    public object clone() {
       return this.bA();

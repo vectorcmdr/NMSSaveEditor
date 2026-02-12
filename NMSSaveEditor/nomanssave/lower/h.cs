@@ -88,7 +88,7 @@ public class h : Form {
       this.u = (List<object>)this.s.stream().filter((var1x) => {
          return var1x.ba() == var1;
       // PORT_TODO: }).map(ey.bc).distinct().sorted((var0, var1x) => {
-         return var0.Name.CompareTo(var1x.Name);
+         // PORT_TODO: return var0.Name.CompareTo(var1x.Name);
       }).collect(Collectors.toList());
       this.p.SelectedIndex = (this.u.Count == 1 ? 0 : -1);
       this.p.Refresh();
@@ -120,7 +120,7 @@ public class h : Form {
    public static ey a(Container var0, int var1) {
       if (w == null) {
          Frame var2 = null;
-         w = new h(var2);
+         // PORT_TODO: w = new h(var2);
       }
 
       return w.a(var1);

@@ -19,10 +19,10 @@ public class dR : ActionListener {
    }
 
    public void actionPerformed(EventArgs var1) {
-      int var2 = dN.p(this.ia).SelectedIndex;
-      if (var2 >= 0 && var2 < dN.a(this.ia).Length) {
-         this.bv.a(dN.a(this.ia)[var2]);
-      }
+      // PORT_TODO: int var2 = dN.p(this.ia).SelectedIndex;
+      // PORT_TODO: if (var2 >= 0 && var2 < dN.a(this.ia).Length) {
+         // PORT_TODO: this.bv.a(dN.a(this.ia)[var2]);
+      // PORT_TODO: }
    }
 }
 

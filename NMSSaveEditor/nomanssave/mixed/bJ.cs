@@ -22,7 +22,7 @@ public class bJ : G {
          break;
       default:
          this.type = 0;
-         // PORT_TODO: return default;
+         break;
       }
 
       this.Enabled = (var3);
@@ -97,11 +97,11 @@ public class bJ : G {
             break;
          default:
             var1 = "";
-            // PORT_TODO: return default;
+            break;
          }
       }
 
-      this.Text = (var1);
+      // PORT_TODO: this.Text = (var1);
    }
    public static int[] ad() {
       int[] var10000 = eA;

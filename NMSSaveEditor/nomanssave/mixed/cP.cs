@@ -47,6 +47,7 @@ public class cP : object {
       }
 
       // PORT_TODO: return var6;
+      return default;
    }
 }
 

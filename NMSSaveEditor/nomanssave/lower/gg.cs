@@ -15,7 +15,8 @@ public class gg {
    }
 
    public string toString() {
-      return this.nl.getValueAsString("ObjectID");
+      // PORT_TODO: return this.nl.getValueAsString("ObjectID");
+      return default;
    }
 }
 

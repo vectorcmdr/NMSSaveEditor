@@ -16,85 +16,87 @@ public class gv {
    public gt qG;
 
    public static gv[] v(eY var0) {
-      eV var1 = var0.d("Multitools");
-      if (var1 != null && var1.Count != 0) {
-         List<object> var2 = new List<object>();
+      // PORT_TODO: eV var1 = var0.d("Multitools");
+      // PORT_TODO: if (var1 != null && var1.Count != 0) {
+         // PORT_TODO: List<object> var2 = new List<object>();
 
-         for(int var3 = 0; var3 < var1.Count; ++var3) {
-            eY var4 = var1.V(var3);
-            if (var4.d("Seed").ab(0)) {
-               var2.Add(new gv(var3, var4, var4.H("Store")));
-            }
-         }
+         // PORT_TODO: for(int var3 = 0; var3 < var1.Count; ++var3) {
+            // PORT_TODO: eY var4 = var1.V(var3);
+            // PORT_TODO: if (var4.d("Seed").ab(0)) {
+               // PORT_TODO: var2.Add(new gv(var3, var4, var4.H("Store")));
+            // PORT_TODO: }
+         // PORT_TODO: }
 
-         return (gv[])var2.ToArray();
-      } else {
-         return new gv[]{new gw(var0, var0.H("WeaponInventory"))};
-      }
+         // PORT_TODO: return (gv[])var2.ToArray();
+      // PORT_TODO: } else {
+         // PORT_TODO: return new gv[]{new gw(var0, var0.H("WeaponInventory"))};
+      // PORT_TODO: }
+      return null;
    }
 
    public static gv b(eY var0, FileInfo var1) {
-      eV var2 = var0.d("Multitools");
-      if (var2 != null && var2.Count != 0) {
-         int var3 = -1;
+      // PORT_TODO: eV var2 = var0.d("Multitools");
+      // PORT_TODO: if (var2 != null && var2.Count != 0) {
+         // PORT_TODO: int var3 = -1;
 
-         eY var5;
-         for(int var4 = 0; var4 < var2.Count; ++var4) {
-            var5 = var2.V(var4);
-            if (!var5.d("Seed").ab(0)) {
-               var3 = var4;
-               break;
-            }
-         }
+         // PORT_TODO: eY var5;
+         // PORT_TODO: for(int var4 = 0; var4 < var2.Count; ++var4) {
+            // PORT_TODO: var5 = var2.V(var4);
+            // PORT_TODO: if (!var5.d("Seed").ab(0)) {
+               // PORT_TODO: var3 = var4;
+               // PORT_TODO: break;
+            // PORT_TODO: }
+         // PORT_TODO: }
 
-         if (var3 < 0) {
-            throw new Exception("Weapon cannot be imported to current file!");
-         } else {
-            eY var14 = gR.az("multitool");
-            Exception var15 = null;
-            eV var6 = null;
+         // PORT_TODO: if (var3 < 0) {
+            // PORT_TODO: throw new Exception("Weapon cannot be imported to current file!");
+         // PORT_TODO: } else {
+            // PORT_TODO: eY var14 = gR.az("multitool");
+            // PORT_TODO: Exception var15 = null;
+            // PORT_TODO: eV var6 = null;
 
-            try {
-               ff var7 = new ff(new FileStream((var1).ToString(), System.IO.FileMode.Open));
+            // PORT_TODO: try {
+               // PORT_TODO: ff var7 = new ff(new FileStream((var1).ToString(), System.IO.FileMode.Open));
 
-               try {
-                  if (var14 == null) {
-                     var14 = var7.bK();
-                  } else {
-                     var14.c(var7.bK());
-                  }
-               } finally {
-                  if (var7 != null) {
-                     var7.Close();
-                  }
+               // PORT_TODO: try {
+                  // PORT_TODO: if (var14 == null) {
+                     // PORT_TODO: var14 = var7.bK();
+                  // PORT_TODO: } else {
+                     // PORT_TODO: var14.c(var7.bK());
+                  // PORT_TODO: }
+               // PORT_TODO: } finally {
+                  // PORT_TODO: if (var7 != null) {
+                     // PORT_TODO: var7.Close();
+                  // PORT_TODO: }
 
-               }
-            } catch (Exception var13) {
-               if (var15 == null) {
-                  var15 = var13;
-               } else if (var15 != var13) {
-                  var15.addSuppressed(var13);
-               }
+               // PORT_TODO: }
+            // PORT_TODO: } catch (Exception var13) {
+               // PORT_TODO: if (var15 == null) {
+                  // PORT_TODO: var15 = var13;
+               // PORT_TODO: } else if (var15 != var13) {
+                  // PORT_TODO: var15.addSuppressed(var13);
+               // PORT_TODO: }
 
-               throw var15;
-            }
+               // PORT_TODO: throw var15;
+            // PORT_TODO: }
 
-            var2.a(var3, var14);
-            var5 = var14.H("Store");
-            if (var5 == null) {
-               throw new Exception("Invalid weapon data");
-            } else {
-               var6 = var14.d("Seed");
-               if (var6 != null && var6.ab(0)) {
-                  return new gv(var3, var14, var5);
-               } else {
-                  throw new Exception("Invalid weapon data");
-               }
-            }
-         }
-      } else {
-         throw new Exception("Weapon cannot be imported to current file!");
-      }
+            // PORT_TODO: var2.a(var3, var14);
+            // PORT_TODO: var5 = var14.H("Store");
+            // PORT_TODO: if (var5 == null) {
+               // PORT_TODO: throw new Exception("Invalid weapon data");
+            // PORT_TODO: } else {
+               // PORT_TODO: var6 = var14.d("Seed");
+               // PORT_TODO: if (var6 != null && var6.ab(0)) {
+                  // PORT_TODO: return new gv(var3, var14, var5);
+               // PORT_TODO: } else {
+                  // PORT_TODO: throw new Exception("Invalid weapon data");
+               // PORT_TODO: }
+            // PORT_TODO: }
+         // PORT_TODO: }
+      // PORT_TODO: } else {
+         // PORT_TODO: throw new Exception("Weapon cannot be imported to current file!");
+      // PORT_TODO: }
+      return default;
    }
 
    public static Function b(gv var0) {
@@ -154,35 +156,39 @@ public class gv {
    }
 
    public string getName() {
-      return this.qF.getValueAsString("Name");
+      // PORT_TODO: return this.qF.getValueAsString("Name");
+      return default;
    }
 
    public void setName(string var1) {
-      this.qF.b("Name", (object)var1);
+      // PORT_TODO: this.qF.b("Name", (object)var1);
    }
 
    public string cT() {
-      return this.qF.getValueAsString("Resource.Filename");
+      // PORT_TODO: return this.qF.getValueAsString("Resource.Filename");
+      return default;
    }
 
    public void ag(string var1) {
-      this.qF.b("Resource.Filename", (object)var1);
+      // PORT_TODO: this.qF.b("Resource.Filename", (object)var1);
    }
 
    public string cK() {
-      return this.qF.d("Seed").X(1);
+      // PORT_TODO: return this.qF.d("Seed").X(1);
+      return default;
    }
 
    public void aa(string var1) {
-      this.qF.d("Seed").a(1, var1);
+      // PORT_TODO: this.qF.d("Seed").a(1, var1);
    }
 
    public string cW() {
-      return this.qF.getValueAsString("Store.Class.InventoryClass");
+      // PORT_TODO: return this.qF.getValueAsString("Store.Class.InventoryClass");
+      return default;
    }
 
    public void aj(string var1) {
-      this.qF.b("Store.Class.InventoryClass", (object)var1);
+      // PORT_TODO: this.qF.b("Store.Class.InventoryClass", (object)var1);
    }
 
    public gt dE() {

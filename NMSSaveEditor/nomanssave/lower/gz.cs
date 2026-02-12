@@ -16,18 +16,19 @@ public class gz {
 
    public static gz w(eY var0) {
       eV var1 = null;
-      eV var2 = var0.d("Stats");
-      if (var2 != null) {
-         for(int var3 = 0; var3 < var2.Count; ++var3) {
-            eY var4 = var2.V(var3);
-            if ("^GLOBAL_STATS".Equals(var4.getValueAsString("GroupId"))) {
-               var1 = var4.d("Stats");
-               break;
-            }
-         }
-      }
+      // PORT_TODO: eV var2 = var0.d("Stats");
+      // PORT_TODO: if (var2 != null) {
+         // PORT_TODO: for(int var3 = 0; var3 < var2.Count; ++var3) {
+            // PORT_TODO: eY var4 = var2.V(var3);
+            // PORT_TODO: if ("^GLOBAL_STATS".Equals(var4.getValueAsString("GroupId"))) {
+               // PORT_TODO: var1 = var4.d("Stats");
+               // PORT_TODO: break;
+            // PORT_TODO: }
+         // PORT_TODO: }
+      // PORT_TODO: }
 
-      return new gz(var0, var1, var0.H("Inventory"), var0.H("Inventory_TechOnly"), var0.H("Inventory_Cargo"));
+      // PORT_TODO: return new gz(var0, var1, var0.H("Inventory"), var0.H("Inventory_TechOnly"), var0.H("Inventory_Cargo"));
+      return default;
    }
 
    public static Function au(string var0) {
@@ -39,53 +40,53 @@ public class gz {
    public gz(eY var1, eV var2, eY var3, eY var4, eY var5) {
       this.oI = var1;
       this.rb = var2;
-      eV var6 = var1.d("KnownWords");
-      eV var7 = var1.d("KnownWordGroups");
-      if (var7 == null) {
-         var7 = new eV();
-         var1.b("KnownWordGroups", (object)var7);
-      }
+      // PORT_TODO: eV var6 = var1.d("KnownWords");
+      // PORT_TODO: eV var7 = var1.d("KnownWordGroups");
+      // PORT_TODO: if (var7 == null) {
+         // PORT_TODO: var7 = new eV();
+         // PORT_TODO: var1.b("KnownWordGroups", (object)var7);
+      // PORT_TODO: }
 
-      if (var6.Count > 0) {
-         int var8 = 0;
+      // PORT_TODO: if (var6.Count > 0) {
+         // PORT_TODO: int var8 = 0;
 
-         label46:
-         while(true) {
-            while(true) {
-               if (var8 >= var6.Count) {
-                  goto label46;
-               }
+         // PORT_TODO: label46:
+         // PORT_TODO: while(true) {
+            // PORT_TODO: while(true) {
+               // PORT_TODO: if (var8 >= var6.Count) {
+                  // PORT_TODO: goto label46;
+               // PORT_TODO: }
 
-               eY var9 = var6.V(var8);
-               eS var10 = eS.A(var9.getValueAsString("id"));
-               if (var10 == null) {
-                  hc.warn("Could not build word groups: " + var9.getValueAsString("id"));
-                  ++var8;
-               } else {
-                  IEnumerator<object> var12 = var10.bw().GetEnumerator();
+               // PORT_TODO: eY var9 = var6.V(var8);
+               // PORT_TODO: eS var10 = eS.A(var9.getValueAsString("id"));
+               // PORT_TODO: if (var10 == null) {
+                  // PORT_TODO: hc.warn("Could not build word groups: " + var9.getValueAsString("id"));
+                  // PORT_TODO: ++var8;
+               // PORT_TODO: } else {
+                  // PORT_TODO: IEnumerator<object> var12 = var10.bw().GetEnumerator();
 
-                  while(var12.MoveNext()) {
-                     string var11 = (string)var12.Current;
-                     eU var13 = var10.z(var11);
-                     if (var13 != null) {
-                        eY var14 = new eY();
-                        var14.b("Group", (object)var11);
+                  // PORT_TODO: while(var12.MoveNext()) {
+                     // PORT_TODO: string var11 = (string)var12.Current;
+                     // PORT_TODO: eU var13 = var10.z(var11);
+                     // PORT_TODO: if (var13 != null) {
+                        // PORT_TODO: eY var14 = new eY();
+                        // PORT_TODO: var14.b("Group", (object)var11);
                         // PORT_TODO: eV var15 = new eV(new object[]{Boolean.FALSE, Boolean.FALSE, Boolean.FALSE, Boolean.FALSE, Boolean.FALSE, Boolean.FALSE, Boolean.FALSE, Boolean.FALSE});
                         // PORT_TODO: var15.a(var13.ordinal(), Boolean.TRUE);
                         // PORT_TODO: var14.b("Races", (object)var15);
-                        var7.f(var14);
-                        hc.debug("Creating word: " + var11 + "[" + var13.ordinal() + "] = true");
-                     }
-                  }
+                        // PORT_TODO: var7.f(var14);
+                        // PORT_TODO: hc.debug("Creating word: " + var11 + "[" + var13.ordinal() + "] = true");
+                     // PORT_TODO: }
+                  // PORT_TODO: }
 
-                  var6.ac(var8);
-                  hc.debug("Removed old word: " + var9.getValueAsString("id"));
-               }
-            }
-         }
-      }
+                  // PORT_TODO: var6.ac(var8);
+                  // PORT_TODO: hc.debug("Removed old word: " + var9.getValueAsString("id"));
+               // PORT_TODO: }
+            // PORT_TODO: }
+         // PORT_TODO: }
+      // PORT_TODO: }
 
-      this.rc = var7;
+      // PORT_TODO: this.rc = var7;
       bool var20 = false;
       bool var22 = false;
       short var24 = 0;
@@ -129,51 +130,57 @@ public class gz {
    }
 
    public long dJ() {
-      return this.oI.K("Units") & 4294967295L;
+      // PORT_TODO: return this.oI.K("Units") & 4294967295L;
+      return 0;
    }
 
    public void e(long var1) {
-      this.oI.b("Units", (object)((int)(var1)));
+      // PORT_TODO: this.oI.b("Units", (object)((int)(var1)));
    }
 
    public long dK() {
-      return this.oI.K("Nanites") & 4294967295L;
+      // PORT_TODO: return this.oI.K("Nanites") & 4294967295L;
+      return 0;
    }
 
    public void f(long var1) {
-      this.oI.b("Nanites", (object)((int)(var1)));
+      // PORT_TODO: this.oI.b("Nanites", (object)((int)(var1)));
    }
 
    public long dL() {
-      return this.oI.K("Specials") & 4294967295L;
+      // PORT_TODO: return this.oI.K("Specials") & 4294967295L;
+      return 0;
    }
 
    public void g(long var1) {
-      this.oI.b("Specials", (object)((int)(var1)));
+      // PORT_TODO: this.oI.b("Specials", (object)((int)(var1)));
    }
 
    public int dM() {
-      return this.oI.J("Health");
+      // PORT_TODO: return this.oI.J("Health");
+      return 0;
    }
 
    public void aB(int var1) {
-      this.oI.b("Health", (object)(((int)(var1))));
+      // PORT_TODO: this.oI.b("Health", (object)(((int)(var1))));
    }
 
    public int dN() {
-      return this.oI.J("Shield");
+      // PORT_TODO: return this.oI.J("Shield");
+      return 0;
    }
 
    public void aC(int var1) {
-      this.oI.b("Shield", (object)(((int)(var1))));
+      // PORT_TODO: this.oI.b("Shield", (object)(((int)(var1))));
    }
 
    public int dO() {
-      return this.oI.J("Energy");
+      // PORT_TODO: return this.oI.J("Energy");
+      return 0;
    }
 
    public void aD(int var1) {
-      this.oI.b("Energy", (object)(((int)(var1))));
+      // PORT_TODO: this.oI.b("Energy", (object)(((int)(var1))));
    }
 
    public List<object> cC() {
@@ -181,23 +188,27 @@ public class gz {
    }
 
    public int dP() {
-      return this.oI.J("KnownPortalRunes");
+      // PORT_TODO: return this.oI.J("KnownPortalRunes");
+      return 0;
    }
 
    public void aE(int var1) {
-      this.oI.b("KnownPortalRunes", (object)(((int)(var1))));
+      // PORT_TODO: this.oI.b("KnownPortalRunes", (object)(((int)(var1))));
    }
 
    public eV dQ() {
-      return this.oI.d("KnownTech");
+      // PORT_TODO: return this.oI.d("KnownTech");
+      return null;
    }
 
    public eV dR() {
-      return this.oI.d("KnownProducts");
+      // PORT_TODO: return this.oI.d("KnownProducts");
+      return null;
    }
 
    public eV dS() {
-      return this.oI.d("KnownSpecials");
+      // PORT_TODO: return this.oI.d("KnownSpecials");
+      return null;
    }
 
    public int bx() {
@@ -206,10 +217,10 @@ public class gz {
 
       for(int var4 = 0; var4 < this.rc.Count; ++var4) {
          eY var2 = this.rc.V(var4);
-         eS var5 = eS.B(var2.getValueAsString("Group"));
-         if (var5 != null && !var3.Contains(var5.getID())) {
-            var3.Add(var5.getID());
-         }
+         // PORT_TODO: eS var5 = eS.B(var2.getValueAsString("Group"));
+         // PORT_TODO: if (var5 != null && !var3.Contains(var5.getID())) {
+            // PORT_TODO: var3.Add(var5.getID());
+         // PORT_TODO: }
       }
 
       return var1;
@@ -220,9 +231,9 @@ public class gz {
 
       for(int var4 = 0; var4 < this.rc.Count; ++var4) {
          eY var3 = this.rc.V(var4);
-         if (var3.d("Races").ab(var1.ordinal())) {
-            ++var2;
-         }
+         // PORT_TODO: if (var3.d("Races").ab(var1.ordinal())) {
+            // PORT_TODO: ++var2;
+         // PORT_TODO: }
       }
 
       return var2;
@@ -235,9 +246,9 @@ public class gz {
    public bool d(string var1, int var2) {
       for(int var3 = 0; var3 < this.rc.Count; ++var3) {
          eY var4 = this.rc.V(var3);
-         if (var1.Equals(var4.getValueAsString("Group"))) {
-            return var4.d("Races").ab(var2);
-         }
+         // PORT_TODO: if (var1.Equals(var4.getValueAsString("Group"))) {
+            // PORT_TODO: return var4.d("Races").ab(var2);
+         // PORT_TODO: }
       }
 
       return false;
@@ -247,33 +258,33 @@ public class gz {
       eY var4;
       for(int var5 = 0; var5 < this.rc.Count; ++var5) {
          var4 = this.rc.V(var5);
-         if (var1.Equals(var4.getValueAsString("Group"))) {
-            hc.debug("Updating word: " + var1 + "[" + var2 + "] = " + var3);
-            eV var6 = var4.d("Races");
+         // PORT_TODO: if (var1.Equals(var4.getValueAsString("Group"))) {
+            // PORT_TODO: hc.debug("Updating word: " + var1 + "[" + var2 + "] = " + var3);
+            // PORT_TODO: eV var6 = var4.d("Races");
 
-            if (false) { // PORT_TODO: original while had errors
+            // PORT_TODO: if (false) { // PORT_TODO: original while had errors
                // PORT_TODO: var6.Add(Boolean.FALSE);
-            }
+            // PORT_TODO: }
 
             // PORT_TODO: var6.a(var2, new Boolean(var3));
 
-            for(int var7 = 0; var7 < var6.Count; ++var7) {
-               var3 |= var6.ab(var7);
-            }
+            // PORT_TODO: for(int var7 = 0; var7 < var6.Count; ++var7) {
+               // PORT_TODO: var3 |= var6.ab(var7);
+            // PORT_TODO: }
 
-            if (var3 == null) {
-               hc.debug("Removing word: " + var1);
-               this.rc.ac(var5);
-            }
+            // PORT_TODO: if (var3 == null) {
+               // PORT_TODO: hc.debug("Removing word: " + var1);
+               // PORT_TODO: this.rc.ac(var5);
+            // PORT_TODO: }
 
-            return;
-         }
+            // PORT_TODO: return;
+         // PORT_TODO: }
       }
 
       if (var3) {
          hc.debug("Creating word: " + var1 + "[" + var2 + "] = " + var3);
          var4 = new eY();
-         var4.b("Group", (object)var1);
+         // PORT_TODO: var4.b("Group", (object)var1);
          eV var8 = new eV();
 
          if (false) { // PORT_TODO: original while had errors
@@ -281,7 +292,7 @@ public class gz {
          }
 
          // PORT_TODO: var8.a(var2, new Boolean(var3));
-         var4.b("Races", (object)var8);
+         // PORT_TODO: var4.b("Races", (object)var8);
          this.rc.f(var4);
       }
 
@@ -296,7 +307,7 @@ public class gz {
       // PORT_TODO: long var3 = Math.Round(var1 * 900.0D);
       if (true) { // PORT_TODO: original condition had errors
       long var3 = 0; // PORT_TODO: stub declaration
-         this.oI.b("HazardTimeAlive", (object)((int)(var3)));
+         // PORT_TODO: this.oI.b("HazardTimeAlive", (object)((int)(var3)));
       } else {
          throw new Exception("Stat value out of range");
       }
@@ -305,9 +316,9 @@ public class gz {
    public int a(gs var1) {
       for(int var3 = 0; var3 < this.rb.Count; ++var3) {
          eY var2 = this.rb.V(var3);
-         if (var2.getValueAsString("Id").Equals(var1.id)) {
-            return var2.J("Value.IntValue");
-         }
+         // PORT_TODO: if (var2.getValueAsString("Id").Equals(var1.id)) {
+            // PORT_TODO: return var2.J("Value.IntValue");
+         // PORT_TODO: }
       }
 
       return 0;
@@ -320,19 +331,19 @@ public class gz {
          eY var3;
          for(int var4 = 0; var4 < this.rb.Count; ++var4) {
             var3 = this.rb.V(var4);
-            if (var3.getValueAsString("Id").Equals(var1.id)) {
-               var3.b("Value.IntValue", (object)(((int)(var2))));
-               return;
-            }
+            // PORT_TODO: if (var3.getValueAsString("Id").Equals(var1.id)) {
+               // PORT_TODO: var3.b("Value.IntValue", (object)(((int)(var2))));
+               // PORT_TODO: return;
+            // PORT_TODO: }
          }
 
          var3 = new eY();
-         var3.b("Id", (object)var1.id);
+         // PORT_TODO: var3.b("Id", (object)var1.id);
          eY var5 = new eY();
-         var5.b("IntValue", (object)(((int)(var2))));
+         // PORT_TODO: var5.b("IntValue", (object)(((int)(var2))));
          // PORT_TODO: var5.b("FloatValue", (object)(new Double(0.0D)));
          // PORT_TODO: var5.b("Denominator", (object)(new Double(0.0D)));
-         var3.b("Value", (object)var5);
+         // PORT_TODO: var3.b("Value", (object)var5);
          this.rb.f(var3);
       }
    }
@@ -340,9 +351,9 @@ public class gz {
    public double b(gs var1) {
       for(int var3 = 0; var3 < this.rb.Count; ++var3) {
          eY var2 = this.rb.V(var3);
-         if (var2.getValueAsString("Id").Equals(var1.id)) {
-            return var2.L("Value.FloatValue");
-         }
+         // PORT_TODO: if (var2.getValueAsString("Id").Equals(var1.id)) {
+            // PORT_TODO: return var2.L("Value.FloatValue");
+         // PORT_TODO: }
       }
 
       return 0.0D;
@@ -355,19 +366,19 @@ public class gz {
          eY var4;
          for(int var5 = 0; var5 < this.rb.Count; ++var5) {
             var4 = this.rb.V(var5);
-            if (var4.getValueAsString("Id").Equals(var1.id)) {
+            // PORT_TODO: if (var4.getValueAsString("Id").Equals(var1.id)) {
                // PORT_TODO: var4.b("Value.FloatValue", (object)(new Double(var2)));
-               return;
-            }
+               // PORT_TODO: return;
+            // PORT_TODO: }
          }
 
          var4 = new eY();
-         var4.b("Id", (object)var1.id);
+         // PORT_TODO: var4.b("Id", (object)var1.id);
          eY var6 = new eY();
-         var6.b("IntValue", (object)(((int)(0))));
+         // PORT_TODO: var6.b("IntValue", (object)(((int)(0))));
          // PORT_TODO: var6.b("FloatValue", (object)(new Double(var2)));
          // PORT_TODO: var6.b("Denominator", (object)(new Double(0.0D)));
-         var4.b("Value", (object)var6);
+         // PORT_TODO: var4.b("Value", (object)var6);
          this.rb.f(var4);
       }
    }

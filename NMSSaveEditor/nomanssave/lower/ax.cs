@@ -121,7 +121,7 @@ public class ax : object {
          break;
       case 6:
          // PORT_TODO: var5.a(eU.kz, Boolean.TRUE.Equals(var1));
-         // PORT_TODO: return default;
+         break;
       }
 
    }

@@ -19,27 +19,30 @@ public class gC {
    }
 
    public int dV() {
-      return this.oI.J("PrimaryShip");
+      // PORT_TODO: return this.oI.J("PrimaryShip");
+      return 0;
    }
 
    public void aG(int var1) {
-      this.oI.b("PrimaryShip", (object)var1);
+      // PORT_TODO: this.oI.b("PrimaryShip", (object)var1);
    }
 
    public int dM() {
-      return this.oI.J("ShipHealth");
+      // PORT_TODO: return this.oI.J("ShipHealth");
+      return 0;
    }
 
    public void aB(int var1) {
-      this.oI.b("ShipHealth", (object)(((int)(var1))));
+      // PORT_TODO: this.oI.b("ShipHealth", (object)(((int)(var1))));
    }
 
    public int dN() {
-      return this.oI.J("ShipShield");
+      // PORT_TODO: return this.oI.J("ShipShield");
+      return 0;
    }
 
    public void aC(int var1) {
-      this.oI.b("ShipShield", (object)(((int)(var1))));
+      // PORT_TODO: this.oI.b("ShipShield", (object)(((int)(var1))));
    }
 }
 

@@ -100,6 +100,7 @@ public class gc {
       }
 
       // PORT_TODO: return new string(var1, 0, var2, "UTF-16LE");
+      return default;
    }
 
    public static string e(Stream var0) {
@@ -111,6 +112,7 @@ public class gc {
       }
 
       // PORT_TODO: return new string(var1, 0, var2, Encoding.UTF8);
+      return default;
    }
 
    public static void c(Stream var0, string var1) {

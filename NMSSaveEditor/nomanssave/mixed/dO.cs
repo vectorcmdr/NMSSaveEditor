@@ -20,11 +20,13 @@ public class dO : object {
    }
 
    public int getSize() {
-      return dN.a(this.ia) == null ? 0 : dN.a(this.ia).Length;
+      // PORT_TODO: return dN.a(this.ia) == null ? 0 : dN.a(this.ia).Length;
+      return 0;
    }
 
    public gH G(int var1) {
-      return dN.a(this.ia)[var1];
+      // PORT_TODO: return dN.a(this.ia)[var1];
+      return default;
    }
 
    public void addListDataListener(EventHandler var1) {
@@ -36,42 +38,42 @@ public class dO : object {
    public void setSelectedItem(object var1) {
       this.hZ = (gH)var1;
       if (this.hZ == null) {
-         dN.b(this.ia).Text = ("");
-         dN.c(this.ia).SelectedIndex = (-1);
-         dN.d(this.ia).SelectedIndex = (-1);
-         dN.e(this.ia).Text = ("");
-         dN.f(this.ia).Checked = (false);
-         dN.f(this.ia).Enabled = (false);
-         dN.g(this.ia).Enabled = (false);
-         dN.h(this.ia).Text = ("");
-         dN.i(this.ia).Text = ("");
-         dN.j(this.ia).Text = ("");
-         dN.k(this.ia).Text = ("");
-         dN.l(this.ia).a(new List<object>());
+         // PORT_TODO: dN.b(this.ia).Text = ("");
+         // PORT_TODO: dN.c(this.ia).SelectedIndex = (-1);
+         // PORT_TODO: dN.d(this.ia).SelectedIndex = (-1);
+         // PORT_TODO: dN.e(this.ia).Text = ("");
+         // PORT_TODO: dN.f(this.ia).Checked = (false);
+         // PORT_TODO: dN.f(this.ia).Enabled = (false);
+         // PORT_TODO: dN.g(this.ia).Enabled = (false);
+         // PORT_TODO: dN.h(this.ia).Text = ("");
+         // PORT_TODO: dN.i(this.ia).Text = ("");
+         // PORT_TODO: dN.j(this.ia).Text = ("");
+         // PORT_TODO: dN.k(this.ia).Text = ("");
+         // PORT_TODO: dN.l(this.ia).a(new List<object>());
       } else {
-         dN.b(this.ia).Text = (this.hZ.Name);
-         dN.c(this.ia).m(this.hZ.cT());
-         dN.d(this.ia).m(this.hZ.cW());
-         dN.e(this.ia).Text = (this.hZ.cK());
+         // PORT_TODO: dN.b(this.ia).Text = (this.hZ.Name);
+         // PORT_TODO: dN.c(this.ia).m(this.hZ.cT());
+         // PORT_TODO: dN.d(this.ia).m(this.hZ.cW());
+         // PORT_TODO: dN.e(this.ia).Text = (this.hZ.cK());
          eV var2 = this.bv.d("PlayerStateData.ShipUsesLegacyColours");
-         dN.f(this.ia).Checked = (var2 != null && var2.ab(this.hZ.getIndex()));
-         dN.f(this.ia).Enabled = (true);
-         dN.g(this.ia).Enabled = (true);
-         dN.h(this.ia).Text = ((this.hZ.dF().ToString()));
-         dN.i(this.ia).Text = ((this.hZ.eb().ToString()));
-         dN.j(this.ia).Text = ((this.hZ.cX().ToString()));
-         dN.k(this.ia).Text = ((this.hZ.ec().ToString()));
-         dN.l(this.ia).a(this.hZ.cC());
-         dN.m(this.ia).Enabled = (false);
-         dN.n(this.ia).Enabled = (false);
-         if (dN.o(this.ia) != null) {
-            for(int var3 = 0; var3 < dN.a(this.ia).Length; ++var3) {
-               if (this.hZ == dN.a(this.ia)[var3] && var3 == dN.o(this.ia).dV()) {
-                  dN.m(this.ia).Enabled = (true);
-                  dN.n(this.ia).Enabled = (true);
-               }
-            }
-         }
+         // PORT_TODO: dN.f(this.ia).Checked = (var2 != null && var2.ab(this.hZ.getIndex()));
+         // PORT_TODO: dN.f(this.ia).Enabled = (true);
+         // PORT_TODO: dN.g(this.ia).Enabled = (true);
+         // PORT_TODO: dN.h(this.ia).Text = ((this.hZ.dF().ToString()));
+         // PORT_TODO: dN.i(this.ia).Text = ((this.hZ.eb().ToString()));
+         // PORT_TODO: dN.j(this.ia).Text = ((this.hZ.cX().ToString()));
+         // PORT_TODO: dN.k(this.ia).Text = ((this.hZ.ec().ToString()));
+         // PORT_TODO: dN.l(this.ia).a(this.hZ.cC());
+         // PORT_TODO: dN.m(this.ia).Enabled = (false);
+         // PORT_TODO: dN.n(this.ia).Enabled = (false);
+         // PORT_TODO: if (dN.o(this.ia) != null) {
+            // PORT_TODO: for(int var3 = 0; var3 < dN.a(this.ia).Length; ++var3) {
+               // PORT_TODO: if (this.hZ == dN.a(this.ia)[var3] && var3 == dN.o(this.ia).dV()) {
+                  // PORT_TODO: dN.m(this.ia).Enabled = (true);
+                  // PORT_TODO: dN.n(this.ia).Enabled = (true);
+               // PORT_TODO: }
+            // PORT_TODO: }
+         // PORT_TODO: }
 
       }
    }

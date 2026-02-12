@@ -22,6 +22,7 @@ public class ab : object {
 
    public gl r(int var1) {
       // PORT_TODO: return gl.Values[var1];
+      return default;
    }
 
    public void addListDataListener(EventHandler var1) {

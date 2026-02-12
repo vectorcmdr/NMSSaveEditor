@@ -81,11 +81,11 @@ public class cJ {
    public void setText(string var1) {
       if (this.gi == null) {
          this.value = eY.E(var1);
-         cy.b(this.gg).d((eY)this.value);
+         // PORT_TODO: cy.b(this.gg).d((eY)this.value);
       } else {
          this.value = fh.P(var1);
          if (this.gi.value is eY) {
-            ((eY)this.gi.value).b(this.name, this.value);
+            // PORT_TODO: ((eY)this.gi.value).b(this.name, this.value);
          } else if (this.gi.value is eV) {
             ((eV)this.gi.value).a(this.gj, this.value);
          }
@@ -101,7 +101,7 @@ public class cJ {
       } else {
          this.value = null;
          if (this.gi.value is eY) {
-            ((eY)this.gi.value).N(this.name);
+            // PORT_TODO: ((eY)this.gi.value).N(this.name);
          } else if (this.gi.value is eV) {
             ((eV)this.gi.value).ac(this.gj);
          }

@@ -72,7 +72,7 @@ public class aW : Form {
 
    public static void a(cy var0, string var1) {
       if (dx == null) {
-         dx = new aW(var0);
+         // PORT_TODO: dx = new aW(var0);
       }
 
       dx.StartPosition = FormStartPosition.CenterParent; //(var0);

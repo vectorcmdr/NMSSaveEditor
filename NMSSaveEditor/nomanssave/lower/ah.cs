@@ -15,13 +15,13 @@ public class ah : ActionListener {
    }
 
    public void actionPerformed(EventArgs var1) {
-      gj var2 = (gj)X.k(this.bV).SelectedItem;
-      if (var2 != null) {
-         if (X.h(this.bV).Checked ^ var2.cQ()) {
-            var2.d(X.h(this.bV).Checked);
-         }
+      // PORT_TODO: gj var2 = (gj)X.k(this.bV).SelectedItem;
+      // PORT_TODO: if (var2 != null) {
+         // PORT_TODO: if (X.h(this.bV).Checked ^ var2.cQ()) {
+            // PORT_TODO: var2.d(X.h(this.bV).Checked);
+         // PORT_TODO: }
 
-      }
+      // PORT_TODO: }
    }
 }
 

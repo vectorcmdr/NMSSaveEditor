@@ -198,7 +198,7 @@ public class cy : Form, TreeSelectionListener {
 
    public static bool a(Application var0, string var1, eY var2) {
       if (gd == null) {
-         gd = new cy(var0);
+         // PORT_TODO: gd = new cy(var0);
       }
 
       return gd.a(var1, var2);

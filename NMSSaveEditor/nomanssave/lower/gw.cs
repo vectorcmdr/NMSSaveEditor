@@ -16,11 +16,12 @@ public gw(eY var1, eY var2) : base(0, (eY)null, var2) {
    }
 
    public string getName() {
-      return this.oI.getValueAsString("PlayerWeaponName");
+      // PORT_TODO: return this.oI.getValueAsString("PlayerWeaponName");
+      return default;
    }
 
    public void setName(string var1) {
-      this.oI.b("PlayerWeaponName", (object)var1);
+      // PORT_TODO: this.oI.b("PlayerWeaponName", (object)var1);
    }
 
    public string cT() {
@@ -44,19 +45,21 @@ public gw(eY var1, eY var2) : base(0, (eY)null, var2) {
    }
 
    public string cK() {
-      return this.oI.d("CurrentWeapon.GenerationSeed").X(1);
+      // PORT_TODO: return this.oI.d("CurrentWeapon.GenerationSeed").X(1);
+      return default;
    }
 
    public void aa(string var1) {
-      this.oI.d("CurrentWeapon.GenerationSeed").a(1, var1);
+      // PORT_TODO: this.oI.d("CurrentWeapon.GenerationSeed").a(1, var1);
    }
 
    public string cW() {
-      return this.oI.getValueAsString("WeaponInventory.Class.InventoryClass");
+      // PORT_TODO: return this.oI.getValueAsString("WeaponInventory.Class.InventoryClass");
+      return default;
    }
 
    public void aj(string var1) {
-      this.oI.b("WeaponInventory.Class.InventoryClass", (object)var1);
+      // PORT_TODO: this.oI.b("WeaponInventory.Class.InventoryClass", (object)var1);
    }
 
    public string toString() {

@@ -45,7 +45,7 @@ public class fV : fs {
          }
 
          string var8 = var6.getProperty("GameMode");
-         this.be = var8 == null ? null : fn.valueOf(var8);
+         // PORT_TODO: this.be = var8 == null ? null : fn.valueOf(var8);
          this.mO = new fW(var1, var7);
          var5 = var4.getEntry(this.mP);
          if (var5 == null) {

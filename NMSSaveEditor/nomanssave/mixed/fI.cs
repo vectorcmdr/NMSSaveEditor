@@ -123,7 +123,7 @@ public class fI {
          this.setString(216, var1);
          return;
       default:
-         // PORT_TODO: return default;
+         break;
       }
    }
 
@@ -146,7 +146,7 @@ public class fI {
          this.setString(216, var1);
          return;
       default:
-         // PORT_TODO: return default;
+         break;
       }
    }
 

@@ -30,6 +30,7 @@ public class cA : DefaultTreeCellRenderer {
       }
 
       // PORT_TODO: return var8;
+      return default;
    }
 }
 

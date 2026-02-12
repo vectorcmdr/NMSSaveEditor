@@ -125,7 +125,7 @@ public class aj : Form {
    public static hl a(Container var0, hl var1) {
       if (cf == null) {
          Frame var2 = null;
-         cf = new aj(var2);
+         // PORT_TODO: cf = new aj(var2);
       }
 
       return cf.a(var1);

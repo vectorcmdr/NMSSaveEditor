@@ -65,9 +65,9 @@ public class c : Panel {
          this.d.a((eV)null);
          this.e.a((eV)null);
       } else {
-         this._c.a(var1.d("UserSettingsData.UnlockedSeasonRewards"));
-         this.d.a(var1.d("UserSettingsData.UnlockedTwitchRewards"));
-         this.e.a(var1.d("UserSettingsData.UnlockedPlatformRewards"));
+         // PORT_TODO: this._c.a(var1.d("UserSettingsData.UnlockedSeasonRewards"));
+         // PORT_TODO: this.d.a(var1.d("UserSettingsData.UnlockedTwitchRewards"));
+         // PORT_TODO: this.e.a(var1.d("UserSettingsData.UnlockedPlatformRewards"));
       }
 
       this.Refresh();

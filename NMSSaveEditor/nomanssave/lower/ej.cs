@@ -63,6 +63,7 @@ public class ej : JFileChooser {
       }
 
       // PORT_TODO: return ir.showOpenDialog((Component)null) == 0 ? ir.getSelectedFile() : null;
+      return default;
    }
    public static Image @as() {
       return im;

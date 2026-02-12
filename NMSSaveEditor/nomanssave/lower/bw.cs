@@ -23,6 +23,7 @@ public class bw : object {
 
    public gr u(int var1) {
       // PORT_TODO: return gr.Values[var1];
+      return default;
    }
 
    public void addListDataListener(EventHandler var1) {

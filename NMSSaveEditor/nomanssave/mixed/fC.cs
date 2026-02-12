@@ -38,7 +38,7 @@ public class fC : fs {
          }
 
          string var7 = var6.getProperty("GameMode");
-         this.be = var7 == null ? null : fn.valueOf(var7);
+         // PORT_TODO: this.be = var7 == null ? null : fn.valueOf(var7);
          var5 = var4.getEntry(this.md);
          Stream var8 = var4.getInputStream(var5);
 

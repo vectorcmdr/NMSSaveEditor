@@ -64,12 +64,13 @@ public class aQ : Form {
       this.StartPosition = FormStartPosition.CenterParent; //(this.DirectoryName);
       this.Show();
       // PORT_TODO: return this.dn;
+      return default;
    }
 
    public static Size a(Container var0, Size var1, Size var2, Size var3) {
       if (dq == null) {
          Frame var4 = null;
-         dq = new aQ(var4);
+         // PORT_TODO: dq = new aQ(var4);
       }
 
       return dq.a(var1, var2, var3);

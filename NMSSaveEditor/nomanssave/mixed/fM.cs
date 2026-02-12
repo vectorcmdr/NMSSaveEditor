@@ -49,9 +49,9 @@ public fM(fJ var1, int var2, eY var3) : base(var1, var2 == 0 ? "save.hg" : "save
 
    public string b(eY var1) {
       this.a(this.lO == 0 ? "backup" : "backup" + (this.lO + 1), this.me, this.Name, this.getDescription());
-      this.mx.Y(var1.getValueAsString("CommonStateData.SaveName"));
+      // PORT_TODO: this.mx.Y(var1.getValueAsString("CommonStateData.SaveName"));
       this.me = fn.i(var1);
-      this.mx.al((int)var1.K("CommonStateData.TotalPlayTime"));
+      // PORT_TODO: this.mx.al((int)var1.K("CommonStateData.TotalPlayTime"));
       this.a(var1, true);
       return this.filename;
    }

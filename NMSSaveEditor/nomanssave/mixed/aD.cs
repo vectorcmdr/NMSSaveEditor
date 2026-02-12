@@ -57,7 +57,7 @@ public class aD : Form {
    public static bool d(Container var0) {
       if (cz == null) {
          Frame var1 = null;
-         cz = new aD(var1);
+         // PORT_TODO: cz = new aD(var1);
       }
 
       return cz.S();

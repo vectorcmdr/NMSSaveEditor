@@ -41,21 +41,21 @@ public fY(fT var1, fV var2, eY var3) : base(var1, var2) {
       this.mN = var1;
       this.lO = var2.mb;
       this.mZ.a(var2.mQ);
-      int var4 = fT.ao(var3.J("Version"));
-      if (var4 != 0) {
-         this.mZ.setVersion(var4);
-      }
+      // PORT_TODO: int var4 = fT.ao(var3.J("Version"));
+      // PORT_TODO: if (var4 != 0) {
+         // PORT_TODO: this.mZ.setVersion(var4);
+      // PORT_TODO: }
 
-      this.na = var3.getValueAsString("CommonStateData.SaveName");
+      // PORT_TODO: this.na = var3.getValueAsString("CommonStateData.SaveName");
       if (this.na != null) {
          this.mZ.Y(this.na);
       }
 
       this.me = fn.i(var3);
-      long var5 = var3.K("PlayerStateData.TotalPlayTime");
-      if (var5 != 0L) {
-         this.mZ.d(var5);
-      }
+      // PORT_TODO: long var5 = var3.K("PlayerStateData.TotalPlayTime");
+      // PORT_TODO: if (var5 != 0L) {
+         // PORT_TODO: this.mZ.d(var5);
+      // PORT_TODO: }
 
       this.h(var3);
    }
@@ -74,21 +74,21 @@ public fY(fT var1, fV var2, eY var3) : base(var1, var2) {
 
    public string b(eY var1) {
       this.a(this.lO == 0 ? "wgsbackup" : "wgsbackup" + (this.lO + 1), this.me);
-      int var2 = fT.ao(var1.J("Version"));
-      if (var2 != 0) {
-         this.mZ.setVersion(var2);
-      }
+      // PORT_TODO: int var2 = fT.ao(var1.J("Version"));
+      // PORT_TODO: if (var2 != 0) {
+         // PORT_TODO: this.mZ.setVersion(var2);
+      // PORT_TODO: }
 
-      this.na = var1.getValueAsString("CommonStateData.SaveName");
+      // PORT_TODO: this.na = var1.getValueAsString("CommonStateData.SaveName");
       if (this.na != null) {
          this.mZ.Y(this.na);
       }
 
       this.me = fn.i(var1);
-      long var3 = var1.K("PlayerStateData.TotalPlayTime");
-      if (var3 != 0L) {
-         this.mZ.d(var3);
-      }
+      // PORT_TODO: long var3 = var1.K("PlayerStateData.TotalPlayTime");
+      // PORT_TODO: if (var3 != 0L) {
+         // PORT_TODO: this.mZ.d(var3);
+      // PORT_TODO: }
 
       this.h(var1);
       return this.mO.filename;

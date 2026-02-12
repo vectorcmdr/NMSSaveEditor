@@ -70,7 +70,7 @@ public class Q : Form {
    public static W a(Container var0, W var1, int var2, int var3) {
       if (bC == null) {
          Frame var4 = null;
-         bC = new Q(var4);
+         // PORT_TODO: bC = new Q(var4);
       }
 
       return bC.a(var1, var2, var3);

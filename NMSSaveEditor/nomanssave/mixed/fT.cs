@@ -234,6 +234,7 @@ public class fT : fq {
       }
 
       // PORT_TODO: return var0.Delete();
+      return false;
    }
 
    public static Stream a(Stream var0, int var1) {
@@ -245,7 +246,7 @@ public class fT : fq {
 
          // PORT_TODO: ((Stream)var0).mark(lA.Length);
          // PORT_TODO: byte[] var3 = new byte[lA.Length];
-         hk.readFully((Stream)var0, var3);
+         // PORT_TODO: hk.readFully((Stream)var0, var3);
 
          if (false) { // PORT_TODO: original loop had errors
             // PORT_TODO: if (var3[var4] != lA[var4]) {
@@ -319,6 +320,7 @@ public class fT : fq {
    }
    public static byte[] cy() {
       // PORT_TODO: return lA;
+      return null;
    }
    public static void e(fT var0) {
       var0.cs();

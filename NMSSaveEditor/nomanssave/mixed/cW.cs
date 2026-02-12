@@ -145,6 +145,7 @@ public class cW : Panel, CaretListener {
       int var2 = this.gB.getCaretPosition();
       // PORT_TODO: Element var3 = this.gB.getDocument().getDefaultRootElement();
       // PORT_TODO: return var3.getElementIndex(var1) == var3.getElementIndex(var2);
+      return false;
    }
 
    public string B(int var1) {
@@ -154,6 +155,7 @@ public class cW : Panel, CaretListener {
       // PORT_TODO: int var3 = var2.getElementIndex(var1);
       // PORT_TODO: Element var4 = var2.getElement(var3);
       // PORT_TODO: return var4.getStartOffset() == var1 ? Convert.ToString(var3 + 1) : "";
+      return default;
    }
 
    public int b(int var1, int var2) {
@@ -198,6 +200,7 @@ public class cW : Panel, CaretListener {
       }
 
       // PORT_TODO: return var5 - var6;
+      return 0;
    }
 
    public void caretUpdate(CaretEvent var1) {

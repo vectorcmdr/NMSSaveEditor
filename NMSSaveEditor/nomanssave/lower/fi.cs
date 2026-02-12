@@ -40,7 +40,8 @@ public fi(string var1) : base(var1) {
       }
 
       ++this.kG;
-      return var1;
+      // PORT_TODO: return var1;
+      return 0;
    }
 
    public int a(Predicate<object> var1) {

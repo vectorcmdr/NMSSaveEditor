@@ -24,6 +24,7 @@ public class eg : object {
 
    public gL I(int var1) {
       // PORT_TODO: return gL.Values[var1];
+      return default;
    }
 
    public void addListDataListener(EventHandler var1) {

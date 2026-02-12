@@ -39,10 +39,12 @@ public class fg {
 
    public string substring(int var1) {
       // PORT_TODO: return this.Substring(var1, this.bytes.Length - var1);
+      return default;
    }
 
    public string substring(int var1, int var2) {
       // PORT_TODO: return new string(this.bytes, var1, var2, kT);
+      return default;
    }
 
    public string bP() {
@@ -94,6 +96,7 @@ public class fg {
 
    public string toString() {
       // PORT_TODO: return new string(this.bytes, kT);
+      return default;
    }
 }
 

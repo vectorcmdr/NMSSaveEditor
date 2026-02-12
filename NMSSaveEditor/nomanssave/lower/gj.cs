@@ -16,32 +16,33 @@ public class gj {
    public eY bf;
 
    public static bool n(eY var0) {
-      return var0.d("Pets") != null && var0.d("Eggs") != null;
+      // PORT_TODO: return var0.d("Pets") != null && var0.d("Eggs") != null;
+      return false;
    }
 
    public static gj[] o(eY var0) {
       List<object> var1 = new List<object>();
-      eV var2 = var0.d("Pets");
+      // PORT_TODO: eV var2 = var0.d("Pets");
       int var3;
       eY var4;
-      if (var2 != null) {
-         for(var3 = 0; var3 < var2.Count; ++var3) {
-            var4 = var2.V(var3);
-            if (var4.d("CreatureSeed").ab(0)) {
-               var1.Add(new gj(gl.oF, var3, var4));
-            }
-         }
-      }
+      // PORT_TODO: if (var2 != null) {
+         // PORT_TODO: for(var3 = 0; var3 < var2.Count; ++var3) {
+            // PORT_TODO: var4 = var2.V(var3);
+            // PORT_TODO: if (var4.d("CreatureSeed").ab(0)) {
+               // PORT_TODO: var1.Add(new gj(gl.oF, var3, var4));
+            // PORT_TODO: }
+         // PORT_TODO: }
+      // PORT_TODO: }
 
-      var2 = var0.d("Eggs");
-      if (var2 != null) {
-         for(var3 = 0; var3 < var2.Count; ++var3) {
-            var4 = var2.V(var3);
-            if (var4.d("CreatureSeed").ab(0)) {
-               var1.Add(new gj(gl.oG, var3, var4));
-            }
-         }
-      }
+      // PORT_TODO: var2 = var0.d("Eggs");
+      // PORT_TODO: if (var2 != null) {
+         // PORT_TODO: for(var3 = 0; var3 < var2.Count; ++var3) {
+            // PORT_TODO: var4 = var2.V(var3);
+            // PORT_TODO: if (var4.d("CreatureSeed").ab(0)) {
+               // PORT_TODO: var1.Add(new gj(gl.oG, var3, var4));
+            // PORT_TODO: }
+         // PORT_TODO: }
+      // PORT_TODO: }
 
       return (gj[])var1.ToArray();
    }
@@ -50,12 +51,12 @@ public class gj {
       eV var2 = null;
       // PORT_TODO: gl var3 = null;
       if (var1.Name.EndsWith(".pet")) {
-         var2 = var0.d("Pets");
+         // PORT_TODO: var2 = var0.d("Pets");
          // PORT_TODO: var3 = gl.oF;
       }
 
       if (var1.Name.EndsWith(".egg")) {
-         var2 = var0.d("Eggs");
+         // PORT_TODO: var2 = var0.d("Eggs");
          // PORT_TODO: var3 = gl.oG;
       }
 
@@ -64,10 +65,10 @@ public class gj {
 
          for(int var5 = 0; var5 < var2.Count; ++var5) {
             eY var6 = var2.V(var5);
-            if (!var6.d("CreatureSeed").ab(0)) {
-               var4 = var5;
-               break;
-            }
+            // PORT_TODO: if (!var6.d("CreatureSeed").ab(0)) {
+               // PORT_TODO: var4 = var5;
+               // PORT_TODO: break;
+            // PORT_TODO: }
          }
 
          if (var4 < 0) {
@@ -102,13 +103,13 @@ public class gj {
                throw var16;
             }
 
-            eV var17 = var15.d("CreatureSeed");
-            if (var17 != null && var17.ab(0)) {
-               var2.a(var4, var15);
+            // PORT_TODO: eV var17 = var15.d("CreatureSeed");
+            // PORT_TODO: if (var17 != null && var17.ab(0)) {
+               // PORT_TODO: var2.a(var4, var15);
                // PORT_TODO: return new gj(var3, var4, var15);
-            } else {
-               throw new Exception("Invalid creature data");
-            }
+            // PORT_TODO: } else {
+               // PORT_TODO: throw new Exception("Invalid creature data");
+            // PORT_TODO: }
          }
       } else {
          throw new Exception("Companion cannot be imported to current file!");
@@ -129,7 +130,7 @@ public class gj {
 
    public void cm() {
       // PORT_TODO: this.bf.d("CreatureSeed").a(0, Boolean.FALSE);
-      this.bf.d("CreatureSeed").a(1, "0x0");
+      // PORT_TODO: this.bf.d("CreatureSeed").a(1, "0x0");
    }
 
    public void j(FileInfo var1) {
@@ -165,80 +166,89 @@ public class gj {
    }
 
    public string getName() {
-      return this.bf.getValueAsString("CustomName");
+      // PORT_TODO: return this.bf.getValueAsString("CustomName");
+      return default;
    }
 
    public void setName(string var1) {
-      this.bf.b("CustomName", (object)var1);
+      // PORT_TODO: this.bf.b("CustomName", (object)var1);
    }
 
    public string cM() {
-      return this.bf.getValueAsString("CreatureID");
+      // PORT_TODO: return this.bf.getValueAsString("CreatureID");
+      return default;
    }
 
    public string cK() {
-      return this.bf.d("CreatureSeed").X(1);
+      // PORT_TODO: return this.bf.d("CreatureSeed").X(1);
+      return default;
    }
 
    public void aa(string var1) {
-      this.bf.d("CreatureSeed").a(1, var1);
+      // PORT_TODO: this.bf.d("CreatureSeed").a(1, var1);
    }
 
    public string cN() {
-      eV var1 = this.bf.d("CreatureSecondarySeed");
-      return var1.ab(0) ? var1.X(1) : "";
+      // PORT_TODO: eV var1 = this.bf.d("CreatureSecondarySeed");
+      // PORT_TODO: return var1.ab(0) ? var1.X(1) : "";
+      return default;
    }
 
    public void ab(string var1) {
-      eV var2 = this.bf.d("CreatureSecondarySeed");
+      // PORT_TODO: eV var2 = this.bf.d("CreatureSecondarySeed");
       if (var1 != null && var1.Length != 0) {
-         var2.a(0, true);
-         var2.a(1, var1);
+         // PORT_TODO: var2.a(0, true);
+         // PORT_TODO: var2.a(1, var1);
       } else {
-         var2.a(0, false);
-         var2.a(1, "");
+         // PORT_TODO: var2.a(0, false);
+         // PORT_TODO: var2.a(1, "");
       }
 
    }
 
    public string cO() {
-      return this.bf.I("SpeciesSeed");
+      // PORT_TODO: return this.bf.I("SpeciesSeed");
+      return default;
    }
 
    public void ac(string var1) {
-      this.bf.b("SpeciesSeed", (object)var1);
+      // PORT_TODO: this.bf.b("SpeciesSeed", (object)var1);
    }
 
    public string cP() {
-      return this.bf.I("GenusSeed");
+      // PORT_TODO: return this.bf.I("GenusSeed");
+      return default;
    }
 
    public void ad(string var1) {
-      this.bf.b("GenusSeed", (object)var1);
+      // PORT_TODO: this.bf.b("GenusSeed", (object)var1);
    }
 
    public bool cQ() {
-      return this.bf.M("Predator");
+      // PORT_TODO: return this.bf.M("Predator");
+      return false;
    }
 
    public void d(bool var1) {
-      this.bf.b("Predator", (object)var1);
+      // PORT_TODO: this.bf.b("Predator", (object)var1);
    }
 
    public string cR() {
-      return this.bf.getValueAsString("Biome.Biome");
+      // PORT_TODO: return this.bf.getValueAsString("Biome.Biome");
+      return null;
    }
 
    public void ae(string var1) {
-      this.bf.b("Biome.Biome", (object)var1);
+      // PORT_TODO: this.bf.b("Biome.Biome", (object)var1);
    }
 
    public string cS() {
-      return this.bf.getValueAsString("CreatureType.CreatureType");
+      // PORT_TODO: return this.bf.getValueAsString("CreatureType.CreatureType");
+      return null;
    }
 
    public void af(string var1) {
-      this.bf.b("CreatureType.CreatureType", (object)var1);
+      // PORT_TODO: this.bf.b("CreatureType.CreatureType", (object)var1);
    }
 
    public string toString() {

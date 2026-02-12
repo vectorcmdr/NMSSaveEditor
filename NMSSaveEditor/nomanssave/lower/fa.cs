@@ -11,7 +11,7 @@ public class fa {
    public fa d(string var1, object var2) {
       if (var1 == null) {
          throw new NullReferenceException();
-      } else if (!eY.bF().matcher(var1).matches()) {
+      // PORT_TODO: } else if (!eY.bF().matcher(var1).matches()) {
          throw new Exception("Invalid name: " + var1);
       } else if (var2 != null && !fh.a(var2.GetType())) {
          throw new Exception("Unsupported type: " + var2.GetType().getSimpleName());

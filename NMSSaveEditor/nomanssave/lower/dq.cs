@@ -19,14 +19,14 @@ public class dq : ActionListener {
    }
 
    public void actionPerformed(EventArgs var1) {
-      int var2 = dj.j(this.hl).SelectedIndex;
-      if (var2 >= 0 && var2 < dj.a(this.hl).Length) {
-         if (dj.a(this.hl).Length == 1) {
-            this.bv.c("You cannot delete the only multitool you have!");
+      // PORT_TODO: int var2 = dj.j(this.hl).SelectedIndex;
+      // PORT_TODO: if (var2 >= 0 && var2 < dj.a(this.hl).Length) {
+         // PORT_TODO: if (dj.a(this.hl).Length == 1) {
+            // PORT_TODO: this.bv.c("You cannot delete the only multitool you have!");
          // PORT_TODO: } else if (MessageBox.Show(this.hl, "Are you sure you want to delete this multitool?\nAll technology in the multitool will be lost!", "Delete", 2) == 0) {
-            this.bv.h(dj.a(this.hl)[var2].getIndex());
-         }
-      }
+            // PORT_TODO: this.bv.h(dj.a(this.hl)[var2].getIndex());
+         // PORT_TODO: }
+      // PORT_TODO: }
    }
 }
 

@@ -19,19 +19,20 @@ public class gB {
    }
 
    public int dU() {
-      return this.oI.J("ActiveMultioolIndex");
+      // PORT_TODO: return this.oI.J("ActiveMultioolIndex");
+      return 0;
    }
 
    public void aF(int var1) {
-      eY var2 = this.oI.H("Multitools[" + var1 + "]");
-      if (var2 != null && var2.M("Seed[0]")) {
-         this.oI.b("ActiveMultioolIndex", (object)var1);
-         this.oI.b("WeaponInventory", (object)var2.H("Store").bE());
-         this.oI.b("CurrentWeapon.GenerationSeed[1]", (object)var2.I("Seed[1]"));
-         this.oI.b("CurrentWeapon.Filename", (object)var2.getValueAsString("Resource.Filename"));
-      } else {
-         throw new Exception("Cannot set current multitool");
-      }
+      // PORT_TODO: eY var2 = this.oI.H("Multitools[" + var1 + "]");
+      // PORT_TODO: if (var2 != null && var2.M("Seed[0]")) {
+         // PORT_TODO: this.oI.b("ActiveMultioolIndex", (object)var1);
+         // PORT_TODO: this.oI.b("WeaponInventory", (object)var2.H("Store").bE());
+         // PORT_TODO: this.oI.b("CurrentWeapon.GenerationSeed[1]", (object)var2.I("Seed[1]"));
+         // PORT_TODO: this.oI.b("CurrentWeapon.Filename", (object)var2.getValueAsString("Resource.Filename"));
+      // PORT_TODO: } else {
+         // PORT_TODO: throw new Exception("Cannot set current multitool");
+      // PORT_TODO: }
    }
 }
 

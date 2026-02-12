@@ -106,28 +106,28 @@ public class gt {
       this.qv = var7;
       this.qw = var8;
       this.qx = var9;
-      this.width = var2.J("Width");
-      this.height = var2.J("Height");
-      ew var10 = eu.b(Application.e().E(), var2.getValueAsString("StackSizeGroup.InventoryStackSizeGroup"));
-      if (var10 != null) {
-         this.bE = var10.aX();
-         this.bF = var10.aY();
-      } else {
-         switch(dx()[Application.e().F().ordinal()]) {
-         case 1:
-         case 3:
-         case 4:
-         default:
-            this.bE = 9999;
-            this.bF = var2.c("ProductMaxStorageMultiplier", 10);
-            break;
-         case 2:
-         case 5:
-            this.bE = 250 * var2.c("SubstanceMaxStorageMultiplier", 2);
-            this.bF = var2.c("ProductMaxStorageMultiplier", 10);
+      // PORT_TODO: this.width = var2.J("Width");
+      // PORT_TODO: this.height = var2.J("Height");
+      // PORT_TODO: ew var10 = eu.b(Application.e().E(), var2.getValueAsString("StackSizeGroup.InventoryStackSizeGroup"));
+      // PORT_TODO: if (var10 != null) {
+         // PORT_TODO: this.bE = var10.aX();
+         // PORT_TODO: this.bF = var10.aY();
+      // PORT_TODO: } else {
+         // PORT_TODO: switch(dx()[Application.e().F().ordinal()]) {
+         // PORT_TODO: case 1:
+         // PORT_TODO: case 3:
+         // PORT_TODO: case 4:
+         // PORT_TODO: default:
+            // PORT_TODO: this.bE = 9999;
+            // PORT_TODO: this.bF = var2.c("ProductMaxStorageMultiplier", 10);
+            // PORT_TODO: break;
+         // PORT_TODO: case 2:
+         // PORT_TODO: case 5:
+            // PORT_TODO: this.bE = 250 * var2.c("SubstanceMaxStorageMultiplier", 2);
+            // PORT_TODO: this.bF = var2.c("ProductMaxStorageMultiplier", 10);
             // PORT_TODO: return default;
-         }
-      }
+         // PORT_TODO: }
+      // PORT_TODO: }
 
       int var11 = Math.Max(this.height, var5);
       int var12 = Math.Max(this.width, var4);
@@ -139,28 +139,28 @@ public class gt {
          this.qz[var13] = new bool[var12];
       }
 
-      eV var19 = var2.d("ValidSlotIndices");
+      // PORT_TODO: eV var19 = var2.d("ValidSlotIndices");
 
       int var17;
-      for(int var14 = 0; var14 < var19.Count; ++var14) {
-         eY var15 = var19.V(var14);
-         int var16 = var15.J("X");
-         var17 = var15.J("Y");
-         if (var16 >= 0 && var16 < var12 && var17 >= 0 && var17 < var11) {
-            this.qz[var17][var16] = true;
-         }
-      }
+      // PORT_TODO: for(int var14 = 0; var14 < var19.Count; ++var14) {
+         // PORT_TODO: eY var15 = var19.V(var14);
+         // PORT_TODO: int var16 = var15.J("X");
+         // PORT_TODO: var17 = var15.J("Y");
+         // PORT_TODO: if (var16 >= 0 && var16 < var12 && var17 >= 0 && var17 < var11) {
+            // PORT_TODO: this.qz[var17][var16] = true;
+         // PORT_TODO: }
+      // PORT_TODO: }
 
-      eV var20 = var2.d("Slots");
+      // PORT_TODO: eV var20 = var2.d("Slots");
 
-      for(int var21 = 0; var21 < var20.Count; ++var21) {
-         eY var22 = var20.V(var21);
-         var17 = var22.J("Index.X");
-         int var18 = var22.J("Index.Y");
-         if (var17 >= 0 && var17 < var12 && var18 >= 0 && var18 < var11) {
-            this.qy[var18][var17] = var22;
-         }
-      }
+      // PORT_TODO: for(int var21 = 0; var21 < var20.Count; ++var21) {
+         // PORT_TODO: eY var22 = var20.V(var21);
+         // PORT_TODO: var17 = var22.J("Index.X");
+         // PORT_TODO: int var18 = var22.J("Index.Y");
+         // PORT_TODO: if (var17 >= 0 && var17 < var12 && var18 >= 0 && var18 < var11) {
+            // PORT_TODO: this.qy[var18][var17] = var22;
+         // PORT_TODO: }
+      // PORT_TODO: }
 
    }
 
@@ -183,7 +183,8 @@ public class gt {
    }
 
    public string getName() {
-      return this.qt.getValueAsString("Name");
+      // PORT_TODO: return this.qt.getValueAsString("Name");
+      return default;
    }
 
    public void setName(string var1) {
@@ -191,7 +192,7 @@ public class gt {
          var1 = "";
       }
 
-      this.qt.b("Name", (object)var1);
+      // PORT_TODO: this.qt.b("Name", (object)var1);
    }
 
    public int dj() {
@@ -215,79 +216,82 @@ public class gt {
    }
 
    public bool ao(string var1) {
-      eV var2 = this.qt.d("BaseStatValues");
-      if (var2 == null) {
-         return false;
-      } else {
-         for(int var3 = 0; var3 < var2.Count; ++var3) {
-            eY var4 = var2.V(var3);
-            if (var4.getValueAsString("BaseStatID").Equals(var1)) {
-               return true;
-            }
-         }
+      // PORT_TODO: eV var2 = this.qt.d("BaseStatValues");
+      // PORT_TODO: if (var2 == null) {
+         // PORT_TODO: return false;
+      // PORT_TODO: } else {
+         // PORT_TODO: for(int var3 = 0; var3 < var2.Count; ++var3) {
+            // PORT_TODO: eY var4 = var2.V(var3);
+            // PORT_TODO: if (var4.getValueAsString("BaseStatID").Equals(var1)) {
+               // PORT_TODO: return true;
+            // PORT_TODO: }
+         // PORT_TODO: }
 
-         return false;
-      }
+         // PORT_TODO: return false;
+      // PORT_TODO: }
+      return false;
    }
 
    public double ak(string var1) {
-      eV var2 = this.qt.d("BaseStatValues");
-      if (var2 == null) {
-         return 0.0D;
-      } else {
-         for(int var3 = 0; var3 < var2.Count; ++var3) {
-            eY var4 = var2.V(var3);
-            if (var4.getValueAsString("BaseStatID").Equals(var1)) {
-               return var4.L("Value");
-            }
-         }
+      // PORT_TODO: eV var2 = this.qt.d("BaseStatValues");
+      // PORT_TODO: if (var2 == null) {
+         // PORT_TODO: return 0.0D;
+      // PORT_TODO: } else {
+         // PORT_TODO: for(int var3 = 0; var3 < var2.Count; ++var3) {
+            // PORT_TODO: eY var4 = var2.V(var3);
+            // PORT_TODO: if (var4.getValueAsString("BaseStatID").Equals(var1)) {
+               // PORT_TODO: return var4.L("Value");
+            // PORT_TODO: }
+         // PORT_TODO: }
 
-         return 0.0D;
-      }
+         // PORT_TODO: return 0.0D;
+      // PORT_TODO: }
+      return 0.0;
    }
 
    public void d(string var1, double var2) {
-      eV var4 = this.qt.d("BaseStatValues");
-      if (var4 == null) {
-         throw new Exception("Could not set base stat");
-      } else {
-         bool var5 = false;
+      // PORT_TODO: eV var4 = this.qt.d("BaseStatValues");
+      // PORT_TODO: if (var4 == null) {
+         // PORT_TODO: throw new Exception("Could not set base stat");
+      // PORT_TODO: } else {
+         // PORT_TODO: bool var5 = false;
 
-         for(int var6 = 0; var6 < var4.Count; ++var6) {
-            eY var7 = var4.V(var6);
-            if (var7.getValueAsString("BaseStatID").Equals(var1)) {
-               var7.b("Value", (object)var2);
-               var5 = true;
-               break;
-            }
-         }
+         // PORT_TODO: for(int var6 = 0; var6 < var4.Count; ++var6) {
+            // PORT_TODO: eY var7 = var4.V(var6);
+            // PORT_TODO: if (var7.getValueAsString("BaseStatID").Equals(var1)) {
+               // PORT_TODO: var7.b("Value", (object)var2);
+               // PORT_TODO: var5 = true;
+               // PORT_TODO: break;
+            // PORT_TODO: }
+         // PORT_TODO: }
 
-         if (var5 == null) {
-            eY var8 = new eY();
-            var8.b("BaseStatID", (object)var1);
-            var8.b("Value", (object)var2);
-            var4.f(var8);
-            var5 = true;
-         }
+         // PORT_TODO: if (var5 == null) {
+            // PORT_TODO: eY var8 = new eY();
+            // PORT_TODO: var8.b("BaseStatID", (object)var1);
+            // PORT_TODO: var8.b("Value", (object)var2);
+            // PORT_TODO: var4.f(var8);
+            // PORT_TODO: var5 = true;
+         // PORT_TODO: }
 
-      }
+      // PORT_TODO: }
    }
 
    public bool ap(string var1) {
-      eV var2 = this.qt.d("BaseStatValues");
-      if (var2 == null) {
-         return false;
-      } else {
-         for(int var3 = 0; var3 < var2.Count; ++var3) {
-            eY var4 = var2.V(var3);
-            if (var4.getValueAsString("BaseStatID").Equals(var1)) {
-               var2.ac(var3);
-               return true;
-            }
-         }
+      // PORT_TODO: eV var2 = this.qt.d("BaseStatValues");
+      // PORT_TODO: if (var2 == null) {
+         // PORT_TODO: return false;
+      // PORT_TODO: } else {
+         // PORT_TODO: for(int var3 = 0; var3 < var2.Count; ++var3) {
+            // PORT_TODO: eY var4 = var2.V(var3);
+            // PORT_TODO: if (var4.getValueAsString("BaseStatID").Equals(var1)) {
+               // PORT_TODO: var2.ac(var3);
+               // PORT_TODO: return true;
+            // PORT_TODO: }
+         // PORT_TODO: }
 
-         return false;
-      }
+         // PORT_TODO: return false;
+      // PORT_TODO: }
+      return false;
    }
 
    public Size getSize() {
@@ -385,13 +389,13 @@ public class gt {
       bool var1 = false;
       if (this.width < this.qz[0].Length) {
          this.width = this.qz[0].Length;
-         this.qt.b("Width", (object)(((int)(this.width))));
+         // PORT_TODO: this.qt.b("Width", (object)(((int)(this.width))));
          var1 = true;
       }
 
       if (this.height < this.qz.Length) {
          this.height = this.qz.Length;
-         this.qt.b("Height", (object)(((int)(this.height))));
+         // PORT_TODO: this.qt.b("Height", (object)(((int)(this.height))));
          var1 = true;
       }
 
@@ -424,18 +428,18 @@ public class gt {
       } else if (!this.qz[var4][var3]) {
          throw new Exception("New slot not enabled");
       } else {
-         eV var5 = this.qt.d("Slots");
+         // PORT_TODO: eV var5 = this.qt.d("Slots");
          if (this.qy[var4][var3] != null) {
-            var5.g(this.qy[var4][var3]);
+            // PORT_TODO: var5.g(this.qy[var4][var3]);
          }
 
          if (this.qy[var2][var1] == null) {
             this.qy[var4][var3] = null;
          } else {
             eY var6 = this.qy[var2][var1].bE();
-            var6.b("Index.X", (object)var3);
-            var6.b("Index.Y", (object)var4);
-            var5.f(var6);
+            // PORT_TODO: var6.b("Index.X", (object)var3);
+            // PORT_TODO: var6.b("Index.Y", (object)var4);
+            // PORT_TODO: var5.f(var6);
             this.qy[var4][var3] = var6;
          }
 
@@ -450,29 +454,29 @@ public class gt {
       } else {
          eY var5 = this.qy[var2][var1];
          eY var6 = this.qy[var4][var3];
-         if (var5 != null && var6 != null && var5.getValue("Id").Equals(var6.getValue("Id"))) {
-            int var7 = var6.J("MaxAmount");
-            int var8 = var5.J("Amount") + var6.J("Amount");
-            if (var8 <= var7) {
-               var6.b("Amount", (object)var8);
-               this.g(var1, var2);
-            } else {
-               var6.b("Amount", (object)var7);
-               var5.b("Amount", (object)(var8 - var7));
-            }
+         // PORT_TODO: if (var5 != null && var6 != null && var5.getValue("Id").Equals(var6.getValue("Id"))) {
+            // PORT_TODO: int var7 = var6.J("MaxAmount");
+            // PORT_TODO: int var8 = var5.J("Amount") + var6.J("Amount");
+            // PORT_TODO: if (var8 <= var7) {
+               // PORT_TODO: var6.b("Amount", (object)var8);
+               // PORT_TODO: this.g(var1, var2);
+            // PORT_TODO: } else {
+               // PORT_TODO: var6.b("Amount", (object)var7);
+               // PORT_TODO: var5.b("Amount", (object)(var8 - var7));
+            // PORT_TODO: }
 
-         } else {
-            if (var5 != null) {
-               var5.b("Index", (new fa()).d("X", var3).d("Y", var4).bH());
-            }
+         // PORT_TODO: } else {
+            // PORT_TODO: if (var5 != null) {
+               // PORT_TODO: var5.b("Index", (new fa()).d("X", var3).d("Y", var4).bH());
+            // PORT_TODO: }
 
-            this.qy[var4][var3] = var5;
-            if (var6 != null) {
-               var6.b("Index", (new fa()).d("X", var1).d("Y", var2).bH());
-            }
+            // PORT_TODO: this.qy[var4][var3] = var5;
+            // PORT_TODO: if (var6 != null) {
+               // PORT_TODO: var6.b("Index", (new fa()).d("X", var1).d("Y", var2).bH());
+            // PORT_TODO: }
 
-            this.qy[var2][var1] = var6;
-         }
+            // PORT_TODO: this.qy[var2][var1] = var6;
+         // PORT_TODO: }
       }
    }
 
@@ -485,12 +489,12 @@ public class gt {
          eY var5 = this.qy[var2][var1];
          eY var6 = this.qy[var4][var3];
          if (var5 != null) {
-            var5.b("Index", (new fa()).d("X", var3).d("Y", var4).bH());
+            // PORT_TODO: var5.b("Index", (new fa()).d("X", var3).d("Y", var4).bH());
          }
 
          this.qy[var4][var3] = var5;
          if (var6 != null) {
-            var6.b("Index", (new fa()).d("X", var1).d("Y", var2).bH());
+            // PORT_TODO: var6.b("Index", (new fa()).d("X", var1).d("Y", var2).bH());
          }
 
          this.qy[var2][var1] = var6;
@@ -502,23 +506,23 @@ public class gt {
    }
 
    public void az(int var1) {
-      eV var2 = this.qt.d("Slots");
+      // PORT_TODO: eV var2 = this.qt.d("Slots");
 
-      for(int var3 = 0; var3 < var2.Count; ++var3) {
-         eY var4 = var2.V(var3);
-         if (var4.getValueAsString("Type.InventoryType").Equals("Technology")) {
-            ey var5 = ey.d(var4.getValue("Id"));
-            if (var5 == null || (a(var5.bc()) & var1) == 0) {
-               int var6 = var4.J("Index.X");
-               int var7 = var4.J("Index.Y");
-               if (var7 < this.qy.Length && var6 < this.qy[var7].Length) {
-                  this.qy[var7][var6] = null;
-               }
+      // PORT_TODO: for(int var3 = 0; var3 < var2.Count; ++var3) {
+         // PORT_TODO: eY var4 = var2.V(var3);
+         // PORT_TODO: if (var4.getValueAsString("Type.InventoryType").Equals("Technology")) {
+            // PORT_TODO: ey var5 = ey.d(var4.getValue("Id"));
+            // PORT_TODO: if (var5 == null || (a(var5.bc()) & var1) == 0) {
+               // PORT_TODO: int var6 = var4.J("Index.X");
+               // PORT_TODO: int var7 = var4.J("Index.Y");
+               // PORT_TODO: if (var7 < this.qy.Length && var6 < this.qy[var7].Length) {
+                  // PORT_TODO: this.qy[var7][var6] = null;
+               // PORT_TODO: }
 
-               var2.ac(var3--);
-            }
-         }
-      }
+               // PORT_TODO: var2.ac(var3--);
+            // PORT_TODO: }
+         // PORT_TODO: }
+      // PORT_TODO: }
 
    }
 
@@ -526,14 +530,14 @@ public class gt {
       if (this.qy[var2][var1] == null) {
          return false;
       } else {
-         eV var3 = this.qt.d("Slots");
+         // PORT_TODO: eV var3 = this.qt.d("Slots");
 
-         for(int var4 = 0; var4 < var3.Count; ++var4) {
-            eY var5 = var3.V(var4);
-            if (var1 == var5.J("Index.X") && var2 == var5.J("Index.Y")) {
-               var3.ac(var4);
-            }
-         }
+         // PORT_TODO: for(int var4 = 0; var4 < var3.Count; ++var4) {
+            // PORT_TODO: eY var5 = var3.V(var4);
+            // PORT_TODO: if (var1 == var5.J("Index.X") && var2 == var5.J("Index.Y")) {
+               // PORT_TODO: var3.ac(var4);
+            // PORT_TODO: }
+         // PORT_TODO: }
 
          this.qy[var2][var1] = null;
          return true;
@@ -544,119 +548,119 @@ public class gt {
       if (this.qy[var2][var1] == null) {
          return false;
       } else {
-         string var4 = this.qy[var2][var1].getValueAsString("Type.InventoryType");
-         object var5 = this.qy[var2][var1].getValue("Id");
-         int var6 = this.qy[var2][var1].J("Amount");
-         double var7 = this.qy[var2][var1].L("DamageFactor");
-         bool var9 = this.qy[var2][var1].M("FullyInstalled");
+         // PORT_TODO: string var4 = this.qy[var2][var1].getValueAsString("Type.InventoryType");
+         // PORT_TODO: object var5 = this.qy[var2][var1].getValue("Id");
+         // PORT_TODO: int var6 = this.qy[var2][var1].J("Amount");
+         // PORT_TODO: double var7 = this.qy[var2][var1].L("DamageFactor");
+         // PORT_TODO: bool var9 = this.qy[var2][var1].M("FullyInstalled");
          bool var10 = false;
          int var11;
          int var12;
          int var13;
-         if (var4.Equals("Technology")) {
-            var11 = this.qy[var2][var1].J("MaxAmount");
+         // PORT_TODO: if (var4.Equals("Technology")) {
+            // PORT_TODO: var11 = this.qy[var2][var1].J("MaxAmount");
 
-            for(var12 = 0; var12 < var3.qy.Length; ++var12) {
-               for(var13 = 0; var13 < var3.qy[var12].Length; ++var13) {
-                  if (var3.qy[var12][var13] == null && var3.qz[var12][var13] && !var3.l(var13, var12)) {
-                     var3.a(var13, var12, var4, var5, var6, var11, var7, var9);
-                     var6 = 0;
-                     var10 = true;
-                     break;
-                  }
-               }
+            // PORT_TODO: for(var12 = 0; var12 < var3.qy.Length; ++var12) {
+               // PORT_TODO: for(var13 = 0; var13 < var3.qy[var12].Length; ++var13) {
+                  // PORT_TODO: if (var3.qy[var12][var13] == null && var3.qz[var12][var13] && !var3.l(var13, var12)) {
+                     // PORT_TODO: var3.a(var13, var12, var4, var5, var6, var11, var7, var9);
+                     // PORT_TODO: var6 = 0;
+                     // PORT_TODO: var10 = true;
+                     // PORT_TODO: break;
+                  // PORT_TODO: }
+               // PORT_TODO: }
 
-               if (var6 == 0) {
-                  break;
-               }
-            }
-         }
+               // PORT_TODO: if (var6 == 0) {
+                  // PORT_TODO: break;
+               // PORT_TODO: }
+            // PORT_TODO: }
+         // PORT_TODO: }
 
          int var14;
          int var15;
-         if (var6 > 0 && !var4.Equals("Technology")) {
-            for(var11 = 0; var11 < var3.qy.Length; ++var11) {
-               for(var12 = 0; var12 < var3.qy[var11].Length; ++var12) {
-                  if (var3.qy[var11][var12] != null && var4.Equals(var3.qy[var11][var12].getValueAsString("Type.InventoryType")) && var5.Equals(var3.qy[var11][var12].getValue("Id"))) {
-                     var13 = var3.qy[var11][var12].J("Amount");
-                     var14 = var3.qy[var11][var12].J("MaxAmount");
-                     if (var13 < var14) {
-                        var15 = var6 > var14 - var13 ? var14 - var13 : var6;
-                        hc.info("  added to existing stack: " + var15);
-                        var3.qy[var11][var12].b("Amount", (object)(((int)(var13 + var15))));
-                        var6 -= var15;
-                        var10 = true;
-                        if (var6 == 0) {
-                           break;
-                        }
-                     }
-                  }
-               }
+         // PORT_TODO: if (var6 > 0 && !var4.Equals("Technology")) {
+            // PORT_TODO: for(var11 = 0; var11 < var3.qy.Length; ++var11) {
+               // PORT_TODO: for(var12 = 0; var12 < var3.qy[var11].Length; ++var12) {
+                  // PORT_TODO: if (var3.qy[var11][var12] != null && var4.Equals(var3.qy[var11][var12].getValueAsString("Type.InventoryType")) && var5.Equals(var3.qy[var11][var12].getValue("Id"))) {
+                     // PORT_TODO: var13 = var3.qy[var11][var12].J("Amount");
+                     // PORT_TODO: var14 = var3.qy[var11][var12].J("MaxAmount");
+                     // PORT_TODO: if (var13 < var14) {
+                        // PORT_TODO: var15 = var6 > var14 - var13 ? var14 - var13 : var6;
+                        // PORT_TODO: hc.info("  added to existing stack: " + var15);
+                        // PORT_TODO: var3.qy[var11][var12].b("Amount", (object)(((int)(var13 + var15))));
+                        // PORT_TODO: var6 -= var15;
+                        // PORT_TODO: var10 = true;
+                        // PORT_TODO: if (var6 == 0) {
+                           // PORT_TODO: break;
+                        // PORT_TODO: }
+                     // PORT_TODO: }
+                  // PORT_TODO: }
+               // PORT_TODO: }
 
-               if (var6 == 0) {
-                  break;
-               }
-            }
-         }
+               // PORT_TODO: if (var6 == 0) {
+                  // PORT_TODO: break;
+               // PORT_TODO: }
+            // PORT_TODO: }
+         // PORT_TODO: }
 
-         if (var6 > 0 && !var4.Equals("Technology")) {
-            ey var16 = ey.d(this.qy[var2][var1].getValue("Id"));
-            if (var4.Equals("Technology")) {
-               var12 = this.qy[var2][var1].J("MaxAmount");
-            } else if (var4.Equals("Substance")) {
-               if (var16 == null) {
-                  var12 = var3.bE;
-               } else {
-                  var12 = Math.Max(1, var3.bE * var16.bj());
-               }
-            } else if (var4.Equals("Product")) {
-               if (var16 == null) {
-                  var12 = var3.bF;
-               } else {
-                  var12 = Math.Max(1, var3.bF * var16.bj());
-               }
-            } else {
-               var12 = 1;
-            }
+         // PORT_TODO: if (var6 > 0 && !var4.Equals("Technology")) {
+            // PORT_TODO: ey var16 = ey.d(this.qy[var2][var1].getValue("Id"));
+            // PORT_TODO: if (var4.Equals("Technology")) {
+               // PORT_TODO: var12 = this.qy[var2][var1].J("MaxAmount");
+            // PORT_TODO: } else if (var4.Equals("Substance")) {
+               // PORT_TODO: if (var16 == null) {
+                  // PORT_TODO: var12 = var3.bE;
+               // PORT_TODO: } else {
+                  // PORT_TODO: var12 = Math.Max(1, var3.bE * var16.bj());
+               // PORT_TODO: }
+            // PORT_TODO: } else if (var4.Equals("Product")) {
+               // PORT_TODO: if (var16 == null) {
+                  // PORT_TODO: var12 = var3.bF;
+               // PORT_TODO: } else {
+                  // PORT_TODO: var12 = Math.Max(1, var3.bF * var16.bj());
+               // PORT_TODO: }
+            // PORT_TODO: } else {
+               // PORT_TODO: var12 = 1;
+            // PORT_TODO: }
 
-            for(var13 = 0; var13 < var3.qy.Length; ++var13) {
-               for(var14 = 0; var14 < var3.qy[var13].Length; ++var14) {
-                  if (var3.qy[var13][var14] == null && var3.qz[var13][var14] && !var3.l(var14, var13)) {
-                     var15 = var6 > var12 ? var12 : var6;
-                     hc.info("  new stack: " + var15);
-                     var3.a(var14, var13, var4, var5, var15, var12, var7, var9);
-                     var6 -= var15;
-                     var10 = true;
-                     if (var6 == 0) {
-                        break;
-                     }
-                  }
-               }
+            // PORT_TODO: for(var13 = 0; var13 < var3.qy.Length; ++var13) {
+               // PORT_TODO: for(var14 = 0; var14 < var3.qy[var13].Length; ++var14) {
+                  // PORT_TODO: if (var3.qy[var13][var14] == null && var3.qz[var13][var14] && !var3.l(var14, var13)) {
+                     // PORT_TODO: var15 = var6 > var12 ? var12 : var6;
+                     // PORT_TODO: hc.info("  new stack: " + var15);
+                     // PORT_TODO: var3.a(var14, var13, var4, var5, var15, var12, var7, var9);
+                     // PORT_TODO: var6 -= var15;
+                     // PORT_TODO: var10 = true;
+                     // PORT_TODO: if (var6 == 0) {
+                        // PORT_TODO: break;
+                     // PORT_TODO: }
+                  // PORT_TODO: }
+               // PORT_TODO: }
 
-               if (var6 == 0) {
-                  break;
-               }
-            }
-         }
+               // PORT_TODO: if (var6 == 0) {
+                  // PORT_TODO: break;
+               // PORT_TODO: }
+            // PORT_TODO: }
+         // PORT_TODO: }
 
          if (var10 == null) {
             return false;
          } else {
-            if (var6 == 0) {
-               eV var17 = this.qt.d("Slots");
+            // PORT_TODO: if (var6 == 0) {
+               // PORT_TODO: eV var17 = this.qt.d("Slots");
 
-               for(var12 = 0; var12 < var17.Count; ++var12) {
-                  eY var18 = var17.V(var12);
-                  if (var1 == var18.J("Index.X") && var2 == var18.J("Index.Y")) {
-                     var17.ac(var12);
-                  }
-               }
+               // PORT_TODO: for(var12 = 0; var12 < var17.Count; ++var12) {
+                  // PORT_TODO: eY var18 = var17.V(var12);
+                  // PORT_TODO: if (var1 == var18.J("Index.X") && var2 == var18.J("Index.Y")) {
+                     // PORT_TODO: var17.ac(var12);
+                  // PORT_TODO: }
+               // PORT_TODO: }
 
-               this.qy[var2][var1] = null;
-            } else {
-               hc.info("  remainder: " + var6);
-               this.qy[var2][var1].b("Amount", (object)(((int)(var6))));
-            }
+               // PORT_TODO: this.qy[var2][var1] = null;
+            // PORT_TODO: } else {
+               // PORT_TODO: hc.info("  remainder: " + var6);
+               // PORT_TODO: this.qy[var2][var1].b("Amount", (object)(((int)(var6))));
+            // PORT_TODO: }
 
             return true;
          }
@@ -691,19 +695,19 @@ public class gt {
       if (var2 > 0) {
          for(int var5 = 0; var5 < this.qy.Length; ++var5) {
             for(var6 = 0; var6 < this.qy[var5].Length; ++var6) {
-               if (this.qy[var5][var6] != null && var4.Equals(this.qy[var5][var6].getValueAsString("Type.InventoryType")) && var1.getID().Equals(this.qy[var5][var6].getValue("Id"))) {
-                  var7 = this.qy[var5][var6].J("Amount");
-                  var8 = this.qy[var5][var6].J("MaxAmount");
-                  if (var7 < var8) {
-                     int var9 = var2 > var8 - var7 ? var8 - var7 : var2;
-                     hc.info("  added to existing stack: " + var9);
-                     this.qy[var5][var6].b("Amount", (object)(((int)(var7 + var9))));
-                     var2 -= var9;
-                     if (var2 == 0) {
-                        break;
-                     }
-                  }
-               }
+               // PORT_TODO: if (this.qy[var5][var6] != null && var4.Equals(this.qy[var5][var6].getValueAsString("Type.InventoryType")) && var1.getID().Equals(this.qy[var5][var6].getValue("Id"))) {
+                  // PORT_TODO: var7 = this.qy[var5][var6].J("Amount");
+                  // PORT_TODO: var8 = this.qy[var5][var6].J("MaxAmount");
+                  // PORT_TODO: if (var7 < var8) {
+                     // PORT_TODO: int var9 = var2 > var8 - var7 ? var8 - var7 : var2;
+                     // PORT_TODO: hc.info("  added to existing stack: " + var9);
+                     // PORT_TODO: this.qy[var5][var6].b("Amount", (object)(((int)(var7 + var9))));
+                     // PORT_TODO: var2 -= var9;
+                     // PORT_TODO: if (var2 == 0) {
+                        // PORT_TODO: break;
+                     // PORT_TODO: }
+                  // PORT_TODO: }
+               // PORT_TODO: }
             }
 
             if (var2 == 0) {
@@ -777,26 +781,26 @@ public class gt {
    }
 
    public void a(int var1, int var2, string var3, object var4, int var5, int var6, double var7, bool var9) {
-      eV var10 = this.qt.d("Slots");
+      // PORT_TODO: eV var10 = this.qt.d("Slots");
       eY var11 = gR.az("slot");
-      var11.b("Type.InventoryType", (object)var3);
-      var11.b("Id", var4);
-      var11.b("Amount", (object)(((int)(var5))));
+      // PORT_TODO: var11.b("Type.InventoryType", (object)var3);
+      // PORT_TODO: var11.b("Id", var4);
+      // PORT_TODO: var11.b("Amount", (object)(((int)(var5))));
       // PORT_TODO: var11.b("MaxAmount", (object)(((int)(var6))));
       // PORT_TODO: var11.b("DamageFactor", (object)(new Double(var7)));
       // PORT_TODO: var11.b("FullyInstalled", (object)(new Boolean(var9)));
-      var11.b("Index.X", (object)var1);
-      var11.b("Index.Y", (object)var2);
-      var10.f(var11);
+      // PORT_TODO: var11.b("Index.X", (object)var1);
+      // PORT_TODO: var11.b("Index.Y", (object)var2);
+      // PORT_TODO: var10.f(var11);
       this.qy[var2][var1] = var11;
    }
 
    public bool aq(string var1) {
       for(int var2 = 0; var2 < this.qy.Length; ++var2) {
          for(int var3 = 0; var3 < this.qy[var2].Length; ++var3) {
-            if (this.qy[var2][var3] != null && var1.Equals(this.qy[var2][var3].getValue("Type"))) {
-               return true;
-            }
+            // PORT_TODO: if (this.qy[var2][var3] != null && var1.Equals(this.qy[var2][var3].getValue("Type"))) {
+               // PORT_TODO: return true;
+            // PORT_TODO: }
          }
       }
 
@@ -810,9 +814,9 @@ public class gt {
    public void i(int var1, int var2) {
       if (!this.qz[var2][var1]) {
          eY var3 = new eY();
-         var3.b("X", (object)var1);
-         var3.b("Y", (object)var2);
-         this.qt.d("ValidSlotIndices").f(var3);
+         // PORT_TODO: var3.b("X", (object)var1);
+         // PORT_TODO: var3.b("Y", (object)var2);
+         // PORT_TODO: this.qt.d("ValidSlotIndices").f(var3);
          this.qz[var2][var1] = true;
       }
 
@@ -824,14 +828,14 @@ public class gt {
             throw new Exception("Cannot disable slot in use");
          }
 
-         eV var3 = this.qt.d("ValidSlotIndices");
+         // PORT_TODO: eV var3 = this.qt.d("ValidSlotIndices");
 
-         for(int var4 = 0; var4 < var3.Count; ++var4) {
-            eY var5 = var3.V(var4);
-            if (var1 == var5.J("X") && var2 == var5.J("Y")) {
-               var3.ac(var4);
-            }
-         }
+         // PORT_TODO: for(int var4 = 0; var4 < var3.Count; ++var4) {
+            // PORT_TODO: eY var5 = var3.V(var4);
+            // PORT_TODO: if (var1 == var5.J("X") && var2 == var5.J("Y")) {
+               // PORT_TODO: var3.ac(var4);
+            // PORT_TODO: }
+         // PORT_TODO: }
 
          this.qz[var2][var1] = false;
       }
@@ -851,70 +855,70 @@ public class gt {
    }
 
    public bool k(int var1, int var2) {
-      eV var3 = this.qt.d("SpecialSlots");
+      // PORT_TODO: eV var3 = this.qt.d("SpecialSlots");
 
-      for(int var4 = 0; var4 < var3.Count; ++var4) {
-         eY var5 = var3.V(var4);
-         if (var5.J("Index.X") == var1 && var5.J("Index.Y") == var2) {
-            return "TechBonus".Equals(var5.getValueAsString("Type.InventorySpecialSlotType"));
-         }
-      }
+      // PORT_TODO: for(int var4 = 0; var4 < var3.Count; ++var4) {
+         // PORT_TODO: eY var5 = var3.V(var4);
+         // PORT_TODO: if (var5.J("Index.X") == var1 && var5.J("Index.Y") == var2) {
+            // PORT_TODO: return "TechBonus".Equals(var5.getValueAsString("Type.InventorySpecialSlotType"));
+         // PORT_TODO: }
+      // PORT_TODO: }
 
       return false;
    }
 
    public void a(int var1, int var2, bool var3) {
-      eV var4 = this.qt.d("SpecialSlots");
+      // PORT_TODO: eV var4 = this.qt.d("SpecialSlots");
 
-      for(int var5 = 0; var5 < var4.Count; ++var5) {
-         eY var6 = var4.V(var5);
-         if (var6.J("Index.X") == var1 && var6.J("Index.Y") == var2) {
-            if (var3 == null) {
-               var4.ac(var5);
-            } else {
-               var6.b("Type.InventorySpecialSlotType", (object)"TechBonus");
-            }
+      // PORT_TODO: for(int var5 = 0; var5 < var4.Count; ++var5) {
+         // PORT_TODO: eY var6 = var4.V(var5);
+         // PORT_TODO: if (var6.J("Index.X") == var1 && var6.J("Index.Y") == var2) {
+            // PORT_TODO: if (var3 == null) {
+               // PORT_TODO: var4.ac(var5);
+            // PORT_TODO: } else {
+               // PORT_TODO: var6.b("Type.InventorySpecialSlotType", (object)"TechBonus");
+            // PORT_TODO: }
 
-            return;
-         }
-      }
+            // PORT_TODO: return;
+         // PORT_TODO: }
+      // PORT_TODO: }
 
       if (var3) {
          eY var7 = gR.az("specialSlot");
-         var7.b("Type.InventorySpecialSlotType", (object)"TechBonus");
-         var7.b("Index.X", (object)var1);
-         var7.b("Index.Y", (object)var2);
-         var4.f(var7);
+         // PORT_TODO: var7.b("Type.InventorySpecialSlotType", (object)"TechBonus");
+         // PORT_TODO: var7.b("Index.X", (object)var1);
+         // PORT_TODO: var7.b("Index.Y", (object)var2);
+         // PORT_TODO: var4.f(var7);
       }
 
    }
 
    public bool dr() {
       // PORT_TODO: bool[][] var1 = new bool[this.height][this.width];
-      eV var2 = this.qt.d("SpecialSlots");
+      // PORT_TODO: eV var2 = this.qt.d("SpecialSlots");
 
       int var5;
-      for(int var3 = 0; var3 < var2.Count; ++var3) {
-         eY var4 = var2.V(var3);
-         var5 = var4.J("Index.X");
-         int var6 = var4.J("Index.Y");
-         if (var5 < this.width && var6 < this.height) {
-            var1[var6][var5] = "TechBonus".Equals(var4.getValueAsString("Type.InventorySpecialSlotType"));
-         }
-      }
+      // PORT_TODO: for(int var3 = 0; var3 < var2.Count; ++var3) {
+         // PORT_TODO: eY var4 = var2.V(var3);
+         // PORT_TODO: var5 = var4.J("Index.X");
+         // PORT_TODO: int var6 = var4.J("Index.Y");
+         // PORT_TODO: if (var5 < this.width && var6 < this.height) {
+            // PORT_TODO: var1[var6][var5] = "TechBonus".Equals(var4.getValueAsString("Type.InventorySpecialSlotType"));
+         // PORT_TODO: }
+      // PORT_TODO: }
 
       bool var7 = false;
 
       for(int var8 = 0; var8 < this.height; ++var8) {
          for(var5 = 0; var5 < this.width; ++var5) {
-            if (!var1[var8][var5]) {
-               eY var9 = gR.az("specialSlot");
-               var9.b("Type.InventorySpecialSlotType", (object)"TechBonus");
-               var9.b("Index.X", (object)var5);
-               var9.b("Index.Y", (object)var8);
-               var2.f(var9);
-               var7 = true;
-            }
+            // PORT_TODO: if (!var1[var8][var5]) {
+               // PORT_TODO: eY var9 = gR.az("specialSlot");
+               // PORT_TODO: var9.b("Type.InventorySpecialSlotType", (object)"TechBonus");
+               // PORT_TODO: var9.b("Index.X", (object)var5);
+               // PORT_TODO: var9.b("Index.Y", (object)var8);
+               // PORT_TODO: var2.f(var9);
+               // PORT_TODO: var7 = true;
+            // PORT_TODO: }
          }
       }
 
@@ -922,71 +926,71 @@ public class gt {
    }
 
    public bool l(int var1, int var2) {
-      eV var3 = this.qt.d("SpecialSlots");
+      // PORT_TODO: eV var3 = this.qt.d("SpecialSlots");
 
-      for(int var5 = 0; var5 < var3.Count; ++var5) {
-         eY var6 = var3.V(var5);
-         if ("Broken".Equals(var6.getValueAsString("Type.InventorySpecialSlotType")) && var1 == var6.J("Index.X") && var2 == var6.J("Index.Y")) {
-            return true;
-         }
+      // PORT_TODO: for(int var5 = 0; var5 < var3.Count; ++var5) {
+         // PORT_TODO: eY var6 = var3.V(var5);
+         // PORT_TODO: if ("Broken".Equals(var6.getValueAsString("Type.InventorySpecialSlotType")) && var1 == var6.J("Index.X") && var2 == var6.J("Index.Y")) {
+            // PORT_TODO: return true;
+         // PORT_TODO: }
 
-         if ("BlockedByBrokenTech".Equals(var6.getValueAsString("Type.InventorySpecialSlotType")) && var1 == var6.J("Index.X") && var2 == var6.J("Index.Y")) {
-            gu var4;
-            if ((var4 = this.f(var1, var2)) != null && var4.dC() != 0.0D) {
-               return true;
-            }
+         // PORT_TODO: if ("BlockedByBrokenTech".Equals(var6.getValueAsString("Type.InventorySpecialSlotType")) && var1 == var6.J("Index.X") && var2 == var6.J("Index.Y")) {
+            // PORT_TODO: gu var4;
+            // PORT_TODO: if ((var4 = this.f(var1, var2)) != null && var4.dC() != 0.0D) {
+               // PORT_TODO: return true;
+            // PORT_TODO: }
 
-            hc.info(this.getFullName() + " slot[" + var1 + "," + var2 + "] appears to be broken, ignoring");
-            return false;
-         }
-      }
+            // PORT_TODO: hc.info(this.getFullName() + " slot[" + var1 + "," + var2 + "] appears to be broken, ignoring");
+            // PORT_TODO: return false;
+         // PORT_TODO: }
+      // PORT_TODO: }
 
       return false;
    }
 
    public void m(int var1, int var2) {
-      eV var3 = this.qt.d("SpecialSlots");
+      // PORT_TODO: eV var3 = this.qt.d("SpecialSlots");
 
-      for(int var5 = 0; var5 < var3.Count; ++var5) {
-         eY var6 = var3.V(var5);
-         if ("Broken".Equals(var6.getValueAsString("Type.InventorySpecialSlotType")) && var1 == var6.J("Index.X") && var2 == var6.J("Index.Y")) {
-            var3.ac(var5);
-         }
+      // PORT_TODO: for(int var5 = 0; var5 < var3.Count; ++var5) {
+         // PORT_TODO: eY var6 = var3.V(var5);
+         // PORT_TODO: if ("Broken".Equals(var6.getValueAsString("Type.InventorySpecialSlotType")) && var1 == var6.J("Index.X") && var2 == var6.J("Index.Y")) {
+            // PORT_TODO: var3.ac(var5);
+         // PORT_TODO: }
 
-         if ("BlockedByBrokenTech".Equals(var6.getValueAsString("Type.InventorySpecialSlotType")) && var1 == var6.J("Index.X") && var2 == var6.J("Index.Y")) {
-            gu var4;
-            if ((var4 = this.f(var1, var2)) != null && var4.dC() != 0.0D) {
-               this.g(var1, var2);
-            }
+         // PORT_TODO: if ("BlockedByBrokenTech".Equals(var6.getValueAsString("Type.InventorySpecialSlotType")) && var1 == var6.J("Index.X") && var2 == var6.J("Index.Y")) {
+            // PORT_TODO: gu var4;
+            // PORT_TODO: if ((var4 = this.f(var1, var2)) != null && var4.dC() != 0.0D) {
+               // PORT_TODO: this.g(var1, var2);
+            // PORT_TODO: }
 
-            var3.ac(var5);
-         }
-      }
+            // PORT_TODO: var3.ac(var5);
+         // PORT_TODO: }
+      // PORT_TODO: }
 
    }
 
    public bool ds() {
       bool var1 = false;
-      eV var3 = this.qt.d("SpecialSlots");
+      // PORT_TODO: eV var3 = this.qt.d("SpecialSlots");
 
       int var4;
-      for(var4 = 0; var4 < var3.Count; ++var4) {
-         eY var5 = var3.V(var4);
-         if ("Broken".Equals(var5.getValueAsString("Type.InventorySpecialSlotType"))) {
-            var3.ac(var4--);
-            var1 = true;
-         }
+      // PORT_TODO: for(var4 = 0; var4 < var3.Count; ++var4) {
+         // PORT_TODO: eY var5 = var3.V(var4);
+         // PORT_TODO: if ("Broken".Equals(var5.getValueAsString("Type.InventorySpecialSlotType"))) {
+            // PORT_TODO: var3.ac(var4--);
+            // PORT_TODO: var1 = true;
+         // PORT_TODO: }
 
-         if ("BlockedByBrokenTech".Equals(var5.getValueAsString("Type.InventorySpecialSlotType"))) {
-            gu var2;
-            if ((var2 = this.f(var5.J("Index.X"), var5.J("Index.Y"))) != null && var2.dC() != 0.0D) {
-               this.g(var5.J("Index.X"), var5.J("Index.Y"));
-            }
+         // PORT_TODO: if ("BlockedByBrokenTech".Equals(var5.getValueAsString("Type.InventorySpecialSlotType"))) {
+            // PORT_TODO: gu var2;
+            // PORT_TODO: if ((var2 = this.f(var5.J("Index.X"), var5.J("Index.Y"))) != null && var2.dC() != 0.0D) {
+               // PORT_TODO: this.g(var5.J("Index.X"), var5.J("Index.Y"));
+            // PORT_TODO: }
 
-            var3.ac(var4--);
-            var1 = true;
-         }
-      }
+            // PORT_TODO: var3.ac(var4--);
+            // PORT_TODO: var1 = true;
+         // PORT_TODO: }
+      // PORT_TODO: }
 
       for(var4 = 0; var4 < this.qy.Length; ++var4) {
          for(int var6 = 0; var6 < this.qy[var4].Length; ++var6) {
@@ -1089,19 +1093,23 @@ public class gt {
    }
 
    public static string r_str(eY var0) {
-      return var0.getValueAsString("Type.InventoryType");
+      // PORT_TODO: return var0.getValueAsString("Type.InventoryType");
+      return default;
    }
 
    public static object s(eY var0) {
-      return var0.getValue("Id");
+      // PORT_TODO: return var0.getValue("Id");
+      return default;
    }
 
    public static int t(eY var0) {
-      return var0.J("Amount");
+      // PORT_TODO: return var0.J("Amount");
+      return 0;
    }
 
    public static int u(eY var0) {
-      return var0.J("MaxAmount");
+      // PORT_TODO: return var0.J("MaxAmount");
+      return 0;
    }
 
    public bool dt() {
@@ -1110,10 +1118,10 @@ public class gt {
       for(int var3 = 0; var3 < this.qy.Length; ++var3) {
          for(int var4 = 0; var4 < this.qy[var3].Length; ++var4) {
             int var1;
-            if (this.qy[var3][var4] != null && "Technology".Equals(this.qy[var3][var4].getValueAsString("Type.InventoryType")) && this.qy[var3][var4].J("Amount") >= 0 && (var1 = this.qy[var3][var4].J("MaxAmount")) > 0) {
-               this.qy[var3][var4].b("Amount", (object)(((int)(var1))));
-               var2 = true;
-            }
+            // PORT_TODO: if (this.qy[var3][var4] != null && "Technology".Equals(this.qy[var3][var4].getValueAsString("Type.InventoryType")) && this.qy[var3][var4].J("Amount") >= 0 && (var1 = this.qy[var3][var4].J("MaxAmount")) > 0) {
+               // PORT_TODO: this.qy[var3][var4].b("Amount", (object)(((int)(var1))));
+               // PORT_TODO: var2 = true;
+            // PORT_TODO: }
          }
       }
 
@@ -1126,10 +1134,10 @@ public class gt {
       for(int var3 = 0; var3 < this.qy.Length; ++var3) {
          for(int var4 = 0; var4 < this.qy[var3].Length; ++var4) {
             int var1;
-            if (this.qy[var3][var4] != null && !"Technology".Equals(this.qy[var3][var4].getValueAsString("Type.InventoryType")) && (var1 = this.qy[var3][var4].J("MaxAmount")) > 1) {
-               this.qy[var3][var4].b("Amount", (object)(((int)(var1))));
-               var2 = true;
-            }
+            // PORT_TODO: if (this.qy[var3][var4] != null && !"Technology".Equals(this.qy[var3][var4].getValueAsString("Type.InventoryType")) && (var1 = this.qy[var3][var4].J("MaxAmount")) > 1) {
+               // PORT_TODO: this.qy[var3][var4].b("Amount", (object)(((int)(var1))));
+               // PORT_TODO: var2 = true;
+            // PORT_TODO: }
          }
       }
 
@@ -1143,9 +1151,9 @@ public class gt {
          for(int var3 = 0; var3 < this.width; ++var3) {
             if (!this.qz[var2][var3]) {
                eY var4 = new eY();
-               var4.b("X", (object)var3);
-               var4.b("Y", (object)var2);
-               this.qt.d("ValidSlotIndices").f(var4);
+               // PORT_TODO: var4.b("X", (object)var3);
+               // PORT_TODO: var4.b("Y", (object)var2);
+               // PORT_TODO: this.qt.d("ValidSlotIndices").f(var4);
                this.qz[var2][var3] = true;
                var1 = true;
             }
@@ -1166,223 +1174,224 @@ public class gt {
          // PORT_TODO: int[] var0 = new int[ex.Values.Length];
 
          try {
-            var0[ex.jq.ordinal()] = 32;
+            // PORT_TODO: var0[ex.jq.ordinal()] = 32;
          } catch (NoSuchFieldError var43) {
          }
 
          try {
-            var0[ex.js.ordinal()] = 34;
+            // PORT_TODO: var0[ex.js.ordinal()] = 34;
          } catch (NoSuchFieldError var42) {
          }
 
          try {
-            var0[ex.jv.ordinal()] = 37;
+            // PORT_TODO: var0[ex.jv.ordinal()] = 37;
          } catch (NoSuchFieldError var41) {
          }
 
          try {
-            var0[ex.jt.ordinal()] = 35;
+            // PORT_TODO: var0[ex.jt.ordinal()] = 35;
          } catch (NoSuchFieldError var40) {
          }
 
          try {
-            var0[ex.jo.ordinal()] = 30;
+            // PORT_TODO: var0[ex.jo.ordinal()] = 30;
          } catch (NoSuchFieldError var39) {
          }
 
          try {
-            var0[ex.iX.ordinal()] = 13;
+            // PORT_TODO: var0[ex.iX.ordinal()] = 13;
          } catch (NoSuchFieldError var38) {
          }
 
          try {
-            var0[ex.iN.ordinal()] = 3;
+            // PORT_TODO: var0[ex.iN.ordinal()] = 3;
          } catch (NoSuchFieldError var37) {
          }
 
          try {
-            var0[ex.iT.ordinal()] = 9;
+            // PORT_TODO: var0[ex.iT.ordinal()] = 9;
          } catch (NoSuchFieldError var36) {
          }
 
          try {
-            var0[ex.iU.ordinal()] = 10;
+            // PORT_TODO: var0[ex.iU.ordinal()] = 10;
          } catch (NoSuchFieldError var35) {
          }
 
          try {
-            var0[ex.jA.ordinal()] = 42;
+            // PORT_TODO: var0[ex.jA.ordinal()] = 42;
          } catch (NoSuchFieldError var34) {
          }
 
          try {
-            var0[ex.iW.ordinal()] = 12;
+            // PORT_TODO: var0[ex.iW.ordinal()] = 12;
          } catch (NoSuchFieldError var33) {
          }
 
          try {
-            var0[ex.iZ.ordinal()] = 15;
+            // PORT_TODO: var0[ex.iZ.ordinal()] = 15;
          } catch (NoSuchFieldError var32) {
          }
 
          try {
-            var0[ex.iQ.ordinal()] = 6;
+            // PORT_TODO: var0[ex.iQ.ordinal()] = 6;
          } catch (NoSuchFieldError var31) {
          }
 
          try {
-            var0[ex.ja.ordinal()] = 16;
+            // PORT_TODO: var0[ex.ja.ordinal()] = 16;
          } catch (NoSuchFieldError var30) {
          }
 
          try {
-            var0[ex.iR.ordinal()] = 7;
+            // PORT_TODO: var0[ex.iR.ordinal()] = 7;
          } catch (NoSuchFieldError var29) {
          }
 
          try {
-            var0[ex.jc.ordinal()] = 18;
+            // PORT_TODO: var0[ex.jc.ordinal()] = 18;
          } catch (NoSuchFieldError var28) {
          }
 
          try {
-            var0[ex.iP.ordinal()] = 5;
+            // PORT_TODO: var0[ex.iP.ordinal()] = 5;
          } catch (NoSuchFieldError var27) {
          }
 
          try {
-            var0[ex.jk.ordinal()] = 26;
+            // PORT_TODO: var0[ex.jk.ordinal()] = 26;
          } catch (NoSuchFieldError var26) {
          }
 
          try {
-            var0[ex.iL.ordinal()] = 1;
+            // PORT_TODO: var0[ex.iL.ordinal()] = 1;
          } catch (NoSuchFieldError var25) {
          }
 
          try {
-            var0[ex.jz.ordinal()] = 41;
+            // PORT_TODO: var0[ex.jz.ordinal()] = 41;
          } catch (NoSuchFieldError var24) {
          }
 
          try {
-            var0[ex.jx.ordinal()] = 39;
+            // PORT_TODO: var0[ex.jx.ordinal()] = 39;
          } catch (NoSuchFieldError var23) {
          }
 
          try {
-            var0[ex.iM.ordinal()] = 2;
+            // PORT_TODO: var0[ex.iM.ordinal()] = 2;
          } catch (NoSuchFieldError var22) {
          }
 
          try {
-            var0[ex.jj.ordinal()] = 25;
+            // PORT_TODO: var0[ex.jj.ordinal()] = 25;
          } catch (NoSuchFieldError var21) {
          }
 
          try {
-            var0[ex.jb.ordinal()] = 17;
+            // PORT_TODO: var0[ex.jb.ordinal()] = 17;
          } catch (NoSuchFieldError var20) {
          }
 
          try {
-            var0[ex.jr.ordinal()] = 33;
+            // PORT_TODO: var0[ex.jr.ordinal()] = 33;
          } catch (NoSuchFieldError var19) {
          }
 
          try {
-            var0[ex.jw.ordinal()] = 38;
+            // PORT_TODO: var0[ex.jw.ordinal()] = 38;
          } catch (NoSuchFieldError var18) {
          }
 
          try {
-            var0[ex.jp.ordinal()] = 31;
+            // PORT_TODO: var0[ex.jp.ordinal()] = 31;
          } catch (NoSuchFieldError var17) {
          }
 
          try {
-            var0[ex.jB.ordinal()] = 43;
+            // PORT_TODO: var0[ex.jB.ordinal()] = 43;
          } catch (NoSuchFieldError var16) {
          }
 
          try {
-            var0[ex.jl.ordinal()] = 27;
+            // PORT_TODO: var0[ex.jl.ordinal()] = 27;
          } catch (NoSuchFieldError var15) {
          }
 
          try {
-            var0[ex.jy.ordinal()] = 40;
+            // PORT_TODO: var0[ex.jy.ordinal()] = 40;
          } catch (NoSuchFieldError var14) {
          }
 
          try {
-            var0[ex.iY.ordinal()] = 14;
+            // PORT_TODO: var0[ex.iY.ordinal()] = 14;
          } catch (NoSuchFieldError var13) {
          }
 
          try {
-            var0[ex.ji.ordinal()] = 24;
+            // PORT_TODO: var0[ex.ji.ordinal()] = 24;
          } catch (NoSuchFieldError var12) {
          }
 
          try {
-            var0[ex.jn.ordinal()] = 29;
+            // PORT_TODO: var0[ex.jn.ordinal()] = 29;
          } catch (NoSuchFieldError var11) {
          }
 
          try {
-            var0[ex.jg.ordinal()] = 22;
+            // PORT_TODO: var0[ex.jg.ordinal()] = 22;
          } catch (NoSuchFieldError var10) {
          }
 
          try {
-            var0[ex.ju.ordinal()] = 36;
+            // PORT_TODO: var0[ex.ju.ordinal()] = 36;
          } catch (NoSuchFieldError var9) {
          }
 
          try {
-            var0[ex.je.ordinal()] = 20;
+            // PORT_TODO: var0[ex.je.ordinal()] = 20;
          } catch (NoSuchFieldError var8) {
          }
 
          try {
-            var0[ex.iS.ordinal()] = 8;
+            // PORT_TODO: var0[ex.iS.ordinal()] = 8;
          } catch (NoSuchFieldError var7) {
          }
 
          try {
-            var0[ex.iO.ordinal()] = 4;
+            // PORT_TODO: var0[ex.iO.ordinal()] = 4;
          } catch (NoSuchFieldError var6) {
          }
 
          try {
-            var0[ex.jh.ordinal()] = 23;
+            // PORT_TODO: var0[ex.jh.ordinal()] = 23;
          } catch (NoSuchFieldError var5) {
          }
 
          try {
-            var0[ex.jd.ordinal()] = 19;
+            // PORT_TODO: var0[ex.jd.ordinal()] = 19;
          } catch (NoSuchFieldError var4) {
          }
 
          try {
-            var0[ex.iV.ordinal()] = 11;
+            // PORT_TODO: var0[ex.iV.ordinal()] = 11;
          } catch (NoSuchFieldError var3) {
          }
 
          try {
-            var0[ex.jm.ordinal()] = 28;
+            // PORT_TODO: var0[ex.jm.ordinal()] = 28;
          } catch (NoSuchFieldError var2) {
          }
 
          try {
-            var0[ex.jf.ordinal()] = 21;
+            // PORT_TODO: var0[ex.jf.ordinal()] = 21;
          } catch (NoSuchFieldError var1) {
          }
 
-         qA = var0;
-         return var0;
+         // PORT_TODO: qA = var0;
+         // PORT_TODO: return var0;
       }
+      return null;
    }
    public static int[] dx() {
       int[] var10000 = qB;
@@ -1392,48 +1401,49 @@ public class gt {
          // PORT_TODO: int[] var0 = new int[fn.Values.Length];
 
          try {
-            var0[fn.lp.ordinal()] = 4;
+            // PORT_TODO: var0[fn.lp.ordinal()] = 4;
          } catch (NoSuchFieldError var8) {
          }
 
          try {
-            var0[fn.lo.ordinal()] = 3;
+            // PORT_TODO: var0[fn.lo.ordinal()] = 3;
          } catch (NoSuchFieldError var7) {
          }
 
          try {
-            var0[fn.lt.ordinal()] = 8;
+            // PORT_TODO: var0[fn.lt.ordinal()] = 8;
          } catch (NoSuchFieldError var6) {
          }
 
          try {
-            var0[fn.lr.ordinal()] = 6;
+            // PORT_TODO: var0[fn.lr.ordinal()] = 6;
          } catch (NoSuchFieldError var5) {
          }
 
          try {
-            var0[fn.lm.ordinal()] = 1;
+            // PORT_TODO: var0[fn.lm.ordinal()] = 1;
          } catch (NoSuchFieldError var4) {
          }
 
          try {
-            var0[fn.lq.ordinal()] = 5;
+            // PORT_TODO: var0[fn.lq.ordinal()] = 5;
          } catch (NoSuchFieldError var3) {
          }
 
          try {
-            var0[fn.ls.ordinal()] = 7;
+            // PORT_TODO: var0[fn.ls.ordinal()] = 7;
          } catch (NoSuchFieldError var2) {
          }
 
          try {
-            var0[fn.ln.ordinal()] = 2;
+            // PORT_TODO: var0[fn.ln.ordinal()] = 2;
          } catch (NoSuchFieldError var1) {
          }
 
-         qB = var0;
-         return var0;
+         // PORT_TODO: qB = var0;
+         // PORT_TODO: return var0;
       }
+      return null;
    }
    public static int[] dy() {
       int[] var10000 = qC;
@@ -1443,28 +1453,29 @@ public class gt {
          // PORT_TODO: int[] var0 = new int[eB.Values.Length];
 
          try {
-            var0[eB.jO.ordinal()] = 2;
+            // PORT_TODO: var0[eB.jO.ordinal()] = 2;
          } catch (NoSuchFieldError var4) {
          }
 
          try {
-            var0[eB.jP.ordinal()] = 3;
+            // PORT_TODO: var0[eB.jP.ordinal()] = 3;
          } catch (NoSuchFieldError var3) {
          }
 
          try {
-            var0[eB.jQ.ordinal()] = 4;
+            // PORT_TODO: var0[eB.jQ.ordinal()] = 4;
          } catch (NoSuchFieldError var2) {
          }
 
          try {
-            var0[eB.jN.ordinal()] = 1;
+            // PORT_TODO: var0[eB.jN.ordinal()] = 1;
          } catch (NoSuchFieldError var1) {
          }
 
-         qC = var0;
-         return var0;
+         // PORT_TODO: qC = var0;
+         // PORT_TODO: return var0;
       }
+      return null;
    }
 }
 

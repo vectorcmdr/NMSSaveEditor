@@ -120,12 +120,12 @@ public class hl {
    }
 
    public hl(eY var1) {
-      this.sQ = var1.c("GalacticAddress.PlanetIndex", 0);
-      this.sR = var1.c("GalacticAddress.SolarSystemIndex", 0);
-      this.sS = var1.c("RealityIndex", 0);
-      this.sT = var1.c("GalacticAddress.VoxelY", 0);
-      this.sU = var1.c("GalacticAddress.VoxelZ", 0);
-      this.sV = var1.c("GalacticAddress.VoxelX", 0);
+      // PORT_TODO: this.sQ = var1.c("GalacticAddress.PlanetIndex", 0);
+      // PORT_TODO: this.sR = var1.c("GalacticAddress.SolarSystemIndex", 0);
+      // PORT_TODO: this.sS = var1.c("RealityIndex", 0);
+      // PORT_TODO: this.sT = var1.c("GalacticAddress.VoxelY", 0);
+      // PORT_TODO: this.sU = var1.c("GalacticAddress.VoxelZ", 0);
+      // PORT_TODO: this.sV = var1.c("GalacticAddress.VoxelX", 0);
    }
 
    public hl(long var1) {

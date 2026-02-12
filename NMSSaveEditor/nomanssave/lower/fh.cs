@@ -79,6 +79,7 @@ public class fh {
 
    public static string a(object var0, string var1, bool var2) {
       // PORT_TODO: return a((object)var0, var1, var2, (Predicate)null);
+      return default;
    }
 
    public static string a(object var0, string var1, bool var2, Predicate<object> var3) {
@@ -101,10 +102,12 @@ public class fh {
       } else {
          throw new Exception("unsupported data type");
       }
+      return default;
    }
 
    public static string a(eV var0, string var1, bool var2) {
       // PORT_TODO: return a((eV)var0, var1, var2, (Predicate)null);
+      return default;
    }
 
    public static string a(eV var0, string var1, bool var2, Predicate<object> var3) {
@@ -133,6 +136,7 @@ public class fh {
 
    public static string a(eY var0, string var1, bool var2) {
       // PORT_TODO: return a((eY)var0, var1, var2, (Predicate)null);
+      return default;
    }
 
    public static string a(eY var0, string var1, bool var2, Predicate<object> var3) {
@@ -172,32 +176,32 @@ public class fh {
 
       if (false) { // PORT_TODO: original loop had errors
          // PORT_TODO: byte var2 = var5[var3];
-         int var6 = var2 & 255;
-         if (var6 == 13) {
-            var1.Append("\\r");
-         } else if (var6 == 10) {
-            var1.Append("\\n");
-         } else if (var6 == 9) {
-            var1.Append("\\t");
-         } else if (var6 == 12) {
-            var1.Append("\\f");
-         } else if (var6 == 8) {
-            var1.Append("\\b");
-         } else if (var6 == 11) {
-            var1.Append("\\v");
-         } else if (var6 == 0) {
-            var1.Append("\\0");
-         } else if (var6 == 34) {
-            var1.Append("\\\"");
-         } else if (var6 == 92) {
-            var1.Append("\\\\");
-         } else if (var6 >= 32 && var6 < 128) {
+         // PORT_TODO: int var6 = var2 & 255;
+         // PORT_TODO: if (var6 == 13) {
+            // PORT_TODO: var1.Append("\\r");
+         // PORT_TODO: } else if (var6 == 10) {
+            // PORT_TODO: var1.Append("\\n");
+         // PORT_TODO: } else if (var6 == 9) {
+            // PORT_TODO: var1.Append("\\t");
+         // PORT_TODO: } else if (var6 == 12) {
+            // PORT_TODO: var1.Append("\\f");
+         // PORT_TODO: } else if (var6 == 8) {
+            // PORT_TODO: var1.Append("\\b");
+         // PORT_TODO: } else if (var6 == 11) {
+            // PORT_TODO: var1.Append("\\v");
+         // PORT_TODO: } else if (var6 == 0) {
+            // PORT_TODO: var1.Append("\\0");
+         // PORT_TODO: } else if (var6 == 34) {
+            // PORT_TODO: var1.Append("\\\"");
+         // PORT_TODO: } else if (var6 == 92) {
+            // PORT_TODO: var1.Append("\\\\");
+         // PORT_TODO: } else if (var6 >= 32 && var6 < 128) {
             // PORT_TODO: var1.Append(Character.toString((char)var6));
-         } else {
-            var1.Append("\\x");
-            var1.Append("0123456789ABCDEFabcdef"[var6 >> 4 & 15]);
-            var1.Append("0123456789ABCDEFabcdef"[var6 & 15]);
-         }
+         // PORT_TODO: } else {
+            // PORT_TODO: var1.Append("\\x");
+            // PORT_TODO: var1.Append("0123456789ABCDEFabcdef"[var6 >> 4 & 15]);
+            // PORT_TODO: var1.Append("0123456789ABCDEFabcdef"[var6 & 15]);
+         // PORT_TODO: }
       }
 
       return var1.ToString();
@@ -248,6 +252,7 @@ public class fh {
 
    public static string O(string var0) {
       // PORT_TODO: return b(var0, (Predicate)null);
+      return default;
    }
 
    public static string b(string var0, Predicate<object> var1) {
@@ -671,12 +676,13 @@ public class fh {
 // PORT_TODO: 
          // PORT_TODO: return new fg(var1.ToArray());
       // PORT_TODO: }
+      return default;
    }
 
    public static Number b(fi var0, int var1) {
       bool var3 = false;
       if (var1 == 45) {
-         var1 = fi.a(var0, kZ);
+         // PORT_TODO: var1 = fi.a(var0, kZ);
          if (var1 < 0) {
             throw new eX("Invalid token", var0.kF, var0.kG);
          }
@@ -686,54 +692,54 @@ public class fh {
 
       BigDecimal var2 = new BigDecimal(var1 - 48);
       if (var1 != 48) {
-         while((var1 = fi.a(var0, kZ)) >= 0) {
-            var2 = var2.multiply(BigDecimal.TEN).Add(new BigDecimal(var1 - 48));
-         }
+         // PORT_TODO: while((var1 = fi.a(var0, kZ)) >= 0) {
+            // PORT_TODO: var2 = var2.multiply(BigDecimal.TEN).Add(new BigDecimal(var1 - 48));
+         // PORT_TODO: }
       }
 
       bool var4 = true;
-      if (fi.a(var0, la) >= 0) {
-         var4 = false;
-         var1 = fi.a(var0, kZ);
-         if (var1 < 0) {
-            throw new eX("Invalid token", var0.kF, var0.kG);
-         }
+      // PORT_TODO: if (fi.a(var0, la) >= 0) {
+         // PORT_TODO: var4 = false;
+         // PORT_TODO: var1 = fi.a(var0, kZ);
+         // PORT_TODO: if (var1 < 0) {
+            // PORT_TODO: throw new eX("Invalid token", var0.kF, var0.kG);
+         // PORT_TODO: }
 
-         int var5 = 0;
+         // PORT_TODO: int var5 = 0;
 
-         do {
-            BigDecimal var10001 = new BigDecimal(var1 - 48);
-            --var5;
-            var2 = var2.Add(var10001.scaleByPowerOfTen(var5));
-         } while((var1 = fi.a(var0, kZ)) >= 0);
-      }
+         // PORT_TODO: do {
+            // PORT_TODO: BigDecimal var10001 = new BigDecimal(var1 - 48);
+            // PORT_TODO: --var5;
+            // PORT_TODO: var2 = var2.Add(var10001.scaleByPowerOfTen(var5));
+         // PORT_TODO: } while((var1 = fi.a(var0, kZ)) >= 0);
+      // PORT_TODO: }
 
-      if (fi.a(var0, lb) >= 0) {
-         var4 = false;
-         var1 = fi.a(var0, lc);
-         bool var9 = false;
-         if (var1 == 43 || var1 == 45) {
-            var9 = var1 == 45;
-            var1 = fi.a(var0, kZ);
-         }
+      // PORT_TODO: if (fi.a(var0, lb) >= 0) {
+         // PORT_TODO: var4 = false;
+         // PORT_TODO: var1 = fi.a(var0, lc);
+         // PORT_TODO: bool var9 = false;
+         // PORT_TODO: if (var1 == 43 || var1 == 45) {
+            // PORT_TODO: var9 = var1 == 45;
+            // PORT_TODO: var1 = fi.a(var0, kZ);
+         // PORT_TODO: }
 
-         if (var1 < 0) {
-            throw new eX("Invalid token", var0.kF, var0.kG);
-         }
+         // PORT_TODO: if (var1 < 0) {
+            // PORT_TODO: throw new eX("Invalid token", var0.kF, var0.kG);
+         // PORT_TODO: }
 
-         int var6 = 0;
+         // PORT_TODO: int var6 = 0;
 
-         do {
-            var6 *= 10;
-            var6 += var1 - 48;
-         } while((var1 = fi.a(var0, kZ)) >= 0);
+         // PORT_TODO: do {
+            // PORT_TODO: var6 *= 10;
+            // PORT_TODO: var6 += var1 - 48;
+         // PORT_TODO: } while((var1 = fi.a(var0, kZ)) >= 0);
 
-         if (var9) {
-            var6 = -var6;
-         }
+         // PORT_TODO: if (var9) {
+            // PORT_TODO: var6 = -var6;
+         // PORT_TODO: }
 
-         var2 = var2.scaleByPowerOfTen(var6);
-      }
+         // PORT_TODO: var2 = var2.scaleByPowerOfTen(var6);
+      // PORT_TODO: }
 
       if (var3) {
          var2 = var2.negate();

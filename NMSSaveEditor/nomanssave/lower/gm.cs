@@ -15,7 +15,8 @@ public class gm {
    public gn oJ;
 
    public static gm p(eY var0) {
-      return var0.d("CurrentFreighter.Seed").ab(0) && !isEmpty(var0.getValueAsString("CurrentFreighter.Filename")) ? new gm(var0, var0.H("FreighterInventory"), var0.H("FreighterInventory_TechOnly"), var0.H("FreighterInventory_Cargo")) : null;
+      // PORT_TODO: return var0.d("CurrentFreighter.Seed").ab(0) && !isEmpty(var0.getValueAsString("CurrentFreighter.Filename")) ? new gm(var0, var0.H("FreighterInventory"), var0.H("FreighterInventory_TechOnly"), var0.H("FreighterInventory_Cargo")) : null;
+      return default;
    }
 
    public static bool isEmpty(string var0) {
@@ -70,80 +71,85 @@ public class gm {
       }
 
       this.gT = new List<object>(var14);
-      eV var15 = var1.d("PersistentPlayerBases");
+      // PORT_TODO: eV var15 = var1.d("PersistentPlayerBases");
       eY var17 = null;
 
-      for(int var18 = 0; var18 < var15.Count; ++var18) {
-         eY var16 = var15.V(var18);
-         if ("FreighterBase".Equals(var16.getValueAsString("BaseType.PersistentBaseTypes")) && var16.J("BaseVersion") >= 3) {
-            var17 = var16;
-            break;
-         }
-      }
+      // PORT_TODO: for(int var18 = 0; var18 < var15.Count; ++var18) {
+         // PORT_TODO: eY var16 = var15.V(var18);
+         // PORT_TODO: if ("FreighterBase".Equals(var16.getValueAsString("BaseType.PersistentBaseTypes")) && var16.J("BaseVersion") >= 3) {
+            // PORT_TODO: var17 = var16;
+            // PORT_TODO: break;
+         // PORT_TODO: }
+      // PORT_TODO: }
 
       this.oJ = var17 == null ? null : new gn(this, var17, (gn)null);
    }
 
    public string getName() {
-      return this.oI.getValueAsString("PlayerFreighterName");
+      // PORT_TODO: return this.oI.getValueAsString("PlayerFreighterName");
+      return default;
    }
 
    public void setName(string var1) {
-      this.oI.b("PlayerFreighterName", (object)var1);
+      // PORT_TODO: this.oI.b("PlayerFreighterName", (object)var1);
    }
 
    public string cT() {
-      return this.oI.getValueAsString("CurrentFreighter.Filename");
+      // PORT_TODO: return this.oI.getValueAsString("CurrentFreighter.Filename");
+      return default;
    }
 
    public void ag(string var1) {
-      this.oI.b("CurrentFreighter.Filename", (object)var1);
+      // PORT_TODO: this.oI.b("CurrentFreighter.Filename", (object)var1);
    }
 
    public string cU() {
-      eV var1 = this.oI.d("CurrentFreighterHomeSystemSeed");
-      if (var1 != null && var1.ab(0)) {
-         string var2 = var1.X(1);
-         return "0x0".Equals(var2) ? "" : var2;
-      } else {
-         return "";
-      }
+      // PORT_TODO: eV var1 = this.oI.d("CurrentFreighterHomeSystemSeed");
+      // PORT_TODO: if (var1 != null && var1.ab(0)) {
+         // PORT_TODO: string var2 = var1.X(1);
+         // PORT_TODO: return "0x0".Equals(var2) ? "" : var2;
+      // PORT_TODO: } else {
+         // PORT_TODO: return "";
+      // PORT_TODO: }
+      return default;
    }
 
    public void ah(string var1) {
-      eV var2 = this.oI.d("CurrentFreighterHomeSystemSeed");
-      if (var2 == null) {
+      // PORT_TODO: eV var2 = this.oI.d("CurrentFreighterHomeSystemSeed");
+      // PORT_TODO: if (var2 == null) {
          // PORT_TODO: var2 = new eV(new object[]{Boolean.FALSE, "0x0"});
-         this.oI.b("CurrentFreighterHomeSystemSeed", (object)var2);
-      }
+         // PORT_TODO: this.oI.b("CurrentFreighterHomeSystemSeed", (object)var2);
+      // PORT_TODO: }
 
       // PORT_TODO: var2.a(0, Boolean.TRUE);
-      var2.a(1, var1.Length == 0 ? "0x0" : var1);
+      // PORT_TODO: var2.a(1, var1.Length == 0 ? "0x0" : var1);
    }
 
    public string cV() {
-      return this.oI.d("CurrentFreighter.Seed").X(1);
+      // PORT_TODO: return this.oI.d("CurrentFreighter.Seed").X(1);
+      return default;
    }
 
    public void ai(string var1) {
-      this.oI.d("CurrentFreighter.Seed").a(1, var1);
+      // PORT_TODO: this.oI.d("CurrentFreighter.Seed").a(1, var1);
    }
 
    public string cW() {
-      return this.oI.getValueAsString("FreighterInventory.Class.InventoryClass");
+      // PORT_TODO: return this.oI.getValueAsString("FreighterInventory.Class.InventoryClass");
+      return default;
    }
 
    public void aj(string var1) {
-      this.oI.b("FreighterInventory.Class.InventoryClass", (object)var1);
-      eY var2 = this.oI.H("FreighterInventory_TechOnly.Class");
-      if (var2 != null) {
-         var2.b("InventoryClass", (object)var1);
-      }
+      // PORT_TODO: this.oI.b("FreighterInventory.Class.InventoryClass", (object)var1);
+      // PORT_TODO: eY var2 = this.oI.H("FreighterInventory_TechOnly.Class");
+      // PORT_TODO: if (var2 != null) {
+         // PORT_TODO: var2.b("InventoryClass", (object)var1);
+      // PORT_TODO: }
 
-      var2 = this.oI.H("FreighterInventory_Cargo.Class");
-      if (var2 != null) {
-         var2.b("InventoryClass", (object)var1);
-      }
+      // PORT_TODO: var2 = this.oI.H("FreighterInventory_Cargo.Class");
+      // PORT_TODO: if (var2 != null) {
+         // PORT_TODO: var2.b("InventoryClass", (object)var1);
+      // PORT_TODO: }
 
    }
 

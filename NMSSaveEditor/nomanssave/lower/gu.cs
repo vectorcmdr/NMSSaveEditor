@@ -17,31 +17,36 @@ public class gu : gQ {
    }
 
    public string getType() {
-      return this.qD.getValueAsString("Type.InventoryType");
+      // PORT_TODO: return this.qD.getValueAsString("Type.InventoryType");
+      return default;
    }
 
    public object dz() {
-      return this.qD.getValue("Id");
+      // PORT_TODO: return this.qD.getValue("Id");
+      return default;
    }
 
    public void m(object var1) {
-      this.qD.b("Id", var1);
+      // PORT_TODO: this.qD.b("Id", var1);
    }
 
    public int dA() {
-      return this.qD.J("Amount");
+      // PORT_TODO: return this.qD.J("Amount");
+      return 0;
    }
 
    public void aA(int var1) {
-      this.qD.b("Amount", (object)(((int)(var1))));
+      // PORT_TODO: this.qD.b("Amount", (object)(((int)(var1))));
    }
 
    public int dB() {
-      return this.qD.J("MaxAmount");
+      // PORT_TODO: return this.qD.J("MaxAmount");
+      return 0;
    }
 
    public double dC() {
-      return this.qD.L("DamageFactor");
+      // PORT_TODO: return this.qD.L("DamageFactor");
+      return 0.0;
    }
 
    public void c(double var1) {
@@ -49,7 +54,8 @@ public class gu : gQ {
    }
 
    public bool dD() {
-      return this.qD.M("FullyInstalled");
+      // PORT_TODO: return this.qD.M("FullyInstalled");
+      return false;
    }
 
    public void e(bool var1) {

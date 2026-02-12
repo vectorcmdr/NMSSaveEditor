@@ -27,56 +27,61 @@ public class aH {
    public static int[] cM;
 
    public static string getProperty(string var0) {
-      return cK.getValueAsString(var0);
+      // PORT_TODO: return cK.getValueAsString(var0);
+      return default;
    }
 
    public static void setProperty(string var0, string var1) {
       if (var1 == null) {
-         cK.N(var0);
+         // PORT_TODO: cK.N(var0);
       } else {
-         cK.c(var0, var1);
+         // PORT_TODO: cK.c(var0, var1);
       }
 
       cL = true;
    }
 
    public static int j(string var0) {
-      return cK.J(var0);
+      // PORT_TODO: return cK.J(var0);
+      return 0;
    }
 
    public static int a(string var0, int var1) {
-      return cK.c(var0, var1);
+      // PORT_TODO: return cK.c(var0, var1);
+      return 0;
    }
 
    public static void b(string var0, int var1) {
-      cK.c(var0, var1);
+      // PORT_TODO: cK.c(var0, var1);
       cL = true;
    }
 
    public static double a(string var0, double var1) {
-      return cK.c(var0, var1);
+      // PORT_TODO: return cK.c(var0, var1);
+      return 0.0;
    }
 
    public static void b(string var0, double var1) {
-      cK.c(var0, var1);
+      // PORT_TODO: cK.c(var0, var1);
       cL = true;
    }
 
    public static object[] a(string var0, Class var1) {
-      eV var2 = cK.d(var0);
-      if (var2 == null) {
+      // PORT_TODO: eV var2 = cK.d(var0);
+      // PORT_TODO: if (var2 == null) {
          // PORT_TODO: return (object[])Array.newInstance(0);
-      } else {
-      object var3 = null; // PORT_TODO: stub declaration
+      // PORT_TODO: } else {
+      // PORT_TODO: object var3 = null; // PORT_TODO: stub declaration
          // PORT_TODO: object var3 = Array.newInstance(var2.Count);
 
-         for(int var4 = 0; var4 < var2.Count; ++var4) {
+         // PORT_TODO: for(int var4 = 0; var4 < var2.Count; ++var4) {
             // PORT_TODO: Array.set(var3, var4, var1.cast(var2.getValue(var4)));
-            return default;
-         }
+            // PORT_TODO: return default;
+         // PORT_TODO: }
 
-         return (object[])var3;
-      }
+         // PORT_TODO: return (object[])var3;
+      // PORT_TODO: }
+      return null;
    }
 
    public static void a(string var0, object[] var1) {
@@ -86,7 +91,7 @@ public class aH {
          var2.f(var1[var3]);
       }
 
-      cK.c(var0, var2);
+      // PORT_TODO: cK.c(var0, var2);
       cL = true;
    }
 
@@ -147,7 +152,7 @@ public class aH {
          // PORT_TODO: Environment.Exit(1);
       // PORT_TODO: } catch (IOException var21) {
          Console.WriteLine("Error: cannot find working directory");
-         var21.printStackTrace();
+         // PORT_TODO: var21.printStackTrace();
          Environment.Exit(1);
       }
 
@@ -200,9 +205,9 @@ public class aH {
                      string var9 = var3.getProperty(var7);
                      if (!var7.Equals("InventoryFontScale")) {
                         if (var7.Equals("InventoryScaling")) {
-                           cK.b("InventoryScaling", (object)double.Parse(var9));
+                           // PORT_TODO: cK.b("InventoryScaling", (object)double.Parse(var9));
                         } else if (var7.Equals("FontScaling")) {
-                           cK.b("FontScaling", (object)double.Parse(var9));
+                           // PORT_TODO: cK.b("FontScaling", (object)double.Parse(var9));
                         } else {
                            int var5;
                            int var10;
@@ -212,26 +217,26 @@ public class aH {
                               if (true) { // PORT_TODO: original condition had errors
                                  var10 = int.Parse(var9.Substring(0, var5));
                                  var11 = int.Parse(var9.Substring(var5 + 1));
-                                 cK.c(var7 + ".X", var10);
-                                 cK.c(var7 + ".Y", var11);
+                                 // PORT_TODO: cK.c(var7 + ".X", var10);
+                                 // PORT_TODO: cK.c(var7 + ".Y", var11);
                               }
                            } else if (var7.EndsWith(".Size")) {
                               var7 = var7.Substring(0, var7.LastIndexOf("."));
                               if (true) { // PORT_TODO: original condition had errors
                                  var10 = int.Parse(var9.Substring(0, var5));
                                  var11 = int.Parse(var9.Substring(var5 + 1));
-                                 cK.c(var7 + ".Width", var10);
-                                 cK.c(var7 + ".Height", var11);
+                                 // PORT_TODO: cK.c(var7 + ".Width", var10);
+                                 // PORT_TODO: cK.c(var7 + ".Height", var11);
                               }
                            } else if (var7.Equals("JSONEditor.Divider")) {
                               var10 = int.Parse(var9);
-                              cK.c(var7, var10);
+                              // PORT_TODO: cK.c(var7, var10);
                            } else if (var7.StartsWith("SteamID.")) {
                               var7 = var7.Substring(8);
                               var6.f(long.Parse(var7));
-                              cK.c("KnownPlayers." + var7, var9);
+                              // PORT_TODO: cK.c("KnownPlayers." + var7, var9);
                            } else {
-                              cK.c(var7, var9);
+                              // PORT_TODO: cK.c(var7, var9);
                            }
                         }
                      }
@@ -240,7 +245,7 @@ public class aH {
                }
 
                if (var6.Count > 0) {
-                  cK.b("SteamIDs", (object)var6);
+                  // PORT_TODO: cK.b("SteamIDs", (object)var6);
                }
 
                cL = true;
@@ -250,10 +255,10 @@ public class aH {
          }
       }
 
-      string var23 = cK.getValueAsString("LogLevel");
-      if (var23 != null) {
-         hc.aA(var23);
-      }
+      // PORT_TODO: string var23 = cK.getValueAsString("LogLevel");
+      // PORT_TODO: if (var23 != null) {
+         // PORT_TODO: hc.aA(var23);
+      // PORT_TODO: }
 
       // PORT_TODO: FlatLaf.registerCustomDefaultsSource("nomanssave");
       V();
@@ -356,38 +361,39 @@ public class aH {
          // PORT_TODO: int[] var0 = new int[aI.Values.Length];
 
          try {
-            var0[aI.cQ.ordinal()] = 4;
+            // PORT_TODO: var0[aI.cQ.ordinal()] = 4;
          } catch (NoSuchFieldError var6) {
          }
 
          try {
-            var0[aI.cO.ordinal()] = 2;
+            // PORT_TODO: var0[aI.cO.ordinal()] = 2;
          } catch (NoSuchFieldError var5) {
          }
 
          try {
-            var0[aI.cP.ordinal()] = 3;
+            // PORT_TODO: var0[aI.cP.ordinal()] = 3;
          } catch (NoSuchFieldError var4) {
          }
 
          try {
-            var0[aI.cN.ordinal()] = 1;
+            // PORT_TODO: var0[aI.cN.ordinal()] = 1;
          } catch (NoSuchFieldError var3) {
          }
 
          try {
-            var0[aI.cS.ordinal()] = 6;
+            // PORT_TODO: var0[aI.cS.ordinal()] = 6;
          } catch (NoSuchFieldError var2) {
          }
 
          try {
-            var0[aI.cR.ordinal()] = 5;
+            // PORT_TODO: var0[aI.cR.ordinal()] = 5;
          } catch (NoSuchFieldError var1) {
          }
 
-         cM = var0;
-         return var0;
+         // PORT_TODO: cM = var0;
+         // PORT_TODO: return var0;
       }
+      return null;
    }
 }
 

@@ -106,6 +106,7 @@ public eR(eQ var1, Element var2) : base(var2.getAttribute("id")) {
 
    public override string bg() {
       // PORT_TODO: return this.kn.b(this.y);
+      return default;
    }
 
    public override bool bh() {
@@ -122,6 +123,7 @@ public eR(eQ var1, Element var2) : base(var2.getAttribute("id")) {
 
    public override string getDescription() {
       // PORT_TODO: return this.kn.c(this.y);
+      return default;
    }
 
    public override List<object> bk() {

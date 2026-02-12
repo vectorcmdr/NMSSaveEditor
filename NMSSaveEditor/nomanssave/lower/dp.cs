@@ -15,23 +15,24 @@ public class dp : G {
    }
 
    public override string g(string var1) {
-      gv var2 = (gv)dj.j(this.hl).SelectedItem;
-      if (var2 == null) {
-         return "";
-      } else {
-         double var3 = var2.dH();
+      // PORT_TODO: gv var2 = (gv)dj.j(this.hl).SelectedItem;
+      // PORT_TODO: if (var2 == null) {
+         // PORT_TODO: return "";
+      // PORT_TODO: } else {
+         // PORT_TODO: double var3 = var2.dH();
 
-         try {
-            double var5 = hf.a(var1, 0.0D, 1000.0D);
-            if (var5 != var3) {
-               var2.f(var5);
-            }
+         // PORT_TODO: try {
+            // PORT_TODO: double var5 = hf.a(var1, 0.0D, 1000.0D);
+            // PORT_TODO: if (var5 != var3) {
+               // PORT_TODO: var2.f(var5);
+            // PORT_TODO: }
 
-            return (var5).ToString();
-         } catch (Exception var7) {
-            return (var3).ToString();
-         }
-      }
+            // PORT_TODO: return (var5).ToString();
+         // PORT_TODO: } catch (Exception var7) {
+            // PORT_TODO: return (var3).ToString();
+         // PORT_TODO: }
+      // PORT_TODO: }
+      return default;
    }
 }
 

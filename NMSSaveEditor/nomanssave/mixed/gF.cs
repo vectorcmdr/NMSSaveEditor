@@ -17,8 +17,9 @@ public class gF : gQ {
    }
 
    public bool isValid() {
-      string var1 = this.kM.getValueAsString("ElementId");
-      return var1 != null && var1.Length > 1;
+      // PORT_TODO: string var1 = this.kM.getValueAsString("ElementId");
+      // PORT_TODO: return var1 != null && var1.Length > 1;
+      return false;
    }
 
    public string getType() {
@@ -26,21 +27,23 @@ public class gF : gQ {
    }
 
    public object dz() {
-      return this.kM.getValue("ElementId");
+      // PORT_TODO: return this.kM.getValue("ElementId");
+      return default;
    }
 
    public void m(object var1) {
-      this.kM.b("ElementId", var1);
-      this.kM.b("LastChangeTimestamp", (object)((int)(DateTimeOffset.UtcNow.ToUnixTimeMilliseconds() / 1000L)));
+      // PORT_TODO: this.kM.b("ElementId", var1);
+      // PORT_TODO: this.kM.b("LastChangeTimestamp", (object)((int)(DateTimeOffset.UtcNow.ToUnixTimeMilliseconds() / 1000L)));
    }
 
    public int dA() {
-      return this.kM.J("Amount");
+      // PORT_TODO: return this.kM.J("Amount");
+      return 0;
    }
 
    public void aA(int var1) {
-      this.kM.b("Amount", (object)var1);
-      this.kM.b("LastChangeTimestamp", (object)((int)(DateTimeOffset.UtcNow.ToUnixTimeMilliseconds() / 1000L)));
+      // PORT_TODO: this.kM.b("Amount", (object)var1);
+      // PORT_TODO: this.kM.b("LastChangeTimestamp", (object)((int)(DateTimeOffset.UtcNow.ToUnixTimeMilliseconds() / 1000L)));
    }
 
    public int dB() {

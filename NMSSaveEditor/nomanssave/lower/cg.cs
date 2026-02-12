@@ -193,7 +193,7 @@ public class cg : Form {
    public static void a(Container var0, gQ var1) {
       if (fE == null) {
          Frame var2 = null;
-         fE = new cg(var2);
+         // PORT_TODO: fE = new cg(var2);
       }
 
       fE.a(var1);

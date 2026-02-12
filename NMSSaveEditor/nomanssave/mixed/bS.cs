@@ -152,7 +152,7 @@ public class bS : Panel {
                Color var8 = var3 ? bO.aj() : bO.eO;
                // PORT_TODO: this.a(var4, var7++, var8);
                this.a(var1.dA() < 0 ? "" : var1.dA() + "/" + var1.dB(), var7++, var8);
-               this.setToolTipText(var4);
+               // PORT_TODO: this.setToolTipText(var4);
             }
          } else {
             this.eY.Checked = (true);

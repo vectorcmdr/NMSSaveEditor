@@ -169,6 +169,7 @@ public class Application {
       }
 
       // PORT_TODO: return var3 == null ? null : new Bitmap(var3, var1, var2, 4);
+      return default;
    }
 
    public void f() {
@@ -447,86 +448,89 @@ public class Application {
 
    public gH h() {
       eY var1;
-      if (this.aK != null && (var1 = this.aK.H("PlayerStateData")) != null) {
-         FileInfo var2 = NMSSaveEditor.aH.cF.Exists ? NMSSaveEditor.aH.cF : NMSSaveEditor.aH.cD;
-         cT var3 = cT.aC();
+      // PORT_TODO: if (this.aK != null && (var1 = this.aK.H("PlayerStateData")) != null) {
+         // PORT_TODO: FileInfo var2 = NMSSaveEditor.aH.cF.Exists ? NMSSaveEditor.aH.cF : NMSSaveEditor.aH.cD;
+         // PORT_TODO: cT var3 = cT.aC();
          // PORT_TODO: var3.setCurrentDirectory(var2.FullName.FullName);
-         if (var3.showOpenDialog(this.N) == 0) {
-            try {
-      FileInfo var4 = null; // PORT_TODO: stub declaration
+         // PORT_TODO: if (var3.showOpenDialog(this.N) == 0) {
+            // PORT_TODO: try {
+      // PORT_TODO: FileInfo var4 = null; // PORT_TODO: stub declaration
                // PORT_TODO: FileInfo var4 = new FileInfo(new FileInfo(var3.getSelectedFile()));
-               gH var5 = gH.c(var1, var4);
-               this.aL = true;
-               return var5;
-            } catch (Exception var6) {
-               hc.a("Ship import error", var6);
-               this.c("An error occured during import.");
+               // PORT_TODO: gH var5 = gH.c(var1, var4);
+               // PORT_TODO: this.aL = true;
+               // PORT_TODO: return var5;
+            // PORT_TODO: } catch (Exception var6) {
+               // PORT_TODO: hc.a("Ship import error", var6);
+               // PORT_TODO: this.c("An error occured during import.");
       // // } catch (IOException var7) {
                // PORT_TODO: hc.a("Ship import error", var7);
-               this.c("An error occured during import.");
-            }
-         }
+               // PORT_TODO: this.c("An error occured during import.");
+            // PORT_TODO: }
+         // PORT_TODO: }
 
-         return null;
-      } else {
-         return null;
-      }
+         // PORT_TODO: return null;
+      // PORT_TODO: } else {
+         // PORT_TODO: return null;
+      // PORT_TODO: }
+      return default;
    }
 
    public gv i() {
       eY var1;
-      if (this.aK != null && (var1 = this.aK.H("PlayerStateData")) != null) {
-         FileInfo var2 = NMSSaveEditor.aH.cF.Exists ? NMSSaveEditor.aH.cF : NMSSaveEditor.aH.cD;
-         cv var3 = cv.ax();
+      // PORT_TODO: if (this.aK != null && (var1 = this.aK.H("PlayerStateData")) != null) {
+         // PORT_TODO: FileInfo var2 = NMSSaveEditor.aH.cF.Exists ? NMSSaveEditor.aH.cF : NMSSaveEditor.aH.cD;
+         // PORT_TODO: cv var3 = cv.ax();
          // PORT_TODO: var3.setCurrentDirectory(var2.FullName.FullName);
-         if (var3.showOpenDialog(this.N) == 0) {
-            try {
-      FileInfo var4 = null; // PORT_TODO: stub declaration
+         // PORT_TODO: if (var3.showOpenDialog(this.N) == 0) {
+            // PORT_TODO: try {
+      // PORT_TODO: FileInfo var4 = null; // PORT_TODO: stub declaration
                // PORT_TODO: FileInfo var4 = new FileInfo(new FileInfo(var3.getSelectedFile()));
-               gv var5 = gv.b(var1, var4);
-               this.aL = true;
-               return var5;
-            } catch (Exception var6) {
-               hc.a("Weapon import error", var6);
-               this.c("An error occured during import.");
+               // PORT_TODO: gv var5 = gv.b(var1, var4);
+               // PORT_TODO: this.aL = true;
+               // PORT_TODO: return var5;
+            // PORT_TODO: } catch (Exception var6) {
+               // PORT_TODO: hc.a("Weapon import error", var6);
+               // PORT_TODO: this.c("An error occured during import.");
       // // } catch (IOException var7) {
                // PORT_TODO: hc.a("Weapon import error", var7);
-               this.c("An error occured during import.");
-            }
-         }
+               // PORT_TODO: this.c("An error occured during import.");
+            // PORT_TODO: }
+         // PORT_TODO: }
 
-         return null;
-      } else {
-         return null;
-      }
+         // PORT_TODO: return null;
+      // PORT_TODO: } else {
+         // PORT_TODO: return null;
+      // PORT_TODO: }
+      return default;
    }
 
    public gj j() {
       eY var1;
-      if (this.aK != null && (var1 = this.aK.H("PlayerStateData")) != null) {
-         FileInfo var2 = NMSSaveEditor.aH.cF.Exists ? NMSSaveEditor.aH.cF : NMSSaveEditor.aH.cD;
-         cp var3 = cp.at();
+      // PORT_TODO: if (this.aK != null && (var1 = this.aK.H("PlayerStateData")) != null) {
+         // PORT_TODO: FileInfo var2 = NMSSaveEditor.aH.cF.Exists ? NMSSaveEditor.aH.cF : NMSSaveEditor.aH.cD;
+         // PORT_TODO: cp var3 = cp.at();
          // PORT_TODO: var3.setCurrentDirectory(var2.FullName.FullName);
-         if (var3.showOpenDialog(this.N) == 0) {
-            try {
-      FileInfo var4 = null; // PORT_TODO: stub declaration
+         // PORT_TODO: if (var3.showOpenDialog(this.N) == 0) {
+            // PORT_TODO: try {
+      // PORT_TODO: FileInfo var4 = null; // PORT_TODO: stub declaration
                // PORT_TODO: FileInfo var4 = new FileInfo(new FileInfo(var3.getSelectedFile()));
-               gj var5 = gj.a(var1, var4);
-               this.aL = true;
-               return var5;
-            } catch (Exception var6) {
-               hc.a("Companion import error", var6);
-               this.c("An error occured during import.");
+               // PORT_TODO: gj var5 = gj.a(var1, var4);
+               // PORT_TODO: this.aL = true;
+               // PORT_TODO: return var5;
+            // PORT_TODO: } catch (Exception var6) {
+               // PORT_TODO: hc.a("Companion import error", var6);
+               // PORT_TODO: this.c("An error occured during import.");
       // // } catch (IOException var7) {
                // PORT_TODO: hc.a("Companion import error", var7);
-               this.c("An error occured during import.");
-            }
-         }
+               // PORT_TODO: this.c("An error occured during import.");
+            // PORT_TODO: }
+         // PORT_TODO: }
 
-         return null;
-      } else {
-         return null;
-      }
+         // PORT_TODO: return null;
+      // PORT_TODO: } else {
+         // PORT_TODO: return null;
+      // PORT_TODO: }
+      return default;
    }
 
    public void a(gf var1) {
@@ -625,34 +629,34 @@ public class Application {
                var7.Put("Resource", var1.cT());
                var7.Put("FleetCoordination", var1.cY());
                var7.Put("Hyperdrive", var1.cX());
-               eY var8 = this.aK.H("PlayerStateData");
-               eY var9 = var8.H("FreighterInventory").bE();
-               eY var10 = var8.H("FreighterInventory_TechOnly").bE();
-               eY var11 = var8.H("FreighterInventory_Cargo").bE();
+               // PORT_TODO: eY var8 = this.aK.H("PlayerStateData");
+               // PORT_TODO: eY var9 = var8.H("FreighterInventory").bE();
+               // PORT_TODO: eY var10 = var8.H("FreighterInventory_TechOnly").bE();
+               // PORT_TODO: eY var11 = var8.H("FreighterInventory_Cargo").bE();
                if (!var4.aw()) {
-                  eV var12 = var9.d("Slots");
+                  // PORT_TODO: eV var12 = var9.d("Slots");
 
                   int var13;
                   eY var14;
-                  for(var13 = 0; var13 < var12.Count; ++var13) {
-                     var14 = var12.V(var13);
-                     if (!var14.getValueAsString("Type.InventoryType").Equals("Technology")) {
-                        var12.ac(var13--);
-                     }
-                  }
+                  // PORT_TODO: for(var13 = 0; var13 < var12.Count; ++var13) {
+                     // PORT_TODO: var14 = var12.V(var13);
+                     // PORT_TODO: if (!var14.getValueAsString("Type.InventoryType").Equals("Technology")) {
+                        // PORT_TODO: var12.ac(var13--);
+                     // PORT_TODO: }
+                  // PORT_TODO: }
 
-                  var12 = var11.d("Slots");
+                  // PORT_TODO: var12 = var11.d("Slots");
 
-                  for(var13 = 0; var13 < var12.Count; ++var13) {
-                     var14 = var12.V(var13);
-                     if (!var14.getValueAsString("Type.InventoryType").Equals("Technology")) {
-                        var12.ac(var13--);
-                     }
-                  }
+                  // PORT_TODO: for(var13 = 0; var13 < var12.Count; ++var13) {
+                     // PORT_TODO: var14 = var12.V(var13);
+                     // PORT_TODO: if (!var14.getValueAsString("Type.InventoryType").Equals("Technology")) {
+                        // PORT_TODO: var12.ac(var13--);
+                     // PORT_TODO: }
+                  // PORT_TODO: }
                }
 
-               var7.Put("Inventory", var9);
-               var7.Put("InventoryTech", var10);
+               // PORT_TODO: var7.Put("Inventory", var9);
+               // PORT_TODO: var7.Put("InventoryTech", var10);
                // PORT_TODO: var7.Put("InventoryCargo", var11);
                gS.a(var2.cH(), (Dictionary<object, object>)var7, (FileInfo)var6);
             } catch (Exception var15) {
@@ -688,7 +692,7 @@ public class Application {
                // PORT_TODO: FileInfo var5 = new FileInfo(new FileInfo(var4.getSelectedFile()));
                // PORT_TODO: Dictionary<object, object> var6 = new Dictionary<object, object>();
                gS.b(var2.cH(), var6, var5);
-               eY var7 = this.aK.H("PlayerStateData");
+               // PORT_TODO: eY var7 = this.aK.H("PlayerStateData");
                bool var8 = false;
                // PORT_TODO: IEnumerator<object> var10 = var6.entrySet().GetEnumerator();
 
@@ -728,26 +732,26 @@ public class Application {
                   }
 
                   if (((string)var9.getKey()).Equals("Inventory")) {
-                     var7.b("FreighterInventory", (object)((eY)var9.getValue()));
+                     // PORT_TODO: var7.b("FreighterInventory", (object)((eY)var9.getValue()));
                      var8 = true;
                   }
 
                   if (((string)var9.getKey()).Equals("InventoryTech")) {
-                     var7.b("FreighterInventory_TechOnly", (object)((eY)var9.getValue()));
+                     // PORT_TODO: var7.b("FreighterInventory_TechOnly", (object)((eY)var9.getValue()));
                      var8 = true;
                   }
 
                   if (((string)var9.getKey()).Equals("InventoryCargo")) {
-                     var7.b("FreighterInventory_Cargo", (object)((eY)var9.getValue()));
+                     // PORT_TODO: var7.b("FreighterInventory_Cargo", (object)((eY)var9.getValue()));
                      var8 = true;
                   }
                }
 
                if (var8) {
-                  var1 = gm.p(var7);
+                  // PORT_TODO: var1 = gm.p(var7);
                }
 
-               this.aw.c(var1);
+               // PORT_TODO: this.aw.c(var1);
                this.aL = true;
                return true;
             } catch (IOException var11) {
@@ -934,102 +938,102 @@ public class Application {
 
       this.O.SelectedIndex = (0);
       eY var1;
-      if (this.aK != null && (var1 = this.aK.H("PlayerStateData")) != null) {
-         bool var20 = this.aF.bW();
-         gz var21 = gz.w(var1);
-         gv[] var4 = gv.v(var1);
-         gB var5 = gB.x(var1);
-         gH[] var6 = gH.C(var1);
-         gC var7 = gC.y(var1);
-         gM[] var8 = gM.D(var1);
-         gm var9 = gm.p(var1);
-         gp[] var10 = gp.q(var1);
-         gO[] var11 = gO.E(var1);
-         gE[] var12 = gE.z(var1);
-         bool var13 = gj.n(var1);
-         gj[] var14 = gj.o(var1);
-         ge var15 = ge.m(var1);
-         this.O.setEnabledAt(1, var21 != null);
-         this.@as.a(var21);
-         this.O.setEnabledAt(2, var4.Length > 0);
-         this.at.a(var4, var5);
-         this.O.setEnabledAt(3, var6.Length > 0);
-         this.au.a(var6, var7);
-         this.O.setEnabledAt(4, var8.Length > 0);
-         this.av.a(var8);
-         this.O.setEnabledAt(5, var9 != null);
-         this.aw.c(var9);
-         this.O.setEnabledAt(6, var9 != null);
-         this.ax.a(var10);
-         this.O.setEnabledAt(7, var11.Length > 0);
-         this.ay.a(var11);
-         this.O.setEnabledAt(8, var13);
-         this.az.a(var14);
-         this.O.setEnabledAt(9, var15 != null);
-         this.aA.a(var15);
-         this.O.setEnabledAt(10, var12.Length > 0);
-         this.aB.a(var12);
-         this.O.setEnabledAt(11, var21 != null);
-         this.aC.a(var21);
-         this.O.setEnabledAt(12, var21 != null);
-         this.aD.a(var21);
-         this.W.Enabled = (!(this.aI[this.aJ] is F));
-         this.X.Enabled = (true);
-         this.Y.Enabled = (var20);
-         this.Z.Enabled = (true);
-         this.aa.Enabled = (true);
-         this.ab.Enabled = (var20);
-         IEnumerator<object> var17 = this.ac.GetEnumerator();
+      // PORT_TODO: if (this.aK != null && (var1 = this.aK.H("PlayerStateData")) != null) {
+         // PORT_TODO: bool var20 = this.aF.bW();
+         // PORT_TODO: gz var21 = gz.w(var1);
+         // PORT_TODO: gv[] var4 = gv.v(var1);
+         // PORT_TODO: gB var5 = gB.x(var1);
+         // PORT_TODO: gH[] var6 = gH.C(var1);
+         // PORT_TODO: gC var7 = gC.y(var1);
+         // PORT_TODO: gM[] var8 = gM.D(var1);
+         // PORT_TODO: gm var9 = gm.p(var1);
+         // PORT_TODO: gp[] var10 = gp.q(var1);
+         // PORT_TODO: gO[] var11 = gO.E(var1);
+         // PORT_TODO: gE[] var12 = gE.z(var1);
+         // PORT_TODO: bool var13 = gj.n(var1);
+         // PORT_TODO: gj[] var14 = gj.o(var1);
+         // PORT_TODO: ge var15 = ge.m(var1);
+         // PORT_TODO: this.O.setEnabledAt(1, var21 != null);
+         // PORT_TODO: this.@as.a(var21);
+         // PORT_TODO: this.O.setEnabledAt(2, var4.Length > 0);
+         // PORT_TODO: this.at.a(var4, var5);
+         // PORT_TODO: this.O.setEnabledAt(3, var6.Length > 0);
+         // PORT_TODO: this.au.a(var6, var7);
+         // PORT_TODO: this.O.setEnabledAt(4, var8.Length > 0);
+         // PORT_TODO: this.av.a(var8);
+         // PORT_TODO: this.O.setEnabledAt(5, var9 != null);
+         // PORT_TODO: this.aw.c(var9);
+         // PORT_TODO: this.O.setEnabledAt(6, var9 != null);
+         // PORT_TODO: this.ax.a(var10);
+         // PORT_TODO: this.O.setEnabledAt(7, var11.Length > 0);
+         // PORT_TODO: this.ay.a(var11);
+         // PORT_TODO: this.O.setEnabledAt(8, var13);
+         // PORT_TODO: this.az.a(var14);
+         // PORT_TODO: this.O.setEnabledAt(9, var15 != null);
+         // PORT_TODO: this.aA.a(var15);
+         // PORT_TODO: this.O.setEnabledAt(10, var12.Length > 0);
+         // PORT_TODO: this.aB.a(var12);
+         // PORT_TODO: this.O.setEnabledAt(11, var21 != null);
+         // PORT_TODO: this.aC.a(var21);
+         // PORT_TODO: this.O.setEnabledAt(12, var21 != null);
+         // PORT_TODO: this.aD.a(var21);
+         // PORT_TODO: this.W.Enabled = (!(this.aI[this.aJ] is F));
+         // PORT_TODO: this.X.Enabled = (true);
+         // PORT_TODO: this.Y.Enabled = (var20);
+         // PORT_TODO: this.Z.Enabled = (true);
+         // PORT_TODO: this.aa.Enabled = (true);
+         // PORT_TODO: this.ab.Enabled = (var20);
+         // PORT_TODO: IEnumerator<object> var17 = this.ac.GetEnumerator();
 
-         while(var17.MoveNext()) {
-            ToolStripMenuItem var16 = (ToolStripMenuItem)var17.Current;
-            var16.Enabled = (true);
-         }
-      } else {
-         this.W.Enabled = (false);
-         this.X.Enabled = (false);
-         this.Y.Enabled = (false);
-         this.Z.Enabled = (false);
-         this.aa.Enabled = (false);
-         this.ab.Enabled = (false);
-         IEnumerator<object> var3 = this.ac.GetEnumerator();
+         // PORT_TODO: while(var17.MoveNext()) {
+            // PORT_TODO: ToolStripMenuItem var16 = (ToolStripMenuItem)var17.Current;
+            // PORT_TODO: var16.Enabled = (true);
+         // PORT_TODO: }
+      // PORT_TODO: } else {
+         // PORT_TODO: this.W.Enabled = (false);
+         // PORT_TODO: this.X.Enabled = (false);
+         // PORT_TODO: this.Y.Enabled = (false);
+         // PORT_TODO: this.Z.Enabled = (false);
+         // PORT_TODO: this.aa.Enabled = (false);
+         // PORT_TODO: this.ab.Enabled = (false);
+         // PORT_TODO: IEnumerator<object> var3 = this.ac.GetEnumerator();
 
-         while(var3.MoveNext()) {
-            ToolStripMenuItem var2 = (ToolStripMenuItem)var3.Current;
-            var2.Enabled = (false);
-         }
+         // PORT_TODO: while(var3.MoveNext()) {
+            // PORT_TODO: ToolStripMenuItem var2 = (ToolStripMenuItem)var3.Current;
+            // PORT_TODO: var2.Enabled = (false);
+         // PORT_TODO: }
 
-         this.@as.a((gz)null);
-         this.at.a((gv[])(new gv[0]), (gB)null);
-         this.au.a((gH[])(new gH[0]), (gC)null);
-         this.av.a(new gM[0]);
-         this.aw.c((gm)null);
-         this.ax.a(new gp[0]);
-         this.ay.a(new gO[0]);
-         this.az.a(new gj[0]);
-         this.aA.a((ge)null);
-         this.aB.a(new gE[0]);
-         this.aC.a((gz)null);
-         this.aD.a((gz)null);
-         this.O.setEnabledAt(1, false);
-         this.O.setEnabledAt(2, false);
-         this.O.setEnabledAt(3, false);
-         this.O.setEnabledAt(4, false);
-         this.O.setEnabledAt(5, false);
-         this.O.setEnabledAt(6, false);
-         this.O.setEnabledAt(7, false);
-         this.O.setEnabledAt(8, false);
-         this.O.setEnabledAt(9, false);
-         this.O.setEnabledAt(11, false);
-         this.O.setEnabledAt(12, false);
-         if (this.aJ >= 0) {
-            if (this.aK == null) {
-               this.b("There was an error loading the file.");
-            } else {
-               this.b("Save file corrupted");
-            }
-         }
-      }
+         // PORT_TODO: this.@as.a((gz)null);
+         // PORT_TODO: this.at.a((gv[])(new gv[0]), (gB)null);
+         // PORT_TODO: this.au.a((gH[])(new gH[0]), (gC)null);
+         // PORT_TODO: this.av.a(new gM[0]);
+         // PORT_TODO: this.aw.c((gm)null);
+         // PORT_TODO: this.ax.a(new gp[0]);
+         // PORT_TODO: this.ay.a(new gO[0]);
+         // PORT_TODO: this.az.a(new gj[0]);
+         // PORT_TODO: this.aA.a((ge)null);
+         // PORT_TODO: this.aB.a(new gE[0]);
+         // PORT_TODO: this.aC.a((gz)null);
+         // PORT_TODO: this.aD.a((gz)null);
+         // PORT_TODO: this.O.setEnabledAt(1, false);
+         // PORT_TODO: this.O.setEnabledAt(2, false);
+         // PORT_TODO: this.O.setEnabledAt(3, false);
+         // PORT_TODO: this.O.setEnabledAt(4, false);
+         // PORT_TODO: this.O.setEnabledAt(5, false);
+         // PORT_TODO: this.O.setEnabledAt(6, false);
+         // PORT_TODO: this.O.setEnabledAt(7, false);
+         // PORT_TODO: this.O.setEnabledAt(8, false);
+         // PORT_TODO: this.O.setEnabledAt(9, false);
+         // PORT_TODO: this.O.setEnabledAt(11, false);
+         // PORT_TODO: this.O.setEnabledAt(12, false);
+         // PORT_TODO: if (this.aJ >= 0) {
+            // PORT_TODO: if (this.aK == null) {
+               // PORT_TODO: this.b("There was an error loading the file.");
+            // PORT_TODO: } else {
+               // PORT_TODO: this.b("Save file corrupted");
+            // PORT_TODO: }
+         // PORT_TODO: }
+      // PORT_TODO: }
 
    }
 
@@ -1159,16 +1163,16 @@ public class Application {
          // PORT_TODO: }).collect(Collectors.toList()));
       }
 
-      gv[] var5 = this.at.aK();
+      // PORT_TODO: gv[] var5 = this.at.aK();
 
-      for(int var6 = 0; var6 < var5.Length; ++var6) {
-         gt var3;
-         if ((var3 = var5[var6].dE()) != null && var3.ay(var1)) {
-            var2.Add(var3);
-         }
-      }
+      // PORT_TODO: for(int var6 = 0; var6 < var5.Length; ++var6) {
+         // PORT_TODO: gt var3;
+         // PORT_TODO: if ((var3 = var5[var6].dE()) != null && var3.ay(var1)) {
+            // PORT_TODO: var2.Add(var3);
+         // PORT_TODO: }
+      // PORT_TODO: }
 
-      gH[] var10 = this.au.aO();
+      // PORT_TODO: gH[] var10 = this.au.aO();
 
       if (false) { // PORT_TODO: original loop had errors
          // PORT_TODO: var2.AddRange((ICollection)var10[var7].cC().stream().filter((var1x) => {
@@ -1177,7 +1181,7 @@ public class Application {
          // PORT_TODO: }).collect(Collectors.toList()));
       }
 
-      gm var11 = this.aw.Z();
+      // PORT_TODO: gm var11 = this.aw.Z();
       if (true) { // PORT_TODO: original condition had errors
          // PORT_TODO: var2.AddRange((ICollection)var11.cC().stream().filter((var1x) => {
             // PORT_TODO: return var1x.ay(var1);
@@ -1204,13 +1208,13 @@ public class Application {
    }
 
    public void p() {
-      eY var1 = this.aK.H("PlayerStateData.UniverseAddress");
-      hl var2 = hl.n(var1);
+      // PORT_TODO: eY var1 = this.aK.H("PlayerStateData.UniverseAddress");
+      // PORT_TODO: hl var2 = hl.n(var1);
       if (true) {
-         var2.aL(0);
-         this.aK.b("PlayerStateData.UniverseAddress", (object)var2.ew());
-         this.aK.b("PlayerStateData.PreviousUniverseAddress", (object)var1);
-         this.aK.b("SpawnStateData.LastKnownPlayerState", (object)"InShip");
+         // PORT_TODO: var2.aL(0);
+         // PORT_TODO: this.aK.b("PlayerStateData.UniverseAddress", (object)var2.ew());
+         // PORT_TODO: this.aK.b("PlayerStateData.PreviousUniverseAddress", (object)var1);
+         // PORT_TODO: this.aK.b("SpawnStateData.LastKnownPlayerState", (object)"InShip");
          this.aL = true;
       }
 
@@ -1245,7 +1249,7 @@ public class Application {
       if (false) { // PORT_TODO: original loop had errors
       object var2 = null; // PORT_TODO: stub declaration
          // PORT_TODO: Window var1 = var4[var2];
-         a(var1);
+         // PORT_TODO: a(var1);
       }
 
    }
@@ -1260,44 +1264,44 @@ public class Application {
 
    public void t() {
       this.aL = true;
-      eY var1 = this.aK.H("PlayerStateData");
-      gz var2 = gz.w(var1);
-      gv[] var3 = gv.v(var1);
-      gB var4 = gB.x(var1);
-      gH[] var5 = gH.C(var1);
-      gM[] var6 = gM.D(var1);
-      gC var7 = gC.y(var1);
-      gm var8 = gm.p(var1);
-      gp[] var9 = gp.q(var1);
-      gO[] var10 = gO.E(var1);
-      gE[] var11 = gE.z(var1);
-      bool var12 = gj.n(var1);
-      gj[] var13 = gj.o(var1);
-      ge var14 = ge.m(var1);
-      this.O.setEnabledAt(1, var2 != null);
-      this.@as.a(var2);
-      this.O.setEnabledAt(2, var3.Length > 0);
-      this.at.a(var3, var4);
-      this.O.setEnabledAt(3, var5.Length > 0);
-      this.au.a(var5, var7);
-      this.O.setEnabledAt(4, var6.Length > 0);
-      this.av.a(var6);
-      this.O.setEnabledAt(5, var8 != null);
-      this.aw.c(var8);
-      this.O.setEnabledAt(6, var8 != null);
-      this.ax.a(var9);
-      this.O.setEnabledAt(7, var10.Length > 0);
-      this.ay.a(var10);
-      this.O.setEnabledAt(8, var12);
-      this.az.a(var13);
-      this.O.setEnabledAt(9, var14 != null);
-      this.aA.a(var14);
-      this.O.setEnabledAt(10, var11.Length > 0);
-      this.aB.a(var11);
-      this.O.setEnabledAt(11, var2 != null);
-      this.aC.a(var2);
-      this.O.setEnabledAt(12, var2 != null);
-      this.aD.a(var2);
+      // PORT_TODO: eY var1 = this.aK.H("PlayerStateData");
+      // PORT_TODO: gz var2 = gz.w(var1);
+      // PORT_TODO: gv[] var3 = gv.v(var1);
+      // PORT_TODO: gB var4 = gB.x(var1);
+      // PORT_TODO: gH[] var5 = gH.C(var1);
+      // PORT_TODO: gM[] var6 = gM.D(var1);
+      // PORT_TODO: gC var7 = gC.y(var1);
+      // PORT_TODO: gm var8 = gm.p(var1);
+      // PORT_TODO: gp[] var9 = gp.q(var1);
+      // PORT_TODO: gO[] var10 = gO.E(var1);
+      // PORT_TODO: gE[] var11 = gE.z(var1);
+      // PORT_TODO: bool var12 = gj.n(var1);
+      // PORT_TODO: gj[] var13 = gj.o(var1);
+      // PORT_TODO: ge var14 = ge.m(var1);
+      // PORT_TODO: this.O.setEnabledAt(1, var2 != null);
+      // PORT_TODO: this.@as.a(var2);
+      // PORT_TODO: this.O.setEnabledAt(2, var3.Length > 0);
+      // PORT_TODO: this.at.a(var3, var4);
+      // PORT_TODO: this.O.setEnabledAt(3, var5.Length > 0);
+      // PORT_TODO: this.au.a(var5, var7);
+      // PORT_TODO: this.O.setEnabledAt(4, var6.Length > 0);
+      // PORT_TODO: this.av.a(var6);
+      // PORT_TODO: this.O.setEnabledAt(5, var8 != null);
+      // PORT_TODO: this.aw.c(var8);
+      // PORT_TODO: this.O.setEnabledAt(6, var8 != null);
+      // PORT_TODO: this.ax.a(var9);
+      // PORT_TODO: this.O.setEnabledAt(7, var10.Length > 0);
+      // PORT_TODO: this.ay.a(var10);
+      // PORT_TODO: this.O.setEnabledAt(8, var12);
+      // PORT_TODO: this.az.a(var13);
+      // PORT_TODO: this.O.setEnabledAt(9, var14 != null);
+      // PORT_TODO: this.aA.a(var14);
+      // PORT_TODO: this.O.setEnabledAt(10, var11.Length > 0);
+      // PORT_TODO: this.aB.a(var11);
+      // PORT_TODO: this.O.setEnabledAt(11, var2 != null);
+      // PORT_TODO: this.aC.a(var2);
+      // PORT_TODO: this.O.setEnabledAt(12, var2 != null);
+      // PORT_TODO: this.aD.a(var2);
    }
 
    public void u() {
@@ -1319,7 +1323,7 @@ public class Application {
                return;
             }
 
-            this.aK.c(var3);
+            // PORT_TODO: this.aK.c(var3);
          } catch (IOException var4) {
             hc.a("JSON Export error", var4);
             this.c("An error occured exporting the save data.");
@@ -1340,7 +1344,7 @@ public class Application {
             }
 
             // PORT_TODO: FileInfo var2 = new FileInfo(new FileInfo(var1.getSelectedFile()));
-            this.aK.d(var2);
+            // PORT_TODO: this.aK.d(var2);
             this.t();
          } catch (IOException var3) {
             hc.a("JSON Import error", var3);
@@ -1352,50 +1356,50 @@ public class Application {
 
    public void w() {
       this.@as.w();
-      this.at.w();
-      this.au.w();
-      this.aw.w();
+      // PORT_TODO: this.at.w();
+      // PORT_TODO: this.au.w();
+      // PORT_TODO: this.aw.w();
       this.ay.w();
       this.aA.w();
    }
 
    public void x() {
       this.@as.x();
-      this.at.x();
-      this.au.x();
-      this.aw.x();
+      // PORT_TODO: this.at.x();
+      // PORT_TODO: this.au.x();
+      // PORT_TODO: this.aw.x();
       this.ay.x();
       this.aA.x();
    }
 
    public void y() {
       this.@as.y();
-      this.at.y();
-      this.au.y();
-      this.aw.y();
+      // PORT_TODO: this.at.y();
+      // PORT_TODO: this.au.y();
+      // PORT_TODO: this.aw.y();
       this.ay.y();
       this.aA.y();
    }
 
    public void z() {
-      this.at.z();
-      this.au.z();
+      // PORT_TODO: this.at.z();
+      // PORT_TODO: this.au.z();
    }
 
    public void A() {
       this.@as.A();
-      this.at.A();
-      this.au.A();
-      this.aw.A();
+      // PORT_TODO: this.at.A();
+      // PORT_TODO: this.au.A();
+      // PORT_TODO: this.aw.A();
       this.ay.A();
       this.aA.A();
    }
 
    public void a(gt var1) {
       this.@as.a(var1);
-      this.at.a(var1);
-      this.au.a(var1);
-      this.aw.a(var1);
+      // PORT_TODO: this.at.a(var1);
+      // PORT_TODO: this.au.a(var1);
+      // PORT_TODO: this.aw.a(var1);
       this.ay.a(var1);
       this.aA.a(var1);
    }
@@ -1409,277 +1413,282 @@ public class Application {
    }
 
    public eV d(string var1) {
-      return this.aK.d(var1);
+      // PORT_TODO: return this.aK.d(var1);
+      return default;
    }
 
    public bool D() {
-      return this.aK.getValue("PlayerStateData.DifficultyState") != null;
+      // PORT_TODO: return this.aK.getValue("PlayerStateData.DifficultyState") != null;
+      return false;
    }
 
    public string E() {
-      return this.aK.getValueAsString("PlayerStateData.DifficultyState.Settings.InventoryStackLimits.InventoryStackLimitsDifficulty");
+      // PORT_TODO: return this.aK.getValueAsString("PlayerStateData.DifficultyState.Settings.InventoryStackLimits.InventoryStackLimitsDifficulty");
+      return default;
    }
 
    public fn F() {
-      string var1 = this.aK.getValueAsString("PlayerStateData.DifficultyState.Preset.DifficultyPresetType");
+      // PORT_TODO: string var1 = this.aK.getValueAsString("PlayerStateData.DifficultyState.Preset.DifficultyPresetType");
       fn var2;
-      if (var1 != null) {
-         fn[] var5;
+      // PORT_TODO: if (var1 != null) {
+         // PORT_TODO: fn[] var5;
       // PORT_TODO: int var4 = (var5 = fn.Values).Length;
 
-         if (false) { // PORT_TODO: original loop had errors
+         // PORT_TODO: if (false) { // PORT_TODO: original loop had errors
             // PORT_TODO: var2 = var5[var3];
-            if (true) { // PORT_TODO: original condition had errors
-               return var2;
-            }
-         }
-      }
+            // PORT_TODO: if (true) { // PORT_TODO: original condition had errors
+               // PORT_TODO: return var2;
+            // PORT_TODO: }
+         // PORT_TODO: }
+      // PORT_TODO: }
 
       var2 = this.aI[this.aJ].L();
       if (var2 == fn.lr) {
-         string var6 = this.aK.getValueAsString("PlayerStateData.SeasonData.GameMode.PresetGameMode");
-         if ("Normal".Equals(var6)) {
-            var2 = fn.lm;
-         }
+         // PORT_TODO: string var6 = this.aK.getValueAsString("PlayerStateData.SeasonData.GameMode.PresetGameMode");
+         // PORT_TODO: if ("Normal".Equals(var6)) {
+            // PORT_TODO: var2 = fn.lm;
+         // PORT_TODO: }
 
-         if ("Creative".Equals(var6)) {
-            var2 = fn.lo;
-         }
+         // PORT_TODO: if ("Creative".Equals(var6)) {
+            // PORT_TODO: var2 = fn.lo;
+         // PORT_TODO: }
 
-         if ("Survival".Equals(var6)) {
-            var2 = fn.ln;
-         }
+         // PORT_TODO: if ("Survival".Equals(var6)) {
+            // PORT_TODO: var2 = fn.ln;
+         // PORT_TODO: }
 
-         if ("Ambient".Equals(var6)) {
-            var2 = fn.lp;
-         }
+         // PORT_TODO: if ("Ambient".Equals(var6)) {
+            // PORT_TODO: var2 = fn.lp;
+         // PORT_TODO: }
 
-         if ("Permadeath".Equals(var6)) {
-            var2 = fn.lq;
-         }
+         // PORT_TODO: if ("Permadeath".Equals(var6)) {
+            // PORT_TODO: var2 = fn.lq;
+         // PORT_TODO: }
       }
 
       return var2;
    }
 
    public void h(int var1) {
-      eY var2 = this.aK.H("PlayerStateData");
-      eV var3 = var2.d("Multitools");
-      if (var3 != null && var3.Count != 0) {
-         eY var4 = gR.az("multitool");
-         if (var1 >= 0 && var1 < var3.Count && var4 != null) {
+      // PORT_TODO: eY var2 = this.aK.H("PlayerStateData");
+      // PORT_TODO: eV var3 = var2.d("Multitools");
+      // PORT_TODO: if (var3 != null && var3.Count != 0) {
+         // PORT_TODO: eY var4 = gR.az("multitool");
+         // PORT_TODO: if (var1 >= 0 && var1 < var3.Count && var4 != null) {
             // PORT_TODO: var3.Remove(var1);
-            var3.Add(var4);
-            gB var5 = gB.x(var2);
-            int var6 = var5.dU();
-            if (var6 > 0 && var6 >= var1) {
-               --var6;
-               var5.aF(var6);
-            }
+            // PORT_TODO: var3.Add(var4);
+            // PORT_TODO: gB var5 = gB.x(var2);
+            // PORT_TODO: int var6 = var5.dU();
+            // PORT_TODO: if (var6 > 0 && var6 >= var1) {
+               // PORT_TODO: --var6;
+               // PORT_TODO: var5.aF(var6);
+            // PORT_TODO: }
 
-            this.at.a(gv.v(var2), var5);
-         }
-      }
+            // PORT_TODO: this.at.a(gv.v(var2), var5);
+         // PORT_TODO: }
+      // PORT_TODO: }
    }
 
    public void i(int var1) {
-      eY var2 = this.aK.H("PlayerStateData");
-      eV var3 = var2.d("ShipOwnership");
-      if (var3 != null && var3.Count != 0) {
-         eY var4 = gR.az("ship");
-         if (var1 >= 0 && var1 < var3.Count && var4 != null) {
+      // PORT_TODO: eY var2 = this.aK.H("PlayerStateData");
+      // PORT_TODO: eV var3 = var2.d("ShipOwnership");
+      // PORT_TODO: if (var3 != null && var3.Count != 0) {
+         // PORT_TODO: eY var4 = gR.az("ship");
+         // PORT_TODO: if (var1 >= 0 && var1 < var3.Count && var4 != null) {
             // PORT_TODO: var3.Remove(var1);
-            var3.Add(var4);
-            gC var5 = gC.y(var2);
-            int var6 = var5.dV();
-            if (var6 > 0 && var6 >= var1) {
-               --var6;
-               var5.aG(var6);
-            }
+            // PORT_TODO: var3.Add(var4);
+            // PORT_TODO: gC var5 = gC.y(var2);
+            // PORT_TODO: int var6 = var5.dV();
+            // PORT_TODO: if (var6 > 0 && var6 >= var1) {
+               // PORT_TODO: --var6;
+               // PORT_TODO: var5.aG(var6);
+            // PORT_TODO: }
 
-            this.au.a(gH.C(var2), var5);
-         }
-      }
+            // PORT_TODO: this.au.a(gH.C(var2), var5);
+         // PORT_TODO: }
+      // PORT_TODO: }
    }
 
    public void a(gl var1, int var2) {
-      eY var3 = this.aK.H("PlayerStateData");
+      // PORT_TODO: eY var3 = this.aK.H("PlayerStateData");
       eV var4;
       switch(I()[var1.ordinal()]) {
       case 1:
-         var4 = var3.d("Pets");
+         // PORT_TODO: var4 = var3.d("Pets");
          break;
       case 2:
-         var4 = var3.d("Eggs");
+         // PORT_TODO: var4 = var3.d("Eggs");
          break;
       default:
          return;
       }
 
-      if (var4 != null && var4.Count != 0) {
-         eY var5 = gR.az("companion");
-         if (var2 >= 0 && var2 < var4.Count && var5 != null) {
+      // PORT_TODO: if (var4 != null && var4.Count != 0) {
+         // PORT_TODO: eY var5 = gR.az("companion");
+         // PORT_TODO: if (var2 >= 0 && var2 < var4.Count && var5 != null) {
             // PORT_TODO: var4.Remove(var2);
-            var4.Add(var5);
-            this.az.a(gj.o(var3));
-         }
-      }
+            // PORT_TODO: var4.Add(var5);
+            // PORT_TODO: this.az.a(gj.o(var3));
+         // PORT_TODO: }
+      // PORT_TODO: }
    }
 
    public bool j(int var1) {
-      eV var2 = this.aK.d("PlayerStateData.FleetExpeditions");
+      // PORT_TODO: eV var2 = this.aK.d("PlayerStateData.FleetExpeditions");
 
-      for(int var3 = 0; var3 < var2.Count; ++var3) {
-         eV var4 = var2.V(var3).d("AllFrigateIndices");
-         if (var4.hasValue(((int)(var1)))) {
-            return true;
-         }
-      }
+      // PORT_TODO: for(int var3 = 0; var3 < var2.Count; ++var3) {
+         // PORT_TODO: eV var4 = var2.V(var3).d("AllFrigateIndices");
+         // PORT_TODO: if (var4.hasValue(((int)(var1)))) {
+            // PORT_TODO: return true;
+         // PORT_TODO: }
+      // PORT_TODO: }
 
       return false;
    }
 
    public gp[] k(int var1) {
-      eV var2 = this.aK.d("PlayerStateData.FleetFrigates");
-      eV var3 = this.aK.d("PlayerStateData.FleetExpeditions");
+      // PORT_TODO: eV var2 = this.aK.d("PlayerStateData.FleetFrigates");
+      // PORT_TODO: eV var3 = this.aK.d("PlayerStateData.FleetExpeditions");
 
       int var4;
-      for(var4 = 0; var4 < var3.Count; ++var4) {
-         eV var5 = var3.V(var4).d("AllFrigateIndices");
-         if (var5.hasValue(((int)(var1)))) {
-            this.c("This frigate is currently on a mission and cannot be deleted!");
-            return gp.d(var2);
-         }
-      }
+      // PORT_TODO: for(var4 = 0; var4 < var3.Count; ++var4) {
+         // PORT_TODO: eV var5 = var3.V(var4).d("AllFrigateIndices");
+         // PORT_TODO: if (var5.hasValue(((int)(var1)))) {
+            // PORT_TODO: this.c("This frigate is currently on a mission and cannot be deleted!");
+            // PORT_TODO: return gp.d(var2);
+         // PORT_TODO: }
+      // PORT_TODO: }
 
-      if (var2 != null && var1 < var2.Count) {
-         var2.ac(var1);
+      // PORT_TODO: if (var2 != null && var1 < var2.Count) {
+         // PORT_TODO: var2.ac(var1);
 
-         for(int var9 = 0; var9 < var3.Count; ++var9) {
-            eY var12 = var3.V(var9);
-            eV var7 = var12.d("ActiveFrigateIndices");
+         // PORT_TODO: for(int var9 = 0; var9 < var3.Count; ++var9) {
+            // PORT_TODO: eY var12 = var3.V(var9);
+            // PORT_TODO: eV var7 = var12.d("ActiveFrigateIndices");
 
-            int var10;
-            for(var10 = 0; var10 < var7.Count; ++var10) {
-               if ((var4 = var7.Y(var10)) > var1) {
-                  var7.a(var10, var4 - 1);
-               }
-            }
+            // PORT_TODO: int var10;
+            // PORT_TODO: for(var10 = 0; var10 < var7.Count; ++var10) {
+               // PORT_TODO: if ((var4 = var7.Y(var10)) > var1) {
+                  // PORT_TODO: var7.a(var10, var4 - 1);
+               // PORT_TODO: }
+            // PORT_TODO: }
 
-            var7 = var12.d("DamagedFrigateIndices");
+            // PORT_TODO: var7 = var12.d("DamagedFrigateIndices");
 
-            for(var10 = 0; var10 < var7.Count; ++var10) {
-               if ((var4 = var7.Y(var10)) > var1) {
-                  var7.a(var10, var4 - 1);
-               }
-            }
+            // PORT_TODO: for(var10 = 0; var10 < var7.Count; ++var10) {
+               // PORT_TODO: if ((var4 = var7.Y(var10)) > var1) {
+                  // PORT_TODO: var7.a(var10, var4 - 1);
+               // PORT_TODO: }
+            // PORT_TODO: }
 
-            var7 = var12.d("DestroyedFrigateIndices");
+            // PORT_TODO: var7 = var12.d("DestroyedFrigateIndices");
 
-            for(var10 = 0; var10 < var7.Count; ++var10) {
-               if ((var4 = var7.Y(var10)) > var1) {
-                  var7.a(var10, var4 - 1);
-               }
-            }
+            // PORT_TODO: for(var10 = 0; var10 < var7.Count; ++var10) {
+               // PORT_TODO: if ((var4 = var7.Y(var10)) > var1) {
+                  // PORT_TODO: var7.a(var10, var4 - 1);
+               // PORT_TODO: }
+            // PORT_TODO: }
 
-            var7 = var12.d("AllFrigateIndices");
+            // PORT_TODO: var7 = var12.d("AllFrigateIndices");
 
-            for(var10 = 0; var10 < var7.Count; ++var10) {
-               if ((var4 = var7.Y(var10)) > var1) {
-                  var7.a(var10, var4 - 1);
-               }
-            }
+            // PORT_TODO: for(var10 = 0; var10 < var7.Count; ++var10) {
+               // PORT_TODO: if ((var4 = var7.Y(var10)) > var1) {
+                  // PORT_TODO: var7.a(var10, var4 - 1);
+               // PORT_TODO: }
+            // PORT_TODO: }
 
-            eV var8 = var12.d("Events");
+            // PORT_TODO: eV var8 = var12.d("Events");
 
-            for(var10 = 0; var10 < var7.Count; ++var10) {
-               eY var6 = var8.V(var10);
-               var7 = var6.d("AffectedFrigateIndices");
+            // PORT_TODO: for(var10 = 0; var10 < var7.Count; ++var10) {
+               // PORT_TODO: eY var6 = var8.V(var10);
+               // PORT_TODO: var7 = var6.d("AffectedFrigateIndices");
 
-               int var11;
-               for(var11 = 0; var11 < var7.Count; ++var11) {
-                  if ((var4 = var7.Y(var11)) > var1) {
-                     var7.a(var11, var4 - 1);
-                  }
-               }
+               // PORT_TODO: int var11;
+               // PORT_TODO: for(var11 = 0; var11 < var7.Count; ++var11) {
+                  // PORT_TODO: if ((var4 = var7.Y(var11)) > var1) {
+                     // PORT_TODO: var7.a(var11, var4 - 1);
+                  // PORT_TODO: }
+               // PORT_TODO: }
 
-               var7 = var6.d("RepairingFrigateIndices");
+               // PORT_TODO: var7 = var6.d("RepairingFrigateIndices");
 
-               for(var11 = 0; var11 < var7.Count; ++var11) {
-                  if ((var4 = var7.Y(var11)) > var1) {
-                     var7.a(var11, var4 - 1);
-                  }
-               }
+               // PORT_TODO: for(var11 = 0; var11 < var7.Count; ++var11) {
+                  // PORT_TODO: if ((var4 = var7.Y(var11)) > var1) {
+                     // PORT_TODO: var7.a(var11, var4 - 1);
+                  // PORT_TODO: }
+               // PORT_TODO: }
 
-               var7 = var6.d("AffectedFrigateResponses");
+               // PORT_TODO: var7 = var6.d("AffectedFrigateResponses");
 
-               for(var11 = 0; var11 < var7.Count; ++var11) {
-                  if ((var4 = var7.Y(var11)) > var1) {
-                     var7.a(var11, var4 - 1);
-                  }
-               }
-            }
-         }
+               // PORT_TODO: for(var11 = 0; var11 < var7.Count; ++var11) {
+                  // PORT_TODO: if ((var4 = var7.Y(var11)) > var1) {
+                     // PORT_TODO: var7.a(var11, var4 - 1);
+                  // PORT_TODO: }
+               // PORT_TODO: }
+            // PORT_TODO: }
+         // PORT_TODO: }
 
-         this.aL = true;
-      }
+         // PORT_TODO: this.aL = true;
+      // PORT_TODO: }
 
-      return gp.d(var2);
+      // PORT_TODO: return gp.d(var2);
+      return null;
    }
 
    public gp[] a(int var1, string var2) {
-      eV var3 = this.aK.d("PlayerStateData.FleetFrigates");
-      if (var3 != null && var1 < var3.Count) {
-         eY var4 = var3.V(var1).bE();
-         var4.d("ResourceSeed").a(1, var2);
-         var4.b("CustomName", (object)"");
-         var3.f(var4);
-         this.aL = true;
-      }
+      // PORT_TODO: eV var3 = this.aK.d("PlayerStateData.FleetFrigates");
+      // PORT_TODO: if (var3 != null && var1 < var3.Count) {
+         // PORT_TODO: eY var4 = var3.V(var1).bE();
+         // PORT_TODO: var4.d("ResourceSeed").a(1, var2);
+         // PORT_TODO: var4.b("CustomName", (object)"");
+         // PORT_TODO: var3.f(var4);
+         // PORT_TODO: this.aL = true;
+      // PORT_TODO: }
 
-      return gp.d(var3);
+      // PORT_TODO: return gp.d(var3);
+      return null;
    }
 
    public void G() {
-      int var1 = this.aK.J("PlayerStateData.TotalPlayTime");
+      // PORT_TODO: int var1 = this.aK.J("PlayerStateData.TotalPlayTime");
       int var2 = 0;
-      eV var3 = this.aK.d("PlayerStateData.PersistentPlayerBases");
+      // PORT_TODO: eV var3 = this.aK.d("PlayerStateData.PersistentPlayerBases");
 
       int var4;
       eV var5;
       int var6;
-      for(var4 = 0; var4 < var3.Count; ++var4) {
-         var5 = var3.V(var4).d("Objects");
+      // PORT_TODO: for(var4 = 0; var4 < var3.Count; ++var4) {
+         // PORT_TODO: var5 = var3.V(var4).d("Objects");
 
-         for(var6 = 0; var6 < var5.Count; ++var6) {
-            string var7 = var5.V(var6).getValueAsString("ObjectID");
-            if ("^PLANTER".Equals(var7)) {
-               ++var2;
-            } else if ("^PLANTERMEGA".Equals(var7)) {
-               ++var2;
-            }
-         }
-      }
+         // PORT_TODO: for(var6 = 0; var6 < var5.Count; ++var6) {
+            // PORT_TODO: string var7 = var5.V(var6).getValueAsString("ObjectID");
+            // PORT_TODO: if ("^PLANTER".Equals(var7)) {
+               // PORT_TODO: ++var2;
+            // PORT_TODO: } else if ("^PLANTERMEGA".Equals(var7)) {
+               // PORT_TODO: ++var2;
+            // PORT_TODO: }
+         // PORT_TODO: }
+      // PORT_TODO: }
 
-      var5 = this.aK.d("PlayerStateData.MaintenanceInteractions");
+      // PORT_TODO: var5 = this.aK.d("PlayerStateData.MaintenanceInteractions");
 
-      for(var6 = 0; var6 < var5.Count; ++var6) {
-         eY var11 = var5.V(var6);
-         eV var8 = var11.d("InventoryContainer.Slots");
+      // PORT_TODO: for(var6 = 0; var6 < var5.Count; ++var6) {
+         // PORT_TODO: eY var11 = var5.V(var6);
+         // PORT_TODO: eV var8 = var11.d("InventoryContainer.Slots");
 
-         for(int var9 = 0; var9 < var8.Count; ++var9) {
-            eY var10 = var8.V(var9);
-            if ("^MAINT_FARM5".Equals(var10.getValueAsString("Id"))) {
-               if ((var4 = var10.J("MaxAmount")) > 0 && var10.J("Amount") < var4) {
-                  var10.b("Amount", (object)(((int)(var4))));
-               }
+         // PORT_TODO: for(int var9 = 0; var9 < var8.Count; ++var9) {
+            // PORT_TODO: eY var10 = var8.V(var9);
+            // PORT_TODO: if ("^MAINT_FARM5".Equals(var10.getValueAsString("Id"))) {
+               // PORT_TODO: if ((var4 = var10.J("MaxAmount")) > 0 && var10.J("Amount") < var4) {
+                  // PORT_TODO: var10.b("Amount", (object)(((int)(var4))));
+               // PORT_TODO: }
 
-               var11.b("LastUpdateTimestamp", (object)(((int)(var1))));
-               this.aL = true;
-               --var2;
-            }
-         }
-      }
+               // PORT_TODO: var11.b("LastUpdateTimestamp", (object)(((int)(var1))));
+               // PORT_TODO: this.aL = true;
+               // PORT_TODO: --var2;
+            // PORT_TODO: }
+         // PORT_TODO: }
+      // PORT_TODO: }
 
    }
 
@@ -2062,6 +2071,7 @@ public class Application {
          // PORT_TODO: aY = var0;
          // PORT_TODO: return var0;
       }
+      return null;
    }
    public static bool i(Application var0) {
       return var0.aL;

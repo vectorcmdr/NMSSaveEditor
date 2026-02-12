@@ -14,12 +14,13 @@ public class gS {
    public static byte[] rS = new byte[] {50, unchecked((byte)-99), unchecked((byte)-78), unchecked((byte)-55), 92, 88, unchecked((byte)-34), 74, unchecked((byte)-57), 17, 57, unchecked((byte)-108), unchecked((byte)-94), 127, 97, unchecked((byte)-79)};
 
    public static double[] a(eY var0, string var1) {
-      eV var2 = var0.d(var1);
-      if (var2.Count != 3) {
-         throw new Exception("Invalid " + var1 + " coordinates");
-      } else {
-         return new double[]{var2.aa(0), var2.aa(1), var2.aa(2)};
-      }
+      // PORT_TODO: eV var2 = var0.d(var1);
+      // PORT_TODO: if (var2.Count != 3) {
+         // PORT_TODO: throw new Exception("Invalid " + var1 + " coordinates");
+      // PORT_TODO: } else {
+         // PORT_TODO: return new double[]{var2.aa(0), var2.aa(1), var2.aa(2)};
+      // PORT_TODO: }
+      return null;
    }
 
    public static void a(eY var0, string var1, double[] var2) {
@@ -31,25 +32,25 @@ public class gS {
    }
 
    public static void a(eY var0, Dictionary<object, object> var1, FileInfo var2) {
-      int var3 = var0.J("BaseVersion");
-      eV var4 = var0.d("Objects").bA();
-      if (var3 < 3) {
-         double[] var5 = a(var0, "Position");
-         double[] var6 = a(var0, "Forward");
-         gT var7 = new gT(var5, var6);
+      // PORT_TODO: int var3 = var0.J("BaseVersion");
+      // PORT_TODO: eV var4 = var0.d("Objects").bA();
+      // PORT_TODO: if (var3 < 3) {
+         // PORT_TODO: double[] var5 = a(var0, "Position");
+         // PORT_TODO: double[] var6 = a(var0, "Forward");
+         // PORT_TODO: gT var7 = new gT(var5, var6);
 
-         for(int var8 = 0; var8 < var4.Count; ++var8) {
-            eY var9 = var4.V(var8);
-            double[] var10 = a(var9, "Position");
-            double[] var11 = a(var9, "Up");
-            double[] var12 = a(var9, "At");
-            a(var9, "Position", var7.d(var10));
-            a(var9, "Up", var7.d(var11));
-            a(var9, "At", var7.d(var12));
-         }
-      }
+         // PORT_TODO: for(int var8 = 0; var8 < var4.Count; ++var8) {
+            // PORT_TODO: eY var9 = var4.V(var8);
+            // PORT_TODO: double[] var10 = a(var9, "Position");
+            // PORT_TODO: double[] var11 = a(var9, "Up");
+            // PORT_TODO: double[] var12 = a(var9, "At");
+            // PORT_TODO: a(var9, "Position", var7.d(var10));
+            // PORT_TODO: a(var9, "Up", var7.d(var11));
+            // PORT_TODO: a(var9, "At", var7.d(var12));
+         // PORT_TODO: }
+      // PORT_TODO: }
 
-      int var17 = var0.J("UserData");
+      // PORT_TODO: int var17 = var0.J("UserData");
       SecretKeySpec var18 = new SecretKeySpec(rS, "AES");
       byte[] var19 = new byte[16];
       (new SecureRandom()).nextBytes(var19);
@@ -64,23 +65,23 @@ public class gS {
          ((Stream)var22).Write(var19);
          // PORT_TODO: var22 = new CipherOutputStream((Stream)var22, var21);
          ((Stream)var22).Write(new byte[]{84, 82, 85, 69});
-         hk.a((Stream)var22, var17);
-         byte[] var23 = fj.b(var4);
-         hk.a((Stream)var22, var23.Length);
-         ((Stream)var22).Write(var23);
+         // PORT_TODO: hk.a((Stream)var22, var17);
+         // PORT_TODO: byte[] var23 = fj.b(var4);
+         // PORT_TODO: hk.a((Stream)var22, var23.Length);
+         // PORT_TODO: ((Stream)var22).Write(var23);
          // PORT_TODO: IEnumerator<object> var13 = var1.entrySet().GetEnumerator();
 
          if (false) { // PORT_TODO: original while had errors
             // PORT_TODO: KeyValuePair<object, object> var24 = (KeyValuePair<object, object>)var13.Current;
             // PORT_TODO: var23 = ((string)var24.getKey()).GetBytes(System.Text.Encoding.UTF8);
-            if (var23.Length <= 255) {
+            // PORT_TODO: if (var23.Length <= 255) {
       // PORT_TODO: KeyValuePair<object, object> var24 = null; // PORT_TODO: stub declaration
-               ((Stream)var22).Write(var23.Length);
-               ((Stream)var22).Write(var23);
-               var23 = fj.j(var24.getValue());
-               hk.a((Stream)var22, var23.Length);
-               ((Stream)var22).Write(var23);
-            }
+               // PORT_TODO: ((Stream)var22).Write(var23.Length);
+               // PORT_TODO: ((Stream)var22).Write(var23);
+               // PORT_TODO: var23 = fj.j(var24.getValue());
+               // PORT_TODO: hk.a((Stream)var22, var23.Length);
+               // PORT_TODO: ((Stream)var22).Write(var23);
+            // PORT_TODO: }
          }
 
          ((Stream)var22).Flush();
@@ -154,7 +155,7 @@ public class gS {
                   throw new IOException("short read");
                }
 
-               var0.b("UserData", (object)(var11 << 24 | var12 << 16 | var13 << 8 | var14));
+               // PORT_TODO: var0.b("UserData", (object)(var11 << 24 | var12 << 16 | var13 << 8 | var14));
                MemoryStream var15 = new MemoryStream();
                byte[] var16 = new byte[8096];
 
@@ -165,7 +166,7 @@ public class gS {
 
                var5 = ff.c(var15.ToArray());
             } else {
-               var0.b("UserData", (object)hk.readInt((Stream)var4));
+               // PORT_TODO: var0.b("UserData", (object)hk.readInt((Stream)var4));
                var11 = hk.readInt((Stream)var4);
                byte[] var26 = new byte[var11];
                hk.readFully((Stream)var4, var26);
@@ -190,13 +191,13 @@ public class gS {
          ((Stream)var4).Close();
       }
 
-      long var21 = var0.K("LastUpdateTimestamp");
+      // PORT_TODO: long var21 = var0.K("LastUpdateTimestamp");
 
       int var22;
       eY var23;
       for(var22 = 0; var22 < var5.Count; ++var22) {
          var23 = var5.V(var22);
-         var23.Put("Timestamp", new Long(var21));
+         // PORT_TODO: var23.Put("Timestamp", new Long(var21));
       }
 
       if (var3 == 3) {
@@ -215,22 +216,22 @@ public class gS {
             a(var23, "At", var27);
          }
 
-         var22 = var0.J("UserData");
-         var5.Add(0, a("^BASE_FLAG", var21, var22, new double[]{0.0D, 0.0D, 0.0D}, new double[]{0.0D, 1.0D, 0.0D}, new double[]{0.0D, 0.0D, 1.0D}));
-         var5.Add(1, a("^MAINROOM", var21, var22, new double[]{-3.0D, 0.0D, 3.0D}, new double[]{0.0D, 1.0D, 0.0D}, new double[]{0.0D, 0.0D, -1.0D}));
-         var5.Add(2, a("^TELEPORTER", var21, var22, new double[]{0.0D, 0.0D, 6.0D}, new double[]{0.0D, 1.0D, 0.0D}, new double[]{-0.7071069478988647D, 0.0D, -0.7071067094802856D}));
-         var5.Add(3, a("^BUILDDOOR", var21, var22, new double[]{-9.005859375D, 0.2421875D, 2.98828125D}, new double[]{0.0D, 1.0D, 0.0D}, new double[]{-1.0D, 0.0D, 0.0D}));
-         var5.Add(4, a("^BUILDRAMP", var21, var22, new double[]{-10.724609375D, 0.296875D, 2.98828125D}, new double[]{-0.2588191032409668D, 0.9659259915351868D, 2.9802322387695312E-8D}, new double[]{-0.9659258127212524D, -0.2588191628456116D, -3.2782554626464844E-7D}));
-         var5.Add(5, a("^BUILDWINDOW", var21, var22, new double[]{-7.248046875D, 0.5D, -1.25D}, new double[]{0.0D, 1.0D, 0.0D}, new double[]{-0.7071069478988647D, 0.0D, -0.7071067094802856D}));
-         var5.Add(6, a("^BUILDWINDOW", var21, var22, new double[]{-7.248046875D, 0.5D, 7.25D}, new double[]{0.0D, 1.0D, 0.0D}, new double[]{-0.7071069478988647D, 0.0D, 0.7071067094802856D}));
-         var5.Add(7, a("^BUILDWINDOW", var21, var22, new double[]{1.248046875D, 0.5D, -1.25D}, new double[]{0.0D, 1.0D, 0.0D}, new double[]{0.7071069478988647D, 0.0D, -0.7071067094802856D}));
+         // PORT_TODO: var22 = var0.J("UserData");
+         // PORT_TODO: var5.Add(0, a("^BASE_FLAG", var21, var22, new double[]{0.0D, 0.0D, 0.0D}, new double[]{0.0D, 1.0D, 0.0D}, new double[]{0.0D, 0.0D, 1.0D}));
+         // PORT_TODO: var5.Add(1, a("^MAINROOM", var21, var22, new double[]{-3.0D, 0.0D, 3.0D}, new double[]{0.0D, 1.0D, 0.0D}, new double[]{0.0D, 0.0D, -1.0D}));
+         // PORT_TODO: var5.Add(2, a("^TELEPORTER", var21, var22, new double[]{0.0D, 0.0D, 6.0D}, new double[]{0.0D, 1.0D, 0.0D}, new double[]{-0.7071069478988647D, 0.0D, -0.7071067094802856D}));
+         // PORT_TODO: var5.Add(3, a("^BUILDDOOR", var21, var22, new double[]{-9.005859375D, 0.2421875D, 2.98828125D}, new double[]{0.0D, 1.0D, 0.0D}, new double[]{-1.0D, 0.0D, 0.0D}));
+         // PORT_TODO: var5.Add(4, a("^BUILDRAMP", var21, var22, new double[]{-10.724609375D, 0.296875D, 2.98828125D}, new double[]{-0.2588191032409668D, 0.9659259915351868D, 2.9802322387695312E-8D}, new double[]{-0.9659258127212524D, -0.2588191628456116D, -3.2782554626464844E-7D}));
+         // PORT_TODO: var5.Add(5, a("^BUILDWINDOW", var21, var22, new double[]{-7.248046875D, 0.5D, -1.25D}, new double[]{0.0D, 1.0D, 0.0D}, new double[]{-0.7071069478988647D, 0.0D, -0.7071067094802856D}));
+         // PORT_TODO: var5.Add(6, a("^BUILDWINDOW", var21, var22, new double[]{-7.248046875D, 0.5D, 7.25D}, new double[]{0.0D, 1.0D, 0.0D}, new double[]{-0.7071069478988647D, 0.0D, 0.7071067094802856D}));
+         // PORT_TODO: var5.Add(7, a("^BUILDWINDOW", var21, var22, new double[]{1.248046875D, 0.5D, -1.25D}, new double[]{0.0D, 1.0D, 0.0D}, new double[]{0.7071069478988647D, 0.0D, -0.7071067094802856D}));
       }
 
       if (var3 < 5) {
-         var0.b("BaseVersion", (int)3);
+         // PORT_TODO: var0.b("BaseVersion", (int)3);
       }
 
-      var0.b("Objects", (object)var5);
+      // PORT_TODO: var0.b("Objects", (object)var5);
    }
 
    public static void a(double[] var0) {

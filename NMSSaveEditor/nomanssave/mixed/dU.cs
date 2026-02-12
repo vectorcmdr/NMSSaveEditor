@@ -15,21 +15,22 @@ public class dU : G {
    }
 
    public override string g(string var1) {
-      gH var2 = (gH)dN.p(this.ia).SelectedItem;
-      if (var2 == null) {
-         return "";
-      } else {
-         try {
-            var1 = hg.aB(var1).ToString();
-            if (!var1.Equals(var2.cK())) {
-               var2.aa(var1);
-            }
+      // PORT_TODO: gH var2 = (gH)dN.p(this.ia).SelectedItem;
+      // PORT_TODO: if (var2 == null) {
+         // PORT_TODO: return "";
+      // PORT_TODO: } else {
+         // PORT_TODO: try {
+            // PORT_TODO: var1 = hg.aB(var1).ToString();
+            // PORT_TODO: if (!var1.Equals(var2.cK())) {
+               // PORT_TODO: var2.aa(var1);
+            // PORT_TODO: }
 
-            return var1;
-         } catch (Exception var4) {
-            return var2.cK();
-         }
-      }
+            // PORT_TODO: return var1;
+         // PORT_TODO: } catch (Exception var4) {
+            // PORT_TODO: return var2.cK();
+         // PORT_TODO: }
+      // PORT_TODO: }
+      return default;
    }
 }
 

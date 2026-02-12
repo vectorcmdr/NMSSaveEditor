@@ -24,6 +24,7 @@ public class aE : object {
 
    public aI t(int var1) {
       // PORT_TODO: return aI.Values[var1];
+      return default;
    }
 
    public void addListDataListener(EventHandler var1) {

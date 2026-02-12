@@ -34,19 +34,20 @@ public class hi {
 
    public static string i(long var0) {
       eY var2 = aC("http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=9710BD8FCF192837DC6DEF6037AB2837&steamids=" + var0);
-      eV var3 = var2.d("response.players");
-      if (var3 != null && var3.Count != 0) {
-         for(int var4 = 0; var4 < var3.Count; ++var4) {
-            eY var5 = var3.V(var4);
-            if ((var0).ToString().Equals(var5.getValueAsString("steamid"))) {
-               return var5.getValueAsString("personaname");
-            }
-         }
+      // PORT_TODO: eV var3 = var2.d("response.players");
+      // PORT_TODO: if (var3 != null && var3.Count != 0) {
+         // PORT_TODO: for(int var4 = 0; var4 < var3.Count; ++var4) {
+            // PORT_TODO: eY var5 = var3.V(var4);
+            // PORT_TODO: if ((var0).ToString().Equals(var5.getValueAsString("steamid"))) {
+               // PORT_TODO: return var5.getValueAsString("personaname");
+            // PORT_TODO: }
+         // PORT_TODO: }
 
-         return null;
-      } else {
-         return null;
-      }
+         // PORT_TODO: return null;
+      // PORT_TODO: } else {
+         // PORT_TODO: return null;
+      // PORT_TODO: }
+      return default;
    }
 
    public static eY aC(string var0) {

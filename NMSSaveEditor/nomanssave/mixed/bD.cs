@@ -44,6 +44,7 @@ public class bD : object {
       }
 
       // PORT_TODO: return var6;
+      return default;
    }
    public bD(bl var1, bD var2) {
       // PORT_TODO: // PORT_TODO: this(var1);

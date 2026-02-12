@@ -14,28 +14,29 @@ public class gO {
    public List<object> gT;
 
    public static gO[] E(eY var0) {
-      eV var1 = var0.d("VehicleOwnership");
-      if (var1 != null && var1.Count != 0) {
-         List<object> var2 = new List<object>();
+      // PORT_TODO: eV var1 = var0.d("VehicleOwnership");
+      // PORT_TODO: if (var1 != null && var1.Count != 0) {
+         // PORT_TODO: List<object> var2 = new List<object>();
 
-         eY var4;
-         for(int var3 = 0; var3 < var1.Count; ++var3) {
-            var4 = var1.V(var3);
-            if (var3 != 4) {
-               var2.Add(new gO(var3, var4, var4.H("Inventory"), var4.H("Inventory_TechOnly")));
-            }
-         }
+         // PORT_TODO: eY var4;
+         // PORT_TODO: for(int var3 = 0; var3 < var1.Count; ++var3) {
+            // PORT_TODO: var4 = var1.V(var3);
+            // PORT_TODO: if (var3 != 4) {
+               // PORT_TODO: var2.Add(new gO(var3, var4, var4.H("Inventory"), var4.H("Inventory_TechOnly")));
+            // PORT_TODO: }
+         // PORT_TODO: }
 
-         eY var5 = var0.H("FishPlatformLayout");
-         var4 = var0.H("FishPlatformInventory");
-         if (var5 != null && var4 != null) {
-            var2.Add(new gO(var5, var4));
-         }
+         // PORT_TODO: eY var5 = var0.H("FishPlatformLayout");
+         // PORT_TODO: var4 = var0.H("FishPlatformInventory");
+         // PORT_TODO: if (var5 != null && var4 != null) {
+            // PORT_TODO: var2.Add(new gO(var5, var4));
+         // PORT_TODO: }
 
-         return (gO[])var2.ToArray();
-      } else {
-         return new gO[0];
-      }
+         // PORT_TODO: return (gO[])var2.ToArray();
+      // PORT_TODO: } else {
+         // PORT_TODO: return new gO[0];
+      // PORT_TODO: }
+      return null;
    }
 
    public static Function a(gO var0, string var1) {

@@ -19,15 +19,17 @@ public class gh {
    }
 
    public gy cJ() {
-      return gy.@as(this.nn.getValueAsString("ResourceElement.Filename"));
+      // PORT_TODO: return gy.@as(this.nn.getValueAsString("ResourceElement.Filename"));
+      return default;
    }
 
    public string cK() {
-      return this.nn.d("ResourceElement.Seed").X(1);
+      // PORT_TODO: return this.nn.d("ResourceElement.Seed").X(1);
+      return default;
    }
 
    public void aa(string var1) {
-      this.nn.d("ResourceElement.Seed").a(1, var1);
+      // PORT_TODO: this.nn.d("ResourceElement.Seed").a(1, var1);
    }
 
    public string toString() {

@@ -19,10 +19,10 @@ public class Z : ActionListener {
    }
 
    public void actionPerformed(EventArgs var1) {
-      gj var2 = (gj)X.k(this.bV).SelectedItem;
-      if (var2 != null) {
-         this.bv.a(var2);
-      }
+      // PORT_TODO: gj var2 = (gj)X.k(this.bV).SelectedItem;
+      // PORT_TODO: if (var2 != null) {
+         // PORT_TODO: this.bv.a(var2);
+      // PORT_TODO: }
 
    }
 }

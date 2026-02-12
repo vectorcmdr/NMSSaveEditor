@@ -19,9 +19,9 @@ public class bk : ActionListener {
    }
 
    public void actionPerformed(EventArgs var1) {
-      if (bd.a(this.dP) != null) {
-         this.bv.b(bd.a(this.dP));
-      }
+      // PORT_TODO: if (bd.a(this.dP) != null) {
+         // PORT_TODO: this.bv.b(bd.a(this.dP));
+      // PORT_TODO: }
    }
 }
 

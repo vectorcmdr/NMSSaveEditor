@@ -19,12 +19,12 @@ public class ai : ActionListener {
    }
 
    public void actionPerformed(EventArgs var1) {
-      int var2 = X.k(this.bV).SelectedIndex;
-      if (var2 >= 0 && var2 < X.a(this.bV).Length) {
-         if (true) { // PORT_TODO: original condition had errors
-            this.bv.a(X.a(this.bV)[var2].cL(), X.a(this.bV)[var2].getIndex());
-         }
-      }
+      // PORT_TODO: int var2 = X.k(this.bV).SelectedIndex;
+      // PORT_TODO: if (var2 >= 0 && var2 < X.a(this.bV).Length) {
+         // PORT_TODO: if (true) { // PORT_TODO: original condition had errors
+            // PORT_TODO: this.bv.a(X.a(this.bV)[var2].cL(), X.a(this.bV)[var2].getIndex());
+         // PORT_TODO: }
+      // PORT_TODO: }
    }
 }
 

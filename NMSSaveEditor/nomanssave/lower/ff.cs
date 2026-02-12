@@ -331,16 +331,16 @@ public class ff : Closeable {
             var3 = new eY();
          }
 
-         if (((eY)var3).H("PlayerStateData") == null) {
-            ((eY)var3).b("PlayerStateData", (var0) => {
+         // PORT_TODO: if (((eY)var3).H("PlayerStateData") == null) {
+            // PORT_TODO: ((eY)var3).b("PlayerStateData", (var0) => {
                // PORT_TODO: string var1 = var0.getValueAsString("ActiveContext");
-               if (true) { // PORT_TODO: original condition had errors
-                  return "BaseContext.PlayerStateData";
-               } else {
+               // PORT_TODO: if (true) { // PORT_TODO: original condition had errors
+                  // PORT_TODO: return "BaseContext.PlayerStateData";
+               // PORT_TODO: } else {
                   // PORT_TODO: return "Season".Equals(var1) && var0.H("ExpeditionContext.PlayerStateData") != null ? "ExpeditionContext.PlayerStateData" : "PlayerStateData";
-               }
-            });
-         }
+               // PORT_TODO: }
+            // PORT_TODO: });
+         // PORT_TODO: }
 
          return (eY)var3;
       }
@@ -410,7 +410,7 @@ public class ff : Closeable {
    public Number ad(int var1) {
       bool var3 = false;
       if (var1 == 45) {
-         var1 = this.a(fh.kZ);
+         // PORT_TODO: var1 = this.a(fh.kZ);
          if (var1 < 0) {
             throw new eX("Invalid token");
          }
@@ -420,54 +420,54 @@ public class ff : Closeable {
 
       BigDecimal var2 = new BigDecimal(var1 - 48);
       if (var1 != 48) {
-         while((var1 = this.a(fh.kZ)) >= 0) {
-            var2 = var2.multiply(BigDecimal.TEN).Add(new BigDecimal(var1 - 48));
-         }
+         // PORT_TODO: while((var1 = this.a(fh.kZ)) >= 0) {
+            // PORT_TODO: var2 = var2.multiply(BigDecimal.TEN).Add(new BigDecimal(var1 - 48));
+         // PORT_TODO: }
       }
 
       bool var4 = true;
-      if (this.a(fh.la) >= 0) {
-         var4 = false;
-         var1 = this.a(fh.kZ);
-         if (var1 < 0) {
-            throw new eX("Invalid token");
-         }
+      // PORT_TODO: if (this.a(fh.la) >= 0) {
+         // PORT_TODO: var4 = false;
+         // PORT_TODO: var1 = this.a(fh.kZ);
+         // PORT_TODO: if (var1 < 0) {
+            // PORT_TODO: throw new eX("Invalid token");
+         // PORT_TODO: }
 
-         int var5 = 0;
+         // PORT_TODO: int var5 = 0;
 
-         do {
-            BigDecimal var10001 = new BigDecimal(var1 - 48);
-            --var5;
-            var2 = var2.Add(var10001.scaleByPowerOfTen(var5));
-         } while((var1 = this.a(fh.kZ)) >= 0);
-      }
+         // PORT_TODO: do {
+            // PORT_TODO: BigDecimal var10001 = new BigDecimal(var1 - 48);
+            // PORT_TODO: --var5;
+            // PORT_TODO: var2 = var2.Add(var10001.scaleByPowerOfTen(var5));
+         // PORT_TODO: } while((var1 = this.a(fh.kZ)) >= 0);
+      // PORT_TODO: }
 
-      if (this.a(fh.lb) >= 0) {
-         var4 = false;
-         var1 = this.a(fh.lc);
-         bool var9 = false;
-         if (var1 == 43 || var1 == 45) {
-            var9 = var1 == 45;
-            var1 = this.a(fh.kZ);
-         }
+      // PORT_TODO: if (this.a(fh.lb) >= 0) {
+         // PORT_TODO: var4 = false;
+         // PORT_TODO: var1 = this.a(fh.lc);
+         // PORT_TODO: bool var9 = false;
+         // PORT_TODO: if (var1 == 43 || var1 == 45) {
+            // PORT_TODO: var9 = var1 == 45;
+            // PORT_TODO: var1 = this.a(fh.kZ);
+         // PORT_TODO: }
 
-         if (var1 < 0) {
-            throw new eX("Invalid token");
-         }
+         // PORT_TODO: if (var1 < 0) {
+            // PORT_TODO: throw new eX("Invalid token");
+         // PORT_TODO: }
 
-         int var6 = 0;
+         // PORT_TODO: int var6 = 0;
 
-         do {
-            var6 *= 10;
-            var6 += var1 - 48;
-         } while((var1 = this.a(fh.kZ)) >= 0);
+         // PORT_TODO: do {
+            // PORT_TODO: var6 *= 10;
+            // PORT_TODO: var6 += var1 - 48;
+         // PORT_TODO: } while((var1 = this.a(fh.kZ)) >= 0);
 
-         if (var9) {
-            var6 = -var6;
-         }
+         // PORT_TODO: if (var9) {
+            // PORT_TODO: var6 = -var6;
+         // PORT_TODO: }
 
-         var2 = var2.scaleByPowerOfTen(var6);
-      }
+         // PORT_TODO: var2 = var2.scaleByPowerOfTen(var6);
+      // PORT_TODO: }
 
       if (var3) {
          var2 = var2.negate();
@@ -589,7 +589,8 @@ public class ff : Closeable {
          }
       }
 
-      return var1.ToArray();
+      // PORT_TODO: return var1.ToArray();
+      return null;
    }
 
    public string bN() {

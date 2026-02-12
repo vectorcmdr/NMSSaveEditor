@@ -56,7 +56,7 @@ public class dz : Form {
    public static int a(Container var0, ft[] var1, int var2) {
       if (ht == null) {
          Frame var3 = null;
-         ht = new dz(var3);
+         // PORT_TODO: ht = new dz(var3);
       }
 
       return ht.a(var1, var2);

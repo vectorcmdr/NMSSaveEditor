@@ -41,6 +41,7 @@ public class dL : object {
       }
 
       // PORT_TODO: return var6;
+      return default;
    }
 }
 

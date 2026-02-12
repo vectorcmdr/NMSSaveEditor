@@ -19,24 +19,27 @@ public class gf {
    }
 
    public string cF() {
-      object var1 = this.nj.getValue("GalacticAddress");
-      if (var1 is string) {
-         return (string)var1;
-      } else {
-         return var1 is Number ? "0x" + ((Number)var1).longValue().ToString("X") : null;
-      }
+      // PORT_TODO: object var1 = this.nj.getValue("GalacticAddress");
+      // PORT_TODO: if (var1 is string) {
+         // PORT_TODO: return (string)var1;
+      // PORT_TODO: } else {
+         // PORT_TODO: return var1 is Number ? "0x" + ((Number)var1).longValue().ToString("X") : null;
+      // PORT_TODO: }
+      return default;
    }
 
    public string getName() {
-      return this.nj.getValueAsString("Name");
+      // PORT_TODO: return this.nj.getValueAsString("Name");
+      return default;
    }
 
    public void setName(string var1) {
-      this.nj.b("Name", (object)var1);
+      // PORT_TODO: this.nj.b("Name", (object)var1);
    }
 
    public int cG() {
-      return this.nj.d("Objects").Count;
+      // PORT_TODO: return this.nj.d("Objects").Count;
+      return 0;
    }
 
    public eY cH() {
@@ -60,7 +63,8 @@ public class gf {
    }
 
    public string toString() {
-      return this.nj.getValueAsString("Name");
+      // PORT_TODO: return this.nj.getValueAsString("Name");
+      return default;
    }
    public gf(ge var1, eY var2, gf var3) : this(var1, var2) {
    }

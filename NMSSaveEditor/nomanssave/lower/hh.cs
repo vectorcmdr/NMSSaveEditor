@@ -419,6 +419,7 @@ public class hh {
 
    public static long a(CharSequence var0, int var1) {
       // PORT_TODO: return (long)var0[var1 + 3] << 48 | (long)var0[var1 + 2] << 32 | (long)var0[var1 + 1] << 16 | (long)var0[var1];
+      return 0;
    }
 
    public static long a(CharSequence var0, int var1, int var2) {
@@ -941,7 +942,7 @@ public class hh {
       var6 += var4;
       // PORT_TODO: var3[0] = var4;
       // PORT_TODO: var3[1] = var6;
-      return default;
+      // PORT_TODO: return default;
    }
 
    public static long b(long[] var0, int var1, int var2, long[] var3) {
@@ -1134,20 +1135,24 @@ public class hh {
 
    public long[] j(byte[] var1) {
       // PORT_TODO: return this.c(var1, 0, var1.Length);
+      return null;
    }
 
    public static long a(CharSequence var0, long[] var1) {
-      return b((CharSequence)var0, 0, var0.Length, var1);
+      // PORT_TODO: return b((CharSequence)var0, 0, var0.Length, var1);
+      return 0;
    }
 
    public long[] b(CharSequence var1, int var2, int var3) {
       long[] var4 = new long[]{this.sG, this.sH};
       b(var1, var2, var3, var4);
       // PORT_TODO: return var4;
+      return null;
    }
 
    public long[] a(CharSequence var1) {
-      return this.b((CharSequence)var1, 0, var1.Length);
+      // PORT_TODO: return this.b((CharSequence)var1, 0, var1.Length);
+      return null;
    }
 
    public static long a(long[] var0, long[] var1) {

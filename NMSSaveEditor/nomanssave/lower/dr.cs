@@ -19,10 +19,10 @@ public class dr : ActionListener {
    }
 
    public void actionPerformed(EventArgs var1) {
-      int var2 = dj.j(this.hl).SelectedIndex;
-      if (var2 >= 0 && var2 < dj.a(this.hl).Length) {
-         this.bv.a(dj.a(this.hl)[var2]);
-      }
+      // PORT_TODO: int var2 = dj.j(this.hl).SelectedIndex;
+      // PORT_TODO: if (var2 >= 0 && var2 < dj.a(this.hl).Length) {
+         // PORT_TODO: this.bv.a(dj.a(this.hl)[var2]);
+      // PORT_TODO: }
    }
 }
 

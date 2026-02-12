@@ -66,22 +66,23 @@ public sealed class fn {
    }
 
    public static fn i(eY var0) {
-      string var1 = var0.getValueAsString("ActiveContext");
+      // PORT_TODO: string var1 = var0.getValueAsString("ActiveContext");
       int var2;
-      if ("Main".Equals(var1)) {
-         var2 = var0.J("BaseContext.GameMode");
-         if (true) { // PORT_TODO: original condition had errors
+      // PORT_TODO: if ("Main".Equals(var1)) {
+         // PORT_TODO: var2 = var0.J("BaseContext.GameMode");
+         // PORT_TODO: if (true) { // PORT_TODO: original condition had errors
             // PORT_TODO: return Values()[var2 - 1];
-         }
-      } else if ("Season".Equals(var1)) {
-         var2 = var0.J("ExpeditionContext.GameMode");
-         if (true) { // PORT_TODO: original condition had errors
+         // PORT_TODO: }
+      // PORT_TODO: } else if ("Season".Equals(var1)) {
+         // PORT_TODO: var2 = var0.J("ExpeditionContext.GameMode");
+         // PORT_TODO: if (true) { // PORT_TODO: original condition had errors
             // PORT_TODO: return Values()[var2 - 1];
-         }
-      }
+         // PORT_TODO: }
+      // PORT_TODO: }
 
-      string var3 = var0.getValueAsString("PlayerStateData.DifficultyState.Preset.DifficultyPresetType");
-      return var3 != null ? S(var3) : null;
+      // PORT_TODO: string var3 = var0.getValueAsString("PlayerStateData.DifficultyState.Preset.DifficultyPresetType");
+      // PORT_TODO: return var3 != null ? S(var3) : null;
+      return default;
    }
 }
 

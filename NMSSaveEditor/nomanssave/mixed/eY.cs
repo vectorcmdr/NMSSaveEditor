@@ -370,6 +370,7 @@ public class eY {
 
 // PORT_TODO: 
       // PORT_TODO: throw new Exception("Invalid path");
+      return default;
    }
 
 // PORT_TODO: 

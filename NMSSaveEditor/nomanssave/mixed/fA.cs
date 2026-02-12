@@ -192,6 +192,7 @@ public class fA : fq {
    }
    public static byte[] bY() {
       // PORT_TODO: return lA;
+      return null;
    }
    public static eY b(byte[] var0, eG var1) {
       return a(var0, var1);
