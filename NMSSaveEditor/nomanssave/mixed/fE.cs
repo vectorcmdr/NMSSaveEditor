@@ -36,9 +36,9 @@ public class fE : ft {
          var1.Add(fA.b(this.ma)[this.lT * 2 + 1]);
       }
 
-      aH.cG.GetFiles());
-      var1.sort(new fG(this));
-      return (fs[])var1.ToArray();
+      aH.cG.listFiles(new fF(this, var1));
+      var1.Sort(new fG(this));
+      return var1.Cast<fs>().ToArray();
    }
 
    public fn L() {
@@ -46,11 +46,11 @@ public class fE : ft {
       fn var3 = null;
       if (fA.b(this.ma)[this.lT * 2] != null) {
          var3 = fA.b(this.ma)[this.lT * 2].L();
-         var1 = fA.b(this.ma)[this.lT * 2].LastWriteTimeUtc.Ticks;
+         var1 = fA.b(this.ma)[this.lT * 2].lastModified();
       }
 
       if (fA.b(this.ma)[this.lT * 2 + 1] != null) {
-         long var4 = fA.b(this.ma)[this.lT * 2 + 1].LastWriteTimeUtc.Ticks;
+         long var4 = fA.b(this.ma)[this.lT * 2 + 1].lastModified();
          if (var4 > var1) {
             var3 = fA.b(this.ma)[this.lT * 2 + 1].L();
          }
@@ -59,18 +59,18 @@ public class fE : ft {
       return var3;
    }
 
-   public string toString() {
+   public override string ToString() {
       StringBuilder var1 = new StringBuilder();
       var1.Append("Slot " + (this.lT + 1) + " - ");
       long var2 = long.MinValue;
       fn var4 = null;
       if (fA.b(this.ma)[this.lT * 2] != null) {
          var4 = fA.b(this.ma)[this.lT * 2].L();
-         var2 = fA.b(this.ma)[this.lT * 2].LastWriteTimeUtc.Ticks;
+         var2 = fA.b(this.ma)[this.lT * 2].lastModified();
       }
 
       if (fA.b(this.ma)[this.lT * 2 + 1] != null) {
-         long var5 = fA.b(this.ma)[this.lT * 2 + 1].LastWriteTimeUtc.Ticks;
+         long var5 = fA.b(this.ma)[this.lT * 2 + 1].lastModified();
          if (var5 > var2) {
             var4 = fA.b(this.ma)[this.lT * 2 + 1].L();
             var2 = var5;
@@ -86,6 +86,7 @@ public class fE : ft {
 
       return var1.ToString();
    }
+
    public static fA a(fE var0) {
       return var0.ma;
    }
