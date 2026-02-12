@@ -105,7 +105,7 @@ public class dN : em {
    }
 
    public void w() {
-      for(int var1 = 0; var1 < this.hX.length; ++var1) {
+      for(int var1 = 0; var1 < this.hX.Length; ++var1) {
          this.hX[var1].cC().forEach((var1x) => {
             if (var1x.dt()) {
                hc.info(var1x + ": technology recharged");
@@ -118,7 +118,7 @@ public class dN : em {
    }
 
    public void x() {
-      for(int var1 = 0; var1 < this.hX.length; ++var1) {
+      for(int var1 = 0; var1 < this.hX.Length; ++var1) {
          this.hX[var1].cC().forEach((var1x) => {
             if (var1x.du()) {
                hc.info(var1x + ": items refilled");
@@ -131,7 +131,7 @@ public class dN : em {
    }
 
    public void y() {
-      for(int var1 = 0; var1 < this.hX.length; ++var1) {
+      for(int var1 = 0; var1 < this.hX.Length; ++var1) {
          this.hX[var1].cC().forEach((var1x) => {
             if (var1x.dv()) {
                hc.info(var1x + ": all slots enabled");
@@ -144,7 +144,7 @@ public class dN : em {
    }
 
    public void z() {
-      for(int var1 = 0; var1 < this.hX.length; ++var1) {
+      for(int var1 = 0; var1 < this.hX.Length; ++var1) {
          this.hX[var1].cC().forEach((var1x) => {
             if (var1x.ds()) {
                hc.info(var1x + ": all slots repaired");
@@ -157,7 +157,7 @@ public class dN : em {
    }
 
    public void A() {
-      for(int var1 = 0; var1 < this.hX.length; ++var1) {
+      for(int var1 = 0; var1 < this.hX.Length; ++var1) {
          this.hX[var1].cC().forEach((var1x) => {
             if (var1x.dl()) {
                hc.info(var1x + ": inventory expanded");
@@ -180,11 +180,11 @@ public class dN : em {
    public void a(gH[] var1, gC var2) {
       this.hX = var1;
       this.hY = var2;
-      if (var1.length == 0) {
+      if (var1.Length == 0) {
          this.hK.SetSelectedIndex(-1);
       } else {
          int var3 = var2 == null ? 0 : var2.dV();
-         if (var3 >= var1.length) {
+         if (var3 >= var1.Length) {
             var3 = 0;
          }
 
@@ -203,87 +203,87 @@ public class dN : em {
    }
 
    // $FF: synthetic method
-   static gH[] a(dN var0) {
+   public static gH[] a(dN var0) {
       return var0.hX;
    }
 
    // $FF: synthetic method
-   static G b(dN var0) {
+   public static G b(dN var0) {
       return var0.hL;
    }
 
    // $FF: synthetic method
-   static cN c(dN var0) {
+   public static cN c(dN var0) {
       return var0.hM;
    }
 
    // $FF: synthetic method
-   static cN d(dN var0) {
+   public static cN d(dN var0) {
       return var0.hN;
    }
 
    // $FF: synthetic method
-   static G e(dN var0) {
+   public static G e(dN var0) {
       return var0.hO;
    }
 
    // $FF: synthetic method
-   static CheckBox f(dN var0) {
+   public static CheckBox f(dN var0) {
       return var0.hP;
    }
 
    // $FF: synthetic method
-   static Button g(dN var0) {
+   public static Button g(dN var0) {
       return var0.bQ;
    }
 
    // $FF: synthetic method
-   static G h(dN var0) {
+   public static G h(dN var0) {
       return var0.hS;
    }
 
    // $FF: synthetic method
-   static G i(dN var0) {
+   public static G i(dN var0) {
       return var0.hT;
    }
 
    // $FF: synthetic method
-   static G j(dN var0) {
+   public static G j(dN var0) {
       return var0.hU;
    }
 
    // $FF: synthetic method
-   static G k(dN var0) {
+   public static G k(dN var0) {
       return var0.hV;
    }
 
    // $FF: synthetic method
-   static bO l(dN var0) {
+   public static bO l(dN var0) {
       return var0.hW;
    }
 
    // $FF: synthetic method
-   static G m(dN var0) {
+   public static G m(dN var0) {
       return var0.hQ;
    }
 
    // $FF: synthetic method
-   static G n(dN var0) {
+   public static G n(dN var0) {
       return var0.hR;
    }
 
    // $FF: synthetic method
-   static gC o(dN var0) {
+   public static gC o(dN var0) {
       return var0.hY;
    }
 
    // $FF: synthetic method
-   static ComboBox p(dN var0) {
+   public static ComboBox p(dN var0) {
       return var0.hK;
    }
 
    // $FF: synthetic method
-   static void a(dN var0, gH[] var1) {
+   public static void a(dN var0, gH[] var1) {
       var0.hX = var1;
    }
 }

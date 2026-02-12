@@ -263,32 +263,32 @@ public class bS : Panel {
    }
 
    // $FF: synthetic method
-   static ToolStripMenuItem b(bS var0) {
+   public static ToolStripMenuItem b(bS var0) {
       return var0.eY;
    }
 
    // $FF: synthetic method
-   static void c(bS var0) {
+   public static void c(bS var0) {
       var0.aq();
    }
 
    // $FF: synthetic method
-   static ToolStripMenuItem d(bS var0) {
+   public static ToolStripMenuItem d(bS var0) {
       return var0.fc;
    }
 
    // $FF: synthetic method
-   static bool e(bS var0) {
+   public static bool e(bS var0) {
       return var0.ao();
    }
 
    // $FF: synthetic method
-   static bool f(bS var0) {
+   public static bool f(bS var0) {
       return var0.ap();
    }
 
    // $FF: synthetic method
-   static ToolStripMenuItem g(bS var0) {
+   public static ToolStripMenuItem g(bS var0) {
       return var0.eZ;
    }
 
@@ -297,17 +297,17 @@ public class bS : Panel {
    }
 
    // $FF: synthetic method
-   static int h(bS var0) {
+   public static int h(bS var0) {
       return var0.x;
    }
 
    // $FF: synthetic method
-   static int i(bS var0) {
+   public static int i(bS var0) {
       return var0.y;
    }
 
    // $FF: synthetic method
-   static bO j(bS var0) {
+   public static bO j(bS var0) {
       return var0.eX;
    }
 }

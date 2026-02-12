@@ -128,7 +128,7 @@ public class gz {
          var17.Add(new gt(au(var19), var5, var24, 8, 6, false, true));
       }
 
-      this.gT = JavaCollections.UnmodifiableList(var17);
+      this.gT = UnmodifiableList(var17);
    }
 
    public long dJ() {
@@ -254,7 +254,7 @@ public class gz {
             hc.debug("Updating word: " + var1 + "[" + var2 + "] = " + var3);
             eV var6 = var4.d("Races");
 
-            while(var6.Count < eU.Values.length) {
+            while(var6.Count < eU.Values.Length) {
                var6.Add(Boolean.FALSE);
             }
 
@@ -279,7 +279,7 @@ public class gz {
          var4.b("Group", (Object)var1);
          eV var8 = new eV();
 
-         while(var8.Count < eU.Values.length) {
+         while(var8.Count < eU.Values.Length) {
             var8.Add(Boolean.FALSE);
          }
 
@@ -374,12 +374,12 @@ public class gz {
    }
 
    // $FF: synthetic method
-   static bool a(gz var0, string var1, int var2) {
+   public static bool a(gz var0, string var1, int var2) {
       return var0.d(var1, var2);
    }
 
    // $FF: synthetic method
-   static void a(gz var0, string var1, int var2, bool var3) {
+   public static void a(gz var0, string var1, int var2, bool var3) {
       var0.a(var1, var2, var3);
    }
 }

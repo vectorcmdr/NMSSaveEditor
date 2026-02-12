@@ -65,17 +65,17 @@ public class aD : Form {
    }
 
    // $FF: synthetic method
-   static ComboBox a(aD var0) {
+   public static ComboBox a(aD var0) {
       return var0.cw;
    }
 
    // $FF: synthetic method
-   static void a(aD var0, bool var1) {
+   public static void a(aD var0, bool var1) {
       var0.cy = var1;
    }
 
    // $FF: synthetic method
-   static TextBox b(aD var0) {
+   public static TextBox b(aD var0) {
       return var0.cx;
    }
 }

@@ -72,17 +72,17 @@ public class cY : Form {
    }
 
    // $FF: synthetic method
-   static List<object> a(cY var0) {
+   public static List<object> a(cY var0) {
       return var0.gN;
    }
 
    // $FF: synthetic method
-   static ComboBox b(cY var0) {
+   public static ComboBox b(cY var0) {
       return var0.gM;
    }
 
    // $FF: synthetic method
-   static void a(cY var0, int var1) {
+   public static void a(cY var0, int var1) {
       var0.gO = var1;
    }
 }

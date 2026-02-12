@@ -206,42 +206,42 @@ public class cg : Form {
    }
 
    // $FF: synthetic method
-   static Integer a(cg var0) {
+   public static Integer a(cg var0) {
       return var0.fC;
    }
 
    // $FF: synthetic method
-   static gQ b(cg var0) {
+   public static gQ b(cg var0) {
       return var0.fB;
    }
 
    // $FF: synthetic method
-   static ey c(cg var0) {
+   public static ey c(cg var0) {
       return var0.fA;
    }
 
    // $FF: synthetic method
-   static void a(cg var0, Integer var1) {
+   public static void a(cg var0, Integer var1) {
       var0.fC = var1;
    }
 
    // $FF: synthetic method
-   static Integer d(cg var0) {
+   public static Integer d(cg var0) {
       return var0.fD;
    }
 
    // $FF: synthetic method
-   static void b(cg var0, Integer var1) {
+   public static void b(cg var0, Integer var1) {
       var0.fD = var1;
    }
 
    // $FF: synthetic method
-   static G e(cg var0) {
+   public static G e(cg var0) {
       return var0.ft;
    }
 
    // $FF: synthetic method
-   static G f(cg var0) {
+   public static G f(cg var0) {
       return var0.fv;
    }
 }

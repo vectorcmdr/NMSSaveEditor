@@ -67,17 +67,17 @@ public class dd : Form {
    }
 
    // $FF: synthetic method
-   static List<object> a(dd var0) {
+   public static List<object> a(dd var0) {
       return var0.gT;
    }
 
    // $FF: synthetic method
-   static ListBox b(dd var0) {
+   public static ListBox b(dd var0) {
       return var0.gS;
    }
 
    // $FF: synthetic method
-   static void a(dd var0, int var1) {
+   public static void a(dd var0, int var1) {
       var0.gU = var1;
    }
 }

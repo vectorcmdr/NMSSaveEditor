@@ -22,7 +22,7 @@ public class aE : ComboBoxModel {
    }
 
    public int getSize() {
-      return aI.Values.length;
+      return aI.Values.Length;
    }
 
    public aI t(int var1) {

@@ -72,12 +72,12 @@ public class hi {
    }
 
    // $FF: synthetic method
-   static Dictionary<object, object> ep() {
+   public static Dictionary<object, object> ep() {
       return sJ;
    }
 
    // $FF: synthetic method
-   static string j(long var0) {
+   public static string j(long var0) {
       return i(var0);
    }
 }

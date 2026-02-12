@@ -22,7 +22,7 @@ public class dF : ComboBoxModel {
    }
 
    public int getSize() {
-      return dE.b(this.hE) == null ? 0 : dE.b(this.hE).length;
+      return dE.b(this.hE) == null ? 0 : dE.b(this.hE).Length;
    }
 
    public gE E(int var1) {
@@ -42,7 +42,7 @@ public class dF : ComboBoxModel {
          dE.c(this.hE).SetText("");
          dE.d(this.hE).SetText("");
 
-         for(var2 = 0; var2 < dE.e(this.hE).length; ++var2) {
+         for(var2 = 0; var2 < dE.e(this.hE).Length; ++var2) {
             dE.e(this.hE)[var2].SetText("");
          }
 
@@ -51,7 +51,7 @@ public class dF : ComboBoxModel {
          dE.c(this.hE).SetText(this.hD.Name);
          dE.d(this.hE).SetText(this.hD.cK());
 
-         for(var2 = 0; var2 < dE.e(this.hE).length; ++var2) {
+         for(var2 = 0; var2 < dE.e(this.hE).Length; ++var2) {
             dE.e(this.hE)[var2].SetText(Convert.ToString(this.hD.aq(var2)));
          }
 

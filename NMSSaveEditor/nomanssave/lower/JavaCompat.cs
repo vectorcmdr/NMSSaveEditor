@@ -593,14 +593,24 @@ public interface DocumentListener {
     void changedUpdate(DocumentEvent e);
 }
 
-public class XmlElement {
-    public string TagName { get; set; }
-    public string getAttribute(string name) { return ""; }
-    public void setAttribute(string name, string value) {}
-    public XmlElement[] getElementsByTagName(string name) { return new XmlElement[0]; }
-    public string getTextContent() { return ""; }
-    public void setTextContent(string text) {}
-    public XmlElement appendChild(XmlElement child) { return child; }
+public class XmlElement : XmlNode {
+    private System.Xml.XmlElement elem;
+    public XmlElement() {}
+    public XmlElement(System.Xml.XmlElement e) : base(e) { elem = e; }
+    public XmlElement(System.Xml.XmlNode n) : base(n) { elem = n as System.Xml.XmlElement; }
+    public string TagName => elem?.Name ?? "";
+    public string Name => TagName;
+    public string GetAttribute(string name) { return elem?.GetAttribute(name) ?? ""; }
+    public string getAttribute(string name) { return GetAttribute(name); }
+    public bool HasAttribute(string name) { return elem?.HasAttribute(name) ?? false; }
+    public bool hasAttribute(string name) { return HasAttribute(name); }
+    public void setAttribute(string name, string value) { elem?.SetAttribute(name, value); }
+    public XmlNodeList ChildNodes => new XmlNodeList(elem?.ChildNodes);
+    public XmlNodeList getChildNodes() { return ChildNodes; }
+    public XmlNodeList getElementsByTagName(string name) { return elem != null ? new XmlNodeList(elem.GetElementsByTagName(name)) : new XmlNodeList(); }
+    public new string getTextContent() { return elem?.InnerText ?? ""; }
+    public new void setTextContent(string text) { if (elem != null) elem.InnerText = text; }
+    public XmlElement appendChild(XmlElement child) { if (elem != null && child?.Inner != null) elem.AppendChild(child.Inner); return child; }
 }
 
 public interface Comparator {
@@ -709,5 +719,150 @@ public class Charset {
 }
 
 public class Transferable {
+}
+
+
+// === Additional types for full port ===
+
+public class XmlNode {
+    public System.Xml.XmlNode Inner { get; set; }
+    public XmlNode() {}
+    public XmlNode(System.Xml.XmlNode inner) { Inner = inner; }
+    public string getNodeName() { return Inner?.Name ?? ""; }
+    public string getTextContent() { return Inner?.InnerText ?? ""; }
+    public void setTextContent(string text) { if (Inner != null) Inner.InnerText = text; }
+    public XmlNodeList getChildNodes() { return new XmlNodeList(Inner?.ChildNodes); }
+    public short getNodeType() { return (short)(Inner?.NodeType ?? 0); }
+    public static short ELEMENT_NODE = 1;
+    public static short TEXT_NODE = 3;
+}
+
+public class XmlNodeList {
+    private System.Xml.XmlNodeList inner;
+    public XmlNodeList() {}
+    public XmlNodeList(System.Xml.XmlNodeList list) { inner = list; }
+    public int getLength() { return inner?.Count ?? 0; }
+    public int Length => getLength();
+    public XmlNode item(int index) { return inner != null ? new XmlNode(inner[index]) : null; }
+}
+
+public class XmlDocument {
+    private System.Xml.XmlDocument doc = new System.Xml.XmlDocument();
+    public XmlDocument() {}
+    public void parse(string xml) { doc.LoadXml(xml); }
+    public void parse(System.IO.Stream stream) { doc.Load(stream); }
+    public XmlElement getDocumentElement() { return new XmlElement(doc.DocumentElement); }
+    public XmlElement createElement(string name) { return new XmlElement(doc.CreateElement(name)); }
+    public System.Xml.XmlDocument InnerDocument => doc;
+}
+
+public class Properties : Dictionary<string, string> {
+    public Properties() {}
+    public string getProperty(string key) { return ContainsKey(key) ? this[key] : null; }
+    public string getProperty(string key, string defaultValue) { return ContainsKey(key) ? this[key] : defaultValue; }
+    public void setProperty(string key, string value) { this[key] = value; }
+    public void load(System.IO.Stream stream) {
+        using var reader = new System.IO.StreamReader(stream);
+        string line;
+        while ((line = reader.ReadLine()) != null) {
+            line = line.Trim();
+            if (line.Length > 0 && !line.StartsWith("#")) {
+                int eq = line.IndexOf('=');
+                if (eq > 0) {
+                    this[line.Substring(0, eq).Trim()] = line.Substring(eq + 1).Trim();
+                }
+            }
+        }
+    }
+    public void store(System.IO.Stream stream, string comments) {
+        using var writer = new System.IO.StreamWriter(stream);
+        if (comments != null) writer.WriteLine("# " + comments);
+        foreach (var kv in this) writer.WriteLine(kv.Key + "=" + kv.Value);
+    }
+    public System.Collections.Generic.IEnumerable<string> stringPropertyNames() { return Keys; }
+}
+
+public class GridLayout : System.Windows.Forms.TableLayoutPanel {
+    public GridLayout() {}
+    public GridLayout(int rows, int cols) { RowCount = rows; ColumnCount = cols; }
+    public GridLayout(int rows, int cols, int hgap, int vgap) : this(rows, cols) {}
+}
+
+public class SAXException : Exception {
+    public SAXException() {}
+    public SAXException(string msg) : base(msg) {}
+}
+
+public class ParserConfigurationException : Exception {
+    public ParserConfigurationException() {}
+    public ParserConfigurationException(string msg) : base(msg) {}
+}
+
+public class Date {
+    private DateTime dt;
+    public Date() { dt = DateTime.Now; }
+    public Date(long millis) { dt = new DateTime(1970, 1, 1).AddMilliseconds(millis); }
+    public long getTime() { return (long)(dt - new DateTime(1970, 1, 1)).TotalMilliseconds; }
+    public override string ToString() { return dt.ToString(); }
+}
+
+public class SimpleDateFormat {
+    private string pattern;
+    public SimpleDateFormat(string pattern) { this.pattern = pattern; }
+    public string format(Date date) { return date.ToString(); }
+    public string format(object date) { return date?.ToString() ?? ""; }
+}
+
+public class Character {
+    public static bool isDigit(char c) { return char.IsDigit(c); }
+    public static bool isLetter(char c) { return char.IsLetter(c); }
+    public static bool isLetterOrDigit(char c) { return char.IsLetterOrDigit(c); }
+    public static bool isWhitespace(char c) { return char.IsWhiteSpace(c); }
+    public static char toUpperCase(char c) { return char.ToUpper(c); }
+    public static char toLowerCase(char c) { return char.ToLower(c); }
+    public static int digit(char c, int radix) { return Convert.ToInt32(c.ToString(), radix); }
+    public static char forDigit(int digit, int radix) { return Convert.ToString(digit, radix)[0]; }
+}
+
+public class Runtime {
+    private static Runtime instance = new Runtime();
+    public static Runtime getRuntime() { return instance; }
+    public int availableProcessors() { return Environment.ProcessorCount; }
+    public long maxMemory() { return GC.GetGCMemoryInfo().TotalAvailableMemoryBytes; }
+    public long totalMemory() { return GC.GetTotalMemory(false); }
+    public long freeMemory() { return maxMemory() - totalMemory(); }
+    public void gc() { GC.Collect(); }
+}
+
+public class Toolkit {
+    private static Toolkit instance = new Toolkit();
+    public static Toolkit getDefaultToolkit() { return instance; }
+    public System.Drawing.Size getScreenSize() { return new System.Drawing.Size(1920, 1080); }
+    public object getSystemClipboard() { return System.Windows.Forms.Clipboard.GetDataObject(); }
+}
+
+public static class StyleConstants {
+    public static void setForeground(object attrs, System.Drawing.Color c) {}
+    public static void setBold(object attrs, bool bold) {}
+    public static void setItalic(object attrs, bool italic) {}
+}
+
+public class TimeUnit {
+    public static TimeUnit MILLISECONDS = new TimeUnit(1);
+    public static TimeUnit SECONDS = new TimeUnit(1000);
+    public static TimeUnit MINUTES = new TimeUnit(60000);
+    private long multiplier;
+    private TimeUnit(long mult) { multiplier = mult; }
+    public long toMillis(long duration) { return duration * multiplier; }
+    public void sleep(long duration) { System.Threading.Thread.Sleep((int)(duration * multiplier)); }
+}
+
+public class RoundingMode {
+    public static RoundingMode HALF_UP = new RoundingMode();
+}
+
+public class Utilities {
+    public static int getRowStart(object textComponent, int offset) { return 0; }
+    public static int getRowEnd(object textComponent, int offset) { return 0; }
 }
 

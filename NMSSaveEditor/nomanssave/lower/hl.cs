@@ -230,29 +230,29 @@ public class hl {
 
    public string ey() {
       StringBuilder var1 = new StringBuilder();
-      var1.append(((int)this.sQ & 15).ToString("X"));
-      var1.append(((int)this.sR & 4095).ToString("X"));
+      var1.Append(((int)this.sQ & 15).ToString("X"));
+      var1.Append(((int)this.sR & 4095).ToString("X"));
 
       while(var1.Length < 4) {
-         var1.insert(1, '0');
+         var1.Insert(1, '0');
       }
 
-      var1.append(((int)this.sT & 255).ToString("X"));
+      var1.Append(((int)this.sT & 255).ToString("X"));
 
       while(var1.Length < 6) {
-         var1.insert(4, '0');
+         var1.Insert(4, '0');
       }
 
-      var1.append(((int)this.sU & 4095).ToString("X"));
+      var1.Append(((int)this.sU & 4095).ToString("X"));
 
       while(var1.Length < 9) {
-         var1.insert(6, '0');
+         var1.Insert(6, '0');
       }
 
-      var1.append(((int)this.sV & 4095).ToString("X"));
+      var1.Append(((int)this.sV & 4095).ToString("X"));
 
       while(var1.Length < 12) {
-         var1.insert(9, '0');
+         var1.Insert(9, '0');
       }
 
       return var1.ToString().ToUpper();
@@ -260,31 +260,31 @@ public class hl {
 
    public string ez() {
       StringBuilder var1 = new StringBuilder();
-      var1.append(((int)this.sV + 2047).ToString("X"));
+      var1.Append(((int)this.sV + 2047).ToString("X"));
 
       while(var1.Length < 4) {
-         var1.insert(0, '0');
+         var1.Insert(0, '0');
       }
 
-      var1.append(':');
-      var1.append(((int)this.sT + 127).ToString("X"));
+      var1.Append(':');
+      var1.Append(((int)this.sT + 127).ToString("X"));
 
       while(var1.Length < 9) {
-         var1.insert(5, '0');
+         var1.Insert(5, '0');
       }
 
-      var1.append(':');
-      var1.append(((int)this.sU + 2047).ToString("X"));
+      var1.Append(':');
+      var1.Append(((int)this.sU + 2047).ToString("X"));
 
       while(var1.Length < 14) {
-         var1.insert(10, '0');
+         var1.Insert(10, '0');
       }
 
-      var1.append(':');
-      var1.append(((int)this.sQ << 12 | this.sR).ToString("X"));
+      var1.Append(':');
+      var1.Append(((int)this.sQ << 12 | this.sR).ToString("X"));
 
       while(var1.Length < 19) {
-         var1.insert(15, '0');
+         var1.Insert(15, '0');
       }
 
       return var1.ToString().ToUpper();

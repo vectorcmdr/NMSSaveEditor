@@ -84,22 +84,22 @@ public class p : Form {
    }
 
    // $FF: synthetic method
-   static List<object> a(p var0) {
+   public static List<object> a(p var0) {
       return var0.F;
    }
 
    // $FF: synthetic method
-   static DataGridView b(p var0) {
+   public static DataGridView b(p var0) {
       return var0.D;
    }
 
    // $FF: synthetic method
-   static void a(p var0, List<object> var1) {
+   public static void a(p var0, List<object> var1) {
       var0.G = var1;
    }
 
    // $FF: synthetic method
-   static List<object> c(p var0) {
+   public static List<object> c(p var0) {
       return var0.G;
    }
 }

@@ -263,92 +263,92 @@ public class bO : Panel, eo {
    }
 
    // $FF: synthetic method
-   static gt a(bO var0) {
+   public static gt a(bO var0) {
       return var0.eW;
    }
 
    // $FF: synthetic method
-   static Application b(bO var0) {
+   public static Application b(bO var0) {
       return var0.eR;
    }
 
    // $FF: synthetic method
-   static void c(bO var0) {
+   public static void c(bO var0) {
       var0.af();
    }
 
    // $FF: synthetic method
-   static void a(bO var0, bS var1) {
+   public static void a(bO var0, bS var1) {
       var0.a(var1);
    }
 
    // $FF: synthetic method
-   static void a(bO var0, gu var1, bS var2) {
+   public static void a(bO var0, gu var1, bS var2) {
       var0.a(var1, var2);
    }
 
    // $FF: synthetic method
-   static bS a(bO var0, int var1, int var2) {
+   public static bS a(bO var0, int var1, int var2) {
       return var0.a(var1, var2);
    }
 
    // $FF: synthetic method
-   static Color ag() {
+   public static Color ag() {
       return eE;
    }
 
    // $FF: synthetic method
-   static Border ah() {
+   public static Border ah() {
       return eQ;
    }
 
    // $FF: synthetic method
-   static Color ai() {
+   public static Color ai() {
       return eF;
    }
 
    // $FF: synthetic method
-   static string b(Object var0) {
+   public static string b(Object var0) {
       return a(var0);
    }
 
    // $FF: synthetic method
-   static Color aj() {
+   public static Color aj() {
       return eN;
    }
 
    // $FF: synthetic method
-   static Color ak() {
+   public static Color ak() {
       return eG;
    }
 
    // $FF: synthetic method
-   static Color al() {
+   public static Color al() {
       return eH;
    }
 
    // $FF: synthetic method
-   static Color am() {
+   public static Color am() {
       return eI;
    }
 
    // $FF: synthetic method
-   static Color an() {
+   public static Color an() {
       return eJ;
    }
 
    // $FF: synthetic method
-   static List<object> d(bO var0) {
+   public static List<object> d(bO var0) {
       return var0.eV;
    }
 
    // $FF: synthetic method
-   static void a(bO var0, gt var1) {
+   public static void a(bO var0, gt var1) {
       var0.eW = var1;
    }
 
    // $FF: synthetic method
-   static Button e(bO var0) {
+   public static Button e(bO var0) {
       return var0.eU;
    }
 }

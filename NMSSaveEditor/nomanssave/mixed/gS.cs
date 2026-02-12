@@ -68,18 +68,18 @@ public class gS {
          ((Stream)var22).Write(new byte[] {84, 82, 85, 69});
          hk.a((Stream)var22, var17);
          byte[] var23 = fj.b(var4);
-         hk.a((Stream)var22, var23.length);
+         hk.a((Stream)var22, var23.Length);
          ((Stream)var22).Write(var23);
          IEnumerator<object> var13 = var1.Entries().GetEnumerator();
 
          while(var13.MoveNext()) {
             Entry var24 = (Entry)var13.Current;
             var23 = ((string)var24.getKey()).GetBytes();
-            if (var23.length <= 255) {
-               ((Stream)var22).Write(var23.length);
+            if (var23.Length <= 255) {
+               ((Stream)var22).Write(var23.Length);
                ((Stream)var22).Write(var23);
                var23 = fj.j(var24.getValue());
-               hk.a((Stream)var22, var23.length);
+               hk.a((Stream)var22, var23.Length);
                ((Stream)var22).Write(var23);
             }
          }

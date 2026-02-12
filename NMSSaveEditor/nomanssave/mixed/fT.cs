@@ -15,7 +15,7 @@ public class fT : fq {
    public static byte[] lA = "HGSAVEV2\u0000".GetBytes();
    public static Pattern lV = new Regex("Slot(\\d+)((Auto)|(Manual))");
    public static Pattern lW = new Regex("wgsbackup(\\d*)\\.\\d*\\.zip");
-   static string mC = "containers.index";
+   public static string mC = "containers.index";
    public FileInfo lX;
    public fR lE;
    public fU mD;
@@ -49,7 +49,7 @@ public class fT : fq {
 
       this.mE = new fY[30];
 
-      for(int var3 = 0; var3 < this.mE.length; ++var3) {
+      for(int var3 = 0; var3 < this.mE.Length; ++var3) {
          try {
             this.mE[var3] = new fY(this, var3);
          } catch (FileNotFoundException var5) {
@@ -221,7 +221,7 @@ public class fT : fq {
       File[] var1 = var0.ListFiles();
       if (var1 != null) {
          File[] var5 = var1;
-         int var4 = var1.length;
+         int var4 = var1.Length;
 
          for(int var3 = 0; var3 < var4; ++var3) {
             FileInfo var2 = var5[var3];
@@ -239,11 +239,11 @@ public class fT : fq {
             var0 = new BufferedInputStream((Stream)var0);
          }
 
-         ((Stream)var0).mark(lA.length);
-         byte[] var3 = new byte[lA.length];
+         ((Stream)var0).mark(lA.Length);
+         byte[] var3 = new byte[lA.Length];
          hk.readFully((Stream)var0, var3);
 
-         for(int var4 = 0; var4 < lA.length; ++var4) {
+         for(int var4 = 0; var4 < lA.Length; ++var4) {
             if (var3[var4] != lA[var4]) {
                var2 = false;
                break;
@@ -255,7 +255,7 @@ public class fT : fq {
          } else {
             ((Stream)var0).reset();
             byte[] var7 = new byte[16];
-            ((Stream)var0).mark(var7.length);
+            ((Stream)var0).mark(var7.Length);
             hk.readFully((Stream)var0, var7);
             if ((255 & var7[0]) == 229 && (255 & var7[1]) == 161 && (255 & var7[2]) == 237 && (255 & var7[3]) == 254) {
                return new gX((Stream)var0, var7);
@@ -275,77 +275,77 @@ public class fT : fq {
    }
 
    // $FF: synthetic method
-   static string a(fT var0) {
+   public static string a(fT var0) {
       return var0.ct();
    }
 
    // $FF: synthetic method
-   static fY[] b(fT var0) {
+   public static fY[] b(fT var0) {
       return var0.mE;
    }
 
    // $FF: synthetic method
-   static Pattern cu() {
+   public static Pattern cu() {
       return lW;
    }
 
    // $FF: synthetic method
-   static Pattern cl() {
+   public static Pattern cl() {
       return mJ;
    }
 
    // $FF: synthetic method
-   static int ao(int var0) {
+   public static int ao(int var0) {
       return an(var0);
    }
 
    // $FF: synthetic method
-   static List<object> c(fT var0) {
+   public static List<object> c(fT var0) {
       return var0.mI;
    }
 
    // $FF: synthetic method
-   static FileInfo d(fT var0) {
+   public static FileInfo d(fT var0) {
       return var0.lX;
    }
 
    // $FF: synthetic method
-   static bool i(FileInfo var0) {
+   public static bool i(FileInfo var0) {
       return h(var0);
    }
 
    // $FF: synthetic method
-   static fW a(fT var0, string var1) {
+   public static fW a(fT var0, string var1) {
       return var0.Z(var1);
    }
 
    // $FF: synthetic method
-   static Stream b(Stream var0, int var1) {
+   public static Stream b(Stream var0, int var1) {
       return a(var0, var1);
    }
 
    // $FF: synthetic method
-   static int cv() {
+   public static int cv() {
       return mM;
    }
 
    // $FF: synthetic method
-   static int cw() {
+   public static int cw() {
       return mL;
    }
 
    // $FF: synthetic method
-   static int cx() {
+   public static int cx() {
       return mK;
    }
 
    // $FF: synthetic method
-   static byte[] cy() {
+   public static byte[] cy() {
       return lA;
    }
 
    // $FF: synthetic method
-   static void e(fT var0) {
+   public static void e(fT var0) {
       var0.cs();
    }
 }

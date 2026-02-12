@@ -48,7 +48,7 @@ public class fC : fs {
             this.lK = new byte[112];
             hk.readFully(var8, this.lK);
 
-            for(int var9 = 0; var9 < fA.bY().length; ++var9) {
+            for(int var9 = 0; var9 < fA.bY().Length; ++var9) {
                if (this.lK[var9] != fA.bY()[var9]) {
                   throw new IOException("Invalid header");
                }

@@ -22,7 +22,7 @@ public class eC {
    }
 
    public static void main(string[] var0) {
-      for(int var1 = 0; var1 < jS.length; ++var1) {
+      for(int var1 = 0; var1 < jS.Length; ++var1) {
          if (jS[var1] != null) {
             IEnumerator<object> var3 = jS[var1].GetEnumerator();
 

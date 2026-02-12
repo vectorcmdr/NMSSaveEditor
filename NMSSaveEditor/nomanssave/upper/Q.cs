@@ -80,32 +80,32 @@ public class Q : Form {
    }
 
    // $FF: synthetic method
-   static TextBox a(Q var0) {
+   public static TextBox a(Q var0) {
       return var0.bA;
    }
 
    // $FF: synthetic method
-   static int b(Q var0) {
+   public static int b(Q var0) {
       return var0.bx;
    }
 
    // $FF: synthetic method
-   static W c(Q var0) {
+   public static W c(Q var0) {
       return var0.bw;
    }
 
    // $FF: synthetic method
-   static TextBox d(Q var0) {
+   public static TextBox d(Q var0) {
       return var0.bB;
    }
 
    // $FF: synthetic method
-   static int e(Q var0) {
+   public static int e(Q var0) {
       return var0.by;
    }
 
    // $FF: synthetic method
-   static void a(Q var0, W var1) {
+   public static void a(Q var0, W var1) {
       var0.bz = var1;
    }
 }

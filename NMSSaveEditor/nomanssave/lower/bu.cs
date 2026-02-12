@@ -37,7 +37,7 @@ public class bu : Runnable {
          bl.n(bt.a(this.es)).SetText("");
          bl.o(bt.a(this.es)).SetText("");
 
-         for(var1 = 0; var1 < bl.d(bt.a(this.es)).length; ++var1) {
+         for(var1 = 0; var1 < bl.d(bt.a(this.es)).Length; ++var1) {
             bl.d(bt.a(this.es))[var1].SetText("");
          }
 
@@ -68,7 +68,7 @@ public class bu : Runnable {
          bl.n(bt.a(this.es)).SetText(bl.c(bt.a(this.es))[bl.b(bt.a(this.es))].cU());
          bl.o(bt.a(this.es)).SetText(bl.c(bt.a(this.es))[bl.b(bt.a(this.es))].cV());
 
-         for(var1 = 0; var1 < bl.d(bt.a(this.es)).length; ++var1) {
+         for(var1 = 0; var1 < bl.d(bt.a(this.es)).Length; ++var1) {
             bl.d(bt.a(this.es))[var1].SetText(Convert.ToString(bl.c(bt.a(this.es))[bl.b(bt.a(this.es))].aq(var1)));
          }
 
@@ -101,8 +101,8 @@ public class bu : Runnable {
          bl.r(bt.a(this.es)).updateUI();
          bl.s(bt.a(this.es)).updateUI();
          bl.t(bt.a(this.es)).updateUI();
-         bl.A(bt.a(this.es)).SetEnabled(bl.c(bt.a(this.es)).length > 1);
-         bl.g(bt.a(this.es)).SetEnabled(bl.c(bt.a(this.es)).length < 30 || en.aS());
+         bl.A(bt.a(this.es)).SetEnabled(bl.c(bt.a(this.es)).Length > 1);
+         bl.g(bt.a(this.es)).SetEnabled(bl.c(bt.a(this.es)).Length < 30 || en.aS());
       }
    }
 }

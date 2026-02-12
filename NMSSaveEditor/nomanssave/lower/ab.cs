@@ -20,7 +20,7 @@ public class ab : ComboBoxModel {
    }
 
    public int getSize() {
-      return gl.Values.length;
+      return gl.Values.Length;
    }
 
    public gl r(int var1) {

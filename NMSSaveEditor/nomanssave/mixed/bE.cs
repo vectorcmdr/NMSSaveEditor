@@ -93,7 +93,7 @@ public class bE : Panel {
    }
 
    public void aa() {
-      for(int var2 = 0; var2 < this.ex.length; ++var2) {
+      for(int var2 = 0; var2 < this.ex.Length; ++var2) {
          for(int var3 = 0; var3 < this.ex[var2].getComponentCount(); ++var3) {
             Component var1 = this.ex[var2].getComponent(var3);
             if (var1 is bL && ((bL)var1).eB.isSpecial()) {
@@ -105,7 +105,7 @@ public class bE : Panel {
    }
 
    public void a(gs var1, string var2) {
-      for(int var4 = 0; var4 < this.ex.length; ++var4) {
+      for(int var4 = 0; var4 < this.ex.Length; ++var4) {
          for(int var5 = 0; var5 < this.ex[var4].getComponentCount(); ++var5) {
             Component var3 = this.ex[var4].getComponent(var5);
             if (var3 is bJ && ((bJ)var3).ez == var1) {
@@ -119,7 +119,7 @@ public class bE : Panel {
    public void a(gz var1) {
       this.cp = var1;
 
-      for(int var3 = 0; var3 < this.ex.length; ++var3) {
+      for(int var3 = 0; var3 < this.ex.Length; ++var3) {
          for(int var4 = 0; var4 < this.ex[var3].getComponentCount(); ++var4) {
             Component var2 = this.ex[var3].getComponent(var4);
             if (var2 is bJ) {
@@ -133,12 +133,12 @@ public class bE : Panel {
    }
 
    // $FF: synthetic method
-   static gz a(bE var0) {
+   public static gz a(bE var0) {
       return var0.cp;
    }
 
    // $FF: synthetic method
-   static void a(bE var0, gs var1, string var2) {
+   public static void a(bE var0, gs var1, string var2) {
       var0.a(var1, var2);
    }
 }

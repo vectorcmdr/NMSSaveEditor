@@ -23,7 +23,7 @@ public class @as : ActionListener {
       string[] var2 = p.b((Container)this.cu);
       bool var3 = false;
 
-      for(int var4 = 0; var4 < var2.length; ++var4) {
+      for(int var4 = 0; var4 < var2.Length; ++var4) {
          if (!ap.a(this.cu).hasValue(var2[var4])) {
             ap.a(this.cu).f(var2[var4]);
             var3 = true;

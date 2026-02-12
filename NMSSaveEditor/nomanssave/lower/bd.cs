@@ -138,17 +138,17 @@ public class bd : em {
    }
 
    // $FF: synthetic method
-   static gm a(bd var0) {
+   public static gm a(bd var0) {
       return var0.dO;
    }
 
    // $FF: synthetic method
-   static G b(bd var0) {
+   public static G b(bd var0) {
       return var0.dG;
    }
 
    // $FF: synthetic method
-   static G c(bd var0) {
+   public static G c(bd var0) {
       return var0.dJ;
    }
 }

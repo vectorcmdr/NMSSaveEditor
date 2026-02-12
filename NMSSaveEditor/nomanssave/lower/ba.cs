@@ -21,7 +21,7 @@ public class ba : Panel {
    public ba(params int[] var1) {
       this.dA = new FormLayout(new ColumnSpec[]{FormFactory.LABEL_COMPONENT_GAP_COLSPEC}, new RowSpec[]{FormFactory.LINE_GAP_ROWSPEC});
 
-      for(int var2 = 0; var2 < var1.length; ++var2) {
+      for(int var2 = 0; var2 < var1.Length; ++var2) {
          if (var1[var2] > 0) {
             this.dA.appendColumn(ColumnSpec.decode(var1[var2] + "px"));
          } else {

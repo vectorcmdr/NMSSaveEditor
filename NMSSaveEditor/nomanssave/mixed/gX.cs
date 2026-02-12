@@ -51,7 +51,7 @@ public class gX : FilterInputStream {
    }
 
    public int read(byte[] var1) {
-      return this.read(var1, 0, var1.length);
+      return this.read(var1, 0, var1.Length);
    }
 
    public int read(byte[] var1, int var2, int var3) {
@@ -59,7 +59,7 @@ public class gX : FilterInputStream {
    }
 
    // $FF: synthetic method
-   static Stream a(gX var0) {
+   public static Stream a(gX var0) {
       return var0.@in;
    }
 }

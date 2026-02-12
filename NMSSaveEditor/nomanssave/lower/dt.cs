@@ -33,7 +33,7 @@ public class dt : ba {
    public void aL() {
       lock (this.eS.getTreeLock()) {
          Component[] var5;
-         int var4 = (var5 = this.eS.getComponents()).length;
+         int var4 = (var5 = this.eS.getComponents()).Length;
          int var3 = 0;
 
          while(true) {
@@ -58,7 +58,7 @@ public class dt : ba {
          int var3 = 0;
 
          while(true) {
-            if (var3 >= var1.length) {
+            if (var3 >= var1.Length) {
                break;
             }
 
@@ -108,12 +108,12 @@ public class dt : ba {
    }
 
    // $FF: synthetic method
-   static void a(dt var0, du var1) {
+   public static void a(dt var0, du var1) {
       var0.a(var1);
    }
 
    // $FF: synthetic method
-   static void b(dt var0, du var1) {
+   public static void b(dt var0, du var1) {
       var0.b(var1);
    }
 }

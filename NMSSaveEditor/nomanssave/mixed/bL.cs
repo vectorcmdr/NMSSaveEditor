@@ -35,7 +35,7 @@ public class bL : TextBox {
    }
 
    // $FF: synthetic method
-   static bE a(bL var0) {
+   public static bE a(bL var0) {
       return var0.ey;
    }
 }

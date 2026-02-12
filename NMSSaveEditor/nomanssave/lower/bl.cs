@@ -129,9 +129,9 @@ public class bl : Panel, eo {
       this.eb.SetVisible(false);
       this.Add(this.eb);
       this.eb.k("Stats");
-      this.ea = new G[gq.Values.length];
+      this.ea = new G[gq.Values.Length];
 
-      for(int var9 = 0; var9 < this.ea.length; ++var9) {
+      for(int var9 = 0; var9 < this.ea.Length; ++var9) {
          this.ea[var9] = new bA(this, var9, (bA)null);
          this.eb.a(gq.Values[var9].ToString(), (JComponent)this.ea[var9]);
       }
@@ -146,12 +146,12 @@ public class bl : Panel, eo {
       this.eb.a("Failed", (JComponent)this.ej);
       this.ek = new bq(this);
       this.eb.a("Damaged", (JComponent)this.ek);
-      nomanssave.en.a(this);
+      NMSSaveEditor.en.a(this);
    }
 
    public void a(bool var1) {
       if (this.dR.GetSelectedRow() >= 0) {
-         this.dS.SetEnabled(this.ep.length < 30 || nomanssave.en.aS());
+         this.dS.SetEnabled(this.ep.Length < 30 || NMSSaveEditor.en.aS());
       }
 
    }
@@ -161,7 +161,7 @@ public class bl : Panel, eo {
       this.en = null;
       this.eo = null;
       this.dR.clearSelection();
-      if (var1.length > 0) {
+      if (var1.Length > 0) {
          this.dR.setRowSelectionInterval(0, 0);
       }
 
@@ -169,157 +169,157 @@ public class bl : Panel, eo {
    }
 
    // $FF: synthetic method
-   static er[] a(bl var0) {
+   public static er[] a(bl var0) {
       return var0.en;
    }
 
    // $FF: synthetic method
-   static int b(bl var0) {
+   public static int b(bl var0) {
       return var0.eq;
    }
 
    // $FF: synthetic method
-   static gp[] c(bl var0) {
+   public static gp[] c(bl var0) {
       return var0.ep;
    }
 
    // $FF: synthetic method
-   static G[] d(bl var0) {
+   public static G[] d(bl var0) {
       return var0.ea;
    }
 
    // $FF: synthetic method
-   static DataGridView e(bl var0) {
+   public static DataGridView e(bl var0) {
       return var0.dR;
    }
 
    // $FF: synthetic method
-   static er[] f(bl var0) {
+   public static er[] f(bl var0) {
       return var0.eo;
    }
 
    // $FF: synthetic method
-   static void a(bl var0, gp[] var1) {
+   public static void a(bl var0, gp[] var1) {
       var0.ep = var1;
    }
 
    // $FF: synthetic method
-   static Button g(bl var0) {
+   public static Button g(bl var0) {
       return var0.dS;
    }
 
    // $FF: synthetic method
-   static void a(bl var0, int var1) {
+   public static void a(bl var0, int var1) {
       var0.eq = var1;
    }
 
    // $FF: synthetic method
-   static void a(bl var0, er[] var1) {
+   public static void a(bl var0, er[] var1) {
       var0.en = var1;
    }
 
    // $FF: synthetic method
-   static void b(bl var0, er[] var1) {
+   public static void b(bl var0, er[] var1) {
       var0.eo = var1;
    }
 
    // $FF: synthetic method
-   static ba h(bl var0) {
+   public static ba h(bl var0) {
       return var0.dT;
    }
 
    // $FF: synthetic method
-   static ba i(bl var0) {
+   public static ba i(bl var0) {
       return var0.eb;
    }
 
    // $FF: synthetic method
-   static G j(bl var0) {
+   public static G j(bl var0) {
       return var0.dU;
    }
 
    // $FF: synthetic method
-   static ComboBox k(bl var0) {
+   public static ComboBox k(bl var0) {
       return var0.dV;
    }
 
    // $FF: synthetic method
-   static TextBox l(bl var0) {
+   public static TextBox l(bl var0) {
       return var0.dW;
    }
 
    // $FF: synthetic method
-   static cN m(bl var0) {
+   public static cN m(bl var0) {
       return var0.dX;
    }
 
    // $FF: synthetic method
-   static G n(bl var0) {
+   public static G n(bl var0) {
       return var0.dY;
    }
 
    // $FF: synthetic method
-   static G o(bl var0) {
+   public static G o(bl var0) {
       return var0.dZ;
    }
 
    // $FF: synthetic method
-   static ComboBox p(bl var0) {
+   public static ComboBox p(bl var0) {
       return var0.ec;
    }
 
    // $FF: synthetic method
-   static ComboBox q(bl var0) {
+   public static ComboBox q(bl var0) {
       return var0.ed;
    }
 
    // $FF: synthetic method
-   static ComboBox r(bl var0) {
+   public static ComboBox r(bl var0) {
       return var0.ee;
    }
 
    // $FF: synthetic method
-   static ComboBox s(bl var0) {
+   public static ComboBox s(bl var0) {
       return var0.ef;
    }
 
    // $FF: synthetic method
-   static ComboBox t(bl var0) {
+   public static ComboBox t(bl var0) {
       return var0.eg;
    }
 
    // $FF: synthetic method
-   static G u(bl var0) {
+   public static G u(bl var0) {
       return var0.eh;
    }
 
    // $FF: synthetic method
-   static G v(bl var0) {
+   public static G v(bl var0) {
       return var0.ei;
    }
 
    // $FF: synthetic method
-   static G w(bl var0) {
+   public static G w(bl var0) {
       return var0.ej;
    }
 
    // $FF: synthetic method
-   static G x(bl var0) {
+   public static G x(bl var0) {
       return var0.ek;
    }
 
    // $FF: synthetic method
-   static Label y(bl var0) {
+   public static Label y(bl var0) {
       return var0.el;
    }
 
    // $FF: synthetic method
-   static Button z(bl var0) {
+   public static Button z(bl var0) {
       return var0.em;
    }
 
    // $FF: synthetic method
-   static Button A(bl var0) {
+   public static Button A(bl var0) {
       return var0.bQ;
    }
 }

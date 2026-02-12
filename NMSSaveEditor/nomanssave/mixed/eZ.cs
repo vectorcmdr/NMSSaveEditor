@@ -27,8 +27,8 @@ public class eZ : fc {
          throw new Exception("Unexpected path");
       } else {
          eV var3 = (eV)this.kN.a(typeof(eV), var2);
-         if (this.index >= 0 && this.index <= var3.length) {
-            if (this.index == var3.length) {
+         if (this.index >= 0 && this.index <= var3.Length) {
+            if (this.index == var3.Length) {
                if (!var2) {
                   throw new fd((fd)null);
                } else {
@@ -67,7 +67,7 @@ public class eZ : fc {
          throw new Exception("Unexpected path");
       } else {
          eV var3 = (eV)this.kN.a(typeof(eV), var2);
-         if (this.index == var3.length) {
+         if (this.index == var3.Length) {
             var3.Add(var1);
             return null;
          } else {

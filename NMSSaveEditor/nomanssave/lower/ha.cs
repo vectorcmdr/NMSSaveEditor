@@ -35,12 +35,12 @@ public class ha : FilterInputStream {
    }
 
    public void aJ(int var1) {
-      if (this.sg + var1 > this.buffer.length) {
+      if (this.sg + var1 > this.buffer.Length) {
          if (!this.sj) {
             throw new IOException("buffer exceeded");
          }
 
-         int var2 = this.buffer.length;
+         int var2 = this.buffer.Length;
 
          do {
             var2 += 1048576;
@@ -97,7 +97,7 @@ public class ha : FilterInputStream {
                }
             }
 
-            if (this.sg == this.buffer.length && !this.sj) {
+            if (this.sg == this.buffer.Length && !this.sj) {
                this.eof = true;
                return true;
             } else {
@@ -168,7 +168,7 @@ public class ha : FilterInputStream {
    }
 
    public int read(byte[] var1) {
-      return this.read(var1, 0, var1.length);
+      return this.read(var1, 0, var1.Length);
    }
 
    public int read(byte[] var1, int var2, int var3) {

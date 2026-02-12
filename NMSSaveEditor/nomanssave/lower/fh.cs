@@ -17,24 +17,24 @@ public class fh {
    public static int kW = 2;
    public static int kX = 3;
    public static int kY = 4;
-   static Predicate kZ = (var0) => {
+   public static Predicate kZ = (var0) => {
       return var0 >= 48 && var0 <= 57;
    };
-   static Predicate la = (var0) => {
+   public static Predicate la = (var0) => {
       return var0 == 46;
    };
-   static Predicate lb = (var0) => {
+   public static Predicate lb = (var0) => {
       return var0 == 101 || var0 == 69;
    };
-   static Predicate lc = (var0) => {
+   public static Predicate lc = (var0) => {
       return var0 >= 48 && var0 <= 57 || var0 == 43 || var0 == 45;
    };
-   static Predicate ld = (var0) => {
+   public static Predicate ld = (var0) => {
       return (var0 & 192) == 128;
    };
-   static string gc = "0123456789ABCDEFabcdef";
+   public static string gc = "0123456789ABCDEFabcdef";
 
-   static bool a(Class var0) {
+   public static bool a(Class var0) {
       if (var0 == null) {
          return true;
       } else if (typeof(Boolean).IsAssignableFrom(var0)) {
@@ -77,7 +77,7 @@ public class fh {
       return a(var0, var3, var4, var2);
    }
 
-   static string a(Object var0, string var1, bool var2) {
+   public static string a(Object var0, string var1, bool var2) {
       return a((Object)var0, var1, var2, (Predicate)null);
    }
 
@@ -103,7 +103,7 @@ public class fh {
       }
    }
 
-   static string a(eV var0, string var1, bool var2) {
+   public static string a(eV var0, string var1, bool var2) {
       return a((eV)var0, var1, var2, (Predicate)null);
    }
 
@@ -111,27 +111,27 @@ public class fh {
       StringBuilder var4 = new StringBuilder();
       var4.Append('[');
 
-      for(int var5 = 0; var5 < var0.length; ++var5) {
+      for(int var5 = 0; var5 < var0.Length; ++var5) {
          if (var5 > 0) {
             var4.Append(',');
          }
 
          if (var1 != null) {
-            var4.append(var1 + "\t");
+            var4.Append(var1 + "\t");
          }
 
-         var4.append(a(var0.values[var5], var1 == null ? null : var1 + "\t", var2, var3));
+         var4.Append(a(var0.values[var5], var1 == null ? null : var1 + "\t", var2, var3));
       }
 
-      if (var0.length > 0) {
-         var4.append(var1);
+      if (var0.Length > 0) {
+         var4.Append(var1);
       }
 
       var4.Append(']');
       return var4.ToString();
    }
 
-   static string a(eY var0, string var1, bool var2) {
+   public static string a(eY var0, string var1, bool var2) {
       return a((eY)var0, var1, var2, (Predicate)null);
    }
 
@@ -139,26 +139,26 @@ public class fh {
       StringBuilder var4 = new StringBuilder();
       var4.Append('{');
 
-      for(int var5 = 0; var5 < var0.length; ++var5) {
+      for(int var5 = 0; var5 < var0.Length; ++var5) {
          if (var5 > 0) {
             var4.Append(',');
          }
 
          if (var1 != null) {
-            var4.append(var1 + "\t");
+            var4.Append(var1 + "\t");
          }
 
-         var4.append(b(var0.names[var5], var3));
+         var4.Append(b(var0.names[var5], var3));
          var4.Append(':');
          if (var2) {
             var4.Append(' ');
          }
 
-         var4.append(a(var0.values[var5], var1 == null ? null : var1 + "\t", var2, var3));
+         var4.Append(a(var0.values[var5], var1 == null ? null : var1 + "\t", var2, var3));
       }
 
-      if (var0.length > 0) {
-         var4.append(var1);
+      if (var0.Length > 0) {
+         var4.Append(var1);
       }
 
       var4.Append('}');
@@ -168,35 +168,35 @@ public class fh {
    public static string a(fg var0) {
       StringBuilder var1 = new StringBuilder();
       byte[] var5;
-      int var4 = (var5 = var0.toByteArray()).length;
+      int var4 = (var5 = var0.toByteArray()).Length;
 
       for(int var3 = 0; var3 < var4; ++var3) {
          byte var2 = var5[var3];
          int var6 = var2 & 255;
          if (var6 == 13) {
-            var1.append("\\r");
+            var1.Append("\\r");
          } else if (var6 == 10) {
-            var1.append("\\n");
+            var1.Append("\\n");
          } else if (var6 == 9) {
-            var1.append("\\t");
+            var1.Append("\\t");
          } else if (var6 == 12) {
-            var1.append("\\f");
+            var1.Append("\\f");
          } else if (var6 == 8) {
-            var1.append("\\b");
+            var1.Append("\\b");
          } else if (var6 == 11) {
-            var1.append("\\v");
+            var1.Append("\\v");
          } else if (var6 == 0) {
-            var1.append("\\0");
+            var1.Append("\\0");
          } else if (var6 == 34) {
-            var1.append("\\\"");
+            var1.Append("\\\"");
          } else if (var6 == 92) {
-            var1.append("\\\\");
+            var1.Append("\\\\");
          } else if (var6 >= 32 && var6 < 128) {
-            var1.append(Character.toString((char)var6));
+            var1.Append(Character.toString((char)var6));
          } else {
-            var1.append("\\x");
-            var1.append("0123456789ABCDEFabcdef"[var6 >> 4 & 15]);
-            var1.append("0123456789ABCDEFabcdef"[var6 & 15]);
+            var1.Append("\\x");
+            var1.Append("0123456789ABCDEFabcdef"[var6 >> 4 & 15]);
+            var1.Append("0123456789ABCDEFabcdef"[var6 & 15]);
          }
       }
 
@@ -205,56 +205,56 @@ public class fh {
 
    public static string b(fg var0) {
       StringBuilder var1 = new StringBuilder();
-      var1.append('"');
-      var1.append(a(var0));
-      var1.append('"');
+      var1.Append('"');
+      var1.Append(a(var0));
+      var1.Append('"');
       return var1.ToString();
    }
 
    public static string a(string var0, Predicate var1) {
       StringBuilder var2 = new StringBuilder();
       char[] var6;
-      int var5 = (var6 = var0.ToCharArray()).length;
+      int var5 = (var6 = var0.ToCharArray()).Length;
 
       for(int var4 = 0; var4 < var5; ++var4) {
          char var3 = var6[var4];
          if (var3 == '\r') {
-            var2.append("\\r");
+            var2.Append("\\r");
          } else if (var3 == '\n') {
-            var2.append("\\n");
+            var2.Append("\\n");
          } else if (var3 == '\t') {
-            var2.append("\\t");
+            var2.Append("\\t");
          } else if (var3 == '\f') {
-            var2.append("\\f");
+            var2.Append("\\f");
          } else if (var3 == '\b') {
-            var2.append("\\b");
+            var2.Append("\\b");
          } else if (var3 == '"') {
-            var2.append("\\\"");
+            var2.Append("\\\"");
          } else if (var3 == '\\') {
-            var2.append("\\\\");
+            var2.Append("\\\\");
          } else if (var3 >= ' ' && (var1 == null || var1.test(var3))) {
-            var2.append(Character.toString(var3));
+            var2.Append(Character.toString(var3));
          } else {
-            var2.append("\\u");
-            var2.append("0123456789ABCDEFabcdef"[var3 >> 12 & 15]);
-            var2.append("0123456789ABCDEFabcdef"[var3 >> 8 & 15]);
-            var2.append("0123456789ABCDEFabcdef"[var3 >> 4 & 15]);
-            var2.append("0123456789ABCDEFabcdef"[var3 & 15]);
+            var2.Append("\\u");
+            var2.Append("0123456789ABCDEFabcdef"[var3 >> 12 & 15]);
+            var2.Append("0123456789ABCDEFabcdef"[var3 >> 8 & 15]);
+            var2.Append("0123456789ABCDEFabcdef"[var3 >> 4 & 15]);
+            var2.Append("0123456789ABCDEFabcdef"[var3 & 15]);
          }
       }
 
       return var2.ToString();
    }
 
-   static string O(string var0) {
+   public static string O(string var0) {
       return b(var0, (Predicate)null);
    }
 
    public static string b(string var0, Predicate var1) {
       StringBuilder var2 = new StringBuilder();
-      var2.append('"');
-      var2.append(a(var0, var1));
-      var2.append('"');
+      var2.Append('"');
+      var2.Append(a(var0, var1));
+      var2.Append('"');
       return var2.ToString();
    }
 
@@ -335,7 +335,7 @@ public class fh {
       }
    }
 
-   static eY Q(string var0) {
+   public static eY Q(string var0) {
       Exception var1 = null;
       Object var2 = null;
 
@@ -427,7 +427,7 @@ public class fh {
       return var1;
    }
 
-   static eV R(string var0) {
+   public static eV R(string var0) {
       Exception var1 = null;
       Object var2 = null;
 
@@ -509,7 +509,7 @@ public class fh {
       return var1;
    }
 
-   static int ae(int var0) {
+   public static int ae(int var0) {
       if (var0 < 0) {
          throw new IOException("short read");
       } else {
@@ -575,7 +575,7 @@ public class fh {
                   var3 = ae(var0.ReadByte()) << 12 | ae(var0.ReadByte()) << 8 | ae(var0.ReadByte()) << 4 | ae(var0.ReadByte());
                   if (var3 <= 255) {
                      if (var1 != null) {
-                        var1.append((char)var3);
+                        var1.Append((char)var3);
                      }
 
                      if (var2 != null) {
@@ -587,7 +587,7 @@ public class fh {
                      }
 
                      var2 = null;
-                     var1.append((char)var3);
+                     var1.Append((char)var3);
                   }
                   continue;
                case 118:
@@ -606,7 +606,7 @@ public class fh {
             }
 
             if (var1 != null) {
-               var1.append((char)var3);
+               var1.Append((char)var3);
             }
 
             if (var2 != null) {
@@ -743,7 +743,7 @@ public class fh {
       return var2;
    }
 
-   static void i(Object var0) {
+   public static void i(Object var0) {
       if (var0 is eY) {
          ((eY)var0).kD = null;
       }
@@ -754,7 +754,7 @@ public class fh {
 
    }
 
-   static void a(Object var0, Object var1) {
+   public static void a(Object var0, Object var1) {
       if (var0 is eY) {
          ((eY)var0).kD = var1;
       }

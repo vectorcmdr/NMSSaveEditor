@@ -67,7 +67,7 @@ public class fi : StringReader {
    }
 
    // $FF: synthetic method
-   static int a(fi var0, Predicate var1) {
+   public static int a(fi var0, Predicate var1) {
       return var0.a(var1);
    }
 }

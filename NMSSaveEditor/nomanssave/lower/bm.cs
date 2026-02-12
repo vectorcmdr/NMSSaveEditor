@@ -26,7 +26,7 @@ public class bm : ActionListener {
       if (bl.b(this.er) >= 0) {
          if (MessageBox.Show("Are you sure you want to delete this frigate?".ToString(), "Delete".ToString(), MessageBoxButtons.YesNo) == 0) {
             bl.a(this.er, this.bv.k(bl.c(this.er)[bl.b(this.er)].getIndex()));
-            if (bl.c(this.er).length > 0) {
+            if (bl.c(this.er).Length > 0) {
                bl.e(this.er).setRowSelectionInterval(0, 0);
             } else {
                bl.e(this.er).clearSelection();

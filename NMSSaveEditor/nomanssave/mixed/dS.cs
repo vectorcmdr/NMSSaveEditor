@@ -25,10 +25,10 @@ public class dS : ActionListener {
    public void actionPerformed(ActionEvent var1) {
       gH var2 = this.bv.h();
       if (var2 != null) {
-         gH[] var3 = new gH[dN.a(this.ia).length + 1];
+         gH[] var3 = new gH[dN.a(this.ia).Length + 1];
          int var4 = -1;
 
-         for(int var5 = 0; var5 < dN.a(this.ia).length; ++var5) {
+         for(int var5 = 0; var5 < dN.a(this.ia).Length; ++var5) {
             if (dN.a(this.ia)[var5].getIndex() < var2.getIndex()) {
                var3[var5] = dN.a(this.ia)[var5];
             } else {
@@ -40,7 +40,7 @@ public class dS : ActionListener {
          }
 
          if (var4 < 0) {
-            var4 = dN.a(this.ia).length;
+            var4 = dN.a(this.ia).Length;
          }
 
          var3[var4] = var2;

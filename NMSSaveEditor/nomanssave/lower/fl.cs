@@ -44,7 +44,7 @@ public class fl {
    }
 
    // $FF: synthetic method
-   static Object bQ() {
+   public static Object bQ() {
       return @lock;
    }
 }

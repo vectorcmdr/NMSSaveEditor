@@ -46,7 +46,7 @@ public class ey {
          }
       }
 
-      jI = JavaCollections.UnmodifiableList(var10);
+      jI = UnmodifiableList(var10);
       List<object> var11 = new List<object>();
       if (var0 != null) {
          XmlNodeList var12 = var0.ChildNodes;
@@ -78,7 +78,7 @@ public class ey {
       var13.sort((var0x, var1x) => {
          return var0x.Name.CompareTo(var1x.Name);
       });
-      jJ = JavaCollections.UnmodifiableList(var11);
+      jJ = UnmodifiableList(var11);
    }
 
    public ey(string var1) {
@@ -91,10 +91,10 @@ public class ey {
 
    public static string L(int var0) {
       StringBuilder var1 = new StringBuilder();
-      var1.append(Convert.ToString(var0));
+      var1.Append(Convert.ToString(var0));
 
       while(var1.Length < 5) {
-         var1.insert(0, '0');
+         var1.Insert(0, '0');
       }
 
       return var1.ToString();
@@ -182,7 +182,7 @@ public class ey {
       return this.id;
    }
 
-   static string a(XmlElement var0) {
+   public static string a(XmlElement var0) {
       if (var0 == null) {
          throw new ArgumentException();
       } else {
@@ -193,7 +193,7 @@ public class ey {
          for(int var5 = 0; var5 < var1.Count; ++var5) {
             XmlNode var4 = var1.Item(var5);
             if (var4.NodeType == 3) {
-               var2.append(var4.Value);
+               var2.Append(var4.Value);
                var3 = true;
             }
          }
@@ -353,14 +353,14 @@ public class ey {
       }).findFirst().orElse((Object)null);
    }
 
-   static eA p(string var0) {
+   public static eA p(string var0) {
       return (eA)jI.filter((var1) => {
          return var0.Equals(var1.id);
       }).findFirst().orElse((Object)null);
    }
 
    // $FF: synthetic method
-   static Pattern bn() {
+   public static Pattern bn() {
       return jH;
    }
 }

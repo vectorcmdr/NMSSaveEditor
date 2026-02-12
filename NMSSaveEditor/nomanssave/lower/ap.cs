@@ -217,57 +217,57 @@ public class ap : Panel {
    }
 
    // $FF: synthetic method
-   static eV a(ap var0) {
+   public static eV a(ap var0) {
       return var0.cq;
    }
 
    // $FF: synthetic method
-   static TableRowSorter b(ap var0) {
+   public static TableRowSorter b(ap var0) {
       return var0.cj;
    }
 
    // $FF: synthetic method
-   static DataGridView c(ap var0) {
+   public static DataGridView c(ap var0) {
       return var0.ci;
    }
 
    // $FF: synthetic method
-   static List<object> d(ap var0) {
+   public static List<object> d(ap var0) {
       return var0.ct;
    }
 
    // $FF: synthetic method
-   static eV e(ap var0) {
+   public static eV e(ap var0) {
       return var0.cs;
    }
 
    // $FF: synthetic method
-   static eV f(ap var0) {
+   public static eV f(ap var0) {
       return var0.cr;
    }
 
    // $FF: synthetic method
-   static TableRowSorter g(ap var0) {
+   public static TableRowSorter g(ap var0) {
       return var0.cl;
    }
 
    // $FF: synthetic method
-   static DataGridView h(ap var0) {
+   public static DataGridView h(ap var0) {
       return var0.ck;
    }
 
    // $FF: synthetic method
-   static gz i(ap var0) {
+   public static gz i(ap var0) {
       return var0.cp;
    }
 
    // $FF: synthetic method
-   static DataGridView j(ap var0) {
+   public static DataGridView j(ap var0) {
       return var0.cn;
    }
 
    // $FF: synthetic method
-   static void k(ap var0) {
+   public static void k(ap var0) {
       var0.R();
    }
 }

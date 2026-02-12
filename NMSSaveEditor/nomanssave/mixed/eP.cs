@@ -55,7 +55,7 @@ public class eP : ey {
       }
 
       this.description = var2;
-      this.ke = JavaCollections.UnmodifiableList(var5);
+      this.ke = UnmodifiableList(var5);
    }
 
    public eB ba() {

@@ -21,7 +21,7 @@ public class bB : ComboBoxModel {
    }
 
    public int getSize() {
-      return bl.a(this.er) == null ? 0 : bl.a(this.er).length;
+      return bl.a(this.er) == null ? 0 : bl.a(this.er).Length;
    }
 
    public er v(int var1) {

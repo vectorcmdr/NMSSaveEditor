@@ -103,9 +103,9 @@ public class Application {
          for(int var4 = 0; var4 < var0.Length; ++var4) {
             char var3 = var0[var4];
             if ("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_".IndexOf(var3) >= 0) {
-               var2.append(var3);
+               var2.Append(var3);
             } else if (Character.isWhitespace(var3)) {
-               var2.append('_');
+               var2.Append('_');
             }
          }
 
@@ -120,14 +120,14 @@ public class Application {
    public static void main(string[] var0) {
       byte var1 = 0;
       bool var2;
-      if (var0.length > var1 && var0[var1].Equals("-autoupdate")) {
+      if (var0.Length > var1 && var0[var1].Equals("-autoupdate")) {
          int var3 = var1 + 1;
          var2 = true;
       } else {
          var2 = false;
       }
 
-      nomanssave.aH.init(!var2);
+      NMSSaveEditor.aH.init(!var2);
       hc.info("Starting Editor...");
       (new System.Threading.Thread(() => {
          cK.aA();
@@ -183,11 +183,11 @@ public class Application {
          this.aS = false;
          var1 = this.aH < 0 ? -1 : this.aG[this.aH].getIndex();
          this.aG = this.aF.bU().Where(var1x => {
-            return var1x.getIndex() == var1 || !var1x.isEmpty();
+            return var1x.getIndex() == var1 || !var1x.Length == 0;
          }).ToArray();
          this.aH = -1;
 
-         for(int var2 = 0; var2 < this.aG.length; ++var2) {
+         for(int var2 = 0; var2 < this.aG.Length; ++var2) {
             if (this.aG[var2].getIndex() == var1) {
                this.aH = var2;
                break;
@@ -207,13 +207,13 @@ public class Application {
       if (this.aT) {
          this.aT = false;
          string var7 = this.aJ < 0 ? null : this.aI[this.aJ].K();
-         long var8 = this.aJ < 0 ? Long.MIN_VALUE : this.aI[this.aJ].LastWriteTimeUtc.Ticks;
+         long var8 = this.aJ < 0 ? long.MinValue : this.aI[this.aJ].LastWriteTimeUtc.Ticks;
          fn var4 = this.aJ < 0 ? null : this.aI[this.aJ].L();
          this.aI = this.aG[this.aH].bX();
          this.aJ = -1;
 
          int var5;
-         for(var5 = 0; var5 < this.aI.length; ++var5) {
+         for(var5 = 0; var5 < this.aI.Length; ++var5) {
             if (this.aI[var5].K().Equals(var7)) {
                this.aJ = var5;
                break;
@@ -227,9 +227,9 @@ public class Application {
                this.aJ = 0;
                this.l();
             } else {
-               fs[] var6 = new fs[this.aI.length + 1];
+               fs[] var6 = new fs[this.aI.Length + 1];
                var6[0] = new F(this, var7, var8, var4, this.aK);
-               Array.Copy(this.aI, 0, var6, 1, this.aI.length);
+               Array.Copy(this.aI, 0, var6, 1, this.aI.Length);
                this.aI = var6;
                this.aJ = 0;
             }
@@ -305,8 +305,8 @@ public class Application {
          }
       };
       this.aX = new u(this);
-      string var2 = nomanssave.aH.getProperty("GameStorage");
-      string var3 = nomanssave.aH.getProperty("GameSaveDir");
+      string var2 = NMSSaveEditor.aH.getProperty("GameStorage");
+      string var3 = NMSSaveEditor.aH.getProperty("GameSaveDir");
       this.aF = var3 == null ? null : fq.a(var2, new File(var3), this.aX);
       if (this.aF == null) {
          this.aG = new ft[0];
@@ -322,7 +322,7 @@ public class Application {
          this.aJ = -1;
          if (var2 == null) {
             var2 = fq.c(this.aF);
-            nomanssave.aH.setProperty("GameStorage", var2);
+            NMSSaveEditor.aH.setProperty("GameStorage", var2);
          }
 
          hc.debug("Storage: " + var2);
@@ -351,9 +351,9 @@ public class Application {
    }
 
    public void a(gH var1) {
-      FileInfo var2 = nomanssave.aH.cF;
+      FileInfo var2 = NMSSaveEditor.aH.cF;
       if (!var2.Exists && !var2.Create()) {
-         var2 = nomanssave.aH.cD;
+         var2 = NMSSaveEditor.aH.cD;
       }
 
       cT var3 = cT.aC();
@@ -380,9 +380,9 @@ public class Application {
    }
 
    public void a(gv var1) {
-      FileInfo var2 = nomanssave.aH.cF;
+      FileInfo var2 = NMSSaveEditor.aH.cF;
       if (!var2.Exists && !var2.Create()) {
-         var2 = nomanssave.aH.cD;
+         var2 = NMSSaveEditor.aH.cD;
       }
 
       cv var3 = cv.ax();
@@ -409,9 +409,9 @@ public class Application {
    }
 
    public void a(gj var1) {
-      FileInfo var2 = nomanssave.aH.cF;
+      FileInfo var2 = NMSSaveEditor.aH.cF;
       if (!var2.Exists && !var2.Create()) {
-         var2 = nomanssave.aH.cD;
+         var2 = NMSSaveEditor.aH.cD;
       }
 
       string var3 = "." + var1.cL().ToString().ToLower();
@@ -441,7 +441,7 @@ public class Application {
    public gH h() {
       eY var1;
       if (this.aK != null && (var1 = this.aK.H("PlayerStateData")) != null) {
-         FileInfo var2 = nomanssave.aH.cF.Exists ? nomanssave.aH.cF : nomanssave.aH.cD;
+         FileInfo var2 = NMSSaveEditor.aH.cF.Exists ? NMSSaveEditor.aH.cF : NMSSaveEditor.aH.cD;
          cT var3 = cT.aC();
          var3.setCurrentDirectory(var2);
          if (var3.showOpenDialog(this.N) == 0) {
@@ -468,7 +468,7 @@ public class Application {
    public gv i() {
       eY var1;
       if (this.aK != null && (var1 = this.aK.H("PlayerStateData")) != null) {
-         FileInfo var2 = nomanssave.aH.cF.Exists ? nomanssave.aH.cF : nomanssave.aH.cD;
+         FileInfo var2 = NMSSaveEditor.aH.cF.Exists ? NMSSaveEditor.aH.cF : NMSSaveEditor.aH.cD;
          cv var3 = cv.ax();
          var3.setCurrentDirectory(var2);
          if (var3.showOpenDialog(this.N) == 0) {
@@ -495,7 +495,7 @@ public class Application {
    public gj j() {
       eY var1;
       if (this.aK != null && (var1 = this.aK.H("PlayerStateData")) != null) {
-         FileInfo var2 = nomanssave.aH.cF.Exists ? nomanssave.aH.cF : nomanssave.aH.cD;
+         FileInfo var2 = NMSSaveEditor.aH.cF.Exists ? NMSSaveEditor.aH.cF : NMSSaveEditor.aH.cD;
          cp var3 = cp.at();
          var3.setCurrentDirectory(var2);
          if (var3.showOpenDialog(this.N) == 0) {
@@ -520,9 +520,9 @@ public class Application {
    }
 
    public void a(gf var1) {
-      FileInfo var2 = nomanssave.aH.cE;
+      FileInfo var2 = NMSSaveEditor.aH.cE;
       if (!var2.Exists && !var2.Create()) {
-         var2 = nomanssave.aH.cD;
+         var2 = NMSSaveEditor.aH.cD;
       }
 
       cl var3 = cl.ar();
@@ -556,7 +556,7 @@ public class Application {
    }
 
    public bool b(gf var1) {
-      FileInfo var2 = nomanssave.aH.cE.Exists ? nomanssave.aH.cE : nomanssave.aH.cD;
+      FileInfo var2 = NMSSaveEditor.aH.cE.Exists ? NMSSaveEditor.aH.cE : NMSSaveEditor.aH.cD;
       cl var3 = cl.ar();
       var3.setCurrentDirectory(var2);
       if (var3.showOpenDialog(this.N) == 0) {
@@ -584,9 +584,9 @@ public class Application {
    public void a(gm var1) {
       gn var2 = var1.cZ();
       if (var2 != null) {
-         FileInfo var3 = nomanssave.aH.cE;
+         FileInfo var3 = NMSSaveEditor.aH.cE;
          if (!var3.Exists && !var3.Create()) {
-            var3 = nomanssave.aH.cD;
+            var3 = NMSSaveEditor.aH.cD;
          }
 
          cs var4 = cs.av();
@@ -662,7 +662,7 @@ public class Application {
       if (var2 == null) {
          return false;
       } else {
-         FileInfo var3 = nomanssave.aH.cE.Exists ? nomanssave.aH.cE : nomanssave.aH.cD;
+         FileInfo var3 = NMSSaveEditor.aH.cE.Exists ? NMSSaveEditor.aH.cE : NMSSaveEditor.aH.cD;
          cs var4 = cs.av();
          var4.setCurrentDirectory(var3);
          if (var4.showOpenDialog(this.N) == 0) {
@@ -790,8 +790,8 @@ public class Application {
             this.Q.SetText("(none)");
          } else {
             string var4 = fq.c(this.aF);
-            nomanssave.aH.setProperty("GameStorage", var4);
-            nomanssave.aH.setProperty("GameSaveDir", this.aF.bS().FullName);
+            NMSSaveEditor.aH.setProperty("GameStorage", var4);
+            NMSSaveEditor.aH.setProperty("GameSaveDir", this.aF.bS().FullName);
             hc.debug("Storage: " + var4);
             hc.debug("Save Path: " + this.aF.bS().FullName);
             this.aG = this.aF.bV();
@@ -799,14 +799,14 @@ public class Application {
             this.aI = new fs[0];
             this.aJ = -1;
             if (var2 != null) {
-               for(int var5 = 0; var5 < this.aG.length; ++var5) {
+               for(int var5 = 0; var5 < this.aG.Length; ++var5) {
                   if (this.aF.W(var2) == this.aG[var5].getIndex()) {
                      this.aH = var5;
                      this.aI = this.aG[var5].bX();
                      int var6 = 0;
 
                      while(true) {
-                        if (var6 >= this.aI.length) {
+                        if (var6 >= this.aI.Length) {
                            goto afterLabel85;
                         }
 
@@ -861,7 +861,7 @@ public class Application {
          this.aJ = -1;
       } else {
          this.aI = this.aG[this.aH].bX();
-         this.aJ = this.aI.length > 0 ? 0 : -1;
+         this.aJ = this.aI.Length > 0 ? 0 : -1;
       }
 
       this.l();
@@ -936,23 +936,23 @@ public class Application {
          ge var15 = ge.m(var1);
          this.O.SetEnabledAt(1, var21 != null);
          this.@as.a(var21);
-         this.O.SetEnabledAt(2, var4.length > 0);
+         this.O.SetEnabledAt(2, var4.Length > 0);
          this.at.a(var4, var5);
-         this.O.SetEnabledAt(3, var6.length > 0);
+         this.O.SetEnabledAt(3, var6.Length > 0);
          this.au.a(var6, var7);
-         this.O.SetEnabledAt(4, var8.length > 0);
+         this.O.SetEnabledAt(4, var8.Length > 0);
          this.av.a(var8);
          this.O.SetEnabledAt(5, var9 != null);
          this.aw.c(var9);
          this.O.SetEnabledAt(6, var9 != null);
          this.ax.a(var10);
-         this.O.SetEnabledAt(7, var11.length > 0);
+         this.O.SetEnabledAt(7, var11.Length > 0);
          this.ay.a(var11);
          this.O.SetEnabledAt(8, var13);
          this.az.a(var14);
          this.O.SetEnabledAt(9, var15 != null);
          this.aA.a(var15);
-         this.O.SetEnabledAt(10, var12.length > 0);
+         this.O.SetEnabledAt(10, var12.Length > 0);
          this.aB.a(var12);
          this.O.SetEnabledAt(11, var21 != null);
          this.aC.a(var21);
@@ -1039,7 +1039,7 @@ public class Application {
             this.aI = this.aG[this.aH].bX();
             this.aJ = -1;
 
-            for(int var2 = 0; var2 < this.aI.length; ++var2) {
+            for(int var2 = 0; var2 < this.aI.Length; ++var2) {
                if (var1.Equals(this.aI[var2].K())) {
                   this.aJ = var2;
                   break;
@@ -1081,14 +1081,14 @@ public class Application {
             this.aI = new fs[0];
             this.aJ = -1;
 
-            for(int var4 = 0; var4 < this.aG.length; ++var4) {
+            for(int var4 = 0; var4 < this.aG.Length; ++var4) {
                if (this.aF.W(var3) == this.aG[var4].getIndex()) {
                   this.aH = var4;
                   this.aI = this.aG[var4].bX();
                   int var5 = 0;
 
                   while(true) {
-                     if (var5 >= this.aI.length) {
+                     if (var5 >= this.aI.Length) {
                         goto afterLabel38;
                      }
 
@@ -1137,7 +1137,7 @@ public class Application {
 
       gv[] var5 = this.at.aK();
 
-      for(int var6 = 0; var6 < var5.length; ++var6) {
+      for(int var6 = 0; var6 < var5.Length; ++var6) {
          gt var3;
          if ((var3 = var5[var6].dE()) != null && var3.ay(var1)) {
             var2.Add(var3);
@@ -1146,7 +1146,7 @@ public class Application {
 
       gH[] var10 = this.au.aO();
 
-      for(int var7 = 0; var7 < var10.length; ++var7) {
+      for(int var7 = 0; var7 < var10.Length; ++var7) {
          var2.AddRange(var10[var7].cC().Where(var1x => {
             return var1x.ay(var1);
          }).ToList());
@@ -1161,7 +1161,7 @@ public class Application {
 
       gO[] var8 = this.ay.aT();
 
-      for(int var9 = 0; var9 < var8.length; ++var9) {
+      for(int var9 = 0; var9 < var8.Length; ++var9) {
          var2.AddRange(var8[var9].cC().Where(var1x => {
             return var1x.ay(var1);
          }).ToList());
@@ -1180,7 +1180,7 @@ public class Application {
    public void p() {
       eY var1 = this.aK.H("PlayerStateData.UniverseAddress");
       hl var2 = hl.n(var1);
-      if ((var2 = nomanssave.aj.a((Container)this.N, var2)) != null) {
+      if ((var2 = NMSSaveEditor.aj.a((Container)this.N, var2)) != null) {
          var2.aL(0);
          this.aK.b("PlayerStateData.UniverseAddress", (Object)var2.ew());
          this.aK.b("PlayerStateData.PreviousUniverseAddress", (Object)var1);
@@ -1214,7 +1214,7 @@ public class Application {
    public static void a(Form var0) {
       SwingUtilities.updateComponentTreeUI(var0);
       Form[] var4;
-      int var3 = (var4 = var0.getOwnedWindows()).length;
+      int var3 = (var4 = var0.getOwnedWindows()).Length;
 
       for(int var2 = 0; var2 < var3; ++var2) {
          Form var1 = var4[var2];
@@ -1224,8 +1224,8 @@ public class Application {
    }
 
    public void s() {
-      if (nomanssave.aD.d(this.N)) {
-         nomanssave.aH.V();
+      if (NMSSaveEditor.aD.d(this.N)) {
+         NMSSaveEditor.aH.V();
          a((Form)this.N);
       }
 
@@ -1249,23 +1249,23 @@ public class Application {
       ge var14 = ge.m(var1);
       this.O.SetEnabledAt(1, var2 != null);
       this.@as.a(var2);
-      this.O.SetEnabledAt(2, var3.length > 0);
+      this.O.SetEnabledAt(2, var3.Length > 0);
       this.at.a(var3, var4);
-      this.O.SetEnabledAt(3, var5.length > 0);
+      this.O.SetEnabledAt(3, var5.Length > 0);
       this.au.a(var5, var7);
-      this.O.SetEnabledAt(4, var6.length > 0);
+      this.O.SetEnabledAt(4, var6.Length > 0);
       this.av.a(var6);
       this.O.SetEnabledAt(5, var8 != null);
       this.aw.c(var8);
       this.O.SetEnabledAt(6, var8 != null);
       this.ax.a(var9);
-      this.O.SetEnabledAt(7, var10.length > 0);
+      this.O.SetEnabledAt(7, var10.Length > 0);
       this.ay.a(var10);
       this.O.SetEnabledAt(8, var12);
       this.az.a(var13);
       this.O.SetEnabledAt(9, var14 != null);
       this.aA.a(var14);
-      this.O.SetEnabledAt(10, var11.length > 0);
+      this.O.SetEnabledAt(10, var11.Length > 0);
       this.aB.a(var11);
       this.O.SetEnabledAt(11, var2 != null);
       this.aC.a(var2);
@@ -1277,8 +1277,8 @@ public class Application {
       hc.info("Exporting JSON...");
       cK var1 = cK.aA();
       string var2 = this.aI[this.aJ].K() + ".json";
-      var1.setCurrentDirectory(nomanssave.aH.cF);
-      var1.setSelectedFile(new File(nomanssave.aH.cF, var2));
+      var1.setCurrentDirectory(NMSSaveEditor.aH.cF);
+      var1.setSelectedFile(new File(NMSSaveEditor.aH.cF, var2));
       if (var1.showSaveDialog(this.N) == 0) {
          try {
             FileInfo var3 = var1.getSelectedFile();
@@ -1302,7 +1302,7 @@ public class Application {
    public void v() {
       hc.info("Importing JSON...");
       cK var1 = cK.aA();
-      var1.setCurrentDirectory(nomanssave.aH.cF);
+      var1.setCurrentDirectory(NMSSaveEditor.aH.cF);
       if (var1.showOpenDialog(this.N) == 0) {
          try {
             if (MessageBox.Show("Are you sure you want to update your current save data?".ToString(), "Confirm".ToString(), MessageBoxButtons.YesNo) != 0) {
@@ -1395,7 +1395,7 @@ public class Application {
       fn var2;
       if (var1 != null) {
          fn[] var5;
-         int var4 = (var5 = fn.Values).length;
+         int var4 = (var5 = fn.Values).Length;
 
          for(int var3 = 0; var3 < var4; ++var3) {
             var2 = var5[var3];
@@ -1662,17 +1662,17 @@ public class Application {
 
       this.N.SetTitle("No Man's Sky Save Editor - 1.19.14 (BREACH)");
       Rectangle var2 = new Rectangle(100, 100, 1100, 720);
-      var2.x = nomanssave.aH.a("MainFrame.X", 100);
-      var2.y = nomanssave.aH.a("MainFrame.Y", 100);
-      var2.width = nomanssave.aH.a("MainFrame.Width", 1000);
-      var2.height = nomanssave.aH.a("MainFrame.Height", 700);
+      var2.x = NMSSaveEditor.aH.a("MainFrame.X", 100);
+      var2.y = NMSSaveEditor.aH.a("MainFrame.Y", 100);
+      var2.width = NMSSaveEditor.aH.a("MainFrame.Width", 1000);
+      var2.height = NMSSaveEditor.aH.a("MainFrame.Height", 700);
       this.N.SetBounds(var2);
       this.N.SetDefaultCloseOperation(3);
       this.N.AddWindowListener(new B(this));
       this.N.addComponentListener(new C(this));
       this.O = new TabControl(1);
       this.N.GetContentPane().Add(this.O, "Center");
-      ba var3 = new ba(new int[]{nomanssave.aH.cH, nomanssave.aH.cI, 0});
+      ba var3 = new ba(new int[]{NMSSaveEditor.aH.cH, NMSSaveEditor.aH.cI, 0});
       this.O.AddTab("Main", (Icon)null, var3, (string)null);
       var3.k("FileInfo Details");
       this.P = new Label();
@@ -1958,52 +1958,52 @@ public class Application {
    }
 
    // $FF: synthetic method
-   static bool a(Application var0) {
+   public static bool a(Application var0) {
       return var0.aQ;
    }
 
    // $FF: synthetic method
-   static fq b(Application var0) {
+   public static fq b(Application var0) {
       return var0.aF;
    }
 
    // $FF: synthetic method
-   static void a(Application var0, bool var1) {
+   public static void a(Application var0, bool var1) {
       var0.aR = var1;
    }
 
    // $FF: synthetic method
-   static void b(Application var0, bool var1) {
+   public static void b(Application var0, bool var1) {
       var0.aS = var1;
    }
 
    // $FF: synthetic method
-   static int c(Application var0) {
+   public static int c(Application var0) {
       return var0.aH;
    }
 
    // $FF: synthetic method
-   static ft[] d(Application var0) {
+   public static ft[] d(Application var0) {
       return var0.aG;
    }
 
    // $FF: synthetic method
-   static void c(Application var0, bool var1) {
+   public static void c(Application var0, bool var1) {
       var0.aT = var1;
    }
 
    // $FF: synthetic method
-   static int e(Application var0) {
+   public static int e(Application var0) {
       return var0.aJ;
    }
 
    // $FF: synthetic method
-   static fs[] f(Application var0) {
+   public static fs[] f(Application var0) {
       return var0.aI;
    }
 
    // $FF: synthetic method
-   static void d(Application var0, bool var1) {
+   public static void d(Application var0, bool var1) {
       var0.aU = var1;
    }
 
@@ -2013,27 +2013,27 @@ public class Application {
    }
 
    // $FF: synthetic method
-   static void g(Application var0) {
+   public static void g(Application var0) {
       L = var0;
    }
 
    // $FF: synthetic method
-   static Application H() {
+   public static Application H() {
       return L;
    }
 
    // $FF: synthetic method
-   static Form h(Application var0) {
+   public static Form h(Application var0) {
       return var0.N;
    }
 
    // $FF: synthetic method
-   static int[] I() {
+   public static int[] I() {
       int[] var10000 = aY;
       if (var10000 != null) {
          return var10000;
       } else {
-         int[] var0 = new int[gl.Values.length];
+         int[] var0 = new int[gl.Values.Length];
 
          try {
             var0[gl.oG.ordinal()] = 2;
@@ -2051,67 +2051,67 @@ public class Application {
    }
 
    // $FF: synthetic method
-   static bool i(Application var0) {
+   public static bool i(Application var0) {
       return var0.aL;
    }
 
    // $FF: synthetic method
-   static bool j(Application var0) {
+   public static bool j(Application var0) {
       return var0.aO;
    }
 
    // $FF: synthetic method
-   static void k(Application var0) {
+   public static void k(Application var0) {
       var0.n();
    }
 
    // $FF: synthetic method
-   static void l(Application var0) {
+   public static void l(Application var0) {
       var0.m();
    }
 
    // $FF: synthetic method
-   static void e(Application var0, bool var1) {
+   public static void e(Application var0, bool var1) {
       var0.aQ = var1;
    }
 
    // $FF: synthetic method
-   static void m(Application var0) {
+   public static void m(Application var0) {
       var0.f();
    }
 
    // $FF: synthetic method
-   static ComboBox n(Application var0) {
+   public static ComboBox n(Application var0) {
       return var0.R;
    }
 
    // $FF: synthetic method
-   static void f(Application var0, bool var1) {
+   public static void f(Application var0, bool var1) {
       var0.aL = var1;
    }
 
    // $FF: synthetic method
-   static void a(Application var0, int var1) {
+   public static void a(Application var0, int var1) {
       var0.e(var1);
    }
 
    // $FF: synthetic method
-   static ComboBox o(Application var0) {
+   public static ComboBox o(Application var0) {
       return var0.S;
    }
 
    // $FF: synthetic method
-   static void a(Application var0, fs[] var1) {
+   public static void a(Application var0, fs[] var1) {
       var0.aI = var1;
    }
 
    // $FF: synthetic method
-   static void b(Application var0, int var1) {
+   public static void b(Application var0, int var1) {
       var0.f(var1);
    }
 
    // $FF: synthetic method
-   static void p(Application var0) {
+   public static void p(Application var0) {
       var0.k();
    }
 }

@@ -43,7 +43,7 @@ public class x  {
             throw new IOException("short read");
          }
 
-         string var12 = new string(var9, 0, var9.length);
+         string var12 = new string(var9, 0, var9.Length);
          if (var12.EndsWith("\r\n")) {
             var12 = var12.Substring(0, var12.Length - 2);
          } else if (var12.EndsWith("\n")) {
@@ -61,7 +61,7 @@ public class x  {
    }
 
    // $FF: synthetic method
-   static Application a(x var0) {
+   public static Application a(x var0) {
       return var0.aZ;
    }
 }

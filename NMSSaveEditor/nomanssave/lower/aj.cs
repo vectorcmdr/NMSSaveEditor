@@ -130,32 +130,32 @@ public class aj : Form {
    }
 
    // $FF: synthetic method
-   static TextBox a(aj var0) {
+   public static TextBox a(aj var0) {
       return var0.m;
    }
 
    // $FF: synthetic method
-   static ComboBox b(aj var0) {
+   public static ComboBox b(aj var0) {
       return var0.bX;
    }
 
    // $FF: synthetic method
-   static void a(aj var0, hl var1) {
+   public static void a(aj var0, hl var1) {
       var0.cc = var1;
    }
 
    // $FF: synthetic method
-   static void c(aj var0) {
+   public static void c(aj var0) {
       var0.P();
    }
 
    // $FF: synthetic method
-   static List<object> Q() {
+   public static List<object> Q() {
       return bW;
    }
 
    // $FF: synthetic method
-   static void a(aj var0, bool var1) {
+   public static void a(aj var0, bool var1) {
       var0.cd = var1;
    }
 }

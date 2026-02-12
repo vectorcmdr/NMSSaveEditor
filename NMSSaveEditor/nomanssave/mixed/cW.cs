@@ -236,22 +236,22 @@ public class cW : Panel, PropertyChangeListener, CaretListener, DocumentListener
    }
 
    // $FF: synthetic method
-   static JTextComponent a(cW var0) {
+   public static JTextComponent a(cW var0) {
       return var0.gB;
    }
 
    // $FF: synthetic method
-   static int b(cW var0) {
+   public static int b(cW var0) {
       return var0.gI;
    }
 
    // $FF: synthetic method
-   static void c(cW var0) {
+   public static void c(cW var0) {
       var0.aI();
    }
 
    // $FF: synthetic method
-   static void a(cW var0, int var1) {
+   public static void a(cW var0, int var1) {
       var0.gI = var1;
    }
 }

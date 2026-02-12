@@ -23,11 +23,11 @@ public class cO : ComboBoxModel {
    }
 
    public int getSize() {
-      return ((Enum[])this.gu.getEnumConstants()).length + cN.a(this.gt).Count;
+      return ((Enum[])this.gu.getEnumConstants()).Length + cN.a(this.gt).Count;
    }
 
    public Object getElementAt(int var1) {
-      return var1 < ((Enum[])this.gu.getEnumConstants()).length ? ((Enum[])this.gu.getEnumConstants())[var1] : cN.a(this.gt).Get(var1 - ((Enum[])this.gu.getEnumConstants()).length);
+      return var1 < ((Enum[])this.gu.getEnumConstants()).Length ? ((Enum[])this.gu.getEnumConstants())[var1] : cN.a(this.gt).Get(var1 - ((Enum[])this.gu.getEnumConstants()).Length);
    }
 
    public void addListDataListener(ListDataListener var1) {

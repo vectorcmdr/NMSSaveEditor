@@ -108,12 +108,12 @@ public class bJ : G {
    }
 
    // $FF: synthetic method
-   static int[] ad() {
+   public static int[] ad() {
       int[] var10000 = eA;
       if (var10000 != null) {
          return var10000;
       } else {
-         int[] var0 = new int[gs.Values.length];
+         int[] var0 = new int[gs.Values.Length];
 
          try {
             var0[gs.pO.ordinal()] = 25;

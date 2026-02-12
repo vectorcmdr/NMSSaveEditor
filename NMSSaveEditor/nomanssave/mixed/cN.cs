@@ -37,7 +37,7 @@ public class cN : ComboBox {
       Object var2 = null;
       if (var1 != null) {
          Enum[] var6;
-         int var5 = (var6 = this.gn).length;
+         int var5 = (var6 = this.gn).Length;
 
          for(int var4 = 0; var4 < var5; ++var4) {
             Enum var3 = var6[var4];
@@ -73,42 +73,42 @@ public class cN : ComboBox {
    }
 
    // $FF: synthetic method
-   static List<object> a(cN var0) {
+   public static List<object> a(cN var0) {
       return var0.go;
    }
 
    // $FF: synthetic method
-   static Object b(cN var0) {
+   public static Object b(cN var0) {
       return var0.gq;
    }
 
    // $FF: synthetic method
-   static void a(cN var0, Object var1) {
+   public static void a(cN var0, Object var1) {
       var0.gq = var1;
    }
 
    // $FF: synthetic method
-   static cR c(cN var0) {
+   public static cR c(cN var0) {
       return var0.gp;
    }
 
    // $FF: synthetic method
-   static bool d(cN var0) {
+   public static bool d(cN var0) {
       return var0.gm;
    }
 
    // $FF: synthetic method
-   static Enum[] e(cN var0) {
+   public static Enum[] e(cN var0) {
       return var0.gn;
    }
 
    // $FF: synthetic method
-   static Color ag() {
+   public static Color ag() {
       return gs;
    }
 
    // $FF: synthetic method
-   static Color aB() {
+   public static Color aB() {
       return gr;
    }
 }

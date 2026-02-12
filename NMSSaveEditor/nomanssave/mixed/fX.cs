@@ -13,8 +13,8 @@ namespace NMSSaveEditor
 
 public abstract class fX {
    fW mO;
-   FileInfo mX;
-   FileInfo mY;
+   public FileInfo mX;
+   public FileInfo mY;
    fS mZ;
    int mode;
    // $FF: synthetic field
@@ -273,7 +273,7 @@ public abstract class fX {
       }
 
       byte[] var28 = var3.toByteArray();
-      this.mZ.aj(var28.length);
+      this.mZ.aj(var28.Length);
       var5 = null;
       var6 = null;
 

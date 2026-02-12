@@ -71,7 +71,7 @@ public class gm {
          var14.Add(new gt(a(this, var6), var4, var9, 8, 6, false, true));
       }
 
-      this.gT = JavaCollections.UnmodifiableList(var14);
+      this.gT = UnmodifiableList(var14);
       eV var15 = var1.d("PersistentPlayerBases");
       eY var17 = null;
 

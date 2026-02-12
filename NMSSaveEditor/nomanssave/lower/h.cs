@@ -130,62 +130,62 @@ public class h : Form {
    }
 
    // $FF: synthetic method
-   static TextBox a(h var0) {
+   public static TextBox a(h var0) {
       return var0.m;
    }
 
    // $FF: synthetic method
-   static int b(h var0) {
+   public static int b(h var0) {
       return var0.r;
    }
 
    // $FF: synthetic method
-   static void a(h var0, List<object> var1) {
+   public static void a(h var0, List<object> var1) {
       var0.s = var1;
    }
 
    // $FF: synthetic method
-   static void c(h var0) {
+   public static void c(h var0) {
       var0.a();
    }
 
    // $FF: synthetic method
-   static List<object> d(h var0) {
+   public static List<object> d(h var0) {
       return var0.s;
    }
 
    // $FF: synthetic method
-   static List<object> e(h var0) {
+   public static List<object> e(h var0) {
       return var0.t;
    }
 
    // $FF: synthetic method
-   static void f(h var0) {
+   public static void f(h var0) {
       var0.b();
    }
 
    // $FF: synthetic method
-   static List<object> g(h var0) {
+   public static List<object> g(h var0) {
       return var0.u;
    }
 
    // $FF: synthetic method
-   static void h_static(h var0) {
+   public static void h_static(h var0) {
       var0.c();
    }
 
    // $FF: synthetic method
-   static List<object> i(h var0) {
+   public static List<object> i(h var0) {
       return var0.v;
    }
 
    // $FF: synthetic method
-   static ComboBox j(h var0) {
+   public static ComboBox j(h var0) {
       return var0.q;
    }
 
    // $FF: synthetic method
-   static void a(h var0, ey var1) {
+   public static void a(h var0, ey var1) {
       var0.l = var1;
    }
 }

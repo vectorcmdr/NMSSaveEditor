@@ -79,7 +79,7 @@ public class aH {
    public static void a(string var0, Object[] var1) {
       eV var2 = new eV();
 
-      for(int var3 = 0; var3 < var1.length; ++var3) {
+      for(int var3 = 0; var3 < var1.Length; ++var3) {
          var2.f(var1[var3]);
       }
 
@@ -87,11 +87,11 @@ public class aH {
       cL = true;
    }
 
-   static bool T() {
+   public static bool T() {
       return cL;
    }
 
-   static void U() {
+   public static void U() {
       string var0 = fh.b(cK, true);
 
       try {
@@ -172,7 +172,7 @@ public class aH {
       if (cC.Exists) {
          try {
             byte[] var22 = hk.l(cC);
-            if (var22.length > 0 && var22[0] == 123) {
+            if (var22.Length > 0 && var22[0] == 123) {
                cK = eY.E(new string(var22, Encoding.UTF8));
             } else {
                Properties var3 = new Properties();
@@ -332,12 +332,12 @@ public class aH {
    }
 
    // $FF: synthetic method
-   static int[] W() {
+   public static int[] W() {
       int[] var10000 = cM;
       if (var10000 != null) {
          return var10000;
       } else {
-         int[] var0 = new int[aI.Values.length];
+         int[] var0 = new int[aI.Values.Length];
 
          try {
             var0[aI.cQ.ordinal()] = 4;

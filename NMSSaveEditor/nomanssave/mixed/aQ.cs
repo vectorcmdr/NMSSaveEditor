@@ -78,32 +78,32 @@ public class aQ : Form {
    }
 
    // $FF: synthetic method
-   static TextBox a(aQ var0) {
+   public static TextBox a(aQ var0) {
       return var0.@do;
    }
 
    // $FF: synthetic method
-   static Size b(aQ var0) {
+   public static Size b(aQ var0) {
       return var0.dk;
    }
 
    // $FF: synthetic method
-   static Size c(aQ var0) {
+   public static Size c(aQ var0) {
       return var0.dl;
    }
 
    // $FF: synthetic method
-   static Size d(aQ var0) {
+   public static Size d(aQ var0) {
       return var0.dm;
    }
 
    // $FF: synthetic method
-   static TextBox e(aQ var0) {
+   public static TextBox e(aQ var0) {
       return var0.dp;
    }
 
    // $FF: synthetic method
-   static void a(aQ var0, Size? var1) {
+   public static void a(aQ var0, Size? var1) {
       var0.dn = var1;
    }
 }

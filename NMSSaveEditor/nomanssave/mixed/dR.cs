@@ -24,7 +24,7 @@ public class dR : ActionListener {
 
    public void actionPerformed(ActionEvent var1) {
       int var2 = dN.p(this.ia).SelectedIndex;
-      if (var2 >= 0 && var2 < dN.a(this.ia).length) {
+      if (var2 >= 0 && var2 < dN.a(this.ia).Length) {
          this.bv.a(dN.a(this.ia)[var2]);
       }
    }

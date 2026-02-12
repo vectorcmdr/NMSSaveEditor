@@ -27,7 +27,7 @@ public class bt : ListSelectionListener {
    }
 
    // $FF: synthetic method
-   static bl a(bt var0) {
+   public static bl a(bt var0) {
       return var0.er;
    }
 }

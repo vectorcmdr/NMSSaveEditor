@@ -94,11 +94,11 @@ public class eI {
    }
 
    public static Iterable bt() {
-      return JavaCollections.UnmodifiableList(ki);
+      return UnmodifiableList(ki);
    }
 
    public static Iterable bu() {
-      return JavaCollections.UnmodifiableList(kj);
+      return UnmodifiableList(kj);
    }
 }
 

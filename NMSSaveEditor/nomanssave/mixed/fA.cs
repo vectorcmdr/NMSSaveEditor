@@ -33,7 +33,7 @@ public class fA : fq {
 
       this.lZ = new fD[30];
 
-      for(int var3 = 0; var3 < this.lZ.length; ++var3) {
+      for(int var3 = 0; var3 < this.lZ.Length; ++var3) {
          try {
             this.lZ[var3] = new fD(this, var3);
          } catch (FileNotFoundException var9) {
@@ -190,32 +190,32 @@ public class fA : fq {
    }
 
    // $FF: synthetic method
-   static FileInfo a(fA var0) {
+   public static FileInfo a(fA var0) {
       return var0.lX;
    }
 
    // $FF: synthetic method
-   static byte[] bY() {
+   public static byte[] bY() {
       return lA;
    }
 
    // $FF: synthetic method
-   static eY b(byte[] var0, eG var1) {
+   public static eY b(byte[] var0, eG var1) {
       return a(var0, var1);
    }
 
    // $FF: synthetic method
-   static byte[] l(eY var0) {
+   public static byte[] l(eY var0) {
       return g(var0);
    }
 
    // $FF: synthetic method
-   static fD[] b(fA var0) {
+   public static fD[] b(fA var0) {
       return var0.lZ;
    }
 
    // $FF: synthetic method
-   static Pattern cb() {
+   public static Pattern cb() {
       return lW;
    }
 }

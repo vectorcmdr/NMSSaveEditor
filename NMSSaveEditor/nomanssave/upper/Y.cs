@@ -22,7 +22,7 @@ public class Y : ComboBoxModel {
    }
 
    public int getSize() {
-      return X.a(this.bV) == null ? 0 : X.a(this.bV).length;
+      return X.a(this.bV) == null ? 0 : X.a(this.bV).Length;
    }
 
    public gj q(int var1) {

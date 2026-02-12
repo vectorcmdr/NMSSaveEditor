@@ -168,19 +168,19 @@ public class gt {
 
    public string getSimpleName() {
       string[] var1 = (string[])this.qs.apply(this);
-      if (var1.length == 0) {
+      if (var1.Length == 0) {
          return "Unknown";
       } else {
-         return var1.length == 1 ? var1[0] : var1[1];
+         return var1.Length == 1 ? var1[0] : var1[1];
       }
    }
 
    public string getFullName() {
       string[] var1 = (string[])this.qs.apply(this);
-      if (var1.length == 0) {
+      if (var1.Length == 0) {
          return "Unknown";
       } else {
-         return var1.length == 1 ? var1[0] : var1[0] + " - " + var1[1];
+         return var1.Length == 1 ? var1[0] : var1[0] + " - " + var1[1];
       }
    }
 
@@ -301,8 +301,8 @@ public class gt {
       int var3 = 1;
 
       int var4;
-      for(var4 = 0; var4 < this.qy.length; ++var4) {
-         for(int var5 = 0; var5 < this.qy[var4].length; ++var5) {
+      for(var4 = 0; var4 < this.qy.Length; ++var4) {
+         for(int var5 = 0; var5 < this.qy[var4].Length; ++var5) {
             if (this.qz[var4][var5]) {
                var2 = Math.Max(var2, var5 + 1);
                var3 = Math.Max(var3, var4 + 1);
@@ -316,24 +316,24 @@ public class gt {
          throw new Exception("Cannot resize less than min height");
       } else {
          if (en.aS()) {
-            if (var1.width > this.qz[0].length) {
-               for(var4 = 0; var4 < this.qy.length; ++var4) {
+            if (var1.width > this.qz[0].Length) {
+               for(var4 = 0; var4 < this.qy.Length; ++var4) {
                   eY[] var9 = new eY[var1.width];
                   bool[] var6 = new bool[var1.width];
-                  Array.Copy(this.qy[var4], 0, var9, 0, this.qz[var4].length);
-                  Array.Copy(this.qz[var4], 0, var6, 0, this.qz[var4].length);
+                  Array.Copy(this.qy[var4], 0, var9, 0, this.qz[var4].Length);
+                  Array.Copy(this.qz[var4], 0, var6, 0, this.qz[var4].Length);
                   this.qy[var4] = var9;
                   this.qz[var4] = var6;
                }
             }
 
-            if (var1.height > this.qz.length) {
+            if (var1.height > this.qz.Length) {
                eY[][] var7 = new eY[var1.height][];
                bool[][] var10 = new bool[var1.height][];
-               Array.Copy(this.qy, 0, var7, 0, this.qz.length);
-               Array.Copy(this.qz, 0, var10, 0, this.qz.length);
+               Array.Copy(this.qy, 0, var7, 0, this.qz.Length);
+               Array.Copy(this.qz, 0, var10, 0, this.qz.Length);
 
-               for(int var11 = this.qz.length; var11 < var1.height; ++var11) {
+               for(int var11 = this.qz.Length; var11 < var1.height; ++var11) {
                   var7[var11] = new eY[var1.width];
                   var10[var11] = new bool[var1.width];
                }
@@ -342,12 +342,12 @@ public class gt {
                this.qz = var10;
             }
          } else {
-            if (var1.width > this.qz[0].length) {
-               throw new Exception("Cannot resize width greater than " + this.qz[0].length);
+            if (var1.width > this.qz[0].Length) {
+               throw new Exception("Cannot resize width greater than " + this.qz[0].Length);
             }
 
-            if (var1.height > this.qz.length) {
-               throw new Exception("Cannot resize height greater than " + this.qz.length);
+            if (var1.height > this.qz.Length) {
+               throw new Exception("Cannot resize height greater than " + this.qz.Length);
             }
          }
 
@@ -370,14 +370,14 @@ public class gt {
 
    public bool dl() {
       bool var1 = false;
-      if (this.width < this.qz[0].length) {
-         this.width = this.qz[0].length;
+      if (this.width < this.qz[0].Length) {
+         this.width = this.qz[0].Length;
          this.qt.b("Width", (Object)(new Integer(this.width)));
          var1 = true;
       }
 
-      if (this.height < this.qz.length) {
-         this.height = this.qz.length;
+      if (this.height < this.qz.Length) {
+         this.height = this.qz.Length;
          this.qt.b("Height", (Object)(new Integer(this.height)));
          var1 = true;
       }
@@ -389,8 +389,8 @@ public class gt {
       int var1 = 1;
       int var2 = 1;
 
-      for(int var3 = 0; var3 < this.qy.length; ++var3) {
-         for(int var4 = 0; var4 < this.qy[var3].length; ++var4) {
+      for(int var3 = 0; var3 < this.qy.Length; ++var3) {
+         for(int var4 = 0; var4 < this.qy[var3].Length; ++var4) {
             if (this.qz[var3][var4]) {
                var1 = Math.Max(var1, var4 + 1);
                var2 = Math.Max(var2, var3 + 1);
@@ -402,7 +402,7 @@ public class gt {
    }
 
    public Size dn() {
-      return new Size(this.qz[0].length, this.qz.length);
+      return new Size(this.qz[0].Length, this.qz.Length);
    }
 
    public void a(int var1, int var2, int var3, int var4) {
@@ -498,7 +498,7 @@ public class gt {
             if (var5 == null || (a(var5.bc()) & var1) == 0) {
                int var6 = var4.J("Index.X");
                int var7 = var4.J("Index.Y");
-               if (var7 < this.qy.length && var6 < this.qy[var7].length) {
+               if (var7 < this.qy.Length && var6 < this.qy[var7].Length) {
                   this.qy[var7][var6] = null;
                }
 
@@ -543,8 +543,8 @@ public class gt {
          if (var4.Equals("Technology")) {
             var11 = this.qy[var2][var1].J("MaxAmount");
 
-            for(var12 = 0; var12 < var3.qy.length; ++var12) {
-               for(var13 = 0; var13 < var3.qy[var12].length; ++var13) {
+            for(var12 = 0; var12 < var3.qy.Length; ++var12) {
+               for(var13 = 0; var13 < var3.qy[var12].Length; ++var13) {
                   if (var3.qy[var12][var13] == null && var3.qz[var12][var13] && !var3.l(var13, var12)) {
                      var3.a(var13, var12, var4, var5, var6, var11, var7, var9);
                      var6 = 0;
@@ -562,8 +562,8 @@ public class gt {
          int var14;
          int var15;
          if (var6 > 0 && !var4.Equals("Technology")) {
-            for(var11 = 0; var11 < var3.qy.length; ++var11) {
-               for(var12 = 0; var12 < var3.qy[var11].length; ++var12) {
+            for(var11 = 0; var11 < var3.qy.Length; ++var11) {
+               for(var12 = 0; var12 < var3.qy[var11].Length; ++var12) {
                   if (var3.qy[var11][var12] != null && var4.Equals(var3.qy[var11][var12].getValueAsString("Type.InventoryType")) && var5.Equals(var3.qy[var11][var12].getValue("Id"))) {
                      var13 = var3.qy[var11][var12].J("Amount");
                      var14 = var3.qy[var11][var12].J("MaxAmount");
@@ -606,8 +606,8 @@ public class gt {
                var12 = 1;
             }
 
-            for(var13 = 0; var13 < var3.qy.length; ++var13) {
-               for(var14 = 0; var14 < var3.qy[var13].length; ++var14) {
+            for(var13 = 0; var13 < var3.qy.Length; ++var13) {
+               for(var14 = 0; var14 < var3.qy[var13].Length; ++var14) {
                   if (var3.qy[var13][var14] == null && var3.qz[var13][var14] && !var3.l(var14, var13)) {
                      var15 = var6 > var12 ? var12 : var6;
                      hc.info("  new stack: " + var15);
@@ -676,8 +676,8 @@ public class gt {
       int var7;
       int var8;
       if (var2 > 0) {
-         for(int var5 = 0; var5 < this.qy.length; ++var5) {
-            for(var6 = 0; var6 < this.qy[var5].length; ++var6) {
+         for(int var5 = 0; var5 < this.qy.Length; ++var5) {
+            for(var6 = 0; var6 < this.qy[var5].Length; ++var6) {
                if (this.qy[var5][var6] != null && var4.Equals(this.qy[var5][var6].getValueAsString("Type.InventoryType")) && var1.getID().Equals(this.qy[var5][var6].getValue("Id"))) {
                   var7 = this.qy[var5][var6].J("Amount");
                   var8 = this.qy[var5][var6].J("MaxAmount");
@@ -702,8 +702,8 @@ public class gt {
       if (var2 > 0) {
          Object var10 = var1.aZ();
 
-         for(var6 = 0; var6 < this.qy.length; ++var6) {
-            for(var7 = 0; var7 < this.qy[var6].length; ++var7) {
+         for(var6 = 0; var6 < this.qy.Length; ++var6) {
+            for(var7 = 0; var7 < this.qy[var6].Length; ++var7) {
                if (this.qy[var6][var7] == null && this.qz[var6][var7] && !this.l(var7, var6)) {
                   var8 = var2 > var3 ? var3 : var2;
                   hc.info("  new stack: " + var8);
@@ -779,8 +779,8 @@ public class gt {
    }
 
    public bool aq(string var1) {
-      for(int var2 = 0; var2 < this.qy.length; ++var2) {
-         for(int var3 = 0; var3 < this.qy[var2].length; ++var3) {
+      for(int var2 = 0; var2 < this.qy.Length; ++var2) {
+         for(int var3 = 0; var3 < this.qy[var2].Length; ++var3) {
             if (this.qy[var2][var3] != null && var1.Equals(this.qy[var2][var3].getValue("Type"))) {
                return true;
             }
@@ -975,8 +975,8 @@ public class gt {
          }
       }
 
-      for(var4 = 0; var4 < this.qy.length; ++var4) {
-         for(int var6 = 0; var6 < this.qy[var4].length; ++var6) {
+      for(var4 = 0; var4 < this.qy.Length; ++var4) {
+         for(int var6 = 0; var6 < this.qy[var4].Length; ++var6) {
             if (this.qy[var4][var6] != null && this.qy[var4][var6].L("DamageFactor") != 0.0D) {
                this.qy[var4][var6].b("DamageFactor", (Object)(new Double(0.0D)));
                this.qy[var4][var6].b("FullyInstalled", (Object)(new Boolean(true)));
@@ -990,19 +990,19 @@ public class gt {
 
    public static string l(Object var0) {
       StringBuffer var1 = new StringBuffer();
-      var1.append(' ');
+      var1.Append(' ');
       if (var0 is fg) {
-         var1.append(((fg)var0).bP());
+         var1.Append(((fg)var0).bP());
       } else if (var0 != null) {
-         var1.append(var0.ToString());
+         var1.Append(var0.ToString());
       }
 
       if (var1.Length > 10) {
-         var1.delete(10, var1.Length);
+         var1.Remove(10, var1.Length);
       }
 
       while(var1.Length < 11) {
-         var1.append(' ');
+         var1.Append(' ');
       }
 
       return var1.ToString();
@@ -1012,17 +1012,17 @@ public class gt {
       var1.print("\t|");
 
       int var2;
-      for(var2 = 0; var2 < this.qy[0].length; ++var2) {
+      for(var2 = 0; var2 < this.qy[0].Length; ++var2) {
          var1.print("-----------|");
       }
 
       var1.println();
 
-      for(var2 = 0; var2 < this.qy.length; ++var2) {
+      for(var2 = 0; var2 < this.qy.Length; ++var2) {
          var1.print("\t|");
 
          int var3;
-         for(var3 = 0; var3 < this.qy[0].length; ++var3) {
+         for(var3 = 0; var3 < this.qy[0].Length; ++var3) {
             if (!this.qz[var2][var3]) {
                var1.print("###########|");
             } else if (this.qy[var2][var3] != null) {
@@ -1035,7 +1035,7 @@ public class gt {
          var1.println();
          var1.print("\t|");
 
-         for(var3 = 0; var3 < this.qy[var2].length; ++var3) {
+         for(var3 = 0; var3 < this.qy[var2].Length; ++var3) {
             if (!this.qz[var2][var3]) {
                var1.print("###########|");
             } else if (this.qy[var2][var3] != null) {
@@ -1048,7 +1048,7 @@ public class gt {
          var1.println();
          var1.print("\t|");
 
-         for(var3 = 0; var3 < this.qy[0].length; ++var3) {
+         for(var3 = 0; var3 < this.qy[0].Length; ++var3) {
             if (!this.qz[var2][var3]) {
                var1.print("###########|");
             } else if (this.qy[var2][var3] != null) {
@@ -1066,7 +1066,7 @@ public class gt {
          var1.println();
          var1.print("\t|");
 
-         for(var3 = 0; var3 < this.qy[0].length; ++var3) {
+         for(var3 = 0; var3 < this.qy[0].Length; ++var3) {
             var1.print("-----------|");
          }
 
@@ -1094,8 +1094,8 @@ public class gt {
    public bool dt() {
       bool var2 = false;
 
-      for(int var3 = 0; var3 < this.qy.length; ++var3) {
-         for(int var4 = 0; var4 < this.qy[var3].length; ++var4) {
+      for(int var3 = 0; var3 < this.qy.Length; ++var3) {
+         for(int var4 = 0; var4 < this.qy[var3].Length; ++var4) {
             int var1;
             if (this.qy[var3][var4] != null && "Technology".Equals(this.qy[var3][var4].getValueAsString("Type.InventoryType")) && this.qy[var3][var4].J("Amount") >= 0 && (var1 = this.qy[var3][var4].J("MaxAmount")) > 0) {
                this.qy[var3][var4].b("Amount", (Object)(new Integer(var1)));
@@ -1110,8 +1110,8 @@ public class gt {
    public bool du() {
       bool var2 = false;
 
-      for(int var3 = 0; var3 < this.qy.length; ++var3) {
-         for(int var4 = 0; var4 < this.qy[var3].length; ++var4) {
+      for(int var3 = 0; var3 < this.qy.Length; ++var3) {
+         for(int var4 = 0; var4 < this.qy[var3].Length; ++var4) {
             int var1;
             if (this.qy[var3][var4] != null && !"Technology".Equals(this.qy[var3][var4].getValueAsString("Type.InventoryType")) && (var1 = this.qy[var3][var4].J("MaxAmount")) > 1) {
                this.qy[var3][var4].b("Amount", (Object)(new Integer(var1)));
@@ -1147,12 +1147,12 @@ public class gt {
    }
 
    // $FF: synthetic method
-   static int[] dw() {
+   public static int[] dw() {
       int[] var10000 = qA;
       if (var10000 != null) {
          return var10000;
       } else {
-         int[] var0 = new int[ex.Values.length];
+         int[] var0 = new int[ex.Values.Length];
 
          try {
             var0[ex.jq.ordinal()] = 32;
@@ -1375,12 +1375,12 @@ public class gt {
    }
 
    // $FF: synthetic method
-   static int[] dx() {
+   public static int[] dx() {
       int[] var10000 = qB;
       if (var10000 != null) {
          return var10000;
       } else {
-         int[] var0 = new int[fn.Values.length];
+         int[] var0 = new int[fn.Values.Length];
 
          try {
             var0[fn.lp.ordinal()] = 4;
@@ -1428,12 +1428,12 @@ public class gt {
    }
 
    // $FF: synthetic method
-   static int[] dy() {
+   public static int[] dy() {
       int[] var10000 = qC;
       if (var10000 != null) {
          return var10000;
       } else {
-         int[] var0 = new int[eB.Values.length];
+         int[] var0 = new int[eB.Values.Length];
 
          try {
             var0[eB.jO.ordinal()] = 2;

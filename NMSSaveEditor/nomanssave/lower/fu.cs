@@ -23,7 +23,7 @@ public class fu : fq {
 
    public static fn ag(int var0) {
       int var1 = (3584 & var0) >> 9;
-      if (var1 <= 0 && var1 > fn.Values.length) {
+      if (var1 <= 0 && var1 > fn.Values.Length) {
          throw new Exception("Unsupported version: " + var0);
       } else {
          return fn.Values[var1 - 1];
@@ -41,7 +41,7 @@ public class fu : fq {
          Console.WriteLine("Reading header");
          byte[] var6 = new byte[8];
          hk.readFully(var3, var6);
-         var4 += (long)var6.length;
+         var4 += (long)var6.Length;
          if (!a(var6, lA)) {
             throw new IOException("Invalid header");
          }
@@ -49,7 +49,7 @@ public class fu : fq {
          int[] var7 = new int[14];
 
          int var8;
-         for(var8 = 0; var8 < var7.length; ++var8) {
+         for(var8 = 0; var8 < var7.Length; ++var8) {
             var7[var8] = hk.readInt(var3);
             var4 += 4L;
             if (var7[var8] != 0) {
@@ -60,7 +60,7 @@ public class fu : fq {
          Console.WriteLine("Reading files");
          this.lF = new fw[32];
 
-         for(var8 = 0; var8 < this.lF.length; ++var8) {
+         for(var8 = 0; var8 < this.lF.Length; ++var8) {
             this.lF[var8] = new fw(this, var3);
             if (this.lF[var8].isValid()) {
                Console.WriteLine("file[" + var8 + "]");
@@ -70,7 +70,7 @@ public class fu : fq {
             var4 += 48L;
          }
 
-         for(var8 = 0; var8 < this.lF.length; ++var8) {
+         for(var8 = 0; var8 < this.lF.Length; ++var8) {
             if (this.lF[var8].isValid()) {
                var3.skip(this.lF[var8].lP - var4);
                var4 = this.lF[var8].lP;
@@ -95,7 +95,7 @@ public class fu : fq {
       this.lG = null;
       this.lH = new fx[30];
 
-      for(int var19 = 0; var19 < this.lF.length; ++var19) {
+      for(int var19 = 0; var19 < this.lF.Length; ++var19) {
          if (this.lF[var19].isValid()) {
             if (this.lF[var19].lN == 262144 && this.lG == null) {
                this.lG = new fv(this, this.lF[var19]);
@@ -141,7 +141,7 @@ public class fu : fq {
    }
 
    public static bool a(byte[] var0, byte[] var1) {
-      for(int var2 = 0; var2 < var0.length; ++var2) {
+      for(int var2 = 0; var2 < var0.Length; ++var2) {
          if (var0[var2] != var1[var2]) {
             return false;
          }
@@ -151,27 +151,27 @@ public class fu : fq {
    }
 
    // $FF: synthetic method
-   static fx[] a(fu var0) {
+   public static fx[] a(fu var0) {
       return var0.lH;
    }
 
    // $FF: synthetic method
-   static byte[] bY() {
+   public static byte[] bY() {
       return lB;
    }
 
    // $FF: synthetic method
-   static bool b(byte[] var0, byte[] var1) {
+   public static bool b(byte[] var0, byte[] var1) {
       return a(var0, var1);
    }
 
    // $FF: synthetic method
-   static FileInfo b(fu var0) {
+   public static FileInfo b(fu var0) {
       return var0.lD;
    }
 
    // $FF: synthetic method
-   static fw[] c(fu var0) {
+   public static fw[] c(fu var0) {
       return var0.lF;
    }
 }

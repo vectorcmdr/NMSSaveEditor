@@ -70,7 +70,7 @@ public class eQ : ey {
       }
 
       this.description = var3;
-      this.ke = JavaCollections.UnmodifiableList(var4);
+      this.ke = UnmodifiableList(var4);
       this.km = var5;
    }
 

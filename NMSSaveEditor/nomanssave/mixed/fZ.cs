@@ -46,7 +46,7 @@ public class fZ : ft {
    }
 
    public fn L() {
-      long var1 = Long.MIN_VALUE;
+      long var1 = long.MinValue;
       fn var3 = null;
       if (fT.b(this.mN)[this.lT * 2] != null) {
          var3 = fT.b(this.mN)[this.lT * 2].L();
@@ -65,8 +65,8 @@ public class fZ : ft {
 
    public string toString() {
       StringBuilder var1 = new StringBuilder();
-      var1.append("Slot " + (this.lT + 1) + " - ");
-      long var2 = Long.MIN_VALUE;
+      var1.Append("Slot " + (this.lT + 1) + " - ");
+      long var2 = long.MinValue;
       fn var4 = null;
       if (fT.b(this.mN)[this.lT * 2] != null) {
          var4 = fT.b(this.mN)[this.lT * 2].L();
@@ -82,17 +82,17 @@ public class fZ : ft {
       }
 
       if (var4 != null) {
-         var1.append(var4.ToString());
-         var1.append(" - " + Application.b(var2));
+         var1.Append(var4.ToString());
+         var1.Append(" - " + Application.b(var2));
       } else {
-         var1.append("[EMPTY]");
+         var1.Append("[EMPTY]");
       }
 
       return var1.ToString();
    }
 
    // $FF: synthetic method
-   static fT a(fZ var0) {
+   public static fT a(fZ var0) {
       return var0.mN;
    }
 }

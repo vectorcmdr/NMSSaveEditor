@@ -22,7 +22,7 @@ public class hc {
       Logger var0 = JavaCompat.GetLogManager().GetLogger("");
       Handler[] var1 = var0.GetHandlers();
 
-      for(int var2 = 0; var2 < var1.length; ++var2) {
+      for(int var2 = 0; var2 < var1.Length; ++var2) {
          var0.RemoveHandler(var1[0]);
       }
 
@@ -233,12 +233,12 @@ public class hc {
    }
 
    // $FF: synthetic method
-   static void a(LogRecord var0) {
+   public static void a(LogRecord var0) {
       log(var0);
    }
 
    // $FF: synthetic method
-   static StreamWriter en() {
+   public static StreamWriter en() {
       return sq;
    }
 }

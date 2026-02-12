@@ -19,25 +19,25 @@ public class hk {
 
       int var2;
       int var3;
-      for(var2 = 0; var2 + 3 <= var0.length; var2 += 3) {
+      for(var2 = 0; var2 + 3 <= var0.Length; var2 += 3) {
          var3 = (255 & var0[var2]) << 16 | (255 & var0[var2 + 1]) << 8 | 255 & var0[var2 + 2];
-         var1.append("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"[(16515072 & var3) >> 18]);
-         var1.append("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"[(258048 & var3) >> 12]);
-         var1.append("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"[(4032 & var3) >> 6]);
-         var1.append("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"[63 & var3]);
+         var1.Append("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"[(16515072 & var3) >> 18]);
+         var1.Append("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"[(258048 & var3) >> 12]);
+         var1.Append("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"[(4032 & var3) >> 6]);
+         var1.Append("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"[63 & var3]);
       }
 
-      if (var2 + 2 == var0.length) {
+      if (var2 + 2 == var0.Length) {
          var3 = (255 & var0[var2]) << 16 | (255 & var0[var2 + 1]) << 8;
-         var1.append("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"[(16515072 & var3) >> 18]);
-         var1.append("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"[(258048 & var3) >> 12]);
-         var1.append("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"[(4032 & var3) >> 6]);
+         var1.Append("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"[(16515072 & var3) >> 18]);
+         var1.Append("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"[(258048 & var3) >> 12]);
+         var1.Append("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"[(4032 & var3) >> 6]);
       }
 
-      if (var2 + 1 == var0.length) {
+      if (var2 + 1 == var0.Length) {
          var3 = (255 & var0[var2]) << 16;
-         var1.append("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"[(16515072 & var3) >> 18]);
-         var1.append("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"[(258048 & var3) >> 12]);
+         var1.Append("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"[(16515072 & var3) >> 18]);
+         var1.Append("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"[(258048 & var3) >> 12]);
       }
 
       return var1.ToString();
@@ -149,7 +149,7 @@ public class hk {
    }
 
    public static void readFully(Stream var0, byte[] var1) {
-      readFully(var0, var1, 0, var1.length);
+      readFully(var0, var1, 0, var1.Length);
    }
 
    public static void readFully(Stream var0, byte[] var1, int var2, int var3) {

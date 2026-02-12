@@ -23,7 +23,7 @@ public class aw : ActionListener {
       int[] var2 = ap.h(this.cu).GetSelectedRows();
       bool var3 = false;
 
-      for(int var4 = var2.length - 1; var4 >= 0; --var4) {
+      for(int var4 = var2.Length - 1; var4 >= 0; --var4) {
          int var5 = ap.h(this.cu).convertRowIndexToModel(var2[var4]);
          string var6 = (string)ap.d(this.cu).Get(var5);
          ap.d(this.cu).Remove(var5);

@@ -45,9 +45,9 @@ public class dE : Panel {
       this.hv.a("Seed", this.hz);
       this.hv.Y();
       this.hv.k("Stats");
-      this.ea = new G[gG.Values.length];
+      this.ea = new G[gG.Values.Length];
 
-      for(int var4 = 0; var4 < this.ea.length; ++var4) {
+      for(int var4 = 0; var4 < this.ea.Length; ++var4) {
          this.ea[var4] = new dM(this, gG.Values[var4], (dM)null);
          this.hv.a(gG.Values[var4].ToString(), (JComponent)this.ea[var4]);
       }
@@ -81,7 +81,7 @@ public class dE : Panel {
    }
 
    public void a(gE[] var1) {
-      if (var1.length == 0) {
+      if (var1.Length == 0) {
          this.hC = new gE[0];
          this.hx.SetSelectedIndex(-1);
       } else {
@@ -93,37 +93,37 @@ public class dE : Panel {
    }
 
    // $FF: synthetic method
-   static ComboBox a(dE var0) {
+   public static ComboBox a(dE var0) {
       return var0.hx;
    }
 
    // $FF: synthetic method
-   static gE[] b(dE var0) {
+   public static gE[] b(dE var0) {
       return var0.hC;
    }
 
    // $FF: synthetic method
-   static G c(dE var0) {
+   public static G c(dE var0) {
       return var0.hy;
    }
 
    // $FF: synthetic method
-   static G d(dE var0) {
+   public static G d(dE var0) {
       return var0.hz;
    }
 
    // $FF: synthetic method
-   static G[] e(dE var0) {
+   public static G[] e(dE var0) {
       return var0.ea;
    }
 
    // $FF: synthetic method
-   static dt f(dE var0) {
+   public static dt f(dE var0) {
       return var0.hB;
    }
 
    // $FF: synthetic method
-   static DataGridView g(dE var0) {
+   public static DataGridView g(dE var0) {
       return var0.hA;
    }
 }

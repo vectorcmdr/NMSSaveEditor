@@ -23,7 +23,7 @@ public class ee : ComboBoxModel {
    }
 
    public int getSize() {
-      return eb.aP().length;
+      return eb.aP().Length;
    }
 
    public gy H(int var1) {

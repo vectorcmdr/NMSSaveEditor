@@ -62,7 +62,7 @@ public class eH : ey {
       }
 
       this.description = var3;
-      this.ke = JavaCollections.UnmodifiableList(var6);
+      this.ke = UnmodifiableList(var6);
    }
 
    public eB ba() {

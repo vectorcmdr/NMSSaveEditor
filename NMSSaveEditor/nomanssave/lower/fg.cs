@@ -20,8 +20,8 @@ public class fg {
    }
 
    public byte[] toByteArray() {
-      byte[] var1 = new byte[this.bytes.length];
-      Array.Copy(this.bytes, 0, var1, 0, this.bytes.length);
+      byte[] var1 = new byte[this.bytes.Length];
+      Array.Copy(this.bytes, 0, var1, 0, this.bytes.Length);
       return var1;
    }
 
@@ -30,7 +30,7 @@ public class fg {
    }
 
    public int indexOf(int var1, int var2) {
-      for(int var3 = var2; var3 < this.bytes.length; ++var3) {
+      for(int var3 = var2; var3 < this.bytes.Length; ++var3) {
          if (var1 == (this.bytes[var3] & 255)) {
             return var3;
          }
@@ -40,7 +40,7 @@ public class fg {
    }
 
    public string substring(int var1) {
-      return this.Substring(var1, this.bytes.length - var1);
+      return this.Substring(var1, this.bytes.Length - var1);
    }
 
    public string substring(int var1, int var2) {
@@ -51,22 +51,22 @@ public class fg {
       StringBuilder var1 = new StringBuilder();
       bool var2 = false;
 
-      for(int var3 = 0; var3 < this.bytes.length; ++var3) {
+      for(int var3 = 0; var3 < this.bytes.Length; ++var3) {
          int var4 = this.bytes[var3] & 255;
          if (var3 == 0) {
             if (var4 != 94) {
                return this.ToString();
             }
 
-            var1.append('^');
+            var1.Append('^');
          } else if (var4 == 35) {
-            var1.append('#');
+            var1.Append('#');
             var2 = true;
          } else if (var2) {
-            var1.append((char)var4);
+            var1.Append((char)var4);
          } else {
-            var1.append("0123456789ABCDEFabcdef"[(this.bytes[var3] & 240) >> 4]);
-            var1.append("0123456789ABCDEFabcdef"[this.bytes[var3] & 15]);
+            var1.Append("0123456789ABCDEFabcdef"[(this.bytes[var3] & 240) >> 4]);
+            var1.Append("0123456789ABCDEFabcdef"[this.bytes[var3] & 15]);
          }
       }
 
@@ -80,10 +80,10 @@ public class fg {
          return false;
       } else {
          fg var2 = (fg)var1;
-         if (this.bytes.length != var2.bytes.length) {
+         if (this.bytes.Length != var2.bytes.Length) {
             return false;
          } else {
-            for(int var3 = 0; var3 < this.bytes.length; ++var3) {
+            for(int var3 = 0; var3 < this.bytes.Length; ++var3) {
                if (this.bytes[var3] != var2.bytes[var3]) {
                   return false;
                }

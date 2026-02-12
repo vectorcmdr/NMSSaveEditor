@@ -89,7 +89,7 @@ public class X : Panel {
 
    public void a(gj[] var1) {
       this.bT = var1;
-      if (var1.length == 0) {
+      if (var1.Length == 0) {
          this.bG.SetSelectedIndex(-1);
       } else {
          this.bG.SetSelectedIndex(0);
@@ -99,62 +99,62 @@ public class X : Panel {
    }
 
    // $FF: synthetic method
-   static gj[] a(X var0) {
+   public static gj[] a(X var0) {
       return var0.bT;
    }
 
    // $FF: synthetic method
-   static ComboBox b(X var0) {
+   public static ComboBox b(X var0) {
       return var0.bH;
    }
 
    // $FF: synthetic method
-   static G c(X var0) {
+   public static G c(X var0) {
       return var0.bI;
    }
 
    // $FF: synthetic method
-   static G d(X var0) {
+   public static G d(X var0) {
       return var0.bJ;
    }
 
    // $FF: synthetic method
-   static G e(X var0) {
+   public static G e(X var0) {
       return var0.bK;
    }
 
    // $FF: synthetic method
-   static G f(X var0) {
+   public static G f(X var0) {
       return var0.bL;
    }
 
    // $FF: synthetic method
-   static G g(X var0) {
+   public static G g(X var0) {
       return var0.bM;
    }
 
    // $FF: synthetic method
-   static CheckBox h(X var0) {
+   public static CheckBox h(X var0) {
       return var0.bN;
    }
 
    // $FF: synthetic method
-   static cN i(X var0) {
+   public static cN i(X var0) {
       return var0.bO;
    }
 
    // $FF: synthetic method
-   static cN j(X var0) {
+   public static cN j(X var0) {
       return var0.bP;
    }
 
    // $FF: synthetic method
-   static ComboBox k(X var0) {
+   public static ComboBox k(X var0) {
       return var0.bG;
    }
 
    // $FF: synthetic method
-   static void a(X var0, gj[] var1) {
+   public static void a(X var0, gj[] var1) {
       var0.bT = var1;
    }
 }

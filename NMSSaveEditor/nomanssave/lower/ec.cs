@@ -60,42 +60,42 @@ public class ec : ba {
    }
 
    // $FF: synthetic method
-   static CheckBox a(ec var0) {
+   public static CheckBox a(ec var0) {
       return var0.@if;
    }
 
    // $FF: synthetic method
-   static ComboBox b(ec var0) {
+   public static ComboBox b(ec var0) {
       return var0.ig;
    }
 
    // $FF: synthetic method
-   static G c(ec var0) {
+   public static G c(ec var0) {
       return var0.bj;
    }
 
    // $FF: synthetic method
-   static ComboBox d(ec var0) {
+   public static ComboBox d(ec var0) {
       return var0.ih;
    }
 
    // $FF: synthetic method
-   static G e(ec var0) {
+   public static G e(ec var0) {
       return var0.hO;
    }
 
    // $FF: synthetic method
-   static G f(ec var0) {
+   public static G f(ec var0) {
       return var0.ii;
    }
 
    // $FF: synthetic method
-   static void g(ec var0) {
+   public static void g(ec var0) {
       var0.aQ();
    }
 
    // $FF: synthetic method
-   static eb h(ec var0) {
+   public static eb h(ec var0) {
       return var0.ij;
    }
 }

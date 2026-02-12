@@ -114,7 +114,7 @@ public class du : Panel {
    }
 
    // $FF: synthetic method
-   static void c(du var0) {
+   public static void c(du var0) {
       var0.aM();
    }
 
@@ -124,7 +124,7 @@ public class du : Panel {
    }
 
    // $FF: synthetic method
-   static dt d(du var0) {
+   public static dt d(du var0) {
       return var0.ho;
    }
 }

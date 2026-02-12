@@ -48,7 +48,7 @@ public class ep : em {
    }
 
    public void a(gO[] var1) {
-      if (var1.length == 0) {
+      if (var1.Length == 0) {
          this.iy = new gO[0];
          this.iw.SetSelectedIndex(-1);
       } else {
@@ -60,12 +60,12 @@ public class ep : em {
    }
 
    // $FF: synthetic method
-   static gO[] a(ep var0) {
+   public static gO[] a(ep var0) {
       return var0.iy;
    }
 
    // $FF: synthetic method
-   static bO b(ep var0) {
+   public static bO b(ep var0) {
       return var0.ix;
    }
 }

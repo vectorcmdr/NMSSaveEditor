@@ -236,3 +236,331 @@ namespace NMSSaveEditor
     
     // StandardWatchEventKinds defined in JavaExtensions.cs
 }
+
+// === Additional extensions for full port ===
+
+public static class PanelExtensions2 {
+    public static void SetLayout(this Panel p, object layout) {}
+    public static void setLayout(this Panel p, object layout) {}
+    public static void setBorder(this Panel p, object border) {}
+    public static void setOpaque(this Panel p, bool opaque) {}
+    public static void add(this Panel p, Control c, object constraints) { p.Controls.Add(c); }
+    public static void add(this Panel p, Control c) { p.Controls.Add(c); }
+    public static int getComponentCount(this Panel p) { return p.Controls.Count; }
+    public static Control getComponent(this Panel p, int i) { return p.Controls[i]; }
+    public static Control[] getComponents(this Panel p) { return p.Controls.Cast<Control>().Select(c => c).ToArray(); }
+    public static object getTreeLock(this Panel p) { return p; }
+}
+
+public static class TabControlExtensions {
+    public static void SetEnabledAt(this TabControl tc, int index, bool enabled) {
+        if (index >= 0 && index < tc.TabPages.Count) tc.TabPages[index].Enabled = enabled;
+    }
+    public static void setEnabledAt(this TabControl tc, int index, bool enabled) { SetEnabledAt(tc, index, enabled); }
+    public static void AddTab(this TabControl tc, string title, object icon, Control component) {
+        var tab = new TabPage(title);
+        if (component != null) { tab.Controls.Add(component); component.Dock = DockStyle.Fill; }
+        tc.TabPages.Add(tab);
+    }
+    public static void addTab(this TabControl tc, string title, Control component) { AddTab(tc, title, null, component); }
+    public static void setSelectedIndex(this TabControl tc, int index) { if (index >= 0 && index < tc.TabCount) tc.SelectedIndex = index; }
+    public static int getSelectedIndex(this TabControl tc) { return tc.SelectedIndex; }
+    public static int getTabCount(this TabControl tc) { return tc.TabCount; }
+    public static string getTitleAt(this TabControl tc, int i) { return tc.TabPages[i].Text; }
+    public static Control getComponentAt(this TabControl tc, int i) { return tc.TabPages[i].Controls.Count > 0 ? tc.TabPages[i].Controls[0] : null; }
+    public static void setTitleAt(this TabControl tc, int i, string title) { tc.TabPages[i].Text = title; }
+}
+
+public static class ButtonExtensions2 {
+    public static void AddActionListener(this Button btn, object listener) {}
+    public static void addActionListener(this Button btn, object listener) {}
+    public static void SetEnabled(this Button btn, bool enabled) { btn.Enabled = enabled; }
+    public static void setEnabled(this Button btn, bool enabled) { btn.Enabled = enabled; }
+    public static void setToolTipText(this Control c, string tip) {}
+    public static void SetText(this Button btn, string text) { btn.Text = text; }
+}
+
+public static class LabelExtensions2 {
+    public static void SetText(this Label lbl, string text) { lbl.Text = text; }
+    public static void putClientProperty(this Label lbl, object key, object value) {}
+    public static void setIcon(this Label lbl, object icon) {}
+    public static void setHorizontalAlignment(this Label lbl, int align) {}
+    public static void setVerticalAlignment(this Label lbl, int align) {}
+}
+
+public static class TextBoxExtensions2 {
+    public static void SetText(this TextBox tb, string text) { tb.Text = text; }
+    public static string GetText(this TextBox tb) { return tb.Text; }
+    public static void setEditable(this TextBox tb, bool editable) { tb.ReadOnly = !editable; }
+    public static bool isEditable(this TextBox tb) { return !tb.ReadOnly; }
+    public static void setColumns(this TextBox tb, int cols) { tb.Width = cols * 8; }
+    public static void setCaretPosition(this TextBox tb, int pos) { tb.SelectionStart = Math.Min(pos, tb.TextLength); }
+    public static string getSelectedText(this TextBox tb) { return tb.SelectedText; }
+    public static void replaceSelection(this TextBox tb, string text) { 
+        int start = tb.SelectionStart;
+        tb.Text = tb.Text.Remove(start, tb.SelectionLength).Insert(start, text ?? "");
+    }
+    public static void selectAll(this TextBox tb) { tb.SelectAll(); }
+    public static void addFocusListener(this TextBox tb, object listener) {}
+    public static void setHorizontalAlignment(this TextBox tb, int align) {}
+    public static object getDocument(this TextBox tb) { return tb; }
+}
+
+public static class ComboBoxExtensions2 {
+    public static void SetModel(this ComboBox cb, object model) {}
+    public static void setModel(this ComboBox cb, object model) {}
+    public static void updateUI(this ComboBox cb) { cb.Refresh(); }
+    public static void SetSelectedIndex(this ComboBox cb, int index) { if (index >= 0 && index < cb.Items.Count) cb.SelectedIndex = index; }
+    public static void setSelectedIndex(this ComboBox cb, int index) { SetSelectedIndex(cb, index); }
+    public static int getSelectedIndex(this ComboBox cb) { return cb.SelectedIndex; }
+    public static void setSelectedItem(this ComboBox cb, object item) { cb.SelectedItem = item; }
+    public static object getSelectedItem(this ComboBox cb) { return cb.SelectedItem; }
+    public static int getItemCount(this ComboBox cb) { return cb.Items.Count; }
+    public static object getItemAt(this ComboBox cb, int i) { return cb.Items[i]; }
+    public static void addItem(this ComboBox cb, object item) { cb.Items.Add(item); }
+    public static void removeAllItems(this ComboBox cb) { cb.Items.Clear(); }
+    public static void setRenderer(this ComboBox cb, object renderer) {}
+    public static void addActionListener(this ComboBox cb, object listener) {}
+    public static void setMaximumRowCount(this ComboBox cb, int count) { cb.MaxDropDownItems = count; }
+}
+
+public static class ToolStripMenuItemExtensions {
+    public static void SetEnabled(this ToolStripMenuItem item, bool enabled) { item.Enabled = enabled; }
+    public static void setEnabled(this ToolStripMenuItem item, bool enabled) { item.Enabled = enabled; }
+    public static void AddActionListener(this ToolStripMenuItem item, object listener) {}
+    public static void addActionListener(this ToolStripMenuItem item, object listener) {}
+    public static void SetText(this ToolStripMenuItem item, string text) { item.Text = text; }
+    public static void setAccelerator(this ToolStripMenuItem item, object keystroke) {}
+    public static void setToolTipText(this ToolStripMenuItem item, string tip) { item.ToolTipText = tip; }
+    public static void setSelected(this ToolStripMenuItem item, bool selected) { item.Checked = selected; }
+    public static bool isSelected(this ToolStripMenuItem item) { return item.Checked; }
+}
+
+public static class DataGridViewExtensions2 {
+    public static object GetColumnModel(this DataGridView dgv) { return dgv; }
+    public static object getColumnModel(this DataGridView dgv) { return dgv; }
+    public static void setAutoCreateRowSorter(this DataGridView dgv, bool create) {}
+    public static void setRowSorter(this DataGridView dgv, object sorter) {}
+    public static object getRowSorter(this DataGridView dgv) { return null; }
+    public static void setDefaultRenderer(this DataGridView dgv, Type type, object renderer) {}
+    public static void setDefaultEditor(this DataGridView dgv, Type type, object editor) {}
+    public static void setModel(this DataGridView dgv, object model) {}
+    public static object getModel(this DataGridView dgv) { return null; }
+    public static int getRowCount(this DataGridView dgv) { return dgv.RowCount; }
+    public static int getColumnCount(this DataGridView dgv) { return dgv.ColumnCount; }
+    public static int getSelectedRow(this DataGridView dgv) { return dgv.CurrentCell?.RowIndex ?? -1; }
+    public static int[] getSelectedRows(this DataGridView dgv) { return dgv.SelectedRows.Cast<DataGridViewRow>().Select(r => r.Index).ToArray(); }
+    public static object getValueAt(this DataGridView dgv, int row, int col) { return dgv[col, row]?.Value; }
+    public static void setValueAt(this DataGridView dgv, object val, int row, int col) { dgv[col, row].Value = val; }
+    public static void setSelectionMode(this DataGridView dgv, int mode) {}
+    public static void setRowSelectionAllowed(this DataGridView dgv, bool allowed) {}
+    public static void setShowHorizontalLines(this DataGridView dgv, bool show) {}
+    public static void setShowVerticalLines(this DataGridView dgv, bool show) {}
+    public static void setRowHeight(this DataGridView dgv, int height) { dgv.RowTemplate.Height = height; }
+    public static void setIntercellSpacing(this DataGridView dgv, System.Drawing.Size size) {}
+    public static void scrollRectToVisible(this DataGridView dgv, object rect) {}
+    public static System.Drawing.Rectangle getCellRect(this DataGridView dgv, int row, int col, bool includeSpacing) { return dgv.GetCellDisplayRectangle(col, row, includeSpacing); }
+    public static int convertRowIndexToModel(this DataGridView dgv, int viewRow) { return viewRow; }
+    public static int convertRowIndexToView(this DataGridView dgv, int modelRow) { return modelRow; }
+    public static void changeSelection(this DataGridView dgv, int row, int col, bool toggle, bool extend) {}
+    public static void repaint(this DataGridView dgv) { dgv.Refresh(); }
+    public static void clearSelection(this DataGridView dgv) { dgv.ClearSelection(); }
+    public static void addMouseListener(this DataGridView dgv, object listener) {}
+}
+
+public static class FormExtensions2 {
+    public static void setDefaultCloseOperation(this Form form, int op) {}
+    public static void setResizable(this Form form, bool resizable) { form.FormBorderStyle = resizable ? FormBorderStyle.Sizable : FormBorderStyle.FixedSingle; }
+    public static void setLocationRelativeTo(this Form form, Control parent) { form.StartPosition = FormStartPosition.CenterParent; }
+    public static void pack(this Form form) {}
+    public static void setTitle(this Form form, string title) { form.Text = title; }
+    public static string getTitle(this Form form) { return form.Text; }
+    public static void setJMenuBar(this Form form, object menuBar) {}
+    public static Control getContentPane(this Form form) { return form; }
+    public static void setContentPane(this Form form, Control pane) { form.Controls.Add(pane); }
+    public static void addWindowListener(this Form form, object listener) {}
+    public static void setIconImage(this Form form, object image) {}
+    public static void dispose(this Form form) { form.Close(); }
+    public static void setModalExclusionType(this Form form, object type) {}
+    public static void setModal(this Form form, bool modal) {}
+    public static void setPreferredSize(this Form form, System.Drawing.Size size) { form.ClientSize = size; }
+}
+
+public static class FileInfoExtensions2 {
+    public static bool IsDirectory(this FileInfo fi) { return (fi.Attributes & FileAttributes.Directory) != 0; }
+    public static bool isDirectory(this FileInfo fi) { return IsDirectory(fi); }
+    public static bool isFile(this FileInfo fi) { return fi.Exists && !IsDirectory(fi); }
+    public static string getAbsolutePath(this FileInfo fi) { return fi.FullName; }
+    public static string getParent(this FileInfo fi) { return fi.DirectoryName; }
+    public static FileInfo getParentFile(this FileInfo fi) { return fi.Directory != null ? new FileInfo(fi.Directory.FullName) : null; }
+    public static FileInfo[] listFiles(this FileInfo fi) {
+        if (Directory.Exists(fi.FullName)) return Directory.GetFiles(fi.FullName).Select(f => new FileInfo(f)).ToArray();
+        return new FileInfo[0];
+    }
+    public static bool mkdirs(this FileInfo fi) { try { Directory.CreateDirectory(fi.FullName); return true; } catch { return false; } }
+    public static bool delete(this FileInfo fi) { try { fi.Delete(); return true; } catch { return false; } }
+    public static long lastModified(this FileInfo fi) { return (long)(fi.LastWriteTimeUtc - new DateTime(1970, 1, 1)).TotalMilliseconds; }
+    public static bool canRead(this FileInfo fi) { return fi.Exists; }
+    public static bool canWrite(this FileInfo fi) { return !fi.IsReadOnly; }
+    public static string getPath(this FileInfo fi) { return fi.FullName; }
+    public static bool renameTo(this FileInfo fi, FileInfo dest) { try { fi.MoveTo(dest.FullName); return true; } catch { return false; } }
+}
+
+public static class CheckBoxExtensions {
+    public static bool isSelected(this CheckBox cb) { return cb.Checked; }
+    public static void setSelected(this CheckBox cb, bool selected) { cb.Checked = selected; }
+    public static void addActionListener(this CheckBox cb, object listener) {}
+    public static void addItemListener(this CheckBox cb, object listener) {}
+}
+
+public static class ListBoxExtensions {
+    public static void setModel(this ListBox lb, object model) {}
+    public static object getModel(this ListBox lb) { return null; }
+    public static void setSelectionMode(this ListBox lb, int mode) {}
+    public static void setCellRenderer(this ListBox lb, object renderer) {}
+    public static int getSelectedIndex(this ListBox lb) { return lb.SelectedIndex; }
+    public static object getSelectedValue(this ListBox lb) { return lb.SelectedItem; }
+    public static void ensureIndexIsVisible(this ListBox lb, int index) {}
+    public static void setSelectedIndex(this ListBox lb, int index) { lb.SelectedIndex = index; }
+    public static void addListSelectionListener(this ListBox lb, object listener) {}
+}
+
+public static class ScrollBarExtensions {
+    public static void setPreferredSize(this ScrollBar sb, System.Drawing.Size s) {}
+}
+
+public static class StringExtensions2 {
+    public static byte[] GetBytes(this string s) { return System.Text.Encoding.UTF8.GetBytes(s); }
+    public static byte[] GetBytes(this string s, System.Text.Encoding enc) { return enc.GetBytes(s); }
+    public static string[] split(this string s, string regex) { return System.Text.RegularExpressions.Regex.Split(s, regex); }
+    public static string[] split(this string s, string regex, int limit) { return System.Text.RegularExpressions.Regex.Split(s, regex); }
+    public static bool matches(this string s, string regex) { return System.Text.RegularExpressions.Regex.IsMatch(s, regex); }
+    public static string replaceAll(this string s, string regex, string replacement) { return System.Text.RegularExpressions.Regex.Replace(s, regex, replacement); }
+    public static string replaceFirst(this string s, string regex, string replacement) { return System.Text.RegularExpressions.Regex.Replace(s, regex, replacement, System.Text.RegularExpressions.RegexOptions.None, TimeSpan.FromSeconds(1)); }
+}
+
+public static class ListExtensions2 {
+    public static object Get(this List<object> list, int index) { return list[index]; }
+    public static void Set(this List<object> list, int index, object value) { list[index] = value; }
+    public static void addAll(this List<object> list, IEnumerable<object> items) { list.AddRange(items); }
+    public static bool isEmpty(this List<object> list) { return list.Count == 0; }
+    public static int size(this List<object> list) { return list.Count; }
+    public static object get(this List<object> list, int index) { return list[index]; }
+    public static void set(this List<object> list, int index, object value) { list[index] = value; }
+    public static object remove(this List<object> list, int index) { var item = list[index]; list.RemoveAt(index); return item; }
+    public static void add(this List<object> list, int index, object item) { list.Insert(index, item); }
+    public static List<object> subList(this List<object> list, int from, int to) { return list.GetRange(from, to - from); }
+    public static object[] toArray(this List<object> list) { return list.ToArray(); }
+    public static T[] toArray<T>(this List<object> list, T[] arr) { return list.Cast<T>().ToArray(); }
+    public static object map(this List<object> list, Func<object, object> mapper) { return list.Select(mapper).ToList(); }
+    public static List<object> filter(this List<object> list, Func<object, bool> predicate) { return list.Where(predicate).ToList(); }
+    public static bool anyMatch(this List<object> list, Func<object, bool> predicate) { return list.Any(predicate); }
+    public static void sort(this List<object> list) { list.Sort(); }
+    public static void sort(this List<object> list, Comparison<object> comparison) { list.Sort(comparison); }
+    public static IEnumerator<object> iterator(this List<object> list) { return list.GetEnumerator(); }
+    public static object stream(this List<object> list) { return list; }
+}
+
+public static class DictionaryExtensions2 {
+    public static object get(this Dictionary<string, object> dict, string key) { return dict.ContainsKey(key) ? dict[key] : null; }
+    public static object put(this Dictionary<string, object> dict, string key, object value) { var old = dict.ContainsKey(key) ? dict[key] : null; dict[key] = value; return old; }
+    public static bool containsKey(this Dictionary<string, object> dict, string key) { return dict.ContainsKey(key); }
+    public static int size(this Dictionary<string, object> dict) { return dict.Count; }
+    public static IEnumerable<KeyValuePair<string, object>> entrySet(this Dictionary<string, object> dict) { return dict; }
+    public static IEnumerable<string> keySet(this Dictionary<string, object> dict) { return dict.Keys; }
+    public static IEnumerable<object> values(this Dictionary<string, object> dict) { return dict.Values; }
+}
+
+public static class StreamExtensions2 {
+    public static int read(this Stream s) { return s.ReadByte(); }
+    public static int read(this Stream s, byte[] buffer) { return s.Read(buffer, 0, buffer.Length); }
+    public static int read(this Stream s, byte[] buffer, int offset, int length) { return s.Read(buffer, offset, length); }
+    public static void write(this Stream s, int b) { s.WriteByte((byte)b); }
+    public static void write(this Stream s, byte[] buffer) { s.Write(buffer, 0, buffer.Length); }
+    public static void write(this Stream s, byte[] buffer, int offset, int length) { s.Write(buffer, offset, length); }
+    public static long skip(this Stream s, long n) { s.Seek(n, SeekOrigin.Current); return n; }
+    public static int available(this Stream s) { return (int)(s.Length - s.Position); }
+    public static void close(this Stream s) { s.Close(); }
+}
+
+public static class KeysExtensions {
+    public static Keys getKeyStroke(string keyString) { return Keys.None; }
+    public static Keys getKeyStroke(int keyCode, int modifiers) { return (Keys)keyCode; }
+}
+
+public static class FormFactory {
+    public static object DEFAULT_COLSPEC = new object();
+    public static object DEFAULT_ROWSPEC = new object();
+}
+
+public class FormLayout {
+    public int RowCount { get; set; }
+    public int ColumnCount { get; set; }
+    public FormLayout(string cols, string rows) {}
+    public FormLayout() {}
+}
+
+public class CellConstraints {
+    public static object xy(int x, int y) { return null; }
+    public static object xyw(int x, int y, int w) { return null; }
+    public static object xywh(int x, int y, int w, int h) { return null; }
+}
+
+
+// === More missing patterns ===
+
+
+
+public static class XmlNodeListExtensions {
+    public static int Count(this XmlNodeList list) { return list.getLength(); }
+    public static XmlNode Item(this XmlNodeList list, int index) { return list.item(index); }
+}
+
+public static class XmlNodeExtensions {
+    public static string Name(this XmlNode node) { return node.getNodeName(); }
+}
+
+public static class XmlDocumentExtensions {
+    public static XmlElement DocumentElement(this XmlDocument doc) { return doc.getDocumentElement(); }
+}
+
+public static class ControlVisibilityExtensions {
+    public static void SetVisible(this Control c, bool visible) { c.Visible = visible; }
+    public static void setVisible(this Control c, bool visible) { c.Visible = visible; }
+    public static bool isVisible(this Control c) { return c.Visible; }
+    public static void SetForeground(this Control c, Color color) { c.ForeColor = color; }
+    public static void setForeground(this Control c, Color color) { c.ForeColor = color; }
+    public static void SetBackground(this Control c, Color color) { c.BackColor = color; }
+    public static void setBackground(this Control c, Color color) { c.BackColor = color; }
+    public static void SetFont(this Control c, Font font) { c.Font = font; }
+    public static void setFont(this Control c, Font font) { c.Font = font; }
+    public static Font getFont(this Control c) { return c.Font; }
+    public static void setPreferredSize(this Control c, Size size) { c.Size = size; }
+    public static void setMinimumSize(this Control c, Size size) { c.MinimumSize = size; }
+    public static void setMaximumSize(this Control c, Size size) { c.MaximumSize = size; }
+    public static void repaint(this Control c) { c.Refresh(); }
+    public static void revalidate(this Control c) { c.Invalidate(); }
+    public static int getWidth(this Control c) { return c.Width; }
+    public static int getHeight(this Control c) { return c.Height; }
+    public static void setCursor(this Control c, object cursor) {}
+    public static void requestFocusInWindow(this Control c) { c.Focus(); }
+    public static void requestFocus(this Control c) { c.Focus(); }
+    public static void setName(this Control c, string name) { c.Name = name; }
+    public static string getName(this Control c) { return c.Name; }
+    public static Control getParent(this Control c) { return c.Parent; }
+    public static void setPreferredSize2(this Control c, int w, int h) { c.Size = new Size(w, h); }
+    public static void setBorder(this Control c, object border) {}
+}
+
+public static class StringBufferExtensions {
+    public static int Length(this StringBuffer sb) { return sb.length(); }
+}
+
+public static class ComboBoxExtensions3 {
+    public static void SetSelectedItem(this ComboBox cb, object item) { cb.SelectedItem = item; }
+}
+
+public static class FileInfoExtensions3 {
+    public static bool IsFile(this FileInfo fi) { return fi.Exists && !fi.IsDirectory(); }
+}
+

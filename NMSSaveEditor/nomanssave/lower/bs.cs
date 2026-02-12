@@ -44,7 +44,7 @@ public class bs : TableModel {
    }
 
    public int getRowCount() {
-      return bl.c(this.er) == null ? 0 : bl.c(this.er).length;
+      return bl.c(this.er) == null ? 0 : bl.c(this.er).Length;
    }
 
    public Object getValueAt(int var1, int var2) {

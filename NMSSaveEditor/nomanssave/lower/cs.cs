@@ -62,7 +62,7 @@ public class cs  {
    }
 
    // $FF: synthetic method
-   static Image @as() {
+   public static Image @as() {
       return fH;
    }
 }

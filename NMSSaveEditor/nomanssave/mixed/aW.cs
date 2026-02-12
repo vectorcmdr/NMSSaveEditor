@@ -90,22 +90,22 @@ public class aW : Form {
    }
 
    // $FF: synthetic method
-   static TextBox a(aW var0) {
+   public static TextBox a(aW var0) {
       return var0.ds;
    }
 
    // $FF: synthetic method
-   static RadioButton b(aW var0) {
+   public static RadioButton b(aW var0) {
       return var0.dw;
    }
 
    // $FF: synthetic method
-   static CheckBox c(aW var0) {
+   public static CheckBox c(aW var0) {
       return var0.dt;
    }
 
    // $FF: synthetic method
-   static CheckBox d(aW var0) {
+   public static CheckBox d(aW var0) {
       return var0.du;
    }
 }

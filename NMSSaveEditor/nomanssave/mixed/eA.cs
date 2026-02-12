@@ -42,11 +42,11 @@ public class eA {
       int var4 = 0;
 
       for(Matcher var5 = ey.bn().Match(var1); var5.Success; var4 = var5.end()) {
-         var3.append(var1.Substring(var4, var5.start()));
-         var3.append((string)var2.apply(var5.Groups[1]));
+         var3.Append(var1.Substring(var4, var5.start()));
+         var3.Append((string)var2.apply(var5.Groups[1]));
       }
 
-      var3.append(var1.Substring(var4));
+      var3.Append(var1.Substring(var4));
       return var3.ToString();
    }
 

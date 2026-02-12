@@ -71,22 +71,22 @@ public class ej  {
    }
 
    // $FF: synthetic method
-   static Image @as() {
+   public static Image @as() {
       return im;
    }
 
    // $FF: synthetic method
-   static Image au() {
+   public static Image au() {
       return io;
    }
 
    // $FF: synthetic method
-   static string a(ej var0, FileInfo var1) {
+   public static string a(ej var0, FileInfo var1) {
       return var0.a(var1);
    }
 
    // $FF: synthetic method
-   static Image aR() {
+   public static Image aR() {
       return ip;
    }
 }

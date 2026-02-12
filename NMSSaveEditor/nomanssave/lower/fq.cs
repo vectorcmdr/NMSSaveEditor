@@ -14,24 +14,24 @@ namespace NMSSaveEditor
 public interface fq {
    const int lz = 15;
 
-   static string c(long var0) {
+   public static string c(long var0) {
       int var2 = (int)(var0 % 60L);
       var0 /= 60L;
       int var3 = (int)(var0 % 60L);
       var0 /= 60L;
       int var4 = (int)var0;
       StringBuilder var5 = new StringBuilder();
-      var5.append(var4);
-      var5.append(':');
+      var5.Append(var4);
+      var5.Append(':');
       if (var3 < 10) {
-         var5.append(0);
+         var5.Append(0);
       }
 
-      var5.append(var3);
+      var5.Append(var3);
       return var5.ToString();
    }
 
-   static string c(fq var0) {
+   public static string c(fq var0) {
       if (var0 is fJ) {
          return "Steam";
       } else if (var0 is fT) {
@@ -41,7 +41,7 @@ public interface fq {
       }
    }
 
-   static fq a(FileInfo var0, fR var1) {
+   public static fq a(FileInfo var0, fR var1) {
       if (!var0.Exists) {
          return null;
       } else {
@@ -49,19 +49,19 @@ public interface fq {
             if (var0.IsDirectory()) {
                if (var0.listFiles((var0x) => {
                   return var0x.Name.Equals("containers.index");
-               }).length > 0) {
+               }).Length > 0) {
                   return new fT(var0, var1);
                }
 
                if (var0.listFiles((var0x) => {
                   return var0x.Name.Equals("accountdata.hg") || Pattern.Matches("save\\d*.hg", var0x.Name.ToLower());
-               }).length > 0) {
+               }).Length > 0) {
                   return new fJ(var0, var1);
                }
 
                if (var0.listFiles((var0x) => {
                   return Pattern.Matches("savedata\\d{2}.hg", var0x.Name.ToLower());
-               }).length > 0) {
+               }).Length > 0) {
                   return new fA(var0, var1);
                }
             } else {
@@ -85,7 +85,7 @@ public interface fq {
       }
    }
 
-   static fq a(string var0, FileInfo var1, fR var2) {
+   public static fq a(string var0, FileInfo var1, fR var2) {
       if (!var1.Exists) {
          return null;
       } else if (var0 == null) {

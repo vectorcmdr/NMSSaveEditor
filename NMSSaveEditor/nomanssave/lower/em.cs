@@ -18,7 +18,7 @@ public class em : Panel {
       GridBagLayout var1 = new GridBagLayout();
       var1.columnWidths = new int[]{aH.cI, 0, 0};
       var1.rowHeights = new int[1];
-      var1.columnWeights = new double[]{0.0D, 1.0D, Double.MIN_VALUE};
+      var1.columnWeights = new double[]{0.0D, 1.0D, double.MinValue};
       var1.rowWeights = new double[]{1.0D};
       this.SetLayout(var1);
       this.it = new ba();

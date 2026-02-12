@@ -29,7 +29,7 @@ public class ho : FilterOutputStream {
    }
 
    public void write(int var1) {
-      if (this.sg == this.buffer.length) {
+      if (this.sg == this.buffer.Length) {
          this.ek();
       }
 
@@ -37,18 +37,18 @@ public class ho : FilterOutputStream {
    }
 
    public void write(byte[] var1) {
-      this.Write(var1, 0, var1.length);
+      this.Write(var1, 0, var1.Length);
    }
 
    public void write(byte[] var1, int var2, int var3) {
-      if (var3 == this.buffer.length) {
+      if (var3 == this.buffer.Length) {
          this.ek();
       }
 
-      while(var3 >= this.buffer.length - this.sg) {
-         int var4 = this.buffer.length - this.sg;
+      while(var3 >= this.buffer.Length - this.sg) {
+         int var4 = this.buffer.Length - this.sg;
          Array.Copy(var1, var2, this.buffer, this.sg, var4);
-         this.sg = this.buffer.length;
+         this.sg = this.buffer.Length;
          this.ek();
          var2 += var4;
          var3 -= var4;

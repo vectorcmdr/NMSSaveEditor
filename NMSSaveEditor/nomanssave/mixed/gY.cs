@@ -36,7 +36,7 @@ public class gY : Stream {
    }
 
    public int read(byte[] var1) {
-      return this.read(var1, 0, var1.length);
+      return this.read(var1, 0, var1.Length);
    }
 
    public int read(byte[] var1, int var2, int var3) {

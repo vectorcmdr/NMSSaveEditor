@@ -116,27 +116,27 @@ public class cy : Form, TreeSelectionListener {
       StringBuffer var1 = new StringBuffer();
       char[] var2 = var0.ToCharArray();
 
-      for(int var3 = 0; var3 < var2.length; ++var3) {
+      for(int var3 = 0; var3 < var2.Length; ++var3) {
          if (var2[var3] != '\r' && var2[var3] != '\n' && var2[var3] != '\t') {
             if (var2[var3] == '\f') {
-               var1.append("\\f");
+               var1.Append("\\f");
             } else if (var2[var3] == '\b') {
-               var1.append("\\b");
+               var1.Append("\\b");
             } else if (var2[var3] == 11) {
-               var1.append("\\v");
+               var1.Append("\\v");
             } else if (var2[var3] == 0) {
-               var1.append("\\0");
+               var1.Append("\\0");
             } else if (var2[var3] >= ' ' && var2[var3] < 128) {
-               var1.append(var2[var3]);
+               var1.Append(var2[var3]);
             } else {
-               var1.append("\\u");
-               var1.append("0123456789ABCDEFabcdef"[var2[var3] >> 12 & 15]);
-               var1.append("0123456789ABCDEFabcdef"[var2[var3] >> 8 & 15]);
-               var1.append("0123456789ABCDEFabcdef"[var2[var3] >> 4 & 15]);
-               var1.append("0123456789ABCDEFabcdef"[var2[var3] & 15]);
+               var1.Append("\\u");
+               var1.Append("0123456789ABCDEFabcdef"[var2[var3] >> 12 & 15]);
+               var1.Append("0123456789ABCDEFabcdef"[var2[var3] >> 8 & 15]);
+               var1.Append("0123456789ABCDEFabcdef"[var2[var3] >> 4 & 15]);
+               var1.Append("0123456789ABCDEFabcdef"[var2[var3] & 15]);
             }
          } else {
-            var1.append(var2[var3]);
+            var1.Append(var2[var3]);
          }
       }
 
@@ -160,26 +160,26 @@ public class cy : Form, TreeSelectionListener {
       StringBuffer var2 = new StringBuffer();
       char[] var3 = var0.ToCharArray();
 
-      for(int var5 = 0; var5 < var3.length; ++var5) {
-         if (var3[var5] == '\\' && var5 + 5 < var3.length && var3[var5 + 1] == 'u') {
+      for(int var5 = 0; var5 < var3.Length; ++var5) {
+         if (var3[var5] == '\\' && var5 + 5 < var3.Length && var3[var5 + 1] == 'u') {
             try {
                int var4 = a(var3[var5 + 2]) << 12 | a(var3[var5 + 3]) << 8 | a(var3[var5 + 4]) << 4 | a(var3[var5 + 5]);
                if (var4 < 32) {
-                  var2.append(var3[var5]);
-                  var2.append(var3[var5 + 1]);
-                  var2.append(var3[var5 + 2]);
-                  var2.append(var3[var5 + 3]);
-                  var2.append(var3[var5 + 4]);
-                  var2.append(var3[var5 + 5]);
+                  var2.Append(var3[var5]);
+                  var2.Append(var3[var5 + 1]);
+                  var2.Append(var3[var5 + 2]);
+                  var2.Append(var3[var5 + 3]);
+                  var2.Append(var3[var5 + 4]);
+                  var2.Append(var3[var5 + 5]);
                } else {
-                  var2.append((char)var4);
+                  var2.Append((char)var4);
                }
 
                var5 += 5;
             } catch (Exception var7) {
             }
          } else {
-            var2.append(var3[var5]);
+            var2.Append(var3[var5]);
          }
       }
 
@@ -284,57 +284,57 @@ public class cy : Form, TreeSelectionListener {
    }
 
    // $FF: synthetic method
-   static string az() {
+   public static string az() {
       return ay();
    }
 
    // $FF: synthetic method
-   static void b(string var0, ClipboardOwner var1) {
+   public static void b(string var0, ClipboardOwner var1) {
       a(var0, var1);
    }
 
    // $FF: synthetic method
-   static string a(cy var0) {
+   public static string a(cy var0) {
       return var0.fS;
    }
 
    // $FF: synthetic method
-   static eY b(cy var0) {
+   public static eY b(cy var0) {
       return var0.fT;
    }
 
    // $FF: synthetic method
-   static void a(cy var0, bool var1) {
+   public static void a(cy var0, bool var1) {
       var0.ga = var1;
    }
 
    // $FF: synthetic method
-   static void b(cy var0, bool var1) {
+   public static void b(cy var0, bool var1) {
       var0.gb = var1;
    }
 
    // $FF: synthetic method
-   static TextBox c(cy var0) {
+   public static TextBox c(cy var0) {
       return var0.fX;
    }
 
    // $FF: synthetic method
-   static cJ d(cy var0) {
+   public static cJ d(cy var0) {
       return var0.fZ;
    }
 
    // $FF: synthetic method
-   static TreeView e(cy var0) {
+   public static TreeView e(cy var0) {
       return var0.fV;
    }
 
    // $FF: synthetic method
-   static Button f(cy var0) {
+   public static Button f(cy var0) {
       return var0.fU;
    }
 
    // $FF: synthetic method
-   static bool g(cy var0) {
+   public static bool g(cy var0) {
       return var0.ga;
    }
 }

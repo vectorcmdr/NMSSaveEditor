@@ -50,8 +50,8 @@ public class gc {
    public static void a(byte var0, StringBuilder var1) {
       int var2 = (240 & var0) >> 4;
       int var3 = 15 & var0;
-      var1.append("0123456789ABCDEF"[var2]);
-      var1.append("0123456789ABCDEF"[var3]);
+      var1.Append("0123456789ABCDEF"[var2]);
+      var1.Append("0123456789ABCDEF"[var3]);
    }
 
    public static void a(Stream var0, string var1) {
@@ -97,7 +97,7 @@ public class gc {
       hk.readFully(var0, var1);
 
       int var2;
-      for(var2 = 0; var2 < var1.length && (var1[var2] != 0 || var1[var2 + 1] != 0); var2 += 2) {
+      for(var2 = 0; var2 < var1.Length && (var1[var2] != 0 || var1[var2 + 1] != 0); var2 += 2) {
       }
 
       return new string(var1, 0, var2, "UTF-16LE");
@@ -108,7 +108,7 @@ public class gc {
       hk.readFully(var0, var1);
 
       int var2;
-      for(var2 = 0; var2 < var1.length && var1[var2] != 0; ++var2) {
+      for(var2 = 0; var2 < var1.Length && var1[var2] != 0; ++var2) {
       }
 
       return new string(var1, 0, var2, Encoding.UTF8);
@@ -116,10 +116,10 @@ public class gc {
 
    public static void c(Stream var0, string var1) {
       byte[] var2 = var1.GetBytes(Encoding.UTF8);
-      if (var2.length < 128) {
+      if (var2.Length < 128) {
          byte[] var3 = new byte[128];
-         Array.Copy(var2, 0, var3, 0, var2.length);
-         var3[var2.length] = 0;
+         Array.Copy(var2, 0, var3, 0, var2.Length);
+         var3[var2.Length] = 0;
          var2 = var3;
       }
 

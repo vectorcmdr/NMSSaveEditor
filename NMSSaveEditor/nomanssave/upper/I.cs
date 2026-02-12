@@ -100,52 +100,52 @@ public class I : em {
    }
 
    // $FF: synthetic method
-   static ge a(I var0) {
+   public static ge a(I var0) {
       return var0.br;
    }
 
    // $FF: synthetic method
-   static TextBox b(I var0) {
+   public static TextBox b(I var0) {
       return var0.bi;
    }
 
    // $FF: synthetic method
-   static G c(I var0) {
+   public static G c(I var0) {
       return var0.bj;
    }
 
    // $FF: synthetic method
-   static ComboBox d(I var0) {
+   public static ComboBox d(I var0) {
       return var0.bh;
    }
 
    // $FF: synthetic method
-   static TextBox e(I var0) {
+   public static TextBox e(I var0) {
       return var0.bm;
    }
 
    // $FF: synthetic method
-   static G f(I var0) {
+   public static G f(I var0) {
       return var0.bl;
    }
 
    // $FF: synthetic method
-   static Button g(I var0) {
+   public static Button g(I var0) {
       return var0.bn;
    }
 
    // $FF: synthetic method
-   static Button h(I var0) {
+   public static Button h(I var0) {
       return var0.bo;
    }
 
    // $FF: synthetic method
-   static Button i(I var0) {
+   public static Button i(I var0) {
       return var0.bp;
    }
 
    // $FF: synthetic method
-   static ComboBox j(I var0) {
+   public static ComboBox j(I var0) {
       return var0.bk;
    }
 }

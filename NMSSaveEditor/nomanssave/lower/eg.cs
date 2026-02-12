@@ -23,7 +23,7 @@ public class eg : ComboBoxModel {
    }
 
    public int getSize() {
-      return gL.Values.length;
+      return gL.Values.Length;
    }
 
    public gL I(int var1) {

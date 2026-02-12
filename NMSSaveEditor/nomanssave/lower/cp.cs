@@ -41,12 +41,12 @@ public class cp  {
    }
 
    // $FF: synthetic method
-   static Image @as() {
+   public static Image @as() {
       return fK;
    }
 
    // $FF: synthetic method
-   static Image au() {
+   public static Image au() {
       return fL;
    }
 }

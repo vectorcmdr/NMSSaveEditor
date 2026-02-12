@@ -24,8 +24,8 @@ public class dQ : ActionListener {
 
    public void actionPerformed(ActionEvent var1) {
       int var2 = dN.p(this.ia).SelectedIndex;
-      if (var2 >= 0 && var2 < dN.a(this.ia).length) {
-         if (dN.a(this.ia).length == 1) {
+      if (var2 >= 0 && var2 < dN.a(this.ia).Length) {
+         if (dN.a(this.ia).Length == 1) {
             this.bv.c("You cannot delete the only ship you have!");
          } else if (MessageBox.Show("Are you sure you want to delete this ship?\nAll items and technology in the ship inventory will be lost!".ToString(), "Delete".ToString(), MessageBoxButtons.YesNo) == 0) {
             this.bv.i(dN.a(this.ia)[var2].getIndex());

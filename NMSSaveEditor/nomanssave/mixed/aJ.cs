@@ -93,7 +93,7 @@ public class aJ : em {
    }
 
    // $FF: synthetic method
-   static gz a(aJ var0) {
+   public static gz a(aJ var0) {
       return var0.di;
    }
 }

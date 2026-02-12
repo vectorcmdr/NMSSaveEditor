@@ -175,7 +175,7 @@ public class fj : Closeable {
    public void c(fg var1) {
       this.lh.Write(34);
       byte[] var5;
-      int var4 = (var5 = var1.toByteArray()).length;
+      int var4 = (var5 = var1.toByteArray()).Length;
 
       for(int var3 = 0; var3 < var4; ++var3) {
          byte var2 = var5[var3];
@@ -198,9 +198,9 @@ public class fj : Closeable {
             this.lh.Write(var6);
          } else {
             StringBuffer var7 = new StringBuffer();
-            var7.append("\\u00");
-            var7.append("0123456789ABCDEFabcdef"[var6 >> 4 & 15]);
-            var7.append("0123456789ABCDEFabcdef"[var6 & 15]);
+            var7.Append("\\u00");
+            var7.Append("0123456789ABCDEFabcdef"[var6 >> 4 & 15]);
+            var7.Append("0123456789ABCDEFabcdef"[var6 & 15]);
             this.lh.Write(var7.ToString().GetBytes(StandardCharsets.UTF_8));
          }
       }
@@ -214,8 +214,8 @@ public class fj : Closeable {
 
    public void a(eY var1, eC var2) {
       this.lh.Write(123);
-      if (var1.length > 0) {
-         for(int var3 = 0; var3 < var1.length; ++var3) {
+      if (var1.Length > 0) {
+         for(int var3 = 0; var3 < var1.Length; ++var3) {
             if (var3 > 0) {
                this.lh.Write(44);
             }
@@ -235,8 +235,8 @@ public class fj : Closeable {
 
    public void a(eV var1, eC var2) {
       this.lh.Write(91);
-      if (var1.length > 0) {
-         for(int var3 = 0; var3 < var1.length; ++var3) {
+      if (var1.Length > 0) {
+         for(int var3 = 0; var3 < var1.Length; ++var3) {
             if (var3 > 0) {
                this.lh.Write(44);
             }

@@ -20,7 +20,7 @@ public class dA : ListModel {
    }
 
    public int getSize() {
-      return dz.a(this.hu).length;
+      return dz.a(this.hu).Length;
    }
 
    public ft m(int var1) {

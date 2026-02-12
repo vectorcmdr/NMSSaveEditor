@@ -23,7 +23,7 @@ public class bC : ComboBoxModel {
    }
 
    public int getSize() {
-      return 1 + (bl.f(this.er) == null ? 0 : bl.f(this.er).length);
+      return 1 + (bl.f(this.er) == null ? 0 : bl.f(this.er).Length);
    }
 
    public er v(int var1) {

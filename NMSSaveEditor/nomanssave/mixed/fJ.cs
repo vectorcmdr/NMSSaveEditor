@@ -32,7 +32,7 @@ public class fJ : fq {
 
       this.ms = new fM[30];
 
-      for(int var3 = 0; var3 < this.ms.length; ++var3) {
+      for(int var3 = 0; var3 < this.ms.Length; ++var3) {
          try {
             this.ms[var3] = new fM(this, var3);
          } catch (FileNotFoundException var7) {
@@ -146,8 +146,8 @@ public class fJ : fq {
 
    public static byte[] c(byte[] var0, byte[] var1) {
       MemoryStream var2 = new MemoryStream();
-      var2.Write(var0, 0, var0.length);
-      var2.Write(var1, 0, var1.length);
+      var2.Write(var0, 0, var0.Length);
+      var2.Write(var1, 0, var1.Length);
       long[] var3 = new long[]{96176015842230784L, -8446744073709551617L};
       hh.a(var2.toByteArray(), var3);
       long[] var4 = new long[]{var3[0] & 4294967295L, var3[0] >>> 32 & 4294967295L, var3[1] & 4294967295L, var3[1] >>> 32 & 4294967295L};
@@ -155,22 +155,22 @@ public class fJ : fq {
    }
 
    // $FF: synthetic method
-   static FileInfo a(fJ var0) {
+   public static FileInfo a(fJ var0) {
       return var0.lX;
    }
 
    // $FF: synthetic method
-   static byte[] d(byte[] var0, byte[] var1) {
+   public static byte[] d(byte[] var0, byte[] var1) {
       return c(var0, var1);
    }
 
    // $FF: synthetic method
-   static fM[] b(fJ var0) {
+   public static fM[] b(fJ var0) {
       return var0.ms;
    }
 
    // $FF: synthetic method
-   static Pattern cl() {
+   public static Pattern cl() {
       return lW;
    }
 }

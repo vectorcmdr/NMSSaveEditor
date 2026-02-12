@@ -1066,7 +1066,7 @@ public class hh {
    }
 
    public static long a(byte[] var0, long[] var1) {
-      return b((byte[])var0, 0, var0.length, var1);
+      return b((byte[])var0, 0, var0.Length, var1);
    }
 
    public long[] c(byte[] var1, int var2, int var3) {
@@ -1076,7 +1076,7 @@ public class hh {
    }
 
    public long[] j(byte[] var1) {
-      return this.c(var1, 0, var1.length);
+      return this.c(var1, 0, var1.Length);
    }
 
    public static long a(CharSequence var0, long[] var1) {
@@ -1094,7 +1094,7 @@ public class hh {
    }
 
    public static long a(long[] var0, long[] var1) {
-      return b((long[])var0, 0, var0.length, var1);
+      return b((long[])var0, 0, var0.Length, var1);
    }
 
    public long[] b(long[] var1, int var2, int var3) {
@@ -1104,7 +1104,7 @@ public class hh {
    }
 
    public long[] b(long[] var1) {
-      return this.b((long[])var1, 0, var1.length);
+      return this.b((long[])var1, 0, var1.Length);
    }
 }
 

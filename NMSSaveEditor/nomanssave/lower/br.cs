@@ -26,7 +26,7 @@ public class br : ActionListener {
       if (bl.b(this.er) >= 0) {
          string var2 = hg.eo().ToString();
          bl.a(this.er, this.bv.a(bl.c(this.er)[bl.b(this.er)].getIndex(), var2));
-         bl.g(this.er).SetEnabled(bl.c(this.er).length < 30 || en.aS());
+         bl.g(this.er).SetEnabled(bl.c(this.er).Length < 30 || en.aS());
          bl.e(this.er).updateUI();
       }
    }

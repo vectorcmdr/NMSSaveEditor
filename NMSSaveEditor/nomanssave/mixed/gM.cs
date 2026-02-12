@@ -22,7 +22,7 @@ public class gM {
       if (var1 != null && var2 != null) {
          gM[] var3 = new gM[Math.Min(var1.Count, var2.Count)];
 
-         for(int var4 = 0; var4 < var3.length; ++var4) {
+         for(int var4 = 0; var4 < var3.Length; ++var4) {
             var3[var4] = new gM(var1, var2.V(var4), var4);
          }
 

@@ -107,11 +107,11 @@ public class dj : em {
 
    public void a(gv[] var1, gB var2) {
       this.hj = var1;
-      if (var1.length == 0) {
+      if (var1.Length == 0) {
          this.ha.SetSelectedIndex(-1);
       } else {
          int var3 = var2 == null ? 0 : var2.dU();
-         if (var3 >= var1.length) {
+         if (var3 >= var1.Length) {
             var3 = 0;
          }
 
@@ -122,57 +122,57 @@ public class dj : em {
    }
 
    // $FF: synthetic method
-   static gv[] a(dj var0) {
+   public static gv[] a(dj var0) {
       return var0.hj;
    }
 
    // $FF: synthetic method
-   static G b(dj var0) {
+   public static G b(dj var0) {
       return var0.hb;
    }
 
    // $FF: synthetic method
-   static cN c(dj var0) {
+   public static cN c(dj var0) {
       return var0.hc;
    }
 
    // $FF: synthetic method
-   static cN d(dj var0) {
+   public static cN d(dj var0) {
       return var0.hd;
    }
 
    // $FF: synthetic method
-   static G e(dj var0) {
+   public static G e(dj var0) {
       return var0.he;
    }
 
    // $FF: synthetic method
-   static G f(dj var0) {
+   public static G f(dj var0) {
       return var0.hf;
    }
 
    // $FF: synthetic method
-   static G g(dj var0) {
+   public static G g(dj var0) {
       return var0.hg;
    }
 
    // $FF: synthetic method
-   static G h(dj var0) {
+   public static G h(dj var0) {
       return var0.hh;
    }
 
    // $FF: synthetic method
-   static bO i(dj var0) {
+   public static bO i(dj var0) {
       return var0.hi;
    }
 
    // $FF: synthetic method
-   static ComboBox j(dj var0) {
+   public static ComboBox j(dj var0) {
       return var0.ha;
    }
 
    // $FF: synthetic method
-   static void a(dj var0, gv[] var1) {
+   public static void a(dj var0, gv[] var1) {
       var0.hj = var1;
    }
 }

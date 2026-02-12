@@ -20,7 +20,7 @@ public class D : ComboBoxModel {
    }
 
    public int getSize() {
-      return Application.d(this.aZ).length;
+      return Application.d(this.aZ).Length;
    }
 
    public ft m(int var1) {
@@ -53,7 +53,7 @@ public class D : ComboBoxModel {
 lock(Application.n(this.aZ)) {
          int var4 = 0;
 
-         while(var4 < Application.d(this.aZ).length) {
+         while(var4 < Application.d(this.aZ).Length) {
             if (Application.d(this.aZ)[var4] != var1) {
                ++var4;
             } else {

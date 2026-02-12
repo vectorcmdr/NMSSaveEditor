@@ -66,17 +66,17 @@ public class dz : Form {
    }
 
    // $FF: synthetic method
-   static ft[] a(dz var0) {
+   public static ft[] a(dz var0) {
       return var0.hs;
    }
 
    // $FF: synthetic method
-   static ListBox b(dz var0) {
+   public static ListBox b(dz var0) {
       return var0.hr;
    }
 
    // $FF: synthetic method
-   static void a(dz var0, int var1) {
+   public static void a(dz var0, int var1) {
       var0.gU = var1;
    }
 }

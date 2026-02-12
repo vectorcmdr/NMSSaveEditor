@@ -22,7 +22,7 @@ public class dk : ComboBoxModel {
    }
 
    public int getSize() {
-      return dj.a(this.hl) == null ? 0 : dj.a(this.hl).length;
+      return dj.a(this.hl) == null ? 0 : dj.a(this.hl).Length;
    }
 
    public gv D(int var1) {

@@ -56,7 +56,7 @@ public class ge {
          var4.Add(new gt(cB(), var14, 36352, var2, var3, false, false));
       }
 
-      this.gT = JavaCollections.UnmodifiableList(var4);
+      this.gT = UnmodifiableList(var4);
       List<object> var6 = new List<object>();
       eV var7 = var1.d("NPCWorkers");
       string var8 = "";
@@ -85,7 +85,7 @@ public class ge {
          }
       }
 
-      this.nh = JavaCollections.UnmodifiableList(var6);
+      this.nh = UnmodifiableList(var6);
       List<object> var15 = new List<object>();
       eV var11 = var1.d("PersistentPlayerBases");
 
@@ -96,7 +96,7 @@ public class ge {
          }
       }
 
-      this.ni = JavaCollections.UnmodifiableList(var15);
+      this.ni = UnmodifiableList(var15);
    }
 
    public List<object> cC() {

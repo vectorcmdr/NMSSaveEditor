@@ -27,7 +27,7 @@ public class gp {
          List<object> var1 = new List<object>();
          gp[] var2 = new gp[var0 == null ? 0 : var0.Count];
 
-         for(int var3 = 0; var3 < var2.length; ++var3) {
+         for(int var3 = 0; var3 < var2.Length; ++var3) {
             eY var4 = var0.V(var3);
             var1.Add(new gp(var3, var4));
          }

@@ -25,7 +25,7 @@ public class dO : ComboBoxModel {
    }
 
    public int getSize() {
-      return dN.a(this.ia) == null ? 0 : dN.a(this.ia).length;
+      return dN.a(this.ia) == null ? 0 : dN.a(this.ia).Length;
    }
 
    public gH G(int var1) {
@@ -70,7 +70,7 @@ public class dO : ComboBoxModel {
          dN.m(this.ia).SetEnabled(false);
          dN.n(this.ia).SetEnabled(false);
          if (dN.o(this.ia) != null) {
-            for(int var3 = 0; var3 < dN.a(this.ia).length; ++var3) {
+            for(int var3 = 0; var3 < dN.a(this.ia).Length; ++var3) {
                if (this.hZ == dN.a(this.ia)[var3] && var3 == dN.o(this.ia).dV()) {
                   dN.m(this.ia).SetEnabled(true);
                   dN.n(this.ia).SetEnabled(true);

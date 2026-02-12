@@ -27,7 +27,7 @@ public class fH {
             this.lK = new byte[112];
             hk.readFully(var4, this.lK);
 
-            for(int var5 = 0; var5 < fA.bY().length; ++var5) {
+            for(int var5 = 0; var5 < fA.bY().Length; ++var5) {
                if (this.lK[var5] != fA.bY()[var5]) {
                   throw new IOException("Invalid header");
                }
@@ -75,10 +75,10 @@ public class fH {
    }
 
    public void writeBytes(byte[] var1) {
-      this.lK[92] = (byte)var1.length;
-      this.lK[93] = (byte)(var1.length >> 8);
-      this.lK[94] = (byte)(var1.length >> 16);
-      this.lK[95] = (byte)(var1.length >> 24);
+      this.lK[92] = (byte)var1.Length;
+      this.lK[93] = (byte)(var1.Length >> 8);
+      this.lK[94] = (byte)(var1.Length >> 16);
+      this.lK[95] = (byte)(var1.Length >> 24);
       FileStream var2 = new FileStream(new File(fA.a(this.ma), this.K()));
 
       try {

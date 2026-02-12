@@ -12,7 +12,7 @@ namespace NMSSaveEditor
 {
 
 public class gT {
-   static int rT = 12;
+   public static int rT = 12;
    public static double rU = 0.1D;
    public double[] rV;
    public double[] rW;
@@ -111,21 +111,21 @@ public class gT {
 
    public void a(double[] var1, StringBuffer var2, StringBuffer var3, StringBuffer var4, int var5) {
       int var6 = var2.Length;
-      var2.append(a(var1[0], var5));
-      var3.append(a(var1[1], var5));
-      var4.append(a(var1[2], var5));
+      var2.Append(a(var1[0], var5));
+      var3.Append(a(var1[1], var5));
+      var4.Append(a(var1[2], var5));
       int var7 = Math.Max(Math.Max(var2.Length, var3.Length), var4.Length);
 
       while(var2.Length < var7) {
-         var2.insert(var6, ' ');
+         var2.Insert(var6, ' ');
       }
 
       while(var3.Length < var7) {
-         var3.insert(var6, ' ');
+         var3.Insert(var6, ' ');
       }
 
       while(var4.Length < var7) {
-         var4.insert(var6, ' ');
+         var4.Insert(var6, ' ');
       }
 
    }
@@ -134,32 +134,32 @@ public class gT {
       int var5 = Math.Max(Math.Max(var1.Length, var2.Length), var3.Length);
 
       while(var1.Length < var5) {
-         var1.append(' ');
+         var1.Append(' ');
       }
 
       while(var2.Length < var5) {
-         var2.append(' ');
+         var2.Append(' ');
       }
 
       while(var3.Length < var5) {
-         var3.append(' ');
+         var3.Append(' ');
       }
 
-      var1.append("| ");
-      var2.append("| ");
-      var3.append("| ");
+      var1.Append("| ");
+      var2.Append("| ");
+      var3.Append("| ");
       this.a(this.rV, var1, var2, var3, var4);
-      var1.append(' ');
-      var2.append(' ');
-      var3.append(' ');
+      var1.Append(' ');
+      var2.Append(' ');
+      var3.Append(' ');
       this.a(this.rW, var1, var2, var3, var4);
-      var1.append(' ');
-      var2.append(' ');
-      var3.append(' ');
+      var1.Append(' ');
+      var2.Append(' ');
+      var3.Append(' ');
       this.a(this.rX, var1, var2, var3, var4);
-      var1.append(" |");
-      var2.append(" |");
-      var3.append(" |");
+      var1.Append(" |");
+      var2.Append(" |");
+      var3.Append(" |");
    }
 
    public string toString() {
@@ -172,29 +172,29 @@ public class gT {
       StringBuffer var4 = new StringBuffer();
       this.a(var2, var3, var4, var1);
       StringBuffer var5 = new StringBuffer();
-      var5.append(var2).append("\n");
-      var5.append(var3).append("\n");
-      var5.append(var4).append("\n");
+      var5.Append(var2).Append("\n");
+      var5.Append(var3).Append("\n");
+      var5.Append(var4).Append("\n");
       return var5.ToString();
    }
 
-   static string e(double[] var0) {
+   public static string e(double[] var0) {
       return a(var0, 12);
    }
 
-   static string a(double[] var0, int var1) {
+   public static string a(double[] var0, int var1) {
       return "[ " + b(var0[0], var1) + " , " + b(var0[1], var1) + " , " + b(var0[2], var1) + " ]";
    }
 
-   static string f(double[] var0) {
+   public static string f(double[] var0) {
       return b(var0, 12);
    }
 
-   static string b(double[] var0, int var1) {
+   public static string b(double[] var0, int var1) {
       return "[ " + b(var0[0], var1) + " , " + b(var0[1], var1) + " , " + b(var0[2], var1) + " , " + b(var0[3], var1) + " ]";
    }
 
-   static string a(double var0, int var2) {
+   public static string a(double var0, int var2) {
       if (double.IsInfinity(var0)) {
          return "Infinite";
       } else if (double.IsNaN(var0)) {
@@ -206,7 +206,7 @@ public class gT {
       }
    }
 
-   static string b(double var0, int var2) {
+   public static string b(double var0, int var2) {
       if (double.IsInfinity(var0)) {
          return "Infinite";
       } else if (double.IsNaN(var0)) {

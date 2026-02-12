@@ -145,7 +145,7 @@ public class gH {
          var15.Add(new gK(this, a(this, var8), var5, var9, 8, 6, false, true, var1));
       }
 
-      this.gT = JavaCollections.UnmodifiableList(var15);
+      this.gT = UnmodifiableList(var15);
    }
 
    public void a(FileInfo var1, bool var2) {
@@ -337,7 +337,7 @@ public class gH {
    }
 
    // $FF: synthetic method
-   static int b(gH var0) {
+   public static int b(gH var0) {
       return var0.ea();
    }
 }

@@ -21,7 +21,7 @@ public class bw : ComboBoxModel {
    }
 
    public int getSize() {
-      return gr.Values.length;
+      return gr.Values.Length;
    }
 
    public gr u(int var1) {
@@ -36,11 +36,11 @@ public class bw : ComboBoxModel {
 
    public void setSelectedItem(Object var1) {
       this.et = (gr)var1;
-      bl.a(this.er, bl.b(this.er) < 0 ? null : nomanssave.er.a(this.et));
-      bl.b(this.er, bl.b(this.er) < 0 ? null : nomanssave.er.b(this.et));
+      bl.a(this.er, bl.b(this.er) < 0 ? null : NMSSaveEditor.er.a(this.et));
+      bl.b(this.er, bl.b(this.er) < 0 ? null : NMSSaveEditor.er.b(this.et));
       if (bl.b(this.er) >= 0 && this.et != null && !this.et.Equals(bl.c(this.er)[bl.b(this.er)].da())) {
          bl.c(this.er)[bl.b(this.er)].c(this.et);
-         if (bl.a(this.er) != null && bl.a(this.er).length > 0) {
+         if (bl.a(this.er) != null && bl.a(this.er).Length > 0) {
             bl.c(this.er)[bl.b(this.er)].a(0, bl.a(this.er)[0]);
             bl.p(this.er).SetSelectedItem(bl.a(this.er)[0]);
          } else {
