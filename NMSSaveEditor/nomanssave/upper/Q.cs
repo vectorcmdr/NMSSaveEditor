@@ -41,7 +41,7 @@ public class Q : Form {
       this.bB = new TextBox();
       this.bB.addFocusListener(new S(this));
       var3.Add(this.bB, "4, 4, fill, default");
-      Label var6 = new Label("<html><font color=\"red\"><b>Please Note: No Man's Sky sometimes reverts these settings back to default.</b></font></html>");
+      Label var6 = new Label() { Text = "<html><font color=\"red\"><b>Please Note: No Man's Sky sometimes reverts these settings back to default.</b></font></html>" };
       var3.Add(var6, "2, 6, 3, 1, fill, center");
       var2.Add(var3);
       Panel var7 = new Panel();

@@ -1549,7 +1549,7 @@ public class Application {
       this.N.SetDefaultCloseOperation(3);
       this.N.AddWindowListener(new B(this));
       this.N.addComponentListener(new C(this));
-      this.O = new TabControl(1);
+      this.O = new TabControl();
       this.N.GetContentPane().Add(this.O, "Center");
       ba var3 = new ba(new int[]{NMSSaveEditor.aH.cH, NMSSaveEditor.aH.cI, 0});
       this.O.AddTab("Main", (Icon)null, var3, (string)null);
@@ -1580,7 +1580,7 @@ public class Application {
       var3.a("Description", this.V, 2);
       var3.Y();
       Panel var4 = new Panel();
-      var4.SetLayout(new FlowLayout(0, 0, 0));
+      var4.SetLayout(new FlowLayoutPanel());
       this.W = new Button() { Text = "Reload" };
       this.W.SetEnabled(false);
       this.W.AddActionListener((var1x) => {

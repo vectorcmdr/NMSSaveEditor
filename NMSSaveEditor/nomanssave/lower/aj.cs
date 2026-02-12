@@ -73,7 +73,7 @@ public class aj : Form {
       }
        this.ca = new Label[12];
        for(var11 = 0; var11 < 12; ++var11) {
-         this.ca[var11] = new Label(this.cb[0]);
+         this.ca[var11] = new Label() { Text = this.cb[0] };
          var10.Add(this.ca[var11]);
       }
        var3.Add(var10, "2, 14, 5, 1, fill, fill");

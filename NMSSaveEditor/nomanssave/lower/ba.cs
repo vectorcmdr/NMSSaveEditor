@@ -100,7 +100,7 @@ public class ba : Panel {
       this.dA.appendRow(FormFactory.LINE_GAP_ROWSPEC);
       int var5 = this.dA.RowCount - 1;
       if (var1 != null) {
-         Label var6 = new Label(var1 + ":");
+         Label var6 = new Label() { Text = var1 + ":" };
          if (var2) {
             var6.putClientProperty("FlatLaf.styleClass", "semibold");
          }

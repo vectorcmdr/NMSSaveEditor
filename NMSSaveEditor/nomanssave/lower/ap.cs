@@ -143,9 +143,9 @@ public class ap : Panel {
          this.cm[var20].AddActionListener(new ar(this));
          Image var23 = Application.a("UI-GLYPH" + (var20 + 1) + ".PNG");
          if (var23 == null) {
-            var4 = new Label(Convert.ToString(var20 + 1));
+            var4 = new Label() { Text = Convert.ToString(var20 + 1) };
          } else {
-            var4 = new Label() { Text = var23 };
+            var4 = new Label();
          }
           var19.Add(this.cm[var20], var21 + ", " + var22);
          var19.Add(var4, var21 + 1 + ", " + var22);

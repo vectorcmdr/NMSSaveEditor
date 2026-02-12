@@ -63,7 +63,7 @@ public class cy : Form, TreeSelectionListener {
       this.fU.AddActionListener(new cC(this));
       var4.Add(this.fU, "North");
       var4.Add(this.fW, "Center");
-      SplitContainer var5 = new SplitContainer(1, var4, this.fY);
+      SplitContainer var5 = new SplitContainer();
       var5.setDividerLocation(aH.a("JSONEditor.Divider", 280));
       var5.addPropertyChangeListener("dividerLocation", new cD(this));
       this.SetContentPane(var5);
