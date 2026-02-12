@@ -23,4 +23,8 @@
     </Content>
   </ItemGroup>
 
+  <Target Name="ZipBuildOutput" AfterTargets="Build">
+    <ZipDirectory SourceDirectory="$(OutputPath)" DestinationFile="$(MSBuildProjectDirectory)\bin\NMSSaveEditor-$(Version)-$(Configuration)-$(RuntimeIdentifier).zip" Overwrite="true" />
+  </Target>
+
 </Project>
