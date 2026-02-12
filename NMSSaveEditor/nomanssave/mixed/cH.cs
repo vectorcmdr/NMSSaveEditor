@@ -13,9 +13,9 @@ namespace NMSSaveEditor
 public class cH : TextAction, ClipboardOwner {
    public cy gg;
 
-public cH(cy var1) : base("Paste From Clipboard") {
-      this.gg = var1;
-   }
+// PORT_TODO: public cH(cy var1) : base("Paste From Clipboard") {
+      // PORT_TODO: this.gg = var1;
+   // PORT_TODO: }
 
    public void actionPerformed(EventArgs var1) {
       string var2 = cy.az();

@@ -18,42 +18,42 @@ public class Q : Form {
    public TextBox bB;
    public static Q bC;
 
-public Q(Frame var1) : base(var1) {
-      this.FormBorderStyle = FormBorderStyle.FixedDialog; //(false);
+// PORT_TODO: public Q(Frame var1) : base(var1) {
+      // PORT_TODO: this.FormBorderStyle = FormBorderStyle.FixedDialog; //(false);
       // setModalExclusionType not available in WinForms
-      this.Text = ("Change Stack Sizes");
+      // PORT_TODO: this.Text = ("Change Stack Sizes");
       // PORT_TODO: // PORT_TODO: this/* setModal */(true);
-      Panel var2 = new Panel();
-      this.setContentPane(var2);
-      var2.SuspendLayout(); // TODO: set layout new TableLayoutPanel());
-      Panel var3 = new Panel();
+      // PORT_TODO: Panel var2 = new Panel();
+      // PORT_TODO: this.setContentPane(var2);
+      // PORT_TODO: var2.SuspendLayout(); // TODO: set layout new TableLayoutPanel());
+      // PORT_TODO: Panel var3 = new Panel();
       // TODO: var3.SuspendLayout(); // TODO: set layout /* FormLayout */ null, FormFactory.LABEL_COMPONENT_GAP_COLSPEC, ColumnSpec.decode("250px"), FormFactory.LABEL_COMPONENT_GAP_COLSPEC}, new RowSpec[]{FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, RowSpec.decode("20dlu"), FormFactory.LINE_GAP_ROWSPEC}));
-      Label var4 = new Label() { Text = "Substances:" };
-      var3.Controls.Add(var4);
-      this.bA = new TextBox();
-      this.bA.addFocusListener(new R(this));
-      var3.Add(this.bA, "4, 2, fill, default");
-      Label var5 = new Label() { Text = "Products:" };
-      var3.Controls.Add(var5);
-      this.bB = new TextBox();
-      this.bB.addFocusListener(new S(this));
-      var3.Add(this.bB, "4, 4, fill, default");
-      Label var6 = new Label() { Text = "<html><font color=\"red\"><b>Please Note: No Man's Sky sometimes reverts these settings back to default.</b></font></html>" };
-      var3.Controls.Add(var6);
-      var2.Add(var3);
-      Panel var7 = new Panel();
-      var7.SuspendLayout(); // TODO: set layout new FlowLayoutPanel(2));
-      var2.Controls.Add(var7);
-      Button var8 = new Button() { Text = "Save" };
+      // PORT_TODO: Label var4 = new Label() { Text = "Substances:" };
+      // PORT_TODO: var3.Controls.Add(var4);
+      // PORT_TODO: this.bA = new TextBox();
+      // PORT_TODO: this.bA.addFocusListener(new R(this));
+      // PORT_TODO: var3.Add(this.bA, "4, 2, fill, default");
+      // PORT_TODO: Label var5 = new Label() { Text = "Products:" };
+      // PORT_TODO: var3.Controls.Add(var5);
+      // PORT_TODO: this.bB = new TextBox();
+      // PORT_TODO: this.bB.addFocusListener(new S(this));
+      // PORT_TODO: var3.Add(this.bB, "4, 4, fill, default");
+      // PORT_TODO: Label var6 = new Label() { Text = "<html><font color=\"red\"><b>Please Note: No Man's Sky sometimes reverts these settings back to default.</b></font></html>" };
+      // PORT_TODO: var3.Controls.Add(var6);
+      // PORT_TODO: var2.Add(var3);
+      // PORT_TODO: Panel var7 = new Panel();
+      // PORT_TODO: var7.SuspendLayout(); // TODO: set layout new FlowLayoutPanel(2));
+      // PORT_TODO: var2.Controls.Add(var7);
+      // PORT_TODO: Button var8 = new Button() { Text = "Save" };
       // PORT_TODO: var8.Click += (new T(this));
-      var7.Add(var8);
-      this.getRootPane().setDefaultButton(var8);
-      Button var9 = new Button() { Text = "Cancel" };
+      // PORT_TODO: var7.Add(var8);
+      // PORT_TODO: this.getRootPane().setDefaultButton(var8);
+      // PORT_TODO: Button var9 = new Button() { Text = "Cancel" };
       // PORT_TODO: var9.Click += (new U(this));
-      var7.Add(var9);
+      // PORT_TODO: var7.Add(var9);
       // PORT_TODO: this.getRootPane().registerKeyboardAction(new V(this), /* KeyStroke */ Keys.None /* (27, 0) */, 2);
-      this.PerformLayout();
-   }
+      // PORT_TODO: this.PerformLayout();
+   // PORT_TODO: }
 
    public W a(W var1, int var2, int var3) {
       this.bw = var1;

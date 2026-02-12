@@ -118,10 +118,11 @@ public class fq {
    public virtual ft[] bU() { return new ft[0]; }
 
    public ft[] bV() {
-      return bU().Where((var0) => {
+      // PORT_TODO: return bU().Where((var0) => {
          // PORT_TODO: return !var0.Count == 0;
-      }).ToArray();
-   }
+      // PORT_TODO: }).ToArray();
+       return new ft[0]; // PORT_TODO: stub return
+    }
 
    public virtual int W(string var1) { return 0; }
 

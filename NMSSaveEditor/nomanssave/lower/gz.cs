@@ -295,6 +295,7 @@ public class gz {
    public void g(double var1) {
       // PORT_TODO: long var3 = Math.Round(var1 * 900.0D);
       if (true) { // PORT_TODO: original condition had errors
+      long var3 = 0; // PORT_TODO: stub declaration
          this.oI.b("HazardTimeAlive", (object)((int)(var3)));
       } else {
          throw new Exception("Stat value out of range");

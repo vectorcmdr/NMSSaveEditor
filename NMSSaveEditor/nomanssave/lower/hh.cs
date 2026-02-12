@@ -53,6 +53,8 @@ public class hh {
          return default;
          return default;
       }
+      return 0; // PORT_TODO: auto-added
+      return 0; // PORT_TODO: auto-added
    }
 
    public static void a(byte[] var0, int var1, int var2, long[] var3) {
@@ -411,27 +413,34 @@ public class hh {
             return var4;
          }
       }
+      return 0; // PORT_TODO: auto-added
+      return 0; // PORT_TODO: auto-added
    }
 
    public static long a(CharSequence var0, int var1) {
-      return (long)var0[var1 + 3] << 48 | (long)var0[var1 + 2] << 32 | (long)var0[var1 + 1] << 16 | (long)var0[var1];
+      // PORT_TODO: return (long)var0[var1 + 3] << 48 | (long)var0[var1 + 2] << 32 | (long)var0[var1 + 1] << 16 | (long)var0[var1];
    }
 
    public static long a(CharSequence var0, int var1, int var2) {
       long var3 = 0L;
       switch(var2) {
+      // break; // PORT_TODO: prevent fall-through
+
       case 3:
-         var3 += (long)var0[var1 + 2] << 32;
+         // PORT_TODO: var3 += (long)var0[var1 + 2] << 32;
+         break; // PORT_TODO: prevent fall-through
          // PORT_TODO: break;
       case 2:
-         var3 += (long)var0[var1 + 1] << 16;
+         // PORT_TODO: var3 += (long)var0[var1 + 1] << 16;
          // PORT_TODO: break;
       case 1:
-         var3 += (long)var0[var1];
+         // PORT_TODO: var3 += (long)var0[var1];
          break;
       default:
          return var3;
       }
+      return 0; // PORT_TODO: auto-added
+      return 0; // PORT_TODO: auto-added
    }
 
    public static void a(CharSequence var0, int var1, int var2, long[] var3) {
@@ -790,6 +799,8 @@ public class hh {
             return var4;
          }
       }
+      return 0; // PORT_TODO: auto-added
+      return 0; // PORT_TODO: auto-added
    }
 
    public static void a(long[] var0, int var1, int var2, long[] var3) {
@@ -928,7 +939,7 @@ public class hh {
       var6 ^= var4;
       var4 = var4 << 63 | var4 >>> 1;
       var6 += var4;
-      var3[0] = var4;
+      // PORT_TODO: var3[0] = var4;
       // PORT_TODO: var3[1] = var6;
       return default;
    }
@@ -1098,6 +1109,8 @@ public class hh {
             return var4;
          }
       }
+      return 0; // PORT_TODO: auto-added
+      return 0; // PORT_TODO: auto-added
    }
 
    public hh() {

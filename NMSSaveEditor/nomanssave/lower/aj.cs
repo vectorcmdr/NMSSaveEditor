@@ -23,76 +23,80 @@ public class aj : Form {
    public static string ce = "0123456789ABCDEF";
    public static aj cf = null;
 
-public aj(Frame var1) : base(var1) {
-      this.FormBorderStyle = FormBorderStyle.FixedDialog; //(false);
+// PORT_TODO: public aj(Frame var1) : base(var1) {
+      // PORT_TODO: this.FormBorderStyle = FormBorderStyle.FixedDialog; //(false);
       // setModalExclusionType not available in WinForms
-      this.Text = ("Coordinate Viewer");
+      // PORT_TODO: this.Text = ("Coordinate Viewer");
       // PORT_TODO: // PORT_TODO: this/* setModal */(true);
-      Panel var2 = new Panel();
-      this.setContentPane(var2);
-      var2.SuspendLayout(); // TODO: set layout new TableLayoutPanel());
-      Panel var3 = new Panel();
+      // PORT_TODO: Panel var2 = new Panel();
+      // PORT_TODO: this.setContentPane(var2);
+      // PORT_TODO: var2.SuspendLayout(); // TODO: set layout new TableLayoutPanel());
+      // PORT_TODO: Panel var3 = new Panel();
       // TODO: var3.SuspendLayout(); // TODO: set layout /* FormLayout */ null, FormFactory.LABEL_COMPONENT_GAP_COLSPEC, ColumnSpec.decode("default:grow"), FormFactory.LABEL_COMPONENT_GAP_COLSPEC, ColumnSpec.decode("100px"), FormFactory.LABEL_COMPONENT_GAP_COLSPEC}, new RowSpec[]{FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, RowSpec.decode("bottom:10px"), FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC}));
-      Label var4 = new Label() { Text = "Search:" };
+      // PORT_TODO: Label var4 = new Label() { Text = "Search:" };
       // TODO: var4.putClientProperty(...);
-      var3.Controls.Add(var4);
-      this.m = new TextBox();
-      var3.Add(this.m, "4, 2, fill, default");
-      Button var5 = new Button() { Text = "Search" };
+      // PORT_TODO: var3.Controls.Add(var4);
+      // PORT_TODO: this.m = new TextBox();
+      // PORT_TODO: var3.Add(this.m, "4, 2, fill, default");
+      // PORT_TODO: Button var5 = new Button() { Text = "Search" };
       // PORT_TODO: var5.Click += (new ak(this));
-      var3.Controls.Add(var5);
-      Label var6 = new Label() { Text = "Coordinate Location:" };
+      // PORT_TODO: var3.Controls.Add(var5);
+      // PORT_TODO: Label var6 = new Label() { Text = "Coordinate Location:" };
       // TODO: var6.putClientProperty(...);
-      var3.Controls.Add(var6);
-      Label var7 = new Label() { Text = "Galaxy:" };
-      var3.Controls.Add(var7);
-      this.bX = new ComboBox();
-      this.bX.DataSource = (new al(this));
-      var3.Add(this.bX, "4, 8, 3, 1, fill, default");
-      Label var8 = new Label() { Text = "Galactic Addr:" };
-      var3.Controls.Add(var8);
-      this.bY = new TextBox();
-      this.bY.setEditable(false);
-      var3.Add(this.bY, "4, 10, 3, 1, fill, default");
-      Label var9 = new Label() { Text = "Portal Addr:" };
-      var3.Controls.Add(var9);
-      this.bZ = new TextBox();
-      this.bZ.setEditable(false);
-      var3.Add(this.bZ, "4, 12, 3, 1, fill, default");
-      Panel var10 = new Panel();
-      var10.setBackground(Color.Gray);
-      var10.Padding = new Padding(0); /* setBorder */ //(new LineBorder(Color.DARK_GRAY));
-      var10.SuspendLayout(); // TODO: set layout new FlowLayoutPanel(1, 5, 5));
-      var10.setMinimumSize(new Size(449, 42));
-      this.cb = new Image[16];
+      // PORT_TODO: var3.Controls.Add(var6);
+      // PORT_TODO: Label var7 = new Label() { Text = "Galaxy:" };
+      // PORT_TODO: var3.Controls.Add(var7);
+      // PORT_TODO: this.bX = new ComboBox();
+      // PORT_TODO: this.bX.DataSource = (new al(this));
+      // PORT_TODO: var3.Add(this.bX, "4, 8, 3, 1, fill, default");
+      // PORT_TODO: Label var8 = new Label() { Text = "Galactic Addr:" };
+      // PORT_TODO: var3.Controls.Add(var8);
+      // PORT_TODO: this.bY = new TextBox();
+      // PORT_TODO: this.bY.setEditable(false);
+      // PORT_TODO: var3.Add(this.bY, "4, 10, 3, 1, fill, default");
+      // PORT_TODO: Label var9 = new Label() { Text = "Portal Addr:" };
+      // PORT_TODO: var3.Controls.Add(var9);
+      // PORT_TODO: this.bZ = new TextBox();
+      // PORT_TODO: this.bZ.setEditable(false);
+      // PORT_TODO: var3.Add(this.bZ, "4, 12, 3, 1, fill, default");
+      // PORT_TODO: Panel var10 = new Panel();
+      // PORT_TODO: var10.setBackground(Color.Gray);
+      // PORT_TODO: var10.Padding = new Padding(0); /* setBorder */ //(new LineBorder(Color.DARK_GRAY));
+      // PORT_TODO: var10.SuspendLayout(); // TODO: set layout new FlowLayoutPanel(1, 5, 5));
+      // PORT_TODO: var10.setMinimumSize(new Size(449, 42));
+      // PORT_TODO: this.cb = new Image[16];
 
-      int var11;
-      for(var11 = 0; var11 < 16; ++var11) {
-         this.cb[var11] = Application.a("UI-GLYPH" + (var11 + 1) + ".PNG");
-      }
+// PORT_TODO: 
+      // PORT_TODO: int var11;
+      // PORT_TODO: for(var11 = 0; var11 < 16; ++var11) {
+         // PORT_TODO: this.cb[var11] = Application.a("UI-GLYPH" + (var11 + 1) + ".PNG");
+      // PORT_TODO: }
 
-      this.ca = new Label[12];
+// PORT_TODO: 
+      // PORT_TODO: this.ca = new Label[12];
 
-      for(var11 = 0; var11 < 12; ++var11) {
+// PORT_TODO: 
+      // PORT_TODO: for(var11 = 0; var11 < 12; ++var11) {
          // PORT_TODO: this.ca[var11] = new Label(this.cb[0]);
-         var10.Add(this.ca[var11]);
-      }
+         // PORT_TODO: var10.Add(this.ca[var11]);
+      // PORT_TODO: }
 
-      var3.Controls.Add(var10);
-      var2.Add(var3);
-      Panel var14 = new Panel();
-      var14.SuspendLayout(); // TODO: set layout new FlowLayoutPanel(2));
-      var2.Controls.Add(var14);
-      Button var12 = new Button() { Text = "Save / Warp" };
+// PORT_TODO: 
+      // PORT_TODO: var3.Controls.Add(var10);
+      // PORT_TODO: var2.Add(var3);
+      // PORT_TODO: Panel var14 = new Panel();
+      // PORT_TODO: var14.SuspendLayout(); // TODO: set layout new FlowLayoutPanel(2));
+      // PORT_TODO: var2.Controls.Add(var14);
+      // PORT_TODO: Button var12 = new Button() { Text = "Save / Warp" };
       // PORT_TODO: var12.Click += (new am(this));
-      var14.Add(var12);
-      this.getRootPane().setDefaultButton(var12);
-      Button var13 = new Button() { Text = "Cancel" };
+      // PORT_TODO: var14.Add(var12);
+      // PORT_TODO: this.getRootPane().setDefaultButton(var12);
+      // PORT_TODO: Button var13 = new Button() { Text = "Cancel" };
       // PORT_TODO: var13.Click += (new an(this));
-      var14.Add(var13);
+      // PORT_TODO: var14.Add(var13);
       // PORT_TODO: this.getRootPane().registerKeyboardAction(new ao(this), /* KeyStroke */ Keys.None /* (27, 0) */, 2);
-      this.PerformLayout();
-   }
+      // PORT_TODO: this.PerformLayout();
+   // PORT_TODO: }
 
    public void P() {
       this.bX.SelectedIndex = (this.cc.es() >= bW.Count ? -1 : this.cc.es());

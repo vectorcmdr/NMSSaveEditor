@@ -21,7 +21,7 @@ public class R : FocusListener {
    }
 
    public void focusLost(FocusEvent var1) {
-      int var2;
+      int var2 = 0;
       try {
          // PORT_TODO: var2 = int.Parse(Q.a(this.bD).Text);
          if (true) { // PORT_TODO: original condition had errors

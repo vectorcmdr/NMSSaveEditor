@@ -27,9 +27,9 @@ public class cy : Form, TreeSelectionListener {
    public bool ge = true;
    public string gf = "";
 
-public cy(Application var1) : base(var1.g()) {
-      Rectangle var2 = new Rectangle(100, 100, 1000, 700);
-      Point var3 = var1.g().getLocation();
+// PORT_TODO: public cy(Application var1) : base(var1.g()) {
+      // PORT_TODO: Rectangle var2 = new Rectangle(100, 100, 1000, 700);
+      // PORT_TODO: Point var3 = var1.g().getLocation();
       // PORT_TODO: // PORT_TODO: var2.x = aH.a("JSONEditor.X", var3.x + 10);
       // PORT_TODO: // PORT_TODO: var2.y = aH.a("JSONEditor.Y", var3.y + 10);
       // PORT_TODO: // PORT_TODO: var2.width = aH.a("JSONEditor.Width", 1000);
@@ -37,42 +37,42 @@ public cy(Application var1) : base(var1.g()) {
       // PORT_TODO: this.Bounds = new Rectangle(var2);
       // PORT_TODO: // PORT_TODO: this/* setDefaultCloseOperation */(0);
       // setModalExclusionType not available in WinForms
-      this.Text = ("JSON Editor (Advanced Users Only)");
+      // PORT_TODO: this.Text = ("JSON Editor (Advanced Users Only)");
       // PORT_TODO: // PORT_TODO: this/* setModal */(true);
-      this.addComponentListener(new cz(this));
-      this.fV = new JTree();
+      // PORT_TODO: this.addComponentListener(new cz(this));
+      // PORT_TODO: this.fV = new JTree();
       // PORT_TODO: // PORT_TODO: this.fV.DataSource = (new cI(this, (cI)null));
-      this.fV.setCellRenderer(new cA(this));
-      this.fV.addTreeSelectionListener(this);
-      this.fW = new Panel();
-      this.fW.setViewportView(this.fV);
-      this.fX = new TextBox();
+      // PORT_TODO: this.fV.setCellRenderer(new cA(this));
+      // PORT_TODO: this.fV.addTreeSelectionListener(this);
+      // PORT_TODO: this.fW = new Panel();
+      // PORT_TODO: this.fW.setViewportView(this.fV);
+      // PORT_TODO: this.fX = new TextBox();
       // TODO: fX.putClientProperty(...);
-      this.fX.setEditable(false);
-      this.fX.setTabSize(4);
+      // PORT_TODO: this.fX.setEditable(false);
+      // PORT_TODO: this.fX.setTabSize(4);
       // PORT_TODO: this.fX.getActionMap().Put("copy-to-clipboard", new cG(this));
       // PORT_TODO: this.fX.getActionMap().Put("paste-from-clipboard", new cH(this));
-      this.fX.getDocument().addDocumentListener(new cB(this));
-      this.fY = new Panel();
+      // PORT_TODO: this.fX.getDocument().addDocumentListener(new cB(this));
+      // PORT_TODO: this.fY = new Panel();
       // PORT_TODO: this.fY.setRowHeaderView(new cW(this.fX));
-      this.fY.setViewportView(this.fX);
-      Panel var4 = new Panel();
-      var4.SuspendLayout(); // TODO: set layout new TableLayoutPanel());
-      this.fU = new Button() { Text = "Validate" };
+      // PORT_TODO: this.fY.setViewportView(this.fX);
+      // PORT_TODO: Panel var4 = new Panel();
+      // PORT_TODO: var4.SuspendLayout(); // TODO: set layout new TableLayoutPanel());
+      // PORT_TODO: this.fU = new Button() { Text = "Validate" };
       // PORT_TODO: this.fU.Click += (new cC(this));
-      var4.Add(this.fU, "North");
-      var4.Controls.Add(this.fW);
-      JSplitPane var5 = new JSplitPane(1, var4, this.fY);
-      var5.setDividerLocation(aH.a("JSONEditor.Divider", 280));
+      // PORT_TODO: var4.Add(this.fU, "North");
+      // PORT_TODO: var4.Controls.Add(this.fW);
+      // PORT_TODO: JSplitPane var5 = new JSplitPane(1, var4, this.fY);
+      // PORT_TODO: var5.setDividerLocation(aH.a("JSONEditor.Divider", 280));
       // var5.addPropertyChangeListener - use property events instead
-      this.setContentPane(var5);
+      // PORT_TODO: this.setContentPane(var5);
       // this.addWindowListener - use FormClosing event instead
-      cF var6 = new cF(this);
-      /* TODO: port from Java - this.fV.getInputMap().Put(KeyStroke.getKeyStroke(70, 2), "find"); */
+      // PORT_TODO: cF var6 = new cF(this);
+      // PORT_TODO: /* TODO: port from Java - this.fV.getInputMap().Put(KeyStroke.getKeyStroke(70, 2), "find"); */
       // PORT_TODO: this.fV.getActionMap().Put("find", var6);
-      /* TODO: port from Java - this.fX.getInputMap().Put(KeyStroke.getKeyStroke(70, 2), "find"); */
+      // PORT_TODO: /* TODO: port from Java - this.fX.getInputMap().Put(KeyStroke.getKeyStroke(70, 2), "find"); */
       // PORT_TODO: this.fX.getActionMap().Put("find", var6);
-   }
+   // PORT_TODO: }
 
    public bool a(string var1, eY var2) {
       this.Text = ("JSON Editor (Advanced Users Only)");
@@ -91,7 +91,7 @@ public cy(Application var1) : base(var1.g()) {
          ++var4;
          if (true) { // PORT_TODO: original condition had errors
             var3 = var4;
-            break;
+            // break; // PORT_TODO: no enclosing loop
          }
       }
 
@@ -115,29 +115,38 @@ public cy(Application var1) : base(var1.g()) {
       StringBuilder var1 = new StringBuilder();
       // PORT_TODO: char[] var2 = var0.ToCharArray();
 
-      for(int var3 = 0; var3 < var2.Length; ++var3) {
-         if (var2[var3] != '\r' && var2[var3] != '\n' && var2[var3] != '\t') {
-            if (var2[var3] == '\f') {
-               var1.Append("\\f");
-            } else if (var2[var3] == '\b') {
-               var1.Append("\\b");
-            } else if (var2[var3] == 11) {
-               var1.Append("\\v");
-            } else if (var2[var3] == 0) {
-               var1.Append("\\0");
-            } else if (var2[var3] >= ' ' && var2[var3] < 128) {
-               var1.Append(var2[var3]);
-            } else {
-               var1.Append("\\u");
-               var1.Append("0123456789ABCDEFabcdef"[var2[var3] >> 12 & 15]);
-               var1.Append("0123456789ABCDEFabcdef"[var2[var3] >> 8 & 15]);
-               var1.Append("0123456789ABCDEFabcdef"[var2[var3] >> 4 & 15]);
-               var1.Append("0123456789ABCDEFabcdef"[var2[var3] & 15]);
-            }
-         } else {
-            var1.Append(var2[var3]);
-         }
-      }
+      // PORT_TODO: for(int var3 = 0; var3 < var2.Length; ++var3) {
+      // PORT_TODO: object var2 = null; // PORT_TODO: stub declaration
+         // PORT_TODO: if (var2[var3] != '\r' && var2[var3] != '\n' && var2[var3] != '\t') {
+      // PORT_TODO: var2 = null; // PORT_TODO: stub declaration
+            // PORT_TODO: if (var2[var3] == '\f') {
+      // PORT_TODO: var2 = null; // PORT_TODO: stub declaration
+               // PORT_TODO: var1.Append("\\f");
+            // PORT_TODO: } else if (var2[var3] == '\b') {
+      // PORT_TODO: var2 = null; // PORT_TODO: stub declaration
+               // PORT_TODO: var1.Append("\\b");
+            // PORT_TODO: } else if (var2[var3] == 11) {
+      // PORT_TODO: var2 = null; // PORT_TODO: stub declaration
+               // PORT_TODO: var1.Append("\\v");
+            // PORT_TODO: } else if (var2[var3] == 0) {
+      // PORT_TODO: var2 = null; // PORT_TODO: stub declaration
+               // PORT_TODO: var1.Append("\\0");
+            // PORT_TODO: } else if (var2[var3] >= ' ' && var2[var3] < 128) {
+      // PORT_TODO: var2 = null; // PORT_TODO: stub declaration
+               // PORT_TODO: var1.Append(var2[var3]);
+            // PORT_TODO: } else {
+      // PORT_TODO: var2 = null; // PORT_TODO: stub declaration
+               // PORT_TODO: var1.Append("\\u");
+               // PORT_TODO: var1.Append("0123456789ABCDEFabcdef"[var2[var3] >> 12 & 15]);
+               // PORT_TODO: var1.Append("0123456789ABCDEFabcdef"[var2[var3] >> 8 & 15]);
+               // PORT_TODO: var1.Append("0123456789ABCDEFabcdef"[var2[var3] >> 4 & 15]);
+               // PORT_TODO: var1.Append("0123456789ABCDEFabcdef"[var2[var3] & 15]);
+            // PORT_TODO: }
+         // PORT_TODO: } else {
+      // PORT_TODO: var2 = null; // PORT_TODO: stub declaration
+            // PORT_TODO: var1.Append(var2[var3]);
+         // PORT_TODO: }
+      // PORT_TODO: }
 
       return var1.ToString();
    }

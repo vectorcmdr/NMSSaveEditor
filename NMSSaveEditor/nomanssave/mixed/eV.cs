@@ -300,12 +300,13 @@ public class eV {
 
    public bool g(object var1) {
       // PORT_TODO: int var2 = this.IndexOf(var1);
-      if (var2 < 0) {
-         return false;
-      } else {
+      // PORT_TODO: if (var2 < 0) {
+      // PORT_TODO: int var2 = 0; // PORT_TODO: stub declaration
+         // PORT_TODO: return false;
+      // PORT_TODO: } else {
          // PORT_TODO: this.Remove(var2);
-         return true;
-      }
+         // PORT_TODO: return true;
+      // PORT_TODO: }
    }
 
    public Stream bB() {

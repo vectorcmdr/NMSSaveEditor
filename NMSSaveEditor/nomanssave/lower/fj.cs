@@ -117,9 +117,9 @@ public class fj : Closeable {
    public void k(object var1) {
       if (var1 == null) {
          // PORT_TODO: this.lh.Write(le);
-      } else if (var1.Equals(Boolean.TRUE)) {
+      // PORT_TODO: } else if (var1.Equals(Boolean.TRUE)) {
          // PORT_TODO: this.lh.Write(lf);
-      } else if (var1.Equals(Boolean.FALSE)) {
+      // PORT_TODO: } else if (var1.Equals(Boolean.FALSE)) {
          // PORT_TODO: this.lh.Write(lg);
       } else if (var1 is string) {
          this.writeString((string)var1);
@@ -144,9 +144,9 @@ public class fj : Closeable {
    public void a(object var1, eC var2) {
       if (var1 == null) {
          // PORT_TODO: this.lh.Write(le);
-      } else if (var1.Equals(Boolean.TRUE)) {
+      // PORT_TODO: } else if (var1.Equals(Boolean.TRUE)) {
          // PORT_TODO: this.lh.Write(lf);
-      } else if (var1.Equals(Boolean.FALSE)) {
+      // PORT_TODO: } else if (var1.Equals(Boolean.FALSE)) {
          // PORT_TODO: this.lh.Write(lg);
       } else if (var1 is string) {
          this.writeString((string)var1);
@@ -176,6 +176,7 @@ public class fj : Closeable {
       // PORT_TODO: int var4 = (var5 = var1.ToArray()).Length;
 
       if (false) { // PORT_TODO: original loop had errors
+      byte var2 = 0; // PORT_TODO: stub declaration
          // PORT_TODO: byte var2 = var5[var3];
          int var6 = var2 & 255;
          if (var6 == 13) {

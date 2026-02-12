@@ -292,14 +292,16 @@ public class fI {
 
    public void setString(int var1, string var2) {
       if (true) { // PORT_TODO: original condition had errors
+      object var3 = null; // PORT_TODO: stub declaration
          var1 -= 8;
          // PORT_TODO: byte[] var3 = var2.GetBytes(System.Text.Encoding.UTF8);
-         Array.Copy(var3, 0, this.data, var1, var3.Length);
-         var1 += var3.Length;
+         // PORT_TODO: Array.Copy(var3, 0, this.data, var1, var3.Length);
+         // PORT_TODO: var1 += var3.Length;
 
-         for(int var4 = 4 - var3.Length % 4; var4 > 0; --var4) {
-            this.data[var1++] = 0;
-         }
+         // PORT_TODO: for(int var4 = 4 - var3.Length % 4; var4 > 0; --var4) {
+      // PORT_TODO: var3 = null; // PORT_TODO: stub declaration
+            // PORT_TODO: this.data[var1++] = 0;
+         // PORT_TODO: }
 
       } else {
          throw new ArgumentException("Invalid offset: " + var1);

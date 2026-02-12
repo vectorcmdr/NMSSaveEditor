@@ -13,9 +13,9 @@ namespace NMSSaveEditor
 public class cG : TextAction, ClipboardOwner {
    public cy gg;
 
-public cG(cy var1) : base("Copy From Clipboard") {
-      this.gg = var1;
-   }
+// PORT_TODO: public cG(cy var1) : base("Copy From Clipboard") {
+      // PORT_TODO: this.gg = var1;
+   // PORT_TODO: }
 
    public void actionPerformed(EventArgs var1) {
       // PORT_TODO: string var2 = ((TextBox)var1.getSource()).getSelectedText();

@@ -32,7 +32,7 @@ public class bJ : G {
       if (bE.a(this.ey) == null) {
          return "";
       } else {
-         string var2;
+         string var2 = default;
          switch(this.type) {
          case 0:
             // PORT_TODO: var2 = (bE.a(this.ey).ToString().a(this.ez));
@@ -75,7 +75,7 @@ public class bJ : G {
                   bE.a(this.ey, gs.pS, (var3).ToString());
                }
 
-               return var1;
+               return var1 = default;
             } catch (Exception var6) {
                return var2;
             }
@@ -108,165 +108,197 @@ public class bJ : G {
       if (true) { // PORT_TODO: original condition had errors
          return var10000;
       } else {
+      object var0 = null; // PORT_TODO: stub declaration
          // PORT_TODO: int[] var0 = new int[gs.Values.Length];
 
          try {
-            var0[gs.pO.ordinal()] = 25;
+      var0 = null; // PORT_TODO: stub declaration
+            // PORT_TODO: var0[gs.pO.ordinal()] = 25;
          } catch (NoSuchFieldError var31) {
          }
 
          try {
-            var0[gs.pU.ordinal()] = 31;
+      var0 = null; // PORT_TODO: stub declaration
+            // PORT_TODO: var0[gs.pU.ordinal()] = 31;
          } catch (NoSuchFieldError var30) {
          }
 
          try {
-            var0[gs.pN.ordinal()] = 24;
+      var0 = null; // PORT_TODO: stub declaration
+            // PORT_TODO: var0[gs.pN.ordinal()] = 24;
          } catch (NoSuchFieldError var29) {
          }
 
          try {
-            var0[gs.pT.ordinal()] = 30;
+      var0 = null; // PORT_TODO: stub declaration
+            // PORT_TODO: var0[gs.pT.ordinal()] = 30;
          } catch (NoSuchFieldError var28) {
          }
 
          try {
-            var0[gs.pI.ordinal()] = 19;
+      var0 = null; // PORT_TODO: stub declaration
+            // PORT_TODO: var0[gs.pI.ordinal()] = 19;
          } catch (NoSuchFieldError var27) {
          }
 
          try {
-            var0[gs.pC.ordinal()] = 13;
+      var0 = null; // PORT_TODO: stub declaration
+            // PORT_TODO: var0[gs.pC.ordinal()] = 13;
          } catch (NoSuchFieldError var26) {
          }
 
          try {
-            var0[gs.pF.ordinal()] = 16;
+      var0 = null; // PORT_TODO: stub declaration
+            // PORT_TODO: var0[gs.pF.ordinal()] = 16;
          } catch (NoSuchFieldError var25) {
          }
 
          try {
-            var0[gs.pE.ordinal()] = 15;
+      var0 = null; // PORT_TODO: stub declaration
+            // PORT_TODO: var0[gs.pE.ordinal()] = 15;
          } catch (NoSuchFieldError var24) {
          }
 
          try {
-            var0[gs.pR.ordinal()] = 28;
+      var0 = null; // PORT_TODO: stub declaration
+            // PORT_TODO: var0[gs.pR.ordinal()] = 28;
          } catch (NoSuchFieldError var23) {
          }
 
          try {
-            var0[gs.pD.ordinal()] = 14;
+      var0 = null; // PORT_TODO: stub declaration
+            // PORT_TODO: var0[gs.pD.ordinal()] = 14;
          } catch (NoSuchFieldError var22) {
          }
 
          try {
-            var0[gs.pB.ordinal()] = 12;
+      var0 = null; // PORT_TODO: stub declaration
+            // PORT_TODO: var0[gs.pB.ordinal()] = 12;
          } catch (NoSuchFieldError var21) {
          }
 
          try {
-            var0[gs.pQ.ordinal()] = 27;
+      var0 = null; // PORT_TODO: stub declaration
+            // PORT_TODO: var0[gs.pQ.ordinal()] = 27;
          } catch (NoSuchFieldError var20) {
          }
 
          try {
-            var0[gs.pL.ordinal()] = 22;
+      var0 = null; // PORT_TODO: stub declaration
+            // PORT_TODO: var0[gs.pL.ordinal()] = 22;
          } catch (NoSuchFieldError var19) {
          }
 
          try {
-            var0[gs.pv.ordinal()] = 6;
+      var0 = null; // PORT_TODO: stub declaration
+            // PORT_TODO: var0[gs.pv.ordinal()] = 6;
          } catch (NoSuchFieldError var18) {
          }
 
          try {
-            var0[gs.pM.ordinal()] = 23;
+      var0 = null; // PORT_TODO: stub declaration
+            // PORT_TODO: var0[gs.pM.ordinal()] = 23;
          } catch (NoSuchFieldError var17) {
          }
 
          try {
-            var0[gs.pH.ordinal()] = 18;
+      var0 = null; // PORT_TODO: stub declaration
+            // PORT_TODO: var0[gs.pH.ordinal()] = 18;
          } catch (NoSuchFieldError var16) {
          }
 
          try {
-            var0[gs.pK.ordinal()] = 21;
+      var0 = null; // PORT_TODO: stub declaration
+            // PORT_TODO: var0[gs.pK.ordinal()] = 21;
          } catch (NoSuchFieldError var15) {
          }
 
          try {
-            var0[gs.pG.ordinal()] = 17;
+      var0 = null; // PORT_TODO: stub declaration
+            // PORT_TODO: var0[gs.pG.ordinal()] = 17;
          } catch (NoSuchFieldError var14) {
          }
 
          try {
-            var0[gs.pS.ordinal()] = 29;
+      var0 = null; // PORT_TODO: stub declaration
+            // PORT_TODO: var0[gs.pS.ordinal()] = 29;
          } catch (NoSuchFieldError var13) {
          }
 
          try {
-            var0[gs.pr.ordinal()] = 2;
+      var0 = null; // PORT_TODO: stub declaration
+            // PORT_TODO: var0[gs.pr.ordinal()] = 2;
          } catch (NoSuchFieldError var12) {
          }
 
          try {
-            var0[gs.pu.ordinal()] = 5;
+      var0 = null; // PORT_TODO: stub declaration
+            // PORT_TODO: var0[gs.pu.ordinal()] = 5;
          } catch (NoSuchFieldError var11) {
          }
 
          try {
-            var0[gs.pt.ordinal()] = 4;
+      var0 = null; // PORT_TODO: stub declaration
+            // PORT_TODO: var0[gs.pt.ordinal()] = 4;
          } catch (NoSuchFieldError var10) {
          }
 
          try {
-            var0[gs.pq.ordinal()] = 1;
+      var0 = null; // PORT_TODO: stub declaration
+            // PORT_TODO: var0[gs.pq.ordinal()] = 1;
          } catch (NoSuchFieldError var9) {
          }
 
          try {
-            var0[gs.ps.ordinal()] = 3;
+      var0 = null; // PORT_TODO: stub declaration
+            // PORT_TODO: var0[gs.ps.ordinal()] = 3;
          } catch (NoSuchFieldError var8) {
          }
 
          try {
-            var0[gs.pJ.ordinal()] = 20;
+      var0 = null; // PORT_TODO: stub declaration
+            // PORT_TODO: var0[gs.pJ.ordinal()] = 20;
          } catch (NoSuchFieldError var7) {
          }
 
          try {
-            var0[gs.pw.ordinal()] = 7;
+      var0 = null; // PORT_TODO: stub declaration
+            // PORT_TODO: var0[gs.pw.ordinal()] = 7;
          } catch (NoSuchFieldError var6) {
          }
 
          try {
-            var0[gs.px.ordinal()] = 8;
+      var0 = null; // PORT_TODO: stub declaration
+            // PORT_TODO: var0[gs.px.ordinal()] = 8;
          } catch (NoSuchFieldError var5) {
          }
 
          try {
-            var0[gs.pA.ordinal()] = 11;
+      var0 = null; // PORT_TODO: stub declaration
+            // PORT_TODO: var0[gs.pA.ordinal()] = 11;
          } catch (NoSuchFieldError var4) {
          }
 
          try {
-            var0[gs.pz.ordinal()] = 10;
+      var0 = null; // PORT_TODO: stub declaration
+            // PORT_TODO: var0[gs.pz.ordinal()] = 10;
          } catch (NoSuchFieldError var3) {
          }
 
          try {
-            var0[gs.pP.ordinal()] = 26;
+      var0 = null; // PORT_TODO: stub declaration
+            // PORT_TODO: var0[gs.pP.ordinal()] = 26;
          } catch (NoSuchFieldError var2) {
          }
 
          try {
-            var0[gs.py.ordinal()] = 9;
+      var0 = null; // PORT_TODO: stub declaration
+            // PORT_TODO: var0[gs.py.ordinal()] = 9;
          } catch (NoSuchFieldError var1) {
          }
 
-         eA = var0;
-         return var0;
+         // PORT_TODO: eA = var0;
+         // PORT_TODO: return var0;
       }
    }
 }

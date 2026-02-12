@@ -253,53 +253,56 @@ public class Application {
       this.aS = false;
       this.aT = false;
       // PORT_TODO: this.aU = false;
-      this.aV = (var1x, var2x, var3x) => {
-         this.aO = true;
-         this.aP = true;
-         if (var3x == null) {
-            hc.info("Removing " + var1x);
-         } else {
-            string var4;
-            if (var3x is eY) {
-               var4 = "[OBJECT]";
-            } else if (var3x is eV) {
-               var4 = "[ARRAY]";
-            } else {
-               var4 = var3x.ToString();
-            }
+      // PORT_TODO: this.aV = (var1x, var2x, var3x) => {
+         // PORT_TODO: this.aO = true;
+         // PORT_TODO: this.aP = true;
+         // PORT_TODO: if (var3x == null) {
+            // PORT_TODO: hc.info("Removing " + var1x);
+         // PORT_TODO: } else {
+            // PORT_TODO: string var4;
+            // PORT_TODO: if (var3x is eY) {
+               // PORT_TODO: var4 = "[OBJECT]";
+            // PORT_TODO: } else if (var3x is eV) {
+               // PORT_TODO: var4 = "[ARRAY]";
+            // PORT_TODO: } else {
+               // PORT_TODO: var4 = var3x.ToString();
+            // PORT_TODO: }
 
-            hc.info("Setting " + var1x + ": " + var4);
-         }
-      };
-      this.aW = (var1x, var2x, var3x) => {
-         this.aL = true;
-         if (var1x.StartsWith("PlayerStateData.Multitools")) {
-            int var4 = this.aK.J("PlayerStateData.ActiveMultioolIndex");
-            if (var1x.StartsWith("PlayerStateData.Multitools[" + var4 + "].Store.")) {
-               eY var5 = this.aK.H("PlayerStateData.Multitools[" + var4 + "].Store");
-               this.aK.b("PlayerStateData.WeaponInventory", (object)var5.bE());
-            } else if (var1x.Equals("PlayerStateData.Multitools[" + var4 + "].Seed[1]")) {
-               this.aK.b("PlayerStateData.CurrentWeapon.GenerationSeed[1]", var3x);
-            } else if (var1x.Equals("PlayerStateData.Multitools[" + var4 + "].Resource.Filename")) {
-               this.aK.b("PlayerStateData.CurrentWeapon.Filename", var3x);
-            }
-         }
+// PORT_TODO: 
+            // PORT_TODO: hc.info("Setting " + var1x + ": " + var4);
+         // PORT_TODO: }
+      // PORT_TODO: };
+      // PORT_TODO: this.aW = (var1x, var2x, var3x) => {
+         // PORT_TODO: this.aL = true;
+         // PORT_TODO: if (var1x.StartsWith("PlayerStateData.Multitools")) {
+            // PORT_TODO: int var4 = this.aK.J("PlayerStateData.ActiveMultioolIndex");
+            // PORT_TODO: if (var1x.StartsWith("PlayerStateData.Multitools[" + var4 + "].Store.")) {
+               // PORT_TODO: eY var5 = this.aK.H("PlayerStateData.Multitools[" + var4 + "].Store");
+               // PORT_TODO: this.aK.b("PlayerStateData.WeaponInventory", (object)var5.bE());
+            // PORT_TODO: } else if (var1x.Equals("PlayerStateData.Multitools[" + var4 + "].Seed[1]")) {
+               // PORT_TODO: this.aK.b("PlayerStateData.CurrentWeapon.GenerationSeed[1]", var3x);
+            // PORT_TODO: } else if (var1x.Equals("PlayerStateData.Multitools[" + var4 + "].Resource.Filename")) {
+               // PORT_TODO: this.aK.b("PlayerStateData.CurrentWeapon.Filename", var3x);
+            // PORT_TODO: }
+         // PORT_TODO: }
 
-         if (var3x == null) {
-            hc.info("Removing " + var1x);
-         } else {
-            string var6;
-            if (var3x is eY) {
-               var6 = "OBJECT";
-            } else if (var3x is eV) {
-               var6 = "ARRAY[" + ((eV)var3x).Count + "]";
-            } else {
-               var6 = fh.b(var3x, false);
-            }
+// PORT_TODO: 
+         // PORT_TODO: if (var3x == null) {
+            // PORT_TODO: hc.info("Removing " + var1x);
+         // PORT_TODO: } else {
+            // PORT_TODO: string var6;
+            // PORT_TODO: if (var3x is eY) {
+               // PORT_TODO: var6 = "OBJECT";
+            // PORT_TODO: } else if (var3x is eV) {
+               // PORT_TODO: var6 = "ARRAY[" + ((eV)var3x).Count + "]";
+            // PORT_TODO: } else {
+               // PORT_TODO: var6 = fh.b(var3x, false);
+            // PORT_TODO: }
 
-            hc.info("Setting " + var1x + ": " + var6);
-         }
-      };
+// PORT_TODO: 
+            // PORT_TODO: hc.info("Setting " + var1x + ": " + var6);
+         // PORT_TODO: }
+      // PORT_TODO: };
       this.aX = new u(this);
       string var2 = NMSSaveEditor.aH.getProperty("GameStorage");
       string var3 = NMSSaveEditor.aH.getProperty("GameSaveDir");
@@ -358,8 +361,10 @@ public class Application {
       var3.setSelectedFile(new FileInfo(System.IO.Path.Combine((var2).ToString(), (var4).ToString())));
       if (var3.showSaveDialog(this.N) == 0) {
          try {
+      FileInfo var5 = null; // PORT_TODO: stub declaration
             // PORT_TODO: FileInfo var5 = new FileInfo(new FileInfo(var3.getSelectedFile()));
             if (true) { // PORT_TODO: original condition had errors
+      var5 = null; // PORT_TODO: stub declaration
                var5 = new FileInfo(System.IO.Path.Combine((var5.Directory).ToString(), (var5.Name + ".sh0").ToString()));
             }
 
@@ -387,8 +392,10 @@ public class Application {
       var3.setSelectedFile(new FileInfo(System.IO.Path.Combine((var2).ToString(), (var4).ToString())));
       if (var3.showSaveDialog(this.N) == 0) {
          try {
+      FileInfo var5 = null; // PORT_TODO: stub declaration
             // PORT_TODO: FileInfo var5 = new FileInfo(new FileInfo(var3.getSelectedFile()));
             if (true) { // PORT_TODO: original condition had errors
+      var5 = null; // PORT_TODO: stub declaration
                var5 = new FileInfo(System.IO.Path.Combine((var5.Directory).ToString(), (var5.Name + ".wp0").ToString()));
             }
 
@@ -405,6 +412,7 @@ public class Application {
    }
 
    public void a(gj var1) {
+      string var5 = null; // PORT_TODO: stub declaration
       FileInfo var2 = NMSSaveEditor.aH.cF;
       if (!var2.Exists && (var2.Create()) == null) {
          var2 = NMSSaveEditor.aH.cD;
@@ -417,8 +425,11 @@ public class Application {
       var4.setSelectedFile(new FileInfo(System.IO.Path.Combine((var2).ToString(), (var5).ToString())));
       if (var4.showSaveDialog(this.N) == 0) {
          try {
+      FileInfo var6 = null; // PORT_TODO: stub declaration
             // PORT_TODO: FileInfo var6 = new FileInfo(new FileInfo(var4.getSelectedFile()));
             if (true) { // PORT_TODO: original condition had errors
+      string var3 = null; // PORT_TODO: stub declaration
+      var6 = null; // PORT_TODO: stub declaration
                var6 = new FileInfo(System.IO.Path.Combine((var6.Directory).ToString(), (var6.Name + var3).ToString()));
             }
 
@@ -442,6 +453,7 @@ public class Application {
          // PORT_TODO: var3.setCurrentDirectory(var2.FullName.FullName);
          if (var3.showOpenDialog(this.N) == 0) {
             try {
+      FileInfo var4 = null; // PORT_TODO: stub declaration
                // PORT_TODO: FileInfo var4 = new FileInfo(new FileInfo(var3.getSelectedFile()));
                gH var5 = gH.c(var1, var4);
                this.aL = true;
@@ -469,6 +481,7 @@ public class Application {
          // PORT_TODO: var3.setCurrentDirectory(var2.FullName.FullName);
          if (var3.showOpenDialog(this.N) == 0) {
             try {
+      FileInfo var4 = null; // PORT_TODO: stub declaration
                // PORT_TODO: FileInfo var4 = new FileInfo(new FileInfo(var3.getSelectedFile()));
                gv var5 = gv.b(var1, var4);
                this.aL = true;
@@ -496,6 +509,7 @@ public class Application {
          // PORT_TODO: var3.setCurrentDirectory(var2.FullName.FullName);
          if (var3.showOpenDialog(this.N) == 0) {
             try {
+      FileInfo var4 = null; // PORT_TODO: stub declaration
                // PORT_TODO: FileInfo var4 = new FileInfo(new FileInfo(var3.getSelectedFile()));
                gj var5 = gj.a(var1, var4);
                this.aL = true;
@@ -527,8 +541,10 @@ public class Application {
       var3.setSelectedFile(new FileInfo(System.IO.Path.Combine((var2).ToString(), (var4).ToString())));
       if (var3.showSaveDialog(this.N) == 0) {
          try {
+      FileInfo var5 = null; // PORT_TODO: stub declaration
             // PORT_TODO: FileInfo var5 = new FileInfo(new FileInfo(var3.getSelectedFile()));
             if (true) { // PORT_TODO: original condition had errors
+      var5 = null; // PORT_TODO: stub declaration
                var5 = new FileInfo(System.IO.Path.Combine((var5.Directory).ToString(), (var5.Name + ".pb3").ToString()));
             }
 
@@ -556,6 +572,7 @@ public class Application {
       // PORT_TODO: var3.setCurrentDirectory(var2.FullName.FullName);
       if (var3.showOpenDialog(this.N) == 0) {
          try {
+      FileInfo var4 = null; // PORT_TODO: stub declaration
             if (true) { // PORT_TODO: original condition had errors
                return false;
             }
@@ -589,9 +606,11 @@ public class Application {
          var4.setSelectedFile(new FileInfo(System.IO.Path.Combine((var3).ToString(), (var5).ToString())));
          if (var4.showSaveDialog(this.N) == 0) {
             try {
+      object var6 = null; // PORT_TODO: stub declaration
                // PORT_TODO: FileInfo var6 = new FileInfo(new FileInfo(var4.getSelectedFile()));
                if (true) { // PORT_TODO: original condition had errors
-                  var6 = new FileInfo(System.IO.Path.Combine((var6.Directory).ToString(), (var6.Name + ".fb3").ToString()));
+      var6 = null; // PORT_TODO: stub declaration
+                  // PORT_TODO: var6 = new FileInfo(System.IO.Path.Combine((var6.Directory).ToString(), (var6.Name + ".fb3").ToString()));
                }
 
                if (true) { // PORT_TODO: original condition had errors
@@ -660,6 +679,8 @@ public class Application {
          // PORT_TODO: var4.setCurrentDirectory(var3.FullName.FullName);
          if (var4.showOpenDialog(this.N) == 0) {
             try {
+      FileInfo var5 = null; // PORT_TODO: stub declaration
+      Dictionary<object, object> var6 = null; // PORT_TODO: stub declaration
                if (true) { // PORT_TODO: original condition had errors
                   return false;
                }
@@ -672,6 +693,7 @@ public class Application {
                // PORT_TODO: IEnumerator<object> var10 = var6.entrySet().GetEnumerator();
 
                if (false) { // PORT_TODO: original while had errors
+      IEnumerator<object> var10 = null; // PORT_TODO: stub declaration
                   KeyValuePair<object, object> var9 = (KeyValuePair<object, object>)var10.Current;
                   if (((string)var9.getKey()).Equals("HomeSeed")) {
                      var1.ah((string)var9.getValue());
@@ -744,7 +766,7 @@ public class Application {
       FileInfo var1 = ej.b(this.aF == null ? null : this.aF.bS());
       if (var1 != null) {
          string var2;
-         FileInfo var3;
+         FileInfo var3 = default;
          if (var1.Attributes.HasFlag(FileAttributes.Directory)) {
             var3 = var1;
             var2 = null;
@@ -1064,59 +1086,67 @@ public class Application {
    public void o() {
       int var1 = this.aG[this.aH].getIndex();
       // PORT_TODO: int var2 = dz.a(this.N, this.aF.bU(), var1);
-      if (var2 >= 0 && var2 != var1) {
-         try {
-            hc.info("Formatting JSON...");
+      // PORT_TODO: if (var2 >= 0 && var2 != var1) {
+      // PORT_TODO: int var2 = 0; // PORT_TODO: stub declaration
+         // PORT_TODO: try {
+      // PORT_TODO: var2 = 0; // PORT_TODO: stub declaration
+            // PORT_TODO: hc.info("Formatting JSON...");
             // PORT_TODO: hc.info("Creating game slot...");
-            string var3 = this.aF.a(var2, this.aK);
-            this.aG = this.aF.bV();
-            this.aH = -1;
-            this.aI = new fs[0];
-            this.aJ = -1;
+            // PORT_TODO: string var3 = this.aF.a(var2, this.aK);
+            // PORT_TODO: this.aG = this.aF.bV();
+            // PORT_TODO: this.aH = -1;
+            // PORT_TODO: this.aI = new fs[0];
+            // PORT_TODO: this.aJ = -1;
 
-            label38:
-            for(int var4 = 0; var4 < this.aG.Length; ++var4) {
-               if (this.aF.W(var3) == this.aG[var4].getIndex()) {
-                  this.aH = var4;
-                  this.aI = this.aG[var4].bX();
-                  int var5 = 0;
+// PORT_TODO: 
+            // PORT_TODO: label38:
+            // PORT_TODO: for(int var4 = 0; var4 < this.aG.Length; ++var4) {
+               // PORT_TODO: if (this.aF.W(var3) == this.aG[var4].getIndex()) {
+                  // PORT_TODO: this.aH = var4;
+                  // PORT_TODO: this.aI = this.aG[var4].bX();
+                  // PORT_TODO: int var5 = 0;
 
-                  while(true) {
-                     if (var5 >= this.aI.Length) {
-                        goto endLabel38;
-                     }
+// PORT_TODO: 
+                  // PORT_TODO: while(true) {
+                     // PORT_TODO: if (var5 >= this.aI.Length) {
+                        // PORT_TODO: goto endLabel38;
+                     // PORT_TODO: }
 
-                     if (var3.Equals(this.aI[var5].K())) {
-                        this.aJ = var5;
-                        goto endLabel38;
-                     }
+// PORT_TODO: 
+                     // PORT_TODO: if (var3.Equals(this.aI[var5].K())) {
+                        // PORT_TODO: this.aJ = var5;
+                        // PORT_TODO: goto endLabel38;
+                     // PORT_TODO: }
 
-                     ++var5;
-                  }
-               }
-            }
-            endLabel38: ;
+// PORT_TODO: 
+                     // PORT_TODO: ++var5;
+                  // PORT_TODO: }
+               // PORT_TODO: }
+            // PORT_TODO: }
+            // PORT_TODO: endLabel38: ;
 
-            this.aL = false;
-            this.R.Refresh();
-            this.S.Refresh();
-            if (this.aJ < 0) {
-               this.T.Text = ("(no file selected)");
-               this.U.Text = ("(no file selected)");
-               this.V.Text = ("(no file selected)");
-            } else {
-               this.T.Text = (a(this.aI[this.aJ].LastWriteTimeUtc.Ticks));
-               this.U.Text = (e(this.aI[this.aJ].Name));
-               this.V.Text = (e(this.aI[this.aJ].getDescription()));
-            }
+// PORT_TODO: 
+            // PORT_TODO: this.aL = false;
+            // PORT_TODO: this.R.Refresh();
+            // PORT_TODO: this.S.Refresh();
+            // PORT_TODO: if (this.aJ < 0) {
+               // PORT_TODO: this.T.Text = ("(no file selected)");
+               // PORT_TODO: this.U.Text = ("(no file selected)");
+               // PORT_TODO: this.V.Text = ("(no file selected)");
+            // PORT_TODO: } else {
+               // PORT_TODO: this.T.Text = (a(this.aI[this.aJ].LastWriteTimeUtc.Ticks));
+               // PORT_TODO: this.U.Text = (e(this.aI[this.aJ].Name));
+               // PORT_TODO: this.V.Text = (e(this.aI[this.aJ].getDescription()));
+            // PORT_TODO: }
 
-            hc.info("Finished.");
-         } catch (IOException var6) {
-            hc.error("Could not write save file", var6);
-            this.b("There was an error saving the file.");
-            return;
-         }
-      }
+// PORT_TODO: 
+            // PORT_TODO: hc.info("Finished.");
+         // PORT_TODO: } catch (IOException var6) {
+            // PORT_TODO: hc.error("Could not write save file", var6);
+            // PORT_TODO: this.b("There was an error saving the file.");
+            // PORT_TODO: return;
+         // PORT_TODO: }
+      // PORT_TODO: }
 
    }
 
@@ -1124,9 +1154,9 @@ public class Application {
       List<object> var2 = new List<object>();
       gz var4 = this.@as.X();
       if (true) { // PORT_TODO: original condition had errors
-         var2.AddRange((ICollection)var4.cC().stream().filter((var1x) => {
+         // PORT_TODO: var2.AddRange((ICollection)var4.cC().stream().filter((var1x) => {
             // PORT_TODO: return var1x.ay(var1);
-         }).collect(Collectors.toList()));
+         // PORT_TODO: }).collect(Collectors.toList()));
       }
 
       gv[] var5 = this.at.aK();
@@ -1141,31 +1171,33 @@ public class Application {
       gH[] var10 = this.au.aO();
 
       if (false) { // PORT_TODO: original loop had errors
-         var2.AddRange((ICollection)var10[var7].cC().stream().filter((var1x) => {
+         // PORT_TODO: var2.AddRange((ICollection)var10[var7].cC().stream().filter((var1x) => {
+      // PORT_TODO: object var7 = null; // PORT_TODO: stub declaration
             // PORT_TODO: return var1x.ay(var1);
-         }).collect(Collectors.toList()));
+         // PORT_TODO: }).collect(Collectors.toList()));
       }
 
       gm var11 = this.aw.Z();
       if (true) { // PORT_TODO: original condition had errors
-         var2.AddRange((ICollection)var11.cC().stream().filter((var1x) => {
+         // PORT_TODO: var2.AddRange((ICollection)var11.cC().stream().filter((var1x) => {
             // PORT_TODO: return var1x.ay(var1);
-         }).collect(Collectors.toList()));
+         // PORT_TODO: }).collect(Collectors.toList()));
       }
 
       gO[] var8 = this.ay.aT();
 
       if (false) { // PORT_TODO: original loop had errors
-         var2.AddRange((ICollection)var8[var9].cC().stream().filter((var1x) => {
+         // PORT_TODO: var2.AddRange((ICollection)var8[var9].cC().stream().filter((var1x) => {
+      // PORT_TODO: object var9 = null; // PORT_TODO: stub declaration
             // PORT_TODO: return var1x.ay(var1);
-         }).collect(Collectors.toList()));
+         // PORT_TODO: }).collect(Collectors.toList()));
       }
 
       ge var12 = this.aA.O();
       if (true) { // PORT_TODO: original condition had errors
-         var2.AddRange((ICollection)var12.cC().stream().filter((var1x) => {
+         // PORT_TODO: var2.AddRange((ICollection)var12.cC().stream().filter((var1x) => {
             // PORT_TODO: return var1x.ay(var1);
-         }).collect(Collectors.toList()));
+         // PORT_TODO: }).collect(Collectors.toList()));
       }
 
       return var2;
@@ -1211,7 +1243,8 @@ public class Application {
       // PORT_TODO: int var3 = (var4 = var0.getOwnedWindows()).Length;
 
       if (false) { // PORT_TODO: original loop had errors
-         Window var1 = var4[var2];
+      object var2 = null; // PORT_TODO: stub declaration
+         // PORT_TODO: Window var1 = var4[var2];
          a(var1);
       }
 
@@ -1275,8 +1308,10 @@ public class Application {
       var1.setSelectedFile(new FileInfo(System.IO.Path.Combine((NMSSaveEditor.aH.cF).ToString(), (var2).ToString())));
       if (var1.showSaveDialog(this.N) == 0) {
          try {
+      FileInfo var3 = null; // PORT_TODO: stub declaration
             // PORT_TODO: FileInfo var3 = new FileInfo(new FileInfo(var1.getSelectedFile()));
             if (true) { // PORT_TODO: original condition had errors
+      var3 = null; // PORT_TODO: stub declaration
                var3 = new FileInfo(System.IO.Path.Combine((var3.Directory).ToString(), (var3.Name + ".json").ToString()));
             }
 
@@ -1299,6 +1334,7 @@ public class Application {
       // PORT_TODO: var1.setCurrentDirectory(NMSSaveEditor.aH.cF);
       if (var1.showOpenDialog(this.N) == 0) {
          try {
+      FileInfo var2 = null; // PORT_TODO: stub declaration
             if (true) { // PORT_TODO: original condition had errors
                return;
             }
@@ -1648,6 +1684,7 @@ public class Application {
    }
 
    public void initialize() {
+      ToolStripMenuItem var7 = null; // PORT_TODO: stub declaration
       this.N = new Form();
       Image var1 = a("UI-FILEICON.PNG");
       if (var1 != null) {
@@ -1754,62 +1791,66 @@ public class Application {
       this.aE = new c(this);
       // PORT_TODO: this.O.TabPages.Add(new TabPage("Account") {{ Tag = this.aE }});
       // PORT_TODO: this.O.setEnabledAt(13, false);
-      this.O.addChangeListener((var1x) => {
-         if (this.O.SelectedIndex == 12) {
-            this.aD.aa();
-         }
+      // PORT_TODO: this.O.addChangeListener((var1x) => {
+         // PORT_TODO: if (this.O.SelectedIndex == 12) {
+            // PORT_TODO: this.aD.aa();
+         // PORT_TODO: }
 
-         if (this.aF != null && this.aO && this.aP) {
-            int var2 = MessageBox.Show(this.N, "Save account data?", "Save", 0);
-            this.aP = var2 == 0;
-            if (this.aP) {
-               this.m();
-            }
-         }
+// PORT_TODO: 
+         // PORT_TODO: if (this.aF != null && this.aO && this.aP) {
+            // PORT_TODO: int var2 = MessageBox.Show(this.N, "Save account data?", "Save", 0);
+            // PORT_TODO: this.aP = var2 == 0;
+            // PORT_TODO: if (this.aP) {
+               // PORT_TODO: this.m();
+            // PORT_TODO: }
+         // PORT_TODO: }
 
-      });
-      MenuStrip var5 = new MenuStrip();
+// PORT_TODO: 
+      // PORT_TODO: });
+      // PORT_TODO: MenuStrip var5 = new MenuStrip();
       // PORT_TODO: this.N.setJMenuBar(var5);
-      ToolStripMenuItem var6 = new ToolStripMenuItem("FileInfo");
-      var5.Add(var6);
+      // PORT_TODO: ToolStripMenuItem var6 = new ToolStripMenuItem("FileInfo");
+      // PORT_TODO: var5.Add(var6);
       // PORT_TODO: ToolStripMenuItem var7 = new ToolStripMenuItem("Open FileInfo/Path");
-      var7; /* TODO: .setAccelerator(KeyStroke.getKeyStroke(79, 2)); */
+      // PORT_TODO: var7; /* TODO: .setAccelerator(KeyStroke.getKeyStroke(79, 2)); */
       // PORT_TODO: var7.Click += ((var1x) => {
       // this.k();
       // });
-      var6.Add(var7);
-      this.Z = new ToolStripMenuItem("Reload FileInfo");
+      // PORT_TODO: var6.Add(var7);
+      // PORT_TODO: this.Z = new ToolStripMenuItem("Reload FileInfo");
       // PORT_TODO: this.Z.Enabled = (false);
-      this.Z; /* TODO: .setAccelerator(KeyStroke.getKeyStroke(82, 2)); */
+      // PORT_TODO: this.Z; /* TODO: .setAccelerator(KeyStroke.getKeyStroke(82, 2)); */
       // PORT_TODO: this.Z.Click += ((var1x) => {
       // this.l();
       // });
-      var6.Add(this.Z);
-      this.aa = new ToolStripMenuItem("Save FileInfo");
+      // PORT_TODO: var6.Add(this.Z);
+      // PORT_TODO: this.aa = new ToolStripMenuItem("Save FileInfo");
       // PORT_TODO: this.aa.Enabled = (false);
-      this.aa; /* TODO: .setAccelerator(KeyStroke.getKeyStroke(83, 2)); */
+      // PORT_TODO: this.aa; /* TODO: .setAccelerator(KeyStroke.getKeyStroke(83, 2)); */
       // PORT_TODO: this.aa.Click += ((var1x) => {
       // Component var2 = this.N.getFocusOwner();
       // if (var2 is G) {
       // ((G)var2).N();
       // }
 
+// PORT_TODO: 
       // this.n();
       // });
-      var6.Add(this.aa);
-      this.ab = new ToolStripMenuItem("Save FileInfo As");
-      this.ab.Enabled = (false);
+      // PORT_TODO: var6.Add(this.aa);
+      // PORT_TODO: this.ab = new ToolStripMenuItem("Save FileInfo As");
+      // PORT_TODO: this.ab.Enabled = (false);
       // PORT_TODO: this.ab.Click += ((var1x) => {
       // Component var2 = this.N.getFocusOwner();
       // if (var2 is G) {
       // ((G)var2).N();
       // }
 
+// PORT_TODO: 
       // this.o();
       // });
-      var6.Add(this.ab);
-      var6.addSeparator();
-      ToolStripMenuItem var8 = new ToolStripMenuItem("Exit");
+      // PORT_TODO: var6.Add(this.ab);
+      // PORT_TODO: var6.addSeparator();
+      // PORT_TODO: ToolStripMenuItem var8 = new ToolStripMenuItem("Exit");
       // PORT_TODO: var8.Click += ((var1x) => {
       // if (this.aL || this.aO) {
       // int var2 = MessageBox.Show(this.N, "Save data before closing?", "Save", 0);
@@ -1818,44 +1859,46 @@ public class Application {
       // this.n();
       // }
 
+// PORT_TODO: 
       // if (this.aO) {
       // this.m();
       // }
       // }
       // }
 
+// PORT_TODO: 
       // this.N.Dispose();
       // });
-      var6.Add(var8);
-      ToolStripMenuItem var9 = new ToolStripMenuItem("Edit");
-      var5.Add(var9);
-      this.ac = new List<object>();
-      ToolStripMenuItem var10 = new ToolStripMenuItem("Edit Raw JSON");
+      // PORT_TODO: var6.Add(var8);
+      // PORT_TODO: ToolStripMenuItem var9 = new ToolStripMenuItem("Edit");
+      // PORT_TODO: var5.Add(var9);
+      // PORT_TODO: this.ac = new List<object>();
+      // PORT_TODO: ToolStripMenuItem var10 = new ToolStripMenuItem("Edit Raw JSON");
       // PORT_TODO: var10.Click += ((var1x) => {
       // this.q();
       // });
-      var9.Add(var10);
-      this.ac.Add(var10);
-      ToolStripMenuItem var11 = new ToolStripMenuItem("Export JSON");
+      // PORT_TODO: var9.Add(var10);
+      // PORT_TODO: this.ac.Add(var10);
+      // PORT_TODO: ToolStripMenuItem var11 = new ToolStripMenuItem("Export JSON");
       // PORT_TODO: var11.Click += ((var1x) => {
       // this.u();
       // });
-      var9.Add(var11);
-      this.ac.Add(var11);
-      ToolStripMenuItem var12 = new ToolStripMenuItem("Import JSON");
+      // PORT_TODO: var9.Add(var11);
+      // PORT_TODO: this.ac.Add(var11);
+      // PORT_TODO: ToolStripMenuItem var12 = new ToolStripMenuItem("Import JSON");
       // PORT_TODO: var12.Click += ((var1x) => {
       // this.v();
       // });
-      var9.Add(var12);
-      this.ac.Add(var12);
-      ToolStripMenuItem var13 = new ToolStripMenuItem("Coordinate Viewer");
+      // PORT_TODO: var9.Add(var12);
+      // PORT_TODO: this.ac.Add(var12);
+      // PORT_TODO: ToolStripMenuItem var13 = new ToolStripMenuItem("Coordinate Viewer");
       // PORT_TODO: var13.Click += ((var1x) => {
       // this.p();
       // });
-      var9.Add(var13);
-      this.ac.Add(var13);
-      ToolStripMenuItem var14 = new ToolStripMenuItem("Test Mode");
-      var14.Checked = (en.aS());
+      // PORT_TODO: var9.Add(var13);
+      // PORT_TODO: this.ac.Add(var13);
+      // PORT_TODO: ToolStripMenuItem var14 = new ToolStripMenuItem("Test Mode");
+      // PORT_TODO: var14.Checked = (en.aS());
       // PORT_TODO: var14.Click += ((var2x) => {
       // bool var3 = var14.Checked;
       // if (var3) {
@@ -1866,85 +1909,89 @@ public class Application {
       // }
       // }
 
+// PORT_TODO: 
       // en.c(var3);
       // });
-      var9.Add(var14);
-      var9.addSeparator();
-      ToolStripMenuItem var15 = new ToolStripMenuItem("Recharge All Technology");
+      // PORT_TODO: var9.Add(var14);
+      // PORT_TODO: var9.addSeparator();
+      // PORT_TODO: ToolStripMenuItem var15 = new ToolStripMenuItem("Recharge All Technology");
       // PORT_TODO: var15.Click += ((var1x) => {
       // this.w();
       // });
-      var9.Add(var15);
-      this.ac.Add(var15);
-      ToolStripMenuItem var16 = new ToolStripMenuItem("Refill All Stacks");
+      // PORT_TODO: var9.Add(var15);
+      // PORT_TODO: this.ac.Add(var15);
+      // PORT_TODO: ToolStripMenuItem var16 = new ToolStripMenuItem("Refill All Stacks");
       // PORT_TODO: var16.Click += ((var1x) => {
       // this.x();
       // });
-      var9.Add(var16);
-      this.ac.Add(var16);
-      ToolStripMenuItem var17 = new ToolStripMenuItem("Recharge Base Planters");
+      // PORT_TODO: var9.Add(var16);
+      // PORT_TODO: this.ac.Add(var16);
+      // PORT_TODO: ToolStripMenuItem var17 = new ToolStripMenuItem("Recharge Base Planters");
       // PORT_TODO: var17.Click += ((var1x) => {
       // this.G();
       // });
-      var9.Add(var17);
-      this.ac.Add(var17);
-      ToolStripMenuItem var18 = new ToolStripMenuItem("Expand All Inventories");
+      // PORT_TODO: var9.Add(var17);
+      // PORT_TODO: this.ac.Add(var17);
+      // PORT_TODO: ToolStripMenuItem var18 = new ToolStripMenuItem("Expand All Inventories");
       // PORT_TODO: var18.Click += ((var1x) => {
       // this.A();
       // });
-      var9.Add(var18);
-      this.ac.Add(var18);
-      ToolStripMenuItem var19 = new ToolStripMenuItem("Enable All Slots");
+      // PORT_TODO: var9.Add(var18);
+      // PORT_TODO: this.ac.Add(var18);
+      // PORT_TODO: ToolStripMenuItem var19 = new ToolStripMenuItem("Enable All Slots");
       // PORT_TODO: var19.Click += ((var1x) => {
       // this.y();
       // });
-      var9.Add(var19);
-      this.ac.Add(var19);
-      ToolStripMenuItem var20 = new ToolStripMenuItem("Repair All Slots / Technology");
+      // PORT_TODO: var9.Add(var19);
+      // PORT_TODO: this.ac.Add(var19);
+      // PORT_TODO: ToolStripMenuItem var20 = new ToolStripMenuItem("Repair All Slots / Technology");
       // PORT_TODO: var20.Click += ((var1x) => {
       // this.z();
       // });
-      var9.Add(var20);
-      this.ac.Add(var20);
-      var9.addSeparator();
-      this.ad = new ToolStripMenuItem("Edit Account JSON");
+      // PORT_TODO: var9.Add(var20);
+      // PORT_TODO: this.ac.Add(var20);
+      // PORT_TODO: var9.addSeparator();
+      // PORT_TODO: this.ad = new ToolStripMenuItem("Edit Account JSON");
       // PORT_TODO: this.ad.Click += ((var1x) => {
       // this.r();
       // });
-      var9.Add(this.ad);
-      IEnumerator<object> var22 = this.ac.GetEnumerator();
+      // PORT_TODO: var9.Add(this.ad);
+      // PORT_TODO: IEnumerator<object> var22 = this.ac.GetEnumerator();
 
-      while(var22.MoveNext()) {
-         ToolStripMenuItem var21 = (ToolStripMenuItem)var22.Current;
-         var21.Enabled = (false);
-      }
+// PORT_TODO: 
+      // PORT_TODO: while(var22.MoveNext()) {
+         // PORT_TODO: ToolStripMenuItem var21 = (ToolStripMenuItem)var22.Current;
+         // PORT_TODO: var21.Enabled = (false);
+      // PORT_TODO: }
 
-      this.ad.Enabled = (false);
-      ToolStripMenuItem var25 = new ToolStripMenuItem("View");
-      var5.Add(var25);
-      ToolStripMenuItem var26 = new ToolStripMenuItem("Settings");
+// PORT_TODO: 
+      // PORT_TODO: this.ad.Enabled = (false);
+      // PORT_TODO: ToolStripMenuItem var25 = new ToolStripMenuItem("View");
+      // PORT_TODO: var5.Add(var25);
+      // PORT_TODO: ToolStripMenuItem var26 = new ToolStripMenuItem("Settings");
       // PORT_TODO: var26.Click += ((var1x) => {
       // this.s();
       // });
-      var25.Add(var26);
+      // PORT_TODO: var25.Add(var26);
       // PORT_TODO: var5.Add(Control.createHorizontalGlue());
-      ToolStripMenuItem var23 = new ToolStripMenuItem("Help");
-      var5.Add(var23);
-      ToolStripMenuItem var24 = new ToolStripMenuItem("About");
+      // PORT_TODO: ToolStripMenuItem var23 = new ToolStripMenuItem("Help");
+      // PORT_TODO: var5.Add(var23);
+      // PORT_TODO: ToolStripMenuItem var24 = new ToolStripMenuItem("About");
       // PORT_TODO: var24.Click += ((var1x) => {
       // a.a(this.N);
       // });
-      var23.Add(var24);
-      if (this.aF == null) {
+      // PORT_TODO: var23.Add(var24);
+      // PORT_TODO: if (this.aF == null) {
          // PORT_TODO: System.Windows.Forms.Application.Run(new v(this));
-      } else if (this.aN != null) {
-         this.ad.Enabled = (true);
-         this.O.setEnabledAt(13, true);
-         this.aE.a(this.aN);
-         this.aO = false;
-      }
+      // PORT_TODO: } else if (this.aN != null) {
+         // PORT_TODO: this.ad.Enabled = (true);
+         // PORT_TODO: this.O.setEnabledAt(13, true);
+         // PORT_TODO: this.aE.a(this.aN);
+         // PORT_TODO: this.aO = false;
+      // PORT_TODO: }
 
-      this.N.PerformLayout();
+// PORT_TODO: 
+      // PORT_TODO: this.N.PerformLayout();
    }
 
    public static string e(string var0) {
@@ -1997,20 +2044,23 @@ public class Application {
       if (var10000 != null) {
          return var10000;
       } else {
+      object var0 = null; // PORT_TODO: stub declaration
          // PORT_TODO: int[] var0 = new int[gl.Values.Length];
 
          try {
-            var0[gl.oG.ordinal()] = 2;
+      var0 = null; // PORT_TODO: stub declaration
+            // PORT_TODO: var0[gl.oG.ordinal()] = 2;
          } catch (NoSuchFieldError var2) {
          }
 
          try {
-            var0[gl.oF.ordinal()] = 1;
+      var0 = null; // PORT_TODO: stub declaration
+            // PORT_TODO: var0[gl.oF.ordinal()] = 1;
          } catch (NoSuchFieldError var1) {
          }
 
          // PORT_TODO: aY = var0;
-         return var0;
+         // PORT_TODO: return var0;
       }
    }
    public static bool i(Application var0) {

@@ -15,39 +15,39 @@ public class cY : Form {
    public int gO = -1;
    public static cY gP = null;
 
-public cY(Frame var1) : base(var1) {
-      this.FormBorderStyle = FormBorderStyle.FixedDialog; //(false);
+// PORT_TODO: public cY(Frame var1) : base(var1) {
+      // PORT_TODO: this.FormBorderStyle = FormBorderStyle.FixedDialog; //(false);
       // setModalExclusionType not available in WinForms
-      this.Text = ("Move Base Computer");
+      // PORT_TODO: this.Text = ("Move Base Computer");
       // PORT_TODO: // PORT_TODO: this/* setModal */(true);
-      Panel var2 = new Panel();
-      this.setContentPane(var2);
-      var2.SuspendLayout(); // TODO: set layout new TableLayoutPanel());
-      Panel var3 = new Panel();
-      var3.SuspendLayout(); // TODO: set layout new FlowLayoutPanel(0));
-      var3.Add(new Label() { Text = "Please select a base part to swap your base computer with." });
-      var2.Controls.Add(var3);
-      Panel var4 = new Panel();
+      // PORT_TODO: Panel var2 = new Panel();
+      // PORT_TODO: this.setContentPane(var2);
+      // PORT_TODO: var2.SuspendLayout(); // TODO: set layout new TableLayoutPanel());
+      // PORT_TODO: Panel var3 = new Panel();
+      // PORT_TODO: var3.SuspendLayout(); // TODO: set layout new FlowLayoutPanel(0));
+      // PORT_TODO: var3.Add(new Label() { Text = "Please select a base part to swap your base computer with." });
+      // PORT_TODO: var2.Controls.Add(var3);
+      // PORT_TODO: Panel var4 = new Panel();
       // TODO: var4.SuspendLayout(); // TODO: set layout /* FormLayout */ null, FormFactory.LABEL_COMPONENT_GAP_COLSPEC, ColumnSpec.decode("250px"), FormFactory.LABEL_COMPONENT_GAP_COLSPEC}, new RowSpec[]{FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC}));
-      Label var5 = new Label() { Text = "Base Part:" };
-      var4.Controls.Add(var5);
-      this.gM = new ComboBox();
-      this.gM.DataSource = (new cZ(this));
-      var4.Add(this.gM, "4, 2, fill, default");
-      var2.Controls.Add(var4);
-      Panel var6 = new Panel();
-      var6.SuspendLayout(); // TODO: set layout new FlowLayoutPanel(2));
-      var2.Controls.Add(var6);
-      Button var7 = new Button() { Text = "Save" };
+      // PORT_TODO: Label var5 = new Label() { Text = "Base Part:" };
+      // PORT_TODO: var4.Controls.Add(var5);
+      // PORT_TODO: this.gM = new ComboBox();
+      // PORT_TODO: this.gM.DataSource = (new cZ(this));
+      // PORT_TODO: var4.Add(this.gM, "4, 2, fill, default");
+      // PORT_TODO: var2.Controls.Add(var4);
+      // PORT_TODO: Panel var6 = new Panel();
+      // PORT_TODO: var6.SuspendLayout(); // TODO: set layout new FlowLayoutPanel(2));
+      // PORT_TODO: var2.Controls.Add(var6);
+      // PORT_TODO: Button var7 = new Button() { Text = "Save" };
       // PORT_TODO: var7.Click += (new da(this));
-      var6.Add(var7);
-      this.getRootPane().setDefaultButton(var7);
-      Button var8 = new Button() { Text = "Cancel" };
+      // PORT_TODO: var6.Add(var7);
+      // PORT_TODO: this.getRootPane().setDefaultButton(var7);
+      // PORT_TODO: Button var8 = new Button() { Text = "Cancel" };
       // PORT_TODO: var8.Click += (new db(this));
-      var6.Add(var8);
+      // PORT_TODO: var6.Add(var8);
       // PORT_TODO: this.getRootPane().registerKeyboardAction(new dc(this), /* KeyStroke */ Keys.None /* (27, 0) */, 2);
-      this.PerformLayout();
-   }
+      // PORT_TODO: this.PerformLayout();
+   // PORT_TODO: }
 
    public int b(List<object> var1) {
       this.gN = var1;

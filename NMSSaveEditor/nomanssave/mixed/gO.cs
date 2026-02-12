@@ -84,18 +84,19 @@ public class gO {
    public gO(eY var1, eY var2) {
       this.index = 1000;
       this.rO = var1;
-      var2.a((var1x, var2x, var3x) => {
-         if ("ValidSlotIndices".Equals(var1x) && var3x is eV) {
-            int var4 = ((eV)var3x).Count;
-            var1.b("Slots", (object)var4);
-         }
+      // PORT_TODO: var2.a((var1x, var2x, var3x) => {
+         // PORT_TODO: if ("ValidSlotIndices".Equals(var1x) && var3x is eV) {
+            // PORT_TODO: int var4 = ((eV)var3x).Count;
+            // PORT_TODO: var1.b("Slots", (object)var4);
+         // PORT_TODO: }
 
-      });
-      byte var3 = 8;
-      byte var4 = 6;
-      List<object> var5 = new List<object>();
-      var5.Add(new gt(a(this, "Cold Storage"), var2, 2048, var3, var4, false, false, true, false));
-      this.gT = new List<object>(var5);
+// PORT_TODO: 
+      // PORT_TODO: });
+      // PORT_TODO: byte var3 = 8;
+      // PORT_TODO: byte var4 = 6;
+      // PORT_TODO: List<object> var5 = new List<object>();
+      // PORT_TODO: var5.Add(new gt(a(this, "Cold Storage"), var2, 2048, var3, var4, false, false, true, false));
+      // PORT_TODO: this.gT = new List<object>(var5);
    }
 
    public string getType() {

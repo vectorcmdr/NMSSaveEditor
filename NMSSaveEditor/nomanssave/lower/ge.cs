@@ -18,14 +18,15 @@ public class ge {
    }
 
    public static Function ap(int var0) {
-      return (var1) => {
+      // PORT_TODO: return (var1) => {
          // PORT_TODO: string var2 = var1.Name;
-         if (true) { // PORT_TODO: original condition had errors
+         // PORT_TODO: if (true) { // PORT_TODO: original condition had errors
             // PORT_TODO: var2 = "Chest " + var0;
-         }
+         // PORT_TODO: }
 
+// PORT_TODO: 
          // PORT_TODO: return new string[]{var2};
-      };
+      // PORT_TODO: };
    }
 
    public static Function cB() {

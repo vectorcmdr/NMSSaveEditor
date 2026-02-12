@@ -80,72 +80,75 @@ public class bl : Panel, eo {
       this.dW.setEditable(false);
       this.dT.a("Class", (Control)this.dW);
       this.dX = new cN(typeof(gd));
-      this.dX.a((var1x) => {
-         if (this.eq >= 0) {
-            this.ep[this.eq].am(var1x);
-         }
+      // PORT_TODO: this.dX.a((var1x) => {
+         // PORT_TODO: if (this.eq >= 0) {
+            // PORT_TODO: this.ep[this.eq].am(var1x);
+         // PORT_TODO: }
 
-      });
-      this.dT.a("NPC Race", (Control)this.dX);
-      this.dY = new bx(this);
-      this.dT.a("Home Seed", (Control)this.dY);
-      this.dZ = new by(this);
-      this.dT.a("Model Seed", this.dZ);
-      this.dT.k("Traits");
-      bD var6 = new bD(this, (bD)null);
-      this.ec = new ComboBox();
-      this.ec.DataSource = (new bB(this, (bB)null));
-      this.ec.setRenderer(var6);
-      this.dT.a(this.ec);
-      this.ed = new ComboBox();
-      this.ed.DataSource = (new bC(this, 1));
-      this.ed.setRenderer(var6);
-      this.dT.a(this.ed);
-      this.ee = new ComboBox();
-      this.ee.DataSource = (new bC(this, 2));
-      this.ee.setRenderer(var6);
-      this.dT.a(this.ee);
-      this.ef = new ComboBox();
-      this.ef.DataSource = (new bC(this, 3));
-      this.ef.setRenderer(var6);
-      this.dT.a(this.ef);
-      this.eg = new ComboBox();
-      this.eg.DataSource = (new bC(this, 4));
-      this.eg.setRenderer(var6);
-      this.dT.a(this.eg);
-      this.dT.Y();
-      Panel var7 = new Panel();
+// PORT_TODO: 
+      // PORT_TODO: });
+      // PORT_TODO: this.dT.a("NPC Race", (Control)this.dX);
+      // PORT_TODO: this.dY = new bx(this);
+      // PORT_TODO: this.dT.a("Home Seed", (Control)this.dY);
+      // PORT_TODO: this.dZ = new by(this);
+      // PORT_TODO: this.dT.a("Model Seed", this.dZ);
+      // PORT_TODO: this.dT.k("Traits");
+      // PORT_TODO: bD var6 = new bD(this, (bD)null);
+      // PORT_TODO: this.ec = new ComboBox();
+      // PORT_TODO: this.ec.DataSource = (new bB(this, (bB)null));
+      // PORT_TODO: this.ec.setRenderer(var6);
+      // PORT_TODO: this.dT.a(this.ec);
+      // PORT_TODO: this.ed = new ComboBox();
+      // PORT_TODO: this.ed.DataSource = (new bC(this, 1));
+      // PORT_TODO: this.ed.setRenderer(var6);
+      // PORT_TODO: this.dT.a(this.ed);
+      // PORT_TODO: this.ee = new ComboBox();
+      // PORT_TODO: this.ee.DataSource = (new bC(this, 2));
+      // PORT_TODO: this.ee.setRenderer(var6);
+      // PORT_TODO: this.dT.a(this.ee);
+      // PORT_TODO: this.ef = new ComboBox();
+      // PORT_TODO: this.ef.DataSource = (new bC(this, 3));
+      // PORT_TODO: this.ef.setRenderer(var6);
+      // PORT_TODO: this.dT.a(this.ef);
+      // PORT_TODO: this.eg = new ComboBox();
+      // PORT_TODO: this.eg.DataSource = (new bC(this, 4));
+      // PORT_TODO: this.eg.setRenderer(var6);
+      // PORT_TODO: this.dT.a(this.eg);
+      // PORT_TODO: this.dT.Y();
+      // PORT_TODO: Panel var7 = new Panel();
       // TODO: var7.SuspendLayout(); // TODO: set layout /* FormLayout */ null);
-      this.el = new Label() { Text = "" };
-      var7.Add(this.el, "2,1");
-      this.em = new Button() { Text = "Repair" };
+      // PORT_TODO: this.el = new Label() { Text = "" };
+      // PORT_TODO: var7.Add(this.el, "2,1");
+      // PORT_TODO: this.em = new Button() { Text = "Repair" };
       // PORT_TODO: this.em.Click += (new bz(this));
-      Panel var8 = new Panel();
-      var8.Add(this.em);
-      var7.Controls.Add(var8);
-      this.dT.a(var7);
-      this.eb = new ba(new int[]{aH.cJ, 0});
-      this.eb.Hide();
-      this.Add(this.eb);
-      this.eb.k("Stats");
+      // PORT_TODO: Panel var8 = new Panel();
+      // PORT_TODO: var8.Add(this.em);
+      // PORT_TODO: var7.Controls.Add(var8);
+      // PORT_TODO: this.dT.a(var7);
+      // PORT_TODO: this.eb = new ba(new int[]{aH.cJ, 0});
+      // PORT_TODO: this.eb.Hide();
+      // PORT_TODO: this.Add(this.eb);
+      // PORT_TODO: this.eb.k("Stats");
       // PORT_TODO: this.ea = new G[gq.Values.Length];
 
-      for(int var9 = 0; var9 < this.ea.Length; ++var9) {
-         this.ea[var9] = new bA(this, var9, (bA)null);
+// PORT_TODO: 
+      // PORT_TODO: for(int var9 = 0; var9 < this.ea.Length; ++var9) {
+         // PORT_TODO: this.ea[var9] = new bA(this, var9, (bA)null);
          // PORT_TODO: this.eb.a(gq.Values[var9].ToString(), (Control)this.ea[var9]);
-      }
+      // PORT_TODO: }
 
-      this.eb.Y();
-      this.eb.k("Totals");
-      this.eh = new bn(this);
-      this.eb.a("Expeditions", (Control)this.eh);
-      this.ei = new bo(this);
-      this.eb.a("Successful", (Control)this.ei);
-      this.ej = new bp(this);
-      this.eb.a("Failed", (Control)this.ej);
-      this.ek = new bq(this);
-      this.eb.a("Damaged", (Control)this.ek);
-      NMSSaveEditor.en.a(this);
+// PORT_TODO: 
+      // PORT_TODO: this.eb.Y();
+      // PORT_TODO: this.eb.k("Totals");
+      // PORT_TODO: this.eh = new bn(this);
+      // PORT_TODO: this.eb.a("Expeditions", (Control)this.eh);
+      // PORT_TODO: this.ei = new bo(this);
+      // PORT_TODO: this.eb.a("Successful", (Control)this.ei);
+      // PORT_TODO: this.ej = new bp(this);
+      // PORT_TODO: this.eb.a("Failed", (Control)this.ej);
+      // PORT_TODO: this.ek = new bq(this);
+      // PORT_TODO: this.eb.a("Damaged", (Control)this.ek);
+      // PORT_TODO: NMSSaveEditor.en.a(this);
    }
 
    public void a(bool var1) {

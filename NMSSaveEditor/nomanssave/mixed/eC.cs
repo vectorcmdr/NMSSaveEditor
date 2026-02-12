@@ -73,12 +73,13 @@ public class eC {
    }
 
    public Dictionary<object, object> bp() {
-      return (Dictionary<object, object>)this.jU.stream().collect(Collectors.toMap((var0) => {
-         return var0.key;
-      }, (var0) => {
-         return var0.name;
-      }));
-   }
+      // PORT_TODO: return (Dictionary<object, object>)this.jU.stream().collect(Collectors.toMap((var0) => {
+         // PORT_TODO: return var0.key;
+      // PORT_TODO: }, (var0) => {
+         // PORT_TODO: return var0.name;
+      // PORT_TODO: }));
+       return new Dictionary<object, object>(); // PORT_TODO: stub return
+    }
 
    public string q(string var1) {
       string var2;

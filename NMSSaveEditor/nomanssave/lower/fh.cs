@@ -15,21 +15,21 @@ public class fh {
    public static int kW = 2;
    public static int kX = 3;
    public static int kY = 4;
-   public static Predicate<object> kZ = (var0) => {
+   // PORT_TODO: public static Predicate<object> kZ = (var0) => {
       // PORT_TODO: return var0 >= 48 && var0 <= 57;
-   };
-   public static Predicate<object> la = (var0) => {
+   // PORT_TODO: };
+   // PORT_TODO: public static Predicate<object> la = (var0) => {
       // PORT_TODO: return var0 == 46;
-   };
-   public static Predicate<object> lb = (var0) => {
+   // PORT_TODO: };
+   // PORT_TODO: public static Predicate<object> lb = (var0) => {
       // PORT_TODO: return var0 == 101 || var0 == 69;
-   };
-   public static Predicate<object> lc = (var0) => {
+   // PORT_TODO: };
+   // PORT_TODO: public static Predicate<object> lc = (var0) => {
       // PORT_TODO: return var0 >= 48 && var0 <= 57 || var0 == 43 || var0 == 45;
-   };
-   public static Predicate<object> ld = (var0) => {
+   // PORT_TODO: };
+   // PORT_TODO: public static Predicate<object> ld = (var0) => {
       // PORT_TODO: return (var0 & 192) == 128;
-   };
+   // PORT_TODO: };
    public static string gc = "0123456789ABCDEFabcdef";
 
    public static bool a(Class var0) {
@@ -78,7 +78,7 @@ public class fh {
    }
 
    public static string a(object var0, string var1, bool var2) {
-      return a((object)var0, var1, var2, (Predicate)null);
+      // PORT_TODO: return a((object)var0, var1, var2, (Predicate)null);
    }
 
    public static string a(object var0, string var1, bool var2, Predicate<object> var3) {
@@ -87,7 +87,7 @@ public class fh {
       } else if (var0 is Boolean) {
          return var0.ToString();
       } else if (var0 is BigDecimal) {
-         return ((BigDecimal)var0).toEngineeringString();
+         // PORT_TODO: return ((BigDecimal)var0).toEngineeringString();
       } else if (var0 is Number) {
          return var0.ToString();
       } else if (var0 is string) {
@@ -104,7 +104,7 @@ public class fh {
    }
 
    public static string a(eV var0, string var1, bool var2) {
-      return a((eV)var0, var1, var2, (Predicate)null);
+      // PORT_TODO: return a((eV)var0, var1, var2, (Predicate)null);
    }
 
    public static string a(eV var0, string var1, bool var2, Predicate<object> var3) {
@@ -132,7 +132,7 @@ public class fh {
    }
 
    public static string a(eY var0, string var1, bool var2) {
-      return a((eY)var0, var1, var2, (Predicate)null);
+      // PORT_TODO: return a((eY)var0, var1, var2, (Predicate)null);
    }
 
    public static string a(eY var0, string var1, bool var2, Predicate<object> var3) {
@@ -168,10 +168,10 @@ public class fh {
    public static string a(fg var0) {
       StringBuilder var1 = new StringBuilder();
       // PORT_TODO: byte[] var5;
-      int var4 = (var5 = var0.ToArray()).Length;
+      // PORT_TODO: int var4 = (var5 = var0.ToArray()).Length;
 
       if (false) { // PORT_TODO: original loop had errors
-         byte var2 = var5[var3];
+         // PORT_TODO: byte var2 = var5[var3];
          int var6 = var2 & 255;
          if (var6 == 13) {
             var1.Append("\\r");
@@ -192,7 +192,7 @@ public class fh {
          } else if (var6 == 92) {
             var1.Append("\\\\");
          } else if (var6 >= 32 && var6 < 128) {
-            var1.Append(Character.toString((char)var6));
+            // PORT_TODO: var1.Append(Character.toString((char)var6));
          } else {
             var1.Append("\\x");
             var1.Append("0123456789ABCDEFabcdef"[var6 >> 4 & 15]);
@@ -233,7 +233,7 @@ public class fh {
          } else if (var3 == '\\') {
             var2.Append("\\\\");
          } else if (var3 >= ' ' && (var1 == null || var1.test(var3))) {
-            var2.Append(Character.toString(var3));
+            // PORT_TODO: var2.Append(Character.toString(var3));
          } else {
             var2.Append("\\u");
             var2.Append("0123456789ABCDEFabcdef"[var3 >> 12 & 15]);
@@ -247,7 +247,7 @@ public class fh {
    }
 
    public static string O(string var0) {
-      return b(var0, (Predicate)null);
+      // PORT_TODO: return b(var0, (Predicate)null);
    }
 
    public static string b(string var0, Predicate<object> var1) {
@@ -278,61 +278,62 @@ public class fh {
       } else if (var1 == 34) {
          return d(var0);
       } else if (var1 == 102) {
-         if (var0.ReadByte() != 97) {
+         // PORT_TODO: if (var0.ReadByte() != 97) {
             // PORT_TODO: throw new eX("Invalid token", var0.kF, var0.kG);
-         } else if (var0.ReadByte() != 108) {
+         // PORT_TODO: } else if (var0.ReadByte() != 108) {
             // PORT_TODO: throw new eX("Invalid token", var0.kF, var0.kG);
-         } else if (var0.ReadByte() != 115) {
+         // PORT_TODO: } else if (var0.ReadByte() != 115) {
             // PORT_TODO: throw new eX("Invalid token", var0.kF, var0.kG);
-         } else if (var0.ReadByte() != 101) {
-            throw new eX("Invalid token", var0.kF, var0.kG);
-         } else {
-            return Boolean.FALSE;
-         }
+         // PORT_TODO: } else if (var0.ReadByte() != 101) {
+            // PORT_TODO: throw new eX("Invalid token", var0.kF, var0.kG);
+         // PORT_TODO: } else {
+            // PORT_TODO: return Boolean.FALSE;
+         // PORT_TODO: }
       } else if (var1 == 116) {
-         if (var0.ReadByte() != 114) {
+         // PORT_TODO: if (var0.ReadByte() != 114) {
             // PORT_TODO: throw new eX("Invalid token", var0.kF, var0.kG);
-         } else if (var0.ReadByte() != 117) {
+         // PORT_TODO: } else if (var0.ReadByte() != 117) {
             // PORT_TODO: throw new eX("Invalid token", var0.kF, var0.kG);
-         } else if (var0.ReadByte() != 101) {
-            throw new eX("Invalid token", var0.kF, var0.kG);
-         } else {
-            return Boolean.TRUE;
-         }
+         // PORT_TODO: } else if (var0.ReadByte() != 101) {
+            // PORT_TODO: throw new eX("Invalid token", var0.kF, var0.kG);
+         // PORT_TODO: } else {
+            // PORT_TODO: return Boolean.TRUE;
+         // PORT_TODO: }
       } else if (var1 == 110) {
-         if (var0.ReadByte() != 117) {
+         // PORT_TODO: if (var0.ReadByte() != 117) {
             // PORT_TODO: throw new eX("Invalid token", var0.kF, var0.kG);
-         } else if (var0.ReadByte() != 108) {
+         // PORT_TODO: } else if (var0.ReadByte() != 108) {
             // PORT_TODO: throw new eX("Invalid token", var0.kF, var0.kG);
-         } else if (var0.ReadByte() != 108) {
-            throw new eX("Invalid token", var0.kF, var0.kG);
-         } else {
-            return null;
-         }
+         // PORT_TODO: } else if (var0.ReadByte() != 108) {
+            // PORT_TODO: throw new eX("Invalid token", var0.kF, var0.kG);
+         // PORT_TODO: } else {
+            // PORT_TODO: return null;
+         // PORT_TODO: }
       } else if (var1 == 100) {
-         if (var0.ReadByte() != 97) {
+         // PORT_TODO: if (var0.ReadByte() != 97) {
             // PORT_TODO: throw new eX("Invalid token", var0.kF, var0.kG);
-         } else if (var0.ReadByte() != 116) {
+         // PORT_TODO: } else if (var0.ReadByte() != 116) {
             // PORT_TODO: throw new eX("Invalid token", var0.kF, var0.kG);
-         } else if (var0.ReadByte() != 97) {
+         // PORT_TODO: } else if (var0.ReadByte() != 97) {
             // PORT_TODO: throw new eX("Invalid token", var0.kF, var0.kG);
-         } else if (var0.ReadByte() != 40) {
-            throw new eX("Invalid token", var0.kF, var0.kG);
-         } else if (var0.bI() != 34) {
-            throw new eX("Invalid token", var0.kF, var0.kG);
-         } else {
-            fg var2 = e(var0);
-            if (var0.bI() != 41) {
-               throw new eX("Invalid token", var0.kF, var0.kG);
-            } else {
-               return var2;
-            }
-         }
+         // PORT_TODO: } else if (var0.ReadByte() != 40) {
+            // PORT_TODO: throw new eX("Invalid token", var0.kF, var0.kG);
+         // PORT_TODO: } else if (var0.bI() != 34) {
+            // PORT_TODO: throw new eX("Invalid token", var0.kF, var0.kG);
+         // PORT_TODO: } else {
+            // PORT_TODO: fg var2 = e(var0);
+            // PORT_TODO: if (var0.bI() != 41) {
+               // PORT_TODO: throw new eX("Invalid token", var0.kF, var0.kG);
+            // PORT_TODO: } else {
+               // PORT_TODO: return var2;
+            // PORT_TODO: }
+         // PORT_TODO: }
       } else if (var1 != 45 && (var1 < 48 || var1 > 57)) {
          throw new eX("Invalid token", var0.kF, var0.kG);
       } else {
          return b(var0, var1);
       }
+      return default; // PORT_TODO: auto
    }
 
    public static eY Q(string var0) {
@@ -542,75 +543,78 @@ public class fh {
 
          // PORT_TODO: int var3;
          if (false) { // PORT_TODO: original while had errors
-            if (var3 < 0) {
-               throw new eX("Short read");
-            }
+            // PORT_TODO: if (var3 < 0) {
+               // PORT_TODO: throw new eX("Short read");
+            // PORT_TODO: }
 
             if (true) { // PORT_TODO: original condition had errors
                // PORT_TODO: var3 = var0.ReadByte();
-               if (var3 < 0) {
-                  throw new eX("Short read");
-               }
+               // PORT_TODO: if (var3 < 0) {
+                  // PORT_TODO: throw new eX("Short read");
+               // PORT_TODO: }
 
-               switch(var3) {
-               case 48:
-                  var3 = 0;
-                  break;
-               case 98:
-                  var3 = 8;
-                  break;
-               case 102:
-                  var3 = 12;
-                  break;
-               case 110:
-                  var3 = 10;
-                  break;
-               case 114:
-                  var3 = 13;
-                  break;
-               case 116:
-                  var3 = 9;
-                  break;
-               case 117:
+               // PORT_TODO: switch(var3) {
+               // PORT_TODO: case 48:
+                  // PORT_TODO: var3 = 0;
+                  // PORT_TODO: break;
+               // PORT_TODO: case 98:
+                  // PORT_TODO: var3 = 8;
+                  // PORT_TODO: break;
+               // PORT_TODO: case 102:
+                  // PORT_TODO: var3 = 12;
+                  // PORT_TODO: break;
+               // PORT_TODO: case 110:
+                  // PORT_TODO: var3 = 10;
+                  // PORT_TODO: break;
+               // PORT_TODO: case 114:
+                  // PORT_TODO: var3 = 13;
+                  // PORT_TODO: break;
+               // PORT_TODO: case 116:
+                  // PORT_TODO: var3 = 9;
+                  // PORT_TODO: break;
+               // PORT_TODO: case 117:
                   // PORT_TODO: var3 = ae(var0.ReadByte()) << 12 | ae(var0.ReadByte()) << 8 | ae(var0.ReadByte()) << 4 | ae(var0.ReadByte());
-                  if (var3 <= 255) {
-                     if (true) { // PORT_TODO: original condition had errors
-                        var1.Append((char)var3);
-                     }
+                  // PORT_TODO: if (var3 <= 255) {
+                     // PORT_TODO: if (true) { // PORT_TODO: original condition had errors
+                        // PORT_TODO: var1.Append((char)var3);
+                     // PORT_TODO: }
 
-                     if (true) { // PORT_TODO: original condition had errors
-                        var2.Write(var3);
-                     }
-                  } else {
-                     if (var1 == null) {
-                        throw new eX("Mixed encodings detected in string");
-                     }
+// PORT_TODO: 
+                     // PORT_TODO: if (true) { // PORT_TODO: original condition had errors
+                        // PORT_TODO: var2.Write(var3);
+                     // PORT_TODO: }
+                  // PORT_TODO: } else {
+                     // PORT_TODO: if (var1 == null) {
+                        // PORT_TODO: throw new eX("Mixed encodings detected in string");
+                     // PORT_TODO: }
 
+// PORT_TODO: 
                      // PORT_TODO: var2 = null;
-                     var1.Append((char)var3);
-                  }
-                  continue;
-               case 118:
-                  var3 = 11;
-                  break;
-               case 120:
-                  var3 = ae(var0.ReadByte()) << 4 | ae(var0.ReadByte());
-                  if (var2 == null) {
-                     throw new eX("Mixed encodings detected in stringx");
-                  }
+                     // PORT_TODO: var1.Append((char)var3);
+                  // PORT_TODO: }
+                  // PORT_TODO: continue;
+               // PORT_TODO: case 118:
+                  // PORT_TODO: var3 = 11;
+                  // PORT_TODO: break;
+               // PORT_TODO: case 120:
+                  // PORT_TODO: var3 = ae(var0.ReadByte()) << 4 | ae(var0.ReadByte());
+                  // PORT_TODO: if (var2 == null) {
+                     // PORT_TODO: throw new eX("Mixed encodings detected in stringx");
+                  // PORT_TODO: }
 
-                  var2.Write(var3);
-                  var1 = null;
-                  continue;
-               }
+// PORT_TODO: 
+                  // PORT_TODO: var2.Write(var3);
+                  // PORT_TODO: var1 = null;
+                  // PORT_TODO: continue;
+               // PORT_TODO: }
             }
 
             if (true) { // PORT_TODO: original condition had errors
-               var1.Append((char)var3);
+               // PORT_TODO: var1.Append((char)var3);
             }
 
             if (true) { // PORT_TODO: original condition had errors
-               var2.Write(var3);
+               // PORT_TODO: var2.Write(var3);
             }
          }
 
@@ -624,43 +628,49 @@ public class fh {
 
    public static fg e(fi var0) {
       // PORT_TODO: MemoryStream var1 = new MemoryStream();
-      if (var0.ReadByte() != 48) {
+      // PORT_TODO: if (var0.ReadByte() != 48) {
          // PORT_TODO: throw new eX("Invalid hex data", var0.kF, var0.kG);
-      } else if (var0.ReadByte() != 120) {
-         throw new eX("Invalid hex data", var0.kF, var0.kG);
-      } else {
-         int var2;
+      // PORT_TODO: } else if (var0.ReadByte() != 120) {
+         // PORT_TODO: throw new eX("Invalid hex data", var0.kF, var0.kG);
+      // PORT_TODO: } else {
+         // PORT_TODO: int var2;
          // PORT_TODO: int var3;
-         for(; (var2 = var0.ReadByte()) != 34; var1.Write(var2 << 4 | var3)) {
-            if (var2 < 0) {
-               throw new eX("Short read", var0.kF, var0.kG);
-            }
+         // PORT_TODO: for(; (var2 = var0.ReadByte()) != 34; var1.Write(var2 << 4 | var3)) {
+            // PORT_TODO: if (var2 < 0) {
+               // PORT_TODO: throw new eX("Short read", var0.kF, var0.kG);
+            // PORT_TODO: }
 
-            if ((var3 = var0.ReadByte()) < 0) {
-               throw new eX("Short read", var0.kF, var0.kG);
-            }
+// PORT_TODO: 
+            // PORT_TODO: if ((var3 = var0.ReadByte()) < 0) {
+               // PORT_TODO: throw new eX("Short read", var0.kF, var0.kG);
+            // PORT_TODO: }
 
-            var2 = "0123456789abcdefABCDEF".IndexOf((char)var2);
-            if (var2 < 0) {
-               throw new eX("Invalid hex data", var0.kF, var0.kG);
-            }
+// PORT_TODO: 
+            // PORT_TODO: var2 = "0123456789abcdefABCDEF".IndexOf((char)var2);
+            // PORT_TODO: if (var2 < 0) {
+               // PORT_TODO: throw new eX("Invalid hex data", var0.kF, var0.kG);
+            // PORT_TODO: }
 
-            if (var2 >= 16) {
-               var2 -= 6;
-            }
+// PORT_TODO: 
+            // PORT_TODO: if (var2 >= 16) {
+               // PORT_TODO: var2 -= 6;
+            // PORT_TODO: }
 
+// PORT_TODO: 
             // PORT_TODO: var3 = "0123456789abcdefABCDEF".IndexOf((char)var3);
-            if (var3 < 0) {
-               throw new eX("Invalid hex data", var0.kF, var0.kG);
-            }
+            // PORT_TODO: if (var3 < 0) {
+               // PORT_TODO: throw new eX("Invalid hex data", var0.kF, var0.kG);
+            // PORT_TODO: }
 
-            if (true) { // PORT_TODO: original condition had errors
-               var3 -= 6;
-            }
-         }
+// PORT_TODO: 
+            // PORT_TODO: if (true) { // PORT_TODO: original condition had errors
+               // PORT_TODO: var3 -= 6;
+            // PORT_TODO: }
+         // PORT_TODO: }
 
-         return new fg(var1.ToArray());
-      }
+// PORT_TODO: 
+         // PORT_TODO: return new fg(var1.ToArray());
+      // PORT_TODO: }
    }
 
    public static Number b(fi var0, int var1) {

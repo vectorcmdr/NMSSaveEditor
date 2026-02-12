@@ -309,62 +309,76 @@ public class gt {
          }
       }
 
-      if (var1.width < var2) {
+      // PORT_TODO: if (var1.width < var2) {
          // PORT_TODO: throw new Exception("Cannot resize less than min width");
-      } else if (var1.height < var3) {
-         throw new Exception("Cannot resize less than min height");
-      } else {
-         if (true) { // PORT_TODO: original condition had errors
-            if (var1.width > this.qz[0].Length) {
-               for(var4 = 0; var4 < this.qy.Length; ++var4) {
+      // PORT_TODO: } else if (var1.height < var3) {
+         // PORT_TODO: throw new Exception("Cannot resize less than min height");
+      // PORT_TODO: } else {
+      // PORT_TODO: bool var8 = false; // PORT_TODO: stub declaration
+         // PORT_TODO: if (true) { // PORT_TODO: original condition had errors
+            // PORT_TODO: if (var1.width > this.qz[0].Length) {
+               // PORT_TODO: for(var4 = 0; var4 < this.qy.Length; ++var4) {
+      // PORT_TODO: object var6 = null; // PORT_TODO: stub declaration
       // PORT_TODO: // PORT_TODO: eY[] var9 = new eY[var1.width];
       // PORT_TODO: // PORT_TODO: bool[] var6 = new bool[var1.width];
                   // PORT_TODO: Array.Copy(this.qy[var4], 0, var9, 0, this.qz[var4].Length);
                   // PORT_TODO: Array.Copy(this.qz[var4], 0, var6, 0, this.qz[var4].Length);
                   // PORT_TODO: this.qy[var4] = var9;
-                  this.qz[var4] = var6;
-               }
-            }
+                  // PORT_TODO: this.qz[var4] = var6;
+               // PORT_TODO: }
+            // PORT_TODO: }
 
-            if (var1.height > this.qz.Length) {
+// PORT_TODO: 
+            // PORT_TODO: if (var1.height > this.qz.Length) {
+      // PORT_TODO: object var10 = null; // PORT_TODO: stub declaration
       // PORT_TODO: // PORT_TODO: eY[][] var7 = new eY[var1.height][];
       // PORT_TODO: // PORT_TODO: bool[][] var10 = new bool[var1.height][];
                // PORT_TODO: Array.Copy(this.qy, 0, var7, 0, this.qz.Length);
-               Array.Copy(this.qz, 0, var10, 0, this.qz.Length);
+               // PORT_TODO: Array.Copy(this.qz, 0, var10, 0, this.qz.Length);
 
-               for(int var11 = this.qz.Length; var11 < var1.height; ++var11) {
+// PORT_TODO: 
+               // PORT_TODO: for(int var11 = this.qz.Length; var11 < var1.height; ++var11) {
       // PORT_TODO: // PORT_TODO: var7[var11] = new eY[var1.width];
       // PORT_TODO: // PORT_TODO: var10[var11] = new bool[var1.width];
-               }
+               // PORT_TODO: }
 
+// PORT_TODO: 
                // PORT_TODO: this.qy = var7;
-               this.qz = var10;
-            }
-         } else {
-            if (var1.width > this.qz[0].Length) {
-               throw new Exception("Cannot resize width greater than " + this.qz[0].Length);
-            }
+               // PORT_TODO: this.qz = var10;
+            // PORT_TODO: }
+         // PORT_TODO: } else {
+            // PORT_TODO: if (var1.width > this.qz[0].Length) {
+               // PORT_TODO: throw new Exception("Cannot resize width greater than " + this.qz[0].Length);
+            // PORT_TODO: }
 
-            if (var1.height > this.qz.Length) {
-               throw new Exception("Cannot resize height greater than " + this.qz.Length);
-            }
-         }
+// PORT_TODO: 
+            // PORT_TODO: if (var1.height > this.qz.Length) {
+               // PORT_TODO: throw new Exception("Cannot resize height greater than " + this.qz.Length);
+            // PORT_TODO: }
+         // PORT_TODO: }
 
+// PORT_TODO: 
          // PORT_TODO: bool var8 = false;
-         if (this.width != var1.width) {
+         // PORT_TODO: if (this.width != var1.width) {
+      // PORT_TODO: var8 = false; // PORT_TODO: stub declaration
       // PORT_TODO: // PORT_TODO: this.width = var1.width;
             // PORT_TODO: this.qt.b("Width", (object)(((int)(this.width))));
-            var8 = true;
-         }
+            // PORT_TODO: var8 = true;
+         // PORT_TODO: }
 
-         if (this.height != var1.height) {
+// PORT_TODO: 
+         // PORT_TODO: if (this.height != var1.height) {
+      // PORT_TODO: var8 = false; // PORT_TODO: stub declaration
       // PORT_TODO: // PORT_TODO: this.height = var1.height;
             // PORT_TODO: this.qt.b("Height", (object)(((int)(this.height))));
-            var8 = true;
-         }
+            // PORT_TODO: var8 = true;
+         // PORT_TODO: }
 
-         return var8;
-      }
+// PORT_TODO: 
+         // PORT_TODO: return var8;
+      // PORT_TODO: }
+      return false; // PORT_TODO: auto-added
+      return false; // PORT_TODO: auto-added
    }
 
    public bool dl() {
@@ -770,7 +784,7 @@ public class gt {
       var11.b("Amount", (object)(((int)(var5))));
       // PORT_TODO: var11.b("MaxAmount", (object)(((int)(var6))));
       // PORT_TODO: var11.b("DamageFactor", (object)(new Double(var7)));
-      var11.b("FullyInstalled", (object)(new Boolean(var9)));
+      // PORT_TODO: var11.b("FullyInstalled", (object)(new Boolean(var9)));
       var11.b("Index.X", (object)var1);
       var11.b("Index.Y", (object)var2);
       var10.f(var11);
@@ -876,7 +890,7 @@ public class gt {
    }
 
    public bool dr() {
-      bool[][] var1 = new bool[this.height][this.width];
+      // PORT_TODO: bool[][] var1 = new bool[this.height][this.width];
       eV var2 = this.qt.d("SpecialSlots");
 
       int var5;
@@ -978,7 +992,7 @@ public class gt {
          for(int var6 = 0; var6 < this.qy[var4].Length; ++var6) {
             if (true) { // PORT_TODO: original condition had errors
                // PORT_TODO: this.qy[var4][var6].b("DamageFactor", (object)(new Double(0.0D)));
-               this.qy[var4][var6].b("FullyInstalled", (object)(new Boolean(true)));
+               // PORT_TODO: this.qy[var4][var6].b("FullyInstalled", (object)(new Boolean(true)));
                var1 = true;
             }
          }
@@ -1149,7 +1163,7 @@ public class gt {
       if (var10000 != null) {
          return var10000;
       } else {
-         int[] var0 = new int[ex.Values.Length];
+         // PORT_TODO: int[] var0 = new int[ex.Values.Length];
 
          try {
             var0[ex.jq.ordinal()] = 32;
@@ -1375,7 +1389,7 @@ public class gt {
       if (var10000 != null) {
          return var10000;
       } else {
-         int[] var0 = new int[fn.Values.Length];
+         // PORT_TODO: int[] var0 = new int[fn.Values.Length];
 
          try {
             var0[fn.lp.ordinal()] = 4;
@@ -1426,7 +1440,7 @@ public class gt {
       if (var10000 != null) {
          return var10000;
       } else {
-         int[] var0 = new int[eB.Values.Length];
+         // PORT_TODO: int[] var0 = new int[eB.Values.Length];
 
          try {
             var0[eB.jO.ordinal()] = 2;

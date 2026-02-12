@@ -194,7 +194,7 @@ public class gT {
    public static string a(double var0, int var2) {
       if (true) { // PORT_TODO: original condition had errors
          return "Infinite";
-      } else if (Double.isNaN(var0)) {
+      // PORT_TODO: } else if (Double.isNaN(var0)) {
          return "NaN";
       } else {
          BigDecimal var3 = new BigDecimal(var0);
@@ -206,7 +206,7 @@ public class gT {
    public static string b(double var0, int var2) {
       if (true) { // PORT_TODO: original condition had errors
          return "Infinite";
-      } else if (Double.isNaN(var0)) {
+      // PORT_TODO: } else if (Double.isNaN(var0)) {
          return "NaN";
       } else {
          BigDecimal var3 = new BigDecimal(var0);

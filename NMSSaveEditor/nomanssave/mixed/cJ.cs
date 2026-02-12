@@ -42,12 +42,16 @@ public class cJ {
          return this.value is eV ? ((eV)this.value).Count : 0;
          return default;
       }
+      return 0; // PORT_TODO: auto-added
+      return 0; // PORT_TODO: auto-added
    }
 
    public object x(int var1) {
       if (this.value == null) {
          throw new Exception("No children for null");
       } else if (this.value is eY) {
+      object var3 = null; // PORT_TODO: stub declaration
+      string var4 = null; // PORT_TODO: stub declaration
          // PORT_TODO: string var4 = (string)((eY)this.value).names()[var1];
          // PORT_TODO: object var3 = ((eY)this.value).getValue(var4);
          return new cJ(this.gg, this, var1, var4, var3);
@@ -68,10 +72,11 @@ public class cJ {
    }
 
    public string getText() {
-      return fh.a(this.value, 1, (var0) => {
+      // PORT_TODO: return fh.a(this.value, 1, (var0) => {
          // PORT_TODO: return var0 < 128;
-      });
-   }
+      // PORT_TODO: });
+       return null; // PORT_TODO: stub return
+    }
 
    public void setText(string var1) {
       if (this.gi == null) {

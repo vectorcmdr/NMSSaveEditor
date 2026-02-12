@@ -114,15 +114,18 @@ public class gc {
    }
 
    public static void c(Stream var0, string var1) {
+      object var2 = null; // PORT_TODO: stub declaration
       // PORT_TODO: byte[] var2 = var1.GetBytes(System.Text.Encoding.UTF8);
-      if (var2.Length < 128) {
+      // PORT_TODO: if (var2.Length < 128) {
+      // PORT_TODO: var2 = null; // PORT_TODO: stub declaration
+      // PORT_TODO: object var3 = null; // PORT_TODO: stub declaration
          // PORT_TODO: byte[] var3 = new byte[128];
          // PORT_TODO: Array.Copy(var2, 0, var3, 0, var2.Length);
          // PORT_TODO: var3[var2.Length] = 0;
-         var2 = var3;
-      }
+         // PORT_TODO: var2 = var3;
+      // PORT_TODO: }
 
-      var0.Write(var2, 0, 128);
+      // PORT_TODO: var0.Write(var2, 0, 128);
    }
 }
 

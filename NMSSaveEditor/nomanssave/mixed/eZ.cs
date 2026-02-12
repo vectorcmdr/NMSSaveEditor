@@ -26,7 +26,7 @@ public class eZ : fc {
                if (!var2) {
                   throw new fd((fd)null);
                } else {
-                  object var4;
+                  object var4 = default;
                   try {
                      // PORT_TODO: var4 = Activator.CreateInstance(var1);
                   } catch (Exception var6) {

@@ -25,9 +25,10 @@ public fY(fT var1, int var2) : base(var1, "Slot" + (var2 / 2 + 1) + (var2 % 2 ==
       try {
          // PORT_TODO: string var3 = new string(this.ah(1048576));
          // PORT_TODO: Matcher var4 = fT.cl().matcher(var3);
-         if (var4.find()) {
-            this.na = var4.group(3);
-         }
+         // PORT_TODO: if (var4.find()) {
+      // PORT_TODO: Matcher var4 = null; // PORT_TODO: stub declaration
+            // PORT_TODO: this.na = var4.group(3);
+         // PORT_TODO: }
 
          // PORT_TODO: this.me = fn.T(var3);
       } catch (IOException var5) {

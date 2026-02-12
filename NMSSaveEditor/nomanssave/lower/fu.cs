@@ -77,12 +77,14 @@ public class fu : fq {
                int var10 = var3.read(var9);
                // PORT_TODO: string var11 = new string(var9, 0, var10, Encoding.Latin1);
                // PORT_TODO: Matcher var12 = lC.matcher(var11);
-               if (var12.matches()) {
-                  try {
-                     this.lF[var8].be = ag(int.Parse(var12.group(1)));
-                  } catch (Exception var17) {
-                  }
-               }
+               // PORT_TODO: if (var12.matches()) {
+      // PORT_TODO: Matcher var12 = null; // PORT_TODO: stub declaration
+                  // PORT_TODO: try {
+      // PORT_TODO: var12 = null; // PORT_TODO: stub declaration
+                     // PORT_TODO: this.lF[var8].be = ag(int.Parse(var12.group(1)));
+                  // PORT_TODO: } catch (Exception var17) {
+                  // PORT_TODO: }
+               // PORT_TODO: }
 
                var4 += (long)var10;
             }

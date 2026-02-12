@@ -23,7 +23,7 @@ public class dQ : ActionListener {
       if (var2 >= 0 && var2 < dN.a(this.ia).Length) {
          if (dN.a(this.ia).Length == 1) {
             this.bv.c("You cannot delete the only ship you have!");
-         } else if (MessageBox.Show(this.ia, "Are you sure you want to delete this ship?\nAll items and technology in the ship inventory will be lost!", "Delete", 2) == 0) {
+         // PORT_TODO: } else if (MessageBox.Show(this.ia, "Are you sure you want to delete this ship?\nAll items and technology in the ship inventory will be lost!", "Delete", 2) == 0) {
             this.bv.i(dN.a(this.ia)[var2].getIndex());
          }
       }

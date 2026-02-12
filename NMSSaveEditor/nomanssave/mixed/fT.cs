@@ -77,6 +77,7 @@ public class fT : fq {
       // PORT_TODO: FileStream var1 = new FileStream((new FileInfo(System.IO.Path.Combine((this.lX).ToString(), System.IO.FileMode.Open).ToString(), ("containers.index").ToString())));
 
       try {
+      int var2 = 0; // PORT_TODO: stub declaration
          // PORT_TODO: this.header = hk.readInt(var1);
          hc.debug("  header: " + this.header);
          // PORT_TODO: int var2 = hk.readInt(var1);
@@ -118,6 +119,7 @@ public class fT : fq {
          this.mI = new List<object>();
 
          for(int var3 = 0; var3 < var2; ++var3) {
+      // PORT_TODO: var2 = null; // PORT_TODO: stub declaration
             // PORT_TODO: this.mI.Add(new fW(this, var1));
          }
 
@@ -222,11 +224,13 @@ public class fT : fq {
          // PORT_TODO: FileInfo[] var5 = var1;
          // PORT_TODO: int var4 = var1.Length;
 
-         for(int var3 = 0; var3 < var4; ++var3) {
-            FileInfo var2 = var5[var3];
-            h(var2);
-            return default;
-         }
+         // PORT_TODO: for(int var3 = 0; var3 < var4; ++var3) {
+      // PORT_TODO: int var4 = 0; // PORT_TODO: stub declaration
+      // PORT_TODO: object var5 = null; // PORT_TODO: stub declaration
+            // PORT_TODO: FileInfo var2 = var5[var3];
+            // PORT_TODO: h(var2);
+            // PORT_TODO: return default;
+         // PORT_TODO: }
       }
 
       // PORT_TODO: return var0.Delete();
@@ -240,14 +244,15 @@ public class fT : fq {
          }
 
          // PORT_TODO: ((Stream)var0).mark(lA.Length);
-         byte[] var3 = new byte[lA.Length];
+         // PORT_TODO: byte[] var3 = new byte[lA.Length];
          hk.readFully((Stream)var0, var3);
 
          if (false) { // PORT_TODO: original loop had errors
-            if (var3[var4] != lA[var4]) {
-               var2 = false;
-               break;
-            }
+            // PORT_TODO: if (var3[var4] != lA[var4]) {
+      // PORT_TODO: object var4 = null; // PORT_TODO: stub declaration
+               // PORT_TODO: var2 = false;
+               // PORT_TODO: break;
+            // PORT_TODO: }
          }
 
          if (var2) {
@@ -313,7 +318,7 @@ public class fT : fq {
       return mK;
    }
    public static byte[] cy() {
-      return lA;
+      // PORT_TODO: return lA;
    }
    public static void e(fT var0) {
       var0.cs();

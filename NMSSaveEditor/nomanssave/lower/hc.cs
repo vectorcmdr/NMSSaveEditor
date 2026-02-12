@@ -20,9 +20,10 @@ public class hc {
       // PORT_TODO: Logger var0 = /* LogManager */ null.getLogger("");
       // PORT_TODO: Handler[] var1 = var0.getHandlers();
 
-      for(int var2 = 0; var2 < var1.Length; ++var2) {
+      // PORT_TODO: for(int var2 = 0; var2 < var1.Length; ++var2) {
+      // PORT_TODO: object var1 = null; // PORT_TODO: stub declaration
          // PORT_TODO: var0.removeHandler(var1[0]);
-      }
+      // PORT_TODO: }
 
       // PORT_TODO: var0.setLevel(Level.ALL);
       // PORT_TODO: var0.addHandler(sn);
@@ -53,13 +54,13 @@ public class hc {
       FileStream var1;
       try {
          var1 = new FileStream((var0).ToString(), System.IO.FileMode.Open);
-         Process.GetCurrentProcess().addShutdownHook(new Thread(() => {
-            close();
-         }));
+         // PORT_TODO: Process.GetCurrentProcess().addShutdownHook(new Thread(() => {
+            // PORT_TODO: close();
+         // PORT_TODO: }));
          // PORT_TODO: System.setOut(new StreamWriter(new he(so, "[STDOUT] ")));
          // PORT_TODO: System.setErr(new StreamWriter(new he(sp, "[STDERR] ")));
-      } catch (FileNotFoundException var3) {
-         var1 = null;
+       } catch (FileNotFoundException var3) {
+         // PORT_TODO: var1 = null;
       }
 
       // PORT_TODO: sq = var1 == null ? null : new StreamWriter(var1, true);
@@ -186,22 +187,28 @@ public class hc {
          if (true) { // PORT_TODO: original condition had errors
             var3 = "SEVERE";
             var4 = sp;
-         } else if (var1.intValue() >= Level.WARNING.intValue()) {
+         // PORT_TODO: } else if (var1.intValue() >= Level.WARNING.intValue()) {
+      Level var1 = null; // PORT_TODO: stub declaration
             var3 = "WARNING";
             var4 = sp;
-         } else if (var1.intValue() >= Level.INFO.intValue()) {
+         // PORT_TODO: } else if (var1.intValue() >= Level.INFO.intValue()) {
+      Level var1 = null; // PORT_TODO: stub declaration
             var3 = "INFO";
             var4 = so;
-         } else if (var1.intValue() >= Level.CONFIG.intValue()) {
+         // PORT_TODO: } else if (var1.intValue() >= Level.CONFIG.intValue()) {
+      object var1 = null; // PORT_TODO: stub declaration
             var3 = "CONFIG";
             var4 = so;
-         } else if (var1.intValue() >= Level.FINE.intValue()) {
+         // PORT_TODO: } else if (var1.intValue() >= Level.FINE.intValue()) {
+      object var1 = null; // PORT_TODO: stub declaration
             var3 = "FINE";
             var4 = so;
-         } else if (var1.intValue() >= Level.FINER.intValue()) {
+         // PORT_TODO: } else if (var1.intValue() >= Level.FINER.intValue()) {
+      object var1 = null; // PORT_TODO: stub declaration
             var3 = "FINER";
             var4 = so;
-         } else if (var1.intValue() >= Level.FINEST.intValue()) {
+         // PORT_TODO: } else if (var1.intValue() >= Level.FINEST.intValue()) {
+      object var1 = null; // PORT_TODO: stub declaration
             var3 = "FINEST";
             var4 = so;
          } else {

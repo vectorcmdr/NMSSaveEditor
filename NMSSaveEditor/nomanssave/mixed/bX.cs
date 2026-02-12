@@ -29,16 +29,18 @@ public class bX : object {
             if (true) { // PORT_TODO: original condition had errors
                if (true) { // PORT_TODO: original condition had errors
                   // PORT_TODO: bS var5 = bO.a(bS.j(this.fk), var3, var4);
-                  if (var5 != null && bS.e(var5) && !bS.f(var5)) {
-                     if (true) { // PORT_TODO: original condition had errors
+                  // PORT_TODO: if (var5 != null && bS.e(var5) && !bS.f(var5)) {
+      // PORT_TODO: bS var5 = null; // PORT_TODO: stub declaration
+                     // PORT_TODO: if (true) { // PORT_TODO: original condition had errors
                         // PORT_TODO: bO.a(bS.j(this.fk)).a(this.fl, this.fm, var3, var4);
-                     } else {
+                     // PORT_TODO: } else {
                         // PORT_TODO: bO.a(bS.j(this.fk)).b(this.fl, this.fm, var3, var4);
-                     }
+                     // PORT_TODO: }
 
-                     bS.c(this.fk);
-                     bS.c(var5);
-                  }
+// PORT_TODO: 
+                     // PORT_TODO: bS.c(this.fk);
+                     // PORT_TODO: bS.c(var5);
+                  // PORT_TODO: }
                }
             }
          }

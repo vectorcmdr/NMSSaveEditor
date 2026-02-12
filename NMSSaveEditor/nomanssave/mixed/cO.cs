@@ -35,22 +35,23 @@ public class cO : object {
       object var2 = cN.b(this.gt);
       cN.a(this.gt, var1);
       if (cN.c(this.gt) != null) {
-         Control.invokeLater(() => {
-            if (cN.b(this.gt) == null) {
-               if (var2 != null) {
-                  cN.c(this.gt).setSelectedValue(null);
-               }
-            } else if (var2 == null || !cN.b(this.gt).Equals(var2)) {
-               if (cN.d(this.gt)) {
-                  cN.c(this.gt).setSelectedValue(((gD)cN.b(this.gt)).K());
-               } else if (cN.b(this.gt) is Enum) {
-                  cN.c(this.gt).setSelectedValue(((Enum)cN.b(this.gt)).Name);
-               } else {
-                  cN.c(this.gt).setSelectedValue(cN.b(this.gt).ToString());
-               }
-            }
+         // PORT_TODO: Control.invokeLater(() => {
+            // PORT_TODO: if (cN.b(this.gt) == null) {
+               // PORT_TODO: if (var2 != null) {
+                  // PORT_TODO: cN.c(this.gt).setSelectedValue(null);
+               // PORT_TODO: }
+            // PORT_TODO: } else if (var2 == null || !cN.b(this.gt).Equals(var2)) {
+               // PORT_TODO: if (cN.d(this.gt)) {
+                  // PORT_TODO: cN.c(this.gt).setSelectedValue(((gD)cN.b(this.gt)).K());
+               // PORT_TODO: } else if (cN.b(this.gt) is Enum) {
+                  // PORT_TODO: cN.c(this.gt).setSelectedValue(((Enum)cN.b(this.gt)).Name);
+               // PORT_TODO: } else {
+                  // PORT_TODO: cN.c(this.gt).setSelectedValue(cN.b(this.gt).ToString());
+               // PORT_TODO: }
+            // PORT_TODO: }
 
-         });
+// PORT_TODO: 
+         // PORT_TODO: });
       }
 
    }

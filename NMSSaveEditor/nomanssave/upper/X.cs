@@ -54,85 +54,91 @@ public class X : Panel {
       // PORT_TODO: this.bN.Click += (new ah(this));
       var3.a(null, (Control)this.bN);
       this.bO = new cN(typeof(gi));
-      this.bO.a((var1x) => {
-         gj var2 = (gj)this.bG.SelectedItem;
-         if (var2 != null) {
-            var2.ae(var1x);
-         }
+      // PORT_TODO: this.bO.a((var1x) => {
+         // PORT_TODO: gj var2 = (gj)this.bG.SelectedItem;
+         // PORT_TODO: if (var2 != null) {
+            // PORT_TODO: var2.ae(var1x);
+         // PORT_TODO: }
 
-      });
-      var3.a("Biome", (Control)this.bO);
-      this.bP = new cN(typeof(gk));
-      this.bP.a((var1x) => {
-         gj var2 = (gj)this.bG.SelectedItem;
-         if (var2 != null) {
-            var2.af(var1x);
-         }
+// PORT_TODO: 
+      // PORT_TODO: });
+      // PORT_TODO: var3.a("Biome", (Control)this.bO);
+      // PORT_TODO: this.bP = new cN(typeof(gk));
+      // PORT_TODO: this.bP.a((var1x) => {
+         // PORT_TODO: gj var2 = (gj)this.bG.SelectedItem;
+         // PORT_TODO: if (var2 != null) {
+            // PORT_TODO: var2.af(var1x);
+         // PORT_TODO: }
 
-      });
-      var3.a("Type", (Control)this.bP);
-      var3.Y();
-      Panel var4 = new Panel();
-      this.bQ = new Button() { Text = "Delete" };
+// PORT_TODO: 
+      // PORT_TODO: });
+      // PORT_TODO: var3.a("Type", (Control)this.bP);
+      // PORT_TODO: var3.Y();
+      // PORT_TODO: Panel var4 = new Panel();
+      // PORT_TODO: this.bQ = new Button() { Text = "Delete" };
       // PORT_TODO: this.bQ.Click += (new ai(this, var1));
-      var4.Add(this.bQ);
-      this.bR = new Button() { Text = "Export" };
+      // PORT_TODO: var4.Add(this.bQ);
+      // PORT_TODO: this.bR = new Button() { Text = "Export" };
       // PORT_TODO: this.bR.Click += (new Z(this, var1));
-      var4.Add(this.bR);
-      this.bS = new Button() { Text = "Import" };
+      // PORT_TODO: var4.Add(this.bR);
+      // PORT_TODO: this.bS = new Button() { Text = "Import" };
       // PORT_TODO: this.bS.Click += (new aa(this, var1));
-      var4.Add(this.bS);
-      var3.a(var4);
-   }
+      // PORT_TODO: var4.Add(this.bS);
+      // PORT_TODO: var3.a(var4);
+   // PORT_TODO: }
 
-   public void a(gj[] var1) {
-      this.bT = var1;
-      if (var1.Length == 0) {
-         this.bG.SelectedIndex = (-1);
-      } else {
-         this.bG.SelectedIndex = (0);
-      }
+// PORT_TODO: 
+   // PORT_TODO: public void a(gj[] var1) {
+      // PORT_TODO: this.bT = var1;
+      // PORT_TODO: if (var1.Length == 0) {
+         // PORT_TODO: this.bG.SelectedIndex = (-1);
+      // PORT_TODO: } else {
+         // PORT_TODO: this.bG.SelectedIndex = (0);
+      // PORT_TODO: }
 
-      this.bG.Refresh();
-   }
-   public static gj[] a(X var0) {
-      return var0.bT;
-   }
-   public static ComboBox b(X var0) {
-      return var0.bH;
-   }
-   public static G c(X var0) {
-      return var0.bI;
-   }
-   public static G d(X var0) {
-      return var0.bJ;
-   }
-   public static G e(X var0) {
-      return var0.bK;
-   }
-   public static G f(X var0) {
-      return var0.bL;
-   }
-   public static G g(X var0) {
-      return var0.bM;
-   }
-   public static CheckBox h(X var0) {
-      return var0.bN;
-   }
-   public static cN i(X var0) {
-      return var0.bO;
-   }
-   public static cN j(X var0) {
-      return var0.bP;
-   }
-   public static ComboBox k(X var0) {
-      return var0.bG;
-   }
-   public static void a(X var0, gj[] var1) {
-      var0.bT = var1;
-   }
+// PORT_TODO: 
+      // PORT_TODO: this.bG.Refresh();
+   // PORT_TODO: }
+   // PORT_TODO: public static gj[] a(X var0) {
+      // PORT_TODO: return var0.bT;
+   // PORT_TODO: }
+   // PORT_TODO: public static ComboBox b(X var0) {
+      // PORT_TODO: return var0.bH;
+   // PORT_TODO: }
+   // PORT_TODO: public static G c(X var0) {
+      // PORT_TODO: return var0.bI;
+   // PORT_TODO: }
+   // PORT_TODO: public static G d(X var0) {
+      // PORT_TODO: return var0.bJ;
+   // PORT_TODO: }
+   // PORT_TODO: public static G e(X var0) {
+      // PORT_TODO: return var0.bK;
+   // PORT_TODO: }
+   // PORT_TODO: public static G f(X var0) {
+      // PORT_TODO: return var0.bL;
+   // PORT_TODO: }
+   // PORT_TODO: public static G g(X var0) {
+      // PORT_TODO: return var0.bM;
+   // PORT_TODO: }
+   // PORT_TODO: public static CheckBox h(X var0) {
+      // PORT_TODO: return var0.bN;
+   // PORT_TODO: }
+   // PORT_TODO: public static cN i(X var0) {
+      // PORT_TODO: return var0.bO;
+   // PORT_TODO: }
+   // PORT_TODO: public static cN j(X var0) {
+      // PORT_TODO: return var0.bP;
+   // PORT_TODO: }
+   // PORT_TODO: public static ComboBox k(X var0) {
+      // PORT_TODO: return var0.bG;
+   // PORT_TODO: }
+   // PORT_TODO: public static void a(X var0, gj[] var1) {
+      // PORT_TODO: var0.bT = var1;
+   // PORT_TODO: }
+// PORT_TODO: }
+
+
+
 }
-
-
-
+}
 }

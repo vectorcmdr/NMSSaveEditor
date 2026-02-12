@@ -27,7 +27,7 @@ public class aR : FocusListener {
          if (true) { // PORT_TODO: original condition had errors
             if (true) { // PORT_TODO: original condition had errors
       // PORT_TODO: // PORT_TODO: var2 = aQ.c(this.dr).width;
-            } else if (var2 > aQ.d(this.dr).width && !en.aS()) {
+            // PORT_TODO: } else if (var2 > aQ.d(this.dr).width && !en.aS()) {
       // PORT_TODO: // PORT_TODO: var2 = aQ.d(this.dr).width;
             }
          }

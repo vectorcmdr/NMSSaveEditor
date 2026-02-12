@@ -93,6 +93,7 @@ public class cW : Panel, CaretListener {
    }
 
    public void aI() {
+      int var2 = 0; // PORT_TODO: stub declaration
       // PORT_TODO: Element var1 = this.gB.getDocument().getDefaultRootElement();
       // PORT_TODO: int var2 = var1.getElementCount();
       int var3 = Math.Max(Convert.ToString(var2).length(), this.gG);
@@ -147,10 +148,12 @@ public class cW : Panel, CaretListener {
    }
 
    public string B(int var1) {
+      Element var3 = null; // PORT_TODO: stub declaration
+      Element var4 = null; // PORT_TODO: stub declaration
       // PORT_TODO: Element var2 = this.gB.getDocument().getDefaultRootElement();
       // PORT_TODO: int var3 = var2.getElementIndex(var1);
       // PORT_TODO: Element var4 = var2.getElement(var3);
-      return var4.getStartOffset() == var1 ? Convert.ToString(var3 + 1) : "";
+      // PORT_TODO: return var4.getStartOffset() == var1 ? Convert.ToString(var3 + 1) : "";
    }
 
    public int b(int var1, int var2) {
@@ -173,21 +176,25 @@ public class cW : Panel, CaretListener {
          // PORT_TODO: int var8 = var7.getElementIndex(var1);
          // PORT_TODO: Element var9 = var7.getElement(var8);
 
-         for(int var10 = 0; var10 < var9.getElementCount(); ++var10) {
-            Element var11 = var9.getElement(var10);
+         // PORT_TODO: for(int var10 = 0; var10 < var9.getElementCount(); ++var10) {
+      // PORT_TODO: string var15 = null; // PORT_TODO: stub declaration
+      // PORT_TODO: Element var9 = null; // PORT_TODO: stub declaration
+            // PORT_TODO: Element var11 = var9.getElement(var10);
             // PORT_TODO: AttributeSet var12 = var11.getAttributes();
             // PORT_TODO: string var13 = (string)var12.getAttribute(StyleConstants.FontFamily);
             // PORT_TODO: Integer var14 = (Integer)var12.getAttribute(StyleConstants.FontSize);
             // PORT_TODO: string var15 = var13 + var14;
-            FontMetrics var16 = (FontMetrics)this.gK[var15];
-            if (var16 == null) {
+            // PORT_TODO: FontMetrics var16 = (FontMetrics)this.gK[var15];
+            // PORT_TODO: if (var16 == null) {
+      // PORT_TODO: var15 = null; // PORT_TODO: stub declaration
                // PORT_TODO: Font var17 = new Font(var13, 0, var14);
                // PORT_TODO: var16 = this.Graphics.FromHwnd(IntPtr.Zero).MeasureString("M", var17);
-               this.gK.Put(var15, var16);
-            }
+               // PORT_TODO: this.gK.Put(var15, var16);
+            // PORT_TODO: }
 
-            var6 = Math.Max(var6, var16.getDescent());
-         }
+// PORT_TODO: 
+            // PORT_TODO: var6 = Math.Max(var6, var16.getDescent());
+         // PORT_TODO: }
       }
 
       // PORT_TODO: return var5 - var6;
@@ -197,10 +204,11 @@ public class cW : Panel, CaretListener {
       int var2 = this.gB.getCaretPosition();
       // PORT_TODO: Element var3 = this.gB.getDocument().getDefaultRootElement();
       // PORT_TODO: int var4 = var3.getElementIndex(var2);
-      if (this.gJ != var4) {
-         this.Invalidate();
-         this.gJ = var4;
-      }
+      // PORT_TODO: if (this.gJ != var4) {
+      // PORT_TODO: int var4 = 0; // PORT_TODO: stub declaration
+         // PORT_TODO: this.Invalidate();
+         // PORT_TODO: this.gJ = var4;
+      // PORT_TODO: }
 
    }
 

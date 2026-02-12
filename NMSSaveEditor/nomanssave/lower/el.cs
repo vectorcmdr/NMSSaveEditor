@@ -31,6 +31,8 @@ public class el : FileView {
          var2 = ej.a(this.@is, var1);
          // PORT_TODO: return var2 == null ? null : ej.aR();
       }
+      return default; // PORT_TODO: auto-added
+      return default; // PORT_TODO: auto-added
    }
 
    public string getName(FileInfo var1) {

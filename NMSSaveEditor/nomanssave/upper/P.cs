@@ -27,9 +27,11 @@ public class P : ActionListener {
          } else {
             int var4;
             if (true) { // PORT_TODO: original condition had errors
+      gg var5 = null; // PORT_TODO: stub declaration
                // PORT_TODO: gg var5 = (gg)var3[var4];
                hc.info("Attempting to swap base computer with " + var5.ToString() + "...");
                if (var2.a(var5)) {
+      var5 = null; // PORT_TODO: stub declaration
                   hc.info("Base computer relocated: " + var2.Name);
                } else {
                   hc.info("Base computer not moved.");

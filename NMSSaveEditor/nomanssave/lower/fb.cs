@@ -29,7 +29,7 @@ public class fb : fc {
          if (!var2) {
             throw new fd((fd)null);
          } else {
-            object var5;
+            object var5 = default;
             try {
                // PORT_TODO: var5 = Activator.CreateInstance(var1);
             } catch (Exception var7) {
@@ -39,7 +39,8 @@ public class fb : fc {
             // PORT_TODO: var3.put(this.name, var5);
             return var5;
          }
-      } else if (var1.IsInstanceOfType(var3.values[var4])) {
+      // PORT_TODO: } else if (var1.IsInstanceOfType(var3.values[var4])) {
+      int var4 = 0; // PORT_TODO: stub declaration
          // PORT_TODO: return var3.values[var4];
       } else {
          throw new Exception("Unexpected path");

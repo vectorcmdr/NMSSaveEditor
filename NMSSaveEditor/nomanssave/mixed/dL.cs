@@ -24,14 +24,18 @@ public class dL : object {
          eM var7 = (eM)var2;
          if (var7.aW()) {
             if (var4) {
+      Label var6 = null; // PORT_TODO: stub declaration
                var6.setBackground(/* UIManager.getColor */ SystemColors.Control); //("Settlement.positivePerkHighlight")
             } else {
+      Label var6 = null; // PORT_TODO: stub declaration
                var6.setForeground(/* UIManager.getColor */ SystemColors.Control); //("Settlement.positivePerkColor")
                return default;
             }
          } else if (var4) {
+      Label var6 = null; // PORT_TODO: stub declaration
             var6.setBackground(/* UIManager.getColor */ SystemColors.Control); //("Settlement.negativePerkHighlight")
          } else {
+      Label var6 = null; // PORT_TODO: stub declaration
             var6.setForeground(/* UIManager.getColor */ SystemColors.Control); //("Settlement.negativePerkColor")
          }
       }

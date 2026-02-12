@@ -23,71 +23,71 @@ public class h : Form {
    public List<object> v = new List<object>();
    public static h w = null;
 
-public h(Frame var1) : base(var1) {
-      this.FormBorderStyle = FormBorderStyle.FixedDialog; //(false);
+// PORT_TODO: public h(Frame var1) : base(var1) {
+      // PORT_TODO: this.FormBorderStyle = FormBorderStyle.FixedDialog; //(false);
       // setModalExclusionType not available in WinForms
-      this.Text = ("Add Item");
+      // PORT_TODO: this.Text = ("Add Item");
       // PORT_TODO: // PORT_TODO: this/* setModal */(true);
-      Panel var2 = new Panel();
-      this.setContentPane(var2);
-      var2.SuspendLayout(); // TODO: set layout new TableLayoutPanel());
-      Panel var3 = new Panel();
+      // PORT_TODO: Panel var2 = new Panel();
+      // PORT_TODO: this.setContentPane(var2);
+      // PORT_TODO: var2.SuspendLayout(); // TODO: set layout new TableLayoutPanel());
+      // PORT_TODO: Panel var3 = new Panel();
       // TODO: var3.SuspendLayout(); // TODO: set layout /* FormLayout */ null, FormFactory.LABEL_COMPONENT_GAP_COLSPEC, ColumnSpec.decode("280px"), FormFactory.LABEL_COMPONENT_GAP_COLSPEC}, new RowSpec[]{FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC}));
-      Label var4 = new Label() { Text = "Search:" };
+      // PORT_TODO: Label var4 = new Label() { Text = "Search:" };
       // PORT_TODO: var3.Controls.Controls.Add(var4);
-      Panel var5 = new Panel();
-      var5.SuspendLayout(); // TODO: set layout new TableLayoutPanel());
-      this.m = new TextBox();
-      this.m.Text = ("");
-      var5.Add(this.m);
-      this.n = new Button() { Text = "Search" };
+      // PORT_TODO: Panel var5 = new Panel();
+      // PORT_TODO: var5.SuspendLayout(); // TODO: set layout new TableLayoutPanel());
+      // PORT_TODO: this.m = new TextBox();
+      // PORT_TODO: this.m.Text = ("");
+      // PORT_TODO: var5.Add(this.m);
+      // PORT_TODO: this.n = new Button() { Text = "Search" };
       // PORT_TODO: this.n.Click += (new i(this));
-      var5.Add(this.n, "East");
-      var3.Controls.Add(var5);
-      Label var6 = new Label() { Text = "Type:" };
-      var3.Controls.Add(var6);
-      this.o = new ComboBox();
-      this.o.DataSource = (new j(this));
-      var3.Add(this.o, "4, 4, fill, default");
-      Label var7 = new Label() { Text = "Category:" };
-      var3.Controls.Add(var7);
-      this.p = new ComboBox();
-      this.p.DataSource = (new k(this));
-      var3.Add(this.p, "4, 6, fill, default");
-      Label var8 = new Label() { Text = "Item:" };
-      var3.Controls.Add(var8);
-      this.q = new ComboBox();
-      this.q.DataSource = (new l(this));
-      var3.Add(this.q, "4, 8, fill, default");
-      var2.Controls.Add(var3);
-      Panel var9 = new Panel();
-      var9.SuspendLayout(); // TODO: set layout new FlowLayoutPanel(2));
-      var2.Controls.Add(var9);
-      Button var10 = new Button() { Text = "Save" };
+      // PORT_TODO: var5.Add(this.n, "East");
+      // PORT_TODO: var3.Controls.Add(var5);
+      // PORT_TODO: Label var6 = new Label() { Text = "Type:" };
+      // PORT_TODO: var3.Controls.Add(var6);
+      // PORT_TODO: this.o = new ComboBox();
+      // PORT_TODO: this.o.DataSource = (new j(this));
+      // PORT_TODO: var3.Add(this.o, "4, 4, fill, default");
+      // PORT_TODO: Label var7 = new Label() { Text = "Category:" };
+      // PORT_TODO: var3.Controls.Add(var7);
+      // PORT_TODO: this.p = new ComboBox();
+      // PORT_TODO: this.p.DataSource = (new k(this));
+      // PORT_TODO: var3.Add(this.p, "4, 6, fill, default");
+      // PORT_TODO: Label var8 = new Label() { Text = "Item:" };
+      // PORT_TODO: var3.Controls.Add(var8);
+      // PORT_TODO: this.q = new ComboBox();
+      // PORT_TODO: this.q.DataSource = (new l(this));
+      // PORT_TODO: var3.Add(this.q, "4, 8, fill, default");
+      // PORT_TODO: var2.Controls.Add(var3);
+      // PORT_TODO: Panel var9 = new Panel();
+      // PORT_TODO: var9.SuspendLayout(); // TODO: set layout new FlowLayoutPanel(2));
+      // PORT_TODO: var2.Controls.Add(var9);
+      // PORT_TODO: Button var10 = new Button() { Text = "Save" };
       // PORT_TODO: var10.Click += (new m(this));
-      var9.Add(var10);
-      this.getRootPane().setDefaultButton(var10);
-      Button var11 = new Button() { Text = "Cancel" };
+      // PORT_TODO: var9.Add(var10);
+      // PORT_TODO: this.getRootPane().setDefaultButton(var10);
+      // PORT_TODO: Button var11 = new Button() { Text = "Cancel" };
       // PORT_TODO: var11.Click += (new n(this));
-      var9.Add(var11);
+      // PORT_TODO: var9.Add(var11);
       // PORT_TODO: this.getRootPane().registerKeyboardAction(new o(this), /* KeyStroke */ Keys.None /* (27, 0) */, 2);
-      this.PerformLayout();
-   }
+      // PORT_TODO: this.PerformLayout();
+   // PORT_TODO: }
 
    public void a() {
-      this.t = (List<object>)this.s.stream().map(ey.ba).distinct().sorted((var0, var1) => {
-         return var0.Name.CompareTo(var1.Name);
-      }).collect(Collectors.toList());
-      this.o.SelectedIndex = (this.t.Count == 1 ? 0 : -1);
-      this.o.Refresh();
-      this.b();
+      // PORT_TODO: this.t = (List<object>)this.s.stream().map(ey.ba).distinct().sorted((var0, var1) => {
+         // PORT_TODO: return var0.Name.CompareTo(var1.Name);
+      // PORT_TODO: }).collect(Collectors.toList());
+      // PORT_TODO: this.o.SelectedIndex = (this.t.Count == 1 ? 0 : -1);
+      // PORT_TODO: this.o.Refresh();
+      // PORT_TODO: this.b();
    }
 
    public void b() {
       eB var1 = (eB)this.o.SelectedItem;
       this.u = (List<object>)this.s.stream().filter((var1x) => {
          return var1x.ba() == var1;
-      }).map(ey.bc).distinct().sorted((var0, var1x) => {
+      // PORT_TODO: }).map(ey.bc).distinct().sorted((var0, var1x) => {
          return var0.Name.CompareTo(var1x.Name);
       }).collect(Collectors.toList());
       this.p.SelectedIndex = (this.u.Count == 1 ? 0 : -1);
@@ -98,13 +98,13 @@ public h(Frame var1) : base(var1) {
    public void c() {
       eB var1 = (eB)this.o.SelectedItem;
       ex var2 = (ex)this.p.SelectedItem;
-      this.v = (List<object>)this.s.stream().filter((var2x) => {
+      // PORT_TODO: this.v = (List<object>)this.s.stream().filter((var2x) => {
          // PORT_TODO: return var2x.ba() == var1 && var2x.bc() == var2 && (var2 != ex.iZ || !var2x.be());
-      }).sorted((var0, var1x) => {
-         return var0.Name.CompareTo(var1x.Name);
-      }).collect(Collectors.toList());
-      this.q.SelectedIndex = (this.v.Count == 1 ? 0 : -1);
-      this.q.Refresh();
+      // PORT_TODO: }).sorted((var0, var1x) => {
+         // PORT_TODO: return var0.Name.CompareTo(var1x.Name);
+      // PORT_TODO: }).collect(Collectors.toList());
+      // PORT_TODO: this.q.SelectedIndex = (this.v.Count == 1 ? 0 : -1);
+      // PORT_TODO: this.q.Refresh();
    }
 
    public ey a(int var1) {

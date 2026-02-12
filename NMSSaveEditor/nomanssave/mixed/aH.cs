@@ -67,6 +67,7 @@ public class aH {
       if (var2 == null) {
          // PORT_TODO: return (object[])Array.newInstance(0);
       } else {
+      object var3 = null; // PORT_TODO: stub declaration
          // PORT_TODO: object var3 = Array.newInstance(var2.Count);
 
          for(int var4 = 0; var4 < var2.Count; ++var4) {
@@ -133,16 +134,18 @@ public class aH {
 
       try {
          // PORT_TODO: URL var2 = typeof(Application).getProtectionDomain().getCodeSource().getLocation();
-         if (var0 && var2.getFile().EndsWith(".jar")) {
+         // PORT_TODO: if (var0 && var2.getFile().EndsWith(".jar")) {
+      // PORT_TODO: URL var2 = null; // PORT_TODO: stub declaration
             // PORT_TODO: var1 = Paths[var2.toURI()].toFile().Directory;
-         } else {
+         // PORT_TODO: } else {
             // PORT_TODO: var1 = (new FileInfo(".")).getCanonicalFile();
-         }
+         // PORT_TODO: }
       } catch (Exception) {
+      object var20 = null; // PORT_TODO: stub declaration
          // PORT_TODO: Console.WriteLine("Error: cannot find working directory");
-         var20.printStackTrace();
+         // PORT_TODO: var20.printStackTrace();
          // PORT_TODO: Environment.Exit(1);
-      } catch (IOException var21) {
+      // PORT_TODO: } catch (IOException var21) {
          Console.WriteLine("Error: cannot find working directory");
          var21.printStackTrace();
          Environment.Exit(1);
@@ -190,6 +193,7 @@ public class aH {
                // PORT_TODO: IEnumerator<object> var8 = var3.stringPropertyNames().GetEnumerator();
 
                if (false) { // PORT_TODO: original while had errors
+      IEnumerator<object> var8 = null; // PORT_TODO: stub declaration
                   string var7 = (string)var8.Current;
 
                   try {
@@ -257,88 +261,99 @@ public class aH {
 
    public static void V() {
       // PORT_TODO: string var0 = cK.getValueAsString("LookAndFeel");
-      aI var1 = (aI)Stream.of(aI.Values).filter((var1x) => {
-         return var1x.Name.Equals(var0);
-      }).findFirst().orElse(aI.cN);
+      // PORT_TODO: aI var1 = (aI)Stream.of(aI.Values).filter((var1x) => {
+      // PORT_TODO: string var0 = null; // PORT_TODO: stub declaration
+         // PORT_TODO: return var1x.Name.Equals(var0);
+      // PORT_TODO: }).findFirst().orElse(aI.cN);
 
-      try {
-         object var2;
-         switch(W()[var1.ordinal()]) {
-         case 1:
-         default:
+// PORT_TODO: 
+      // PORT_TODO: try {
+         // PORT_TODO: object var2;
+         // PORT_TODO: switch(W()[var1.ordinal()]) {
+         // PORT_TODO: case 1:
+         // PORT_TODO: default:
             // PORT_TODO: var2 = new FlatLightLaf();
-            break;
-         case 2:
+            // PORT_TODO: break;
+         // PORT_TODO: case 2:
             // PORT_TODO: var2 = new FlatDarkLaf();
-            break;
-         case 3:
+            // PORT_TODO: break;
+         // PORT_TODO: case 3:
             // PORT_TODO: var2 = new FlatIntelliJLaf();
-            break;
-         case 4:
+            // PORT_TODO: break;
+         // PORT_TODO: case 4:
             // PORT_TODO: var2 = new FlatDarculaLaf();
-            break;
-         case 5:
+            // PORT_TODO: break;
+         // PORT_TODO: case 5:
             // PORT_TODO: var2 = new FlatMacLightLaf();
-            break;
-         case 6:
+            // PORT_TODO: break;
+         // PORT_TODO: case 6:
             // PORT_TODO: var2 = new FlatMacDarkLaf();
-            return default;
-         }
+            // PORT_TODO: return default;
+         // PORT_TODO: }
 
-         /* setLookAndFeel(var2) */;
-      } catch (Exception var13) /* UnsupportedLookAndFeelException */ {
-         hc.a("Could not set look and feel: " + var1, var13);
-         return;
-      }
+// PORT_TODO: 
+         // PORT_TODO: /* setLookAndFeel(var2) */;
+      // PORT_TODO: } catch (Exception var13) /* UnsupportedLookAndFeelException */ {
+         // PORT_TODO: hc.a("Could not set look and feel: " + var1, var13);
+         // PORT_TODO: return;
+      // PORT_TODO: }
 
-      hc.debug("Look and Feel: " + /* L&F */ null.Name);
-      Font var3 = /* UIManager.getFont */ SystemFonts.DefaultFont; //("Label.font");
-      if (var3 == null) {
-         cH = 120;
-         cI = 350;
-         cJ = 200;
-         /* UIManager.put("Inventory.font", (object)null) */;
-         /* UIManager.put("Inventory.gridSize", 200) */;
-         /* UIManager.put("Inventory.iconSize", 64) */;
-      } else {
-         double var4 = cK.L("InventoryScaling");
-         if (var4 <= 0.0D) {
-            var4 = 1.0D;
-            cK.b("InventoryScaling", (object)var4);
-            cL = true;
-         }
+// PORT_TODO: 
+      // PORT_TODO: hc.debug("Look and Feel: " + /* L&F */ null.Name);
+      // PORT_TODO: Font var3 = /* UIManager.getFont */ SystemFonts.DefaultFont; //("Label.font");
+      // PORT_TODO: if (var3 == null) {
+         // PORT_TODO: cH = 120;
+         // PORT_TODO: cI = 350;
+         // PORT_TODO: cJ = 200;
+         // PORT_TODO: /* UIManager.put("Inventory.font", (object)null) */;
+         // PORT_TODO: /* UIManager.put("Inventory.gridSize", 200) */;
+         // PORT_TODO: /* UIManager.put("Inventory.iconSize", 64) */;
+      // PORT_TODO: } else {
+      // PORT_TODO: int var10 = 0; // PORT_TODO: stub declaration
+      // PORT_TODO: Font var7 = null; // PORT_TODO: stub declaration
+         // PORT_TODO: double var4 = cK.L("InventoryScaling");
+         // PORT_TODO: if (var4 <= 0.0D) {
+            // PORT_TODO: var4 = 1.0D;
+            // PORT_TODO: cK.b("InventoryScaling", (object)var4);
+            // PORT_TODO: cL = true;
+         // PORT_TODO: }
 
+// PORT_TODO: 
          // PORT_TODO: int var6 = (int)Math.Round((double)var3.getSize() * var4);
          // PORT_TODO: Font var7 = new Font(var3.Name, 0, var6);
          // PORT_TODO: Canvas var8 = new Canvas();
-         FontMetrics var9 = Graphics.FromHwnd(IntPtr.Zero).MeasureString("M", var3);
-         cH = var9.stringWidth("MMMMMMMMMM");
-         cI = var9.stringWidth("MMMMMMMMMMMMMMMMMMMMMMMMMMMMM");
+         // PORT_TODO: FontMetrics var9 = Graphics.FromHwnd(IntPtr.Zero).MeasureString("M", var3);
+         // PORT_TODO: cH = var9.stringWidth("MMMMMMMMMM");
+         // PORT_TODO: cI = var9.stringWidth("MMMMMMMMMMMMMMMMMMMMMMMMMMMMM");
          // PORT_TODO: cJ = var9.stringWidth("MMMMMMMMMMMMMMMMM");
-         var9 = Graphics.FromHwnd(IntPtr.Zero).MeasureString("M", var7);
+         // PORT_TODO: var9 = Graphics.FromHwnd(IntPtr.Zero).MeasureString("M", var7);
          // PORT_TODO: int var10 = var9.stringWidth("MMMMMMMMMMM");
-         int var11 = var10 - (var9.Height * 2 + 8);
+         // PORT_TODO: int var11 = var10 - (var9.Height * 2 + 8);
 
-         int var12;
-         for(var12 = 16; var12 * 2 <= var11; var12 *= 2) {
-         }
+// PORT_TODO: 
+         // PORT_TODO: int var12;
+         // PORT_TODO: for(var12 = 16; var12 * 2 <= var11; var12 *= 2) {
+         // PORT_TODO: }
 
-         if ((double)var12 * 1.5D <= (double)var11) {
-            var12 = (int)((double)var12 * 1.5D);
-         }
+// PORT_TODO: 
+         // PORT_TODO: if ((double)var12 * 1.5D <= (double)var11) {
+            // PORT_TODO: var12 = (int)((double)var12 * 1.5D);
+         // PORT_TODO: }
 
-         /* UIManager.put("Inventory.font", var7) */;
-         /* UIManager.put("Inventory.gridSize", var10) */;
-         /* UIManager.put("Inventory.iconSize", var12) */;
-      }
+// PORT_TODO: 
+         // PORT_TODO: /* UIManager.put("Inventory.font", var7) */;
+         // PORT_TODO: /* UIManager.put("Inventory.gridSize", var10) */;
+         // PORT_TODO: /* UIManager.put("Inventory.iconSize", var12) */;
+      // PORT_TODO: }
 
+// PORT_TODO: 
    }
    public static int[] W() {
       int[] var10000 = cM;
       if (var10000 != null) {
          return var10000;
       } else {
-         int[] var0 = new int[aI.Values.Length];
+         // PORT_TODO: int[] var0 = new int[aI.Values.Length];
 
          try {
             var0[aI.cQ.ordinal()] = 4;

@@ -161,6 +161,7 @@ public class bO : Panel, eo {
 
             if (false) { // PORT_TODO: original loop had errors
                if (false) { // PORT_TODO: original loop had errors
+      bS var6 = null; // PORT_TODO: stub declaration
                   // PORT_TODO: bS var6 = new bS(this, var5, var4, (bS)null);
                   var6.setMinimumSize(var3);
                   var6.setMaximumSize(var3);
@@ -244,10 +245,11 @@ public class bO : Panel, eo {
       // PORT_TODO: int var7 = dd.a(this, var5, var6);
       if (true) { // PORT_TODO: original condition had errors
          // PORT_TODO: gt var8 = (gt)var5[var7];
-         if (this.eW.a(bS.h(var2), bS.i(var2), var8)) {
-            bS.c(var2);
-            this.eR.a(var8);
-         }
+         // PORT_TODO: if (this.eW.a(bS.h(var2), bS.i(var2), var8)) {
+      // PORT_TODO: gt var8 = null; // PORT_TODO: stub declaration
+            // PORT_TODO: bS.c(var2);
+            // PORT_TODO: this.eR.a(var8);
+         // PORT_TODO: }
       }
 
    }

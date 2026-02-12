@@ -23,7 +23,7 @@ public class dq : ActionListener {
       if (var2 >= 0 && var2 < dj.a(this.hl).Length) {
          if (dj.a(this.hl).Length == 1) {
             this.bv.c("You cannot delete the only multitool you have!");
-         } else if (MessageBox.Show(this.hl, "Are you sure you want to delete this multitool?\nAll technology in the multitool will be lost!", "Delete", 2) == 0) {
+         // PORT_TODO: } else if (MessageBox.Show(this.hl, "Are you sure you want to delete this multitool?\nAll technology in the multitool will be lost!", "Delete", 2) == 0) {
             this.bv.h(dj.a(this.hl)[var2].getIndex());
          }
       }

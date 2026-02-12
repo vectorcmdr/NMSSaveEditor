@@ -75,10 +75,12 @@ public class g : object {
          if (var3 == 2) {
             // PORT_TODO: int var5 = this.i.g.IndexOf(var4.getID());
             if (true) { // PORT_TODO: original condition had errors
-               if (var5 < 0) {
-                  this.i.g.f(var4.getID());
-               }
-            } else if (var5 >= 0) {
+               // PORT_TODO: if (var5 < 0) {
+      // PORT_TODO: int var5 = 0; // PORT_TODO: stub declaration
+                  // PORT_TODO: this.i.g.f(var4.getID());
+               // PORT_TODO: }
+            // PORT_TODO: } else if (var5 >= 0) {
+      int var5 = 0; // PORT_TODO: stub declaration
                this.i.g.ac(var5);
             }
          }

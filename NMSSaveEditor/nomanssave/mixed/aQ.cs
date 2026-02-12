@@ -19,40 +19,40 @@ public class aQ : Form {
    public TextBox dp;
    public static aQ dq;
 
-public aQ(Frame var1) : base(var1) {
-      this.FormBorderStyle = FormBorderStyle.FixedDialog; //(false);
+// PORT_TODO: public aQ(Frame var1) : base(var1) {
+      // PORT_TODO: this.FormBorderStyle = FormBorderStyle.FixedDialog; //(false);
       // setModalExclusionType not available in WinForms
-      this.Text = ("Expand Inventory");
+      // PORT_TODO: this.Text = ("Expand Inventory");
       // PORT_TODO: // PORT_TODO: this/* setModal */(true);
-      Panel var2 = new Panel();
-      this.setContentPane(var2);
-      var2.SuspendLayout(); // TODO: set layout new TableLayoutPanel());
-      Panel var3 = new Panel();
+      // PORT_TODO: Panel var2 = new Panel();
+      // PORT_TODO: this.setContentPane(var2);
+      // PORT_TODO: var2.SuspendLayout(); // TODO: set layout new TableLayoutPanel());
+      // PORT_TODO: Panel var3 = new Panel();
       // TODO: var3.SuspendLayout(); // TODO: set layout /* FormLayout */ null, FormFactory.LABEL_COMPONENT_GAP_COLSPEC, ColumnSpec.decode("250px"), FormFactory.LABEL_COMPONENT_GAP_COLSPEC}, new RowSpec[]{FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC}));
-      Label var4 = new Label() { Text = "Width:" };
-      var3.Controls.Add(var4);
-      this.@do = new TextBox();
-      this.@do.addFocusListener(new aR(this));
-      var3.Add(this.@do, "4, 2, fill, default");
-      Label var5 = new Label() { Text = "Height:" };
-      var3.Controls.Add(var5);
-      this.dp = new TextBox();
-      this.dp.addFocusListener(new aS(this));
-      var3.Add(this.dp, "4, 4, fill, default");
-      var2.Add(var3);
-      Panel var6 = new Panel();
-      var6.SuspendLayout(); // TODO: set layout new FlowLayoutPanel(2));
-      var2.Controls.Add(var6);
-      Button var7 = new Button() { Text = "Save" };
+      // PORT_TODO: Label var4 = new Label() { Text = "Width:" };
+      // PORT_TODO: var3.Controls.Add(var4);
+      // PORT_TODO: this.@do = new TextBox();
+      // PORT_TODO: this.@do.addFocusListener(new aR(this));
+      // PORT_TODO: var3.Add(this.@do, "4, 2, fill, default");
+      // PORT_TODO: Label var5 = new Label() { Text = "Height:" };
+      // PORT_TODO: var3.Controls.Add(var5);
+      // PORT_TODO: this.dp = new TextBox();
+      // PORT_TODO: this.dp.addFocusListener(new aS(this));
+      // PORT_TODO: var3.Add(this.dp, "4, 4, fill, default");
+      // PORT_TODO: var2.Add(var3);
+      // PORT_TODO: Panel var6 = new Panel();
+      // PORT_TODO: var6.SuspendLayout(); // TODO: set layout new FlowLayoutPanel(2));
+      // PORT_TODO: var2.Controls.Add(var6);
+      // PORT_TODO: Button var7 = new Button() { Text = "Save" };
       // PORT_TODO: var7.Click += (new aT(this));
-      var6.Add(var7);
-      this.getRootPane().setDefaultButton(var7);
-      Button var8 = new Button() { Text = "Cancel" };
+      // PORT_TODO: var6.Add(var7);
+      // PORT_TODO: this.getRootPane().setDefaultButton(var7);
+      // PORT_TODO: Button var8 = new Button() { Text = "Cancel" };
       // PORT_TODO: var8.Click += (new aU(this));
-      var6.Add(var8);
+      // PORT_TODO: var6.Add(var8);
       // PORT_TODO: this.getRootPane().registerKeyboardAction(new aV(this), /* KeyStroke */ Keys.None /* (27, 0) */, 2);
-      this.PerformLayout();
-   }
+      // PORT_TODO: this.PerformLayout();
+   // PORT_TODO: }
 
    public Size a(Size var1, Size var2, Size var3) {
       this.dk = var1;

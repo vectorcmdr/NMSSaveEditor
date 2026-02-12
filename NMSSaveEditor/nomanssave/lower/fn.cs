@@ -11,7 +11,7 @@ namespace NMSSaveEditor
 
 public sealed class fn {
       // PORT_TODO: // PORT_TODO: // PORT_TODO: // PORT_TODO: // PORT_TODO: // PORT_TODO: public static fn[] Values() { return new fn[] { lm, ln, lo, lp, lq, lr, ls, lt, S, T, i }; }
-   public static fn valueOf(string name) { foreach (var v in Values()) if (v.ToString() == name) return v; return null; }
+   // PORT_TODO: public static fn valueOf(string name) { foreach (var v in Values()) if (v.ToString() == name) return v; return null; }
 
    public static readonly fn lm = new fn();
    public static readonly fn ln = new fn();
@@ -34,9 +34,10 @@ public sealed class fn {
 
       if (false) { // PORT_TODO: original loop had errors
          // PORT_TODO: fn var1 = var4[var2];
-         if (var0.Equals(var1.ToString())) {
-            return var1;
-         }
+         // PORT_TODO: if (var0.Equals(var1.ToString())) {
+      // PORT_TODO: fn var1 = null; // PORT_TODO: stub declaration
+            // PORT_TODO: return var1;
+         // PORT_TODO: }
       }
 
       return null;

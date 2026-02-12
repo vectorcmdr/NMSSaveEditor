@@ -134,6 +134,8 @@ public class fw {
                // PORT_TODO: FileStream var7 = new FileStream((fu.b(this.lJ).ToString(), System.IO.FileMode.Open));
 
                try {
+      FileStream var6 = null; // PORT_TODO: stub declaration
+      // PORT_TODO: object var6 = null; // PORT_TODO: stub declaration
                   Console.WriteLine("Reading header");
                   byte[] var8 = new byte[64];
                   // PORT_TODO: hk.readFully(var7, var8);
@@ -144,6 +146,7 @@ public class fw {
                   int var13;
                   fw var10000;
                   for(var13 = 0; var13 < var2; ++var13) {
+      var6 = null; // PORT_TODO: stub declaration
                      if (fu.c(this.lJ)[var13].lP < fu.c(this.lJ)[var2].lP) {
                         var10000 = fu.c(this.lJ)[var13];
                         // PORT_TODO: var10000.lP += var9;
@@ -158,6 +161,7 @@ public class fw {
                   var11 += (long)fu.c(this.lJ)[var2].a(var6);
 
                   for(var13 = var2 + 1; var13 < fu.c(this.lJ).Length; ++var13) {
+      var6 = null; // PORT_TODO: stub declaration
                      if (fu.c(this.lJ)[var13].lP < fu.c(this.lJ)[var2].lP) {
                         var10000 = fu.c(this.lJ)[var13];
                         // PORT_TODO: var10000.lP += var9;
@@ -171,6 +175,7 @@ public class fw {
                   byte[] var15;
                   int var16;
                   if (false) { // PORT_TODO: original loop had errors
+      var6 = null; // PORT_TODO: stub declaration
                      var6.Write(var15, 0, var16);
                      var11 += (long)var16;
                   }
@@ -190,13 +195,15 @@ public class fw {
                   }
 
                   if (false) { // PORT_TODO: original while had errors
+      var6 = null; // PORT_TODO: stub declaration
                      var6.Write(var15, 0, var16);
                   }
                } finally {
                   // PORT_TODO: var7.Close();
                }
             } finally {
-               var6.Close();
+      object var6 = null; // PORT_TODO: stub declaration
+               // PORT_TODO: var6.Close();
             }
 
          }

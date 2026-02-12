@@ -42,7 +42,8 @@ public class x : JavaThread {
          // PORT_TODO: string var12 = new string(var9, 0, var9.Length);
          if (true) { // PORT_TODO: original condition had errors
             // PORT_TODO: var12 = var12.Substring(0, var12.Length - 2);
-         } else if (var12.EndsWith("\n")) {
+         // PORT_TODO: } else if (var12.EndsWith("\n")) {
+      string var12 = null; // PORT_TODO: stub declaration
             // PORT_TODO: var12 = var12.Substring(0, var12.Length - 1);
          }
 

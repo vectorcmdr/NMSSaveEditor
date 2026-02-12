@@ -28,6 +28,8 @@ public class ei : G {
       } catch (Exception var3) {
          // PORT_TODO: return (eb.a(ec.h(this.ik).ToString())[this.il].eh());
       }
+      return null; // PORT_TODO: auto-added
+      return null; // PORT_TODO: auto-added
    }
 }
 

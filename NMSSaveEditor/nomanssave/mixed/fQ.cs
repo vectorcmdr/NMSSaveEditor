@@ -23,7 +23,7 @@ public class fQ {
       if (var4) {
          // PORT_TODO: FileStream var5 = new FileStream((new FileInfo(System.IO.Path.Combine((fJ.a(var1).ToString(), System.IO.FileMode.Open)).ToString(), ("mf_" + var2).ToString())));
 
-         int var7;
+         int var7 = 0;
          try {
             hc.info("Reading metadata for " + var2);
             byte[] var6 = new byte[1024];
@@ -70,10 +70,12 @@ public class fQ {
       // PORT_TODO: object var2 = new FileStream((new FileInfo(System.IO.Path.Combine((fJ.a(this.mt).ToString(), System.IO.FileMode.Open)).ToString(), (this.filename).ToString())));
 
       try {
+      object var2 = null; // PORT_TODO: stub declaration
          MemoryStream var3 = new MemoryStream();
          byte[] var4 = new byte[1024];
          hk.readFully((Stream)var2, var4, 0, 16);
          if ((255 & var4[0]) == 229 && (255 & var4[1]) == 161 && (255 & var4[2]) == 237 && (255 & var4[3]) == 254) {
+      var2 = null; // PORT_TODO: stub declaration
             var2 = new gX((Stream)var2, var4);
          } else {
             var3.Write(var4, 0, 16);
@@ -82,6 +84,7 @@ public class fQ {
          while(true) {
             int var5;
             if ((var5 = ((Stream)var2).read(var4)) >= 0) {
+      var2 = null; // PORT_TODO: stub declaration
                // PORT_TODO: var3.Write(var4, 0, var5);
                if (true) { // PORT_TODO: original condition had errors
                   continue;
@@ -92,6 +95,7 @@ public class fQ {
             return var7;
          }
       } finally {
+      object var2 = null; // PORT_TODO: stub declaration
          ((Stream)var2).Close();
       }
    }
@@ -188,7 +192,9 @@ public class fQ {
       // PORT_TODO: object var37 = new FileStream((new FileInfo(System.IO.Path.Combine((fJ.a(this.mt).ToString(), System.IO.FileMode.Open)).ToString(), (this.filename).ToString())));
 
       try {
+      object var37 = null; // PORT_TODO: stub declaration
          if (var2) {
+      var37 = null; // PORT_TODO: stub declaration
             var37 = new gZ((Stream)var37);
          }
 
@@ -197,6 +203,7 @@ public class fQ {
             // PORT_TODO: var36 = ((gZ)var37).ci();
          }
       } finally {
+      object var37 = null; // PORT_TODO: stub declaration
          ((Stream)var37).Close();
       }
 
@@ -223,8 +230,10 @@ public class fQ {
       // PORT_TODO: FileStream var38 = new FileStream((new FileInfo(System.IO.Path.Combine((fJ.a(this.mt).ToString(), System.IO.FileMode.Open)).ToString(), ("mf_" + this.filename).ToString())));
 
       try {
+      FileStream var38 = null; // PORT_TODO: stub declaration
          var38.Write(this.mx.encode());
       } finally {
+      FileStream var38 = null; // PORT_TODO: stub declaration
          var38.Close();
       }
 

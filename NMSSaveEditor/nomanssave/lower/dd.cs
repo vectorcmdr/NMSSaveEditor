@@ -15,34 +15,34 @@ public class dd : Form {
    public int gU;
    public static dd gV = null;
 
-public dd(Frame var1) : base(var1) {
-      this.Size = new Size(300, 300);
-      this.FormBorderStyle = FormBorderStyle.FixedDialog; //(false);
+// PORT_TODO: public dd(Frame var1) : base(var1) {
+      // PORT_TODO: this.Size = new Size(300, 300);
+      // PORT_TODO: this.FormBorderStyle = FormBorderStyle.FixedDialog; //(false);
       // setModalExclusionType not available in WinForms
-      this.Text = ("Move Item");
+      // PORT_TODO: this.Text = ("Move Item");
       // PORT_TODO: // PORT_TODO: this/* setModal */(true);
-      Panel var2 = new Panel();
-      this.setContentPane(var2);
-      var2.SuspendLayout(); // TODO: set layout new TableLayoutPanel());
-      Panel var3 = new Panel();
-      this.gS = new ListBox();
+      // PORT_TODO: Panel var2 = new Panel();
+      // PORT_TODO: this.setContentPane(var2);
+      // PORT_TODO: var2.SuspendLayout(); // TODO: set layout new TableLayoutPanel());
+      // PORT_TODO: Panel var3 = new Panel();
+      // PORT_TODO: this.gS = new ListBox();
       // PORT_TODO: this.gS.setSelectionMode(0);
-      this.gS.DataSource = (new de(this));
+      // PORT_TODO: this.gS.DataSource = (new de(this));
       // this.gS.addMouseListener - use MouseClick event instead
       // PORT_TODO: var3.setViewportView(this.gS);
       // PORT_TODO: var2.Add(var3);
-      Panel var4 = new Panel();
-      var4.SuspendLayout(); // TODO: set layout new FlowLayoutPanel(2));
-      var2.Controls.Add(var4);
-      Button var5 = new Button() { Text = "Move" };
+      // PORT_TODO: Panel var4 = new Panel();
+      // PORT_TODO: var4.SuspendLayout(); // TODO: set layout new FlowLayoutPanel(2));
+      // PORT_TODO: var2.Controls.Add(var4);
+      // PORT_TODO: Button var5 = new Button() { Text = "Move" };
       // PORT_TODO: var5.Click += (new dg(this));
-      var4.Add(var5);
-      this.getRootPane().setDefaultButton(var5);
-      Button var6 = new Button() { Text = "Cancel" };
+      // PORT_TODO: var4.Add(var5);
+      // PORT_TODO: this.getRootPane().setDefaultButton(var5);
+      // PORT_TODO: Button var6 = new Button() { Text = "Cancel" };
       // PORT_TODO: var6.Click += (new dh(this));
-      var4.Add(var6);
+      // PORT_TODO: var4.Add(var6);
       // PORT_TODO: this.getRootPane().registerKeyboardAction(new di(this), /* KeyStroke */ Keys.None /* (27, 0) */, 2);
-   }
+   // PORT_TODO: }
 
    public int a(List<object> var1, int var2) {
       this.gT = var1;

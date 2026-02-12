@@ -74,6 +74,7 @@ public class gS {
             // PORT_TODO: KeyValuePair<object, object> var24 = (KeyValuePair<object, object>)var13.Current;
             // PORT_TODO: var23 = ((string)var24.getKey()).GetBytes(System.Text.Encoding.UTF8);
             if (var23.Length <= 255) {
+      // PORT_TODO: KeyValuePair<object, object> var24 = null; // PORT_TODO: stub declaration
                ((Stream)var22).Write(var23.Length);
                ((Stream)var22).Write(var23);
                var23 = fj.j(var24.getValue());

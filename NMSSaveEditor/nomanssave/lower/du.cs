@@ -61,7 +61,7 @@ public class du : Panel {
          Font var6 = /* UIManager.getFont */ SystemFonts.DefaultFont; //("Inventory.font");
          Image var7 = var3 == null ? null : var3.c(var5, var5);
          int var8 = 0;
-         Label var9;
+         Label var9 = default;
          GridBagConstraints var10;
          if (var7 != null) {
             // PORT_TODO: var9 = new Label() { Text = var7 };

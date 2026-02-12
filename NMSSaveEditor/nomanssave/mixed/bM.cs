@@ -27,13 +27,15 @@ public class bM : FocusListener {
          // PORT_TODO: TextBox var2 = (TextBox)var1.Controls[0];
          string var3 = this.eD.ab();
          // PORT_TODO: string var4 = var2.Text;
-         if (!var4.Equals(var3)) {
-            try {
-               this.eD.l(var4);
-            } catch (Exception var6) {
+         // PORT_TODO: if (!var4.Equals(var3)) {
+      // PORT_TODO: string var4 = null; // PORT_TODO: stub declaration
+            // PORT_TODO: try {
+      // PORT_TODO: var4 = null; // PORT_TODO: stub declaration
+               // PORT_TODO: this.eD.l(var4);
+            // PORT_TODO: } catch (Exception var6) {
                // PORT_TODO: var2.Text = (var3);
-            }
-         }
+            // PORT_TODO: }
+         // PORT_TODO: }
 
       }
    }

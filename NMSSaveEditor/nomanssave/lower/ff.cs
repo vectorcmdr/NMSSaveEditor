@@ -224,6 +224,8 @@ public class ff : Closeable {
             return -1;
          }
       }
+      return 0; // PORT_TODO: auto-added
+      return 0; // PORT_TODO: auto-added
    }
 
    public void Dispose() { close(); }
@@ -367,9 +369,9 @@ public class ff : Closeable {
       } else if (var1 == 116) {
          if (true) { // PORT_TODO: original condition had errors
             // PORT_TODO: throw new eX("Invalid token");
-         } else if (this.ReadByte() != 117) {
+         // PORT_TODO: } else if (this.ReadByte() != 117) {
             // PORT_TODO: throw new eX("Invalid token");
-         } else if (this.ReadByte() != 101) {
+         // PORT_TODO: } else if (this.ReadByte() != 101) {
             throw new eX("Invalid token");
          } else {
             // PORT_TODO: return Boolean.TRUE;
@@ -377,11 +379,11 @@ public class ff : Closeable {
       } else if (var1 == 102) {
          if (true) { // PORT_TODO: original condition had errors
             // PORT_TODO: throw new eX("Invalid token");
-         } else if (this.ReadByte() != 108) {
+         // PORT_TODO: } else if (this.ReadByte() != 108) {
             // PORT_TODO: throw new eX("Invalid token");
-         } else if (this.ReadByte() != 115) {
+         // PORT_TODO: } else if (this.ReadByte() != 115) {
             // PORT_TODO: throw new eX("Invalid token");
-         } else if (this.ReadByte() != 101) {
+         // PORT_TODO: } else if (this.ReadByte() != 101) {
             throw new eX("Invalid token");
          } else {
             // PORT_TODO: return Boolean.FALSE;
@@ -389,9 +391,9 @@ public class ff : Closeable {
       } else if (var1 == 110) {
          if (true) { // PORT_TODO: original condition had errors
             // PORT_TODO: throw new eX("Invalid token");
-         } else if (this.ReadByte() != 108) {
+         // PORT_TODO: } else if (this.ReadByte() != 108) {
             // PORT_TODO: throw new eX("Invalid token");
-         } else if (this.ReadByte() != 108) {
+         // PORT_TODO: } else if (this.ReadByte() != 108) {
             throw new eX("Invalid token");
          } else {
             return null;
@@ -401,6 +403,8 @@ public class ff : Closeable {
       } else {
          return this.ad(var1);
       }
+      return default; // PORT_TODO: auto-added
+      return default; // PORT_TODO: auto-added
    }
 
    public Number ad(int var1) {
@@ -593,9 +597,11 @@ public class ff : Closeable {
 
       try {
          // PORT_TODO: return this.kS.decode(/* ByteBuffer.wrap */ (var1)).ToString();
-      } catch (CharacterCodingException var3) {
+       } catch (Exception var3) {
          throw new eX("Invalid string");
       }
+      return null; // PORT_TODO: auto-added
+      return null; // PORT_TODO: auto-added
    }
 
    public object bO() {
@@ -603,9 +609,11 @@ public class ff : Closeable {
 
       try {
          // PORT_TODO: return this.kS.decode(/* ByteBuffer.wrap */ (var1)).ToString();
-      } catch (CharacterCodingException var3) {
+       } catch (Exception var3) {
          return new fg(var1);
       }
+      return default; // PORT_TODO: auto-added
+      return default; // PORT_TODO: auto-added
    }
 }
 

@@ -15,28 +15,31 @@ public class gE {
 
    public static gE[] z(eY var0) {
       eV var1 = var0.d("TeleportEndpoints");
-      List<object> var2 = (List<object>)var1.bB().filter((var0x) => {
-         return "Settlement".Equals(var0x.getValueAsString("TeleporterType"));
-      }).map((var0x) => {
+      // PORT_TODO: List<object> var2 = (List<object>)var1.bB().filter((var0x) => {
+         // PORT_TODO: return "Settlement".Equals(var0x.getValueAsString("TeleporterType"));
+      // PORT_TODO: }).map((var0x) => {
          // PORT_TODO: return hl.n(var0x.H("UniverseAddress"));
-      }).collect(Collectors.toList());
-      eV var3 = var0.d("SettlementStatesV2");
-      if (var3 != null && var3.Count != 0) {
-         List<object> var4 = new List<object>();
+      // PORT_TODO: }).collect(Collectors.toList());
+      // PORT_TODO: eV var3 = var0.d("SettlementStatesV2");
+      // PORT_TODO: if (var3 != null && var3.Count != 0) {
+         // PORT_TODO: List<object> var4 = new List<object>();
 
-         for(int var5 = 0; var5 < var3.Count; ++var5) {
-            eY var6 = var3.V(var5);
-            hl var7 = hl.n(var6.getValue("UniverseAddress"));
-            if (var2.Contains(var7)) {
-               var4.Add(new gE(var5, var6));
-            }
-         }
+// PORT_TODO: 
+         // PORT_TODO: for(int var5 = 0; var5 < var3.Count; ++var5) {
+            // PORT_TODO: eY var6 = var3.V(var5);
+            // PORT_TODO: hl var7 = hl.n(var6.getValue("UniverseAddress"));
+            // PORT_TODO: if (var2.Contains(var7)) {
+               // PORT_TODO: var4.Add(new gE(var5, var6));
+            // PORT_TODO: }
+         // PORT_TODO: }
 
-         return (gE[])var4.ToArray();
-      } else {
-         return new gE[0];
-      }
-   }
+// PORT_TODO: 
+         // PORT_TODO: return (gE[])var4.ToArray();
+      // PORT_TODO: } else {
+         // PORT_TODO: return new gE[0];
+      // PORT_TODO: }
+       return new gE[0]; // PORT_TODO: stub return
+    }
 
    public gE(int var1, eY var2) {
       this.index = var1;

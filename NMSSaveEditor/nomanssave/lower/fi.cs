@@ -17,7 +17,7 @@ public fi(string var1) : base(var1) {
    }
 
    public int bI() {
-      int var1;
+      int var1 = 0;
       do {
          if (true) { // PORT_TODO: original condition had errors
             return -1;
@@ -61,6 +61,8 @@ public fi(string var1) : base(var1) {
       } catch (IOException var3) {
          throw new eX("stream error", var3, this.kF, this.kG);
       }
+      return 0; // PORT_TODO: auto-added
+      return 0; // PORT_TODO: auto-added
    }
    public static int a(fi var0, Predicate<object> var1) {
       return var0.a(var1);

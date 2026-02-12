@@ -9,7 +9,7 @@ namespace NMSSaveEditor
 
 public sealed class eU {
       // PORT_TODO: // PORT_TODO: public static eU[] Values() { return new eU[] { kr, ks, kt, ku, kv, kw, kx, ky, kz, C }; }
-   public static eU valueOf(string name) { foreach (var v in Values()) if (v.ToString() == name) return v; return null; }
+   // PORT_TODO: public static eU valueOf(string name) { foreach (var v in Values()) if (v.ToString() == name) return v; return null; }
 
    public static readonly eU kr = new eU("Gek");
    public static readonly eU ks = new eU("Vy'keen");
@@ -38,9 +38,10 @@ public sealed class eU {
 
       if (false) { // PORT_TODO: original loop had errors
          // PORT_TODO: eU var1 = var4[var2];
-         if (var1.ToString().Equals(var0)) {
-            return var1;
-         }
+         // PORT_TODO: if (var1.ToString().Equals(var0)) {
+      // PORT_TODO: eU var1 = null; // PORT_TODO: stub declaration
+            // PORT_TODO: return var1;
+         // PORT_TODO: }
       }
 
       return null;
