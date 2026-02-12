@@ -15,7 +15,7 @@ public class hf {
 
          for(int var6 = 0; var6 < var0.length(); ++var6) {
             var3 *= 10L;
-            char var5 = var0[var6);
+            char var5 = var0[var6];
             if (var5 < '0' || var5 > '9') {
                throw new Exception("Invalid digit: " + var5);
             }
@@ -43,7 +43,7 @@ public class hf {
 
          for(int var8 = 0; var8 < var0.length(); ++var8) {
             var5 *= 10L;
-            char var7 = var0[var8);
+            char var7 = var0[var8];
             if (var7 < '0' || var7 > '9') {
                throw new Exception("Invalid digit: " + var7);
             }

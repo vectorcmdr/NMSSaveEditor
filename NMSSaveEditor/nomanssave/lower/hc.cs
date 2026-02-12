@@ -35,8 +35,8 @@ public class hc {
          Class var0 = Class.forName("sun.misc.Unsafe");
          Field var1 = var0.getDeclaredField("theUnsafe");
          var1.setAccessible(true);
-         Object var2 = var1[((Object)null);
-         Method var3 = var0.getDeclaredMethod("putObjectVolatile", typeof(Object), Long.TYPE, typeof(Object));
+         object var2 = var1[((object)null);
+         Method var3 = var0.getDeclaredMethod("putObjectVolatile", typeof(object), Long.TYPE, typeof(object));
          Method var4 = var0.getDeclaredMethod("staticFieldOffset", typeof(Field));
          Class var5 = Class.forName("jdk.internal.module.IllegalAccessLogger");
          Field var6 = var5.getDeclaredField("logger");
@@ -47,7 +47,7 @@ public class hc {
 
    }
 
-   public static void k(File var0) {
+   public static void k(FileInfo var0) {
       FileStream var1;
       try {
          var1 = new FileStream(var0);
@@ -122,7 +122,7 @@ public class hc {
 
    private static string d(string var0, string var1) {
       for(int var2 = 0; var2 < var0.length(); ++var2) {
-         if (!char.IsWhiteSpace(var0[var2))) {
+         if (!char.IsWhiteSpace(var0[var2])) {
             return var0.Substring(0, var2) + var1 + var0.Substring(var2);
          }
       }

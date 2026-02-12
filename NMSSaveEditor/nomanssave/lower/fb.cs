@@ -15,7 +15,7 @@ class fb : fc {
       this.name = var2;
    }
 
-   Object a(Class var1, bool var2) {
+   object a(Class var1, bool var2) {
       eY var3;
       if (this.kN == null) {
          var3 = this.kL;
@@ -28,10 +28,10 @@ class fb : fc {
          if (!var2) {
             throw new fd((fd)null);
          } else {
-            Object var5;
+            object var5;
             try {
                var5 = var1.newInstance();
-            } catch (IllegalAccessException | InstantiationException var7) {
+            } catch (Exception var7) {
                throw new Exception("Unexpected error", var7);
             }
 
@@ -45,7 +45,7 @@ class fb : fc {
       }
    }
 
-   Object getValue() {
+   object getValue() {
       eY var1;
       if (this.kN == null) {
          var1 = this.kL;
@@ -53,10 +53,10 @@ class fb : fc {
          var1 = (eY)this.kN.a(typeof(eY), false);
       }
 
-      return var1[(this.name);
+      return var1[this.name];
    }
 
-   Object a(Object var1, bool var2) {
+   object a(object var1, bool var2) {
       eY var3;
       if (this.kN == null) {
          var3 = this.kL;
@@ -67,7 +67,7 @@ class fb : fc {
       return var3.Put(this.name, var1);
    }
 
-   Object bG() {
+   object bG() {
       eY var1;
       if (this.kN == null) {
          var1 = this.kL;
@@ -86,7 +86,7 @@ class fb : fc {
          var2 = (eY)this.kN.a(typeof(eY), false);
       }
 
-      Object var3 = var2[(this.name);
+      object var3 = var2[this.name];
       if (var3 == null) {
          var2.Put(this.name, var1);
          return null;

@@ -9,7 +9,7 @@ namespace NMSSaveEditor
 
 public class cl : OpenFileDialog {
    private static cl fG = null;
-   private static string name = "Planetary Base Backup File";
+   private static string name = "Planetary Base Backup FileInfo";
    private static Image fH = Application.a("UI-BASEICON.PNG", 16, 16);
 
    public static cl ar() {
@@ -26,7 +26,7 @@ public class cl : OpenFileDialog {
       this.setFileView(new cm(this));
       this.setFileFilter(new cn(this));
       this.addChoosableFileFilter(new co(this));
-      this.setDialogTitle("Choose Backup File");
+      this.setDialogTitle("Choose Backup FileInfo");
       SystemInformation.addPropertyChangeListener((var1) => {
          if ("lookAndFeel".Equals(var1.getPropertyName())) {
             Control.updateComponentTreeUI(this);
@@ -34,7 +34,7 @@ public class cl : OpenFileDialog {
 
       });
    }
-   static Image as() {
+   static Image @as() {
       return fH;
    }
 }

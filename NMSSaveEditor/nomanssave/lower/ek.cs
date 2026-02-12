@@ -18,7 +18,7 @@ class ek : FileFilter {
       return "Saved Game";
    }
 
-   public bool accept(File var1) {
+   public bool accept(FileInfo var1) {
       if (var1.Attributes.HasFlag(FileAttributes.Directory)) {
          return true;
       } else {

@@ -8,7 +8,7 @@ namespace NMSSaveEditor
 public class fa {
    eY kM = new eY();
 
-   public fa d(string var1, Object var2) {
+   public fa d(string var1, object var2) {
       if (var1 == null) {
          throw new NullReferenceException();
       } else if (!eY.bF().matcher(var1).Matches()) {

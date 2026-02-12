@@ -10,8 +10,8 @@ namespace NMSSaveEditor
 
 abstract class fX {
    fW mO;
-   File mX;
-   File mY;
+   FileInfo mX;
+   FileInfo mY;
    fS mZ;
    int mode;
    fT mN;
@@ -24,7 +24,7 @@ abstract class fX {
          int var5 = ((fW)fT.c(var1)[(var4)).name.CompareTo(var2.mO.name);
          if (var5 == 0) {
             fW var6 = (fW)fT.c(var1).Remove(var4);
-            fT.i(new File(fT.d(var1), var6.mU));
+            fT.i(new FileInfo(fT.d(var1), var6.mU));
          }
 
          if (var5 >= 0) {
@@ -34,13 +34,13 @@ abstract class fX {
       }
 
       this.mO = new fW(var1, var2.mO);
-      File var9 = new File(fT.d(var1), this.mO.mU);
+      FileInfo var9 = new FileInfo(fT.d(var1), this.mO.mU);
       if (!var9.Create()) {
          throw new IOException("Unable to create container path");
       } else {
-         this.mX = new File(var9, "container." + this.mO.mT);
-         this.mZ = new fS(new File(var9, var2.mP));
-         this.mY = new File(var9, var2.mR);
+         this.mX = new FileInfo(var9, "container." + this.mO.mT);
+         this.mZ = new fS(new FileInfo(var9, var2.mP));
+         this.mY = new FileInfo(var9, var2.mR);
          FileStream var10 = new FileStream(this.mX);
 
          try {
@@ -56,14 +56,14 @@ abstract class fX {
    fX(fT var1, string var2) {
       this.mN = var1;
       this.mO = fT.a(var1, var2);
-      File var3 = new File(fT.d(var1), this.mO.mU);
+      FileInfo var3 = new FileInfo(fT.d(var1), this.mO.mU);
       if (!var3.Attributes.HasFlag(FileAttributes.Directory)) {
          throw new FileNotFoundException(this.mO.mU);
       } else {
-         this.mX = new File(var3, "container." + this.mO.mT);
+         this.mX = new FileInfo(var3, "container." + this.mO.mT);
          hc.info(this.mO.filename);
-         File var4 = null;
-         File var5 = null;
+         FileInfo var4 = null;
+         FileInfo var5 = null;
          FileStream var6 = new FileStream(this.mX);
 
          try {
@@ -82,16 +82,16 @@ abstract class fX {
                }
 
                if (var10.Equals("data")) {
-                  var4 = new File(var3, var11);
+                  var4 = new FileInfo(var3, var11);
                   if (!var4.Exists) {
-                     var4 = new File(var3, var12);
+                     var4 = new FileInfo(var3, var12);
                   }
                }
 
                if (var10.Equals("meta")) {
-                  var5 = new File(var3, var11);
+                  var5 = new FileInfo(var3, var11);
                   if (!var5.Exists) {
-                     var5 = new File(var3, var12);
+                     var5 = new FileInfo(var3, var12);
                   }
                }
             }
@@ -155,7 +155,7 @@ abstract class fX {
 
    eY a(eG var1) {
       Throwable var2 = null;
-      Object var3 = null;
+      object var3 = null;
 
       try {
          ff var4 = new ff(this.getInputStream(), 2);
@@ -206,7 +206,7 @@ abstract class fX {
    byte[] ah(int var1) {
       MemoryStream var2 = new MemoryStream();
       Throwable var3 = null;
-      Object var4 = null;
+      object var4 = null;
 
       try {
          Stream var5 = this.getInputStream();
@@ -316,7 +316,7 @@ abstract class fX {
 
       var3.setProperty("IndexData", this.mO.cz());
       string var4 = var1 + "." + DateTimeOffset.UtcNow.ToUnixTimeMilliseconds() + ".zip";
-      File var5 = new File(aH.cG, var4);
+      FileInfo var5 = new FileInfo(aH.cG, var4);
       ZipOutputStream var6 = new ZipOutputStream(new FileStream(var5));
 
       try {

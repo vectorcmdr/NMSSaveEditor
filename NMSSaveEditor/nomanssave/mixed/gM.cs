@@ -49,7 +49,7 @@ public class gM {
    }
 
    public void a(gy var1) {
-      this.rI.b("NPCResource.Filename", (Object)var1.K());
+      this.rI.b("NPCResource.Filename", (object)var1.K());
    }
 
    public string ee() {
@@ -74,7 +74,7 @@ public class gM {
    }
 
    public void a(gL var1) {
-      this.rI.b("ShipResource.Filename", (Object)var1.K());
+      this.rI.b("ShipResource.Filename", (object)var1.K());
    }
 
    public string eg() {
@@ -99,7 +99,7 @@ public class gM {
    }
 
    public void aI(int var1) {
-      this.rI.b("PilotRank", (Object)var1);
+      this.rI.b("PilotRank", (object)var1);
    }
 
    public string toString() {

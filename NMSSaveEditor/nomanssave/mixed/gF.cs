@@ -23,13 +23,13 @@ public class gF : gQ {
       return "Product";
    }
 
-   public Object dz() {
+   public object dz() {
       return this.kM.getValue("ElementId");
    }
 
-   public void m(Object var1) {
+   public void m(object var1) {
       this.kM.b("ElementId", var1);
-      this.kM.b("LastChangeTimestamp", (Object)((int)(DateTimeOffset.UtcNow.ToUnixTimeMilliseconds() / 1000L)));
+      this.kM.b("LastChangeTimestamp", (object)((int)(DateTimeOffset.UtcNow.ToUnixTimeMilliseconds() / 1000L)));
    }
 
    public int dA() {
@@ -37,8 +37,8 @@ public class gF : gQ {
    }
 
    public void aA(int var1) {
-      this.kM.b("Amount", (Object)var1);
-      this.kM.b("LastChangeTimestamp", (Object)((int)(DateTimeOffset.UtcNow.ToUnixTimeMilliseconds() / 1000L)));
+      this.kM.b("Amount", (object)var1);
+      this.kM.b("LastChangeTimestamp", (object)((int)(DateTimeOffset.UtcNow.ToUnixTimeMilliseconds() / 1000L)));
    }
 
    public int dB() {

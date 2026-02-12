@@ -41,7 +41,7 @@ class bs : object {
       return bl.c(this.er) == null ? 0 : bl.c(this.er).Length;
    }
 
-   public Object getValueAt(int var1, int var2) {
+   public object getValueAt(int var1, int var2) {
       switch(var2) {
       case 0:
          return bl.c(this.er) == null ? null : bl.c(this.er)[var1].ToString();
@@ -62,7 +62,7 @@ class bs : object {
    public void removeTableModelListener(EventHandler var1) {
    }
 
-   public void setValueAt(Object var1, int var2, int var3) {
+   public void setValueAt(object var1, int var2, int var3) {
    }
 }
 

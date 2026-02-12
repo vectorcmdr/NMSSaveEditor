@@ -105,7 +105,7 @@ public class cg : Form {
 
    private void a(gQ var1) {
       this.fB = var1;
-      Object var2 = var1.dz();
+      object var2 = var1.dz();
       this.fA = ey.d(var2);
       this.fC = null;
       this.fD = null;

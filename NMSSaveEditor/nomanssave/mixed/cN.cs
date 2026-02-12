@@ -13,7 +13,7 @@ public class cN : ComboBox {
    private readonly Enum[] gn;
    private List<object> go;
    private cR gp;
-   private Object gq;
+   private object gq;
    private static Color gr;
    private static Color gs;
 
@@ -31,7 +31,7 @@ public class cN : ComboBox {
    }
 
    public void m(string var1) {
-      Object var2 = null;
+      object var2 = null;
       if (var1 != null) {
          Enum[] var6;
          int var5 = (var6 = this.gn).Length;
@@ -71,10 +71,10 @@ public class cN : ComboBox {
    static List<object> a(cN var0) {
       return var0.go;
    }
-   static Object b(cN var0) {
+   static object b(cN var0) {
       return var0.gq;
    }
-   static void a(cN var0, Object var1) {
+   static void a(cN var0, object var1) {
       var0.gq = var1;
    }
    static cR c(cN var0) {

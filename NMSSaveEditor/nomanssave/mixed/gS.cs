@@ -21,14 +21,14 @@ public class gS {
    }
 
    private static void a(eY var0, string var1, double[] var2) {
-      var0.b(var1, (Object)(new eV(new Object[]{new Double(Double.isNaN(var2[0]) ? 0.0D : var2[0]), new Double(Double.isNaN(var2[1]) ? 0.0D : var2[1]), new Double(Double.isNaN(var2[2]) ? 0.0D : var2[2])})));
+      var0.b(var1, (object)(new eV(new object[]{new Double(Double.isNaN(var2[0]) ? 0.0D : var2[0]), new Double(Double.isNaN(var2[1]) ? 0.0D : var2[1]), new Double(Double.isNaN(var2[2]) ? 0.0D : var2[2])})));
    }
 
-   public static void d(eY var0, File var1) {
+   public static void d(eY var0, FileInfo var1) {
       a(var0, Collections.emptyMap(), var1);
    }
 
-   public static void a(eY var0, Dictionary<object, object> var1, File var2) {
+   public static void a(eY var0, Dictionary<object, object> var1, FileInfo var2) {
       int var3 = var0.J("BaseVersion");
       eV var4 = var0.d("Objects").bA();
       if (var3 < 3) {
@@ -54,7 +54,7 @@ public class gS {
       IvParameterSpec var20 = new IvParameterSpec(var19);
       Cipher var21 = Cipher.getInstance("AES/CBC/PKCS5Padding");
       var21.init(1, var18, var20);
-      Object var22 = new FileStream(var2);
+      object var22 = new FileStream(var2);
 
       try {
          ((Stream)var22).Write(lA);
@@ -86,12 +86,12 @@ public class gS {
       }
    }
 
-   public static void e(eY var0, File var1) {
+   public static void e(eY var0, FileInfo var1) {
       b(var0, Collections.emptyMap(), var1);
    }
 
-   public static void b(eY var0, Dictionary<object, object> var1, File var2) {
-      Object var4 = new FileStream(var2);
+   public static void b(eY var0, Dictionary<object, object> var1, FileInfo var2) {
+      object var4 = new FileStream(var2);
 
       int var3;
       eV var5;
@@ -151,7 +151,7 @@ public class gS {
                   throw new IOException("short read");
                }
 
-               var0.b("UserData", (Object)(var11 << 24 | var12 << 16 | var13 << 8 | var14));
+               var0.b("UserData", (object)(var11 << 24 | var12 << 16 | var13 << 8 | var14));
                MemoryStream var15 = new MemoryStream();
                byte[] var16 = new byte[8096];
 
@@ -162,7 +162,7 @@ public class gS {
 
                var5 = ff.c(var15.toByteArray());
             } else {
-               var0.b("UserData", (Object)hk.readInt((Stream)var4));
+               var0.b("UserData", (object)hk.readInt((Stream)var4));
                var11 = hk.readInt((Stream)var4);
                byte[] var26 = new byte[var11];
                hk.readFully((Stream)var4, var26);
@@ -175,7 +175,7 @@ public class gS {
                   var11 = hk.readInt((Stream)var4);
                   var26 = new byte[var11];
                   hk.readFully((Stream)var4, var26);
-                  Object var29 = ff.a(var26);
+                  object var29 = ff.a(var26);
                   var1.Put(var28, var29);
                }
             }
@@ -227,7 +227,7 @@ public class gS {
          var0.b("BaseVersion", (int)3);
       }
 
-      var0.b("Objects", (Object)var5);
+      var0.b("Objects", (object)var5);
    }
 
    private static void a(double[] var0) {
@@ -241,9 +241,9 @@ public class gS {
       var7.Put("Timestamp", new Long(var1));
       var7.Put("ObjectID", var0);
       var7.Put("UserData", var3);
-      var7.Put("Position", new eV(new Object[]{new Double(var4[0]), new Double(var4[1]), new Double(var4[2])}));
-      var7.Put("Up", new eV(new Object[]{new Double(var5[0]), new Double(var5[1]), new Double(var5[2])}));
-      var7.Put("At", new eV(new Object[]{new Double(var6[0]), new Double(var6[1]), new Double(var6[2])}));
+      var7.Put("Position", new eV(new object[]{new Double(var4[0]), new Double(var4[1]), new Double(var4[2])}));
+      var7.Put("Up", new eV(new object[]{new Double(var5[0]), new Double(var5[1]), new Double(var5[2])}));
+      var7.Put("At", new eV(new object[]{new Double(var6[0]), new Double(var6[1]), new Double(var6[2])}));
       var7.Put("Message", "");
       return var7;
    }

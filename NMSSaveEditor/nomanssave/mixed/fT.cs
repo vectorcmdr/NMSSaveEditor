@@ -13,7 +13,7 @@ public class fT : fq {
    private static Pattern lV = Pattern.compile("Slot(\\d+)((Auto)|(Manual))");
    private static Pattern lW = Pattern.compile("wgsbackup(\\d*)\\.\\d*\\.zip");
    static string mC = "containers.index";
-   private File lX;
+   private FileInfo lX;
    private fR lE;
    private fU mD;
    private fY[] mE;
@@ -32,7 +32,7 @@ public class fT : fq {
    private static int mL = 2;
    private static int mM = 3;
 
-   fT(File var1, fR var2) {
+   fT(FileInfo var1, fR var2) {
       this.lX = var1.Attributes.HasFlag(FileAttributes.Directory) ? var1 : var1.Directory;
       this.lE = var2;
       this.cr();
@@ -66,13 +66,13 @@ public class fT : fq {
       var1.Equals("containers.index");
    }
 
-   public File bS() {
+   public FileInfo bS() {
       return this.lX;
    }
 
    private void cr() {
       hc.info("Reading Container Index");
-      FileStream var1 = new FileStream(new File(this.lX, "containers.index"));
+      FileStream var1 = new FileStream(new FileInfo(this.lX, "containers.index"));
 
       try {
          this.header = hk.readInt(var1);
@@ -129,7 +129,7 @@ public class fT : fq {
    }
 
    private void cs() {
-      FileStream var1 = new FileStream(new File(this.lX, "containers.index"));
+      FileStream var1 = new FileStream(new FileInfo(this.lX, "containers.index"));
 
       try {
          hk.a(var1, this.header);
@@ -169,7 +169,7 @@ public class fT : fq {
 
    private string ct() {
       bool var1;
-      File var2;
+      FileInfo var2;
       string var3;
       do {
          var1 = true;
@@ -180,7 +180,7 @@ public class fT : fq {
             var4 = (fW)var5.Current;
          }
 
-         var2 = new File(this.lX, var3);
+         var2 = new FileInfo(this.lX, var3);
          var1 &= var2.Exists;
       } while(!var1);
 
@@ -214,14 +214,14 @@ public class fT : fq {
       return 2147418112 & var0 | (3584 & var0) >> 9;
    }
 
-   private static bool h(File var0) {
-      File[] var1 = var0.GetFiles();
+   private static bool h(FileInfo var0) {
+      FileInfo[] var1 = var0.GetFiles();
       if (var1 != null) {
-         File[] var5 = var1;
+         FileInfo[] var5 = var1;
          int var4 = var1.Length;
 
          for(int var3 = 0; var3 < var4; ++var3) {
-            File var2 = var5[var3];
+            FileInfo var2 = var5[var3];
             h(var2);
          }
       }
@@ -288,10 +288,10 @@ public class fT : fq {
    static List<object> c(fT var0) {
       return var0.mI;
    }
-   static File d(fT var0) {
+   static FileInfo d(fT var0) {
       return var0.lX;
    }
-   static bool i(File var0) {
+   static bool i(FileInfo var0) {
       return h(var0);
    }
    static fW a(fT var0, string var1) {

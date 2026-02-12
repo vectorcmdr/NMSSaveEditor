@@ -9,7 +9,7 @@ namespace NMSSaveEditor
 
 public class cK : OpenFileDialog {
    private static cK gk = null;
-   private static string name = "JSON File";
+   private static string name = "JSON FileInfo";
 
    public static cK aA() {
       if (gk == null) {
@@ -24,7 +24,7 @@ public class cK : OpenFileDialog {
       this.setAcceptAllFileFilterUsed(false);
       this.setFileView(new cL(this));
       this.setFileFilter(new cM(this));
-      this.setDialogTitle("Choose JSON File");
+      this.setDialogTitle("Choose JSON FileInfo");
    }
 }
 

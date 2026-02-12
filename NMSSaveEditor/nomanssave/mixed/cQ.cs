@@ -14,7 +14,7 @@ class cQ {
       this.value = var2;
    }
 
-   public bool equals(Object var1) {
+   public bool equals(object var1) {
       if (var1 is string) {
          return this.value.Equals(var1);
       } else {

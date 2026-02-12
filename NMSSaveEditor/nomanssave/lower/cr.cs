@@ -15,10 +15,10 @@ class cr : FileFilter {
    }
 
    public string getDescription() {
-      return "Companion Export File";
+      return "Companion Export FileInfo";
    }
 
-   public bool accept(File var1) {
+   public bool accept(FileInfo var1) {
       if (var1.Attributes.HasFlag(FileAttributes.Directory)) {
          return !var1.isHidden();
       } else {

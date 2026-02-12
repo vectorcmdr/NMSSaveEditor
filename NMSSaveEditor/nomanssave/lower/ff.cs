@@ -16,23 +16,23 @@ public class ff : Closeable {
    private int kR;
    private CharsetDecoder kS;
 
-   public static Object a(byte[] var0) {
-      Throwable var1 = null;
-      Object var2 = null;
+   public static object a(byte[] var0) {
+      Exception var1 = null;
+      object var2 = null;
 
       try {
          ff var3 = new ff(new MemoryStream(var0), 0);
 
-         Throwable var10000;
+         Exception var10000;
          label173: {
-            Object var16;
+            object var16;
             bool var10001;
             try {
                var16 = var3.bJ();
-            } catch (Throwable var14) {
+            } catch (Exception var14) {
                var10000 = var14;
                var10001 = false;
-               break label173;
+               goto afterLabel173;
             }
 
             if (var3 != null) {
@@ -42,24 +42,24 @@ public class ff : Closeable {
             label162:
             try {
                return var16;
-            } catch (Throwable var13) {
+            } catch (Exception var13) {
                var10000 = var13;
                var10001 = false;
-               break label162;
+               goto afterLabel173;
             }
          }
 
-         var1 = var10000;
+         afterLabel173: var1 = var10000;
          if (var3 != null) {
             var3.Close();
          }
 
          throw var1;
-      } catch (Throwable var15) {
+      } catch (Exception var15) {
          if (var1 == null) {
             var1 = var15;
          } else if (var1 != var15) {
-            var1.addSuppressed(var15);
+            /* var1.addSuppressed(var15); */
          }
 
          throw var1;
@@ -67,22 +67,22 @@ public class ff : Closeable {
    }
 
    public static eY b(byte[] var0) {
-      Throwable var1 = null;
-      Object var2 = null;
+      Exception var1 = null;
+      object var2 = null;
 
       try {
          ff var3 = new ff(new MemoryStream(var0), 0);
 
-         Throwable var10000;
+         Exception var10000;
          label173: {
             eY var16;
             bool var10001;
             try {
                var16 = var3.bK();
-            } catch (Throwable var14) {
+            } catch (Exception var14) {
                var10000 = var14;
                var10001 = false;
-               break label173;
+               goto afterLabel173;
             }
 
             if (var3 != null) {
@@ -92,24 +92,24 @@ public class ff : Closeable {
             label162:
             try {
                return var16;
-            } catch (Throwable var13) {
+            } catch (Exception var13) {
                var10000 = var13;
                var10001 = false;
-               break label162;
+               goto afterLabel173;
             }
          }
 
-         var1 = var10000;
+         afterLabel173: var1 = var10000;
          if (var3 != null) {
             var3.Close();
          }
 
          throw var1;
-      } catch (Throwable var15) {
+      } catch (Exception var15) {
          if (var1 == null) {
             var1 = var15;
          } else if (var1 != var15) {
-            var1.addSuppressed(var15);
+            /* var1.addSuppressed(var15); */
          }
 
          throw var1;
@@ -117,22 +117,22 @@ public class ff : Closeable {
    }
 
    public static eV c(byte[] var0) {
-      Throwable var1 = null;
-      Object var2 = null;
+      Exception var1 = null;
+      object var2 = null;
 
       try {
          ff var3 = new ff(new MemoryStream(var0), 0);
 
-         Throwable var10000;
+         Exception var10000;
          label173: {
             eV var16;
             bool var10001;
             try {
                var16 = var3.bL();
-            } catch (Throwable var14) {
+            } catch (Exception var14) {
                var10000 = var14;
                var10001 = false;
-               break label173;
+               goto afterLabel173;
             }
 
             if (var3 != null) {
@@ -142,24 +142,24 @@ public class ff : Closeable {
             label162:
             try {
                return var16;
-            } catch (Throwable var13) {
+            } catch (Exception var13) {
                var10000 = var13;
                var10001 = false;
-               break label162;
+               goto afterLabel173;
             }
          }
 
-         var1 = var10000;
+         afterLabel173: var1 = var10000;
          if (var3 != null) {
             var3.Close();
          }
 
          throw var1;
-      } catch (Throwable var15) {
+      } catch (Exception var15) {
          if (var1 == null) {
             var1 = var15;
          } else if (var1 != var15) {
-            var1.addSuppressed(var15);
+            /* var1.addSuppressed(var15); */
          }
 
          throw var1;
@@ -255,7 +255,7 @@ public class ff : Closeable {
 
    }
 
-   public Object bJ() {
+   public object bJ() {
       return this.a(this.bI(), (eC)null);
    }
 
@@ -277,7 +277,7 @@ public class ff : Closeable {
       } else if (var2 != 123) {
          throw new eX("Unexpected token");
       } else {
-         Object var3 = null;
+         object var3 = null;
          eC var4 = null;
          int var5 = this.bI();
          if (var5 != 34) {
@@ -303,7 +303,7 @@ public class ff : Closeable {
                   throw new eX("Invalid token");
                }
 
-               Object var7 = this.a(this.bI(), var4);
+               object var7 = this.a(this.bI(), var4);
                ((eY)var3).a(var6, var7);
                var5 = this.bI();
                if (var5 == 125) {
@@ -351,7 +351,7 @@ public class ff : Closeable {
       }
    }
 
-   private Object a(int var1, eC var2) {
+   private object a(int var1, eC var2) {
       if (var1 < 0) {
          throw new eX("Short read");
       } else if (var1 == 123) {
@@ -497,7 +497,7 @@ public class ff : Closeable {
                throw new eX("Invalid token");
             }
 
-            Object var5 = this.a(this.bI(), var1);
+            object var5 = this.a(this.bI(), var1);
             var2.a(var4, var5);
             var3 = this.bI();
             if (var3 == 125) {
@@ -523,7 +523,7 @@ public class ff : Closeable {
       int var3;
       if ((var3 = this.bI()) != 93) {
          while(true) {
-            Object var4 = this.a(var3, var1);
+            object var4 = this.a(var3, var1);
             var2.e(var4);
             var3 = this.bI();
             if (var3 == 93) {
@@ -593,7 +593,7 @@ public class ff : Closeable {
       }
    }
 
-   private Object bO() {
+   private object bO() {
       byte[] var1 = this.bM();
 
       try {

@@ -67,7 +67,7 @@ public class eM {
       return this.jY;
    }
 
-   public bool equals(Object var1) {
+   public bool equals(object var1) {
       if (var1 is string) {
          return this.jY ? ((string)var1).StartsWith(this.id + "#") : ((string)var1).Equals(this.id);
       } else {
@@ -84,7 +84,7 @@ public class eM {
    }
 
    public static eM S(int var0) {
-      return (eM)kl[(var0);
+      return (eM)kl[var0];
    }
 
    public static int w(string var0) {
@@ -93,7 +93,7 @@ public class eM {
 
    public static eM x(string var0) {
       int var1 = kl.IndexOf(new eO(var0));
-      return var1 >= 0 ? (eM)kl[(var1) : null;
+      return var1 >= 0 ? (eM)kl[var1] : null;
    }
 }
 

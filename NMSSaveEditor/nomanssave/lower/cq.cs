@@ -14,7 +14,7 @@ class cq : FileView {
       this.fM = var1;
    }
 
-   public Icon getIcon(File var1) {
+   public Icon getIcon(FileInfo var1) {
       string var2 = var1.Name;
       if (var2.EndsWith(".pet")) {
          return cp.@as();
@@ -23,7 +23,7 @@ class cq : FileView {
       }
    }
 
-   public string getName(File var1) {
+   public string getName(FileInfo var1) {
       string var2 = var1.Name;
       if (var2.EndsWith(".pet")) {
          return var2.Substring(0, var2.length() - 4);

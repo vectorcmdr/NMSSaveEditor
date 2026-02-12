@@ -11,12 +11,12 @@ namespace NMSSaveEditor
 public class fJ : fq {
    private static Pattern lV = Pattern.compile("save(\\d*)\\.hg");
    private static Pattern lW = Pattern.compile("backup(\\d*)\\.\\d*\\.zip");
-   private File lX;
+   private FileInfo lX;
    private fR lE;
    private fK mr;
    private fM[] ms;
 
-   fJ(File var1, fR var2) {
+   fJ(FileInfo var1, fR var2) {
       this.lX = var1;
       this.lE = var2;
 
@@ -81,7 +81,7 @@ public class fJ : fq {
 
    }
 
-   public File bS() {
+   public FileInfo bS() {
       return this.lX;
    }
 
@@ -150,7 +150,7 @@ public class fJ : fq {
       long[] var4 = new long[]{var3[0] & 4294967295L, var3[0] >>> 32 & 4294967295L, var3[1] & 4294967295L, var3[1] >>> 32 & 4294967295L};
       return a(var4, 0, 4);
    }
-   static File a(fJ var0) {
+   static FileInfo a(fJ var0) {
       return var0.lX;
    }
    static byte[] d(byte[] var0, byte[] var1) {

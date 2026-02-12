@@ -14,7 +14,7 @@ class el : FileView {
       this.@is = var1;
    }
 
-   public Icon getIcon(File var1) {
+   public Icon getIcon(FileInfo var1) {
       string var2;
       if (var1.Exists) {
          var2 = var1.Name;
@@ -29,7 +29,7 @@ class el : FileView {
       }
    }
 
-   public string getName(File var1) {
+   public string getName(FileInfo var1) {
       if (var1.Exists) {
          return var1.Name;
       } else {

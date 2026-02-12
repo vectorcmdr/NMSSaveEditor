@@ -15,7 +15,7 @@ public class er {
    int iC;
    gr iD;
    bool iE;
-   final gr[] iF;
+   gr[] iF;
    private static List<object> iG = new List<object>();
 
    static er() {

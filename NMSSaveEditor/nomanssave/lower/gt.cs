@@ -187,7 +187,7 @@ public class gt {
          var1 = "";
       }
 
-      this.qt.b("Name", (Object)var1);
+      this.qt.b("Name", (object)var1);
    }
 
    public int dj() {
@@ -252,7 +252,7 @@ public class gt {
          for(int var6 = 0; var6 < var4.Count; ++var6) {
             eY var7 = var4.V(var6);
             if (var7.getValueAsString("BaseStatID").Equals(var1)) {
-               var7.b("Value", (Object)var2);
+               var7.b("Value", (object)var2);
                var5 = true;
                break;
             }
@@ -260,8 +260,8 @@ public class gt {
 
          if (!var5) {
             eY var8 = new eY();
-            var8.b("BaseStatID", (Object)var1);
-            var8.b("Value", (Object)var2);
+            var8.b("BaseStatID", (object)var1);
+            var8.b("Value", (object)var2);
             var4.f(var8);
             var5 = true;
          }
@@ -348,13 +348,13 @@ public class gt {
          bool var8 = false;
          if (this.width != var1.width) {
             this.width = var1.width;
-            this.qt.b("Width", (Object)(new Integer(this.width)));
+            this.qt.b("Width", (object)(new Integer(this.width)));
             var8 = true;
          }
 
          if (this.height != var1.height) {
             this.height = var1.height;
-            this.qt.b("Height", (Object)(new Integer(this.height)));
+            this.qt.b("Height", (object)(new Integer(this.height)));
             var8 = true;
          }
 
@@ -366,13 +366,13 @@ public class gt {
       bool var1 = false;
       if (this.width < this.qz[0].Length) {
          this.width = this.qz[0].Length;
-         this.qt.b("Width", (Object)(new Integer(this.width)));
+         this.qt.b("Width", (object)(new Integer(this.width)));
          var1 = true;
       }
 
       if (this.height < this.qz.Length) {
          this.height = this.qz.Length;
-         this.qt.b("Height", (Object)(new Integer(this.height)));
+         this.qt.b("Height", (object)(new Integer(this.height)));
          var1 = true;
       }
 
@@ -414,8 +414,8 @@ public class gt {
             this.qy[var4][var3] = null;
          } else {
             eY var6 = this.qy[var2][var1].bE();
-            var6.b("Index.X", (Object)var3);
-            var6.b("Index.Y", (Object)var4);
+            var6.b("Index.X", (object)var3);
+            var6.b("Index.Y", (object)var4);
             var5.f(var6);
             this.qy[var4][var3] = var6;
          }
@@ -435,11 +435,11 @@ public class gt {
             int var7 = var6.J("MaxAmount");
             int var8 = var5.J("Amount") + var6.J("Amount");
             if (var8 <= var7) {
-               var6.b("Amount", (Object)var8);
+               var6.b("Amount", (object)var8);
                this.g(var1, var2);
             } else {
-               var6.b("Amount", (Object)var7);
-               var5.b("Amount", (Object)(var8 - var7));
+               var6.b("Amount", (object)var7);
+               var5.b("Amount", (object)(var8 - var7));
             }
 
          } else {
@@ -526,7 +526,7 @@ public class gt {
          return false;
       } else {
          string var4 = this.qy[var2][var1].getValueAsString("Type.InventoryType");
-         Object var5 = this.qy[var2][var1].getValue("Id");
+         object var5 = this.qy[var2][var1].getValue("Id");
          int var6 = this.qy[var2][var1].J("Amount");
          double var7 = this.qy[var2][var1].L("DamageFactor");
          bool var9 = this.qy[var2][var1].M("FullyInstalled");
@@ -564,7 +564,7 @@ public class gt {
                      if (var13 < var14) {
                         var15 = var6 > var14 - var13 ? var14 - var13 : var6;
                         hc.info("  added to existing stack: " + var15);
-                        var3.qy[var11][var12].b("Amount", (Object)(new Integer(var13 + var15)));
+                        var3.qy[var11][var12].b("Amount", (object)(new Integer(var13 + var15)));
                         var6 -= var15;
                         var10 = true;
                         if (var6 == 0) {
@@ -636,7 +636,7 @@ public class gt {
                this.qy[var2][var1] = null;
             } else {
                hc.info("  remainder: " + var6);
-               this.qy[var2][var1].b("Amount", (Object)(new Integer(var6)));
+               this.qy[var2][var1].b("Amount", (object)(new Integer(var6)));
             }
 
             return true;
@@ -678,7 +678,7 @@ public class gt {
                   if (var7 < var8) {
                      int var9 = var2 > var8 - var7 ? var8 - var7 : var2;
                      hc.info("  added to existing stack: " + var9);
-                     this.qy[var5][var6].b("Amount", (Object)(new Integer(var7 + var9)));
+                     this.qy[var5][var6].b("Amount", (object)(new Integer(var7 + var9)));
                      var2 -= var9;
                      if (var2 == 0) {
                         break;
@@ -694,7 +694,7 @@ public class gt {
       }
 
       if (var2 > 0) {
-         Object var10 = var1.aZ();
+         object var10 = var1.aZ();
 
          for(var6 = 0; var6 < this.qy.Length; ++var6) {
             for(var7 = 0; var7 < this.qy[var6].Length; ++var7) {
@@ -751,23 +751,23 @@ public class gt {
             return false;
          }
 
-         Object var7 = var3.aZ();
+         object var7 = var3.aZ();
          this.a(var1, var2, var3.ba().ToString(), var7, var4, var5, 0.0D, true);
          return true;
       }
    }
 
-   private void a(int var1, int var2, string var3, Object var4, int var5, int var6, double var7, bool var9) {
+   private void a(int var1, int var2, string var3, object var4, int var5, int var6, double var7, bool var9) {
       eV var10 = this.qt.d("Slots");
       eY var11 = gR.az("slot");
-      var11.b("Type.InventoryType", (Object)var3);
+      var11.b("Type.InventoryType", (object)var3);
       var11.b("Id", var4);
-      var11.b("Amount", (Object)(new Integer(var5)));
-      var11.b("MaxAmount", (Object)(new Integer(var6)));
-      var11.b("DamageFactor", (Object)(new Double(var7)));
-      var11.b("FullyInstalled", (Object)(new Boolean(var9)));
-      var11.b("Index.X", (Object)var1);
-      var11.b("Index.Y", (Object)var2);
+      var11.b("Amount", (object)(new Integer(var5)));
+      var11.b("MaxAmount", (object)(new Integer(var6)));
+      var11.b("DamageFactor", (object)(new Double(var7)));
+      var11.b("FullyInstalled", (object)(new Boolean(var9)));
+      var11.b("Index.X", (object)var1);
+      var11.b("Index.Y", (object)var2);
       var10.f(var11);
       this.qy[var2][var1] = var11;
    }
@@ -791,8 +791,8 @@ public class gt {
    public void i(int var1, int var2) {
       if (!this.qz[var2][var1]) {
          eY var3 = new eY();
-         var3.b("X", (Object)var1);
-         var3.b("Y", (Object)var2);
+         var3.b("X", (object)var1);
+         var3.b("Y", (object)var2);
          this.qt.d("ValidSlotIndices").f(var3);
          this.qz[var2][var1] = true;
       }
@@ -853,7 +853,7 @@ public class gt {
             if (!var3) {
                var4.ac(var5);
             } else {
-               var6.b("Type.InventorySpecialSlotType", (Object)"TechBonus");
+               var6.b("Type.InventorySpecialSlotType", (object)"TechBonus");
             }
 
             return;
@@ -862,9 +862,9 @@ public class gt {
 
       if (var3) {
          eY var7 = gR.az("specialSlot");
-         var7.b("Type.InventorySpecialSlotType", (Object)"TechBonus");
-         var7.b("Index.X", (Object)var1);
-         var7.b("Index.Y", (Object)var2);
+         var7.b("Type.InventorySpecialSlotType", (object)"TechBonus");
+         var7.b("Index.X", (object)var1);
+         var7.b("Index.Y", (object)var2);
          var4.f(var7);
       }
 
@@ -890,9 +890,9 @@ public class gt {
          for(var5 = 0; var5 < this.width; ++var5) {
             if (!var1[var8][var5]) {
                eY var9 = gR.az("specialSlot");
-               var9.b("Type.InventorySpecialSlotType", (Object)"TechBonus");
-               var9.b("Index.X", (Object)var5);
-               var9.b("Index.Y", (Object)var8);
+               var9.b("Type.InventorySpecialSlotType", (object)"TechBonus");
+               var9.b("Index.X", (object)var5);
+               var9.b("Index.Y", (object)var8);
                var2.f(var9);
                var7 = true;
             }
@@ -972,8 +972,8 @@ public class gt {
       for(var4 = 0; var4 < this.qy.Length; ++var4) {
          for(int var6 = 0; var6 < this.qy[var4].Length; ++var6) {
             if (this.qy[var4][var6] != null && this.qy[var4][var6].L("DamageFactor") != 0.0D) {
-               this.qy[var4][var6].b("DamageFactor", (Object)(new Double(0.0D)));
-               this.qy[var4][var6].b("FullyInstalled", (Object)(new Boolean(true)));
+               this.qy[var4][var6].b("DamageFactor", (object)(new Double(0.0D)));
+               this.qy[var4][var6].b("FullyInstalled", (object)(new Boolean(true)));
                var1 = true;
             }
          }
@@ -982,7 +982,7 @@ public class gt {
       return var1;
    }
 
-   private static string l(Object var0) {
+   private static string l(object var0) {
       StringBuilder var1 = new StringBuilder();
       var1.Append(' ');
       if (var0 is fg) {
@@ -1073,7 +1073,7 @@ public class gt {
       return var0.getValueAsString("Type.InventoryType");
    }
 
-   private static Object s(eY var0) {
+   private static object s(eY var0) {
       return var0.getValue("Id");
    }
 
@@ -1092,7 +1092,7 @@ public class gt {
          for(int var4 = 0; var4 < this.qy[var3].Length; ++var4) {
             int var1;
             if (this.qy[var3][var4] != null && "Technology".Equals(this.qy[var3][var4].getValueAsString("Type.InventoryType")) && this.qy[var3][var4].J("Amount") >= 0 && (var1 = this.qy[var3][var4].J("MaxAmount")) > 0) {
-               this.qy[var3][var4].b("Amount", (Object)(new Integer(var1)));
+               this.qy[var3][var4].b("Amount", (object)(new Integer(var1)));
                var2 = true;
             }
          }
@@ -1108,7 +1108,7 @@ public class gt {
          for(int var4 = 0; var4 < this.qy[var3].Length; ++var4) {
             int var1;
             if (this.qy[var3][var4] != null && !"Technology".Equals(this.qy[var3][var4].getValueAsString("Type.InventoryType")) && (var1 = this.qy[var3][var4].J("MaxAmount")) > 1) {
-               this.qy[var3][var4].b("Amount", (Object)(new Integer(var1)));
+               this.qy[var3][var4].b("Amount", (object)(new Integer(var1)));
                var2 = true;
             }
          }
@@ -1124,8 +1124,8 @@ public class gt {
          for(int var3 = 0; var3 < this.width; ++var3) {
             if (!this.qz[var2][var3]) {
                eY var4 = new eY();
-               var4.b("X", (Object)var3);
-               var4.b("Y", (Object)var2);
+               var4.b("X", (object)var3);
+               var4.b("Y", (object)var2);
                this.qt.d("ValidSlotIndices").f(var4);
                this.qz[var2][var3] = true;
                var1 = true;

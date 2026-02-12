@@ -41,8 +41,8 @@ class fM : fQ, fs {
 
    void cm() {
       this.a(this.lO == 0 ? "backup" : "backup" + (this.lO + 1), this.me, this.Name, this.getDescription());
-      (new File(fJ.a(this.mt), this.filename)).Delete();
-      (new File(fJ.a(this.mt), "mf_" + this.filename)).Delete();
+      (new FileInfo(fJ.a(this.mt), this.filename)).Delete();
+      (new FileInfo(fJ.a(this.mt), "mf_" + this.filename)).Delete();
    }
 
    public string b(eY var1) {

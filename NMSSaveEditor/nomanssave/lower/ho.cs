@@ -63,8 +63,8 @@ public class ho : FilterOutputStream {
       byte[] var2 = new byte[var1];
       int var3 = this.sf.compress((byte[])this.buffer, 0, this.sg, (byte[])var2, 0, var1);
       byte[] var4 = new byte[]{(byte)(255 & this.sg), (byte)(255 & this.sg >> 8), (byte)(255 & this.sg >> 16), (byte)(255 & this.sg >> 24), (byte)(255 & var3), (byte)(255 & var3 >> 8), (byte)(255 & var3 >> 16), (byte)(255 & var3 >> 24)};
-      this.out.Write(var4);
-      this.out.Write(var2, 0, var3);
+      this.@out.Write(var4);
+      this.@out.Write(var2, 0, var3);
       this.sh += this.sg;
       this.sg = 0;
       this.si += var3 + 8;
@@ -83,7 +83,7 @@ public class ho : FilterOutputStream {
          this.ek();
       }
 
-      this.out.Flush();
+      this.@out.Flush();
    }
 
    public void close() {
@@ -92,7 +92,7 @@ public class ho : FilterOutputStream {
             this.ek();
          }
       } finally {
-         this.out.Close();
+         this.@out.Close();
       }
 
    }

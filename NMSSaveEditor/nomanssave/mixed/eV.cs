@@ -10,8 +10,8 @@ public class eV {
    private static int kB = 10;
    private static int kC = 10;
    int length;
-   Object[] values;
-   Object kD;
+   object[] values;
+   object kD;
 
    public static eV D(string var0) {
       return fh.R(var0);
@@ -19,12 +19,12 @@ public class eV {
 
    public eV() {
       this.Length = 0;
-      this.values = new Object[10];
+      this.values = new object[10];
    }
 
-   public eV(params Object[] var1) {
+   public eV(params object[] var1) {
       this.Length = var1.Length;
-      this.values = new Object[var1.Length];
+      this.values = new object[var1.Length];
 
       for(int var2 = 0; var2 < this.Length; ++var2) {
          if (var1[var2] != null && !fh.a(var1[var2].GetType())) {
@@ -32,24 +32,24 @@ public class eV {
          }
 
          this.values[var2] = var1[var2];
-         fh.a((Object)var1[var2], (Object)this);
+         fh.a((object)var1[var2], (object)this);
       }
 
    }
 
-   void e(Object var1) {
+   void e(object var1) {
       if (this.values.Length == this.Length) {
-         Object[] var2 = new Object[this.Length + 10];
+         object[] var2 = new object[this.Length + 10];
          Array.Copy(this.values, 0, var2, 0, this.Length);
          this.values = var2;
       }
 
       this.values[this.Length] = var1;
-      fh.a((Object)var1, (Object)this);
+      fh.a((object)var1, (object)this);
       ++this.Length;
    }
 
-   Object U(int var1) {
+   object U(int var1) {
       return this.values[var1];
    }
 
@@ -63,15 +63,15 @@ public class eV {
 
    public eV bA() {
       eV var1 = new eV();
-      var1.values = new Object[this.values.Length];
+      var1.values = new object[this.values.Length];
 
       for(int var2 = 0; var2 < this.Length; ++var2) {
          if (this.values[var2] is eY) {
             var1.values[var2] = ((eY)this.values[var2]).bE();
-            fh.a((Object)var1.values[var2], (Object)var1);
+            fh.a((object)var1.values[var2], (object)var1);
          } else if (this.values[var2] is eV) {
             var1.values[var2] = ((eV)this.values[var2]).bA();
-            fh.a((Object)var1.values[var2], (Object)var1);
+            fh.a((object)var1.values[var2], (object)var1);
          } else {
             var1.values[var2] = this.values[var2];
          }
@@ -85,7 +85,7 @@ public class eV {
       return this.Length;
    }
 
-   public int indexOf(Object var1) {
+   public int indexOf(object var1) {
       if (var1 == null) {
          throw new NullReferenceException();
       } else {
@@ -99,7 +99,7 @@ public class eV {
       }
    }
 
-   public Object get(int var1) {
+   public object get(int var1) {
       if (var1 >= 0 && var1 < this.Length) {
          return this.values[var1];
       } else {
@@ -107,15 +107,15 @@ public class eV {
       }
    }
 
-   public Object set(int var1, Object var2) {
+   public object set(int var1, object var2) {
       if (var1 >= 0 && var1 < this.Length) {
          if (var2 != null && !fh.a(var2.GetType())) {
             throw new Exception("Unsupported type: " + var2.GetType().getSimpleName());
          } else {
-            Object var3 = this.values[var1];
+            object var3 = this.values[var1];
             fh.i(var3);
             this.values[var1] = var2;
-            fh.a((Object)var2, (Object)this);
+            fh.a((object)var2, (object)this);
             this.firePropertyChange("[" + var1 + "]", var3, var2);
             return var3;
          }
@@ -124,7 +124,7 @@ public class eV {
       }
    }
 
-   public void add(Object var1) {
+   public void add(object var1) {
       if (var1 != null && !fh.a(var1.GetType())) {
          throw new Exception("Unsupported type: " + var1.GetType().getSimpleName());
       } else {
@@ -132,23 +132,23 @@ public class eV {
          if (this.values.Length == this.Length) {
             var2.values = this.values;
             var2.Length = this.Length;
-            Object[] var3 = new Object[this.Length + 10];
+            object[] var3 = new object[this.Length + 10];
             Array.Copy(this.values, 0, var3, 0, this.Length);
             this.values = var3;
          } else {
-            var2.values = new Object[this.values.Length];
+            var2.values = new object[this.values.Length];
             Array.Copy(this.values, 0, var2.values, 0, this.Length);
             var2.Length = this.Length;
          }
 
          this.values[this.Length] = var1;
-         fh.a((Object)var1, (Object)this);
+         fh.a((object)var1, (object)this);
          ++this.Length;
          this.firePropertyChange("", var2, this);
       }
    }
 
-   public void add(int var1, Object var2) {
+   public void add(int var1, object var2) {
       if (var1 >= 0 && var1 <= this.Length) {
          if (var2 != null && !fh.a(var2.GetType())) {
             throw new Exception("Unsupported type: " + var2.GetType().getSimpleName());
@@ -157,11 +157,11 @@ public class eV {
             if (this.values.Length == this.Length) {
                var3.values = this.values;
                var3.Length = this.Length;
-               Object[] var4 = new Object[this.Length + 10];
+               object[] var4 = new object[this.Length + 10];
                Array.Copy(this.values, 0, var4, 0, this.Length);
                this.values = var4;
             } else {
-               var3.values = new Object[this.values.Length];
+               var3.values = new object[this.values.Length];
                Array.Copy(this.values, 0, var3.values, 0, this.Length);
                var3.Length = this.Length;
             }
@@ -171,7 +171,7 @@ public class eV {
             }
 
             this.values[var1] = var2;
-            fh.a((Object)var2, (Object)this);
+            fh.a((object)var2, (object)this);
             ++this.Length;
             this.firePropertyChange("", var3, this);
          }
@@ -180,13 +180,13 @@ public class eV {
       }
    }
 
-   public Object remove(int var1) {
+   public object remove(int var1) {
       if (var1 >= 0 && var1 < this.Length) {
          eV var2 = new eV();
-         var2.values = new Object[this.values.Length];
+         var2.values = new object[this.values.Length];
          Array.Copy(this.values, 0, var2.values, 0, this.Length);
          var2.Length = this.Length;
-         Object var3 = this.values[var1];
+         object var3 = this.values[var1];
          fh.i(var3);
 
          for(int var4 = var1; var4 < this.Length - 1; ++var4) {
@@ -203,7 +203,7 @@ public class eV {
 
    public void clear() {
       eV var1 = new eV();
-      var1.values = new Object[this.values.Length];
+      var1.values = new object[this.values.Length];
       Array.Copy(this.values, 0, var1.values, 0, this.Length);
       var1.Length = this.Length;
 
@@ -215,7 +215,7 @@ public class eV {
       this.firePropertyChange("", var1, this);
    }
 
-   void a(Object var1, string var2, Object var3, Object var4) {
+   void a(object var1, string var2, object var3, object var4) {
       for(int var5 = 0; var5 < this.Length; ++var5) {
          if (var1 == this.values[var5]) {
             this.firePropertyChange("[" + var5 + "]" + var2, var3, var4);
@@ -225,7 +225,7 @@ public class eV {
 
    }
 
-   private void firePropertyChange(string var1, Object var2, Object var3) {
+   private void firePropertyChange(string var1, object var2, object var3) {
       if (this.kD is eY) {
          ((eY)this.kD).a(this, var1, var2, var3);
       }
@@ -236,7 +236,7 @@ public class eV {
 
    }
 
-   public Object getValue(int var1) {
+   public object getValue(int var1) {
       return this[(var1);
    }
 
@@ -249,39 +249,39 @@ public class eV {
    }
 
    public string X(int var1) {
-      Object var2 = this.getValue(var1);
+      object var2 = this.getValue(var1);
       return var2 is fg ? var2.ToString() : (string)var2;
    }
 
    public int Y(int var1) {
-      Object var2 = this.getValue(var1);
+      object var2 = this.getValue(var1);
       return var2 == null ? 0 : ((Number)var2).intValue();
    }
 
    public long Z(int var1) {
-      Object var2 = this.getValue(var1);
+      object var2 = this.getValue(var1);
       return var2 == null ? 0L : ((Number)var2).longValue();
    }
 
    public double aa(int var1) {
-      Object var2 = this.getValue(var1);
+      object var2 = this.getValue(var1);
       return var2 == null ? 0.0D : ((Number)var2).doubleValue();
    }
 
    public bool ab(int var1) {
-      Object var2 = this.getValue(var1);
+      object var2 = this.getValue(var1);
       return var2 == null ? false : (Boolean)var2;
    }
 
-   public void a(int var1, Object var2) {
+   public void a(int var1, object var2) {
       this.set(var1, var2);
    }
 
-   public void f(Object var1) {
+   public void f(object var1) {
       this.Add(var1);
    }
 
-   public bool hasValue(Object var1) {
+   public bool hasValue(object var1) {
       return this.IndexOf(var1) >= 0;
    }
 
@@ -290,7 +290,7 @@ public class eV {
       return true;
    }
 
-   public bool g(Object var1) {
+   public bool g(object var1) {
       int var2 = this.IndexOf(var1);
       if (var2 < 0) {
          return false;
@@ -312,7 +312,7 @@ public class eV {
 
       return Arrays.stream(var1, 0, var2);
    }
-   public Object clone() {
+   public object clone() {
       return this.bA();
    }
 }

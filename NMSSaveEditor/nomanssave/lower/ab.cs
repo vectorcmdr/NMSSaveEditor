@@ -27,13 +27,13 @@ class ab : object {
    public void removeListDataListener(EventHandler var1) {
    }
 
-   public void setSelectedItem(Object var1) {
+   public void setSelectedItem(object var1) {
    }
 
-   public Object getSelectedItem() {
+   public object getSelectedItem() {
       return gl.oF;
    }
-   public Object getElementAt(int var1) {
+   public object getElementAt(int var1) {
       return this.r(var1);
    }
 }

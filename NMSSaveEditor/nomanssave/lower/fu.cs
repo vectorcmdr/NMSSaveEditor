@@ -12,7 +12,7 @@ public class fu : fq {
    private static readonly byte[] lA = "NOMANSKY".GetBytes();
    private static readonly byte[] lB = new byte[]{126, -25, 85, -54, -47, 7, 0, 0};
    private static Pattern lC = Pattern.compile("\\{\"Version\":(\\d*),.*");
-   private File lD;
+   private FileInfo lD;
    private fR lE;
    private fw[] lF;
    private fv lG;
@@ -27,8 +27,8 @@ public class fu : fq {
       }
    }
 
-   fu(File var1, fR var2) {
-      this.lD = var1.Exists ? var1 : new File(var1, "memory.dat");
+   fu(FileInfo var1, fR var2) {
+      this.lD = var1.Exists ? var1 : new FileInfo(var1, "memory.dat");
       this.lE = var2;
       Console.WriteLine(this.lD.FullName);
       FileStream var3 = new FileStream(this.lD);
@@ -107,7 +107,7 @@ public class fu : fq {
       fl.a(this, this.lD.Directory);
    }
 
-   public File bS() {
+   public FileInfo bS() {
       return this.lD;
    }
 
@@ -134,7 +134,7 @@ public class fu : fq {
    }
 
    public static void main(string[] var0) {
-      new fu(new File("D:\\Temp\\PS4_NEW"), (fR)null);
+      new fu(new FileInfo("D:\\Temp\\PS4_NEW"), (fR)null);
    }
 
    private static bool a(byte[] var0, byte[] var1) {
@@ -155,7 +155,7 @@ public class fu : fq {
    static bool b(byte[] var0, byte[] var1) {
       return a(var0, var1);
    }
-   static File b(fu var0) {
+   static FileInfo b(fu var0) {
       return var0.lD;
    }
    static fw[] c(fu var0) {

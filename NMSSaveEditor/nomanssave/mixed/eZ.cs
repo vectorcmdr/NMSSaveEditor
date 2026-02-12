@@ -15,7 +15,7 @@ class eZ : fc {
       this.index = var2;
    }
 
-   Object a(Class var1, bool var2) {
+   object a(Class var1, bool var2) {
       if (this.kN == null) {
          throw new Exception("Unexpected path");
       } else {
@@ -25,10 +25,10 @@ class eZ : fc {
                if (!var2) {
                   throw new fd((fd)null);
                } else {
-                  Object var4;
+                  object var4;
                   try {
                      var4 = var1.newInstance();
-                  } catch (IllegalAccessException | InstantiationException var6) {
+                  } catch (Exception var6) {
                      throw new Exception("Unexpected error", var6);
                   }
 
@@ -46,16 +46,16 @@ class eZ : fc {
       }
    }
 
-   Object getValue() {
+   object getValue() {
       if (this.kN == null) {
          throw new Exception("Unexpected path");
       } else {
          eV var1 = (eV)this.kN.a(typeof(eV), false);
-         return var1[(this.index);
+         return var1[this.index];
       }
    }
 
-   Object a(Object var1, bool var2) {
+   object a(object var1, bool var2) {
       if (this.kN == null) {
          throw new Exception("Unexpected path");
       } else {
@@ -69,7 +69,7 @@ class eZ : fc {
       }
    }
 
-   Object bG() {
+   object bG() {
       if (this.kN == null) {
          throw new Exception("Unexpected path");
       } else {
@@ -83,7 +83,7 @@ class eZ : fc {
          throw new Exception("Unexpected path");
       } else {
          eV var2 = (eV)this.kN.a(typeof(eV), false);
-         Object var3 = var2[(this.index);
+         object var3 = var2[this.index];
          if (var3 == null) {
             var2.set(this.index, var1);
             return null;

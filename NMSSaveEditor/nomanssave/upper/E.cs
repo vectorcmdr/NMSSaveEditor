@@ -28,7 +28,7 @@ class E : object {
    public void removeListDataListener(EventHandler var1) {
    }
 
-   public void setSelectedItem(Object var1) {
+   public void setSelectedItem(object var1) {
       int var2;
       if (Application.i(this.aZ)) {
          Application.o(this.aZ).hidePopup();
@@ -63,10 +63,10 @@ class E : object {
       Application.b(this.aZ, var2);
    }
 
-   public Object getSelectedItem() {
+   public object getSelectedItem() {
       return Application.e(this.aZ) < 0 ? null : Application.f(this.aZ)[Application.e(this.aZ)];
    }
-   public Object getElementAt(int var1) {
+   public object getElementAt(int var1) {
       return this.n(var1);
    }
 }

@@ -17,7 +17,7 @@ public class gV {
    }
 
    private static void a(eY var0, string var1, double[] var2) {
-      var0.b(var1, (Object)(new eV(new Object[]{new Double(Double.isNaN(var2[0]) ? 0.0D : var2[0]), new Double(Double.isNaN(var2[1]) ? 0.0D : var2[1]), new Double(Double.isNaN(var2[2]) ? 0.0D : var2[2])})));
+      var0.b(var1, (object)(new eV(new object[]{new Double(Double.isNaN(var2[0]) ? 0.0D : var2[0]), new Double(Double.isNaN(var2[1]) ? 0.0D : var2[1]), new Double(Double.isNaN(var2[2]) ? 0.0D : var2[2])})));
    }
 
    public static bool F(eY var0) {

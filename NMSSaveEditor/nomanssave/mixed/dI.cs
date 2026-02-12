@@ -42,7 +42,7 @@ class dI : object {
       return var1 == null ? 0 : var1.dW();
    }
 
-   public Object getValueAt(int var1, int var2) {
+   public object getValueAt(int var1, int var2) {
       gE var3 = (gE)dE.a(this.hE).SelectedItem;
       string var4 = var3 == null ? null : var3.aH(var1);
       eM var5 = eM.x(var4);
@@ -65,7 +65,7 @@ class dI : object {
    public void removeTableModelListener(EventHandler var1) {
    }
 
-   public void setValueAt(Object var1, int var2, int var3) {
+   public void setValueAt(object var1, int var2, int var3) {
       gE var4 = (gE)dE.a(this.hE).SelectedItem;
       if (var4 != null && var3 == 1) {
          eM var5 = (eM)var1;

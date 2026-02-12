@@ -9,7 +9,7 @@ namespace NMSSaveEditor
 
 public class cT : OpenFileDialog {
    private static cT gv = null;
-   private static string name = "Ship Export File";
+   private static string name = "Ship Export FileInfo";
    private static Image fH = Application.a("UI-SHIPICON.PNG", 16, 16);
    private CheckBox fO;
 
@@ -26,7 +26,7 @@ public class cT : OpenFileDialog {
       this.setAcceptAllFileFilterUsed(false);
       this.setFileView(new cU(this));
       this.setFileFilter(new cV(this));
-      this.setDialogTitle("Choose Ship Export File");
+      this.setDialogTitle("Choose Ship Export FileInfo");
       Panel var1 = new Panel();
       var1.SuspendLayout(); // TODO: set layout new BoxLayout(var1, 1));
       var1.Padding = new Padding(0); /* setBorder */ //(null /* EmptyBorder */);
@@ -55,7 +55,7 @@ public class cT : OpenFileDialog {
       this.getAccessory().Hide();
       return base.showOpenDialog(var1);
    }
-   static Image as() {
+   static Image @as() {
       return fH;
    }
 }

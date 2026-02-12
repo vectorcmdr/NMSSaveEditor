@@ -43,7 +43,7 @@ public class gj {
       return (gj[])var1.ToArray(new gj[0]);
    }
 
-   public static gj a(eY var0, File var1) {
+   public static gj a(eY var0, FileInfo var1) {
       eV var2 = null;
       gl var3 = null;
       if (var1.Name.EndsWith(".pet")) {
@@ -72,7 +72,7 @@ public class gj {
          } else {
             eY var15 = gR.az("companion");
             Throwable var16 = null;
-            Object var7 = null;
+            object var7 = null;
 
             try {
                ff var8 = new ff(new FileStream(var1));
@@ -127,9 +127,9 @@ public class gj {
       this.bf.d("CreatureSeed").a(1, "0x0");
    }
 
-   public void j(File var1) {
+   public void j(FileInfo var1) {
       Throwable var2 = null;
-      Object var3 = null;
+      object var3 = null;
 
       try {
          fj var4 = new fj(new FileStream(var1));
@@ -164,7 +164,7 @@ public class gj {
    }
 
    public void setName(string var1) {
-      this.bf.b("CustomName", (Object)var1);
+      this.bf.b("CustomName", (object)var1);
    }
 
    public string cM() {
@@ -201,7 +201,7 @@ public class gj {
    }
 
    public void ac(string var1) {
-      this.bf.b("SpeciesSeed", (Object)var1);
+      this.bf.b("SpeciesSeed", (object)var1);
    }
 
    public string cP() {
@@ -209,7 +209,7 @@ public class gj {
    }
 
    public void ad(string var1) {
-      this.bf.b("GenusSeed", (Object)var1);
+      this.bf.b("GenusSeed", (object)var1);
    }
 
    public bool cQ() {
@@ -217,7 +217,7 @@ public class gj {
    }
 
    public void d(bool var1) {
-      this.bf.b("Predator", (Object)var1);
+      this.bf.b("Predator", (object)var1);
    }
 
    public string cR() {
@@ -225,7 +225,7 @@ public class gj {
    }
 
    public void ae(string var1) {
-      this.bf.b("Biome.Biome", (Object)var1);
+      this.bf.b("Biome.Biome", (object)var1);
    }
 
    public string cS() {
@@ -233,7 +233,7 @@ public class gj {
    }
 
    public void af(string var1) {
-      this.bf.b("CreatureType.CreatureType", (Object)var1);
+      this.bf.b("CreatureType.CreatureType", (object)var1);
    }
 
    public string toString() {

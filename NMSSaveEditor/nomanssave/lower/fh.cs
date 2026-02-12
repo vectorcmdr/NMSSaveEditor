@@ -50,11 +50,11 @@ public class fh {
       }
    }
 
-   public static string b(Object var0, bool var1) {
+   public static string b(object var0, bool var1) {
       return a(var0, var1 ? 7 : 0, (Predicate)null);
    }
 
-   public static string a(Object var0, int var1, Predicate var2) {
+   public static string a(object var0, int var1, Predicate var2) {
       string var3 = null;
       if ((var1 & 3) != 0) {
          switch(var1 & 3) {
@@ -73,11 +73,11 @@ public class fh {
       return a(var0, var3, var4, var2);
    }
 
-   static string a(Object var0, string var1, bool var2) {
-      return a((Object)var0, var1, var2, (Predicate)null);
+   static string a(object var0, string var1, bool var2) {
+      return a((object)var0, var1, var2, (Predicate)null);
    }
 
-   private static string a(Object var0, string var1, bool var2, Predicate var3) {
+   private static string a(object var0, string var1, bool var2, Predicate var3) {
       if (var0 == null) {
          return "null";
       } else if (var0 is Boolean) {
@@ -191,8 +191,8 @@ public class fh {
             var1.Append(Character.toString((char)var6));
          } else {
             var1.Append("\\x");
-            var1.Append("0123456789ABCDEFabcdef"[var6 >> 4 & 15));
-            var1.Append("0123456789ABCDEFabcdef"[var6 & 15));
+            var1.Append("0123456789ABCDEFabcdef"[var6 >> 4 & 15]);
+            var1.Append("0123456789ABCDEFabcdef"[var6 & 15]);
          }
       }
 
@@ -232,10 +232,10 @@ public class fh {
             var2.Append(Character.toString(var3));
          } else {
             var2.Append("\\u");
-            var2.Append("0123456789ABCDEFabcdef"[var3 >> 12 & 15));
-            var2.Append("0123456789ABCDEFabcdef"[var3 >> 8 & 15));
-            var2.Append("0123456789ABCDEFabcdef"[var3 >> 4 & 15));
-            var2.Append("0123456789ABCDEFabcdef"[var3 & 15));
+            var2.Append("0123456789ABCDEFabcdef"[var3 >> 12 & 15]);
+            var2.Append("0123456789ABCDEFabcdef"[var3 >> 8 & 15]);
+            var2.Append("0123456789ABCDEFabcdef"[var3 >> 4 & 15]);
+            var2.Append("0123456789ABCDEFabcdef"[var3 & 15]);
          }
       }
 
@@ -254,9 +254,9 @@ public class fh {
       return var2.ToString();
    }
 
-   public static Object P(string var0) {
+   public static object P(string var0) {
       fi var1 = new fi(var0);
-      Object var2 = a(var1, var1.bI());
+      object var2 = a(var1, var1.bI());
       if (var1.bI() >= 0) {
          throw new eX("Invalid trailing data", var1.kF, var1.kG);
       } else {
@@ -264,7 +264,7 @@ public class fh {
       }
    }
 
-   private static Object a(fi var0, int var1) {
+   private static object a(fi var0, int var1) {
       if (var1 < 0) {
          throw new eX("Short read", var0.kF, var0.kG);
       } else if (var1 == 123) {
@@ -333,7 +333,7 @@ public class fh {
 
    static eY Q(string var0) {
       Throwable var1 = null;
-      Object var2 = null;
+      object var2 = null;
 
       try {
          fi var3 = new fi(var0);
@@ -400,7 +400,7 @@ public class fh {
                throw new eX("Invalid token", var0.kF, var0.kG);
             }
 
-            Object var4 = a(var0, var0.bI());
+            object var4 = a(var0, var0.bI());
             var1.a(var3, var4);
             var2 = var0.bI();
             if (var2 == 125) {
@@ -425,7 +425,7 @@ public class fh {
 
    static eV R(string var0) {
       Throwable var1 = null;
-      Object var2 = null;
+      object var2 = null;
 
       try {
          fi var3 = new fi(var0);
@@ -487,7 +487,7 @@ public class fh {
       int var2;
       if ((var2 = var0.bI()) != 93) {
          while(true) {
-            Object var3 = a(var0, var2);
+            object var3 = a(var0, var2);
             var1.e(var3);
             var2 = var0.bI();
             if (var2 == 93) {
@@ -523,7 +523,7 @@ public class fh {
    }
 
    private static string c(fi var0) {
-      Object var1 = d(var0);
+      object var1 = d(var0);
       if (var1 is string) {
          return (string)var1;
       } else {
@@ -531,7 +531,7 @@ public class fh {
       }
    }
 
-   private static Object d(fi var0) {
+   private static object d(fi var0) {
       try {
          StringBuilder var1 = new StringBuilder();
          MemoryStream var2 = new MemoryStream();
@@ -739,7 +739,7 @@ public class fh {
       return var2;
    }
 
-   static void i(Object var0) {
+   static void i(object var0) {
       if (var0 is eY) {
          ((eY)var0).kD = null;
       }
@@ -750,7 +750,7 @@ public class fh {
 
    }
 
-   static void a(Object var0, Object var1) {
+   static void a(object var0, object var1) {
       if (var0 is eY) {
          ((eY)var0).kD = var1;
       }

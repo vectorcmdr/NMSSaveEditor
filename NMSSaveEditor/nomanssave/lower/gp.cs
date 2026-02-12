@@ -45,7 +45,7 @@ public class gp {
    }
 
    public void setName(string var1) {
-      this.oR.b("CustomName", (Object)var1);
+      this.oR.b("CustomName", (object)var1);
    }
 
    public gr da() {
@@ -53,7 +53,7 @@ public class gp {
    }
 
    public void c(gr var1) {
-      this.oR.b("FrigateClass.FrigateClass", (Object)var1.ToString());
+      this.oR.b("FrigateClass.FrigateClass", (object)var1.ToString());
    }
 
    public string cW() {
@@ -100,7 +100,7 @@ public class gp {
    }
 
    public void am(string var1) {
-      this.oR.b("Race.AlienRace", (Object)var1);
+      this.oR.b("Race.AlienRace", (object)var1);
    }
 
    public int aq(int var1) {
@@ -141,7 +141,7 @@ public class gp {
    }
 
    public void @as(int var1) {
-      this.oR.b("TotalNumberOfExpeditions", (Object)(new Integer(var1)));
+      this.oR.b("TotalNumberOfExpeditions", (object)(new Integer(var1)));
    }
 
    public int dd() {
@@ -149,7 +149,7 @@ public class gp {
    }
 
    public void at(int var1) {
-      this.oR.b("TotalNumberOfSuccessfulEvents", (Object)(new Integer(var1)));
+      this.oR.b("TotalNumberOfSuccessfulEvents", (object)(new Integer(var1)));
    }
 
    public int de() {
@@ -157,7 +157,7 @@ public class gp {
    }
 
    public void au(int var1) {
-      this.oR.b("TotalNumberOfFailedEvents", (Object)(new Integer(var1)));
+      this.oR.b("TotalNumberOfFailedEvents", (object)(new Integer(var1)));
    }
 
    public int df() {
@@ -165,7 +165,7 @@ public class gp {
    }
 
    public void av(int var1) {
-      this.oR.b("NumberOfTimesDamaged", (Object)(new Integer(var1)));
+      this.oR.b("NumberOfTimesDamaged", (object)(new Integer(var1)));
    }
 
    public int dg() {
@@ -173,7 +173,7 @@ public class gp {
    }
 
    public void aw(int var1) {
-      this.oR.b("RepairsMade", (Object)(new Integer(var1)));
+      this.oR.b("RepairsMade", (object)(new Integer(var1)));
    }
 
    public int dh() {
@@ -181,7 +181,7 @@ public class gp {
    }
 
    public void ax(int var1) {
-      this.oR.b("DamageTaken", (Object)(new Integer(var1)));
+      this.oR.b("DamageTaken", (object)(new Integer(var1)));
    }
 
    public string toString() {

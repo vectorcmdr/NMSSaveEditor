@@ -9,13 +9,13 @@ namespace NMSSaveEditor
 {
 
 class fH {
-   File mh;
+   FileInfo mh;
    byte[] lK;
    fA ma;
 
    fH(fA var1, string var2, bool var3) {
       this.ma = var1;
-      this.mh = new File(fA.a(var1), var2);
+      this.mh = new FileInfo(fA.a(var1), var2);
       if (var3) {
          FileStream var4 = new FileStream(this.mh);
 
@@ -37,7 +37,7 @@ class fH {
 
    byte[] readBytes() {
       long var1 = (255L & (long)this.lK[95]) << 24 | (255L & (long)this.lK[94]) << 16 | (255L & (long)this.lK[93]) << 8 | 255L & (long)this.lK[92];
-      FileStream var3 = new FileStream(new File(fA.a(this.ma), this.K()));
+      FileStream var3 = new FileStream(new FileInfo(fA.a(this.ma), this.K()));
 
       byte[] var6;
       try {
@@ -54,7 +54,7 @@ class fH {
 
    byte[] ah(int var1) {
       long var2 = (255L & (long)this.lK[95]) << 24 | (255L & (long)this.lK[94]) << 16 | (255L & (long)this.lK[93]) << 8 | 255L & (long)this.lK[92];
-      FileStream var4 = new FileStream(new File(fA.a(this.ma), this.K()));
+      FileStream var4 = new FileStream(new FileInfo(fA.a(this.ma), this.K()));
 
       byte[] var7;
       try {
@@ -75,7 +75,7 @@ class fH {
       this.lK[93] = (byte)(var1.Length >> 8);
       this.lK[94] = (byte)(var1.Length >> 16);
       this.lK[95] = (byte)(var1.Length >> 24);
-      FileStream var2 = new FileStream(new File(fA.a(this.ma), this.K()));
+      FileStream var2 = new FileStream(new FileInfo(fA.a(this.ma), this.K()));
 
       try {
          var2.Write(this.lK);
@@ -103,7 +103,7 @@ class fH {
       }
 
       string var6 = var1 + "." + DateTimeOffset.UtcNow.ToUnixTimeMilliseconds() + ".zip";
-      File var7 = new File(aH.cG, var6);
+      FileInfo var7 = new FileInfo(aH.cG, var6);
       ZipOutputStream var8 = new ZipOutputStream(new FileStream(var7));
 
       try {

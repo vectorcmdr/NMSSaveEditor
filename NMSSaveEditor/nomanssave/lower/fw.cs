@@ -9,7 +9,7 @@ namespace NMSSaveEditor
 
 class fw {
    public fn be;
-   final byte[] lK;
+   byte[] lK;
    int lL;
    int lM;
    int lN;
@@ -125,7 +125,7 @@ class fw {
             throw new IOException("header not valid");
          } else {
             long var25 = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
-            File var5 = new File(fu.b(this.lJ).Directory, "~" + fu.b(this.lJ).Name);
+            FileInfo var5 = new FileInfo(fu.b(this.lJ).Directory, "~" + fu.b(this.lJ).Name);
             FileStream var6 = new FileStream(var5);
 
             try {

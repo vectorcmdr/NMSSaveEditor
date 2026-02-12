@@ -18,7 +18,7 @@ class co : FileFilter {
       return "All Base Backup Files";
    }
 
-   public bool accept(File var1) {
+   public bool accept(FileInfo var1) {
       if (var1.Attributes.HasFlag(FileAttributes.Directory)) {
          return !var1.isHidden();
       } else {

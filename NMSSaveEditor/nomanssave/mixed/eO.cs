@@ -12,7 +12,7 @@ class eO {
       this.id = var1;
    }
 
-   public bool equals(Object var1) {
+   public bool equals(object var1) {
       eM var2 = (eM)var1;
       return var2.jY ? this.id.StartsWith(var2.id + "#") : this.id.Equals(var2.id);
    }

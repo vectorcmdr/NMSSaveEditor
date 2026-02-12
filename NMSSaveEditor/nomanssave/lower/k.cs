@@ -29,15 +29,15 @@ class k : object {
    public void removeListDataListener(EventHandler var1) {
    }
 
-   public void setSelectedItem(Object var1) {
+   public void setSelectedItem(object var1) {
       this.B = (ex)var1;
       h.h(this.z);
    }
 
-   public Object getSelectedItem() {
+   public object getSelectedItem() {
       return this.B;
    }
-   public Object getElementAt(int var1) {
+   public object getElementAt(int var1) {
       return this.c(var1);
    }
 }

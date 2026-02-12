@@ -46,7 +46,7 @@ public class cy : Form, TreeSelectionListener {
       this.fW = new Panel();
       this.fW.setViewportView(this.fV);
       this.fX = new TextBox();
-      this.// TODO: fX.putClientProperty(...);
+      // TODO: fX.putClientProperty(...);
       this.fX.setEditable(false);
       this.fX.setTabSize(4);
       this.fX.getActionMap().Put("copy-to-clipboard", new cG(this));
@@ -67,9 +67,9 @@ public class cy : Form, TreeSelectionListener {
       this.setContentPane(var5);
       this.addWindowListener(new cE(this));
       cF var6 = new cF(this);
-      this.fV.getInputMap().Put(/* KeyStroke */ Keys.None; //(70, 2), "find");
+      /* TODO: port from Java - this.fV.getInputMap().Put(KeyStroke.getKeyStroke(70, 2), "find"); */
       this.fV.getActionMap().Put("find", var6);
-      this.fX.getInputMap().Put(/* KeyStroke */ Keys.None; //(70, 2), "find");
+      /* TODO: port from Java - this.fX.getInputMap().Put(KeyStroke.getKeyStroke(70, 2), "find"); */
       this.fX.getActionMap().Put("find", var6);
    }
 
@@ -88,7 +88,7 @@ public class cy : Form, TreeSelectionListener {
       while(var6.MoveNext()) {
          string var5 = (string)var6.Current;
          ++var4;
-         if (var2[(var5) is eY) {
+         if (var2[var5] is eY) {
             var3 = var4;
             break;
          }
@@ -106,7 +106,7 @@ public class cy : Form, TreeSelectionListener {
       string var0;
       try {
          var0 = (string)Toolkit.getDefaultToolkit().getSystemClipboard().getData(DataFlavor.stringFlavor);
-      } catch (IOException | UnsupportedFlavorException var4) {
+      } catch (Exception var4) {
          hc.error("Could not retrieve clipboard contents", var4);
          return "";
       }
@@ -128,10 +128,10 @@ public class cy : Form, TreeSelectionListener {
                var1.Append(var2[var3]);
             } else {
                var1.Append("\\u");
-               var1.Append("0123456789ABCDEFabcdef"[var2[var3] >> 12 & 15));
-               var1.Append("0123456789ABCDEFabcdef"[var2[var3] >> 8 & 15));
-               var1.Append("0123456789ABCDEFabcdef"[var2[var3] >> 4 & 15));
-               var1.Append("0123456789ABCDEFabcdef"[var2[var3] & 15));
+               var1.Append("0123456789ABCDEFabcdef"[var2[var3] >> 12 & 15]);
+               var1.Append("0123456789ABCDEFabcdef"[var2[var3] >> 8 & 15]);
+               var1.Append("0123456789ABCDEFabcdef"[var2[var3] >> 4 & 15]);
+               var1.Append("0123456789ABCDEFabcdef"[var2[var3] & 15]);
             }
          } else {
             var1.Append(var2[var3]);
@@ -207,7 +207,7 @@ public class cy : Form, TreeSelectionListener {
                   ((cI)this.fV.DataSource).a(this.fZ);
                }
             } catch (eX var3) {
-               MessageBox.showOptionDialog(this, "Error on line #" + var3.getLineNumber() + ": " + var3.getMessage(), "Error", 0, 0, (Icon)null, new Object[]{"Cancel"}, (Object)null);
+               MessageBox.showOptionDialog(this, "Error on line #" + var3.getLineNumber() + ": " + var3.getMessage(), "Error", 0, 0, (Icon)null, new object[]{"Cancel"}, (object)null);
                this.fX.setCaretPosition(var3.bD());
                this.fX.Focus();
                return;

@@ -29,7 +29,7 @@ class dF : object {
    public void removeListDataListener(EventHandler var1) {
    }
 
-   public void setSelectedItem(Object var1) {
+   public void setSelectedItem(object var1) {
       this.hD = (gE)var1;
       int var2;
       if (this.hD == null) {
@@ -55,10 +55,10 @@ class dF : object {
       dE.g(this.hE).PerformLayout();
    }
 
-   public Object getSelectedItem() {
+   public object getSelectedItem() {
       return this.hD;
    }
-   public Object getElementAt(int var1) {
+   public object getElementAt(int var1) {
       return this.E(var1);
    }
 }

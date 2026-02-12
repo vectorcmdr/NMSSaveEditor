@@ -9,10 +9,10 @@ class cJ {
    cJ gi;
    int gj;
    string name;
-   Object value;
+   object value;
    cy gg;
 
-   cJ(cy var1, cJ var2, int var3, string var4, Object var5) {
+   cJ(cy var1, cJ var2, int var3, string var4, object var5) {
       this.gg = var1;
       this.gi = var2;
       this.value = var5;
@@ -40,22 +40,22 @@ class cJ {
       }
    }
 
-   Object x(int var1) {
+   object x(int var1) {
       if (this.value == null) {
          throw new Exception("No children for null");
       } else if (this.value is eY) {
          string var4 = (string)((eY)this.value).names()[(var1);
-         Object var3 = ((eY)this.value).getValue(var4);
+         object var3 = ((eY)this.value).getValue(var4);
          return new cJ(this.gg, this, var1, var4, var3);
       } else if (this.value is eV) {
-         Object var2 = ((eV)this.value).getValue(var1);
+         object var2 = ((eV)this.value).getValue(var1);
          return new cJ(this.gg, this, var1, "[" + var1 + "]", var2);
       } else {
          throw new Exception("No children for " + this.value.GetType().Name);
       }
    }
 
-   int indexOf(Object var1) {
+   int indexOf(object var1) {
       return var1 is cJ && ((cJ)var1).gi == this ? ((cJ)var1).gj : -1;
    }
 

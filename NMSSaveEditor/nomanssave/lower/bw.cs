@@ -28,7 +28,7 @@ class bw : object {
    public void removeListDataListener(EventHandler var1) {
    }
 
-   public void setSelectedItem(Object var1) {
+   public void setSelectedItem(object var1) {
       this.et = (gr)var1;
       bl.a(this.er, bl.b(this.er) < 0 ? null : nomanssave.er.a(this.et));
       bl.b(this.er, bl.b(this.er) < 0 ? null : nomanssave.er.b(this.et));
@@ -38,13 +38,13 @@ class bw : object {
             bl.c(this.er)[bl.b(this.er)].a(0, bl.a(this.er)[0]);
             bl.p(this.er).SelectedItem = (bl.a(this.er)[0]);
          } else {
-            bl.p(this.er).SelectedItem = ((Object)null);
+            bl.p(this.er).SelectedItem = ((object)null);
          }
 
-         bl.q(this.er).SelectedItem = ((Object)null);
-         bl.r(this.er).SelectedItem = ((Object)null);
-         bl.s(this.er).SelectedItem = ((Object)null);
-         bl.t(this.er).SelectedItem = ((Object)null);
+         bl.q(this.er).SelectedItem = ((object)null);
+         bl.r(this.er).SelectedItem = ((object)null);
+         bl.s(this.er).SelectedItem = ((object)null);
+         bl.t(this.er).SelectedItem = ((object)null);
       }
 
       bl.e(this.er).Refresh();
@@ -55,10 +55,10 @@ class bw : object {
       bl.t(this.er).Refresh();
    }
 
-   public Object getSelectedItem() {
+   public object getSelectedItem() {
       return this.et;
    }
-   public Object getElementAt(int var1) {
+   public object getElementAt(int var1) {
       return this.u(var1);
    }
 }

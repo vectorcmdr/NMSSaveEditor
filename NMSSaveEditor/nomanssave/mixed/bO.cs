@@ -83,7 +83,7 @@ public class bO : Panel, eo {
       bool var2 = this.eW == null ? false : var1 || this.eW.dp();
       lock(this.eS.getTreeLock()) {
          for(int var4 = 0; var4 < this.eS.Controls.Count; ++var4) {
-            Component var5 = this.eS.Controls[var4);
+            Component var5 = this.eS.Controls[var4];
             if (var5 is bS) {
                bS var6 = (bS)var5;
                bS.b(var6).Enabled = (var2);
@@ -202,7 +202,7 @@ public class bO : Panel, eo {
    private bS a(int var1, int var2) {
       lock(this.eS.getTreeLock()) {
          for(int var4 = 0; var4 < this.eS.Controls.Count; ++var4) {
-            Component var5 = this.eS.Controls[var4);
+            Component var5 = this.eS.Controls[var4];
             if (var5 is bS) {
                bS var6 = (bS)var5;
                if (bS.h(var6) == var1 && bS.i(var6) == var2) {
@@ -255,7 +255,7 @@ public class bO : Panel, eo {
 
    }
 
-   private static string a(Object var0) {
+   private static string a(object var0) {
       return var0 is fg ? "Archived Tech" : var0.ToString();
    }
    static gt a(bO var0) {
@@ -285,7 +285,7 @@ public class bO : Panel, eo {
    static Color ai() {
       return eF;
    }
-   static string b(Object var0) {
+   static string b(object var0) {
       return a(var0);
    }
    static Color aj() {

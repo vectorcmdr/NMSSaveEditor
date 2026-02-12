@@ -101,7 +101,7 @@ public class aj : Form {
       this.bZ.Text = (var1);
 
       for(int var2 = 0; var2 < 12; ++var2) {
-         int var3 = "0123456789ABCDEF".IndexOf(var1[var2));
+         int var3 = "0123456789ABCDEF".IndexOf(var1[var2]);
          this.ca[var2].setIcon(var3 < 0 ? null : this.cb[var3]);
       }
 

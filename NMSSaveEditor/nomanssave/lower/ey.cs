@@ -98,8 +98,8 @@ public abstract class ey {
       return var1.ToString();
    }
 
-   public Object aZ() {
-      if (this.id.length() >= 2 && this.id[0) == '^') {
+   public object aZ() {
+      if (this.id.length() >= 2 && this.id[0] == '^') {
          if (this.bb()) {
             int var1 = (int)Math.Floor(new Random().NextDouble() * 100000.0D);
             return this.id + "#" + L(var1);
@@ -111,8 +111,8 @@ public abstract class ey {
       }
    }
 
-   public Object M(int var1) {
-      if (this.id.length() >= 2 && this.id[0) == '^') {
+   public object M(int var1) {
+      if (this.id.length() >= 2 && this.id[0] == '^') {
          if (this.bb()) {
             if (var1 >= 0 && var1 < 100000) {
                return this.id + "#" + L(var1);
@@ -344,17 +344,17 @@ public abstract class ey {
       }).collect(Collectors.toList());
    }
 
-   public static ey d(Object var0) {
+   public static ey d(object var0) {
       string var1 = var0 is fg ? ((fg)var0).bP() : var0.ToString();
       return (ey)jJ.stream().filter((var2) => {
          return !var2.bb() && !(var2 is eR) ? var0.Equals(var2.id) : var1.StartsWith(var2.id + "#");
-      }).findFirst().orElse((Object)null);
+      }).findFirst().orElse((object)null);
    }
 
    static eA p(string var0) {
       return (eA)jI.stream().filter((var1) => {
          return var0.Equals(var1.id);
-      }).findFirst().orElse((Object)null);
+      }).findFirst().orElse((object)null);
    }
    static Pattern bn() {
       return jH;

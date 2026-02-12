@@ -85,7 +85,7 @@ public class gO {
       var2.a((var1x, var2x, var3x) => {
          if ("ValidSlotIndices".Equals(var1x) && var3x is eV) {
             int var4 = ((eV)var3x).Count;
-            var1.b("Slots", (Object)var4);
+            var1.b("Slots", (object)var4);
          }
 
       });

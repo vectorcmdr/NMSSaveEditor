@@ -83,12 +83,12 @@ public class Application {
 
    public static string a(long var0) {
       string var2 = "h:mm a, E MMM d, yyyy";
-      return var2.ToString("var0));
+      return var0.ToString();
    }
 
    public static string b(long var0) {
       string var2 = "MMM d, HH:mm";
-      return var2.ToString("var0));
+      return var0.ToString();
    }
 
    private static string a(string var0, string var1) {
@@ -98,7 +98,7 @@ public class Application {
          StringBuilder var2 = new StringBuilder();
 
          for(int var4 = 0; var4 < var0.length(); ++var4) {
-            char var3 = var0[var4);
+            char var3 = var0[var4];
             if ("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_".IndexOf(var3) >= 0) {
                var2.Append(var3);
             } else if (char.IsWhiteSpace(var3)) {
@@ -133,7 +133,7 @@ public class Application {
    }
 
    public static Image a(string var0) {
-      Bitmap var1 = (Bitmap)M[(var0);
+      Bitmap var1 = (Bitmap)M[var0];
       if (var1 == null) {
          Stream var2 = typeof(Application).GetManifestResourceStream("icons/" + var0);
          if (var2 != null) {
@@ -152,7 +152,7 @@ public class Application {
    }
 
    public static Image a(string var0, int var1, int var2) {
-      Bitmap var3 = (Bitmap)M[(var0);
+      Bitmap var3 = (Bitmap)M[var0];
       if (var3 == null) {
          Stream var4 = typeof(Application).GetManifestResourceStream("icons/" + var0);
          if (var4 != null) {
@@ -167,7 +167,7 @@ public class Application {
          }
       }
 
-      return var3 == null ? null : new Bitmap(var3, var1, var2, 4));
+      return var3 == null ? null : new Bitmap(var3, var1, var2, 4);
    }
 
    private void f() {
@@ -179,11 +179,7 @@ public class Application {
       if (this.aS) {
          this.aS = false;
          var1 = this.aH < 0 ? -1 : this.aG[this.aH].getIndex();
-         this.aG = (ft[])new List<object>(new object[]{this.aF.bU()).stream().filter((var1x) => {
-            return var1x.getIndex() == var1 || !var1x.Count == 0;
-         }).ToArray((var0) => {
-            return new ft[var0];
-         });
+         this.aG = this.aF.bV(); /* TODO: port from Java - was stream().filter().ToArray() */
          this.aH = -1;
 
          for(int var2 = 0; var2 < this.aG.Length; ++var2) {
@@ -221,7 +217,7 @@ public class Application {
 
          if (var7 != null && this.aJ < 0) {
             this.aU = false;
-            var5 = MessageBox.Show(this.N, "Save file has been deleted externally. Would you like to reload?\nNOTE: All changes made in the editor will be lost.", "Reload File", 0);
+            var5 = MessageBox.Show(this.N, "Save file has been deleted externally. Would you like to reload?\nNOTE: All changes made in the editor will be lost.", "Reload FileInfo", 0);
             if (var5 == 0) {
                this.aJ = 0;
                this.l();
@@ -240,7 +236,7 @@ public class Application {
       this.aU &= this.aJ >= 0;
       if (this.aU) {
          this.aU = false;
-         var1 = MessageBox.Show(this.N, "Save file has been modified externally. Would you like to reload?\nNOTE: All changes made in the editor will be lost.", "Reload File", 0);
+         var1 = MessageBox.Show(this.N, "Save file has been modified externally. Would you like to reload?\nNOTE: All changes made in the editor will be lost.", "Reload FileInfo", 0);
          if (var1 == 0) {
             this.l();
          } else {
@@ -280,7 +276,7 @@ public class Application {
             int var4 = this.aK.J("PlayerStateData.ActiveMultioolIndex");
             if (var1x.StartsWith("PlayerStateData.Multitools[" + var4 + "].Store.")) {
                eY var5 = this.aK.H("PlayerStateData.Multitools[" + var4 + "].Store");
-               this.aK.b("PlayerStateData.WeaponInventory", (Object)var5.bE());
+               this.aK.b("PlayerStateData.WeaponInventory", (object)var5.bE());
             } else if (var1x.Equals("PlayerStateData.Multitools[" + var4 + "].Seed[1]")) {
                this.aK.b("PlayerStateData.CurrentWeapon.GenerationSeed[1]", var3x);
             } else if (var1x.Equals("PlayerStateData.Multitools[" + var4 + "].Resource.Filename")) {
@@ -306,7 +302,7 @@ public class Application {
       this.aX = new u(this);
       string var2 = nomanssave.aH.getProperty("GameStorage");
       string var3 = nomanssave.aH.getProperty("GameSaveDir");
-      this.aF = var3 == null ? null : fq.a(var2, new File(var3), this.aX);
+      this.aF = var3 == null ? null : fq.a(var2, new FileInfo(var3), this.aX);
       if (this.aF == null) {
          this.aG = new ft[0];
          this.aH = -1;
@@ -350,7 +346,7 @@ public class Application {
    }
 
    public void a(gH var1) {
-      File var2 = nomanssave.aH.cF;
+      FileInfo var2 = nomanssave.aH.cF;
       if (!var2.Exists && !var2.Create()) {
          var2 = nomanssave.aH.cD;
       }
@@ -358,12 +354,12 @@ public class Application {
       cT var3 = cT.aC();
       string var4 = a(var1.Name, "Ship");
       var3.setCurrentDirectory(var2);
-      var3.setSelectedFile(new File(var2, var4));
+      var3.setSelectedFile(new FileInfo(var2, var4));
       if (var3.showSaveDialog(this.N) == 0) {
          try {
-            File var5 = var3.getSelectedFile();
+            FileInfo var5 = var3.getSelectedFile();
             if (!var5.Name.EndsWith(".sh0")) {
-               var5 = new File(var5.Directory, var5.Name + ".sh0");
+               var5 = new FileInfo(var5.Directory, var5.Name + ".sh0");
             }
 
             var1.a(var5, var3.aw());
@@ -379,7 +375,7 @@ public class Application {
    }
 
    public void a(gv var1) {
-      File var2 = nomanssave.aH.cF;
+      FileInfo var2 = nomanssave.aH.cF;
       if (!var2.Exists && !var2.Create()) {
          var2 = nomanssave.aH.cD;
       }
@@ -387,12 +383,12 @@ public class Application {
       cv var3 = cv.ax();
       string var4 = a(var1.Name, "Weapon");
       var3.setCurrentDirectory(var2);
-      var3.setSelectedFile(new File(var2, var4));
+      var3.setSelectedFile(new FileInfo(var2, var4));
       if (var3.showSaveDialog(this.N) == 0) {
          try {
-            File var5 = var3.getSelectedFile();
+            FileInfo var5 = var3.getSelectedFile();
             if (!var5.Name.EndsWith(".wp0")) {
-               var5 = new File(var5.Directory, var5.Name + ".wp0");
+               var5 = new FileInfo(var5.Directory, var5.Name + ".wp0");
             }
 
             var1.j(var5);
@@ -408,7 +404,7 @@ public class Application {
    }
 
    public void a(gj var1) {
-      File var2 = nomanssave.aH.cF;
+      FileInfo var2 = nomanssave.aH.cF;
       if (!var2.Exists && !var2.Create()) {
          var2 = nomanssave.aH.cD;
       }
@@ -417,12 +413,12 @@ public class Application {
       cp var4 = cp.at();
       string var5 = a(var1.Name, var1.cL().name());
       var4.setCurrentDirectory(var2);
-      var4.setSelectedFile(new File(var2, var5));
+      var4.setSelectedFile(new FileInfo(var2, var5));
       if (var4.showSaveDialog(this.N) == 0) {
          try {
-            File var6 = var4.getSelectedFile();
+            FileInfo var6 = var4.getSelectedFile();
             if (!var6.Name.EndsWith(var3)) {
-               var6 = new File(var6.Directory, var6.Name + var3);
+               var6 = new FileInfo(var6.Directory, var6.Name + var3);
             }
 
             var1.j(var6);
@@ -440,12 +436,12 @@ public class Application {
    public gH h() {
       eY var1;
       if (this.aK != null && (var1 = this.aK.H("PlayerStateData")) != null) {
-         File var2 = nomanssave.aH.cF.Exists ? nomanssave.aH.cF : nomanssave.aH.cD;
+         FileInfo var2 = nomanssave.aH.cF.Exists ? nomanssave.aH.cF : nomanssave.aH.cD;
          cT var3 = cT.aC();
          var3.setCurrentDirectory(var2);
          if (var3.showOpenDialog(this.N) == 0) {
             try {
-               File var4 = var3.getSelectedFile();
+               FileInfo var4 = var3.getSelectedFile();
                gH var5 = gH.c(var1, var4);
                this.aL = true;
                return var5;
@@ -467,12 +463,12 @@ public class Application {
    public gv i() {
       eY var1;
       if (this.aK != null && (var1 = this.aK.H("PlayerStateData")) != null) {
-         File var2 = nomanssave.aH.cF.Exists ? nomanssave.aH.cF : nomanssave.aH.cD;
+         FileInfo var2 = nomanssave.aH.cF.Exists ? nomanssave.aH.cF : nomanssave.aH.cD;
          cv var3 = cv.ax();
          var3.setCurrentDirectory(var2);
          if (var3.showOpenDialog(this.N) == 0) {
             try {
-               File var4 = var3.getSelectedFile();
+               FileInfo var4 = var3.getSelectedFile();
                gv var5 = gv.b(var1, var4);
                this.aL = true;
                return var5;
@@ -494,12 +490,12 @@ public class Application {
    public gj j() {
       eY var1;
       if (this.aK != null && (var1 = this.aK.H("PlayerStateData")) != null) {
-         File var2 = nomanssave.aH.cF.Exists ? nomanssave.aH.cF : nomanssave.aH.cD;
+         FileInfo var2 = nomanssave.aH.cF.Exists ? nomanssave.aH.cF : nomanssave.aH.cD;
          cp var3 = cp.at();
          var3.setCurrentDirectory(var2);
          if (var3.showOpenDialog(this.N) == 0) {
             try {
-               File var4 = var3.getSelectedFile();
+               FileInfo var4 = var3.getSelectedFile();
                gj var5 = gj.a(var1, var4);
                this.aL = true;
                return var5;
@@ -519,7 +515,7 @@ public class Application {
    }
 
    public void a(gf var1) {
-      File var2 = nomanssave.aH.cE;
+      FileInfo var2 = nomanssave.aH.cE;
       if (!var2.Exists && !var2.Create()) {
          var2 = nomanssave.aH.cD;
       }
@@ -527,12 +523,12 @@ public class Application {
       cl var3 = cl.ar();
       string var4 = a(var1.Name, "Base");
       var3.setCurrentDirectory(var2);
-      var3.setSelectedFile(new File(var2, var4));
+      var3.setSelectedFile(new FileInfo(var2, var4));
       if (var3.showSaveDialog(this.N) == 0) {
          try {
-            File var5 = var3.getSelectedFile();
+            FileInfo var5 = var3.getSelectedFile();
             if (!var5.Name.EndsWith(".pb3")) {
-               var5 = new File(var5.Directory, var5.Name + ".pb3");
+               var5 = new FileInfo(var5.Directory, var5.Name + ".pb3");
             }
 
             if (var5.Exists && MessageBox.Show(this.N, "Are you sure you want to overwrite this existing backup file?", "Confirm", 2) != 0) {
@@ -555,7 +551,7 @@ public class Application {
    }
 
    public bool b(gf var1) {
-      File var2 = nomanssave.aH.cE.Exists ? nomanssave.aH.cE : nomanssave.aH.cD;
+      FileInfo var2 = nomanssave.aH.cE.Exists ? nomanssave.aH.cE : nomanssave.aH.cD;
       cl var3 = cl.ar();
       var3.setCurrentDirectory(var2);
       if (var3.showOpenDialog(this.N) == 0) {
@@ -564,7 +560,7 @@ public class Application {
                return false;
             }
 
-            File var4 = var3.getSelectedFile();
+            FileInfo var4 = var3.getSelectedFile();
             gS.e(var1.cH(), var4);
             this.aL = true;
             return true;
@@ -583,7 +579,7 @@ public class Application {
    public void a(gm var1) {
       gn var2 = var1.cZ();
       if (var2 != null) {
-         File var3 = nomanssave.aH.cE;
+         FileInfo var3 = nomanssave.aH.cE;
          if (!var3.Exists && !var3.Create()) {
             var3 = nomanssave.aH.cD;
          }
@@ -591,12 +587,12 @@ public class Application {
          cs var4 = cs.av();
          string var5 = a(var2.Name, "Freighter");
          var4.setCurrentDirectory(var3);
-         var4.setSelectedFile(new File(var3, var5));
+         var4.setSelectedFile(new FileInfo(var3, var5));
          if (var4.showSaveDialog(this.N) == 0) {
             try {
-               File var6 = var4.getSelectedFile();
+               FileInfo var6 = var4.getSelectedFile();
                if (!var6.Name.EndsWith(".fb3")) {
-                  var6 = new File(var6.Directory, var6.Name + ".fb3");
+                  var6 = new FileInfo(var6.Directory, var6.Name + ".fb3");
                }
 
                if (var6.Exists && MessageBox.Show(this.N, "Are you sure you want to overwrite this existing backup file?", "Confirm", 2) != 0) {
@@ -640,7 +636,7 @@ public class Application {
                var7.Put("Inventory", var9);
                var7.Put("InventoryTech", var10);
                var7.Put("InventoryCargo", var11);
-               gS.a(var2.cH(), (Dictionary<object, object>)var7, (File)var6);
+               gS.a(var2.cH(), (Dictionary<object, object>)var7, (FileInfo)var6);
             } catch (Exception var15) {
                hc.a("Freighter backup error", var15);
                this.c("An error occured during backup.");
@@ -661,7 +657,7 @@ public class Application {
       if (var2 == null) {
          return false;
       } else {
-         File var3 = nomanssave.aH.cE.Exists ? nomanssave.aH.cE : nomanssave.aH.cD;
+         FileInfo var3 = nomanssave.aH.cE.Exists ? nomanssave.aH.cE : nomanssave.aH.cD;
          cs var4 = cs.av();
          var4.setCurrentDirectory(var3);
          if (var4.showOpenDialog(this.N) == 0) {
@@ -670,7 +666,7 @@ public class Application {
                   return false;
                }
 
-               File var5 = var4.getSelectedFile();
+               FileInfo var5 = var4.getSelectedFile();
                Dictionary<object, object> var6 = new Dictionary<object, object>();
                gS.b(var2.cH(), var6, var5);
                eY var7 = this.aK.H("PlayerStateData");
@@ -712,17 +708,17 @@ public class Application {
                   }
 
                   if (((string)var9.getKey()).Equals("Inventory")) {
-                     var7.b("FreighterInventory", (Object)((eY)var9.getValue()));
+                     var7.b("FreighterInventory", (object)((eY)var9.getValue()));
                      var8 = true;
                   }
 
                   if (((string)var9.getKey()).Equals("InventoryTech")) {
-                     var7.b("FreighterInventory_TechOnly", (Object)((eY)var9.getValue()));
+                     var7.b("FreighterInventory_TechOnly", (object)((eY)var9.getValue()));
                      var8 = true;
                   }
 
                   if (((string)var9.getKey()).Equals("InventoryCargo")) {
-                     var7.b("FreighterInventory_Cargo", (Object)((eY)var9.getValue()));
+                     var7.b("FreighterInventory_Cargo", (object)((eY)var9.getValue()));
                      var8 = true;
                   }
                }
@@ -748,10 +744,10 @@ public class Application {
    }
 
    private void k() {
-      File var1 = ej.b(this.aF == null ? null : this.aF.bS());
+      FileInfo var1 = ej.b(this.aF == null ? null : this.aF.bS());
       if (var1 != null) {
          string var2;
-         File var3;
+         FileInfo var3;
          if (var1.Attributes.HasFlag(FileAttributes.Directory)) {
             var3 = var1;
             var2 = null;
@@ -807,18 +803,19 @@ public class Application {
 
                      while(true) {
                         if (var6 >= this.aI.Length) {
-                           break label85;
+                           goto endLabel85;
                         }
 
                         if (var2.Equals(this.aI[var6].K())) {
                            this.aJ = var6;
-                           break label85;
+                           goto endLabel85;
                         }
 
                         ++var6;
                      }
                   }
                }
+               endLabel85: ;
             }
 
             this.aM = null;
@@ -1089,18 +1086,19 @@ public class Application {
 
                   while(true) {
                      if (var5 >= this.aI.Length) {
-                        break label38;
+                        goto endLabel38;
                      }
 
                      if (var3.Equals(this.aI[var5].K())) {
                         this.aJ = var5;
-                        break label38;
+                        goto endLabel38;
                      }
 
                      ++var5;
                   }
                }
             }
+            endLabel38: ;
 
             this.aL = false;
             this.R.Refresh();
@@ -1181,9 +1179,9 @@ public class Application {
       hl var2 = hl.n(var1);
       if ((var2 = nomanssave.aj.a((Container)this.N, var2)) != null) {
          var2.aL(0);
-         this.aK.b("PlayerStateData.UniverseAddress", (Object)var2.ew());
-         this.aK.b("PlayerStateData.PreviousUniverseAddress", (Object)var1);
-         this.aK.b("SpawnStateData.LastKnownPlayerState", (Object)"InShip");
+         this.aK.b("PlayerStateData.UniverseAddress", (object)var2.ew());
+         this.aK.b("PlayerStateData.PreviousUniverseAddress", (object)var1);
+         this.aK.b("SpawnStateData.LastKnownPlayerState", (object)"InShip");
          this.aL = true;
       }
 
@@ -1277,12 +1275,12 @@ public class Application {
       cK var1 = cK.aA();
       string var2 = this.aI[this.aJ].K() + ".json";
       var1.setCurrentDirectory(nomanssave.aH.cF);
-      var1.setSelectedFile(new File(nomanssave.aH.cF, var2));
+      var1.setSelectedFile(new FileInfo(nomanssave.aH.cF, var2));
       if (var1.showSaveDialog(this.N) == 0) {
          try {
-            File var3 = var1.getSelectedFile();
+            FileInfo var3 = var1.getSelectedFile();
             if (!var3.Name.EndsWith(".json")) {
-               var3 = new File(var3.Directory, var3.Name + ".json");
+               var3 = new FileInfo(var3.Directory, var3.Name + ".json");
             }
 
             if (var3.Exists && MessageBox.Show(this.N, "Are you sure you want to overwrite this existing JSON file?", "Confirm", 2) != 0) {
@@ -1308,7 +1306,7 @@ public class Application {
                return;
             }
 
-            File var2 = var1.getSelectedFile();
+            FileInfo var2 = var1.getSelectedFile();
             this.aK.d(var2);
             this.t();
          } catch (IOException var3) {
@@ -1601,7 +1599,7 @@ public class Application {
       if (var3 != null && var1 < var3.Count) {
          eY var4 = var3.V(var1).bE();
          var4.d("ResourceSeed").a(1, var2);
-         var4.b("CustomName", (Object)"");
+         var4.b("CustomName", (object)"");
          var3.f(var4);
          this.aL = true;
       }
@@ -1640,10 +1638,10 @@ public class Application {
             eY var10 = var8.V(var9);
             if ("^MAINT_FARM5".Equals(var10.getValueAsString("Id"))) {
                if ((var4 = var10.J("MaxAmount")) > 0 && var10.J("Amount") < var4) {
-                  var10.b("Amount", (Object)(new Integer(var4)));
+                  var10.b("Amount", (object)(new Integer(var4)));
                }
 
-               var11.b("LastUpdateTimestamp", (Object)(new Integer(var1)));
+               var11.b("LastUpdateTimestamp", (object)(new Integer(var1)));
                this.aL = true;
                --var2;
             }
@@ -1673,7 +1671,7 @@ public class Application {
       this.N.Add(this.O, "Center");
       ba var3 = new ba(new int[]{nomanssave.aH.cH, nomanssave.aH.cI, 0});
       this.O.addTab("Main", (Icon)null, var3, null);
-      var3.k("File Details");
+      var3.k("FileInfo Details");
       this.P = new Label();
       this.P.Text = (this.aF == null ? "" : fq.c(this.aF));
       var3.a("Storage", this.P, 2);
@@ -1688,7 +1686,7 @@ public class Application {
       this.S.setEditable(false);
       this.S.DataSource = (new E(this));
       this.S.Enabled = (this.aF != null);
-      var3.a("Save File", (Control)this.S);
+      var3.a("Save FileInfo", (Control)this.S);
       this.T = new Label();
       this.T.Text = ("(no file selected)");
       var3.a("Modified", this.T, 2);
@@ -1775,24 +1773,24 @@ public class Application {
       });
       MenuStrip var5 = new MenuStrip();
       this.N.setJMenuBar(var5);
-      ToolStripMenuItem var6 = new ToolStripMenuItem("File");
+      ToolStripMenuItem var6 = new ToolStripMenuItem("FileInfo");
       var5.Add(var6);
-      ToolStripMenuItem var7 = new ToolStripMenuItem("Open File/Path");
-      var7.setAccelerator(/* KeyStroke */ Keys.None; //(79, 2));
+      ToolStripMenuItem var7 = new ToolStripMenuItem("Open FileInfo/Path");
+      var7; /* TODO: .setAccelerator(KeyStroke.getKeyStroke(79, 2)); */
       var7.Click += ((var1x) => {
          this.k();
       });
       var6.Add(var7);
-      this.Z = new ToolStripMenuItem("Reload File");
+      this.Z = new ToolStripMenuItem("Reload FileInfo");
       this.Z.Enabled = (false);
-      this.Z.setAccelerator(/* KeyStroke */ Keys.None; //(82, 2));
+      this.Z; /* TODO: .setAccelerator(KeyStroke.getKeyStroke(82, 2)); */
       this.Z.Click += ((var1x) => {
          this.l();
       });
       var6.Add(this.Z);
-      this.aa = new ToolStripMenuItem("Save File");
+      this.aa = new ToolStripMenuItem("Save FileInfo");
       this.aa.Enabled = (false);
-      this.aa.setAccelerator(/* KeyStroke */ Keys.None; //(83, 2));
+      this.aa; /* TODO: .setAccelerator(KeyStroke.getKeyStroke(83, 2)); */
       this.aa.Click += ((var1x) => {
          Component var2 = this.N.getFocusOwner();
          if (var2 is G) {
@@ -1802,7 +1800,7 @@ public class Application {
          this.n();
       });
       var6.Add(this.aa);
-      this.ab = new ToolStripMenuItem("Save File As");
+      this.ab = new ToolStripMenuItem("Save FileInfo As");
       this.ab.Enabled = (false);
       this.ab.Click += ((var1x) => {
          Component var2 = this.N.getFocusOwner();

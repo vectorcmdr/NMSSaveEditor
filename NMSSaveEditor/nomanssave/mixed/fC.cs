@@ -10,16 +10,16 @@ namespace NMSSaveEditor
 
 class fC : fs {
    int mb;
-   File mc;
+   FileInfo mc;
    string md;
-   final byte[] lK;
+   byte[] lK;
    fn be;
    fA ma;
 
    fC(fA var1, string var2, int var3) {
       this.ma = var1;
       this.mb = var3;
-      this.mc = new File(aH.cG, var2);
+      this.mc = new FileInfo(aH.cG, var2);
       ZipFile var4 = new ZipFile(this.mc);
 
       try {
@@ -75,7 +75,7 @@ class fC : fs {
    public eY M() {
       MemoryStream var1 = new MemoryStream();
       Throwable var2 = null;
-      Object var3 = null;
+      object var3 = null;
 
       try {
          ZipFile var4 = new ZipFile(this.mc);

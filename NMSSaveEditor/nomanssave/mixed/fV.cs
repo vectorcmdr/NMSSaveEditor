@@ -11,7 +11,7 @@ namespace NMSSaveEditor
 class fV : fs {
    fW mO;
    int mb;
-   File mc;
+   FileInfo mc;
    string mP;
    fS mQ;
    string mR;
@@ -22,7 +22,7 @@ class fV : fs {
    fV(fT var1, string var2, int var3) {
       this.mN = var1;
       this.mb = var3;
-      this.mc = new File(aH.cG, var2);
+      this.mc = new FileInfo(aH.cG, var2);
       ZipFile var4 = new ZipFile(this.mc);
 
       try {
@@ -49,7 +49,7 @@ class fV : fs {
             throw new IOException("Invalid backup file");
          }
 
-         this.mQ = new fS((File)null);
+         this.mQ = new fS((FileInfo)null);
          this.mQ.read(var4.getInputStream(var5));
       } catch (FormatException var12) {
          throw new IOException("Invalid backup file");

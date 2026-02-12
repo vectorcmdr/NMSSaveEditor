@@ -27,7 +27,7 @@ class fx : fs {
    public eY M() {
       byte[] var1 = this.lI.ca();
       Throwable var2 = null;
-      Object var3 = null;
+      object var3 = null;
 
       try {
          ff var4 = new ff(new MemoryStream(var1), 2);
@@ -78,7 +78,7 @@ class fx : fs {
    public string b(eY var1) {
       MemoryStream var2 = new MemoryStream();
       Throwable var3 = null;
-      Object var4 = null;
+      object var4 = null;
 
       try {
          fj var5 = new fj(var2, 2);

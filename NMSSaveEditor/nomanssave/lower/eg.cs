@@ -29,7 +29,7 @@ class eg : object {
    public void removeListDataListener(EventHandler var1) {
    }
 
-   public void setSelectedItem(Object var1) {
+   public void setSelectedItem(object var1) {
       gL var2 = (gL)var1;
       if (var2 != null && !var2.Equals(eb.a(ec.h(this.ik))[this.il].ef())) {
          eb.a(ec.h(this.ik))[this.il].a(var2);
@@ -37,10 +37,10 @@ class eg : object {
 
    }
 
-   public Object getSelectedItem() {
+   public object getSelectedItem() {
       return eb.a(ec.h(this.ik))[this.il].ef();
    }
-   public Object getElementAt(int var1) {
+   public object getElementAt(int var1) {
       return this.I(var1);
    }
 }

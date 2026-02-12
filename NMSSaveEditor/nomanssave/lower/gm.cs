@@ -86,7 +86,7 @@ public class gm {
    }
 
    public void setName(string var1) {
-      this.oI.b("PlayerFreighterName", (Object)var1);
+      this.oI.b("PlayerFreighterName", (object)var1);
    }
 
    public string cT() {
@@ -94,7 +94,7 @@ public class gm {
    }
 
    public void ag(string var1) {
-      this.oI.b("CurrentFreighter.Filename", (Object)var1);
+      this.oI.b("CurrentFreighter.Filename", (object)var1);
    }
 
    public string cU() {
@@ -110,8 +110,8 @@ public class gm {
    public void ah(string var1) {
       eV var2 = this.oI.d("CurrentFreighterHomeSystemSeed");
       if (var2 == null) {
-         var2 = new eV(new Object[]{Boolean.FALSE, "0x0"});
-         this.oI.b("CurrentFreighterHomeSystemSeed", (Object)var2);
+         var2 = new eV(new object[]{Boolean.FALSE, "0x0"});
+         this.oI.b("CurrentFreighterHomeSystemSeed", (object)var2);
       }
 
       var2.a(0, Boolean.TRUE);
@@ -131,15 +131,15 @@ public class gm {
    }
 
    public void aj(string var1) {
-      this.oI.b("FreighterInventory.Class.InventoryClass", (Object)var1);
+      this.oI.b("FreighterInventory.Class.InventoryClass", (object)var1);
       eY var2 = this.oI.H("FreighterInventory_TechOnly.Class");
       if (var2 != null) {
-         var2.b("InventoryClass", (Object)var1);
+         var2.b("InventoryClass", (object)var1);
       }
 
       var2 = this.oI.H("FreighterInventory_Cargo.Class");
       if (var2 != null) {
-         var2.b("InventoryClass", (Object)var1);
+         var2.b("InventoryClass", (object)var1);
       }
 
    }

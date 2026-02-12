@@ -15,10 +15,10 @@ class cM : FileFilter {
    }
 
    public string getDescription() {
-      return "JSON File";
+      return "JSON FileInfo";
    }
 
-   public bool accept(File var1) {
+   public bool accept(FileInfo var1) {
       if (var1.Attributes.HasFlag(FileAttributes.Directory)) {
          return !var1.isHidden();
       } else {

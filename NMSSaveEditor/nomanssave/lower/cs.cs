@@ -9,7 +9,7 @@ namespace NMSSaveEditor
 
 public class cs : OpenFileDialog {
    private static cs fN = null;
-   private static string name = "Freighter Backup File";
+   private static string name = "Freighter Backup FileInfo";
    private static Image fH = Application.a("UI-FREIGHTERICON.PNG", 16, 16);
    private CheckBox fO;
 
@@ -26,7 +26,7 @@ public class cs : OpenFileDialog {
       this.setAcceptAllFileFilterUsed(false);
       this.setFileView(new ct(this));
       this.setFileFilter(new cu(this));
-      this.setDialogTitle("Choose Backup File");
+      this.setDialogTitle("Choose Backup FileInfo");
       Panel var1 = new Panel();
       var1.SuspendLayout(); // TODO: set layout new BoxLayout(var1, 1));
       var1.Padding = new Padding(0); /* setBorder */ //(null /* EmptyBorder */);
@@ -55,7 +55,7 @@ public class cs : OpenFileDialog {
       this.getAccessory().Hide();
       return base.showOpenDialog(var1);
    }
-   static Image as() {
+   static Image @as() {
       return fH;
    }
 }

@@ -22,14 +22,14 @@ class y : Runnable {
       string var1 = "A newer version of the save editor is available.\n";
       if (!this.ba) {
          var1 = var1 + "Please visit https://github.com/goatfungus/NMSSaveEditor to download the latest release.";
-         MessageBox.showOptionDialog(Application.h(x.a(this.bb)), var1, "New Version Available", 0, 1, (Icon)null, new Object[]{"OK"}, (Object)null);
+         MessageBox.showOptionDialog(Application.h(x.a(this.bb)), var1, "New Version Available", 0, 1, (Icon)null, new object[]{"OK"}, (object)null);
       } else {
          var1 = var1 + "Would you like to download and install? (will require app restart)";
          int var2 = MessageBox.Show(Application.h(x.a(this.bb)), var1, "New Version Available", 0);
          if (var2 == 0) {
             Application.h(x.a(this.bb)).Dispose();
             hc.info("Starting download...");
-            File var3 = new File("~NMSSaveEditor.dl");
+            FileInfo var3 = new FileInfo("~NMSSaveEditor.dl");
 
             try {
                URL var4 = new URL("https://github.com/goatfungus/NMSSaveEditor/raw/master/NMSSaveEditor.jar");

@@ -43,7 +43,7 @@ class au : object {
       return ap.d(this.cu) == null ? 0 : ap.d(this.cu).Count;
    }
 
-   public Object getValueAt(int var1, int var2) {
+   public object getValueAt(int var1, int var2) {
       string var3 = (string)ap.d(this.cu)[(var1);
       ey var4 = ey.d(var3);
       switch(var2) {
@@ -67,7 +67,7 @@ class au : object {
    public void removeTableModelListener(EventHandler var1) {
    }
 
-   public void setValueAt(Object var1, int var2, int var3) {
+   public void setValueAt(object var1, int var2, int var3) {
    }
 }
 

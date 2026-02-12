@@ -43,7 +43,7 @@ public class eC {
       int var5 = (int)(var3 % 68L);
       int var6 = (int)((8796093022207L & var1[0] >> 21) % 68L);
       int var7 = (int)((4194303L & var1[0] >> 42) % 68L);
-      return new string(new char[]{var2[var5), var2[var6), var2[var7)});
+      return new string(new char[]{var2[var5], var2[var6], var2[var7]});
    }
 
    public static eC a(eG var0, string var1) {

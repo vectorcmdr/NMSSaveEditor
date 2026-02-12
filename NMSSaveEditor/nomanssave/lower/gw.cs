@@ -18,7 +18,7 @@ public class gw : gv {
    }
 
    public void setName(string var1) {
-      this.oI.b("PlayerWeaponName", (Object)var1);
+      this.oI.b("PlayerWeaponName", (object)var1);
    }
 
    public string cT() {
@@ -54,7 +54,7 @@ public class gw : gv {
    }
 
    public void aj(string var1) {
-      this.oI.b("WeaponInventory.Class.InventoryClass", (Object)var1);
+      this.oI.b("WeaponInventory.Class.InventoryClass", (object)var1);
    }
 
    public string toString() {

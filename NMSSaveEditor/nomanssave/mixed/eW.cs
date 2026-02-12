@@ -8,7 +8,7 @@ namespace NMSSaveEditor
 public class eW {
    eV kE = new eV();
 
-   public eW h(Object var1) {
+   public eW h(object var1) {
       if (var1 != null && !fh.a(var1.GetType())) {
          throw new Exception("Unsupported type: " + var1.GetType().getSimpleName());
       } else {

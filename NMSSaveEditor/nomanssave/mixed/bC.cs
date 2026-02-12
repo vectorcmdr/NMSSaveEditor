@@ -34,7 +34,7 @@ class bC : object {
    public void removeListDataListener(EventHandler var1) {
    }
 
-   public void setSelectedItem(Object var1) {
+   public void setSelectedItem(object var1) {
       this.eu = (er)var1;
       if (bl.b(this.er) >= 0) {
          er var2 = bl.c(this.er)[bl.b(this.er)].ar(this.ev);
@@ -72,10 +72,10 @@ class bC : object {
 
    }
 
-   public Object getSelectedItem() {
+   public object getSelectedItem() {
       return this.eu;
    }
-   public Object getElementAt(int var1) {
+   public object getElementAt(int var1) {
       return this.v(var1);
    }
 }

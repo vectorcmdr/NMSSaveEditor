@@ -6,7 +6,7 @@ using System.Text;
 namespace NMSSaveEditor
 {
 public interface fe {
-   void propertyChanged(string var1, Object var2, Object var3);
+   void propertyChanged(string var1, object var2, object var3);
 }
 
 }

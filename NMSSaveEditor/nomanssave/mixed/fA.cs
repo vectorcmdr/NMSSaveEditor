@@ -12,12 +12,12 @@ public class fA : fq {
    private static readonly byte[] lA = "NOMANSKY".GetBytes();
    private static Pattern lV = Pattern.compile("savedata(\\d{2})\\.hg", 2);
    private static Pattern lW = Pattern.compile("ps4_backup(\\d*)\\.\\d*\\.zip", 2);
-   private File lX;
+   private FileInfo lX;
    private fR lE;
    private fB lY;
    private fD[] lZ;
 
-   fA(File var1, fR var2) {
+   fA(FileInfo var1, fR var2) {
       this.lX = var1;
       this.lE = var2;
 
@@ -46,7 +46,7 @@ public class fA : fq {
 
    private static eY a(byte[] var0, eG var1) {
       Throwable var2 = null;
-      Object var3 = null;
+      object var3 = null;
 
       try {
          ff var4 = new ff(new MemoryStream(var0), 2);
@@ -97,7 +97,7 @@ public class fA : fq {
    private static byte[] g(eY var0) {
       MemoryStream var1 = new MemoryStream();
       Throwable var2 = null;
-      Object var3 = null;
+      object var3 = null;
 
       try {
          fj var4 = new fj(var1, 2);
@@ -123,7 +123,7 @@ public class fA : fq {
       return var1.toByteArray();
    }
 
-   public File bS() {
+   public FileInfo bS() {
       return this.lX;
    }
 
@@ -185,7 +185,7 @@ public class fA : fq {
       }
 
    }
-   static File a(fA var0) {
+   static FileInfo a(fA var0) {
       return var0.lX;
    }
    static byte[] bY() {

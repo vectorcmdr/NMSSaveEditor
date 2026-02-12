@@ -29,7 +29,7 @@ class eq : object {
    public void removeListDataListener(EventHandler var1) {
    }
 
-   public void setSelectedItem(Object var1) {
+   public void setSelectedItem(object var1) {
       this.iz = (gO)var1;
       if (this.iz == null) {
          ep.b(this.iA).a(new List<object>());
@@ -38,10 +38,10 @@ class eq : object {
       }
    }
 
-   public Object getSelectedItem() {
+   public object getSelectedItem() {
       return this.iz;
    }
-   public Object getElementAt(int var1) {
+   public object getElementAt(int var1) {
       return this.J(var1);
    }
 }

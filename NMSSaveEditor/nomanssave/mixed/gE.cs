@@ -49,7 +49,7 @@ public class gE {
    }
 
    public void setName(string var1) {
-      this.bf.b("Name", (Object)var1);
+      this.bf.b("Name", (object)var1);
    }
 
    public int aq(int var1) {
@@ -85,7 +85,7 @@ public class gE {
    }
 
    public void aa(string var1) {
-      this.bf.b("SeedValue", (Object)var1);
+      this.bf.b("SeedValue", (object)var1);
    }
 
    public gF[] dX() {

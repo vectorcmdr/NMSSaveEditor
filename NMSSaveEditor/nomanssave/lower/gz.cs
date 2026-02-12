@@ -41,7 +41,7 @@ public class gz {
       eV var7 = var1.d("KnownWordGroups");
       if (var7 == null) {
          var7 = new eV();
-         var1.b("KnownWordGroups", (Object)var7);
+         var1.b("KnownWordGroups", (object)var7);
       }
 
       if (var6.Count > 0) {
@@ -67,10 +67,10 @@ public class gz {
                      eU var13 = var10.z(var11);
                      if (var13 != null) {
                         eY var14 = new eY();
-                        var14.b("Group", (Object)var11);
-                        eV var15 = new eV(new Object[]{Boolean.FALSE, Boolean.FALSE, Boolean.FALSE, Boolean.FALSE, Boolean.FALSE, Boolean.FALSE, Boolean.FALSE, Boolean.FALSE});
+                        var14.b("Group", (object)var11);
+                        eV var15 = new eV(new object[]{Boolean.FALSE, Boolean.FALSE, Boolean.FALSE, Boolean.FALSE, Boolean.FALSE, Boolean.FALSE, Boolean.FALSE, Boolean.FALSE});
                         var15.a(var13.ordinal(), Boolean.TRUE);
-                        var14.b("Races", (Object)var15);
+                        var14.b("Races", (object)var15);
                         var7.f(var14);
                         hc.debug("Creating word: " + var11 + "[" + var13.ordinal() + "] = true");
                      }
@@ -131,7 +131,7 @@ public class gz {
    }
 
    public void e(long var1) {
-      this.oI.b("Units", (Object)(new Integer((int)var1)));
+      this.oI.b("Units", (object)(new Integer((int)var1)));
    }
 
    public long dK() {
@@ -139,7 +139,7 @@ public class gz {
    }
 
    public void f(long var1) {
-      this.oI.b("Nanites", (Object)(new Integer((int)var1)));
+      this.oI.b("Nanites", (object)(new Integer((int)var1)));
    }
 
    public long dL() {
@@ -147,7 +147,7 @@ public class gz {
    }
 
    public void g(long var1) {
-      this.oI.b("Specials", (Object)(new Integer((int)var1)));
+      this.oI.b("Specials", (object)(new Integer((int)var1)));
    }
 
    public int dM() {
@@ -155,7 +155,7 @@ public class gz {
    }
 
    public void aB(int var1) {
-      this.oI.b("Health", (Object)(new Integer(var1)));
+      this.oI.b("Health", (object)(new Integer(var1)));
    }
 
    public int dN() {
@@ -163,7 +163,7 @@ public class gz {
    }
 
    public void aC(int var1) {
-      this.oI.b("Shield", (Object)(new Integer(var1)));
+      this.oI.b("Shield", (object)(new Integer(var1)));
    }
 
    public int dO() {
@@ -171,7 +171,7 @@ public class gz {
    }
 
    public void aD(int var1) {
-      this.oI.b("Energy", (Object)(new Integer(var1)));
+      this.oI.b("Energy", (object)(new Integer(var1)));
    }
 
    public List<object> cC() {
@@ -183,7 +183,7 @@ public class gz {
    }
 
    public void aE(int var1) {
-      this.oI.b("KnownPortalRunes", (Object)(new Integer(var1)));
+      this.oI.b("KnownPortalRunes", (object)(new Integer(var1)));
    }
 
    public eV dQ() {
@@ -271,7 +271,7 @@ public class gz {
       if (var3) {
          hc.debug("Creating word: " + var1 + "[" + var2 + "] = " + var3);
          var4 = new eY();
-         var4.b("Group", (Object)var1);
+         var4.b("Group", (object)var1);
          eV var8 = new eV();
 
          while(var8.Count < eU.Values.Length) {
@@ -279,7 +279,7 @@ public class gz {
          }
 
          var8.a(var2, new Boolean(var3));
-         var4.b("Races", (Object)var8);
+         var4.b("Races", (object)var8);
          this.rc.f(var4);
       }
 
@@ -292,7 +292,7 @@ public class gz {
    public void g(double var1) {
       long var3 = Math.Round(var1 * 900.0D);
       if (var3 >= 0L && var3 <= 2147483647L) {
-         this.oI.b("HazardTimeAlive", (Object)(new Integer((int)var3)));
+         this.oI.b("HazardTimeAlive", (object)(new Integer((int)var3)));
       } else {
          throw new Exception("Stat value out of range");
       }
@@ -317,18 +317,18 @@ public class gz {
          for(int var4 = 0; var4 < this.rb.Count; ++var4) {
             var3 = this.rb.V(var4);
             if (var3.getValueAsString("Id").Equals(var1.id)) {
-               var3.b("Value.IntValue", (Object)(new Integer(var2)));
+               var3.b("Value.IntValue", (object)(new Integer(var2)));
                return;
             }
          }
 
          var3 = new eY();
-         var3.b("Id", (Object)var1.id);
+         var3.b("Id", (object)var1.id);
          eY var5 = new eY();
-         var5.b("IntValue", (Object)(new Integer(var2)));
-         var5.b("FloatValue", (Object)(new Double(0.0D)));
-         var5.b("Denominator", (Object)(new Double(0.0D)));
-         var3.b("Value", (Object)var5);
+         var5.b("IntValue", (object)(new Integer(var2)));
+         var5.b("FloatValue", (object)(new Double(0.0D)));
+         var5.b("Denominator", (object)(new Double(0.0D)));
+         var3.b("Value", (object)var5);
          this.rb.f(var3);
       }
    }
@@ -352,18 +352,18 @@ public class gz {
          for(int var5 = 0; var5 < this.rb.Count; ++var5) {
             var4 = this.rb.V(var5);
             if (var4.getValueAsString("Id").Equals(var1.id)) {
-               var4.b("Value.FloatValue", (Object)(new Double(var2)));
+               var4.b("Value.FloatValue", (object)(new Double(var2)));
                return;
             }
          }
 
          var4 = new eY();
-         var4.b("Id", (Object)var1.id);
+         var4.b("Id", (object)var1.id);
          eY var6 = new eY();
-         var6.b("IntValue", (Object)(new Integer(0)));
-         var6.b("FloatValue", (Object)(new Double(var2)));
-         var6.b("Denominator", (Object)(new Double(0.0D)));
-         var4.b("Value", (Object)var6);
+         var6.b("IntValue", (object)(new Integer(0)));
+         var6.b("FloatValue", (object)(new Double(var2)));
+         var6.b("Denominator", (object)(new Double(0.0D)));
+         var4.b("Value", (object)var6);
          this.rb.f(var4);
       }
    }

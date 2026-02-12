@@ -15,10 +15,10 @@ class cn : FileFilter {
    }
 
    public string getDescription() {
-      return "Planetary Base Backup File";
+      return "Planetary Base Backup FileInfo";
    }
 
-   public bool accept(File var1) {
+   public bool accept(FileInfo var1) {
       if (var1.Attributes.HasFlag(FileAttributes.Directory)) {
          return !var1.isHidden();
       } else {

@@ -7,8 +7,8 @@ namespace NMSSaveEditor
 {
 
 public class fg {
-   private static Charset kT = Charset.forName("Windows-1252");
-   final byte[] bytes;
+   private static System.Text.Encoding kT = System.Text.Encoding.GetEncoding("Windows-1252");
+   byte[] bytes;
 
    public fg(byte[] var1) {
       this.bytes = var1;
@@ -60,15 +60,15 @@ public class fg {
          } else if (var2) {
             var1.Append((char)var4);
          } else {
-            var1.Append("0123456789ABCDEFabcdef"[(this.bytes[var3] & 240) >> 4));
-            var1.Append("0123456789ABCDEFabcdef"[this.bytes[var3] & 15));
+            var1.Append("0123456789ABCDEFabcdef"[(this.bytes[var3] & 240) >> 4]);
+            var1.Append("0123456789ABCDEFabcdef"[this.bytes[var3] & 15]);
          }
       }
 
       return var1.ToString();
    }
 
-   public bool equals(Object var1) {
+   public bool equals(object var1) {
       if (var1 == this) {
          return true;
       } else if (!(var1 is fg)) {

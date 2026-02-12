@@ -19,7 +19,7 @@ class i : EventHandler {
       h.a(this.z, ey.b(h.b(this.z), var2));
       h.c(this.z);
       if (h.d(this.z).Count == 0) {
-         MessageBox.showOptionDialog(this.z, "Item not found.", "Warning", 0, 2, (Icon)null, new Object[]{"OK"}, (Object)null);
+         MessageBox.showOptionDialog(this.z, "Item not found.", "Warning", 0, 2, (Icon)null, new object[]{"OK"}, (object)null);
       }
 
    }

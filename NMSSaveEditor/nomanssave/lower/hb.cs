@@ -64,7 +64,7 @@ public class hb : FilterOutputStream {
    }
 
    public void flush() {
-      this.out.Flush();
+      this.@out.Flush();
    }
 
    public void close() {
@@ -73,10 +73,10 @@ public class hb : FilterOutputStream {
             int var1 = this.sf.maxCompressedLength(this.sg);
             byte[] var2 = new byte[var1];
             this.si = this.sf.compress((byte[])this.buffer, 0, this.sg, (byte[])var2, 0, var1);
-            this.out.Write(var2, 0, this.si);
+            this.@out.Write(var2, 0, this.si);
          }
       } finally {
-         this.out.Close();
+         this.@out.Close();
       }
 
    }

@@ -8,7 +8,7 @@ namespace NMSSaveEditor
 {
 
 public class fS {
-   private File mh;
+   private FileInfo mh;
    private int lL;
    private int version;
    private long my;
@@ -19,13 +19,13 @@ public class fS {
    private string description;
    private int lM;
 
-   fS(File var1) {
+   fS(FileInfo var1) {
       this.mh = var1;
    }
 
    void cn() {
       Throwable var1 = null;
-      Object var2 = null;
+      object var2 = null;
 
       try {
          FileStream var3 = new FileStream(this.mh);
@@ -103,7 +103,7 @@ public class fS {
 
    void write() {
       Throwable var1 = null;
-      Object var2 = null;
+      object var2 = null;
 
       try {
          FileStream var3 = new FileStream(this.mh);

@@ -38,7 +38,7 @@ public interface fq {
       }
    }
 
-   static fq a(File var0, fR var1) {
+   static fq a(FileInfo var0, fR var1) {
       if (!var0.Exists) {
          return null;
       } else {
@@ -82,7 +82,7 @@ public interface fq {
       }
    }
 
-   static fq a(string var0, File var1, fR var2) {
+   static fq a(string var0, FileInfo var1, fR var2) {
       if (!var1.Exists) {
          return null;
       } else if (var0 == null) {
@@ -108,13 +108,12 @@ public interface fq {
       }
    }
 
-   File bS();
+   FileInfo bS();
 
    fr bT();
 
    ft[] bU();
-
-   default ft[] bV() {
+   public ft[] bV() {
       return (ft[])new List<object>(new object[]{this.bU()).stream().filter((var0) => {
          return !var0.Count == 0;
       }).ToArray((var0) => {
@@ -123,12 +122,10 @@ public interface fq {
    }
 
    int W(string var1);
-
-   default bool bW() {
+   public bool bW() {
       return false;
    }
-
-   default string a(int var1, eY var2) {
+   public string a(int var1, eY var2) {
       throw new IOException("cannot create slot " + (var1 + 1));
    }
 

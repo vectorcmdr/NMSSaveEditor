@@ -30,7 +30,7 @@ public class ej : OpenFileDialog {
       });
    }
 
-   private string a(File var1) {
+   private string a(FileInfo var1) {
       Matcher var2 = iq.matcher(var1.Name);
       if (var2.Matches()) {
          long var3 = long.Parse(var2.group(1));
@@ -40,7 +40,7 @@ public class ej : OpenFileDialog {
       }
    }
 
-   public static File b(File var0) {
+   public static FileInfo b(FileInfo var0) {
       if (ir == null) {
          ir = new ej();
       }
@@ -52,9 +52,9 @@ public class ej : OpenFileDialog {
 
          ir.setCurrentDirectory(var0);
       } else {
-         File var1 = new File(Environment.GetEnvironmentVariable("user.home"));
-         File var2 = new File(var1, "AppData\\Roaming\\HelloGames\\NMS");
-         File var3 = new File(var1, "AppData\\Local\\Packages\\HelloGames.NoMansSky_bs190hzg1sesy\\SystemAppData");
+         FileInfo var1 = new FileInfo(Environment.GetEnvironmentVariable("user.home"));
+         FileInfo var2 = new FileInfo(var1, "AppData\\Roaming\\HelloGames\\NMS");
+         FileInfo var3 = new FileInfo(var1, "AppData\\Local\\Packages\\HelloGames.NoMansSky_bs190hzg1sesy\\SystemAppData");
          if (var2.Attributes.HasFlag(FileAttributes.Directory)) {
             ir.setCurrentDirectory(var2);
          } else if (var3.Attributes.HasFlag(FileAttributes.Directory)) {
@@ -66,13 +66,13 @@ public class ej : OpenFileDialog {
 
       return ir.showOpenDialog((Component)null) == 0 ? ir.getSelectedFile() : null;
    }
-   static Image as() {
+   static Image @as() {
       return im;
    }
    static Image au() {
       return io;
    }
-   static string a(ej var0, File var1) {
+   static string a(ej var0, FileInfo var1) {
       return var0.a(var1);
    }
    static Image aR() {

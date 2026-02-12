@@ -391,18 +391,18 @@ public class hh {
    }
 
    private static long a(CharSequence var0, int var1) {
-      return (long)var0[var1 + 3) << 48 | (long)var0[var1 + 2) << 32 | (long)var0[var1 + 1) << 16 | (long)var0[var1);
+      return (long)var0[var1 + 3] << 48 | (long)var0[var1 + 2] << 32 | (long)var0[var1 + 1] << 16 | (long)var0[var1];
    }
 
    private static long a(CharSequence var0, int var1, int var2) {
       long var3 = 0L;
       switch(var2) {
       case 3:
-         var3 += (long)var0[var1 + 2) << 32;
+         var3 += (long)var0[var1 + 2] << 32;
       case 2:
-         var3 += (long)var0[var1 + 1) << 16;
+         var3 += (long)var0[var1 + 1] << 16;
       case 1:
-         var3 += (long)var0[var1);
+         var3 += (long)var0[var1];
       default:
          return var3;
       }

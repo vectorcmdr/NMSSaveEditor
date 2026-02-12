@@ -12,11 +12,11 @@ namespace NMSSaveEditor
 {
 
 public class aH {
-   private static File cC;
-   public static File cD;
-   public static File cE;
-   public static File cF;
-   public static File cG;
+   private static FileInfo cC;
+   public static FileInfo cD;
+   public static FileInfo cE;
+   public static FileInfo cF;
+   public static FileInfo cG;
    public static int cH;
    public static int cI;
    public static int cJ;
@@ -60,22 +60,22 @@ public class aH {
       cL = true;
    }
 
-   public static Object[] a(string var0, Class var1) {
+   public static object[] a(string var0, Class var1) {
       eV var2 = cK.d(var0);
       if (var2 == null) {
-         return (Object[])Array.newInstance(var1, 0);
+         return (object[])Array.newInstance(var1, 0);
       } else {
-         Object var3 = Array.newInstance(var1, var2.Count);
+         object var3 = Array.newInstance(var1, var2.Count);
 
          for(int var4 = 0; var4 < var2.Count; ++var4) {
             Array.set(var3, var4, var1.cast(var2.getValue(var4)));
          }
 
-         return (Object[])var3;
+         return (object[])var3;
       }
    }
 
-   public static void a(string var0, Object[] var1) {
+   public static void a(string var0, object[] var1) {
       eV var2 = new eV();
 
       for(int var3 = 0; var3 < var1.Length; ++var3) {
@@ -95,7 +95,7 @@ public class aH {
 
       try {
          Throwable var1 = null;
-         Object var2 = null;
+         object var2 = null;
 
          try {
             FileStream var3 = new FileStream(cC);
@@ -126,14 +126,14 @@ public class aH {
 
    public static void init(bool var0) {
       Console.WriteLine("Initializing environment...");
-      File var1 = null;
+      FileInfo var1 = null;
 
       try {
          URL var2 = typeof(Application).getProtectionDomain().getCodeSource().getLocation();
          if (var0 && var2.getFile().EndsWith(".jar")) {
             var1 = Paths[(var2.toURI()).toFile().Directory;
          } else {
-            var1 = (new File(".")).getCanonicalFile();
+            var1 = (new FileInfo(".")).getCanonicalFile();
          }
       } catch (URISyntaxException var20) {
          Console.WriteLine("Error: cannot find working directory");
@@ -151,16 +151,16 @@ public class aH {
       }
 
       cD = var1;
-      cC = new File(var1, "NMSSaveEditor.conf");
-      cE = new File(var1, "bases");
-      cF = new File(var1, "exported");
-      cG = new File(var1, "backups");
+      cC = new FileInfo(var1, "NMSSaveEditor.conf");
+      cE = new FileInfo(var1, "bases");
+      cF = new FileInfo(var1, "exported");
+      cG = new FileInfo(var1, "backups");
       if (!cG.Exists && !cG.Create()) {
          Console.WriteLine("Error: cannot create backups folder");
          Environment.Exit(1);
       }
 
-      hc.k(new File(var1, "NMSSaveEditor.log"));
+      hc.k(new FileInfo(var1, "NMSSaveEditor.log"));
       hc.debug("Java Vendor: " + Environment.GetEnvironmentVariable("java.vendor"));
       hc.debug("Java Version: " + Environment.GetEnvironmentVariable("java.version"));
       hc.debug("Java Architecture: " + Environment.GetEnvironmentVariable("os.arch"));
@@ -193,9 +193,9 @@ public class aH {
                      string var9 = var3.getProperty(var7);
                      if (!var7.Equals("InventoryFontScale")) {
                         if (var7.Equals("InventoryScaling")) {
-                           cK.b("InventoryScaling", (Object)double.Parse(var9));
+                           cK.b("InventoryScaling", (object)double.Parse(var9));
                         } else if (var7.Equals("FontScaling")) {
-                           cK.b("FontScaling", (Object)double.Parse(var9));
+                           cK.b("FontScaling", (object)double.Parse(var9));
                         } else {
                            int var5;
                            int var10;
@@ -233,7 +233,7 @@ public class aH {
                }
 
                if (var6.Count > 0) {
-                  cK.b("SteamIDs", (Object)var6);
+                  cK.b("SteamIDs", (object)var6);
                }
 
                cL = true;
@@ -259,7 +259,7 @@ public class aH {
       }).findFirst().orElse(aI.cN);
 
       try {
-         Object var2;
+         object var2;
          switch(W()[var1.ordinal()]) {
          case 1:
          default:
@@ -293,14 +293,14 @@ public class aH {
          cH = 120;
          cI = 350;
          cJ = 200;
-         SystemInformation.Put("Inventory.font", (Object)null);
+         SystemInformation.Put("Inventory.font", (object)null);
          SystemInformation.Put("Inventory.gridSize", 200);
          SystemInformation.Put("Inventory.iconSize", 64);
       } else {
          double var4 = cK.L("InventoryScaling");
          if (var4 <= 0.0D) {
             var4 = 1.0D;
-            cK.b("InventoryScaling", (Object)var4);
+            cK.b("InventoryScaling", (object)var4);
             cL = true;
          }
 

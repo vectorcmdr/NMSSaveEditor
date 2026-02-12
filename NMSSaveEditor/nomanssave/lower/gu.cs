@@ -18,11 +18,11 @@ public class gu : gQ {
       return this.qD.getValueAsString("Type.InventoryType");
    }
 
-   public Object dz() {
+   public object dz() {
       return this.qD.getValue("Id");
    }
 
-   public void m(Object var1) {
+   public void m(object var1) {
       this.qD.b("Id", var1);
    }
 
@@ -31,7 +31,7 @@ public class gu : gQ {
    }
 
    public void aA(int var1) {
-      this.qD.b("Amount", (Object)(new Integer(var1)));
+      this.qD.b("Amount", (object)(new Integer(var1)));
    }
 
    public int dB() {
@@ -43,7 +43,7 @@ public class gu : gQ {
    }
 
    public void c(double var1) {
-      this.qD.b("DamageFactor", (Object)(new Double(var1)));
+      this.qD.b("DamageFactor", (object)(new Double(var1)));
    }
 
    public bool dD() {
@@ -51,7 +51,7 @@ public class gu : gQ {
    }
 
    public void e(bool var1) {
-      this.qD.b("FullyInstalled", (Object)(new Boolean(var1)));
+      this.qD.b("FullyInstalled", (object)(new Boolean(var1)));
    }
    gu(gt var1, eY var2, gu var3) {
       this(var1, var2);

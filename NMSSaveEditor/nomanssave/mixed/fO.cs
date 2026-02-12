@@ -17,7 +17,7 @@ class fO : FileFilter {
       this.mg = var2;
    }
 
-   public bool accept(File var1) {
+   public bool accept(FileInfo var1) {
       Matcher var2 = fJ.cl().matcher(var1.Name);
       if (var2.Matches()) {
          int var3 = var2.group(1).length() == 0 ? 0 : int.Parse(var2.group(1)) - 1;

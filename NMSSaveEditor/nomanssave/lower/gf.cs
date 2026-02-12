@@ -16,7 +16,7 @@ public class gf {
    }
 
    public string cF() {
-      Object var1 = this.nj.getValue("GalacticAddress");
+      object var1 = this.nj.getValue("GalacticAddress");
       if (var1 is string) {
          return (string)var1;
       } else {
@@ -29,7 +29,7 @@ public class gf {
    }
 
    public void setName(string var1) {
-      this.nj.b("Name", (Object)var1);
+      this.nj.b("Name", (object)var1);
    }
 
    public int cG() {

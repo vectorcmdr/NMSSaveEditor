@@ -22,7 +22,7 @@ public class hl {
       long var1 = 0L;
 
       for(int var4 = 0; var4 < var0.length(); ++var4) {
-         char var3 = var0[var4);
+         char var3 = var0[var4];
          var1 <<= 4;
          if (var3 >= 'A' && var3 <= 'F') {
             var1 |= (long)(var3 - 55);
@@ -90,7 +90,7 @@ public class hl {
       }
    }
 
-   public static hl n(Object var0) {
+   public static hl n(object var0) {
       if (var0 == null) {
          return null;
       } else if (var0 is Number) {
@@ -286,7 +286,7 @@ public class hl {
       return var1.ToString().ToUpper();
    }
 
-   public bool equals(Object var1) {
+   public bool equals(object var1) {
       if (var1 is hl) {
          hl var2 = (hl)var1;
          if (this.sQ != var2.sQ) {

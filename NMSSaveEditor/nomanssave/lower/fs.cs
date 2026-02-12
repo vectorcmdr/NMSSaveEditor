@@ -15,12 +15,10 @@ public interface fs {
    string b(eY var1);
 
    long lastModified();
-
-   default string getName() {
+   public string getName() {
       return null;
    }
-
-   default string getDescription() {
+   public string getDescription() {
       return null;
    }
 }

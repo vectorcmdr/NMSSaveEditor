@@ -29,7 +29,7 @@ class L : object {
    public void removeListDataListener(EventHandler var1) {
    }
 
-   public void setSelectedItem(Object var1) {
+   public void setSelectedItem(object var1) {
       this.bu = (gf)var1;
       if (this.bu == null) {
          I.e(this.bt).Text = ("");
@@ -49,10 +49,10 @@ class L : object {
 
    }
 
-   public Object getSelectedItem() {
+   public object getSelectedItem() {
       return this.bu;
    }
-   public Object getElementAt(int var1) {
+   public object getElementAt(int var1) {
       return this.p(var1);
    }
 }

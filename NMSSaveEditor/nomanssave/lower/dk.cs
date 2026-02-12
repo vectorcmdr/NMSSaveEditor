@@ -29,7 +29,7 @@ class dk : object {
    public void removeListDataListener(EventHandler var1) {
    }
 
-   public void setSelectedItem(Object var1) {
+   public void setSelectedItem(object var1) {
       this.hk = (gv)var1;
       if (this.hk == null) {
          dj.b(this.hl).Text = ("");
@@ -52,10 +52,10 @@ class dk : object {
       }
    }
 
-   public Object getSelectedItem() {
+   public object getSelectedItem() {
       return this.hk;
    }
-   public Object getElementAt(int var1) {
+   public object getElementAt(int var1) {
       return this.D(var1);
    }
 }

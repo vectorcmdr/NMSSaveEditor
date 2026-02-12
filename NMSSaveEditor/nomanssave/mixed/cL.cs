@@ -14,7 +14,7 @@ class cL : FileView {
       this.gl = var1;
    }
 
-   public string getName(File var1) {
+   public string getName(FileInfo var1) {
       string var2 = var1.Name;
       return var2.EndsWith(".json") ? var2.Substring(0, var2.length() - 5) : var2;
    }

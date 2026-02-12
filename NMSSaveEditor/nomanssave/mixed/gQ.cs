@@ -8,14 +8,13 @@ namespace NMSSaveEditor
 public interface gQ {
    string getType();
 
-   Object dz();
-
-   default string ei() {
-      Object var1 = this.dz();
+   object dz();
+   public string ei() {
+      object var1 = this.dz();
       return var1 is fg ? ((fg)var1).bP() : var1.ToString();
    }
 
-   void m(Object var1);
+   void m(object var1);
 
    int dA();
 

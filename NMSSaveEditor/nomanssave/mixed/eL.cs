@@ -10,7 +10,7 @@ class eL : IComparer {
    public int a(eI var1, eI var2) {
       return var1.name.CompareTo(var2.name);
    }
-   public int compare(Object var1, Object var2) {
+   public int compare(object var1, object var2) {
       return this.a((eI)var1, (eI)var2);
    }
 }

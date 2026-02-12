@@ -31,7 +31,7 @@ class dO : object {
    public void removeListDataListener(EventHandler var1) {
    }
 
-   public void setSelectedItem(Object var1) {
+   public void setSelectedItem(object var1) {
       this.hZ = (gH)var1;
       if (this.hZ == null) {
          dN.b(this.ia).Text = ("");
@@ -74,10 +74,10 @@ class dO : object {
       }
    }
 
-   public Object getSelectedItem() {
+   public object getSelectedItem() {
       return this.hZ;
    }
-   public Object getElementAt(int var1) {
+   public object getElementAt(int var1) {
       return this.G(var1);
    }
 }

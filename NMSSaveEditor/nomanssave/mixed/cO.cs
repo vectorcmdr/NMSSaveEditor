@@ -19,7 +19,7 @@ class cO : object {
       return ((Enum[])this.gu.getEnumConstants()).Length + cN.a(this.gt).Count;
    }
 
-   public Object getElementAt(int var1) {
+   public object getElementAt(int var1) {
       return var1 < ((Enum[])this.gu.getEnumConstants()).Length ? ((Enum[])this.gu.getEnumConstants())[var1] : cN.a(this.gt)[(var1 - ((Enum[])this.gu.getEnumConstants()).Length);
    }
 
@@ -29,8 +29,8 @@ class cO : object {
    public void removeListDataListener(EventHandler var1) {
    }
 
-   public void setSelectedItem(Object var1) {
-      Object var2 = cN.b(this.gt);
+   public void setSelectedItem(object var1) {
+      object var2 = cN.b(this.gt);
       cN.a(this.gt, var1);
       if (cN.c(this.gt) != null) {
          Control.invokeLater(() => {
@@ -53,7 +53,7 @@ class cO : object {
 
    }
 
-   public Object getSelectedItem() {
+   public object getSelectedItem() {
       return cN.b(this.gt);
    }
 }

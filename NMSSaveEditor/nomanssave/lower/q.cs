@@ -43,16 +43,16 @@ class q : object {
       return p.a(this.I) == null ? 0 : p.a(this.I).Count;
    }
 
-   public Object getValueAt(int var1, int var2) {
+   public object getValueAt(int var1, int var2) {
       switch(var2) {
       case 0:
-         return ((ey)p.a(this.I)[(var1)).N(3);
+         return ((ey)p.a(this.I)[var1]).N(3);
       case 1:
-         return ((ey)p.a(this.I)[(var1)).Name;
+         return ((ey)p.a(this.I)[var1]).Name;
       case 2:
-         return ((ey)p.a(this.I)[(var1)).bc().ToString();
+         return ((ey)p.a(this.I)[var1]).bc().ToString();
       case 3:
-         return ((ey)p.a(this.I)[(var1)).getID();
+         return ((ey)p.a(this.I)[var1]).getID();
       default:
          return null;
       }
@@ -65,7 +65,7 @@ class q : object {
    public void removeTableModelListener(EventHandler var1) {
    }
 
-   public void setValueAt(Object var1, int var2, int var3) {
+   public void setValueAt(object var1, int var2, int var3) {
    }
 }
 

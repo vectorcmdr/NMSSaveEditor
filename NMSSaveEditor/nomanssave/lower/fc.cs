@@ -14,13 +14,13 @@ abstract class fc {
       this.kN = var2;
    }
 
-   abstract Object a(Class var1, bool var2);
+   abstract object a(Class var1, bool var2);
 
-   abstract Object getValue();
+   abstract object getValue();
 
-   abstract Object a(Object var1, bool var2);
+   abstract object a(object var1, bool var2);
 
-   abstract Object bG();
+   abstract object bG();
 
    abstract eY e(eY var1);
 }

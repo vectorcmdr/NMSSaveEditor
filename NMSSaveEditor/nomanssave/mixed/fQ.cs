@@ -19,7 +19,7 @@ class fQ {
       this.filename = var2;
       this.lO = var3;
       if (var4) {
-         FileStream var5 = new FileStream(new File(fJ.a(var1), "mf_" + var2));
+         FileStream var5 = new FileStream(new FileInfo(fJ.a(var1), "mf_" + var2));
 
          int var7;
          try {
@@ -57,14 +57,14 @@ class fQ {
    }
 
    public long lastModified() {
-      return (new File(fJ.a(this.mt), "mf_" + this.filename)).LastWriteTimeUtc.Ticks;
+      return (new FileInfo(fJ.a(this.mt), "mf_" + this.filename)).LastWriteTimeUtc.Ticks;
    }
 
    eY a(eG param1) {
    }
 
    byte[] ah(int var1) {
-      Object var2 = new FileStream(new File(fJ.a(this.mt), this.filename));
+      object var2 = new FileStream(new FileInfo(fJ.a(this.mt), this.filename));
 
       try {
          MemoryStream var3 = new MemoryStream();
@@ -94,8 +94,8 @@ class fQ {
    }
 
    void a(string var1, fn var2, string var3, string var4) {
-      File var5 = new File(fJ.a(this.mt), "mf_" + this.filename);
-      File var6 = new File(fJ.a(this.mt), this.filename);
+      FileInfo var5 = new FileInfo(fJ.a(this.mt), "mf_" + this.filename);
+      FileInfo var6 = new FileInfo(fJ.a(this.mt), this.filename);
       Dictionary<string, string> var7 = new Dictionary<string, string>();
       var7.setProperty("ArchiveNumber", Integer.toString(this.lO));
       var7.setProperty("ManifestFile", "mf_" + this.filename);
@@ -114,7 +114,7 @@ class fQ {
       }
 
       string var8 = var1 + "." + DateTimeOffset.UtcNow.ToUnixTimeMilliseconds() + ".zip";
-      File var9 = new File(aH.cG, var8);
+      FileInfo var9 = new FileInfo(aH.cG, var8);
       ZipOutputStream var10 = new ZipOutputStream(new FileStream(var9));
 
       try {
@@ -157,7 +157,7 @@ class fQ {
    void a(eY var1, bool var2) {
       MemoryStream var3 = new MemoryStream();
       Throwable var4 = null;
-      Object var5 = null;
+      object var5 = null;
 
       try {
          fj var6 = new fj(var3, 2);
@@ -182,7 +182,7 @@ class fQ {
 
       byte[] var35 = var3.toByteArray();
       int var36 = 0;
-      Object var37 = new FileStream(new File(fJ.a(this.mt), this.filename));
+      object var37 = new FileStream(new FileInfo(fJ.a(this.mt), this.filename));
 
       try {
          if (var2) {
@@ -217,7 +217,7 @@ class fQ {
       this.mx.f(var8);
       this.mx.ak(var36);
       this.mx.aj(var35.Length);
-      FileStream var38 = new FileStream(new File(fJ.a(this.mt), "mf_" + this.filename));
+      FileStream var38 = new FileStream(new FileInfo(fJ.a(this.mt), "mf_" + this.filename));
 
       try {
          var38.Write(this.mx.encode());

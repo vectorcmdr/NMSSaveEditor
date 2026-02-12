@@ -30,7 +30,7 @@ public class gH {
       }
    }
 
-   public static gH c(eY var0, File var1) {
+   public static gH c(eY var0, FileInfo var1) {
       eV var2 = var0.d("ShipOwnership");
       if (var2 != null && var2.Count != 0) {
          int var3 = -1;
@@ -144,9 +144,9 @@ public class gH {
       this.gT = new List<object>(var15);
    }
 
-   public void a(File var1, bool var2) {
+   public void a(FileInfo var1, bool var2) {
       Throwable var3 = null;
-      Object var4 = null;
+      object var4 = null;
 
       try {
          fj var5 = new fj(new FileStream(var1));
@@ -203,7 +203,7 @@ public class gH {
    }
 
    public void setName(string var1) {
-      this.rp.b("Name", (Object)var1);
+      this.rp.b("Name", (object)var1);
    }
 
    public bool dZ() {
@@ -220,7 +220,7 @@ public class gH {
    }
 
    public void ag(string var1) {
-      this.rp.b("Resource.Filename", (Object)var1);
+      this.rp.b("Resource.Filename", (object)var1);
       gL var2 = gL.aw(var1);
       this.gT.stream().forEach((var1x) => {
          var1x.az(var2 == null ? 4 : var2.ea());
@@ -247,7 +247,7 @@ public class gH {
    }
 
    public void cm() {
-      this.rp.b("Resource.Filename", (Object)"");
+      this.rp.b("Resource.Filename", (object)"");
       this.rp.d("Resource.Seed").a(0, Boolean.FALSE);
       this.rp.d("Resource.Seed").a(1, "0x0");
    }
@@ -257,15 +257,15 @@ public class gH {
    }
 
    public void aj(string var1) {
-      this.rp.b("Inventory.Class.InventoryClass", (Object)var1);
+      this.rp.b("Inventory.Class.InventoryClass", (object)var1);
       eY var2 = this.rp.H("Inventory_TechOnly.Class");
       if (var2 != null) {
-         var2.b("InventoryClass", (Object)var1);
+         var2.b("InventoryClass", (object)var1);
       }
 
       var2 = this.rp.H("Inventory_Cargo.Class");
       if (var2 != null) {
-         var2.b("InventoryClass", (Object)var1);
+         var2.b("InventoryClass", (object)var1);
       }
 
    }

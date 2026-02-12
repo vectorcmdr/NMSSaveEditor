@@ -16,10 +16,10 @@ public class fj : Closeable {
    private Stream lh;
    private int flags;
 
-   public static byte[] j(Object var0) {
+   public static byte[] j(object var0) {
       MemoryStream var1 = new MemoryStream();
       Throwable var2 = null;
-      Object var3 = null;
+      object var3 = null;
 
       try {
          fj var4 = new fj(var1, 0);
@@ -48,7 +48,7 @@ public class fj : Closeable {
    public static byte[] g(eY var0) {
       MemoryStream var1 = new MemoryStream();
       Throwable var2 = null;
-      Object var3 = null;
+      object var3 = null;
 
       try {
          fj var4 = new fj(var1, 0);
@@ -77,7 +77,7 @@ public class fj : Closeable {
    public static byte[] b(eV var0) {
       MemoryStream var1 = new MemoryStream();
       Throwable var2 = null;
-      Object var3 = null;
+      object var3 = null;
 
       try {
          fj var4 = new fj(var1, 0);
@@ -112,7 +112,7 @@ public class fj : Closeable {
       this.flags = var2;
    }
 
-   public void k(Object var1) {
+   public void k(object var1) {
       if (var1 == null) {
          this.lh.Write(le);
       } else if (var1.Equals(Boolean.TRUE)) {
@@ -139,7 +139,7 @@ public class fj : Closeable {
 
    }
 
-   private void a(Object var1, eC var2) {
+   private void a(object var1, eC var2) {
       if (var1 == null) {
          this.lh.Write(le);
       } else if (var1.Equals(Boolean.TRUE)) {
@@ -195,8 +195,8 @@ public class fj : Closeable {
          } else {
             StringBuilder var7 = new StringBuilder();
             var7.Append("\\u00");
-            var7.Append("0123456789ABCDEFabcdef"[var6 >> 4 & 15));
-            var7.Append("0123456789ABCDEFabcdef"[var6 & 15));
+            var7.Append("0123456789ABCDEFabcdef"[var6 >> 4 & 15]);
+            var7.Append("0123456789ABCDEFabcdef"[var6 & 15]);
             this.lh.Write(var7.ToString().GetBytes());
          }
       }

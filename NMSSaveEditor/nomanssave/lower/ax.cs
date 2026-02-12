@@ -78,7 +78,7 @@ class ax : object {
       }
    }
 
-   public Object getValueAt(int var1, int var2) {
+   public object getValueAt(int var1, int var2) {
       eS var3 = eS.T(var1);
       gA var4 = ap.i(this.cu).a(var3);
       switch(var2) {
@@ -101,7 +101,7 @@ class ax : object {
       }
    }
 
-   public void setValueAt(Object var1, int var2, int var3) {
+   public void setValueAt(object var1, int var2, int var3) {
       eS var4 = eS.T(var2);
       gA var5 = ap.i(this.cu).a(var4);
       switch(var3) {

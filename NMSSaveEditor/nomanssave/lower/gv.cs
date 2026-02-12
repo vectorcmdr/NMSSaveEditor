@@ -30,7 +30,7 @@ public class gv {
       }
    }
 
-   public static gv b(eY var0, File var1) {
+   public static gv b(eY var0, FileInfo var1) {
       eV var2 = var0.d("Multitools");
       if (var2 != null && var2.Count != 0) {
          int var3 = -1;
@@ -118,9 +118,9 @@ public class gv {
       this.qG = new gt(b(this), var3, 2, var4, var5, true, true);
    }
 
-   public void j(File var1) {
+   public void j(FileInfo var1) {
       Throwable var2 = null;
-      Object var3 = null;
+      object var3 = null;
 
       try {
          fj var4 = new fj(new FileStream(var1));
@@ -155,7 +155,7 @@ public class gv {
    }
 
    public void setName(string var1) {
-      this.qF.b("Name", (Object)var1);
+      this.qF.b("Name", (object)var1);
    }
 
    public string cT() {
@@ -163,7 +163,7 @@ public class gv {
    }
 
    public void ag(string var1) {
-      this.qF.b("Resource.Filename", (Object)var1);
+      this.qF.b("Resource.Filename", (object)var1);
    }
 
    public string cK() {
@@ -179,7 +179,7 @@ public class gv {
    }
 
    public void aj(string var1) {
-      this.qF.b("Store.Class.InventoryClass", (Object)var1);
+      this.qF.b("Store.Class.InventoryClass", (object)var1);
    }
 
    public gt dE() {
@@ -219,7 +219,7 @@ public class gv {
    }
 
    public void cm() {
-      this.qF.b("Seed", (Object)(new eV(new Object[]{Boolean.FALSE, "0x0"})));
+      this.qF.b("Seed", (object)(new eV(new object[]{Boolean.FALSE, "0x0"})));
    }
 
    public string toString() {

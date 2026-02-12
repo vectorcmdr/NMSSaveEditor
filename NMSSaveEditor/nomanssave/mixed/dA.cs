@@ -27,7 +27,7 @@ class dA : ListModel {
 
    public void removeListDataListener(EventHandler var1) {
    }
-   public Object getElementAt(int var1) {
+   public object getElementAt(int var1) {
       return this.m(var1);
    }
 }

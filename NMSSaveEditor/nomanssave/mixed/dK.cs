@@ -28,14 +28,14 @@ class dK : object {
    public void removeListDataListener(EventHandler var1) {
    }
 
-   public void setSelectedItem(Object var1) {
+   public void setSelectedItem(object var1) {
       this.hF = (eM)var1;
    }
 
-   public Object getSelectedItem() {
+   public object getSelectedItem() {
       return this.hF;
    }
-   public Object getElementAt(int var1) {
+   public object getElementAt(int var1) {
       return this.F(var1);
    }
 }

@@ -16,7 +16,7 @@ class fm : Thread {
       this.Start();
    }
 
-   void a(fq var1, File var2) {
+   void a(fq var1, FileInfo var2) {
       WatchKey var3 = var2.toPath().register(this.lk, StandardWatchEventKinds.ENTRY_CREATE, StandardWatchEventKinds.ENTRY_DELETE, StandardWatchEventKinds.ENTRY_MODIFY);
       this.ll.Put(var1, var3);
    }
@@ -39,7 +39,7 @@ class fm : Thread {
 
                Kind var6;
                do {
-                  Object var2;
+                  object var2;
                   if (var1.ContainsKey(var3)) {
                      var2 = (List<object>)var1[(var3);
                   } else {
@@ -118,7 +118,7 @@ class fm : Thread {
          }
       } catch (InterruptedException var20) {
       } catch (IOException var21) {
-         hc.error("File watcher service error", var21);
+         hc.error("FileInfo watcher service error", var21);
       }
 
    }

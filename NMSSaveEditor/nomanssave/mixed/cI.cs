@@ -16,26 +16,26 @@ class cI : TreeModel {
       this.gh = new List<object>();
    }
 
-   public Object getRoot() {
+   public object getRoot() {
       return new cJ(this.gg, (cJ)null, 0, cy.a(this.gg), cy.b(this.gg));
    }
 
-   public Object getChild(Object var1, int var2) {
+   public object getChild(object var1, int var2) {
       return ((cJ)var1).x(var2);
    }
 
-   public int getChildCount(Object var1) {
+   public int getChildCount(object var1) {
       return ((cJ)var1).getChildCount();
    }
 
-   public bool isLeaf(Object var1) {
+   public bool isLeaf(object var1) {
       return ((cJ)var1).isLeaf();
    }
 
-   public void valueForPathChanged(TreePath var1, Object var2) {
+   public void valueForPathChanged(TreePath var1, object var2) {
    }
 
-   public int getIndexOfChild(Object var1, Object var2) {
+   public int getIndexOfChild(object var1, object var2) {
       return ((cJ)var1).IndexOf(var2);
    }
 

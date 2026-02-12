@@ -33,7 +33,7 @@ public sealed class gy {
       return this.name;
    }
 
-   public static gy as(string var0) {
+   public static gy @as(string var0) {
       for(int var1 = 0; var1 < values().Length; ++var1) {
          if (var0.Equals(values()[var1].filename)) {
             return values()[var1];

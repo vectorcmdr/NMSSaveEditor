@@ -29,14 +29,14 @@ class l : object {
    public void removeListDataListener(EventHandler var1) {
    }
 
-   public void setSelectedItem(Object var1) {
+   public void setSelectedItem(object var1) {
       this.C = (ey)var1;
    }
 
-   public Object getSelectedItem() {
+   public object getSelectedItem() {
       return this.C;
    }
-   public Object getElementAt(int var1) {
+   public object getElementAt(int var1) {
       return this.d(var1);
    }
 }

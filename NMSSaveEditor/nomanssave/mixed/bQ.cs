@@ -14,7 +14,7 @@ class bQ : object {
       this.eX = var1;
    }
 
-   public Component getListCellRendererComponent(ListBox var1, Object var2, int var3, bool var4, bool var5) {
+   public Component getListCellRendererComponent(ListBox var1, object var2, int var3, bool var4, bool var5) {
       if (var2 is gt) {
          var2 = ((gt)var2).getSimpleName();
       }

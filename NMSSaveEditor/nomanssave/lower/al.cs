@@ -29,14 +29,14 @@ class al : object {
    public void removeListDataListener(EventHandler var1) {
    }
 
-   public void setSelectedItem(Object var1) {
+   public void setSelectedItem(object var1) {
       this.ch = (string)var1;
    }
 
-   public Object getSelectedItem() {
+   public object getSelectedItem() {
       return this.ch;
    }
-   public Object getElementAt(int var1) {
+   public object getElementAt(int var1) {
       return this.s(var1);
    }
 }

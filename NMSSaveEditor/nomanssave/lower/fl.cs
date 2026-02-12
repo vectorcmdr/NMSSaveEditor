@@ -8,11 +8,11 @@ namespace NMSSaveEditor
 {
 
 public class fl {
-   private static Object lock = new Object();
+   private static object @lock = new object();
    private static fm lj;
 
-   public static void a(fq var0, File var1) {
-      lock(lock) {
+   public static void a(fq var0, FileInfo var1) {
+      lock(@lock) {
          try {
             if (lj == null) {
                lj = new fm();
@@ -27,7 +27,7 @@ public class fl {
    }
 
    public static void b(fq var0) {
-      lock(lock) {
+      lock(@lock) {
          try {
             if (lj != null) {
                lj.b(var0);
@@ -38,8 +38,8 @@ public class fl {
 
       }
    }
-   static Object bQ() {
-      return lock;
+   static object bQ() {
+      return @lock;
    }
 }
 

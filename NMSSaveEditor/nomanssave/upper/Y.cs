@@ -29,7 +29,7 @@ class Y : object {
    public void removeListDataListener(EventHandler var1) {
    }
 
-   public void setSelectedItem(Object var1) {
+   public void setSelectedItem(object var1) {
       this.bU = (gj)var1;
       if (this.bU == null) {
          X.b(this.bV).SelectedIndex = (-1);
@@ -71,10 +71,10 @@ class Y : object {
 
    }
 
-   public Object getSelectedItem() {
+   public object getSelectedItem() {
       return this.bU;
    }
-   public Object getElementAt(int var1) {
+   public object getElementAt(int var1) {
       return this.q(var1);
    }
 }

@@ -14,7 +14,7 @@ class cP : object {
       this.gt = var1;
    }
 
-   public Component getListCellRendererComponent(ListBox var1, Object var2, int var3, bool var4, bool var5) {
+   public Component getListCellRendererComponent(ListBox var1, object var2, int var3, bool var4, bool var5) {
       Component var6 = base.getListCellRendererComponent(var1, var2, var3, var4, var5);
       if (var2 == null && var6 is Label) {
          Label var7 = (Label)var6;

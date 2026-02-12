@@ -52,7 +52,7 @@ class g : object {
       return var2 == 2 && this.i.g != null;
    }
 
-   public Object getValueAt(int var1, int var2) {
+   public object getValueAt(int var1, int var2) {
       eI var3 = (eI)this.k.apply(var1);
       switch(var2) {
       case 0:
@@ -66,7 +66,7 @@ class g : object {
       }
    }
 
-   public void setValueAt(Object var1, int var2, int var3) {
+   public void setValueAt(object var1, int var2, int var3) {
       if (this.i.g != null) {
          eI var4 = (eI)this.k.apply(var2);
          if (var3 == 2) {

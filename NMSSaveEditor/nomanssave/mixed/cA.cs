@@ -14,7 +14,7 @@ class cA : DefaultTreeCellRenderer {
       this.gg = var1;
    }
 
-   public Component getTreeCellRendererComponent(JTree var1, Object var2, bool var3, bool var4, bool var5, int var6, bool var7) {
+   public Component getTreeCellRendererComponent(JTree var1, object var2, bool var3, bool var4, bool var5, int var6, bool var7) {
       Label var8 = (Label)base.getTreeCellRendererComponent(var1, var2, var3, var4, var5, var6, var7);
       if (((cJ)var2).gi == null) {
          var8.setIcon(Application.a("UI-FILEICON.PNG", 20, 20));

@@ -37,7 +37,7 @@ class hj : Thread {
                Long[] var5 = new Long[var3.Length + 1];
                Array.Copy(var3, 0, var5, 0, var3.Length);
                var5[var3.Length] = this.sK;
-               aH.a("SteamIDs", (Object[])var5);
+               aH.a("SteamIDs", (object[])var5);
             }
 
             if (!var1.Equals(this.sL)) {
