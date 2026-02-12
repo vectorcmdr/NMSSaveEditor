@@ -60,7 +60,7 @@ public class fA : fq {
             } catch (Throwable var15) {
                var10000 = var15;
                var10001 = false;
-               break label173;
+               goto label173;
             }
 
             if (var4 != null) {
@@ -73,7 +73,7 @@ public class fA : fq {
             } catch (Throwable var14) {
                var10000 = var14;
                var10001 = false;
-               break label162;
+               goto label162;
             }
          }
 

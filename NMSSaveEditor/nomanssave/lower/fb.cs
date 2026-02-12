@@ -15,7 +15,7 @@ class fb : fc {
       this.name = var2;
    }
 
-   object a(Class var1, bool var2) {
+   protected override object a(Class var1, bool var2) {
       eY var3;
       if (this.kN == null) {
          var3 = this.kL;
@@ -45,7 +45,7 @@ class fb : fc {
       }
    }
 
-   object getValue() {
+   protected override object getValue() {
       eY var1;
       if (this.kN == null) {
          var1 = this.kL;
@@ -56,7 +56,7 @@ class fb : fc {
       return var1[this.name];
    }
 
-   object a(object var1, bool var2) {
+   protected override object a(object var1, bool var2) {
       eY var3;
       if (this.kN == null) {
          var3 = this.kL;
@@ -67,7 +67,7 @@ class fb : fc {
       return var3.Put(this.name, var1);
    }
 
-   object bG() {
+   protected override object bG() {
       eY var1;
       if (this.kN == null) {
          var1 = this.kL;
@@ -78,7 +78,7 @@ class fb : fc {
       return var1.F(this.name);
    }
 
-   eY e(eY var1) {
+   protected override eY e(eY var1) {
       eY var2;
       if (this.kN == null) {
          var2 = this.kL;

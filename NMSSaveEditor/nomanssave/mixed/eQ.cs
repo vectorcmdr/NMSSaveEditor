@@ -70,55 +70,55 @@ public class eQ : ey {
       this.km = var5;
    }
 
-   public eB ba() {
+   public override eB ba() {
       return eB.jN;
    }
 
-   public bool bb() {
+   public override bool bb() {
       return this.jY;
    }
 
-   public string getName() {
+   public override string getName() {
       return this.name;
    }
 
-   public ex bc() {
+   public override ex bc() {
       return this.jZ;
    }
 
-   public bool bd() {
+   public override bool bd() {
       return !this.jY && this.jZ != ex.ja && this.jZ != ex.iZ;
    }
 
-   public bool be() {
+   public override bool be() {
       return !this.jY && this.special;
    }
 
-   public Integer bf() {
+   public override Integer bf() {
       return this.ka;
    }
 
-   public string bg() {
+   public override string bg() {
       return this.jM;
    }
 
-   public bool bh() {
+   public override bool bh() {
       return false;
    }
 
-   public string bi() {
+   public override string bi() {
       return this.kc;
    }
 
-   public int bj() {
+   public override int bj() {
       return this.kd;
    }
 
-   public string getDescription() {
+   public override string getDescription() {
       return this.description;
    }
 
-   public List<object> bk() {
+   public override List<object> bk() {
       return this.ke;
    }
 

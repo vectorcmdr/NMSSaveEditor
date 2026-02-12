@@ -18,7 +18,7 @@ class eE : List<object> {
       if (this.Count == 0) {
          return false;
       } else {
-         eF var2 = (eF)this[(0);
+         eF var2 = (eF)this[0];
          return var2.key.Equals(var1) || var2.name.Equals(var1);
       }
    }

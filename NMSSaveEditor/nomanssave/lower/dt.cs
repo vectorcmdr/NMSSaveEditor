@@ -92,7 +92,7 @@ public class dt : ba {
          List<object> var3 = this.eR.g(3584);
          int var4 = dd.a(this, var3, -1);
          if (var4 != -1) {
-            gt var5 = (gt)var3[(var4);
+            gt var5 = (gt)var3[var4];
             int var6 = var1.hm.dA();
             ey var7 = ey.d(var1.hm.dz());
             var6 = var5.a(var7, var6);

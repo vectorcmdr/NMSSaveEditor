@@ -20,7 +20,7 @@ public class fI {
    private int mq;
    private byte[] data;
 
-   private static readonly bool ai(int var0) {
+   private static bool ai(int var0) {
       return var0 == 2001 || var0 == 2002 || var0 == 2003 || var0 == 2004;
    }
 

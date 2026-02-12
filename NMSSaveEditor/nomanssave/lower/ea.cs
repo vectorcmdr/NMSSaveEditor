@@ -12,7 +12,7 @@ class ea : G {
       this.ia = var1;
    }
 
-   protected string g(string var1) {
+   protected override string g(string var1) {
       gH var2 = (gH)dN.p(this.ia).SelectedItem;
       if (var2 == null) {
          return "";

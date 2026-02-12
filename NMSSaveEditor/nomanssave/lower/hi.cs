@@ -16,7 +16,7 @@ public class hi {
       hj var2;
       lock(sJ) {
          if (sJ.ContainsKey(var0)) {
-            var2 = (hj)sJ[(var0);
+            var2 = (hj)sJ[var0];
          } else {
             var2 = new hj(var0);
          }

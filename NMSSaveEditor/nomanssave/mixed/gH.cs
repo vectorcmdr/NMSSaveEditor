@@ -275,7 +275,7 @@ public class gH {
    }
 
    private double ak(string var1) {
-      return ((gt)this.gT[(0)).ak(var1);
+      return ((gt)this.gT[0]).ak(var1);
    }
 
    private void d(string var1, double var2) {

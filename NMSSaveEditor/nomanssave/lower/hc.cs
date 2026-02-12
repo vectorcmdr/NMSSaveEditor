@@ -25,8 +25,8 @@ public class hc {
       var0.setLevel(Level.ALL);
       var0.addHandler(sn);
       em();
-      so = System.out;
-      sp = System.err;
+      so = Console.Out;
+      sp = Console.Error;
       sr = Level.INFO.intValue();
    }
 
@@ -35,7 +35,7 @@ public class hc {
          Class var0 = Class.forName("sun.misc.Unsafe");
          Field var1 = var0.getDeclaredField("theUnsafe");
          var1.setAccessible(true);
-         object var2 = var1[((object)null);
+         object var2 = var1[(object)null];
          Method var3 = var0.getDeclaredMethod("putObjectVolatile", typeof(object), Long.TYPE, typeof(object));
          Method var4 = var0.getDeclaredMethod("staticFieldOffset", typeof(Field));
          Class var5 = Class.forName("jdk.internal.module.IllegalAccessLogger");

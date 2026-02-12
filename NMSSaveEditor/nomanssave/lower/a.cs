@@ -8,7 +8,7 @@ namespace NMSSaveEditor
 {
 
 public class a : Form {
-   private static a a = null;
+   private static a _a_inst = null;
 
    private a(Frame var1) {
       base(var1);
@@ -36,11 +36,11 @@ public class a : Form {
 
       var2.setEditable(false);
       this.Controls.Add(var2);
-      this.getRootPane().registerKeyboardAction(new b(this), /* KeyStroke */ Keys.None; //(27, 0), 2);
+      this.getRootPane().registerKeyboardAction(new b(this), /* KeyStroke */ Keys.None /* (27, 0) */, 2);
       this.PerformLayout();
    }
 
-   public static void a(Container var0) {
+   public static void a_init(Container var0) {
       if (a == null) {
          Frame var1 = MessageBox.getFrameForComponent(var0);
          a = new a(var1);

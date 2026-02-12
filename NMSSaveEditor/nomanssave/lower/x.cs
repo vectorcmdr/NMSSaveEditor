@@ -8,7 +8,7 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-class x : Thread {
+class x : JavaThread {
    Application aZ;
    private bool ba;
 

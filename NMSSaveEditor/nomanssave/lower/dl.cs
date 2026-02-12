@@ -12,7 +12,7 @@ class dl : G {
       this.hl = var1;
    }
 
-   protected string g(string var1) {
+   protected override string g(string var1) {
       gv var2 = (gv)dj.j(this.hl).SelectedItem;
       if (var2 == null) {
          return "";

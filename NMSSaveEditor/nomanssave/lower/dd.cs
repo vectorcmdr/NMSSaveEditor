@@ -40,7 +40,7 @@ public class dd : Form {
       Button var6 = new Button("Cancel");
       var6.Click += (new dh(this));
       var4.Add(var6);
-      this.getRootPane().registerKeyboardAction(new di(this), /* KeyStroke */ Keys.None; //(27, 0), 2);
+      this.getRootPane().registerKeyboardAction(new di(this), /* KeyStroke */ Keys.None /* (27, 0) */, 2);
    }
 
    private int a(List<object> var1, int var2) {

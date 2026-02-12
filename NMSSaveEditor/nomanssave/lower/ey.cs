@@ -83,7 +83,7 @@ public abstract class ey {
       this.id = var1;
    }
 
-   public readonly string getID() {
+   public string getID() {
       return this.id;
    }
 
@@ -149,7 +149,7 @@ public abstract class ey {
 
    public abstract string bi();
 
-   public readonly Image N(int var1) {
+   public Image N(int var1) {
       string var2 = this.bi();
       switch(var1) {
       case 0:
@@ -165,7 +165,7 @@ public abstract class ey {
       }
    }
 
-   public readonly Image c(int var1, int var2) {
+   public Image c(int var1, int var2) {
       string var3 = this.bi();
       return var3 == null ? null : Application.a(var3, var1, var2);
    }

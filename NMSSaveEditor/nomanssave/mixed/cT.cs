@@ -7,7 +7,7 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
-public class cT : OpenFileDialog {
+public class cT : JFileChooser {
    private static cT gv = null;
    private static string name = "Ship Export FileInfo";
    private static Image fH = Application.a("UI-SHIPICON.PNG", 16, 16);

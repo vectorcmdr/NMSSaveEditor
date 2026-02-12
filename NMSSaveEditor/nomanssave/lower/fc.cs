@@ -14,15 +14,15 @@ abstract class fc {
       this.kN = var2;
    }
 
-   abstract object a(Class var1, bool var2);
+   protected abstract object a(Class var1, bool var2);
 
-   abstract object getValue();
+   protected abstract object getValue();
 
-   abstract object a(object var1, bool var2);
+   protected abstract object a(object var1, bool var2);
 
-   abstract object bG();
+   protected abstract object bG();
 
-   abstract eY e(eY var1);
+   protected abstract eY e(eY var1);
 }
 
 }

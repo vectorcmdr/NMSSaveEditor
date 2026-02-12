@@ -22,14 +22,14 @@ class dL : object {
          eM var7 = (eM)var2;
          if (var7.aW()) {
             if (var4) {
-               var6.setBackground(/* UIManager.getColor */ SystemColors.Control; //("Settlement.positivePerkHighlight"));
+               var6.setBackground(/* UIManager.getColor */ SystemColors.Control); //("Settlement.positivePerkHighlight")
             } else {
-               var6.setForeground(/* UIManager.getColor */ SystemColors.Control; //("Settlement.positivePerkColor"));
+               var6.setForeground(/* UIManager.getColor */ SystemColors.Control); //("Settlement.positivePerkColor")
             }
          } else if (var4) {
-            var6.setBackground(/* UIManager.getColor */ SystemColors.Control; //("Settlement.negativePerkHighlight"));
+            var6.setBackground(/* UIManager.getColor */ SystemColors.Control); //("Settlement.negativePerkHighlight")
          } else {
-            var6.setForeground(/* UIManager.getColor */ SystemColors.Control; //("Settlement.negativePerkColor"));
+            var6.setForeground(/* UIManager.getColor */ SystemColors.Control); //("Settlement.negativePerkColor")
          }
       }
 

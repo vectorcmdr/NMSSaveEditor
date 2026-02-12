@@ -13,19 +13,19 @@ public class fh {
    public static int kW = 2;
    public static int kX = 3;
    public static int kY = 4;
-   static Predicate kZ = (var0) => {
+   static Predicate<object> kZ = (var0) => {
       return var0 >= 48 && var0 <= 57;
    };
-   static Predicate la = (var0) => {
+   static Predicate<object> la = (var0) => {
       return var0 == 46;
    };
-   static Predicate lb = (var0) => {
+   static Predicate<object> lb = (var0) => {
       return var0 == 101 || var0 == 69;
    };
-   static Predicate lc = (var0) => {
+   static Predicate<object> lc = (var0) => {
       return var0 >= 48 && var0 <= 57 || var0 == 43 || var0 == 45;
    };
-   static Predicate ld = (var0) => {
+   static Predicate<object> ld = (var0) => {
       return (var0 & 192) == 128;
    };
    static string gc = "0123456789ABCDEFabcdef";
@@ -54,7 +54,7 @@ public class fh {
       return a(var0, var1 ? 7 : 0, (Predicate)null);
    }
 
-   public static string a(object var0, int var1, Predicate var2) {
+   public static string a(object var0, int var1, Predicate<object> var2) {
       string var3 = null;
       if ((var1 & 3) != 0) {
          switch(var1 & 3) {
@@ -77,7 +77,7 @@ public class fh {
       return a((object)var0, var1, var2, (Predicate)null);
    }
 
-   private static string a(object var0, string var1, bool var2, Predicate var3) {
+   private static string a(object var0, string var1, bool var2, Predicate<object> var3) {
       if (var0 == null) {
          return "null";
       } else if (var0 is Boolean) {
@@ -103,7 +103,7 @@ public class fh {
       return a((eV)var0, var1, var2, (Predicate)null);
    }
 
-   private static string a(eV var0, string var1, bool var2, Predicate var3) {
+   private static string a(eV var0, string var1, bool var2, Predicate<object> var3) {
       StringBuilder var4 = new StringBuilder();
       var4.Append('[');
 
@@ -131,7 +131,7 @@ public class fh {
       return a((eY)var0, var1, var2, (Predicate)null);
    }
 
-   private static string a(eY var0, string var1, bool var2, Predicate var3) {
+   private static string a(eY var0, string var1, bool var2, Predicate<object> var3) {
       StringBuilder var4 = new StringBuilder();
       var4.Append('{');
 
@@ -207,7 +207,7 @@ public class fh {
       return var1.ToString();
    }
 
-   private static string a(string var0, Predicate var1) {
+   private static string a(string var0, Predicate<object> var1) {
       StringBuilder var2 = new StringBuilder();
       char[] var6;
       int var5 = (var6 = var0.ToCharArray()).Length;
@@ -246,7 +246,7 @@ public class fh {
       return b(var0, (Predicate)null);
    }
 
-   private static string b(string var0, Predicate var1) {
+   private static string b(string var0, Predicate<object> var1) {
       StringBuilder var2 = new StringBuilder();
       var2.Append('"');
       var2.Append(a(var0, var1));
@@ -356,7 +356,7 @@ public class fh {
             } catch (Throwable var15) {
                var10000 = var15;
                var10001 = false;
-               break label213;
+               goto label213;
             }
 
             if (var3 != null) {
@@ -369,7 +369,7 @@ public class fh {
             } catch (Throwable var14) {
                var10000 = var14;
                var10001 = false;
-               break label197;
+               goto label197;
             }
          }
 
@@ -448,7 +448,7 @@ public class fh {
             } catch (Throwable var15) {
                var10000 = var15;
                var10001 = false;
-               break label213;
+               goto label213;
             }
 
             if (var3 != null) {
@@ -461,7 +461,7 @@ public class fh {
             } catch (Throwable var14) {
                var10000 = var14;
                var10001 = false;
-               break label197;
+               goto label197;
             }
          }
 

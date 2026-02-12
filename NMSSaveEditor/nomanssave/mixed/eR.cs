@@ -66,11 +66,11 @@ public class eR : ey {
       }
    }
 
-   public eB ba() {
+   public override eB ba() {
       return eB.jO;
    }
 
-   public bool bb() {
+   public override bool bb() {
       return this.ko.jY;
    }
 
@@ -82,47 +82,47 @@ public class eR : ey {
       }
    }
 
-   public string getName() {
+   public override string getName() {
       return this.kn.a(this.y);
    }
 
-   public ex bc() {
+   public override ex bc() {
       return ex.jd;
    }
 
-   public bool bd() {
+   public override bool bd() {
       return false;
    }
 
-   public bool be() {
+   public override bool be() {
       return false;
    }
 
-   public Integer bf() {
+   public override Integer bf() {
       return null;
    }
 
-   public string bg() {
+   public override string bg() {
       return this.kn.b(this.y);
    }
 
-   public bool bh() {
+   public override bool bh() {
       return false;
    }
 
-   public string bi() {
+   public override string bi() {
       return this.kc;
    }
 
-   public int bj() {
+   public override int bj() {
       return 0;
    }
 
-   public string getDescription() {
+   public override string getDescription() {
       return this.kn.c(this.y);
    }
 
-   public List<object> bk() {
+   public override List<object> bk() {
       return this.ko.ke;
    }
 

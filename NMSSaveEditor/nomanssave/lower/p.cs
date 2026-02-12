@@ -43,7 +43,7 @@ public class p : Form {
       Button var6 = new Button("Cancel");
       var6.Click += (new s(this));
       var4.Add(var6);
-      this.getRootPane().registerKeyboardAction(new t(this), /* KeyStroke */ Keys.None; //(27, 0), 2);
+      this.getRootPane().registerKeyboardAction(new t(this), /* KeyStroke */ Keys.None /* (27, 0) */, 2);
    }
 
    private string[] d() {

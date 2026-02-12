@@ -14,7 +14,7 @@ class aN : G {
       this.bv = var2;
    }
 
-   protected string g(string var1) {
+   protected override string g(string var1) {
       if (aJ.a(this.dj) == null) {
          return "";
       } else {

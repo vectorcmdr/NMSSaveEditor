@@ -84,10 +84,10 @@ public class eY {
       return this.Length;
    }
 
-   public List<object> names() {
+   public List<object> getNames() {
       string[] var1 = new string[this.Length];
       Array.Copy(this.names, 0, var1, 0, this.Length);
-      return new List<object>(new object[]{var1);
+      return new List<object>(new object[]{var1});
    }
 
    public bool contains(string var1) {

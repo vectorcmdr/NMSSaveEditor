@@ -18,7 +18,7 @@ class bP : object {
    }
 
    public gt w(int var1) {
-      return (gt)bO.d(this.eX)[(var1);
+      return (gt)bO.d(this.eX)[var1];
    }
 
    public void addListDataListener(EventHandler var1) {

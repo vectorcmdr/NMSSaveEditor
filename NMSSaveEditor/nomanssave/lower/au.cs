@@ -44,7 +44,7 @@ class au : object {
    }
 
    public object getValueAt(int var1, int var2) {
-      string var3 = (string)ap.d(this.cu)[(var1);
+      string var3 = (string)ap.d(this.cu)[var1];
       ey var4 = ey.d(var3);
       switch(var2) {
       case 0:

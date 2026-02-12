@@ -15,7 +15,7 @@ class eZ : fc {
       this.index = var2;
    }
 
-   object a(Class var1, bool var2) {
+   protected override object a(Class var1, bool var2) {
       if (this.kN == null) {
          throw new Exception("Unexpected path");
       } else {
@@ -46,7 +46,7 @@ class eZ : fc {
       }
    }
 
-   object getValue() {
+   protected override object getValue() {
       if (this.kN == null) {
          throw new Exception("Unexpected path");
       } else {
@@ -55,7 +55,7 @@ class eZ : fc {
       }
    }
 
-   object a(object var1, bool var2) {
+   protected override object a(object var1, bool var2) {
       if (this.kN == null) {
          throw new Exception("Unexpected path");
       } else {
@@ -69,7 +69,7 @@ class eZ : fc {
       }
    }
 
-   object bG() {
+   protected override object bG() {
       if (this.kN == null) {
          throw new Exception("Unexpected path");
       } else {
@@ -78,7 +78,7 @@ class eZ : fc {
       }
    }
 
-   eY e(eY var1) {
+   protected override eY e(eY var1) {
       if (this.kN == null) {
          throw new Exception("Unexpected path");
       } else {

@@ -49,7 +49,7 @@ public class aQ : Form {
       Button var8 = new Button("Cancel");
       var8.Click += (new aU(this));
       var6.Add(var8);
-      this.getRootPane().registerKeyboardAction(new aV(this), /* KeyStroke */ Keys.None; //(27, 0), 2);
+      this.getRootPane().registerKeyboardAction(new aV(this), /* KeyStroke */ Keys.None /* (27, 0) */, 2);
       this.PerformLayout();
    }
 

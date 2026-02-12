@@ -20,7 +20,7 @@ class cO : object {
    }
 
    public object getElementAt(int var1) {
-      return var1 < ((Enum[])this.gu.getEnumConstants()).Length ? ((Enum[])this.gu.getEnumConstants())[var1] : cN.a(this.gt)[(var1 - ((Enum[])this.gu.getEnumConstants()).Length);
+      return var1 < ((Enum[])this.gu.getEnumConstants()).Length ? ((Enum[])this.gu.getEnumConstants())[var1] : cN.a(this.gt)[var1 - ((Enum[])this.gu.getEnumConstants()).Length];
    }
 
    public void addListDataListener(EventHandler var1) {

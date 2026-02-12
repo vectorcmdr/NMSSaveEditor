@@ -1020,7 +1020,7 @@ public class gt {
             if (!this.qz[var2][var3]) {
                var1.print("###########|");
             } else if (this.qy[var2][var3] != null) {
-               var1.print(l(r(this.qy[var2][var3])) + "|");
+               var1.print(l(r_str(this.qy[var2][var3])) + "|");
             } else {
                var1.print("           |");
             }
@@ -1069,7 +1069,7 @@ public class gt {
 
    }
 
-   private static string r(eY var0) {
+   private static string r_str(eY var0) {
       return var0.getValueAsString("Type.InventoryType");
    }
 

@@ -243,7 +243,7 @@ class bS : Panel {
 
    private void a(string var1, int var2, Color var3) {
       Label var4 = new Label();
-      var4.setFont(/* UIManager.getFont */ SystemFonts.DefaultFont; //("Inventory.font"));
+      var4.setFont(/* UIManager.getFont */ SystemFonts.DefaultFont); //("Inventory.font")
       var4.setBackground((Color)null);
       var4.Padding = new Padding(0); /* setBorder */ //((Border)null);
       var4.Text = (var1);

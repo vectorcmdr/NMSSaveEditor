@@ -6,7 +6,7 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-class bt : EventHandler {
+class bt : ActionListener {
    bl er;
    private Application bv;
 

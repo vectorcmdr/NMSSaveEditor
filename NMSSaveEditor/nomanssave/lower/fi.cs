@@ -42,7 +42,7 @@ class fi : StringReader {
       return var1;
    }
 
-   private int a(Predicate var1) {
+   private int a(Predicate<object> var1) {
       try {
          this.mark(1);
          int var2 = base.ReadByte();
@@ -61,7 +61,7 @@ class fi : StringReader {
          throw new eX("stream error", var3, this.kF, this.kG);
       }
    }
-   static int a(fi var0, Predicate var1) {
+   static int a(fi var0, Predicate<object> var1) {
       return var0.a(var1);
    }
 }

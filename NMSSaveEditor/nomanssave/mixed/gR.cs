@@ -13,7 +13,7 @@ public class gR {
    public static eY az(string var0) {
       eY var1 = null;
       if (rR.ContainsKey(var0)) {
-         var1 = (eY)rR[(var0);
+         var1 = (eY)rR[var0];
       } else {
          Stream var2 = typeof(Application).GetManifestResourceStream("templates/" + var0 + ".json");
          if (var2 != null) {

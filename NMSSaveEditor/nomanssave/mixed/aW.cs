@@ -65,7 +65,7 @@ public class aW : Form {
       var10.setMnemonic(27);
       var10.Click += (new aY(this));
       var8.Add(var10);
-      this.getRootPane().registerKeyboardAction(new aZ(this), /* KeyStroke */ Keys.None; //(27, 0), 2);
+      this.getRootPane().registerKeyboardAction(new aZ(this), /* KeyStroke */ Keys.None /* (27, 0) */, 2);
       this.PerformLayout();
    }
 

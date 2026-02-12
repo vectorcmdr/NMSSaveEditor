@@ -69,7 +69,7 @@ public class h : Form {
       Button var11 = new Button("Cancel");
       var11.Click += (new n(this));
       var9.Add(var11);
-      this.getRootPane().registerKeyboardAction(new o(this), /* KeyStroke */ Keys.None; //(27, 0), 2);
+      this.getRootPane().registerKeyboardAction(new o(this), /* KeyStroke */ Keys.None /* (27, 0) */, 2);
       this.PerformLayout();
    }
 
@@ -148,7 +148,7 @@ public class h : Form {
    static List<object> g(h var0) {
       return var0.u;
    }
-   static void h(h var0) {
+   static void h_impl(h var0) {
       var0.c();
    }
    static List<object> i(h var0) {

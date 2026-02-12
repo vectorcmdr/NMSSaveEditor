@@ -14,7 +14,7 @@ class ef : G {
       this.il = var2;
    }
 
-   protected string g(string var1) {
+   protected override string g(string var1) {
       try {
          var1 = hg.aB(var1).ToString();
          if (!var1.Equals(eb.a(ec.h(this.ik))[this.il].ee())) {

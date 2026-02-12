@@ -12,7 +12,7 @@ class bg : G {
       this.dP = var1;
    }
 
-   protected string g(string var1) {
+   protected override string g(string var1) {
       if (bd.a(this.dP) == null) {
          return "";
       } else {

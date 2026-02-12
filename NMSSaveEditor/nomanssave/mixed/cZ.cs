@@ -20,7 +20,7 @@ class cZ : object {
    }
 
    public gg C(int var1) {
-      return (gg)cY.a(this.gR)[(var1);
+      return (gg)cY.a(this.gR)[var1];
    }
 
    public void addListDataListener(EventHandler var1) {

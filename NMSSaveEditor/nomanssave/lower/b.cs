@@ -7,15 +7,15 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
-class b : EventHandler {
-   a b;
+class b : ActionListener {
+   a _b;
 
    b(a var1) {
-      this.b = var1;
+      this._b = var1;
    }
 
    public void actionPerformed(EventArgs var1) {
-      this.b.Hide();
+      this._b.Hide();
    }
 }
 

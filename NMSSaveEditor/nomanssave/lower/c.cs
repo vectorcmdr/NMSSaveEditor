@@ -8,7 +8,7 @@ namespace NMSSaveEditor
 {
 
 public class c : Panel {
-   private f c;
+   private f _c;
    private f d;
    private f e;
 
@@ -23,8 +23,8 @@ public class c : Panel {
       var3.Controls.Add(var4);
       Panel var5 = new Panel();
       var3.Controls.Add(var5);
-      this.c = new f(this, var1, eI.bq, eI.P);
-      var5.setViewportView(this.c);
+      this._c = new f(this, var1, eI.bq, eI.P);
+      var5.setViewportView(this._c);
       Panel var6 = new Panel();
       this.Add(var6);
       // TODO: var6.SuspendLayout(); // TODO: set layout /* FormLayout */ null, FormFactory.LABEL_COMPONENT_GAP_COLSPEC}, new RowSpec[]{FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, RowSpec.decode("200px:grow"), FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC}));
@@ -59,11 +59,11 @@ public class c : Panel {
 
    void a(eY var1) {
       if (var1 == null) {
-         this.c.a((eV)null);
+         this._c.a((eV)null);
          this.d.a((eV)null);
          this.e.a((eV)null);
       } else {
-         this.c.a(var1.d("UserSettingsData.UnlockedSeasonRewards"));
+         this._c.a(var1.d("UserSettingsData.UnlockedSeasonRewards"));
          this.d.a(var1.d("UserSettingsData.UnlockedTwitchRewards"));
          this.e.a(var1.d("UserSettingsData.UnlockedPlatformRewards"));
       }

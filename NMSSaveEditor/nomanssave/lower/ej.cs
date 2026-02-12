@@ -9,7 +9,7 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
-public class ej : OpenFileDialog {
+public class ej : JFileChooser {
    private static Image im = Application.a("UI-FILEICON.PNG", 16, 16);
    private static Image io = Application.a("UI-GAMEPASS.PNG", 16, 16);
    private static Image ip = Application.a("UI-STEAMLOGO.PNG", 16, 16);

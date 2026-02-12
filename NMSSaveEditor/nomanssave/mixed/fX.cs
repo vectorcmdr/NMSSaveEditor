@@ -21,7 +21,7 @@ abstract class fX {
       int var3 = fT.c(var1).Count;
 
       for(int var4 = 0; var4 < fT.c(var1).Count; ++var4) {
-         int var5 = ((fW)fT.c(var1)[(var4)).name.CompareTo(var2.mO.name);
+         int var5 = ((fW)fT.c(var1)[var4]).name.CompareTo(var2.mO.name);
          if (var5 == 0) {
             fW var6 = (fW)fT.c(var1).Remove(var4);
             fT.i(new FileInfo(fT.d(var1), var6.mU));
@@ -169,7 +169,7 @@ abstract class fX {
             } catch (Throwable var15) {
                var10000 = var15;
                var10001 = false;
-               break label173;
+               goto label173;
             }
 
             if (var4 != null) {
@@ -182,7 +182,7 @@ abstract class fX {
             } catch (Throwable var14) {
                var10000 = var14;
                var10001 = false;
-               break label162;
+               goto label162;
             }
          }
 

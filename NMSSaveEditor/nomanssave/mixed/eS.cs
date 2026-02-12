@@ -67,7 +67,7 @@ public class eS {
    }
 
    public eU z(string var1) {
-      return (eU)this.kp[(var1);
+      return (eU)this.kp[var1];
    }
 
    public bool a(eU var1) {
@@ -105,7 +105,7 @@ public class eS {
    }
 
    public static eS T(int var0) {
-      return (eS)kq[(var0);
+      return (eS)kq[var0];
    }
 
    public static Iterable by() {

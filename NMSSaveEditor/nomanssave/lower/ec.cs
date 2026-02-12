@@ -55,7 +55,7 @@ class ec : ba {
       this.ii.Text = (Integer.toString(eb.a(this.ij)[this.index].eh()));
    }
    static CheckBox a(ec var0) {
-      return var0.if;
+      return var0.@if;
    }
    static ComboBox b(ec var0) {
       return var0.ig;

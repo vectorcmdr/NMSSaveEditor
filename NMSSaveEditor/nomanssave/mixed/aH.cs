@@ -131,7 +131,7 @@ public class aH {
       try {
          URL var2 = typeof(Application).getProtectionDomain().getCodeSource().getLocation();
          if (var0 && var2.getFile().EndsWith(".jar")) {
-            var1 = Paths[(var2.toURI()).toFile().Directory;
+            var1 = Paths[var2.toURI()].toFile().Directory;
          } else {
             var1 = (new FileInfo(".")).getCanonicalFile();
          }
@@ -281,8 +281,8 @@ public class aH {
             var2 = new FlatMacDarkLaf();
          }
 
-         /* setLookAndFeel */var2);
-      } catch (UnsupportedLookAndFeelException var13) {
+         /* setLookAndFeel(var2) */;
+      } catch (Exception var13) /* UnsupportedLookAndFeelException */ {
          hc.a("Could not set look and feel: " + var1, var13);
          return;
       }

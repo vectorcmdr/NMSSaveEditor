@@ -7,7 +7,7 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
-public class cK : OpenFileDialog {
+public class cK : JFileChooser {
    private static cK gk = null;
    private static string name = "JSON FileInfo";
 

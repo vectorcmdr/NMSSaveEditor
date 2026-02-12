@@ -99,7 +99,7 @@ public class cg : Form {
       this.fz.setFont(this.fx.getFont());
       var2.Add(this.fz, "4, 16, 3, 1, fill, fill");
       this.setContentPane(var2);
-      this.getRootPane().registerKeyboardAction(new cj(this), /* KeyStroke */ Keys.None; //(27, 0), 2);
+      this.getRootPane().registerKeyboardAction(new cj(this), /* KeyStroke */ Keys.None /* (27, 0) */, 2);
       this.addWindowListener(new ck(this));
    }
 

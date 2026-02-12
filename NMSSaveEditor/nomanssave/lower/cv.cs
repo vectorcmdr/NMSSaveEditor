@@ -7,7 +7,7 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
-public class cv : OpenFileDialog {
+public class cv : JFileChooser {
    private static cv fQ = null;
    private static string name = "Weapon Export FileInfo";
    private static Image fH = Application.a("UI-WEAPONICON.PNG", 16, 16);

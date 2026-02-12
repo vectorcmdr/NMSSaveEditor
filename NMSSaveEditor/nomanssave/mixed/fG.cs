@@ -6,7 +6,7 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-class fG : IComparer {
+class fG : IComparer<object> {
    fE mf;
 
    fG(fE var1) {
@@ -21,7 +21,7 @@ class fG : IComparer {
          return var3 > 2147483647L ? int.MaxValue : (int)var3;
       }
    }
-   public int compare(object var1, object var2) {
+   public int Compare(object var1, object var2) {
       return this.a((fs)var1, (fs)var2);
    }
 }

@@ -149,7 +149,7 @@ public class bO : Panel, eo {
    void ae() {
       int var1 = this.eT.SelectedIndex;
       if (var1 >= 0) {
-         this.eW = (gt)this.eV[(var1);
+         this.eW = (gt)this.eV[var1];
          this.af();
       }
 
@@ -246,7 +246,7 @@ public class bO : Panel, eo {
       int var6 = var5.IndexOf(this.eW);
       int var7 = dd.a(this, var5, var6);
       if (var7 != var6) {
-         gt var8 = (gt)var5[(var7);
+         gt var8 = (gt)var5[var7];
          if (this.eW.a(bS.h(var2), bS.i(var2), var8)) {
             bS.c(var2);
             this.eR.a(var8);

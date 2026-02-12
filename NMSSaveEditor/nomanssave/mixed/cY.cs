@@ -44,7 +44,7 @@ public class cY : Form {
       Button var8 = new Button("Cancel");
       var8.Click += (new db(this));
       var6.Add(var8);
-      this.getRootPane().registerKeyboardAction(new dc(this), /* KeyStroke */ Keys.None; //(27, 0), 2);
+      this.getRootPane().registerKeyboardAction(new dc(this), /* KeyStroke */ Keys.None /* (27, 0) */, 2);
       this.PerformLayout();
    }
 

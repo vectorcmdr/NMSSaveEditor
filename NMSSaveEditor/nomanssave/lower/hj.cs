@@ -7,7 +7,7 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-class hj : Thread {
+class hj : JavaThread {
    long sK;
    string sL;
 
@@ -30,7 +30,7 @@ class hj : Thread {
       lock(hi.ep()) {
          if (var1 != null) {
             Long[] var3 = (Long[])aH.a("SteamIDs", typeof(Long));
-            bool var4 = new List<object>(new object[]{var3).stream().anyMatch((var1x) => {
+            bool var4 = new List<object>(new object[]{var3}).Any((var1x) => {
                return var1x.Equals(this.sK);
             });
             if (!var4) {

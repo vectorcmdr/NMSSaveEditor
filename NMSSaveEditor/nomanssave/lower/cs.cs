@@ -7,7 +7,7 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
-public class cs : OpenFileDialog {
+public class cs : JFileChooser {
    private static cs fN = null;
    private static string name = "Freighter Backup FileInfo";
    private static Image fH = Application.a("UI-FREIGHTERICON.PNG", 16, 16);

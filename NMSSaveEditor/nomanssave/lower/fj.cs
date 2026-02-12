@@ -253,6 +253,7 @@ public class fj : Closeable {
 
    }
 
+   public void Dispose() { close(); }
    public void close() {
       try {
          if ((this.flags & 2) != 0) {

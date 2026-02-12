@@ -21,7 +21,7 @@ class cH : TextAction, ClipboardOwner {
       ((TextBox)var1.getSource()).replaceSelection(var2);
    }
 
-   public void lostOwnership(Clipboard var1, Transferable var2) {
+   public void lostOwnership(object var1, Transferable var2) {
    }
 }
 

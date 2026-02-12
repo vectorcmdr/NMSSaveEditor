@@ -14,7 +14,7 @@ class ei : G {
       this.il = var2;
    }
 
-   protected string g(string var1) {
+   protected override string g(string var1) {
       try {
          int var2 = int.Parse(var1);
          if (var2 != eb.a(ec.h(this.ik))[this.il].eh()) {

@@ -20,7 +20,7 @@ class al : object {
    }
 
    public string s(int var1) {
-      return (string)aj.Q()[(var1);
+      return (string)aj.Q()[var1];
    }
 
    public void addListDataListener(EventHandler var1) {

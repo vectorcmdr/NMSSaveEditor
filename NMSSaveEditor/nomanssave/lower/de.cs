@@ -19,7 +19,7 @@ class de : ListModel {
    }
 
    public gt w(int var1) {
-      return (gt)dd.a(this.gW)[(var1);
+      return (gt)dd.a(this.gW)[var1];
    }
 
    public void addListDataListener(EventHandler var1) {

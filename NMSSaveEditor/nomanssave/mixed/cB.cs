@@ -6,7 +6,7 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-class cB : EventHandler {
+class cB : ActionListener {
    cy gg;
 
    cB(cy var1) {

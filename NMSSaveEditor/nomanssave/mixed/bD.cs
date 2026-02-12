@@ -26,14 +26,14 @@ class bD : object {
          Label var8 = (Label)var6;
          if (var9.aW()) {
             if (var4) {
-               var8.setBackground(/* UIManager.getColor */ SystemColors.Control; //("Frigate.positiveTraitHighlight"));
+               var8.setBackground(/* UIManager.getColor */ SystemColors.Control); //("Frigate.positiveTraitHighlight")
             } else {
-               var8.setForeground(/* UIManager.getColor */ SystemColors.Control; //("Frigate.positiveTraitColor"));
+               var8.setForeground(/* UIManager.getColor */ SystemColors.Control); //("Frigate.positiveTraitColor")
             }
          } else if (var4) {
-            var8.setBackground(/* UIManager.getColor */ SystemColors.Control; //("Frigate.negativeTraitHighlight"));
+            var8.setBackground(/* UIManager.getColor */ SystemColors.Control); //("Frigate.negativeTraitHighlight")
          } else {
-            var8.setForeground(/* UIManager.getColor */ SystemColors.Control; //("Frigate.negativeTraitColor"));
+            var8.setForeground(/* UIManager.getColor */ SystemColors.Control); //("Frigate.negativeTraitColor")
          }
       }
 

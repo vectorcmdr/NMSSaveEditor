@@ -20,7 +20,7 @@ class J : object {
    }
 
    public gh o(int var1) {
-      return I.a(this.bt) == null ? null : (gh)I.a(this.bt).cD()[(var1);
+      return I.a(this.bt) == null ? null : (gh)I.a(this.bt).cD()[var1];
    }
 
    public void addListDataListener(EventHandler var1) {

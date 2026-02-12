@@ -8,7 +8,7 @@ using System.Text.RegularExpressions;
 namespace NMSSaveEditor
 {
 
-public interface fq {
+public class fq {
    int lz = 15;
 
    static string c(long var0) {
@@ -108,20 +108,20 @@ public interface fq {
       }
    }
 
-   FileInfo bS();
+   public virtual FileInfo bS() { return null; }
 
-   fr bT();
+   public virtual fr bT() { return null; }
 
-   ft[] bU();
+   public virtual ft[] bU() { return new ft[0]; }
    public ft[] bV() {
-      return (ft[])new List<object>(new object[]{this.bU()).stream().filter((var0) => {
-         return !var0.Count == 0;
+      return (ft[])new List<object>(new object[]{this.bU()}).Where((var0) => {
+         return var0.Count != 0;
       }).ToArray((var0) => {
          return new ft[var0];
       });
    }
 
-   int W(string var1);
+   public virtual int W(string var1) { return 0; }
    public bool bW() {
       return false;
    }
@@ -129,7 +129,7 @@ public interface fq {
       throw new IOException("cannot create slot " + (var1 + 1));
    }
 
-   void X(string var1);
+   public virtual void X(string var1) { }
 }
 
 }

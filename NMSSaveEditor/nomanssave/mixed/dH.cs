@@ -12,7 +12,7 @@ class dH : G {
       this.hE = var1;
    }
 
-   protected string g(string var1) {
+   protected override string g(string var1) {
       gE var2 = (gE)dE.a(this.hE).SelectedItem;
       if (var2 == null) {
          return "";

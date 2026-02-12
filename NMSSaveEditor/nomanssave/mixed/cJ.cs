@@ -44,7 +44,7 @@ class cJ {
       if (this.value == null) {
          throw new Exception("No children for null");
       } else if (this.value is eY) {
-         string var4 = (string)((eY)this.value).names()[(var1);
+         string var4 = (string)((eY)this.value).names()[var1];
          object var3 = ((eY)this.value).getValue(var4);
          return new cJ(this.gg, this, var1, var4, var3);
       } else if (this.value is eV) {

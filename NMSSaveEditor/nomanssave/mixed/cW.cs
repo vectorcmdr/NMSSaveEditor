@@ -8,7 +8,7 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
-public class cW : Panel, EventHandler, CaretListener, EventHandler {
+public class cW : Panel, CaretListener {
    public static float gx = 0.0F;
    public static float gy = 0.5F;
    public static float gz = 1.0F;
@@ -177,7 +177,7 @@ public class cW : Panel, EventHandler, CaretListener, EventHandler {
             string var13 = (string)var12.getAttribute(StyleConstants.FontFamily);
             Integer var14 = (Integer)var12.getAttribute(StyleConstants.FontSize);
             string var15 = var13 + var14;
-            FontMetrics var16 = (FontMetrics)this.gK[(var15);
+            FontMetrics var16 = (FontMetrics)this.gK[var15];
             if (var16 == null) {
                Font var17 = new Font(var13, 0, var14);
                var16 = this.gB.getFontMetrics(var17);

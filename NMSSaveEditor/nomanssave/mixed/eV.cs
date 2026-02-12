@@ -237,7 +237,7 @@ public class eV {
    }
 
    public object getValue(int var1) {
-      return this[(var1);
+      return this[var1];
    }
 
    public eY V(int var1) {

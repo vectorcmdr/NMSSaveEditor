@@ -71,7 +71,7 @@ public class eI {
    }
 
    public static eI P(int var0) {
-      return (eI)ki[(var0);
+      return (eI)ki[var0];
    }
 
    public static int br() {
@@ -79,7 +79,7 @@ public class eI {
    }
 
    public static eI Q(int var0) {
-      return (eI)kj[(var0);
+      return (eI)kj[var0];
    }
 
    public static int bs() {
@@ -87,7 +87,7 @@ public class eI {
    }
 
    public static eI R(int var0) {
-      return (eI)kk[(var0);
+      return (eI)kk[var0];
    }
 
    public static Iterable bt() {

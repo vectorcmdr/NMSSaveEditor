@@ -7,7 +7,7 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
-public class cl : OpenFileDialog {
+public class cl : JFileChooser {
    private static cl fG = null;
    private static string name = "Planetary Base Backup FileInfo";
    private static Image fH = Application.a("UI-BASEICON.PNG", 16, 16);

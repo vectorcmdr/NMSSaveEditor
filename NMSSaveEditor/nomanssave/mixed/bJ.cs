@@ -25,7 +25,7 @@ class bJ : G {
       this.Enabled = (var3);
    }
 
-   protected string g(string var1) {
+   protected override string g(string var1) {
       if (bE.a(this.ey) == null) {
          return "";
       } else {

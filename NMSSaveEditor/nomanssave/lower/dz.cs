@@ -39,7 +39,7 @@ public class dz : Form {
       Button var6 = new Button("Cancel");
       var6.Click += (new dC(this));
       var4.Add(var6);
-      this.getRootPane().registerKeyboardAction(new dD(this), /* KeyStroke */ Keys.None; //(27, 0), 2);
+      this.getRootPane().registerKeyboardAction(new dD(this), /* KeyStroke */ Keys.None /* (27, 0) */, 2);
    }
 
    private int a(ft[] var1, int var2) {

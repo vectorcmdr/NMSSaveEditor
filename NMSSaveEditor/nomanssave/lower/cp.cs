@@ -7,7 +7,7 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
-public class cp : OpenFileDialog {
+public class cp : JFileChooser {
    private static cp fJ = null;
    private static string name = "Companion Export FileInfo";
    private static Image fK = Application.a("UI-PET.PNG", 16, 16);

@@ -47,7 +47,7 @@ public class hm : FilterInputStream {
       return this.sa != null && (this.sa.Length != 0 || this.ej()) ? this.sa.read(var1, var2, var3) : -1;
    }
    static Stream a(hm var0) {
-      return var0.in;
+      return var0.@in;
    }
 }
 

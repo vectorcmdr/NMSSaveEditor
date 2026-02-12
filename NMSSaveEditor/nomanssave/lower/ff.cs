@@ -187,7 +187,7 @@ public class ff : Closeable {
       }
    }
 
-   private int a(Predicate var1) {
+   private int a(Predicate<object> var1) {
       if (this.kR < 0) {
          this.kR = this.@in.ReadByte();
       }
@@ -223,6 +223,7 @@ public class ff : Closeable {
       }
    }
 
+   public void Dispose() { close(); }
    public void close() {
       try {
          if (this.kR < 0) {

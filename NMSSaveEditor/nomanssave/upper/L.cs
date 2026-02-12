@@ -20,7 +20,7 @@ class L : object {
    }
 
    public gf p(int var1) {
-      return I.a(this.bt) == null ? null : (gf)I.a(this.bt).cE()[(var1);
+      return I.a(this.bt) == null ? null : (gf)I.a(this.bt).cE()[var1];
    }
 
    public void addListDataListener(EventHandler var1) {

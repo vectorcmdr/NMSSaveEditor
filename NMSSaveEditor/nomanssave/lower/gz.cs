@@ -51,7 +51,7 @@ public class gz {
          while(true) {
             while(true) {
                if (var8 >= var6.Count) {
-                  break label46;
+                  goto label46;
                }
 
                eY var9 = var6.V(var8);

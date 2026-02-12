@@ -12,7 +12,7 @@ class K : G {
       this.bt = var1;
    }
 
-   protected string g(string var1) {
+   protected override string g(string var1) {
       gh var2 = (gh)I.d(this.bt).SelectedItem;
       if (var2 == null) {
          return "";

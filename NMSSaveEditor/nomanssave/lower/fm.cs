@@ -7,7 +7,7 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-class fm : Thread {
+class fm : JavaThread {
    WatchService lk = FileSystems.getDefault().newWatchService();
    Dictionary<object, object> ll = new WeakHashMap();
 
@@ -41,7 +41,7 @@ class fm : Thread {
                do {
                   object var2;
                   if (var1.ContainsKey(var3)) {
-                     var2 = (List<object>)var1[(var3);
+                     var2 = (List<object>)var1[var3];
                   } else {
                      var2 = new List<object>();
                      var1.Put(var3, var2);
@@ -93,7 +93,7 @@ class fm : Thread {
                                  if (!var23) {
                                     var3.cancel();
                                  }
-                                 continue label156;
+                                 goto label156;
                               }
 
                               var9 = (Entry)var10.Current;

@@ -121,7 +121,7 @@ public class er {
 
    public static er o(string var0) {
       int var1 = iG.IndexOf(new et(var0));
-      return var1 >= 0 ? (er)iG[(var1) : null;
+      return var1 >= 0 ? (er)iG[var1] : null;
    }
 }
 

@@ -12,7 +12,7 @@ class dW : G {
       this.ia = var1;
    }
 
-   protected string g(string var1) {
+   protected override string g(string var1) {
       if (dN.o(this.ia) == null) {
          return "";
       } else {

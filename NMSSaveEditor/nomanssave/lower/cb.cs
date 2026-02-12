@@ -7,7 +7,7 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
-class cb : EventHandler {
+class cb : ActionListener {
    bS fk;
    private int fl;
    private int fm;

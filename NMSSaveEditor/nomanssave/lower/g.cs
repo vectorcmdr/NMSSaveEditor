@@ -18,7 +18,7 @@ class g : object {
    }
 
    public int getRowCount() {
-      return (Integer)this.j[();
+      return (int)this.j.Count;
    }
 
    public int getColumnCount() {

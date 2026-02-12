@@ -48,7 +48,7 @@ class dk : object {
          dj.f(this.hl).Text = (Double.toString(this.hk.dF()));
          dj.g(this.hl).Text = (Double.toString(this.hk.dG()));
          dj.h(this.hl).Text = (Double.toString(this.hk.dH()));
-         dj.i(this.hl).a(new List<object> { this.hk.dE()));
+         dj.i(this.hl).a(new List<object> { this.hk.dE() });
       }
    }
 

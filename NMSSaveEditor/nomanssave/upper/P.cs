@@ -7,7 +7,7 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
-class P : EventHandler {
+class P : ActionListener {
    I bt;
    private Application bv;
 
@@ -25,7 +25,7 @@ class P : EventHandler {
          } else {
             int var4;
             if ((var4 = cY.a(this.bv.g(), var3)) >= 0) {
-               gg var5 = (gg)var3[(var4);
+               gg var5 = (gg)var3[var4];
                hc.info("Attempting to swap base computer with " + var5.ToString() + "...");
                if (var2.a(var5)) {
                   hc.info("Base computer relocated: " + var2.Name);

@@ -52,7 +52,7 @@ public class cN : ComboBox {
          if (var2 == null) {
             int var7 = this.go.IndexOf(new cQ(this, var1));
             if (var7 >= 0) {
-               var2 = this.go[(var7);
+               var2 = this.go[var7];
             } else {
                var2 = this.gm ? new cS(this, var1) : var1;
                this.go.Add(var2);

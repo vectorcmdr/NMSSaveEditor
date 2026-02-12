@@ -12,7 +12,7 @@ class ch : G {
       this.fF = var1;
    }
 
-   protected string g(string var1) {
+   protected override string g(string var1) {
       if (cg.a(this.fF) == null) {
          return "";
       } else {

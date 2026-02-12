@@ -12,7 +12,7 @@ class bx : G {
       this.er = var1;
    }
 
-   protected string g(string var1) {
+   protected override string g(string var1) {
       if (bl.b(this.er) < 0) {
          return "";
       } else {
