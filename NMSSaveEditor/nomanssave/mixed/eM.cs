@@ -27,7 +27,7 @@ public class eM {
             XmlElement var2 = var1.DocumentElement;
             XmlNodeList var3 = var2.ChildNodes;
              for(int var4 = 0; var4 < var3.Count; ++var4) {
-               XmlNode var5 = var3.Item(var4);
+               XmlNode var5 = var3[var4];
                if (var5 is XmlElement && var5.Name.Equals("perk")) {
                   kl.Add(new eM((XmlElement)var5));
                }

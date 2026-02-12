@@ -62,6 +62,7 @@ public class fD : fH, fs {
       return this.K();
    }
 
+   public DateTime LastWriteTimeUtc { get { var ms = lastModified(); return ms > 0 ? DateTimeOffset.FromUnixTimeMilliseconds(ms).UtcDateTime : DateTime.MinValue; } }
 }
 
 

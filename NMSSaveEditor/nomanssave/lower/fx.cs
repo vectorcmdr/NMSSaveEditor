@@ -117,6 +117,7 @@ public class fx : fs {
    public string toString() {
       return this.K();
    }
+   public DateTime LastWriteTimeUtc { get { var ms = lastModified(); return ms > 0 ? DateTimeOffset.FromUnixTimeMilliseconds(ms).UtcDateTime : DateTime.MinValue; } }
 }
 
 }

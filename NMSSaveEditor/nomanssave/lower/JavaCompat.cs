@@ -774,6 +774,8 @@ public class XmlNodeList {
     public int Length => getLength();
     public int Count => getLength();
     public XmlNode item(int index) { return inner != null ? new XmlNode(inner[index]) : null; }
+    public XmlNode GetItem(int index) { return item(index); }
+    [System.Runtime.CompilerServices.IndexerName("NodeItem")]
     public XmlNode this[int index] { get { return item(index); } }
 }
 

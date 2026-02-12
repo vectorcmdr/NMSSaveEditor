@@ -52,7 +52,7 @@ public class eQ : ey {
       eR var5 = null;
       XmlNodeList var6 = var1.ChildNodes;
        for(int var9 = 0; var9 < var6.Count; ++var9) {
-         XmlNode var7 = var6.Item(var9);
+         XmlNode var7 = var6[var9];
          if (var7 is Element) {
             XmlElement var8 = (XmlElement)var7;
             if (var8.Name.Equals("description")) {

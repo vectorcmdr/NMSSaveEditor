@@ -41,7 +41,7 @@ public class eP : ey {
       XmlNodeList var3 = var1.ChildNodes;
       List<object> var5 = new List<object>();
        for(int var6 = 0; var6 < var3.Count; ++var6) {
-         XmlNode var4 = var3.Item(var6);
+         XmlNode var4 = var3[var6];
          if (var4 is Element) {
             var1 = (XmlElement)var4;
             if (var1.Name.Equals("description")) {

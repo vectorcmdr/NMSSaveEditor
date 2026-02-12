@@ -37,7 +37,7 @@ public class ey {
       if (var0 != null) {
          XmlNodeList var3 = var0.ChildNodes;
           for(int var4 = 0; var4 < var3.Count; ++var4) {
-            XmlNode var5 = var3.Item(var4);
+            XmlNode var5 = var3[var4];
             if (var5 is XmlElement && var5.Name.Equals("product-template")) {
                var10.Add(new eA((XmlElement)var5));
             }
@@ -48,7 +48,7 @@ public class ey {
       if (var0 != null) {
          XmlNodeList var12 = var0.ChildNodes;
           for(int var14 = 0; var14 < var12.Count; ++var14) {
-            XmlNode var6 = var12.Item(var14);
+            XmlNode var6 = var12[var14];
             if (var6 is XmlElement && var6.Name.Equals("substance")) {
                var11.Add(new eP((XmlElement)var6));
             } else if (var6 is XmlElement && var6.Name.Equals("product")) {
@@ -186,7 +186,7 @@ public class ey {
          StringBuffer var2 = new StringBuffer();
          bool var3 = false;
           for(int var5 = 0; var5 < var1.Count; ++var5) {
-            XmlNode var4 = var1.Item(var5);
+            XmlNode var4 = var1[var5];
             if (var4.NodeType == 3) {
                var2.Append(var4.Value);
                var3 = true;

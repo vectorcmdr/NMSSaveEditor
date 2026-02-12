@@ -47,7 +47,7 @@ public class eH : ey {
       XmlNodeList var4 = var1.ChildNodes;
       List<object> var6 = new List<object>();
        for(int var7 = 0; var7 < var4.Count; ++var7) {
-         XmlNode var5 = var4.Item(var7);
+         XmlNode var5 = var4[var7];
          if (var5 is Element) {
             var1 = (XmlElement)var5;
             if (var1.Name.Equals("description")) {

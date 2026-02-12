@@ -24,7 +24,7 @@ public class eA {
       string var2 = null;
       XmlNodeList var3 = var1.ChildNodes;
        for(int var5 = 0; var5 < var3.Count; ++var5) {
-         XmlNode var4 = var3.Item(var5);
+         XmlNode var4 = var3[var5];
          if (var4 is Element) {
             var1 = (XmlElement)var4;
             if (var1.Name.Equals("description")) {

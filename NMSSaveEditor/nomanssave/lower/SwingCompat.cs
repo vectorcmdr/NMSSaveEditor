@@ -9,10 +9,12 @@ namespace NMSSaveEditor
     public class FlowLayout { public FlowLayout(int align) {} }
     public class FormLayout
     {
-        public FormLayout(object[] cols, object[] rows) {}
-        public void appendColumn(object col) {}
-        public void appendRow(object row) {}
-        public void insertRow(int i, object row) {}
+        public FormLayout(object[] cols, object[] rows) { ColumnCount = cols?.Length ?? 0; RowCount = rows?.Length ?? 0; }
+        public int RowCount { get; set; }
+        public int ColumnCount { get; set; }
+        public void appendColumn(object col) { ColumnCount++; }
+        public void appendRow(object row) { RowCount++; }
+        public void insertRow(int i, object row) { RowCount++; }
     }
     public class ColumnSpec
     {

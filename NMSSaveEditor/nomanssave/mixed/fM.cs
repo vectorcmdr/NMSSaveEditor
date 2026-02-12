@@ -71,6 +71,7 @@ public class fM : fQ, fs {
    }
 
    public long lastModified() { return 0; }
+   public DateTime LastWriteTimeUtc { get { var ms = lastModified(); return ms > 0 ? DateTimeOffset.FromUnixTimeMilliseconds(ms).UtcDateTime : DateTime.MinValue; } }
 }
 
 
