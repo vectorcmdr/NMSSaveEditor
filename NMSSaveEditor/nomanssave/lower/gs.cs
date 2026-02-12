@@ -44,20 +44,20 @@ public sealed class gs {
    public static readonly gs pT = new gs("pT", "^DIST_WARP", "Distance Warped");
    public static readonly gs pU = new gs("pU", "^DISC_ALL_CREATU", "Planet Zoology Scanned");
 
-   private int _ordinal;
-   private string _name;
+   public int _ordinal;
+   public string _name;
    public readonly string id;
-   public readonly string name;
+   public readonly string displayName;
 
-   private gs(string __name, string var3, string var4) {
+   public gs(string __name, string var3, string var4) {
       this._ordinal = _nextOrdinal++;
       this._name = __name;
       this.id = var3;
-      this.name = var4;
+      this.displayName = var4;
    }
 
-   private static int _nextOrdinal = 0;
-   private static readonly gs[] _values = new gs[] { pq, pr, ps, pt, pu, pv, pw, px, py, pz, pA, pB, pC, pD, pE, pF, pG, pH, pI, pJ, pK, pL, pM, pN, pO, pP, pQ, pR, pS, pT, pU };
+   public static int _nextOrdinal = 0;
+   public static readonly gs[] _values = new gs[] { pq, pr, ps, pt, pu, pv, pw, px, py, pz, pA, pB, pC, pD, pE, pF, pG, pH, pI, pJ, pK, pL, pM, pN, pO, pP, pQ, pR, pS, pT, pU };
    public static gs[] values() { return _values; }
    public static gs valueOf(string n) { return _values.FirstOrDefault(v => v._name == n); }
    public int ordinal() { return _ordinal; }
@@ -69,7 +69,7 @@ public sealed class gs {
    }
 
    public string toString() {
-      return this.name;
+      return this.displayName;
    }
 }
 }

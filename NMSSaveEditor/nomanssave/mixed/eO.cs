@@ -12,9 +12,9 @@ namespace NMSSaveEditor
 {
 
 public class eO {
-   string id;
+   public string id;
 
-   eO(string var1) {
+   public eO(string var1) {
       this.id = var1;
    }
 

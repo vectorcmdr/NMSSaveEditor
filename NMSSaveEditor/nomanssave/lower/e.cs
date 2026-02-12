@@ -12,9 +12,9 @@ namespace NMSSaveEditor
 {
 
 public class e : DefaultTableCellRenderer {
-   int f;
+   public int f;
 
-   e(int var1) {
+   public e(int var1) {
       this.f = var1;
    }
 

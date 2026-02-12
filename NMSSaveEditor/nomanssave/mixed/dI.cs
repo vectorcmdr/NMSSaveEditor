@@ -13,16 +13,16 @@ namespace NMSSaveEditor
 
 public class dI : TableModel {
    // $FF: synthetic field
-   dE hE;
+   public dE hE;
 
-   dI(dE var1) {
+   public dI(dE var1) {
       this.hE = var1;
    }
 
    public void addTableModelListener(TableModelListener var1) {
    }
 
-   public Class getColumnClass(int var1) {
+   public object getColumnClass(int var1) {
       return var1 == 1 ? typeof(eM) : typeof(string);
    }
 

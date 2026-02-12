@@ -13,11 +13,11 @@ namespace NMSSaveEditor
 
 public class eg : ComboBoxModel {
    // $FF: synthetic field
-   ec ik;
+   public ec ik;
    // $FF: synthetic field
-   private int il;
+   public int il;
 
-   eg(ec var1, int var2) {
+   public eg(ec var1, int var2) {
       this.ik = var1;
       this.il = var2;
    }

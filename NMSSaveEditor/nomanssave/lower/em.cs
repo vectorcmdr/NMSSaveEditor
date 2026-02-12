@@ -12,9 +12,9 @@ namespace NMSSaveEditor
 {
 
 public class em : Panel {
-   private ba it;
+   public ba it;
 
-   em() {
+   public em() {
       GridBagLayout var1 = new GridBagLayout();
       var1.columnWidths = new int[]{aH.cI, 0, 0};
       var1.rowHeights = new int[1];
@@ -30,7 +30,7 @@ public class em : Panel {
       this.Add(this.it, var2);
    }
 
-   void b(JComponent var1) {
+   public void b(JComponent var1) {
       GridBagConstraints var2 = new GridBagConstraints();
       var2.fill = 1;
       var2.gridx = 1;
@@ -38,27 +38,27 @@ public class em : Panel {
       this.Add(var1, var2);
    }
 
-   void k(string var1) {
+   public void k(string var1) {
       this.it.k(var1);
    }
 
-   void a(string var1, G var2) {
+   public void a(string var1, G var2) {
       this.it.a(var1, var2);
    }
 
-   void a(string var1, JComponent var2) {
+   public void a(string var1, JComponent var2) {
       this.it.a(var1, var2);
    }
 
-   void a(string var1, bool var2, JComponent var3) {
+   public void a(string var1, bool var2, JComponent var3) {
       this.it.a(var1, var2, var3);
    }
 
-   void a(JComponent var1) {
+   public void a(JComponent var1) {
       this.it.a(var1);
    }
 
-   void Y() {
+   public void Y() {
       this.it.Y();
    }
 }

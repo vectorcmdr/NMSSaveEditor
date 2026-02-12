@@ -15,18 +15,18 @@ public class cW : Panel, PropertyChangeListener, CaretListener, DocumentListener
    public static float gx = 0.0F;
    public static float gy = 0.5F;
    public static float gz = 1.0F;
-   private static Border gA;
-   private static int HEIGHT = 2146483647;
-   private JTextComponent gB;
-   private bool gC;
-   private int gD;
-   private Color gE;
-   private float gF;
-   private int gG;
-   private int gH;
-   private int gI;
-   private int gJ;
-   private Dictionary<object, object> gK;
+   public static Border gA;
+   public static int HEIGHT = 2146483647;
+   public JTextComponent gB;
+   public bool gC;
+   public int gD;
+   public Color gE;
+   public float gF;
+   public int gG;
+   public int gH;
+   public int gI;
+   public int gJ;
+   public Dictionary<object, object> gK;
 
    static cW() {
       gA = new MatteBorder(0, 0, 0, 2, Color.Gray);
@@ -93,7 +93,7 @@ public class cW : Panel, PropertyChangeListener, CaretListener, DocumentListener
       this.aI();
    }
 
-   private void aI() {
+   public void aI() {
       XmlElement var1 = this.gB.getDocument().getDefaultRootElement();
       int var2 = var1.getElementCount();
       int var3 = Math.Max(Convert.ToString(var2).Length, this.gG);
@@ -141,24 +141,24 @@ public class cW : Panel, PropertyChangeListener, CaretListener, DocumentListener
 
    }
 
-   private bool A(int var1) {
+   public bool A(int var1) {
       int var2 = this.gB.getCaretPosition();
       XmlElement var3 = this.gB.getDocument().getDefaultRootElement();
       return var3.getElementIndex(var1) == var3.getElementIndex(var2);
    }
 
-   protected string B(int var1) {
+   public string B(int var1) {
       XmlElement var2 = this.gB.getDocument().getDefaultRootElement();
       int var3 = var2.getElementIndex(var1);
       XmlElement var4 = var2.getElement(var3);
       return var4.getStartOffset() == var1 ? Convert.ToString(var3 + 1) : "";
    }
 
-   private int b(int var1, int var2) {
+   public int b(int var1, int var2) {
       return (int)((float)(var1 - var2) * this.gF);
    }
 
-   private int a(int var1, FontMetrics var2) {
+   public int a(int var1, FontMetrics var2) {
       Rectangle var3 = this.gB.modelToView(var1);
       int var4 = var2.Height;
       int var5 = var3.y + var3.height;
@@ -217,7 +217,7 @@ public class cW : Panel, PropertyChangeListener, CaretListener, DocumentListener
       this.aJ();
    }
 
-   private void aJ() {
+   public void aJ() {
       JavaCompat.InvokeLater(new cX(this));
    }
 

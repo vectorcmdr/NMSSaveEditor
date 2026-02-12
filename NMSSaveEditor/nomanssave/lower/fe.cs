@@ -12,7 +12,7 @@ namespace NMSSaveEditor
 {
 
 public interface fe {
-   void propertyChanged(string var1, Object var2, Object var3);
+   public void propertyChanged(string var1, Object var2, Object var3);
 }
 
 }

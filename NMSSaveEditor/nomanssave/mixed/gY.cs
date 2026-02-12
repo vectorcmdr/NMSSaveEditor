@@ -12,11 +12,11 @@ namespace NMSSaveEditor
 {
 
 public class gY : Stream {
-   private int sc;
+   public int sc;
    // $FF: synthetic field
-   gX sd;
+   public gX sd;
 
-   private gY(gX var1, int var2) {
+   public gY(gX var1, int var2) {
       this.sd = var1;
       this.sc = var2;
    }
@@ -58,9 +58,23 @@ public class gY : Stream {
    }
 
    // $FF: synthetic method
-   gY(gX var1, int var2, gY var3) {
+   public gY(gX var1, int var2, gY var3) {
       // Constructor chain: base(var1, var2)
    }
+
+   // Stream abstract members
+   public override bool CanRead => true;
+   public override bool CanSeek => false;
+   public override bool CanWrite => true;
+   public override long Length => 0;
+   public override long Position { get => 0; set {} }
+   public override void Flush() {}
+   public override int Read(byte[] buffer, int offset, int count) { return 0; }
+   public override long Seek(long offset, SeekOrigin origin) { return 0; }
+   public override void SetLength(long value) {}
+   public override void Write(byte[] buffer, int offset, int count) {}
+
 }
+
 
 }

@@ -12,12 +12,12 @@ namespace NMSSaveEditor
 {
 
 public class F : fs {
-   string filename;
-   long bd;
-   fn be;
-   eY bf;
+   public string filename;
+   public long bd;
+   public fn be;
+   public eY bf;
    // $FF: synthetic field
-   Application aZ;
+   public Application aZ;
 
    public F(Application var1, string var2, long var3, fn var5, eY var6) {
       this.aZ = var1;

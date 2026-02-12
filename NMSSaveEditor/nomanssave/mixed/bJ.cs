@@ -12,14 +12,14 @@ namespace NMSSaveEditor
 {
 
 public class bJ : G {
-   gs ez;
-   int type;
+   public gs ez;
+   public int type;
    // $FF: synthetic field
-   bE ey;
+   public bE ey;
    // $FF: synthetic field
-   private static int[] eA;
+   public static int[] eA;
 
-   bJ(bE var1, gs var2, bool var3) {
+   public bJ(bE var1, gs var2, bool var3) {
       this.ey = var1;
       this.ez = var2;
       switch(ad()[var2.ordinal()]) {
@@ -33,7 +33,7 @@ public class bJ : G {
       this.SetEnabled(var3);
    }
 
-   protected string g(string var1) {
+   public string g(string var1) {
       if (bE.a(this.ey) == null) {
          return "";
       } else {
@@ -87,7 +87,7 @@ public class bJ : G {
       }
    }
 
-   void ac() {
+   public void ac() {
       string var1;
       if (bE.a(this.ey) == null) {
          var1 = "";

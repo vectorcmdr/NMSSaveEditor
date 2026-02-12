@@ -11,21 +11,22 @@ using System.Globalization;
 namespace NMSSaveEditor
 {
 
-public class fm : Thread {
-   WatchService lk = FileSystems.getDefault().newWatchService();
-   Dictionary<object, object> ll = new WeakHashMap();
+public class fm  {
+   public Thread thread;
+   public WatchService lk = FileSystems.getDefault().newWatchService();
+   public Dictionary<object, object> ll = new WeakHashMap();
 
-   fm() {
+   public fm() {
       this.setDaemon(true);
       this.start();
    }
 
-   void a(fq var1, FileInfo var2) {
+   public void a(fq var1, FileInfo var2) {
       WatchKey var3 = var2.toPath().register(this.lk, StandardWatchEventKinds.ENTRY_CREATE, StandardWatchEventKinds.ENTRY_DELETE, StandardWatchEventKinds.ENTRY_MODIFY);
       this.ll.Put(var1, var3);
    }
 
-   void b(fq var1) {
+   public void b(fq var1) {
       WatchKey var2 = (WatchKey)this.ll.Remove(var1);
       if (var2 != null) {
          var2.cancel();
@@ -71,7 +72,7 @@ public class fm : Thread {
                   var3 = this.lk.poll(500L, TimeUnit.MILLISECONDS);
                } while(var3 != null);
 
-               (fl.bQ()) {
+               lock (fl.bQ()) {
                   bool var23 = false;
                   IEnumerator<object> var8 = var1.Entries().GetEnumerator();
 
@@ -97,7 +98,7 @@ public class fm : Thread {
                                  if (!var23) {
                                     var3.cancel();
                                  }
-                                 continue label156;
+                                 goto label156;
                               }
 
                               var9 = (Entry)var10.Current;

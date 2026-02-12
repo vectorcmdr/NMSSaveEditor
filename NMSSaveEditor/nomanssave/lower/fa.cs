@@ -12,7 +12,7 @@ namespace NMSSaveEditor
 {
 
 public class fa {
-   eY kM = new eY();
+   public eY kM = new eY();
 
    public fa d(string var1, Object var2) {
       if (var1 == null) {

@@ -11,7 +11,7 @@ using System.Globalization;
 namespace NMSSaveEditor
 {
 
-public abstract class G : TextBox {
+public class G : TextBox {
    public G() {
       this.addFocusListener(new H(this));
    }
@@ -24,7 +24,7 @@ public abstract class G : TextBox {
       this.SetText(this.g(var1));
    }
 
-   protected abstract string g(string var1);
+   public virtual string g(string var1) { return var1; }
 }
 
 }

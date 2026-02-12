@@ -12,11 +12,11 @@ namespace NMSSaveEditor
 {
 
 public class he : Stream {
-   StreamWriter ss;
-   string st;
-   MemoryStream su;
+   public StreamWriter ss;
+   public string st;
+   public MemoryStream su;
 
-   he(StreamWriter var1, string var2) {
+   public he(StreamWriter var1, string var2) {
       this.ss = var1;
       this.st = var2;
       this.su = new MemoryStream();
@@ -27,7 +27,7 @@ public class he : Stream {
       this.su.Write(var1);
       if (var1 == 10) {
          if (hc.en() != null) {
-            (hc.en()) {
+            lock (hc.en()) {
                hc.en().Write(this.st.GetBytes());
                hc.en().Write(this.su.toByteArray());
             }
@@ -47,7 +47,7 @@ public class he : Stream {
          if (var1[var2 + var4] == 10) {
             this.su.Write(var1, var2, var4 + 1);
             if (hc.en() != null) {
-               (hc.en()) {
+               lock (hc.en()) {
                   hc.en().Write(this.st.GetBytes());
                   hc.en().Write(this.su.toByteArray());
                }
@@ -67,7 +67,7 @@ public class he : Stream {
       if (this.su.Count > 0) {
          this.su.Write(System.lineSeparator().GetBytes());
          if (hc.en() != null) {
-            (hc.en()) {
+            lock (hc.en()) {
                hc.en().Write(this.st.GetBytes());
                hc.en().Write(this.su.toByteArray());
             }
@@ -77,6 +77,20 @@ public class he : Stream {
       }
 
    }
+
+   // Stream abstract members
+   public override bool CanRead => true;
+   public override bool CanSeek => false;
+   public override bool CanWrite => true;
+   public override long Length => 0;
+   public override long Position { get => 0; set {} }
+   public override void Flush() {}
+   public override int Read(byte[] buffer, int offset, int count) { return 0; }
+   public override long Seek(long offset, SeekOrigin origin) { return 0; }
+   public override void SetLength(long value) {}
+   public override void Write(byte[] buffer, int offset, int count) {}
+
 }
+
 
 }

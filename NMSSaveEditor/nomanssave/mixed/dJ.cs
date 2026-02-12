@@ -13,9 +13,9 @@ namespace NMSSaveEditor
 
 public class dJ : ComboBox {
    // $FF: synthetic field
-   dE hE;
+   public dE hE;
 
-   dJ(dE var1) {
+   public dJ(dE var1) {
       this.hE = var1;
       this.SetModel(new dK(this));
       this.setRenderer(new dL(this));

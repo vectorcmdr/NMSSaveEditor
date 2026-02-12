@@ -12,10 +12,10 @@ namespace NMSSaveEditor
 {
 
 public class eF {
-   string key;
-   string name;
+   public string key;
+   public string name;
 
-   eF(string var1, string var2) {
+   public eF(string var1, string var2) {
       this.key = var1;
       this.name = var2;
    }

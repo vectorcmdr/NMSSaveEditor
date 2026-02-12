@@ -12,9 +12,9 @@ namespace NMSSaveEditor
 {
 
 public class et {
-   string id;
+   public string id;
 
-   et(string var1) {
+   public et(string var1) {
       this.id = var1;
    }
 

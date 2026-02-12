@@ -12,11 +12,11 @@ namespace NMSSaveEditor
 {
 
 public class fd : Exception {
-   private fd() {
+   public fd() {
    }
 
    // $FF: synthetic method
-   fd(fd var1) {
+   public fd(fd var1) {
       // Constructor chain: base()
    }
 }

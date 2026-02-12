@@ -12,13 +12,13 @@ namespace NMSSaveEditor
 {
 
 public class p : Form {
-   private DataGridView D;
-   private TableRowSorter E;
-   private List<object> F;
-   private List<object> G = null;
-   private static p H = null;
+   public DataGridView D;
+   public TableRowSorter E;
+   public List<object> F;
+   public List<object> G = null;
+   public static p H = null;
 
-   private p(Form var1) {
+   public p(Form var1) {
       base(var1);
       this.SetSize(aH.cI * 2, aH.cI + aH.cH);
       this.SetResizable(false);
@@ -50,7 +50,7 @@ public class p : Form {
       this.GetRootPane().registerKeyboardAction(new t(this), Keys.getKeyStroke(27, 0), 2);
    }
 
-   private string[] d() {
+   public string[] d() {
       this.D.clearSelection();
       this.E.setSortKeys(new List<object>());
       this.E.sort();

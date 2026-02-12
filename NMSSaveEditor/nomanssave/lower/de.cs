@@ -13,9 +13,9 @@ namespace NMSSaveEditor
 
 public class de : ListModel {
    // $FF: synthetic field
-   dd gW;
+   public dd gW;
 
-   de(dd var1) {
+   public de(dd var1) {
       this.gW = var1;
    }
 

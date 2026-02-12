@@ -12,22 +12,22 @@ namespace NMSSaveEditor
 {
 
 public class X : Panel {
-   private ComboBox bG;
-   private ComboBox bH;
-   private G bI;
-   private G bJ;
-   private G bK;
-   private G bL;
-   private G bM;
-   private CheckBox bN;
-   private cN bO;
-   private cN bP;
-   private Button bQ;
-   private Button bR;
-   private Button bS;
-   private gj[] bT;
+   public ComboBox bG;
+   public ComboBox bH;
+   public G bI;
+   public G bJ;
+   public G bK;
+   public G bL;
+   public G bM;
+   public CheckBox bN;
+   public cN bO;
+   public cN bP;
+   public Button bQ;
+   public Button bR;
+   public Button bS;
+   public gj[] bT;
 
-   X(Application var1) {
+   public X(Application var1) {
       GridLayout var2 = new GridLayout(1, 3);
       this.SetLayout(var2);
       ba var3 = new ba(new int[]{aH.cJ, 0});
@@ -87,7 +87,7 @@ public class X : Panel {
       var3.a(var4);
    }
 
-   void a(gj[] var1) {
+   public void a(gj[] var1) {
       this.bT = var1;
       if (var1.length == 0) {
          this.bG.SetSelectedIndex(-1);

@@ -12,14 +12,14 @@ namespace NMSSaveEditor
 {
 
 public class cJ {
-   cJ gi;
-   int gj;
-   string name;
-   Object value;
+   public cJ gi;
+   public int gj;
+   public string name;
+   public Object value;
    // $FF: synthetic field
-   cy gg;
+   public cy gg;
 
-   cJ(cy var1, cJ var2, int var3, string var4, Object var5) {
+   public cJ(cy var1, cJ var2, int var3, string var4, Object var5) {
       this.gg = var1;
       this.gi = var2;
       this.value = var5;
@@ -27,7 +27,7 @@ public class cJ {
       this.gj = var3;
    }
 
-   bool isLeaf() {
+   public bool isLeaf() {
       if (this.value == null) {
          return true;
       } else if (this.value is eY) {
@@ -37,7 +37,7 @@ public class cJ {
       }
    }
 
-   int getChildCount() {
+   public int getChildCount() {
       if (this.value == null) {
          return 0;
       } else if (this.value is eY) {
@@ -47,7 +47,7 @@ public class cJ {
       }
    }
 
-   Object x(int var1) {
+   public Object x(int var1) {
       if (this.value == null) {
          throw new Exception("No children for null");
       } else if (this.value is eY) {
@@ -62,7 +62,7 @@ public class cJ {
       }
    }
 
-   int indexOf(Object var1) {
+   public int indexOf(Object var1) {
       return var1 is cJ && ((cJ)var1).gi == this ? ((cJ)var1).gj : -1;
    }
 

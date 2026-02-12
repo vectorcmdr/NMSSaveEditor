@@ -12,19 +12,19 @@ namespace NMSSaveEditor
 {
 
 public class I : em {
-   private ComboBox bh = new ComboBox();
-   private TextBox bi;
-   private G bj;
-   private ComboBox bk;
-   private G bl;
-   private TextBox bm;
-   private Button bn;
-   private Button bo;
-   private Button bp;
-   private bO bq;
-   private ge br;
+   public ComboBox bh = new ComboBox();
+   public TextBox bi;
+   public G bj;
+   public ComboBox bk;
+   public G bl;
+   public TextBox bm;
+   public Button bn;
+   public Button bo;
+   public Button bp;
+   public bO bq;
+   public ge br;
 
-   I(Application var1) {
+   public I(Application var1) {
       this.bh.SetModel(new J(this));
       this.a("Base NPC", true, this.bh);
       this.bi = new TextBox();
@@ -57,31 +57,31 @@ public class I : em {
       this.b(this.bq);
    }
 
-   void w() {
+   public void w() {
       this.bq.w();
    }
 
-   void x() {
+   public void x() {
       this.bq.x();
    }
 
-   void y() {
+   public void y() {
       this.bq.y();
    }
 
-   void A() {
+   public void A() {
       this.bq.A();
    }
 
-   void a(gt var1) {
+   public void a(gt var1) {
       this.bq.a(var1);
    }
 
-   ge O() {
+   public ge O() {
       return this.br;
    }
 
-   void a(ge var1) {
+   public void a(ge var1) {
       this.br = var1;
       List<object> var2;
       if (var1 == null) {

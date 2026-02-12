@@ -12,15 +12,15 @@ namespace NMSSaveEditor
 {
 
 public class aQ : Form {
-   private Size dk;
-   private Size dl;
-   private Size dm;
-   private Size? dn = null;
-   private TextBox @do;
-   private TextBox dp;
-   private static aQ dq;
+   public Size dk;
+   public Size dl;
+   public Size dm;
+   public Size? dn = null;
+   public TextBox @do;
+   public TextBox dp;
+   public static aQ dq;
 
-   private aQ(Form var1) {
+   public aQ(Form var1) {
       this.setResizable(false);
       this.setTitle("Expand Inventory");
       this.setModal(true);
@@ -56,7 +56,7 @@ public class aQ : Form {
       this.pack();
    }
 
-   private Size? a(Size var1, Size var2, Size var3) {
+   public Size? a(Size var1, Size var2, Size var3) {
       this.dk = var1;
       this.dl = var2;
       this.dm = var3;

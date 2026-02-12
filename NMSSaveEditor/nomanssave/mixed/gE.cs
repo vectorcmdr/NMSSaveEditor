@@ -12,8 +12,8 @@ namespace NMSSaveEditor
 {
 
 public class gE {
-   private int index;
-   private eY bf;
+   public int index;
+   public eY bf;
 
    public static gE[] z(eY var0) {
       eV var1 = var0.d("TeleportEndpoints");
@@ -40,7 +40,7 @@ public class gE {
       }
    }
 
-   private gE(int var1, eY var2) {
+   public gE(int var1, eY var2) {
       this.index = var1;
       this.bf = var2;
    }

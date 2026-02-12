@@ -12,13 +12,13 @@ namespace NMSSaveEditor
 {
 
 public class ba : Panel {
-   private FormLayout dA;
+   public FormLayout dA;
 
-   ba() {
+   public ba() {
       // Constructor chain: base(aH.cH, 0)
    }
 
-   ba(params int[] var1) {
+   public ba(params int[] var1) {
       this.dA = new FormLayout(new ColumnSpec[]{FormFactory.LABEL_COMPONENT_GAP_COLSPEC}, new RowSpec[]{FormFactory.LINE_GAP_ROWSPEC});
 
       for(int var2 = 0; var2 < var1.length; ++var2) {
@@ -34,11 +34,11 @@ public class ba : Panel {
       this.SetLayout(this.dA);
    }
 
-   void k(string var1) {
+   public void k(string var1) {
       this.a(var1, (Image)null);
    }
 
-   void a(string var1, Image var2) {
+   public void a(string var1, Image var2) {
       int var3;
       if (this.dA.RowCount == 1) {
          this.dA.appendRow(FormFactory.DEFAULT_ROWSPEC);
@@ -64,7 +64,7 @@ public class ba : Panel {
 
    }
 
-   void addText(string var1) {
+   public void addText(string var1) {
       int var2;
       if (this.dA.RowCount == 1) {
          this.dA.appendRow(FormFactory.DEFAULT_ROWSPEC);
@@ -80,24 +80,24 @@ public class ba : Panel {
       this.Add(var3, "2, " + (this.dA.RowCount - 1) + ", " + var2 + ", 1, left, default");
    }
 
-   void Y() {
+   public void Y() {
       this.dA.appendRow(RowSpec.decode("bottom:10px"));
       this.dA.appendRow(FormFactory.LINE_GAP_ROWSPEC);
    }
 
-   void a(string var1, JComponent var2) {
+   public void a(string var1, JComponent var2) {
       this.a(var1, false, var2, 1);
    }
 
-   void a(string var1, JComponent var2, int var3) {
+   public void a(string var1, JComponent var2, int var3) {
       this.a(var1, false, var2, var3);
    }
 
-   void a(string var1, bool var2, JComponent var3) {
+   public void a(string var1, bool var2, JComponent var3) {
       this.a(var1, var2, var3, 1);
    }
 
-   void a(string var1, bool var2, JComponent var3, int var4) {
+   public void a(string var1, bool var2, JComponent var3, int var4) {
       var4 = var4 * 2 - 1;
       this.dA.appendRow(FormFactory.DEFAULT_ROWSPEC);
       this.dA.appendRow(FormFactory.LINE_GAP_ROWSPEC);
@@ -114,7 +114,7 @@ public class ba : Panel {
       this.Add(var3, "4, " + var5 + ", " + var4 + ", 1, fill, default");
    }
 
-   void a(string var1, G var2) {
+   public void a(string var1, G var2) {
       Panel var3 = new Panel();
       var3.SetLayout(new BorderLayout(0, 0));
       Panel var4 = new Panel();
@@ -129,7 +129,7 @@ public class ba : Panel {
       this.a(var1, (JComponent)var3);
    }
 
-   void a(JComponent var1) {
+   public void a(JComponent var1) {
       this.dA.appendRow(FormFactory.DEFAULT_ROWSPEC);
       this.dA.appendRow(FormFactory.LINE_GAP_ROWSPEC);
       int var2 = this.dA.ColumnCount - 2;

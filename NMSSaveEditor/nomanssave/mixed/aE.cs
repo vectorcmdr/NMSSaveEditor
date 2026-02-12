@@ -12,11 +12,11 @@ namespace NMSSaveEditor
 {
 
 public class aE : ComboBoxModel {
-   aI cA;
+   public aI cA;
    // $FF: synthetic field
-   aD cB;
+   public aD cB;
 
-   aE(aD var1) {
+   public aE(aD var1) {
       this.cB = var1;
       this.cA = null;
    }

@@ -13,9 +13,9 @@ namespace NMSSaveEditor
 
 public class w : Runnable {
    // $FF: synthetic field
-   private bool ba;
+   public bool ba;
 
-   w(bool var1) {
+   public w(bool var1) {
       this.ba = var1;
    }
 

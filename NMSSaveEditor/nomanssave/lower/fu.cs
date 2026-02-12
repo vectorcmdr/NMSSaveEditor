@@ -12,14 +12,14 @@ namespace NMSSaveEditor
 {
 
 public class fu : fq {
-   private static byte[] lA = "NOMANSKY".GetBytes();
-   private static byte[] lB = new byte[]{126, -25, 85, -54, -47, 7, 0, 0};
-   private static Pattern lC = new Regex("\\{\"Version\":(\\d*),.*");
-   private FileInfo lD;
-   private fR lE;
-   private fw[] lF;
-   private fv lG;
-   private fx[] lH;
+   public static byte[] lA = "NOMANSKY".GetBytes();
+   public static byte[] lB = new byte[] {126, -25, 85, -54, -47, 7, 0, 0};
+   public static Pattern lC = new Regex("\\{\"Version\":(\\d*),.*");
+   public FileInfo lD;
+   public fR lE;
+   public fw[] lF;
+   public fv lG;
+   public fx[] lH;
 
    public static fn ag(int var0) {
       int var1 = (3584 & var0) >> 9;
@@ -30,7 +30,7 @@ public class fu : fq {
       }
    }
 
-   fu(FileInfo var1, fR var2) {
+   public fu(FileInfo var1, fR var2) {
       this.lD = var1.IsFile() ? var1 : new File(var1, "memory.dat");
       this.lE = var2;
       Console.WriteLine(this.lD.FullName);
@@ -140,7 +140,7 @@ public class fu : fq {
       new fu(new File("D:\\Temp\\PS4_NEW"), (fR)null);
    }
 
-   private static bool a(byte[] var0, byte[] var1) {
+   public static bool a(byte[] var0, byte[] var1) {
       for(int var2 = 0; var2 < var0.length; ++var2) {
          if (var0[var2] != var1[var2]) {
             return false;

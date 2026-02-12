@@ -13,9 +13,9 @@ namespace NMSSaveEditor
 
 public class cB : DocumentListener {
    // $FF: synthetic field
-   cy gg;
+   public cy gg;
 
-   cB(cy var1) {
+   public cB(cy var1) {
       this.gg = var1;
    }
 

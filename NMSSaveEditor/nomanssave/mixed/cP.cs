@@ -13,9 +13,9 @@ namespace NMSSaveEditor
 
 public class cP : DefaultListCellRenderer {
    // $FF: synthetic field
-   cN gt;
+   public cN gt;
 
-   cP(cN var1) {
+   public cP(cN var1) {
       this.gt = var1;
    }
 

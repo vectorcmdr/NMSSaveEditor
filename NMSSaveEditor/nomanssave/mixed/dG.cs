@@ -13,13 +13,13 @@ namespace NMSSaveEditor
 
 public class dG : G {
    // $FF: synthetic field
-   dE hE;
+   public dE hE;
 
-   dG(dE var1) {
+   public dG(dE var1) {
       this.hE = var1;
    }
 
-   protected string g(string var1) {
+   public string g(string var1) {
       gE var2 = (gE)dE.a(this.hE).SelectedItem;
       if (var2 == null) {
          return "";

@@ -13,11 +13,11 @@ namespace NMSSaveEditor
 
 public class cO : ComboBoxModel {
    // $FF: synthetic field
-   cN gt;
+   public cN gt;
    // $FF: synthetic field
-   private Class gu;
+   public Class gu;
 
-   cO(cN var1, Class var2) {
+   public cO(cN var1, Class var2) {
       this.gt = var1;
       this.gu = var2;
    }

@@ -12,8 +12,8 @@ namespace NMSSaveEditor
 {
 
 public class en {
-   private static bool iu = false;
-   private static List<object> iv = new List<object>();
+   public static bool iu = false;
+   public static List<object> iv = new List<object>();
 
    public static void a(eo var0) {
       iv.Add(var0);

@@ -12,7 +12,7 @@ namespace NMSSaveEditor
 {
 
 public interface eo {
-   void a(bool var1);
+   public void a(bool var1);
 }
 
 }

@@ -13,11 +13,11 @@ namespace NMSSaveEditor
 
 public class ed : ActionListener {
    // $FF: synthetic field
-   ec ik;
+   public ec ik;
    // $FF: synthetic field
-   private int il;
+   public int il;
 
-   ed(ec var1, int var2) {
+   public ed(ec var1, int var2) {
       this.ik = var1;
       this.il = var2;
    }

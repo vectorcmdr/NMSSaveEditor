@@ -13,9 +13,9 @@ namespace NMSSaveEditor
 
 public class v : Runnable {
    // $FF: synthetic field
-   Application aZ;
+   public Application aZ;
 
-   v(Application var1) {
+   public v(Application var1) {
       this.aZ = var1;
    }
 

@@ -11,11 +11,12 @@ using System.Globalization;
 namespace NMSSaveEditor
 {
 
-public class cs : OpenFileDialog {
-   private static cs fN = null;
-   private static string name = "Freighter Backup File";
-   private static Image fH = Application.a("UI-FREIGHTERICON.PNG", 16, 16);
-   private CheckBox fO;
+public class cs  {
+   public OpenFileDialog dialog = new OpenFileDialog();
+   public static cs fN = null;
+   public static string name = "Freighter Backup File";
+   public static Image fH = Application.a("UI-FREIGHTERICON.PNG", 16, 16);
+   public CheckBox fO;
 
    public static cs av() {
       if (fN == null) {
@@ -25,7 +26,7 @@ public class cs : OpenFileDialog {
       return fN;
    }
 
-   private cs() {
+   public cs() {
       this.setFileSelectionMode(0);
       this.setAcceptAllFileFilterUsed(false);
       this.setFileView(new ct(this));

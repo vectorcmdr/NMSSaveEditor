@@ -12,7 +12,7 @@ namespace NMSSaveEditor
 {
 
 public class aA : DefaultTableCellRenderer {
-   int f;
+   public int f;
 
    public aA(DataGridView var1, int var2) {
       this.f = var2;

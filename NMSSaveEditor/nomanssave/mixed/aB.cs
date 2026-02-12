@@ -13,9 +13,9 @@ namespace NMSSaveEditor
 
 public class aB : DefaultTableCellRenderer {
    // $FF: synthetic field
-   ap cu;
+   public ap cu;
 
-   private aB(ap var1) {
+   public aB(ap var1) {
       this.cu = var1;
    }
 
@@ -26,7 +26,7 @@ public class aB : DefaultTableCellRenderer {
    }
 
    // $FF: synthetic method
-   aB(ap var1, aB var2) {
+   public aB(ap var1, aB var2) {
       // Constructor chain: base(var1)
    }
 }

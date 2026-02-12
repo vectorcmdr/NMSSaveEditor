@@ -13,11 +13,11 @@ namespace NMSSaveEditor
 
 public class bM : FocusListener {
    // $FF: synthetic field
-   bL eC;
+   public bL eC;
    // $FF: synthetic field
-   private bK eD;
+   public bK eD;
 
-   bM(bL var1, bK var2) {
+   public bM(bL var1, bK var2) {
       this.eC = var1;
       this.eD = var2;
    }

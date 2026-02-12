@@ -13,7 +13,7 @@ namespace NMSSaveEditor
 
 public class cG : TextAction, ClipboardOwner {
    // $FF: synthetic field
-   cy gg;
+   public cy gg;
 
    public cG(cy var1) {
       base("Copy From Clipboard");
@@ -28,8 +28,7 @@ public class cG : TextAction, ClipboardOwner {
 
    }
 
-   public void lostOwnership(Clipboard var1, Transferable var2) {
-   }
+   public void lostOwnership(object clipboard, Transferable contents) {}
 }
 
 }

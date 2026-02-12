@@ -13,9 +13,9 @@ namespace NMSSaveEditor
 
 public class m : ActionListener {
    // $FF: synthetic field
-   h z;
+   public h z;
 
-   m(h var1) {
+   public m(h var1) {
       this.z = var1;
    }
 

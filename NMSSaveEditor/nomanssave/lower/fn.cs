@@ -21,28 +21,28 @@ public sealed class fn {
    public static readonly fn ls = new fn("ls");
    public static readonly fn lt = new fn("lt");
 
-   private int _ordinal;
-   private string _name;
+   public int _ordinal;
+   public string _name;
 
-   private fn(string __name) {
+   public fn(string __name) {
       this._ordinal = _nextOrdinal++;
       this._name = __name;
    }
 
-   private static int _nextOrdinal = 0;
-   private static readonly fn[] _values = new fn[] { lm, ln, lo, lp, lq, lr, ls, lt };
+   public static int _nextOrdinal = 0;
+   public static readonly fn[] _values = new fn[] { lm, ln, lo, lp, lq, lr, ls, lt };
    public static fn[] values() { return _values; }
    public static fn valueOf(string n) { return _values.FirstOrDefault(v => v._name == n); }
    public int ordinal() { return _ordinal; }
    public string name() { return _name; }
    public override string ToString() { return _name; }
 
-   private static readonly Regex lu = new Regex("\"((?:XTp)|(?:ActiveContext))\":\"([^\"]+)\",");
-   private static readonly Regex lv = new Regex("\"((?:vLc)|(?:BaseContext))\":\\{\"((?:idA)|(?:GameMode))\":(\\d+)");
-   private static readonly Regex lw = new Regex("\"((?:2YS)|(?:ExpeditionContext))\":\\{\"((?:idA)|(?:GameMode))\":(\\d+)");
-   private static readonly Regex lx = new Regex("\"((?:7ND)|(?:DifficultyPresetType))\":\"(\\w+)\"");
+   public static readonly Regex lu = new Regex("\"((?:XTp)|(?:ActiveContext))\":\"([^\"]+)\",");
+   public static readonly Regex lv = new Regex("\"((?:vLc)|(?:BaseContext))\":\\{\"((?:idA)|(?:GameMode))\":(\\d+)");
+   public static readonly Regex lw = new Regex("\"((?:2YS)|(?:ExpeditionContext))\":\\{\"((?:idA)|(?:GameMode))\":(\\d+)");
+   public static readonly Regex lx = new Regex("\"((?:7ND)|(?:DifficultyPresetType))\":\"(\\w+)\"");
 
-   private static fn S(string var0) {
+   public static fn S(string var0) {
       fn[] var4;
       int var3 = (var4 = values()).Length;
 

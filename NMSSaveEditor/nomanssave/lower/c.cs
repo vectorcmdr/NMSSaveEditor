@@ -12,11 +12,11 @@ namespace NMSSaveEditor
 {
 
 public class c : Panel {
-   private f c;
-   private f d;
-   private f e;
+   public f c_field;
+   public f d;
+   public f e;
 
-   c(Application var1) {
+   public c(Application var1) {
       GridLayout var2 = new GridLayout(2, 3);
       this.SetLayout(var2);
       Panel var3 = new Panel();
@@ -27,8 +27,8 @@ public class c : Panel {
       var3.Add(var4, "2, 2");
       Panel var5 = new Panel();
       var3.Add(var5, "2, 4, fill, fill");
-      this.c = new f(this, var1, eI.bq, eI.P);
-      var5.setViewportView(this.c);
+      this.c_field = new f(this, var1, eI.bq, eI.P);
+      var5.setViewportView(this.c_field);
       Panel var6 = new Panel();
       this.Add(var6);
       var6.SetLayout(new FormLayout(new ColumnSpec[]{FormFactory.LABEL_COMPONENT_GAP_COLSPEC, ColumnSpec.decode("default:grow"), FormFactory.LABEL_COMPONENT_GAP_COLSPEC}, new RowSpec[]{FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, RowSpec.decode("200px:grow"), FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC}));
@@ -61,13 +61,13 @@ public class c : Panel {
       this.Add(var10);
    }
 
-   void a(eY var1) {
+   public void a(eY var1) {
       if (var1 == null) {
-         this.c.a((eV)null);
+         this.c_field.a((eV)null);
          this.d.a((eV)null);
          this.e.a((eV)null);
       } else {
-         this.c.a(var1.d("UserSettingsData.UnlockedSeasonRewards"));
+         this.c_field.a(var1.d("UserSettingsData.UnlockedSeasonRewards"));
          this.d.a(var1.d("UserSettingsData.UnlockedTwitchRewards"));
          this.e.a(var1.d("UserSettingsData.UnlockedPlatformRewards"));
       }

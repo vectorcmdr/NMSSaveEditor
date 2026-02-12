@@ -13,16 +13,16 @@ namespace NMSSaveEditor
 
 public class aN : G {
    // $FF: synthetic field
-   aJ dj;
+   public aJ dj;
    // $FF: synthetic field
-   private Application bv;
+   public Application bv;
 
-   aN(aJ var1, Application var2) {
+   public aN(aJ var1, Application var2) {
       this.dj = var1;
       this.bv = var2;
    }
 
-   protected string g(string var1) {
+   public string g(string var1) {
       if (aJ.a(this.dj) == null) {
          return "";
       } else {

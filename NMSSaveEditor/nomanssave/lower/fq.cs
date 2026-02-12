@@ -12,7 +12,7 @@ namespace NMSSaveEditor
 {
 
 public interface fq {
-   int lz = 15;
+   const int lz = 15;
 
    static string c(long var0) {
       int var2 = (int)(var0 % 60L);
@@ -111,31 +111,29 @@ public interface fq {
       }
    }
 
-   FileInfo bS();
+   public FileInfo bS();
 
-   fr bT();
+   public fr bT();
 
-   ft[] bU();
+   public ft[] bU();
 
-   ft[] bV() {
-      return (ft[])new List<object> {this.bU()).filter((var0) => {
-         return !var0.Length == 0;
-      }).ToArray((var0) => {
-         return new ft[var0];
-      });
+   public ft[] bV() {
+      return this.bU().Where((var0) => {
+         return var0.Length != 0;
+      }).ToArray();
    }
 
-   int W(string var1);
+   public int W(string var1);
 
-   bool bW() {
+   public bool bW() {
       return false;
    }
 
-   string a(int var1, eY var2) {
+   public string a(int var1, eY var2) {
       throw new IOException("cannot create slot " + (var1 + 1));
    }
 
-   void X(string var1);
+   public void X(string var1);
 }
 
 }

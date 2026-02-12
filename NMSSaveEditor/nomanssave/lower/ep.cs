@@ -12,42 +12,42 @@ namespace NMSSaveEditor
 {
 
 public class ep : em {
-   private ComboBox iw = new ComboBox();
-   private bO ix;
-   private gO[] iy;
+   public ComboBox iw = new ComboBox();
+   public bO ix;
+   public gO[] iy;
 
-   ep(Application var1) {
+   public ep(Application var1) {
       this.iw.SetModel(new eq(this));
       this.a("Vehicle", true, this.iw);
       this.ix = new bO(var1);
       this.b(this.ix);
    }
 
-   void w() {
+   public void w() {
       this.ix.w();
    }
 
-   void x() {
+   public void x() {
       this.ix.x();
    }
 
-   void y() {
+   public void y() {
       this.ix.y();
    }
 
-   void A() {
+   public void A() {
       this.ix.A();
    }
 
-   void a(gt var1) {
+   public void a(gt var1) {
       this.ix.a(var1);
    }
 
-   gO[] aT() {
+   public gO[] aT() {
       return this.iy;
    }
 
-   void a(gO[] var1) {
+   public void a(gO[] var1) {
       if (var1.length == 0) {
          this.iy = new gO[0];
          this.iw.SetSelectedIndex(-1);

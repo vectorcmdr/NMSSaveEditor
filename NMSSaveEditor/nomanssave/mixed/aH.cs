@@ -12,7 +12,7 @@ namespace NMSSaveEditor
 {
 
 public class aH {
-   private static FileInfo cC;
+   public static FileInfo cC;
    public static FileInfo cD;
    public static FileInfo cE;
    public static FileInfo cF;
@@ -20,10 +20,10 @@ public class aH {
    public static int cH;
    public static int cI;
    public static int cJ;
-   private static eY cK;
-   private static bool cL;
+   public static eY cK;
+   public static bool cL;
    // $FF: synthetic field
-   private static int[] cM;
+   public static int[] cM;
 
    public static string getProperty(string var0) {
       return cK.getValueAsString(var0);

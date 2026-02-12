@@ -13,13 +13,13 @@ namespace NMSSaveEditor
 
 public class g : TableModel {
    // $FF: synthetic field
-   f i;
+   public f i;
    // $FF: synthetic field
-   private Supplier j;
+   public Supplier j;
    // $FF: synthetic field
-   private Function k;
+   public Function k;
 
-   g(f var1, Supplier var2, Function var3) {
+   public g(f var1, Supplier var2, Function var3) {
       this.i = var1;
       this.j = var2;
       this.k = var3;
@@ -46,7 +46,7 @@ public class g : TableModel {
       }
    }
 
-   public Class getColumnClass(int var1) {
+   public object getColumnClass(int var1) {
       switch(var1) {
       case 0:
       case 1:

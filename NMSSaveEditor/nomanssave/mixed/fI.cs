@@ -12,23 +12,23 @@ namespace NMSSaveEditor
 {
 
 public class fI {
-   private static int mi = 2001;
-   private static int mj = 2002;
-   private static int mk = 2003;
-   private static int ml = 2004;
-   private static int mm = 6;
-   private static int mn = 2004;
-   private static int mo = 384;
-   private int mp;
-   private int lO;
-   private int mq;
-   private byte[] data;
+   public static int mi = 2001;
+   public static int mj = 2002;
+   public static int mk = 2003;
+   public static int ml = 2004;
+   public static int mm = 6;
+   public static int mn = 2004;
+   public static int mo = 384;
+   public int mp;
+   public int lO;
+   public int mq;
+   public byte[] data;
 
-   private static bool ai(int var0) {
+   public static bool ai(int var0) {
       return var0 == 2001 || var0 == 2002 || var0 == 2003 || var0 == 2004;
    }
 
-   private fI(int var1, int var2, int var3, byte[] var4) {
+   public fI(int var1, int var2, int var3, byte[] var4) {
       this.mp = var1;
       this.lO = var2;
       this.mq = var3;
@@ -253,7 +253,7 @@ public class fI {
       return a((long[])var6, 0, var6.length);
    }
 
-   private int getInt(int var1) {
+   public int getInt(int var1) {
       if (var1 >= 8 && var1 % 4 == 0) {
          var1 -= 8;
          return this.data[var1] & 255 | (this.data[var1 + 1] & 255) << 8 | (this.data[var1 + 2] & 255) << 16 | (this.data[var1 + 3] & 255) << 24;
@@ -262,7 +262,7 @@ public class fI {
       }
    }
 
-   private void setInt(int var1, int var2) {
+   public void setInt(int var1, int var2) {
       if (var1 >= 8 && var1 % 4 == 0) {
          var1 -= 8;
          this.data[var1] = (byte)(var2 & 255);
@@ -274,7 +274,7 @@ public class fI {
       }
    }
 
-   private string getString(int var1) {
+   public string getString(int var1) {
       if (var1 >= 8 && var1 % 4 == 0) {
          var1 -= 8;
 
@@ -290,7 +290,7 @@ public class fI {
       }
    }
 
-   private void setString(int var1, string var2) {
+   public void setString(int var1, string var2) {
       if (var1 >= 8 && var1 % 4 == 0) {
          var1 -= 8;
          byte[] var3 = var2.GetBytes();
@@ -306,7 +306,7 @@ public class fI {
       }
    }
 
-   private byte[] d(int var1, int var2) {
+   public byte[] d(int var1, int var2) {
       if (var1 >= 8 && var1 % 4 == 0) {
          if (var2 % 4 != 0) {
             throw new ArgumentException("Invalid length: " + var2);
@@ -321,7 +321,7 @@ public class fI {
       }
    }
 
-   private void setBytes(int var1, byte[] var2) {
+   public void setBytes(int var1, byte[] var2) {
       if (var1 >= 8 && var1 % 4 == 0) {
          if (var2.length % 4 != 0) {
             throw new ArgumentException("Invalid length: " + var2.length);
@@ -384,12 +384,12 @@ public class fI {
       return var1.ToString();
    }
 
-   private static long rotateLeft(long var0, int var2) {
+   public static long rotateLeft(long var0, int var2) {
       long var3 = (long)Math.Pow(2.0D, (double)(32 - var2)) - 1L;
       return (var0 & var3) << var2 | var0 >>> 32 - var2;
    }
 
-   private static byte[] a(long[] var0, int var1, int var2) {
+   public static byte[] a(long[] var0, int var1, int var2) {
       byte[] var3 = new byte[var2 * 4];
 
       for(int var4 = 0; var4 < var2; ++var4) {
@@ -402,11 +402,11 @@ public class fI {
       return var3;
    }
 
-   private static long[] g(byte[] var0) {
+   public static long[] g(byte[] var0) {
       return a((byte[])var0, 0, var0.length);
    }
 
-   private static long[] a(byte[] var0, int var1, int var2) {
+   public static long[] a(byte[] var0, int var1, int var2) {
       long[] var3 = new long[var2 / 4];
 
       for(int var4 = 0; var4 < var2; var4 += 4) {

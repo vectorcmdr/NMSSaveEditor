@@ -26,22 +26,22 @@ public sealed class gL : gD {
    public static readonly gL rD = new gL("rD", "Starborn Runner", "MODELS/COMMON/SPACECRAFT/FIGHTERS/WRACER.SCENE.MBIN", 4);
    public static readonly gL rE = new gL("rE", "Corvette", "MODELS/COMMON/SPACECRAFT/BIGGS/BIGGS.SCENE.MBIN", 4);
 
-   private int _ordinal;
-   private string _name;
-   private string name;
-   private string filename;
-   private int rF;
+   public int _ordinal;
+   public string _name;
+   public string displayName;
+   public string filename;
+   public int rF;
 
-   private gL(string __name, string var3, string var4, int var5) {
+   public gL(string __name, string var3, string var4, int var5) {
       this._ordinal = _nextOrdinal++;
       this._name = __name;
-      this.name = var3;
+      this.displayName = var3;
       this.filename = var4;
       this.rF = var5;
    }
 
-   private static int _nextOrdinal = 0;
-   private static readonly gL[] _values = new gL[] { rs, rt, ru, rv, rw, rx, ry, rz, rA, rB, rC, rD, rE };
+   public static int _nextOrdinal = 0;
+   public static readonly gL[] _values = new gL[] { rs, rt, ru, rv, rw, rx, ry, rz, rA, rB, rC, rD, rE };
    public static gL[] values() { return _values; }
    public static gL valueOf(string n) { return _values.FirstOrDefault(v => v._name == n); }
    public int ordinal() { return _ordinal; }
@@ -57,7 +57,7 @@ public sealed class gL : gD {
    }
 
    public string toString() {
-      return this.name;
+      return this.displayName;
    }
 
    public static gL aw(string var0) {

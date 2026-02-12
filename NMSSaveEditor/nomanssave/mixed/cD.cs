@@ -13,9 +13,9 @@ namespace NMSSaveEditor
 
 public class cD : PropertyChangeListener {
    // $FF: synthetic field
-   cy gg;
+   public cy gg;
 
-   cD(cy var1) {
+   public cD(cy var1) {
       this.gg = var1;
    }
 

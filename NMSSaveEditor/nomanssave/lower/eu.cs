@@ -12,7 +12,7 @@ namespace NMSSaveEditor
 {
 
 public class eu {
-   private static List<object> iH = new List<object>();
+   public static List<object> iH = new List<object>();
 
    static eu() {
       Stream var0 = JavaCompat.GetResourceStream("db/inventory.xml");

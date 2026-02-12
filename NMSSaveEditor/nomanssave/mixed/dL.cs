@@ -13,9 +13,9 @@ namespace NMSSaveEditor
 
 public class dL : DefaultListCellRenderer {
    // $FF: synthetic field
-   dJ hG;
+   public dJ hG;
 
-   dL(dJ var1) {
+   public dL(dJ var1) {
       this.hG = var1;
    }
 

@@ -12,12 +12,12 @@ namespace NMSSaveEditor
 {
 
 public class fH {
-   FileInfo mh;
-   byte[] lK;
+   public FileInfo mh;
+   public byte[] lK;
    // $FF: synthetic field
-   fA ma;
+   public fA ma;
 
-   fH(fA var1, string var2, bool var3) {
+   public fH(fA var1, string var2, bool var3) {
       this.ma = var1;
       this.mh = new File(fA.a(var1), var2);
       if (var3) {
@@ -39,7 +39,7 @@ public class fH {
 
    }
 
-   byte[] readBytes() {
+   public byte[] readBytes() {
       long var1 = (255L & (long)this.lK[95]) << 24 | (255L & (long)this.lK[94]) << 16 | (255L & (long)this.lK[93]) << 8 | 255L & (long)this.lK[92];
       FileStream var3 = new FileStream(new File(fA.a(this.ma), this.K()));
 
@@ -56,7 +56,7 @@ public class fH {
       return var6;
    }
 
-   byte[] ah(int var1) {
+   public byte[] ah(int var1) {
       long var2 = (255L & (long)this.lK[95]) << 24 | (255L & (long)this.lK[94]) << 16 | (255L & (long)this.lK[93]) << 8 | 255L & (long)this.lK[92];
       FileStream var4 = new FileStream(new File(fA.a(this.ma), this.K()));
 
@@ -74,7 +74,7 @@ public class fH {
       return var7;
    }
 
-   void writeBytes(byte[] var1) {
+   public void writeBytes(byte[] var1) {
       this.lK[92] = (byte)var1.length;
       this.lK[93] = (byte)(var1.length >> 8);
       this.lK[94] = (byte)(var1.length >> 16);
@@ -90,7 +90,7 @@ public class fH {
 
    }
 
-   void a(string var1, fn var2, string var3, string var4) {
+   public void a(string var1, fn var2, string var3, string var4) {
       Properties var5 = new Properties();
       var5.setProperty("StorageFile", this.mh.Name);
       var5.setProperty("LastModified", Convert.ToString(this.mh.LastWriteTimeUtc.Ticks));

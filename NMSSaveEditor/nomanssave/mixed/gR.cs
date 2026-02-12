@@ -12,7 +12,7 @@ namespace NMSSaveEditor
 {
 
 public class gR {
-   private static Dictionary<object, object> rR = new Dictionary<object, object>();
+   public static Dictionary<object, object> rR = new Dictionary<object, object>();
 
    public static eY az(string var0) {
       eY var1 = null;

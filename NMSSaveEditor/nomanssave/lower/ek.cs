@@ -15,7 +15,7 @@ public class ek : FileFilter {
    // $FF: synthetic field
    ej @is;
 
-   ek(ej var1) {
+   public ek(ej var1) {
       this.@is = var1;
    }
 

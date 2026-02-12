@@ -12,13 +12,13 @@ namespace NMSSaveEditor
 {
 
 public class gC {
-   private eY oI;
+   public eY oI;
 
    public static gC y(eY var0) {
       return new gC(var0);
    }
 
-   private gC(eY var1) {
+   public gC(eY var1) {
       this.oI = var1;
    }
 

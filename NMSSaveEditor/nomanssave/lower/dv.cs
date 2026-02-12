@@ -13,11 +13,11 @@ namespace NMSSaveEditor
 
 public class dv : ActionListener {
    // $FF: synthetic field
-   du hp;
+   public du hp;
    // $FF: synthetic field
-   private gF hq;
+   public gF hq;
 
-   dv(du var1, gF var2) {
+   public dv(du var1, gF var2) {
       this.hp = var1;
       this.hq = var2;
    }

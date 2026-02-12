@@ -13,9 +13,9 @@ namespace NMSSaveEditor
 
 public class co : FileFilter {
    // $FF: synthetic field
-   cl fI;
+   public cl fI;
 
-   co(cl var1) {
+   public co(cl var1) {
       this.fI = var1;
    }
 

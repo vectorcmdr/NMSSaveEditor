@@ -12,13 +12,13 @@ namespace NMSSaveEditor
 {
 
 public class dO : ComboBoxModel {
-   private gH hZ;
+   public gH hZ;
    // $FF: synthetic field
-   dN ia;
+   public dN ia;
    // $FF: synthetic field
-   private Application bv;
+   public Application bv;
 
-   dO(dN var1, Application var2) {
+   public dO(dN var1, Application var2) {
       this.ia = var1;
       this.bv = var2;
       this.hZ = null;

@@ -12,25 +12,25 @@ namespace NMSSaveEditor
 {
 
 public class bO : Panel, eo {
-   private static Color eE;
-   private static Color eF;
-   private static Color eG;
-   private static Color eH;
-   private static Color eI;
-   private static Color eJ;
+   public static Color eE;
+   public static Color eF;
+   public static Color eG;
+   public static Color eH;
+   public static Color eI;
+   public static Color eJ;
    public static Color eK;
-   private static Color eL;
-   private static Color eM;
-   private static Color eN;
+   public static Color eL;
+   public static Color eM;
+   public static Color eN;
    public static Color eO;
    public static Border eP;
-   private static Border eQ;
-   private Application eR;
-   private Panel eS;
-   private ComboBox eT;
-   private Button eU;
-   private List<object> eV;
-   private gt eW;
+   public static Border eQ;
+   public Application eR;
+   public Panel eS;
+   public ComboBox eT;
+   public Button eU;
+   public List<object> eV;
+   public gt eW;
 
    static bO() {
       eE = Color.Gray;
@@ -48,7 +48,7 @@ public class bO : Panel, eo {
       eQ = BorderFactory.createCompoundBorder(eP, BorderFactory.createLineBorder(eM, 2));
    }
 
-   bO(Application var1) {
+   public bO(Application var1) {
       this.eR = var1;
       this.SetLayout(new BorderLayout());
       Panel var2 = new Panel();
@@ -84,7 +84,7 @@ public class bO : Panel, eo {
    public void a(bool var1) {
       this.eU.SetVisible(this.eW == null ? false : var1 || this.eW.dk());
       bool var2 = this.eW == null ? false : var1 || this.eW.dp();
-      (this.eS.getTreeLock()) {
+      lock (this.eS.getTreeLock()) {
          for(int var4 = 0; var4 < this.eS.getComponentCount(); ++var4) {
             Component var5 = this.eS.getComponent(var4);
             if (var5 is bS) {
@@ -97,14 +97,14 @@ public class bO : Panel, eo {
       }
    }
 
-   void a(gt var1) {
+   public void a(gt var1) {
       if (this.eW == var1) {
          this.af();
       }
 
    }
 
-   void w() {
+   public void w() {
       this.eV.forEach((var1) => {
          if (var1.dt() && this.eW == var1) {
             this.af();
@@ -113,7 +113,7 @@ public class bO : Panel, eo {
       });
    }
 
-   void x() {
+   public void x() {
       this.eV.forEach((var1) => {
          if (var1.du() && this.eW == var1) {
             this.af();
@@ -122,7 +122,7 @@ public class bO : Panel, eo {
       });
    }
 
-   void y() {
+   public void y() {
       this.eV.forEach((var1) => {
          if (var1.dp() && var1.dv() && this.eW == var1) {
             this.af();
@@ -131,7 +131,7 @@ public class bO : Panel, eo {
       });
    }
 
-   void z() {
+   public void z() {
       this.eV.forEach((var1) => {
          if (var1.dq() && var1.ds() && this.eW == var1) {
             this.af();
@@ -140,7 +140,7 @@ public class bO : Panel, eo {
       });
    }
 
-   void A() {
+   public void A() {
       this.eV.forEach((var1) => {
          if (var1.dk() && var1.dl() && this.eW == var1) {
             this.af();
@@ -149,7 +149,7 @@ public class bO : Panel, eo {
       });
    }
 
-   void ae() {
+   public void ae() {
       int var1 = this.eT.SelectedIndex;
       if (var1 >= 0) {
          this.eW = (gt)this.eV.Get(var1);
@@ -158,8 +158,8 @@ public class bO : Panel, eo {
 
    }
 
-   private void af() {
-      (this.eS.getTreeLock()) {
+   public void af() {
+      lock (this.eS.getTreeLock()) {
          this.eS.Controls.Clear();
          if (this.eW != null) {
             int var2 = UIManager.getInt("Inventory.gridSize");
@@ -186,7 +186,7 @@ public class bO : Panel, eo {
       this.eS.updateUI();
    }
 
-   void a(List<object> var1) {
+   public void a(List<object> var1) {
       this.eV = var1;
       this.eW = null;
       this.eT.updateUI();
@@ -202,8 +202,8 @@ public class bO : Panel, eo {
 
    }
 
-   private bS a(int var1, int var2) {
-      (this.eS.getTreeLock()) {
+   public bS a(int var1, int var2) {
+      lock (this.eS.getTreeLock()) {
          for(int var4 = 0; var4 < this.eS.getComponentCount(); ++var4) {
             Component var5 = this.eS.getComponent(var4);
             if (var5 is bS) {
@@ -218,7 +218,7 @@ public class bO : Panel, eo {
       }
    }
 
-   private void a(bS var1) {
+   public void a(bS var1) {
       ey var2 = h.a(this, this.eW.dj());
       if (var2 != null) {
          this.eW.a(bS.h(var1), bS.i(var1), var2);
@@ -227,7 +227,7 @@ public class bO : Panel, eo {
 
    }
 
-   private void a(gu var1, bS var2) {
+   public void a(gu var1, bS var2) {
       ey var3 = ey.d(var1.dz());
       int var4;
       if (var3 == null) {
@@ -258,7 +258,7 @@ public class bO : Panel, eo {
 
    }
 
-   private static string a(Object var0) {
+   public static string a(Object var0) {
       return var0 is fg ? "Archived Tech" : var0.ToString();
    }
 

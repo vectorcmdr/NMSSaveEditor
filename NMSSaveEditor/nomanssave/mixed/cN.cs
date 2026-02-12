@@ -12,13 +12,13 @@ namespace NMSSaveEditor
 {
 
 public class cN : ComboBox {
-   private bool gm;
-   private Enum[] gn;
-   private List<object> go;
-   private cR gp;
-   private Object gq;
-   private static Color gr;
-   private static Color gs;
+   public bool gm;
+   public Enum[] gn;
+   public List<object> go;
+   public cR gp;
+   public Object gq;
+   public static Color gr;
+   public static Color gs;
 
    static cN() {
       gr = Color.Red;

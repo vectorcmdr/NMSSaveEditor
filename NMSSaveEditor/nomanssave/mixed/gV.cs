@@ -12,7 +12,7 @@ namespace NMSSaveEditor
 {
 
 public class gV {
-   private static double[] a(eY var0, string var1) {
+   public static double[] a(eY var0, string var1) {
       eV var2 = var0.d(var1);
       if (var2.Count != 3) {
          throw new Exception("Invalid " + var1 + " coordinates");
@@ -21,7 +21,7 @@ public class gV {
       }
    }
 
-   private static void a(eY var0, string var1, double[] var2) {
+   public static void a(eY var0, string var1, double[] var2) {
       var0.b(var1, (Object)(new eV(new Object[]{new Double(double.IsNaN(var2[0]) ? 0.0D : var2[0]), new Double(double.IsNaN(var2[1]) ? 0.0D : var2[1]), new Double(double.IsNaN(var2[2]) ? 0.0D : var2[2])})));
    }
 
@@ -118,7 +118,7 @@ public class gV {
       }
    }
 
-   private static void a(eY var0, eY var1, eY var2) {
+   public static void a(eY var0, eY var1, eY var2) {
       double[] var3 = a(var0, "Position");
       double[] var4 = a(var0, "Forward");
       double[] var5 = a(var2, "Position");

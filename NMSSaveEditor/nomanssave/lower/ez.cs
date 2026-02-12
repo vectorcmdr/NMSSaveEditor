@@ -12,12 +12,12 @@ namespace NMSSaveEditor
 {
 
 public class ez {
-   string id;
-   int jK;
+   public string id;
+   public int jK;
    // $FF: synthetic field
-   ey jL;
+   public ey jL;
 
-   ez(ey var1, XmlElement var2) {
+   public ez(ey var1, XmlElement var2) {
       this.jL = var1;
       this.id = var2.GetAttribute("id");
       this.jK = int.Parse(var2.GetAttribute("quantity"));

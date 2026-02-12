@@ -81,7 +81,7 @@ public class fh {
       return a((Object)var0, var1, var2, (Predicate)null);
    }
 
-   private static string a(Object var0, string var1, bool var2, Predicate var3) {
+   public static string a(Object var0, string var1, bool var2, Predicate var3) {
       if (var0 == null) {
          return "null";
       } else if (var0 is Boolean) {
@@ -107,13 +107,13 @@ public class fh {
       return a((eV)var0, var1, var2, (Predicate)null);
    }
 
-   private static string a(eV var0, string var1, bool var2, Predicate var3) {
+   public static string a(eV var0, string var1, bool var2, Predicate var3) {
       StringBuilder var4 = new StringBuilder();
-      var4.append('['];
+      var4.Append('[');
 
       for(int var5 = 0; var5 < var0.length; ++var5) {
          if (var5 > 0) {
-            var4.append(',');
+            var4.Append(',');
          }
 
          if (var1 != null) {
@@ -127,7 +127,7 @@ public class fh {
          var4.append(var1);
       }
 
-      var4.append(']');
+      var4.Append(']');
       return var4.ToString();
    }
 
@@ -135,13 +135,13 @@ public class fh {
       return a((eY)var0, var1, var2, (Predicate)null);
    }
 
-   private static string a(eY var0, string var1, bool var2, Predicate var3) {
+   public static string a(eY var0, string var1, bool var2, Predicate var3) {
       StringBuilder var4 = new StringBuilder();
-      var4.append('{');
+      var4.Append('{');
 
       for(int var5 = 0; var5 < var0.length; ++var5) {
          if (var5 > 0) {
-            var4.append(',');
+            var4.Append(',');
          }
 
          if (var1 != null) {
@@ -149,9 +149,9 @@ public class fh {
          }
 
          var4.append(b(var0.names[var5], var3));
-         var4.append(':');
+         var4.Append(':');
          if (var2) {
-            var4.append(' ');
+            var4.Append(' ');
          }
 
          var4.append(a(var0.values[var5], var1 == null ? null : var1 + "\t", var2, var3));
@@ -161,11 +161,11 @@ public class fh {
          var4.append(var1);
       }
 
-      var4.append('}');
+      var4.Append('}');
       return var4.ToString();
    }
 
-   private static string a(fg var0) {
+   public static string a(fg var0) {
       StringBuilder var1 = new StringBuilder();
       byte[] var5;
       int var4 = (var5 = var0.toByteArray()).length;
@@ -203,7 +203,7 @@ public class fh {
       return var1.ToString();
    }
 
-   private static string b(fg var0) {
+   public static string b(fg var0) {
       StringBuilder var1 = new StringBuilder();
       var1.append('"');
       var1.append(a(var0));
@@ -211,7 +211,7 @@ public class fh {
       return var1.ToString();
    }
 
-   private static string a(string var0, Predicate var1) {
+   public static string a(string var0, Predicate var1) {
       StringBuilder var2 = new StringBuilder();
       char[] var6;
       int var5 = (var6 = var0.ToCharArray()).length;
@@ -250,7 +250,7 @@ public class fh {
       return b(var0, (Predicate)null);
    }
 
-   private static string b(string var0, Predicate var1) {
+   public static string b(string var0, Predicate var1) {
       StringBuilder var2 = new StringBuilder();
       var2.append('"');
       var2.append(a(var0, var1));
@@ -268,7 +268,7 @@ public class fh {
       }
    }
 
-   private static Object a(fi var0, int var1) {
+   public static Object a(fi var0, int var1) {
       if (var1 < 0) {
          throw new eX("Short read", var0.kF, var0.kG);
       } else if (var1 == 123) {
@@ -360,7 +360,7 @@ public class fh {
             } catch (Exception var15) {
                var10000 = var15;
                var10001 = false;
-               break label213;
+               goto label213;
             }
 
             if (var3 != null) {
@@ -373,7 +373,7 @@ public class fh {
             } catch (Exception var14) {
                var10000 = var14;
                var10001 = false;
-               break label197;
+               goto label197;
             }
          }
 
@@ -394,7 +394,7 @@ public class fh {
       }
    }
 
-   private static eY a(fi var0) {
+   public static eY a(fi var0) {
       eY var1 = new eY();
       int var2 = var0.bI();
       if (var2 == 34) {
@@ -452,7 +452,7 @@ public class fh {
             } catch (Exception var15) {
                var10000 = var15;
                var10001 = false;
-               break label213;
+               goto label213;
             }
 
             if (var3 != null) {
@@ -465,7 +465,7 @@ public class fh {
             } catch (Exception var14) {
                var10000 = var14;
                var10001 = false;
-               break label197;
+               goto label197;
             }
          }
 
@@ -486,7 +486,7 @@ public class fh {
       }
    }
 
-   private static eV b(fi var0) {
+   public static eV b(fi var0) {
       eV var1 = new eV();
       int var2;
       if ((var2 = var0.bI()) != 93) {
@@ -526,7 +526,7 @@ public class fh {
       }
    }
 
-   private static string c(fi var0) {
+   public static string c(fi var0) {
       Object var1 = d(var0);
       if (var1 is string) {
          return (string)var1;
@@ -535,7 +535,7 @@ public class fh {
       }
    }
 
-   private static Object d(fi var0) {
+   public static Object d(fi var0) {
       try {
          StringBuilder var1 = new StringBuilder();
          MemoryStream var2 = new MemoryStream();
@@ -622,7 +622,7 @@ public class fh {
       }
    }
 
-   private static fg e(fi var0) {
+   public static fg e(fi var0) {
       MemoryStream var1 = new MemoryStream();
       if (var0.ReadByte() != 48) {
          throw new eX("Invalid hex data", var0.kF, var0.kG);
@@ -663,7 +663,7 @@ public class fh {
       }
    }
 
-   private static Number b(fi var0, int var1) {
+   public static Number b(fi var0, int var1) {
       bool var3 = false;
       if (var1 == 45) {
          var1 = fi.a(var0, kZ);

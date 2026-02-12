@@ -12,8 +12,8 @@ namespace NMSSaveEditor
 {
 
 public class gX : FilterInputStream {
-   private ha sa;
-   private int sb;
+   public ha sa;
+   public int sb;
 
    public gX(Stream var1, byte[] var2) {
       base(var1);
@@ -27,9 +27,9 @@ public class gX : FilterInputStream {
       return this.sb;
    }
 
-   private bool ej() {
+   public bool ej() {
       byte[] var1 = new byte[16];
-      int var2 = this.in.read(var1, 0, 16);
+      int var2 = this.@in.read(var1, 0, 16);
       if (var2 < 0) {
          this.sa = null;
          return false;
@@ -60,7 +60,7 @@ public class gX : FilterInputStream {
 
    // $FF: synthetic method
    static Stream a(gX var0) {
-      return var0.in;
+      return var0.@in;
    }
 }
 

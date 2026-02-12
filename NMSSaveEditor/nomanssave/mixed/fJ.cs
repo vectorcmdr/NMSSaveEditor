@@ -12,14 +12,14 @@ namespace NMSSaveEditor
 {
 
 public class fJ : fq {
-   private static Pattern lV = new Regex("save(\\d*)\\.hg");
-   private static Pattern lW = new Regex("backup(\\d*)\\.\\d*\\.zip");
-   private FileInfo lX;
-   private fR lE;
-   private fK mr;
-   private fM[] ms;
+   public static Pattern lV = new Regex("save(\\d*)\\.hg");
+   public static Pattern lW = new Regex("backup(\\d*)\\.\\d*\\.zip");
+   public FileInfo lX;
+   public fR lE;
+   public fK mr;
+   public fM[] ms;
 
-   fJ(FileInfo var1, fR var2) {
+   public fJ(FileInfo var1, fR var2) {
       this.lX = var1;
       this.lE = var2;
 
@@ -44,7 +44,7 @@ public class fJ : fq {
       fl.a(this, var1);
    }
 
-   protected void finalize() {
+   public void finalize() {
       fl.b(this);
    }
 
@@ -131,7 +131,7 @@ public class fJ : fq {
       return this.ms[var1 * 2].filename;
    }
 
-   private static byte[] a(long[] var0, int var1, int var2) {
+   public static byte[] a(long[] var0, int var1, int var2) {
       byte[] var3 = new byte[var2 * 4];
 
       for(int var4 = 0; var4 < var2; ++var4) {
@@ -144,7 +144,7 @@ public class fJ : fq {
       return var3;
    }
 
-   private static byte[] c(byte[] var0, byte[] var1) {
+   public static byte[] c(byte[] var0, byte[] var1) {
       MemoryStream var2 = new MemoryStream();
       var2.Write(var0, 0, var0.length);
       var2.Write(var1, 0, var1.length);

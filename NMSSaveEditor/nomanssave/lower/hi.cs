@@ -12,8 +12,8 @@ namespace NMSSaveEditor
 {
 
 public class hi {
-   private static string sI = "9710BD8FCF192837DC6DEF6037AB2837";
-   private static Dictionary<object, object> sJ = new Dictionary<object, object>();
+   public static string sI = "9710BD8FCF192837DC6DEF6037AB2837";
+   public static Dictionary<object, object> sJ = new Dictionary<object, object>();
 
    public static string h(long var0) {
       hj var2;
@@ -33,7 +33,7 @@ public class hi {
       return var2.sL;
    }
 
-   private static string i(long var0) {
+   public static string i(long var0) {
       eY var2 = aC("http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=9710BD8FCF192837DC6DEF6037AB2837&steamids=" + var0);
       eV var3 = var2.d("response.players");
       if (var3 != null && var3.Count != 0) {
@@ -50,7 +50,7 @@ public class hi {
       }
    }
 
-   private static eY aC(string var0) {
+   public static eY aC(string var0) {
       URLConnection var1 = (new URL(var0)).openConnection();
       int var2 = var1.getContentLength();
       int var3 = 0;

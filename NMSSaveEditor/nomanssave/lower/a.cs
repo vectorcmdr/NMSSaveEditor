@@ -12,9 +12,9 @@ namespace NMSSaveEditor
 {
 
 public class a : Form {
-   private static a a = null;
+   public static a a_inst = null;
 
-   private a(Form var1) {
+   public a(Form var1) {
       base(var1);
       this.SetResizable(false);
       this.setModalExclusionType(ModalExclusionType.APPLICATION_EXCLUDE);
@@ -44,7 +44,7 @@ public class a : Form {
       this.Pack();
    }
 
-   public static void a(Container var0) {
+   public static void showDialog(Container var0) {
       if (a == null) {
          Form var1 = JOptionPane.getFrameForComponent(var0);
          a = new a(var1);

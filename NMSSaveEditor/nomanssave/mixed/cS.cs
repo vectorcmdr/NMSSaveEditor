@@ -12,12 +12,12 @@ namespace NMSSaveEditor
 {
 
 public class cS : gD {
-   string filename;
-   int index;
+   public string filename;
+   public int index;
    // $FF: synthetic field
-   cN gt;
+   public cN gt;
 
-   cS(cN var1, string var2) {
+   public cS(cN var1, string var2) {
       this.gt = var1;
       this.filename = var2;
       this.index = cN.a(var1).Count + 1;

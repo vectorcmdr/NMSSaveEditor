@@ -12,22 +12,22 @@ namespace NMSSaveEditor
 {
 
 public class fS {
-   private FileInfo mh;
-   private int lL;
-   private int version;
-   private long my;
-   private int mz;
-   private int mA;
-   private byte[] mB;
-   private string name;
-   private string description;
-   private int lM;
+   public FileInfo mh;
+   public int lL;
+   public int version;
+   public long my;
+   public int mz;
+   public int mA;
+   public byte[] mB;
+   public string name;
+   public string description;
+   public int lM;
 
-   fS(FileInfo var1) {
+   public fS(FileInfo var1) {
       this.mh = var1;
    }
 
-   void cn() {
+   public void cn() {
       Exception var1 = null;
       Object var2 = null;
 
@@ -54,7 +54,7 @@ public class fS {
       }
    }
 
-   void read(Stream var1) {
+   public void read(Stream var1) {
       this.lL = hk.readInt(var1);
       if (this.lL != 0) {
          hc.debug("  unknown1: " + Convert.ToString((int)this.lL));
@@ -105,7 +105,7 @@ public class fS {
 
    }
 
-   void write() {
+   public void write() {
       Exception var1 = null;
       Object var2 = null;
 
@@ -132,7 +132,7 @@ public class fS {
       }
    }
 
-   void write(Stream var1) {
+   public void write(Stream var1) {
       hk.a(var1, this.lL);
       hk.a(var1, this.version);
       hk.b(var1, this.my);
@@ -148,75 +148,75 @@ public class fS {
       hk.a(var1, this.lM);
    }
 
-   byte[] co() {
+   public byte[] co() {
       MemoryStream var1 = new MemoryStream();
       this.Write(var1);
       return var1.toByteArray();
    }
 
-   bool cp() {
+   public bool cp() {
       return this.mB == null;
    }
 
-   int getVersion() {
+   public int getVersion() {
       return this.version;
    }
 
-   void setVersion(int var1) {
+   public void setVersion(int var1) {
       this.version = var1;
    }
 
-   int ch() {
+   public int ch() {
       return this.mz;
    }
 
-   void aj(int var1) {
+   public void aj(int var1) {
       if (this.mB != null) {
          this.mz = var1;
       }
 
    }
 
-   int ci() {
+   public int ci() {
       return this.mA;
    }
 
-   void ak(int var1) {
+   public void ak(int var1) {
       if (this.mB == null) {
          this.mA = var1;
       }
 
    }
 
-   string ck() {
+   public string ck() {
       return this.name;
    }
 
-   void Y(string var1) {
+   public void Y(string var1) {
       this.name = var1;
    }
 
-   string getDescription() {
+   public string getDescription() {
       return this.description;
    }
 
-   long cq() {
+   public long cq() {
       return this.my;
    }
 
-   void d(long var1) {
+   public void d(long var1) {
       this.my = var1;
    }
 
-   string getName() {
+   public string getName() {
       return this.mh.Name;
    }
 
-   long length() {
+   public long length() {
       return this.mh.Length;
    }
 
-   void a(fS var1) {
+   public void a(fS var1) {
       this.lL = var1.lL;
       this.version = var1.version;
       this.my = var1.my;

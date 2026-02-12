@@ -12,20 +12,20 @@ namespace NMSSaveEditor
 {
 
 public class eQ : ey {
-   private static string gc = "0123456789ABCDEFabcdef";
-   bool jY;
-   string name;
-   ex jZ;
-   bool special;
-   Integer ka;
-   string jM;
-   string kc;
-   int kd;
-   string description;
-   List<object> ke;
-   eR km;
+   public static string gc = "0123456789ABCDEFabcdef";
+   public bool jY;
+   public string name;
+   public ex jZ;
+   public bool special;
+   public Integer ka;
+   public string jM;
+   public string kc;
+   public int kd;
+   public string description;
+   public List<object> ke;
+   public eR km;
 
-   eQ(XmlElement var1, bool var2) {
+   public eQ(XmlElement var1, bool var2) {
       base(var1.GetAttribute("id"));
       this.jY = var2;
       this.name = var1.GetAttribute("name");

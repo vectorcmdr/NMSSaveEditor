@@ -11,10 +11,11 @@ using System.Globalization;
 namespace NMSSaveEditor
 {
 
-public class cv : OpenFileDialog {
-   private static cv fQ = null;
-   private static string name = "Weapon Export File";
-   private static Image fH = Application.a("UI-WEAPONICON.PNG", 16, 16);
+public class cv  {
+   public OpenFileDialog dialog = new OpenFileDialog();
+   public static cv fQ = null;
+   public static string name = "Weapon Export File";
+   public static Image fH = Application.a("UI-WEAPONICON.PNG", 16, 16);
 
    public static cv ax() {
       if (fQ == null) {
@@ -24,7 +25,7 @@ public class cv : OpenFileDialog {
       return fQ;
    }
 
-   private cv() {
+   public cv() {
       this.setFileSelectionMode(0);
       this.setAcceptAllFileFilterUsed(false);
       this.setFileView(new cw(this));

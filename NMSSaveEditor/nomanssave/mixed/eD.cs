@@ -12,9 +12,9 @@ namespace NMSSaveEditor
 {
 
 public class eD : eE {
-   private string version;
+   public string version;
 
-   private eD(Stream var1, string var2) {
+   public eD(Stream var1, string var2) {
       base((eE)null);
       this.version = var2;
       List<object> var3 = new List<object>();
@@ -80,7 +80,7 @@ public class eD : eE {
    }
 
    // $FF: synthetic method
-   eD(Stream var1, string var2, eD var3) {
+   public eD(Stream var1, string var2, eD var3) {
       // Constructor chain: base(var1, var2)
    }
 }

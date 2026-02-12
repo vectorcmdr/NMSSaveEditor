@@ -13,11 +13,11 @@ namespace NMSSaveEditor
 
 public class Z : ActionListener {
    // $FF: synthetic field
-   X bV;
+   public X bV;
    // $FF: synthetic field
-   private Application bv;
+   public Application bv;
 
-   Z(X var1, Application var2) {
+   public Z(X var1, Application var2) {
       this.bV = var1;
       this.bv = var2;
    }

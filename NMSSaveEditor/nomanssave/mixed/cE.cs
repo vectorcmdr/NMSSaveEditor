@@ -13,9 +13,9 @@ namespace NMSSaveEditor
 
 public class cE : WindowAdapter {
    // $FF: synthetic field
-   cy gg;
+   public cy gg;
 
-   cE(cy var1) {
+   public cE(cy var1) {
       this.gg = var1;
    }
 

@@ -11,14 +11,15 @@ using System.Globalization;
 namespace NMSSaveEditor
 {
 
-public class ej : OpenFileDialog {
-   private static Image im = Application.a("UI-FILEICON.PNG", 16, 16);
-   private static Image io = Application.a("UI-GAMEPASS.PNG", 16, 16);
-   private static Image ip = Application.a("UI-STEAMLOGO.PNG", 16, 16);
-   private static Pattern iq = new Regex("st_(\\d*)");
-   private static ej ir = null;
+public class ej  {
+   public OpenFileDialog dialog = new OpenFileDialog();
+   public static Image im = Application.a("UI-FILEICON.PNG", 16, 16);
+   public static Image io = Application.a("UI-GAMEPASS.PNG", 16, 16);
+   public static Image ip = Application.a("UI-STEAMLOGO.PNG", 16, 16);
+   public static Pattern iq = new Regex("st_(\\d*)");
+   public static ej ir = null;
 
-   private ej() {
+   public ej() {
       this.setFileSelectionMode(2);
       this.setAcceptAllFileFilterUsed(false);
       this.setFileFilter(new ek(this));
@@ -32,7 +33,7 @@ public class ej : OpenFileDialog {
       });
    }
 
-   private string a(FileInfo var1) {
+   public string a(FileInfo var1) {
       Matcher var2 = iq.Match(var1.Name);
       if (var2.Matches()) {
          long var3 = long.Parse(var2.Groups[1]);

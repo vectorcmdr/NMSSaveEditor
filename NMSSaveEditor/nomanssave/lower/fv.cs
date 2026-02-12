@@ -12,11 +12,11 @@ namespace NMSSaveEditor
 {
 
 public class fv : fr {
-   fw lI;
+   public fw lI;
    // $FF: synthetic field
-   fu lJ;
+   public fu lJ;
 
-   fv(fu var1, fw var2) {
+   public fv(fu var1, fw var2) {
       this.lJ = var1;
       this.lI = var2;
    }
@@ -42,7 +42,7 @@ public class fv : fr {
             } catch (Exception var15) {
                var10000 = var15;
                var10001 = false;
-               break label173;
+               goto label173;
             }
 
             if (var4 != null) {
@@ -55,7 +55,7 @@ public class fv : fr {
             } catch (Exception var14) {
                var10000 = var14;
                var10001 = false;
-               break label162;
+               goto label162;
             }
          }
 

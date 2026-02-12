@@ -12,13 +12,13 @@ namespace NMSSaveEditor
 {
 
 public interface ft {
-   int getIndex();
+   public int getIndex();
 
-   bool isEmpty();
+   public bool isEmpty();
 
-   fn L();
+   public fn L();
 
-   fs[] bX();
+   public fs[] bX();
 }
 
 }

@@ -12,22 +12,22 @@ namespace NMSSaveEditor
 {
 
 public class cy : Form, TreeSelectionListener {
-   private string fS;
-   private eY fT = null;
-   private Button fU;
-   private TreeView fV;
-   private Panel fW;
-   private TextBox fX;
-   private Panel fY;
-   private cJ fZ;
-   private bool ga;
-   private bool gb;
-   private static string gc = "0123456789ABCDEFabcdef";
-   private static cy gd = null;
-   private bool ge = true;
-   private string gf = "";
+   public string fS;
+   public eY fT = null;
+   public Button fU;
+   public TreeView fV;
+   public Panel fW;
+   public TextBox fX;
+   public Panel fY;
+   public cJ fZ;
+   public bool ga;
+   public bool gb;
+   public static string gc = "0123456789ABCDEFabcdef";
+   public static cy gd = null;
+   public bool ge = true;
+   public string gf = "";
 
-   private cy(Application var1) {
+   public cy(Application var1) {
       base(var1.g());
       Rectangle var2 = new Rectangle(100, 100, 1000, 700);
       Point var3 = var1.g().Location;
@@ -75,7 +75,7 @@ public class cy : Form, TreeSelectionListener {
       this.fX.getActionMap().Put("find", var6);
    }
 
-   private bool a(string var1, eY var2) {
+   public bool a(string var1, eY var2) {
       this.SetTitle("JSON Editor (Advanced Users Only)");
       this.fS = var1;
       this.fT = var2;
@@ -104,7 +104,7 @@ public class cy : Form, TreeSelectionListener {
       return this.gb;
    }
 
-   private static string ay() {
+   public static string ay() {
       string var0;
       try {
          var0 = (string)Toolkit.getDefaultToolkit().getSystemClipboard().getData(DataFlavor.stringFlavor);
@@ -143,7 +143,7 @@ public class cy : Form, TreeSelectionListener {
       return var1.ToString();
    }
 
-   private static int a(char var0) {
+   public static int a(char var0) {
       int var1 = "0123456789ABCDEFabcdef".IndexOf(var0);
       if (var1 < 0) {
          throw new Exception("Error decoding hex");
@@ -156,7 +156,7 @@ public class cy : Form, TreeSelectionListener {
       }
    }
 
-   private static void a(string var0, ClipboardOwner var1) {
+   public static void a(string var0, ClipboardOwner var1) {
       StringBuffer var2 = new StringBuffer();
       char[] var3 = var0.ToCharArray();
 
@@ -231,7 +231,7 @@ public class cy : Form, TreeSelectionListener {
       }
    }
 
-   void a(string var1, bool var2, bool var3, bool var4) {
+   public void a(string var1, bool var2, bool var3, bool var4) {
       string var5 = this.fX.GetText();
       if (!this.gf.Equals(var1)) {
          Highlighter var6 = this.fX.getHighlighter();

@@ -15,10 +15,10 @@ public class ff : Closeable {
    public static int kO = 1;
    public static int kP = 2;
    public static int kQ = 4;
-   private Stream @in;
-   private int flags;
-   private int kR;
-   private CharsetDecoder kS;
+   public Stream @in;
+   public int flags;
+   public int kR;
+   public CharsetDecoder kS;
 
    public static Object a(byte[] var0) {
       ff var3 = new ff(new MemoryStream(var0), 0);
@@ -57,7 +57,7 @@ public class ff : Closeable {
       this.kS = new CharsetDecoder().onMalformedInput(CodingErrorAction.REPORT).onUnmappableCharacter(CodingErrorAction.REPORT);
    }
 
-   private int read() {
+   public int read() {
       if (this.kR >= 0) {
          int var1 = this.kR;
          this.kR = -1;
@@ -67,7 +67,7 @@ public class ff : Closeable {
       }
    }
 
-   private int a(Predicate var1) {
+   public int a(Predicate var1) {
       if (this.kR < 0) {
          this.kR = this.@in.ReadByte();
       }
@@ -81,7 +81,7 @@ public class ff : Closeable {
       }
    }
 
-   private int bI() {
+   public int bI() {
       if ((this.flags & 1) != 0) {
          return this.read();
       } else {
@@ -233,7 +233,7 @@ public class ff : Closeable {
       }
    }
 
-   private Object a(int var1, eC var2) {
+   public Object a(int var1, eC var2) {
       if (var1 < 0) {
          throw new eX("Short read");
       } else if (var1 == 123) {
@@ -281,7 +281,7 @@ public class ff : Closeable {
       }
    }
 
-   private Number ad(int var1) {
+   public Number ad(int var1) {
       bool var3 = false;
       if (var1 == 45) {
          var1 = this.a(fh.kZ);
@@ -361,7 +361,7 @@ public class ff : Closeable {
       return var2;
    }
 
-   private eY a(eC var1) {
+   public eY a(eC var1) {
       eY var2 = new eY();
       int var3 = this.bI();
       if (var3 != 34) {
@@ -400,7 +400,7 @@ public class ff : Closeable {
       return var2;
    }
 
-   private eV b(eC var1) {
+   public eV b(eC var1) {
       eV var2 = new eV();
       int var3;
       if ((var3 = this.bI()) != 93) {
@@ -423,7 +423,7 @@ public class ff : Closeable {
       return var2;
    }
 
-   private byte[] bM() {
+   public byte[] bM() {
       MemoryStream var1 = new MemoryStream();
       int var2;
       while ((var2 = this.read()) != 34) {
@@ -468,7 +468,7 @@ public class ff : Closeable {
       return var1.ToArray();
    }
 
-   private string bN() {
+   public string bN() {
       byte[] var1 = this.bM();
 
       try {
@@ -479,7 +479,7 @@ public class ff : Closeable {
       }
    }
 
-   private Object bO() {
+   public Object bO() {
       byte[] var1 = this.bM();
 
       try {

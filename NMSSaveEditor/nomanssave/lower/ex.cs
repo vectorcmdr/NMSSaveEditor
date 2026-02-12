@@ -56,18 +56,18 @@ public sealed class ex {
    public static readonly ex jA = new ex("jA", "Corvette");
    public static readonly ex jB = new ex("jB", "Procedural");
 
-   private int _ordinal;
-   private string _name;
-   private string name;
+   public int _ordinal;
+   public string _name;
+   public string displayName;
 
-   private ex(string __name, string var3) {
+   public ex(string __name, string var3) {
       this._ordinal = _nextOrdinal++;
       this._name = __name;
-      this.name = var3;
+      this.displayName = var3;
    }
 
-   private static int _nextOrdinal = 0;
-   private static readonly ex[] _values = new ex[] { iL, iM, iN, iO, iP, iQ, iR, iS, iT, iU, iV, iW, iX, iY, iZ, ja, jb, jc, jd, je, jf, jg, jh, ji, jj, jk, jl, jm, jn, jo, jp, jq, jr, js, jt, ju, jv, jw, jx, jy, jz, jA, jB };
+   public static int _nextOrdinal = 0;
+   public static readonly ex[] _values = new ex[] { iL, iM, iN, iO, iP, iQ, iR, iS, iT, iU, iV, iW, iX, iY, iZ, ja, jb, jc, jd, je, jf, jg, jh, ji, jj, jk, jl, jm, jn, jo, jp, jq, jr, js, jt, ju, jv, jw, jx, jy, jz, jA, jB };
    public static ex[] values() { return _values; }
    public static ex valueOf(string n) { return _values.FirstOrDefault(v => v._name == n); }
    public int ordinal() { return _ordinal; }
@@ -75,7 +75,7 @@ public sealed class ex {
    public override string ToString() { return _name; }
 
    public string toString() {
-      return this.name;
+      return this.displayName;
    }
 }
 }

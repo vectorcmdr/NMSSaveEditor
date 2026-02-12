@@ -12,7 +12,7 @@ namespace NMSSaveEditor
 {
 
 public class gc {
-   private static long nc = -11644473600000L;
+   public static long nc = -11644473600000L;
 
    public static string a(Stream var0) {
       byte[] var1 = new byte[16];
@@ -26,7 +26,7 @@ public class gc {
       return h(var0);
    }
 
-   private static string h(byte[] var0) {
+   public static string h(byte[] var0) {
       StringBuilder var1 = new StringBuilder();
       a(var0[3], var1);
       a(var0[2], var1);
@@ -47,7 +47,7 @@ public class gc {
       return var1.ToString();
    }
 
-   private static void a(byte var0, StringBuilder var1) {
+   public static void a(byte var0, StringBuilder var1) {
       int var2 = (240 & var0) >> 4;
       int var3 = 15 & var0;
       var1.append("0123456789ABCDEF"[var2]);
@@ -63,7 +63,7 @@ public class gc {
          }
 
          var1 = var1.ToLower();
-         byte[] var2 = new byte[]{(byte)int.Parse(var1.Substring(6, NumberStyles.HexNumber), 16), (byte)int.Parse(var1.Substring(4, NumberStyles.HexNumber), 16), (byte)int.Parse(var1.Substring(2, NumberStyles.HexNumber), 16), (byte)int.Parse(var1.Substring(0, NumberStyles.HexNumber), 16), (byte)int.Parse(var1.Substring(10, NumberStyles.HexNumber), 16), (byte)int.Parse(var1.Substring(8, NumberStyles.HexNumber), 16), (byte)int.Parse(var1.Substring(14, NumberStyles.HexNumber), 16), (byte)int.Parse(var1.Substring(12, NumberStyles.HexNumber), 16), (byte)int.Parse(var1.Substring(16, NumberStyles.HexNumber), 16), (byte)int.Parse(var1.Substring(18, NumberStyles.HexNumber), 16), (byte)int.Parse(var1.Substring(20, NumberStyles.HexNumber), 16), (byte)int.Parse(var1.Substring(22, NumberStyles.HexNumber), 16), (byte)int.Parse(var1.Substring(24, NumberStyles.HexNumber), 16), (byte)int.Parse(var1.Substring(26, NumberStyles.HexNumber), 16), (byte)int.Parse(var1.Substring(28, NumberStyles.HexNumber), 16), (byte)int.Parse(var1.Substring(30, NumberStyles.HexNumber), 16)};
+         byte[] var2 = new byte[] {(byte)int.Parse(var1.Substring(6, NumberStyles.HexNumber), 16), (byte)int.Parse(var1.Substring(4, NumberStyles.HexNumber), 16), (byte)int.Parse(var1.Substring(2, NumberStyles.HexNumber), 16), (byte)int.Parse(var1.Substring(0, NumberStyles.HexNumber), 16), (byte)int.Parse(var1.Substring(10, NumberStyles.HexNumber), 16), (byte)int.Parse(var1.Substring(8, NumberStyles.HexNumber), 16), (byte)int.Parse(var1.Substring(14, NumberStyles.HexNumber), 16), (byte)int.Parse(var1.Substring(12, NumberStyles.HexNumber), 16), (byte)int.Parse(var1.Substring(16, NumberStyles.HexNumber), 16), (byte)int.Parse(var1.Substring(18, NumberStyles.HexNumber), 16), (byte)int.Parse(var1.Substring(20, NumberStyles.HexNumber), 16), (byte)int.Parse(var1.Substring(22, NumberStyles.HexNumber), 16), (byte)int.Parse(var1.Substring(24, NumberStyles.HexNumber), 16), (byte)int.Parse(var1.Substring(26, NumberStyles.HexNumber), 16), (byte)int.Parse(var1.Substring(28, NumberStyles.HexNumber), 16), (byte)int.Parse(var1.Substring(30, NumberStyles.HexNumber), 16)};
          var0.Write(var2);
       }
    }

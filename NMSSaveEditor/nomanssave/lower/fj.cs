@@ -14,11 +14,11 @@ namespace NMSSaveEditor
 public class fj : Closeable {
    public static int kP = 2;
    public static int kQ = 8;
-   private static byte[] le = "null".GetBytes();
-   private static byte[] lf = "true".GetBytes();
-   private static byte[] lg = "false".GetBytes();
-   private Stream lh;
-   private int flags;
+   public static byte[] le = "null".GetBytes();
+   public static byte[] lf = "true".GetBytes();
+   public static byte[] lg = "false".GetBytes();
+   public Stream lh;
+   public int flags;
 
    public static byte[] j(Object var0) {
       MemoryStream var1 = new MemoryStream();
@@ -143,7 +143,7 @@ public class fj : Closeable {
 
    }
 
-   private void a(Object var1, eC var2) {
+   public void a(Object var1, eC var2) {
       if (var1 == null) {
          this.lh.Write(le);
       } else if (var1.Equals(Boolean.TRUE)) {
@@ -168,11 +168,11 @@ public class fj : Closeable {
 
    }
 
-   private void writeString(string var1) {
+   public void writeString(string var1) {
       this.lh.Write(fh.O(var1).GetBytes(StandardCharsets.UTF_8));
    }
 
-   private void c(fg var1) {
+   public void c(fg var1) {
       this.lh.Write(34);
       byte[] var5;
       int var4 = (var5 = var1.toByteArray()).length;
@@ -212,7 +212,7 @@ public class fj : Closeable {
       this.a(var1, var1 is fk ? ((fk)var1).li : null);
    }
 
-   private void a(eY var1, eC var2) {
+   public void a(eY var1, eC var2) {
       this.lh.Write(123);
       if (var1.length > 0) {
          for(int var3 = 0; var3 < var1.length; ++var3) {
@@ -233,7 +233,7 @@ public class fj : Closeable {
       this.a((eV)var1, (eC)null);
    }
 
-   private void a(eV var1, eC var2) {
+   public void a(eV var1, eC var2) {
       this.lh.Write(91);
       if (var1.length > 0) {
          for(int var3 = 0; var3 < var1.length; ++var3) {
@@ -248,7 +248,7 @@ public class fj : Closeable {
       this.lh.Write(93);
    }
 
-   private void a(Number var1) {
+   public void a(Number var1) {
       if (var1 is BigDecimal) {
          this.lh.Write(((BigDecimal)var1).ToString().Replace('E', 'e').GetBytes(StandardCharsets.UTF_8));
       } else {
@@ -270,6 +270,7 @@ public class fj : Closeable {
       }
 
    }
+   public void Dispose() {}
 }
 
 }

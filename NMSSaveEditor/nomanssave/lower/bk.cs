@@ -13,11 +13,11 @@ namespace NMSSaveEditor
 
 public class bk : ActionListener {
    // $FF: synthetic field
-   bd dP;
+   public bd dP;
    // $FF: synthetic field
-   private Application bv;
+   public Application bv;
 
-   bk(bd var1, Application var2) {
+   public bk(bd var1, Application var2) {
       this.dP = var1;
       this.bv = var2;
    }

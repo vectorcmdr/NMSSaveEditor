@@ -22,20 +22,20 @@ public sealed class gx : gD {
    public static readonly gx qO = new gx("qO", "Atlas", "MODELS/COMMON/WEAPONS/MULTITOOL/ATLASMULTITOOL.SCENE.MBIN");
    public static readonly gx qP = new gx("qP", "Atlas Scepter", "MODELS/COMMON/WEAPONS/MULTITOOL/STAFFMULTITOOLATLAS.SCENE.MBIN");
 
-   private int _ordinal;
-   private string _name;
-   private string name;
-   private string filename;
+   public int _ordinal;
+   public string _name;
+   public string displayName;
+   public string filename;
 
-   private gx(string __name, string var3, string var4) {
+   public gx(string __name, string var3, string var4) {
       this._ordinal = _nextOrdinal++;
       this._name = __name;
-      this.name = var3;
+      this.displayName = var3;
       this.filename = var4;
    }
 
-   private static int _nextOrdinal = 0;
-   private static readonly gx[] _values = new gx[] { qH, qI, qJ, qK, qL, qM, qN, qO, qP };
+   public static int _nextOrdinal = 0;
+   public static readonly gx[] _values = new gx[] { qH, qI, qJ, qK, qL, qM, qN, qO, qP };
    public static gx[] values() { return _values; }
    public static gx valueOf(string n) { return _values.FirstOrDefault(v => v._name == n); }
    public int ordinal() { return _ordinal; }
@@ -47,7 +47,7 @@ public sealed class gx : gD {
    }
 
    public string toString() {
-      return this.name;
+      return this.displayName;
    }
 
    public static gx ar(string var0) {

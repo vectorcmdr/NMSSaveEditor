@@ -12,12 +12,12 @@ namespace NMSSaveEditor
 {
 
 public class bE : Panel {
-   private static int ew = 0;
-   private static int TYPE_DOUBLE = 1;
-   private bN[] ex = new bN[3];
-   private gz cp;
+   public static int ew = 0;
+   public static int TYPE_DOUBLE = 1;
+   public bN[] ex = new bN[3];
+   public gz cp;
 
-   bE(Application var1) {
+   public bE(Application var1) {
       GridLayout var2 = new GridLayout(1, 3, 10, 0);
       this.SetLayout(var2);
       this.ex[0] = new bN(this);
@@ -75,13 +75,13 @@ public class bE : Panel {
       this.ex[2].a("Distance Warped", gs.pT, false, "See Milestones section for more details");
    }
 
-   void B() {
+   public void B() {
       int var1 = this.cp.bx();
       this.cp.a(gs.pP, var1);
       this.a(gs.pP, Convert.ToString(var1));
    }
 
-   void C() {
+   public void C() {
       long var1 = this.cp.dJ();
       int var3 = this.cp.a(gs.pQ);
       if ((long)var3 < var1) {
@@ -92,7 +92,7 @@ public class bE : Panel {
 
    }
 
-   void aa() {
+   public void aa() {
       for(int var2 = 0; var2 < this.ex.length; ++var2) {
          for(int var3 = 0; var3 < this.ex[var2].getComponentCount(); ++var3) {
             Component var1 = this.ex[var2].getComponent(var3);
@@ -104,7 +104,7 @@ public class bE : Panel {
 
    }
 
-   private void a(gs var1, string var2) {
+   public void a(gs var1, string var2) {
       for(int var4 = 0; var4 < this.ex.length; ++var4) {
          for(int var5 = 0; var5 < this.ex[var4].getComponentCount(); ++var5) {
             Component var3 = this.ex[var4].getComponent(var5);
@@ -116,7 +116,7 @@ public class bE : Panel {
 
    }
 
-   void a(gz var1) {
+   public void a(gz var1) {
       this.cp = var1;
 
       for(int var3 = 0; var3 < this.ex.length; ++var3) {

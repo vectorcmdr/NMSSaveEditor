@@ -12,21 +12,21 @@ namespace NMSSaveEditor
 {
 
 public interface fs {
-   string K();
+   public string K();
 
-   fn L();
+   public fn L();
 
-   eY M();
+   public eY M();
 
-   string b(eY var1);
+   public string b(eY var1);
 
-   long lastModified();
+   public long lastModified();
 
-   string getName() {
+   public string getName() {
       return null;
    }
 
-   string getDescription() {
+   public string getDescription() {
       return null;
    }
 }

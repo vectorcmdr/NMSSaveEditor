@@ -12,8 +12,8 @@ namespace NMSSaveEditor
 {
 
 public class fl {
-   private static Object @lock = new Object();
-   private static fm lj;
+   public static Object @lock = new Object();
+   public static fm lj;
 
    public static void a(fq var0, FileInfo var1) {
       lock(@lock) {

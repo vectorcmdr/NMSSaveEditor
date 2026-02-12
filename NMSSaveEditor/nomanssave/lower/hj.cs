@@ -11,11 +11,12 @@ using System.Globalization;
 namespace NMSSaveEditor
 {
 
-public class hj : Thread {
-   long sK;
-   string sL;
+public class hj  {
+   public Thread thread;
+   public long sK;
+   public string sL;
 
-   hj(long var1) {
+   public hj(long var1) {
       this.sK = var1;
       this.sL = aH.getProperty("KnownPlayers." + var1);
       hi.ep().Put(var1, this);
@@ -31,16 +32,16 @@ public class hj : Thread {
          var1 = null;
       }
 
-      (hi.ep()) {
+      lock (hi.ep()) {
          if (var1 != null) {
             Long[] var3 = (Long[])aH.a("SteamIDs", typeof(Long));
-            bool var4 = new List<object> {var3).anyMatch((var1x) => {
+            bool var4 = ((IEnumerable<Long>)var3).Any((var1x) => {
                return var1x.Equals(this.sK);
             });
             if (!var4) {
-               Long[] var5 = new Long[var3.length + 1];
-               Array.Copy(var3, 0, var5, 0, var3.length);
-               var5[var3.length] = this.sK;
+               Long[] var5 = new Long[var3.Length + 1];
+               Array.Copy(var3, 0, var5, 0, var3.Length);
+               var5[var3.Length] = this.sK;
                aH.a("SteamIDs", (Object[])var5);
             }
 

@@ -13,12 +13,12 @@ namespace NMSSaveEditor
 
 public class gT {
    static int rT = 12;
-   private static double rU = 0.1D;
-   private double[] rV;
-   private double[] rW;
-   private double[] rX;
+   public static double rU = 0.1D;
+   public double[] rV;
+   public double[] rW;
+   public double[] rX;
 
-   private static double[] b(double[] var0) {
+   public static double[] b(double[] var0) {
       double var1 = Math.Sqrt(var0[0] * var0[0] + var0[1] * var0[1] + var0[2] * var0[2]);
       if (var1 < 0.1D) {
          throw new Exception("vector cannot be normalized");
@@ -54,7 +54,7 @@ public class gT {
 
    }
 
-   private static double[] a(double var0, double[] var2, double[] var3) {
+   public static double[] a(double var0, double[] var2, double[] var3) {
       double var4 = Math.Cos(var0);
       double var6 = -Math.Sin(var0);
       double var8 = var3[0];
@@ -109,7 +109,7 @@ public class gT {
       return new double[]{var2, var4, var6};
    }
 
-   private void a(double[] var1, StringBuffer var2, StringBuffer var3, StringBuffer var4, int var5) {
+   public void a(double[] var1, StringBuffer var2, StringBuffer var3, StringBuffer var4, int var5) {
       int var6 = var2.Length;
       var2.append(a(var1[0], var5));
       var3.append(a(var1[1], var5));
@@ -130,7 +130,7 @@ public class gT {
 
    }
 
-   private void a(StringBuffer var1, StringBuffer var2, StringBuffer var3, int var4) {
+   public void a(StringBuffer var1, StringBuffer var2, StringBuffer var3, int var4) {
       int var5 = Math.Max(Math.Max(var1.Length, var2.Length), var3.Length);
 
       while(var1.Length < var5) {

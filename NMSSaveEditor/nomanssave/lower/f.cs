@@ -12,11 +12,11 @@ namespace NMSSaveEditor
 {
 
 public class f : DataGridView {
-   eV g;
+   public eV g;
    // $FF: synthetic field
-   c h;
+   public c h;
 
-   f(c var1, Application var2, Supplier var3, Function var4) {
+   public f(c var1, Application var2, Supplier var3, Function var4) {
       this.h = var1;
       this.g = null;
       g var5 = new g(this, var3, var4);
@@ -36,7 +36,7 @@ public class f : DataGridView {
       this.GetColumnModel().getColumn(2).setCellRenderer(new d((d)null));
    }
 
-   void a(eV var1) {
+   public void a(eV var1) {
       this.g = var1;
    }
 }

@@ -13,9 +13,9 @@ namespace NMSSaveEditor
 
 public class R : FocusListener {
    // $FF: synthetic field
-   Q bD;
+   public Q bD;
 
-   R(Q var1) {
+   public R(Q var1) {
       this.bD = var1;
    }
 

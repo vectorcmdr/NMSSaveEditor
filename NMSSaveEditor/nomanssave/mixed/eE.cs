@@ -12,7 +12,7 @@ namespace NMSSaveEditor
 {
 
 public class eE : List<object> {
-   private eE() {
+   public eE() {
    }
 
    public bool add(string var1, string var2) {
@@ -68,12 +68,12 @@ public class eE : List<object> {
    }
 
    // $FF: synthetic method
-   eE(eE var1) {
+   public eE(eE var1) {
       // Constructor chain: base()
    }
 
    // $FF: synthetic method
-   eE(eE var1, eE var2) {
+   public eE(eE var1, eE var2) {
       // Constructor chain: base()
    }
 }

@@ -12,30 +12,30 @@ namespace NMSSaveEditor
 {
 
 public class fT : fq {
-   private static byte[] lA = "HGSAVEV2\u0000".GetBytes();
-   private static Pattern lV = new Regex("Slot(\\d+)((Auto)|(Manual))");
-   private static Pattern lW = new Regex("wgsbackup(\\d*)\\.\\d*\\.zip");
+   public static byte[] lA = "HGSAVEV2\u0000".GetBytes();
+   public static Pattern lV = new Regex("Slot(\\d+)((Auto)|(Manual))");
+   public static Pattern lW = new Regex("wgsbackup(\\d*)\\.\\d*\\.zip");
    static string mC = "containers.index";
-   private FileInfo lX;
-   private fR lE;
-   private fU mD;
-   private fY[] mE;
-   private int header;
-   private int lL;
-   private string name;
-   private int lM;
-   private int lR;
-   private int lS;
-   private string mF;
-   private int mG;
-   private int mH;
-   private List<object> mI;
-   private static Pattern mJ = new Regex("\"((?:<h0)|(?:CommonStateData))\":\\{\"((?:Pk4)|(?:SaveName))\":\"([^\"]+)\"");
-   private static int mK = 1;
-   private static int mL = 2;
-   private static int mM = 3;
+   public FileInfo lX;
+   public fR lE;
+   public fU mD;
+   public fY[] mE;
+   public int header;
+   public int lL;
+   public string name;
+   public int lM;
+   public int lR;
+   public int lS;
+   public string mF;
+   public int mG;
+   public int mH;
+   public List<object> mI;
+   public static Pattern mJ = new Regex("\"((?:<h0)|(?:CommonStateData))\":\\{\"((?:Pk4)|(?:SaveName))\":\"([^\"]+)\"");
+   public static int mK = 1;
+   public static int mL = 2;
+   public static int mM = 3;
 
-   fT(FileInfo var1, fR var2) {
+   public fT(FileInfo var1, fR var2) {
       this.lX = var1.IsDirectory() ? var1 : var1.Directory;
       this.lE = var2;
       this.cr();
@@ -61,7 +61,7 @@ public class fT : fq {
       fl.a(this, this.lX);
    }
 
-   protected void finalize() {
+   public void finalize() {
       fl.b(this);
    }
 
@@ -73,7 +73,7 @@ public class fT : fq {
       return this.lX;
    }
 
-   private void cr() {
+   public void cr() {
       hc.info("Reading Container Index");
       FileStream var1 = new FileStream(new File(this.lX, "containers.index"));
 
@@ -131,7 +131,7 @@ public class fT : fq {
 
    }
 
-   private void cs() {
+   public void cs() {
       FileStream var1 = new FileStream(new File(this.lX, "containers.index"));
 
       try {
@@ -157,7 +157,7 @@ public class fT : fq {
 
    }
 
-   private fW Z(string var1) {
+   public fW Z(string var1) {
       IEnumerator<object> var3 = this.mI.GetEnumerator();
 
       while(var3.MoveNext()) {
@@ -170,7 +170,7 @@ public class fT : fq {
       throw new FileNotFoundException(var1);
    }
 
-   private string ct() {
+   public string ct() {
       bool var1;
       FileInfo var2;
       string var3;
@@ -213,11 +213,11 @@ public class fT : fq {
       return !var2.Matches() ? -1 : int.Parse(var2.Groups[1]);
    }
 
-   private static int an(int var0) {
+   public static int an(int var0) {
       return 2147418112 & var0 | (3584 & var0) >> 9;
    }
 
-   private static bool h(FileInfo var0) {
+   public static bool h(FileInfo var0) {
       File[] var1 = var0.ListFiles();
       if (var1 != null) {
          File[] var5 = var1;
@@ -232,7 +232,7 @@ public class fT : fq {
       return var0.Delete();
    }
 
-   private static Stream a(Stream var0, int var1) {
+   public static Stream a(Stream var0, int var1) {
       try {
          bool var2 = true;
          if (!((Stream)var0).markSupported()) {

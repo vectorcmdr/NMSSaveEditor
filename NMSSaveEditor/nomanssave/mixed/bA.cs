@@ -12,16 +12,16 @@ namespace NMSSaveEditor
 {
 
 public class bA : G {
-   private int index;
+   public int index;
    // $FF: synthetic field
-   bl er;
+   public bl er;
 
-   private bA(bl var1, int var2) {
+   public bA(bl var1, int var2) {
       this.er = var1;
       this.index = var2;
    }
 
-   protected string g(string var1) {
+   public string g(string var1) {
       if (bl.b(this.er) < 0) {
          return "";
       } else {
@@ -41,7 +41,7 @@ public class bA : G {
    }
 
    // $FF: synthetic method
-   bA(bl var1, int var2, bA var3) {
+   public bA(bl var1, int var2, bA var3) {
       // Constructor chain: base(var1, var2)
    }
 }

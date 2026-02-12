@@ -13,16 +13,16 @@ namespace NMSSaveEditor
 
 public class q : TableModel {
    // $FF: synthetic field
-   p I;
+   public p I;
 
-   q(p var1) {
+   public q(p var1) {
       this.I = var1;
    }
 
    public void addTableModelListener(TableModelListener var1) {
    }
 
-   public Class getColumnClass(int var1) {
+   public object getColumnClass(int var1) {
       return var1 == 0 ? typeof(Image) : typeof(string);
    }
 

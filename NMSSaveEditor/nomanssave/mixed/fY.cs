@@ -12,13 +12,13 @@ namespace NMSSaveEditor
 {
 
 public class fY : fX, fs {
-   int lO;
-   fn me;
-   string na;
+   public int lO;
+   public fn me;
+   public string na;
    // $FF: synthetic field
-   fT mN;
+   public fT mN;
 
-   fY(fT var1, int var2) {
+   public fY(fT var1, int var2) {
       base(var1, "Slot" + (var2 / 2 + 1) + (var2 % 2 == 0 ? "Auto" : "Manual"));
       this.mN = var1;
       this.lO = var2;
@@ -37,7 +37,7 @@ public class fY : fX, fs {
 
    }
 
-   fY(fT var1, fV var2, eY var3) {
+   public fY(fT var1, fV var2, eY var3) {
       base(var1, var2);
       this.mN = var1;
       this.lO = var2.mb;

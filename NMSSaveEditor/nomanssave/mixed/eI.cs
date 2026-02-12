@@ -15,12 +15,12 @@ public class eI {
    public static int kf = 0;
    public static int kg = 1;
    public static int kh = 2;
-   int type;
-   string id;
-   string name;
-   private static List<object> ki = new List<object>();
-   private static List<object> kj = new List<object>();
-   private static List<object> kk = new List<object>();
+   public int type;
+   public string id;
+   public string name;
+   public static List<object> ki = new List<object>();
+   public static List<object> kj = new List<object>();
+   public static List<object> kk = new List<object>();
 
    static eI() {
       Stream var0 = JavaCompat.GetResourceStream("db/rewards.xml");
@@ -55,7 +55,7 @@ public class eI {
       kk.sort(new eL());
    }
 
-   private eI(XmlElement var1, int var2) {
+   public eI(XmlElement var1, int var2) {
       this.type = var2;
       this.id = var1.GetAttribute("id");
       this.name = var1.GetAttribute("name");

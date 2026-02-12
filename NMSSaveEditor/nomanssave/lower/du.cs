@@ -12,14 +12,14 @@ namespace NMSSaveEditor
 {
 
 public class du : Panel {
-   gF hm;
-   private ToolStripMenuItem fh;
-   private ToolStripMenuItem hn;
-   private ToolStripMenuItem fe;
+   public gF hm;
+   public ToolStripMenuItem fh;
+   public ToolStripMenuItem hn;
+   public ToolStripMenuItem fe;
    // $FF: synthetic field
-   dt ho;
+   public dt ho;
 
-   private du(dt var1, gF var2) {
+   public du(dt var1, gF var2) {
       this.ho = var1;
       this.hm = var2;
       int var3 = UIManager.getInt("Inventory.gridSize");
@@ -45,7 +45,7 @@ public class du : Panel {
       this.aM();
    }
 
-   private void aM() {
+   public void aM() {
       this.Controls.Clear();
       int var1 = UIManager.getInt("Inventory.gridSize");
       Size var2 = new Size(var1, var1);
@@ -119,7 +119,7 @@ public class du : Panel {
    }
 
    // $FF: synthetic method
-   du(dt var1, gF var2, du var3) {
+   public du(dt var1, gF var2, du var3) {
       // Constructor chain: base(var1, var2)
    }
 

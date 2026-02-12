@@ -12,12 +12,12 @@ namespace NMSSaveEditor
 {
 
 public class eA {
-   string id;
-   string name;
-   string jM;
-   string description;
+   public string id;
+   public string name;
+   public string jM;
+   public string description;
 
-   eA(XmlElement var1) {
+   public eA(XmlElement var1) {
       this.id = var1.GetAttribute("id");
       this.name = var1.GetAttribute("name");
       this.jM = var1.GetAttribute("subtitle");
@@ -37,7 +37,7 @@ public class eA {
       this.description = var2;
    }
 
-   private string a(string var1, Function var2) {
+   public string a(string var1, Function var2) {
       StringBuilder var3 = new StringBuilder();
       int var4 = 0;
 
@@ -50,15 +50,15 @@ public class eA {
       return var3.ToString();
    }
 
-   string a(Function var1) {
+   public string a(Function var1) {
       return this.a(this.name, var1);
    }
 
-   string b(Function var1) {
+   public string b(Function var1) {
       return this.a(this.jM, var1);
    }
 
-   string c(Function var1) {
+   public string c(Function var1) {
       return this.description == null ? null : this.a(this.description, var1);
    }
 }

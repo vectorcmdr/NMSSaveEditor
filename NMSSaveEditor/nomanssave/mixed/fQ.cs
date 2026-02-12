@@ -12,13 +12,13 @@ namespace NMSSaveEditor
 {
 
 public class fQ {
-   string filename;
-   int lO;
-   fI mx;
+   public string filename;
+   public int lO;
+   public fI mx;
    // $FF: synthetic field
-   fJ mt;
+   public fJ mt;
 
-   fQ(fJ var1, string var2, int var3, bool var4) {
+   public fQ(fJ var1, string var2, int var3, bool var4) {
       this.mt = var1;
       this.filename = var2;
       this.lO = var3;
@@ -64,11 +64,11 @@ public class fQ {
       return (new File(fJ.a(this.mt), "mf_" + this.filename)).LastWriteTimeUtc.Ticks;
    }
 
-   eY a(eG param1) {
+   public eY a(eG param1) {
       // $FF: Couldn't be decompiled
    }
 
-   byte[] ah(int var1) {
+   public byte[] ah(int var1) {
       Object var2 = new FileStream(new File(fJ.a(this.mt), this.filename));
 
       try {
@@ -98,7 +98,7 @@ public class fQ {
       }
    }
 
-   void a(string var1, fn var2, string var3, string var4) {
+   public void a(string var1, fn var2, string var3, string var4) {
       FileInfo var5 = new File(fJ.a(this.mt), "mf_" + this.filename);
       FileInfo var6 = new File(fJ.a(this.mt), this.filename);
       Properties var7 = new Properties();
@@ -159,7 +159,7 @@ public class fQ {
       var9.setLastModified(var5.LastWriteTimeUtc.Ticks);
    }
 
-   void a(eY var1, bool var2) {
+   public void a(eY var1, bool var2) {
       MemoryStream var3 = new MemoryStream();
       Exception var4 = null;
       Object var5 = null;

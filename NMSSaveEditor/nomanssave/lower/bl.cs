@@ -12,36 +12,36 @@ namespace NMSSaveEditor
 {
 
 public class bl : Panel, eo {
-   private static int dQ = 50;
-   private DataGridView dR;
-   private Button bQ;
-   private Button dS;
-   private ba dT;
-   private G dU;
-   private ComboBox dV;
-   private TextBox dW;
-   private cN dX;
-   private G dY;
-   private G dZ;
-   private G[] ea;
-   private ba eb;
-   private ComboBox ec;
-   private ComboBox ed;
-   private ComboBox ee;
-   private ComboBox ef;
-   private ComboBox eg;
-   private G eh;
-   private G ei;
-   private G ej;
-   private G ek;
-   private Label el;
-   private Button em;
-   private er[] en;
-   private er[] eo;
-   private gp[] ep;
-   private int eq;
+   public static int dQ = 50;
+   public DataGridView dR;
+   public Button bQ;
+   public Button dS;
+   public ba dT;
+   public G dU;
+   public ComboBox dV;
+   public TextBox dW;
+   public cN dX;
+   public G dY;
+   public G dZ;
+   public G[] ea;
+   public ba eb;
+   public ComboBox ec;
+   public ComboBox ed;
+   public ComboBox ee;
+   public ComboBox ef;
+   public ComboBox eg;
+   public G eh;
+   public G ei;
+   public G ej;
+   public G ek;
+   public Label el;
+   public Button em;
+   public er[] en;
+   public er[] eo;
+   public gp[] ep;
+   public int eq;
 
-   bl(Application var1) {
+   public bl(Application var1) {
       GridLayout var2 = new GridLayout(1, 3);
       this.SetLayout(var2);
       Panel var3 = new Panel();
@@ -156,7 +156,7 @@ public class bl : Panel, eo {
 
    }
 
-   void a(gp[] var1) {
+   public void a(gp[] var1) {
       this.ep = var1;
       this.en = null;
       this.eo = null;

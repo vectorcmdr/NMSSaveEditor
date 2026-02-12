@@ -12,10 +12,10 @@ namespace NMSSaveEditor
 {
 
 public class gS {
-   private static byte[] lA = new byte[]{78, 77, 83, 66};
-   private static byte[] rS = new byte[]{50, -99, -78, -55, 92, 88, -34, 74, -57, 17, 57, -108, -94, 127, 97, -79};
+   public static byte[] lA = new byte[] {78, 77, 83, 66};
+   public static byte[] rS = new byte[] {50, -99, -78, -55, 92, 88, -34, 74, -57, 17, 57, -108, -94, 127, 97, -79};
 
-   private static double[] a(eY var0, string var1) {
+   public static double[] a(eY var0, string var1) {
       eV var2 = var0.d(var1);
       if (var2.Count != 3) {
          throw new Exception("Invalid " + var1 + " coordinates");
@@ -24,7 +24,7 @@ public class gS {
       }
    }
 
-   private static void a(eY var0, string var1, double[] var2) {
+   public static void a(eY var0, string var1, double[] var2) {
       var0.b(var1, (Object)(new eV(new Object[]{new Double(double.IsNaN(var2[0]) ? 0.0D : var2[0]), new Double(double.IsNaN(var2[1]) ? 0.0D : var2[1]), new Double(double.IsNaN(var2[2]) ? 0.0D : var2[2])})));
    }
 
@@ -62,10 +62,10 @@ public class gS {
 
       try {
          ((Stream)var22).Write(lA);
-         ((Stream)var22).Write(new byte[]{0, 5, 0, 0});
+         ((Stream)var22).Write(new byte[] {0, 5, 0, 0});
          ((Stream)var22).Write(var19);
          var22 = new CipherOutputStream((Stream)var22, var21);
-         ((Stream)var22).Write(new byte[]{84, 82, 85, 69});
+         ((Stream)var22).Write(new byte[] {84, 82, 85, 69});
          hk.a((Stream)var22, var17);
          byte[] var23 = fj.b(var4);
          hk.a((Stream)var22, var23.length);
@@ -234,13 +234,13 @@ public class gS {
       var0.b("Objects", (Object)var5);
    }
 
-   private static void a(double[] var0) {
+   public static void a(double[] var0) {
       double var1 = var0[0];
       var0[0] = -var0[2];
       var0[2] = var1;
    }
 
-   private static eY a(string var0, long var1, int var3, double[] var4, double[] var5, double[] var6) {
+   public static eY a(string var0, long var1, int var3, double[] var4, double[] var5, double[] var6) {
       eY var7 = new eY();
       var7.Put("Timestamp", new Long(var1));
       var7.Put("ObjectID", var0);

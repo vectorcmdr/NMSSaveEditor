@@ -23,20 +23,20 @@ public sealed class gr {
    public static readonly gr pn = new gr("pn", "Pirate", false);
    public static readonly gr po = new gr("po", "GhostShip", true);
 
-   private int _ordinal;
-   private string _name;
-   private string name;
-   private bool special;
+   public int _ordinal;
+   public string _name;
+   public string displayName;
+   public bool special;
 
-   private gr(string __name, string var3, bool var4) {
+   public gr(string __name, string var3, bool var4) {
       this._ordinal = _nextOrdinal++;
       this._name = __name;
-      this.name = var3;
+      this.displayName = var3;
       this.special = var4;
    }
 
-   private static int _nextOrdinal = 0;
-   private static readonly gr[] _values = new gr[] { pf, pg, ph, pi, pj, pk, pl, pm, pn, po };
+   public static int _nextOrdinal = 0;
+   public static readonly gr[] _values = new gr[] { pf, pg, ph, pi, pj, pk, pl, pm, pn, po };
    public static gr[] values() { return _values; }
    public static gr valueOf(string n) { return _values.FirstOrDefault(v => v._name == n); }
    public int ordinal() { return _ordinal; }
@@ -48,7 +48,7 @@ public sealed class gr {
    }
 
    public string toString() {
-      return this.name;
+      return this.displayName;
    }
 
    public static gr an(string var0) {

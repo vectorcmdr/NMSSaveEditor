@@ -11,10 +11,11 @@ using System.Globalization;
 namespace NMSSaveEditor
 {
 
-public class cl : OpenFileDialog {
-   private static cl fG = null;
-   private static string name = "Planetary Base Backup File";
-   private static Image fH = Application.a("UI-BASEICON.PNG", 16, 16);
+public class cl  {
+   public OpenFileDialog dialog = new OpenFileDialog();
+   public static cl fG = null;
+   public static string name = "Planetary Base Backup File";
+   public static Image fH = Application.a("UI-BASEICON.PNG", 16, 16);
 
    public static cl ar() {
       if (fG == null) {
@@ -24,7 +25,7 @@ public class cl : OpenFileDialog {
       return fG;
    }
 
-   private cl() {
+   public cl() {
       this.setFileSelectionMode(0);
       this.setAcceptAllFileFilterUsed(false);
       this.setFileView(new cm(this));

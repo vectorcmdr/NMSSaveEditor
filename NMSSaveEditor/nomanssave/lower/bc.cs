@@ -13,13 +13,13 @@ namespace NMSSaveEditor
 
 public class bc : PropertyChangeListener {
    // $FF: synthetic field
-   ba dB;
+   public ba dB;
    // $FF: synthetic field
-   private Button dD;
+   public Button dD;
    // $FF: synthetic field
-   private G dC;
+   public G dC;
 
-   bc(ba var1, Button var2, G var3) {
+   public bc(ba var1, Button var2, G var3) {
       this.dB = var1;
       this.dD = var2;
       this.dC = var3;

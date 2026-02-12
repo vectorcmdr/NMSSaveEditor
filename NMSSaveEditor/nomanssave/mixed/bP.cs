@@ -13,9 +13,9 @@ namespace NMSSaveEditor
 
 public class bP : ComboBoxModel {
    // $FF: synthetic field
-   bO eX;
+   public bO eX;
 
-   bP(bO var1) {
+   public bP(bO var1) {
       this.eX = var1;
    }
 

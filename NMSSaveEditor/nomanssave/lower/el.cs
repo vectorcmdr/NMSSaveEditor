@@ -15,7 +15,7 @@ public class el : FileView {
    // $FF: synthetic field
    ej @is;
 
-   el(ej var1) {
+   public el(ej var1) {
       this.@is = var1;
    }
 

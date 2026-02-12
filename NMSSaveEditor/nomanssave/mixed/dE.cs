@@ -12,17 +12,17 @@ namespace NMSSaveEditor
 {
 
 public class dE : Panel {
-   private ba hv;
-   private ba hw;
-   private ComboBox hx;
-   private G hy;
-   private G hz;
-   private G[] ea;
-   private DataGridView hA;
-   private dt hB;
-   private gE[] hC;
+   public ba hv;
+   public ba hw;
+   public ComboBox hx;
+   public G hy;
+   public G hz;
+   public G[] ea;
+   public DataGridView hA;
+   public dt hB;
+   public gE[] hC;
 
-   dE(Application var1) {
+   public dE(Application var1) {
       GridBagLayout var2 = new GridBagLayout();
       var2.columnWidths = new int[]{aH.cI, 0, 0};
       var2.rowHeights = new int[1];
@@ -76,11 +76,11 @@ public class dE : Panel {
       this.Add(this.hB, var3);
    }
 
-   gE[] aN() {
+   public gE[] aN() {
       return this.hC;
    }
 
-   void a(gE[] var1) {
+   public void a(gE[] var1) {
       if (var1.length == 0) {
          this.hC = new gE[0];
          this.hx.SetSelectedIndex(-1);

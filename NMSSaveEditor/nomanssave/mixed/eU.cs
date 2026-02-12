@@ -22,18 +22,18 @@ public sealed class eU {
    public static readonly eU ky = new eU("ky", "None");
    public static readonly eU kz = new eU("kz", "Autophage");
 
-   private int _ordinal;
-   private string _name;
-   private string name;
+   public int _ordinal;
+   public string _name;
+   public string displayName;
 
-   private eU(string __name, string var3) {
+   public eU(string __name, string var3) {
       this._ordinal = _nextOrdinal++;
       this._name = __name;
-      this.name = var3;
+      this.displayName = var3;
    }
 
-   private static int _nextOrdinal = 0;
-   private static readonly eU[] _values = new eU[] { kr, ks, kt, ku, kv, kw, kx, ky, kz };
+   public static int _nextOrdinal = 0;
+   public static readonly eU[] _values = new eU[] { kr, ks, kt, ku, kv, kw, kx, ky, kz };
    public static eU[] values() { return _values; }
    public static eU valueOf(string n) { return _values.FirstOrDefault(v => v._name == n); }
    public int ordinal() { return _ordinal; }
@@ -41,7 +41,7 @@ public sealed class eU {
    public override string ToString() { return _name; }
 
    public string toString() {
-      return this.name;
+      return this.displayName;
    }
 
    public static eU C(string var0) {

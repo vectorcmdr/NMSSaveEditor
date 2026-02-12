@@ -13,9 +13,9 @@ namespace NMSSaveEditor
 
 public class cz : ComponentAdapter {
    // $FF: synthetic field
-   cy gg;
+   public cy gg;
 
-   cz(cy var1) {
+   public cz(cy var1) {
       this.gg = var1;
    }
 

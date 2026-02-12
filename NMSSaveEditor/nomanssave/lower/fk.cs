@@ -12,9 +12,9 @@ namespace NMSSaveEditor
 {
 
 public class fk : eY {
-   eC li;
+   public eC li;
 
-   fk(eC var1) {
+   public fk(eC var1) {
       this.li = var1;
    }
 

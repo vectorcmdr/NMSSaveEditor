@@ -20,18 +20,18 @@ public sealed class gG {
    public static readonly gG rl = new gG("rl", 10000000);
    public static readonly gG rm = new gG("rm", 100);
 
-   private int _ordinal;
-   private string _name;
+   public int _ordinal;
+   public string _name;
    public readonly int rn;
 
-   private gG(string __name, int var3) {
+   public gG(string __name, int var3) {
       this._ordinal = _nextOrdinal++;
       this._name = __name;
       this.rn = var3;
    }
 
-   private static int _nextOrdinal = 0;
-   private static readonly gG[] _values = new gG[] { rg, rh, ri, rj, rk, rl, rm };
+   public static int _nextOrdinal = 0;
+   public static readonly gG[] _values = new gG[] { rg, rh, ri, rj, rk, rl, rm };
    public static gG[] values() { return _values; }
    public static gG valueOf(string n) { return _values.FirstOrDefault(v => v._name == n); }
    public int ordinal() { return _ordinal; }

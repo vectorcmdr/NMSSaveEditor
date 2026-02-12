@@ -12,9 +12,9 @@ namespace NMSSaveEditor
 {
 
 public class gj {
-   private gl nF;
-   private int index;
-   private eY bf;
+   public gl nF;
+   public int index;
+   public eY bf;
 
    public static bool n(eY var0) {
       return var0.d("Pets") != null && var0.d("Eggs") != null;
@@ -116,7 +116,7 @@ public class gj {
       }
    }
 
-   private gj(gl var1, int var2, eY var3) {
+   public gj(gl var1, int var2, eY var3) {
       this.nF = var1;
       this.index = var2;
       this.bf = var3;

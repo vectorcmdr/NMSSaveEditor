@@ -12,20 +12,20 @@ namespace NMSSaveEditor
 {
 
 public class ap : Panel {
-   private DataGridView ci;
-   private TableRowSorter cj;
-   private DataGridView ck;
-   private TableRowSorter cl;
-   private CheckBox[] cm;
-   private DataGridView cn;
-   private TableRowSorter co;
-   private gz cp;
-   private eV cq;
-   private eV cr;
-   private eV cs;
-   private List<object> ct = new List<object>();
+   public DataGridView ci;
+   public TableRowSorter cj;
+   public DataGridView ck;
+   public TableRowSorter cl;
+   public CheckBox[] cm;
+   public DataGridView cn;
+   public TableRowSorter co;
+   public gz cp;
+   public eV cq;
+   public eV cr;
+   public eV cs;
+   public List<object> ct = new List<object>();
 
-   ap(Application var1) {
+   public ap(Application var1) {
       GridLayout var2 = new GridLayout(2, 2);
       this.SetLayout(var2);
       Panel var3 = new Panel();
@@ -159,7 +159,7 @@ public class ap : Panel {
 
    }
 
-   private void R() {
+   public void R() {
       if (this.cp != null) {
          int var1 = 0;
 

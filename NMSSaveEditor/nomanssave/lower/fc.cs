@@ -11,25 +11,26 @@ using System.Globalization;
 namespace NMSSaveEditor
 {
 
-public abstract class fc {
-   fc kN;
+public class fc {
+   public fc kN;
    // $FF: synthetic field
-   eY kL;
+   public eY kL;
 
-   fc(eY var1, fc var2) {
+   public fc() {}
+   public fc(eY var1, fc var2) {
       this.kL = var1;
       this.kN = var2;
    }
 
-   abstract Object a(Class var1, bool var2);
+   public virtual Object a(Class var1, bool var2) { return null; }
 
-   abstract Object getValue();
+   public virtual Object getValue() { return null; }
 
-   abstract Object a(Object var1, bool var2);
+   public virtual Object a(Object var1, bool var2) { return null; }
 
-   abstract Object bG();
+   public virtual Object bG() { return null; }
 
-   abstract eY e(eY var1);
+   public virtual eY e(eY var1) { return null; }
 }
 
 }

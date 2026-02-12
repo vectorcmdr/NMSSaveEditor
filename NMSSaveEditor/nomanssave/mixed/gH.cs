@@ -12,9 +12,9 @@ namespace NMSSaveEditor
 {
 
 public class gH {
-   private int index;
-   private eY rp;
-   private List<object> gT;
+   public int index;
+   public eY rp;
+   public List<object> gT;
 
    public static gH[] C(eY var0) {
       eV var1 = var0.d("ShipOwnership");
@@ -98,7 +98,7 @@ public class gH {
       }
    }
 
-   private static Function a(gH var0, string[] var1) {
+   public static Function a(gH var0, string[] var1) {
       return (var2) => {
          string var3 = var0.Name;
          if (var3 == null || var3.Length == 0) {
@@ -109,7 +109,7 @@ public class gH {
       };
    }
 
-   private gH(int var1, eY var2, eY var3, eY var4, eY var5) {
+   public gH(int var1, eY var2, eY var3, eY var4, eY var5) {
       this.index = var1;
       this.rp = var2;
       string[] var7 = new string[]{"Technology", "Organ Chamber"};
@@ -214,7 +214,7 @@ public class gH {
       return gL.aw(this.cT()) == gL.rx;
    }
 
-   private int ea() {
+   public int ea() {
       gL var1 = gL.aw(this.cT());
       return var1 == null ? 4 : var1.ea();
    }
@@ -278,17 +278,17 @@ public class gH {
       return this.gT;
    }
 
-   private double ak(string var1) {
+   public double ak(string var1) {
       return ((gt)this.gT.Get(0)).ak(var1);
    }
 
-   private void d(string var1, double var2) {
+   public void d(string var1, double var2) {
       this.gT.forEach((var3) => {
          var3.d(var1, var2);
       });
    }
 
-   private void av(string var1) {
+   public void av(string var1) {
       this.gT.forEach((var1x) => {
          var1x.ap(var1);
       });

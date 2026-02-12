@@ -12,12 +12,12 @@ namespace NMSSaveEditor
 {
 
 public class aD : Form {
-   private ComboBox cw;
-   private TextBox cx;
-   private bool cy;
+   public ComboBox cw;
+   public TextBox cx;
+   public bool cy;
    public static aD cz = null;
 
-   private aD(Form var1) {
+   public aD(Form var1) {
       base(var1);
       this.SetMinimumSize(new Size(400, 10));
       this.setModalExclusionType(ModalExclusionType.APPLICATION_EXCLUDE);
@@ -42,7 +42,7 @@ public class aD : Form {
       this.Pack();
    }
 
-   private bool S() {
+   public bool S() {
       string var1 = aH.getProperty("LookAndFeel");
       aI var2 = (aI)Stream.of(aI.Values).filter((var1x) => {
          return var1x.ToString().Equals(var1);

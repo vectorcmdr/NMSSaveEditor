@@ -13,11 +13,11 @@ namespace NMSSaveEditor
 
 public class fF : FileFilter {
    // $FF: synthetic field
-   fE mf;
+   public fE mf;
    // $FF: synthetic field
-   private List<object> mg;
+   public List<object> mg;
 
-   fF(fE var1, List<object> var2) {
+   public fF(fE var1, List<object> var2) {
       this.mf = var1;
       this.mg = var2;
    }

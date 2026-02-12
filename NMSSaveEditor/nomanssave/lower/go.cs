@@ -18,20 +18,20 @@ public sealed class go : gD {
    public static readonly go oO = new go("oO", "Capital", "MODELS/COMMON/SPACECRAFT/INDUSTRIAL/CAPITALFREIGHTER_PROC.SCENE.MBIN");
    public static readonly go oP = new go("oP", "Pirate", "MODELS/COMMON/SPACECRAFT/INDUSTRIAL/PIRATEFREIGHTER.SCENE.MBIN");
 
-   private int _ordinal;
-   private string _name;
-   private string name;
-   private string filename;
+   public int _ordinal;
+   public string _name;
+   public string displayName;
+   public string filename;
 
-   private go(string __name, string var3, string var4) {
+   public go(string __name, string var3, string var4) {
       this._ordinal = _nextOrdinal++;
       this._name = __name;
-      this.name = var3;
+      this.displayName = var3;
       this.filename = var4;
    }
 
-   private static int _nextOrdinal = 0;
-   private static readonly go[] _values = new go[] { oL, oM, oN, oO, oP };
+   public static int _nextOrdinal = 0;
+   public static readonly go[] _values = new go[] { oL, oM, oN, oO, oP };
    public static go[] values() { return _values; }
    public static go valueOf(string n) { return _values.FirstOrDefault(v => v._name == n); }
    public int ordinal() { return _ordinal; }
@@ -43,7 +43,7 @@ public sealed class go : gD {
    }
 
    public string toString() {
-      return this.name;
+      return this.displayName;
    }
 
    public static go al(string var0) {

@@ -13,9 +13,9 @@ namespace NMSSaveEditor
 
 public class fz : Comparator {
    // $FF: synthetic field
-   fy lU;
+   public fy lU;
 
-   fz(fy var1) {
+   public fz(fy var1) {
       this.lU = var1;
    }
 

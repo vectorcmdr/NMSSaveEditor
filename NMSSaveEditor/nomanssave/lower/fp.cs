@@ -12,13 +12,13 @@ namespace NMSSaveEditor
 {
 
 public interface fp {
-   string K();
+   public string K();
 
-   long lastModified();
+   public long lastModified();
 
-   eY M();
+   public eY M();
 
-   string b(eY var1);
+   public string b(eY var1);
 }
 
 }

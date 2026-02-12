@@ -13,11 +13,11 @@ namespace NMSSaveEditor
 
 public class bu : Runnable {
    // $FF: synthetic field
-   bt es;
+   public bt es;
    // $FF: synthetic field
-   private Application bv;
+   public Application bv;
 
-   bu(bt var1, Application var2) {
+   public bu(bt var1, Application var2) {
       this.es = var1;
       this.bv = var2;
    }

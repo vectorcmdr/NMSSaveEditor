@@ -12,17 +12,17 @@ namespace NMSSaveEditor
 {
 
 public class fb : fc {
-   string name;
+   public string name;
    // $FF: synthetic field
-   eY kL;
+   public eY kL;
 
-   fb(eY var1, string var2, fc var3) {
+   public fb(eY var1, string var2, fc var3) {
       base(var1, var3);
       this.kL = var1;
       this.name = var2;
    }
 
-   Object a(Class var1, bool var2) {
+   public Object a(Class var1, bool var2) {
       eY var3;
       if (this.kN == null) {
          var3 = this.kL;
@@ -52,7 +52,7 @@ public class fb : fc {
       }
    }
 
-   Object getValue() {
+   public Object getValue() {
       eY var1;
       if (this.kN == null) {
          var1 = this.kL;
@@ -63,7 +63,7 @@ public class fb : fc {
       return var1.Get(this.name);
    }
 
-   Object a(Object var1, bool var2) {
+   public Object a(Object var1, bool var2) {
       eY var3;
       if (this.kN == null) {
          var3 = this.kL;
@@ -74,7 +74,7 @@ public class fb : fc {
       return var3.Put(this.name, var1);
    }
 
-   Object bG() {
+   public Object bG() {
       eY var1;
       if (this.kN == null) {
          var1 = this.kL;
@@ -85,7 +85,7 @@ public class fb : fc {
       return var1.F(this.name);
    }
 
-   eY e(eY var1) {
+   public eY e(eY var1) {
       eY var2;
       if (this.kN == null) {
          var2 = this.kL;

@@ -21,22 +21,22 @@ public sealed class gy {
    public static readonly gy qX = new gy("qX", "Gek (Old)", (string)null, "MODELS/PLANETS/NPCS/LOWERORDER/LOWERORDER.SCENE.MBIN");
    public static readonly gy qY = new gy("qY", "Fourth Race (Old)", (string)null, "MODELS/PLANETS/NPCS/FOURTHRACE/FOURTHRACE.SCENE.MBIN");
 
-   private int _ordinal;
-   private string _name;
-   private string name;
-   private string qZ;
-   private string filename;
+   public int _ordinal;
+   public string _name;
+   public string displayName;
+   public string qZ;
+   public string filename;
 
-   private gy(string __name, string var3, string var4, string var5) {
+   public gy(string __name, string var3, string var4, string var5) {
       this._ordinal = _nextOrdinal++;
       this._name = __name;
-      this.name = var3;
+      this.displayName = var3;
       this.qZ = var4;
       this.filename = var5;
    }
 
-   private static int _nextOrdinal = 0;
-   private static readonly gy[] _values = new gy[] { qR, qS, qT, qU, qV, qW, qX, qY };
+   public static int _nextOrdinal = 0;
+   public static readonly gy[] _values = new gy[] { qR, qS, qT, qU, qV, qW, qX, qY };
    public static gy[] values() { return _values; }
    public static gy valueOf(string n) { return _values.FirstOrDefault(v => v._name == n); }
    public int ordinal() { return _ordinal; }
@@ -48,10 +48,10 @@ public sealed class gy {
    }
 
    public string toString() {
-      return this.name;
+      return this.displayName;
    }
 
-   public static gy @@as(string var0) {
+   public static gy a_s(string var0) {
       for(int var1 = 0; var1 < values().Length; ++var1) {
          if (var0.Equals(values()[var1].filename)) {
             return values()[var1];

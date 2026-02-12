@@ -12,13 +12,13 @@ namespace NMSSaveEditor
 {
 
 public interface bK {
-   string getID();
+   public string getID();
 
-   bool isSpecial();
+   public bool isSpecial();
 
-   string ab();
+   public string ab();
 
-   void l(string var1);
+   public void l(string var1);
 }
 
 }

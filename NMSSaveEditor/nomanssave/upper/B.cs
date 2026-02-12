@@ -13,9 +13,9 @@ namespace NMSSaveEditor
 
 public class B : WindowAdapter {
    // $FF: synthetic field
-   Application aZ;
+   public Application aZ;
 
-   B(Application var1) {
+   public B(Application var1) {
       this.aZ = var1;
    }
 

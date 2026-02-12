@@ -12,7 +12,7 @@ namespace NMSSaveEditor
 {
 
 public class aC : CheckBox, TableCellRenderer {
-   Label cv = new Label();
+   public Label cv = new Label();
 
    public Component getTableCellRendererComponent(DataGridView var1, Object var2, bool var3, bool var4, int var5, int var6) {
       var5 = var1.convertRowIndexToModel(var5);
@@ -25,6 +25,7 @@ public class aC : CheckBox, TableCellRenderer {
          return this;
       }
    }
+   object TableCellRenderer.getTableCellRendererComponent(object table, object value, bool isSelected, bool hasFocus, int row, int column) { return getTableCellRendererComponent((DataGridView)table, value, isSelected, hasFocus, row, column); }
 }
 
 }

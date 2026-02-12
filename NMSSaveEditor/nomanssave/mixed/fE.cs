@@ -12,11 +12,11 @@ namespace NMSSaveEditor
 {
 
 public class fE : ft {
-   int lT;
+   public int lT;
    // $FF: synthetic field
-   fA ma;
+   public fA ma;
 
-   fE(fA var1, int var2) {
+   public fE(fA var1, int var2) {
       this.ma = var1;
       this.lT = var2;
    }

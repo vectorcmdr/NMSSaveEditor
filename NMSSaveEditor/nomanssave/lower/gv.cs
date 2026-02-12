@@ -12,9 +12,9 @@ namespace NMSSaveEditor
 {
 
 public class gv {
-   private int index;
-   private eY qF;
-   private gt qG;
+   public int index;
+   public eY qF;
+   public gt qG;
 
    public static gv[] v(eY var0) {
       eV var1 = var0.d("Multitools");
@@ -98,7 +98,7 @@ public class gv {
       }
    }
 
-   private static Function b(gv var0) {
+   public static Function b(gv var0) {
       return (var1) => {
          string var2 = var0.Name;
          if (var2 == null || var2.Length == 0) {
@@ -109,7 +109,7 @@ public class gv {
       };
    }
 
-   gv(int var1, eY var2, eY var3) {
+   public gv(int var1, eY var2, eY var3) {
       this.index = var1;
       this.qF = var2;
       byte var4 = 8;
@@ -190,11 +190,11 @@ public class gv {
       return this.qG;
    }
 
-   private double ak(string var1) {
+   public double ak(string var1) {
       return this.qG.ak(var1);
    }
 
-   private void d(string var1, double var2) {
+   public void d(string var1, double var2) {
       this.qG.d(var1, var2);
    }
 

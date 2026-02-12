@@ -12,9 +12,9 @@ namespace NMSSaveEditor
 {
 
 public class ev : List<object> {
-   string id;
+   public string id;
 
-   ev(XmlElement var1) {
+   public ev(XmlElement var1) {
       this.id = var1.GetAttribute("id");
       XmlNodeList var2 = var1.ChildNodes;
 

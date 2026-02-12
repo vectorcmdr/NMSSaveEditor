@@ -12,17 +12,17 @@ namespace NMSSaveEditor
 {
 
 public class eZ : fc {
-   int index;
+   public int index;
    // $FF: synthetic field
-   eY kL;
+   public eY kL;
 
-   eZ(eY var1, int var2, fc var3) {
+   public eZ(eY var1, int var2, fc var3) {
       base(var1, var3);
       this.kL = var1;
       this.index = var2;
    }
 
-   Object a(Class var1, bool var2) {
+   public Object a(Class var1, bool var2) {
       if (this.kN == null) {
          throw new Exception("Unexpected path");
       } else {
@@ -53,7 +53,7 @@ public class eZ : fc {
       }
    }
 
-   Object getValue() {
+   public Object getValue() {
       if (this.kN == null) {
          throw new Exception("Unexpected path");
       } else {
@@ -62,7 +62,7 @@ public class eZ : fc {
       }
    }
 
-   Object a(Object var1, bool var2) {
+   public Object a(Object var1, bool var2) {
       if (this.kN == null) {
          throw new Exception("Unexpected path");
       } else {
@@ -76,7 +76,7 @@ public class eZ : fc {
       }
    }
 
-   Object bG() {
+   public Object bG() {
       if (this.kN == null) {
          throw new Exception("Unexpected path");
       } else {
@@ -85,7 +85,7 @@ public class eZ : fc {
       }
    }
 
-   eY e(eY var1) {
+   public eY e(eY var1) {
       if (this.kN == null) {
          throw new Exception("Unexpected path");
       } else {

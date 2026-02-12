@@ -13,14 +13,14 @@ namespace NMSSaveEditor
 
 public class b : ActionListener {
    // $FF: synthetic field
-   a b;
+   public a b_field;
 
-   b(a var1) {
-      this.b = var1;
+   public b(a var1) {
+      this.b_field = var1;
    }
 
    public void actionPerformed(ActionEvent var1) {
-      this.b.SetVisible(false);
+      this.b_field.SetVisible(false);
    }
 }
 

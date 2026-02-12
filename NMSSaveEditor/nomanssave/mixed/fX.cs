@@ -122,7 +122,7 @@ public abstract class fX {
       return this.mO.filename;
    }
 
-   private Stream getInputStream() {
+   public Stream getInputStream() {
       Stream var1 = fT.b(new FileStream(this.mY), this.mZ.ch());
       if (var1 is gX) {
          this.mode = fT.cv();
@@ -135,7 +135,7 @@ public abstract class fX {
       return var1;
    }
 
-   private Stream getOutputStream() {
+   public Stream getOutputStream() {
       FileStream var1 = new FileStream(this.mY);
 
       try {
@@ -173,7 +173,7 @@ public abstract class fX {
             } catch (Exception var15) {
                var10000 = var15;
                var10001 = false;
-               break label173;
+               goto label173;
             }
 
             if (var4 != null) {
@@ -186,7 +186,7 @@ public abstract class fX {
             } catch (Exception var14) {
                var10000 = var14;
                var10001 = false;
-               break label162;
+               goto label162;
             }
          }
 

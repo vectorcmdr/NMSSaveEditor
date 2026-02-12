@@ -12,11 +12,11 @@ namespace NMSSaveEditor
 {
 
 public class fM : fQ, fs {
-   fn me;
+   public fn me;
    // $FF: synthetic field
-   fJ mt;
+   public fJ mt;
 
-   fM(fJ var1, int var2) {
+   public fM(fJ var1, int var2) {
       base(var1, var2 == 0 ? "save.hg" : "save" + (var2 + 1) + ".hg", var2, true);
       this.mt = var1;
 
@@ -29,7 +29,7 @@ public class fM : fQ, fs {
 
    }
 
-   fM(fJ var1, int var2, eY var3) {
+   public fM(fJ var1, int var2, eY var3) {
       base(var1, var2 == 0 ? "save.hg" : "save" + (var2 + 1) + ".hg", var2, false);
       this.mt = var1;
       this.me = fn.i(var3);
@@ -44,7 +44,7 @@ public class fM : fQ, fs {
       return this.a(eG.jV);
    }
 
-   void cm() {
+   public void cm() {
       this.a(this.lO == 0 ? "backup" : "backup" + (this.lO + 1), this.me, this.Name, this.getDescription());
       (new File(fJ.a(this.mt), this.filename)).Delete();
       (new File(fJ.a(this.mt), "mf_" + this.filename)).Delete();

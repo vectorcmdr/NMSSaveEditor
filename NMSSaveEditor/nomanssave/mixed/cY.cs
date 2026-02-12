@@ -12,12 +12,12 @@ namespace NMSSaveEditor
 {
 
 public class cY : Form {
-   private ComboBox gM;
-   private List<object> gN = new List<object>();
-   private int gO = -1;
-   private static cY gP = null;
+   public ComboBox gM;
+   public List<object> gN = new List<object>();
+   public int gO = -1;
+   public static cY gP = null;
 
-   private cY(Form var1) {
+   public cY(Form var1) {
       base(var1);
       this.SetResizable(false);
       this.setModalExclusionType(ModalExclusionType.APPLICATION_EXCLUDE);
@@ -52,7 +52,7 @@ public class cY : Form {
       this.Pack();
    }
 
-   private int b(List<object> var1) {
+   public int b(List<object> var1) {
       this.gN = var1;
       this.SetLocationRelativeTo(this.Parent);
       this.gM.SetSelectedIndex(0);

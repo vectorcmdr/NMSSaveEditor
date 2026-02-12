@@ -13,9 +13,9 @@ namespace NMSSaveEditor
 
 public class bD : DefaultListCellRenderer {
    // $FF: synthetic field
-   bl er;
+   public bl er;
 
-   private bD(bl var1) {
+   public bD(bl var1) {
       this.er = var1;
    }
 
@@ -46,7 +46,7 @@ public class bD : DefaultListCellRenderer {
    }
 
    // $FF: synthetic method
-   bD(bl var1, bD var2) {
+   public bD(bl var1, bD var2) {
       // Constructor chain: base(var1)
    }
 }

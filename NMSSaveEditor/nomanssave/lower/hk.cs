@@ -12,7 +12,7 @@ namespace NMSSaveEditor
 {
 
 public class hk {
-   private static string sM = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
+   public static string sM = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
 
    public static string k(byte[] var0) {
       StringBuilder var1 = new StringBuilder();

@@ -13,9 +13,9 @@ namespace NMSSaveEditor
 
 public class bQ : DefaultListCellRenderer {
    // $FF: synthetic field
-   bO eX;
+   public bO eX;
 
-   bQ(bO var1) {
+   public bQ(bO var1) {
       this.eX = var1;
    }
 

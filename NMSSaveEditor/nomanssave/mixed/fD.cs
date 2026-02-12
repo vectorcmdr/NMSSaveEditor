@@ -12,12 +12,12 @@ namespace NMSSaveEditor
 {
 
 public class fD : fH, fs {
-   int lO;
-   fn me;
+   public int lO;
+   public fn me;
    // $FF: synthetic field
-   fA ma;
+   public fA ma;
 
-   fD(fA var1, int var2) {
+   public fD(fA var1, int var2) {
       base(var1, "savedata" + (var2 < 8 ? "0" : "") + Convert.ToString(var2 + 2) + ".hg", true);
       this.ma = var1;
       this.lO = var2;
@@ -31,7 +31,7 @@ public class fD : fH, fs {
 
    }
 
-   fD(fA var1, int var2, byte[] var3, eY var4) {
+   public fD(fA var1, int var2, byte[] var3, eY var4) {
       base(var1, "savedata" + (var2 < 8 ? "0" : "") + Convert.ToString(var2 + 2) + ".hg", false);
       this.ma = var1;
       this.lO = var2;

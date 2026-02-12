@@ -12,15 +12,15 @@ namespace NMSSaveEditor
 {
 
 public class fC : fs {
-   int mb;
-   FileInfo mc;
-   string md;
-   byte[] lK;
-   fn be;
+   public int mb;
+   public FileInfo mc;
+   public string md;
+   public byte[] lK;
+   public fn be;
    // $FF: synthetic field
-   fA ma;
+   public fA ma;
 
-   fC(fA var1, string var2, int var3) {
+   public fC(fA var1, string var2, int var3) {
       this.ma = var1;
       this.mb = var3;
       this.mc = new File(aH.cG, var2);

@@ -12,12 +12,12 @@ namespace NMSSaveEditor
 {
 
 public class dz : Form {
-   private ListBox hr;
-   private ft[] hs;
-   private int gU;
-   private static dz ht = null;
+   public ListBox hr;
+   public ft[] hs;
+   public int gU;
+   public static dz ht = null;
 
-   private dz(Form var1) {
+   public dz(Form var1) {
       base(var1);
       this.SetSize(300, 400);
       this.SetResizable(false);
@@ -46,7 +46,7 @@ public class dz : Form {
       this.GetRootPane().registerKeyboardAction(new dD(this), Keys.getKeyStroke(27, 0), 2);
    }
 
-   private int a(ft[] var1, int var2) {
+   public int a(ft[] var1, int var2) {
       this.hs = var1;
       this.hr.updateUI();
       this.hr.SetSelectedIndex(var2);

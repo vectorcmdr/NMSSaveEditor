@@ -11,11 +11,12 @@ using System.Globalization;
 namespace NMSSaveEditor
 {
 
-public class cT : OpenFileDialog {
-   private static cT gv = null;
-   private static string name = "Ship Export File";
-   private static Image fH = Application.a("UI-SHIPICON.PNG", 16, 16);
-   private CheckBox fO;
+public class cT  {
+   public OpenFileDialog dialog = new OpenFileDialog();
+   public static cT gv = null;
+   public static string name = "Ship Export File";
+   public static Image fH = Application.a("UI-SHIPICON.PNG", 16, 16);
+   public CheckBox fO;
 
    public static cT aC() {
       if (gv == null) {
@@ -25,7 +26,7 @@ public class cT : OpenFileDialog {
       return gv;
    }
 
-   private cT() {
+   public cT() {
       this.setFileSelectionMode(0);
       this.setAcceptAllFileFilterUsed(false);
       this.setFileView(new cU(this));

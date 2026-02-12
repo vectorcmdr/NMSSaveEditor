@@ -13,9 +13,9 @@ namespace NMSSaveEditor
 
 public class cA : DefaultTreeCellRenderer {
    // $FF: synthetic field
-   cy gg;
+   public cy gg;
 
-   cA(cy var1) {
+   public cA(cy var1) {
       this.gg = var1;
    }
 

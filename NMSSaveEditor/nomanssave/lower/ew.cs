@@ -12,11 +12,11 @@ namespace NMSSaveEditor
 {
 
 public class ew {
-   string iI;
-   int iJ;
-   int iK;
+   public string iI;
+   public int iJ;
+   public int iK;
 
-   ew(XmlElement var1) {
+   public ew(XmlElement var1) {
       this.iI = var1.GetAttribute("group");
       this.iJ = int.Parse(var1.GetAttribute("substance"));
       this.iK = int.Parse(var1.GetAttribute("product"));

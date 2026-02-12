@@ -13,9 +13,9 @@ namespace NMSSaveEditor
 
 public class fU : fX, fr {
    // $FF: synthetic field
-   fT mN;
+   public fT mN;
 
-   fU(fT var1) {
+   public fU(fT var1) {
       base(var1, "AccountData");
       this.mN = var1;
    }

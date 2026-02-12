@@ -12,18 +12,18 @@ namespace NMSSaveEditor
 {
 
 public class fV : fs {
-   fW mO;
-   int mb;
-   FileInfo mc;
-   string mP;
-   fS mQ;
-   string mR;
-   string mS;
-   fn be;
+   public fW mO;
+   public int mb;
+   public FileInfo mc;
+   public string mP;
+   public fS mQ;
+   public string mR;
+   public string mS;
+   public fn be;
    // $FF: synthetic field
-   fT mN;
+   public fT mN;
 
-   fV(fT var1, string var2, int var3) {
+   public fV(fT var1, string var2, int var3) {
       this.mN = var1;
       this.mb = var3;
       this.mc = new File(aH.cG, var2);
@@ -63,7 +63,7 @@ public class fV : fs {
 
    }
 
-   void a(FileStream var1) {
+   public void a(FileStream var1) {
       ZipFile var2 = new ZipFile(this.mc);
 
       try {

@@ -12,32 +12,32 @@ namespace NMSSaveEditor
 {
 
 public class dN : em {
-   private static int cV = 500;
-   private static int cW = 200;
-   private static double gX = 1000.0D;
-   private static double hI = 1000.0D;
-   private static double dE = 1000.0D;
-   private static double hJ = 1000.0D;
-   private ComboBox hK = new ComboBox();
-   private G hL;
-   private cN hM;
-   private cN hN;
-   private G hO;
-   private CheckBox hP;
-   private Button bQ;
-   private Button bR;
-   private Button bS;
-   private G hQ;
-   private G hR;
-   private G hS;
-   private G hT;
-   private G hU;
-   private G hV;
-   private bO hW;
-   private gH[] hX;
-   private gC hY;
+   public static int cV = 500;
+   public static int cW = 200;
+   public static double gX = 1000.0D;
+   public static double hI = 1000.0D;
+   public static double dE = 1000.0D;
+   public static double hJ = 1000.0D;
+   public ComboBox hK = new ComboBox();
+   public G hL;
+   public cN hM;
+   public cN hN;
+   public G hO;
+   public CheckBox hP;
+   public Button bQ;
+   public Button bR;
+   public Button bS;
+   public G hQ;
+   public G hR;
+   public G hS;
+   public G hT;
+   public G hU;
+   public G hV;
+   public bO hW;
+   public gH[] hX;
+   public gC hY;
 
-   dN(Application var1) {
+   public dN(Application var1) {
       this.hK.SetModel(new dO(this, var1));
       this.a("Ship", true, this.hK);
       this.hL = new dT(this);
@@ -104,7 +104,7 @@ public class dN : em {
       this.b(this.hW);
    }
 
-   void w() {
+   public void w() {
       for(int var1 = 0; var1 < this.hX.length; ++var1) {
          this.hX[var1].cC().forEach((var1x) => {
             if (var1x.dt()) {
@@ -117,7 +117,7 @@ public class dN : em {
 
    }
 
-   void x() {
+   public void x() {
       for(int var1 = 0; var1 < this.hX.length; ++var1) {
          this.hX[var1].cC().forEach((var1x) => {
             if (var1x.du()) {
@@ -130,7 +130,7 @@ public class dN : em {
 
    }
 
-   void y() {
+   public void y() {
       for(int var1 = 0; var1 < this.hX.length; ++var1) {
          this.hX[var1].cC().forEach((var1x) => {
             if (var1x.dv()) {
@@ -143,7 +143,7 @@ public class dN : em {
 
    }
 
-   void z() {
+   public void z() {
       for(int var1 = 0; var1 < this.hX.length; ++var1) {
          this.hX[var1].cC().forEach((var1x) => {
             if (var1x.ds()) {
@@ -156,7 +156,7 @@ public class dN : em {
 
    }
 
-   void A() {
+   public void A() {
       for(int var1 = 0; var1 < this.hX.length; ++var1) {
          this.hX[var1].cC().forEach((var1x) => {
             if (var1x.dl()) {
@@ -169,15 +169,15 @@ public class dN : em {
 
    }
 
-   void a(gt var1) {
+   public void a(gt var1) {
       this.hW.a(var1);
    }
 
-   gH[] aO() {
+   public gH[] aO() {
       return this.hX;
    }
 
-   void a(gH[] var1, gC var2) {
+   public void a(gH[] var1, gC var2) {
       this.hX = var1;
       this.hY = var2;
       if (var1.length == 0) {

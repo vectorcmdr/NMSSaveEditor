@@ -13,13 +13,13 @@ namespace NMSSaveEditor
 
 public class bi : G {
    // $FF: synthetic field
-   bd dP;
+   public bd dP;
 
-   bi(bd var1) {
+   public bi(bd var1) {
       this.dP = var1;
    }
 
-   protected string g(string var1) {
+   public string g(string var1) {
       if (bd.a(this.dP) == null) {
          return "";
       } else {

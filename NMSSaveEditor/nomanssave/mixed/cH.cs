@@ -13,7 +13,7 @@ namespace NMSSaveEditor
 
 public class cH : TextAction, ClipboardOwner {
    // $FF: synthetic field
-   cy gg;
+   public cy gg;
 
    public cH(cy var1) {
       base("Paste From Clipboard");
@@ -25,8 +25,7 @@ public class cH : TextAction, ClipboardOwner {
       ((TextBox)var1.getSource()).replaceSelection(var2);
    }
 
-   public void lostOwnership(Clipboard var1, Transferable var2) {
-   }
+   public void lostOwnership(object clipboard, Transferable contents) {}
 }
 
 }

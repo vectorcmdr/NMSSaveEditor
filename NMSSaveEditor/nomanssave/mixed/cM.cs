@@ -13,9 +13,9 @@ namespace NMSSaveEditor
 
 public class cM : FileFilter {
    // $FF: synthetic field
-   cK gl;
+   public cK gl;
 
-   cM(cK var1) {
+   public cM(cK var1) {
       this.gl = var1;
    }
 

@@ -13,13 +13,13 @@ namespace NMSSaveEditor
 
 public class cf : ActionListener {
    // $FF: synthetic field
-   bS fk;
+   public bS fk;
    // $FF: synthetic field
-   private int fl;
+   public int fl;
    // $FF: synthetic field
-   private int fm;
+   public int fm;
 
-   cf(bS var1, int var2, int var3) {
+   public cf(bS var1, int var2, int var3) {
       this.fk = var1;
       this.fl = var2;
       this.fm = var3;

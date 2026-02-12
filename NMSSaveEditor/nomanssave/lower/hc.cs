@@ -12,11 +12,11 @@ namespace NMSSaveEditor
 {
 
 public class hc {
-   private static Handler sn = new hd();
-   private static StreamWriter so;
-   private static StreamWriter sp;
-   private static StreamWriter sq;
-   private static int sr;
+   public static Handler sn = new hd();
+   public static StreamWriter so;
+   public static StreamWriter sp;
+   public static StreamWriter sq;
+   public static int sr;
 
    static hc() {
       Logger var0 = JavaCompat.GetLogManager().GetLogger("");
@@ -29,12 +29,12 @@ public class hc {
       var0.SetLevel(JavaCompat.LevelAll);
       var0.AddHandler(sn);
       em();
-      so = System.out;
-      sp = System.err;
+      so = Console.Out;
+      sp = Console.Error;
       sr = JavaCompat.LevelInfo.intValue();
    }
 
-   private static void em() {
+   public static void em() {
       try {
          Class var0 = Class.forName("sun.misc.Unsafe");
          Field var1 = var0.getDeclaredField("theUnsafe");
@@ -124,7 +124,7 @@ public class hc {
 
    }
 
-   private static string d(string var0, string var1) {
+   public static string d(string var0, string var1) {
       for(int var2 = 0; var2 < var0.Length; ++var2) {
          if (!Character.isWhitespace(var0[var2])) {
             return var0.Substring(0, var2) + var1 + var0.Substring(var2);
@@ -172,7 +172,7 @@ public class hc {
 
    }
 
-   private static void log(LogRecord var0) {
+   public static void log(LogRecord var0) {
       Level var1 = var0.getLevel();
       if (var1.intValue() >= sr) {
          string var2 = var0.getLoggerName();
@@ -228,7 +228,7 @@ public class hc {
       }
    }
 
-   private static void close() {
+   public static void close() {
       sq.Close();
    }
 

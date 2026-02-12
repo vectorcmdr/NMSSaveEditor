@@ -12,15 +12,15 @@ namespace NMSSaveEditor
 {
 
 public class ge {
-   private List<object> gT;
-   private List<object> nh;
-   private List<object> ni;
+   public List<object> gT;
+   public List<object> nh;
+   public List<object> ni;
 
    public static ge m(eY var0) {
       return new ge(var0);
    }
 
-   private static Function ap(int var0) {
+   public static Function ap(int var0) {
       return (var1) => {
          string var2 = var1.Name;
          if (var2 == null || var2.Length == 0 || "BLD_STORAGE_NAME".Equals(var2)) {
@@ -31,13 +31,13 @@ public class ge {
       };
    }
 
-   private static Function cB() {
+   public static Function cB() {
       return (var0) => {
          return new string[]{"Ingredient Storage"};
       };
    }
 
-   private ge(eY var1) {
+   public ge(eY var1) {
       byte var2 = 8;
       byte var3 = 6;
       if (Application.e().D()) {

@@ -11,13 +11,14 @@ using System.Globalization;
 namespace NMSSaveEditor
 {
 
-public class x : Thread {
+public class x  {
+   public Thread thread;
    // $FF: synthetic field
-   Application aZ;
+   public Application aZ;
    // $FF: synthetic field
-   private bool ba;
+   public bool ba;
 
-   x(Application var1, bool var2) {
+   public x(Application var1, bool var2) {
       this.aZ = var1;
       this.ba = var2;
    }

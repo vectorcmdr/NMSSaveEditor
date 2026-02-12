@@ -12,12 +12,12 @@ namespace NMSSaveEditor
 {
 
 public class eR : ey {
-   string kc;
-   eA kn;
+   public string kc;
+   public eA kn;
    // $FF: synthetic field
-   eQ ko;
+   public eQ ko;
 
-   eR(eQ var1, XmlElement var2) {
+   public eR(eQ var1, XmlElement var2) {
       base(var2.GetAttribute("id"));
       this.ko = var1;
       this.kc = var2.HasAttribute("icon") ? var2.GetAttribute("icon") : null;
@@ -78,7 +78,7 @@ public class eR : ey {
       return this.ko.jY;
    }
 
-   private string y(string var1) {
+   public string y(string var1) {
       if ("NAME".Equals(var1)) {
          return this.ko.name;
       } else {

@@ -12,16 +12,16 @@ namespace NMSSaveEditor
 {
 
 public class dM : G {
-   private gG hH;
+   public gG hH;
    // $FF: synthetic field
-   dE hE;
+   public dE hE;
 
-   private dM(dE var1, gG var2) {
+   public dM(dE var1, gG var2) {
       this.hE = var1;
       this.hH = var2;
    }
 
-   protected string g(string var1) {
+   public string g(string var1) {
       gE var2 = (gE)dE.a(this.hE).SelectedItem;
       if (var2 == null) {
          return "";
@@ -42,7 +42,7 @@ public class dM : G {
    }
 
    // $FF: synthetic method
-   dM(dE var1, gG var2, dM var3) {
+   public dM(dE var1, gG var2, dM var3) {
       // Constructor chain: base(var1, var2)
    }
 }

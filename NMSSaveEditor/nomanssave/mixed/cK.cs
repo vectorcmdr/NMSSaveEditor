@@ -11,9 +11,10 @@ using System.Globalization;
 namespace NMSSaveEditor
 {
 
-public class cK : OpenFileDialog {
-   private static cK gk = null;
-   private static string name = "JSON File";
+public class cK  {
+   public OpenFileDialog dialog = new OpenFileDialog();
+   public static cK gk = null;
+   public static string name = "JSON File";
 
    public static cK aA() {
       if (gk == null) {
@@ -23,7 +24,7 @@ public class cK : OpenFileDialog {
       return gk;
    }
 
-   private cK() {
+   public cK() {
       this.setFileSelectionMode(0);
       this.setAcceptAllFileFilterUsed(false);
       this.setFileView(new cL(this));

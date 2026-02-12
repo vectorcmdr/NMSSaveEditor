@@ -12,15 +12,15 @@ namespace NMSSaveEditor
 {
 
 public class fA : fq {
-   private static byte[] lA = "NOMANSKY".GetBytes();
-   private static Pattern lV = new Regex("savedata(\\d{2})\\.hg", 2);
-   private static Pattern lW = new Regex("ps4_backup(\\d*)\\.\\d*\\.zip", 2);
-   private FileInfo lX;
-   private fR lE;
-   private fB lY;
-   private fD[] lZ;
+   public static byte[] lA = "NOMANSKY".GetBytes();
+   public static Pattern lV = new Regex("savedata(\\d{2})\\.hg", 2);
+   public static Pattern lW = new Regex("ps4_backup(\\d*)\\.\\d*\\.zip", 2);
+   public FileInfo lX;
+   public fR lE;
+   public fB lY;
+   public fD[] lZ;
 
-   fA(FileInfo var1, fR var2) {
+   public fA(FileInfo var1, fR var2) {
       this.lX = var1;
       this.lE = var2;
 
@@ -47,7 +47,7 @@ public class fA : fq {
       fl.a(this, var1);
    }
 
-   private static eY a(byte[] var0, eG var1) {
+   public static eY a(byte[] var0, eG var1) {
       Exception var2 = null;
       Object var3 = null;
 
@@ -63,7 +63,7 @@ public class fA : fq {
             } catch (Exception var15) {
                var10000 = var15;
                var10001 = false;
-               break label173;
+               goto label173;
             }
 
             if (var4 != null) {
@@ -76,7 +76,7 @@ public class fA : fq {
             } catch (Exception var14) {
                var10000 = var14;
                var10001 = false;
-               break label162;
+               goto label162;
             }
          }
 
@@ -97,7 +97,7 @@ public class fA : fq {
       }
    }
 
-   private static byte[] g(eY var0) {
+   public static byte[] g(eY var0) {
       MemoryStream var1 = new MemoryStream();
       Exception var2 = null;
       Object var3 = null;

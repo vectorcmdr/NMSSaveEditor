@@ -12,11 +12,11 @@ namespace NMSSaveEditor
 {
 
 public class dk : ComboBoxModel {
-   private gv hk;
+   public gv hk;
    // $FF: synthetic field
-   dj hl;
+   public dj hl;
 
-   dk(dj var1) {
+   public dk(dj var1) {
       this.hl = var1;
       this.hk = null;
    }
@@ -54,7 +54,7 @@ public class dk : ComboBoxModel {
          dj.f(this.hl).SetText(Double.toString(this.hk.dF()));
          dj.g(this.hl).SetText(Double.toString(this.hk.dG()));
          dj.h(this.hl).SetText(Double.toString(this.hk.dH()));
-         dj.i(this.hl).a(new List<object> { this.hk.dE()));
+         dj.i(this.hl).a(new List<object> { this.hk.dE() });
       }
    }
 

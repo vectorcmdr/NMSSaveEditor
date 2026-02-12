@@ -12,8 +12,8 @@ namespace NMSSaveEditor
 {
 
 public class hm : FilterInputStream {
-   private ha sa;
-   private int sb;
+   public ha sa;
+   public int sb;
 
    public hm(Stream var1) {
       base(var1);
@@ -29,9 +29,9 @@ public class hm : FilterInputStream {
       return this.sb;
    }
 
-   private bool ej() {
+   public bool ej() {
       byte[] var1 = new byte[8];
-      hk.readFully(this.in, var1);
+      hk.readFully(this.@in, var1);
       int var2 = 255 & var1[0] | (255 & var1[1]) << 8 | (255 & var1[2]) << 16 | (255 & var1[3]) << 24;
       int var3 = 255 & var1[4] | (255 & var1[5]) << 8 | (255 & var1[6]) << 16 | (255 & var1[7]) << 24;
       this.sa = new ha(new hn(this, var3, (hn)null), var2);
@@ -53,7 +53,7 @@ public class hm : FilterInputStream {
 
    // $FF: synthetic method
    static Stream a(hm var0) {
-      return var0.in;
+      return var0.@in;
    }
 }
 

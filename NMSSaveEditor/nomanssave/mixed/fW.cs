@@ -12,19 +12,19 @@ namespace NMSSaveEditor
 {
 
 public class fW {
-   string name;
-   string filename;
-   string id;
-   int mT;
-   int lL;
-   string mU;
-   long timestamp;
-   long mV;
-   long mW;
+   public string name;
+   public string filename;
+   public string id;
+   public int mT;
+   public int lL;
+   public string mU;
+   public long timestamp;
+   public long mV;
+   public long mW;
    // $FF: synthetic field
-   fT mN;
+   public fT mN;
 
-   fW(fT var1, Stream var2) {
+   public fW(fT var1, Stream var2) {
       this.mN = var1;
       this.name = gc.c(var2);
       hc.info("  " + this.name);
@@ -56,11 +56,11 @@ public class fW {
       }
    }
 
-   fW(fT var1, string var2) {
+   public fW(fT var1, string var2) {
       this(var1, (Stream)(new MemoryStream(hk.aD(var2))));
    }
 
-   fW(fT var1, fW var2) {
+   public fW(fT var1, fW var2) {
       this.mN = var1;
       this.name = var2.name;
       this.filename = var2.filename;
@@ -73,7 +73,7 @@ public class fW {
       this.mW = var2.mW;
    }
 
-   void write(Stream var1) {
+   public void write(Stream var1) {
       gc.b(var1, this.name);
       gc.b(var1, this.filename);
       gc.b(var1, this.id);
@@ -85,7 +85,7 @@ public class fW {
       hk.b(var1, this.mW);
    }
 
-   string cz() {
+   public string cz() {
       MemoryStream var1 = new MemoryStream();
       this.Write(var1);
       return hk.k(var1.toByteArray());

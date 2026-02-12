@@ -12,9 +12,9 @@ namespace NMSSaveEditor
 {
 
 public class gg {
-   eY nl;
+   public eY nl;
    // $FF: synthetic field
-   gf nm;
+   public gf nm;
 
    public gg(gf var1, eY var2) {
       this.nm = var1;

@@ -13,9 +13,9 @@ namespace NMSSaveEditor
 
 public class cU : FileView {
    // $FF: synthetic field
-   cT gw;
+   public cT gw;
 
-   cU(cT var1) {
+   public cU(cT var1) {
       this.gw = var1;
    }
 

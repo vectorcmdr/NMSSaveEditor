@@ -19,18 +19,18 @@ public sealed class aI {
    public static readonly aI cR = new aI("cR", "macOS Light");
    public static readonly aI cS = new aI("cS", "macOS Dark");
 
-   private int _ordinal;
-   private string _name;
+   public int _ordinal;
+   public string _name;
    public readonly string cT;
 
-   private aI(string __name, string var3) {
+   public aI(string __name, string var3) {
       this._ordinal = _nextOrdinal++;
       this._name = __name;
       this.cT = var3;
    }
 
-   private static int _nextOrdinal = 0;
-   private static readonly aI[] _values = new aI[] { cN, cO, cP, cQ, cR, cS };
+   public static int _nextOrdinal = 0;
+   public static readonly aI[] _values = new aI[] { cN, cO, cP, cQ, cR, cS };
    public static aI[] values() { return _values; }
    public static aI valueOf(string n) { return _values.FirstOrDefault(v => v._name == n); }
    public int ordinal() { return _ordinal; }

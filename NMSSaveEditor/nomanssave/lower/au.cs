@@ -13,16 +13,16 @@ namespace NMSSaveEditor
 
 public class au : TableModel {
    // $FF: synthetic field
-   ap cu;
+   public ap cu;
 
-   au(ap var1) {
+   public au(ap var1) {
       this.cu = var1;
    }
 
    public void addTableModelListener(TableModelListener var1) {
    }
 
-   public Class getColumnClass(int var1) {
+   public object getColumnClass(int var1) {
       return var1 == 0 ? typeof(Image) : typeof(string);
    }
 

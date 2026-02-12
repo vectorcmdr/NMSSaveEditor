@@ -13,9 +13,9 @@ namespace NMSSaveEditor
 
 public class ax : TableModel {
    // $FF: synthetic field
-   ap cu;
+   public ap cu;
 
-   ax(ap var1) {
+   public ax(ap var1) {
       this.cu = var1;
    }
 
@@ -48,7 +48,7 @@ public class ax : TableModel {
       }
    }
 
-   public Class getColumnClass(int var1) {
+   public object getColumnClass(int var1) {
       switch(var1) {
       case 0:
       case 1:

@@ -13,9 +13,9 @@ namespace NMSSaveEditor
 
 public class cF : AbstractAction {
    // $FF: synthetic field
-   cy gg;
+   public cy gg;
 
-   cF(cy var1) {
+   public cF(cy var1) {
       this.gg = var1;
    }
 

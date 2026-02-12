@@ -12,11 +12,11 @@ namespace NMSSaveEditor
 {
 
 public class eV {
-   private static int kB = 10;
-   private static int kC = 10;
-   int length;
-   Object[] values;
-   Object kD;
+   public static int kB = 10;
+   public static int kC = 10;
+   public int length;
+   public Object[] values;
+   public Object kD;
 
    public static eV D(string var0) {
       return fh.R(var0);
@@ -42,7 +42,7 @@ public class eV {
 
    }
 
-   void e(Object var1) {
+   public void e(Object var1) {
       if (this.values.length == this.length) {
          Object[] var2 = new Object[this.length + 10];
          Array.Copy(this.values, 0, var2, 0, this.length);
@@ -54,7 +54,7 @@ public class eV {
       ++this.length;
    }
 
-   Object U(int var1) {
+   public Object U(int var1) {
       return this.values[var1];
    }
 
@@ -220,7 +220,7 @@ public class eV {
       this.firePropertyChange("", var1, this);
    }
 
-   void a(Object var1, string var2, Object var3, Object var4) {
+   public void a(Object var1, string var2, Object var3, Object var4) {
       for(int var5 = 0; var5 < this.length; ++var5) {
          if (var1 == this.values[var5]) {
             this.firePropertyChange("[" + var5 + "]" + var2, var3, var4);
@@ -230,7 +230,7 @@ public class eV {
 
    }
 
-   private void firePropertyChange(string var1, Object var2, Object var3) {
+   public void firePropertyChange(string var1, Object var2, Object var3) {
       if (this.kD is eY) {
          ((eY)this.kD).a(this, var1, var2, var3);
       }

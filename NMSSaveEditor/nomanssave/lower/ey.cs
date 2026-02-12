@@ -11,15 +11,15 @@ using System.Globalization;
 namespace NMSSaveEditor
 {
 
-public abstract class ey {
+public class ey {
    public static int jD = 0;
    public static int jE = 1;
    public static int jF = 2;
    public static int jG = 3;
-   string id;
-   private static Pattern jH = new Regex("%(\\w+)%");
-   private static List<object> jI;
-   private static List<object> jJ;
+   public string id;
+   public static Pattern jH = new Regex("%(\\w+)%");
+   public static List<object> jI;
+   public static List<object> jJ;
 
    static ey() {
       XmlElement var0 = null;
@@ -81,7 +81,7 @@ public abstract class ey {
       jJ = JavaCollections.UnmodifiableList(var11);
    }
 
-   ey(string var1) {
+   public ey(string var1) {
       this.id = var1;
    }
 
@@ -89,7 +89,7 @@ public abstract class ey {
       return this.id;
    }
 
-   private static string L(int var0) {
+   public static string L(int var0) {
       StringBuilder var1 = new StringBuilder();
       var1.append(Convert.ToString(var0));
 
@@ -131,25 +131,25 @@ public abstract class ey {
       }
    }
 
-   public abstract eB ba();
+   public virtual eB ba() { return null; }
 
-   public abstract bool bb();
+   public virtual bool bb() { return false; }
 
-   public abstract string getName();
+   public virtual string getName() { return ""; }
 
-   public abstract ex bc();
+   public virtual ex bc() { return null; }
 
-   public abstract bool bd();
+   public virtual bool bd() { return false; }
 
-   public abstract bool be();
+   public virtual bool be() { return false; }
 
-   public abstract Integer bf();
+   public virtual Integer bf() { return null; }
 
-   public abstract string bg();
+   public virtual string bg() { return ""; }
 
-   public abstract bool bh();
+   public virtual bool bh() { return false; }
 
-   public abstract string bi();
+   public virtual string bi() { return ""; }
 
    public Image N(int var1) {
       string var2 = this.bi();
@@ -172,11 +172,11 @@ public abstract class ey {
       return var3 == null ? null : Application.a(var3, var1, var2);
    }
 
-   public abstract int bj();
+   public virtual int bj() { return 0; }
 
-   public abstract string getDescription();
+   public virtual string getDescription() { return ""; }
 
-   public abstract List<object> bk();
+   public virtual List<object> bk() { return new List<object>(); }
 
    public string toString() {
       return this.id;
@@ -206,7 +206,7 @@ public abstract class ey {
       }
    }
 
-   private static List<object> O(int var0) {
+   public static List<object> O(int var0) {
       List<object> var1 = new List<object>();
       bool var2 = (var0 & 16384) == 0;
       if ((var0 & 4) == 4) {

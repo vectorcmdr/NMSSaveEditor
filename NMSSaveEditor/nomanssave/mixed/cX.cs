@@ -13,9 +13,9 @@ namespace NMSSaveEditor
 
 public class cX : Runnable {
    // $FF: synthetic field
-   cW gL;
+   public cW gL;
 
-   cX(cW var1) {
+   public cX(cW var1) {
       this.gL = var1;
    }
 

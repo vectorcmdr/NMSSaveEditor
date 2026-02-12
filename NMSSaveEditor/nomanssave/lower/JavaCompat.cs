@@ -510,3 +510,204 @@ namespace NMSSaveEditor
     public interface Iterable : IEnumerable<object> { }
 
 }
+
+// === Additional Java types needed for compilation ===
+
+public class ActionEvent : EventArgs {
+    public object Source { get; set; }
+    public string ActionCommand { get; set; }
+    public ActionEvent() {}
+    public ActionEvent(object source) { Source = source; }
+}
+
+public interface ListDataListener {
+    void intervalAdded(object e);
+    void intervalRemoved(object e);
+    void contentsChanged(object e);
+}
+
+public interface ComboBoxModel {
+    object getSelectedItem();
+    void setSelectedItem(object item);
+    int getSize();
+    object getElementAt(int index);
+    void addListDataListener(ListDataListener l);
+    void removeListDataListener(ListDataListener l);
+}
+
+public interface TableModelListener {
+    void tableChanged(object e);
+}
+
+public interface TableModel {
+    int getRowCount();
+    int getColumnCount();
+    string getColumnName(int col);
+    object getColumnClass(int col);
+    bool isCellEditable(int row, int col);
+    object getValueAt(int row, int col);
+    void setValueAt(object val, int row, int col);
+    void addTableModelListener(TableModelListener l);
+    void removeTableModelListener(TableModelListener l);
+}
+
+public class TableRowSorter {
+    public TableRowSorter() {}
+    public TableRowSorter(TableModel model) {}
+    public void setModel(TableModel model) {}
+    public Comparator getComparator(int col) { return null; }
+    public void setComparator(int col, Comparator c) {}
+    public void setSortable(int col, bool sortable) {}
+    public int convertRowIndexToModel(int viewRow) { return viewRow; }
+    public void sort() {}
+    public void setRowFilter(object filter) {}
+    public void toggleSortOrder(int col) {}
+}
+
+public class StringBuffer {
+    private System.Text.StringBuilder sb = new System.Text.StringBuilder();
+    public StringBuffer() {}
+    public StringBuffer(string s) { sb = new System.Text.StringBuilder(s); }
+    public StringBuffer append(object o) { sb.Append(o); return this; }
+    public StringBuffer append(string s) { sb.Append(s); return this; }
+    public StringBuffer append(char c) { sb.Append(c); return this; }
+    public int length() { return sb.Length; }
+    public char charAt(int i) { return sb[i]; }
+    public void setCharAt(int i, char c) { sb[i] = c; }
+    public StringBuffer delete(int start, int end) { sb.Remove(start, end - start); return this; }
+    public StringBuffer insert(int offset, string s) { sb.Insert(offset, s); return this; }
+    public StringBuffer replace(int start, int end, string s) { sb.Remove(start, end - start); sb.Insert(start, s); return this; }
+    public override string ToString() { return sb.ToString(); }
+    public string substring(int start) { return sb.ToString(start, sb.Length - start); }
+    public string substring(int start, int end) { return sb.ToString(start, end - start); }
+}
+
+public interface DocumentEvent {
+    int getOffset();
+    int getLength();
+}
+
+public interface DocumentListener {
+    void insertUpdate(DocumentEvent e);
+    void removeUpdate(DocumentEvent e);
+    void changedUpdate(DocumentEvent e);
+}
+
+public class XmlElement {
+    public string TagName { get; set; }
+    public string getAttribute(string name) { return ""; }
+    public void setAttribute(string name, string value) {}
+    public XmlElement[] getElementsByTagName(string name) { return new XmlElement[0]; }
+    public string getTextContent() { return ""; }
+    public void setTextContent(string text) {}
+    public XmlElement appendChild(XmlElement child) { return child; }
+}
+
+public interface Comparator {
+    int compare(object o1, object o2);
+}
+
+public class Comparator<T> : Comparator {
+    private Func<T, T, int> _func;
+    public Comparator() {}
+    public Comparator(Func<T, T, int> func) { _func = func; }
+    public int compare(object o1, object o2) { return _func != null ? _func((T)o1, (T)o2) : 0; }
+    public static Comparator<T> comparing(Func<T, IComparable> keyExtractor) {
+        return new Comparator<T>((a, b) => keyExtractor(a).CompareTo(keyExtractor(b)));
+    }
+}
+
+public class JComponent : Panel {
+    public JComponent() {}
+    public virtual void setPreferredSize(System.Drawing.Size s) { this.Size = s; }
+    public virtual void setBorder(Border b) {}
+    public virtual void putClientProperty(object key, object value) {}
+    public virtual object getClientProperty(object key) { return null; }
+    public virtual void revalidate() { Invalidate(); }
+    public void setAlignmentX(float alignment) {}
+    public static float CENTER_ALIGNMENT = 0.5f;
+    public static float LEFT_ALIGNMENT = 0.0f;
+    public static float RIGHT_ALIGNMENT = 1.0f;
+}
+
+public class Border {
+    public Border() {}
+}
+
+public class WindowEvent : EventArgs {
+    public Form Window { get; set; }
+    public WindowEvent() {}
+    public WindowEvent(Form window) { Window = window; }
+}
+
+public class WindowAdapter {
+    public virtual void windowClosing(WindowEvent e) {}
+    public virtual void windowOpened(WindowEvent e) {}
+    public virtual void windowClosed(WindowEvent e) {}
+}
+
+public class MouseEvent : EventArgs {
+    public int X { get; set; }
+    public int Y { get; set; }
+    public int Button { get; set; }
+    public int ClickCount { get; set; }
+    public object Source { get; set; }
+    public bool isPopupTrigger() { return Button == 2; }
+    public int getX() { return X; }
+    public int getY() { return Y; }
+    public int getButton() { return Button; }
+    public int getClickCount() { return ClickCount; }
+    public object getSource() { return Source; }
+    public System.Drawing.Point getPoint() { return new System.Drawing.Point(X, Y); }
+}
+
+public class MouseAdapter {
+    public virtual void mouseClicked(MouseEvent e) {}
+    public virtual void mousePressed(MouseEvent e) {}
+    public virtual void mouseReleased(MouseEvent e) {}
+}
+
+public class DefaultListCellRenderer : Label {
+    public DefaultListCellRenderer() {}
+    public virtual Control getListCellRendererComponent(object list, object value, int index, bool isSelected, bool cellHasFocus) { return this; }
+}
+
+public interface PropertyChangeListener {
+    void propertyChange(PropertyChangeEvent e);
+}
+
+public class PropertyChangeEvent : EventArgs {
+    public object Source { get; set; }
+    public string PropertyName { get; set; }
+    public object OldValue { get; set; }
+    public object NewValue { get; set; }
+    public PropertyChangeEvent() {}
+    public PropertyChangeEvent(object source, string propertyName, object oldValue, object newValue) {
+        Source = source; PropertyName = propertyName; OldValue = oldValue; NewValue = newValue;
+    }
+    public object getNewValue() { return NewValue; }
+    public object getOldValue() { return OldValue; }
+    public string getPropertyName() { return PropertyName; }
+}
+
+public interface ListSelectionListener {
+    void valueChanged(ListSelectionEvent e);
+}
+
+public class ListSelectionEvent : EventArgs {
+    public object Source { get; set; }
+    public int FirstIndex { get; set; }
+    public int LastIndex { get; set; }
+    public bool ValueIsAdjusting { get; set; }
+    public ListSelectionEvent() {}
+    public bool getValueIsAdjusting() { return ValueIsAdjusting; }
+}
+
+public class Charset {
+    public static Charset forName(string name) { return new Charset(); }
+    public string name() { return "UTF-8"; }
+}
+
+public class Transferable {
+}
+

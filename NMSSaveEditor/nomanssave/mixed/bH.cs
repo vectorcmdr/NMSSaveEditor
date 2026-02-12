@@ -13,9 +13,9 @@ namespace NMSSaveEditor
 
 public class bH : bK {
    // $FF: synthetic field
-   bE ey;
+   public bE ey;
 
-   bH(bE var1) {
+   public bH(bE var1) {
       this.ey = var1;
    }
 

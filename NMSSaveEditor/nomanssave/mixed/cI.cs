@@ -12,11 +12,11 @@ namespace NMSSaveEditor
 {
 
 public class cI : TreeModel {
-   private List<object> gh;
+   public List<object> gh;
    // $FF: synthetic field
-   cy gg;
+   public cy gg;
 
-   private cI(cy var1) {
+   public cI(cy var1) {
       this.gg = var1;
       this.gh = new List<object>();
    }
@@ -71,7 +71,7 @@ public class cI : TreeModel {
    }
 
    // $FF: synthetic method
-   cI(cy var1, cI var2) {
+   public cI(cy var1, cI var2) {
       // Constructor chain: base(var1)
    }
 }

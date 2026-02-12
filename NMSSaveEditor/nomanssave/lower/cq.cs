@@ -13,9 +13,9 @@ namespace NMSSaveEditor
 
 public class cq : FileView {
    // $FF: synthetic field
-   cp fM;
+   public cp fM;
 
-   cq(cp var1) {
+   public cq(cp var1) {
       this.fM = var1;
    }
 

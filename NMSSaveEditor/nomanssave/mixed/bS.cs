@@ -12,24 +12,24 @@ namespace NMSSaveEditor
 {
 
 public class bS : Panel {
-   private int x;
-   private int y;
-   private ToolStripMenuItem eY;
-   private ToolStripMenuItem eZ;
-   private ToolStripMenuItem fa;
-   private ToolStripMenuItem fb;
-   private ToolStripMenuItem fc;
-   private ToolStripMenuItem fd;
-   private ToolStripMenuItem fe;
-   private ToolStripMenuItem ff;
-   private ToolStripMenuItem fg;
-   private ToolStripMenuItem fh;
-   private ToolStripMenuItem fi;
-   private ToolStripMenuItem fj;
+   public int x;
+   public int y;
+   public ToolStripMenuItem eY;
+   public ToolStripMenuItem eZ;
+   public ToolStripMenuItem fa;
+   public ToolStripMenuItem fb;
+   public ToolStripMenuItem fc;
+   public ToolStripMenuItem fd;
+   public ToolStripMenuItem fe;
+   public ToolStripMenuItem ff;
+   public ToolStripMenuItem fg;
+   public ToolStripMenuItem fh;
+   public ToolStripMenuItem fi;
+   public ToolStripMenuItem fj;
    // $FF: synthetic field
-   bO eX;
+   public bO eX;
 
-   private bS(bO var1, int var2, int var3) {
+   public bS(bO var1, int var2, int var3) {
       this.eX = var1;
       this.x = var2;
       this.y = var3;
@@ -84,15 +84,15 @@ public class bS : Panel {
       this.aq();
    }
 
-   private bool ao() {
+   public bool ao() {
       return bO.a(this.eX).h(this.x, this.y);
    }
 
-   private bool ap() {
+   public bool ap() {
       return bO.a(this.eX).l(this.x, this.y);
    }
 
-   private void aq() {
+   public void aq() {
       this.Controls.Clear();
       this.eY.setEnabled(bO.a(this.eX).dp() || en.aS());
       this.eZ.setEnabled(bO.a(this.eX).dp() || en.aS());
@@ -233,7 +233,7 @@ public class bS : Panel {
       this.Invalidate();
    }
 
-   private void a(Image var1, int var2, int var3) {
+   public void a(Image var1, int var2, int var3) {
       Label var4 = new Label();
       var4.setPreferredSize(new Size(var2, var2));
       GridBagConstraints var5 = new GridBagConstraints();
@@ -245,7 +245,7 @@ public class bS : Panel {
       this.add(var4, var5);
    }
 
-   private void a(string var1, int var2, Color var3) {
+   public void a(string var1, int var2, Color var3) {
       Label var4 = new Label();
       var4.setFont(UIManager.getFont("Inventory.font"));
       var4.setBackground(Color.Empty);
@@ -293,7 +293,7 @@ public class bS : Panel {
    }
 
    // $FF: synthetic method
-   bS(bO var1, int var2, int var3, bS var4) : this(var1, var2, var3) {
+   public bS(bO var1, int var2, int var3, bS var4) : this(var1, var2, var3) {
    }
 
    // $FF: synthetic method

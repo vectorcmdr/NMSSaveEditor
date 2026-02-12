@@ -13,11 +13,11 @@ namespace NMSSaveEditor
 
 public class dy : MouseAdapter {
    // $FF: synthetic field
-   du hp;
+   public du hp;
    // $FF: synthetic field
-   private gF hq;
+   public gF hq;
 
-   dy(du var1, gF var2) {
+   public dy(du var1, gF var2) {
       this.hp = var1;
       this.hq = var2;
    }

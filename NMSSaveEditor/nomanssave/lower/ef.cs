@@ -13,16 +13,16 @@ namespace NMSSaveEditor
 
 public class ef : G {
    // $FF: synthetic field
-   ec ik;
+   public ec ik;
    // $FF: synthetic field
-   private int il;
+   public int il;
 
-   ef(ec var1, int var2) {
+   public ef(ec var1, int var2) {
       this.ik = var1;
       this.il = var2;
    }
 
-   protected string g(string var1) {
+   public string g(string var1) {
       try {
          var1 = hg.aB(var1).ToString();
          if (!var1.Equals(eb.a(ec.h(this.ik))[this.il].ee())) {

@@ -12,11 +12,11 @@ namespace NMSSaveEditor
 {
 
 public class gF : gQ {
-   private eY kM;
+   public eY kM;
    // $FF: synthetic field
-   gE rf;
+   public gE rf;
 
-   private gF(gE var1, eY var2) {
+   public gF(gE var1, eY var2) {
       this.rf = var1;
       this.kM = var2;
    }
@@ -53,7 +53,7 @@ public class gF : gQ {
    }
 
    // $FF: synthetic method
-   gF(gE var1, eY var2, gF var3) {
+   public gF(gE var1, eY var2, gF var3) {
       // Constructor chain: base(var1, var2)
    }
 }

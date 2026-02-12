@@ -12,25 +12,25 @@ namespace NMSSaveEditor
 {
 
 public class gm {
-   private eY oI;
-   private List<object> gT;
-   private gn oJ;
+   public eY oI;
+   public List<object> gT;
+   public gn oJ;
 
    public static gm p(eY var0) {
       return var0.d("CurrentFreighter.Seed").ab(0) && !isEmpty(var0.getValueAsString("CurrentFreighter.Filename")) ? new gm(var0, var0.H("FreighterInventory"), var0.H("FreighterInventory_TechOnly"), var0.H("FreighterInventory_Cargo")) : null;
    }
 
-   private static bool isEmpty(string var0) {
+   public static bool isEmpty(string var0) {
       return var0 == null || var0.Length == 0;
    }
 
-   private static Function a(gm var0, string var1) {
+   public static Function a(gm var0, string var1) {
       return (var1x) => {
          return new string[]{"Freighter", var1};
       };
    }
 
-   private gm(eY var1, eY var2, eY var3, eY var4) {
+   public gm(eY var1, eY var2, eY var3, eY var4) {
       this.oI = var1;
       bool var7 = false;
       bool var8 = false;
@@ -153,11 +153,11 @@ public class gm {
       return this.gT;
    }
 
-   private double ak(string var1) {
+   public double ak(string var1) {
       return ((gt)this.gT.Get(0)).ak(var1);
    }
 
-   private void d(string var1, double var2) {
+   public void d(string var1, double var2) {
       this.gT.forEach((var3) => {
          var3.d(var1, var2);
       });

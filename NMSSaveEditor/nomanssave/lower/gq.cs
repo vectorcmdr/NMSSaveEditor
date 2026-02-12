@@ -24,23 +24,23 @@ public sealed class gq {
    public static readonly gq pb = new gq("pb", "Damage Reduction");
    public static readonly gq pc = new gq("pc", "Stealth");
 
-   private int _ordinal;
-   private string _name;
-   private string name;
-   private int pd;
+   public int _ordinal;
+   public string _name;
+   public string displayName;
+   public int pd;
 
-   private gq(string __name, string var3) : this(__name, var3, 1) {
+   public gq(string __name, string var3) : this(__name, var3, 1) {
    }
 
-   private gq(string __name, string var3, int var4) {
+   public gq(string __name, string var3, int var4) {
       this._ordinal = _nextOrdinal++;
       this._name = __name;
-      this.name = var3;
+      this.displayName = var3;
       this.pd = var4;
    }
 
-   private static int _nextOrdinal = 0;
-   private static readonly gq[] _values = new gq[] { oS, oT, oU, oV, oW, oX, oY, oZ, pa, pb, pc };
+   public static int _nextOrdinal = 0;
+   public static readonly gq[] _values = new gq[] { oS, oT, oU, oV, oW, oX, oY, oZ, pa, pb, pc };
    public static gq[] values() { return _values; }
    public static gq valueOf(string n) { return _values.FirstOrDefault(v => v._name == n); }
    public int ordinal() { return _ordinal; }
@@ -52,7 +52,7 @@ public sealed class gq {
    }
 
    public string toString() {
-      return this.name;
+      return this.displayName;
    }
 }
 }

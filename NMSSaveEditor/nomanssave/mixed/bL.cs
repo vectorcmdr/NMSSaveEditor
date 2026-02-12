@@ -12,18 +12,18 @@ namespace NMSSaveEditor
 {
 
 public class bL : TextBox {
-   bK eB;
+   public bK eB;
    // $FF: synthetic field
-   bE ey;
+   public bE ey;
 
-   bL(bE var1, bK var2, bool var3) {
+   public bL(bE var1, bK var2, bool var3) {
       this.ey = var1;
       this.eB = var2;
       this.SetEnabled(var3);
       this.addFocusListener(new bM(this, var2));
    }
 
-   void ac() {
+   public void ac() {
       string var1;
       if (bE.a(this.ey) == null) {
          var1 = "";

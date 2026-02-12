@@ -12,14 +12,14 @@ namespace NMSSaveEditor
 {
 
 public class fg {
-   private static Charset kT = Charset.forName("Windows-1252");
-   byte[] bytes;
+   public static Charset kT = Charset.forName("Windows-1252");
+   public byte[] bytes;
 
    public fg(byte[] var1) {
       this.bytes = var1;
    }
 
-   byte[] toByteArray() {
+   public byte[] toByteArray() {
       byte[] var1 = new byte[this.bytes.length];
       Array.Copy(this.bytes, 0, var1, 0, this.bytes.length);
       return var1;

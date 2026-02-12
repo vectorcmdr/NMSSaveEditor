@@ -13,9 +13,9 @@ namespace NMSSaveEditor
 
 public class df : MouseAdapter {
    // $FF: synthetic field
-   dd gW;
+   public dd gW;
 
-   df(dd var1) {
+   public df(dd var1) {
       this.gW = var1;
    }
 

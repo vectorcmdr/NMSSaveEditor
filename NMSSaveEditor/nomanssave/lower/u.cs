@@ -13,9 +13,9 @@ namespace NMSSaveEditor
 
 public class u : fR {
    // $FF: synthetic field
-   Application aZ;
+   public Application aZ;
 
-   u(Application var1) {
+   public u(Application var1) {
       this.aZ = var1;
    }
 

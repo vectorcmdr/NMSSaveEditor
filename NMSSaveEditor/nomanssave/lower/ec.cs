@@ -12,17 +12,17 @@ namespace NMSSaveEditor
 {
 
 public class ec : ba {
-   private int index;
-   private CheckBox @if;
-   private ComboBox ig;
-   private G bj;
-   private ComboBox ih;
-   private G hO;
-   private G ii;
+   public int index;
+   public CheckBox @if;
+   public ComboBox ig;
+   public G bj;
+   public ComboBox ih;
+   public G hO;
+   public G ii;
    // $FF: synthetic field
-   eb ij;
+   public eb ij;
 
-   ec(eb var1, int var2) : base(aH.cH, aH.cH * 2) {
+   public ec(eb var1, int var2) : base(aH.cH, aH.cH * 2) {
       this.ij = var1;
       this.index = var2;
       this.k("Wingman " + (var2 + 1));
@@ -45,7 +45,7 @@ public class ec : ba {
       this.a("Pilot Rank", this.ii);
    }
 
-   private void aQ() {
+   public void aQ() {
       this.@if.setSelected(eb.a(this.ij)[this.index].isEnabled());
       this.ig.setEnabled(eb.a(this.ij)[this.index].isEnabled());
       this.ig.setSelectedItem(eb.a(this.ij)[this.index].ed());

@@ -12,11 +12,11 @@ namespace NMSSaveEditor
 {
 
 public class cQ {
-   string value;
+   public string value;
    // $FF: synthetic field
-   cN gt;
+   public cN gt;
 
-   cQ(cN var1, string var2) {
+   public cQ(cN var1, string var2) {
       this.gt = var1;
       this.value = var2;
    }

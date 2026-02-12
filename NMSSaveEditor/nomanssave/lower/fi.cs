@@ -12,10 +12,10 @@ namespace NMSSaveEditor
 {
 
 public class fi : StringReader {
-   int kF = 1;
-   int kG = 0;
+   public int kF = 1;
+   public int kG = 0;
 
-   fi(string var1) {
+   public fi(string var1) {
       base(var1);
    }
 
@@ -46,7 +46,7 @@ public class fi : StringReader {
       return var1;
    }
 
-   private int a(Predicate var1) {
+   public int a(Predicate var1) {
       try {
          this.mark(1);
          int var2 = base.ReadByte();
