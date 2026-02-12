@@ -46,33 +46,34 @@ public class fq {
       } else {
          try {
             if (var0.Attributes.HasFlag(FileAttributes.Directory)) {
-               if (var0.GetFiles() => {
-                  return var0x.Name.Equals("containers.index");
-               }).Length > 0) {
+               DirectoryInfo dir = new DirectoryInfo(var0.FullName);
+               if (dir.GetFiles().Where((var0x) => {
+                  return var0x.Name.Equals("containers.index", StringComparison.OrdinalIgnoreCase);
+               }).Count() > 0) {
                   return new fT(var0, var1);
                }
 
-               if (var0.GetFiles() => {
-                  return var0x.Name.Equals("accountdata.hg") || Pattern.System.Text.RegularExpressions.Regex.IsMatch("save\\d*.hg", var0x.Name.ToLower());
-               }).Length > 0) {
+               if (dir.GetFiles().Where((var0x) => {
+                  return var0x.Name.Equals("accountdata.hg", StringComparison.OrdinalIgnoreCase) || Regex.IsMatch(var0x.Name.ToLower(), "^save\\d*.hg$");
+               }).Count() > 0) {
                   return new fJ(var0, var1);
                }
 
-               if (var0.GetFiles() => {
-                  return Pattern.System.Text.RegularExpressions.Regex.IsMatch("savedata\\d{2}.hg", var0x.Name.ToLower());
-               }).Length > 0) {
+               if (dir.GetFiles().Where((var0x) => {
+                  return Regex.IsMatch(var0x.Name.ToLower(), "^savedata\\d{2}.hg$");
+               }).Count() > 0) {
                   return new fA(var0, var1);
                }
             } else {
-               if (var0.Name.Equals("containers.index")) {
+               if (var0.Name.Equals("containers.index", StringComparison.OrdinalIgnoreCase)) {
                   return new fT(var0.Directory, var1);
                }
 
-               if (var0.Name.Equals("accountdata.hg") || Pattern.System.Text.RegularExpressions.Regex.IsMatch("save\\d*.hg", var0.Name.ToLower())) {
+               if (var0.Name.Equals("accountdata.hg", StringComparison.OrdinalIgnoreCase) || Regex.IsMatch(var0.Name.ToLower(), "^save\\d*.hg$")) {
                   return new fJ(var0.Directory, var1);
                }
 
-               if (Pattern.System.Text.RegularExpressions.Regex.IsMatch("savedata\\d{2}.hg", var0.Name.ToLower())) {
+               if (Regex.IsMatch(var0.Name.ToLower(), "^savedata\\d{2}.hg$")) {
                   return new fA(var0.Directory, var1);
                }
             }
@@ -115,19 +116,20 @@ public class fq {
    public virtual fr bT() { return null; }
 
    public virtual ft[] bU() { return new ft[0]; }
+
    public ft[] bV() {
-      return (ft[])new List<object>(new object[]{this.bU()}).Where((var0) => {
-         return var0.Count != 0;
-      }).ToArray() => {
-         return new ft[var0];
-      });
+      return bU().Where((var0) => {
+         return !var0.isEmpty();
+      }).ToArray();
    }
 
    public virtual int W(string var1) { return 0; }
-   public bool bW() {
+
+   public virtual bool bW() {
       return false;
    }
-   public string a(int var1, eY var2) {
+
+   public virtual string a(int var1, eY var2) {
       throw new IOException("cannot create slot " + (var1 + 1));
    }
 
