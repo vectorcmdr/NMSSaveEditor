@@ -9,6 +9,7 @@ public class ExosuitPanel : UserControl
 
     public ExosuitPanel()
     {
+        SuspendLayout();
         var layout = new TableLayoutPanel
         {
             Dock = DockStyle.Fill,
@@ -34,6 +35,8 @@ public class ExosuitPanel : UserControl
         layout.Controls.Add(_titleLabel, 0, 0);
         layout.Controls.Add(_infoLabel, 0, 1);
         Controls.Add(layout);
+        ResumeLayout(false);
+        PerformLayout();
     }
 
     public void LoadData(JsonObject saveData)

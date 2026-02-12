@@ -43,6 +43,8 @@ public class MainForm : Form
 
     public MainForm()
     {
+        SuspendLayout();
+
         // Initialize components
         _menuStrip = new MenuStrip();
         _toolStrip = new ToolStrip();
@@ -74,18 +76,29 @@ public class MainForm : Form
         InitializeToolbar();
         InitializeStatusBar();
         InitializeTabs();
+
+        ResumeLayout(false);
+        PerformLayout();
+
         LoadConfig();
         LoadDatabase();
     }
 
     private void InitializeForm()
     {
+        AutoScaleMode = AutoScaleMode.Font;
         Text = $"No Man's Sky Save Editor - {Version} ({Release})";
-        Size = new Size(1200, 800);
+        ClientSize = new Size(1200, 800);
         StartPosition = FormStartPosition.CenterScreen;
         MinimumSize = new Size(800, 600);
         FormClosing += OnFormClosing;
 
+        // Set dock styles before adding controls
+        _tabControl.Dock = DockStyle.Fill;
+
+        // Add controls in proper z-order for WinForms docking engine.
+        // Controls are processed in reverse z-order (last added = back = processed first).
+        // Order: TabControl (Fill, front) -> ToolStrip (Top) -> MenuStrip (Top) -> StatusStrip (Bottom, back)
         Controls.Add(_tabControl);
         Controls.Add(_toolStrip);
         Controls.Add(_menuStrip);
@@ -149,7 +162,6 @@ public class MainForm : Form
 
     private void InitializeTabs()
     {
-        _tabControl.Dock = DockStyle.Fill;
         _tabControl.TabPages.Add(CreateTab("Main Stats", _mainStatsPanel));
         _tabControl.TabPages.Add(CreateTab("Exosuit", _exosuitPanel));
         _tabControl.TabPages.Add(CreateTab("Multitools", _multitoolPanel));

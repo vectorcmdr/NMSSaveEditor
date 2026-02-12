@@ -13,6 +13,7 @@ public class MainStatsPanel : UserControl
 
     public MainStatsPanel()
     {
+        SuspendLayout();
         _healthField = new NumericUpDown { Maximum = 999999, Width = 150 };
         _shieldField = new NumericUpDown { Maximum = 999999, Width = 150 };
         _energyField = new NumericUpDown { Maximum = 999999, Width = 150 };
@@ -21,6 +22,8 @@ public class MainStatsPanel : UserControl
         _quicksilverField = new NumericUpDown { Maximum = int.MaxValue, Width = 150 };
 
         InitializeLayout();
+        ResumeLayout(false);
+        PerformLayout();
     }
 
     private void InitializeLayout()

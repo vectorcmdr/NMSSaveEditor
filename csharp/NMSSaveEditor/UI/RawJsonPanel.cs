@@ -12,6 +12,7 @@ public class RawJsonPanel : UserControl
 
     public RawJsonPanel()
     {
+        SuspendLayout();
         var layout = new TableLayoutPanel
         {
             Dock = DockStyle.Fill,
@@ -60,6 +61,8 @@ public class RawJsonPanel : UserControl
         layout.SetColumnSpan(_jsonTextBox, 3);
 
         Controls.Add(layout);
+        ResumeLayout(false);
+        PerformLayout();
     }
 
     public void LoadData(JsonObject saveData)
