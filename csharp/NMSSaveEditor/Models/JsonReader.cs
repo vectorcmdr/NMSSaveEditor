@@ -19,11 +19,12 @@ internal sealed class JsonReader : IDisposable
     }
 
     // Read next non-whitespace character (port of bI())
+    // Also skips null bytes (0x00) since NMS save files use null terminators after JSON data
     public int ReadSkipWhitespace()
     {
         int c;
         do { c = Read(); }
-        while (c == ' ' || c == '\t' || c == '\n' || c == '\r');
+        while (c == ' ' || c == '\t' || c == '\n' || c == '\r' || c == '\0');
         return c;
     }
 

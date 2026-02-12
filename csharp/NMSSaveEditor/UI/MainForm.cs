@@ -38,6 +38,7 @@ public class MainForm : Form
 
     // Data
     private readonly GameItemDatabase _database = new();
+    private List<string> _saveSlotFiles = new();
     private JsonObject? _currentSaveData;
     private string? _currentFilePath;
 
@@ -153,6 +154,7 @@ public class MainForm : Form
 
         _loadButton.Click += OnLoadSlot;
         _saveButton.Click += OnSave;
+        _directoryCombo.SelectedIndexChanged += (_, _) => PopulateSaveSlots();
     }
 
     private void InitializeStatusBar()
@@ -218,6 +220,72 @@ public class MainForm : Form
         catch (Exception ex)
         {
             _statusLabel.Text = $"Warning: Could not load game database: {ex.Message}";
+        }
+    }
+
+    private void PopulateSaveSlots()
+    {
+        _saveSlotCombo.Items.Clear();
+
+        if (_directoryCombo.SelectedItem is not string dir || !Directory.Exists(dir))
+            return;
+
+        // NMS Steam saves: save.hg, save2.hg, save3.hg, ... (up to 30 files for 15 slots)
+        // Each slot has 2 files: manual save and auto save
+        // Slot 1: save.hg (manual), save2.hg (auto)
+        // Slot 2: save3.hg (manual), save4.hg (auto)  etc.
+        var saveFiles = new List<string>();
+        for (int i = 0; i < 15; i++)
+        {
+            string manualSave = i == 0 ? "save.hg" : $"save{i * 2 + 1}.hg";
+            string autoSave = $"save{i * 2 + 2}.hg";
+
+            string manualPath = Path.Combine(dir, manualSave);
+            string autoPath = Path.Combine(dir, autoSave);
+
+            bool hasManual = File.Exists(manualPath);
+            bool hasAuto = File.Exists(autoPath);
+
+            if (hasManual || hasAuto)
+            {
+                // Pick most recent between manual and auto
+                string? bestPath = null;
+                if (hasManual && hasAuto)
+                    bestPath = File.GetLastWriteTime(manualPath) >= File.GetLastWriteTime(autoPath) ? manualPath : autoPath;
+                else if (hasManual)
+                    bestPath = manualPath;
+                else
+                    bestPath = autoPath;
+
+                saveFiles.Add(bestPath);
+                _saveSlotCombo.Items.Add($"Slot {i + 1}");
+            }
+        }
+
+        // Also check for PS4-style saves (savedata00.hg, savedata02.hg, etc.)
+        if (_saveSlotCombo.Items.Count == 0)
+        {
+            var ps4Files = Directory.GetFiles(dir, "savedata*.hg")
+                .OrderBy(f => f)
+                .ToArray();
+            for (int i = 0; i < ps4Files.Length; i++)
+            {
+                saveFiles.Add(ps4Files[i]);
+                _saveSlotCombo.Items.Add($"Save {i + 1}");
+            }
+        }
+
+        // Store file paths for later use
+        _saveSlotFiles = saveFiles;
+
+        if (_saveSlotCombo.Items.Count > 0)
+        {
+            _saveSlotCombo.SelectedIndex = 0;
+            _statusLabel.Text = $"Found {_saveSlotCombo.Items.Count} save slot(s) in {Path.GetFileName(dir)}";
+        }
+        else
+        {
+            _statusLabel.Text = "No save files found in selected directory";
         }
     }
 
@@ -296,22 +364,15 @@ public class MainForm : Form
 
     private void OnLoadSlot(object? sender, EventArgs e)
     {
-        if (_directoryCombo.SelectedItem is string dir && Directory.Exists(dir))
+        int slotIndex = _saveSlotCombo.SelectedIndex;
+        if (slotIndex >= 0 && slotIndex < _saveSlotFiles.Count)
         {
-            var saveFiles = Directory.GetFiles(dir, "save*.hg");
-            if (saveFiles.Length > 0)
-            {
-                int slotIndex = _saveSlotCombo.SelectedIndex;
-                if (slotIndex >= 0 && slotIndex < saveFiles.Length)
-                    LoadSaveData(saveFiles[slotIndex]);
-                else if (saveFiles.Length > 0)
-                    LoadSaveData(saveFiles[0]);
-            }
-            else
-            {
-                MessageBox.Show("No save files found in the selected directory.", "Info",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+            LoadSaveData(_saveSlotFiles[slotIndex]);
+        }
+        else
+        {
+            MessageBox.Show("No save slot selected. Please select a directory with save files first.", "Info",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 
