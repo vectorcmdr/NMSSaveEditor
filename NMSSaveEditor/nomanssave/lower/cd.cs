@@ -31,8 +31,7 @@ public class cd : ActionListener {
          cg.a((Container)bS.j(this.fk), (gQ)var2);
          bS.c(this.fk);
       }
-
-   }
+    }
 }
 
 }

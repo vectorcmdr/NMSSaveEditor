@@ -57,8 +57,7 @@ public sealed class gr {
             return values()[var1];
          }
       }
-
-      return null;
+       return null;
    }
 }
 }

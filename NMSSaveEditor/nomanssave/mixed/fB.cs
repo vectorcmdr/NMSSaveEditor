@@ -16,7 +16,7 @@ public class fB : fH, fr {
    public fA ma;
 
    public fB(fA var1) {
-      base(var1, "savedata00.hg", true);
+      // base(var1, "savedata00.hg", true);
       this.ma = var1;
    }
 

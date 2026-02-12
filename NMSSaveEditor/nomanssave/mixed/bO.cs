@@ -77,8 +77,7 @@ public class bO : Panel, eo {
          if ("lookAndFeel".Equals(var1x.getPropertyName())) {
             JavaCompat.InvokeLater(this.af);
          }
-
-      });
+       });
    }
 
    public void a(bool var1) {
@@ -93,8 +92,7 @@ public class bO : Panel, eo {
                bS.g(var6).SetEnabled(var2);
             }
          }
-
-      }
+       }
    }
 
    public void a(gt var1) {
@@ -109,8 +107,7 @@ public class bO : Panel, eo {
          if (var1.dt() && this.eW == var1) {
             this.af();
          }
-
-      });
+       });
    }
 
    public void x() {
@@ -118,8 +115,7 @@ public class bO : Panel, eo {
          if (var1.du() && this.eW == var1) {
             this.af();
          }
-
-      });
+       });
    }
 
    public void y() {
@@ -127,8 +123,7 @@ public class bO : Panel, eo {
          if (var1.dp() && var1.dv() && this.eW == var1) {
             this.af();
          }
-
-      });
+       });
    }
 
    public void z() {
@@ -136,8 +131,7 @@ public class bO : Panel, eo {
          if (var1.dq() && var1.ds() && this.eW == var1) {
             this.af();
          }
-
-      });
+       });
    }
 
    public void A() {
@@ -145,8 +139,7 @@ public class bO : Panel, eo {
          if (var1.dk() && var1.dl() && this.eW == var1) {
             this.af();
          }
-
-      });
+       });
    }
 
    public void ae() {
@@ -164,8 +157,7 @@ public class bO : Panel, eo {
          if (this.eW != null) {
             int var2 = UIManager.getInt("Inventory.gridSize");
             Size var3 = new Size(var2, var2);
-
-            for(int var4 = 0; var4 < this.eW.Height; ++var4) {
+             for(int var4 = 0; var4 < this.eW.Height; ++var4) {
                for(int var5 = 0; var5 < this.eW.Width; ++var5) {
                   bS var6 = new bS(this, var5, var4, (bS)null);
                   var6.SetMinimumSize(var3);
@@ -181,8 +173,7 @@ public class bO : Panel, eo {
             }
          }
       }
-
-      this.eS.PerformLayout();
+       this.eS.PerformLayout();
       this.eS.updateUI();
    }
 
@@ -213,8 +204,7 @@ public class bO : Panel, eo {
                }
             }
          }
-
-         return null;
+          return null;
       }
    }
 
@@ -224,8 +214,7 @@ public class bO : Panel, eo {
          this.eW.a(bS.h(var1), bS.i(var1), var2);
          bS.c(var1);
       }
-
-   }
+    }
 
    public void a(gu var1, bS var2) {
       ey var3 = ey.d(var1.dz());
@@ -238,14 +227,12 @@ public class bO : Panel, eo {
                this.eR.c("Item details not found!");
                return;
             }
-
-            var4 = 1024;
+             var4 = 1024;
          }
       } else {
          var4 = gt.a(var3.bc());
       }
-
-      List<object> var5 = this.eR.g(var4);
+       List<object> var5 = this.eR.g(var4);
       int var6 = var5.IndexOf(this.eW);
       int var7 = dd.a(this, var5, var6);
       if (var7 != var6) {
@@ -255,8 +242,7 @@ public class bO : Panel, eo {
             this.eR.a(var8);
          }
       }
-
-   }
+    }
 
    public static string a(Object var0) {
       return var0 is fg ? "Archived Tech" : var0.ToString();
@@ -351,6 +337,8 @@ public class bO : Panel, eo {
    public static Button e(bO var0) {
       return var0.eU;
    }
+
 }
+
 
 }

@@ -53,12 +53,10 @@ public class bC : ComboBoxModel {
                if (var4 < 0) {
                   var4 = 0;
                }
-
-               bl.c(this.er)[bl.b(this.er)].e(var3, var4);
+                bl.c(this.er)[bl.b(this.er)].e(var3, var4);
                bl.d(this.er)[var3].SetText(Convert.ToString(var4));
             }
-
-            if (this.eu == null) {
+             if (this.eu == null) {
                bl.c(this.er)[bl.b(this.er)].a(this.ev, (er)null);
             } else {
                bl.c(this.er)[bl.b(this.er)].a(this.ev, this.eu);
@@ -67,16 +65,13 @@ public class bC : ComboBoxModel {
                if (var4 < 0) {
                   var4 = 0;
                }
-
-               bl.c(this.er)[bl.b(this.er)].e(var3, var4);
+                bl.c(this.er)[bl.b(this.er)].e(var3, var4);
                bl.d(this.er)[var3].SetText(Convert.ToString(var4));
             }
-
-            bl.e(this.er).updateUI();
+             bl.e(this.er).updateUI();
          }
       }
-
-   }
+    }
 
    public Object getSelectedItem() {
       return this.eu;
@@ -86,6 +81,8 @@ public class bC : ComboBoxModel {
    public Object getElementAt(int var1) {
       return this.v(var1);
    }
+
 }
+
 
 }

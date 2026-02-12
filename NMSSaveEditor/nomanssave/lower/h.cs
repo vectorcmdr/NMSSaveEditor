@@ -26,7 +26,7 @@ public class h : Form {
    public static h w = null;
 
    public h(Form var1) {
-      base(var1);
+      // base(var1);
       this.SetResizable(false);
       this.setModalExclusionType(ModalExclusionType.APPLICATION_EXCLUDE);
       this.SetTitle("Add Item");

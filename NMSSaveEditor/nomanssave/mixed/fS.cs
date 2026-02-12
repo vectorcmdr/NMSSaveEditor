@@ -30,27 +30,22 @@ public class fS {
    public void cn() {
       Exception var1 = null;
       Object var2 = null;
-
-      try {
+       try {
          FileStream var3 = new FileStream(this.mh);
-
-         try {
+          try {
             this.read(var3);
          } finally {
             if (var3 != null) {
                var3.Close();
             }
-
-         }
-
-      } catch (Exception var9) {
+          }
+       } catch (Exception var9) {
          if (var1 == null) {
             var1 = var9;
          } else if (var1 != var9) {
             var1.addSuppressed(var9);
          }
-
-         throw var1;
+          throw var1;
       }
    }
 
@@ -108,27 +103,22 @@ public class fS {
    public void write() {
       Exception var1 = null;
       Object var2 = null;
-
-      try {
+       try {
          FileStream var3 = new FileStream(this.mh);
-
-         try {
+          try {
             this.Write(var3);
          } finally {
             if (var3 != null) {
                var3.Close();
             }
-
-         }
-
-      } catch (Exception var9) {
+          }
+       } catch (Exception var9) {
          if (var1 == null) {
             var1 = var9;
          } else if (var1 != var9) {
             var1.addSuppressed(var9);
          }
-
-         throw var1;
+          throw var1;
       }
    }
 

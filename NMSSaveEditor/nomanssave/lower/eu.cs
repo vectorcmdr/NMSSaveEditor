@@ -21,8 +21,7 @@ public class eu {
             XmlDocument var1 = JavaCompat.ParseXml(var0);
             XmlElement var2 = var1.DocumentElement;
             XmlNodeList var3 = var2.ChildNodes;
-
-            for(int var4 = 0; var4 < var3.Count; ++var4) {
+             for(int var4 = 0; var4 < var3.Count; ++var4) {
                XmlNode var5 = var3.Item(var4);
                if (var5 is XmlElement && var5.Name.Equals("difficulty")) {
                   iH.Add(new ev((System.Xml.XmlElement)var5));
@@ -33,8 +32,7 @@ public class eu {
          } catch (IOException var8) {
          }
       }
-
-   }
+    }
 
    public static ew b(string var0, string var1) {
       IEnumerator<object> var3 = iH.GetEnumerator();

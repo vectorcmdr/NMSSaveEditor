@@ -30,8 +30,9 @@ public class cX : Runnable {
          }
       } catch (BadLocationException var3) {
       }
+    }
 
-   }
 }
+
 
 }

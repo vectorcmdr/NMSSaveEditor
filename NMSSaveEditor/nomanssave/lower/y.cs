@@ -34,28 +34,24 @@ public class y : Runnable {
             Application.h(x.a(this.bb)).Dispose();
             hc.info("Starting download...");
             FileInfo var3 = new File("~NMSSaveEditor.dl");
-
-            try {
+             try {
                URL var4 = new URL("https://github.com/goatfungus/NMSSaveEditor/raw/master/NMSSaveEditor.jar");
                URLConnection var5 = var4.openConnection();
                int var6 = var5.getContentLength();
                Stream var7 = var5.getInputStream();
                FileStream var8 = new FileStream(var3);
-
-               try {
+                try {
                   int var10;
                   for(byte[] var9 = new byte[4096]; (var10 = var7.read(var9)) > 0; var6 -= var10) {
                      var8.Write(var9, 0, var10);
                   }
-
-                  if (var6 != 0) {
+                   if (var6 != 0) {
                      throw new IOException("invalid file size");
                   }
                } finally {
                   var8.Close();
                }
-
-               hc.info("Restarting editor...");
+                hc.info("Restarting editor...");
                Environment.Exit(2);
             } catch (IOException var15) {
                var15.printStackTrace();
@@ -64,8 +60,9 @@ public class y : Runnable {
             }
          }
       }
+    }
 
-   }
 }
+
 
 }

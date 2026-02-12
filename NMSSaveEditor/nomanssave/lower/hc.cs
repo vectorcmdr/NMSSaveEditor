@@ -21,12 +21,10 @@ public class hc {
    static hc() {
       Logger var0 = JavaCompat.GetLogManager().GetLogger("");
       Handler[] var1 = var0.GetHandlers();
-
-      for(int var2 = 0; var2 < var1.Length; ++var2) {
+       for(int var2 = 0; var2 < var1.Length; ++var2) {
          var0.RemoveHandler(var1[0]);
       }
-
-      var0.SetLevel(JavaCompat.LevelAll);
+       var0.SetLevel(JavaCompat.LevelAll);
       var0.AddHandler(sn);
       em();
       so = Console.Out;
@@ -48,8 +46,7 @@ public class hc {
          var3.invoke(var2, var5, var7, null);
       } catch (Exception var8) {
       }
-
-   }
+    }
 
    public static void k(FileInfo var0) {
       FileStream var1;
@@ -63,8 +60,7 @@ public class hc {
       } catch (FileNotFoundException var3) {
          var1 = null;
       }
-
-      sq = var1 == null ? null : new StreamWriter(var1, true);
+       sq = var1 == null ? null : new StreamWriter(var1, true);
    }
 
    public static void aA(string var0) {
@@ -75,8 +71,7 @@ public class hc {
       } catch (ArgumentException var2) {
          warn("Invalid LogLevel: " + var0);
       }
-
-   }
+    }
 
    public static void debug(string var0) {
       if (sq != null) {
@@ -97,8 +92,7 @@ public class hc {
             }
          }
       }
-
-   }
+    }
 
    public static void info(string var0) {
       so.println(var0);
@@ -121,8 +115,7 @@ public class hc {
             }
          }
       }
-
-   }
+    }
 
    public static string d(string var0, string var1) {
       for(int var2 = 0; var2 < var0.Length; ++var2) {
@@ -155,8 +148,7 @@ public class hc {
             }
          }
       }
-
-   }
+    }
 
    public static void error(string var0, Exception var1) {
       sp.println(d(var0, "ERROR: "));
@@ -169,8 +161,7 @@ public class hc {
             }
          }
       }
-
-   }
+    }
 
    public static void log(LogRecord var0) {
       Level var1 = var0.getLevel();
@@ -181,8 +172,7 @@ public class hc {
          } else {
             var2 = var2 + ": ";
          }
-
-         var2 = var2 + var0.getMessage();
+          var2 = var2 + var0.getMessage();
          string var3;
          StreamWriter var4;
          if (var1.intValue() >= JavaCompat.LevelSevere.intValue()) {
@@ -210,12 +200,10 @@ public class hc {
             var3 = "DEBUG";
             var4 = so;
          }
-
-         if (var1.intValue() >= JavaCompat.LevelInfo.intValue()) {
+          if (var1.intValue() >= JavaCompat.LevelInfo.intValue()) {
             var4.println(d(var2, var3 + ": "));
          }
-
-         if (sq != null) {
+          if (sq != null) {
             lock(sq) {
                sq.println("[" + var3 + "] " + var2.Trim());
                if (var0.getThrown() != null) {
@@ -224,8 +212,7 @@ public class hc {
                }
             }
          }
-
-      }
+       }
    }
 
    public static void close() {

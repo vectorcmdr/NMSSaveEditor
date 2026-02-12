@@ -42,8 +42,7 @@ public class he : Stream {
       if (this.ss != null) {
          this.ss.Write(var1, var2, var3);
       }
-
-      for(int var4 = 0; var4 < var3; ++var4) {
+       for(int var4 = 0; var4 < var3; ++var4) {
          if (var1[var2 + var4] == 10) {
             this.su.Write(var1, var2, var4 + 1);
             if (hc.en() != null) {
@@ -52,15 +51,13 @@ public class he : Stream {
                   hc.en().Write(this.su.toByteArray());
                }
             }
-
-            this.su.reset();
+             this.su.reset();
             var3 -= var4 + 1;
             var2 = var4 + 1;
             var4 = -1;
          }
       }
-
-      this.su.Write(var1, var2, var3);
+       this.su.Write(var1, var2, var3);
    }
 
    public void flush() {
@@ -72,11 +69,9 @@ public class he : Stream {
                hc.en().Write(this.su.toByteArray());
             }
          }
-
-         this.su.reset();
+          this.su.reset();
       }
-
-   }
+    }
 
    // Stream abstract members
    public override bool CanRead => true;

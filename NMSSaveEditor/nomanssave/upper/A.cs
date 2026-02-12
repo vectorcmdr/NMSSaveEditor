@@ -25,6 +25,8 @@ public class A : Runnable {
    public void run() {
       JavaCompat.ShowOptionDialog(Application.h(this.aZ), this.bc, "Warning", 0, 2, (Icon)null, new Object[]{"OK"}, (Object)null);
    }
+
 }
+
 
 }

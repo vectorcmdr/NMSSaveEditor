@@ -29,18 +29,15 @@ public class eI {
             XmlDocument var1 = JavaCompat.ParseXml(var0);
             XmlElement var2 = var1.DocumentElement;
             XmlNodeList var3 = var2.ChildNodes;
-
-            for(int var4 = 0; var4 < var3.Count; ++var4) {
+             for(int var4 = 0; var4 < var3.Count; ++var4) {
                XmlNode var5 = var3.Item(var4);
                if (var5 is XmlElement && var5.Name.Equals("season")) {
                   ki.Add(new eI((System.Xml.XmlElement)var5, 0));
                }
-
-               if (var5 is XmlElement && var5.Name.Equals("twitch")) {
+                if (var5 is XmlElement && var5.Name.Equals("twitch")) {
                   kj.Add(new eI((System.Xml.XmlElement)var5, 1));
                }
-
-               if (var5 is XmlElement && var5.Name.Equals("platform")) {
+                if (var5 is XmlElement && var5.Name.Equals("platform")) {
                   kk.Add(new eI((System.Xml.XmlElement)var5, 2));
                }
             }
@@ -49,8 +46,7 @@ public class eI {
          } catch (IOException var8) {
          }
       }
-
-      ki.sort(new eJ());
+       ki.sort(new eJ());
       kj.sort(new eK());
       kk.sort(new eL());
    }

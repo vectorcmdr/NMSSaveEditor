@@ -26,13 +26,11 @@ public class gp {
       } else {
          List<object> var1 = new List<object>();
          gp[] var2 = new gp[var0 == null ? 0 : var0.Count];
-
-         for(int var3 = 0; var3 < var2.Length; ++var3) {
+          for(int var3 = 0; var3 < var2.Length; ++var3) {
             eY var4 = var0.V(var3);
             var1.Add(new gp(var3, var4));
          }
-
-         return (gp[])var1.ToArray(new gp[0]);
+          return (gp[])var1.ToArray(new gp[0]);
       }
    }
 
@@ -64,24 +62,20 @@ public class gp {
    public string cW() {
       int var1 = -2;
       eV var2 = this.oR.d("TraitIDs");
-
-      for(int var3 = 0; var3 < var2.Count; ++var3) {
+       for(int var3 = 0; var3 < var2.Count; ++var3) {
          string var4 = var2.X(var3);
          er var5 = er.o(var4);
          if (var5 != null && var5.aW()) {
             ++var1;
          }
       }
-
-      if (var1 < 0) {
+       if (var1 < 0) {
          var1 = 0;
       }
-
-      if (var1 > 3) {
+       if (var1 > 3) {
          var1 = 3;
       }
-
-      return gN.Values[var1].ToString();
+       return gN.Values[var1].ToString();
    }
 
    public string cU() {

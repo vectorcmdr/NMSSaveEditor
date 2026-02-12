@@ -67,12 +67,10 @@ public class aH {
          return (Object[])Array.newInstance(var1, 0);
       } else {
          Object var3 = Array.newInstance(var1, var2.Count);
-
-         for(int var4 = 0; var4 < var2.Count; ++var4) {
+          for(int var4 = 0; var4 < var2.Count; ++var4) {
             Array.Set(var3, var4, var1.cast(var2.getValue(var4)));
          }
-
-         return (Object[])var3;
+          return (Object[])var3;
       }
    }
 
@@ -93,43 +91,36 @@ public class aH {
 
    public static void U() {
       string var0 = fh.b(cK, true);
-
-      try {
+       try {
          Exception var1 = null;
          Object var2 = null;
-
-         try {
+          try {
             FileStream var3 = new FileStream(cC);
-
-            try {
+             try {
                var3.Write(var0.GetBytes(Encoding.UTF8));
                cL = false;
             } finally {
                if (var3 != null) {
                   var3.Close();
                }
-
-            }
+             }
          } catch (Exception var11) {
             if (var1 == null) {
                var1 = var11;
             } else if (var1 != var11) {
                var1.addSuppressed(var11);
             }
-
-            throw var1;
+             throw var1;
          }
       } catch (IOException var12) {
          hc.error("Could not save configuration file", var12);
       }
-
-   }
+    }
 
    public static void init(bool var0) {
       Console.WriteLine("Initializing environment...");
       FileInfo var1 = null;
-
-      try {
+       try {
          URL var2 = typeof(Application).getProtectionDomain().getCodeSource().Location;
          if (var0 && var2.getFile().EndsWith(".jar")) {
             var1 = Paths.Get(var2.toURI()).toFile().Directory;
@@ -145,13 +136,11 @@ public class aH {
          var21.printStackTrace();
          Environment.Exit(1);
       }
-
-      if (!var1.IsDirectory()) {
+       if (!var1.IsDirectory()) {
          Console.WriteLine("Error: working directory error: " + var1.FullName);
          Environment.Exit(1);
       }
-
-      cD = var1;
+       cD = var1;
       cC = new File(var1, "NMSSaveEditor.conf");
       cE = new File(var1, "bases");
       cF = new File(var1, "exported");
@@ -160,8 +149,7 @@ public class aH {
          Console.WriteLine("Error: cannot create backups folder");
          Environment.Exit(1);
       }
-
-      hc.k(new File(var1, "NMSSaveEditor.log"));
+       hc.k(new File(var1, "NMSSaveEditor.log"));
       hc.debug("Java Vendor: " + System.getProperty("java.vendor"));
       hc.debug("Java Version: " + System.getProperty("java.version"));
       hc.debug("Java Architecture: " + System.getProperty("os.arch"));
@@ -177,20 +165,16 @@ public class aH {
             } else {
                Properties var3 = new Properties();
                FileStream var4 = new FileStream(cC);
-
-               try {
+                try {
                   var3.load(var4);
                } finally {
                   var4.Close();
                }
-
-               eV var6 = new eV();
+                eV var6 = new eV();
                IEnumerator<object> var8 = var3.stringPropertyNames().GetEnumerator();
-
-               while(var8.MoveNext()) {
+                while(var8.MoveNext()) {
                   string var7 = (string)var8.Current;
-
-                  try {
+                   try {
                      string var9 = var3.getProperty(var7);
                      if (!var7.Equals("InventoryFontScale")) {
                         if (var7.Equals("InventoryScaling")) {
@@ -232,24 +216,20 @@ public class aH {
                   } catch (FormatException var17) {
                   }
                }
-
-               if (var6.Count > 0) {
+                if (var6.Count > 0) {
                   cK.b("SteamIDs", (Object)var6);
                }
-
-               cL = true;
+                cL = true;
             }
          } catch (IOException var19) {
             hc.a("Could not load configuration file", var19);
          }
       }
-
-      string var23 = cK.getValueAsString("LogLevel");
+       string var23 = cK.getValueAsString("LogLevel");
       if (var23 != null) {
          hc.aA(var23);
       }
-
-      FlatLaf.registerCustomDefaultsSource("nomanssave");
+       FlatLaf.registerCustomDefaultsSource("nomanssave");
       V();
    }
 
@@ -258,8 +238,7 @@ public class aH {
       aI var1 = (aI)Stream.of(aI.Values).filter((var1x) => {
          return var1x.ToString().Equals(var0);
       }).findFirst().orElse(aI.cN);
-
-      try {
+       try {
          Object var2;
          switch(W()[var1.ordinal()]) {
          case 1:
@@ -281,14 +260,12 @@ public class aH {
          case 6:
             var2 = new FlatMacDarkLaf();
          }
-
-         UIManager.setLookAndFeel((LookAndFeel)var2);
+          UIManager.setLookAndFeel((LookAndFeel)var2);
       } catch (UnsupportedLookAndFeelException var13) {
          hc.a("Could not set look and feel: " + var1, var13);
          return;
       }
-
-      hc.debug("Look and Feel: " + UIManager.getLookAndFeel().Name);
+       hc.debug("Look and Feel: " + UIManager.getLookAndFeel().Name);
       Font var3 = UIManager.getFont("Label.font");
       if (var3 == null) {
          cH = 120;
@@ -304,8 +281,7 @@ public class aH {
             cK.b("InventoryScaling", (Object)var4);
             cL = true;
          }
-
-         int var6 = (int)Math.Round((double)var3.Size * var4);
+          int var6 = (int)Math.Round((double)var3.Size * var4);
          Font var7 = new Font(var3.Name, 0, var6);
          Canvas var8 = new Canvas();
          FontMetrics var9 = var8.getFontMetrics(var3);
@@ -315,21 +291,17 @@ public class aH {
          var9 = var8.getFontMetrics(var7);
          int var10 = var9.stringWidth("MMMMMMMMMMM");
          int var11 = var10 - (var9.Height * 2 + 8);
-
-         int var12;
+          int var12;
          for(var12 = 16; var12 * 2 <= var11; var12 *= 2) {
          }
-
-         if ((double)var12 * 1.5D <= (double)var11) {
+          if ((double)var12 * 1.5D <= (double)var11) {
             var12 = (int)((double)var12 * 1.5D);
          }
-
-         UIManager.Put("Inventory.font", var7);
+          UIManager.Put("Inventory.font", var7);
          UIManager.Put("Inventory.gridSize", var10);
          UIManager.Put("Inventory.iconSize", var12);
       }
-
-   }
+    }
 
    // $FF: synthetic method
    public static int[] W() {
@@ -338,38 +310,31 @@ public class aH {
          return var10000;
       } else {
          int[] var0 = new int[aI.Values.Length];
-
-         try {
+          try {
             var0[aI.cQ.ordinal()] = 4;
          } catch (NoSuchFieldError var6) {
          }
-
-         try {
+          try {
             var0[aI.cO.ordinal()] = 2;
          } catch (NoSuchFieldError var5) {
          }
-
-         try {
+          try {
             var0[aI.cP.ordinal()] = 3;
          } catch (NoSuchFieldError var4) {
          }
-
-         try {
+          try {
             var0[aI.cN.ordinal()] = 1;
          } catch (NoSuchFieldError var3) {
          }
-
-         try {
+          try {
             var0[aI.cS.ordinal()] = 6;
          } catch (NoSuchFieldError var2) {
          }
-
-         try {
+          try {
             var0[aI.cR.ordinal()] = 5;
          } catch (NoSuchFieldError var1) {
          }
-
-         cM = var0;
+          cM = var0;
          return var0;
       }
    }

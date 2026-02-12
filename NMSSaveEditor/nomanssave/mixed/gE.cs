@@ -25,16 +25,14 @@ public class gE {
       eV var3 = var0.d("SettlementStatesV2");
       if (var3 != null && var3.Count != 0) {
          List<object> var4 = new List<object>();
-
-         for(int var5 = 0; var5 < var3.Count; ++var5) {
+          for(int var5 = 0; var5 < var3.Count; ++var5) {
             eY var6 = var3.V(var5);
             hl var7 = hl.n(var6.getValue("UniverseAddress"));
             if (var2.Contains(var7)) {
                var4.Add(new gE(var5, var6));
             }
          }
-
-         return (gE[])var4.ToArray(new gE[0]);
+          return (gE[])var4.ToArray(new gE[0]);
       } else {
          return new gE[0];
       }
@@ -99,13 +97,11 @@ public class gE {
          return new gF[0];
       } else {
          List<object> var2 = new List<object>();
-
-         for(int var3 = 0; var3 < var1.Count; ++var3) {
+          for(int var3 = 0; var3 < var1.Count; ++var3) {
             eY var4 = var1.V(var3);
             var2.Add(new gF(this, var4, (gF)null));
          }
-
-         return (gF[])var2.ToArray(new gF[0]);
+          return (gF[])var2.ToArray(new gF[0]);
       }
    }
 

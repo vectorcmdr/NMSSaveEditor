@@ -28,7 +28,7 @@ public class cy : Form, TreeSelectionListener {
    public string gf = "";
 
    public cy(Application var1) {
-      base(var1.g());
+      // base(var1.g());
       Rectangle var2 = new Rectangle(100, 100, 1000, 700);
       Point var3 = var1.g().Location;
       var2.x = aH.a("JSONEditor.X", var3.x + 10);
@@ -86,8 +86,7 @@ public class cy : Form, TreeSelectionListener {
       int var3 = 0;
       int var4 = 0;
       IEnumerator<object> var6 = var2.names().GetEnumerator();
-
-      while(var6.MoveNext()) {
+       while(var6.MoveNext()) {
          string var5 = (string)var6.Current;
          ++var4;
          if (var2.Get(var5) is eY) {
@@ -95,8 +94,7 @@ public class cy : Form, TreeSelectionListener {
             break;
          }
       }
-
-      this.fV.setSelectionRow(var3);
+       this.fV.setSelectionRow(var3);
       this.gb = false;
       this.fV.SetVisible(true);
       this.fU.SetVisible(false);
@@ -112,11 +110,9 @@ public class cy : Form, TreeSelectionListener {
          hc.error("Could not retrieve clipboard contents", var4);
          return "";
       }
-
-      StringBuffer var1 = new StringBuffer();
+       StringBuffer var1 = new StringBuffer();
       char[] var2 = var0.ToCharArray();
-
-      for(int var3 = 0; var3 < var2.Length; ++var3) {
+       for(int var3 = 0; var3 < var2.Length; ++var3) {
          if (var2[var3] != '\r' && var2[var3] != '\n' && var2[var3] != '\t') {
             if (var2[var3] == '\f') {
                var1.Append("\\f");
@@ -139,8 +135,7 @@ public class cy : Form, TreeSelectionListener {
             var1.Append(var2[var3]);
          }
       }
-
-      return var1.ToString();
+       return var1.ToString();
    }
 
    public static int a(char var0) {
@@ -159,8 +154,7 @@ public class cy : Form, TreeSelectionListener {
    public static void a(string var0, ClipboardOwner var1) {
       StringBuffer var2 = new StringBuffer();
       char[] var3 = var0.ToCharArray();
-
-      for(int var5 = 0; var5 < var3.Length; ++var5) {
+       for(int var5 = 0; var5 < var3.Length; ++var5) {
          if (var3[var5] == '\\' && var5 + 5 < var3.Length && var3[var5 + 1] == 'u') {
             try {
                int var4 = a(var3[var5 + 2]) << 12 | a(var3[var5 + 3]) << 8 | a(var3[var5 + 4]) << 4 | a(var3[var5 + 5]);
@@ -174,16 +168,14 @@ public class cy : Form, TreeSelectionListener {
                } else {
                   var2.Append((char)var4);
                }
-
-               var5 += 5;
+                var5 += 5;
             } catch (Exception var7) {
             }
          } else {
             var2.Append(var3[var5]);
          }
       }
-
-      StringSelection var8 = new StringSelection(var2.ToString());
+       StringSelection var8 = new StringSelection(var2.ToString());
       Clipboard var6 = Toolkit.getDefaultToolkit().getSystemClipboard();
       var6.setContents(var8, var1);
    }
@@ -215,8 +207,7 @@ public class cy : Form, TreeSelectionListener {
                return;
             }
          }
-
-         this.fZ = (cJ)this.fV.getLastSelectedPathComponent();
+          this.fZ = (cJ)this.fV.getLastSelectedPathComponent();
          if (this.fZ == null) {
             this.fX.SetText("");
             this.fX.setEditable(false);
@@ -224,8 +215,7 @@ public class cy : Form, TreeSelectionListener {
             this.fX.SetText(this.fZ.GetText());
             this.fX.setEditable(true);
          }
-
-         this.ga = false;
+          this.ga = false;
          this.fX.setCaretPosition(0);
          this.fX.Focus();
       }
@@ -239,49 +229,42 @@ public class cy : Form, TreeSelectionListener {
          Color var7 = UIManager.getColor("JSONEditor.hiliteColor");
          DefaultHighlightPainter var8 = new DefaultHighlightPainter(var7);
          int var9 = -1;
-
-         while((var9 = var5.IndexOf(var1, var9 + 1)) >= 0) {
+          while((var9 = var5.IndexOf(var1, var9 + 1)) >= 0) {
             try {
                var6.addHighlight(var9, var9 + var1.Length, var8);
             } catch (BadLocationException var11) {
             }
          }
       }
-
-      if (!var3) {
+       if (!var3) {
          var5 = var5.ToUpper();
          var1 = var1.ToUpper();
       }
-
-      int var12 = this.fX.getCaretPosition();
+       int var12 = this.fX.getCaretPosition();
       int var13 = -1;
       if (var2) {
          if (var12 > var1.Length) {
             var13 = var5.LastIndexOf(var1, var12 - var1.Length - 1);
          }
-
-         if (var13 < 0 && var4) {
+          if (var13 < 0 && var4) {
             var13 = var5.LastIndexOf(var1);
          }
       } else {
          if (var12 < var5.Length - 1) {
             var13 = var5.IndexOf(var1, var12 + 1);
          }
-
-         if (var13 < 0 && var4) {
+          if (var13 < 0 && var4) {
             var13 = var5.IndexOf(var1);
          }
       }
-
-      if (var13 < 0) {
+       if (var13 < 0) {
          MessageBox.Show("Text not found!".ToString(), "NMS Save Editor", MessageBoxButtons.OK);
       } else {
          this.fX.setCaretPosition(var13);
          this.fX.setSelectionStart(var13);
          this.fX.setSelectionEnd(var13 + var1.Length);
       }
-
-   }
+    }
 
    // $FF: synthetic method
    public static string az() {
@@ -337,6 +320,8 @@ public class cy : Form, TreeSelectionListener {
    public static bool g(cy var0) {
       return var0.ga;
    }
+
 }
+
 
 }

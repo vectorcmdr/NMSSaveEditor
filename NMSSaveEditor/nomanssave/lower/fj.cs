@@ -137,11 +137,9 @@ public class fj : Closeable {
          if (!(var1 is Number)) {
             throw new IOException("Cannot write value");
          }
-
-         this.a((Number)var1);
+          this.a((Number)var1);
       }
-
-   }
+    }
 
    public void a(Object var1, eC var2) {
       if (var1 == null) {
@@ -162,11 +160,9 @@ public class fj : Closeable {
          if (!(var1 is Number)) {
             throw new IOException("Cannot write value");
          }
-
-         this.a((Number)var1);
+          this.a((Number)var1);
       }
-
-   }
+    }
 
    public void writeString(string var1) {
       this.lh.Write(fh.O(var1).GetBytes(StandardCharsets.UTF_8));
@@ -176,8 +172,7 @@ public class fj : Closeable {
       this.lh.Write(34);
       byte[] var5;
       int var4 = (var5 = var1.toByteArray()).Length;
-
-      for(int var3 = 0; var3 < var4; ++var3) {
+       for(int var3 = 0; var3 < var4; ++var3) {
          byte var2 = var5[var3];
          int var6 = var2 & 255;
          if (var6 == 13) {
@@ -204,8 +199,7 @@ public class fj : Closeable {
             this.lh.Write(var7.ToString().GetBytes(StandardCharsets.UTF_8));
          }
       }
-
-      this.lh.Write(34);
+       this.lh.Write(34);
    }
 
    public void h(eY var1) {
@@ -254,8 +248,7 @@ public class fj : Closeable {
       } else {
          this.lh.Write(var1.ToString().GetBytes(StandardCharsets.UTF_8));
       }
-
-   }
+    }
 
    public void close() {
       try {

@@ -46,13 +46,11 @@ public class dE : Panel {
       this.hv.Y();
       this.hv.k("Stats");
       this.ea = new G[gG.Values.Length];
-
-      for(int var4 = 0; var4 < this.ea.Length; ++var4) {
+       for(int var4 = 0; var4 < this.ea.Length; ++var4) {
          this.ea[var4] = new dM(this, gG.Values[var4], (dM)null);
          this.hv.a(gG.Values[var4].ToString(), (JComponent)this.ea[var4]);
       }
-
-      this.hw = new ba();
+       this.hw = new ba();
       var3 = new GridBagConstraints();
       var3.insets = new Insets(0, 0, 0, 0);
       var3.fill = 1;

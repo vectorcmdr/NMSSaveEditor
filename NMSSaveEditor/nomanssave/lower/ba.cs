@@ -48,8 +48,7 @@ public class ba : Panel {
          this.dA.insertRow(var3, FormFactory.DEFAULT_ROWSPEC);
          this.dA.insertRow(var3, RowSpec.decode("bottom:25px"));
       }
-
-      var3 = this.dA.ColumnCount - 2;
+       var3 = this.dA.ColumnCount - 2;
       Label var4 = new Label(var1);
       var4.putClientProperty("FlatLaf.styleClass", "semibold");
       if (var2 == null) {
@@ -61,8 +60,7 @@ public class ba : Panel {
          var5.Add(var4);
          this.Add(var5, "2, " + (this.dA.RowCount - 1) + ", " + var3 + ", 1, left, default");
       }
-
-   }
+    }
 
    public void addText(string var1) {
       int var2;
@@ -74,8 +72,7 @@ public class ba : Panel {
          this.dA.insertRow(var2, FormFactory.DEFAULT_ROWSPEC);
          this.dA.insertRow(var2, RowSpec.decode("bottom:25px"));
       }
-
-      var2 = this.dA.ColumnCount - 2;
+       var2 = this.dA.ColumnCount - 2;
       Label var3 = new Label(var1);
       this.Add(var3, "2, " + (this.dA.RowCount - 1) + ", " + var2 + ", 1, left, default");
    }
@@ -107,11 +104,9 @@ public class ba : Panel {
          if (var2) {
             var6.putClientProperty("FlatLaf.styleClass", "semibold");
          }
-
-         this.Add(var6, "2, " + var5 + ", left, default");
+          this.Add(var6, "2, " + var5 + ", left, default");
       }
-
-      this.Add(var3, "4, " + var5 + ", " + var4 + ", 1, fill, default");
+       this.Add(var3, "4, " + var5 + ", " + var4 + ", 1, fill, default");
    }
 
    public void a(string var1, G var2) {

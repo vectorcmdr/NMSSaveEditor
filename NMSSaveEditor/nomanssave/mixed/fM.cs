@@ -17,20 +17,18 @@ public class fM : fQ, fs {
    public fJ mt;
 
    public fM(fJ var1, int var2) {
-      base(var1, var2 == 0 ? "save.hg" : "save" + (var2 + 1) + ".hg", var2, true);
+      // base(var1, var2 == 0 ? "save.hg" : "save" + (var2 + 1) + ".hg", var2, true);
       this.mt = var1;
-
-      try {
+       try {
          string var3 = new string(this.ah(65536));
          this.me = fn.T(var3);
       } catch (IOException var4) {
          hc.a("Could not read game mode from " + this.filename, var4);
       }
-
-   }
+    }
 
    public fM(fJ var1, int var2, eY var3) {
-      base(var1, var2 == 0 ? "save.hg" : "save" + (var2 + 1) + ".hg", var2, false);
+      // base(var1, var2 == 0 ? "save.hg" : "save" + (var2 + 1) + ".hg", var2, false);
       this.mt = var1;
       this.me = fn.i(var3);
       this.a(var3, true);
@@ -70,6 +68,9 @@ public class fM : fQ, fs {
    public string getDescription() {
       return this.mx.getDescription();
    }
+
+   public long lastModified() { return 0; }
 }
+
 
 }

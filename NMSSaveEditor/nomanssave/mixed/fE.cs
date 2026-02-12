@@ -35,12 +35,10 @@ public class fE : ft {
       if (fA.b(this.ma)[this.lT * 2] != null) {
          var1.Add(fA.b(this.ma)[this.lT * 2]);
       }
-
-      if (fA.b(this.ma)[this.lT * 2 + 1] != null) {
+       if (fA.b(this.ma)[this.lT * 2 + 1] != null) {
          var1.Add(fA.b(this.ma)[this.lT * 2 + 1]);
       }
-
-      aH.cG.listFiles(new fF(this, var1));
+       aH.cG.listFiles(new fF(this, var1));
       var1.sort(new fG(this));
       return (fs[])var1.ToArray(new fs[0]);
    }
@@ -52,15 +50,13 @@ public class fE : ft {
          var3 = fA.b(this.ma)[this.lT * 2].L();
          var1 = fA.b(this.ma)[this.lT * 2].LastWriteTimeUtc.Ticks;
       }
-
-      if (fA.b(this.ma)[this.lT * 2 + 1] != null) {
+       if (fA.b(this.ma)[this.lT * 2 + 1] != null) {
          long var4 = fA.b(this.ma)[this.lT * 2 + 1].LastWriteTimeUtc.Ticks;
          if (var4 > var1) {
             var3 = fA.b(this.ma)[this.lT * 2 + 1].L();
          }
       }
-
-      return var3;
+       return var3;
    }
 
    public string toString() {
@@ -72,29 +68,28 @@ public class fE : ft {
          var4 = fA.b(this.ma)[this.lT * 2].L();
          var2 = fA.b(this.ma)[this.lT * 2].LastWriteTimeUtc.Ticks;
       }
-
-      if (fA.b(this.ma)[this.lT * 2 + 1] != null) {
+       if (fA.b(this.ma)[this.lT * 2 + 1] != null) {
          long var5 = fA.b(this.ma)[this.lT * 2 + 1].LastWriteTimeUtc.Ticks;
          if (var5 > var2) {
             var4 = fA.b(this.ma)[this.lT * 2 + 1].L();
             var2 = var5;
          }
       }
-
-      if (var4 != null) {
+       if (var4 != null) {
          var1.Append(var4.ToString());
          var1.Append(" - " + Application.b(var2));
       } else {
          var1.Append("[EMPTY]");
       }
-
-      return var1.ToString();
+       return var1.ToString();
    }
 
    // $FF: synthetic method
    public static fA a(fE var0) {
       return var0.ma;
    }
+
 }
+
 
 }

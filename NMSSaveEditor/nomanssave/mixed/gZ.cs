@@ -20,7 +20,7 @@ public class gZ : FilterOutputStream {
    public int si;
 
    public gZ(Stream var1) {
-      base(var1);
+      // base(var1);
       this.sf = se.fastCompressor();
       this.buffer = new byte[524288];
       this.sg = 0;

@@ -96,11 +96,9 @@ public class eC {
             hc.warn("  name mapping not found: " + var1);
             var2 = var1;
          }
-
-         this.jU.Add(var1, var2);
+          this.jU.Add(var1, var2);
       }
-
-      return var2;
+       return var2;
    }
 
    public string r(string var1) {

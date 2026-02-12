@@ -46,14 +46,12 @@ public class bw : ComboBoxModel {
          } else {
             bl.p(this.er).SetSelectedItem((Object)null);
          }
-
-         bl.q(this.er).SetSelectedItem((Object)null);
+          bl.q(this.er).SetSelectedItem((Object)null);
          bl.r(this.er).SetSelectedItem((Object)null);
          bl.s(this.er).SetSelectedItem((Object)null);
          bl.t(this.er).SetSelectedItem((Object)null);
       }
-
-      bl.e(this.er).updateUI();
+       bl.e(this.er).updateUI();
       bl.p(this.er).updateUI();
       bl.q(this.er).updateUI();
       bl.r(this.er).updateUI();
@@ -69,6 +67,8 @@ public class bw : ComboBoxModel {
    public Object getElementAt(int var1) {
       return this.u(var1);
    }
+
 }
+
 
 }

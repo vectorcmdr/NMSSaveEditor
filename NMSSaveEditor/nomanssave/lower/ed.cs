@@ -32,8 +32,7 @@ public class ed : ActionListener {
          ec.e(this.ik).SetEnabled(var2);
          ec.f(this.ik).SetEnabled(var2);
       }
-
-   }
+    }
 }
 
 }

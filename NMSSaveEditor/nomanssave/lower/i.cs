@@ -26,8 +26,7 @@ public class i : ActionListener {
       if (h.d(this.z).Count == 0) {
          JavaCompat.ShowOptionDialog(this.z, "Item not found.", "Warning", 0, 2, (Icon)null, new Object[]{"OK"}, (Object)null);
       }
-
-   }
+    }
 }
 
 }

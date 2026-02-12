@@ -69,8 +69,7 @@ public class gV {
       List<object> var1 = new List<object>();
       bool var2 = false;
       eV var3 = var0.d("Objects");
-
-      for(int var4 = 0; var4 < var3.Count; ++var4) {
+       for(int var4 = 0; var4 < var3.Count; ++var4) {
          eY var5 = var3.V(var4);
          string var6 = var5.getValueAsString("ObjectID");
          if ("^BASE_FLAG".Equals(var5.getValueAsString("ObjectID"))) {
@@ -83,8 +82,7 @@ public class gV {
             var1.Add(var5);
          }
       }
-
-      return (List)(var2 ? var1 : new List<object>());
+       return (List)(var2 ? var1 : new List<object>());
    }
 
    public static bool a(eY var0, eY var1) {

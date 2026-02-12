@@ -33,12 +33,10 @@ public class eb : em {
 
    public void a(gM[] var1) {
       this.ic = var1;
-
-      for(int var2 = var1.Length; var2 < this.ib.Length; ++var2) {
+       for(int var2 = var1.Length; var2 < this.ib.Length; ++var2) {
          this.Remove(this.ib[var2]);
       }
-
-      byte var6;
+       byte var6;
       if (var1.Length <= 4) {
          var6 = 2;
       } else if (var1.Length <= 6) {
@@ -46,11 +44,9 @@ public class eb : em {
       } else {
          var6 = 4;
       }
-
-      ec[] var4 = new ec[var1.Length];
+       ec[] var4 = new ec[var1.Length];
       Array.Copy(this.ib, 0, var4, 0, Math.Min(var1.Length, this.ib.Length));
-
-      int var5;
+       int var5;
       for(var5 = this.ib.Length; var5 < var1.Length; ++var5) {
          var4[var5] = new ec(this, var5);
          GridBagConstraints var3 = new GridBagConstraints();
@@ -61,14 +57,11 @@ public class eb : em {
          var3.gridy = var5 / var6;
          this.Add(var4[var5], var3);
       }
-
-      this.ib = var4;
-
-      for(var5 = 0; var5 < var1.Length; ++var5) {
+       this.ib = var4;
+       for(var5 = 0; var5 < var1.Length; ++var5) {
          ec.g(this.ib[var5]);
       }
-
-      this.updateUI();
+       this.updateUI();
    }
 
    // $FF: synthetic method

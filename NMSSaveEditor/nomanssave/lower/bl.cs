@@ -85,8 +85,7 @@ public class bl : Panel, eo {
          if (this.eq >= 0) {
             this.ep[this.eq].am(var1x);
          }
-
-      });
+       });
       this.dT.a("NPC Race", (JComponent)this.dX);
       this.dY = new bx(this);
       this.dT.a("Home Seed", (JComponent)this.dY);
@@ -130,13 +129,11 @@ public class bl : Panel, eo {
       this.Add(this.eb);
       this.eb.k("Stats");
       this.ea = new G[gq.Values.Length];
-
-      for(int var9 = 0; var9 < this.ea.Length; ++var9) {
+       for(int var9 = 0; var9 < this.ea.Length; ++var9) {
          this.ea[var9] = new bA(this, var9, (bA)null);
          this.eb.a(gq.Values[var9].ToString(), (JComponent)this.ea[var9]);
       }
-
-      this.eb.Y();
+       this.eb.Y();
       this.eb.k("Totals");
       this.eh = new bn(this);
       this.eb.a("Expeditions", (JComponent)this.eh);
@@ -153,8 +150,7 @@ public class bl : Panel, eo {
       if (this.dR.GetSelectedRow() >= 0) {
          this.dS.SetEnabled(this.ep.Length < 30 || NMSSaveEditor.en.aS());
       }
-
-   }
+    }
 
    public void a(gp[] var1) {
       this.ep = var1;
@@ -164,8 +160,7 @@ public class bl : Panel, eo {
       if (var1.Length > 0) {
          this.dR.setRowSelectionInterval(0, 0);
       }
-
-      this.dR.updateUI();
+       this.dR.updateUI();
    }
 
    // $FF: synthetic method
@@ -322,6 +317,8 @@ public class bl : Panel, eo {
    public static Button A(bl var0) {
       return var0.bQ;
    }
+
 }
+
 
 }

@@ -20,7 +20,7 @@ public class aW : Form {
    public static aW dx;
 
    public aW(cy var1) {
-      base(var1);
+      // base(var1);
       this.SetSize(400, 250);
       this.SetResizable(false);
       this.setModalExclusionType(ModalExclusionType.APPLICATION_EXCLUDE);
@@ -77,13 +77,11 @@ public class aW : Form {
       if (dx == null) {
          dx = new aW(var0);
       }
-
-      dx.SetLocationRelativeTo(var0);
+       dx.SetLocationRelativeTo(var0);
       if (var1 != null) {
          dx.ds.SetText(var1);
       }
-
-      dx.ds.setSelectionStart(0);
+       dx.ds.setSelectionStart(0);
       dx.ds.setSelectionEnd(dx.ds.GetText().Length);
       dx.ds.Focus();
       dx.SetVisible(true);

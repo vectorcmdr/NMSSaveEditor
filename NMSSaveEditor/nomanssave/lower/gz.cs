@@ -48,26 +48,22 @@ public class gz {
          var7 = new eV();
          var1.b("KnownWordGroups", (Object)var7);
       }
-
-      if (var6.Count > 0) {
+       if (var6.Count > 0) {
          int var8 = 0;
-
-         label46:
+          label46:
          while(true) {
             while(true) {
                if (var8 >= var6.Count) {
                   goto label46;
                }
-
-               eY var9 = var6.V(var8);
+                eY var9 = var6.V(var8);
                eS var10 = eS.A(var9.getValueAsString("id"));
                if (var10 == null) {
                   hc.warn("Could not build word groups: " + var9.getValueAsString("id"));
                   ++var8;
                } else {
                   IEnumerator<object> var12 = var10.bw().GetEnumerator();
-
-                  while(var12.MoveNext()) {
+                   while(var12.MoveNext()) {
                      string var11 = (string)var12.Current;
                      eU var13 = var10.z(var11);
                      if (var13 != null) {
@@ -80,15 +76,13 @@ public class gz {
                         hc.debug("Creating word: " + var11 + "[" + var13.ordinal() + "] = true");
                      }
                   }
-
-                  var6.ac(var8);
+                   var6.ac(var8);
                   hc.debug("Removed old word: " + var9.getValueAsString("id"));
                }
             }
          }
       }
-
-      this.rc = var7;
+       this.rc = var7;
       bool var20 = false;
       bool var22 = false;
       short var24 = 0;
@@ -117,18 +111,15 @@ public class gz {
          var18 = "General";
          var19 = "Cargo";
       }
-
-      List<object> var17 = new List<object>();
+       List<object> var17 = new List<object>();
       var17.Add(new gt(au(var18), var3, var21, var25, var26, false, true));
       if (var4 != null) {
          var17.Add(new gt(au("Technology"), var4, var23, var27, var16, true, true));
       }
-
-      if (var5 != null) {
+       if (var5 != null) {
          var17.Add(new gt(au(var19), var5, var24, 8, 6, false, true));
       }
-
-      this.gT = UnmodifiableList(var17);
+       this.gT = UnmodifiableList(var17);
    }
 
    public long dJ() {
@@ -253,42 +244,33 @@ public class gz {
          if (var1.Equals(var4.getValueAsString("Group"))) {
             hc.debug("Updating word: " + var1 + "[" + var2 + "] = " + var3);
             eV var6 = var4.d("Races");
-
-            while(var6.Count < eU.Values.Length) {
+             while(var6.Count < eU.Values.Length) {
                var6.Add(Boolean.FALSE);
             }
-
-            var6.a(var2, new Boolean(var3));
-
-            for(int var7 = 0; var7 < var6.Count; ++var7) {
+             var6.a(var2, new Boolean(var3));
+             for(int var7 = 0; var7 < var6.Count; ++var7) {
                var3 |= var6.ab(var7);
             }
-
-            if (!var3) {
+             if (!var3) {
                hc.debug("Removing word: " + var1);
                this.rc.ac(var5);
             }
-
-            return;
+             return;
          }
       }
-
-      if (var3) {
+       if (var3) {
          hc.debug("Creating word: " + var1 + "[" + var2 + "] = " + var3);
          var4 = new eY();
          var4.b("Group", (Object)var1);
          eV var8 = new eV();
-
-         while(var8.Count < eU.Values.Length) {
+          while(var8.Count < eU.Values.Length) {
             var8.Add(Boolean.FALSE);
          }
-
-         var8.a(var2, new Boolean(var3));
+          var8.a(var2, new Boolean(var3));
          var4.b("Races", (Object)var8);
          this.rc.f(var4);
       }
-
-   }
+    }
 
    public double dT() {
       return new Double((double)Math.Round((double)this.oI.J("HazardTimeAlive") / 90.0D) / 10.0D);
@@ -326,8 +308,7 @@ public class gz {
                return;
             }
          }
-
-         var3 = new eY();
+          var3 = new eY();
          var3.b("Id", (Object)var1.id);
          eY var5 = new eY();
          var5.b("IntValue", (Object)(new Integer(var2)));
@@ -361,8 +342,7 @@ public class gz {
                return;
             }
          }
-
-         var4 = new eY();
+          var4 = new eY();
          var4.b("Id", (Object)var1.id);
          eY var6 = new eY();
          var6.b("IntValue", (Object)(new Integer(0)));

@@ -25,7 +25,7 @@ public class aj : Form {
    public static aj cf = null;
 
    public aj(Form var1) {
-      base(var1);
+      // base(var1);
       this.SetResizable(false);
       this.setModalExclusionType(ModalExclusionType.APPLICATION_EXCLUDE);
       this.SetTitle("Coordinate Viewer");
@@ -67,20 +67,16 @@ public class aj : Form {
       var10.SetLayout(new FlowLayout(1, 5, 5));
       var10.SetMinimumSize(new Size(449, 42));
       this.cb = new Image[16];
-
-      int var11;
+       int var11;
       for(var11 = 0; var11 < 16; ++var11) {
          this.cb[var11] = Application.a("UI-GLYPH" + (var11 + 1) + ".PNG");
       }
-
-      this.ca = new Label[12];
-
-      for(var11 = 0; var11 < 12; ++var11) {
+       this.ca = new Label[12];
+       for(var11 = 0; var11 < 12; ++var11) {
          this.ca[var11] = new Label(this.cb[0]);
          var10.Add(this.ca[var11]);
       }
-
-      var3.Add(var10, "2, 14, 5, 1, fill, fill");
+       var3.Add(var10, "2, 14, 5, 1, fill, fill");
       var2.Add(var3);
       Panel var14 = new Panel();
       var14.SetLayout(new FlowLayout(2));

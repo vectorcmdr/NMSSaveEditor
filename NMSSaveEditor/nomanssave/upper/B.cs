@@ -26,18 +26,15 @@ public class B : WindowAdapter {
             if (Application.i(this.aZ)) {
                Application.k(this.aZ);
             }
-
-            if (Application.j(this.aZ)) {
+             if (Application.j(this.aZ)) {
                Application.l(this.aZ);
             }
          }
       }
-
-      if (aH.T()) {
+       if (aH.T()) {
          aH.U();
       }
-
-      Application.h(this.aZ).Dispose();
+       Application.h(this.aZ).Dispose();
    }
 
    public void windowDeactivated(WindowEvent var1) {

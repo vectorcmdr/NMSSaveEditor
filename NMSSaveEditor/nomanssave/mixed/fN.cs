@@ -35,12 +35,10 @@ public class fN : ft {
       if (fJ.b(this.mt)[this.lT * 2] != null) {
          var1.Add(fJ.b(this.mt)[this.lT * 2]);
       }
-
-      if (fJ.b(this.mt)[this.lT * 2 + 1] != null) {
+       if (fJ.b(this.mt)[this.lT * 2 + 1] != null) {
          var1.Add(fJ.b(this.mt)[this.lT * 2 + 1]);
       }
-
-      aH.cG.listFiles(new fO(this, var1));
+       aH.cG.listFiles(new fO(this, var1));
       var1.sort(new fP(this));
       return (fs[])var1.ToArray(new fs[0]);
    }
@@ -52,15 +50,13 @@ public class fN : ft {
          var3 = fJ.b(this.mt)[this.lT * 2].L();
          var1 = fJ.b(this.mt)[this.lT * 2].LastWriteTimeUtc.Ticks;
       }
-
-      if (fJ.b(this.mt)[this.lT * 2 + 1] != null) {
+       if (fJ.b(this.mt)[this.lT * 2 + 1] != null) {
          long var4 = fJ.b(this.mt)[this.lT * 2 + 1].LastWriteTimeUtc.Ticks;
          if (var4 > var1) {
             var3 = fJ.b(this.mt)[this.lT * 2 + 1].L();
          }
       }
-
-      return var3;
+       return var3;
    }
 
    public string toString() {
@@ -74,8 +70,7 @@ public class fN : ft {
          var2 = fJ.b(this.mt)[this.lT * 2].LastWriteTimeUtc.Ticks;
          var4 = fJ.b(this.mt)[this.lT * 2].Name;
       }
-
-      if (fJ.b(this.mt)[this.lT * 2 + 1] != null) {
+       if (fJ.b(this.mt)[this.lT * 2 + 1] != null) {
          long var6 = fJ.b(this.mt)[this.lT * 2 + 1].LastWriteTimeUtc.Ticks;
          if (var6 > var2) {
             var5 = fJ.b(this.mt)[this.lT * 2 + 1].L();
@@ -83,8 +78,7 @@ public class fN : ft {
             var4 = fJ.b(this.mt)[this.lT * 2 + 1].Name;
          }
       }
-
-      if (var5 != null) {
+       if (var5 != null) {
          var1.Append(var5.ToString());
          if (var4 != null) {
             var1.Append(" - " + var4);
@@ -94,14 +88,15 @@ public class fN : ft {
       } else {
          var1.Append("[EMPTY]");
       }
-
-      return var1.ToString();
+       return var1.ToString();
    }
 
    // $FF: synthetic method
    public static fJ a(fN var0) {
       return var0.mt;
    }
+
 }
+
 
 }

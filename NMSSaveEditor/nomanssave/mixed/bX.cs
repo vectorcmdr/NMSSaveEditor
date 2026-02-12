@@ -40,8 +40,7 @@ public class bX : MouseAdapter {
                      } else {
                         bO.a(bS.j(this.fk)).b(this.fl, this.fm, var3, var4);
                      }
-
-                     bS.c(this.fk);
+                      bS.c(this.fk);
                      bS.c(var5);
                   }
                }
@@ -58,8 +57,7 @@ public class bX : MouseAdapter {
             bS.c(this.fk);
          }
       }
-
-   }
+    }
 }
 
 }

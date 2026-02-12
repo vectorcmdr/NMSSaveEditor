@@ -126,14 +126,15 @@ public class ax : TableModel {
       case 6:
          var5.a(eU.kz, Boolean.TRUE.Equals(var1));
       }
-
-   }
+    }
 
    public void addTableModelListener(TableModelListener var1) {
    }
 
    public void removeTableModelListener(TableModelListener var1) {
    }
+
 }
+
 
 }

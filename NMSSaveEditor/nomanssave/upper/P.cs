@@ -39,8 +39,7 @@ public class P : ActionListener {
                   hc.info("Base computer not moved.");
                   this.bv.c("An error occurred while attempting to move base computer.");
                }
-
-            }
+             }
          }
       }
    }

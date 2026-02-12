@@ -29,8 +29,7 @@ public class bv : G {
             bl.j(this.er).SetText(var1);
             bl.e(this.er).updateUI();
          }
-
-         return var1;
+          return var1;
       }
    }
 }

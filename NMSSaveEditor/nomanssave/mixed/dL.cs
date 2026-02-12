@@ -37,8 +37,7 @@ public class dL : DefaultListCellRenderer {
             var6.SetForeground(UIManager.getColor("Settlement.negativePerkColor"));
          }
       }
-
-      return var6;
+       return var6;
    }
 }
 

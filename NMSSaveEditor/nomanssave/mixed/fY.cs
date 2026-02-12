@@ -19,26 +19,23 @@ public class fY : fX, fs {
    public fT mN;
 
    public fY(fT var1, int var2) {
-      base(var1, "Slot" + (var2 / 2 + 1) + (var2 % 2 == 0 ? "Auto" : "Manual"));
+      // base(var1, "Slot" + (var2 / 2 + 1) + (var2 % 2 == 0 ? "Auto" : "Manual"));
       this.mN = var1;
       this.lO = var2;
-
-      try {
+       try {
          string var3 = new string(this.ah(1048576));
          Matcher var4 = fT.cl().Match(var3);
          if (var4.Success) {
             this.na = var4.Groups[3];
          }
-
-         this.me = fn.T(var3);
+          this.me = fn.T(var3);
       } catch (IOException var5) {
          hc.a("Could not read game mode from " + this.mO.name, var5);
       }
-
-   }
+    }
 
    public fY(fT var1, fV var2, eY var3) {
-      base(var1, var2);
+      // base(var1, var2);
       this.mN = var1;
       this.lO = var2.mb;
       this.mZ.a(var2.mQ);
@@ -46,19 +43,16 @@ public class fY : fX, fs {
       if (var4 != 0) {
          this.mZ.setVersion(var4);
       }
-
-      this.na = var3.getValueAsString("CommonStateData.SaveName");
+       this.na = var3.getValueAsString("CommonStateData.SaveName");
       if (this.na != null) {
          this.mZ.Y(this.na);
       }
-
-      this.me = fn.i(var3);
+       this.me = fn.i(var3);
       long var5 = var3.K("PlayerStateData.TotalPlayTime");
       if (var5 != 0L) {
          this.mZ.d(var5);
       }
-
-      this.h(var3);
+       this.h(var3);
    }
 
    public fn L() {
@@ -79,19 +73,16 @@ public class fY : fX, fs {
       if (var2 != 0) {
          this.mZ.setVersion(var2);
       }
-
-      this.na = var1.getValueAsString("CommonStateData.SaveName");
+       this.na = var1.getValueAsString("CommonStateData.SaveName");
       if (this.na != null) {
          this.mZ.Y(this.na);
       }
-
-      this.me = fn.i(var1);
+       this.me = fn.i(var1);
       long var3 = var1.K("PlayerStateData.TotalPlayTime");
       if (var3 != 0L) {
          this.mZ.d(var3);
       }
-
-      this.h(var1);
+       this.h(var1);
       return this.mO.filename;
    }
 
@@ -106,6 +97,8 @@ public class fY : fX, fs {
    public string getDescription() {
       return this.mZ.getDescription();
    }
+
 }
+
 
 }

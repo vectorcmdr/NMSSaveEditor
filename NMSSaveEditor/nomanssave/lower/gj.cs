@@ -33,8 +33,7 @@ public class gj {
             }
          }
       }
-
-      var2 = var0.d("Eggs");
+       var2 = var0.d("Eggs");
       if (var2 != null) {
          for(var3 = 0; var3 < var2.Count; ++var3) {
             var4 = var2.V(var3);
@@ -43,8 +42,7 @@ public class gj {
             }
          }
       }
-
-      return (gj[])var1.ToArray(new gj[0]);
+       return (gj[])var1.ToArray(new gj[0]);
    }
 
    public static gj a(eY var0, FileInfo var1) {
@@ -54,34 +52,28 @@ public class gj {
          var2 = var0.d("Pets");
          var3 = gl.oF;
       }
-
-      if (var1.Name.EndsWith(".egg")) {
+       if (var1.Name.EndsWith(".egg")) {
          var2 = var0.d("Eggs");
          var3 = gl.oG;
       }
-
-      if (var2 != null && var2.Count != 0) {
+       if (var2 != null && var2.Count != 0) {
          int var4 = -1;
-
-         for(int var5 = 0; var5 < var2.Count; ++var5) {
+          for(int var5 = 0; var5 < var2.Count; ++var5) {
             eY var6 = var2.V(var5);
             if (!var6.d("CreatureSeed").ab(0)) {
                var4 = var5;
                break;
             }
          }
-
-         if (var4 < 0) {
+          if (var4 < 0) {
             throw new Exception("Companion cannot be imported to current file!");
          } else {
             eY var15 = gR.az("companion");
             Exception var16 = null;
             Object var7 = null;
-
-            try {
+             try {
                ff var8 = new ff(new FileStream(var1));
-
-               try {
+                try {
                   if (var15 == null) {
                      var15 = var8.bK();
                   } else {
@@ -91,19 +83,16 @@ public class gj {
                   if (var8 != null) {
                      var8.Close();
                   }
-
-               }
+                }
             } catch (Exception var14) {
                if (var16 == null) {
                   var16 = var14;
                } else if (var16 != var14) {
                   var16.addSuppressed(var14);
                }
-
-               throw var16;
+                throw var16;
             }
-
-            eV var17 = var15.d("CreatureSeed");
+             eV var17 = var15.d("CreatureSeed");
             if (var17 != null && var17.ab(0)) {
                var2.a(var4, var15);
                return new gj(var3, var4, var15);
@@ -134,28 +123,23 @@ public class gj {
    public void j(FileInfo var1) {
       Exception var2 = null;
       Object var3 = null;
-
-      try {
+       try {
          fj var4 = new fj(new FileStream(var1));
-
-         try {
+          try {
             eY var5 = this.bf.bE();
             var4.h(var5);
          } finally {
             if (var4 != null) {
                var4.Close();
             }
-
-         }
-
-      } catch (Exception var11) {
+          }
+       } catch (Exception var11) {
          if (var2 == null) {
             var2 = var11;
          } else if (var2 != var11) {
             var2.addSuppressed(var11);
          }
-
-         throw var2;
+          throw var2;
       }
    }
 

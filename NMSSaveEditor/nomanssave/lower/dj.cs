@@ -40,8 +40,7 @@ public class dj : em {
          if (var2 != null) {
             var2.ag(var1x);
          }
-
-      });
+       });
       this.a((string)"Type", (JComponent)this.hc);
       this.hd = new cN(typeof(gN));
       this.hd.a((var1x) => {
@@ -49,8 +48,7 @@ public class dj : em {
          if (var2 != null) {
             var2.aj(var1x);
          }
-
-      });
+       });
       this.a((string)"Class", (JComponent)this.hd);
       this.he = new dm(this);
       this.a((string)"Seed", (G)this.he);

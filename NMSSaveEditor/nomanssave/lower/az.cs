@@ -21,8 +21,7 @@ public class az : ActionListener {
 
    public void actionPerformed(ActionEvent var1) {
       IEnumerator<object> var4 = eS.by().GetEnumerator();
-
-      while(var4.MoveNext()) {
+       while(var4.MoveNext()) {
          eS var3 = (eS)var4.Current;
          gA var2 = ap.i(this.cu).a(var3);
          var2.a(eU.kr, false);
@@ -31,8 +30,7 @@ public class az : ActionListener {
          var2.a(eU.kv, false);
          var2.a(eU.kz, false);
       }
-
-      ap.j(this.cu).updateUI();
+       ap.j(this.cu).updateUI();
    }
 }
 

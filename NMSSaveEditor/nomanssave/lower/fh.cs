@@ -72,8 +72,7 @@ public class fh {
             var3 = System.lineSeparator();
          }
       }
-
-      bool var4 = (var1 & 4) != 0;
+       bool var4 = (var1 & 4) != 0;
       return a(var0, var3, var4, var2);
    }
 
@@ -169,8 +168,7 @@ public class fh {
       StringBuilder var1 = new StringBuilder();
       byte[] var5;
       int var4 = (var5 = var0.toByteArray()).Length;
-
-      for(int var3 = 0; var3 < var4; ++var3) {
+       for(int var3 = 0; var3 < var4; ++var3) {
          byte var2 = var5[var3];
          int var6 = var2 & 255;
          if (var6 == 13) {
@@ -199,8 +197,7 @@ public class fh {
             var1.Append("0123456789ABCDEFabcdef"[var6 & 15]);
          }
       }
-
-      return var1.ToString();
+       return var1.ToString();
    }
 
    public static string b(fg var0) {
@@ -215,8 +212,7 @@ public class fh {
       StringBuilder var2 = new StringBuilder();
       char[] var6;
       int var5 = (var6 = var0.ToCharArray()).Length;
-
-      for(int var4 = 0; var4 < var5; ++var4) {
+       for(int var4 = 0; var4 < var5; ++var4) {
          char var3 = var6[var4];
          if (var3 == '\r') {
             var2.Append("\\r");
@@ -242,8 +238,7 @@ public class fh {
             var2.Append("0123456789ABCDEFabcdef"[var3 & 15]);
          }
       }
-
-      return var2.ToString();
+       return var2.ToString();
    }
 
    public static string O(string var0) {
@@ -539,20 +534,17 @@ public class fh {
       try {
          StringBuilder var1 = new StringBuilder();
          MemoryStream var2 = new MemoryStream();
-
-         int var3;
+          int var3;
          while((var3 = var0.ReadByte()) != 34) {
             if (var3 < 0) {
                throw new eX("Short read");
             }
-
-            if (var3 == 92) {
+             if (var3 == 92) {
                var3 = var0.ReadByte();
                if (var3 < 0) {
                   throw new eX("Short read");
                }
-
-               switch(var3) {
+                switch(var3) {
                case 48:
                   var3 = 0;
                   break;
@@ -577,16 +569,14 @@ public class fh {
                      if (var1 != null) {
                         var1.Append((char)var3);
                      }
-
-                     if (var2 != null) {
+                      if (var2 != null) {
                         var2.Write(var3);
                      }
                   } else {
                      if (var1 == null) {
                         throw new eX("Mixed encodings detected in string");
                      }
-
-                     var2 = null;
+                      var2 = null;
                      var1.Append((char)var3);
                   }
                   continue;
@@ -598,23 +588,19 @@ public class fh {
                   if (var2 == null) {
                      throw new eX("Mixed encodings detected in stringx");
                   }
-
-                  var2.Write(var3);
+                   var2.Write(var3);
                   var1 = null;
                   continue;
                }
             }
-
-            if (var1 != null) {
+             if (var1 != null) {
                var1.Append((char)var3);
             }
-
-            if (var2 != null) {
+             if (var2 != null) {
                var2.Write(var3);
             }
          }
-
-         return var1 != null ? var1.ToString() : new fg(var2.toByteArray());
+          return var1 != null ? var1.ToString() : new fg(var2.toByteArray());
       } catch (eX var4) {
          throw var4;
       } catch (IOException var5) {
@@ -635,31 +621,25 @@ public class fh {
             if (var2 < 0) {
                throw new eX("Short read", var0.kF, var0.kG);
             }
-
-            if ((var3 = var0.ReadByte()) < 0) {
+             if ((var3 = var0.ReadByte()) < 0) {
                throw new eX("Short read", var0.kF, var0.kG);
             }
-
-            var2 = "0123456789abcdefABCDEF".IndexOf((char)var2);
+             var2 = "0123456789abcdefABCDEF".IndexOf((char)var2);
             if (var2 < 0) {
                throw new eX("Invalid hex data", var0.kF, var0.kG);
             }
-
-            if (var2 >= 16) {
+             if (var2 >= 16) {
                var2 -= 6;
             }
-
-            var3 = "0123456789abcdefABCDEF".IndexOf((char)var3);
+             var3 = "0123456789abcdefABCDEF".IndexOf((char)var3);
             if (var3 < 0) {
                throw new eX("Invalid hex data", var0.kF, var0.kG);
             }
-
-            if (var3 >= 16) {
+             if (var3 >= 16) {
                var3 -= 6;
             }
          }
-
-         return new fg(var1.toByteArray());
+          return new fg(var1.toByteArray());
       }
    }
 

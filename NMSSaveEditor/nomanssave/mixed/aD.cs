@@ -18,7 +18,7 @@ public class aD : Form {
    public static aD cz = null;
 
    public aD(Form var1) {
-      base(var1);
+      // base(var1);
       this.SetMinimumSize(new Size(400, 10));
       this.setModalExclusionType(ModalExclusionType.APPLICATION_EXCLUDE);
       this.SetTitle("Editor Settings");

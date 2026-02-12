@@ -24,13 +24,11 @@ public class hi {
             var2 = new hj(var0);
          }
       }
-
-      try {
+       try {
          var2.join(500L);
       } catch (InterruptedException var4) {
       }
-
-      return var2.sL;
+       return var2.sL;
    }
 
    public static string i(long var0) {
@@ -55,14 +53,12 @@ public class hi {
       int var2 = var1.getContentLength();
       int var3 = 0;
       Stream var4 = var1.getInputStream();
-
-      byte[] var5;
+       byte[] var5;
       int var6;
       for(var5 = new byte[var2]; (var6 = var4.read(var5, var3, var2)) >= 0; var2 -= var6) {
          var3 += var6;
       }
-
-      if (var2 > 0) {
+       if (var2 > 0) {
          throw new EOFException();
       } else {
          string var7 = var1.getContentEncoding();

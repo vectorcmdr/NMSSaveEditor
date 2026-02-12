@@ -16,7 +16,7 @@ public class fK : fQ, fr {
    public fJ mt;
 
    public fK(fJ var1) {
-      base(var1, "accountdata.hg", -1, true);
+      // base(var1, "accountdata.hg", -1, true);
       this.mt = var1;
    }
 

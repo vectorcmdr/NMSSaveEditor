@@ -19,7 +19,7 @@ public class p : Form {
    public static p H = null;
 
    public p(Form var1) {
-      base(var1);
+      // base(var1);
       this.SetSize(aH.cI * 2, aH.cI + aH.cH);
       this.SetResizable(false);
       this.setModalExclusionType(ModalExclusionType.APPLICATION_EXCLUDE);
@@ -66,8 +66,7 @@ public class p : Form {
          Form var1 = JOptionPane.getFrameForComponent(var0);
          H = new p(var1);
       }
-
-      H.F = ey.bl();
+       H.F = ey.bl();
       H.SetTitle("Add Known Technologies");
       return H.d();
    }
@@ -77,8 +76,7 @@ public class p : Form {
          Form var1 = JOptionPane.getFrameForComponent(var0);
          H = new p(var1);
       }
-
-      H.F = ey.bm();
+       H.F = ey.bm();
       H.SetTitle("Add Known Products");
       return H.d();
    }

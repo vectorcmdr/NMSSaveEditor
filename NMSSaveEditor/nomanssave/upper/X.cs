@@ -61,8 +61,7 @@ public class X : Panel {
          if (var2 != null) {
             var2.ae(var1x);
          }
-
-      });
+       });
       var3.a("Biome", (JComponent)this.bO);
       this.bP = new cN(typeof(gk));
       this.bP.a((var1x) => {
@@ -70,8 +69,7 @@ public class X : Panel {
          if (var2 != null) {
             var2.af(var1x);
          }
-
-      });
+       });
       var3.a("Type", (JComponent)this.bP);
       var3.Y();
       Panel var4 = new Panel();

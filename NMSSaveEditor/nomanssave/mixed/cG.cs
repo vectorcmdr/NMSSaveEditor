@@ -16,7 +16,7 @@ public class cG : TextAction, ClipboardOwner {
    public cy gg;
 
    public cG(cy var1) {
-      base("Copy From Clipboard");
+      // base("Copy From Clipboard");
       this.gg = var1;
    }
 

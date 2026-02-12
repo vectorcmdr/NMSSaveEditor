@@ -28,11 +28,9 @@ public class gR {
                hc.a("Cannot load template: " + var0, var4);
             }
          }
-
-         rR.Put(var0, var1);
+          rR.Put(var0, var1);
       }
-
-      return var1 == null ? null : var1.bE();
+       return var1 == null ? null : var1.bE();
    }
 }
 

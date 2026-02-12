@@ -27,8 +27,7 @@ public class aX : ActionListener {
       if (var2.Length > 0) {
          this.dz.a(var2, aW.b(this.dy).isSelected(), aW.c(this.dy).isSelected(), aW.d(this.dy).isSelected());
       }
-
-   }
+    }
 }
 
 }

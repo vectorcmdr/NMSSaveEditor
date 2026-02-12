@@ -22,13 +22,11 @@ public class r : ActionListener {
    public void actionPerformed(ActionEvent var1) {
       int[] var2 = p.b(this.I).GetSelectedRows();
       p.a(this.I, new List<object>());
-
-      for(int var4 = 0; var4 < var2.Length; ++var4) {
+       for(int var4 = 0; var4 < var2.Length; ++var4) {
          int var3 = p.b(this.I).convertRowIndexToModel(var2[var4]);
          p.c(this.I).Add((string)p.b(this.I).GetModel().GetValueAt(var3, 3));
       }
-
-      this.I.SetVisible(false);
+       this.I.SetVisible(false);
    }
 }
 

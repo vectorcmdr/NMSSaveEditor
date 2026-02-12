@@ -99,8 +99,7 @@ public class Application {
          return var1;
       } else {
          StringBuffer var2 = new StringBuffer();
-
-         for(int var4 = 0; var4 < var0.Length; ++var4) {
+          for(int var4 = 0; var4 < var0.Length; ++var4) {
             char var3 = var0[var4];
             if ("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_".IndexOf(var3) >= 0) {
                var2.Append(var3);
@@ -108,8 +107,7 @@ public class Application {
                var2.Append('_');
             }
          }
-
-         return var2.Length != 0 ? var2.ToString() : var1;
+          return var2.Length != 0 ? var2.ToString() : var1;
       }
    }
 
@@ -126,8 +124,7 @@ public class Application {
       } else {
          var2 = false;
       }
-
-      NMSSaveEditor.aH.init(!var2);
+       NMSSaveEditor.aH.init(!var2);
       hc.info("Starting Editor...");
       (new System.Threading.Thread(() => {
          cK.aA();
@@ -150,8 +147,7 @@ public class Application {
             }
          }
       }
-
-      return var1 == null ? null : new Image(var1);
+       return var1 == null ? null : new Image(var1);
    }
 
    public static Image a(string var0, int var1, int var2) {
@@ -169,16 +165,14 @@ public class Application {
             }
          }
       }
-
-      return var3 == null ? null : new Image(var3.getScaledInstance(var1, var2, 4));
+       return var3 == null ? null : new Image(var3.getScaledInstance(var1, var2, 4));
    }
 
    public void f() {
       if (this.aR) {
          this.aR = false;
       }
-
-      int var1;
+       int var1;
       if (this.aS) {
          this.aS = false;
          var1 = this.aH < 0 ? -1 : this.aG[this.aH].getIndex();
@@ -186,24 +180,20 @@ public class Application {
             return var1x.getIndex() == var1 || !var1x.Length == 0;
          }).ToArray();
          this.aH = -1;
-
-         for(int var2 = 0; var2 < this.aG.Length; ++var2) {
+          for(int var2 = 0; var2 < this.aG.Length; ++var2) {
             if (this.aG[var2].getIndex() == var1) {
                this.aH = var2;
                break;
             }
          }
-
-         if (var1 >= 0 && this.aH < 0) {
+          if (var1 >= 0 && this.aH < 0) {
             hc.warn("Slot " + (var1 + 1) + " was not reloaded!");
             this.aI = new fs[0];
             this.aJ = -1;
          }
-
-         this.R.updateUI();
+          this.R.updateUI();
       }
-
-      this.aT &= this.aH >= 0;
+       this.aT &= this.aH >= 0;
       if (this.aT) {
          this.aT = false;
          string var7 = this.aJ < 0 ? null : this.aI[this.aJ].K();
@@ -211,16 +201,14 @@ public class Application {
          fn var4 = this.aJ < 0 ? null : this.aI[this.aJ].L();
          this.aI = this.aG[this.aH].bX();
          this.aJ = -1;
-
-         int var5;
+          int var5;
          for(var5 = 0; var5 < this.aI.Length; ++var5) {
             if (this.aI[var5].K().Equals(var7)) {
                this.aJ = var5;
                break;
             }
          }
-
-         if (var7 != null && this.aJ < 0) {
+          if (var7 != null && this.aJ < 0) {
             this.aU = false;
             var5 = MessageBox.Show("Save file has been deleted externally. Would you like to reload?\nNOTE: All changes made in the editor will be lost.".ToString(), "Reload File".ToString(), MessageBoxButtons.YesNo);
             if (var5 == 0) {
@@ -234,11 +222,9 @@ public class Application {
                this.aJ = 0;
             }
          }
-
-         this.S.updateUI();
+          this.S.updateUI();
       }
-
-      this.aU &= this.aJ >= 0;
+       this.aU &= this.aJ >= 0;
       if (this.aU) {
          this.aU = false;
          var1 = MessageBox.Show("Save file has been modified externally. Would you like to reload?\nNOTE: All changes made in the editor will be lost.".ToString(), "Reload File".ToString(), MessageBoxButtons.YesNo);
@@ -248,8 +234,7 @@ public class Application {
             this.aL = true;
          }
       }
-
-   }
+    }
 
    public Application(bool var1) {
       this.aQ = false;
@@ -271,8 +256,7 @@ public class Application {
             } else {
                var4 = var3x.ToString();
             }
-
-            hc.info("Setting " + var1x + ": " + var4);
+             hc.info("Setting " + var1x + ": " + var4);
          }
       };
       this.aW = (var1x, var2x, var3x) => {
@@ -288,8 +272,7 @@ public class Application {
                this.aK.b("PlayerStateData.CurrentWeapon.Filename", var3x);
             }
          }
-
-         if (var3x == null) {
+          if (var3x == null) {
             hc.info("Removing " + var1x);
          } else {
             string var6;
@@ -300,8 +283,7 @@ public class Application {
             } else {
                var6 = fh.b(var3x, false);
             }
-
-            hc.info("Setting " + var1x + ": " + var6);
+             hc.info("Setting " + var1x + ": " + var6);
          }
       };
       this.aX = new u(this);
@@ -324,13 +306,11 @@ public class Application {
             var2 = fq.c(this.aF);
             NMSSaveEditor.aH.setProperty("GameStorage", var2);
          }
-
-         hc.debug("Storage: " + var2);
+          hc.debug("Storage: " + var2);
          hc.debug("Save Path: " + this.aF.bS().FullName);
          this.aM = null;
          this.aN = null;
-
-         try {
+          try {
             hc.info("Reading account data...");
             this.aM = this.aF.bT();
             this.aN = this.aM == null ? null : this.aM.M();
@@ -341,8 +321,7 @@ public class Application {
             hc.a("Error reading account data", var5);
          }
       }
-
-      this.initialize();
+       this.initialize();
       (new x(this, var1)).start();
    }
 
@@ -355,8 +334,7 @@ public class Application {
       if (!var2.Exists && !var2.Create()) {
          var2 = NMSSaveEditor.aH.cD;
       }
-
-      cT var3 = cT.aC();
+       cT var3 = cT.aC();
       string var4 = a(var1.Name, "Ship");
       var3.setCurrentDirectory(var2);
       var3.setSelectedFile(new File(var2, var4));
@@ -366,8 +344,7 @@ public class Application {
             if (!var5.Name.EndsWith(".sh0")) {
                var5 = new File(var5.Directory, var5.Name + ".sh0");
             }
-
-            var1.a(var5, var3.aw());
+             var1.a(var5, var3.aw());
          } catch (Exception var6) {
             hc.a("Ship export error", var6);
             this.c("An error occured during export.");
@@ -376,16 +353,14 @@ public class Application {
             this.c("An error occured during export.");
          }
       }
-
-   }
+    }
 
    public void a(gv var1) {
       FileInfo var2 = NMSSaveEditor.aH.cF;
       if (!var2.Exists && !var2.Create()) {
          var2 = NMSSaveEditor.aH.cD;
       }
-
-      cv var3 = cv.ax();
+       cv var3 = cv.ax();
       string var4 = a(var1.Name, "Weapon");
       var3.setCurrentDirectory(var2);
       var3.setSelectedFile(new File(var2, var4));
@@ -395,8 +370,7 @@ public class Application {
             if (!var5.Name.EndsWith(".wp0")) {
                var5 = new File(var5.Directory, var5.Name + ".wp0");
             }
-
-            var1.j(var5);
+             var1.j(var5);
          } catch (Exception var6) {
             hc.a("Weapon export error", var6);
             this.c("An error occured during export.");
@@ -405,16 +379,14 @@ public class Application {
             this.c("An error occured during export.");
          }
       }
-
-   }
+    }
 
    public void a(gj var1) {
       FileInfo var2 = NMSSaveEditor.aH.cF;
       if (!var2.Exists && !var2.Create()) {
          var2 = NMSSaveEditor.aH.cD;
       }
-
-      string var3 = "." + var1.cL().ToString().ToLower();
+       string var3 = "." + var1.cL().ToString().ToLower();
       cp var4 = cp.at();
       string var5 = a(var1.Name, var1.cL().ToString());
       var4.setCurrentDirectory(var2);
@@ -425,8 +397,7 @@ public class Application {
             if (!var6.Name.EndsWith(var3)) {
                var6 = new File(var6.Directory, var6.Name + var3);
             }
-
-            var1.j(var6);
+             var1.j(var6);
          } catch (Exception var7) {
             hc.a("Companion export error", var7);
             this.c("An error occured during export.");
@@ -435,8 +406,7 @@ public class Application {
             this.c("An error occured during export.");
          }
       }
-
-   }
+    }
 
    public gH h() {
       eY var1;
@@ -458,8 +428,7 @@ public class Application {
                this.c("An error occured during import.");
             }
          }
-
-         return null;
+          return null;
       } else {
          return null;
       }
@@ -485,8 +454,7 @@ public class Application {
                this.c("An error occured during import.");
             }
          }
-
-         return null;
+          return null;
       } else {
          return null;
       }
@@ -512,8 +480,7 @@ public class Application {
                this.c("An error occured during import.");
             }
          }
-
-         return null;
+          return null;
       } else {
          return null;
       }
@@ -524,8 +491,7 @@ public class Application {
       if (!var2.Exists && !var2.Create()) {
          var2 = NMSSaveEditor.aH.cD;
       }
-
-      cl var3 = cl.ar();
+       cl var3 = cl.ar();
       string var4 = a(var1.Name, "Base");
       var3.setCurrentDirectory(var2);
       var3.setSelectedFile(new File(var2, var4));
@@ -535,12 +501,10 @@ public class Application {
             if (!var5.Name.EndsWith(".pb3")) {
                var5 = new File(var5.Directory, var5.Name + ".pb3");
             }
-
-            if (var5.Exists && MessageBox.Show("Are you sure you want to overwrite this existing backup file?".ToString(), "Confirm".ToString(), MessageBoxButtons.YesNo) != 0) {
+             if (var5.Exists && MessageBox.Show("Are you sure you want to overwrite this existing backup file?".ToString(), "Confirm".ToString(), MessageBoxButtons.YesNo) != 0) {
                return;
             }
-
-            gS.d(var1.cH(), var5);
+             gS.d(var1.cH(), var5);
          } catch (Exception var6) {
             hc.a("Base backup error", var6);
             this.c("An error occured during backup.");
@@ -552,8 +516,7 @@ public class Application {
             this.c("An error occured during backup.");
          }
       }
-
-   }
+    }
 
    public bool b(gf var1) {
       FileInfo var2 = NMSSaveEditor.aH.cE.Exists ? NMSSaveEditor.aH.cE : NMSSaveEditor.aH.cD;
@@ -564,8 +527,7 @@ public class Application {
             if (MessageBox.Show("Are you sure you want to overwrite your existing base?".ToString(), "Confirm".ToString(), MessageBoxButtons.YesNo) != 0) {
                return false;
             }
-
-            FileInfo var4 = var3.getSelectedFile();
+             FileInfo var4 = var3.getSelectedFile();
             gS.e(var1.cH(), var4);
             this.aL = true;
             return true;
@@ -577,8 +539,7 @@ public class Application {
             this.c("An error occured during backup.");
          }
       }
-
-      return false;
+       return false;
    }
 
    public void a(gm var1) {
@@ -588,8 +549,7 @@ public class Application {
          if (!var3.Exists && !var3.Create()) {
             var3 = NMSSaveEditor.aH.cD;
          }
-
-         cs var4 = cs.av();
+          cs var4 = cs.av();
          string var5 = a(var2.Name, "Freighter");
          var4.setCurrentDirectory(var3);
          var4.setSelectedFile(new File(var3, var5));
@@ -599,12 +559,10 @@ public class Application {
                if (!var6.Name.EndsWith(".fb3")) {
                   var6 = new File(var6.Directory, var6.Name + ".fb3");
                }
-
-               if (var6.Exists && MessageBox.Show("Are you sure you want to overwrite this existing backup file?".ToString(), "Confirm".ToString(), MessageBoxButtons.YesNo) != 0) {
+                if (var6.Exists && MessageBox.Show("Are you sure you want to overwrite this existing backup file?".ToString(), "Confirm".ToString(), MessageBoxButtons.YesNo) != 0) {
                   return;
                }
-
-               Dictionary<object, object> var7 = new Dictionary<object, object>();
+                Dictionary<object, object> var7 = new Dictionary<object, object>();
                var7.Put("HomeSeed", var1.cU());
                var7.Put("ResourceSeed", var1.cV());
                var7.Put("Name", var1.Name);
@@ -618,8 +576,7 @@ public class Application {
                eY var11 = var8.H("FreighterInventory_Cargo").bE();
                if (!var4.aw()) {
                   eV var12 = var9.d("Slots");
-
-                  int var13;
+                   int var13;
                   eY var14;
                   for(var13 = 0; var13 < var12.Count; ++var13) {
                      var14 = var12.V(var13);
@@ -627,18 +584,15 @@ public class Application {
                         var12.ac(var13--);
                      }
                   }
-
-                  var12 = var11.d("Slots");
-
-                  for(var13 = 0; var13 < var12.Count; ++var13) {
+                   var12 = var11.d("Slots");
+                   for(var13 = 0; var13 < var12.Count; ++var13) {
                      var14 = var12.V(var13);
                      if (!var14.getValueAsString("Type.InventoryType").Equals("Technology")) {
                         var12.ac(var13--);
                      }
                   }
                }
-
-               var7.Put("Inventory", var9);
+                var7.Put("Inventory", var9);
                var7.Put("InventoryTech", var10);
                var7.Put("InventoryCargo", var11);
                gS.a(var2.cH(), (Map)var7, (File)var6);
@@ -653,8 +607,7 @@ public class Application {
                this.c("An error occured during backup.");
             }
          }
-
-      }
+       }
    }
 
    public bool b(gm var1) {
@@ -670,69 +623,55 @@ public class Application {
                if (MessageBox.Show("Are you sure you want to overwrite your existing freighter?".ToString(), "Confirm".ToString(), MessageBoxButtons.YesNo) != 0) {
                   return false;
                }
-
-               FileInfo var5 = var4.getSelectedFile();
+                FileInfo var5 = var4.getSelectedFile();
                Dictionary<object, object> var6 = new Dictionary<object, object>();
                gS.b(var2.cH(), var6, var5);
                eY var7 = this.aK.H("PlayerStateData");
                bool var8 = false;
                IEnumerator<object> var10 = var6.Entries().GetEnumerator();
-
-               while(var10.MoveNext()) {
+                while(var10.MoveNext()) {
                   Entry var9 = (Entry)var10.Current;
                   if (((string)var9.getKey()).Equals("HomeSeed")) {
                      var1.ah((string)var9.getValue());
                   }
-
-                  if (((string)var9.getKey()).Equals("ResourceSeed")) {
+                   if (((string)var9.getKey()).Equals("ResourceSeed")) {
                      var1.ai((string)var9.getValue());
                   }
-
-                  if (((string)var9.getKey()).Equals("Name")) {
+                   if (((string)var9.getKey()).Equals("Name")) {
                      var1.setName((string)var9.getValue());
                   }
-
-                  if (((string)var9.getKey()).Equals("TypeClass")) {
+                   if (((string)var9.getKey()).Equals("TypeClass")) {
                      var1.aj((string)var9.getValue());
                   }
-
-                  if (((string)var9.getKey()).Equals("Type")) {
+                   if (((string)var9.getKey()).Equals("Type")) {
                      var1.ag(go.valueOf((string)var9.getValue()).K());
                   }
-
-                  if (((string)var9.getKey()).Equals("Resource")) {
+                   if (((string)var9.getKey()).Equals("Resource")) {
                      var1.ag((string)var9.getValue());
                   }
-
-                  if (((string)var9.getKey()).Equals("FleetCoordination")) {
+                   if (((string)var9.getKey()).Equals("FleetCoordination")) {
                      var1.b(((Number)var9.getValue()).doubleValue());
                   }
-
-                  if (((string)var9.getKey()).Equals("Hyperdrive")) {
+                   if (((string)var9.getKey()).Equals("Hyperdrive")) {
                      var1.a(((Number)var9.getValue()).doubleValue());
                   }
-
-                  if (((string)var9.getKey()).Equals("Inventory")) {
+                   if (((string)var9.getKey()).Equals("Inventory")) {
                      var7.b("FreighterInventory", (Object)((eY)var9.getValue()));
                      var8 = true;
                   }
-
-                  if (((string)var9.getKey()).Equals("InventoryTech")) {
+                   if (((string)var9.getKey()).Equals("InventoryTech")) {
                      var7.b("FreighterInventory_TechOnly", (Object)((eY)var9.getValue()));
                      var8 = true;
                   }
-
-                  if (((string)var9.getKey()).Equals("InventoryCargo")) {
+                   if (((string)var9.getKey()).Equals("InventoryCargo")) {
                      var7.b("FreighterInventory_Cargo", (Object)((eY)var9.getValue()));
                      var8 = true;
                   }
                }
-
-               if (var8) {
+                if (var8) {
                   var1 = gm.p(var7);
                }
-
-               this.aw.c(var1);
+                this.aw.c(var1);
                this.aL = true;
                return true;
             } catch (IOException var11) {
@@ -743,8 +682,7 @@ public class Application {
                this.c("An error occured during restore.");
             }
          }
-
-         return false;
+          return false;
       }
    }
 
@@ -760,21 +698,18 @@ public class Application {
             var3 = var1.Directory;
             var2 = var1.Name;
          }
-
-         if (this.aF != null) {
+          if (this.aF != null) {
             if (this.aF.bS().IsDirectory() && !this.aF.bS().Equals(var3)) {
                this.aF = null;
             } else if (this.aF.bS().IsFile() && !this.aF.bS().Equals(var1)) {
                this.aF = null;
             }
          }
-
-         if (this.aF == null) {
+          if (this.aF == null) {
             hc.info("Loading storage: " + var3.FullName);
             this.aF = fq.a(var3, this.aX);
          }
-
-         if (this.aF == null) {
+          if (this.aF == null) {
             this.aG = new ft[0];
             this.aH = -1;
             this.aI = new fs[0];
@@ -804,28 +739,23 @@ public class Application {
                      this.aH = var5;
                      this.aI = this.aG[var5].bX();
                      int var6 = 0;
-
-                     while(true) {
+                      while(true) {
                         if (var6 >= this.aI.Length) {
                            goto afterLabel85;
                         }
-
-                        if (var2.Equals(this.aI[var6].K())) {
+                         if (var2.Equals(this.aI[var6].K())) {
                            this.aJ = var6;
                            goto afterLabel85;
                         }
-
-                        ++var6;
+                         ++var6;
                      }
                   }
                }
                afterLabel85:;
             }
-
-            this.aM = null;
+             this.aM = null;
             this.aN = null;
-
-            try {
+             try {
                this.aM = this.aF.bT();
                this.aN = this.aM == null ? null : this.aM.M();
                if (this.aN != null) {
@@ -834,25 +764,21 @@ public class Application {
             } catch (IOException var7) {
                hc.a("Error reading account data", var7);
             }
-
-            this.ad.SetEnabled(this.aN != null);
+             this.ad.SetEnabled(this.aN != null);
             this.O.SetEnabledAt(13, this.aN != null);
             this.aE.a(this.aN);
             this.aO = false;
             this.P.SetText(var4);
             this.Q.SetText(this.aF.bS().FullName);
          }
-
-         this.R.SetEnabled(true);
+          this.R.SetEnabled(true);
          this.S.SetEnabled(true);
          if (this.aJ > 0) {
             this.c("The save file you have selected is not the most recent.");
          }
-
-         this.l();
+          this.l();
       }
-
-   }
+    }
 
    public void e(int var1) {
       this.aH = var1;
@@ -901,23 +827,20 @@ public class Application {
             hc.info("Reading save file...");
             hc.info("  Slot: " + this.aG[this.aH]);
             hc.info("  Filename: " + this.aI[this.aJ].K());
-
-            try {
+             try {
                this.aK = this.aI[this.aJ].M();
                this.aK.a(this.aW);
             } catch (eX var18) {
                hc.info("  Error parsing JSON: " + var18.getMessage());
             }
-
-            hc.info("Finished.");
+             hc.info("Finished.");
             this.aL = this.aI[this.aJ] is F;
          } catch (IOException var19) {
             hc.error("Could not load save file: " + this.aI[this.aJ].K(), var19);
             this.aK = null;
          }
       }
-
-      this.O.SetSelectedIndex(0);
+       this.O.SetSelectedIndex(0);
       eY var1;
       if (this.aK != null && (var1 = this.aK.H("PlayerStateData")) != null) {
          bool var20 = this.aF.bW();
@@ -965,8 +888,7 @@ public class Application {
          this.aa.SetEnabled(true);
          this.ab.SetEnabled(var20);
          IEnumerator<object> var17 = this.ac.GetEnumerator();
-
-         while(var17.MoveNext()) {
+          while(var17.MoveNext()) {
             ToolStripMenuItem var16 = (ToolStripMenuItem)var17.Current;
             var16.SetEnabled(true);
          }
@@ -978,13 +900,11 @@ public class Application {
          this.aa.SetEnabled(false);
          this.ab.SetEnabled(false);
          IEnumerator<object> var3 = this.ac.GetEnumerator();
-
-         while(var3.MoveNext()) {
+          while(var3.MoveNext()) {
             ToolStripMenuItem var2 = (ToolStripMenuItem)var3.Current;
             var2.SetEnabled(false);
          }
-
-         this.@as.a((gz)null);
+          this.@as.a((gz)null);
          this.at.a((gv[])(new gv[0]), (gB)null);
          this.au.a((gH[])(new gH[0]), (gC)null);
          this.av.a(new gM[0]);
@@ -1015,8 +935,7 @@ public class Application {
             }
          }
       }
-
-   }
+    }
 
    public void m() {
       try {
@@ -1038,15 +957,13 @@ public class Application {
             string var1 = this.aI[this.aJ].b(this.aK);
             this.aI = this.aG[this.aH].bX();
             this.aJ = -1;
-
-            for(int var2 = 0; var2 < this.aI.Length; ++var2) {
+             for(int var2 = 0; var2 < this.aI.Length; ++var2) {
                if (var1.Equals(this.aI[var2].K())) {
                   this.aJ = var2;
                   break;
                }
             }
-
-            this.aL = false;
+             this.aL = false;
             this.R.updateUI();
             this.S.updateUI();
             if (this.aJ < 0) {
@@ -1058,14 +975,12 @@ public class Application {
                this.U.SetText(e(this.aI[this.aJ].Name));
                this.V.SetText(e(this.aI[this.aJ].getDescription()));
             }
-
-            hc.info("Finished.");
+             hc.info("Finished.");
          } catch (IOException var3) {
             hc.error("Could not write save file: " + this.aI[this.aJ].K(), var3);
             this.b("There was an error saving the file.");
          }
-
-      }
+       }
    }
 
    public void o() {
@@ -1080,30 +995,25 @@ public class Application {
             this.aH = -1;
             this.aI = new fs[0];
             this.aJ = -1;
-
-            for(int var4 = 0; var4 < this.aG.Length; ++var4) {
+             for(int var4 = 0; var4 < this.aG.Length; ++var4) {
                if (this.aF.W(var3) == this.aG[var4].getIndex()) {
                   this.aH = var4;
                   this.aI = this.aG[var4].bX();
                   int var5 = 0;
-
-                  while(true) {
+                   while(true) {
                      if (var5 >= this.aI.Length) {
                         goto afterLabel38;
                      }
-
-                     if (var3.Equals(this.aI[var5].K())) {
+                      if (var3.Equals(this.aI[var5].K())) {
                         this.aJ = var5;
                         goto afterLabel38;
                      }
-
-                     ++var5;
+                      ++var5;
                   }
                }
             }
             afterLabel38:
-
-            this.aL = false;
+             this.aL = false;
             this.R.updateUI();
             this.S.updateUI();
             if (this.aJ < 0) {
@@ -1115,16 +1025,14 @@ public class Application {
                this.U.SetText(e(this.aI[this.aJ].Name));
                this.V.SetText(e(this.aI[this.aJ].getDescription()));
             }
-
-            hc.info("Finished.");
+             hc.info("Finished.");
          } catch (IOException var6) {
             hc.error("Could not write save file", var6);
             this.b("There was an error saving the file.");
             return;
          }
       }
-
-   }
+    }
 
    public List<object> g(int var1) {
       List<object> var2 = new List<object>();
@@ -1134,47 +1042,38 @@ public class Application {
             return var1x.ay(var1);
          }).ToList());
       }
-
-      gv[] var5 = this.at.aK();
-
-      for(int var6 = 0; var6 < var5.Length; ++var6) {
+       gv[] var5 = this.at.aK();
+       for(int var6 = 0; var6 < var5.Length; ++var6) {
          gt var3;
          if ((var3 = var5[var6].dE()) != null && var3.ay(var1)) {
             var2.Add(var3);
          }
       }
-
-      gH[] var10 = this.au.aO();
-
-      for(int var7 = 0; var7 < var10.Length; ++var7) {
+       gH[] var10 = this.au.aO();
+       for(int var7 = 0; var7 < var10.Length; ++var7) {
          var2.AddRange(var10[var7].cC().Where(var1x => {
             return var1x.ay(var1);
          }).ToList());
       }
-
-      gm var11 = this.aw.Z();
+       gm var11 = this.aw.Z();
       if (var11 != null) {
          var2.AddRange(var11.cC().Where(var1x => {
             return var1x.ay(var1);
          }).ToList());
       }
-
-      gO[] var8 = this.ay.aT();
-
-      for(int var9 = 0; var9 < var8.Length; ++var9) {
+       gO[] var8 = this.ay.aT();
+       for(int var9 = 0; var9 < var8.Length; ++var9) {
          var2.AddRange(var8[var9].cC().Where(var1x => {
             return var1x.ay(var1);
          }).ToList());
       }
-
-      ge var12 = this.aA.O();
+       ge var12 = this.aA.O();
       if (var12 != null) {
          var2.AddRange(var12.cC().Where(var1x => {
             return var1x.ay(var1);
          }).ToList());
       }
-
-      return var2;
+       return var2;
    }
 
    public void p() {
@@ -1187,8 +1086,7 @@ public class Application {
          this.aK.b("SpawnStateData.LastKnownPlayerState", (Object)"InShip");
          this.aL = true;
       }
-
-   }
+    }
 
    public void q() {
       hc.info("Starting JSON Editor...");
@@ -1215,21 +1113,18 @@ public class Application {
       SwingUtilities.updateComponentTreeUI(var0);
       Form[] var4;
       int var3 = (var4 = var0.getOwnedWindows()).Length;
-
-      for(int var2 = 0; var2 < var3; ++var2) {
+       for(int var2 = 0; var2 < var3; ++var2) {
          Form var1 = var4[var2];
          a(var1);
       }
-
-   }
+    }
 
    public void s() {
       if (NMSSaveEditor.aD.d(this.N)) {
          NMSSaveEditor.aH.V();
          a((Form)this.N);
       }
-
-   }
+    }
 
    public void t() {
       this.aL = true;
@@ -1285,19 +1180,16 @@ public class Application {
             if (!var3.Name.EndsWith(".json")) {
                var3 = new File(var3.Directory, var3.Name + ".json");
             }
-
-            if (var3.Exists && MessageBox.Show("Are you sure you want to overwrite this existing JSON file?".ToString(), "Confirm".ToString(), MessageBoxButtons.YesNo) != 0) {
+             if (var3.Exists && MessageBox.Show("Are you sure you want to overwrite this existing JSON file?".ToString(), "Confirm".ToString(), MessageBoxButtons.YesNo) != 0) {
                return;
             }
-
-            this.aK.c(var3);
+             this.aK.c(var3);
          } catch (IOException var4) {
             hc.a("JSON Export error", var4);
             this.c("An error occured exporting the save data.");
          }
       }
-
-   }
+    }
 
    public void v() {
       hc.info("Importing JSON...");
@@ -1308,8 +1200,7 @@ public class Application {
             if (MessageBox.Show("Are you sure you want to update your current save data?".ToString(), "Confirm".ToString(), MessageBoxButtons.YesNo) != 0) {
                return;
             }
-
-            FileInfo var2 = var1.getSelectedFile();
+             FileInfo var2 = var1.getSelectedFile();
             this.aK.d(var2);
             this.t();
          } catch (IOException var3) {
@@ -1317,8 +1208,7 @@ public class Application {
             this.c("An error occured importing the save data.");
          }
       }
-
-   }
+    }
 
    public void w() {
       this.@as.w();
@@ -1396,40 +1286,33 @@ public class Application {
       if (var1 != null) {
          fn[] var5;
          int var4 = (var5 = fn.Values).Length;
-
-         for(int var3 = 0; var3 < var4; ++var3) {
+          for(int var3 = 0; var3 < var4; ++var3) {
             var2 = var5[var3];
             if (var1.Equals(var2.ToString())) {
                return var2;
             }
          }
       }
-
-      var2 = this.aI[this.aJ].L();
+       var2 = this.aI[this.aJ].L();
       if (var2 == fn.lr) {
          string var6 = this.aK.getValueAsString("PlayerStateData.SeasonData.GameMode.PresetGameMode");
          if ("Normal".Equals(var6)) {
             var2 = fn.lm;
          }
-
-         if ("Creative".Equals(var6)) {
+          if ("Creative".Equals(var6)) {
             var2 = fn.lo;
          }
-
-         if ("Survival".Equals(var6)) {
+          if ("Survival".Equals(var6)) {
             var2 = fn.ln;
          }
-
-         if ("Ambient".Equals(var6)) {
+          if ("Ambient".Equals(var6)) {
             var2 = fn.lp;
          }
-
-         if ("Permadeath".Equals(var6)) {
+          if ("Permadeath".Equals(var6)) {
             var2 = fn.lq;
          }
       }
-
-      return var2;
+       return var2;
    }
 
    public void h(int var1) {
@@ -1446,8 +1329,7 @@ public class Application {
                --var6;
                var5.aF(var6);
             }
-
-            this.at.a(gv.v(var2), var5);
+             this.at.a(gv.v(var2), var5);
          }
       }
    }
@@ -1466,8 +1348,7 @@ public class Application {
                --var6;
                var5.aG(var6);
             }
-
-            this.au.a(gH.C(var2), var5);
+             this.au.a(gH.C(var2), var5);
          }
       }
    }
@@ -1485,8 +1366,7 @@ public class Application {
       default:
          return;
       }
-
-      if (var4 != null && var4.Count != 0) {
+       if (var4 != null && var4.Count != 0) {
          eY var5 = gR.az("companion");
          if (var2 >= 0 && var2 < var4.Count && var5 != null) {
             var4.Remove(var2);
@@ -1659,8 +1539,7 @@ public class Application {
       if (var1 != null) {
          this.N.setIconImage(var1.getImage());
       }
-
-      this.N.SetTitle("No Man's Sky Save Editor - 1.19.14 (BREACH)");
+       this.N.SetTitle("No Man's Sky Save Editor - 1.19.14 (BREACH)");
       Rectangle var2 = new Rectangle(100, 100, 1100, 720);
       var2.x = NMSSaveEditor.aH.a("MainFrame.X", 100);
       var2.y = NMSSaveEditor.aH.a("MainFrame.Y", 100);
@@ -1764,16 +1643,14 @@ public class Application {
          if (this.O.SelectedIndex == 12) {
             this.aD.aa();
          }
-
-         if (this.aF != null && this.aO && this.aP) {
+          if (this.aF != null && this.aO && this.aP) {
             int var2 = MessageBox.Show("Save account data?".ToString(), "Save".ToString(), MessageBoxButtons.YesNo);
             this.aP = var2 == 0;
             if (this.aP) {
                this.m();
             }
          }
-
-      });
+       });
       MenuStrip var5 = new MenuStrip();
       this.N.setJMenuBar(var5);
       ToolStripMenuItem var6 = new ToolStripMenuItem("File");
@@ -1799,8 +1676,7 @@ public class Application {
          if (var2 is G) {
             ((G)var2).N();
          }
-
-         this.n();
+          this.n();
       });
       var6.Add(this.aa);
       this.ab = new ToolStripMenuItem("Save FileInfo As");
@@ -1810,8 +1686,7 @@ public class Application {
          if (var2 is G) {
             ((G)var2).N();
          }
-
-         this.o();
+          this.o();
       });
       var6.Add(this.ab);
       var6.AddSeparator();
@@ -1823,14 +1698,12 @@ public class Application {
                if (this.aL) {
                   this.n();
                }
-
-               if (this.aO) {
+                if (this.aO) {
                   this.m();
                }
             }
          }
-
-         this.N.Dispose();
+          this.N.Dispose();
       });
       var6.Add(var8);
       ToolStripMenuItem var9 = new ToolStripMenuItem("Edit");
@@ -1871,8 +1744,7 @@ public class Application {
                return;
             }
          }
-
-         en.c(var3);
+          en.c(var3);
       });
       var9.Add(var14);
       var9.AddSeparator();
@@ -1919,13 +1791,11 @@ public class Application {
       });
       var9.Add(this.ad);
       IEnumerator<object> var22 = this.ac.GetEnumerator();
-
-      while(var22.MoveNext()) {
+       while(var22.MoveNext()) {
          ToolStripMenuItem var21 = (ToolStripMenuItem)var22.Current;
          var21.SetEnabled(false);
       }
-
-      this.ad.SetEnabled(false);
+       this.ad.SetEnabled(false);
       ToolStripMenuItem var25 = new ToolStripMenuItem("View");
       var5.Add(var25);
       ToolStripMenuItem var26 = new ToolStripMenuItem("Settings");
@@ -1949,8 +1819,7 @@ public class Application {
          this.aE.a(this.aN);
          this.aO = false;
       }
-
-      this.N.Pack();
+       this.N.Pack();
    }
 
    public static string e(string var0) {
@@ -2034,18 +1903,15 @@ public class Application {
          return var10000;
       } else {
          int[] var0 = new int[gl.Values.Length];
-
-         try {
+          try {
             var0[gl.oG.ordinal()] = 2;
          } catch (NoSuchFieldError var2) {
          }
-
-         try {
+          try {
             var0[gl.oF.ordinal()] = 1;
          } catch (NoSuchFieldError var1) {
          }
-
-         aY = var0;
+          aY = var0;
          return var0;
       }
    }

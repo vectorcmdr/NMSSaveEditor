@@ -108,8 +108,7 @@ public class cW : Panel, PropertyChangeListener, CaretListener, DocumentListener
          this.SetPreferredSize(var8);
          this.SetSize(var8);
       }
-
-   }
+    }
 
    public void paintComponent(Graphics var1) {
       base.paintComponent(var1);
@@ -119,16 +118,14 @@ public class cW : Panel, PropertyChangeListener, CaretListener, DocumentListener
       Rectangle var5 = var1.getClipBounds();
       int var6 = this.gB.viewToModel(new Point(0, var5.y));
       int var7 = this.gB.viewToModel(new Point(0, var5.y + var5.height));
-
-      while(var6 <= var7) {
+       while(var6 <= var7) {
          try {
             if (this.A(var6)) {
                var1.setColor(this.aF());
             } else {
                var1.setColor(this.ForeColor);
             }
-
-            string var8 = this.B(var6);
+             string var8 = this.B(var6);
             int var9 = var2.stringWidth(var8);
             int var10 = this.b(var4, var9) + var3.left;
             int var11 = this.a(var6, var2);
@@ -138,8 +135,7 @@ public class cW : Panel, PropertyChangeListener, CaretListener, DocumentListener
             break;
          }
       }
-
-   }
+    }
 
    public bool A(int var1) {
       int var2 = this.gB.getCaretPosition();
@@ -169,12 +165,10 @@ public class cW : Panel, PropertyChangeListener, CaretListener, DocumentListener
          if (this.gK == null) {
             this.gK = new Dictionary<object, object>();
          }
-
-         XmlElement var7 = this.gB.getDocument().getDefaultRootElement();
+          XmlElement var7 = this.gB.getDocument().getDefaultRootElement();
          int var8 = var7.getElementIndex(var1);
          XmlElement var9 = var7.getElement(var8);
-
-         for(int var10 = 0; var10 < var9.getElementCount(); ++var10) {
+          for(int var10 = 0; var10 < var9.getElementCount(); ++var10) {
             XmlElement var11 = var9.getElement(var10);
             AttributeSet var12 = var11.getAttributes();
             string var13 = (string)var12.GetAttribute(StyleConstants.FontFamily);
@@ -186,12 +180,10 @@ public class cW : Panel, PropertyChangeListener, CaretListener, DocumentListener
                var16 = this.gB.getFontMetrics(var17);
                this.gK.Put(var15, var16);
             }
-
-            var6 = Math.Max(var6, var16.getDescent());
+             var6 = Math.Max(var6, var16.getDescent());
          }
       }
-
-      return var5 - var6;
+       return var5 - var6;
    }
 
    public void caretUpdate(CaretEvent var1) {
@@ -202,8 +194,7 @@ public class cW : Panel, PropertyChangeListener, CaretListener, DocumentListener
          this.Invalidate();
          this.gJ = var4;
       }
-
-   }
+    }
 
    public void changedUpdate(DocumentEvent var1) {
       this.aJ();
@@ -254,6 +245,8 @@ public class cW : Panel, PropertyChangeListener, CaretListener, DocumentListener
    public static void a(cW var0, int var1) {
       var0.gI = var1;
    }
+
 }
+
 
 }

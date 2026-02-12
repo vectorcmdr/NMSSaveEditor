@@ -54,15 +54,15 @@ public class cO : ComboBoxModel {
                   cN.c(this.gt).setSelectedValue(cN.b(this.gt).ToString());
                }
             }
-
-         });
+          });
       }
-
-   }
+    }
 
    public Object getSelectedItem() {
       return cN.b(this.gt);
    }
+
 }
+
 
 }

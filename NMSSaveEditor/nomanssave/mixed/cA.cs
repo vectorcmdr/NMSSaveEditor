@@ -30,8 +30,7 @@ public class cA : DefaultTreeCellRenderer {
       } else {
          var8.setIcon(UIManager.getIcon("Tree.closedIcon"));
       }
-
-      return var8;
+       return var8;
    }
 }
 

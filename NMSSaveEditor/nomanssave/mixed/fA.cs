@@ -169,8 +169,7 @@ public class fA : fq {
                this.lY = null;
                hc.a("cannot read file metadata: " + var1, var8);
             }
-
-            this.lE.a(this);
+             this.lE.a(this);
          } else if (var3 >= 0) {
             try {
                this.lZ[var3] = new fD(this, var3);
@@ -182,12 +181,10 @@ public class fA : fq {
                this.lZ[var3] = null;
                hc.a("cannot read file metadata: " + var1, var6);
             }
-
-            this.lE.a(this, var3 / 2, var1);
+             this.lE.a(this, var3 / 2, var1);
          }
       }
-
-   }
+    }
 
    // $FF: synthetic method
    public static FileInfo a(fA var0) {
@@ -218,6 +215,8 @@ public class fA : fq {
    public static Pattern cb() {
       return lW;
    }
+
 }
+
 
 }

@@ -74,8 +74,7 @@ public class Y : ComboBoxModel {
          X.j(this.bV).m(this.bU.cS());
          X.j(this.bV).SetEnabled(true);
       }
-
-   }
+    }
 
    public Object getSelectedItem() {
       return this.bU;
@@ -85,6 +84,8 @@ public class Y : ComboBoxModel {
    public Object getElementAt(int var1) {
       return this.q(var1);
    }
+
 }
+
 
 }

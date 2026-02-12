@@ -20,15 +20,13 @@ public class gH {
       eV var1 = var0.d("ShipOwnership");
       if (var1 != null && var1.Count != 0) {
          List<object> var2 = new List<object>();
-
-         for(int var3 = 0; var3 < var1.Count; ++var3) {
+          for(int var3 = 0; var3 < var1.Count; ++var3) {
             eY var4 = var1.V(var3);
             if (var4.d("Resource.Seed").ab(0)) {
                var2.Add(new gH(var3, var4, var4.H("Inventory"), var4.H("Inventory_TechOnly"), var4.H("Inventory_Cargo")));
             }
          }
-
-         return (gH[])var2.ToArray(new gH[0]);
+          return (gH[])var2.ToArray(new gH[0]);
       } else {
          return new gH[0];
       }
@@ -38,8 +36,7 @@ public class gH {
       eV var2 = var0.d("ShipOwnership");
       if (var2 != null && var2.Count != 0) {
          int var3 = -1;
-
-         eY var5;
+          eY var5;
          for(int var4 = 0; var4 < var2.Count; ++var4) {
             var5 = var2.V(var4);
             if (!var5.d("Resource.Seed").ab(0)) {
@@ -47,18 +44,15 @@ public class gH {
                break;
             }
          }
-
-         if (var3 < 0) {
+          if (var3 < 0) {
             throw new Exception("Ship cannot be imported to current file!");
          } else {
             eY var14 = gR.az("ship");
             Exception var15 = null;
             eV var6 = null;
-
-            try {
+             try {
                ff var7 = new ff(new FileStream(var1));
-
-               try {
+                try {
                   if (var14 == null) {
                      var14 = var7.bK();
                   } else {
@@ -68,19 +62,16 @@ public class gH {
                   if (var7 != null) {
                      var7.Close();
                   }
-
-               }
+                }
             } catch (Exception var13) {
                if (var15 == null) {
                   var15 = var13;
                } else if (var15 != var13) {
                   var15.addSuppressed(var13);
                }
-
-               throw var15;
+                throw var15;
             }
-
-            var5 = var14.H("Inventory");
+             var5 = var14.H("Inventory");
             if (var5 == null) {
                throw new Exception("Invalid ship data");
             } else {
@@ -104,8 +95,7 @@ public class gH {
          if (var3 == null || var3.Length == 0) {
             var3 = "Ship [" + var0.index + "]";
          }
-
-         return new string[]{var3, var1[var0.dZ() ? 1 : 0]};
+          return new string[]{var3, var1[var0.dZ() ? 1 : 0]};
       };
    }
 
@@ -134,33 +124,27 @@ public class gH {
          var6 = new string[]{"General", "Storage Sacs"};
          var8 = new string[]{"Cargo", "Inflated Sacs"};
       }
-
-      List<object> var15 = new List<object>();
+       List<object> var15 = new List<object>();
       var15.Add(new gI(this, a(this, var6), var3, 0, var10, var11, false, true, var14, var1));
       if (var4 != null) {
          var15.Add(new gJ(this, a(this, var7), var4, 0, var12, var13, true, true, var1));
       }
-
-      if (var5 != null) {
+       if (var5 != null) {
          var15.Add(new gK(this, a(this, var8), var5, var9, 8, 6, false, true, var1));
       }
-
-      this.gT = UnmodifiableList(var15);
+       this.gT = UnmodifiableList(var15);
    }
 
    public void a(FileInfo var1, bool var2) {
       Exception var3 = null;
       Object var4 = null;
-
-      try {
+       try {
          fj var5 = new fj(new FileStream(var1));
-
-         try {
+          try {
             eY var6 = this.rp.bE();
             if (!var2) {
                eV var7 = var6.d("Inventory.Slots");
-
-               int var8;
+                int var8;
                eY var9;
                for(var8 = 0; var8 < var7.Count; ++var8) {
                   var9 = var7.V(var8);
@@ -168,33 +152,27 @@ public class gH {
                      var7.ac(var8--);
                   }
                }
-
-               var7 = var6.d("Inventory_Cargo.Slots");
-
-               for(var8 = 0; var8 < var7.Count; ++var8) {
+                var7 = var6.d("Inventory_Cargo.Slots");
+                for(var8 = 0; var8 < var7.Count; ++var8) {
                   var9 = var7.V(var8);
                   if (!var9.getValueAsString("Type.InventoryType").Equals("Technology")) {
                      var7.ac(var8--);
                   }
                }
             }
-
-            var5.h(var6);
+             var5.h(var6);
          } finally {
             if (var5 != null) {
                var5.Close();
             }
-
-         }
-
-      } catch (Exception var15) {
+          }
+       } catch (Exception var15) {
          if (var3 == null) {
             var3 = var15;
          } else if (var3 != var15) {
             var3.addSuppressed(var15);
          }
-
-         throw var3;
+          throw var3;
       }
    }
 
@@ -239,8 +217,7 @@ public class gH {
          this.av("^ALIEN_SHIP");
          this.av("^ROBOT_SHIP");
       }
-
-   }
+    }
 
    public string cK() {
       return this.rp.d("Resource.Seed").X(1);

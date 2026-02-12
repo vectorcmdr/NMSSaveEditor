@@ -35,14 +35,12 @@ public class aF : ActionListener {
          aH.setProperty("LookAndFeel", var4.ToString());
          aD.a(this.cB, true);
       }
-
-      double var5 = double.Parse(aD.b(this.cB).GetText());
+       double var5 = double.Parse(aD.b(this.cB).GetText());
       if (var5 != aH.a("InventoryScaling", 1.0D)) {
          aH.b("InventoryScaling", var5);
          aD.a(this.cB, true);
       }
-
-      this.cB.SetVisible(false);
+       this.cB.SetVisible(false);
    }
 }
 

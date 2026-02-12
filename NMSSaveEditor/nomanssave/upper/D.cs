@@ -44,16 +44,13 @@ public class D : ComboBoxModel {
             if (var2 == 2) {
                return;
             }
-
-            Application.f(this.aZ, false);
+             Application.f(this.aZ, false);
          }
       }
-
-      var2 = -1;
+       var2 = -1;
 lock(Application.n(this.aZ)) {
          int var4 = 0;
-
-         while(var4 < Application.d(this.aZ).Length) {
+          while(var4 < Application.d(this.aZ).Length) {
             if (Application.d(this.aZ)[var4] != var1) {
                ++var4;
             } else {
@@ -62,8 +59,7 @@ lock(Application.n(this.aZ)) {
             }
          }
       }
-
-      Application.a(this.aZ, var2);
+       Application.a(this.aZ, var2);
    }
 
    public Object getSelectedItem() {
@@ -74,6 +70,8 @@ lock(Application.n(this.aZ)) {
    public Object getElementAt(int var1) {
       return this.m(var1);
    }
+
 }
+
 
 }

@@ -18,7 +18,7 @@ public class dz : Form {
    public static dz ht = null;
 
    public dz(Form var1) {
-      base(var1);
+      // base(var1);
       this.SetSize(300, 400);
       this.SetResizable(false);
       this.setModalExclusionType(ModalExclusionType.APPLICATION_EXCLUDE);

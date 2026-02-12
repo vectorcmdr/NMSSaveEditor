@@ -52,14 +52,12 @@ public interface fq {
                }).Length > 0) {
                   return new fT(var0, var1);
                }
-
-               if (var0.listFiles((var0x) => {
+                if (var0.listFiles((var0x) => {
                   return var0x.Name.Equals("accountdata.hg") || Pattern.Matches("save\\d*.hg", var0x.Name.ToLower());
                }).Length > 0) {
                   return new fJ(var0, var1);
                }
-
-               if (var0.listFiles((var0x) => {
+                if (var0.listFiles((var0x) => {
                   return Pattern.Matches("savedata\\d{2}.hg", var0x.Name.ToLower());
                }).Length > 0) {
                   return new fA(var0, var1);
@@ -68,20 +66,17 @@ public interface fq {
                if (var0.Name.Equals("containers.index")) {
                   return new fT(var0.Directory, var1);
                }
-
-               if (var0.Name.Equals("accountdata.hg") || Pattern.Matches("save\\d*.hg", var0.Name.ToLower())) {
+                if (var0.Name.Equals("accountdata.hg") || Pattern.Matches("save\\d*.hg", var0.Name.ToLower())) {
                   return new fJ(var0.Directory, var1);
                }
-
-               if (Pattern.Matches("savedata\\d{2}.hg", var0.Name.ToLower())) {
+                if (Pattern.Matches("savedata\\d{2}.hg", var0.Name.ToLower())) {
                   return new fA(var0.Directory, var1);
                }
             }
          } catch (IOException var3) {
             hc.error("cannot load storage", var3);
          }
-
-         return null;
+          return null;
       }
    }
 

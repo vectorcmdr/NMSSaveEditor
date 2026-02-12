@@ -34,8 +34,7 @@ public class fO : FileFilter {
             }
          }
       }
-
-      return false;
+       return false;
    }
 }
 

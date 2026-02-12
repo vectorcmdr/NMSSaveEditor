@@ -36,9 +36,10 @@ public class aS : FocusListener {
       } catch (Exception var4) {
          var2 = aQ.b(this.dr).height;
       }
-
-      aQ.e(this.dr).SetText(Convert.ToString(var2));
+       aQ.e(this.dr).SetText(Convert.ToString(var2));
    }
+
 }
+
 
 }

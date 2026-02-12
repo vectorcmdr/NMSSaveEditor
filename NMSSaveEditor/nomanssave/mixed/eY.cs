@@ -16,6 +16,7 @@ public class eY {
    public static int kC = 10;
    public static Pattern kH = new Regex("[^\"\\.\\[\\]]+");
    public int length = 0;
+   public int Length { get => length; set => length = value; }
    public string[] names = new string[10];
    public Object[] values = new Object[10];
    public Object kD;
@@ -297,35 +298,29 @@ public class eY {
             this.kI.propertyChanged(var1, var2, var3);
          });
       }
-
-      string var4 = var1.Length == 0 ? "" : "." + var1;
+       string var4 = var1.Length == 0 ? "" : "." + var1;
       if (this.kD is eY) {
          ((eY)this.kD).a(this, var4, var2, var3);
       }
-
-      if (this.kD is eV) {
+       if (this.kD is eV) {
          ((eV)this.kD).a(this, var4, var2, var3);
       }
-
-   }
+    }
 
    public fc G(string var1) {
       IEnumerator<object> var3 = this.kJ.Entries().GetEnumerator();
-
-      while(var3.MoveNext()) {
+       while(var3.MoveNext()) {
          Entry var2 = (Entry)var3.Current;
          if (var1.Equals(var2.getKey())) {
             var1 = (string)((Function)var2.getValue()).apply(this);
             break;
          }
-
-         if (var1.StartsWith((string)var2.getKey() + ".") || var1.StartsWith((string)var2.getKey() + "[")) {
+          if (var1.StartsWith((string)var2.getKey() + ".") || var1.StartsWith((string)var2.getKey() + "[")) {
             var1 = (string)((Function)var2.getValue()).apply(this) + var1.Substring(((string)var2.getKey()).Length);
             break;
          }
       }
-
-      Matcher var5 = kK.Match(var1);
+       Matcher var5 = kK.Match(var1);
       if (var5.Success && var5.start() == 0) {
          int var6 = var5.end();
          Object var4;
@@ -335,11 +330,9 @@ public class eY {
             if (var5.Groups[3] == null) {
                throw new Exception("Invalid path");
             }
-
-            var4 = new eZ(this, int.Parse(var5.Groups[3]), (fc)null);
+             var4 = new eZ(this, int.Parse(var5.Groups[3]), (fc)null);
          }
-
-         while(var5.Success && var5.start() == var6) {
+          while(var5.Success && var5.start() == var6) {
             var6 = var5.end();
             if (var5.Groups[2] != null) {
                var4 = new fb(this, var5.Groups[2], (fc)var4);
@@ -347,17 +340,14 @@ public class eY {
                if (var5.Groups[3] == null) {
                   throw new Exception("Invalid path");
                }
-
-               var4 = new eZ(this, int.Parse(var5.Groups[3]), (fc)var4);
+                var4 = new eZ(this, int.Parse(var5.Groups[3]), (fc)var4);
             }
          }
-
-         if (var5.hitEnd()) {
+          if (var5.hitEnd()) {
             return (fc)var4;
          }
       }
-
-      throw new Exception("Invalid path");
+       throw new Exception("Invalid path");
    }
 
    public Object getValue(string var1) {
@@ -475,8 +465,7 @@ public class eY {
          this.names = new string[var1.Length];
          this.values = new Object[var1.Length];
          Array.Copy(var1.names, 0, this.names, 0, this.Length);
-
-         for(int var2 = 0; var2 < this.Length; ++var2) {
+          for(int var2 = 0; var2 < this.Length; ++var2) {
             if (var1.values[var2] is eY) {
                this.values[var2] = ((eY)var1.values[var2]).bE();
                fh.a((Object)this.values[var2], (Object)this);
@@ -486,71 +475,58 @@ public class eY {
             } else {
                this.values[var2] = var1.values[var2];
             }
-
-            this.firePropertyChange(this.names[var2], (Object)null, this.values[var2]);
+             this.firePropertyChange(this.names[var2], (Object)null, this.values[var2]);
          }
-
-      }
+       }
    }
 
    public void c(FileInfo var1) {
       Exception var2 = null;
       Object var3 = null;
-
-      try {
+       try {
          FileStream var4 = new FileStream(var1);
-
-         try {
+          try {
             string var5 = fh.b(this, true);
             var4.Write(var5.GetBytes(StandardCharsets.UTF_8));
          } finally {
             if (var4 != null) {
                var4.Close();
             }
-
-         }
-
-      } catch (Exception var11) {
+          }
+       } catch (Exception var11) {
          if (var2 == null) {
             var2 = var11;
          } else if (var2 != var11) {
             var2.addSuppressed(var11);
          }
-
-         throw var2;
+          throw var2;
       }
    }
 
    public void d(FileInfo var1) {
       Exception var2 = null;
       Object var3 = null;
-
-      try {
+       try {
          FileStream var4 = new FileStream(var1);
-
-         try {
+          try {
             string var5 = new string(hk.g(var4), StandardCharsets.UTF_8);
             Object var6 = fh.P(var5);
             if (!(var6 is eY)) {
                throw new eX("Object expected", 0, 0);
             }
-
-            this.d((eY)var6);
+             this.d((eY)var6);
          } finally {
             if (var4 != null) {
                var4.Close();
             }
-
-         }
-
-      } catch (Exception var12) {
+          }
+       } catch (Exception var12) {
          if (var2 == null) {
             var2 = var12;
          } else if (var2 != var12) {
             var2.addSuppressed(var12);
          }
-
-         throw var2;
+          throw var2;
       }
    }
 

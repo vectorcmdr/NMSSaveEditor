@@ -25,14 +25,12 @@ public class dp : G {
          return "";
       } else {
          double var3 = var2.dH();
-
-         try {
+          try {
             double var5 = hf.a(var1, 0.0D, 1000.0D);
             if (var5 != var3) {
                var2.f(var5);
             }
-
-            return Double.toString(var5);
+             return Double.toString(var5);
          } catch (Exception var7) {
             return Double.toString(var3);
          }

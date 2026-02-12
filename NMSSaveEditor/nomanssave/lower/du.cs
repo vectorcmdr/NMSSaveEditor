@@ -76,8 +76,7 @@ public class du : Panel {
             var10.gridy = var8++;
             this.Add(var9, var10);
          }
-
-         var9 = new Label();
+          var9 = new Label();
          var9.SetFont(var6);
          var9.SetBackground((Color)null);
          var9.SetBorder((Border)null);
@@ -108,8 +107,7 @@ public class du : Panel {
          this.hn.SetEnabled(false);
          this.fh.SetEnabled(false);
       }
-
-      this.PerformLayout();
+       this.PerformLayout();
       this.updateUI();
    }
 

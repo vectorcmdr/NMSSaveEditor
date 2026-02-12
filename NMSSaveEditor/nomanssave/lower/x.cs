@@ -33,32 +33,27 @@ public class x  {
          int var7 = var6.getContentLength();
          Stream var8 = var6.getInputStream();
          byte[] var9 = new byte[var7];
-
-         int var10;
+          int var10;
          for(int var11 = 0; (var10 = var8.read(var9, var11, var7)) > 0; var7 -= var10) {
             var11 += var10;
          }
-
-         if (var7 > 0) {
+          if (var7 > 0) {
             throw new IOException("short read");
          }
-
-         string var12 = new string(var9, 0, var9.Length);
+          string var12 = new string(var9, 0, var9.Length);
          if (var12.EndsWith("\r\n")) {
             var12 = var12.Substring(0, var12.Length - 2);
          } else if (var12.EndsWith("\n")) {
             var12 = var12.Substring(0, var12.Length - 1);
          }
-
-         hc.debug("Latest version: \"" + var12 + "\"");
+          hc.debug("Latest version: \"" + var12 + "\"");
          hc.debug("Current version: \"1.19.14\"");
          if (!"1.19.14".Equals(var12)) {
             JavaCompat.InvokeLater(new y(this, this.ba));
          }
       } catch (IOException var13) {
       }
-
-   }
+    }
 
    // $FF: synthetic method
    public static Application a(x var0) {

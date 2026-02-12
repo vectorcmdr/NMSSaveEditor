@@ -34,8 +34,7 @@ public class ga : FileFilter {
             }
          }
       }
-
-      return false;
+       return false;
    }
 }
 

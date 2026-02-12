@@ -16,7 +16,7 @@ public class dt : ba {
    public Panel eS;
 
    public dt(Application var1) {
-      base(aH.cJ, 0);
+      // base(aH.cJ, 0);
       this.eR = var1;
       this.k("Production");
       this.eS = new Panel();
@@ -26,8 +26,7 @@ public class dt : ba {
          if ("lookAndFeel".Equals(var1x.getPropertyName())) {
             JavaCompat.InvokeLater(this.aL);
          }
-
-      });
+       });
    }
 
    public void aL() {
@@ -35,20 +34,17 @@ public class dt : ba {
          Component[] var5;
          int var4 = (var5 = this.eS.getComponents()).Length;
          int var3 = 0;
-
-         while(true) {
+          while(true) {
             if (var3 >= var4) {
                break;
             }
-
-            Component var2 = var5[var3];
+             Component var2 = var5[var3];
             du var6 = (du)var2;
             du.c(var6);
             ++var3;
          }
       }
-
-      this.eS.PerformLayout();
+       this.eS.PerformLayout();
       this.eS.updateUI();
    }
 
@@ -56,13 +52,11 @@ public class dt : ba {
       lock (this.eS.getTreeLock()) {
          this.eS.Controls.Clear();
          int var3 = 0;
-
-         while(true) {
+          while(true) {
             if (var3 >= var1.Length) {
                break;
             }
-
-            du var4 = new du(this, var1[var3], (du)null);
+             du var4 = new du(this, var1[var3], (du)null);
             GridBagConstraints var5 = new GridBagConstraints();
             var5.fill = 1;
             var5.insets = new Insets(10, 10, 10, 10);
@@ -72,8 +66,7 @@ public class dt : ba {
             ++var3;
          }
       }
-
-      this.eS.PerformLayout();
+       this.eS.PerformLayout();
       this.eS.updateUI();
    }
 
@@ -84,8 +77,7 @@ public class dt : ba {
          var1.hm.aA(0);
          du.c(var1);
       }
-
-   }
+    }
 
    public void b(du var1) {
       ey var2 = ey.d(var1.hm.dz());
@@ -103,8 +95,7 @@ public class dt : ba {
             du.c(var1);
             this.eR.a(var5);
          }
-
-      }
+       }
    }
 
    // $FF: synthetic method

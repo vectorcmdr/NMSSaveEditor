@@ -16,7 +16,7 @@ public class hm : FilterInputStream {
    public int sb;
 
    public hm(Stream var1) {
-      base(var1);
+      // base(var1);
       byte[] var2 = new byte[8];
       hk.readFully(var1, var2);
       int var3 = 255 & var2[0] | (255 & var2[1]) << 8 | (255 & var2[2]) << 16 | (255 & var2[3]) << 24;

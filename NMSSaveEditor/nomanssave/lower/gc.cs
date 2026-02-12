@@ -61,8 +61,7 @@ public class gc {
          while(var1.Length < 32) {
             var1 = "0" + var1;
          }
-
-         var1 = var1.ToLower();
+          var1 = var1.ToLower();
          byte[] var2 = new byte[] {(byte)int.Parse(var1.Substring(6, NumberStyles.HexNumber), 16), (byte)int.Parse(var1.Substring(4, NumberStyles.HexNumber), 16), (byte)int.Parse(var1.Substring(2, NumberStyles.HexNumber), 16), (byte)int.Parse(var1.Substring(0, NumberStyles.HexNumber), 16), (byte)int.Parse(var1.Substring(10, NumberStyles.HexNumber), 16), (byte)int.Parse(var1.Substring(8, NumberStyles.HexNumber), 16), (byte)int.Parse(var1.Substring(14, NumberStyles.HexNumber), 16), (byte)int.Parse(var1.Substring(12, NumberStyles.HexNumber), 16), (byte)int.Parse(var1.Substring(16, NumberStyles.HexNumber), 16), (byte)int.Parse(var1.Substring(18, NumberStyles.HexNumber), 16), (byte)int.Parse(var1.Substring(20, NumberStyles.HexNumber), 16), (byte)int.Parse(var1.Substring(22, NumberStyles.HexNumber), 16), (byte)int.Parse(var1.Substring(24, NumberStyles.HexNumber), 16), (byte)int.Parse(var1.Substring(26, NumberStyles.HexNumber), 16), (byte)int.Parse(var1.Substring(28, NumberStyles.HexNumber), 16), (byte)int.Parse(var1.Substring(30, NumberStyles.HexNumber), 16)};
          var0.Write(var2);
       }
@@ -95,23 +94,19 @@ public class gc {
    public static string d(Stream var0) {
       byte[] var1 = new byte[128];
       hk.readFully(var0, var1);
-
-      int var2;
+       int var2;
       for(var2 = 0; var2 < var1.Length && (var1[var2] != 0 || var1[var2 + 1] != 0); var2 += 2) {
       }
-
-      return new string(var1, 0, var2, "UTF-16LE");
+       return new string(var1, 0, var2, "UTF-16LE");
    }
 
    public static string e(Stream var0) {
       byte[] var1 = new byte[128];
       hk.readFully(var0, var1);
-
-      int var2;
+       int var2;
       for(var2 = 0; var2 < var1.Length && var1[var2] != 0; ++var2) {
       }
-
-      return new string(var1, 0, var2, Encoding.UTF8);
+       return new string(var1, 0, var2, Encoding.UTF8);
    }
 
    public static void c(Stream var0, string var1) {

@@ -20,7 +20,7 @@ public class ho : FilterOutputStream {
    public int si;
 
    public ho(Stream var1) {
-      base(var1);
+      // base(var1);
       this.sf = se.fastCompressor();
       this.buffer = new byte[1048576];
       this.sg = 0;

@@ -55,20 +55,16 @@ public class cI : TreeModel {
    public void a(cJ var1) {
       List<object> var2 = new List<object>();
       var2.Add(var1);
-
-      while((var1 = var1.gi) != null) {
+       while((var1 = var1.gi) != null) {
          var2.Add(0, var1);
       }
-
-      TreeModelEvent var3 = new TreeModelEvent(this, var2.ToArray());
+       TreeModelEvent var3 = new TreeModelEvent(this, var2.ToArray());
       IEnumerator<object> var5 = this.gh.GetEnumerator();
-
-      while(var5.MoveNext()) {
+       while(var5.MoveNext()) {
          TreeModelListener var4 = (TreeModelListener)var5.Current;
          var4.treeStructureChanged(var3);
       }
-
-   }
+    }
 
    // $FF: synthetic method
    public cI(cy var1, cI var2) {

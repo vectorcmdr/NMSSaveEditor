@@ -176,38 +176,31 @@ public class ff : Closeable {
                      var3 = new eY();
                   }
                }
-
-               if (var4 != null) {
+                if (var4 != null) {
                   var6 = var4.q(var6);
                }
-
-               if (this.bI() != 58) {
+                if (this.bI() != 58) {
                   throw new eX("Invalid token");
                }
-
-               Object var7 = this.a(this.bI(), var4);
+                Object var7 = this.a(this.bI(), var4);
                ((eY)var3).a(var6, var7);
                var5 = this.bI();
                if (var5 == 125) {
                   break;
                }
-
-               if (var5 != 44) {
+                if (var5 != 44) {
                   throw new eX("Invalid token");
                }
-
-               var5 = this.bI();
+                var5 = this.bI();
                if (var5 != 34) {
                   throw new eX("Invalid token");
                }
             }
          }
-
-         if (var3 == null) {
+          if (var3 == null) {
             var3 = new eY();
          }
-
-         if (((eY)var3).H("PlayerStateData") == null) {
+          if (((eY)var3).H("PlayerStateData") == null) {
             ((eY)var3).b("PlayerStateData", (var0) => {
                string var1x = var0.getValueAsString("ActiveContext");
                if ("Main".Equals(var1x) && var0.H("BaseContext.PlayerStateData") != null) {
@@ -217,8 +210,7 @@ public class ff : Closeable {
                }
             });
          }
-
-         return (eY)var3;
+          return (eY)var3;
       }
    }
 

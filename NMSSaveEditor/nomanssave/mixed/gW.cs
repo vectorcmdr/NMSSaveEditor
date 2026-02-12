@@ -18,8 +18,7 @@ public class gW {
       var1.Append(System.lineSeparator());
       var1.Append("  ");
       StringBuilder var2 = new StringBuilder();
-
-      for(int var3 = 0; var3 < var0.Length; ++var3) {
+       for(int var3 = 0; var3 < var0.Length; ++var3) {
          var1.Append(Convert.ToString((var0[var3] & 240) >> 4, 16));
          var1.Append(((int)var0[var3] & 15).ToString("X"));
          if (var0[var3] >= 32 && var0[var3] < 127) {
@@ -27,8 +26,7 @@ public class gW {
          } else {
             var2.Append('?');
          }
-
-         if (var3 % 16 == 15) {
+          if (var3 % 16 == 15) {
             var1.Append("  ");
             var1.Append(var2);
             var1.Append(System.lineSeparator());
@@ -36,18 +34,15 @@ public class gW {
             var2 = new StringBuilder();
          }
       }
-
-      if (var2.Length > 0) {
+       if (var2.Length > 0) {
          while(var2.Length < 16) {
             var1.Append("  ");
             var2.Append(" ");
          }
-
-         var1.Append("  ");
+          var1.Append("  ");
          var1.Append(var2);
       }
-
-      Console.WriteLine(var1.ToString());
+       Console.WriteLine(var1.ToString());
    }
 
    public static void a(long[] var0) {

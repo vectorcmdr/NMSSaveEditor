@@ -32,7 +32,7 @@ public class cg : Form {
    public static cg fE = null;
 
    public cg(Form var1) {
-      base(var1);
+      // base(var1);
       this.SetSize(600, 480);
       this.setModalExclusionType(ModalExclusionType.APPLICATION_EXCLUDE);
       this.SetTitle("Item Details");
@@ -132,13 +132,11 @@ public class cg : Form {
                var4 = var8.Substring(var6 + 1);
             }
          }
-
-         this.fs.SetText(this.fA.getID());
+          this.fs.SetText(this.fA.getID());
          this.ft.SetText(var4);
          this.fr.SetVisible(true);
          this.ft.SetVisible(true);
-
-         try {
+          try {
             int var9 = hf.b(var4, 0, 99999);
             this.fC = new Integer(var9);
             this.ft.setEditable(true);
@@ -153,8 +151,7 @@ public class cg : Form {
          this.fr.SetVisible(false);
          this.ft.SetVisible(false);
       }
-
-      if (var3.Equals("Technology") && var1.dA() >= 0 && var1.dA() < var1.dB()) {
+       if (var3.Equals("Technology") && var1.dA() >= 0 && var1.dA() < var1.dB()) {
          this.fu.SetText("Charge:");
          this.fD = var1.dA();
          this.fv.SetText(Convert.ToString(var1.dA()));
@@ -172,8 +169,7 @@ public class cg : Form {
          this.fw.SetText("1");
          this.fv.setEditable(false);
       }
-
-      this.fq.SetText(this.fA == null ? "[Unknown]" : this.fA.Name);
+       this.fq.SetText(this.fA == null ? "[Unknown]" : this.fA.Name);
       this.fp.SetText(this.fA == null ? "[Unknown]" : this.fA.bc().ToString());
       this.fx.SetText(this.fA == null ? "" : this.fA.bg());
       if (this.fA != null) {
@@ -188,8 +184,7 @@ public class cg : Form {
       if (var4.Length == 0) {
          var4 = "N/A";
       }
-
-      this.fy.SetText(var4);
+       this.fy.SetText(var4);
       this.fy.setCaretPosition(0);
       this.fz.SetText(this.fA == null ? "" : this.fA.getDescription());
       this.SetLocationRelativeTo(this.Parent);

@@ -18,7 +18,7 @@ public class eR : ey {
    public eQ ko;
 
    public eR(eQ var1, XmlElement var2) {
-      base(var2.GetAttribute("id"));
+      // base(var2.GetAttribute("id"));
       this.ko = var1;
       this.kc = var2.HasAttribute("icon") ? var2.GetAttribute("icon") : null;
       this.kn = ey.p(var2.GetAttribute("template"));

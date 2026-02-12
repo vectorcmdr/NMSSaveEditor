@@ -20,22 +20,19 @@ public class gO {
       eV var1 = var0.d("VehicleOwnership");
       if (var1 != null && var1.Count != 0) {
          List<object> var2 = new List<object>();
-
-         eY var4;
+          eY var4;
          for(int var3 = 0; var3 < var1.Count; ++var3) {
             var4 = var1.V(var3);
             if (var3 != 4) {
                var2.Add(new gO(var3, var4, var4.H("Inventory"), var4.H("Inventory_TechOnly")));
             }
          }
-
-         eY var5 = var0.H("FishPlatformLayout");
+          eY var5 = var0.H("FishPlatformLayout");
          var4 = var0.H("FishPlatformInventory");
          if (var5 != null && var4 != null) {
             var2.Add(new gO(var5, var4));
          }
-
-         return (gO[])var2.ToArray(new gO[0]);
+          return (gO[])var2.ToArray(new gO[0]);
       } else {
          return new gO[0];
       }
@@ -58,8 +55,7 @@ public class gO {
       } else {
          var5 = 16;
       }
-
-      bool var6 = Application.e().D();
+       bool var6 = Application.e().D();
       byte var7 = 8;
       byte var8 = 6;
       byte var9 = 8;
@@ -74,14 +70,12 @@ public class gO {
       } else {
          var11 = "General";
       }
-
-      List<object> var12 = new List<object>();
+       List<object> var12 = new List<object>();
       var12.Add(new gP(this, a(this, var11), var3, 0, var7, var8, false, false, false, false, var6, var5));
       if (var4 != null) {
          var12.Add(new gt(a(this, "Technology"), var4, var5, var9, var10, true, false, false, false));
       }
-
-      this.gT = UnmodifiableList(var12);
+       this.gT = UnmodifiableList(var12);
    }
 
    public gO(eY var1, eY var2) {
@@ -92,8 +86,7 @@ public class gO {
             int var4 = ((eV)var3x).Count;
             var1.b("Slots", (Object)var4);
          }
-
-      });
+       });
       byte var3 = 8;
       byte var4 = 6;
       List<object> var5 = new List<object>();

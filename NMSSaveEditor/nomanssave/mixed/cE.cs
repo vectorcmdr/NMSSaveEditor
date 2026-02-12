@@ -36,12 +36,10 @@ public class cE : WindowAdapter {
             var2 = false;
          }
       }
-
-      if (var2) {
+       if (var2) {
          this.gg.SetVisible(false);
       }
-
-   }
+    }
 }
 
 }

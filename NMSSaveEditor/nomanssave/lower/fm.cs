@@ -31,18 +31,15 @@ public class fm  {
       if (var2 != null) {
          var2.cancel();
       }
-
-   }
+    }
 
    public void run() {
       try {
          try {
             Dictionary<object, object> var1 = new Dictionary<object, object>();
-
-            while(true) {
+             while(true) {
                WatchKey var3 = this.lk.take();
-
-               Kind var6;
+                Kind var6;
                do {
                   Object var2;
                   if (var1.ContainsKey(var3)) {
@@ -51,10 +48,8 @@ public class fm  {
                      var2 = new List<object>();
                      var1.Put(var3, var2);
                   }
-
-                  IEnumerator<object> var5 = var3.pollEvents().GetEnumerator();
-
-                  while(var5.MoveNext()) {
+                   IEnumerator<object> var5 = var3.pollEvents().GetEnumerator();
+                   while(var5.MoveNext()) {
                      WatchEvent var4 = (WatchEvent)var5.Current;
                      var6 = var4.kind();
                      if (var6 != StandardWatchEventKinds.OVERFLOW) {
@@ -64,32 +59,26 @@ public class fm  {
                         }
                      }
                   }
-
-                  if (!var3.reset()) {
+                   if (!var3.reset()) {
                      break;
                   }
-
-                  var3 = this.lk.poll(500L, TimeUnit.MILLISECONDS);
+                   var3 = this.lk.poll(500L, TimeUnit.MILLISECONDS);
                } while(var3 != null);
-
-               lock (fl.bQ()) {
+                lock (fl.bQ()) {
                   bool var23 = false;
                   IEnumerator<object> var8 = var1.Entries().GetEnumerator();
-
-                  label156:
+                   label156:
                   while(true) {
                      if (!var8.MoveNext()) {
                         var6 = null;
                         break;
                      }
-
-                     Entry var25 = (Entry)var8.Current;
+                      Entry var25 = (Entry)var8.Current;
                      var3 = (WatchKey)var25.getKey();
                      List<object> var22 = (List)var25.getValue();
                      var23 = false;
                      IEnumerator<object> var10 = this.ll.Entries().GetEnumerator();
-
-                     while(true) {
+                      while(true) {
                         Entry var9;
                         fq var24;
                         do {
@@ -100,23 +89,19 @@ public class fm  {
                                  }
                                  goto label156;
                               }
-
-                              var9 = (Entry)var10.Current;
+                               var9 = (Entry)var10.Current;
                            } while(var9.getValue() != var3);
                         } while((var24 = (fq)var9.getKey()) == null);
-
-                        var23 = true;
+                         var23 = true;
                         IEnumerator<object> var12 = var22.GetEnumerator();
-
-                        while(var12.MoveNext()) {
+                         while(var12.MoveNext()) {
                            string var11 = (string)var12.Current;
                            var24.X(var11);
                         }
                      }
                   }
                }
-
-               var1.Clear();
+                var1.Clear();
             }
          } finally {
             this.lk.Close();
@@ -125,8 +110,7 @@ public class fm  {
       } catch (IOException var21) {
          hc.error("FileInfo watcher service error", var21);
       }
-
-   }
+    }
 }
 
 }

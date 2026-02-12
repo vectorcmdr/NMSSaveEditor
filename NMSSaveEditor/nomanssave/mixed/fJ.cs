@@ -60,15 +60,12 @@ public class fJ : fq {
             this.mr = null;
             hc.a("cannot read file metadata: mf_accountdata.hg", var6);
          }
-
-         this.lE.a(this);
+          this.lE.a(this);
       }
-
-      Matcher var2 = lV.Match(var1);
+       Matcher var2 = lV.Match(var1);
       if (var2.Matches()) {
          int var3 = var2.Groups[1].Length == 0 ? 0 : int.Parse(var2.Groups[1]) - 1;
-
-         try {
+          try {
             this.ms[var3] = new fM(this, var3);
             hc.info("Save file reloaded from storage: " + var1);
          } catch (FileNotFoundException var7) {
@@ -78,11 +75,9 @@ public class fJ : fq {
             this.ms[var3] = null;
             hc.a("cannot read file metadata: mf_save" + (var3 == 0 ? "" : Convert.ToString(var3 + 1)) + ".hg", var8);
          }
-
-         this.lE.a(this, var3 / 2, var1);
+          this.lE.a(this, var3 / 2, var1);
       }
-
-   }
+    }
 
    public FileInfo bS() {
       return this.lX;
@@ -173,6 +168,8 @@ public class fJ : fq {
    public static Pattern cl() {
       return lW;
    }
+
 }
+
 
 }

@@ -17,7 +17,7 @@ public class fb : fc {
    public eY kL;
 
    public fb(eY var1, string var2, fc var3) {
-      base(var1, var3);
+      // base(var1, var3);
       this.kL = var1;
       this.name = var2;
    }
@@ -29,8 +29,7 @@ public class fb : fc {
       } else {
          var3 = (eY)this.kN.a(typeof(eY), var2);
       }
-
-      int var4 = var3.IndexOf(this.name);
+       int var4 = var3.IndexOf(this.name);
       if (var4 < 0) {
          if (!var2) {
             throw new fd((fd)null);
@@ -41,8 +40,7 @@ public class fb : fc {
             } catch (Exception var7) {
                throw new Exception("Unexpected error", var7);
             }
-
-            var3.Put(this.name, var5);
+             var3.Put(this.name, var5);
             return var5;
          }
       } else if (var1.IsInstanceOfType(var3.values[var4])) {
@@ -59,8 +57,7 @@ public class fb : fc {
       } else {
          var1 = (eY)this.kN.a(typeof(eY), false);
       }
-
-      return var1.Get(this.name);
+       return var1.Get(this.name);
    }
 
    public Object a(Object var1, bool var2) {
@@ -70,8 +67,7 @@ public class fb : fc {
       } else {
          var3 = (eY)this.kN.a(typeof(eY), var2);
       }
-
-      return var3.Put(this.name, var1);
+       return var3.Put(this.name, var1);
    }
 
    public Object bG() {
@@ -92,8 +88,7 @@ public class fb : fc {
       } else {
          var2 = (eY)this.kN.a(typeof(eY), false);
       }
-
-      Object var3 = var2.Get(this.name);
+       Object var3 = var2.Get(this.name);
       if (var3 == null) {
          var2.Put(this.name, var1);
          return null;

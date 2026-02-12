@@ -16,7 +16,7 @@ public class fi : StringReader {
    public int kG = 0;
 
    public fi(string var1) {
-      base(var1);
+      // base(var1);
    }
 
    public int bI() {
@@ -26,8 +26,7 @@ public class fi : StringReader {
             return -1;
          }
       } while(var1 == 32 || var1 == 13 || var1 == 10 || var1 == 9);
-
-      return var1;
+       return var1;
    }
 
    public int read() {
@@ -37,12 +36,10 @@ public class fi : StringReader {
       } catch (IOException var3) {
          throw new eX("stream error", var3, this.kF, this.kG);
       }
-
-      if (var1 == 10) {
+       if (var1 == 10) {
          ++this.kF;
       }
-
-      ++this.kG;
+       ++this.kG;
       return var1;
    }
 
@@ -54,8 +51,7 @@ public class fi : StringReader {
             if (var2 == 10) {
                ++this.kF;
             }
-
-            ++this.kG;
+             ++this.kG;
             return var2;
          } else {
             this.reset();

@@ -101,8 +101,7 @@ public class bE : Panel {
             }
          }
       }
-
-   }
+    }
 
    public void a(gs var1, string var2) {
       for(int var4 = 0; var4 < this.ex.Length; ++var4) {
@@ -113,13 +112,11 @@ public class bE : Panel {
             }
          }
       }
-
-   }
+    }
 
    public void a(gz var1) {
       this.cp = var1;
-
-      for(int var3 = 0; var3 < this.ex.Length; ++var3) {
+       for(int var3 = 0; var3 < this.ex.Length; ++var3) {
          for(int var4 = 0; var4 < this.ex[var3].getComponentCount(); ++var4) {
             Component var2 = this.ex[var3].getComponent(var4);
             if (var2 is bJ) {
@@ -129,8 +126,7 @@ public class bE : Panel {
             }
          }
       }
-
-   }
+    }
 
    // $FF: synthetic method
    public static gz a(bE var0) {

@@ -31,6 +31,8 @@ namespace NMSSaveEditor
         public static Pattern compile(string regex) { return new Pattern { _regex = new Regex(regex) }; }
         public static Pattern compile(string regex, int flags) { return new Pattern { _regex = new Regex(regex) }; }
         public Matcher matcher(string input) { return new Matcher(_regex, input); }
+        public Matcher Match(string input) { return matcher(input); }
+        public string pattern() { return _regex?.ToString() ?? ""; }
         public static int CASE_INSENSITIVE = 1;
         public static int DOTALL = 2;
         public static int MULTILINE = 4;
@@ -61,6 +63,9 @@ namespace NMSSaveEditor
         public int start() { return _match?.Index ?? 0; }
         public int Start() { return start(); }
         public int end() { return (_match?.Index ?? 0) + (_match?.Length ?? 0); }
+        public System.Text.RegularExpressions.GroupCollection Groups => _match?.Groups;
+        public bool Success => _match?.Success ?? false;
+        public int groupCount() { return _match?.Groups?.Count - 1 ?? 0; }
     }
 
     // Java Function<T,R>

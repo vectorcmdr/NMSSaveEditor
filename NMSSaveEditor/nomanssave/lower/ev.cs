@@ -17,15 +17,13 @@ public class ev : List<object> {
    public ev(XmlElement var1) {
       this.id = var1.GetAttribute("id");
       XmlNodeList var2 = var1.ChildNodes;
-
-      for(int var3 = 0; var3 < var2.Count; ++var3) {
+       for(int var3 = 0; var3 < var2.Count; ++var3) {
          XmlNode var4 = var2.Item(var3);
          if (var4 is XmlElement && var4.Name.Equals("stacksize")) {
             this.Add(new ew((System.Xml.XmlElement)var4));
          }
       }
-
-   }
+    }
 }
 
 }

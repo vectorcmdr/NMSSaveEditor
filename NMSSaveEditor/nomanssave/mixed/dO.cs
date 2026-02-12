@@ -77,8 +77,7 @@ public class dO : ComboBoxModel {
                }
             }
          }
-
-      }
+       }
    }
 
    public Object getSelectedItem() {
@@ -89,6 +88,8 @@ public class dO : ComboBoxModel {
    public Object getElementAt(int var1) {
       return this.G(var1);
    }
+
 }
+
 
 }

@@ -36,15 +36,13 @@ public class fy : ft {
          var3 = fu.a(this.lJ)[this.lT * 2].L();
          var1 = fu.a(this.lJ)[this.lT * 2].LastWriteTimeUtc.Ticks;
       }
-
-      if (fu.a(this.lJ)[this.lT * 2 + 1] != null) {
+       if (fu.a(this.lJ)[this.lT * 2 + 1] != null) {
          long var4 = fu.a(this.lJ)[this.lT * 2 + 1].LastWriteTimeUtc.Ticks;
          if (var4 > var1) {
             var3 = fu.a(this.lJ)[this.lT * 2 + 1].L();
          }
       }
-
-      return var3;
+       return var3;
    }
 
    public fs[] bX() {
@@ -53,12 +51,10 @@ public class fy : ft {
       if (fu.a(this.lJ)[this.lT * 2] != null) {
          var1.Add(fu.a(this.lJ)[this.lT * 2]);
       }
-
-      if (fu.a(this.lJ)[this.lT * 2 + 1] != null) {
+       if (fu.a(this.lJ)[this.lT * 2 + 1] != null) {
          var1.Add(fu.a(this.lJ)[this.lT * 2 + 1]);
       }
-
-      var1.sort(new fz(this));
+       var1.sort(new fz(this));
       return (fs[])var1.ToArray(new fs[0]);
    }
 
@@ -71,24 +67,23 @@ public class fy : ft {
          var4 = fu.a(this.lJ)[this.lT * 2].L();
          var2 = fu.a(this.lJ)[this.lT * 2].LastWriteTimeUtc.Ticks;
       }
-
-      if (fu.a(this.lJ)[this.lT * 2 + 1] != null) {
+       if (fu.a(this.lJ)[this.lT * 2 + 1] != null) {
          long var5 = fu.a(this.lJ)[this.lT * 2 + 1].LastWriteTimeUtc.Ticks;
          if (var5 > var2) {
             var4 = fu.a(this.lJ)[this.lT * 2 + 1].L();
             var2 = var5;
          }
       }
-
-      if (var4 != null) {
+       if (var4 != null) {
          var1.Append(var4.ToString());
          var1.Append(" - " + Application.b(var2));
       } else {
          var1.Append("[EMPTY]");
       }
-
-      return var1.ToString();
+       return var1.ToString();
    }
+
 }
+
 
 }

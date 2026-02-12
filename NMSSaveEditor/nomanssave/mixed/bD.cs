@@ -25,8 +25,7 @@ public class bD : DefaultListCellRenderer {
          Label var7 = (Label)var6;
          var7.SetText(" ");
       }
-
-      if (var2 is er && var6 is Label) {
+       if (var2 is er && var6 is Label) {
          er var9 = (er)var2;
          Label var8 = (Label)var6;
          if (var9.aW()) {
@@ -41,8 +40,7 @@ public class bD : DefaultListCellRenderer {
             var8.SetForeground(UIManager.getColor("Frigate.negativeTraitColor"));
          }
       }
-
-      return var6;
+       return var6;
    }
 
    // $FF: synthetic method

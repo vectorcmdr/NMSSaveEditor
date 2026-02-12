@@ -125,15 +125,13 @@ public class hk {
 
    public static byte[] l(FileInfo var0) {
       FileStream var1 = new FileStream(var0);
-
-      byte[] var3;
+       byte[] var3;
       try {
          var3 = g(var1);
       } finally {
          var1.Close();
       }
-
-      return var3;
+       return var3;
    }
 
    public static byte[] g(Stream var0) {

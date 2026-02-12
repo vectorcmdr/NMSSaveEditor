@@ -36,12 +36,10 @@ public class bu : Runnable {
          bl.m(bt.a(this.es)).SetSelectedIndex(-1);
          bl.n(bt.a(this.es)).SetText("");
          bl.o(bt.a(this.es)).SetText("");
-
-         for(var1 = 0; var1 < bl.d(bt.a(this.es)).Length; ++var1) {
+          for(var1 = 0; var1 < bl.d(bt.a(this.es)).Length; ++var1) {
             bl.d(bt.a(this.es))[var1].SetText("");
          }
-
-         bl.p(bt.a(this.es)).SetSelectedIndex(-1);
+          bl.p(bt.a(this.es)).SetSelectedIndex(-1);
          bl.q(bt.a(this.es)).SetSelectedIndex(-1);
          bl.r(bt.a(this.es)).SetSelectedIndex(-1);
          bl.s(bt.a(this.es)).SetSelectedIndex(-1);
@@ -67,12 +65,10 @@ public class bu : Runnable {
          bl.m(bt.a(this.es)).m(bl.c(bt.a(this.es))[bl.b(bt.a(this.es))].db());
          bl.n(bt.a(this.es)).SetText(bl.c(bt.a(this.es))[bl.b(bt.a(this.es))].cU());
          bl.o(bt.a(this.es)).SetText(bl.c(bt.a(this.es))[bl.b(bt.a(this.es))].cV());
-
-         for(var1 = 0; var1 < bl.d(bt.a(this.es)).Length; ++var1) {
+          for(var1 = 0; var1 < bl.d(bt.a(this.es)).Length; ++var1) {
             bl.d(bt.a(this.es))[var1].SetText(Convert.ToString(bl.c(bt.a(this.es))[bl.b(bt.a(this.es))].aq(var1)));
          }
-
-         bl.p(bt.a(this.es)).SetSelectedItem(bl.c(bt.a(this.es))[bl.b(bt.a(this.es))].ar(0));
+          bl.p(bt.a(this.es)).SetSelectedItem(bl.c(bt.a(this.es))[bl.b(bt.a(this.es))].ar(0));
          bl.q(bt.a(this.es)).SetSelectedItem(bl.c(bt.a(this.es))[bl.b(bt.a(this.es))].ar(1));
          bl.r(bt.a(this.es)).SetSelectedItem(bl.c(bt.a(this.es))[bl.b(bt.a(this.es))].ar(2));
          bl.s(bt.a(this.es)).SetSelectedItem(bl.c(bt.a(this.es))[bl.b(bt.a(this.es))].ar(3));
@@ -93,8 +89,7 @@ public class bu : Runnable {
             bl.y(bt.a(this.es)).SetText("");
             bl.z(bt.a(this.es)).SetVisible(false);
          }
-
-         bl.h(bt.a(this.es)).updateUI();
+          bl.h(bt.a(this.es)).updateUI();
          bl.i(bt.a(this.es)).updateUI();
          bl.p(bt.a(this.es)).updateUI();
          bl.q(bt.a(this.es)).updateUI();
@@ -105,6 +100,8 @@ public class bu : Runnable {
          bl.g(bt.a(this.es)).SetEnabled(bl.c(bt.a(this.es)).Length < 30 || en.aS());
       }
    }
+
 }
+
 
 }

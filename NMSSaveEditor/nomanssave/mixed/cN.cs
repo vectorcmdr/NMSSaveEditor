@@ -38,8 +38,7 @@ public class cN : ComboBox {
       if (var1 != null) {
          Enum[] var6;
          int var5 = (var6 = this.gn).Length;
-
-         for(int var4 = 0; var4 < var5; ++var4) {
+          for(int var4 = 0; var4 < var5; ++var4) {
             Enum var3 = var6[var4];
             if (this.gm) {
                if (((gD)var3).K().Equals(var1)) {
@@ -51,8 +50,7 @@ public class cN : ComboBox {
                break;
             }
          }
-
-         if (var2 == null) {
+          if (var2 == null) {
             int var7 = this.go.IndexOf(new cQ(this, var1));
             if (var7 >= 0) {
                var2 = this.go.Get(var7);
@@ -62,8 +60,7 @@ public class cN : ComboBox {
             }
          }
       }
-
-      this.gq = var2;
+       this.gq = var2;
       this.selectedItemChanged();
       this.updateUI();
    }

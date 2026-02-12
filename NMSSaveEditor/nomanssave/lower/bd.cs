@@ -36,16 +36,14 @@ public class bd : em {
          if (this.dO != null) {
             this.dO.ag(var1x);
          }
-
-      });
+       });
       this.a("Type", this.dH);
       this.dI = new cN(typeof(gN));
       this.dI.a((var1x) => {
          if (this.dO != null) {
             this.dO.aj(var1x);
          }
-
-      });
+       });
       this.a("Class", this.dI);
       this.dJ = new bf(this);
       this.a("Home Seed", this.dJ);
@@ -131,11 +129,9 @@ public class bd : em {
             this.bn.SetEnabled(true);
             this.bo.SetEnabled(true);
          }
-
-         this.dN.a(var1.cC());
+          this.dN.a(var1.cC());
       }
-
-   }
+    }
 
    // $FF: synthetic method
    public static gm a(bd var0) {

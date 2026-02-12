@@ -74,42 +74,35 @@ public class fw {
       if (this.lR != 0) {
          Console.WriteLine("  unknown3 = " + this.lR + " 0x" + Convert.ToString((int)this.lR) + " " + Integer.toBinaryString(this.lR) + " date:" + new Date(1000L * (long)this.lR));
       }
-
-      if (this.lS != 0) {
+       if (this.lS != 0) {
          Console.WriteLine("  unknown4 = " + this.lS + " 0x" + Convert.ToString((int)this.lS) + " " + Integer.toBinaryString(this.lS) + " len:" + (4294967295L & (long)this.lS));
       }
-
-   }
+    }
 
    public byte[] ca() {
       if (!this.isValid()) {
          return null;
       } else {
          FileStream var1 = new FileStream(fu.b(this.lJ));
-
-         byte[] var8;
+          byte[] var8;
          try {
             var1.skip(this.lP);
             MemoryStream var2 = new MemoryStream();
             byte[] var3 = new byte[4096];
             long var4 = this.Length;
-
-            int var6;
+             int var6;
             while(var4 > 0L && (var6 = var1.read(var3, 0, (int)Math.Min((long)var3.Length, var4))) > 0) {
                var4 -= (long)var6;
                var2.Write(var3, 0, var6);
             }
-
-            if (var4 > 0L) {
+             if (var4 > 0L) {
                throw new IOException("short read");
             }
-
-            var8 = var2.toByteArray();
+             var8 = var2.toByteArray();
          } finally {
             var1.Close();
          }
-
-         return var8;
+          return var8;
       }
    }
 
@@ -118,81 +111,65 @@ public class fw {
          throw new IOException("header not valid");
       } else {
          int var2 = -1;
-
-         for(int var3 = 0; var3 < fu.c(this.lJ).Length; ++var3) {
+          for(int var3 = 0; var3 < fu.c(this.lJ).Length; ++var3) {
             if (fu.c(this.lJ)[var3] == this) {
                var2 = var3;
                break;
             }
          }
-
-         if (var2 < 0) {
+          if (var2 < 0) {
             throw new IOException("header not valid");
          } else {
             long var25 = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
             FileInfo var5 = new File(fu.b(this.lJ).Directory, "~" + fu.b(this.lJ).Name);
             FileStream var6 = new FileStream(var5);
-
-            try {
+             try {
                FileStream var7 = new FileStream(fu.b(this.lJ));
-
-               try {
+                try {
                   Console.WriteLine("Reading header");
                   byte[] var8 = new byte[64];
                   hk.readFully(var7, var8);
                   var6.Write(var8);
                   long var9 = (long)var1.Length - fu.c(this.lJ)[var2].Length;
                   long var11 = 64L;
-
-                  int var13;
+                   int var13;
                   fw var10000;
                   for(var13 = 0; var13 < var2; ++var13) {
                      if (fu.c(this.lJ)[var13].lP < fu.c(this.lJ)[var2].lP) {
                         var10000 = fu.c(this.lJ)[var13];
                         var10000.lP += var9;
                      }
-
-                     var11 += (long)fu.c(this.lJ)[var13].a(var6);
+                      var11 += (long)fu.c(this.lJ)[var13].a(var6);
                   }
-
-                  var6.Write(fu.bY());
+                   var6.Write(fu.bY());
                   fu.c(this.lJ)[var2].Length = (long)var1.Length;
                   fu.c(this.lJ)[var2].bd = var25;
                   var11 += (long)fu.c(this.lJ)[var2].a(var6);
-
-                  for(var13 = var2 + 1; var13 < fu.c(this.lJ).Length; ++var13) {
+                   for(var13 = var2 + 1; var13 < fu.c(this.lJ).Length; ++var13) {
                      if (fu.c(this.lJ)[var13].lP < fu.c(this.lJ)[var2].lP) {
                         var10000 = fu.c(this.lJ)[var13];
                         var10000.lP += var9;
                      }
-
-                     var11 += (long)fu.c(this.lJ)[var13].a(var6);
+                      var11 += (long)fu.c(this.lJ)[var13].a(var6);
                   }
-
-                  long var26 = fu.c(this.lJ)[var2].lP - var11;
-
-                  byte[] var15;
+                   long var26 = fu.c(this.lJ)[var2].lP - var11;
+                   byte[] var15;
                   int var16;
                   for(var15 = new byte[4096]; var26 > 0L && (var16 = var7.read(var15, 0, (int)Math.Min((long)var15.Length, var26))) > 0; var26 -= (long)var16) {
                      var6.Write(var15, 0, var16);
                      var11 += (long)var16;
                   }
-
-                  if (var26 > 0L) {
+                   if (var26 > 0L) {
                      throw new IOException("short read");
                   }
-
-                  var6.Write(var1);
+                   var6.Write(var1);
                   long var27 = var11 + (long)var1.Length;
-
-                  for(var26 = (long)var1.Length - var9; var26 > 0L && (var16 = var7.read(var15, 0, (int)Math.Min((long)var15.Length, var26))) > 0; var26 -= (long)var16) {
+                   for(var26 = (long)var1.Length - var9; var26 > 0L && (var16 = var7.read(var15, 0, (int)Math.Min((long)var15.Length, var26))) > 0; var26 -= (long)var16) {
                   }
-
-                  if (var26 > 0L) {
+                   if (var26 > 0L) {
                      throw new IOException("short read");
                   }
-
-                  while((var16 = var7.read(var15)) > 0) {
+                   while((var16 = var7.read(var15)) > 0) {
                      var6.Write(var15, 0, var16);
                   }
                } finally {
@@ -201,8 +178,7 @@ public class fw {
             } finally {
                var6.Close();
             }
-
-         }
+          }
       }
    }
 }

@@ -21,7 +21,7 @@ public class Q : Form {
    public static Q bC;
 
    public Q(Form var1) {
-      base(var1);
+      // base(var1);
       this.SetResizable(false);
       this.setModalExclusionType(ModalExclusionType.APPLICATION_EXCLUDE);
       this.SetTitle("Change Stack Sizes");

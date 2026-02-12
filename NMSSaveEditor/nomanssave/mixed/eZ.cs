@@ -17,7 +17,7 @@ public class eZ : fc {
    public eY kL;
 
    public eZ(eY var1, int var2, fc var3) {
-      base(var1, var3);
+      // base(var1, var3);
       this.kL = var1;
       this.index = var2;
    }
@@ -38,8 +38,7 @@ public class eZ : fc {
                   } catch (Exception var6) {
                      throw new Exception("Unexpected error", var6);
                   }
-
-                  var3.Add(var4);
+                   var3.Add(var4);
                   return var4;
                }
             } else if (var1.IsInstanceOfType(var3.values[this.index])) {

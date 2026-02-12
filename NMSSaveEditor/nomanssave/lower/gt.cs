@@ -130,20 +130,16 @@ public class gt {
             this.bF = var2.c("ProductMaxStorageMultiplier", 10);
          }
       }
-
-      int var11 = Math.Max(this.height, var5);
+       int var11 = Math.Max(this.height, var5);
       int var12 = Math.Max(this.width, var4);
       this.qy = new eY[var11][];
       this.qz = new bool[var11][];
-
-      for(int var13 = 0; var13 < var11; ++var13) {
+       for(int var13 = 0; var13 < var11; ++var13) {
          this.qy[var13] = new eY[var12];
          this.qz[var13] = new bool[var12];
       }
-
-      eV var19 = var2.d("ValidSlotIndices");
-
-      int var17;
+       eV var19 = var2.d("ValidSlotIndices");
+       int var17;
       for(int var14 = 0; var14 < var19.Count; ++var14) {
          eY var15 = var19.V(var14);
          int var16 = var15.J("X");
@@ -152,10 +148,8 @@ public class gt {
             this.qz[var17][var16] = true;
          }
       }
-
-      eV var20 = var2.d("Slots");
-
-      for(int var21 = 0; var21 < var20.Count; ++var21) {
+       eV var20 = var2.d("Slots");
+       for(int var21 = 0; var21 < var20.Count; ++var21) {
          eY var22 = var20.V(var21);
          var17 = var22.J("Index.X");
          int var18 = var22.J("Index.Y");
@@ -163,8 +157,7 @@ public class gt {
             this.qy[var18][var17] = var22;
          }
       }
-
-   }
+    }
 
    public string getSimpleName() {
       string[] var1 = (string[])this.qs.apply(this);
@@ -299,8 +292,7 @@ public class gt {
    public bool a(Size var1) {
       int var2 = 1;
       int var3 = 1;
-
-      int var4;
+       int var4;
       for(var4 = 0; var4 < this.qy.Length; ++var4) {
          for(int var5 = 0; var5 < this.qy[var4].Length; ++var5) {
             if (this.qz[var4][var5]) {
@@ -309,8 +301,7 @@ public class gt {
             }
          }
       }
-
-      if (var1.width < var2) {
+       if (var1.width < var2) {
          throw new Exception("Cannot resize less than min width");
       } else if (var1.height < var3) {
          throw new Exception("Cannot resize less than min height");
@@ -326,45 +317,38 @@ public class gt {
                   this.qz[var4] = var6;
                }
             }
-
-            if (var1.height > this.qz.Length) {
+             if (var1.height > this.qz.Length) {
                eY[][] var7 = new eY[var1.height][];
                bool[][] var10 = new bool[var1.height][];
                Array.Copy(this.qy, 0, var7, 0, this.qz.Length);
                Array.Copy(this.qz, 0, var10, 0, this.qz.Length);
-
-               for(int var11 = this.qz.Length; var11 < var1.height; ++var11) {
+                for(int var11 = this.qz.Length; var11 < var1.height; ++var11) {
                   var7[var11] = new eY[var1.width];
                   var10[var11] = new bool[var1.width];
                }
-
-               this.qy = var7;
+                this.qy = var7;
                this.qz = var10;
             }
          } else {
             if (var1.width > this.qz[0].Length) {
                throw new Exception("Cannot resize width greater than " + this.qz[0].Length);
             }
-
-            if (var1.height > this.qz.Length) {
+             if (var1.height > this.qz.Length) {
                throw new Exception("Cannot resize height greater than " + this.qz.Length);
             }
          }
-
-         bool var8 = false;
+          bool var8 = false;
          if (this.width != var1.width) {
             this.width = var1.width;
             this.qt.b("Width", (Object)(new Integer(this.width)));
             var8 = true;
          }
-
-         if (this.height != var1.height) {
+          if (this.height != var1.height) {
             this.height = var1.height;
             this.qt.b("Height", (Object)(new Integer(this.height)));
             var8 = true;
          }
-
-         return var8;
+          return var8;
       }
    }
 
@@ -879,8 +863,7 @@ public class gt {
    public bool dr() {
       bool[][] var1 = new bool[this.height][this.width];
       eV var2 = this.qt.d("SpecialSlots");
-
-      int var5;
+       int var5;
       for(int var3 = 0; var3 < var2.Count; ++var3) {
          eY var4 = var2.V(var3);
          var5 = var4.J("Index.X");
@@ -889,10 +872,8 @@ public class gt {
             var1[var6][var5] = "TechBonus".Equals(var4.getValueAsString("Type.InventorySpecialSlotType"));
          }
       }
-
-      bool var7 = false;
-
-      for(int var8 = 0; var8 < this.height; ++var8) {
+       bool var7 = false;
+       for(int var8 = 0; var8 < this.height; ++var8) {
          for(var5 = 0; var5 < this.width; ++var5) {
             if (!var1[var8][var5]) {
                eY var9 = gR.az("specialSlot");
@@ -904,8 +885,7 @@ public class gt {
             }
          }
       }
-
-      return var7;
+       return var7;
    }
 
    public bool l(int var1, int var2) {
@@ -955,27 +935,23 @@ public class gt {
    public bool ds() {
       bool var1 = false;
       eV var3 = this.qt.d("SpecialSlots");
-
-      int var4;
+       int var4;
       for(var4 = 0; var4 < var3.Count; ++var4) {
          eY var5 = var3.V(var4);
          if ("Broken".Equals(var5.getValueAsString("Type.InventorySpecialSlotType"))) {
             var3.ac(var4--);
             var1 = true;
          }
-
-         if ("BlockedByBrokenTech".Equals(var5.getValueAsString("Type.InventorySpecialSlotType"))) {
+          if ("BlockedByBrokenTech".Equals(var5.getValueAsString("Type.InventorySpecialSlotType"))) {
             gu var2;
             if ((var2 = this.f(var5.J("Index.X"), var5.J("Index.Y"))) != null && var2.dC() != 0.0D) {
                this.g(var5.J("Index.X"), var5.J("Index.Y"));
             }
-
-            var3.ac(var4--);
+             var3.ac(var4--);
             var1 = true;
          }
       }
-
-      for(var4 = 0; var4 < this.qy.Length; ++var4) {
+       for(var4 = 0; var4 < this.qy.Length; ++var4) {
          for(int var6 = 0; var6 < this.qy[var4].Length; ++var6) {
             if (this.qy[var4][var6] != null && this.qy[var4][var6].L("DamageFactor") != 0.0D) {
                this.qy[var4][var6].b("DamageFactor", (Object)(new Double(0.0D)));
@@ -984,8 +960,7 @@ public class gt {
             }
          }
       }
-
-      return var1;
+       return var1;
    }
 
    public static string l(Object var0) {
@@ -996,16 +971,13 @@ public class gt {
       } else if (var0 != null) {
          var1.Append(var0.ToString());
       }
-
-      if (var1.Length > 10) {
+       if (var1.Length > 10) {
          var1.Remove(10, var1.Length);
       }
-
-      while(var1.Length < 11) {
+       while(var1.Length < 11) {
          var1.Append(' ');
       }
-
-      return var1.ToString();
+       return var1.ToString();
    }
 
    public void a(StreamWriter var1) {
@@ -1153,223 +1125,179 @@ public class gt {
          return var10000;
       } else {
          int[] var0 = new int[ex.Values.Length];
-
-         try {
+          try {
             var0[ex.jq.ordinal()] = 32;
          } catch (NoSuchFieldError var43) {
          }
-
-         try {
+          try {
             var0[ex.js.ordinal()] = 34;
          } catch (NoSuchFieldError var42) {
          }
-
-         try {
+          try {
             var0[ex.jv.ordinal()] = 37;
          } catch (NoSuchFieldError var41) {
          }
-
-         try {
+          try {
             var0[ex.jt.ordinal()] = 35;
          } catch (NoSuchFieldError var40) {
          }
-
-         try {
+          try {
             var0[ex.jo.ordinal()] = 30;
          } catch (NoSuchFieldError var39) {
          }
-
-         try {
+          try {
             var0[ex.iX.ordinal()] = 13;
          } catch (NoSuchFieldError var38) {
          }
-
-         try {
+          try {
             var0[ex.iN.ordinal()] = 3;
          } catch (NoSuchFieldError var37) {
          }
-
-         try {
+          try {
             var0[ex.iT.ordinal()] = 9;
          } catch (NoSuchFieldError var36) {
          }
-
-         try {
+          try {
             var0[ex.iU.ordinal()] = 10;
          } catch (NoSuchFieldError var35) {
          }
-
-         try {
+          try {
             var0[ex.jA.ordinal()] = 42;
          } catch (NoSuchFieldError var34) {
          }
-
-         try {
+          try {
             var0[ex.iW.ordinal()] = 12;
          } catch (NoSuchFieldError var33) {
          }
-
-         try {
+          try {
             var0[ex.iZ.ordinal()] = 15;
          } catch (NoSuchFieldError var32) {
          }
-
-         try {
+          try {
             var0[ex.iQ.ordinal()] = 6;
          } catch (NoSuchFieldError var31) {
          }
-
-         try {
+          try {
             var0[ex.ja.ordinal()] = 16;
          } catch (NoSuchFieldError var30) {
          }
-
-         try {
+          try {
             var0[ex.iR.ordinal()] = 7;
          } catch (NoSuchFieldError var29) {
          }
-
-         try {
+          try {
             var0[ex.jc.ordinal()] = 18;
          } catch (NoSuchFieldError var28) {
          }
-
-         try {
+          try {
             var0[ex.iP.ordinal()] = 5;
          } catch (NoSuchFieldError var27) {
          }
-
-         try {
+          try {
             var0[ex.jk.ordinal()] = 26;
          } catch (NoSuchFieldError var26) {
          }
-
-         try {
+          try {
             var0[ex.iL.ordinal()] = 1;
          } catch (NoSuchFieldError var25) {
          }
-
-         try {
+          try {
             var0[ex.jz.ordinal()] = 41;
          } catch (NoSuchFieldError var24) {
          }
-
-         try {
+          try {
             var0[ex.jx.ordinal()] = 39;
          } catch (NoSuchFieldError var23) {
          }
-
-         try {
+          try {
             var0[ex.iM.ordinal()] = 2;
          } catch (NoSuchFieldError var22) {
          }
-
-         try {
+          try {
             var0[ex.jj.ordinal()] = 25;
          } catch (NoSuchFieldError var21) {
          }
-
-         try {
+          try {
             var0[ex.jb.ordinal()] = 17;
          } catch (NoSuchFieldError var20) {
          }
-
-         try {
+          try {
             var0[ex.jr.ordinal()] = 33;
          } catch (NoSuchFieldError var19) {
          }
-
-         try {
+          try {
             var0[ex.jw.ordinal()] = 38;
          } catch (NoSuchFieldError var18) {
          }
-
-         try {
+          try {
             var0[ex.jp.ordinal()] = 31;
          } catch (NoSuchFieldError var17) {
          }
-
-         try {
+          try {
             var0[ex.jB.ordinal()] = 43;
          } catch (NoSuchFieldError var16) {
          }
-
-         try {
+          try {
             var0[ex.jl.ordinal()] = 27;
          } catch (NoSuchFieldError var15) {
          }
-
-         try {
+          try {
             var0[ex.jy.ordinal()] = 40;
          } catch (NoSuchFieldError var14) {
          }
-
-         try {
+          try {
             var0[ex.iY.ordinal()] = 14;
          } catch (NoSuchFieldError var13) {
          }
-
-         try {
+          try {
             var0[ex.ji.ordinal()] = 24;
          } catch (NoSuchFieldError var12) {
          }
-
-         try {
+          try {
             var0[ex.jn.ordinal()] = 29;
          } catch (NoSuchFieldError var11) {
          }
-
-         try {
+          try {
             var0[ex.jg.ordinal()] = 22;
          } catch (NoSuchFieldError var10) {
          }
-
-         try {
+          try {
             var0[ex.ju.ordinal()] = 36;
          } catch (NoSuchFieldError var9) {
          }
-
-         try {
+          try {
             var0[ex.je.ordinal()] = 20;
          } catch (NoSuchFieldError var8) {
          }
-
-         try {
+          try {
             var0[ex.iS.ordinal()] = 8;
          } catch (NoSuchFieldError var7) {
          }
-
-         try {
+          try {
             var0[ex.iO.ordinal()] = 4;
          } catch (NoSuchFieldError var6) {
          }
-
-         try {
+          try {
             var0[ex.jh.ordinal()] = 23;
          } catch (NoSuchFieldError var5) {
          }
-
-         try {
+          try {
             var0[ex.jd.ordinal()] = 19;
          } catch (NoSuchFieldError var4) {
          }
-
-         try {
+          try {
             var0[ex.iV.ordinal()] = 11;
          } catch (NoSuchFieldError var3) {
          }
-
-         try {
+          try {
             var0[ex.jm.ordinal()] = 28;
          } catch (NoSuchFieldError var2) {
          }
-
-         try {
+          try {
             var0[ex.jf.ordinal()] = 21;
          } catch (NoSuchFieldError var1) {
          }
-
-         qA = var0;
+          qA = var0;
          return var0;
       }
    }
@@ -1381,48 +1309,39 @@ public class gt {
          return var10000;
       } else {
          int[] var0 = new int[fn.Values.Length];
-
-         try {
+          try {
             var0[fn.lp.ordinal()] = 4;
          } catch (NoSuchFieldError var8) {
          }
-
-         try {
+          try {
             var0[fn.lo.ordinal()] = 3;
          } catch (NoSuchFieldError var7) {
          }
-
-         try {
+          try {
             var0[fn.lt.ordinal()] = 8;
          } catch (NoSuchFieldError var6) {
          }
-
-         try {
+          try {
             var0[fn.lr.ordinal()] = 6;
          } catch (NoSuchFieldError var5) {
          }
-
-         try {
+          try {
             var0[fn.lm.ordinal()] = 1;
          } catch (NoSuchFieldError var4) {
          }
-
-         try {
+          try {
             var0[fn.lq.ordinal()] = 5;
          } catch (NoSuchFieldError var3) {
          }
-
-         try {
+          try {
             var0[fn.ls.ordinal()] = 7;
          } catch (NoSuchFieldError var2) {
          }
-
-         try {
+          try {
             var0[fn.ln.ordinal()] = 2;
          } catch (NoSuchFieldError var1) {
          }
-
-         qB = var0;
+          qB = var0;
          return var0;
       }
    }
@@ -1434,28 +1353,23 @@ public class gt {
          return var10000;
       } else {
          int[] var0 = new int[eB.Values.Length];
-
-         try {
+          try {
             var0[eB.jO.ordinal()] = 2;
          } catch (NoSuchFieldError var4) {
          }
-
-         try {
+          try {
             var0[eB.jP.ordinal()] = 3;
          } catch (NoSuchFieldError var3) {
          }
-
-         try {
+          try {
             var0[eB.jQ.ordinal()] = 4;
          } catch (NoSuchFieldError var2) {
          }
-
-         try {
+          try {
             var0[eB.jN.ordinal()] = 1;
          } catch (NoSuchFieldError var1) {
          }
-
-         qC = var0;
+          qC = var0;
          return var0;
       }
    }

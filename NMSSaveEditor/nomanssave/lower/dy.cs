@@ -27,8 +27,7 @@ public class dy : MouseAdapter {
          cg.a((Container)du.d(this.hp), (gQ)this.hq);
          du.c(this.hp);
       }
-
-   }
+    }
 }
 
 }

@@ -23,8 +23,7 @@ public class bQ : DefaultListCellRenderer {
       if (var2 is gt) {
          var2 = ((gt)var2).Name;
       }
-
-      return base.getListCellRendererComponent(var1, var2, var3, var4, var5);
+       return base.getListCellRendererComponent(var1, var2, var3, var4, var5);
    }
 }
 

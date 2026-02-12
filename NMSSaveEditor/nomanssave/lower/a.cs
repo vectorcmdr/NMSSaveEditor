@@ -15,7 +15,7 @@ public class a : Form {
    public static a a_inst = null;
 
    public a(Form var1) {
-      base(var1);
+      // base(var1);
       this.SetResizable(false);
       this.setModalExclusionType(ModalExclusionType.APPLICATION_EXCLUDE);
       this.SetTitle("About Save Editor");
@@ -23,8 +23,7 @@ public class a : Form {
       RichTextBox var2 = new RichTextBox();
       var2.SetBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
       var2.setOpaque(false);
-
-      try {
+       try {
          StyledDocument var3 = (StyledDocument)var2.getDocument();
          SimpleAttributeSet var4 = new SimpleAttributeSet();
          StyleConstants.setBold(var4, true);
@@ -37,8 +36,7 @@ public class a : Form {
       } catch (BadLocationException var6) {
          var2.SetText("No Man's Sky Save EditorVersion: 1.19.14by GoatFungusFor further information visit:https://github.com/goatfungus/NMSSaveEditor");
       }
-
-      var2.setEditable(false);
+       var2.setEditable(false);
       this.GetContentPane().Add(var2, "Center");
       this.GetRootPane().registerKeyboardAction(new b(this), Keys.getKeyStroke(27, 0), 2);
       this.Pack();
@@ -49,8 +47,7 @@ public class a : Form {
          Form var1 = JOptionPane.getFrameForComponent(var0);
          a = new a(var1);
       }
-
-      a.SetLocationRelativeTo(a.Parent);
+       a.SetLocationRelativeTo(a.Parent);
       a.SetVisible(true);
    }
 }

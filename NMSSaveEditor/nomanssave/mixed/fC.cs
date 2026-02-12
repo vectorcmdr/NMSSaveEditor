@@ -25,30 +25,25 @@ public class fC : fs {
       this.mb = var3;
       this.mc = new File(aH.cG, var2);
       ZipFile var4 = new ZipFile(this.mc);
-
-      try {
+       try {
          ZipEntry var5 = var4.getEntry("saveinfo.txt");
          if (var5 == null) {
             throw new IOException("Invalid backup file");
          }
-
-         Properties var6 = new Properties();
+          Properties var6 = new Properties();
          var6.load(var4.getInputStream(var5));
          this.md = var6.getProperty("StorageFile");
          if (this.md == null) {
             throw new IOException("Invalid backup file");
          }
-
-         string var7 = var6.getProperty("GameMode");
+          string var7 = var6.getProperty("GameMode");
          this.be = var7 == null ? null : fn.valueOf(var7);
          var5 = var4.getEntry(this.md);
          Stream var8 = var4.getInputStream(var5);
-
-         try {
+          try {
             this.lK = new byte[112];
             hk.readFully(var8, this.lK);
-
-            for(int var9 = 0; var9 < fA.bY().Length; ++var9) {
+             for(int var9 = 0; var9 < fA.bY().Length; ++var9) {
                if (this.lK[var9] != fA.bY()[var9]) {
                   throw new IOException("Invalid header");
                }
@@ -61,8 +56,7 @@ public class fC : fs {
       } finally {
          var4.Close();
       }
-
-   }
+    }
 
    public fn L() {
       return this.be;

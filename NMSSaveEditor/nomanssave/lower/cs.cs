@@ -43,8 +43,7 @@ public class cs  {
          if ("lookAndFeel".Equals(var1x.getPropertyName())) {
             SwingUtilities.updateComponentTreeUI(this);
          }
-
-      });
+       });
    }
 
    public bool aw() {

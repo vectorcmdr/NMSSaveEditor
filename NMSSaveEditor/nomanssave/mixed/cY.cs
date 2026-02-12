@@ -18,7 +18,7 @@ public class cY : Form {
    public static cY gP = null;
 
    public cY(Form var1) {
-      base(var1);
+      // base(var1);
       this.SetResizable(false);
       this.setModalExclusionType(ModalExclusionType.APPLICATION_EXCLUDE);
       this.SetTitle("Move Base Computer");

@@ -52,13 +52,11 @@ public class dN : em {
                this.hM.m(var3.cT());
                return;
             }
-
-            var3.ag(var2x);
+             var3.ag(var2x);
             this.hW.a(var3.cC());
             this.hK.updateUI();
          }
-
-      });
+       });
       this.a((string)"Type", (JComponent)this.hM);
       this.hN = new cN(typeof(gN));
       this.hN.a((var1x) => {
@@ -66,8 +64,7 @@ public class dN : em {
          if (var2 != null) {
             var2.aj(var1x);
          }
-
-      });
+       });
       this.a((string)"Class", (JComponent)this.hN);
       this.hO = new dU(this);
       this.a((string)"Seed", (G)this.hO);
@@ -110,12 +107,10 @@ public class dN : em {
             if (var1x.dt()) {
                hc.info(var1x + ": technology recharged");
             }
-
-            this.hW.a(var1x);
+             this.hW.a(var1x);
          });
       }
-
-   }
+    }
 
    public void x() {
       for(int var1 = 0; var1 < this.hX.Length; ++var1) {
@@ -123,12 +118,10 @@ public class dN : em {
             if (var1x.du()) {
                hc.info(var1x + ": items refilled");
             }
-
-            this.hW.a(var1x);
+             this.hW.a(var1x);
          });
       }
-
-   }
+    }
 
    public void y() {
       for(int var1 = 0; var1 < this.hX.Length; ++var1) {
@@ -136,12 +129,10 @@ public class dN : em {
             if (var1x.dv()) {
                hc.info(var1x + ": all slots enabled");
             }
-
-            this.hW.a(var1x);
+             this.hW.a(var1x);
          });
       }
-
-   }
+    }
 
    public void z() {
       for(int var1 = 0; var1 < this.hX.Length; ++var1) {
@@ -149,12 +140,10 @@ public class dN : em {
             if (var1x.ds()) {
                hc.info(var1x + ": all slots repaired");
             }
-
-            this.hW.a(var1x);
+             this.hW.a(var1x);
          });
       }
-
-   }
+    }
 
    public void A() {
       for(int var1 = 0; var1 < this.hX.Length; ++var1) {
@@ -162,12 +151,10 @@ public class dN : em {
             if (var1x.dl()) {
                hc.info(var1x + ": inventory expanded");
             }
-
-            this.hW.a(var1x);
+             this.hW.a(var1x);
          });
       }
-
-   }
+    }
 
    public void a(gt var1) {
       this.hW.a(var1);

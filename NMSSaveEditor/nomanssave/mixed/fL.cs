@@ -27,22 +27,19 @@ public class fL : fs {
       this.mb = var3;
       this.mc = new File(aH.cG, var2);
       ZipFile var4 = new ZipFile(this.mc);
-
-      try {
+       try {
          ZipEntry var5 = var4.getEntry("saveinfo.txt");
          if (var5 == null) {
             throw new IOException("Invalid backup file");
          }
-
-         Properties var6 = new Properties();
+          Properties var6 = new Properties();
          var6.load(var4.getInputStream(var5));
          this.mu = var6.getProperty("ManifestFile");
          this.md = var6.getProperty("StorageFile");
          if (this.mu == null || this.md == null) {
             throw new IOException("Invalid backup file");
          }
-
-         string var7 = var6.getProperty("GameMode");
+          string var7 = var6.getProperty("GameMode");
          this.be = var7 == null ? null : fn.valueOf(var7);
          this.mv = var6.getProperty("SaveName");
          this.description = var6.getProperty("Description");
@@ -51,8 +48,7 @@ public class fL : fs {
       } finally {
          var4.Close();
       }
-
-   }
+    }
 
    public fn L() {
       return this.be;
@@ -95,6 +91,8 @@ public class fL : fs {
    public string toString() {
       return this.mc.Name;
    }
+
 }
+
 
 }

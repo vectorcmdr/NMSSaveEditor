@@ -24,14 +24,12 @@ public class bh : G {
          return "";
       } else {
          double var2 = bd.a(this.dP).cX();
-
-         try {
+          try {
             double var4 = hf.a(var1, 0.0D, 1000.0D);
             if (var4 != var2) {
                bd.a(this.dP).a(var4);
             }
-
-            return Double.toString(var4);
+             return Double.toString(var4);
          } catch (Exception var6) {
             return Double.toString(var2);
          }

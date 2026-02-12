@@ -16,7 +16,7 @@ public class bN : ba {
    public bE ey;
 
    public bN(bE var1) {
-      base(aH.cJ, 0);
+      // base(aH.cJ, 0);
       this.ey = var1;
    }
 
@@ -29,8 +29,7 @@ public class bN : ba {
       if (var4 != null) {
          var5.setToolTipText(var4);
       }
-
-      this.a(var1, (JComponent)var5);
+       this.a(var1, (JComponent)var5);
    }
 
    public void a(string var1, bK var2) {
@@ -42,8 +41,7 @@ public class bN : ba {
       if (var4 != null) {
          var5.setToolTipText(var4);
       }
-
-      this.a(var1, (JComponent)var5);
+       this.a(var1, (JComponent)var5);
    }
 }
 

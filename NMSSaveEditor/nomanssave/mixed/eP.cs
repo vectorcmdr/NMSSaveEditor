@@ -24,7 +24,7 @@ public class eP : ey {
    public List<object> ke;
 
    public eP(XmlElement var1) {
-      base(var1.GetAttribute("id"));
+      // base(var1.GetAttribute("id"));
       this.name = var1.GetAttribute("name");
       this.jZ = ex.valueOf(var1.GetAttribute("category"));
       this.special = var1.HasAttribute("special") ? Boolean.valueOf(var1.GetAttribute("special")) : false;
@@ -37,12 +37,10 @@ public class eP : ey {
       } else {
          this.kd = 0;
       }
-
-      string var2 = null;
+       string var2 = null;
       XmlNodeList var3 = var1.ChildNodes;
       List<object> var5 = new List<object>();
-
-      for(int var6 = 0; var6 < var3.Count; ++var6) {
+       for(int var6 = 0; var6 < var3.Count; ++var6) {
          XmlNode var4 = var3.Item(var6);
          if (var4 is Element) {
             var1 = (System.Xml.XmlElement)var4;
@@ -53,8 +51,7 @@ public class eP : ey {
             }
          }
       }
-
-      this.description = var2;
+       this.description = var2;
       this.ke = UnmodifiableList(var5);
    }
 

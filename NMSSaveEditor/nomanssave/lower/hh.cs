@@ -215,8 +215,7 @@ public class hh {
          long var14 = -2401053088876216593L;
          long var8 = -2401053088876216593L;
          int var28 = var2;
-
-         int var29;
+          int var29;
          for(var29 = var1; var28 >= 96; var29 += 96) {
             var4 += a(var0, var29);
             var8 ^= var24;
@@ -280,8 +279,7 @@ public class hh {
             var24 += var4;
             var28 -= 96;
          }
-
-         int var30 = var28 & 7;
+          int var30 = var28 & 7;
          int var31 = var28 >>> 3;
          if (var30 > 0) {
             long var32 = b(var0, var29 + (var31 << 3), var30);
@@ -323,8 +321,7 @@ public class hh {
                var26 += var32;
             }
          }
-
-         switch(var31) {
+          switch(var31) {
          case 11:
             var24 += a(var0, var29 + 80);
          case 10:
@@ -349,8 +346,7 @@ public class hh {
             var4 += a(var0, var29);
          default:
             var26 += (long)var28 << 56;
-
-            for(int var34 = 0; var34 < 3; ++var34) {
+             for(int var34 = 0; var34 < 3; ++var34) {
                var26 += var6;
                var8 ^= var26;
                var6 = var6 << 44 | var6 >>> 20;
@@ -388,8 +384,7 @@ public class hh {
                var6 ^= var24;
                var4 = var4 << 54 | var4 >>> 10;
             }
-
-            var3[0] = var4;
+             var3[0] = var4;
             var3[1] = var6;
             return var4;
          }
@@ -579,8 +574,7 @@ public class hh {
          long var14 = -2401053088876216593L;
          long var8 = -2401053088876216593L;
          int var28 = var2;
-
-         int var29;
+          int var29;
          for(var29 = var1; var28 >= 48; var29 += 48) {
             var4 += a(var0, var29);
             var8 ^= var24;
@@ -644,8 +638,7 @@ public class hh {
             var24 += var4;
             var28 -= 48;
          }
-
-         int var30 = var28 & 3;
+          int var30 = var28 & 3;
          int var31 = var28 >> 2;
          if (var30 > 0) {
             long var32 = a(var0, var29 + (var31 << 2), var30);
@@ -687,8 +680,7 @@ public class hh {
                var26 += var32;
             }
          }
-
-         switch(var31) {
+          switch(var31) {
          case 11:
             var24 += a(var0, var29 + 40);
          case 10:
@@ -713,8 +705,7 @@ public class hh {
             var4 += a(var0, var29);
          default:
             var26 += (long)var28 << 1 << 56;
-
-            for(int var34 = 0; var34 < 3; ++var34) {
+             for(int var34 = 0; var34 < 3; ++var34) {
                var26 += var6;
                var8 ^= var26;
                var6 = var6 << 44 | var6 >>> 20;
@@ -752,8 +743,7 @@ public class hh {
                var6 ^= var24;
                var4 = var4 << 54 | var4 >>> 10;
             }
-
-            var3[0] = var4;
+             var3[0] = var4;
             var3[1] = var6;
             return var4;
          }
@@ -918,8 +908,7 @@ public class hh {
          long var14 = -2401053088876216593L;
          long var8 = -2401053088876216593L;
          int var28 = var1;
-
-         int var29;
+          int var29;
          for(var29 = var2; var29 >= 12; var29 -= 12) {
             var4 += var0[var28];
             var8 ^= var24;
@@ -983,8 +972,7 @@ public class hh {
             var24 += var4;
             var28 += 12;
          }
-
-         switch(var29) {
+          switch(var29) {
          case 11:
             var24 += var0[var28 + 10];
          case 10:
@@ -1009,8 +997,7 @@ public class hh {
             var4 += var0[var28];
          default:
             var26 += (long)(var29 << 3) << 56;
-
-            for(int var30 = 0; var30 < 3; ++var30) {
+             for(int var30 = 0; var30 < 3; ++var30) {
                var26 += var6;
                var8 ^= var26;
                var6 = var6 << 44 | var6 >>> 20;
@@ -1048,8 +1035,7 @@ public class hh {
                var6 ^= var24;
                var4 = var4 << 54 | var4 >>> 10;
             }
-
-            var3[0] = var4;
+             var3[0] = var4;
             var3[1] = var6;
             return var4;
          }

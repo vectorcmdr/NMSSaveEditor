@@ -26,8 +26,7 @@ public class eM {
             XmlDocument var1 = JavaCompat.ParseXml(var0);
             XmlElement var2 = var1.DocumentElement;
             XmlNodeList var3 = var2.ChildNodes;
-
-            for(int var4 = 0; var4 < var3.Count; ++var4) {
+             for(int var4 = 0; var4 < var3.Count; ++var4) {
                XmlNode var5 = var3.Item(var4);
                if (var5 is XmlElement && var5.Name.Equals("perk")) {
                   kl.Add(new eM((System.Xml.XmlElement)var5));
@@ -38,8 +37,7 @@ public class eM {
          } catch (IOException var8) {
          }
       }
-
-      kl.sort(new eN());
+       kl.sort(new eN());
    }
 
    public eM(XmlElement var1) {

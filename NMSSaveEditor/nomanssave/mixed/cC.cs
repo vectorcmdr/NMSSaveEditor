@@ -21,8 +21,7 @@ public class cC : ActionListener {
 
    public void actionPerformed(ActionEvent var1) {
       string var2 = cy.c(this.gg).GetText().Trim();
-
-      try {
+       try {
          cy.d(this.gg).SetText(var2);
          ((cI)cy.e(this.gg).GetModel()).a(cy.d(this.gg));
          cy.e(this.gg).setSelectionRow(0);
@@ -33,8 +32,7 @@ public class cC : ActionListener {
          cy.c(this.gg).setCaretPosition(var4.bD());
          cy.c(this.gg).Focus();
       }
-
-   }
+    }
 }
 
 }

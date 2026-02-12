@@ -277,14 +277,12 @@ public class fI {
    public string getString(int var1) {
       if (var1 >= 8 && var1 % 4 == 0) {
          var1 -= 8;
-
-         for(int var2 = var1; var2 < this.data.Length; ++var2) {
+          for(int var2 = var1; var2 < this.data.Length; ++var2) {
             if (this.data[var2] == 0) {
                return new string(this.data, var1, var2 - var1);
             }
          }
-
-         return "";
+          return "";
       } else {
          throw new ArgumentException("Invalid offset: " + var1);
       }
@@ -341,19 +339,15 @@ public class fI {
       StringBuilder var2 = new StringBuilder();
       var2.Append("########");
       byte var3 = 8;
-
-      for(int var4 = 0; var4 < this.data.Length; ++var4) {
+       for(int var4 = 0; var4 < this.data.Length; ++var4) {
          if ((var4 + var3) % 16 == 0) {
             var1.Append(System.lineSeparator());
-
-            string var5;
+             string var5;
             for(var5 = Convert.ToString((var4 + 1 + var3) / 16, 16) + "0"; var5.Length < 8; var5 = "0" + var5) {
             }
-
-            var1.Append(var5 + "    ");
+             var1.Append(var5 + "    ");
          }
-
-         var1.Append(Convert.ToString((this.data[var4] & 240) >> 4, 16));
+          var1.Append(Convert.ToString((this.data[var4] & 240) >> 4, 16));
          var1.Append(((int)this.data[var4] & 15).ToString("X"));
          var1.Append(' ');
          if (this.data[var4] == 32) {
@@ -363,25 +357,21 @@ public class fI {
          } else {
             var2.Append('?');
          }
-
-         if ((var4 + var3) % 16 == 15) {
+          if ((var4 + var3) % 16 == 15) {
             var1.Append("   ");
             var1.Append(var2);
             var2 = new StringBuilder();
          }
       }
-
-      if (var2.Length > 0) {
+       if (var2.Length > 0) {
          while(var2.Length < 16) {
             var1.Append("   ");
             var2.Append(" ");
          }
-
-         var1.Append("   ");
+          var1.Append("   ");
          var1.Append(var2);
       }
-
-      return var1.ToString();
+       return var1.ToString();
    }
 
    public static long rotateLeft(long var0, int var2) {

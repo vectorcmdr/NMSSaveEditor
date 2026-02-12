@@ -25,8 +25,7 @@ public class bR : ActionListener {
          if (var2 != null && bO.a(this.eX).a(var2)) {
             bO.c(this.eX);
          }
-
-      }
+       }
    }
 }
 

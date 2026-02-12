@@ -16,7 +16,7 @@ public class fU : fX, fr {
    public fT mN;
 
    public fU(fT var1) {
-      base(var1, "AccountData");
+      // base(var1, "AccountData");
       this.mN = var1;
    }
 
@@ -28,6 +28,8 @@ public class fU : fX, fr {
       this.a("msaccountdata", (fn)null);
       this.h(var1);
    }
+
 }
+
 
 }

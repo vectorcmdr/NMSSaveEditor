@@ -87,8 +87,7 @@ public class g : TableModel {
                this.i.g.ac(var5);
             }
          }
-
-      }
+       }
    }
 
    public void addTableModelListener(TableModelListener var1) {
@@ -96,6 +95,8 @@ public class g : TableModel {
 
    public void removeTableModelListener(TableModelListener var1) {
    }
+
 }
+
 
 }

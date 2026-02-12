@@ -16,7 +16,7 @@ public class gX : FilterInputStream {
    public int sb;
 
    public gX(Stream var1, byte[] var2) {
-      base(var1);
+      // base(var1);
       int var3 = 255 & var2[4] | (255 & var2[5]) << 8 | (255 & var2[6]) << 16 | (255 & var2[7]) << 24;
       int var4 = 255 & var2[8] | (255 & var2[9]) << 8 | (255 & var2[10]) << 16 | (255 & var2[11]) << 24;
       this.sa = new ha(new gY(this, var3, (gY)null), var4);

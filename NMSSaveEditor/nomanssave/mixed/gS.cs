@@ -39,8 +39,7 @@ public class gS {
          double[] var5 = a(var0, "Position");
          double[] var6 = a(var0, "Forward");
          gT var7 = new gT(var5, var6);
-
-         for(int var8 = 0; var8 < var4.Count; ++var8) {
+          for(int var8 = 0; var8 < var4.Count; ++var8) {
             eY var9 = var4.V(var8);
             double[] var10 = a(var9, "Position");
             double[] var11 = a(var9, "Up");
@@ -50,8 +49,7 @@ public class gS {
             a(var9, "At", var7.d(var12));
          }
       }
-
-      int var17 = var0.J("UserData");
+       int var17 = var0.J("UserData");
       SecretKeySpec var18 = new JavaCompat.CreateSecretKey(rS, "AES");
       byte[] var19 = new byte[16];
       (new SecureRandom()).nextBytes(var19);
@@ -59,8 +57,7 @@ public class gS {
       Cipher var21 = JavaCompat.GetCipher("AES/CBC/PKCS5Padding");
       var21.init(1, var18, var20);
       Object var22 = new FileStream(var2);
-
-      try {
+       try {
          ((Stream)var22).Write(lA);
          ((Stream)var22).Write(new byte[] {0, 5, 0, 0});
          ((Stream)var22).Write(var19);
@@ -71,8 +68,7 @@ public class gS {
          hk.a((Stream)var22, var23.Length);
          ((Stream)var22).Write(var23);
          IEnumerator<object> var13 = var1.Entries().GetEnumerator();
-
-         while(var13.MoveNext()) {
+          while(var13.MoveNext()) {
             Entry var24 = (Entry)var13.Current;
             var23 = ((string)var24.getKey()).GetBytes();
             if (var23.Length <= 255) {
@@ -83,8 +79,7 @@ public class gS {
                ((Stream)var22).Write(var23);
             }
          }
-
-         ((Stream)var22).Flush();
+          ((Stream)var22).Flush();
       } finally {
          ((Stream)var22).Close();
       }
@@ -96,20 +91,17 @@ public class gS {
 
    public static void b(eY var0, Dictionary<object, object> var1, FileInfo var2) {
       Object var4 = new FileStream(var2);
-
-      int var3;
+       int var3;
       eV var5;
       try {
          byte[] var6 = new byte[8];
          if (((Stream)var4).read(var6) != 8) {
             throw new IOException("short read");
          }
-
-         if (var6[0] != lA[0] || var6[1] != lA[1] || var6[2] != lA[2] || var6[3] != lA[3]) {
+          if (var6[0] != lA[0] || var6[1] != lA[1] || var6[2] != lA[2] || var6[3] != lA[3]) {
             throw new IOException("invalid base file");
          }
-
-         var3 = (var6[4] & 255) << 8 | var6[5] & 255;
+          var3 = (var6[4] & 255) << 8 | var6[5] & 255;
          switch(var3) {
          case 2:
             throw new IOException("unsupported base file");
@@ -120,8 +112,7 @@ public class gS {
             if (((Stream)var4).read(var7) != 16) {
                throw new IOException("short read");
             }
-
-            SecretKeySpec var8 = new JavaCompat.CreateSecretKey(rS, "AES");
+             SecretKeySpec var8 = new JavaCompat.CreateSecretKey(rS, "AES");
             IvParameterSpec var9 = new JavaCompat.CreateIv(var7);
             Cipher var10 = JavaCompat.GetCipher("AES/CBC/PKCS5Padding");
             var10.init(2, var8, var9);
@@ -129,50 +120,41 @@ public class gS {
             if (((Stream)var4).read(var6, 0, 4) != 4) {
                throw new IOException("short read");
             }
-
-            if (var6[0] != 84 || var6[1] != 82 || var6[2] != 85 || var6[3] != 69) {
+             if (var6[0] != 84 || var6[1] != 82 || var6[2] != 85 || var6[3] != 69) {
                throw new IOException("invalid base file");
             }
-
-            int var11;
+             int var11;
             if (var3 < 5) {
                if ((var11 = ((Stream)var4).ReadByte()) < 0) {
                   throw new IOException("short read");
                }
-
-               int var12;
+                int var12;
                if ((var12 = ((Stream)var4).ReadByte()) < 0) {
                   throw new IOException("short read");
                }
-
-               int var13;
+                int var13;
                if ((var13 = ((Stream)var4).ReadByte()) < 0) {
                   throw new IOException("short read");
                }
-
-               int var14;
+                int var14;
                if ((var14 = ((Stream)var4).ReadByte()) < 0) {
                   throw new IOException("short read");
                }
-
-               var0.b("UserData", (Object)(var11 << 24 | var12 << 16 | var13 << 8 | var14));
+                var0.b("UserData", (Object)(var11 << 24 | var12 << 16 | var13 << 8 | var14));
                MemoryStream var15 = new MemoryStream();
                byte[] var16 = new byte[8096];
-
-               int var17;
+                int var17;
                while((var17 = ((Stream)var4).read(var16)) >= 0) {
                   var15.Write(var16, 0, var17);
                }
-
-               var5 = ff.c(var15.toByteArray());
+                var5 = ff.c(var15.toByteArray());
             } else {
                var0.b("UserData", (Object)hk.readInt((Stream)var4));
                var11 = hk.readInt((Stream)var4);
                byte[] var26 = new byte[var11];
                hk.readFully((Stream)var4, var26);
                var5 = ff.c(var26);
-
-               while((var11 = ((Stream)var4).ReadByte()) >= 0) {
+                while((var11 = ((Stream)var4).ReadByte()) >= 0) {
                   var26 = new byte[var11];
                   hk.readFully((Stream)var4, var26);
                   string var28 = new string(var26);
@@ -190,17 +172,14 @@ public class gS {
       } finally {
          ((Stream)var4).Close();
       }
-
-      long var21 = var0.K("LastUpdateTimestamp");
-
-      int var22;
+       long var21 = var0.K("LastUpdateTimestamp");
+       int var22;
       eY var23;
       for(var22 = 0; var22 < var5.Count; ++var22) {
          var23 = var5.V(var22);
          var23.Put("Timestamp", new Long(var21));
       }
-
-      if (var3 == 3) {
+       if (var3 == 3) {
          for(var22 = 0; var22 < var5.Count; ++var22) {
             var23 = var5.V(var22);
             double[] var24 = a(var23, "Position");
@@ -215,8 +194,7 @@ public class gS {
             a(var27);
             a(var23, "At", var27);
          }
-
-         var22 = var0.J("UserData");
+          var22 = var0.J("UserData");
          var5.Add(0, a("^BASE_FLAG", var21, var22, new double[]{0.0D, 0.0D, 0.0D}, new double[]{0.0D, 1.0D, 0.0D}, new double[]{0.0D, 0.0D, 1.0D}));
          var5.Add(1, a("^MAINROOM", var21, var22, new double[]{-3.0D, 0.0D, 3.0D}, new double[]{0.0D, 1.0D, 0.0D}, new double[]{0.0D, 0.0D, -1.0D}));
          var5.Add(2, a("^TELEPORTER", var21, var22, new double[]{0.0D, 0.0D, 6.0D}, new double[]{0.0D, 1.0D, 0.0D}, new double[]{-0.7071069478988647D, 0.0D, -0.7071067094802856D}));
@@ -226,12 +204,10 @@ public class gS {
          var5.Add(6, a("^BUILDWINDOW", var21, var22, new double[]{-7.248046875D, 0.5D, 7.25D}, new double[]{0.0D, 1.0D, 0.0D}, new double[]{-0.7071069478988647D, 0.0D, 0.7071067094802856D}));
          var5.Add(7, a("^BUILDWINDOW", var21, var22, new double[]{1.248046875D, 0.5D, -1.25D}, new double[]{0.0D, 1.0D, 0.0D}, new double[]{0.7071069478988647D, 0.0D, -0.7071067094802856D}));
       }
-
-      if (var3 < 5) {
+       if (var3 < 5) {
          var0.b("BaseVersion", (int)3);
       }
-
-      var0.b("Objects", (Object)var5);
+       var0.b("Objects", (Object)var5);
    }
 
    public static void a(double[] var0) {

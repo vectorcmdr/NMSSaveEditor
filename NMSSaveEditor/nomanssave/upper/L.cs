@@ -52,8 +52,7 @@ public class L : ComboBoxModel {
          I.h(this.bt).SetEnabled(true);
          I.i(this.bt).SetEnabled(true);
       }
-
-   }
+    }
 
    public Object getSelectedItem() {
       return this.bu;
@@ -63,6 +62,8 @@ public class L : ComboBoxModel {
    public Object getElementAt(int var1) {
       return this.p(var1);
    }
+
 }
+
 
 }

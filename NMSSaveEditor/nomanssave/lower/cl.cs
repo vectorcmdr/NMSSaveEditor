@@ -36,8 +36,7 @@ public class cl  {
          if ("lookAndFeel".Equals(var1.getPropertyName())) {
             SwingUtilities.updateComponentTreeUI(this);
          }
-
-      });
+       });
    }
 
    // $FF: synthetic method

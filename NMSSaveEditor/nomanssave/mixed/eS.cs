@@ -24,8 +24,7 @@ public class eS {
             XmlDocument var1 = JavaCompat.ParseXml(var0);
             XmlElement var2 = var1.DocumentElement;
             XmlNodeList var3 = var2.ChildNodes;
-
-            for(int var4 = 0; var4 < var3.Count; ++var4) {
+             for(int var4 = 0; var4 < var3.Count; ++var4) {
                XmlNode var5 = var3.Item(var4);
                if (var5 is XmlElement && var5.Name.Equals("word")) {
                   kq.Add(new eS((System.Xml.XmlElement)var5));
@@ -36,8 +35,7 @@ public class eS {
          } catch (IOException var8) {
          }
       }
-
-      kq.sort(new eT());
+       kq.sort(new eT());
    }
 
    public eS(XmlElement var1) {
@@ -45,8 +43,7 @@ public class eS {
       this.text = var1.GetAttribute("text");
       this.kp = new Dictionary<object, object>();
       XmlNodeList var2 = var1.GetElementsByTagName("group");
-
-      for(int var3 = 0; var3 < var2.Count; ++var3) {
+       for(int var3 = 0; var3 < var2.Count; ++var3) {
          XmlElement var4 = (System.Xml.XmlElement)var2.Item(var3);
          string var5 = var4.GetAttribute("group");
          eU var6 = eU.C(var4.GetAttribute("race"));
@@ -54,8 +51,7 @@ public class eS {
             this.kp.Put(var5, var6);
          }
       }
-
-   }
+    }
 
    public string getID() {
       return this.id;

@@ -25,7 +25,7 @@ public class eH : ey {
    public List<object> ke;
 
    public eH(XmlElement var1, bool var2) {
-      base(var1.GetAttribute("id"));
+      // base(var1.GetAttribute("id"));
       this.jY = var2;
       this.name = var1.GetAttribute("name");
       if (var2) {
@@ -33,8 +33,7 @@ public class eH : ey {
       } else {
          this.jZ = ex.valueOf(var1.GetAttribute("category"));
       }
-
-      this.special = var1.HasAttribute("special") ? Boolean.valueOf(var1.GetAttribute("special")) : false;
+       this.special = var1.HasAttribute("special") ? Boolean.valueOf(var1.GetAttribute("special")) : false;
       this.ka = var1.HasAttribute("chargeable") ? new Integer(var1.GetAttribute("chargeable")) : null;
       this.jM = var1.GetAttribute("subtitle");
       this.kb = var1.HasAttribute("cooking") ? Boolean.valueOf(var1.GetAttribute("cooking")) : false;
@@ -44,12 +43,10 @@ public class eH : ey {
       } else {
          this.kd = 0;
       }
-
-      string var3 = null;
+       string var3 = null;
       XmlNodeList var4 = var1.ChildNodes;
       List<object> var6 = new List<object>();
-
-      for(int var7 = 0; var7 < var4.Count; ++var7) {
+       for(int var7 = 0; var7 < var4.Count; ++var7) {
          XmlNode var5 = var4.Item(var7);
          if (var5 is Element) {
             var1 = (System.Xml.XmlElement)var5;
@@ -60,8 +57,7 @@ public class eH : ey {
             }
          }
       }
-
-      this.description = var3;
+       this.description = var3;
       this.ke = UnmodifiableList(var6);
    }
 

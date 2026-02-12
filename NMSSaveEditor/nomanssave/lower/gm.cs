@@ -60,30 +60,25 @@ public class gm {
          var5 = "General";
          var6 = "Cargo";
       }
-
-      List<object> var14 = new List<object>();
+       List<object> var14 = new List<object>();
       var14.Add(new gt(a(this, var5), var2, var19, var10, var11, false, true));
       if (var3 != null) {
          var14.Add(new gt(a(this, "Technology"), var3, var20, var12, var13, true, true));
       }
-
-      if (var4 != null) {
+       if (var4 != null) {
          var14.Add(new gt(a(this, var6), var4, var9, 8, 6, false, true));
       }
-
-      this.gT = UnmodifiableList(var14);
+       this.gT = UnmodifiableList(var14);
       eV var15 = var1.d("PersistentPlayerBases");
       eY var17 = null;
-
-      for(int var18 = 0; var18 < var15.Count; ++var18) {
+       for(int var18 = 0; var18 < var15.Count; ++var18) {
          eY var16 = var15.V(var18);
          if ("FreighterBase".Equals(var16.getValueAsString("BaseType.PersistentBaseTypes")) && var16.J("BaseVersion") >= 3) {
             var17 = var16;
             break;
          }
       }
-
-      this.oJ = var17 == null ? null : new gn(this, var17, (gn)null);
+       this.oJ = var17 == null ? null : new gn(this, var17, (gn)null);
    }
 
    public string getName() {
@@ -118,8 +113,7 @@ public class gm {
          var2 = new eV(new Object[]{Boolean.FALSE, "0x0"});
          this.oI.b("CurrentFreighterHomeSystemSeed", (Object)var2);
       }
-
-      var2.a(0, Boolean.TRUE);
+       var2.a(0, Boolean.TRUE);
       var2.a(1, var1.Length == 0 ? "0x0" : var1);
    }
 

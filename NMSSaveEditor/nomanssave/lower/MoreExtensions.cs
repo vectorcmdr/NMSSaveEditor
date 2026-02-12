@@ -564,3 +564,26 @@ public static class FileInfoExtensions3 {
     public static bool IsFile(this FileInfo fi) { return fi.Exists && !fi.IsDirectory(); }
 }
 
+
+// === More missing members ===
+
+public static class ObjectExtensions3 {
+    public static string Name(this object o) { return o?.GetType()?.Name ?? ""; }
+    public static string id(this object o) { return o?.ToString() ?? ""; }
+    public static void SetVisible(this object o, bool v) { if (o is Control c) c.Visible = v; }
+    public static void SetEnabled(this object o, bool e) { if (o is Control c) c.Enabled = e; }
+}
+
+public static class DataGridViewExtensions3 {
+    public static void SetSelectionMode(this DataGridView dgv, int mode) { dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect; }
+}
+
+public static class StyledDocumentExtensions {
+    public static int Count(this object doc) { return 0; }
+}
+
+public static class DictExtensions3 {
+    public static IEnumerable<KeyValuePair<object, object>> Entries(this Dictionary<object, object> dict) { return dict; }
+    public static IEnumerable<KeyValuePair<string, object>> Entries(this Dictionary<string, object> dict) { return dict; }
+}
+

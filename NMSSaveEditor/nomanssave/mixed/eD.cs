@@ -15,12 +15,11 @@ public class eD : eE {
    public string version;
 
    public eD(Stream var1, string var2) {
-      base((eE)null);
+      // base((eE)null);
       this.version = var2;
       List<object> var3 = new List<object>();
       StreamReader var4 = new StreamReader(new StreamReader(var1));
-
-      string var5;
+       string var5;
       try {
          while((var5 = var4.ReadLine()) != null) {
             try {
@@ -37,14 +36,12 @@ public class eD : eE {
                         if (!var7.Equals(var8.name)) {
                            throw new IOException("Mapping error: " + var6);
                         }
-
-                        hc.debug("Mapping duplicated: " + var6);
+                         hc.debug("Mapping duplicated: " + var6);
                      } else if ((var8 = this.u(var7)) != null) {
                         if (!var6.Equals(var8.key)) {
                            throw new IOException("Reverse error: " + var7);
                         }
-
-                        hc.debug("Reverse duplicated: " + var7);
+                         hc.debug("Reverse duplicated: " + var7);
                      } else {
                         this.Add(var6, var7);
                      }
@@ -57,23 +54,18 @@ public class eD : eE {
       } finally {
          var4.Close();
       }
-
-      IEnumerator<object> var15 = var3.GetEnumerator();
-
-      while(var15.MoveNext()) {
+       IEnumerator<object> var15 = var3.GetEnumerator();
+       while(var15.MoveNext()) {
          var5 = (string)var15.Current;
          if (this.t(var5) != null) {
             throw new IOException("Mapping error: " + var5);
          }
-
-         if (this.u(var5) != null) {
+          if (this.u(var5) != null) {
             throw new IOException("Reverse error: " + var5);
          }
-
-         this.Add(var5, var5);
+          this.Add(var5, var5);
       }
-
-   }
+    }
 
    public string toString() {
       return this.version;

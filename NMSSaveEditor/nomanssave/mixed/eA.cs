@@ -23,8 +23,7 @@ public class eA {
       this.jM = var1.GetAttribute("subtitle");
       string var2 = null;
       XmlNodeList var3 = var1.ChildNodes;
-
-      for(int var5 = 0; var5 < var3.Count; ++var5) {
+       for(int var5 = 0; var5 < var3.Count; ++var5) {
          XmlNode var4 = var3.Item(var5);
          if (var4 is Element) {
             var1 = (System.Xml.XmlElement)var4;
@@ -33,8 +32,7 @@ public class eA {
             }
          }
       }
-
-      this.description = var2;
+       this.description = var2;
    }
 
    public string a(string var1, Function var2) {

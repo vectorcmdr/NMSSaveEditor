@@ -41,15 +41,12 @@ public class E : ComboBoxModel {
          if (var2 != 0) {
             return;
          }
-
-         Application.f(this.aZ, false);
+          Application.f(this.aZ, false);
       }
-
-      var2 = -1;
+       var2 = -1;
       lock(Application.n(this.aZ)) {
          int var4 = 0;
-
-         for(int var5 = 0; var5 < Application.f(this.aZ).Length; ++var5) {
+          for(int var5 = 0; var5 < Application.f(this.aZ).Length; ++var5) {
             if (Application.f(this.aZ)[var5] == var1) {
                var2 = var4;
                Application.f(this.aZ)[var4++] = Application.f(this.aZ)[var5];
@@ -57,15 +54,13 @@ public class E : ComboBoxModel {
                Application.f(this.aZ)[var4++] = Application.f(this.aZ)[var5];
             }
          }
-
-         if (var4 < Application.f(this.aZ).Length) {
+          if (var4 < Application.f(this.aZ).Length) {
             fs[] var7 = new fs[var4];
             Array.Copy(Application.f(this.aZ), 0, var7, 0, var4);
             Application.a(this.aZ, var7);
          }
       }
-
-      Application.b(this.aZ, var2);
+       Application.b(this.aZ, var2);
    }
 
    public Object getSelectedItem() {
@@ -76,6 +71,8 @@ public class E : ComboBoxModel {
    public Object getElementAt(int var1) {
       return this.n(var1);
    }
+
 }
+
 
 }

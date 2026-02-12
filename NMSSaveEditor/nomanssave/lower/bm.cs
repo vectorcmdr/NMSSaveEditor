@@ -31,8 +31,7 @@ public class bm : ActionListener {
             } else {
                bl.e(this.er).clearSelection();
             }
-
-            bl.e(this.er).updateUI();
+             bl.e(this.er).updateUI();
          }
       }
    }

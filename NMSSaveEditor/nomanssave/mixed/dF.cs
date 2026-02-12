@@ -41,24 +41,19 @@ public class dF : ComboBoxModel {
       if (this.hD == null) {
          dE.c(this.hE).SetText("");
          dE.d(this.hE).SetText("");
-
-         for(var2 = 0; var2 < dE.e(this.hE).Length; ++var2) {
+          for(var2 = 0; var2 < dE.e(this.hE).Length; ++var2) {
             dE.e(this.hE)[var2].SetText("");
          }
-
-         dE.f(this.hE).a(new gF[0]);
+          dE.f(this.hE).a(new gF[0]);
       } else {
          dE.c(this.hE).SetText(this.hD.Name);
          dE.d(this.hE).SetText(this.hD.cK());
-
-         for(var2 = 0; var2 < dE.e(this.hE).Length; ++var2) {
+          for(var2 = 0; var2 < dE.e(this.hE).Length; ++var2) {
             dE.e(this.hE)[var2].SetText(Convert.ToString(this.hD.aq(var2)));
          }
-
-         dE.f(this.hE).a(this.hD.dX());
+          dE.f(this.hE).a(this.hD.dX());
       }
-
-      dE.g(this.hE).PerformLayout();
+       dE.g(this.hE).PerformLayout();
    }
 
    public Object getSelectedItem() {
@@ -69,6 +64,8 @@ public class dF : ComboBoxModel {
    public Object getElementAt(int var1) {
       return this.E(var1);
    }
+
 }
+
 
 }

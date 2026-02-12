@@ -18,21 +18,19 @@ public class fD : fH, fs {
    public fA ma;
 
    public fD(fA var1, int var2) {
-      base(var1, "savedata" + (var2 < 8 ? "0" : "") + Convert.ToString(var2 + 2) + ".hg", true);
+      // base(var1, "savedata" + (var2 < 8 ? "0" : "") + Convert.ToString(var2 + 2) + ".hg", true);
       this.ma = var1;
       this.lO = var2;
-
-      try {
+       try {
          string var3 = new string(this.ah(65536));
          this.me = fn.T(var3);
       } catch (IOException var4) {
          hc.a("Could not read game mode from " + this.mh.Name, var4);
       }
-
-   }
+    }
 
    public fD(fA var1, int var2, byte[] var3, eY var4) {
-      base(var1, "savedata" + (var2 < 8 ? "0" : "") + Convert.ToString(var2 + 2) + ".hg", false);
+      // base(var1, "savedata" + (var2 < 8 ? "0" : "") + Convert.ToString(var2 + 2) + ".hg", false);
       this.ma = var1;
       this.lO = var2;
       this.lK = var3;
@@ -61,6 +59,8 @@ public class fD : fH, fs {
    public string toString() {
       return this.K();
    }
+
 }
+
 
 }

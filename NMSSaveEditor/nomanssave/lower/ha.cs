@@ -20,7 +20,7 @@ public class ha : FilterInputStream {
    public bool eof;
 
    public ha(Stream var1, int var2) {
-      base(var1);
+      // base(var1);
       if (var2 == 0) {
          this.sj = true;
          this.buffer = new byte[1048576];
@@ -74,30 +74,25 @@ public class ha : FilterInputStream {
                   if (var1 < 0) {
                      throw new EOFException("Unexpected end of literal length");
                   }
-
-                  var2 += var1;
+                   var2 += var1;
                } while(var1 == 255);
             }
-
-            int var4;
+             int var4;
             if (var2 > 0) {
                var4 = var2;
                this.aJ(var2);
-
-               while((var1 = base.read(this.buffer, this.sg, var4)) > 0) {
+                while((var1 = base.read(this.buffer, this.sg, var4)) > 0) {
                   this.sg += var1;
                   var4 -= var1;
                   if (var4 == 0) {
                      break;
                   }
                }
-
-               if (var4 > 0) {
+                if (var4 > 0) {
                   throw new EOFException("Unexpected end of literal value");
                }
             }
-
-            if (this.sg == this.buffer.Length && !this.sj) {
+             if (this.sg == this.buffer.Length && !this.sj) {
                this.eof = true;
                return true;
             } else {
@@ -121,12 +116,10 @@ public class ha : FilterInputStream {
                            if (var1 < 0) {
                               throw new EOFException("Unexpected end of literal length");
                            }
-
-                           var3 += var1;
+                            var3 += var1;
                         } while(var1 == 255);
                      }
-
-                     var3 += 4;
+                      var3 += 4;
                      if (var4 == 0) {
                         throw new EOFException("Offset is zero!");
                      } else if (var4 > this.sg) {
@@ -135,21 +128,18 @@ public class ha : FilterInputStream {
                         this.aJ(var3);
                         if (var3 > var4) {
                            int var6 = this.sg - var4;
-
-                           do {
+                            do {
                               Array.Copy(this.buffer, var6, this.buffer, this.sg, var4);
                               var3 -= var4;
                               this.sg += var4;
                            } while(var3 > var4);
-
-                           Array.Copy(this.buffer, var6, this.buffer, this.sg, var3);
+                            Array.Copy(this.buffer, var6, this.buffer, this.sg, var3);
                            this.sg += var3;
                         } else {
                            Array.Copy(this.buffer, this.sg - var4, this.buffer, this.sg, var3);
                            this.sg += var3;
                         }
-
-                        this.sl = Math.Max(this.sl, var4);
+                         this.sl = Math.Max(this.sl, var4);
                         return true;
                      }
                   }

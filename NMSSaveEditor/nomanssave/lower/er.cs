@@ -28,8 +28,7 @@ public class er {
             XmlDocument var1 = JavaCompat.ParseXml(var0);
             XmlElement var2 = var1.DocumentElement;
             XmlNodeList var3 = var2.ChildNodes;
-
-            for(int var4 = 0; var4 < var3.Count; ++var4) {
+             for(int var4 = 0; var4 < var3.Count; ++var4) {
                XmlNode var5 = var3.Item(var4);
                if (var5 is XmlElement && var5.Name.Equals("trait")) {
                   iG.Add(new er((System.Xml.XmlElement)var5));
@@ -40,8 +39,7 @@ public class er {
          } catch (IOException var8) {
          }
       }
-
-      iG.sort(new es());
+       iG.sort(new es());
    }
 
    public er(XmlElement var1) {
@@ -59,8 +57,7 @@ public class er {
    public static gr[] n(string var0) {
       List<object> var1 = new List<object>();
       int var2 = 0;
-
-      while(var2 < var0.Length) {
+       while(var2 < var0.Length) {
          int var4 = var0.IndexOf(",", var2);
          gr var3;
          if (var4 >= 0) {
@@ -70,13 +67,11 @@ public class er {
             var3 = gr.an(var0.Substring(var2));
             var2 = var0.Length;
          }
-
-         if (var3 != null) {
+          if (var3 != null) {
             var1.Add(var3);
          }
       }
-
-      return (gr[])var1.ToArray(new gr[0]);
+       return (gr[])var1.ToArray(new gr[0]);
    }
 
    public string getID() {

@@ -25,21 +25,18 @@ public class cP : DefaultListCellRenderer {
          Label var7 = (Label)var6;
          var7.SetText(" ");
       }
-
-      if (var6 is Label) {
+       if (var6 is Label) {
          bool var12 = false;
          Enum[] var11;
          int var10 = (var11 = cN.e(this.gt)).Length;
-
-         for(int var9 = 0; var9 < var10; ++var9) {
+          for(int var9 = 0; var9 < var10; ++var9) {
             Enum var8 = var11[var9];
             if (var8 == var2) {
                var12 = true;
                break;
             }
          }
-
-         Label var13 = (Label)var6;
+          Label var13 = (Label)var6;
          if (!var12) {
             if (var4) {
                var13.SetBackground(cN.ag());
@@ -48,8 +45,7 @@ public class cP : DefaultListCellRenderer {
             }
          }
       }
-
-      return var6;
+       return var6;
    }
 }
 

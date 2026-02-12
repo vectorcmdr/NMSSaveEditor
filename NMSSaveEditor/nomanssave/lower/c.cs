@@ -71,8 +71,7 @@ public class c : Panel {
          this.d.a(var1.d("UserSettingsData.UnlockedTwitchRewards"));
          this.e.a(var1.d("UserSettingsData.UnlockedPlatformRewards"));
       }
-
-      this.updateUI();
+       this.updateUI();
    }
 }
 

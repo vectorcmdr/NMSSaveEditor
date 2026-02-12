@@ -135,8 +135,7 @@ public class bS : Panel {
                this.setBorder(bO.eP);
                this.fc.setSelected(false);
             }
-
-            this.setBackground(bO.ai());
+             this.setBackground(bO.ai());
             var1 = bO.a(this.eX).f(this.x, this.y);
             if (var1 == null) {
                this.setToolTipText((string)null);
@@ -150,8 +149,7 @@ public class bS : Panel {
                if (var6 != null) {
                   this.a(var6, var5, var7++);
                }
-
-               Color var8 = var3 ? bO.aj() : bO.eO;
+                Color var8 = var3 ? bO.aj() : bO.eO;
                this.a(var4, var7++, var8);
                this.a(var1.dA() < 0 ? "" : var1.dA() + "/" + var1.dB(), var7++, var8);
                this.setToolTipText(var4);
@@ -167,8 +165,7 @@ public class bS : Panel {
                this.setBorder(bO.eP);
                this.fc.setSelected(false);
             }
-
-            var1 = bO.a(this.eX).f(this.x, this.y);
+             var1 = bO.a(this.eX).f(this.x, this.y);
             if (var1 == null) {
                this.fe.setVisible(false);
                this.fg.setVisible(false);
@@ -211,8 +208,7 @@ public class bS : Panel {
                } else {
                   this.setBackground(bO.an());
                }
-
-               this.fe.setEnabled(var2 != null);
+                this.fe.setEnabled(var2 != null);
                string var10 = var2 == null ? bO.b(var1.dz()) : var2.Name;
                int var11 = UIManager.getInt("Inventory.iconSize");
                Image var13 = var2 == null ? null : var2.c(var11, var11);
@@ -220,16 +216,14 @@ public class bS : Panel {
                if (var13 != null) {
                   this.a(var13, var11, var12++);
                }
-
-               Color var9 = var3 ? bO.aj() : bO.eO;
+                Color var9 = var3 ? bO.aj() : bO.eO;
                this.a(var10, var12++, var9);
                this.a(var1.dA() < 0 ? " " : var1.dA() + "/" + var1.dB(), var12++, var9);
                this.setToolTipText(var10);
             }
          }
       }
-
-      this.PerformLayout();
+       this.PerformLayout();
       this.Invalidate();
    }
 

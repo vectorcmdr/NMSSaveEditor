@@ -24,8 +24,7 @@ public class fQ {
       this.lO = var3;
       if (var4) {
          FileStream var5 = new FileStream(new File(fJ.a(var1), "mf_" + var2));
-
-         int var7;
+          int var7;
          try {
             hc.info("Reading metadata for " + var2);
             byte[] var6 = new byte[1024];
@@ -34,18 +33,15 @@ public class fQ {
          } finally {
             var5.Close();
          }
-
-         int var11 = this.mx.ch();
+          int var11 = this.mx.ch();
          if (var11 != 0) {
             hc.debug("  DecompressedSize: " + var11);
          }
-
-         var7 = this.mx.ci();
+          var7 = this.mx.ci();
          if (var7 != 0) {
             hc.debug("  CompressedSize: " + var7);
          }
-
-         int var8 = this.mx.cj();
+          int var8 = this.mx.cj();
          if (var8 != 0) {
             hc.info("  TotalPlayTime: " + fq.c((long)var8));
          }
@@ -53,8 +49,7 @@ public class fQ {
          hc.info("Creating new metadata for " + var2);
          this.mx = fI.am(var3);
       }
-
-   }
+    }
 
    public string K() {
       return this.filename;
@@ -70,8 +65,7 @@ public class fQ {
 
    public byte[] ah(int var1) {
       Object var2 = new FileStream(new File(fJ.a(this.mt), this.filename));
-
-      try {
+       try {
          MemoryStream var3 = new MemoryStream();
          byte[] var4 = new byte[1024];
          hk.readFully((Stream)var2, var4, 0, 16);
@@ -80,8 +74,7 @@ public class fQ {
          } else {
             var3.Write(var4, 0, 16);
          }
-
-         while(true) {
+          while(true) {
             int var5;
             if ((var5 = ((Stream)var2).read(var4)) >= 0) {
                var3.Write(var4, 0, var5);
@@ -89,8 +82,7 @@ public class fQ {
                   continue;
                }
             }
-
-            byte[] var7 = var3.toByteArray();
+             byte[] var7 = var3.toByteArray();
             return var7;
          }
       } finally {
@@ -109,26 +101,21 @@ public class fQ {
       if (var2 != null) {
          var7.setProperty("GameMode", var2.ToString());
       }
-
-      if (var3 != null) {
+       if (var3 != null) {
          var7.setProperty("SaveName", var3);
       }
-
-      if (var4 != null) {
+       if (var4 != null) {
          var7.setProperty("Description", var4);
       }
-
-      string var8 = var1 + "." + DateTimeOffset.UtcNow.ToUnixTimeMilliseconds() + ".zip";
+       string var8 = var1 + "." + DateTimeOffset.UtcNow.ToUnixTimeMilliseconds() + ".zip";
       FileInfo var9 = new File(aH.cG, var8);
       ZipOutputStream var10 = new ZipOutputStream(new FileStream(var9));
-
-      try {
+       try {
          byte[] var12 = new byte[1024];
          ZipEntry var13 = new ZipEntry(var5.Name);
          var10.putNextEntry(var13);
          FileStream var14 = new FileStream(var5);
-
-         int var11;
+          int var11;
          try {
             while((var11 = var14.read(var12)) >= 0) {
                var10.Write(var12, 0, var11);
@@ -136,77 +123,64 @@ public class fQ {
          } finally {
             var14.Close();
          }
-
-         var13 = new ZipEntry(var6.Name);
+          var13 = new ZipEntry(var6.Name);
          var10.putNextEntry(var13);
          FileStream var15 = new FileStream(var6);
-
-         try {
+          try {
             while((var11 = var15.read(var12)) >= 0) {
                var10.Write(var12, 0, var11);
             }
          } finally {
             var15.Close();
          }
-
-         var13 = new ZipEntry("saveinfo.txt");
+          var13 = new ZipEntry("saveinfo.txt");
          var10.putNextEntry(var13);
          var7.store(var10, "");
       } finally {
          var10.Close();
       }
-
-      var9.setLastModified(var5.LastWriteTimeUtc.Ticks);
+       var9.setLastModified(var5.LastWriteTimeUtc.Ticks);
    }
 
    public void a(eY var1, bool var2) {
       MemoryStream var3 = new MemoryStream();
       Exception var4 = null;
       Object var5 = null;
-
-      try {
+       try {
          fj var6 = new fj(var3, 2);
-
-         try {
+          try {
             var6.h(var1);
          } finally {
             if (var6 != null) {
                var6.Close();
             }
-
-         }
+          }
       } catch (Exception var33) {
          if (var4 == null) {
             var4 = var33;
          } else if (var4 != var33) {
             var4.addSuppressed(var33);
          }
-
-         throw var4;
+          throw var4;
       }
-
-      byte[] var35 = var3.toByteArray();
+       byte[] var35 = var3.toByteArray();
       int var36 = 0;
       Object var37 = new FileStream(new File(fJ.a(this.mt), this.filename));
-
-      try {
+       try {
          if (var2) {
             var37 = new gZ((Stream)var37);
          }
-
-         ((Stream)var37).Write(var35);
+          ((Stream)var37).Write(var35);
          if (var2) {
             var36 = ((gZ)var37).ci();
          }
       } finally {
          ((Stream)var37).Close();
       }
-
-      if (!this.mx.ce()) {
+       if (!this.mx.ce()) {
          hc.warn("Metadata version could not be upgraded");
       }
-
-      byte[] var7 = new byte[32];
+       byte[] var7 = new byte[32];
       byte[] var8 = new byte[16];
       if (!var2) {
          try {
@@ -217,20 +191,17 @@ public class fQ {
             hc.a("Error generating SHA-256 hash", var31);
          }
       }
-
-      this.mx.e(var7);
+       this.mx.e(var7);
       this.mx.f(var8);
       this.mx.ak(var36);
       this.mx.aj(var35.Length);
       FileStream var38 = new FileStream(new File(fJ.a(this.mt), "mf_" + this.filename));
-
-      try {
+       try {
          var38.Write(this.mx.encode());
       } finally {
          var38.Close();
       }
-
-   }
+    }
 }
 
 }

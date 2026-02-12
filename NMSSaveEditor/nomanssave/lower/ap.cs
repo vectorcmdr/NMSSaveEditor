@@ -100,22 +100,18 @@ public class ap : Panel {
       this.cn.getTableHeader().GetColumnModel().getColumn(1).setHeaderRenderer(new aA(this.cn, 2));
       CheckBox var15 = new CheckBox();
       var15.setHorizontalAlignment(0);
-
-      int var16;
+       int var16;
       for(var16 = 2; var16 < this.cn.ColumnCount; ++var16) {
          this.cn.GetColumnModel().getColumn(var16).setMaxWidth(80);
          this.cn.getTableHeader().GetColumnModel().getColumn(var16).setHeaderRenderer(new aA(this.cn, 0));
          this.cn.GetColumnModel().getColumn(var16).setCellEditor(new DefaultCellEditor(var15));
          this.cn.GetColumnModel().getColumn(var16).setCellRenderer(new aC());
       }
-
-      this.co = new TableRowSorter(this.cn.GetModel());
-
-      for(var16 = 2; var16 < this.cn.GetModel().ColumnCount; ++var16) {
+       this.co = new TableRowSorter(this.cn.GetModel());
+       for(var16 = 2; var16 < this.cn.GetModel().ColumnCount; ++var16) {
          this.co.setSortable(var16, false);
       }
-
-      this.cn.setRowSorter(this.co);
+       this.cn.setRowSorter(this.co);
       var14.setViewportView(this.cn);
       var6 = new Panel();
       var6.SetLayout(new FlowLayout());
@@ -139,8 +135,7 @@ public class ap : Panel {
       var18.Add(var19, "2, 4, fill, fill");
       var19.SetLayout(new FormLayout(new ColumnSpec[]{FormFactory.LABEL_COMPONENT_GAP_COLSPEC, FormFactory.DEFAULT_COLSPEC, FormFactory.DEFAULT_COLSPEC, FormFactory.LABEL_COMPONENT_GAP_COLSPEC, FormFactory.DEFAULT_COLSPEC, FormFactory.DEFAULT_COLSPEC, FormFactory.LABEL_COMPONENT_GAP_COLSPEC, FormFactory.DEFAULT_COLSPEC, FormFactory.DEFAULT_COLSPEC, FormFactory.LABEL_COMPONENT_GAP_COLSPEC, FormFactory.DEFAULT_COLSPEC, FormFactory.DEFAULT_COLSPEC}, new RowSpec[]{FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC}));
       this.cm = new CheckBox[16];
-
-      for(int var20 = 0; var20 < 16; ++var20) {
+       for(int var20 = 0; var20 < 16; ++var20) {
          int var21 = var20 % 4 * 3 + 2;
          int var22 = var20 / 4 * 2 + 2;
          this.cm[var20] = new CheckBox();
@@ -152,12 +147,10 @@ public class ap : Panel {
          } else {
             var4 = new Label(var23);
          }
-
-         var19.Add(this.cm[var20], var21 + ", " + var22);
+          var19.Add(this.cm[var20], var21 + ", " + var22);
          var19.Add(var4, var21 + 1 + ", " + var22);
       }
-
-   }
+    }
 
    public void R() {
       if (this.cp != null) {
@@ -189,8 +182,7 @@ public class ap : Panel {
             }
          }
       }
-
-      if (this.cs != null) {
+       if (this.cs != null) {
          for(var2 = 0; var2 < this.cs.Count; ++var2) {
             var3 = this.cs.X(var2);
             if (!this.ct.Contains(var3)) {
@@ -198,21 +190,18 @@ public class ap : Panel {
             }
          }
       }
-
-      this.ci.clearSelection();
+       this.ci.clearSelection();
       this.cj.allRowsChanged();
       this.ci.updateUI();
       this.ck.clearSelection();
       this.cl.allRowsChanged();
       this.ck.updateUI();
       var2 = var1 == null ? 0 : var1.dP();
-
-      for(int var5 = 0; var5 < 16; ++var5) {
+       for(int var5 = 0; var5 < 16; ++var5) {
          int var4 = 1 << var5;
          this.cm[var5].setSelected((var2 & var4) == var4);
       }
-
-      this.co.allRowsChanged();
+       this.co.allRowsChanged();
       this.cn.updateUI();
    }
 

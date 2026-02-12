@@ -26,11 +26,10 @@ public class eQ : ey {
    public eR km;
 
    public eQ(XmlElement var1, bool var2) {
-      base(var1.GetAttribute("id"));
+      // base(var1.GetAttribute("id"));
       this.jY = var2;
       this.name = var1.GetAttribute("name");
-
-      try {
+       try {
          if (var2) {
             this.jZ = ex.valueOf("PROC_" + var1.GetAttribute("category"));
          } else {
@@ -39,8 +38,7 @@ public class eQ : ey {
       } catch (ArgumentException var10) {
          throw new Exception("Error in tech: " + this.id, var10);
       }
-
-      this.special = var1.HasAttribute("special") ? Boolean.valueOf(var1.GetAttribute("special")) : false;
+       this.special = var1.HasAttribute("special") ? Boolean.valueOf(var1.GetAttribute("special")) : false;
       this.ka = var1.HasAttribute("chargeable") ? new Integer(var1.GetAttribute("chargeable")) : null;
       this.jM = var1.GetAttribute("subtitle");
       this.kc = var1.HasAttribute("icon") ? var1.GetAttribute("icon") : null;
@@ -49,13 +47,11 @@ public class eQ : ey {
       } else {
          this.kd = 0;
       }
-
-      string var3 = null;
+       string var3 = null;
       List<object> var4 = new List<object>();
       eR var5 = null;
       XmlNodeList var6 = var1.ChildNodes;
-
-      for(int var9 = 0; var9 < var6.Count; ++var9) {
+       for(int var9 = 0; var9 < var6.Count; ++var9) {
          XmlNode var7 = var6.Item(var9);
          if (var7 is Element) {
             XmlElement var8 = (System.Xml.XmlElement)var7;
@@ -68,8 +64,7 @@ public class eQ : ey {
             }
          }
       }
-
-      this.description = var3;
+       this.description = var3;
       this.ke = UnmodifiableList(var4);
       this.km = var5;
    }

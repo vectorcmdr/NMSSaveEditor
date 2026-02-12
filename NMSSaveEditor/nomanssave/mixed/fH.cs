@@ -22,12 +22,10 @@ public class fH {
       this.mh = new File(fA.a(var1), var2);
       if (var3) {
          FileStream var4 = new FileStream(this.mh);
-
-         try {
+          try {
             this.lK = new byte[112];
             hk.readFully(var4, this.lK);
-
-            for(int var5 = 0; var5 < fA.bY().Length; ++var5) {
+             for(int var5 = 0; var5 < fA.bY().Length; ++var5) {
                if (this.lK[var5] != fA.bY()[var5]) {
                   throw new IOException("Invalid header");
                }
@@ -36,14 +34,12 @@ public class fH {
             var4.Close();
          }
       }
-
-   }
+    }
 
    public byte[] readBytes() {
       long var1 = (255L & (long)this.lK[95]) << 24 | (255L & (long)this.lK[94]) << 16 | (255L & (long)this.lK[93]) << 8 | 255L & (long)this.lK[92];
       FileStream var3 = new FileStream(new File(fA.a(this.ma), this.K()));
-
-      byte[] var6;
+       byte[] var6;
       try {
          byte[] var4 = new byte[(int)var1];
          var3.skip(112L);
@@ -52,15 +48,13 @@ public class fH {
       } finally {
          var3.Close();
       }
-
-      return var6;
+       return var6;
    }
 
    public byte[] ah(int var1) {
       long var2 = (255L & (long)this.lK[95]) << 24 | (255L & (long)this.lK[94]) << 16 | (255L & (long)this.lK[93]) << 8 | 255L & (long)this.lK[92];
       FileStream var4 = new FileStream(new File(fA.a(this.ma), this.K()));
-
-      byte[] var7;
+       byte[] var7;
       try {
          var1 = (int)Math.Min((long)var1, var2);
          byte[] var5 = new byte[var1];
@@ -70,8 +64,7 @@ public class fH {
       } finally {
          var4.Close();
       }
-
-      return var7;
+       return var7;
    }
 
    public void writeBytes(byte[] var1) {
@@ -80,15 +73,13 @@ public class fH {
       this.lK[94] = (byte)(var1.Length >> 16);
       this.lK[95] = (byte)(var1.Length >> 24);
       FileStream var2 = new FileStream(new File(fA.a(this.ma), this.K()));
-
-      try {
+       try {
          var2.Write(this.lK);
          var2.Write(var1);
       } finally {
          var2.Close();
       }
-
-   }
+    }
 
    public void a(string var1, fn var2, string var3, string var4) {
       Properties var5 = new Properties();
@@ -97,26 +88,21 @@ public class fH {
       if (var2 != null) {
          var5.setProperty("GameMode", var2.ToString());
       }
-
-      if (var3 != null) {
+       if (var3 != null) {
          var5.setProperty("SaveName", var3);
       }
-
-      if (var4 != null) {
+       if (var4 != null) {
          var5.setProperty("Description", var4);
       }
-
-      string var6 = var1 + "." + DateTimeOffset.UtcNow.ToUnixTimeMilliseconds() + ".zip";
+       string var6 = var1 + "." + DateTimeOffset.UtcNow.ToUnixTimeMilliseconds() + ".zip";
       FileInfo var7 = new File(aH.cG, var6);
       ZipOutputStream var8 = new ZipOutputStream(new FileStream(var7));
-
-      try {
+       try {
          byte[] var10 = new byte[4096];
          ZipEntry var11 = new ZipEntry(this.mh.Name);
          var8.putNextEntry(var11);
          FileStream var12 = new FileStream(this.mh);
-
-         int var9;
+          int var9;
          try {
             while((var9 = var12.read(var10)) >= 0) {
                var8.Write(var10, 0, var9);
@@ -124,15 +110,13 @@ public class fH {
          } finally {
             var12.Close();
          }
-
-         var11 = new ZipEntry("saveinfo.txt");
+          var11 = new ZipEntry("saveinfo.txt");
          var8.putNextEntry(var11);
          var5.store(var8, "");
       } finally {
          var8.Close();
       }
-
-      var7.setLastModified(this.mh.LastWriteTimeUtc.Ticks);
+       var7.setLastModified(this.mh.LastWriteTimeUtc.Ticks);
    }
 
    public string K() {

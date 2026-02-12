@@ -29,8 +29,7 @@ public class ej  {
          if ("lookAndFeel".Equals(var1.getPropertyName())) {
             SwingUtilities.updateComponentTreeUI(this);
          }
-
-      });
+       });
    }
 
    public string a(FileInfo var1) {
@@ -47,13 +46,11 @@ public class ej  {
       if (ir == null) {
          ir = new ej();
       }
-
-      if (var0 != null && var0.Exists) {
+       if (var0 != null && var0.Exists) {
          if (var0.IsFile()) {
             var0 = var0.Directory;
          }
-
-         ir.setCurrentDirectory(var0);
+          ir.setCurrentDirectory(var0);
       } else {
          FileInfo var1 = new File(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile));
          FileInfo var2 = new File(var1, "AppData\\Roaming\\HelloGames\\NMS");
@@ -66,8 +63,7 @@ public class ej  {
             ir.setCurrentDirectory(var1);
          }
       }
-
-      return ir.showOpenDialog((Component)null) == 0 ? ir.getSelectedFile() : null;
+       return ir.showOpenDialog((Component)null) == 0 ? ir.getSelectedFile() : null;
    }
 
    // $FF: synthetic method

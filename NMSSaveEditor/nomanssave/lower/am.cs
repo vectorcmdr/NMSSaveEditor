@@ -28,8 +28,7 @@ public class am : ActionListener {
             aj.a(this.cg, true);
             this.cg.SetVisible(false);
          }
-
-      }
+       }
    }
 }
 

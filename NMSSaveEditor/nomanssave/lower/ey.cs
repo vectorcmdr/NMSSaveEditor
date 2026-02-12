@@ -33,25 +33,21 @@ public class ey {
          } catch (IOException var9) {
          }
       }
-
-      List<object> var10 = new List<object>();
+       List<object> var10 = new List<object>();
       if (var0 != null) {
          XmlNodeList var3 = var0.ChildNodes;
-
-         for(int var4 = 0; var4 < var3.Count; ++var4) {
+          for(int var4 = 0; var4 < var3.Count; ++var4) {
             XmlNode var5 = var3.Item(var4);
             if (var5 is XmlElement && var5.Name.Equals("product-template")) {
                var10.Add(new eA((System.Xml.XmlElement)var5));
             }
          }
       }
-
-      jI = UnmodifiableList(var10);
+       jI = UnmodifiableList(var10);
       List<object> var11 = new List<object>();
       if (var0 != null) {
          XmlNodeList var12 = var0.ChildNodes;
-
-         for(int var14 = 0; var14 < var12.Count; ++var14) {
+          for(int var14 = 0; var14 < var12.Count; ++var14) {
             XmlNode var6 = var12.Item(var14);
             if (var6 is XmlElement && var6.Name.Equals("substance")) {
                var11.Add(new eP((System.Xml.XmlElement)var6));
@@ -66,8 +62,7 @@ public class ey {
             }
          }
       }
-
-      List<object> var13 = (List)var11.filter((var0x) => {
+       List<object> var13 = (List)var11.filter((var0x) => {
          return var0x is eQ;
       }).map(typeof(eQ).cast).map((var0x) => {
          return var0x.bv();
@@ -189,16 +184,14 @@ public class ey {
          XmlNodeList var1 = var0.ChildNodes;
          StringBuffer var2 = new StringBuffer();
          bool var3 = false;
-
-         for(int var5 = 0; var5 < var1.Count; ++var5) {
+          for(int var5 = 0; var5 < var1.Count; ++var5) {
             XmlNode var4 = var1.Item(var5);
             if (var4.NodeType == 3) {
                var2.Append(var4.Value);
                var3 = true;
             }
          }
-
-         if (!var3) {
+          if (!var3) {
             return null;
          } else {
             return var2.ToString();

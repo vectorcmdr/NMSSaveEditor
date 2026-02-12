@@ -310,14 +310,12 @@ public class eV {
    public Stream bB() {
       eY[] var1 = new eY[this.Length];
       int var2 = 0;
-
-      for(int var3 = 0; var3 < this.Length; ++var3) {
+       for(int var3 = 0; var3 < this.Length; ++var3) {
          if (this.values[var3] is eY) {
             var1[var2++] = (eY)this.values[var3];
          }
       }
-
-      return Arrays.stream(var1, 0, var2);
+       return Arrays.stream(var1, 0, var2);
    }
 
    // $FF: synthetic method
