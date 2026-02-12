@@ -665,6 +665,7 @@ public class JComponent : Panel {
     public static float CENTER_ALIGNMENT = 0.5f;
     public static float LEFT_ALIGNMENT = 0.0f;
     public static float RIGHT_ALIGNMENT = 1.0f;
+    public void registerKeyboardAction(object listener, string name, object key, int cond) {}
 }
 
 public class Border {

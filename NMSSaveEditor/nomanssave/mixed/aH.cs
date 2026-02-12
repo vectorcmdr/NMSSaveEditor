@@ -235,7 +235,7 @@ public class aH {
 
    public static void V() {
       string var0 = cK.getValueAsString("LookAndFeel");
-      aI var1 = (aI)Stream.of(aI.Values).filter((var1x) => {
+      aI var1 = (aI)StreamOf.of(aI.Values).filter((var1x) => {
          return var1x.ToString().Equals(var0);
       }).findFirst().orElse(aI.cN);
        try {

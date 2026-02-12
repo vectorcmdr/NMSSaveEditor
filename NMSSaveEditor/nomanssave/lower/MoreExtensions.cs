@@ -684,6 +684,8 @@ namespace NMSSaveEditor {
 public class Dimension { public int Width; public int Height; public Dimension(int w, int h) { Width = w; Height = h; } }
 public static class ButtonExtensions3 {
     public static void AddActionListener(this Button btn, object listener) { btn.Click += (s, e) => { }; }
+    public static void AddActionListener(this Button btn, Action<object> listener) { btn.Click += (s, e) => listener(e); }
+    public static void AddActionListener(this Button btn, Action listener) { btn.Click += (s, e) => listener(); }
     public static void SetEnabled(this Button btn, bool enabled) { btn.Enabled = enabled; }
     public static void SetVisible(this Button btn, bool visible) { btn.Visible = visible; }
     public static void SetText(this Button btn, string text) { btn.Text = text; }
@@ -864,3 +866,11 @@ public static class JavaFile {
     public static FileInfo Create(DirectoryInfo parent, string child) { return new FileInfo(Path.Combine(parent?.FullName ?? ".", child ?? "")); }
 }
 
+namespace NMSSaveEditor {
+
+// StreamOf utility
+public static class StreamOf {
+    public static IEnumerable<T> of<T>(params T[] items) { return items; }
+}
+
+}

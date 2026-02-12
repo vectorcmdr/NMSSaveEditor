@@ -44,7 +44,7 @@ public class aD : Form {
 
    public bool S() {
       string var1 = aH.getProperty("LookAndFeel");
-      aI var2 = (aI)Stream.of(aI.Values).filter((var1x) => {
+      aI var2 = (aI)StreamOf.of(aI.Values).filter((var1x) => {
          return var1x.ToString().Equals(var1);
       }).findFirst().orElse(aI.cN);
       this.cw.SetSelectedItem(var2);

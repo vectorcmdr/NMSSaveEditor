@@ -1581,19 +1581,19 @@ public class Application {
       var3.Y();
       Panel var4 = new Panel();
       var4.SetLayout(new FlowLayout(0, 0, 0));
-      this.W = new Button("Reload");
+      this.W = new Button() { Text = "Reload" };
       this.W.SetEnabled(false);
       this.W.AddActionListener((var1x) => {
          this.l();
       });
       var4.Add(this.W);
-      this.X = new Button("Save Changes");
+      this.X = new Button() { Text = "Save Changes" };
       this.X.SetEnabled(false);
       this.X.AddActionListener((var1x) => {
          this.n();
       });
       var4.Add(this.X);
-      this.Y = new Button("Save As");
+      this.Y = new Button() { Text = "Save As" };
       this.Y.SetEnabled(false);
       this.Y.AddActionListener((var1x) => {
          this.o();

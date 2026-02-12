@@ -21,7 +21,7 @@ public class aF : ActionListener {
 
    public void actionPerformed(ActionEvent var1) {
       string var2 = aH.getProperty("LookAndFeel");
-      aI var3 = (aI)Stream.of(aI.Values).filter((var1x) => {
+      aI var3 = (aI)StreamOf.of(aI.Values).filter((var1x) => {
          return var1x.ToString().Equals(var2);
       }).findFirst().orElse(aI.cN);
       aI var4 = (aI)aD.a(this.cB).SelectedItem;
