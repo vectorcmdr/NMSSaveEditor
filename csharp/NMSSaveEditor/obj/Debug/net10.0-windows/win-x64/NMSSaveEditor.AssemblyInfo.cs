@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyDescriptionAttribute("No Man\'s Sky Save Editor - Ported from Java to C# .NET 10")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.19.14.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.19.14+307bd894e720bb1eb6a09d5055e7f0972e9362ec")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.19.14+904c7ada04e4d70d4d224941f1838e3cf931193a")]
 [assembly: System.Reflection.AssemblyProductAttribute("NMSSaveEditor")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NMS Save Editor")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.19.14.0")]
