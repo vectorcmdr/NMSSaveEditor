@@ -11,31 +11,33 @@ public class eZ : fc {
    public int index;
    public eY kL;
 
-public eZ(eY var1, int var2, fc var3) : base(var1, var3) {
+   public eZ(eY var1, int var2, fc var3) : base(var1, var3) {
       this.kL = var1;
       this.index = var2;
    }
 
-   public override object a(Class var1, bool var2) {
+   public override object a(Type var1, bool var2) {
       if (this.kN == null) {
          throw new Exception("Unexpected path");
       } else {
          eV var3 = (eV)this.kN.a(typeof(eV), var2);
-         if (this.index >= 0 && this.index <= var3.Length) {
-            if (this.index == var3.Length) {
-               if (var2 == null) {
+         if (this.index >= 0 && this.index <= var3.length) {
+            if (this.index == var3.length) {
+               if (!var2) {
                   throw new fd((fd)null);
                } else {
                   object var4;
                   try {
-                     var4 = var1.newInstance(var6);
+                     var4 = Activator.CreateInstance(var1);
+                  } catch (Exception var6) {
+                     throw new Exception("Unexpected error", var6);
                   }
 
-                  var3.Add(var4);
+                  var3.add(var4);
                   return var4;
                }
-            } else if (var1.isInstance(var3.values[this.index])) {
-               return var1.cast(var3.values[this.index]);
+            } else if (var1.IsInstanceOfType(var3.values[this.index])) {
+               return var3.values[this.index];
             } else {
                throw new Exception("Unexpected path");
             }
@@ -50,7 +52,7 @@ public eZ(eY var1, int var2, fc var3) : base(var1, var3) {
          throw new Exception("Unexpected path");
       } else {
          eV var1 = (eV)this.kN.a(typeof(eV), false);
-         return var1[this.index];
+         return var1.get(this.index);
       }
    }
 
@@ -59,8 +61,8 @@ public eZ(eY var1, int var2, fc var3) : base(var1, var3) {
          throw new Exception("Unexpected path");
       } else {
          eV var3 = (eV)this.kN.a(typeof(eV), var2);
-         if (this.index == var3.Length) {
-            var3.Add(var1);
+         if (this.index == var3.length) {
+            var3.add(var1);
             return null;
          } else {
             return var3.set(this.index, var1);
@@ -73,7 +75,7 @@ public eZ(eY var1, int var2, fc var3) : base(var1, var3) {
          throw new Exception("Unexpected path");
       } else {
          eV var1 = (eV)this.kN.a(typeof(eV), false);
-         return var1.Remove(this.index);
+         return var1.remove(this.index);
       }
    }
 
@@ -82,7 +84,7 @@ public eZ(eY var1, int var2, fc var3) : base(var1, var3) {
          throw new Exception("Unexpected path");
       } else {
          eV var2 = (eV)this.kN.a(typeof(eV), false);
-         object var3 = var2[this.index];
+         object var3 = var2.get(this.index);
          if (var3 == null) {
             var2.set(this.index, var1);
             return null;
@@ -90,7 +92,7 @@ public eZ(eY var1, int var2, fc var3) : base(var1, var3) {
             ((eY)var3).c(var1);
             return (eY)var3;
          } else {
-            throw new Exception("Unsupported type: " + var3.GetType().getSimpleName());
+            throw new Exception("Unsupported type: " + var3.GetType().Name);
          }
       }
    }
