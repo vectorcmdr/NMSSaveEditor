@@ -14,10 +14,26 @@ public class eu {
    public static List<object> iH = new List<object>();
 
    static eu() {
-      Stream var0 = typeof(Application).GetManifestResourceStream("db/inventory.xml");
+      Stream var0 = typeof(Application).Assembly.GetManifestResourceStream("NMSSaveEditor.Resources.db.inventory.xml");
       if (var0 != null) {
          try {
-            Document var1 = DocumentBuilderFactory.newInstance(string var1) {
+            XmlDocument doc = new XmlDocument();
+            doc.Load(var0);
+            XmlElement var2 = doc.DocumentElement;
+            XmlNodeList var3 = var2.ChildNodes;
+
+            for(int var4 = 0; var4 < var3.Count; ++var4) {
+               XmlNode var5 = var3[var4];
+               if (var5 is XmlElement && var5.Name.Equals("difficulty")) {
+                  iH.Add(new ev((XmlElement)var5));
+               }
+            }
+         } catch (Exception) { }
+      }
+
+   }
+
+   public static ew b(string var0, string var1) {
       IEnumerator<object> var3 = iH.GetEnumerator();
 
       while(true) {
