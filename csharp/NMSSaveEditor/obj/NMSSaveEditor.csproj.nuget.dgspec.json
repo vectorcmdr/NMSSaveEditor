@@ -1,0 +1,112 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/runner/work/NMSSaveEditor/NMSSaveEditor/csharp/NMSSaveEditor/NMSSaveEditor.csproj": {}
+  },
+  "projects": {
+    "/home/runner/work/NMSSaveEditor/NMSSaveEditor/csharp/NMSSaveEditor/NMSSaveEditor.csproj": {
+      "version": "1.19.14",
+      "restore": {
+        "projectUniqueName": "/home/runner/work/NMSSaveEditor/NMSSaveEditor/csharp/NMSSaveEditor/NMSSaveEditor.csproj",
+        "projectName": "NMSSaveEditor",
+        "projectPath": "/home/runner/work/NMSSaveEditor/NMSSaveEditor/csharp/NMSSaveEditor/NMSSaveEditor.csproj",
+        "packagesPath": "/home/runner/work/NMSSaveEditor/.codeql-scratch/dbs/csharp/working/packages",
+        "outputPath": "/home/runner/work/NMSSaveEditor/NMSSaveEditor/csharp/NMSSaveEditor/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/runner/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net10.0-windows"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net10.0-windows7.0": {
+            "targetAlias": "net10.0-windows",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "all"
+        },
+        "SdkAnalysisLevel": "10.0.100"
+      },
+      "frameworks": {
+        "net10.0-windows7.0": {
+          "targetAlias": "net10.0-windows",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[10.0.2, 10.0.2]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[10.0.2, 10.0.2]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[10.0.2, 10.0.2]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[10.0.2, 10.0.2]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WindowsForms": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/10.0.102/PortableRuntimeIdentifierGraph.json",
+          "packagesToPrune": {
+            "Microsoft.VisualBasic": "(,10.3.32767]",
+            "Microsoft.Win32.Registry.AccessControl": "(,9.0.32767]",
+            "Microsoft.Win32.SystemEvents": "(,9.0.32767]",
+            "System.CodeDom": "(,9.0.32767]",
+            "System.Configuration.ConfigurationManager": "(,9.0.32767]",
+            "System.Diagnostics.EventLog": "(,9.0.32767]",
+            "System.Diagnostics.PerformanceCounter": "(,9.0.32767]",
+            "System.DirectoryServices": "(,9.0.32767]",
+            "System.Drawing.Common": "(,9.0.32767]",
+            "System.IO.Packaging": "(,9.0.32767]",
+            "System.Resources.Extensions": "(,9.0.32767]",
+            "System.Security.Cryptography.Pkcs": "(,9.0.32767]",
+            "System.Security.Cryptography.ProtectedData": "(,9.0.32767]",
+            "System.Security.Cryptography.Xml": "(,9.0.32767]",
+            "System.Security.Permissions": "(,9.0.32767]",
+            "System.Threading.AccessControl": "(,9.0.32767]",
+            "System.Windows.Extensions": "(,9.0.32767]"
+          }
+        }
+      },
+      "runtimes": {
+        "win-x64": {
+          "#import": []
+        }
+      }
+    }
+  }
+}
