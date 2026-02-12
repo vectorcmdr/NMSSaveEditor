@@ -17,7 +17,7 @@ class f : DataGridView {
       g var5 = new g(this, var3, var4);
       this.setCellSelectionEnabled(false);
       this.getColumnModel().setColumnMargin(2);
-      this.setModel(var5);
+      this.DataSource = (var5);
       object var6 = new object(var5);
       var6.setSortable(2, false);
       this.setRowSorter(var6);

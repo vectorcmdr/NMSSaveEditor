@@ -8,37 +8,37 @@ namespace NMSSaveEditor
 public class gW {
    public static void i(byte[] var0) {
       StringBuilder var1 = new StringBuilder();
-      var1.append("Data: " + var0.Length);
-      var1.append(System.lineSeparator());
-      var1.append("  ");
+      var1.Append("Data: " + var0.Length);
+      var1.Append(System.lineSeparator());
+      var1.Append("  ");
       StringBuilder var2 = new StringBuilder();
 
       for(int var3 = 0; var3 < var0.Length; ++var3) {
-         var1.append(Integer.toString((var0[var3] & 240) >> 4, 16));
-         var1.append(Integer.toString(var0[var3] & 15, 16));
+         var1.Append(Integer.toString((var0[var3] & 240) >> 4, 16));
+         var1.Append(Integer.toString(var0[var3] & 15, 16));
          if (var0[var3] >= 32 && var0[var3] < 127) {
-            var2.append((char)(var0[var3] & 255));
+            var2.Append((char)(var0[var3] & 255));
          } else {
-            var2.append('?');
+            var2.Append('?');
          }
 
          if (var3 % 16 == 15) {
-            var1.append("  ");
-            var1.append(var2);
-            var1.append(System.lineSeparator());
-            var1.append("  ");
+            var1.Append("  ");
+            var1.Append(var2);
+            var1.Append(System.lineSeparator());
+            var1.Append("  ");
             var2 = new StringBuilder();
          }
       }
 
       if (var2.length() > 0) {
          while(var2.length() < 16) {
-            var1.append("  ");
-            var2.append(" ");
+            var1.Append("  ");
+            var2.Append(" ");
          }
 
-         var1.append("  ");
-         var1.append(var2);
+         var1.Append("  ");
+         var1.Append(var2);
       }
 
       Console.WriteLine(var1.ToString());

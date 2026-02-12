@@ -50,12 +50,12 @@ class fC : fs {
                }
             }
          } finally {
-            var8.close();
+            var8.Close();
          }
       } catch (FormatException var19) {
          throw new IOException("Invalid backup file");
       } finally {
-         var4.close();
+         var4.Close();
       }
 
    }
@@ -65,11 +65,11 @@ class fC : fs {
    }
 
    public string K() {
-      return this.mc.getName();
+      return this.mc.Name;
    }
 
    public long lastModified() {
-      return this.mc.lastModified();
+      return this.mc.LastWriteTimeUtc.Ticks;
    }
 
    public eY M() {
@@ -94,14 +94,14 @@ class fC : fs {
 
                int var8;
                while((var8 = var6.read(var7)) >= 0) {
-                  var1.write(var7, 0, var8);
+                  var1.Write(var7, 0, var8);
                }
             } finally {
-               var6.close();
+               var6.Close();
             }
          } finally {
             if (var4 != null) {
-               var4.close();
+               var4.Close();
             }
 
          }
@@ -133,7 +133,7 @@ class fC : fs {
    }
 
    public string toString() {
-      return this.mc.getName();
+      return this.mc.Name;
    }
 }
 

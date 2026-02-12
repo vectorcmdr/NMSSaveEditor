@@ -17,14 +17,14 @@ class ed : EventHandler {
    }
 
    public void actionPerformed(EventArgs var1) {
-      if (ec.a(this.ik).isSelected() ^ eb.a(ec.h(this.ik))[this.il].isEnabled()) {
-         bool var2 = ec.a(this.ik).isSelected();
-         eb.a(ec.h(this.ik))[this.il].setEnabled(var2);
-         ec.b(this.ik).setEnabled(var2);
-         ec.c(this.ik).setEnabled(var2);
-         ec.d(this.ik).setEnabled(var2);
-         ec.e(this.ik).setEnabled(var2);
-         ec.f(this.ik).setEnabled(var2);
+      if (ec.a(this.ik).Checked ^ eb.a(ec.h(this.ik))[this.il].Enabled) {
+         bool var2 = ec.a(this.ik).Checked;
+         eb.a(ec.h(this.ik))[this.il].Enabled = (var2);
+         ec.b(this.ik).Enabled = (var2);
+         ec.c(this.ik).Enabled = (var2);
+         ec.d(this.ik).Enabled = (var2);
+         ec.e(this.ik).Enabled = (var2);
+         ec.f(this.ik).Enabled = (var2);
       }
 
    }

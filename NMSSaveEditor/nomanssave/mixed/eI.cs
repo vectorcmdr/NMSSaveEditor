@@ -15,12 +15,12 @@ public class eI {
    int type;
    string id;
    string name;
-   private static List ki = new List<object>();
-   private static List kj = new List<object>();
-   private static List kk = new List<object>();
+   private static List<object> ki = new List<object>();
+   private static List<object> kj = new List<object>();
+   private static List<object> kk = new List<object>();
 
-   static {
-      Stream var0 = Application.class.getResourceAsStream("db/rewards.xml");
+   static eI() {
+      Stream var0 = typeof(Application).GetManifestResourceStream("db/rewards.xml");
       if (var0 != null) {
          try {
             Document var1 = XmlDocument.newInstance().newDocumentBuilder().parse(var0);
@@ -29,15 +29,15 @@ public class eI {
 
             for(int var4 = 0; var4 < var3.getLength(); ++var4) {
                Node var5 = var3.item(var4);
-               if (var5 is Element && var5.getNodeName().equals("season")) {
+               if (var5 is Element && var5.getNodeName().Equals("season")) {
                   ki.Add(new eI((Element)var5, 0));
                }
 
-               if (var5 is Element && var5.getNodeName().equals("twitch")) {
+               if (var5 is Element && var5.getNodeName().Equals("twitch")) {
                   kj.Add(new eI((Element)var5, 1));
                }
 
-               if (var5 is Element && var5.getNodeName().equals("platform")) {
+               if (var5 is Element && var5.getNodeName().Equals("platform")) {
                   kk.Add(new eI((Element)var5, 2));
                }
             }
@@ -71,7 +71,7 @@ public class eI {
    }
 
    public static eI P(int var0) {
-      return (eI)ki.get(var0);
+      return (eI)ki[(var0);
    }
 
    public static int br() {
@@ -79,7 +79,7 @@ public class eI {
    }
 
    public static eI Q(int var0) {
-      return (eI)kj.get(var0);
+      return (eI)kj[(var0);
    }
 
    public static int bs() {
@@ -87,7 +87,7 @@ public class eI {
    }
 
    public static eI R(int var0) {
-      return (eI)kk.get(var0);
+      return (eI)kk[(var0);
    }
 
    public static Iterable bt() {

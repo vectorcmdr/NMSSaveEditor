@@ -32,41 +32,41 @@ class Y : object {
    public void setSelectedItem(Object var1) {
       this.bU = (gj)var1;
       if (this.bU == null) {
-         X.b(this.bV).setSelectedIndex(-1);
-         X.c(this.bV).setText("");
-         X.c(this.bV).setEnabled(false);
-         X.d(this.bV).setText("");
-         X.d(this.bV).setEnabled(false);
-         X.e(this.bV).setText("");
-         X.e(this.bV).setEnabled(false);
-         X.f(this.bV).setText("");
-         X.f(this.bV).setEnabled(false);
-         X.g(this.bV).setText("");
-         X.g(this.bV).setEnabled(false);
-         X.h(this.bV).setSelected(false);
-         X.h(this.bV).setEnabled(false);
-         X.i(this.bV).setSelectedIndex(-1);
-         X.i(this.bV).setEnabled(false);
-         X.j(this.bV).setSelectedIndex(-1);
-         X.j(this.bV).setEnabled(false);
+         X.b(this.bV).SelectedIndex = (-1);
+         X.c(this.bV).Text = ("");
+         X.c(this.bV).Enabled = (false);
+         X.d(this.bV).Text = ("");
+         X.d(this.bV).Enabled = (false);
+         X.e(this.bV).Text = ("");
+         X.e(this.bV).Enabled = (false);
+         X.f(this.bV).Text = ("");
+         X.f(this.bV).Enabled = (false);
+         X.g(this.bV).Text = ("");
+         X.g(this.bV).Enabled = (false);
+         X.h(this.bV).Checked = (false);
+         X.h(this.bV).Enabled = (false);
+         X.i(this.bV).SelectedIndex = (-1);
+         X.i(this.bV).Enabled = (false);
+         X.j(this.bV).SelectedIndex = (-1);
+         X.j(this.bV).Enabled = (false);
       } else {
-         X.b(this.bV).setSelectedIndex(this.bU.cL().ordinal());
-         X.c(this.bV).setText(this.bU.getName());
-         X.c(this.bV).setEnabled(true);
-         X.d(this.bV).setText(this.bU.cK());
-         X.d(this.bV).setEnabled(true);
-         X.e(this.bV).setText(this.bU.cN());
-         X.e(this.bV).setEnabled(true);
-         X.f(this.bV).setText(this.bU.cO());
-         X.f(this.bV).setEnabled(true);
-         X.g(this.bV).setText(this.bU.cP());
-         X.g(this.bV).setEnabled(true);
-         X.h(this.bV).setSelected(this.bU.cQ());
-         X.h(this.bV).setEnabled(true);
+         X.b(this.bV).SelectedIndex = (this.bU.cL().ordinal());
+         X.c(this.bV).Text = (this.bU.Name);
+         X.c(this.bV).Enabled = (true);
+         X.d(this.bV).Text = (this.bU.cK());
+         X.d(this.bV).Enabled = (true);
+         X.e(this.bV).Text = (this.bU.cN());
+         X.e(this.bV).Enabled = (true);
+         X.f(this.bV).Text = (this.bU.cO());
+         X.f(this.bV).Enabled = (true);
+         X.g(this.bV).Text = (this.bU.cP());
+         X.g(this.bV).Enabled = (true);
+         X.h(this.bV).Checked = (this.bU.cQ());
+         X.h(this.bV).Enabled = (true);
          X.i(this.bV).m(this.bU.cR());
-         X.i(this.bV).setEnabled(true);
+         X.i(this.bV).Enabled = (true);
          X.j(this.bV).m(this.bU.cS());
-         X.j(this.bV).setEnabled(true);
+         X.j(this.bV).Enabled = (true);
       }
 
    }

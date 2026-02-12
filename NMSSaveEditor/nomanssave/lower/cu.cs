@@ -19,10 +19,10 @@ class cu : FileFilter {
    }
 
    public bool accept(File var1) {
-      if (var1.isDirectory()) {
+      if (var1.Attributes.HasFlag(FileAttributes.Directory)) {
          return !var1.isHidden();
       } else {
-         return var1.getName().EndsWith(".fb3");
+         return var1.Name.EndsWith(".fb3");
       }
    }
 }

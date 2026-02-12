@@ -40,18 +40,18 @@ public class gj {
          }
       }
 
-      return (gj[])var1.toArray(new gj[0]);
+      return (gj[])var1.ToArray(new gj[0]);
    }
 
    public static gj a(eY var0, File var1) {
       eV var2 = null;
       gl var3 = null;
-      if (var1.getName().EndsWith(".pet")) {
+      if (var1.Name.EndsWith(".pet")) {
          var2 = var0.d("Pets");
          var3 = gl.oF;
       }
 
-      if (var1.getName().EndsWith(".egg")) {
+      if (var1.Name.EndsWith(".egg")) {
          var2 = var0.d("Eggs");
          var3 = gl.oG;
       }
@@ -85,7 +85,7 @@ public class gj {
                   }
                } finally {
                   if (var8 != null) {
-                     var8.close();
+                     var8.Close();
                   }
 
                }
@@ -139,7 +139,7 @@ public class gj {
             var4.h(var5);
          } finally {
             if (var4 != null) {
-               var4.close();
+               var4.Close();
             }
 
          }
@@ -237,7 +237,7 @@ public class gj {
    }
 
    public string toString() {
-      string var1 = this.getName();
+      string var1 = this.Name;
       return var1 != null && var1.length() != 0 ? var1 : this.nF.name() + " [" + this.index + "]";
    }
 }

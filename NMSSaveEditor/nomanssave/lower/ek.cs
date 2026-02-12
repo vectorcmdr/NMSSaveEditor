@@ -8,10 +8,10 @@ namespace NMSSaveEditor
 {
 
 class ek : FileFilter {
-   ej is;
+   ej @is;
 
    ek(ej var1) {
-      this.is = var1;
+      this.@is = var1;
    }
 
    public string getDescription() {
@@ -19,14 +19,14 @@ class ek : FileFilter {
    }
 
    public bool accept(File var1) {
-      if (var1.isDirectory()) {
+      if (var1.Attributes.HasFlag(FileAttributes.Directory)) {
          return true;
       } else {
-         string var2 = var1.getName();
+         string var2 = var1.Name;
          if (var2.EndsWith(".hg") && !var2.StartsWith("mf_")) {
             return true;
          } else {
-            return var2.equals("containers.index");
+            return var2.Equals("containers.index");
          }
       }
    }

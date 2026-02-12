@@ -18,9 +18,9 @@ class bf : G {
       } else {
          try {
             var1 = var1.Trim();
-            if (!var1.equals(bd.a(this.dP).cU())) {
+            if (!var1.Equals(bd.a(this.dP).cU())) {
                bd.a(this.dP).ah(var1);
-               bd.c(this.dP).setText(var1);
+               bd.c(this.dP).Text = (var1);
             }
 
             return var1;

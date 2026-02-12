@@ -45,7 +45,7 @@ class fx : fs {
             }
 
             if (var4 != null) {
-               var4.close();
+               var4.Close();
             }
 
             label162:
@@ -60,7 +60,7 @@ class fx : fs {
 
          var2 = var10000;
          if (var4 != null) {
-            var4.close();
+            var4.Close();
          }
 
          throw var2;
@@ -87,7 +87,7 @@ class fx : fs {
             var5.h(var1);
          } finally {
             if (var5 != null) {
-               var5.close();
+               var5.Close();
             }
 
          }

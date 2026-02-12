@@ -16,12 +16,12 @@ public abstract class ey {
    public static int jG = 3;
    string id;
    private static Pattern jH = Pattern.compile("%(\\w+)%");
-   private static List jI;
-   private static List jJ;
+   private static List<object> jI;
+   private static List<object> jJ;
 
-   static {
+   static ey() {
       Element var0 = null;
-      Stream var1 = Application.class.getResourceAsStream("db/items.xml");
+      Stream var1 = typeof(Application).GetManifestResourceStream("db/items.xml");
       if (var1 != null) {
          try {
             Document var2 = XmlDocument.newInstance().newDocumentBuilder().parse(var1);
@@ -38,7 +38,7 @@ public abstract class ey {
 
          for(int var4 = 0; var4 < var3.getLength(); ++var4) {
             Node var5 = var3.item(var4);
-            if (var5 is Element && var5.getNodeName().equals("product-template")) {
+            if (var5 is Element && var5.getNodeName().Equals("product-template")) {
                var10.Add(new eA((Element)var5));
             }
          }
@@ -51,30 +51,30 @@ public abstract class ey {
 
          for(int var14 = 0; var14 < var12.getLength(); ++var14) {
             Node var6 = var12.item(var14);
-            if (var6 is Element && var6.getNodeName().equals("substance")) {
+            if (var6 is Element && var6.getNodeName().Equals("substance")) {
                var11.Add(new eP((Element)var6));
-            } else if (var6 is Element && var6.getNodeName().equals("product")) {
+            } else if (var6 is Element && var6.getNodeName().Equals("product")) {
                var11.Add(new eH((Element)var6, false));
-            } else if (var6 is Element && var6.getNodeName().equals("procedural-product")) {
+            } else if (var6 is Element && var6.getNodeName().Equals("procedural-product")) {
                var11.Add(new eH((Element)var6, true));
-            } else if (var6 is Element && var6.getNodeName().equals("technology")) {
+            } else if (var6 is Element && var6.getNodeName().Equals("technology")) {
                var11.Add(new eQ((Element)var6, false));
-            } else if (var6 is Element && var6.getNodeName().equals("procedural-technology")) {
+            } else if (var6 is Element && var6.getNodeName().Equals("procedural-technology")) {
                var11.Add(new eQ((Element)var6, true));
             }
          }
       }
 
-      List var13 = (List)var11.stream().filter((var0x) -> {
+      List<object> var13 = (List<object>)var11.stream().filter((var0x) => {
          return var0x is eQ;
-      }).map(eQ.class::cast).map((var0x) -> {
+      }).map(typeof(eQ).cast).map((var0x) => {
          return var0x.bv();
-      }).filter((var0x) -> {
+      }).filter((var0x) => {
          return var0x != null;
       }).collect(Collectors.toList());
-      var11.addAll(var13);
-      var13.sort((var0x, var1x) -> {
-         return var0x.getName().compareTo(var1x.getName());
+      var11.AddRange(var13);
+      var13.sort((var0x, var1x) => {
+         return var0x.Name.CompareTo(var1x.Name);
       });
       jJ = new List<object>(var11);
    }
@@ -89,17 +89,17 @@ public abstract class ey {
 
    private static string L(int var0) {
       StringBuilder var1 = new StringBuilder();
-      var1.append(Integer.toString(var0));
+      var1.Append(Integer.toString(var0));
 
       while(var1.length() < 5) {
-         var1.insert(0, '0');
+         var1.Insert(0, '0');
       }
 
       return var1.ToString();
    }
 
    public Object aZ() {
-      if (this.id.length() >= 2 && this.id.charAt(0) == '^') {
+      if (this.id.length() >= 2 && this.id[0) == '^') {
          if (this.bb()) {
             int var1 = (int)Math.Floor(new Random().NextDouble() * 100000.0D);
             return this.id + "#" + L(var1);
@@ -112,7 +112,7 @@ public abstract class ey {
    }
 
    public Object M(int var1) {
-      if (this.id.length() >= 2 && this.id.charAt(0) == '^') {
+      if (this.id.length() >= 2 && this.id[0) == '^') {
          if (this.bb()) {
             if (var1 >= 0 && var1 < 100000) {
                return this.id + "#" + L(var1);
@@ -174,7 +174,7 @@ public abstract class ey {
 
    public abstract string getDescription();
 
-   public abstract List bk();
+   public abstract List<object> bk();
 
    public string toString() {
       return this.id;
@@ -191,7 +191,7 @@ public abstract class ey {
          for(int var5 = 0; var5 < var1.getLength(); ++var5) {
             Node var4 = var1.item(var5);
             if (var4.getNodeType() == 3) {
-               var2.append(var4.getNodeValue());
+               var2.Append(var4.getNodeValue());
                var3 = true;
             }
          }
@@ -204,7 +204,7 @@ public abstract class ey {
       }
    }
 
-   private static List O(int var0) {
+   private static List<object> O(int var0) {
       List<object> var1 = new List<object>();
       bool var2 = (var0 & 16384) == 0;
       if ((var0 & 4) == 4) {
@@ -325,35 +325,35 @@ public abstract class ey {
       return var1;
    }
 
-   public static List b(int var0, string var1) {
+   public static List<object> b(int var0, string var1) {
       string var2 = var1.ToUpper();
-      return (List)jJ.stream().filter((var2x) -> {
-         return var2x.getName().ToUpper().IndexOf(var2) >= 0 && O(var0).Contains(var2x.bc());
+      return (List<object>)jJ.stream().filter((var2x) => {
+         return var2x.Name.ToUpper().IndexOf(var2) >= 0 && O(var0).Contains(var2x.bc());
       }).collect(Collectors.toList());
    }
 
-   public static List bl() {
-      return (List)jJ.stream().filter((var0) -> {
+   public static List<object> bl() {
+      return (List<object>)jJ.stream().filter((var0) => {
          return var0 is eQ && !var0.bb() && var0.bc() != ex.jz;
       }).collect(Collectors.toList());
    }
 
-   public static List bm() {
-      return (List)jJ.stream().filter((var0) -> {
+   public static List<object> bm() {
+      return (List<object>)jJ.stream().filter((var0) => {
          return var0 is eH && !var0.bb();
       }).collect(Collectors.toList());
    }
 
    public static ey d(Object var0) {
       string var1 = var0 is fg ? ((fg)var0).bP() : var0.ToString();
-      return (ey)jJ.stream().filter((var2) -> {
-         return !var2.bb() && !(var2 is eR) ? var0.equals(var2.id) : var1.StartsWith(var2.id + "#");
+      return (ey)jJ.stream().filter((var2) => {
+         return !var2.bb() && !(var2 is eR) ? var0.Equals(var2.id) : var1.StartsWith(var2.id + "#");
       }).findFirst().orElse((Object)null);
    }
 
    static eA p(string var0) {
-      return (eA)jI.stream().filter((var1) -> {
-         return var0.equals(var1.id);
+      return (eA)jI.stream().filter((var1) => {
+         return var0.Equals(var1.id);
       }).findFirst().orElse((Object)null);
    }
    static Pattern bn() {

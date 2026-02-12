@@ -20,7 +20,7 @@ class j : object {
    }
 
    public eB b(int var1) {
-      return (eB)h.e(this.z).get(var1);
+      return (eB)h.e(this.z)[(var1);
    }
 
    public void addListDataListener(EventHandler var1) {

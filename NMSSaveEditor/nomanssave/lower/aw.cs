@@ -20,7 +20,7 @@ class aw : EventHandler {
 
       for(int var4 = var2.Length - 1; var4 >= 0; --var4) {
          int var5 = ap.h(this.cu).convertRowIndexToModel(var2[var4]);
-         string var6 = (string)ap.d(this.cu).get(var5);
+         string var6 = (string)ap.d(this.cu)[(var5);
          ap.d(this.cu).Remove(var5);
 
          while((var5 = ap.e(this.cu).IndexOf(var6)) >= 0) {
@@ -37,7 +37,7 @@ class aw : EventHandler {
       if (var3) {
          ap.h(this.cu).clearSelection();
          ap.g(this.cu).sort();
-         ap.h(this.cu).updateUI();
+         ap.h(this.cu).Refresh();
       }
 
    }

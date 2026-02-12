@@ -25,7 +25,7 @@ class eA {
          Node var4 = var3.item(var5);
          if (var4 is Element) {
             var1 = (Element)var4;
-            if (var1.getNodeName().equals("description")) {
+            if (var1.getNodeName().Equals("description")) {
                var2 = ey.a(var1);
             }
          }
@@ -39,11 +39,11 @@ class eA {
       int var4 = 0;
 
       for(Matcher var5 = ey.bn().matcher(var1); var5.find(); var4 = var5.end()) {
-         var3.append(var1.Substring(var4, var5.start()));
-         var3.append((string)var2.apply(var5.group(1)));
+         var3.Append(var1.Substring(var4, var5.Start()));
+         var3.Append((string)var2.apply(var5.group(1)));
       }
 
-      var3.append(var1.Substring(var4));
+      var3.Append(var1.Substring(var4));
       return var3.ToString();
    }
 

@@ -17,9 +17,9 @@ class ai : EventHandler {
    }
 
    public void actionPerformed(EventArgs var1) {
-      int var2 = X.k(this.bV).getSelectedIndex();
+      int var2 = X.k(this.bV).SelectedIndex;
       if (var2 >= 0 && var2 < X.a(this.bV).Length) {
-         if (MessageBox.showConfirmDialog(this.bV, "Are you sure you want to delete this companion?", "Delete", 2) == 0) {
+         if (MessageBox.Show(this.bV, "Are you sure you want to delete this companion?", "Delete", 2) == 0) {
             this.bv.a(X.a(this.bV)[var2].cL(), X.a(this.bV)[var2].getIndex());
          }
       }

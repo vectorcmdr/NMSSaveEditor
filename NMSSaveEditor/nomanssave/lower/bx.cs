@@ -18,9 +18,9 @@ class bx : G {
       } else {
          try {
             var1 = var1.Trim();
-            if (!var1.equals(bl.c(this.er)[bl.b(this.er)].cU())) {
+            if (!var1.Equals(bl.c(this.er)[bl.b(this.er)].cU())) {
                bl.c(this.er)[bl.b(this.er)].ah(var1);
-               bl.n(this.er).setText(var1);
+               bl.n(this.er).Text = (var1);
             }
 
             return var1;

@@ -13,19 +13,19 @@ public class fh {
    public static int kW = 2;
    public static int kX = 3;
    public static int kY = 4;
-   static Predicate kZ = (var0) -> {
+   static Predicate kZ = (var0) => {
       return var0 >= 48 && var0 <= 57;
    };
-   static Predicate la = (var0) -> {
+   static Predicate la = (var0) => {
       return var0 == 46;
    };
-   static Predicate lb = (var0) -> {
+   static Predicate lb = (var0) => {
       return var0 == 101 || var0 == 69;
    };
-   static Predicate lc = (var0) -> {
+   static Predicate lc = (var0) => {
       return var0 >= 48 && var0 <= 57 || var0 == 43 || var0 == 45;
    };
-   static Predicate ld = (var0) -> {
+   static Predicate ld = (var0) => {
       return (var0 & 192) == 128;
    };
    static string gc = "0123456789ABCDEFabcdef";
@@ -33,20 +33,20 @@ public class fh {
    static bool a(Class var0) {
       if (var0 == null) {
          return true;
-      } else if (Boolean.class.isAssignableFrom(var0)) {
+      } else if (typeof(Boolean).isAssignableFrom(var0)) {
          return true;
-      } else if (BigDecimal.class.isAssignableFrom(var0)) {
+      } else if (typeof(BigDecimal).isAssignableFrom(var0)) {
          return true;
-      } else if (Number.class.isAssignableFrom(var0)) {
+      } else if (typeof(Number).isAssignableFrom(var0)) {
          return true;
-      } else if (string.class.isAssignableFrom(var0)) {
+      } else if (typeof(string).isAssignableFrom(var0)) {
          return true;
-      } else if (eY.class.isAssignableFrom(var0)) {
-         return !fk.class.isAssignableFrom(var0);
-      } else if (eV.class.isAssignableFrom(var0)) {
+      } else if (typeof(eY).isAssignableFrom(var0)) {
+         return !typeof(fk).isAssignableFrom(var0);
+      } else if (typeof(eV).isAssignableFrom(var0)) {
          return true;
       } else {
-         return fg.class.isAssignableFrom(var0);
+         return typeof(fg).isAssignableFrom(var0);
       }
    }
 
@@ -105,25 +105,25 @@ public class fh {
 
    private static string a(eV var0, string var1, bool var2, Predicate var3) {
       StringBuilder var4 = new StringBuilder();
-      var4.append('[');
+      var4.Append('[');
 
       for(int var5 = 0; var5 < var0.Length; ++var5) {
          if (var5 > 0) {
-            var4.append(',');
+            var4.Append(',');
          }
 
          if (var1 != null) {
-            var4.append(var1 + "\t");
+            var4.Append(var1 + "\t");
          }
 
-         var4.append(a(var0.values[var5], var1 == null ? null : var1 + "\t", var2, var3));
+         var4.Append(a(var0.values[var5], var1 == null ? null : var1 + "\t", var2, var3));
       }
 
       if (var0.Length > 0) {
-         var4.append(var1);
+         var4.Append(var1);
       }
 
-      var4.append(']');
+      var4.Append(']');
       return var4.ToString();
    }
 
@@ -133,31 +133,31 @@ public class fh {
 
    private static string a(eY var0, string var1, bool var2, Predicate var3) {
       StringBuilder var4 = new StringBuilder();
-      var4.append('{');
+      var4.Append('{');
 
       for(int var5 = 0; var5 < var0.Length; ++var5) {
          if (var5 > 0) {
-            var4.append(',');
+            var4.Append(',');
          }
 
          if (var1 != null) {
-            var4.append(var1 + "\t");
+            var4.Append(var1 + "\t");
          }
 
-         var4.append(b(var0.names[var5], var3));
-         var4.append(':');
+         var4.Append(b(var0.names[var5], var3));
+         var4.Append(':');
          if (var2) {
-            var4.append(' ');
+            var4.Append(' ');
          }
 
-         var4.append(a(var0.values[var5], var1 == null ? null : var1 + "\t", var2, var3));
+         var4.Append(a(var0.values[var5], var1 == null ? null : var1 + "\t", var2, var3));
       }
 
       if (var0.Length > 0) {
-         var4.append(var1);
+         var4.Append(var1);
       }
 
-      var4.append('}');
+      var4.Append('}');
       return var4.ToString();
    }
 
@@ -170,29 +170,29 @@ public class fh {
          byte var2 = var5[var3];
          int var6 = var2 & 255;
          if (var6 == 13) {
-            var1.append("\\r");
+            var1.Append("\\r");
          } else if (var6 == 10) {
-            var1.append("\\n");
+            var1.Append("\\n");
          } else if (var6 == 9) {
-            var1.append("\\t");
+            var1.Append("\\t");
          } else if (var6 == 12) {
-            var1.append("\\f");
+            var1.Append("\\f");
          } else if (var6 == 8) {
-            var1.append("\\b");
+            var1.Append("\\b");
          } else if (var6 == 11) {
-            var1.append("\\v");
+            var1.Append("\\v");
          } else if (var6 == 0) {
-            var1.append("\\0");
+            var1.Append("\\0");
          } else if (var6 == 34) {
-            var1.append("\\\"");
+            var1.Append("\\\"");
          } else if (var6 == 92) {
-            var1.append("\\\\");
+            var1.Append("\\\\");
          } else if (var6 >= 32 && var6 < 128) {
-            var1.append(Character.toString((char)var6));
+            var1.Append(Character.toString((char)var6));
          } else {
-            var1.append("\\x");
-            var1.append("0123456789ABCDEFabcdef".charAt(var6 >> 4 & 15));
-            var1.append("0123456789ABCDEFabcdef".charAt(var6 & 15));
+            var1.Append("\\x");
+            var1.Append("0123456789ABCDEFabcdef"[var6 >> 4 & 15));
+            var1.Append("0123456789ABCDEFabcdef"[var6 & 15));
          }
       }
 
@@ -201,9 +201,9 @@ public class fh {
 
    private static string b(fg var0) {
       StringBuilder var1 = new StringBuilder();
-      var1.append('"');
-      var1.append(a(var0));
-      var1.append('"');
+      var1.Append('"');
+      var1.Append(a(var0));
+      var1.Append('"');
       return var1.ToString();
    }
 
@@ -215,27 +215,27 @@ public class fh {
       for(int var4 = 0; var4 < var5; ++var4) {
          char var3 = var6[var4];
          if (var3 == '\r') {
-            var2.append("\\r");
+            var2.Append("\\r");
          } else if (var3 == '\n') {
-            var2.append("\\n");
+            var2.Append("\\n");
          } else if (var3 == '\t') {
-            var2.append("\\t");
+            var2.Append("\\t");
          } else if (var3 == '\f') {
-            var2.append("\\f");
+            var2.Append("\\f");
          } else if (var3 == '\b') {
-            var2.append("\\b");
+            var2.Append("\\b");
          } else if (var3 == '"') {
-            var2.append("\\\"");
+            var2.Append("\\\"");
          } else if (var3 == '\\') {
-            var2.append("\\\\");
+            var2.Append("\\\\");
          } else if (var3 >= ' ' && (var1 == null || var1.test(var3))) {
-            var2.append(Character.toString(var3));
+            var2.Append(Character.toString(var3));
          } else {
-            var2.append("\\u");
-            var2.append("0123456789ABCDEFabcdef".charAt(var3 >> 12 & 15));
-            var2.append("0123456789ABCDEFabcdef".charAt(var3 >> 8 & 15));
-            var2.append("0123456789ABCDEFabcdef".charAt(var3 >> 4 & 15));
-            var2.append("0123456789ABCDEFabcdef".charAt(var3 & 15));
+            var2.Append("\\u");
+            var2.Append("0123456789ABCDEFabcdef"[var3 >> 12 & 15));
+            var2.Append("0123456789ABCDEFabcdef"[var3 >> 8 & 15));
+            var2.Append("0123456789ABCDEFabcdef"[var3 >> 4 & 15));
+            var2.Append("0123456789ABCDEFabcdef"[var3 & 15));
          }
       }
 
@@ -248,9 +248,9 @@ public class fh {
 
    private static string b(string var0, Predicate var1) {
       StringBuilder var2 = new StringBuilder();
-      var2.append('"');
-      var2.append(a(var0, var1));
-      var2.append('"');
+      var2.Append('"');
+      var2.Append(a(var0, var1));
+      var2.Append('"');
       return var2.ToString();
    }
 
@@ -274,45 +274,45 @@ public class fh {
       } else if (var1 == 34) {
          return d(var0);
       } else if (var1 == 102) {
-         if (var0.read() != 97) {
+         if (var0.ReadByte() != 97) {
             throw new eX("Invalid token", var0.kF, var0.kG);
-         } else if (var0.read() != 108) {
+         } else if (var0.ReadByte() != 108) {
             throw new eX("Invalid token", var0.kF, var0.kG);
-         } else if (var0.read() != 115) {
+         } else if (var0.ReadByte() != 115) {
             throw new eX("Invalid token", var0.kF, var0.kG);
-         } else if (var0.read() != 101) {
+         } else if (var0.ReadByte() != 101) {
             throw new eX("Invalid token", var0.kF, var0.kG);
          } else {
             return Boolean.FALSE;
          }
       } else if (var1 == 116) {
-         if (var0.read() != 114) {
+         if (var0.ReadByte() != 114) {
             throw new eX("Invalid token", var0.kF, var0.kG);
-         } else if (var0.read() != 117) {
+         } else if (var0.ReadByte() != 117) {
             throw new eX("Invalid token", var0.kF, var0.kG);
-         } else if (var0.read() != 101) {
+         } else if (var0.ReadByte() != 101) {
             throw new eX("Invalid token", var0.kF, var0.kG);
          } else {
             return Boolean.TRUE;
          }
       } else if (var1 == 110) {
-         if (var0.read() != 117) {
+         if (var0.ReadByte() != 117) {
             throw new eX("Invalid token", var0.kF, var0.kG);
-         } else if (var0.read() != 108) {
+         } else if (var0.ReadByte() != 108) {
             throw new eX("Invalid token", var0.kF, var0.kG);
-         } else if (var0.read() != 108) {
+         } else if (var0.ReadByte() != 108) {
             throw new eX("Invalid token", var0.kF, var0.kG);
          } else {
             return null;
          }
       } else if (var1 == 100) {
-         if (var0.read() != 97) {
+         if (var0.ReadByte() != 97) {
             throw new eX("Invalid token", var0.kF, var0.kG);
-         } else if (var0.read() != 116) {
+         } else if (var0.ReadByte() != 116) {
             throw new eX("Invalid token", var0.kF, var0.kG);
-         } else if (var0.read() != 97) {
+         } else if (var0.ReadByte() != 97) {
             throw new eX("Invalid token", var0.kF, var0.kG);
-         } else if (var0.read() != 40) {
+         } else if (var0.ReadByte() != 40) {
             throw new eX("Invalid token", var0.kF, var0.kG);
          } else if (var0.bI() != 34) {
             throw new eX("Invalid token", var0.kF, var0.kG);
@@ -360,7 +360,7 @@ public class fh {
             }
 
             if (var3 != null) {
-               var3.close();
+               var3.Close();
             }
 
             label197:
@@ -375,7 +375,7 @@ public class fh {
 
          var1 = var10000;
          if (var3 != null) {
-            var3.close();
+            var3.Close();
          }
 
          throw var1;
@@ -452,7 +452,7 @@ public class fh {
             }
 
             if (var3 != null) {
-               var3.close();
+               var3.Close();
             }
 
             label197:
@@ -467,7 +467,7 @@ public class fh {
 
          var1 = var10000;
          if (var3 != null) {
-            var3.close();
+            var3.Close();
          }
 
          throw var1;
@@ -537,13 +537,13 @@ public class fh {
          MemoryStream var2 = new MemoryStream();
 
          int var3;
-         while((var3 = var0.read()) != 34) {
+         while((var3 = var0.ReadByte()) != 34) {
             if (var3 < 0) {
                throw new eX("Short read");
             }
 
             if (var3 == 92) {
-               var3 = var0.read();
+               var3 = var0.ReadByte();
                if (var3 < 0) {
                   throw new eX("Short read");
                }
@@ -568,14 +568,14 @@ public class fh {
                   var3 = 9;
                   break;
                case 117:
-                  var3 = ae(var0.read()) << 12 | ae(var0.read()) << 8 | ae(var0.read()) << 4 | ae(var0.read());
+                  var3 = ae(var0.ReadByte()) << 12 | ae(var0.ReadByte()) << 8 | ae(var0.ReadByte()) << 4 | ae(var0.ReadByte());
                   if (var3 <= 255) {
                      if (var1 != null) {
-                        var1.append((char)var3);
+                        var1.Append((char)var3);
                      }
 
                      if (var2 != null) {
-                        var2.write(var3);
+                        var2.Write(var3);
                      }
                   } else {
                      if (var1 == null) {
@@ -583,30 +583,30 @@ public class fh {
                      }
 
                      var2 = null;
-                     var1.append((char)var3);
+                     var1.Append((char)var3);
                   }
                   continue;
                case 118:
                   var3 = 11;
                   break;
                case 120:
-                  var3 = ae(var0.read()) << 4 | ae(var0.read());
+                  var3 = ae(var0.ReadByte()) << 4 | ae(var0.ReadByte());
                   if (var2 == null) {
                      throw new eX("Mixed encodings detected in stringx");
                   }
 
-                  var2.write(var3);
+                  var2.Write(var3);
                   var1 = null;
                   continue;
                }
             }
 
             if (var1 != null) {
-               var1.append((char)var3);
+               var1.Append((char)var3);
             }
 
             if (var2 != null) {
-               var2.write(var3);
+               var2.Write(var3);
             }
          }
 
@@ -620,19 +620,19 @@ public class fh {
 
    private static fg e(fi var0) {
       MemoryStream var1 = new MemoryStream();
-      if (var0.read() != 48) {
+      if (var0.ReadByte() != 48) {
          throw new eX("Invalid hex data", var0.kF, var0.kG);
-      } else if (var0.read() != 120) {
+      } else if (var0.ReadByte() != 120) {
          throw new eX("Invalid hex data", var0.kF, var0.kG);
       } else {
          int var2;
          int var3;
-         for(; (var2 = var0.read()) != 34; var1.write(var2 << 4 | var3)) {
+         for(; (var2 = var0.ReadByte()) != 34; var1.Write(var2 << 4 | var3)) {
             if (var2 < 0) {
                throw new eX("Short read", var0.kF, var0.kG);
             }
 
-            if ((var3 = var0.read()) < 0) {
+            if ((var3 = var0.ReadByte()) < 0) {
                throw new eX("Short read", var0.kF, var0.kG);
             }
 

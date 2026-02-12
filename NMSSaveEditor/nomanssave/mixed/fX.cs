@@ -21,7 +21,7 @@ abstract class fX {
       int var3 = fT.c(var1).Count;
 
       for(int var4 = 0; var4 < fT.c(var1).Count; ++var4) {
-         int var5 = ((fW)fT.c(var1).get(var4)).name.compareTo(var2.mO.name);
+         int var5 = ((fW)fT.c(var1)[(var4)).name.CompareTo(var2.mO.name);
          if (var5 == 0) {
             fW var6 = (fW)fT.c(var1).Remove(var4);
             fT.i(new File(fT.d(var1), var6.mU));
@@ -35,7 +35,7 @@ abstract class fX {
 
       this.mO = new fW(var1, var2.mO);
       File var9 = new File(fT.d(var1), this.mO.mU);
-      if (!var9.mkdir()) {
+      if (!var9.Create()) {
          throw new IOException("Unable to create container path");
       } else {
          this.mX = new File(var9, "container." + this.mO.mT);
@@ -46,7 +46,7 @@ abstract class fX {
          try {
             var2.a(var10);
          } finally {
-            var10.close();
+            var10.Close();
          }
 
          fT.c(var1).Add(var3, this.mO);
@@ -57,7 +57,7 @@ abstract class fX {
       this.mN = var1;
       this.mO = fT.a(var1, var2);
       File var3 = new File(fT.d(var1), this.mO.mU);
-      if (!var3.isDirectory()) {
+      if (!var3.Attributes.HasFlag(FileAttributes.Directory)) {
          throw new FileNotFoundException(this.mO.mU);
       } else {
          this.mX = new File(var3, "container." + this.mO.mT);
@@ -77,26 +77,26 @@ abstract class fX {
                string var11 = gc.a(var6);
                hc.debug("  filename: " + var11);
                string var12 = gc.a(var6);
-               if (!var11.equals(var12)) {
+               if (!var11.Equals(var12)) {
                   hc.debug("  filename2: " + var12);
                }
 
-               if (var10.equals("data")) {
+               if (var10.Equals("data")) {
                   var4 = new File(var3, var11);
-                  if (!var4.exists()) {
+                  if (!var4.Exists) {
                      var4 = new File(var3, var12);
                   }
                }
 
-               if (var10.equals("meta")) {
+               if (var10.Equals("meta")) {
                   var5 = new File(var3, var11);
-                  if (!var5.exists()) {
+                  if (!var5.Exists) {
                      var5 = new File(var3, var12);
                   }
                }
             }
          } finally {
-            var6.close();
+            var6.Close();
          }
 
          if (var4 != null && var5 != null) {
@@ -138,14 +138,14 @@ abstract class fX {
          if (this.mode == fT.cv()) {
             return new gZ(var1);
          } else if (this.mode == fT.cw()) {
-            var1.write(fT.cy());
+            var1.Write(fT.cy());
             return new ho(var1);
          } else {
             return new hb(var1);
          }
       } catch (IOException var5) {
          try {
-            var1.close();
+            var1.Close();
          } catch (IOException var4) {
          }
 
@@ -173,7 +173,7 @@ abstract class fX {
             }
 
             if (var4 != null) {
-               var4.close();
+               var4.Close();
             }
 
             label162:
@@ -188,7 +188,7 @@ abstract class fX {
 
          var2 = var10000;
          if (var4 != null) {
-            var4.close();
+            var4.Close();
          }
 
          throw var2;
@@ -216,14 +216,14 @@ abstract class fX {
 
             int var7;
             while((var7 = var5.read(var6)) >= 0) {
-               var2.write(var6, 0, var7);
+               var2.Write(var6, 0, var7);
                if (var2.Count >= var1) {
                   break;
                }
             }
          } finally {
             if (var5 != null) {
-               var5.close();
+               var5.Close();
             }
 
          }
@@ -254,7 +254,7 @@ abstract class fX {
             var6.h(var1);
          } finally {
             if (var6 != null) {
-               var6.close();
+               var6.Close();
             }
 
          }
@@ -277,14 +277,14 @@ abstract class fX {
          Stream var7 = this.getOutputStream();
 
          try {
-            var7.write(var28);
+            var7.Write(var28);
             if (var2) {
-               var7.flush();
-               var7.write(0);
+               var7.Flush();
+               var7.Write(0);
             }
          } finally {
             if (var7 != null) {
-               var7.close();
+               var7.Close();
             }
 
          }
@@ -299,7 +299,7 @@ abstract class fX {
       }
 
       this.mZ.ak((int)this.mY.length());
-      this.mZ.write();
+      this.mZ.Write();
       this.mO.timestamp = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
       this.mO.mW = this.mY.length() + this.mZ.length();
       fT.e(this.mN);
@@ -307,9 +307,9 @@ abstract class fX {
 
    void a(string var1, fn var2) {
       Dictionary<string, string> var3 = new Dictionary<string, string>();
-      var3.setProperty("MetaFile", this.mZ.getName());
-      var3.setProperty("DataFile", this.mY.getName());
-      var3.setProperty("ContainerFile", this.mX.getName());
+      var3.setProperty("MetaFile", this.mZ.Name);
+      var3.setProperty("DataFile", this.mY.Name);
+      var3.setProperty("ContainerFile", this.mX.Name);
       if (var2 != null) {
          var3.setProperty("GameMode", var2.name());
       }
@@ -320,10 +320,10 @@ abstract class fX {
       ZipOutputStream var6 = new ZipOutputStream(new FileStream(var5));
 
       try {
-         ZipEntry var8 = new ZipEntry(this.mZ.getName());
+         ZipEntry var8 = new ZipEntry(this.mZ.Name);
          var6.putNextEntry(var8);
-         var6.write(this.mZ.co());
-         var8 = new ZipEntry(this.mY.getName());
+         var6.Write(this.mZ.co());
+         var8 = new ZipEntry(this.mY.Name);
          var6.putNextEntry(var8);
          byte[] var9 = new byte[1024];
          FileStream var10 = new FileStream(this.mY);
@@ -331,29 +331,29 @@ abstract class fX {
          int var7;
          try {
             while((var7 = var10.read(var9)) > 0) {
-               var6.write(var9, 0, var7);
+               var6.Write(var9, 0, var7);
             }
          } finally {
-            var10.close();
+            var10.Close();
          }
 
-         var8 = new ZipEntry(this.mX.getName());
+         var8 = new ZipEntry(this.mX.Name);
          var6.putNextEntry(var8);
          var10 = new FileStream(this.mX);
 
          try {
             while((var7 = var10.read(var9)) > 0) {
-               var6.write(var9, 0, var7);
+               var6.Write(var9, 0, var7);
             }
          } finally {
-            var10.close();
+            var10.Close();
          }
 
          var8 = new ZipEntry("saveinfo.txt");
          var6.putNextEntry(var8);
          var3.store(var6, "");
       } finally {
-         var6.close();
+         var6.Close();
       }
 
       var5.setLastModified(this.mO.timestamp);

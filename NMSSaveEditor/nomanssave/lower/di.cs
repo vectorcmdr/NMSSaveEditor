@@ -15,7 +15,7 @@ class di : EventHandler {
    }
 
    public void actionPerformed(EventArgs var1) {
-      this.gW.setVisible(false);
+      this.gW.Hide();
    }
 }
 

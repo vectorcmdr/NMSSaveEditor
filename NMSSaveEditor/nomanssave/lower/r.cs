@@ -20,10 +20,10 @@ class r : EventHandler {
 
       for(int var4 = 0; var4 < var2.Length; ++var4) {
          int var3 = p.b(this.I).convertRowIndexToModel(var2[var4]);
-         p.c(this.I).Add((string)p.b(this.I).getModel().getValueAt(var3, 3));
+         p.c(this.I).Add((string)p.b(this.I).DataSource.getValueAt(var3, 3));
       }
 
-      this.I.setVisible(false);
+      this.I.Hide();
    }
 }
 

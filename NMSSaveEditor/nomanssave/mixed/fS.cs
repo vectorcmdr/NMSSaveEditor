@@ -34,7 +34,7 @@ public class fS {
             this.read(var3);
          } finally {
             if (var3 != null) {
-               var3.close();
+               var3.Close();
             }
 
          }
@@ -109,10 +109,10 @@ public class fS {
          FileStream var3 = new FileStream(this.mh);
 
          try {
-            this.write(var3);
+            this.Write(var3);
          } finally {
             if (var3 != null) {
-               var3.close();
+               var3.Close();
             }
 
          }
@@ -134,7 +134,7 @@ public class fS {
       hk.b(var1, this.my);
       if (this.mB != null) {
          hk.a(var1, this.mz);
-         var1.write(this.mB);
+         var1.Write(this.mB);
       } else {
          hk.a(var1, this.mA);
          gc.c(var1, this.name);
@@ -146,7 +146,7 @@ public class fS {
 
    byte[] co() {
       MemoryStream var1 = new MemoryStream();
-      this.write(var1);
+      this.Write(var1);
       return var1.toByteArray();
    }
 
@@ -205,7 +205,7 @@ public class fS {
    }
 
    string getName() {
-      return this.mh.getName();
+      return this.mh.Name;
    }
 
    long length() {

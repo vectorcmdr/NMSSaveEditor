@@ -25,17 +25,17 @@ public class X : Panel {
 
    X(Application var1) {
       TableLayoutPanel var2 = new TableLayoutPanel(1, 3);
-      this.setLayout(var2);
+      this.LayoutEnginevar2);
       ba var3 = new ba(new int[]{aH.cJ, 0});
       this.Add(var3);
       this.Add(new Panel());
       this.Add(new Panel());
       this.bG = new ComboBox();
-      this.bG.setModel(new Y(this));
+      this.bG.DataSource = (new Y(this));
       var3.a("Companion", true, this.bG);
       this.bH = new ComboBox();
-      this.bH.setModel(new ab(this));
-      this.bH.setEnabled(false);
+      this.bH.DataSource = (new ab(this));
+      this.bH.Enabled = (false);
       var3.a("Type", (Control)this.bH);
       this.bI = new ac(this);
       var3.a("Name", (Control)this.bI);
@@ -48,21 +48,21 @@ public class X : Panel {
       this.bM = new ag(this);
       var3.a("Genus Seed", (Control)this.bM);
       this.bN = new CheckBox("Predator");
-      this.bN.setEnabled(false);
-      this.bN.addActionListener(new ah(this));
+      this.bN.Enabled = (false);
+      this.bN.Click += (new ah(this));
       var3.a((string)null, (Control)this.bN);
-      this.bO = new cN(gi.class);
-      this.bO.a((var1x) -> {
-         gj var2 = (gj)this.bG.getSelectedItem();
+      this.bO = new cN(typeof(gi));
+      this.bO.a((var1x) => {
+         gj var2 = (gj)this.bG.SelectedItem;
          if (var2 != null) {
             var2.ae(var1x);
          }
 
       });
       var3.a("Biome", (Control)this.bO);
-      this.bP = new cN(gk.class);
-      this.bP.a((var1x) -> {
-         gj var2 = (gj)this.bG.getSelectedItem();
+      this.bP = new cN(typeof(gk));
+      this.bP.a((var1x) => {
+         gj var2 = (gj)this.bG.SelectedItem;
          if (var2 != null) {
             var2.af(var1x);
          }
@@ -72,13 +72,13 @@ public class X : Panel {
       var3.Y();
       Panel var4 = new Panel();
       this.bQ = new Button("Delete");
-      this.bQ.addActionListener(new ai(this, var1));
+      this.bQ.Click += (new ai(this, var1));
       var4.Add(this.bQ);
       this.bR = new Button("Export");
-      this.bR.addActionListener(new Z(this, var1));
+      this.bR.Click += (new Z(this, var1));
       var4.Add(this.bR);
       this.bS = new Button("Import");
-      this.bS.addActionListener(new aa(this, var1));
+      this.bS.Click += (new aa(this, var1));
       var4.Add(this.bS);
       var3.a(var4);
    }
@@ -86,12 +86,12 @@ public class X : Panel {
    void a(gj[] var1) {
       this.bT = var1;
       if (var1.Length == 0) {
-         this.bG.setSelectedIndex(-1);
+         this.bG.SelectedIndex = (-1);
       } else {
-         this.bG.setSelectedIndex(0);
+         this.bG.SelectedIndex = (0);
       }
 
-      this.bG.updateUI();
+      this.bG.Refresh();
    }
    static gj[] a(X var0) {
       return var0.bT;

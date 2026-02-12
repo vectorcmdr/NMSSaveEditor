@@ -22,7 +22,7 @@ public class hl {
       long var1 = 0L;
 
       for(int var4 = 0; var4 < var0.length(); ++var4) {
-         char var3 = var0.charAt(var4);
+         char var3 = var0[var4);
          var1 <<= 4;
          if (var3 >= 'A' && var3 <= 'F') {
             var1 |= (long)(var3 - 55);
@@ -55,7 +55,7 @@ public class hl {
    public static hl e(string var0, int var1) {
       Matcher var2;
       long var3;
-      if ((var2 = sP.matcher(var0)).matches()) {
+      if ((var2 = sP.matcher(var0)).Matches()) {
          var3 = aE(var2.group(1)) - 2047L;
          if (var3 > 2047L) {
             throw new Exception("Invalid galactic coordinates");
@@ -77,7 +77,7 @@ public class hl {
                }
             }
          }
-      } else if (sO.matcher(var0).matches()) {
+      } else if (sO.matcher(var0).Matches()) {
          var3 = aE(var0);
          int var5 = b(var3 >> 44, 4);
          int var6 = b(var3 >> 32, 12);
@@ -99,7 +99,7 @@ public class hl {
       } else if (var0 is string) {
          string var5 = (string)var0;
          Matcher var2;
-         if ((var2 = sN.matcher(var5)).matches()) {
+         if ((var2 = sN.matcher(var5)).Matches()) {
             long var3 = aE(var2.group(1));
             return new hl(var3);
          } else {
@@ -226,29 +226,29 @@ public class hl {
 
    public string ey() {
       StringBuilder var1 = new StringBuilder();
-      var1.append(Integer.toString(this.sQ & 15, 16));
-      var1.append(Integer.toString(this.sR & 4095, 16));
+      var1.Append(Integer.toString(this.sQ & 15, 16));
+      var1.Append(Integer.toString(this.sR & 4095, 16));
 
       while(var1.length() < 4) {
-         var1.insert(1, '0');
+         var1.Insert(1, '0');
       }
 
-      var1.append(Integer.toString(this.sT & 255, 16));
+      var1.Append(Integer.toString(this.sT & 255, 16));
 
       while(var1.length() < 6) {
-         var1.insert(4, '0');
+         var1.Insert(4, '0');
       }
 
-      var1.append(Integer.toString(this.sU & 4095, 16));
+      var1.Append(Integer.toString(this.sU & 4095, 16));
 
       while(var1.length() < 9) {
-         var1.insert(6, '0');
+         var1.Insert(6, '0');
       }
 
-      var1.append(Integer.toString(this.sV & 4095, 16));
+      var1.Append(Integer.toString(this.sV & 4095, 16));
 
       while(var1.length() < 12) {
-         var1.insert(9, '0');
+         var1.Insert(9, '0');
       }
 
       return var1.ToString().ToUpper();
@@ -256,31 +256,31 @@ public class hl {
 
    public string ez() {
       StringBuilder var1 = new StringBuilder();
-      var1.append(Integer.toString(this.sV + 2047, 16));
+      var1.Append(Integer.toString(this.sV + 2047, 16));
 
       while(var1.length() < 4) {
-         var1.insert(0, '0');
+         var1.Insert(0, '0');
       }
 
-      var1.append(':');
-      var1.append(Integer.toString(this.sT + 127, 16));
+      var1.Append(':');
+      var1.Append(Integer.toString(this.sT + 127, 16));
 
       while(var1.length() < 9) {
-         var1.insert(5, '0');
+         var1.Insert(5, '0');
       }
 
-      var1.append(':');
-      var1.append(Integer.toString(this.sU + 2047, 16));
+      var1.Append(':');
+      var1.Append(Integer.toString(this.sU + 2047, 16));
 
       while(var1.length() < 14) {
-         var1.insert(10, '0');
+         var1.Insert(10, '0');
       }
 
-      var1.append(':');
-      var1.append(Integer.toString(this.sQ << 12 | this.sR, 16));
+      var1.Append(':');
+      var1.Append(Integer.toString(this.sQ << 12 | this.sR, 16));
 
       while(var1.length() < 19) {
-         var1.insert(15, '0');
+         var1.Insert(15, '0');
       }
 
       return var1.ToString().ToUpper();

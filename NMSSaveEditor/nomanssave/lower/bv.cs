@@ -17,10 +17,10 @@ class bv : G {
          return "";
       } else {
          var1 = var1.Trim();
-         if (!var1.equals(bl.c(this.er)[bl.b(this.er)].getName())) {
+         if (!var1.Equals(bl.c(this.er)[bl.b(this.er)].Name)) {
             bl.c(this.er)[bl.b(this.er)].setName(var1);
-            bl.j(this.er).setText(var1);
-            bl.e(this.er).updateUI();
+            bl.j(this.er).Text = (var1);
+            bl.e(this.er).Refresh();
          }
 
          return var1;

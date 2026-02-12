@@ -45,7 +45,7 @@ public class gM {
    }
 
    public gy ed() {
-      return gy.as(this.rI.getValueAsString("NPCResource.Filename"));
+      return gy.@as(this.rI.getValueAsString("NPCResource.Filename"));
    }
 
    public void a(gy var1) {
@@ -103,7 +103,7 @@ public class gM {
    }
 
    public string toString() {
-      return this.isEnabled() ? (this.isValid() ? "Wingman " + this.index : "EMPTY") : "LOCKED";
+      return this.Enabled ? (this.isValid() ? "Wingman " + this.index : "EMPTY") : "LOCKED";
    }
 }
 

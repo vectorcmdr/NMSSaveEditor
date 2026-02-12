@@ -10,7 +10,7 @@ namespace NMSSaveEditor
 
 class ec : ba {
    private int index;
-   private CheckBox if;
+   private CheckBox @if;
    private ComboBox ig;
    private G bj;
    private ComboBox ih;
@@ -23,17 +23,17 @@ class ec : ba {
       this.ij = var1;
       this.index = var2;
       this.k("Wingman " + (var2 + 1));
-      this.if = new CheckBox("Enabled");
-      this.if.addActionListener(new ed(this, var2));
-      this.a((string)null, this.if);
+      this.@if = new CheckBox("Enabled");
+      this.@if.Click += (new ed(this, var2));
+      this.a((string)null, this.@if);
       this.setBorder(new LineBorder(Color.DARK_GRAY));
       this.ig = new ComboBox();
-      this.ig.setModel(new ee(this, var2));
+      this.ig.DataSource = (new ee(this, var2));
       this.a("NPC Race", this.ig);
       this.bj = new ef(this, var2);
       this.a("NPC Seed", this.bj);
       this.ih = new ComboBox();
-      this.ih.setModel(new eg(this, var2));
+      this.ih.DataSource = (new eg(this, var2));
       this.a("Ship Type", this.ih);
       this.hO = new eh(this, var2);
       this.a("Ship Seed", this.hO);
@@ -42,17 +42,17 @@ class ec : ba {
    }
 
    private void aQ() {
-      this.if.setSelected(eb.a(this.ij)[this.index].isEnabled());
-      this.ig.setEnabled(eb.a(this.ij)[this.index].isEnabled());
-      this.ig.setSelectedItem(eb.a(this.ij)[this.index].ed());
-      this.bj.setEnabled(eb.a(this.ij)[this.index].isEnabled());
-      this.bj.setText(eb.a(this.ij)[this.index].ee());
-      this.ih.setEnabled(eb.a(this.ij)[this.index].isEnabled());
-      this.ih.setSelectedItem(eb.a(this.ij)[this.index].ef());
-      this.hO.setEnabled(eb.a(this.ij)[this.index].isEnabled());
-      this.hO.setText(eb.a(this.ij)[this.index].eg());
-      this.ii.setEnabled(eb.a(this.ij)[this.index].isEnabled());
-      this.ii.setText(Integer.toString(eb.a(this.ij)[this.index].eh()));
+      this.@if.Checked = (eb.a(this.ij)[this.index].Enabled);
+      this.ig.Enabled = (eb.a(this.ij)[this.index].Enabled);
+      this.ig.SelectedItem = (eb.a(this.ij)[this.index].ed());
+      this.bj.Enabled = (eb.a(this.ij)[this.index].Enabled);
+      this.bj.Text = (eb.a(this.ij)[this.index].ee());
+      this.ih.Enabled = (eb.a(this.ij)[this.index].Enabled);
+      this.ih.SelectedItem = (eb.a(this.ij)[this.index].ef());
+      this.hO.Enabled = (eb.a(this.ij)[this.index].Enabled);
+      this.hO.Text = (eb.a(this.ij)[this.index].eg());
+      this.ii.Enabled = (eb.a(this.ij)[this.index].Enabled);
+      this.ii.Text = (Integer.toString(eb.a(this.ij)[this.index].eh()));
    }
    static CheckBox a(ec var0) {
       return var0.if;

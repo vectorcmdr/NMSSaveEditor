@@ -7,10 +7,9 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
-class as : EventHandler {
+class @as : EventHandler {
    ap cu;
-
-   as(ap var1) {
+   @as(ap var1) {
       this.cu = var1;
    }
 
@@ -27,7 +26,7 @@ class as : EventHandler {
 
       if (var3) {
          ap.b(this.cu).sort();
-         ap.c(this.cu).updateUI();
+         ap.c(this.cu).Refresh();
       }
 
    }

@@ -12,12 +12,12 @@ class aC : CheckBox, TableCellRenderer {
 
    public Component getTableCellRendererComponent(DataGridView var1, Object var2, bool var3, bool var4, int var5, int var6) {
       var5 = var1.convertRowIndexToModel(var5);
-      if (!var1.getModel().isCellEditable(var5, var6)) {
+      if (!var1.DataSource.isCellEditable(var5, var6)) {
          return this.cv;
       } else {
          this.setBackground(var1.getBackground());
          this.setHorizontalAlignment(0);
-         this.setSelected(Boolean.TRUE == var2);
+         this.Checked = (Boolean.TRUE == var2);
          return this;
       }
    }

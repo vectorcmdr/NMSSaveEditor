@@ -20,7 +20,7 @@ class J : object {
    }
 
    public gh o(int var1) {
-      return I.a(this.bt) == null ? null : (gh)I.a(this.bt).cD().get(var1);
+      return I.a(this.bt) == null ? null : (gh)I.a(this.bt).cD()[(var1);
    }
 
    public void addListDataListener(EventHandler var1) {
@@ -32,14 +32,14 @@ class J : object {
    public void setSelectedItem(Object var1) {
       this.bs = (gh)var1;
       if (this.bs == null) {
-         I.b(this.bt).setText("");
-         I.c(this.bt).setText("");
-         I.c(this.bt).setEnabled(false);
+         I.b(this.bt).Text = ("");
+         I.c(this.bt).Text = ("");
+         I.c(this.bt).Enabled = (false);
       } else {
          gy var2 = this.bs.cJ();
-         I.b(this.bt).setText(var2 == null ? "" : var2.ToString());
-         I.c(this.bt).setText(this.bs.cK());
-         I.c(this.bt).setEnabled(true);
+         I.b(this.bt).Text = (var2 == null ? "" : var2.ToString());
+         I.c(this.bt).Text = (this.bs.cK());
+         I.c(this.bt).Enabled = (true);
       }
 
    }

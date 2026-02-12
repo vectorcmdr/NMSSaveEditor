@@ -17,7 +17,7 @@ public class eP : ey {
    string kc;
    int kd;
    string description;
-   List ke;
+   List<object> ke;
 
    eP(Element var1) {
       base(var1.getAttribute("id"));
@@ -42,9 +42,9 @@ public class eP : ey {
          Node var4 = var3.item(var6);
          if (var4 is Element) {
             var1 = (Element)var4;
-            if (var1.getNodeName().equals("description")) {
+            if (var1.getNodeName().Equals("description")) {
                var2 = a(var1);
-            } else if (var1.getNodeName().equals("requirement")) {
+            } else if (var1.getNodeName().Equals("requirement")) {
                var5.Add(new ez(this, var1));
             }
          }
@@ -102,7 +102,7 @@ public class eP : ey {
       return this.description;
    }
 
-   public List bk() {
+   public List<object> bk() {
       return this.ke;
    }
 

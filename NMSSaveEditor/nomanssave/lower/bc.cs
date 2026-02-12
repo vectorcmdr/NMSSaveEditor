@@ -19,7 +19,7 @@ class bc : EventHandler {
    }
 
    public void propertyChange(EventArgs var1) {
-      this.dD.setEnabled(this.dC.isEnabled());
+      this.dD.Enabled = (this.dC.Enabled);
    }
 }
 

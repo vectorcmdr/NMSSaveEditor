@@ -18,7 +18,7 @@ public class eH : ey {
    string kc;
    int kd;
    string description;
-   List ke;
+   List<object> ke;
 
    eH(Element var1, bool var2) {
       base(var1.getAttribute("id"));
@@ -49,9 +49,9 @@ public class eH : ey {
          Node var5 = var4.item(var7);
          if (var5 is Element) {
             var1 = (Element)var5;
-            if (var1.getNodeName().equals("description")) {
+            if (var1.getNodeName().Equals("description")) {
                var3 = a(var1);
-            } else if (var1.getNodeName().equals("requirement")) {
+            } else if (var1.getNodeName().Equals("requirement")) {
                var6.Add(new ez(this, var1));
             }
          }
@@ -109,7 +109,7 @@ public class eH : ey {
       return this.description;
    }
 
-   public List bk() {
+   public List<object> bk() {
       return this.ke;
    }
 

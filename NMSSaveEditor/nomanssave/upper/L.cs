@@ -20,7 +20,7 @@ class L : object {
    }
 
    public gf p(int var1) {
-      return I.a(this.bt) == null ? null : (gf)I.a(this.bt).cE().get(var1);
+      return I.a(this.bt) == null ? null : (gf)I.a(this.bt).cE()[(var1);
    }
 
    public void addListDataListener(EventHandler var1) {
@@ -32,19 +32,19 @@ class L : object {
    public void setSelectedItem(Object var1) {
       this.bu = (gf)var1;
       if (this.bu == null) {
-         I.e(this.bt).setText("");
-         I.f(this.bt).setText("");
-         I.f(this.bt).setEnabled(false);
-         I.g(this.bt).setEnabled(false);
-         I.h(this.bt).setEnabled(false);
-         I.i(this.bt).setEnabled(false);
+         I.e(this.bt).Text = ("");
+         I.f(this.bt).Text = ("");
+         I.f(this.bt).Enabled = (false);
+         I.g(this.bt).Enabled = (false);
+         I.h(this.bt).Enabled = (false);
+         I.i(this.bt).Enabled = (false);
       } else {
-         I.e(this.bt).setText(Integer.toString(this.bu.cG()));
-         I.f(this.bt).setText(this.bu.getName());
-         I.f(this.bt).setEnabled(true);
-         I.g(this.bt).setEnabled(true);
-         I.h(this.bt).setEnabled(true);
-         I.i(this.bt).setEnabled(true);
+         I.e(this.bt).Text = (Integer.toString(this.bu.cG()));
+         I.f(this.bt).Text = (this.bu.Name);
+         I.f(this.bt).Enabled = (true);
+         I.g(this.bt).Enabled = (true);
+         I.h(this.bt).Enabled = (true);
+         I.i(this.bt).Enabled = (true);
       }
 
    }

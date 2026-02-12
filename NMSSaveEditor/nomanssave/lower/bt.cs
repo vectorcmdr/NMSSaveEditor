@@ -16,7 +16,7 @@ class bt : EventHandler {
    }
 
    public void valueChanged(EventArgs var1) {
-      System.Windows.Forms.Application.invokeLater(new bu(this, this.bv));
+      System.Windows.Forms.Application.Run(new bu(this, this.bv));
    }
    static bl a(bt var0) {
       return var0.er;

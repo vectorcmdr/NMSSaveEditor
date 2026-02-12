@@ -32,27 +32,27 @@ class bw : object {
       this.et = (gr)var1;
       bl.a(this.er, bl.b(this.er) < 0 ? null : nomanssave.er.a(this.et));
       bl.b(this.er, bl.b(this.er) < 0 ? null : nomanssave.er.b(this.et));
-      if (bl.b(this.er) >= 0 && this.et != null && !this.et.equals(bl.c(this.er)[bl.b(this.er)].da())) {
+      if (bl.b(this.er) >= 0 && this.et != null && !this.et.Equals(bl.c(this.er)[bl.b(this.er)].da())) {
          bl.c(this.er)[bl.b(this.er)].c(this.et);
          if (bl.a(this.er) != null && bl.a(this.er).Length > 0) {
             bl.c(this.er)[bl.b(this.er)].a(0, bl.a(this.er)[0]);
-            bl.p(this.er).setSelectedItem(bl.a(this.er)[0]);
+            bl.p(this.er).SelectedItem = (bl.a(this.er)[0]);
          } else {
-            bl.p(this.er).setSelectedItem((Object)null);
+            bl.p(this.er).SelectedItem = ((Object)null);
          }
 
-         bl.q(this.er).setSelectedItem((Object)null);
-         bl.r(this.er).setSelectedItem((Object)null);
-         bl.s(this.er).setSelectedItem((Object)null);
-         bl.t(this.er).setSelectedItem((Object)null);
+         bl.q(this.er).SelectedItem = ((Object)null);
+         bl.r(this.er).SelectedItem = ((Object)null);
+         bl.s(this.er).SelectedItem = ((Object)null);
+         bl.t(this.er).SelectedItem = ((Object)null);
       }
 
-      bl.e(this.er).updateUI();
-      bl.p(this.er).updateUI();
-      bl.q(this.er).updateUI();
-      bl.r(this.er).updateUI();
-      bl.s(this.er).updateUI();
-      bl.t(this.er).updateUI();
+      bl.e(this.er).Refresh();
+      bl.p(this.er).Refresh();
+      bl.q(this.er).Refresh();
+      bl.r(this.er).Refresh();
+      bl.s(this.er).Refresh();
+      bl.t(this.er).Refresh();
    }
 
    public Object getSelectedItem() {

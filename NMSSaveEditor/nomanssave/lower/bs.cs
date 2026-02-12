@@ -17,7 +17,7 @@ class bs : object {
    }
 
    public Class getColumnClass(int var1) {
-      return string.class;
+      return typeof(string);
    }
 
    public int getColumnCount() {

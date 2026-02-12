@@ -46,7 +46,7 @@ public class fJ : fq {
    }
 
    public void X(string var1) {
-      if (var1.equals("accountdata.hg")) {
+      if (var1.Equals("accountdata.hg")) {
          try {
             this.mr = new fK(this);
             hc.info("Account data reloaded from storage.");
@@ -62,7 +62,7 @@ public class fJ : fq {
       }
 
       Matcher var2 = lV.matcher(var1);
-      if (var2.matches()) {
+      if (var2.Matches()) {
          int var3 = var2.group(1).length() == 0 ? 0 : int.Parse(var2.group(1)) - 1;
 
          try {
@@ -101,7 +101,7 @@ public class fJ : fq {
 
    public int W(string var1) {
       Matcher var2 = lV.matcher(var1);
-      if (!var2.matches()) {
+      if (!var2.Matches()) {
          return -1;
       } else {
          int var3 = var2.group(1).length() == 0 ? 0 : int.Parse(var2.group(1)) - 1;
@@ -143,8 +143,8 @@ public class fJ : fq {
 
    private static byte[] c(byte[] var0, byte[] var1) {
       MemoryStream var2 = new MemoryStream();
-      var2.write(var0, 0, var0.Length);
-      var2.write(var1, 0, var1.Length);
+      var2.Write(var0, 0, var0.Length);
+      var2.Write(var1, 0, var1.Length);
       long[] var3 = new long[]{96176015842230784L, -8446744073709551617L};
       hh.a(var2.toByteArray(), var3);
       long[] var4 = new long[]{var3[0] & 4294967295L, var3[0] >>> 32 & 4294967295L, var3[1] & 4294967295L, var3[1] >>> 32 & 4294967295L};

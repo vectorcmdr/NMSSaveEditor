@@ -18,7 +18,7 @@ class bg : G {
       } else {
          try {
             var1 = hg.aB(var1).ToString();
-            if (!var1.equals(bd.a(this.dP).cV())) {
+            if (!var1.Equals(bd.a(this.dP).cV())) {
                bd.a(this.dP).ai(var1);
             }
 

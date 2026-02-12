@@ -10,7 +10,7 @@ namespace NMSSaveEditor
 public class gH {
    private int index;
    private eY rp;
-   private List gT;
+   private List<object> gT;
 
    public static gH[] C(eY var0) {
       eV var1 = var0.d("ShipOwnership");
@@ -24,7 +24,7 @@ public class gH {
             }
          }
 
-         return (gH[])var2.toArray(new gH[0]);
+         return (gH[])var2.ToArray(new gH[0]);
       } else {
          return new gH[0];
       }
@@ -62,7 +62,7 @@ public class gH {
                   }
                } finally {
                   if (var7 != null) {
-                     var7.close();
+                     var7.Close();
                   }
 
                }
@@ -95,8 +95,8 @@ public class gH {
    }
 
    private static Function a(gH var0, string[] var1) {
-      return (var2) -> {
-         string var3 = var0.getName();
+      return (var2) => {
+         string var3 = var0.Name;
          if (var3 == null || var3.length() == 0) {
             var3 = "Ship [" + var0.index + "]";
          }
@@ -160,7 +160,7 @@ public class gH {
                eY var9;
                for(var8 = 0; var8 < var7.Count; ++var8) {
                   var9 = var7.V(var8);
-                  if (!var9.getValueAsString("Type.InventoryType").equals("Technology")) {
+                  if (!var9.getValueAsString("Type.InventoryType").Equals("Technology")) {
                      var7.ac(var8--);
                   }
                }
@@ -169,7 +169,7 @@ public class gH {
 
                for(var8 = 0; var8 < var7.Count; ++var8) {
                   var9 = var7.V(var8);
-                  if (!var9.getValueAsString("Type.InventoryType").equals("Technology")) {
+                  if (!var9.getValueAsString("Type.InventoryType").Equals("Technology")) {
                      var7.ac(var8--);
                   }
                }
@@ -178,7 +178,7 @@ public class gH {
             var5.h(var6);
          } finally {
             if (var5 != null) {
-               var5.close();
+               var5.Close();
             }
 
          }
@@ -222,7 +222,7 @@ public class gH {
    public void ag(string var1) {
       this.rp.b("Resource.Filename", (Object)var1);
       gL var2 = gL.aw(var1);
-      this.gT.stream().forEach((var1x) -> {
+      this.gT.stream().forEach((var1x) => {
          var1x.az(var2 == null ? 4 : var2.ea());
       });
       if (var2 == gL.rx) {
@@ -270,22 +270,22 @@ public class gH {
 
    }
 
-   public List cC() {
+   public List<object> cC() {
       return this.gT;
    }
 
    private double ak(string var1) {
-      return ((gt)this.gT.get(0)).ak(var1);
+      return ((gt)this.gT[(0)).ak(var1);
    }
 
    private void d(string var1, double var2) {
-      this.gT.stream().forEach((var3) -> {
+      this.gT.stream().forEach((var3) => {
          var3.d(var1, var2);
       });
    }
 
    private void av(string var1) {
-      this.gT.stream().forEach((var1x) -> {
+      this.gT.stream().forEach((var1x) => {
          var1x.ap(var1);
       });
    }
@@ -323,7 +323,7 @@ public class gH {
    }
 
    public string toString() {
-      string var1 = this.getName();
+      string var1 = this.Name;
       if (var1 != null && var1.length() != 0) {
          return var1;
       } else {

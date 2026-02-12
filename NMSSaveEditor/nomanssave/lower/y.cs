@@ -25,9 +25,9 @@ class y : Runnable {
          MessageBox.showOptionDialog(Application.h(x.a(this.bb)), var1, "New Version Available", 0, 1, (Icon)null, new Object[]{"OK"}, (Object)null);
       } else {
          var1 = var1 + "Would you like to download and install? (will require app restart)";
-         int var2 = MessageBox.showConfirmDialog(Application.h(x.a(this.bb)), var1, "New Version Available", 0);
+         int var2 = MessageBox.Show(Application.h(x.a(this.bb)), var1, "New Version Available", 0);
          if (var2 == 0) {
-            Application.h(x.a(this.bb)).dispose();
+            Application.h(x.a(this.bb)).Dispose();
             hc.info("Starting download...");
             File var3 = new File("~NMSSaveEditor.dl");
 
@@ -41,22 +41,22 @@ class y : Runnable {
                try {
                   int var10;
                   for(byte[] var9 = new byte[4096]; (var10 = var7.read(var9)) > 0; var6 -= var10) {
-                     var8.write(var9, 0, var10);
+                     var8.Write(var9, 0, var10);
                   }
 
                   if (var6 != 0) {
                      throw new IOException("invalid file size");
                   }
                } finally {
-                  var8.close();
+                  var8.Close();
                }
 
                hc.info("Restarting editor...");
-               System.exit(2);
+               Environment.Exit(2);
             } catch (IOException var15) {
                var15.printStackTrace();
-               var3.delete();
-               System.exit(1);
+               var3.Delete();
+               Environment.Exit(1);
             }
          }
       }

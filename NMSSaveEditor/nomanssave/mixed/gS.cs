@@ -28,7 +28,7 @@ public class gS {
       a(var0, Collections.emptyMap(), var1);
    }
 
-   public static void a(eY var0, Map var1, File var2) {
+   public static void a(eY var0, Dictionary<object, object> var1, File var2) {
       int var3 = var0.J("BaseVersion");
       eV var4 = var0.d("Objects").bA();
       if (var3 < 3) {
@@ -57,32 +57,32 @@ public class gS {
       Object var22 = new FileStream(var2);
 
       try {
-         ((Stream)var22).write(lA);
-         ((Stream)var22).write(new byte[]{0, 5, 0, 0});
-         ((Stream)var22).write(var19);
+         ((Stream)var22).Write(lA);
+         ((Stream)var22).Write(new byte[]{0, 5, 0, 0});
+         ((Stream)var22).Write(var19);
          var22 = new CipherOutputStream((Stream)var22, var21);
-         ((Stream)var22).write(new byte[]{84, 82, 85, 69});
+         ((Stream)var22).Write(new byte[]{84, 82, 85, 69});
          hk.a((Stream)var22, var17);
          byte[] var23 = fj.b(var4);
          hk.a((Stream)var22, var23.Length);
-         ((Stream)var22).write(var23);
-         IEnumerator var13 = var1.entrySet().iterator();
+         ((Stream)var22).Write(var23);
+         IEnumerator var13 = var1.entrySet().GetEnumerator();
 
-         while(var13.hasNext()) {
-            Entry var24 = (Entry)var13.next();
+         while(var13.MoveNext()) {
+            Entry var24 = (Entry)var13.Current;
             var23 = ((string)var24.getKey()).GetBytes();
             if (var23.Length <= 255) {
-               ((Stream)var22).write(var23.Length);
-               ((Stream)var22).write(var23);
+               ((Stream)var22).Write(var23.Length);
+               ((Stream)var22).Write(var23);
                var23 = fj.j(var24.getValue());
                hk.a((Stream)var22, var23.Length);
-               ((Stream)var22).write(var23);
+               ((Stream)var22).Write(var23);
             }
          }
 
-         ((Stream)var22).flush();
+         ((Stream)var22).Flush();
       } finally {
-         ((Stream)var22).close();
+         ((Stream)var22).Close();
       }
    }
 
@@ -90,7 +90,7 @@ public class gS {
       b(var0, Collections.emptyMap(), var1);
    }
 
-   public static void b(eY var0, Map var1, File var2) {
+   public static void b(eY var0, Dictionary<object, object> var1, File var2) {
       Object var4 = new FileStream(var2);
 
       int var3;
@@ -132,22 +132,22 @@ public class gS {
 
             int var11;
             if (var3 < 5) {
-               if ((var11 = ((Stream)var4).read()) < 0) {
+               if ((var11 = ((Stream)var4).ReadByte()) < 0) {
                   throw new IOException("short read");
                }
 
                int var12;
-               if ((var12 = ((Stream)var4).read()) < 0) {
+               if ((var12 = ((Stream)var4).ReadByte()) < 0) {
                   throw new IOException("short read");
                }
 
                int var13;
-               if ((var13 = ((Stream)var4).read()) < 0) {
+               if ((var13 = ((Stream)var4).ReadByte()) < 0) {
                   throw new IOException("short read");
                }
 
                int var14;
-               if ((var14 = ((Stream)var4).read()) < 0) {
+               if ((var14 = ((Stream)var4).ReadByte()) < 0) {
                   throw new IOException("short read");
                }
 
@@ -157,7 +157,7 @@ public class gS {
 
                int var17;
                while((var17 = ((Stream)var4).read(var16)) >= 0) {
-                  var15.write(var16, 0, var17);
+                  var15.Write(var16, 0, var17);
                }
 
                var5 = ff.c(var15.toByteArray());
@@ -168,7 +168,7 @@ public class gS {
                hk.readFully((Stream)var4, var26);
                var5 = ff.c(var26);
 
-               while((var11 = ((Stream)var4).read()) >= 0) {
+               while((var11 = ((Stream)var4).ReadByte()) >= 0) {
                   var26 = new byte[var11];
                   hk.readFully((Stream)var4, var26);
                   string var28 = new string(var26);
@@ -176,7 +176,7 @@ public class gS {
                   var26 = new byte[var11];
                   hk.readFully((Stream)var4, var26);
                   Object var29 = ff.a(var26);
-                  var1.put(var28, var29);
+                  var1.Put(var28, var29);
                }
             }
             break;
@@ -184,7 +184,7 @@ public class gS {
             throw new IOException("invalid base file");
          }
       } finally {
-         ((Stream)var4).close();
+         ((Stream)var4).Close();
       }
 
       long var21 = var0.K("LastUpdateTimestamp");
@@ -193,7 +193,7 @@ public class gS {
       eY var23;
       for(var22 = 0; var22 < var5.Count; ++var22) {
          var23 = var5.V(var22);
-         var23.put("Timestamp", new Long(var21));
+         var23.Put("Timestamp", new Long(var21));
       }
 
       if (var3 == 3) {
@@ -238,13 +238,13 @@ public class gS {
 
    private static eY a(string var0, long var1, int var3, double[] var4, double[] var5, double[] var6) {
       eY var7 = new eY();
-      var7.put("Timestamp", new Long(var1));
-      var7.put("ObjectID", var0);
-      var7.put("UserData", var3);
-      var7.put("Position", new eV(new Object[]{new Double(var4[0]), new Double(var4[1]), new Double(var4[2])}));
-      var7.put("Up", new eV(new Object[]{new Double(var5[0]), new Double(var5[1]), new Double(var5[2])}));
-      var7.put("At", new eV(new Object[]{new Double(var6[0]), new Double(var6[1]), new Double(var6[2])}));
-      var7.put("Message", "");
+      var7.Put("Timestamp", new Long(var1));
+      var7.Put("ObjectID", var0);
+      var7.Put("UserData", var3);
+      var7.Put("Position", new eV(new Object[]{new Double(var4[0]), new Double(var4[1]), new Double(var4[2])}));
+      var7.Put("Up", new eV(new Object[]{new Double(var5[0]), new Double(var5[1]), new Double(var5[2])}));
+      var7.Put("At", new eV(new Object[]{new Double(var6[0]), new Double(var6[1]), new Double(var6[2])}));
+      var7.Put("Message", "");
       return var7;
    }
 }

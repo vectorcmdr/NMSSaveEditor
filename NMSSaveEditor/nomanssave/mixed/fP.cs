@@ -14,7 +14,7 @@ class fP : IComparer {
    }
 
    public int a(fs var1, fs var2) {
-      long var3 = var2.lastModified() - var1.lastModified();
+      long var3 = var2.LastWriteTimeUtc.Ticks - var1.LastWriteTimeUtc.Ticks;
       if (var3 < -2147483648L) {
          return int.MinValue;
       } else {

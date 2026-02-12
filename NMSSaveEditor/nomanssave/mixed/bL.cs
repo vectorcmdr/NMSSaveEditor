@@ -14,7 +14,7 @@ class bL : TextBox {
    bL(bE var1, bK var2, bool var3) {
       this.ey = var1;
       this.eB = var2;
-      this.setEnabled(var3);
+      this.Enabled = (var3);
       this.addFocusListener(new bM(this, var2));
    }
 
@@ -26,7 +26,7 @@ class bL : TextBox {
          var1 = this.eB.ab();
       }
 
-      this.setText(var1);
+      this.Text = (var1);
    }
    static bE a(bL var0) {
       return var0.ey;

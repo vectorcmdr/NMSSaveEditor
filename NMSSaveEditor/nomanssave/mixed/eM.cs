@@ -14,10 +14,10 @@ public class eM {
    string description;
    bool iE;
    bool jY;
-   private static List kl = new List<object>();
+   private static List<object> kl = new List<object>();
 
-   static {
-      Stream var0 = Application.class.getResourceAsStream("db/settlements.xml");
+   static eM() {
+      Stream var0 = typeof(Application).GetManifestResourceStream("db/settlements.xml");
       if (var0 != null) {
          try {
             Document var1 = XmlDocument.newInstance().newDocumentBuilder().parse(var0);
@@ -26,7 +26,7 @@ public class eM {
 
             for(int var4 = 0; var4 < var3.getLength(); ++var4) {
                Node var5 = var3.item(var4);
-               if (var5 is Element && var5.getNodeName().equals("perk")) {
+               if (var5 is Element && var5.getNodeName().Equals("perk")) {
                   kl.Add(new eM((Element)var5));
                }
             }
@@ -69,9 +69,9 @@ public class eM {
 
    public bool equals(Object var1) {
       if (var1 is string) {
-         return this.jY ? ((string)var1).StartsWith(this.id + "#") : ((string)var1).equals(this.id);
+         return this.jY ? ((string)var1).StartsWith(this.id + "#") : ((string)var1).Equals(this.id);
       } else {
-         return base.equals(var1);
+         return base.Equals(var1);
       }
    }
 
@@ -84,7 +84,7 @@ public class eM {
    }
 
    public static eM S(int var0) {
-      return (eM)kl.get(var0);
+      return (eM)kl[(var0);
    }
 
    public static int w(string var0) {
@@ -93,7 +93,7 @@ public class eM {
 
    public static eM x(string var0) {
       int var1 = kl.IndexOf(new eO(var0));
-      return var1 >= 0 ? (eM)kl.get(var1) : null;
+      return var1 >= 0 ? (eM)kl[(var1) : null;
    }
 }
 

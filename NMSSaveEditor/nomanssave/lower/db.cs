@@ -15,7 +15,7 @@ class db : EventHandler {
    }
 
    public void actionPerformed(EventArgs var1) {
-      this.gR.setVisible(false);
+      this.gR.Hide();
    }
 }
 

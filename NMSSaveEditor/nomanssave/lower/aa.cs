@@ -40,8 +40,8 @@ class aa : EventHandler {
          var4[var3] = var2;
          X.a(this.bV, var4);
          hc.info("Imported " + var2.cL().name().ToLower() + ": " + var2.getIndex());
-         X.k(this.bV).setSelectedIndex(var3);
-         X.k(this.bV).updateUI();
+         X.k(this.bV).SelectedIndex = (var3);
+         X.k(this.bV).Refresh();
       }
 
    }

@@ -13,7 +13,7 @@ class dY : G {
    }
 
    protected string g(string var1) {
-      gH var2 = (gH)dN.p(this.ia).getSelectedItem();
+      gH var2 = (gH)dN.p(this.ia).SelectedItem;
       if (var2 == null) {
          return "";
       } else {

@@ -20,7 +20,7 @@ class cO : object {
    }
 
    public Object getElementAt(int var1) {
-      return var1 < ((Enum[])this.gu.getEnumConstants()).Length ? ((Enum[])this.gu.getEnumConstants())[var1] : cN.a(this.gt).get(var1 - ((Enum[])this.gu.getEnumConstants()).Length);
+      return var1 < ((Enum[])this.gu.getEnumConstants()).Length ? ((Enum[])this.gu.getEnumConstants())[var1] : cN.a(this.gt)[(var1 - ((Enum[])this.gu.getEnumConstants()).Length);
    }
 
    public void addListDataListener(EventHandler var1) {
@@ -33,12 +33,12 @@ class cO : object {
       Object var2 = cN.b(this.gt);
       cN.a(this.gt, var1);
       if (cN.c(this.gt) != null) {
-         Control.invokeLater(() -> {
+         Control.invokeLater(() => {
             if (cN.b(this.gt) == null) {
                if (var2 != null) {
                   cN.c(this.gt).setSelectedValue((string)null);
                }
-            } else if (var2 == null || !cN.b(this.gt).equals(var2)) {
+            } else if (var2 == null || !cN.b(this.gt).Equals(var2)) {
                if (cN.d(this.gt)) {
                   cN.c(this.gt).setSelectedValue(((gD)cN.b(this.gt)).K());
                } else if (cN.b(this.gt) is Enum) {

@@ -18,7 +18,7 @@ class eD : eE {
 
       string var5;
       try {
-         while((var5 = var4.readLine()) != null) {
+         while((var5 = var4.ReadLine()) != null) {
             try {
                if (var5.length() != 0) {
                   int var9 = var5.IndexOf("\t");
@@ -30,13 +30,13 @@ class eD : eE {
                      string var7 = var5.Substring(var9 + 1, var5.length());
                      eF var8;
                      if ((var8 = this.t(var6)) != null) {
-                        if (!var7.equals(var8.name)) {
+                        if (!var7.Equals(var8.name)) {
                            throw new IOException("Mapping error: " + var6);
                         }
 
                         hc.debug("Mapping duplicated: " + var6);
                      } else if ((var8 = this.u(var7)) != null) {
-                        if (!var6.equals(var8.key)) {
+                        if (!var6.Equals(var8.key)) {
                            throw new IOException("Reverse error: " + var7);
                         }
 
@@ -51,13 +51,13 @@ class eD : eE {
             }
          }
       } finally {
-         var4.close();
+         var4.Close();
       }
 
-      IEnumerator var15 = var3.iterator();
+      IEnumerator var15 = var3.GetEnumerator();
 
-      while(var15.hasNext()) {
-         var5 = (string)var15.next();
+      while(var15.MoveNext()) {
+         var5 = (string)var15.Current;
          if (this.t(var5) != null) {
             throw new IOException("Mapping error: " + var5);
          }

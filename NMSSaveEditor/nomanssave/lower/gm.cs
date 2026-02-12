@@ -8,7 +8,7 @@ namespace NMSSaveEditor
 
 public class gm {
    private eY oI;
-   private List gT;
+   private List<object> gT;
    private gn oJ;
 
    public static gm p(eY var0) {
@@ -20,7 +20,7 @@ public class gm {
    }
 
    private static Function a(gm var0, string var1) {
-      return (var1x) -> {
+      return (var1x) => {
          return new string[]{"Freighter", var1};
       };
    }
@@ -72,7 +72,7 @@ public class gm {
 
       for(int var18 = 0; var18 < var15.Count; ++var18) {
          eY var16 = var15.V(var18);
-         if ("FreighterBase".equals(var16.getValueAsString("BaseType.PersistentBaseTypes")) && var16.J("BaseVersion") >= 3) {
+         if ("FreighterBase".Equals(var16.getValueAsString("BaseType.PersistentBaseTypes")) && var16.J("BaseVersion") >= 3) {
             var17 = var16;
             break;
          }
@@ -101,7 +101,7 @@ public class gm {
       eV var1 = this.oI.d("CurrentFreighterHomeSystemSeed");
       if (var1 != null && var1.ab(0)) {
          string var2 = var1.X(1);
-         return "0x0".equals(var2) ? "" : var2;
+         return "0x0".Equals(var2) ? "" : var2;
       } else {
          return "";
       }
@@ -144,16 +144,16 @@ public class gm {
 
    }
 
-   public List cC() {
+   public List<object> cC() {
       return this.gT;
    }
 
    private double ak(string var1) {
-      return ((gt)this.gT.get(0)).ak(var1);
+      return ((gt)this.gT[(0)).ak(var1);
    }
 
    private void d(string var1, double var2) {
-      this.gT.stream().forEach((var3) -> {
+      this.gT.stream().forEach((var3) => {
          var3.d(var1, var2);
       });
    }
@@ -179,7 +179,7 @@ public class gm {
    }
 
    public string toString() {
-      string var1 = this.getName();
+      string var1 = this.Name;
       return var1 != null && var1.length() != 0 ? var1 : "Freighter";
    }
 }

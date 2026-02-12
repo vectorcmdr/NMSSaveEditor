@@ -19,8 +19,8 @@ class bz : EventHandler {
          hc.info("Repairing frigate damage");
          bl.c(this.er)[bl.b(this.er)].aw(0);
          bl.c(this.er)[bl.b(this.er)].ax(0);
-         bl.y(this.er).setText("");
-         bl.z(this.er).setVisible(false);
+         bl.y(this.er).Text = ("");
+         bl.z(this.er).Hide();
       }
    }
 }

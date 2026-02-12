@@ -5,13 +5,14 @@ using System.Text;
 
 namespace NMSSaveEditor
 {
-public enum aI {
-   cN("Light"),
-   cO("Dark"),
-   cP("IntelliJ"),
-   cQ("Darcula"),
-   cR("macOS Light"),
-   cS("macOS Dark");
+public sealed class aI {
+   public static readonly aI cN = new aI("Light");
+   public static readonly aI cO = new aI("Dark");
+   public static readonly aI cP = new aI("IntelliJ");
+   public static readonly aI cQ = new aI("Darcula");
+   public static readonly aI cR = new aI("macOS Light");
+   public static readonly aI cS = new aI("macOS Dark");
+
 
    string cT;
 

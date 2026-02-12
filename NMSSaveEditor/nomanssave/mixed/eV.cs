@@ -22,7 +22,7 @@ public class eV {
       this.values = new Object[10];
    }
 
-   public eV(Object... var1) {
+   public eV(params Object[] var1) {
       this.Length = var1.Length;
       this.values = new Object[var1.Length];
 
@@ -90,7 +90,7 @@ public class eV {
          throw new NullReferenceException();
       } else {
          for(int var2 = 0; var2 < this.Length; ++var2) {
-            if (var1.equals(this.values[var2])) {
+            if (var1.Equals(this.values[var2])) {
                return var2;
             }
          }
@@ -237,7 +237,7 @@ public class eV {
    }
 
    public Object getValue(int var1) {
-      return this.get(var1);
+      return this[(var1);
    }
 
    public eY V(int var1) {

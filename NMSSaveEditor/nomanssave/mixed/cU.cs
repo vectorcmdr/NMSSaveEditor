@@ -15,12 +15,12 @@ class cU : FileView {
    }
 
    public Icon getIcon(File var1) {
-      string var2 = var1.getName();
-      return (Icon)(var2.EndsWith(".sh0") ? cT.as() : base.getIcon(var1));
+      string var2 = var1.Name;
+      return (Icon)(var2.EndsWith(".sh0") ? cT.@as() : base.getIcon(var1));
    }
 
    public string getName(File var1) {
-      string var2 = var1.getName();
+      string var2 = var1.Name;
       return var2.EndsWith(".sh0") ? var2.Substring(0, var2.length() - 4) : var2;
    }
 }

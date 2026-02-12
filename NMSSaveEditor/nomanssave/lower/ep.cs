@@ -13,7 +13,7 @@ public class ep : em {
    private gO[] iy;
 
    ep(Application var1) {
-      this.iw.setModel(new eq(this));
+      this.iw.DataSource = (new eq(this));
       this.a("Vehicle", true, this.iw);
       this.ix = new bO(var1);
       this.b(this.ix);
@@ -46,13 +46,13 @@ public class ep : em {
    void a(gO[] var1) {
       if (var1.Length == 0) {
          this.iy = new gO[0];
-         this.iw.setSelectedIndex(-1);
+         this.iw.SelectedIndex = (-1);
       } else {
          this.iy = var1;
-         this.iw.setSelectedIndex(0);
+         this.iw.SelectedIndex = (0);
       }
 
-      this.iw.updateUI();
+      this.iw.Refresh();
    }
    static gO[] a(ep var0) {
       return var0.iy;

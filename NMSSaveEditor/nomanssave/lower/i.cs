@@ -15,7 +15,7 @@ class i : EventHandler {
    }
 
    public void actionPerformed(EventArgs var1) {
-      string var2 = h.a(this.z).getText();
+      string var2 = h.a(this.z).Text;
       h.a(this.z, ey.b(h.b(this.z), var2));
       h.c(this.z);
       if (h.d(this.z).Count == 0) {

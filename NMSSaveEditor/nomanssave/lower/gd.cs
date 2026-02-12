@@ -8,7 +8,7 @@ namespace NMSSaveEditor
 public enum gd {
    nd,
    ne,
-   nf;
+   nf
 }
 
 }

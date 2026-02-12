@@ -16,10 +16,10 @@ public class er {
    gr iD;
    bool iE;
    final gr[] iF;
-   private static List iG = new List<object>();
+   private static List<object> iG = new List<object>();
 
-   static {
-      Stream var0 = Application.class.getResourceAsStream("db/frigates.xml");
+   static er() {
+      Stream var0 = typeof(Application).GetManifestResourceStream("db/frigates.xml");
       if (var0 != null) {
          try {
             Document var1 = XmlDocument.newInstance().newDocumentBuilder().parse(var0);
@@ -28,7 +28,7 @@ public class er {
 
             for(int var4 = 0; var4 < var3.getLength(); ++var4) {
                Node var5 = var3.item(var4);
-               if (var5 is Element && var5.getNodeName().equals("trait")) {
+               if (var5 is Element && var5.getNodeName().Equals("trait")) {
                   iG.Add(new er((Element)var5));
                }
             }
@@ -73,7 +73,7 @@ public class er {
          }
       }
 
-      return (gr[])var1.toArray(new gr[0]);
+      return (gr[])var1.ToArray(new gr[0]);
    }
 
    public string getID() {
@@ -102,26 +102,26 @@ public class er {
    }
 
    public static er[] a(gr var0) {
-      return (er[])iG.stream().filter((var1) -> {
+      return (er[])iG.stream().filter((var1) => {
          return var1.iD == var0;
-      }).toArray((var0x) -> {
+      }).ToArray((var0x) => {
          return new er[var0x];
       });
    }
 
    public static er[] b(gr var0) {
-      return (er[])iG.stream().filter((var1) -> {
-         return Arrays.stream(var1.iF).anyMatch((var1x) -> {
+      return (er[])iG.stream().filter((var1) => {
+         return Arrays.stream(var1.iF).anyMatch((var1x) => {
             return var1x == var0;
          });
-      }).toArray((var0x) -> {
+      }).ToArray((var0x) => {
          return new er[var0x];
       });
    }
 
    public static er o(string var0) {
       int var1 = iG.IndexOf(new et(var0));
-      return var1 >= 0 ? (er)iG.get(var1) : null;
+      return var1 >= 0 ? (er)iG[(var1) : null;
    }
 }
 

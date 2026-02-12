@@ -5,15 +5,16 @@ using System.Text;
 
 namespace NMSSaveEditor
 {
-public enum gy {
-   qR("Vy’keen", "Warriors", "MODELS/COMMON/PLAYER/PLAYERCHARACTER/NPCVYKEEN.SCENE.MBIN"),
-   qS("Korvax", "Explorers", "MODELS/COMMON/PLAYER/PLAYERCHARACTER/NPCKORVAX.SCENE.MBIN"),
-   qT("Gek", "Traders", "MODELS/COMMON/PLAYER/PLAYERCHARACTER/NPCGEK.SCENE.MBIN"),
-   qU("Fourth Race", (string)null, "MODELS/COMMON/PLAYER/PLAYERCHARACTER/NPCFOURTH.SCENE.MBIN"),
-   qV("Vy’keen (Old)", (string)null, "MODELS/PLANETS/NPCS/WARRIOR/WARRIOR.SCENE.MBIN"),
-   qW("Korvax (Old)", (string)null, "MODELS/PLANETS/NPCS/EXPLORER/EXPLORERIPAD.SCENE.MBIN"),
-   qX("Gek (Old)", (string)null, "MODELS/PLANETS/NPCS/LOWERORDER/LOWERORDER.SCENE.MBIN"),
-   qY("Fourth Race (Old)", (string)null, "MODELS/PLANETS/NPCS/FOURTHRACE/FOURTHRACE.SCENE.MBIN");
+public sealed class gy {
+   public static readonly gy qU = new gy("Fourth Race", (string)null, "MODELS/COMMON/PLAYER/PLAYERCHARACTER/NPCFOURTH.SCENE.MBIN");
+   public static readonly gy qV = new gy("Vy’keen (Old)", (string)null, "MODELS/PLANETS/NPCS/WARRIOR/WARRIOR.SCENE.MBIN");
+   public static readonly gy qW = new gy("Korvax (Old)", (string)null, "MODELS/PLANETS/NPCS/EXPLORER/EXPLORERIPAD.SCENE.MBIN");
+   public static readonly gy qX = new gy("Gek (Old)", (string)null, "MODELS/PLANETS/NPCS/LOWERORDER/LOWERORDER.SCENE.MBIN");
+   public static readonly gy qR = new gy("Vy’keen", "Warriors", "MODELS/COMMON/PLAYER/PLAYERCHARACTER/NPCVYKEEN.SCENE.MBIN");
+   public static readonly gy qS = new gy("Korvax", "Explorers", "MODELS/COMMON/PLAYER/PLAYERCHARACTER/NPCKORVAX.SCENE.MBIN");
+   public static readonly gy qT = new gy("Gek", "Traders", "MODELS/COMMON/PLAYER/PLAYERCHARACTER/NPCGEK.SCENE.MBIN");
+
+   public static readonly gy qY = new gy("Fourth Race (Old)", (string)null, "MODELS/PLANETS/NPCS/FOURTHRACE/FOURTHRACE.SCENE.MBIN");
 
    private string name;
    private string qZ;
@@ -35,7 +36,7 @@ public enum gy {
 
    public static gy as(string var0) {
       for(int var1 = 0; var1 < values().Length; ++var1) {
-         if (var0.equals(values()[var1].filename)) {
+         if (var0.Equals(values()[var1].filename)) {
             return values()[var1];
          }
       }
@@ -45,7 +46,7 @@ public enum gy {
 
    public static gy at(string var0) {
       for(int var1 = 0; var1 < values().Length; ++var1) {
-         if (var0.equals(values()[var1].qZ)) {
+         if (var0.Equals(values()[var1].qZ)) {
             return values()[var1];
          }
       }

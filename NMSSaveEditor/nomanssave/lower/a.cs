@@ -12,10 +12,10 @@ public class a : Form {
 
    private a(Frame var1) {
       base(var1);
-      this.setResizable(false);
+      this.FormBorderStyle = FormBorderStyle.FixedDialog; //(false);
       this.setModalExclusionType(ModalExclusionType.APPLICATION_EXCLUDE);
-      this.setTitle("About Save Editor");
-      this.setModal(true);
+      this.Text = ("About Save Editor");
+      this/* setModal */(true);
       JTextPane var2 = new JTextPane();
       var2.setBorder(object.createEmptyBorder(10, 10, 10, 10));
       var2.setOpaque(false);
@@ -31,13 +31,13 @@ public class a : Form {
          var3.insertString(var3.getLength(), "For further information visit:\n", var5);
          var3.insertString(var3.getLength(), "https://github.com/goatfungus/NMSSaveEditor", var5);
       } catch (Exception var6) {
-         var2.setText("No Man's Sky Save EditorVersion: 1.19.14by GoatFungusFor further information visit:https://github.com/goatfungus/NMSSaveEditor");
+         var2.Text = ("No Man's Sky Save EditorVersion: 1.19.14by GoatFungusFor further information visit:https://github.com/goatfungus/NMSSaveEditor");
       }
 
       var2.setEditable(false);
-      this.getContentPane().Add(var2, "Center");
+      this.Add(var2, "Center");
       this.getRootPane().registerKeyboardAction(new b(this), Keys.getKeyStroke(27, 0), 2);
-      this.pack();
+      this.PerformLayout();
    }
 
    public static void a(Container var0) {
@@ -46,8 +46,8 @@ public class a : Form {
          a = new a(var1);
       }
 
-      a.setLocationRelativeTo(a.getParent());
-      a.setVisible(true);
+      a.StartPosition = FormStartPosition.CenterParent; //(a.DirectoryName);
+      a.Show();
    }
 }
 

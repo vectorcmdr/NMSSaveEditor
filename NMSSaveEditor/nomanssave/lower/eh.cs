@@ -17,7 +17,7 @@ class eh : G {
    protected string g(string var1) {
       try {
          var1 = hg.aB(var1).ToString();
-         if (!var1.equals(eb.a(ec.h(this.ik))[this.il].eg())) {
+         if (!var1.Equals(eb.a(ec.h(this.ik))[this.il].eg())) {
             eb.a(ec.h(this.ik))[this.il].ay(var1);
          }
 

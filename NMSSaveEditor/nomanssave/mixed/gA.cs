@@ -20,10 +20,10 @@ public class gA {
    }
 
    public bool c(eU var1) {
-      IEnumerator var3 = this.rd.bw().iterator();
+      IEnumerator var3 = this.rd.bw().GetEnumerator();
 
-      while(var3.hasNext()) {
-         string var2 = (string)var3.next();
+      while(var3.MoveNext()) {
+         string var2 = (string)var3.Current;
          if (this.rd.z(var2) == var1) {
             return gz.a(this.re, var2, var1.ordinal());
          }
@@ -33,10 +33,10 @@ public class gA {
    }
 
    public void a(eU var1, bool var2) {
-      IEnumerator var4 = this.rd.bw().iterator();
+      IEnumerator var4 = this.rd.bw().GetEnumerator();
 
-      while(var4.hasNext()) {
-         string var3 = (string)var4.next();
+      while(var4.MoveNext()) {
+         string var3 = (string)var4.Current;
          if (this.rd.z(var3) == var1) {
             gz.a(this.re, var3, var1.ordinal(), var2);
          }

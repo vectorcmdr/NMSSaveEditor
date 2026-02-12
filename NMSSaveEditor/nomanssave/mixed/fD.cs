@@ -21,7 +21,7 @@ class fD : fH, fs {
          string var3 = new string(this.ah(65536));
          this.me = fn.T(var3);
       } catch (IOException var4) {
-         hc.a("Could not read game mode from " + this.mh.getName(), var4);
+         hc.a("Could not read game mode from " + this.mh.Name, var4);
       }
 
    }
@@ -44,13 +44,13 @@ class fD : fH, fs {
    }
 
    public string b(eY var1) {
-      this.a(this.lO == 0 ? "ps4_backup" : "ps4_backup" + (this.lO + 1), this.me, this.getName(), this.getDescription());
+      this.a(this.lO == 0 ? "ps4_backup" : "ps4_backup" + (this.lO + 1), this.me, this.Name, this.getDescription());
       this.writeBytes(fA.l(var1));
       return this.K();
    }
 
    public long lastModified() {
-      return this.mh.lastModified();
+      return this.mh.LastWriteTimeUtc.Ticks;
    }
 
    public string toString() {

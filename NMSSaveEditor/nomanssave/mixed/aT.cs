@@ -16,8 +16,8 @@ class aT : EventHandler {
    }
 
    public void actionPerformed(EventArgs var1) {
-      aQ.a(this.dr, new Size(int.Parse(aQ.a(this.dr).getText()), int.Parse(aQ.e(this.dr).getText())));
-      this.dr.setVisible(false);
+      aQ.a(this.dr, new Size(int.Parse(aQ.a(this.dr).Text), int.Parse(aQ.e(this.dr).Text)));
+      this.dr.Hide();
    }
 }
 

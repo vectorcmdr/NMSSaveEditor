@@ -17,7 +17,7 @@ class q : object {
    }
 
    public Class getColumnClass(int var1) {
-      return var1 == 0 ? Image.class : string.class;
+      return var1 == 0 ? typeof(Image) : typeof(string);
    }
 
    public int getColumnCount() {
@@ -46,13 +46,13 @@ class q : object {
    public Object getValueAt(int var1, int var2) {
       switch(var2) {
       case 0:
-         return ((ey)p.a(this.I).get(var1)).N(3);
+         return ((ey)p.a(this.I)[(var1)).N(3);
       case 1:
-         return ((ey)p.a(this.I).get(var1)).getName();
+         return ((ey)p.a(this.I)[(var1)).Name;
       case 2:
-         return ((ey)p.a(this.I).get(var1)).bc().ToString();
+         return ((ey)p.a(this.I)[(var1)).bc().ToString();
       case 3:
-         return ((ey)p.a(this.I).get(var1)).getID();
+         return ((ey)p.a(this.I)[(var1)).getID();
       default:
          return null;
       }

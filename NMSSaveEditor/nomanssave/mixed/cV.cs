@@ -19,10 +19,10 @@ class cV : FileFilter {
    }
 
    public bool accept(File var1) {
-      if (var1.isDirectory()) {
+      if (var1.Attributes.HasFlag(FileAttributes.Directory)) {
          return !var1.isHidden();
       } else {
-         return var1.getName().EndsWith(".sh0");
+         return var1.Name.EndsWith(".sh0");
       }
    }
 }

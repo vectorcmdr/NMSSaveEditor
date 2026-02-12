@@ -46,8 +46,8 @@ public class gc {
    private static void a(byte var0, StringBuilder var1) {
       int var2 = (240 & var0) >> 4;
       int var3 = 15 & var0;
-      var1.append("0123456789ABCDEF".charAt(var2));
-      var1.append("0123456789ABCDEF".charAt(var3));
+      var1.Append("0123456789ABCDEF"[var2));
+      var1.Append("0123456789ABCDEF"[var3));
    }
 
    public static void a(Stream var0, string var1) {
@@ -60,7 +60,7 @@ public class gc {
 
          var1 = var1.ToLower();
          byte[] var2 = new byte[]{(byte)int.Parse(var1.Substring(6, 8), 16), (byte)int.Parse(var1.Substring(4, 6), 16), (byte)int.Parse(var1.Substring(2, 4), 16), (byte)int.Parse(var1.Substring(0, 2), 16), (byte)int.Parse(var1.Substring(10, 12), 16), (byte)int.Parse(var1.Substring(8, 10), 16), (byte)int.Parse(var1.Substring(14, 16), 16), (byte)int.Parse(var1.Substring(12, 14), 16), (byte)int.Parse(var1.Substring(16, 18), 16), (byte)int.Parse(var1.Substring(18, 20), 16), (byte)int.Parse(var1.Substring(20, 22), 16), (byte)int.Parse(var1.Substring(22, 24), 16), (byte)int.Parse(var1.Substring(24, 26), 16), (byte)int.Parse(var1.Substring(26, 28), 16), (byte)int.Parse(var1.Substring(28, 30), 16), (byte)int.Parse(var1.Substring(30, 32), 16)};
-         var0.write(var2);
+         var0.Write(var2);
       }
    }
 
@@ -85,7 +85,7 @@ public class gc {
 
    public static void b(Stream var0, string var1) {
       hk.a(var0, var1.length());
-      var0.write(var1.getBytes("UTF-16LE"));
+      var0.Write(var1.getBytes("UTF-16LE"));
    }
 
    public static string d(Stream var0) {
@@ -119,7 +119,7 @@ public class gc {
          var2 = var3;
       }
 
-      var0.write(var2, 0, 128);
+      var0.Write(var2, 0, 128);
    }
 }
 

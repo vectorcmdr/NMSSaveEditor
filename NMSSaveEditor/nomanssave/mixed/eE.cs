@@ -18,17 +18,17 @@ class eE : List<object> {
       if (this.Count == 0) {
          return false;
       } else {
-         eF var2 = (eF)this.get(0);
-         return var2.key.equals(var1) || var2.name.equals(var1);
+         eF var2 = (eF)this[(0);
+         return var2.key.Equals(var1) || var2.name.Equals(var1);
       }
    }
 
    public eF t(string var1) {
-      IEnumerator var3 = this.iterator();
+      IEnumerator var3 = this.GetEnumerator();
 
-      while(var3.hasNext()) {
-         eF var2 = (eF)var3.next();
-         if (var2.key.equals(var1)) {
+      while(var3.MoveNext()) {
+         eF var2 = (eF)var3.Current;
+         if (var2.key.Equals(var1)) {
             return var2;
          }
       }
@@ -37,11 +37,11 @@ class eE : List<object> {
    }
 
    public eF u(string var1) {
-      IEnumerator var3 = this.iterator();
+      IEnumerator var3 = this.GetEnumerator();
 
-      while(var3.hasNext()) {
-         eF var2 = (eF)var3.next();
-         if (var2.name.equals(var1)) {
+      while(var3.MoveNext()) {
+         eF var2 = (eF)var3.Current;
+         if (var2.name.Equals(var1)) {
             return var2;
          }
       }
@@ -50,11 +50,11 @@ class eE : List<object> {
    }
 
    public eF v(string var1) {
-      IEnumerator var3 = this.iterator();
+      IEnumerator var3 = this.GetEnumerator();
 
-      while(var3.hasNext()) {
-         eF var2 = (eF)var3.next();
-         if (var2.name.equalsIgnoreCase(var1)) {
+      while(var3.MoveNext()) {
+         eF var2 = (eF)var3.Current;
+         if (var2.name.Equals(var1)) {
             return var2;
          }
       }

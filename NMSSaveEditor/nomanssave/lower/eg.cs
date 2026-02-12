@@ -31,7 +31,7 @@ class eg : object {
 
    public void setSelectedItem(Object var1) {
       gL var2 = (gL)var1;
-      if (var2 != null && !var2.equals(eb.a(ec.h(this.ik))[this.il].ef())) {
+      if (var2 != null && !var2.Equals(eb.a(ec.h(this.ik))[this.il].ef())) {
          eb.a(ec.h(this.ik))[this.il].a(var2);
       }
 

@@ -18,14 +18,14 @@ class ga : FileFilter {
    }
 
    public bool accept(File var1) {
-      Matcher var2 = fT.cu().matcher(var1.getName());
-      if (var2.matches()) {
+      Matcher var2 = fT.cu().matcher(var1.Name);
+      if (var2.Matches()) {
          int var3 = var2.group(1).length() == 0 ? 0 : int.Parse(var2.group(1)) - 1;
          if (var3 / 2 == this.nb.lT) {
             try {
-               this.mg.Add(new fV(fZ.a(this.nb), var1.getName(), var3));
+               this.mg.Add(new fV(fZ.a(this.nb), var1.Name, var3));
             } catch (IOException var5) {
-               hc.a("Cannot load " + var1.getName(), var5);
+               hc.a("Cannot load " + var1.Name, var5);
             }
          }
       }

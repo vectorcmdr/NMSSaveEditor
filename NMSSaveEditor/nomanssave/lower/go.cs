@@ -5,12 +5,12 @@ using System.Text;
 
 namespace NMSSaveEditor
 {
-public enum go implements gD {
-   oL("Tiny", "MODELS/COMMON/SPACECRAFT/INDUSTRIAL/FREIGHTERTINY_PROC.SCENE.MBIN"),
-   oM("Small", "MODELS/COMMON/SPACECRAFT/INDUSTRIAL/FREIGHTERSMALL_PROC.SCENE.MBIN"),
-   oN("Normal", "MODELS/COMMON/SPACECRAFT/INDUSTRIAL/FREIGHTER_PROC.SCENE.MBIN"),
-   oO("Capital", "MODELS/COMMON/SPACECRAFT/INDUSTRIAL/CAPITALFREIGHTER_PROC.SCENE.MBIN"),
-   oP("Pirate", "MODELS/COMMON/SPACECRAFT/INDUSTRIAL/PIRATEFREIGHTER.SCENE.MBIN");
+public sealed class go : gD {
+   public static readonly go oL = new go("Tiny", "MODELS/COMMON/SPACECRAFT/INDUSTRIAL/FREIGHTERTINY_PROC.SCENE.MBIN");
+   public static readonly go oM = new go("Small", "MODELS/COMMON/SPACECRAFT/INDUSTRIAL/FREIGHTERSMALL_PROC.SCENE.MBIN");
+   public static readonly go oN = new go("Normal", "MODELS/COMMON/SPACECRAFT/INDUSTRIAL/FREIGHTER_PROC.SCENE.MBIN");
+   public static readonly go oO = new go("Capital", "MODELS/COMMON/SPACECRAFT/INDUSTRIAL/CAPITALFREIGHTER_PROC.SCENE.MBIN");
+   public static readonly go oP = new go("Pirate", "MODELS/COMMON/SPACECRAFT/INDUSTRIAL/PIRATEFREIGHTER.SCENE.MBIN");
 
    private string name;
    private string filename;
@@ -30,7 +30,7 @@ public enum go implements gD {
 
    public static go al(string var0) {
       for(int var1 = 0; var1 < values().Length; ++var1) {
-         if (var0.equals(values()[var1].filename)) {
+         if (var0.Equals(values()[var1].filename)) {
             return values()[var1];
          }
       }

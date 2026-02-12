@@ -7,7 +7,7 @@ namespace NMSSaveEditor
 {
 public enum gl {
    oF,
-   oG;
+   oG
 }
 
 }

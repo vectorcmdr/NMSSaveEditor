@@ -20,7 +20,7 @@ class gY : Stream {
       if (this.sc == 0) {
          return -1;
       } else {
-         int var1 = gX.a(this.sd).read();
+         int var1 = gX.a(this.sd).ReadByte();
          if (var1 < 0) {
             throw new IOException("short read");
          } else {

@@ -25,7 +25,7 @@ public class dE : Panel {
       var2.rowHeights = new int[1];
       var2.columnWeights = new double[]{0.0D, 0.0D, 1.0D};
       var2.rowWeights = new double[]{1.0D};
-      this.setLayout(var2);
+      this.LayoutEnginevar2);
       this.hv = new ba();
       GridBagConstraints var3 = new GridBagConstraints();
       var3.insets = new Padding(0, 0, 0, 0);
@@ -34,7 +34,7 @@ public class dE : Panel {
       var3.gridy = 0;
       this.Add(this.hv, var3);
       this.hx = new ComboBox();
-      this.hx.setModel(new dF(this));
+      this.hx.DataSource = (new dF(this));
       this.hv.a("Settlement", true, this.hx);
       this.hy = new dG(this);
       this.hv.a("Name", (Control)this.hy);
@@ -61,7 +61,7 @@ public class dE : Panel {
       this.hw.a(var5);
       this.hA = new DataGridView();
       this.hA.setCellSelectionEnabled(false);
-      this.hA.setModel(new dI(this));
+      this.hA.DataSource = (new dI(this));
       this.hA.getColumnModel().getColumn(1).setCellEditor(new DefaultCellEditor(new dJ(this)));
       var5.setViewportView(this.hA);
       this.hB = new dt(var1);
@@ -80,13 +80,13 @@ public class dE : Panel {
    void a(gE[] var1) {
       if (var1.Length == 0) {
          this.hC = new gE[0];
-         this.hx.setSelectedIndex(-1);
+         this.hx.SelectedIndex = (-1);
       } else {
          this.hC = var1;
-         this.hx.setSelectedIndex(0);
+         this.hx.SelectedIndex = (0);
       }
 
-      this.hx.updateUI();
+      this.hx.Refresh();
    }
    static ComboBox a(dE var0) {
       return var0.hx;

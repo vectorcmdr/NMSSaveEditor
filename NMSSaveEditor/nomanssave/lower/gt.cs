@@ -217,7 +217,7 @@ public class gt {
       } else {
          for(int var3 = 0; var3 < var2.Count; ++var3) {
             eY var4 = var2.V(var3);
-            if (var4.getValueAsString("BaseStatID").equals(var1)) {
+            if (var4.getValueAsString("BaseStatID").Equals(var1)) {
                return true;
             }
          }
@@ -233,7 +233,7 @@ public class gt {
       } else {
          for(int var3 = 0; var3 < var2.Count; ++var3) {
             eY var4 = var2.V(var3);
-            if (var4.getValueAsString("BaseStatID").equals(var1)) {
+            if (var4.getValueAsString("BaseStatID").Equals(var1)) {
                return var4.L("Value");
             }
          }
@@ -251,7 +251,7 @@ public class gt {
 
          for(int var6 = 0; var6 < var4.Count; ++var6) {
             eY var7 = var4.V(var6);
-            if (var7.getValueAsString("BaseStatID").equals(var1)) {
+            if (var7.getValueAsString("BaseStatID").Equals(var1)) {
                var7.b("Value", (Object)var2);
                var5 = true;
                break;
@@ -276,7 +276,7 @@ public class gt {
       } else {
          for(int var3 = 0; var3 < var2.Count; ++var3) {
             eY var4 = var2.V(var3);
-            if (var4.getValueAsString("BaseStatID").equals(var1)) {
+            if (var4.getValueAsString("BaseStatID").Equals(var1)) {
                var2.ac(var3);
                return true;
             }
@@ -431,7 +431,7 @@ public class gt {
       } else {
          eY var5 = this.qy[var2][var1];
          eY var6 = this.qy[var4][var3];
-         if (var5 != null && var6 != null && var5.getValue("Id").equals(var6.getValue("Id"))) {
+         if (var5 != null && var6 != null && var5.getValue("Id").Equals(var6.getValue("Id"))) {
             int var7 = var6.J("MaxAmount");
             int var8 = var5.J("Amount") + var6.J("Amount");
             if (var8 <= var7) {
@@ -487,7 +487,7 @@ public class gt {
 
       for(int var3 = 0; var3 < var2.Count; ++var3) {
          eY var4 = var2.V(var3);
-         if (var4.getValueAsString("Type.InventoryType").equals("Technology")) {
+         if (var4.getValueAsString("Type.InventoryType").Equals("Technology")) {
             ey var5 = ey.d(var4.getValue("Id"));
             if (var5 == null || (a(var5.bc()) & var1) == 0) {
                int var6 = var4.J("Index.X");
@@ -534,7 +534,7 @@ public class gt {
          int var11;
          int var12;
          int var13;
-         if (var4.equals("Technology")) {
+         if (var4.Equals("Technology")) {
             var11 = this.qy[var2][var1].J("MaxAmount");
 
             for(var12 = 0; var12 < var3.qy.Length; ++var12) {
@@ -555,10 +555,10 @@ public class gt {
 
          int var14;
          int var15;
-         if (var6 > 0 && !var4.equals("Technology")) {
+         if (var6 > 0 && !var4.Equals("Technology")) {
             for(var11 = 0; var11 < var3.qy.Length; ++var11) {
                for(var12 = 0; var12 < var3.qy[var11].Length; ++var12) {
-                  if (var3.qy[var11][var12] != null && var4.equals(var3.qy[var11][var12].getValueAsString("Type.InventoryType")) && var5.equals(var3.qy[var11][var12].getValue("Id"))) {
+                  if (var3.qy[var11][var12] != null && var4.Equals(var3.qy[var11][var12].getValueAsString("Type.InventoryType")) && var5.Equals(var3.qy[var11][var12].getValue("Id"))) {
                      var13 = var3.qy[var11][var12].J("Amount");
                      var14 = var3.qy[var11][var12].J("MaxAmount");
                      if (var13 < var14) {
@@ -580,17 +580,17 @@ public class gt {
             }
          }
 
-         if (var6 > 0 && !var4.equals("Technology")) {
+         if (var6 > 0 && !var4.Equals("Technology")) {
             ey var16 = ey.d(this.qy[var2][var1].getValue("Id"));
-            if (var4.equals("Technology")) {
+            if (var4.Equals("Technology")) {
                var12 = this.qy[var2][var1].J("MaxAmount");
-            } else if (var4.equals("Substance")) {
+            } else if (var4.Equals("Substance")) {
                if (var16 == null) {
                   var12 = var3.bE;
                } else {
                   var12 = Math.Max(1, var3.bE * var16.bj());
                }
-            } else if (var4.equals("Product")) {
+            } else if (var4.Equals("Product")) {
                if (var16 == null) {
                   var12 = var3.bF;
                } else {
@@ -672,7 +672,7 @@ public class gt {
       if (var2 > 0) {
          for(int var5 = 0; var5 < this.qy.Length; ++var5) {
             for(var6 = 0; var6 < this.qy[var5].Length; ++var6) {
-               if (this.qy[var5][var6] != null && var4.equals(this.qy[var5][var6].getValueAsString("Type.InventoryType")) && var1.getID().equals(this.qy[var5][var6].getValue("Id"))) {
+               if (this.qy[var5][var6] != null && var4.Equals(this.qy[var5][var6].getValueAsString("Type.InventoryType")) && var1.getID().Equals(this.qy[var5][var6].getValue("Id"))) {
                   var7 = this.qy[var5][var6].J("Amount");
                   var8 = this.qy[var5][var6].J("MaxAmount");
                   if (var7 < var8) {
@@ -775,7 +775,7 @@ public class gt {
    public bool aq(string var1) {
       for(int var2 = 0; var2 < this.qy.Length; ++var2) {
          for(int var3 = 0; var3 < this.qy[var2].Length; ++var3) {
-            if (this.qy[var2][var3] != null && var1.equals(this.qy[var2][var3].getValue("Type"))) {
+            if (this.qy[var2][var3] != null && var1.Equals(this.qy[var2][var3].getValue("Type"))) {
                return true;
             }
          }
@@ -819,7 +819,7 @@ public class gt {
 
    }
 
-   public bool do() {
+   public bool @do() {
       return this.qu;
    }
 
@@ -837,7 +837,7 @@ public class gt {
       for(int var4 = 0; var4 < var3.Count; ++var4) {
          eY var5 = var3.V(var4);
          if (var5.J("Index.X") == var1 && var5.J("Index.Y") == var2) {
-            return "TechBonus".equals(var5.getValueAsString("Type.InventorySpecialSlotType"));
+            return "TechBonus".Equals(var5.getValueAsString("Type.InventorySpecialSlotType"));
          }
       }
 
@@ -880,7 +880,7 @@ public class gt {
          var5 = var4.J("Index.X");
          int var6 = var4.J("Index.Y");
          if (var5 < this.width && var6 < this.height) {
-            var1[var6][var5] = "TechBonus".equals(var4.getValueAsString("Type.InventorySpecialSlotType"));
+            var1[var6][var5] = "TechBonus".Equals(var4.getValueAsString("Type.InventorySpecialSlotType"));
          }
       }
 
@@ -907,11 +907,11 @@ public class gt {
 
       for(int var5 = 0; var5 < var3.Count; ++var5) {
          eY var6 = var3.V(var5);
-         if ("Broken".equals(var6.getValueAsString("Type.InventorySpecialSlotType")) && var1 == var6.J("Index.X") && var2 == var6.J("Index.Y")) {
+         if ("Broken".Equals(var6.getValueAsString("Type.InventorySpecialSlotType")) && var1 == var6.J("Index.X") && var2 == var6.J("Index.Y")) {
             return true;
          }
 
-         if ("BlockedByBrokenTech".equals(var6.getValueAsString("Type.InventorySpecialSlotType")) && var1 == var6.J("Index.X") && var2 == var6.J("Index.Y")) {
+         if ("BlockedByBrokenTech".Equals(var6.getValueAsString("Type.InventorySpecialSlotType")) && var1 == var6.J("Index.X") && var2 == var6.J("Index.Y")) {
             gu var4;
             if ((var4 = this.f(var1, var2)) != null && var4.dC() != 0.0D) {
                return true;
@@ -930,11 +930,11 @@ public class gt {
 
       for(int var5 = 0; var5 < var3.Count; ++var5) {
          eY var6 = var3.V(var5);
-         if ("Broken".equals(var6.getValueAsString("Type.InventorySpecialSlotType")) && var1 == var6.J("Index.X") && var2 == var6.J("Index.Y")) {
+         if ("Broken".Equals(var6.getValueAsString("Type.InventorySpecialSlotType")) && var1 == var6.J("Index.X") && var2 == var6.J("Index.Y")) {
             var3.ac(var5);
          }
 
-         if ("BlockedByBrokenTech".equals(var6.getValueAsString("Type.InventorySpecialSlotType")) && var1 == var6.J("Index.X") && var2 == var6.J("Index.Y")) {
+         if ("BlockedByBrokenTech".Equals(var6.getValueAsString("Type.InventorySpecialSlotType")) && var1 == var6.J("Index.X") && var2 == var6.J("Index.Y")) {
             gu var4;
             if ((var4 = this.f(var1, var2)) != null && var4.dC() != 0.0D) {
                this.g(var1, var2);
@@ -953,12 +953,12 @@ public class gt {
       int var4;
       for(var4 = 0; var4 < var3.Count; ++var4) {
          eY var5 = var3.V(var4);
-         if ("Broken".equals(var5.getValueAsString("Type.InventorySpecialSlotType"))) {
+         if ("Broken".Equals(var5.getValueAsString("Type.InventorySpecialSlotType"))) {
             var3.ac(var4--);
             var1 = true;
          }
 
-         if ("BlockedByBrokenTech".equals(var5.getValueAsString("Type.InventorySpecialSlotType"))) {
+         if ("BlockedByBrokenTech".Equals(var5.getValueAsString("Type.InventorySpecialSlotType"))) {
             gu var2;
             if ((var2 = this.f(var5.J("Index.X"), var5.J("Index.Y"))) != null && var2.dC() != 0.0D) {
                this.g(var5.J("Index.X"), var5.J("Index.Y"));
@@ -984,11 +984,11 @@ public class gt {
 
    private static string l(Object var0) {
       StringBuilder var1 = new StringBuilder();
-      var1.append(' ');
+      var1.Append(' ');
       if (var0 is fg) {
-         var1.append(((fg)var0).bP());
+         var1.Append(((fg)var0).bP());
       } else if (var0 != null) {
-         var1.append(var0.ToString());
+         var1.Append(var0.ToString());
       }
 
       if (var1.length() > 10) {
@@ -996,7 +996,7 @@ public class gt {
       }
 
       while(var1.length() < 11) {
-         var1.append(' ');
+         var1.Append(' ');
       }
 
       return var1.ToString();
@@ -1091,7 +1091,7 @@ public class gt {
       for(int var3 = 0; var3 < this.qy.Length; ++var3) {
          for(int var4 = 0; var4 < this.qy[var3].Length; ++var4) {
             int var1;
-            if (this.qy[var3][var4] != null && "Technology".equals(this.qy[var3][var4].getValueAsString("Type.InventoryType")) && this.qy[var3][var4].J("Amount") >= 0 && (var1 = this.qy[var3][var4].J("MaxAmount")) > 0) {
+            if (this.qy[var3][var4] != null && "Technology".Equals(this.qy[var3][var4].getValueAsString("Type.InventoryType")) && this.qy[var3][var4].J("Amount") >= 0 && (var1 = this.qy[var3][var4].J("MaxAmount")) > 0) {
                this.qy[var3][var4].b("Amount", (Object)(new Integer(var1)));
                var2 = true;
             }
@@ -1107,7 +1107,7 @@ public class gt {
       for(int var3 = 0; var3 < this.qy.Length; ++var3) {
          for(int var4 = 0; var4 < this.qy[var3].Length; ++var4) {
             int var1;
-            if (this.qy[var3][var4] != null && !"Technology".equals(this.qy[var3][var4].getValueAsString("Type.InventoryType")) && (var1 = this.qy[var3][var4].J("MaxAmount")) > 1) {
+            if (this.qy[var3][var4] != null && !"Technology".Equals(this.qy[var3][var4].getValueAsString("Type.InventoryType")) && (var1 = this.qy[var3][var4].J("MaxAmount")) > 1) {
                this.qy[var3][var4].b("Amount", (Object)(new Integer(var1)));
                var2 = true;
             }

@@ -19,7 +19,7 @@ class eZ : fc {
       if (this.kN == null) {
          throw new Exception("Unexpected path");
       } else {
-         eV var3 = (eV)this.kN.a(eV.class, var2);
+         eV var3 = (eV)this.kN.a(typeof(eV), var2);
          if (this.index >= 0 && this.index <= var3.Length) {
             if (this.index == var3.Length) {
                if (!var2) {
@@ -50,8 +50,8 @@ class eZ : fc {
       if (this.kN == null) {
          throw new Exception("Unexpected path");
       } else {
-         eV var1 = (eV)this.kN.a(eV.class, false);
-         return var1.get(this.index);
+         eV var1 = (eV)this.kN.a(typeof(eV), false);
+         return var1[(this.index);
       }
    }
 
@@ -59,7 +59,7 @@ class eZ : fc {
       if (this.kN == null) {
          throw new Exception("Unexpected path");
       } else {
-         eV var3 = (eV)this.kN.a(eV.class, var2);
+         eV var3 = (eV)this.kN.a(typeof(eV), var2);
          if (this.index == var3.Length) {
             var3.Add(var1);
             return null;
@@ -73,7 +73,7 @@ class eZ : fc {
       if (this.kN == null) {
          throw new Exception("Unexpected path");
       } else {
-         eV var1 = (eV)this.kN.a(eV.class, false);
+         eV var1 = (eV)this.kN.a(typeof(eV), false);
          return var1.Remove(this.index);
       }
    }
@@ -82,8 +82,8 @@ class eZ : fc {
       if (this.kN == null) {
          throw new Exception("Unexpected path");
       } else {
-         eV var2 = (eV)this.kN.a(eV.class, false);
-         Object var3 = var2.get(this.index);
+         eV var2 = (eV)this.kN.a(typeof(eV), false);
+         Object var3 = var2[(this.index);
          if (var3 == null) {
             var2.set(this.index, var1);
             return null;

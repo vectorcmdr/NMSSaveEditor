@@ -40,45 +40,45 @@ public class bl : Panel, eo {
 
    bl(Application var1) {
       TableLayoutPanel var2 = new TableLayoutPanel(1, 3);
-      this.setLayout(var2);
+      this.LayoutEnginevar2);
       Panel var3 = new Panel();
       var3.setMinimumSize(new Size(300, 0));
       var3.setMaximumSize(new Size(300, int.MaxValue));
-      var3.setPreferredSize(new Size(300, 0));
+      var3.Size = (new Size(300, 0));
       Panel var4 = new Panel();
-      var4.setLayout(new TableLayoutPanel());
+      var4.LayoutEnginenew TableLayoutPanel());
       var4.Add(var3, "Center");
       Panel var5 = new Panel();
       this.bQ = new Button("Delete");
-      this.bQ.setEnabled(false);
-      this.bQ.addActionListener(new bm(this, var1));
+      this.bQ.Enabled = (false);
+      this.bQ.Click += (new bm(this, var1));
       var5.Add(this.bQ);
       this.dS = new Button("Copy");
-      this.dS.setEnabled(false);
-      this.dS.addActionListener(new br(this, var1));
+      this.dS.Enabled = (false);
+      this.dS.Click += (new br(this, var1));
       var5.Add(this.dS);
       var4.Add(var5, "South");
       this.Add(var4);
       this.dR = new DataGridView();
       this.dR.setSelectionMode(0);
-      this.dR.setModel(new bs(this));
+      this.dR.DataSource = (new bs(this));
       this.dR.getColumnModel().getColumn(2).setMaxWidth(60);
       this.dR.getSelectionModel().addListSelectionListener(new bt(this, var1));
       var3.setViewportView(this.dR);
       this.dT = new ba(new int[]{aH.cJ, 0});
-      this.dT.setVisible(false);
+      this.dT.Hide();
       this.Add(this.dT);
       this.dT.k("Frigate Info");
       this.dU = new bv(this);
       this.dT.a("Name", (Control)this.dU);
       this.dV = new ComboBox();
-      this.dV.setModel(new bw(this));
+      this.dV.DataSource = (new bw(this));
       this.dT.a("Type", (Control)this.dV);
       this.dW = new TextBox();
       this.dW.setEditable(false);
       this.dT.a("Class", (Control)this.dW);
-      this.dX = new cN(gd.class);
-      this.dX.a((var1x) -> {
+      this.dX = new cN(typeof(gd));
+      this.dX.a((var1x) => {
          if (this.eq >= 0) {
             this.ep[this.eq].am(var1x);
          }
@@ -92,38 +92,38 @@ public class bl : Panel, eo {
       this.dT.k("Traits");
       bD var6 = new bD(this, (bD)null);
       this.ec = new ComboBox();
-      this.ec.setModel(new bB(this, (bB)null));
+      this.ec.DataSource = (new bB(this, (bB)null));
       this.ec.setRenderer(var6);
       this.dT.a(this.ec);
       this.ed = new ComboBox();
-      this.ed.setModel(new bC(this, 1));
+      this.ed.DataSource = (new bC(this, 1));
       this.ed.setRenderer(var6);
       this.dT.a(this.ed);
       this.ee = new ComboBox();
-      this.ee.setModel(new bC(this, 2));
+      this.ee.DataSource = (new bC(this, 2));
       this.ee.setRenderer(var6);
       this.dT.a(this.ee);
       this.ef = new ComboBox();
-      this.ef.setModel(new bC(this, 3));
+      this.ef.DataSource = (new bC(this, 3));
       this.ef.setRenderer(var6);
       this.dT.a(this.ef);
       this.eg = new ComboBox();
-      this.eg.setModel(new bC(this, 4));
+      this.eg.DataSource = (new bC(this, 4));
       this.eg.setRenderer(var6);
       this.dT.a(this.eg);
       this.dT.Y();
       Panel var7 = new Panel();
-      var7.setLayout(new FormLayout(new ColumnSpec[]{FormFactory.GLUE_COLSPEC, FormFactory.DEFAULT_COLSPEC, FormFactory.GLUE_COLSPEC}, new RowSpec[]{FormFactory.DEFAULT_ROWSPEC, FormFactory.DEFAULT_ROWSPEC}));
+      var7.LayoutEnginenew FormLayout(new ColumnSpec[]{FormFactory.GLUE_COLSPEC, FormFactory.DEFAULT_COLSPEC, FormFactory.GLUE_COLSPEC}, new RowSpec[]{FormFactory.DEFAULT_ROWSPEC, FormFactory.DEFAULT_ROWSPEC}));
       this.el = new Label("");
       var7.Add(this.el, "2,1");
       this.em = new Button("Repair");
-      this.em.addActionListener(new bz(this));
+      this.em.Click += (new bz(this));
       Panel var8 = new Panel();
       var8.Add(this.em);
       var7.Add(var8, "2,2");
       this.dT.a(var7);
       this.eb = new ba(new int[]{aH.cJ, 0});
-      this.eb.setVisible(false);
+      this.eb.Hide();
       this.Add(this.eb);
       this.eb.k("Stats");
       this.ea = new G[gq.Values.Length];
@@ -148,7 +148,7 @@ public class bl : Panel, eo {
 
    public void a(bool var1) {
       if (this.dR.getSelectedRow() >= 0) {
-         this.dS.setEnabled(this.ep.Length < 30 || nomanssave.en.aS());
+         this.dS.Enabled = (this.ep.Length < 30 || nomanssave.en.aS());
       }
 
    }
@@ -162,7 +162,7 @@ public class bl : Panel, eo {
          this.dR.setRowSelectionInterval(0, 0);
       }
 
-      this.dR.updateUI();
+      this.dR.Refresh();
    }
    static er[] a(bl var0) {
       return var0.en;

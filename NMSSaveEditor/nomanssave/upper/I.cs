@@ -21,32 +21,32 @@ public class I : em {
    private ge br;
 
    I(Application var1) {
-      this.bh.setModel(new J(this));
+      this.bh.DataSource = (new J(this));
       this.a("Base NPC", true, this.bh);
       this.bi = new TextBox();
-      this.bi.setEnabled(false);
+      this.bi.Enabled = (false);
       this.a("Race", this.bi);
       this.bj = new K(this);
-      this.bj.setEnabled(false);
+      this.bj.Enabled = (false);
       this.a("Seed", this.bj);
       this.Y();
       this.bk = new ComboBox();
-      this.bk.setModel(new L(this));
+      this.bk.DataSource = (new L(this));
       this.a("Base Info", true, this.bk);
       this.bl = new M(this);
       this.a("Name", this.bl);
       this.bm = new TextBox();
-      this.bm.setEnabled(false);
+      this.bm.Enabled = (false);
       this.a("Items", this.bm);
       Panel var2 = new Panel();
       this.bn = new Button("Backup");
-      this.bn.addActionListener(new N(this, var1));
+      this.bn.Click += (new N(this, var1));
       var2.Add(this.bn);
       this.bo = new Button("Restore");
-      this.bo.addActionListener(new O(this, var1));
+      this.bo.Click += (new O(this, var1));
       var2.Add(this.bo);
       this.bp = new Button("Move Base Computer");
-      this.bp.addActionListener(new P(this, var1));
+      this.bp.Click += (new P(this, var1));
       var2.Add(this.bp);
       this.a((Control)var2);
       this.bq = new bO(var1);
@@ -79,19 +79,19 @@ public class I : em {
 
    void a(ge var1) {
       this.br = var1;
-      List var2;
+      List<object> var2;
       if (var1 == null) {
          var2 = new List<object>();
-         this.bh.setSelectedIndex(-1);
-         this.bk.setSelectedIndex(-1);
+         this.bh.SelectedIndex = (-1);
+         this.bk.SelectedIndex = (-1);
       } else {
          var2 = var1.cC();
-         this.bh.setSelectedIndex(var1.cD().Count == 0 ? -1 : 0);
-         this.bk.setSelectedIndex(var1.cE().Count == 0 ? -1 : 0);
+         this.bh.SelectedIndex = (var1.cD().Count == 0 ? -1 : 0);
+         this.bk.SelectedIndex = (var1.cE().Count == 0 ? -1 : 0);
       }
 
-      this.bh.updateUI();
-      this.bk.updateUI();
+      this.bh.Refresh();
+      this.bk.Refresh();
       this.bq.a(var2);
    }
    static ge a(I var0) {

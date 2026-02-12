@@ -21,7 +21,7 @@ class R : FocusListener {
    public void focusLost(FocusEvent var1) {
       int var2;
       try {
-         var2 = int.Parse(Q.a(this.bD).getText());
+         var2 = int.Parse(Q.a(this.bD).Text);
          if (var2 % 250 != 0) {
             var2 = (int)Math.Round((double)var2 / 250.0D);
          }
@@ -33,7 +33,7 @@ class R : FocusListener {
          var2 = Q.c(this.bD).bE;
       }
 
-      Q.a(this.bD).setText(Integer.toString(var2));
+      Q.a(this.bD).Text = (Integer.toString(var2));
    }
 }
 

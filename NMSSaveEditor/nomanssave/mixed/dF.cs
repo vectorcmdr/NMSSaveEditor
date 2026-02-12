@@ -33,26 +33,26 @@ class dF : object {
       this.hD = (gE)var1;
       int var2;
       if (this.hD == null) {
-         dE.c(this.hE).setText("");
-         dE.d(this.hE).setText("");
+         dE.c(this.hE).Text = ("");
+         dE.d(this.hE).Text = ("");
 
          for(var2 = 0; var2 < dE.e(this.hE).Length; ++var2) {
-            dE.e(this.hE)[var2].setText("");
+            dE.e(this.hE)[var2].Text = ("");
          }
 
          dE.f(this.hE).a(new gF[0]);
       } else {
-         dE.c(this.hE).setText(this.hD.getName());
-         dE.d(this.hE).setText(this.hD.cK());
+         dE.c(this.hE).Text = (this.hD.Name);
+         dE.d(this.hE).Text = (this.hD.cK());
 
          for(var2 = 0; var2 < dE.e(this.hE).Length; ++var2) {
-            dE.e(this.hE)[var2].setText(Integer.toString(this.hD.aq(var2)));
+            dE.e(this.hE)[var2].Text = (Integer.toString(this.hD.aq(var2)));
          }
 
          dE.f(this.hE).a(this.hD.dX());
       }
 
-      dE.g(this.hE).revalidate();
+      dE.g(this.hE).PerformLayout();
    }
 
    public Object getSelectedItem() {

@@ -73,17 +73,17 @@ public class gT {
    }
 
    public double[] a(gU var1) {
-      if (var1.rY.equals("fr")) {
+      if (var1.rY.Equals("fr")) {
          return a(var1.rZ, this.rX, this.rV);
-      } else if (var1.rY.equals("fu")) {
+      } else if (var1.rY.Equals("fu")) {
          return a(var1.rZ, this.rX, this.rW);
-      } else if (var1.rY.equals("ur")) {
+      } else if (var1.rY.Equals("ur")) {
          return a(var1.rZ, this.rW, this.rV);
-      } else if (var1.rY.equals("uf")) {
+      } else if (var1.rY.Equals("uf")) {
          return a(var1.rZ, this.rW, this.rX);
-      } else if (var1.rY.equals("ru")) {
+      } else if (var1.rY.Equals("ru")) {
          return a(var1.rZ, this.rV, this.rW);
-      } else if (var1.rY.equals("rf")) {
+      } else if (var1.rY.Equals("rf")) {
          return a(var1.rZ, this.rV, this.rX);
       } else {
          throw new Exception("Unsupported rotation axis");
@@ -106,21 +106,21 @@ public class gT {
 
    private void a(double[] var1, StringBuilder var2, StringBuilder var3, StringBuilder var4, int var5) {
       int var6 = var2.length();
-      var2.append(a(var1[0], var5));
-      var3.append(a(var1[1], var5));
-      var4.append(a(var1[2], var5));
+      var2.Append(a(var1[0], var5));
+      var3.Append(a(var1[1], var5));
+      var4.Append(a(var1[2], var5));
       int var7 = Math.Max(Math.Max(var2.length(), var3.length()), var4.length());
 
       while(var2.length() < var7) {
-         var2.insert(var6, ' ');
+         var2.Insert(var6, ' ');
       }
 
       while(var3.length() < var7) {
-         var3.insert(var6, ' ');
+         var3.Insert(var6, ' ');
       }
 
       while(var4.length() < var7) {
-         var4.insert(var6, ' ');
+         var4.Insert(var6, ' ');
       }
 
    }
@@ -129,32 +129,32 @@ public class gT {
       int var5 = Math.Max(Math.Max(var1.length(), var2.length()), var3.length());
 
       while(var1.length() < var5) {
-         var1.append(' ');
+         var1.Append(' ');
       }
 
       while(var2.length() < var5) {
-         var2.append(' ');
+         var2.Append(' ');
       }
 
       while(var3.length() < var5) {
-         var3.append(' ');
+         var3.Append(' ');
       }
 
-      var1.append("| ");
-      var2.append("| ");
-      var3.append("| ");
+      var1.Append("| ");
+      var2.Append("| ");
+      var3.Append("| ");
       this.a(this.rV, var1, var2, var3, var4);
-      var1.append(' ');
-      var2.append(' ');
-      var3.append(' ');
+      var1.Append(' ');
+      var2.Append(' ');
+      var3.Append(' ');
       this.a(this.rW, var1, var2, var3, var4);
-      var1.append(' ');
-      var2.append(' ');
-      var3.append(' ');
+      var1.Append(' ');
+      var2.Append(' ');
+      var3.Append(' ');
       this.a(this.rX, var1, var2, var3, var4);
-      var1.append(" |");
-      var2.append(" |");
-      var3.append(" |");
+      var1.Append(" |");
+      var2.Append(" |");
+      var3.Append(" |");
    }
 
    public string toString() {
@@ -167,9 +167,9 @@ public class gT {
       StringBuilder var4 = new StringBuilder();
       this.a(var2, var3, var4, var1);
       StringBuilder var5 = new StringBuilder();
-      var5.append(var2).append("\n");
-      var5.append(var3).append("\n");
-      var5.append(var4).append("\n");
+      var5.Append(var2).Append("\n");
+      var5.Append(var3).Append("\n");
+      var5.Append(var4).Append("\n");
       return var5.ToString();
    }
 

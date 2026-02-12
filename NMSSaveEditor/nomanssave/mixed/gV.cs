@@ -31,14 +31,14 @@ public class gV {
 
       for(int var5 = 0; var5 < var2.Count; ++var5) {
          eY var6 = var2.V(var5);
-         if ("^BASE_FLAG".equals(var6.getValueAsString("ObjectID"))) {
+         if ("^BASE_FLAG".Equals(var6.getValueAsString("ObjectID"))) {
             if (var3 != null) {
                hc.warn("  multiple base computers found");
                return false;
             }
 
             var3 = var6;
-         } else if (var1.equals(var6.getValueAsString("ObjectID"))) {
+         } else if (var1.Equals(var6.getValueAsString("ObjectID"))) {
             if (var4 != null) {
                hc.warn("  multiple " + var1 + " objects found");
                return false;
@@ -60,7 +60,7 @@ public class gV {
       }
    }
 
-   public static List G(eY var0) {
+   public static List<object> G(eY var0) {
       List<object> var1 = new List<object>();
       bool var2 = false;
       eV var3 = var0.d("Objects");
@@ -68,18 +68,18 @@ public class gV {
       for(int var4 = 0; var4 < var3.Count; ++var4) {
          eY var5 = var3.V(var4);
          string var6 = var5.getValueAsString("ObjectID");
-         if ("^BASE_FLAG".equals(var5.getValueAsString("ObjectID"))) {
+         if ("^BASE_FLAG".Equals(var5.getValueAsString("ObjectID"))) {
             var2 = true;
-         } else if ("^BUILDSIGNAL".equals(var6)) {
+         } else if ("^BUILDSIGNAL".Equals(var6)) {
             var1.Add(var5);
-         } else if ("^BP_ANALYSER".equals(var6)) {
+         } else if ("^BP_ANALYSER".Equals(var6)) {
             var1.Add(var5);
-         } else if ("^BUILDBEACON".equals(var6)) {
+         } else if ("^BUILDBEACON".Equals(var6)) {
             var1.Add(var5);
          }
       }
 
-      return (List)(var2 ? var1 : new List<object>());
+      return (List<object>)(var2 ? var1 : new List<object>());
    }
 
    public static bool a(eY var0, eY var1) {
@@ -89,7 +89,7 @@ public class gV {
 
       for(int var5 = 0; var5 < var2.Count; ++var5) {
          eY var6 = var2.V(var5);
-         if ("^BASE_FLAG".equals(var6.getValueAsString("ObjectID"))) {
+         if ("^BASE_FLAG".Equals(var6.getValueAsString("ObjectID"))) {
             if (var4 != null) {
                hc.warn("  multiple base computers found");
                return false;

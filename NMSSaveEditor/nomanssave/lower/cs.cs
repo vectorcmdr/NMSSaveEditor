@@ -28,14 +28,14 @@ public class cs : OpenFileDialog {
       this.setFileFilter(new cu(this));
       this.setDialogTitle("Choose Backup File");
       Panel var1 = new Panel();
-      var1.setLayout(new BoxLayout(var1, 1));
+      var1.LayoutEnginenew BoxLayout(var1, 1));
       var1.setBorder(object.createEmptyBorder(2, 5, 2, 2));
       var1.Add(new Label("Export Options:"));
       this.fO = new CheckBox("Products/Substances");
       var1.Add(this.fO);
       this.setAccessory(var1);
-      SystemInformation.addPropertyChangeListener((var1x) -> {
-         if ("lookAndFeel".equals(var1x.getPropertyName())) {
+      SystemInformation.addPropertyChangeListener((var1x) => {
+         if ("lookAndFeel".Equals(var1x.getPropertyName())) {
             Control.updateComponentTreeUI(this);
          }
 
@@ -43,16 +43,16 @@ public class cs : OpenFileDialog {
    }
 
    public bool aw() {
-      return this.fO.isSelected();
+      return this.fO.Checked;
    }
 
    public int showSaveDialog(Component var1) {
-      this.getAccessory().setVisible(true);
+      this.getAccessory().Show();
       return base.showSaveDialog(var1);
    }
 
    public int showOpenDialog(Component var1) {
-      this.getAccessory().setVisible(false);
+      this.getAccessory().Hide();
       return base.showOpenDialog(var1);
    }
    static Image as() {

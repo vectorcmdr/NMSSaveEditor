@@ -15,8 +15,8 @@ class da : EventHandler {
    }
 
    public void actionPerformed(EventArgs var1) {
-      cY.a(this.gR, cY.b(this.gR).getSelectedIndex());
-      this.gR.setVisible(false);
+      cY.a(this.gR, cY.b(this.gR).SelectedIndex);
+      this.gR.Hide();
    }
 }
 

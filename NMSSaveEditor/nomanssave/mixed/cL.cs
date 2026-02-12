@@ -15,7 +15,7 @@ class cL : FileView {
    }
 
    public string getName(File var1) {
-      string var2 = var1.getName();
+      string var2 = var1.Name;
       return var2.EndsWith(".json") ? var2.Substring(0, var2.length() - 5) : var2;
    }
 }

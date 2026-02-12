@@ -16,9 +16,9 @@ class cQ {
 
    public bool equals(Object var1) {
       if (var1 is string) {
-         return this.value.equals(var1);
+         return this.value.Equals(var1);
       } else {
-         return var1 is cS ? this.value.equals(((cS)var1).filename) : base.equals(var1);
+         return var1 is cS ? this.value.Equals(((cS)var1).filename) : base.Equals(var1);
       }
    }
 }

@@ -11,22 +11,22 @@ namespace NMSSaveEditor
 public class cN : ComboBox {
    private bool gm;
    private readonly Enum[] gn;
-   private List go;
+   private List<object> go;
    private cR gp;
    private Object gq;
    private static Color gr;
    private static Color gs;
 
-   static {
+   static cN() {
       gr = Color.RED;
       gs = new Color(255, 100, 100);
    }
 
    public cN(Class var1) {
-      this.gm = gD.class.isAssignableFrom(var1);
+      this.gm = typeof(gD).isAssignableFrom(var1);
       this.gn = (Enum[])var1.getEnumConstants();
       this.go = new List<object>();
-      this.setModel(new cO(this, var1));
+      this.DataSource = (new cO(this, var1));
       this.setRenderer(new cP(this));
    }
 
@@ -39,11 +39,11 @@ public class cN : ComboBox {
          for(int var4 = 0; var4 < var5; ++var4) {
             Enum var3 = var6[var4];
             if (this.gm) {
-               if (((gD)var3).K().equals(var1)) {
+               if (((gD)var3).K().Equals(var1)) {
                   var2 = var3;
                   break;
                }
-            } else if (var3.name().equals(var1)) {
+            } else if (var3.name().Equals(var1)) {
                var2 = var3;
                break;
             }
@@ -52,7 +52,7 @@ public class cN : ComboBox {
          if (var2 == null) {
             int var7 = this.go.IndexOf(new cQ(this, var1));
             if (var7 >= 0) {
-               var2 = this.go.get(var7);
+               var2 = this.go[(var7);
             } else {
                var2 = this.gm ? new cS(this, var1) : var1;
                this.go.Add(var2);
@@ -62,13 +62,13 @@ public class cN : ComboBox {
 
       this.gq = var2;
       this.selectedItemChanged();
-      this.updateUI();
+      this.Refresh();
    }
 
    public void a(cR var1) {
       this.gp = var1;
    }
-   static List a(cN var0) {
+   static List<object> a(cN var0) {
       return var0.go;
    }
    static Object b(cN var0) {

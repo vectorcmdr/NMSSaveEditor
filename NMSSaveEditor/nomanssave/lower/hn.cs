@@ -20,7 +20,7 @@ class hn : Stream {
       if (this.sc == 0) {
          return -1;
       } else {
-         int var1 = hm.a(this.sW).read();
+         int var1 = hm.a(this.sW).ReadByte();
          if (var1 < 0) {
             throw new IOException("short read");
          } else {

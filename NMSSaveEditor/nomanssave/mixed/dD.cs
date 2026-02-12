@@ -15,7 +15,7 @@ class dD : EventHandler {
    }
 
    public void actionPerformed(EventArgs var1) {
-      this.hu.setVisible(false);
+      this.hu.Hide();
    }
 }
 

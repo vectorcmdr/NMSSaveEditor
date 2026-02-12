@@ -36,7 +36,7 @@ class av : EventHandler {
 
       if (var3) {
          ap.g(this.cu).sort();
-         ap.h(this.cu).updateUI();
+         ap.h(this.cu).Refresh();
       }
 
    }

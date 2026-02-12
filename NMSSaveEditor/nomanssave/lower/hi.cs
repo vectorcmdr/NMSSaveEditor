@@ -16,7 +16,7 @@ public class hi {
       hj var2;
       lock(sJ) {
          if (sJ.ContainsKey(var0)) {
-            var2 = (hj)sJ.get(var0);
+            var2 = (hj)sJ[(var0);
          } else {
             var2 = new hj(var0);
          }
@@ -36,7 +36,7 @@ public class hi {
       if (var3 != null && var3.Count != 0) {
          for(int var4 = 0; var4 < var3.Count; ++var4) {
             eY var5 = var3.V(var4);
-            if (Long.toString(var0).equals(var5.getValueAsString("steamid"))) {
+            if (Long.toString(var0).Equals(var5.getValueAsString("steamid"))) {
                return var5.getValueAsString("personaname");
             }
          }

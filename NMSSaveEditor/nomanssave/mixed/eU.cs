@@ -5,16 +5,17 @@ using System.Text;
 
 namespace NMSSaveEditor
 {
-public enum eU {
-   kr("Gek"),
-   ks("Vy'keen"),
-   kt("Korvax"),
-   ku("Robot"),
-   kv("Atlas"),
-   kw("Diplomats"),
-   kx("Exotics"),
-   ky("None"),
-   kz("Autophage");
+public sealed class eU {
+   public static readonly eU kr = new eU("Gek");
+   public static readonly eU ks = new eU("Vy'keen");
+   public static readonly eU kt = new eU("Korvax");
+   public static readonly eU ku = new eU("Robot");
+   public static readonly eU kv = new eU("Atlas");
+   public static readonly eU kw = new eU("Diplomats");
+   public static readonly eU kx = new eU("Exotics");
+   public static readonly eU ky = new eU("None");
+   public static readonly eU kz = new eU("Autophage");
+
 
    private string name;
 
@@ -32,7 +33,7 @@ public enum eU {
 
       for(int var2 = 0; var2 < var3; ++var2) {
          eU var1 = var4[var2];
-         if (var1.name().equals(var0)) {
+         if (var1.ToString().Equals(var0)) {
             return var1;
          }
       }

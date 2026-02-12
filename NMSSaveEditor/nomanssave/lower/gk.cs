@@ -55,7 +55,7 @@ public enum gk {
    oA,
    oB,
    oC,
-   oD;
+   oD
 }
 
 }

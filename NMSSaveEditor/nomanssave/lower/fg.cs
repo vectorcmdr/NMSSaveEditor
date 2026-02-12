@@ -53,15 +53,15 @@ public class fg {
                return this.ToString();
             }
 
-            var1.append('^');
+            var1.Append('^');
          } else if (var4 == 35) {
-            var1.append('#');
+            var1.Append('#');
             var2 = true;
          } else if (var2) {
-            var1.append((char)var4);
+            var1.Append((char)var4);
          } else {
-            var1.append("0123456789ABCDEFabcdef".charAt((this.bytes[var3] & 240) >> 4));
-            var1.append("0123456789ABCDEFabcdef".charAt(this.bytes[var3] & 15));
+            var1.Append("0123456789ABCDEFabcdef"[(this.bytes[var3] & 240) >> 4));
+            var1.Append("0123456789ABCDEFabcdef"[this.bytes[var3] & 15));
          }
       }
 

@@ -22,8 +22,8 @@ public class ej : OpenFileDialog {
       this.setFileFilter(new ek(this));
       this.setFileView(new el(this));
       this.setDialogTitle("Choose Save Path");
-      SystemInformation.addPropertyChangeListener((var1) -> {
-         if ("lookAndFeel".equals(var1.getPropertyName())) {
+      SystemInformation.addPropertyChangeListener((var1) => {
+         if ("lookAndFeel".Equals(var1.getPropertyName())) {
             Control.updateComponentTreeUI(this);
          }
 
@@ -31,8 +31,8 @@ public class ej : OpenFileDialog {
    }
 
    private string a(File var1) {
-      Matcher var2 = iq.matcher(var1.getName());
-      if (var2.matches()) {
+      Matcher var2 = iq.matcher(var1.Name);
+      if (var2.Matches()) {
          long var3 = long.Parse(var2.group(1));
          return hi.h(var3);
       } else {
@@ -45,19 +45,19 @@ public class ej : OpenFileDialog {
          ir = new ej();
       }
 
-      if (var0 != null && var0.exists()) {
-         if (var0.isFile()) {
-            var0 = var0.getParentFile();
+      if (var0 != null && var0.Exists) {
+         if (var0.Exists) {
+            var0 = var0.Directory;
          }
 
          ir.setCurrentDirectory(var0);
       } else {
-         File var1 = new File(System.getProperty("user.home"));
+         File var1 = new File(Environment.GetEnvironmentVariable("user.home"));
          File var2 = new File(var1, "AppData\\Roaming\\HelloGames\\NMS");
          File var3 = new File(var1, "AppData\\Local\\Packages\\HelloGames.NoMansSky_bs190hzg1sesy\\SystemAppData");
-         if (var2.isDirectory()) {
+         if (var2.Attributes.HasFlag(FileAttributes.Directory)) {
             ir.setCurrentDirectory(var2);
-         } else if (var3.isDirectory()) {
+         } else if (var3.Attributes.HasFlag(FileAttributes.Directory)) {
             ir.setCurrentDirectory(var3);
          } else {
             ir.setCurrentDirectory(var1);

@@ -18,7 +18,7 @@ class fi : StringReader {
    public int bI() {
       int var1;
       do {
-         if ((var1 = this.read()) < 0) {
+         if ((var1 = this.ReadByte()) < 0) {
             return -1;
          }
       } while(var1 == 32 || var1 == 13 || var1 == 10 || var1 == 9);
@@ -29,7 +29,7 @@ class fi : StringReader {
    public int read() {
       int var1;
       try {
-         var1 = base.read();
+         var1 = base.ReadByte();
       } catch (IOException var3) {
          throw new eX("stream error", var3, this.kF, this.kG);
       }
@@ -45,7 +45,7 @@ class fi : StringReader {
    private int a(Predicate var1) {
       try {
          this.mark(1);
-         int var2 = base.read();
+         int var2 = base.ReadByte();
          if (var2 >= 0 && var1.test(var2)) {
             if (var2 == 10) {
                ++this.kF;

@@ -55,11 +55,11 @@ class cI : TreeModel {
          var2.Add(0, var1);
       }
 
-      TreeModelEvent var3 = new TreeModelEvent(this, var2.toArray());
-      IEnumerator var5 = this.gh.iterator();
+      TreeModelEvent var3 = new TreeModelEvent(this, var2.ToArray());
+      IEnumerator var5 = this.gh.GetEnumerator();
 
-      while(var5.hasNext()) {
-         TreeModelListener var4 = (TreeModelListener)var5.next();
+      while(var5.MoveNext()) {
+         TreeModelListener var4 = (TreeModelListener)var5.Current;
          var4.treeStructureChanged(var3);
       }
 

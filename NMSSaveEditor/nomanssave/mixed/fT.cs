@@ -26,14 +26,14 @@ public class fT : fq {
    private string mF;
    private int mG;
    private int mH;
-   private List mI;
+   private List<object> mI;
    private static Pattern mJ = Pattern.compile("\"((?:<h0)|(?:CommonStateData))\":\\{\"((?:Pk4)|(?:SaveName))\":\"([^\"]+)\"");
    private static int mK = 1;
    private static int mL = 2;
    private static int mM = 3;
 
    fT(File var1, fR var2) {
-      this.lX = var1.isDirectory() ? var1 : var1.getParentFile();
+      this.lX = var1.Attributes.HasFlag(FileAttributes.Directory) ? var1 : var1.Directory;
       this.lE = var2;
       this.cr();
 
@@ -63,7 +63,7 @@ public class fT : fq {
    }
 
    public void X(string var1) {
-      var1.equals("containers.index");
+      var1.Equals("containers.index");
    }
 
    public File bS() {
@@ -119,11 +119,11 @@ public class fT : fq {
             this.mI.Add(new fW(this, var1));
          }
 
-         if (var1.read() >= 0) {
+         if (var1.ReadByte() >= 0) {
             throw new IOException("Invalid footer");
          }
       } finally {
-         var1.close();
+         var1.Close();
       }
 
    }
@@ -142,24 +142,24 @@ public class fT : fq {
          gc.b(var1, this.mF);
          hk.a(var1, this.mG);
          hk.a(var1, this.mH);
-         IEnumerator var3 = this.mI.iterator();
+         IEnumerator var3 = this.mI.GetEnumerator();
 
-         while(var3.hasNext()) {
-            fW var2 = (fW)var3.next();
-            var2.write(var1);
+         while(var3.MoveNext()) {
+            fW var2 = (fW)var3.Current;
+            var2.Write(var1);
          }
       } finally {
-         var1.close();
+         var1.Close();
       }
 
    }
 
    private fW Z(string var1) {
-      IEnumerator var3 = this.mI.iterator();
+      IEnumerator var3 = this.mI.GetEnumerator();
 
-      while(var3.hasNext()) {
-         fW var2 = (fW)var3.next();
-         if (var2.name.equals(var1)) {
+      while(var3.MoveNext()) {
+         fW var2 = (fW)var3.Current;
+         if (var2.name.Equals(var1)) {
             return var2;
          }
       }
@@ -176,15 +176,15 @@ public class fT : fq {
          var3 = gc.cA();
 
          fW var4;
-         for(IEnumerator var5 = this.mI.iterator(); var5.hasNext(); var1 &= var4.mU.equals(var3)) {
-            var4 = (fW)var5.next();
+         for(IEnumerator var5 = this.mI.GetEnumerator(); var5.MoveNext(); var1 &= var4.mU.Equals(var3)) {
+            var4 = (fW)var5.Current;
          }
 
          var2 = new File(this.lX, var3);
-         var1 &= var2.exists();
+         var1 &= var2.Exists;
       } while(!var1);
 
-      if (!var2.mkdir()) {
+      if (!var2.Create()) {
          throw new FileNotFoundException(var3);
       } else {
          return var3;
@@ -207,7 +207,7 @@ public class fT : fq {
 
    public int W(string var1) {
       Matcher var2 = lV.matcher(var1);
-      return !var2.matches() ? -1 : int.Parse(var2.group(1));
+      return !var2.Matches() ? -1 : int.Parse(var2.group(1));
    }
 
    private static int an(int var0) {
@@ -215,7 +215,7 @@ public class fT : fq {
    }
 
    private static bool h(File var0) {
-      File[] var1 = var0.listFiles();
+      File[] var1 = var0.GetFiles();
       if (var1 != null) {
          File[] var5 = var1;
          int var4 = var1.Length;
@@ -226,7 +226,7 @@ public class fT : fq {
          }
       }
 
-      return var0.delete();
+      return var0.Delete();
    }
 
    private static Stream a(Stream var0, int var1) {
@@ -263,7 +263,7 @@ public class fT : fq {
          }
       } catch (IOException var6) {
          try {
-            ((Stream)var0).close();
+            ((Stream)var0).Close();
          } catch (IOException var5) {
          }
 
@@ -285,7 +285,7 @@ public class fT : fq {
    static int ao(int var0) {
       return an(var0);
    }
-   static List c(fT var0) {
+   static List<object> c(fT var0) {
       return var0.mI;
    }
    static File d(fT var0) {

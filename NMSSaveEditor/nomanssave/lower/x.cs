@@ -19,8 +19,8 @@ class x : Thread {
 
    public void run() {
       try {
-         long var1 = Math.Round((double)Runtime.getRuntime().totalMemory() / 1000000.0D);
-         long var3 = Math.Round((double)Runtime.getRuntime().maxMemory() / 1000000.0D);
+         long var1 = Math.Round((double)Process.GetCurrentProcess().totalMemory() / 1000000.0D);
+         long var3 = Math.Round((double)Process.GetCurrentProcess().maxMemory() / 1000000.0D);
          hc.debug("Mem Usage: " + var1 + "/" + var3 + " MB");
          URL var5 = new URL("https://github.com/goatfungus/NMSSaveEditor/raw/master/VERSION.txt");
          URLConnection var6 = var5.openConnection();
@@ -46,8 +46,8 @@ class x : Thread {
 
          hc.debug("Latest version: \"" + var12 + "\"");
          hc.debug("Current version: \"1.19.14\"");
-         if (!"1.19.14".equals(var12)) {
-            System.Windows.Forms.Application.invokeLater(new y(this, this.ba));
+         if (!"1.19.14".Equals(var12)) {
+            System.Windows.Forms.Application.Run(new y(this, this.ba));
          }
       } catch (IOException var13) {
       }

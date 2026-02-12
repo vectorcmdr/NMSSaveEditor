@@ -27,7 +27,7 @@ public class hm : FilterInputStream {
 
    private bool ej() {
       byte[] var1 = new byte[8];
-      hk.readFully(this.in, var1);
+      hk.readFully(this.@in, var1);
       int var2 = 255 & var1[0] | (255 & var1[1]) << 8 | (255 & var1[2]) << 16 | (255 & var1[3]) << 24;
       int var3 = 255 & var1[4] | (255 & var1[5]) << 8 | (255 & var1[6]) << 16 | (255 & var1[7]) << 24;
       this.sa = new ha(new hn(this, var3, (hn)null), var2);
@@ -36,7 +36,7 @@ public class hm : FilterInputStream {
    }
 
    public int read() {
-      return this.sa != null && (this.sa.available() != 0 || this.ej()) ? this.sa.read() : -1;
+      return this.sa != null && (this.sa.Length != 0 || this.ej()) ? this.sa.ReadByte() : -1;
    }
 
    public int read(byte[] var1) {
@@ -44,7 +44,7 @@ public class hm : FilterInputStream {
    }
 
    public int read(byte[] var1, int var2, int var3) {
-      return this.sa != null && (this.sa.available() != 0 || this.ej()) ? this.sa.read(var1, var2, var3) : -1;
+      return this.sa != null && (this.sa.Length != 0 || this.ej()) ? this.sa.read(var1, var2, var3) : -1;
    }
    static Stream a(hm var0) {
       return var0.in;

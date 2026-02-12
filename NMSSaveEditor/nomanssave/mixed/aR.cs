@@ -21,7 +21,7 @@ class aR : FocusListener {
    public void focusLost(FocusEvent var1) {
       int var2;
       try {
-         var2 = int.Parse(aQ.a(this.dr).getText());
+         var2 = int.Parse(aQ.a(this.dr).Text);
          if (var2 != aQ.b(this.dr).width) {
             if (var2 < aQ.c(this.dr).width) {
                var2 = aQ.c(this.dr).width;
@@ -33,7 +33,7 @@ class aR : FocusListener {
          var2 = aQ.b(this.dr).width;
       }
 
-      aQ.a(this.dr).setText(Integer.toString(var2));
+      aQ.a(this.dr).Text = (Integer.toString(var2));
    }
 }
 

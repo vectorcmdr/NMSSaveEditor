@@ -17,12 +17,12 @@ class dV : EventHandler {
    }
 
    public void actionPerformed(EventArgs var1) {
-      gH var2 = (gH)dN.p(this.ia).getSelectedItem();
+      gH var2 = (gH)dN.p(this.ia).SelectedItem;
       if (var2 != null) {
          eV var3 = this.bv.d("PlayerStateData.ShipUsesLegacyColours");
          if (var3 != null) {
-            if (dN.f(this.ia).isSelected() ^ var3.ab(var2.getIndex())) {
-               var3.a(var2.getIndex(), dN.f(this.ia).isSelected());
+            if (dN.f(this.ia).Checked ^ var3.ab(var2.getIndex())) {
+               var3.a(var2.getIndex(), dN.f(this.ia).Checked);
             }
 
          }

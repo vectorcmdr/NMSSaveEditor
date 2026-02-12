@@ -9,16 +9,16 @@ namespace NMSSaveEditor
 
 class fm : Thread {
    WatchService lk = FileSystems.getDefault().newWatchService();
-   Map ll = new WeakHashMap();
+   Dictionary<object, object> ll = new WeakHashMap();
 
    fm() {
-      this.setDaemon(true);
-      this.start();
+      this.IsBackground = (true);
+      this.Start();
    }
 
    void a(fq var1, File var2) {
       WatchKey var3 = var2.toPath().register(this.lk, StandardWatchEventKinds.ENTRY_CREATE, StandardWatchEventKinds.ENTRY_DELETE, StandardWatchEventKinds.ENTRY_MODIFY);
-      this.ll.put(var1, var3);
+      this.ll.Put(var1, var3);
    }
 
    void b(fq var1) {
@@ -41,21 +41,21 @@ class fm : Thread {
                do {
                   Object var2;
                   if (var1.ContainsKey(var3)) {
-                     var2 = (List)var1.get(var3);
+                     var2 = (List<object>)var1[(var3);
                   } else {
                      var2 = new List<object>();
-                     var1.put(var3, var2);
+                     var1.Put(var3, var2);
                   }
 
-                  IEnumerator var5 = var3.pollEvents().iterator();
+                  IEnumerator var5 = var3.pollEvents().GetEnumerator();
 
-                  while(var5.hasNext()) {
-                     WatchEvent var4 = (WatchEvent)var5.next();
+                  while(var5.MoveNext()) {
+                     WatchEvent var4 = (WatchEvent)var5.Current;
                      var6 = var4.kind();
                      if (var6 != StandardWatchEventKinds.OVERFLOW) {
                         string var7 = var4.context().ToString();
-                        if (!((List)var2).Contains(var7)) {
-                           ((List)var2).Add(var7);
+                        if (!((List<object>)var2).Contains(var7)) {
+                           ((List<object>)var2).Add(var7);
                         }
                      }
                   }
@@ -69,42 +69,42 @@ class fm : Thread {
 
                lock(fl.bQ()) {
                   bool var23 = false;
-                  IEnumerator var8 = var1.entrySet().iterator();
+                  IEnumerator var8 = var1.entrySet().GetEnumerator();
 
                   label156:
                   while(true) {
-                     if (!var8.hasNext()) {
+                     if (!var8.MoveNext()) {
                         var6 = null;
                         break;
                      }
 
-                     Entry var25 = (Entry)var8.next();
+                     Entry var25 = (Entry)var8.Current;
                      var3 = (WatchKey)var25.getKey();
-                     List var22 = (List)var25.getValue();
+                     List<object> var22 = (List<object>)var25.getValue();
                      var23 = false;
-                     IEnumerator var10 = this.ll.entrySet().iterator();
+                     IEnumerator var10 = this.ll.entrySet().GetEnumerator();
 
                      while(true) {
                         Entry var9;
                         fq var24;
                         do {
                            do {
-                              if (!var10.hasNext()) {
+                              if (!var10.MoveNext()) {
                                  if (!var23) {
                                     var3.cancel();
                                  }
                                  continue label156;
                               }
 
-                              var9 = (Entry)var10.next();
+                              var9 = (Entry)var10.Current;
                            } while(var9.getValue() != var3);
                         } while((var24 = (fq)var9.getKey()) == null);
 
                         var23 = true;
-                        IEnumerator var12 = var22.iterator();
+                        IEnumerator var12 = var22.GetEnumerator();
 
-                        while(var12.hasNext()) {
-                           string var11 = (string)var12.next();
+                        while(var12.MoveNext()) {
+                           string var11 = (string)var12.Current;
                            var24.X(var11);
                         }
                      }
@@ -114,7 +114,7 @@ class fm : Thread {
                var1.Clear();
             }
          } finally {
-            this.lk.close();
+            this.lk.Close();
          }
       } catch (InterruptedException var20) {
       } catch (IOException var21) {

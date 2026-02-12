@@ -19,13 +19,13 @@ class he : Stream {
    }
 
    public void write(int var1) {
-      this.ss.write(var1);
-      this.su.write(var1);
+      this.ss.Write(var1);
+      this.su.Write(var1);
       if (var1 == 10) {
          if (hc.en() != null) {
             lock(hc.en()) {
-               hc.en().write(this.st.GetBytes());
-               hc.en().write(this.su.toByteArray());
+               hc.en().Write(this.st.GetBytes());
+               hc.en().Write(this.su.toByteArray());
             }
          }
 
@@ -36,16 +36,16 @@ class he : Stream {
 
    public void write(byte[] var1, int var2, int var3) {
       if (this.ss != null) {
-         this.ss.write(var1, var2, var3);
+         this.ss.Write(var1, var2, var3);
       }
 
       for(int var4 = 0; var4 < var3; ++var4) {
          if (var1[var2 + var4] == 10) {
-            this.su.write(var1, var2, var4 + 1);
+            this.su.Write(var1, var2, var4 + 1);
             if (hc.en() != null) {
                lock(hc.en()) {
-                  hc.en().write(this.st.GetBytes());
-                  hc.en().write(this.su.toByteArray());
+                  hc.en().Write(this.st.GetBytes());
+                  hc.en().Write(this.su.toByteArray());
                }
             }
 
@@ -56,16 +56,16 @@ class he : Stream {
          }
       }
 
-      this.su.write(var1, var2, var3);
+      this.su.Write(var1, var2, var3);
    }
 
    public void flush() {
       if (this.su.Count > 0) {
-         this.su.write(System.lineSeparator().GetBytes());
+         this.su.Write(System.lineSeparator().GetBytes());
          if (hc.en() != null) {
             lock(hc.en()) {
-               hc.en().write(this.st.GetBytes());
-               hc.en().write(this.su.toByteArray());
+               hc.en().Write(this.st.GetBytes());
+               hc.en().Write(this.su.toByteArray());
             }
          }
 

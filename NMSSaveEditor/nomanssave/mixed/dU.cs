@@ -13,13 +13,13 @@ class dU : G {
    }
 
    protected string g(string var1) {
-      gH var2 = (gH)dN.p(this.ia).getSelectedItem();
+      gH var2 = (gH)dN.p(this.ia).SelectedItem;
       if (var2 == null) {
          return "";
       } else {
          try {
             var1 = hg.aB(var1).ToString();
-            if (!var1.equals(var2.cK())) {
+            if (!var1.Equals(var2.cK())) {
                var2.aa(var1);
             }
 

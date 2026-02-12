@@ -28,9 +28,9 @@ public class fu : fq {
    }
 
    fu(File var1, fR var2) {
-      this.lD = var1.isFile() ? var1 : new File(var1, "memory.dat");
+      this.lD = var1.Exists ? var1 : new File(var1, "memory.dat");
       this.lE = var2;
-      Console.WriteLine(this.lD.getAbsolutePath());
+      Console.WriteLine(this.lD.FullName);
       FileStream var3 = new FileStream(this.lD);
 
       try {
@@ -75,7 +75,7 @@ public class fu : fq {
                int var10 = var3.read(var9);
                string var11 = new string(var9, 0, var10, "ISO-8859-1");
                Matcher var12 = lC.matcher(var11);
-               if (var12.matches()) {
+               if (var12.Matches()) {
                   try {
                      this.lF[var8].be = ag(int.Parse(var12.group(1)));
                   } catch (Exception var17) {
@@ -86,7 +86,7 @@ public class fu : fq {
             }
          }
       } finally {
-         var3.close();
+         var3.Close();
       }
 
       this.lG = null;
@@ -104,7 +104,7 @@ public class fu : fq {
          }
       }
 
-      fl.a(this, this.lD.getParentFile());
+      fl.a(this, this.lD.Directory);
    }
 
    public File bS() {
@@ -130,7 +130,7 @@ public class fu : fq {
    }
 
    public void X(string var1) {
-      var1.equals(this.lD.getName());
+      var1.Equals(this.lD.Name);
    }
 
    public static void main(string[] var0) {

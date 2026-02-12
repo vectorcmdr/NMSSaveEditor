@@ -13,7 +13,7 @@ public class fk : eY {
       this.li = var1;
    }
 
-   public Map bp() {
+   public Dictionary<object, object> bp() {
       return this.li.bp();
    }
 }

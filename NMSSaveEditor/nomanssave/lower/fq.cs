@@ -18,13 +18,13 @@ public interface fq {
       var0 /= 60L;
       int var4 = (int)var0;
       StringBuilder var5 = new StringBuilder();
-      var5.append(var4);
-      var5.append(':');
+      var5.Append(var4);
+      var5.Append(':');
       if (var3 < 10) {
-         var5.append(0);
+         var5.Append(0);
       }
 
-      var5.append(var3);
+      var5.Append(var3);
       return var5.ToString();
    }
 
@@ -39,39 +39,39 @@ public interface fq {
    }
 
    static fq a(File var0, fR var1) {
-      if (!var0.exists()) {
+      if (!var0.Exists) {
          return null;
       } else {
          try {
-            if (var0.isDirectory()) {
-               if (var0.listFiles((var0x) -> {
-                  return var0x.getName().equalsIgnoreCase("containers.index");
+            if (var0.Attributes.HasFlag(FileAttributes.Directory)) {
+               if (var0.listFiles((var0x) => {
+                  return var0x.Name.Equals("containers.index");
                }).Length > 0) {
                   return new fT(var0, var1);
                }
 
-               if (var0.listFiles((var0x) -> {
-                  return var0x.getName().equalsIgnoreCase("accountdata.hg") || Pattern.matches("save\\d*.hg", var0x.getName().ToLower());
+               if (var0.listFiles((var0x) => {
+                  return var0x.Name.Equals("accountdata.hg") || Pattern.Matches("save\\d*.hg", var0x.Name.ToLower());
                }).Length > 0) {
                   return new fJ(var0, var1);
                }
 
-               if (var0.listFiles((var0x) -> {
-                  return Pattern.matches("savedata\\d{2}.hg", var0x.getName().ToLower());
+               if (var0.listFiles((var0x) => {
+                  return Pattern.Matches("savedata\\d{2}.hg", var0x.Name.ToLower());
                }).Length > 0) {
                   return new fA(var0, var1);
                }
             } else {
-               if (var0.getName().equalsIgnoreCase("containers.index")) {
-                  return new fT(var0.getParentFile(), var1);
+               if (var0.Name.Equals("containers.index")) {
+                  return new fT(var0.Directory, var1);
                }
 
-               if (var0.getName().equalsIgnoreCase("accountdata.hg") || Pattern.matches("save\\d*.hg", var0.getName().ToLower())) {
-                  return new fJ(var0.getParentFile(), var1);
+               if (var0.Name.Equals("accountdata.hg") || Pattern.Matches("save\\d*.hg", var0.Name.ToLower())) {
+                  return new fJ(var0.Directory, var1);
                }
 
-               if (Pattern.matches("savedata\\d{2}.hg", var0.getName().ToLower())) {
-                  return new fA(var0.getParentFile(), var1);
+               if (Pattern.Matches("savedata\\d{2}.hg", var0.Name.ToLower())) {
+                  return new fA(var0.Directory, var1);
                }
             }
          } catch (IOException var3) {
@@ -83,21 +83,21 @@ public interface fq {
    }
 
    static fq a(string var0, File var1, fR var2) {
-      if (!var1.exists()) {
+      if (!var1.Exists) {
          return null;
       } else if (var0 == null) {
          return a(var1, var2);
       } else {
          try {
-            if ("Steam".equals(var0)) {
+            if ("Steam".Equals(var0)) {
                return new fJ(var1, var2);
             }
 
-            if ("Xbox Game Pass".equals(var0)) {
+            if ("Xbox Game Pass".Equals(var0)) {
                return new fT(var1, var2);
             }
 
-            if ("PS4 - Save Wizard".equals(var0)) {
+            if ("PS4 - Save Wizard".Equals(var0)) {
                return new fA(var1, var2);
             }
          } catch (IOException var4) {
@@ -115,9 +115,9 @@ public interface fq {
    ft[] bU();
 
    default ft[] bV() {
-      return (ft[])new List<object>(new object[]{this.bU()).stream().filter((var0) -> {
-         return !var0.isEmpty();
-      }).toArray((var0) -> {
+      return (ft[])new List<object>(new object[]{this.bU()).stream().filter((var0) => {
+         return !var0.Count == 0;
+      }).ToArray((var0) => {
          return new ft[var0];
       });
    }

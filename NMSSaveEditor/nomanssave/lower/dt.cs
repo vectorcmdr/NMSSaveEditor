@@ -17,11 +17,11 @@ public class dt : ba {
       this.eR = var1;
       this.k("Production");
       this.eS = new Panel();
-      this.eS.setLayout(new GridBagLayout());
+      this.eS.LayoutEnginenew GridBagLayout());
       this.a((Control)this.eS);
-      SystemInformation.addPropertyChangeListener((var1x) -> {
-         if ("lookAndFeel".equals(var1x.getPropertyName())) {
-            System.Windows.Forms.Application.invokeLater(this::aL);
+      SystemInformation.addPropertyChangeListener((var1x) => {
+         if ("lookAndFeel".Equals(var1x.getPropertyName())) {
+            System.Windows.Forms.Application.Run(this.aL);
          }
 
       });
@@ -45,13 +45,13 @@ public class dt : ba {
          }
       }
 
-      this.eS.revalidate();
-      this.eS.updateUI();
+      this.eS.PerformLayout();
+      this.eS.Refresh();
    }
 
    public void a(gF[] var1) {
       lock(this.eS.getTreeLock()) {
-         this.eS.removeAll();
+         this.eS.RemoveAll();
          int var3 = 0;
 
          while(true) {
@@ -70,8 +70,8 @@ public class dt : ba {
          }
       }
 
-      this.eS.revalidate();
-      this.eS.updateUI();
+      this.eS.PerformLayout();
+      this.eS.Refresh();
    }
 
    private void a(du var1) {
@@ -89,10 +89,10 @@ public class dt : ba {
       if (var2 == null) {
          this.eR.c("Item details not found!");
       } else {
-         List var3 = this.eR.g(3584);
+         List<object> var3 = this.eR.g(3584);
          int var4 = dd.a(this, var3, -1);
          if (var4 != -1) {
-            gt var5 = (gt)var3.get(var4);
+            gt var5 = (gt)var3[(var4);
             int var6 = var1.hm.dA();
             ey var7 = ey.d(var1.hm.dz());
             var6 = var5.a(var7, var6);

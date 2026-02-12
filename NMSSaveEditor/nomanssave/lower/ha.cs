@@ -53,7 +53,7 @@ public class ha : FilterInputStream {
       if (this.eof) {
          return false;
       } else {
-         int var1 = base.read();
+         int var1 = base.ReadByte();
          if (var1 < 0) {
             if (this.sj) {
                this.eof = true;
@@ -66,7 +66,7 @@ public class ha : FilterInputStream {
             int var3 = var1 & 15;
             if (var2 == 15) {
                do {
-                  var1 = base.read();
+                  var1 = base.ReadByte();
                   if (var1 < 0) {
                      throw new EOFException("Unexpected end of literal length");
                   }
@@ -97,7 +97,7 @@ public class ha : FilterInputStream {
                this.eof = true;
                return true;
             } else {
-               var4 = base.read();
+               var4 = base.ReadByte();
                if (var4 < 0) {
                   if (this.sj) {
                      this.eof = true;
@@ -106,14 +106,14 @@ public class ha : FilterInputStream {
                      throw new EOFException("Unexpected end of offset");
                   }
                } else {
-                  int var5 = base.read();
+                  int var5 = base.ReadByte();
                   if (var5 < 0) {
                      throw new EOFException("Unexpected end of offset");
                   } else {
                      var4 |= var5 << 8;
                      if (var3 == 15) {
                         do {
-                           var1 = base.read();
+                           var1 = base.ReadByte();
                            if (var1 < 0) {
                               throw new EOFException("Unexpected end of literal length");
                            }

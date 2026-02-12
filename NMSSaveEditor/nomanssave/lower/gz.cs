@@ -10,7 +10,7 @@ public class gz {
    private eY oI;
    private eV rb;
    private eV rc;
-   private List gT;
+   private List<object> gT;
 
    public static gz w(eY var0) {
       eV var1 = null;
@@ -18,7 +18,7 @@ public class gz {
       if (var2 != null) {
          for(int var3 = 0; var3 < var2.Count; ++var3) {
             eY var4 = var2.V(var3);
-            if ("^GLOBAL_STATS".equals(var4.getValueAsString("GroupId"))) {
+            if ("^GLOBAL_STATS".Equals(var4.getValueAsString("GroupId"))) {
                var1 = var4.d("Stats");
                break;
             }
@@ -29,7 +29,7 @@ public class gz {
    }
 
    private static Function au(string var0) {
-      return (var1) -> {
+      return (var1) => {
          return new string[]{"Exosuit", var0};
       };
    }
@@ -60,10 +60,10 @@ public class gz {
                   hc.warn("Could not build word groups: " + var9.getValueAsString("id"));
                   ++var8;
                } else {
-                  IEnumerator var12 = var10.bw().iterator();
+                  IEnumerator var12 = var10.bw().GetEnumerator();
 
-                  while(var12.hasNext()) {
-                     string var11 = (string)var12.next();
+                  while(var12.MoveNext()) {
+                     string var11 = (string)var12.Current;
                      eU var13 = var10.z(var11);
                      if (var13 != null) {
                         eY var14 = new eY();
@@ -174,7 +174,7 @@ public class gz {
       this.oI.b("Energy", (Object)(new Integer(var1)));
    }
 
-   public List cC() {
+   public List<object> cC() {
       return this.gT;
    }
 
@@ -233,7 +233,7 @@ public class gz {
    private bool d(string var1, int var2) {
       for(int var3 = 0; var3 < this.rc.Count; ++var3) {
          eY var4 = this.rc.V(var3);
-         if (var1.equals(var4.getValueAsString("Group"))) {
+         if (var1.Equals(var4.getValueAsString("Group"))) {
             return var4.d("Races").ab(var2);
          }
       }
@@ -245,7 +245,7 @@ public class gz {
       eY var4;
       for(int var5 = 0; var5 < this.rc.Count; ++var5) {
          var4 = this.rc.V(var5);
-         if (var1.equals(var4.getValueAsString("Group"))) {
+         if (var1.Equals(var4.getValueAsString("Group"))) {
             hc.debug("Updating word: " + var1 + "[" + var2 + "] = " + var3);
             eV var6 = var4.d("Races");
 
@@ -301,7 +301,7 @@ public class gz {
    public int a(gs var1) {
       for(int var3 = 0; var3 < this.rb.Count; ++var3) {
          eY var2 = this.rb.V(var3);
-         if (var2.getValueAsString("Id").equals(var1.id)) {
+         if (var2.getValueAsString("Id").Equals(var1.id)) {
             return var2.J("Value.IntValue");
          }
       }
@@ -316,7 +316,7 @@ public class gz {
          eY var3;
          for(int var4 = 0; var4 < this.rb.Count; ++var4) {
             var3 = this.rb.V(var4);
-            if (var3.getValueAsString("Id").equals(var1.id)) {
+            if (var3.getValueAsString("Id").Equals(var1.id)) {
                var3.b("Value.IntValue", (Object)(new Integer(var2)));
                return;
             }
@@ -336,7 +336,7 @@ public class gz {
    public double b(gs var1) {
       for(int var3 = 0; var3 < this.rb.Count; ++var3) {
          eY var2 = this.rb.V(var3);
-         if (var2.getValueAsString("Id").equals(var1.id)) {
+         if (var2.getValueAsString("Id").Equals(var1.id)) {
             return var2.L("Value.FloatValue");
          }
       }
@@ -351,7 +351,7 @@ public class gz {
          eY var4;
          for(int var5 = 0; var5 < this.rb.Count; ++var5) {
             var4 = this.rb.V(var5);
-            if (var4.getValueAsString("Id").equals(var1.id)) {
+            if (var4.getValueAsString("Id").Equals(var1.id)) {
                var4.b("Value.FloatValue", (Object)(new Double(var2)));
                return;
             }

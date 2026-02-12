@@ -17,7 +17,7 @@ class aq : object {
    }
 
    public Class getColumnClass(int var1) {
-      return var1 == 0 ? Image.class : string.class;
+      return var1 == 0 ? typeof(Image) : typeof(string);
    }
 
    public int getColumnCount() {
@@ -50,7 +50,7 @@ class aq : object {
       case 0:
          return var4 == null ? null : var4.N(3);
       case 1:
-         return var4 == null ? "" : var4.getName();
+         return var4 == null ? "" : var4.Name;
       case 2:
          return var4 == null ? "" : var4.bc().ToString();
       case 3:

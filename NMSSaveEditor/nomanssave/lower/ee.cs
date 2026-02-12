@@ -31,7 +31,7 @@ class ee : object {
 
    public void setSelectedItem(Object var1) {
       gy var2 = (gy)var1;
-      if (var2 != null && !var2.equals(eb.a(ec.h(this.ik))[this.il].ed())) {
+      if (var2 != null && !var2.Equals(eb.a(ec.h(this.ik))[this.il].ed())) {
          eb.a(ec.h(this.ik))[this.il].a(var2);
       }
 

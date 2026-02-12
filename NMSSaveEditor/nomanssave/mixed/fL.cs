@@ -45,7 +45,7 @@ class fL : fs {
       } catch (FormatException var11) {
          throw new IOException("Invalid backup file");
       } finally {
-         var4.close();
+         var4.Close();
       }
 
    }
@@ -55,11 +55,11 @@ class fL : fs {
    }
 
    public string K() {
-      return this.mc.getName();
+      return this.mc.Name;
    }
 
    public long lastModified() {
-      return this.mc.lastModified();
+      return this.mc.LastWriteTimeUtc.Ticks;
    }
 
    public string getName() {
@@ -88,7 +88,7 @@ class fL : fs {
    }
 
    public string toString() {
-      return this.mc.getName();
+      return this.mc.Name;
    }
 }
 

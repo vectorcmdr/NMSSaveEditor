@@ -5,50 +5,51 @@ using System.Text;
 
 namespace NMSSaveEditor
 {
-public enum ex {
-   iL("Fuel"),
-   iM("Metal"),
-   iN("Catalyst"),
-   iO("Stellar"),
-   iP("Flora"),
-   iQ("Earth"),
-   iR("Exotic"),
-   iS("Special"),
-   iT("Component"),
-   iU("Consumable"),
-   iV("Tradeable"),
-   iW("Curiosity"),
-   iX("Building Part"),
-   iY("Procedural"),
-   iZ("Customisation Part"),
-   ja("Emote"),
-   jb("Pet"),
-   jc("Fish"),
-   jd("TechBox"),
-   je("Ship"),
-   jf("Weapon"),
-   jg("Procedural"),
-   jh("Suit"),
-   ji("Procedural"),
-   jj("Personal"),
-   jk("Freighter"),
-   jl("Procedural"),
-   jm("Vehicle"),
-   jn("Procedural"),
-   jo("Aquatic"),
-   jp("Procedural"),
-   jq("Living Ship"),
-   jr("Procedural"),
-   js("All Ships"),
-   jt("All Vehicles"),
-   ju("Robot Ship"),
-   jv("All Ships Except Alien"),
-   jw("Procedural"),
-   jx("Mech"),
-   jy("Procedural"),
-   jz("Maintenance"),
-   jA("Corvette"),
-   jB("Procedural");
+public sealed class ex {
+   public static readonly ex iL = new ex("Fuel");
+   public static readonly ex iM = new ex("Metal");
+   public static readonly ex iN = new ex("Catalyst");
+   public static readonly ex iO = new ex("Stellar");
+   public static readonly ex iP = new ex("Flora");
+   public static readonly ex iQ = new ex("Earth");
+   public static readonly ex iR = new ex("Exotic");
+   public static readonly ex iS = new ex("Special");
+   public static readonly ex iT = new ex("Component");
+   public static readonly ex iU = new ex("Consumable");
+   public static readonly ex iV = new ex("Tradeable");
+   public static readonly ex iW = new ex("Curiosity");
+   public static readonly ex iX = new ex("Building Part");
+   public static readonly ex iY = new ex("Procedural");
+   public static readonly ex iZ = new ex("Customisation Part");
+   public static readonly ex ja = new ex("Emote");
+   public static readonly ex jb = new ex("Pet");
+   public static readonly ex jc = new ex("Fish");
+   public static readonly ex jd = new ex("TechBox");
+   public static readonly ex je = new ex("Ship");
+   public static readonly ex jf = new ex("Weapon");
+   public static readonly ex jg = new ex("Procedural");
+   public static readonly ex jh = new ex("Suit");
+   public static readonly ex ji = new ex("Procedural");
+   public static readonly ex jj = new ex("Personal");
+   public static readonly ex jk = new ex("Freighter");
+   public static readonly ex jl = new ex("Procedural");
+   public static readonly ex jm = new ex("Vehicle");
+   public static readonly ex jn = new ex("Procedural");
+   public static readonly ex jo = new ex("Aquatic");
+   public static readonly ex jp = new ex("Procedural");
+   public static readonly ex jq = new ex("Living Ship");
+   public static readonly ex jr = new ex("Procedural");
+   public static readonly ex js = new ex("All Ships");
+   public static readonly ex jt = new ex("All Vehicles");
+   public static readonly ex ju = new ex("Robot Ship");
+   public static readonly ex jv = new ex("All Ships Except Alien");
+   public static readonly ex jw = new ex("Procedural");
+   public static readonly ex jx = new ex("Mech");
+   public static readonly ex jy = new ex("Procedural");
+   public static readonly ex jz = new ex("Maintenance");
+   public static readonly ex jA = new ex("Corvette");
+   public static readonly ex jB = new ex("Procedural");
+
 
    private string name;
 

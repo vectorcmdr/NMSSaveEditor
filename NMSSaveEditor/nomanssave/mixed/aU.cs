@@ -15,7 +15,7 @@ class aU : EventHandler {
    }
 
    public void actionPerformed(EventArgs var1) {
-      this.dr.setVisible(false);
+      this.dr.Hide();
    }
 }
 

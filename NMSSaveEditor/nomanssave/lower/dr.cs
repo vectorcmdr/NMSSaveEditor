@@ -17,7 +17,7 @@ class dr : EventHandler {
    }
 
    public void actionPerformed(EventArgs var1) {
-      int var2 = dj.j(this.hl).getSelectedIndex();
+      int var2 = dj.j(this.hl).SelectedIndex;
       if (var2 >= 0 && var2 < dj.a(this.hl).Length) {
          this.bv.a(dj.a(this.hl)[var2]);
       }

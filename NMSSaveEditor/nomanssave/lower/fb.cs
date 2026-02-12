@@ -20,7 +20,7 @@ class fb : fc {
       if (this.kN == null) {
          var3 = this.kL;
       } else {
-         var3 = (eY)this.kN.a(eY.class, var2);
+         var3 = (eY)this.kN.a(typeof(eY), var2);
       }
 
       int var4 = var3.IndexOf(this.name);
@@ -35,7 +35,7 @@ class fb : fc {
                throw new Exception("Unexpected error", var7);
             }
 
-            var3.put(this.name, var5);
+            var3.Put(this.name, var5);
             return var5;
          }
       } else if (var1.isInstance(var3.values[var4])) {
@@ -50,10 +50,10 @@ class fb : fc {
       if (this.kN == null) {
          var1 = this.kL;
       } else {
-         var1 = (eY)this.kN.a(eY.class, false);
+         var1 = (eY)this.kN.a(typeof(eY), false);
       }
 
-      return var1.get(this.name);
+      return var1[(this.name);
    }
 
    Object a(Object var1, bool var2) {
@@ -61,10 +61,10 @@ class fb : fc {
       if (this.kN == null) {
          var3 = this.kL;
       } else {
-         var3 = (eY)this.kN.a(eY.class, var2);
+         var3 = (eY)this.kN.a(typeof(eY), var2);
       }
 
-      return var3.put(this.name, var1);
+      return var3.Put(this.name, var1);
    }
 
    Object bG() {
@@ -72,7 +72,7 @@ class fb : fc {
       if (this.kN == null) {
          var1 = this.kL;
       } else {
-         var1 = (eY)this.kN.a(eY.class, false);
+         var1 = (eY)this.kN.a(typeof(eY), false);
       }
 
       return var1.F(this.name);
@@ -83,12 +83,12 @@ class fb : fc {
       if (this.kN == null) {
          var2 = this.kL;
       } else {
-         var2 = (eY)this.kN.a(eY.class, false);
+         var2 = (eY)this.kN.a(typeof(eY), false);
       }
 
-      Object var3 = var2.get(this.name);
+      Object var3 = var2[(this.name);
       if (var3 == null) {
-         var2.put(this.name, var1);
+         var2.Put(this.name, var1);
          return null;
       } else if (var3 is eY) {
          ((eY)var3).c(var1);

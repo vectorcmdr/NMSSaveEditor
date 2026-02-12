@@ -15,40 +15,40 @@ public class dz : Form {
 
    private dz(Frame var1) {
       base(var1);
-      this.setSize(300, 400);
-      this.setResizable(false);
+      this.Size = new Size(300, 400);
+      this.FormBorderStyle = FormBorderStyle.FixedDialog; //(false);
       this.setModalExclusionType(ModalExclusionType.APPLICATION_EXCLUDE);
-      this.setTitle("Save File As");
-      this.setModal(true);
+      this.Text = ("Save File As");
+      this/* setModal */(true);
       Panel var2 = new Panel();
       this.setContentPane(var2);
-      var2.setLayout(new TableLayoutPanel(0, 0));
+      var2.LayoutEnginenew TableLayoutPanel(0, 0));
       Panel var3 = new Panel();
       this.hr = new ListBox();
       this.hr.setSelectionMode(0);
-      this.hr.setModel(new dA(this));
+      this.hr.DataSource = (new dA(this));
       var3.setViewportView(this.hr);
       var2.Add(var3);
       Panel var4 = new Panel();
-      var4.setLayout(new FlowLayoutPanel(2));
+      var4.LayoutEnginenew FlowLayoutPanel(2));
       var2.Add(var4, "South");
       Button var5 = new Button("Replace/Save");
-      var5.addActionListener(new dB(this));
+      var5.Click += (new dB(this));
       var4.Add(var5);
       this.getRootPane().setDefaultButton(var5);
       Button var6 = new Button("Cancel");
-      var6.addActionListener(new dC(this));
+      var6.Click += (new dC(this));
       var4.Add(var6);
       this.getRootPane().registerKeyboardAction(new dD(this), Keys.getKeyStroke(27, 0), 2);
    }
 
    private int a(ft[] var1, int var2) {
       this.hs = var1;
-      this.hr.updateUI();
-      this.hr.setSelectedIndex(var2);
+      this.hr.Refresh();
+      this.hr.SelectedIndex = (var2);
       this.gU = -1;
-      this.setLocationRelativeTo(this.getParent());
-      this.setVisible(true);
+      this.StartPosition = FormStartPosition.CenterParent; //(this.DirectoryName);
+      this.Show();
       return this.gU;
    }
 

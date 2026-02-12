@@ -39,8 +39,8 @@ class ds : EventHandler {
 
          var3[var4] = var2;
          dj.a(this.hl, var3);
-         dj.j(this.hl).setSelectedIndex(var4);
-         dj.j(this.hl).updateUI();
+         dj.j(this.hl).SelectedIndex = (var4);
+         dj.j(this.hl).Refresh();
       }
 
    }

@@ -16,10 +16,10 @@ class aF : EventHandler {
 
    public void actionPerformed(EventArgs var1) {
       string var2 = aH.getProperty("LookAndFeel");
-      aI var3 = (aI)Stream.of(aI.Values).filter((var1x) -> {
-         return var1x.name().equalsIgnoreCase(var2);
+      aI var3 = (aI)Stream.of(aI.Values).filter((var1x) => {
+         return var1x.name().Equals(var2);
       }).findFirst().orElse(aI.cN);
-      aI var4 = (aI)aD.a(this.cB).getSelectedItem();
+      aI var4 = (aI)aD.a(this.cB).SelectedItem;
       aD.a(this.cB, false);
       if (var4 == null) {
          if (var3 != null) {
@@ -31,13 +31,13 @@ class aF : EventHandler {
          aD.a(this.cB, true);
       }
 
-      double var5 = double.Parse(aD.b(this.cB).getText());
+      double var5 = double.Parse(aD.b(this.cB).Text);
       if (var5 != aH.a("InventoryScaling", 1.0D)) {
          aH.b("InventoryScaling", var5);
          aD.a(this.cB, true);
       }
 
-      this.cB.setVisible(false);
+      this.cB.Hide();
    }
 }
 

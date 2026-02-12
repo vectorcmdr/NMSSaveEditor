@@ -28,11 +28,11 @@ class fy : ft {
       fn var3 = null;
       if (fu.a(this.lJ)[this.lT * 2] != null) {
          var3 = fu.a(this.lJ)[this.lT * 2].L();
-         var1 = fu.a(this.lJ)[this.lT * 2].lastModified();
+         var1 = fu.a(this.lJ)[this.lT * 2].LastWriteTimeUtc.Ticks;
       }
 
       if (fu.a(this.lJ)[this.lT * 2 + 1] != null) {
-         long var4 = fu.a(this.lJ)[this.lT * 2 + 1].lastModified();
+         long var4 = fu.a(this.lJ)[this.lT * 2 + 1].LastWriteTimeUtc.Ticks;
          if (var4 > var1) {
             var3 = fu.a(this.lJ)[this.lT * 2 + 1].L();
          }
@@ -53,21 +53,21 @@ class fy : ft {
       }
 
       var1.sort(new fz(this));
-      return (fs[])var1.toArray(new fs[0]);
+      return (fs[])var1.ToArray(new fs[0]);
    }
 
    public string toString() {
       StringBuilder var1 = new StringBuilder();
-      var1.append("Slot " + (this.lT + 1) + " - ");
+      var1.Append("Slot " + (this.lT + 1) + " - ");
       long var2 = long.MinValue;
       fn var4 = null;
       if (fu.a(this.lJ)[this.lT * 2] != null) {
          var4 = fu.a(this.lJ)[this.lT * 2].L();
-         var2 = fu.a(this.lJ)[this.lT * 2].lastModified();
+         var2 = fu.a(this.lJ)[this.lT * 2].LastWriteTimeUtc.Ticks;
       }
 
       if (fu.a(this.lJ)[this.lT * 2 + 1] != null) {
-         long var5 = fu.a(this.lJ)[this.lT * 2 + 1].lastModified();
+         long var5 = fu.a(this.lJ)[this.lT * 2 + 1].LastWriteTimeUtc.Ticks;
          if (var5 > var2) {
             var4 = fu.a(this.lJ)[this.lT * 2 + 1].L();
             var2 = var5;
@@ -75,10 +75,10 @@ class fy : ft {
       }
 
       if (var4 != null) {
-         var1.append(var4.ToString());
-         var1.append(" - " + Application.b(var2));
+         var1.Append(var4.ToString());
+         var1.Append(" - " + Application.b(var2));
       } else {
-         var1.append("[EMPTY]");
+         var1.Append("[EMPTY]");
       }
 
       return var1.ToString();

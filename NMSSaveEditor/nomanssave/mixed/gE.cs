@@ -12,9 +12,9 @@ public class gE {
 
    public static gE[] z(eY var0) {
       eV var1 = var0.d("TeleportEndpoints");
-      List var2 = (List)var1.bB().filter((var0x) -> {
-         return "Settlement".equals(var0x.getValueAsString("TeleporterType"));
-      }).map((var0x) -> {
+      List<object> var2 = (List<object>)var1.bB().filter((var0x) => {
+         return "Settlement".Equals(var0x.getValueAsString("TeleporterType"));
+      }).map((var0x) => {
          return hl.n(var0x.H("UniverseAddress"));
       }).collect(Collectors.toList());
       eV var3 = var0.d("SettlementStatesV2");
@@ -29,7 +29,7 @@ public class gE {
             }
          }
 
-         return (gE[])var4.toArray(new gE[0]);
+         return (gE[])var4.ToArray(new gE[0]);
       } else {
          return new gE[0];
       }
@@ -100,12 +100,12 @@ public class gE {
             var2.Add(new gF(this, var4, (gF)null));
          }
 
-         return (gF[])var2.toArray(new gF[0]);
+         return (gF[])var2.ToArray(new gF[0]);
       }
    }
 
    public string toString() {
-      return this.getName();
+      return this.Name;
    }
 }
 

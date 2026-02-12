@@ -25,7 +25,7 @@ public class gX : FilterInputStream {
 
    private bool ej() {
       byte[] var1 = new byte[16];
-      int var2 = this.in.read(var1, 0, 16);
+      int var2 = this.@in.read(var1, 0, 16);
       if (var2 < 0) {
          this.sa = null;
          return false;
@@ -43,7 +43,7 @@ public class gX : FilterInputStream {
    }
 
    public int read() {
-      return this.sa != null && (this.sa.available() != 0 || this.ej()) ? this.sa.read() : -1;
+      return this.sa != null && (this.sa.Length != 0 || this.ej()) ? this.sa.ReadByte() : -1;
    }
 
    public int read(byte[] var1) {
@@ -51,7 +51,7 @@ public class gX : FilterInputStream {
    }
 
    public int read(byte[] var1, int var2, int var3) {
-      return this.sa != null && (this.sa.available() != 0 || this.ej()) ? this.sa.read(var1, var2, var3) : -1;
+      return this.sa != null && (this.sa.Length != 0 || this.ej()) ? this.sa.read(var1, var2, var3) : -1;
    }
    static Stream a(gX var0) {
       return var0.in;

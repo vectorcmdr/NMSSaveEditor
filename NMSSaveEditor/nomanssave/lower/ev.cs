@@ -16,7 +16,7 @@ class ev : List<object> {
 
       for(int var3 = 0; var3 < var2.getLength(); ++var3) {
          Node var4 = var2.item(var3);
-         if (var4 is Element && var4.getNodeName().equals("stacksize")) {
+         if (var4 is Element && var4.getNodeName().Equals("stacksize")) {
             this.Add(new ew((Element)var4));
          }
       }

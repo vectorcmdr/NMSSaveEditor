@@ -8,7 +8,7 @@ namespace NMSSaveEditor
 
 public class en {
    private static bool iu = false;
-   private static List iv = new List<object>();
+   private static List<object> iv = new List<object>();
 
    public static void a(eo var0) {
       iv.Add(var0);
@@ -20,10 +20,10 @@ public class en {
 
    public static void c(bool var0) {
       iu = var0;
-      IEnumerator var2 = iv.iterator();
+      IEnumerator var2 = iv.GetEnumerator();
 
-      while(var2.hasNext()) {
-         eo var1 = (eo)var2.next();
+      while(var2.MoveNext()) {
+         eo var1 = (eo)var2.Current;
          var1.a(var0);
       }
 

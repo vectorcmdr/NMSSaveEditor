@@ -17,7 +17,7 @@ class Z : EventHandler {
    }
 
    public void actionPerformed(EventArgs var1) {
-      gj var2 = (gj)X.k(this.bV).getSelectedItem();
+      gj var2 = (gj)X.k(this.bV).SelectedItem;
       if (var2 != null) {
          this.bv.a(var2);
       }

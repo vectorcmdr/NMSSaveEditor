@@ -5,15 +5,14 @@ using System.Text;
 
 namespace NMSSaveEditor
 {
-class do : G {
+class @do : G {
    dj hl;
-
-   do(dj var1) {
+   @do(dj var1) {
       this.hl = var1;
    }
 
    protected string g(string var1) {
-      gv var2 = (gv)dj.j(this.hl).getSelectedItem();
+      gv var2 = (gv)dj.j(this.hl).SelectedItem;
       if (var2 == null) {
          return "";
       } else {

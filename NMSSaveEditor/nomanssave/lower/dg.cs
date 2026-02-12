@@ -15,8 +15,8 @@ class dg : EventHandler {
    }
 
    public void actionPerformed(EventArgs var1) {
-      dd.a(this.gW, dd.b(this.gW).getSelectedIndex());
-      this.gW.setVisible(false);
+      dd.a(this.gW, dd.b(this.gW).SelectedIndex);
+      this.gW.Hide();
    }
 }
 

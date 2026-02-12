@@ -27,7 +27,7 @@ public class gp {
             var1.Add(new gp(var3, var4));
          }
 
-         return (gp[])var1.toArray(new gp[0]);
+         return (gp[])var1.ToArray(new gp[0]);
       }
    }
 
@@ -140,7 +140,7 @@ public class gp {
       return this.oR.J("TotalNumberOfExpeditions");
    }
 
-   public void as(int var1) {
+   public void @as(int var1) {
       this.oR.b("TotalNumberOfExpeditions", (Object)(new Integer(var1)));
    }
 
@@ -185,7 +185,7 @@ public class gp {
    }
 
    public string toString() {
-      string var1 = this.getName();
+      string var1 = this.Name;
       if (var1 != null && var1.length() != 0) {
          return var1;
       } else {

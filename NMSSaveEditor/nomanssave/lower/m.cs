@@ -15,8 +15,8 @@ class m : EventHandler {
    }
 
    public void actionPerformed(EventArgs var1) {
-      h.a(this.z, (ey)h.j(this.z).getSelectedItem());
-      this.z.setVisible(false);
+      h.a(this.z, (ey)h.j(this.z).SelectedItem);
+      this.z.Hide();
    }
 }
 

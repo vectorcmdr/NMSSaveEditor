@@ -46,9 +46,9 @@ class ax : object {
       switch(var1) {
       case 0:
       case 1:
-         return string.class;
+         return typeof(string);
       default:
-         return Boolean.class;
+         return typeof(Boolean);
       }
    }
 
@@ -83,7 +83,7 @@ class ax : object {
       gA var4 = ap.i(this.cu).a(var3);
       switch(var2) {
       case 0:
-         return var3 == null ? "" : var3.getText();
+         return var3 == null ? "" : var3.Text;
       case 1:
          return var4.getID();
       case 2:
@@ -106,19 +106,19 @@ class ax : object {
       gA var5 = ap.i(this.cu).a(var4);
       switch(var3) {
       case 2:
-         var5.a(eU.kr, Boolean.TRUE.equals(var1));
+         var5.a(eU.kr, Boolean.TRUE.Equals(var1));
          break;
       case 3:
-         var5.a(eU.ks, Boolean.TRUE.equals(var1));
+         var5.a(eU.ks, Boolean.TRUE.Equals(var1));
          break;
       case 4:
-         var5.a(eU.kt, Boolean.TRUE.equals(var1));
+         var5.a(eU.kt, Boolean.TRUE.Equals(var1));
          break;
       case 5:
-         var5.a(eU.kv, Boolean.TRUE.equals(var1));
+         var5.a(eU.kv, Boolean.TRUE.Equals(var1));
          break;
       case 6:
-         var5.a(eU.kz, Boolean.TRUE.equals(var1));
+         var5.a(eU.kz, Boolean.TRUE.Equals(var1));
       }
 
    }

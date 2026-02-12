@@ -17,7 +17,7 @@ public class eY {
    Object[] values = new Object[10];
    Object kD;
    fe kI;
-   Map kJ = new Dictionary<object, object>();
+   Dictionary<object, object> kJ = new Dictionary<object, object>();
    private static Pattern kK = Pattern.compile("([^\\.\\[\\]]+)|(?:\\.([^\\.\\[\\]]+))|(?:\\[(\\d+)\\])");
 
    public static eY E(string var0) {
@@ -25,12 +25,12 @@ public class eY {
    }
 
    public void b(string var1, Function var2) {
-      this.kJ.put(var1, var2);
+      this.kJ.Put(var1, var2);
    }
 
    void a(string var1, Object var2) {
       for(int var3 = 0; var3 < this.Length; ++var3) {
-         if (this.names[var3].equals(var1)) {
+         if (this.names[var3].Equals(var1)) {
             throw new Exception("duplicate key: " + var1);
          }
       }
@@ -84,7 +84,7 @@ public class eY {
       return this.Length;
    }
 
-   public List names() {
+   public List<object> names() {
       string[] var1 = new string[this.Length];
       Array.Copy(this.names, 0, var1, 0, this.Length);
       return new List<object>(new object[]{var1);
@@ -93,11 +93,11 @@ public class eY {
    public bool contains(string var1) {
       if (var1 == null) {
          throw new NullReferenceException();
-      } else if (!kH.matcher(var1).matches()) {
+      } else if (!kH.matcher(var1).Matches()) {
          throw new Exception("Invalid name: " + var1);
       } else {
          for(int var2 = 0; var2 < this.Length; ++var2) {
-            if (var1.equals(this.names[var2])) {
+            if (var1.Equals(this.names[var2])) {
                return true;
             }
          }
@@ -109,11 +109,11 @@ public class eY {
    public Object get(string var1) {
       if (var1 == null) {
          throw new NullReferenceException();
-      } else if (!kH.matcher(var1).matches()) {
+      } else if (!kH.matcher(var1).Matches()) {
          throw new Exception("Invalid name: " + var1);
       } else {
          for(int var2 = 0; var2 < this.Length; ++var2) {
-            if (var1.equals(this.names[var2])) {
+            if (var1.Equals(this.names[var2])) {
                return this.values[var2];
             }
          }
@@ -125,13 +125,13 @@ public class eY {
    public Object put(string var1, Object var2) {
       if (var1 == null) {
          throw new NullReferenceException();
-      } else if (!kH.matcher(var1).matches()) {
+      } else if (!kH.matcher(var1).Matches()) {
          throw new Exception("Invalid name: " + var1);
       } else if (var2 != null && !fh.a(var2.GetType())) {
          throw new Exception("Unsupported type: " + var2.GetType().getSimpleName());
       } else {
          for(int var3 = 0; var3 < this.Length; ++var3) {
-            if (var1.equals(this.names[var3])) {
+            if (var1.Equals(this.names[var3])) {
                Object var4 = this.values[var3];
                fh.i(var4);
                this.values[var3] = var2;
@@ -162,11 +162,11 @@ public class eY {
    public Object F(string var1) {
       if (var1 == null) {
          throw new NullReferenceException();
-      } else if (!kH.matcher(var1).matches()) {
+      } else if (!kH.matcher(var1).Matches()) {
          throw new Exception("Invalid name: " + var1);
       } else {
          for(int var2 = 0; var2 < this.Length; ++var2) {
-            if (var1.equals(this.names[var2])) {
+            if (var1.Equals(this.names[var2])) {
                Object var3 = this.values[var2];
                fh.i(var3);
                ++var2;
@@ -195,7 +195,7 @@ public class eY {
             bool var3 = false;
 
             for(int var4 = 0; var4 < this.Length; ++var4) {
-               if (var1.names[var2].equals(this.names[var4])) {
+               if (var1.names[var2].Equals(this.names[var4])) {
                   Object var5 = this.values[var4];
                   fh.i(var5);
                   if (var5 is eY && var1.values[var2] is eY) {
@@ -233,7 +233,7 @@ public class eY {
 
    int indexOf(string var1) {
       for(int var2 = 0; var2 < this.Length; ++var2) {
-         if (var1.equals(this.names[var2])) {
+         if (var1.Equals(this.names[var2])) {
             return var2;
          }
       }
@@ -290,7 +290,7 @@ public class eY {
 
    private void firePropertyChange(string var1, Object var2, Object var3) {
       if (this.kI != null) {
-         System.Windows.Forms.Application.invokeLater(() -> {
+         System.Windows.Forms.Application.Run(() => {
             this.kI.propertyChanged(var1, var2, var3);
          });
       }
@@ -307,11 +307,11 @@ public class eY {
    }
 
    private fc G(string var1) {
-      IEnumerator var3 = this.kJ.entrySet().iterator();
+      IEnumerator var3 = this.kJ.entrySet().GetEnumerator();
 
-      while(var3.hasNext()) {
-         Entry var2 = (Entry)var3.next();
-         if (var1.equals(var2.getKey())) {
+      while(var3.MoveNext()) {
+         Entry var2 = (Entry)var3.Current;
+         if (var1.Equals(var2.getKey())) {
             var1 = (string)((Function)var2.getValue()).apply(this);
             break;
          }
@@ -323,7 +323,7 @@ public class eY {
       }
 
       Matcher var5 = kK.matcher(var1);
-      if (var5.find() && var5.start() == 0) {
+      if (var5.find() && var5.Start() == 0) {
          int var6 = var5.end();
          Object var4;
          if (var5.group(1) != null) {
@@ -336,7 +336,7 @@ public class eY {
             var4 = new eZ(this, int.Parse(var5.group(3)), (fc)null);
          }
 
-         while(var5.find() && var5.start() == var6) {
+         while(var5.find() && var5.Start() == var6) {
             var6 = var5.end();
             if (var5.group(2) != null) {
                var4 = new fb(this, var5.group(2), (fc)var4);
@@ -499,10 +499,10 @@ public class eY {
 
          try {
             string var5 = fh.b(this, true);
-            var4.write(var5.getBytes(StandardCharsets.UTF_8));
+            var4.Write(var5.GetBytes());
          } finally {
             if (var4 != null) {
-               var4.close();
+               var4.Close();
             }
 
          }
@@ -535,7 +535,7 @@ public class eY {
             this.d((eY)var6);
          } finally {
             if (var4 != null) {
-               var4.close();
+               var4.Close();
             }
 
          }

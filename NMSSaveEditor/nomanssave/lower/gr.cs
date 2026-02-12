@@ -5,17 +5,18 @@ using System.Text;
 
 namespace NMSSaveEditor
 {
-public enum gr {
-   pf("Combat", false),
-   pg("Exploration", false),
-   ph("Mining", false),
-   pi("Diplomacy", false),
-   pj("Support", false),
-   pk("Normandy", true),
-   pl("DeepSpace", true),
-   pm("DeepSpaceCommon", true),
-   pn("Pirate", false),
-   po("GhostShip", true);
+public sealed class gr {
+   public static readonly gr pf = new gr("Combat", false);
+   public static readonly gr pg = new gr("Exploration", false);
+   public static readonly gr ph = new gr("Mining", false);
+   public static readonly gr pi = new gr("Diplomacy", false);
+   public static readonly gr pj = new gr("Support", false);
+   public static readonly gr pk = new gr("Normandy", true);
+   public static readonly gr pl = new gr("DeepSpace", true);
+   public static readonly gr pm = new gr("DeepSpaceCommon", true);
+   public static readonly gr pn = new gr("Pirate", false);
+   public static readonly gr po = new gr("GhostShip", true);
+
 
    private string name;
    private bool special;
@@ -35,7 +36,7 @@ public enum gr {
 
    public static gr an(string var0) {
       for(int var1 = 0; var1 < values().Length; ++var1) {
-         if (var0.equalsIgnoreCase(values()[var1].name)) {
+         if (var0.Equals(values()[var1].name)) {
             return values()[var1];
          }
       }

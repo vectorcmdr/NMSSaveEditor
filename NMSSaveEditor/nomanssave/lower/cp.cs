@@ -27,8 +27,8 @@ public class cp : OpenFileDialog {
       this.setFileView(new cq(this));
       this.setFileFilter(new cr(this));
       this.setDialogTitle("Choose Companion Export File");
-      SystemInformation.addPropertyChangeListener((var1) -> {
-         if ("lookAndFeel".equals(var1.getPropertyName())) {
+      SystemInformation.addPropertyChangeListener((var1) => {
+         if ("lookAndFeel".Equals(var1.getPropertyName())) {
             Control.updateComponentTreeUI(this);
          }
 

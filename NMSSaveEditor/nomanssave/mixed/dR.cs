@@ -17,7 +17,7 @@ class dR : EventHandler {
    }
 
    public void actionPerformed(EventArgs var1) {
-      int var2 = dN.p(this.ia).getSelectedIndex();
+      int var2 = dN.p(this.ia).SelectedIndex;
       if (var2 >= 0 && var2 < dN.a(this.ia).Length) {
          this.bv.a(dN.a(this.ia)[var2]);
       }

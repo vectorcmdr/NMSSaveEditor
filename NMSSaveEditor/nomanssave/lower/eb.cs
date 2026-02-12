@@ -13,7 +13,7 @@ public class eb : em {
    private gM[] ic;
    private static readonly gy[] ie;
 
-   static {
+   static eb() {
       ie = new gy[]{gy.qR, gy.qS, gy.qT};
    }
 
@@ -23,7 +23,7 @@ public class eb : em {
       var2.rowHeights = new int[3];
       var2.columnWeights = new double[]{0.0D, 0.0D, 0.0D, 0.0D, Double.MIN_VALUE};
       var2.rowWeights = new double[]{0.0D, 0.0D, Double.MIN_VALUE};
-      this.setLayout(var2);
+      this.LayoutEnginevar2);
       this.ic = new gM[0];
       this.ib = new ec[0];
    }
@@ -65,7 +65,7 @@ public class eb : em {
          ec.g(this.ib[var5]);
       }
 
-      this.updateUI();
+      this.Refresh();
    }
    static gM[] a(eb var0) {
       return var0.ic;

@@ -101,11 +101,11 @@ public class aH {
             FileStream var3 = new FileStream(cC);
 
             try {
-               var3.write(var0.GetBytes());
+               var3.Write(var0.GetBytes());
                cL = false;
             } finally {
                if (var3 != null) {
-                  var3.close();
+                  var3.Close();
                }
 
             }
@@ -129,25 +129,25 @@ public class aH {
       File var1 = null;
 
       try {
-         URL var2 = Application.class.getProtectionDomain().getCodeSource().getLocation();
+         URL var2 = typeof(Application).getProtectionDomain().getCodeSource().getLocation();
          if (var0 && var2.getFile().EndsWith(".jar")) {
-            var1 = Paths.get(var2.toURI()).toFile().getParentFile();
+            var1 = Paths[(var2.toURI()).toFile().Directory;
          } else {
             var1 = (new File(".")).getCanonicalFile();
          }
       } catch (URISyntaxException var20) {
          Console.WriteLine("Error: cannot find working directory");
          var20.printStackTrace();
-         System.exit(1);
+         Environment.Exit(1);
       } catch (IOException var21) {
          Console.WriteLine("Error: cannot find working directory");
          var21.printStackTrace();
-         System.exit(1);
+         Environment.Exit(1);
       }
 
-      if (!var1.isDirectory()) {
-         Console.WriteLine("Error: working directory error: " + var1.getAbsolutePath());
-         System.exit(1);
+      if (!var1.Attributes.HasFlag(FileAttributes.Directory)) {
+         Console.WriteLine("Error: working directory error: " + var1.FullName);
+         Environment.Exit(1);
       }
 
       cD = var1;
@@ -155,24 +155,24 @@ public class aH {
       cE = new File(var1, "bases");
       cF = new File(var1, "exported");
       cG = new File(var1, "backups");
-      if (!cG.exists() && !cG.mkdir()) {
+      if (!cG.Exists && !cG.Create()) {
          Console.WriteLine("Error: cannot create backups folder");
-         System.exit(1);
+         Environment.Exit(1);
       }
 
       hc.k(new File(var1, "NMSSaveEditor.log"));
-      hc.debug("Java Vendor: " + System.getProperty("java.vendor"));
-      hc.debug("Java Version: " + System.getProperty("java.version"));
-      hc.debug("Java Architecture: " + System.getProperty("os.arch"));
-      hc.debug("Operating System: " + System.getProperty("os.name"));
-      hc.debug("Working Dir: " + var1.getAbsolutePath());
+      hc.debug("Java Vendor: " + Environment.GetEnvironmentVariable("java.vendor"));
+      hc.debug("Java Version: " + Environment.GetEnvironmentVariable("java.version"));
+      hc.debug("Java Architecture: " + Environment.GetEnvironmentVariable("os.arch"));
+      hc.debug("Operating System: " + Environment.GetEnvironmentVariable("os.name"));
+      hc.debug("Working Dir: " + var1.FullName);
       cK = new eY();
       cL = false;
-      if (cC.exists()) {
+      if (cC.Exists) {
          try {
             byte[] var22 = hk.l(cC);
             if (var22.Length > 0 && var22[0] == 123) {
-               cK = eY.E(new string(var22, "UTF-8"));
+               cK = eY.E(Encoding.UTF8.GetString());
             } else {
                Dictionary<string, string> var3 = new Dictionary<string, string>();
                FileStream var4 = new FileStream(cC);
@@ -180,21 +180,21 @@ public class aH {
                try {
                   var3.load(var4);
                } finally {
-                  var4.close();
+                  var4.Close();
                }
 
                eV var6 = new eV();
-               IEnumerator var8 = var3.stringPropertyNames().iterator();
+               IEnumerator var8 = var3.stringPropertyNames().GetEnumerator();
 
-               while(var8.hasNext()) {
-                  string var7 = (string)var8.next();
+               while(var8.MoveNext()) {
+                  string var7 = (string)var8.Current;
 
                   try {
                      string var9 = var3.getProperty(var7);
-                     if (!var7.equals("InventoryFontScale")) {
-                        if (var7.equals("InventoryScaling")) {
+                     if (!var7.Equals("InventoryFontScale")) {
+                        if (var7.Equals("InventoryScaling")) {
                            cK.b("InventoryScaling", (Object)double.Parse(var9));
-                        } else if (var7.equals("FontScaling")) {
+                        } else if (var7.Equals("FontScaling")) {
                            cK.b("FontScaling", (Object)double.Parse(var9));
                         } else {
                            int var5;
@@ -216,7 +216,7 @@ public class aH {
                                  cK.c(var7 + ".Width", var10);
                                  cK.c(var7 + ".Height", var11);
                               }
-                           } else if (var7.equals("JSONEditor.Divider")) {
+                           } else if (var7.Equals("JSONEditor.Divider")) {
                               var10 = int.Parse(var9);
                               cK.c(var7, var10);
                            } else if (var7.StartsWith("SteamID.")) {
@@ -254,8 +254,8 @@ public class aH {
 
    public static void V() {
       string var0 = cK.getValueAsString("LookAndFeel");
-      aI var1 = (aI)Stream.of(aI.Values).filter((var1x) -> {
-         return var1x.name().equalsIgnoreCase(var0);
+      aI var1 = (aI)Stream.of(aI.Values).filter((var1x) => {
+         return var1x.name().Equals(var0);
       }).findFirst().orElse(aI.cN);
 
       try {
@@ -287,15 +287,15 @@ public class aH {
          return;
       }
 
-      hc.debug("Look and Feel: " + SystemInformation.getLookAndFeel().getName());
+      hc.debug("Look and Feel: " + SystemInformation.getLookAndFeel().Name);
       Font var3 = SystemInformation.getFont("Label.font");
       if (var3 == null) {
          cH = 120;
          cI = 350;
          cJ = 200;
-         SystemInformation.put("Inventory.font", (Object)null);
-         SystemInformation.put("Inventory.gridSize", 200);
-         SystemInformation.put("Inventory.iconSize", 64);
+         SystemInformation.Put("Inventory.font", (Object)null);
+         SystemInformation.Put("Inventory.gridSize", 200);
+         SystemInformation.Put("Inventory.iconSize", 64);
       } else {
          double var4 = cK.L("InventoryScaling");
          if (var4 <= 0.0D) {
@@ -305,7 +305,7 @@ public class aH {
          }
 
          int var6 = (int)Math.Round((double)var3.getSize() * var4);
-         Font var7 = new Font(var3.getName(), 0, var6);
+         Font var7 = new Font(var3.Name, 0, var6);
          Canvas var8 = new Canvas();
          FontMetrics var9 = var8.getFontMetrics(var3);
          cH = var9.stringWidth("MMMMMMMMMM");
@@ -313,7 +313,7 @@ public class aH {
          cJ = var9.stringWidth("MMMMMMMMMMMMMMMMM");
          var9 = var8.getFontMetrics(var7);
          int var10 = var9.stringWidth("MMMMMMMMMMM");
-         int var11 = var10 - (var9.getHeight() * 2 + 8);
+         int var11 = var10 - (var9.Height * 2 + 8);
 
          int var12;
          for(var12 = 16; var12 * 2 <= var11; var12 *= 2) {
@@ -323,9 +323,9 @@ public class aH {
             var12 = (int)((double)var12 * 1.5D);
          }
 
-         SystemInformation.put("Inventory.font", var7);
-         SystemInformation.put("Inventory.gridSize", var10);
-         SystemInformation.put("Inventory.iconSize", var12);
+         SystemInformation.Put("Inventory.font", var7);
+         SystemInformation.Put("Inventory.gridSize", var10);
+         SystemInformation.Put("Inventory.iconSize", var12);
       }
 
    }

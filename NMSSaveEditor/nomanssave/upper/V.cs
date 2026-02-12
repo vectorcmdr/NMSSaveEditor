@@ -15,7 +15,7 @@ class V : EventHandler {
    }
 
    public void actionPerformed(EventArgs var1) {
-      this.bD.setVisible(false);
+      this.bD.Hide();
    }
 }
 

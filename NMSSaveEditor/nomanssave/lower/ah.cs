@@ -15,10 +15,10 @@ class ah : EventHandler {
    }
 
    public void actionPerformed(EventArgs var1) {
-      gj var2 = (gj)X.k(this.bV).getSelectedItem();
+      gj var2 = (gj)X.k(this.bV).SelectedItem;
       if (var2 != null) {
-         if (X.h(this.bV).isSelected() ^ var2.cQ()) {
-            var2.d(X.h(this.bV).isSelected());
+         if (X.h(this.bV).Checked ^ var2.cQ()) {
+            var2.d(X.h(this.bV).Checked);
          }
 
       }

@@ -18,15 +18,15 @@ public class Q : Form {
 
    private Q(Frame var1) {
       base(var1);
-      this.setResizable(false);
+      this.FormBorderStyle = FormBorderStyle.FixedDialog; //(false);
       this.setModalExclusionType(ModalExclusionType.APPLICATION_EXCLUDE);
-      this.setTitle("Change Stack Sizes");
-      this.setModal(true);
+      this.Text = ("Change Stack Sizes");
+      this/* setModal */(true);
       Panel var2 = new Panel();
       this.setContentPane(var2);
-      var2.setLayout(new TableLayoutPanel(0, 0));
+      var2.LayoutEnginenew TableLayoutPanel(0, 0));
       Panel var3 = new Panel();
-      var3.setLayout(new FormLayout(new ColumnSpec[]{FormFactory.LABEL_COMPONENT_GAP_COLSPEC, ColumnSpec.decode("100px"), FormFactory.LABEL_COMPONENT_GAP_COLSPEC, ColumnSpec.decode("250px"), FormFactory.LABEL_COMPONENT_GAP_COLSPEC}, new RowSpec[]{FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, RowSpec.decode("20dlu"), FormFactory.LINE_GAP_ROWSPEC}));
+      var3.LayoutEnginenew FormLayout(new ColumnSpec[]{FormFactory.LABEL_COMPONENT_GAP_COLSPEC, ColumnSpec.decode("100px"), FormFactory.LABEL_COMPONENT_GAP_COLSPEC, ColumnSpec.decode("250px"), FormFactory.LABEL_COMPONENT_GAP_COLSPEC}, new RowSpec[]{FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, RowSpec.decode("20dlu"), FormFactory.LINE_GAP_ROWSPEC}));
       Label var4 = new Label("Substances:");
       var3.Add(var4, "2, 2, left, center");
       this.bA = new TextBox();
@@ -41,28 +41,28 @@ public class Q : Form {
       var3.Add(var6, "2, 6, 3, 1, fill, center");
       var2.Add(var3);
       Panel var7 = new Panel();
-      var7.setLayout(new FlowLayoutPanel(2));
+      var7.LayoutEnginenew FlowLayoutPanel(2));
       var2.Add(var7, "South");
       Button var8 = new Button("Save");
-      var8.addActionListener(new T(this));
+      var8.Click += (new T(this));
       var7.Add(var8);
       this.getRootPane().setDefaultButton(var8);
       Button var9 = new Button("Cancel");
-      var9.addActionListener(new U(this));
+      var9.Click += (new U(this));
       var7.Add(var9);
       this.getRootPane().registerKeyboardAction(new V(this), Keys.getKeyStroke(27, 0), 2);
-      this.pack();
+      this.PerformLayout();
    }
 
    private W a(W var1, int var2, int var3) {
       this.bw = var1;
       this.bx = var2;
       this.by = var3;
-      this.bA.setText(Integer.toString(var1.bE));
-      this.bB.setText(Integer.toString(var1.bF));
+      this.bA.Text = (Integer.toString(var1.bE));
+      this.bB.Text = (Integer.toString(var1.bF));
       this.bz = null;
-      this.setLocationRelativeTo(this.getParent());
-      this.setVisible(true);
+      this.StartPosition = FormStartPosition.CenterParent; //(this.DirectoryName);
+      this.Show();
       return this.bz;
    }
 

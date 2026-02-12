@@ -26,7 +26,7 @@ class at : EventHandler {
       if (var3) {
          ap.c(this.cu).clearSelection();
          ap.b(this.cu).sort();
-         ap.c(this.cu).updateUI();
+         ap.c(this.cu).Refresh();
       }
 
    }

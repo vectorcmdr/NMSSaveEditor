@@ -17,9 +17,9 @@ class be : G {
          return "";
       } else {
          var1 = var1.Trim();
-         if (!var1.equals(bd.a(this.dP).getName())) {
+         if (!var1.Equals(bd.a(this.dP).Name)) {
             bd.a(this.dP).setName(var1);
-            bd.b(this.dP).setText(var1);
+            bd.b(this.dP).Text = (var1);
          }
 
          return var1;

@@ -18,7 +18,7 @@ public class eQ : ey {
    string kc;
    int kd;
    string description;
-   List ke;
+   List<object> ke;
    eR km;
 
    eQ(Element var1, bool var2) {
@@ -55,11 +55,11 @@ public class eQ : ey {
          Node var7 = var6.item(var9);
          if (var7 is Element) {
             Element var8 = (Element)var7;
-            if (var8.getNodeName().equals("description")) {
+            if (var8.getNodeName().Equals("description")) {
                var3 = a(var8);
-            } else if (var8.getNodeName().equals("requirement")) {
+            } else if (var8.getNodeName().Equals("requirement")) {
                var4.Add(new ez(this, var8));
-            } else if (var8.getNodeName().equals("techbox")) {
+            } else if (var8.getNodeName().Equals("techbox")) {
                var5 = new eR(this, var8);
             }
          }
@@ -118,7 +118,7 @@ public class eQ : ey {
       return this.description;
    }
 
-   public List bk() {
+   public List<object> bk() {
       return this.ke;
    }
 

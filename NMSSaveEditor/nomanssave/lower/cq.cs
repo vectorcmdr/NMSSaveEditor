@@ -15,16 +15,16 @@ class cq : FileView {
    }
 
    public Icon getIcon(File var1) {
-      string var2 = var1.getName();
+      string var2 = var1.Name;
       if (var2.EndsWith(".pet")) {
-         return cp.as();
+         return cp.@as();
       } else {
          return (Icon)(var2.EndsWith(".egg") ? cp.au() : base.getIcon(var1));
       }
    }
 
    public string getName(File var1) {
-      string var2 = var1.getName();
+      string var2 = var1.Name;
       if (var2.EndsWith(".pet")) {
          return var2.Substring(0, var2.length() - 4);
       } else {

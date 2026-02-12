@@ -14,8 +14,8 @@ class hj : Thread {
    hj(long var1) {
       this.sK = var1;
       this.sL = aH.getProperty("KnownPlayers." + var1);
-      hi.ep().put(var1, this);
-      this.start();
+      hi.ep().Put(var1, this);
+      this.Start();
    }
 
    public void run() {
@@ -29,9 +29,9 @@ class hj : Thread {
 
       lock(hi.ep()) {
          if (var1 != null) {
-            Long[] var3 = (Long[])aH.a("SteamIDs", Long.class);
-            bool var4 = new List<object>(new object[]{var3).stream().anyMatch((var1x) -> {
-               return var1x.equals(this.sK);
+            Long[] var3 = (Long[])aH.a("SteamIDs", typeof(Long));
+            bool var4 = new List<object>(new object[]{var3).stream().anyMatch((var1x) => {
+               return var1x.Equals(this.sK);
             });
             if (!var4) {
                Long[] var5 = new Long[var3.Length + 1];
@@ -40,7 +40,7 @@ class hj : Thread {
                aH.a("SteamIDs", (Object[])var5);
             }
 
-            if (!var1.equals(this.sL)) {
+            if (!var1.Equals(this.sL)) {
                aH.setProperty("KnownPlayers." + this.sK, var1);
                this.sL = var1;
             }

@@ -13,14 +13,14 @@ class dT : G {
    }
 
    protected string g(string var1) {
-      gH var2 = (gH)dN.p(this.ia).getSelectedItem();
+      gH var2 = (gH)dN.p(this.ia).SelectedItem;
       if (var2 == null) {
          return "";
       } else {
          var1 = var1.Trim();
-         if (!var1.equals(var2.getName())) {
+         if (!var1.Equals(var2.Name)) {
             var2.setName(var1);
-            dN.b(this.ia).setText(var1);
+            dN.b(this.ia).Text = (var1);
          }
 
          return var1;

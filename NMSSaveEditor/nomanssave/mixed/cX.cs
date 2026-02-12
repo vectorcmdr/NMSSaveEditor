@@ -20,7 +20,7 @@ class cX : Runnable {
          Rectangle var2 = cW.a(this.gL).modelToView(var1);
          if (var2 != null && var2.y != cW.b(this.gL)) {
             cW.c(this.gL);
-            this.gL.repaint();
+            this.gL.Invalidate();
             cW.a(this.gL, var2.y);
          }
       } catch (Exception var3) {

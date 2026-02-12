@@ -67,21 +67,21 @@ public class aJ : em {
    void a(gz var1) {
       if (var1 == null) {
          this.di = null;
-         this.db.setText("");
-         this.dc.setText("");
-         this.dd.setText("");
-         this.de.setText("");
-         this.df.setText("");
-         this.dg.setText("");
+         this.db.Text = ("");
+         this.dc.Text = ("");
+         this.dd.Text = ("");
+         this.de.Text = ("");
+         this.df.Text = ("");
+         this.dg.Text = ("");
          this.dh.a(new List<object>());
       } else {
          this.di = var1;
-         this.db.setText(Long.toString(var1.dJ()));
-         this.dc.setText(Long.toString(var1.dK()));
-         this.dd.setText(Long.toString(var1.dL()));
-         this.de.setText(Integer.toString(var1.dM()));
-         this.df.setText(Integer.toString(var1.dN()));
-         this.dg.setText(Integer.toString(var1.dO()));
+         this.db.Text = (Long.toString(var1.dJ()));
+         this.dc.Text = (Long.toString(var1.dK()));
+         this.dd.Text = (Long.toString(var1.dL()));
+         this.de.Text = (Integer.toString(var1.dM()));
+         this.df.Text = (Integer.toString(var1.dN()));
+         this.dg.Text = (Integer.toString(var1.dO()));
          this.dh.a(var1.cC());
       }
 

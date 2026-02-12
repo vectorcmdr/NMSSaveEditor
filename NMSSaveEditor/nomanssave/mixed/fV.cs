@@ -54,7 +54,7 @@ class fV : fs {
       } catch (FormatException var12) {
          throw new IOException("Invalid backup file");
       } finally {
-         var4.close();
+         var4.Close();
       }
 
    }
@@ -75,13 +75,13 @@ class fV : fs {
 
             int var6;
             while((var6 = var4.read(var5)) > 0) {
-               var1.write(var5, 0, var6);
+               var1.Write(var5, 0, var6);
             }
          } finally {
-            var4.close();
+            var4.Close();
          }
       } finally {
-         var2.close();
+         var2.Close();
       }
 
    }
@@ -117,11 +117,11 @@ class fV : fs {
    }
 
    public string toString() {
-      return this.mc.getName();
+      return this.mc.Name;
    }
 
    public string getName() {
-      return this.mQ.getName();
+      return this.mQ.Name;
    }
 
    public string getDescription() {

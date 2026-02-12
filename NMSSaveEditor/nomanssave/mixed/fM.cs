@@ -40,13 +40,13 @@ class fM : fQ, fs {
    }
 
    void cm() {
-      this.a(this.lO == 0 ? "backup" : "backup" + (this.lO + 1), this.me, this.getName(), this.getDescription());
-      (new File(fJ.a(this.mt), this.filename)).delete();
-      (new File(fJ.a(this.mt), "mf_" + this.filename)).delete();
+      this.a(this.lO == 0 ? "backup" : "backup" + (this.lO + 1), this.me, this.Name, this.getDescription());
+      (new File(fJ.a(this.mt), this.filename)).Delete();
+      (new File(fJ.a(this.mt), "mf_" + this.filename)).Delete();
    }
 
    public string b(eY var1) {
-      this.a(this.lO == 0 ? "backup" : "backup" + (this.lO + 1), this.me, this.getName(), this.getDescription());
+      this.a(this.lO == 0 ? "backup" : "backup" + (this.lO + 1), this.me, this.Name, this.getDescription());
       this.mx.Y(var1.getValueAsString("CommonStateData.SaveName"));
       this.me = fn.i(var1);
       this.mx.al((int)var1.K("CommonStateData.TotalPlayTime"));

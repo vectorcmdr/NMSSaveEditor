@@ -33,14 +33,14 @@ public class cy : Form, TreeSelectionListener {
       var2.y = aH.a("JSONEditor.Y", var3.y + 10);
       var2.width = aH.a("JSONEditor.Width", 1000);
       var2.height = aH.a("JSONEditor.Height", 700);
-      this.setBounds(var2);
-      this.setDefaultCloseOperation(0);
+      this.Bounds = new Rectangle(var2);
+      this/* setDefaultCloseOperation */(0);
       this.setModalExclusionType(ModalExclusionType.APPLICATION_EXCLUDE);
-      this.setTitle("JSON Editor (Advanced Users Only)");
-      this.setModal(true);
+      this.Text = ("JSON Editor (Advanced Users Only)");
+      this/* setModal */(true);
       this.addComponentListener(new cz(this));
       this.fV = new JTree();
-      this.fV.setModel(new cI(this, (cI)null));
+      this.fV.DataSource = (new cI(this, (cI)null));
       this.fV.setCellRenderer(new cA(this));
       this.fV.addTreeSelectionListener(this);
       this.fW = new Panel();
@@ -49,16 +49,16 @@ public class cy : Form, TreeSelectionListener {
       this.fX.putClientProperty("FlatLaf.styleClass", "monospaced");
       this.fX.setEditable(false);
       this.fX.setTabSize(4);
-      this.fX.getActionMap().put("copy-to-clipboard", new cG(this));
-      this.fX.getActionMap().put("paste-from-clipboard", new cH(this));
+      this.fX.getActionMap().Put("copy-to-clipboard", new cG(this));
+      this.fX.getActionMap().Put("paste-from-clipboard", new cH(this));
       this.fX.getDocument().addDocumentListener(new cB(this));
       this.fY = new Panel();
       this.fY.setRowHeaderView(new cW(this.fX));
       this.fY.setViewportView(this.fX);
       Panel var4 = new Panel();
-      var4.setLayout(new TableLayoutPanel());
+      var4.LayoutEnginenew TableLayoutPanel());
       this.fU = new Button("Validate");
-      this.fU.addActionListener(new cC(this));
+      this.fU.Click += (new cC(this));
       var4.Add(this.fU, "North");
       var4.Add(this.fW, "Center");
       JSplitPane var5 = new JSplitPane(1, var4, this.fY);
@@ -67,28 +67,28 @@ public class cy : Form, TreeSelectionListener {
       this.setContentPane(var5);
       this.addWindowListener(new cE(this));
       cF var6 = new cF(this);
-      this.fV.getInputMap().put(Keys.getKeyStroke(70, 2), "find");
-      this.fV.getActionMap().put("find", var6);
-      this.fX.getInputMap().put(Keys.getKeyStroke(70, 2), "find");
-      this.fX.getActionMap().put("find", var6);
+      this.fV.getInputMap().Put(Keys.getKeyStroke(70, 2), "find");
+      this.fV.getActionMap().Put("find", var6);
+      this.fX.getInputMap().Put(Keys.getKeyStroke(70, 2), "find");
+      this.fX.getActionMap().Put("find", var6);
    }
 
    private bool a(string var1, eY var2) {
-      this.setTitle("JSON Editor (Advanced Users Only)");
+      this.Text = ("JSON Editor (Advanced Users Only)");
       this.fS = var1;
       this.fT = var2;
-      this.fX.setText("");
+      this.fX.Text = ("");
       this.ga = false;
       this.fZ = null;
-      this.fV.updateUI();
+      this.fV.Refresh();
       int var3 = 0;
       int var4 = 0;
-      IEnumerator var6 = var2.names().iterator();
+      IEnumerator var6 = var2.names().GetEnumerator();
 
-      while(var6.hasNext()) {
-         string var5 = (string)var6.next();
+      while(var6.MoveNext()) {
+         string var5 = (string)var6.Current;
          ++var4;
-         if (var2.get(var5) is eY) {
+         if (var2[(var5) is eY) {
             var3 = var4;
             break;
          }
@@ -96,9 +96,9 @@ public class cy : Form, TreeSelectionListener {
 
       this.fV.setSelectionRow(var3);
       this.gb = false;
-      this.fV.setVisible(true);
-      this.fU.setVisible(false);
-      this.setVisible(true);
+      this.fV.Show();
+      this.fU.Hide();
+      this.Show();
       return this.gb;
    }
 
@@ -117,24 +117,24 @@ public class cy : Form, TreeSelectionListener {
       for(int var3 = 0; var3 < var2.Length; ++var3) {
          if (var2[var3] != '\r' && var2[var3] != '\n' && var2[var3] != '\t') {
             if (var2[var3] == '\f') {
-               var1.append("\\f");
+               var1.Append("\\f");
             } else if (var2[var3] == '\b') {
-               var1.append("\\b");
+               var1.Append("\\b");
             } else if (var2[var3] == 11) {
-               var1.append("\\v");
+               var1.Append("\\v");
             } else if (var2[var3] == 0) {
-               var1.append("\\0");
+               var1.Append("\\0");
             } else if (var2[var3] >= ' ' && var2[var3] < 128) {
-               var1.append(var2[var3]);
+               var1.Append(var2[var3]);
             } else {
-               var1.append("\\u");
-               var1.append("0123456789ABCDEFabcdef".charAt(var2[var3] >> 12 & 15));
-               var1.append("0123456789ABCDEFabcdef".charAt(var2[var3] >> 8 & 15));
-               var1.append("0123456789ABCDEFabcdef".charAt(var2[var3] >> 4 & 15));
-               var1.append("0123456789ABCDEFabcdef".charAt(var2[var3] & 15));
+               var1.Append("\\u");
+               var1.Append("0123456789ABCDEFabcdef"[var2[var3] >> 12 & 15));
+               var1.Append("0123456789ABCDEFabcdef"[var2[var3] >> 8 & 15));
+               var1.Append("0123456789ABCDEFabcdef"[var2[var3] >> 4 & 15));
+               var1.Append("0123456789ABCDEFabcdef"[var2[var3] & 15));
             }
          } else {
-            var1.append(var2[var3]);
+            var1.Append(var2[var3]);
          }
       }
 
@@ -163,21 +163,21 @@ public class cy : Form, TreeSelectionListener {
             try {
                int var4 = a(var3[var5 + 2]) << 12 | a(var3[var5 + 3]) << 8 | a(var3[var5 + 4]) << 4 | a(var3[var5 + 5]);
                if (var4 < 32) {
-                  var2.append(var3[var5]);
-                  var2.append(var3[var5 + 1]);
-                  var2.append(var3[var5 + 2]);
-                  var2.append(var3[var5 + 3]);
-                  var2.append(var3[var5 + 4]);
-                  var2.append(var3[var5 + 5]);
+                  var2.Append(var3[var5]);
+                  var2.Append(var3[var5 + 1]);
+                  var2.Append(var3[var5 + 2]);
+                  var2.Append(var3[var5 + 3]);
+                  var2.Append(var3[var5 + 4]);
+                  var2.Append(var3[var5 + 5]);
                } else {
-                  var2.append((char)var4);
+                  var2.Append((char)var4);
                }
 
                var5 += 5;
             } catch (Exception var7) {
             }
          } else {
-            var2.append(var3[var5]);
+            var2.Append(var3[var5]);
          }
       }
 
@@ -198,40 +198,40 @@ public class cy : Form, TreeSelectionListener {
       if (this.ge) {
          if (this.ga && this.fZ != null) {
             try {
-               string var2 = this.fX.getText().Trim();
-               if (var2.length() == 0 && MessageBox.showConfirmDialog(this, "The JSON data has been deleted, do you wish to apply these changes to the save file?", this.getTitle(), 0) == 0) {
+               string var2 = this.fX.Text.Trim();
+               if (var2.length() == 0 && MessageBox.Show(this, "The JSON data has been deleted, do you wish to apply these changes to the save file?", this.Text, 0) == 0) {
                   this.fZ.Remove();
-                  ((cI)this.fV.getModel()).a(this.fZ.gi);
-               } else if (MessageBox.showConfirmDialog(this, "The JSON data has changed, do you wish to apply these changes to the save file?", this.getTitle(), 0) == 0) {
-                  this.fZ.setText(var2);
-                  ((cI)this.fV.getModel()).a(this.fZ);
+                  ((cI)this.fV.DataSource).a(this.fZ.gi);
+               } else if (MessageBox.Show(this, "The JSON data has changed, do you wish to apply these changes to the save file?", this.Text, 0) == 0) {
+                  this.fZ.Text = (var2);
+                  ((cI)this.fV.DataSource).a(this.fZ);
                }
             } catch (eX var3) {
                MessageBox.showOptionDialog(this, "Error on line #" + var3.getLineNumber() + ": " + var3.getMessage(), "Error", 0, 0, (Icon)null, new Object[]{"Cancel"}, (Object)null);
                this.fX.setCaretPosition(var3.bD());
-               this.fX.requestFocus();
+               this.fX.Focus();
                return;
             }
          }
 
          this.fZ = (cJ)this.fV.getLastSelectedPathComponent();
          if (this.fZ == null) {
-            this.fX.setText("");
+            this.fX.Text = ("");
             this.fX.setEditable(false);
          } else {
-            this.fX.setText(this.fZ.getText());
+            this.fX.Text = (this.fZ.Text);
             this.fX.setEditable(true);
          }
 
          this.ga = false;
          this.fX.setCaretPosition(0);
-         this.fX.requestFocus();
+         this.fX.Focus();
       }
    }
 
    void a(string var1, bool var2, bool var3, bool var4) {
-      string var5 = this.fX.getText();
-      if (!this.gf.equals(var1)) {
+      string var5 = this.fX.Text;
+      if (!this.gf.Equals(var1)) {
          Highlighter var6 = this.fX.getHighlighter();
          var6.removeAllHighlights();
          Color var7 = SystemInformation.getColor("JSONEditor.hiliteColor");
@@ -272,7 +272,7 @@ public class cy : Form, TreeSelectionListener {
       }
 
       if (var13 < 0) {
-         MessageBox.showMessageDialog(this, "Text not found!");
+         MessageBox.Show(this, "Text not found!");
       } else {
          this.fX.setCaretPosition(var13);
          this.fX.setSelectionStart(var13);

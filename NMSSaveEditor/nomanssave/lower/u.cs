@@ -23,7 +23,7 @@ class u : fR {
          Application.b(this.aZ, true);
          if (Application.c(this.aZ) >= 0 && Application.d(this.aZ)[Application.c(this.aZ)].getIndex() == var2) {
             Application.c(this.aZ, true);
-            if (Application.e(this.aZ) >= 0 && Application.f(this.aZ)[Application.e(this.aZ)].K().equals(var3)) {
+            if (Application.e(this.aZ) >= 0 && Application.f(this.aZ)[Application.e(this.aZ)].K().Equals(var3)) {
                Application.d(this.aZ, true);
             }
          }

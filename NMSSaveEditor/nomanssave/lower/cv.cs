@@ -26,8 +26,8 @@ public class cv : OpenFileDialog {
       this.setFileView(new cw(this));
       this.setFileFilter(new cx(this));
       this.setDialogTitle("Choose Weapon Export File");
-      SystemInformation.addPropertyChangeListener((var1) -> {
-         if ("lookAndFeel".equals(var1.getPropertyName())) {
+      SystemInformation.addPropertyChangeListener((var1) => {
+         if ("lookAndFeel".Equals(var1.getPropertyName())) {
             Control.updateComponentTreeUI(this);
          }
 

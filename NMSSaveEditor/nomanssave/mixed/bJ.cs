@@ -22,7 +22,7 @@ class bJ : G {
          this.type = 0;
       }
 
-      this.setEnabled(var3);
+      this.Enabled = (var3);
    }
 
    protected string g(string var1) {
@@ -41,7 +41,7 @@ class bJ : G {
             return "";
          }
 
-         if (var1.equals(var2)) {
+         if (var1.Equals(var2)) {
             return var1;
          } else {
             try {
@@ -96,7 +96,7 @@ class bJ : G {
          }
       }
 
-      this.setText(var1);
+      this.Text = (var1);
    }
    static int[] ad() {
       int[] var10000 = eA;

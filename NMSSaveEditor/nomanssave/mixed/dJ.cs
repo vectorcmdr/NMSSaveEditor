@@ -12,7 +12,7 @@ class dJ : ComboBox {
 
    dJ(dE var1) {
       this.hE = var1;
-      this.setModel(new dK(this));
+      this.DataSource = (new dK(this));
       this.setRenderer(new dL(this));
    }
 }

@@ -332,49 +332,49 @@ public class fI {
 
    public string toString() {
       StringBuilder var1 = new StringBuilder();
-      var1.append("00000000    ");
-      var1.append("## ## ## ## ## ## ## ## ");
+      var1.Append("00000000    ");
+      var1.Append("## ## ## ## ## ## ## ## ");
       StringBuilder var2 = new StringBuilder();
-      var2.append("########");
+      var2.Append("########");
       byte var3 = 8;
 
       for(int var4 = 0; var4 < this.data.Length; ++var4) {
          if ((var4 + var3) % 16 == 0) {
-            var1.append(System.lineSeparator());
+            var1.Append(System.lineSeparator());
 
             string var5;
             for(var5 = Integer.toString((var4 + 1 + var3) / 16, 16) + "0"; var5.length() < 8; var5 = "0" + var5) {
             }
 
-            var1.append(var5 + "    ");
+            var1.Append(var5 + "    ");
          }
 
-         var1.append(Integer.toString((this.data[var4] & 240) >> 4, 16));
-         var1.append(Integer.toString(this.data[var4] & 15, 16));
-         var1.append(' ');
+         var1.Append(Integer.toString((this.data[var4] & 240) >> 4, 16));
+         var1.Append(Integer.toString(this.data[var4] & 15, 16));
+         var1.Append(' ');
          if (this.data[var4] == 32) {
-            var2.append('.');
+            var2.Append('.');
          } else if (this.data[var4] >= 32 && this.data[var4] < 127) {
-            var2.append((char)(this.data[var4] & 255));
+            var2.Append((char)(this.data[var4] & 255));
          } else {
-            var2.append('?');
+            var2.Append('?');
          }
 
          if ((var4 + var3) % 16 == 15) {
-            var1.append("   ");
-            var1.append(var2);
+            var1.Append("   ");
+            var1.Append(var2);
             var2 = new StringBuilder();
          }
       }
 
       if (var2.length() > 0) {
          while(var2.length() < 16) {
-            var1.append("   ");
-            var2.append(" ");
+            var1.Append("   ");
+            var2.Append(" ");
          }
 
-         var1.append("   ");
-         var1.append(var2);
+         var1.Append("   ");
+         var1.Append(var2);
       }
 
       return var1.ToString();

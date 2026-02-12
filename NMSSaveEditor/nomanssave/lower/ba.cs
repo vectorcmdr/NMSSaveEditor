@@ -14,7 +14,7 @@ public class ba : Panel {
       this(aH.cH, 0);
    }
 
-   ba(int... var1) {
+   ba(params int[] var1) {
       this.dA = new FormLayout(new ColumnSpec[]{FormFactory.LABEL_COMPONENT_GAP_COLSPEC}, new RowSpec[]{FormFactory.LINE_GAP_ROWSPEC});
 
       for(int var2 = 0; var2 < var1.Length; ++var2) {
@@ -27,7 +27,7 @@ public class ba : Panel {
          this.dA.appendColumn(FormFactory.LABEL_COMPONENT_GAP_COLSPEC);
       }
 
-      this.setLayout(this.dA);
+      this.LayoutEnginethis.dA);
    }
 
    void k(string var1) {
@@ -52,7 +52,7 @@ public class ba : Panel {
          this.Add(var4, "2, " + (this.dA.getRowCount() - 1) + ", " + var3 + ", 1, left, default");
       } else {
          Panel var5 = new Panel();
-         var5.setLayout(new FlowLayoutPanel(0, 0, 0));
+         var5.LayoutEnginenew FlowLayoutPanel(0, 0, 0));
          var5.Add(new Label(var2));
          var5.Add(var4);
          this.Add(var5, "2, " + (this.dA.getRowCount() - 1) + ", " + var3 + ", 1, left, default");
@@ -112,12 +112,12 @@ public class ba : Panel {
 
    void a(string var1, G var2) {
       Panel var3 = new Panel();
-      var3.setLayout(new TableLayoutPanel(0, 0));
+      var3.LayoutEnginenew TableLayoutPanel(0, 0));
       Panel var4 = new Panel();
-      var4.setLayout(new FlowLayoutPanel(2, 0, 0));
+      var4.LayoutEnginenew FlowLayoutPanel(2, 0, 0));
       Button var5 = new Button("Generate");
-      var5.setEnabled(var2.isEnabled());
-      var5.addActionListener(new bb(this, var2));
+      var5.Enabled = (var2.Enabled);
+      var5.Click += (new bb(this, var2));
       var2.addPropertyChangeListener("enabled", new bc(this, var5, var2));
       var4.Add(var5);
       var3.Add(var2, "Center");

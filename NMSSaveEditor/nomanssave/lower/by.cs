@@ -18,7 +18,7 @@ class by : G {
       } else {
          try {
             var1 = hg.aB(var1).ToString();
-            if (!var1.equals(bl.c(this.er)[bl.b(this.er)].cV())) {
+            if (!var1.Equals(bl.c(this.er)[bl.b(this.er)].cV())) {
                bl.c(this.er)[bl.b(this.er)].ai(var1);
             }
 

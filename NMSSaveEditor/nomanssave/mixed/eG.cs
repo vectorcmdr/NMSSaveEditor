@@ -7,7 +7,7 @@ namespace NMSSaveEditor
 {
 public enum eG {
    jV,
-   jW;
+   jW
 }
 
 }

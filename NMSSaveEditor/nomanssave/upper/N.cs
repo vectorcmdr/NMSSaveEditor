@@ -17,7 +17,7 @@ class N : EventHandler {
    }
 
    public void actionPerformed(EventArgs var1) {
-      gf var2 = (gf)I.j(this.bt).getSelectedItem();
+      gf var2 = (gf)I.j(this.bt).SelectedItem;
       if (var2 != null) {
          this.bv.a(var2);
       }

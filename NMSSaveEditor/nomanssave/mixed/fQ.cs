@@ -28,7 +28,7 @@ class fQ {
             var7 = var5.read(var6);
             this.mx = fI.a(var3, var6, 0, var7);
          } finally {
-            var5.close();
+            var5.Close();
          }
 
          int var11 = this.mx.ch();
@@ -57,7 +57,7 @@ class fQ {
    }
 
    public long lastModified() {
-      return (new File(fJ.a(this.mt), "mf_" + this.filename)).lastModified();
+      return (new File(fJ.a(this.mt), "mf_" + this.filename)).LastWriteTimeUtc.Ticks;
    }
 
    eY a(eG param1) {
@@ -73,13 +73,13 @@ class fQ {
          if ((255 & var4[0]) == 229 && (255 & var4[1]) == 161 && (255 & var4[2]) == 237 && (255 & var4[3]) == 254) {
             var2 = new gX((Stream)var2, var4);
          } else {
-            var3.write(var4, 0, 16);
+            var3.Write(var4, 0, 16);
          }
 
          while(true) {
             int var5;
             if ((var5 = ((Stream)var2).read(var4)) >= 0) {
-               var3.write(var4, 0, var5);
+               var3.Write(var4, 0, var5);
                if (var3.Count < var1) {
                   continue;
                }
@@ -89,7 +89,7 @@ class fQ {
             return var7;
          }
       } finally {
-         ((Stream)var2).close();
+         ((Stream)var2).Close();
       }
    }
 
@@ -100,7 +100,7 @@ class fQ {
       var7.setProperty("ArchiveNumber", Integer.toString(this.lO));
       var7.setProperty("ManifestFile", "mf_" + this.filename);
       var7.setProperty("StorageFile", this.filename);
-      var7.setProperty("LastModified", Long.toString(var5.lastModified()));
+      var7.setProperty("LastModified", Long.toString(var5.LastWriteTimeUtc.Ticks));
       if (var2 != null) {
          var7.setProperty("GameMode", var2.name());
       }
@@ -119,39 +119,39 @@ class fQ {
 
       try {
          byte[] var12 = new byte[1024];
-         ZipEntry var13 = new ZipEntry(var5.getName());
+         ZipEntry var13 = new ZipEntry(var5.Name);
          var10.putNextEntry(var13);
          FileStream var14 = new FileStream(var5);
 
          int var11;
          try {
             while((var11 = var14.read(var12)) >= 0) {
-               var10.write(var12, 0, var11);
+               var10.Write(var12, 0, var11);
             }
          } finally {
-            var14.close();
+            var14.Close();
          }
 
-         var13 = new ZipEntry(var6.getName());
+         var13 = new ZipEntry(var6.Name);
          var10.putNextEntry(var13);
          FileStream var15 = new FileStream(var6);
 
          try {
             while((var11 = var15.read(var12)) >= 0) {
-               var10.write(var12, 0, var11);
+               var10.Write(var12, 0, var11);
             }
          } finally {
-            var15.close();
+            var15.Close();
          }
 
          var13 = new ZipEntry("saveinfo.txt");
          var10.putNextEntry(var13);
          var7.store(var10, "");
       } finally {
-         var10.close();
+         var10.Close();
       }
 
-      var9.setLastModified(var5.lastModified());
+      var9.setLastModified(var5.LastWriteTimeUtc.Ticks);
    }
 
    void a(eY var1, bool var2) {
@@ -166,7 +166,7 @@ class fQ {
             var6.h(var1);
          } finally {
             if (var6 != null) {
-               var6.close();
+               var6.Close();
             }
 
          }
@@ -189,12 +189,12 @@ class fQ {
             var37 = new gZ((Stream)var37);
          }
 
-         ((Stream)var37).write(var35);
+         ((Stream)var37).Write(var35);
          if (var2) {
             var36 = ((gZ)var37).ci();
          }
       } finally {
-         ((Stream)var37).close();
+         ((Stream)var37).Close();
       }
 
       if (!this.mx.ce()) {
@@ -220,9 +220,9 @@ class fQ {
       FileStream var38 = new FileStream(new File(fJ.a(this.mt), "mf_" + this.filename));
 
       try {
-         var38.write(this.mx.encode());
+         var38.Write(this.mx.encode());
       } finally {
-         var38.close();
+         var38.Close();
       }
 
    }

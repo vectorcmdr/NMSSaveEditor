@@ -13,13 +13,13 @@ class K : G {
    }
 
    protected string g(string var1) {
-      gh var2 = (gh)I.d(this.bt).getSelectedItem();
+      gh var2 = (gh)I.d(this.bt).SelectedItem;
       if (var2 == null) {
          return "";
       } else {
          try {
             var1 = hg.aB(var1).ToString();
-            if (!var1.equals(var2.cK())) {
+            if (!var1.Equals(var2.cK())) {
                var2.aa(var1);
             }
 

@@ -43,7 +43,7 @@ class fw {
    }
 
    int a(Stream var1) {
-      var1.write(this.lK);
+      var1.Write(this.lK);
       hk.a(var1, this.lL);
       hk.a(var1, this.lM);
       hk.a(var1, this.lN);
@@ -92,7 +92,7 @@ class fw {
             int var6;
             while(var4 > 0L && (var6 = var1.read(var3, 0, (int)Math.Min((long)var3.Length, var4))) > 0) {
                var4 -= (long)var6;
-               var2.write(var3, 0, var6);
+               var2.Write(var3, 0, var6);
             }
 
             if (var4 > 0L) {
@@ -101,7 +101,7 @@ class fw {
 
             var8 = var2.toByteArray();
          } finally {
-            var1.close();
+            var1.Close();
          }
 
          return var8;
@@ -125,7 +125,7 @@ class fw {
             throw new IOException("header not valid");
          } else {
             long var25 = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
-            File var5 = new File(fu.b(this.lJ).getParentFile(), "~" + fu.b(this.lJ).getName());
+            File var5 = new File(fu.b(this.lJ).Directory, "~" + fu.b(this.lJ).Name);
             FileStream var6 = new FileStream(var5);
 
             try {
@@ -135,7 +135,7 @@ class fw {
                   Console.WriteLine("Reading header");
                   byte[] var8 = new byte[64];
                   hk.readFully(var7, var8);
-                  var6.write(var8);
+                  var6.Write(var8);
                   long var9 = (long)var1.Length - fu.c(this.lJ)[var2].Length;
                   long var11 = 64L;
 
@@ -150,7 +150,7 @@ class fw {
                      var11 += (long)fu.c(this.lJ)[var13].a(var6);
                   }
 
-                  var6.write(fu.bY());
+                  var6.Write(fu.bY());
                   fu.c(this.lJ)[var2].Length = (long)var1.Length;
                   fu.c(this.lJ)[var2].bd = var25;
                   var11 += (long)fu.c(this.lJ)[var2].a(var6);
@@ -169,7 +169,7 @@ class fw {
                   byte[] var15;
                   int var16;
                   for(var15 = new byte[4096]; var26 > 0L && (var16 = var7.read(var15, 0, (int)Math.Min((long)var15.Length, var26))) > 0; var26 -= (long)var16) {
-                     var6.write(var15, 0, var16);
+                     var6.Write(var15, 0, var16);
                      var11 += (long)var16;
                   }
 
@@ -177,7 +177,7 @@ class fw {
                      throw new IOException("short read");
                   }
 
-                  var6.write(var1);
+                  var6.Write(var1);
                   long var27 = var11 + (long)var1.Length;
 
                   for(var26 = (long)var1.Length - var9; var26 > 0L && (var16 = var7.read(var15, 0, (int)Math.Min((long)var15.Length, var26))) > 0; var26 -= (long)var16) {
@@ -188,13 +188,13 @@ class fw {
                   }
 
                   while((var16 = var7.read(var15)) > 0) {
-                     var6.write(var15, 0, var16);
+                     var6.Write(var15, 0, var16);
                   }
                } finally {
-                  var7.close();
+                  var7.Close();
                }
             } finally {
-               var6.close();
+               var6.Close();
             }
 
          }

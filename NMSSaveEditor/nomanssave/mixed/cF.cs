@@ -17,7 +17,7 @@ class cF : AbstractAction {
    public void actionPerformed(EventArgs var1) {
       int var2 = cy.c(this.gg).getSelectionStart();
       int var3 = cy.c(this.gg).getSelectionEnd();
-      string var4 = var3 > var2 ? cy.c(this.gg).getText().Substring(var2, var3) : null;
+      string var4 = var3 > var2 ? cy.c(this.gg).Text.Substring(var2, var3) : null;
       aW.a(this.gg, var4);
    }
 }

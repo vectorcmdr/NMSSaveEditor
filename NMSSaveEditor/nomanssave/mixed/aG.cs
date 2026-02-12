@@ -15,7 +15,7 @@ class aG : EventHandler {
    }
 
    public void actionPerformed(EventArgs var1) {
-      this.cB.setVisible(false);
+      this.cB.Hide();
    }
 }
 

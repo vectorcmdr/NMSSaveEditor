@@ -20,7 +20,7 @@ class k : object {
    }
 
    public ex c(int var1) {
-      return (ex)h.g(this.z).get(var1);
+      return (ex)h.g(this.z)[(var1);
    }
 
    public void addListDataListener(EventHandler var1) {

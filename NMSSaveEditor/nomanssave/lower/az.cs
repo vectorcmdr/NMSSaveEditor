@@ -15,10 +15,10 @@ class az : EventHandler {
    }
 
    public void actionPerformed(EventArgs var1) {
-      IEnumerator var4 = eS.by().iterator();
+      IEnumerator var4 = eS.by().GetEnumerator();
 
-      while(var4.hasNext()) {
-         eS var3 = (eS)var4.next();
+      while(var4.MoveNext()) {
+         eS var3 = (eS)var4.Current;
          gA var2 = ap.i(this.cu).a(var3);
          var2.a(eU.kr, false);
          var2.a(eU.ks, false);
@@ -27,7 +27,7 @@ class az : EventHandler {
          var2.a(eU.kz, false);
       }
 
-      ap.j(this.cu).updateUI();
+      ap.j(this.cu).Refresh();
    }
 }
 

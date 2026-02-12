@@ -7,18 +7,18 @@ namespace NMSSaveEditor
 {
 
 public class ge {
-   private List gT;
-   private List nh;
-   private List ni;
+   private List<object> gT;
+   private List<object> nh;
+   private List<object> ni;
 
    public static ge m(eY var0) {
       return new ge(var0);
    }
 
    private static Function ap(int var0) {
-      return (var1) -> {
-         string var2 = var1.getName();
-         if (var2 == null || var2.length() == 0 || "BLD_STORAGE_NAME".equals(var2)) {
+      return (var1) => {
+         string var2 = var1.Name;
+         if (var2 == null || var2.length() == 0 || "BLD_STORAGE_NAME".Equals(var2)) {
             var2 = "Chest " + var0;
          }
 
@@ -27,7 +27,7 @@ public class ge {
    }
 
    private static Function cB() {
-      return (var0) -> {
+      return (var0) => {
          return new string[]{"Ingredient Storage"};
       };
    }
@@ -86,7 +86,7 @@ public class ge {
 
       for(int var13 = 0; var13 < var11.Count; ++var13) {
          eY var12 = var11.V(var13);
-         if ("HomePlanetBase".equals(var12.getValueAsString("BaseType.PersistentBaseTypes")) && var12.J("BaseVersion") >= 3) {
+         if ("HomePlanetBase".Equals(var12.getValueAsString("BaseType.PersistentBaseTypes")) && var12.J("BaseVersion") >= 3) {
             var15.Add(new gf(this, var12, (gf)null));
          }
       }
@@ -94,15 +94,15 @@ public class ge {
       this.ni = new List<object>(var15);
    }
 
-   public List cC() {
+   public List<object> cC() {
       return this.gT;
    }
 
-   public List cD() {
+   public List<object> cD() {
       return this.nh;
    }
 
-   public List cE() {
+   public List<object> cE() {
       return this.ni;
    }
 }

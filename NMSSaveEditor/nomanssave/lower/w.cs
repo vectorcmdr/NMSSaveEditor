@@ -15,10 +15,10 @@ class w : Runnable {
    public void run() {
       try {
          Application.g(new Application(this.ba, (Application)null));
-         Application.h(Application.H()).setVisible(true);
+         Application.h(Application.H()).Show();
       } catch (Exception var2) {
          var2.printStackTrace();
-         System.exit(1);
+         Environment.Exit(1);
       }
 
    }

@@ -15,7 +15,7 @@ class n : EventHandler {
    }
 
    public void actionPerformed(EventArgs var1) {
-      this.z.setVisible(false);
+      this.z.Hide();
    }
 }
 

@@ -32,7 +32,7 @@ class E : object {
       int var2;
       if (Application.i(this.aZ)) {
          Application.o(this.aZ).hidePopup();
-         var2 = MessageBox.showConfirmDialog(Application.h(this.aZ), "Are you sure you want to load a different file and lose current changes?", "Save", 2);
+         var2 = MessageBox.Show(Application.h(this.aZ), "Are you sure you want to load a different file and lose current changes?", "Save", 2);
          if (var2 != 0) {
             return;
          }

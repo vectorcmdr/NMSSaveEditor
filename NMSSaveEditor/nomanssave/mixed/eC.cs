@@ -12,7 +12,7 @@ public class eC {
    private eD jT;
    private eE jU;
 
-   static {
+   static eC() {
       jS[0] = c("db/jsonmap.txt", "NMS 5.21 (savegame)");
       jS[1] = c("db/jsonmapac.txt", "NMS 5.21 (account)");
    }
@@ -20,12 +20,12 @@ public class eC {
    public static void main(string[] var0) {
       for(int var1 = 0; var1 < jS.Length; ++var1) {
          if (jS[var1] != null) {
-            IEnumerator var3 = jS[var1].iterator();
+            IEnumerator var3 = jS[var1].GetEnumerator();
 
-            while(var3.hasNext()) {
-               eF var2 = (eF)var3.next();
+            while(var3.MoveNext()) {
+               eF var2 = (eF)var3.Current;
                string var4 = hashName(var2.name);
-               if (!var2.key.equals(var4)) {
+               if (!var2.key.Equals(var4)) {
                   Console.WriteLine(var2.name + " = " + var2.key + " incorrect, should be " + var4);
                }
             }
@@ -43,7 +43,7 @@ public class eC {
       int var5 = (int)(var3 % 68L);
       int var6 = (int)((8796093022207L & var1[0] >> 21) % 68L);
       int var7 = (int)((4194303L & var1[0] >> 42) % 68L);
-      return new string(new char[]{var2.charAt(var5), var2.charAt(var6), var2.charAt(var7)});
+      return new string(new char[]{var2[var5), var2[var6), var2[var7)});
    }
 
    public static eC a(eG var0, string var1) {
@@ -52,7 +52,7 @@ public class eC {
    }
 
    private static eD c(string var0, string var1) {
-      Stream var2 = Application.class.getResourceAsStream(var0);
+      Stream var2 = typeof(Application).GetManifestResourceStream(var0);
       if (var2 == null) {
          return null;
       } else {
@@ -70,10 +70,10 @@ public class eC {
       this.jU = new eE((eE)null, (eE)null);
    }
 
-   public Map bp() {
-      return (Map)this.jU.stream().collect(Collectors.toMap((var0) -> {
+   public Dictionary<object, object> bp() {
+      return (Dictionary<object, object>)this.jU.stream().collect(Collectors.toMap((var0) => {
          return var0.key;
-      }, (var0) -> {
+      }, (var0) => {
          return var0.name;
       }));
    }

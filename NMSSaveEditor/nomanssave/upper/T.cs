@@ -15,8 +15,8 @@ class T : EventHandler {
    }
 
    public void actionPerformed(EventArgs var1) {
-      Q.a(this.bD, new W(int.Parse(Q.a(this.bD).getText()), int.Parse(Q.d(this.bD).getText())));
-      this.bD.setVisible(false);
+      Q.a(this.bD, new W(int.Parse(Q.a(this.bD).Text), int.Parse(Q.d(this.bD).Text)));
+      this.bD.Hide();
    }
 }
 

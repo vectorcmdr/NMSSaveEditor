@@ -13,14 +13,14 @@ class ac : G {
    }
 
    protected string g(string var1) {
-      gj var2 = (gj)X.k(this.bV).getSelectedItem();
+      gj var2 = (gj)X.k(this.bV).SelectedItem;
       if (var2 == null) {
          return "";
       } else {
          var1 = var1.Trim();
-         if (!var1.equals(var2.getName())) {
+         if (!var1.Equals(var2.Name)) {
             var2.setName(var1);
-            X.c(this.bV).setText(var1);
+            X.c(this.bV).Text = (var1);
          }
 
          return var1;

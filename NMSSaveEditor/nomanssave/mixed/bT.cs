@@ -20,11 +20,11 @@ class bT : EventHandler {
 
    public void actionPerformed(EventArgs var1) {
       if (bO.a(bS.j(this.fk)).dp() || en.aS()) {
-         if (bS.b(this.fk).isSelected()) {
+         if (bS.b(this.fk).Checked) {
             bO.a(bS.j(this.fk)).i(this.fl, this.fm);
          } else {
             if (bO.a(bS.j(this.fk)).f(this.fl, this.fm) != null) {
-               bS.b(this.fk).setSelected(true);
+               bS.b(this.fk).Checked = (true);
                bO.b(bS.j(this.fk)).c("Cannot disable slots that are in use!");
                return;
             }

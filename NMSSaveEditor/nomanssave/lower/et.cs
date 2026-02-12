@@ -13,7 +13,7 @@ class et {
    }
 
    public bool equals(Object var1) {
-      return this.id.equals(((er)var1).id);
+      return this.id.Equals(((er)var1).id);
    }
 }
 

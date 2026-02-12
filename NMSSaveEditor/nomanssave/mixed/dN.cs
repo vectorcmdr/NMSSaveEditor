@@ -34,16 +34,16 @@ public class dN : em {
    private gC hY;
 
    dN(Application var1) {
-      this.hK.setModel(new dO(this, var1));
+      this.hK.DataSource = (new dO(this, var1));
       this.a("Ship", true, this.hK);
       this.hL = new dT(this);
       this.a((string)"Name", (Control)this.hL);
-      this.hM = new cN(gL.class);
-      this.hM.a((var2x) -> {
-         gH var3 = (gH)this.hK.getModel().getSelectedItem();
+      this.hM = new cN(typeof(gL));
+      this.hM.a((var2x) => {
+         gH var3 = (gH)this.hK.DataSource.SelectedItem;
          if (var3 != null) {
             gL var4 = gL.aw(var2x);
-            int var5 = MessageBox.showConfirmDialog(var1.g(), "You are about to change a ship type to " + (var4 == null ? "Unknown" : var4.ToString()) + ". Are you sure?\nNOTE: Any incompatible technology installed on the ship will be deleted.", "Change Ship Type", 0);
+            int var5 = MessageBox.Show(var1.g(), "You are about to change a ship type to " + (var4 == null ? "Unknown" : var4.ToString()) + ". Are you sure?\nNOTE: Any incompatible technology installed on the ship will be deleted.", "Change Ship Type", 0);
             if (var5 != 0) {
                this.hM.m(var3.cT());
                return;
@@ -51,14 +51,14 @@ public class dN : em {
 
             var3.ag(var2x);
             this.hW.a(var3.cC());
-            this.hK.updateUI();
+            this.hK.Refresh();
          }
 
       });
       this.a((string)"Type", (Control)this.hM);
-      this.hN = new cN(gN.class);
-      this.hN.a((var1x) -> {
-         gH var2 = (gH)this.hK.getModel().getSelectedItem();
+      this.hN = new cN(typeof(gN));
+      this.hN.a((var1x) => {
+         gH var2 = (gH)this.hK.DataSource.SelectedItem;
          if (var2 != null) {
             var2.aj(var1x);
          }
@@ -68,8 +68,8 @@ public class dN : em {
       this.hO = new dU(this);
       this.a((string)"Seed", (G)this.hO);
       this.hP = new CheckBox("Use Old Colours");
-      this.hP.setEnabled(false);
-      this.hP.addActionListener(new dV(this, var1));
+      this.hP.Enabled = (false);
+      this.hP.Click += (new dV(this, var1));
       this.a((string)null, (Control)this.hP);
       this.k("Base Stats");
       this.hQ = new dW(this);
@@ -87,13 +87,13 @@ public class dN : em {
       this.Y();
       Panel var2 = new Panel();
       this.bQ = new Button("Delete Ship");
-      this.bQ.addActionListener(new dQ(this, var1));
+      this.bQ.Click += (new dQ(this, var1));
       var2.Add(this.bQ);
       this.bR = new Button("Export");
-      this.bR.addActionListener(new dR(this, var1));
+      this.bR.Click += (new dR(this, var1));
       var2.Add(this.bR);
       this.bS = new Button("Import");
-      this.bS.addActionListener(new dS(this, var1));
+      this.bS.Click += (new dS(this, var1));
       var2.Add(this.bS);
       this.a((Control)var2);
       this.hW = new bO(var1);
@@ -102,7 +102,7 @@ public class dN : em {
 
    void w() {
       for(int var1 = 0; var1 < this.hX.Length; ++var1) {
-         this.hX[var1].cC().stream().forEach((var1x) -> {
+         this.hX[var1].cC().stream().forEach((var1x) => {
             if (var1x.dt()) {
                hc.info(var1x + ": technology recharged");
             }
@@ -115,7 +115,7 @@ public class dN : em {
 
    void x() {
       for(int var1 = 0; var1 < this.hX.Length; ++var1) {
-         this.hX[var1].cC().stream().forEach((var1x) -> {
+         this.hX[var1].cC().stream().forEach((var1x) => {
             if (var1x.du()) {
                hc.info(var1x + ": items refilled");
             }
@@ -128,7 +128,7 @@ public class dN : em {
 
    void y() {
       for(int var1 = 0; var1 < this.hX.Length; ++var1) {
-         this.hX[var1].cC().stream().forEach((var1x) -> {
+         this.hX[var1].cC().stream().forEach((var1x) => {
             if (var1x.dv()) {
                hc.info(var1x + ": all slots enabled");
             }
@@ -141,7 +141,7 @@ public class dN : em {
 
    void z() {
       for(int var1 = 0; var1 < this.hX.Length; ++var1) {
-         this.hX[var1].cC().stream().forEach((var1x) -> {
+         this.hX[var1].cC().stream().forEach((var1x) => {
             if (var1x.ds()) {
                hc.info(var1x + ": all slots repaired");
             }
@@ -154,7 +154,7 @@ public class dN : em {
 
    void A() {
       for(int var1 = 0; var1 < this.hX.Length; ++var1) {
-         this.hX[var1].cC().stream().forEach((var1x) -> {
+         this.hX[var1].cC().stream().forEach((var1x) => {
             if (var1x.dl()) {
                hc.info(var1x + ": inventory expanded");
             }
@@ -177,25 +177,25 @@ public class dN : em {
       this.hX = var1;
       this.hY = var2;
       if (var1.Length == 0) {
-         this.hK.setSelectedIndex(-1);
+         this.hK.SelectedIndex = (-1);
       } else {
          int var3 = var2 == null ? 0 : var2.dV();
          if (var3 >= var1.Length) {
             var3 = 0;
          }
 
-         this.hK.setSelectedIndex(var3);
+         this.hK.SelectedIndex = (var3);
       }
 
       if (var2 == null) {
-         this.hQ.setText("");
-         this.hR.setText("");
+         this.hQ.Text = ("");
+         this.hR.Text = ("");
       } else {
-         this.hQ.setText(Long.toString((long)var2.dM()));
-         this.hR.setText(Long.toString((long)var2.dN()));
+         this.hQ.Text = (Long.toString((long)var2.dM()));
+         this.hR.Text = (Long.toString((long)var2.dN()));
       }
 
-      this.hK.updateUI();
+      this.hK.Refresh();
    }
    static gH[] a(dN var0) {
       return var0.hX;

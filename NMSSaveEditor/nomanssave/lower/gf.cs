@@ -40,12 +40,12 @@ public class gf {
       return this.nj;
    }
 
-   public List cI() {
+   public List<object> cI() {
       List<object> var1 = new List<object>();
-      IEnumerator var3 = gV.G(this.nj).iterator();
+      IEnumerator var3 = gV.G(this.nj).GetEnumerator();
 
-      while(var3.hasNext()) {
-         eY var2 = (eY)var3.next();
+      while(var3.MoveNext()) {
+         eY var2 = (eY)var3.Current;
          var1.Add(new gg(this, var2));
       }
 

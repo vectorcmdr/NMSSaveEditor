@@ -21,7 +21,7 @@ public enum gi {
    nA,
    nB,
    nC,
-   nD;
+   nD
 }
 
 }

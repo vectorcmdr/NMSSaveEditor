@@ -19,10 +19,10 @@ class co : FileFilter {
    }
 
    public bool accept(File var1) {
-      if (var1.isDirectory()) {
+      if (var1.Attributes.HasFlag(FileAttributes.Directory)) {
          return !var1.isHidden();
       } else {
-         string var2 = var1.getName();
+         string var2 = var1.Name;
          return var2.EndsWith(".pb3") || var2.EndsWith(".pb0");
       }
    }

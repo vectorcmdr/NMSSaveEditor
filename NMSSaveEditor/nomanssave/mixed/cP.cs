@@ -18,7 +18,7 @@ class cP : object {
       Component var6 = base.getListCellRendererComponent(var1, var2, var3, var4, var5);
       if (var2 == null && var6 is Label) {
          Label var7 = (Label)var6;
-         var7.setText(" ");
+         var7.Text = (" ");
       }
 
       if (var6 is Label) {

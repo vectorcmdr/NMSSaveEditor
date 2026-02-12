@@ -11,7 +11,7 @@ public class ff : Closeable {
    public static int kO = 1;
    public static int kP = 2;
    public static int kQ = 4;
-   private Stream in;
+   private Stream @in;
    private int flags;
    private int kR;
    private CharsetDecoder kS;
@@ -36,7 +36,7 @@ public class ff : Closeable {
             }
 
             if (var3 != null) {
-               var3.close();
+               var3.Close();
             }
 
             label162:
@@ -51,7 +51,7 @@ public class ff : Closeable {
 
          var1 = var10000;
          if (var3 != null) {
-            var3.close();
+            var3.Close();
          }
 
          throw var1;
@@ -86,7 +86,7 @@ public class ff : Closeable {
             }
 
             if (var3 != null) {
-               var3.close();
+               var3.Close();
             }
 
             label162:
@@ -101,7 +101,7 @@ public class ff : Closeable {
 
          var1 = var10000;
          if (var3 != null) {
-            var3.close();
+            var3.Close();
          }
 
          throw var1;
@@ -136,7 +136,7 @@ public class ff : Closeable {
             }
 
             if (var3 != null) {
-               var3.close();
+               var3.Close();
             }
 
             label162:
@@ -151,7 +151,7 @@ public class ff : Closeable {
 
          var1 = var10000;
          if (var3 != null) {
-            var3.close();
+            var3.Close();
          }
 
          throw var1;
@@ -171,7 +171,7 @@ public class ff : Closeable {
    }
 
    public ff(Stream var1, int var2) {
-      this.in = var1;
+      this.@in = var1;
       this.flags = var2;
       this.kR = -1;
       this.kS = StandardCharsets.UTF_8.newDecoder().onMalformedInput(CodingErrorAction.REPORT).onUnmappableCharacter(CodingErrorAction.REPORT);
@@ -183,13 +183,13 @@ public class ff : Closeable {
          this.kR = -1;
          return var1;
       } else {
-         return this.in.read();
+         return this.@in.ReadByte();
       }
    }
 
    private int a(Predicate var1) {
       if (this.kR < 0) {
-         this.kR = this.in.read();
+         this.kR = this.@in.ReadByte();
       }
 
       if (this.kR >= 0 && var1.test(this.kR)) {
@@ -203,14 +203,14 @@ public class ff : Closeable {
 
    private int bI() {
       if ((this.flags & 1) != 0) {
-         return this.read();
+         return this.ReadByte();
       } else {
          if (this.kR < 0) {
-            this.kR = this.in.read();
+            this.kR = this.@in.ReadByte();
          }
 
          while(this.kR == 32 || this.kR == 13 || this.kR == 10 || this.kR == 9) {
-            this.kR = this.in.read();
+            this.kR = this.@in.ReadByte();
          }
 
          if (this.kR >= 0) {
@@ -226,12 +226,12 @@ public class ff : Closeable {
    public void close() {
       try {
          if (this.kR < 0) {
-            this.kR = this.in.read();
+            this.kR = this.@in.ReadByte();
          }
 
          if ((this.flags & 1) == 0) {
             while(this.kR == 32 || this.kR == 13 || this.kR == 10 || this.kR == 9) {
-               this.kR = this.in.read();
+               this.kR = this.@in.ReadByte();
             }
          }
 
@@ -248,7 +248,7 @@ public class ff : Closeable {
          }
       } finally {
          if ((this.flags & 4) == 0) {
-            this.in.close();
+            this.@in.Close();
          }
 
       }
@@ -326,12 +326,12 @@ public class ff : Closeable {
          }
 
          if (((eY)var3).H("PlayerStateData") == null) {
-            ((eY)var3).b("PlayerStateData", (var0) -> {
+            ((eY)var3).b("PlayerStateData", (var0) => {
                string var1 = var0.getValueAsString("ActiveContext");
-               if ("Main".equals(var1) && var0.H("BaseContext.PlayerStateData") != null) {
+               if ("Main".Equals(var1) && var0.H("BaseContext.PlayerStateData") != null) {
                   return "BaseContext.PlayerStateData";
                } else {
-                  return "Season".equals(var1) && var0.H("ExpeditionContext.PlayerStateData") != null ? "ExpeditionContext.PlayerStateData" : "PlayerStateData";
+                  return "Season".Equals(var1) && var0.H("ExpeditionContext.PlayerStateData") != null ? "ExpeditionContext.PlayerStateData" : "PlayerStateData";
                }
             });
          }
@@ -361,33 +361,33 @@ public class ff : Closeable {
       } else if (var1 == 34) {
          return this.bO();
       } else if (var1 == 116) {
-         if (this.read() != 114) {
+         if (this.ReadByte() != 114) {
             throw new eX("Invalid token");
-         } else if (this.read() != 117) {
+         } else if (this.ReadByte() != 117) {
             throw new eX("Invalid token");
-         } else if (this.read() != 101) {
+         } else if (this.ReadByte() != 101) {
             throw new eX("Invalid token");
          } else {
             return Boolean.TRUE;
          }
       } else if (var1 == 102) {
-         if (this.read() != 97) {
+         if (this.ReadByte() != 97) {
             throw new eX("Invalid token");
-         } else if (this.read() != 108) {
+         } else if (this.ReadByte() != 108) {
             throw new eX("Invalid token");
-         } else if (this.read() != 115) {
+         } else if (this.ReadByte() != 115) {
             throw new eX("Invalid token");
-         } else if (this.read() != 101) {
+         } else if (this.ReadByte() != 101) {
             throw new eX("Invalid token");
          } else {
             return Boolean.FALSE;
          }
       } else if (var1 == 110) {
-         if (this.read() != 117) {
+         if (this.ReadByte() != 117) {
             throw new eX("Invalid token");
-         } else if (this.read() != 108) {
+         } else if (this.ReadByte() != 108) {
             throw new eX("Invalid token");
-         } else if (this.read() != 108) {
+         } else if (this.ReadByte() != 108) {
             throw new eX("Invalid token");
          } else {
             return null;
@@ -544,13 +544,13 @@ public class ff : Closeable {
    private byte[] bM() {
       MemoryStream var1;
       int var2;
-      for(var1 = new MemoryStream(); (var2 = this.read()) != 34; var1.write(var2)) {
+      for(var1 = new MemoryStream(); (var2 = this.ReadByte()) != 34; var1.Write(var2)) {
          if (var2 < 0) {
             throw new eX("Short read");
          }
 
          if (var2 == 92) {
-            var2 = this.read();
+            var2 = this.ReadByte();
             if (var2 < 0) {
                throw new eX("Short read");
             }
@@ -572,7 +572,7 @@ public class ff : Closeable {
                var2 = 9;
                break;
             case 117:
-               var2 = fh.ae(this.read()) << 12 | fh.ae(this.read()) << 8 | fh.ae(this.read()) << 4 | fh.ae(this.read());
+               var2 = fh.ae(this.ReadByte()) << 12 | fh.ae(this.ReadByte()) << 8 | fh.ae(this.ReadByte()) << 4 | fh.ae(this.ReadByte());
                if (var2 > 255) {
                   throw new eX("Unexpected unicode escape: " + var2);
                }

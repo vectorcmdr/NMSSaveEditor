@@ -27,7 +27,7 @@ class fW {
       hc.debug("    filename: " + this.filename);
       this.id = gc.c(var2);
       hc.debug("    id: " + this.id);
-      this.mT = var2.read();
+      this.mT = var2.ReadByte();
       if (this.mT < 0) {
          throw new IOException("short read");
       } else {
@@ -72,7 +72,7 @@ class fW {
       gc.b(var1, this.name);
       gc.b(var1, this.filename);
       gc.b(var1, this.id);
-      var1.write(this.mT);
+      var1.Write(this.mT);
       hk.a(var1, this.lL);
       gc.a(var1, this.mU);
       gc.a(var1, this.timestamp);
@@ -82,7 +82,7 @@ class fW {
 
    string cz() {
       MemoryStream var1 = new MemoryStream();
-      this.write(var1);
+      this.Write(var1);
       return hk.k(var1.toByteArray());
    }
 }

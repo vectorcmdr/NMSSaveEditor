@@ -40,8 +40,8 @@ class dS : EventHandler {
          var3[var4] = var2;
          dN.a(this.ia, var3);
          hc.info("Imported ship: " + var2.getIndex());
-         dN.p(this.ia).setSelectedIndex(var4);
-         dN.p(this.ia).updateUI();
+         dN.p(this.ia).SelectedIndex = (var4);
+         dN.p(this.ia).Refresh();
       }
 
    }

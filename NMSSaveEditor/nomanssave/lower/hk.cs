@@ -17,23 +17,23 @@ public class hk {
       int var3;
       for(var2 = 0; var2 + 3 <= var0.Length; var2 += 3) {
          var3 = (255 & var0[var2]) << 16 | (255 & var0[var2 + 1]) << 8 | 255 & var0[var2 + 2];
-         var1.append("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/".charAt((16515072 & var3) >> 18));
-         var1.append("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/".charAt((258048 & var3) >> 12));
-         var1.append("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/".charAt((4032 & var3) >> 6));
-         var1.append("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/".charAt(63 & var3));
+         var1.Append("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"[(16515072 & var3) >> 18));
+         var1.Append("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"[(258048 & var3) >> 12));
+         var1.Append("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"[(4032 & var3) >> 6));
+         var1.Append("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"[63 & var3));
       }
 
       if (var2 + 2 == var0.Length) {
          var3 = (255 & var0[var2]) << 16 | (255 & var0[var2 + 1]) << 8;
-         var1.append("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/".charAt((16515072 & var3) >> 18));
-         var1.append("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/".charAt((258048 & var3) >> 12));
-         var1.append("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/".charAt((4032 & var3) >> 6));
+         var1.Append("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"[(16515072 & var3) >> 18));
+         var1.Append("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"[(258048 & var3) >> 12));
+         var1.Append("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"[(4032 & var3) >> 6));
       }
 
       if (var2 + 1 == var0.Length) {
          var3 = (255 & var0[var2]) << 16;
-         var1.append("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/".charAt((16515072 & var3) >> 18));
-         var1.append("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/".charAt((258048 & var3) >> 12));
+         var1.Append("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"[(16515072 & var3) >> 18));
+         var1.Append("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"[(258048 & var3) >> 12));
       }
 
       return var1.ToString();
@@ -47,39 +47,39 @@ public class hk {
       int var4;
       int var5;
       for(var2 = 0; var2 + 4 <= var0.length(); var2 += 4) {
-         var3 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/".IndexOf(var0.charAt(var2));
-         var4 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/".IndexOf(var0.charAt(var2 + 1));
-         var5 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/".IndexOf(var0.charAt(var2 + 2));
-         int var6 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/".IndexOf(var0.charAt(var2 + 3));
+         var3 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/".IndexOf(var0[var2));
+         var4 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/".IndexOf(var0[var2 + 1));
+         var5 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/".IndexOf(var0[var2 + 2));
+         int var6 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/".IndexOf(var0[var2 + 3));
          if (var3 < 0 || var4 < 0 || var5 < 0 || var6 < 0) {
             throw new Exception("Invalid base64 character");
          }
 
-         var1.write(var3 << 2 | var4 >> 4);
-         var1.write((15 & var4) << 4 | var5 >> 2);
-         var1.write((3 & var5) << 6 | var6);
+         var1.Write(var3 << 2 | var4 >> 4);
+         var1.Write((15 & var4) << 4 | var5 >> 2);
+         var1.Write((3 & var5) << 6 | var6);
       }
 
       if (var2 + 3 == var0.length()) {
-         var3 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/".IndexOf(var0.charAt(var2));
-         var4 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/".IndexOf(var0.charAt(var2 + 1));
-         var5 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/".IndexOf(var0.charAt(var2 + 2));
+         var3 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/".IndexOf(var0[var2));
+         var4 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/".IndexOf(var0[var2 + 1));
+         var5 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/".IndexOf(var0[var2 + 2));
          if (var3 < 0 || var4 < 0 || var5 < 0) {
             throw new Exception("Invalid base64 character");
          }
 
-         var1.write(var3 << 2 | var4 >> 4);
-         var1.write((15 & var4) << 4 | var5 >> 2);
+         var1.Write(var3 << 2 | var4 >> 4);
+         var1.Write((15 & var4) << 4 | var5 >> 2);
       }
 
       if (var2 + 2 == var0.length()) {
-         var3 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/".IndexOf(var0.charAt(var2));
-         var4 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/".IndexOf(var0.charAt(var2 + 1));
+         var3 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/".IndexOf(var0[var2));
+         var4 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/".IndexOf(var0[var2 + 1));
          if (var3 < 0 || var4 < 0) {
             throw new Exception("Invalid base64 character");
          }
 
-         var1.write(var3 << 2 | var4 >> 4);
+         var1.Write(var3 << 2 | var4 >> 4);
       }
 
       if (var2 + 1 == var0.length()) {
@@ -96,10 +96,10 @@ public class hk {
    }
 
    public static void a(Stream var0, int var1) {
-      var0.write(255 & var1);
-      var0.write(255 & var1 >> 8);
-      var0.write(255 & var1 >> 16);
-      var0.write(255 & var1 >> 24);
+      var0.Write(255 & var1);
+      var0.Write(255 & var1 >> 8);
+      var0.Write(255 & var1 >> 16);
+      var0.Write(255 & var1 >> 24);
    }
 
    public static long f(Stream var0) {
@@ -109,14 +109,14 @@ public class hk {
    }
 
    public static void b(Stream var0, long var1) {
-      var0.write((int)(255L & var1));
-      var0.write((int)(255L & var1 >> 8));
-      var0.write((int)(255L & var1 >> 16));
-      var0.write((int)(255L & var1 >> 24));
-      var0.write((int)(255L & var1 >> 32));
-      var0.write((int)(255L & var1 >> 40));
-      var0.write((int)(255L & var1 >> 48));
-      var0.write((int)(255L & var1 >> 56));
+      var0.Write((int)(255L & var1));
+      var0.Write((int)(255L & var1 >> 8));
+      var0.Write((int)(255L & var1 >> 16));
+      var0.Write((int)(255L & var1 >> 24));
+      var0.Write((int)(255L & var1 >> 32));
+      var0.Write((int)(255L & var1 >> 40));
+      var0.Write((int)(255L & var1 >> 48));
+      var0.Write((int)(255L & var1 >> 56));
    }
 
    public static byte[] l(File var0) {
@@ -126,7 +126,7 @@ public class hk {
       try {
          var3 = g(var1);
       } finally {
-         var1.close();
+         var1.Close();
       }
 
       return var3;
@@ -138,7 +138,7 @@ public class hk {
 
       int var3;
       while((var3 = var0.read(var2)) >= 0) {
-         var1.write(var2, 0, var3);
+         var1.Write(var2, 0, var3);
       }
 
       return var1.toByteArray();

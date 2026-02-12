@@ -32,7 +32,7 @@ class D : object {
       int var2;
       if (Application.i(this.aZ)) {
          Application.n(this.aZ).hidePopup();
-         var2 = MessageBox.showConfirmDialog(Application.h(this.aZ), "Save data before switching slots?", "Save", 1);
+         var2 = MessageBox.Show(Application.h(this.aZ), "Save data before switching slots?", "Save", 1);
          if (var2 == 0) {
             Application.k(this.aZ);
          } else {

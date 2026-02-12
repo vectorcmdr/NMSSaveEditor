@@ -5,14 +5,15 @@ using System.Text;
 
 namespace NMSSaveEditor
 {
-public enum gG {
-   rg(200),
-   rh(100),
-   ri(1000000),
-   rj(1000000),
-   rk(100),
-   rl(10000000),
-   rm(100);
+public sealed class gG {
+   public static readonly gG rg = new gG(200);
+   public static readonly gG rh = new gG(100);
+   public static readonly gG ri = new gG(1000000);
+   public static readonly gG rj = new gG(1000000);
+   public static readonly gG rk = new gG(100);
+   public static readonly gG rl = new gG(10000000);
+   public static readonly gG rm = new gG(100);
+
 
    int rn;
 

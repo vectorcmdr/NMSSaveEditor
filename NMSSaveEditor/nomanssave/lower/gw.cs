@@ -26,7 +26,7 @@ public class gw : gv {
    }
 
    public void ag(string var1) {
-      if (!gx.qH.K().equals(var1)) {
+      if (!gx.qH.K().Equals(var1)) {
          throw new Exception("Only standard types allowed");
       }
    }
@@ -58,7 +58,7 @@ public class gw : gv {
    }
 
    public string toString() {
-      string var1 = this.getName();
+      string var1 = this.Name;
       return var1 != null && var1.length() != 0 ? var1 : "Multitool";
    }
 }

@@ -16,7 +16,7 @@ class ak : EventHandler {
 
    public void actionPerformed(EventArgs var1) {
       try {
-         aj.a(this.cg, hl.e(aj.a(this.cg).getText().Trim(), aj.b(this.cg).getSelectedIndex()));
+         aj.a(this.cg, hl.e(aj.a(this.cg).Text.Trim(), aj.b(this.cg).SelectedIndex));
          aj.c(this.cg);
       } catch (Exception var3) {
          MessageBox.showOptionDialog(this.cg, "Invalid address value, please try again.", "Error", 0, 0, (Icon)null, new Object[]{"Cancel"}, (Object)null);

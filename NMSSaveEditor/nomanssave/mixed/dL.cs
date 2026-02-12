@@ -17,7 +17,7 @@ class dL : object {
    public Component getListCellRendererComponent(ListBox var1, Object var2, int var3, bool var4, bool var5) {
       Label var6 = (Label)base.getListCellRendererComponent(var1, var2, var3, var4, var5);
       if (var2 == null) {
-         var6.setText("");
+         var6.Text = ("");
       } else {
          eM var7 = (eM)var2;
          if (var7.aW()) {

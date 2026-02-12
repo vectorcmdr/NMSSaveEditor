@@ -14,7 +14,7 @@ class d : CheckBox, TableCellRenderer {
    public Component getTableCellRendererComponent(DataGridView var1, Object var2, bool var3, bool var4, int var5, int var6) {
       this.setBackground(var1.getBackground());
       this.setHorizontalAlignment(0);
-      this.setSelected(Boolean.TRUE == var2);
+      this.Checked = (Boolean.TRUE == var2);
       return this;
    }
    d(d var1) {

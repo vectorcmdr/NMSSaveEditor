@@ -21,10 +21,10 @@ class bX : object {
    public void mouseReleased(MouseEventArgs var1) {
       if (bO.a(bS.j(this.fk)).h(this.fl, this.fm) && !bO.a(bS.j(this.fk)).l(this.fl, this.fm)) {
          int var2 = SystemInformation.getInt("Inventory.gridSize");
-         int var3 = this.fl + (int)Math.Floor((double)var1.getX() / (double)var2);
-         int var4 = this.fm + (int)Math.Floor((double)var1.getY() / (double)var2);
-         if (var3 >= 0 && var3 < bO.a(bS.j(this.fk)).getWidth()) {
-            if (var4 >= 0 && var4 < bO.a(bS.j(this.fk)).getHeight()) {
+         int var3 = this.fl + (int)Math.Floor((double)var1.Left / (double)var2);
+         int var4 = this.fm + (int)Math.Floor((double)var1.Top / (double)var2);
+         if (var3 >= 0 && var3 < bO.a(bS.j(this.fk)).Width) {
+            if (var4 >= 0 && var4 < bO.a(bS.j(this.fk)).Height) {
                if (var3 != this.fl || var4 != this.fm) {
                   bS var5 = bO.a(bS.j(this.fk), var3, var4);
                   if (var5 != null && bS.e(var5) && !bS.f(var5)) {

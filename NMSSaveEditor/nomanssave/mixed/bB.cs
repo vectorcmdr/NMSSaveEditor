@@ -43,7 +43,7 @@ class bB : object {
                }
 
                bl.c(this.er)[bl.b(this.er)].e(var3, var4);
-               bl.d(this.er)[var3].setText(Integer.toString(var4));
+               bl.d(this.er)[var3].Text = (Integer.toString(var4));
             }
 
             if (this.eu == null) {
@@ -57,10 +57,10 @@ class bB : object {
                }
 
                bl.c(this.er)[bl.b(this.er)].e(var3, var4);
-               bl.d(this.er)[var3].setText(Integer.toString(var4));
+               bl.d(this.er)[var3].Text = (Integer.toString(var4));
             }
 
-            bl.e(this.er).updateUI();
+            bl.e(this.er).Refresh();
          }
       }
 

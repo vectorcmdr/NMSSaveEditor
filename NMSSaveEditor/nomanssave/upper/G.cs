@@ -13,11 +13,11 @@ public abstract class G : TextBox {
    }
 
    public void N() {
-      this.setText(this.g(this.getText()));
+      this.Text = (this.g(this.Text));
    }
 
    public void f(string var1) {
-      this.setText(this.g(var1));
+      this.Text = (this.g(var1));
    }
 
    protected abstract string g(string var1);

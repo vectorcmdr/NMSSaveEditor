@@ -12,10 +12,10 @@ public class eS {
    string id;
    string text;
    private Dictionary<object, object> kp;
-   private static List kq = new List<object>();
+   private static List<object> kq = new List<object>();
 
-   static {
-      Stream var0 = Application.class.getResourceAsStream("db/words.xml");
+   static eS() {
+      Stream var0 = typeof(Application).GetManifestResourceStream("db/words.xml");
       if (var0 != null) {
          try {
             Document var1 = XmlDocument.newInstance().newDocumentBuilder().parse(var0);
@@ -24,7 +24,7 @@ public class eS {
 
             for(int var4 = 0; var4 < var3.getLength(); ++var4) {
                Node var5 = var3.item(var4);
-               if (var5 is Element && var5.getNodeName().equals("word")) {
+               if (var5 is Element && var5.getNodeName().Equals("word")) {
                   kq.Add(new eS((Element)var5));
                }
             }
@@ -48,7 +48,7 @@ public class eS {
          string var5 = var4.getAttribute("group");
          eU var6 = eU.C(var4.getAttribute("race"));
          if (var6 != null) {
-            this.kp.put(var5, var6);
+            this.kp.Put(var5, var6);
          }
       }
 
@@ -67,7 +67,7 @@ public class eS {
    }
 
    public eU z(string var1) {
-      return (eU)this.kp.get(var1);
+      return (eU)this.kp[(var1);
    }
 
    public bool a(eU var1) {
@@ -75,11 +75,11 @@ public class eS {
    }
 
    public static eS A(string var0) {
-      IEnumerator var2 = kq.iterator();
+      IEnumerator var2 = kq.GetEnumerator();
 
-      while(var2.hasNext()) {
-         eS var1 = (eS)var2.next();
-         if (var1.id.equals(var0)) {
+      while(var2.MoveNext()) {
+         eS var1 = (eS)var2.Current;
+         if (var1.id.Equals(var0)) {
             return var1;
          }
       }
@@ -88,10 +88,10 @@ public class eS {
    }
 
    public static eS B(string var0) {
-      IEnumerator var2 = kq.iterator();
+      IEnumerator var2 = kq.GetEnumerator();
 
-      while(var2.hasNext()) {
-         eS var1 = (eS)var2.next();
+      while(var2.MoveNext()) {
+         eS var1 = (eS)var2.Current;
          if (var1.kp.ContainsKey(var0)) {
             return var1;
          }
@@ -105,7 +105,7 @@ public class eS {
    }
 
    public static eS T(int var0) {
-      return (eS)kq.get(var0);
+      return (eS)kq[(var0);
    }
 
    public static Iterable by() {

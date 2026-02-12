@@ -15,7 +15,7 @@ public class bE : Panel {
 
    bE(Application var1) {
       TableLayoutPanel var2 = new TableLayoutPanel(1, 3, 10, 0);
-      this.setLayout(var2);
+      this.LayoutEnginevar2);
       this.ex[0] = new bN(this);
       this.Add(this.ex[0]);
       this.ex[1] = new bN(this);
@@ -90,8 +90,8 @@ public class bE : Panel {
 
    void aa() {
       for(int var2 = 0; var2 < this.ex.Length; ++var2) {
-         for(int var3 = 0; var3 < this.ex[var2].getComponentCount(); ++var3) {
-            Component var1 = this.ex[var2].getComponent(var3);
+         for(int var3 = 0; var3 < this.ex[var2].Controls.Count; ++var3) {
+            Component var1 = this.ex[var2].Controls[var3);
             if (var1 is bL && ((bL)var1).eB.isSpecial()) {
                ((bL)var1).ac();
             }
@@ -102,10 +102,10 @@ public class bE : Panel {
 
    private void a(gs var1, string var2) {
       for(int var4 = 0; var4 < this.ex.Length; ++var4) {
-         for(int var5 = 0; var5 < this.ex[var4].getComponentCount(); ++var5) {
-            Component var3 = this.ex[var4].getComponent(var5);
+         for(int var5 = 0; var5 < this.ex[var4].Controls.Count; ++var5) {
+            Component var3 = this.ex[var4].Controls[var5);
             if (var3 is bJ && ((bJ)var3).ez == var1) {
-               ((bJ)var3).setText(var2);
+               ((bJ)var3).Text = (var2);
             }
          }
       }
@@ -116,8 +116,8 @@ public class bE : Panel {
       this.cp = var1;
 
       for(int var3 = 0; var3 < this.ex.Length; ++var3) {
-         for(int var4 = 0; var4 < this.ex[var3].getComponentCount(); ++var4) {
-            Component var2 = this.ex[var3].getComponent(var4);
+         for(int var4 = 0; var4 < this.ex[var3].Controls.Count; ++var4) {
+            Component var2 = this.ex[var3].Controls[var4);
             if (var2 is bJ) {
                ((bJ)var2).ac();
             } else if (var2 is bL) {

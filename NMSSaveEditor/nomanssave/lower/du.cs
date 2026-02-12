@@ -23,18 +23,18 @@ class du : Panel {
       this.setBackground(bO.eK);
       this.setMinimumSize(var4);
       this.setMaximumSize(var4);
-      this.setPreferredSize(var4);
-      this.setLayout(new GridBagLayout());
+      this.Size = (var4);
+      this.LayoutEnginenew GridBagLayout());
       this.setBorder(bO.eP);
       JPopupMenu var5 = new JPopupMenu();
       this.fe = new ToolStripMenuItem("Item Details");
-      this.fe.addActionListener(new dv(this, var2));
+      this.fe.Click += (new dv(this, var2));
       var5.Add(this.fe);
       this.hn = new ToolStripMenuItem("Change Item");
-      this.hn.addActionListener(new dw(this, var2));
+      this.hn.Click += (new dw(this, var2));
       var5.Add(this.hn);
       this.fh = new ToolStripMenuItem("Move Item");
-      this.fh.addActionListener(new dx(this, var2));
+      this.fh.Click += (new dx(this, var2));
       var5.Add(this.fh);
       this.setComponentPopupMenu(var5);
       this.addMouseListener(new dy(this, var2));
@@ -42,19 +42,19 @@ class du : Panel {
    }
 
    private void aM() {
-      this.removeAll();
+      this.RemoveAll();
       int var1 = SystemInformation.getInt("Inventory.gridSize");
       Size var2 = new Size(var1, var1);
       this.setBackground(bO.eK);
       this.setMinimumSize(var2);
       this.setMaximumSize(var2);
-      this.setPreferredSize(var2);
+      this.Size = (var2);
       if (this.hm != null && this.hm.isValid()) {
-         this.fe.setEnabled(true);
-         this.hn.setEnabled(true);
-         this.fh.setEnabled(this.hm.dA() > 0);
+         this.fe.Enabled = (true);
+         this.hn.Enabled = (true);
+         this.fh.Enabled = (this.hm.dA() > 0);
          ey var3 = ey.d(this.hm.dz());
-         string var4 = var3 == null ? this.hm.ei() : var3.getName();
+         string var4 = var3 == null ? this.hm.ei() : var3.Name;
          int var5 = SystemInformation.getInt("Inventory.iconSize");
          Font var6 = SystemInformation.getFont("Inventory.font");
          Image var7 = var3 == null ? null : var3.c(var5, var5);
@@ -63,7 +63,7 @@ class du : Panel {
          GridBagConstraints var10;
          if (var7 != null) {
             var9 = new Label(var7);
-            var9.setPreferredSize(new Size(var5, var5));
+            var9.Size = (new Size(var5, var5));
             var10 = new GridBagConstraints();
             var10.anchor = 10;
             var10.fill = 0;
@@ -77,7 +77,7 @@ class du : Panel {
          var9.setFont(var6);
          var9.setBackground((Color)null);
          var9.setBorder((Border)null);
-         var9.setText(var4);
+         var9.Text = (var4);
          var9.setForeground(bO.eO);
          var10 = new GridBagConstraints();
          var10.anchor = 10;
@@ -90,7 +90,7 @@ class du : Panel {
          var9.setFont(var6);
          var9.setBackground((Color)null);
          var9.setBorder((Border)null);
-         var9.setText(Integer.toString(this.hm.dA()) + "/" + Integer.toString(this.hm.dB()));
+         var9.Text = (Integer.toString(this.hm.dA()) + "/" + Integer.toString(this.hm.dB()));
          var9.setForeground(bO.eO);
          var10 = new GridBagConstraints();
          var10.anchor = 10;
@@ -100,13 +100,13 @@ class du : Panel {
          var10.gridy = var8++;
          this.Add(var9, var10);
       } else {
-         this.fe.setEnabled(false);
-         this.hn.setEnabled(false);
-         this.fh.setEnabled(false);
+         this.fe.Enabled = (false);
+         this.hn.Enabled = (false);
+         this.fh.Enabled = (false);
       }
 
-      this.revalidate();
-      this.updateUI();
+      this.PerformLayout();
+      this.Refresh();
    }
    static void c(du var0) {
       var0.aM();

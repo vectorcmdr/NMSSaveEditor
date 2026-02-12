@@ -64,7 +64,7 @@ public class fA : fq {
             }
 
             if (var4 != null) {
-               var4.close();
+               var4.Close();
             }
 
             label162:
@@ -79,7 +79,7 @@ public class fA : fq {
 
          var2 = var10000;
          if (var4 != null) {
-            var4.close();
+            var4.Close();
          }
 
          throw var2;
@@ -106,7 +106,7 @@ public class fA : fq {
             var4.h(var0);
          } finally {
             if (var4 != null) {
-               var4.close();
+               var4.Close();
             }
 
          }
@@ -143,7 +143,7 @@ public class fA : fq {
 
    public int W(string var1) {
       Matcher var2 = lV.matcher(var1);
-      if (!var2.matches()) {
+      if (!var2.Matches()) {
          return -1;
       } else {
          int var3 = int.Parse(var2.group(1)) - 2;
@@ -153,7 +153,7 @@ public class fA : fq {
 
    public void X(string var1) {
       Matcher var2 = lV.matcher(var1);
-      if (var2.matches()) {
+      if (var2.Matches()) {
          int var3 = int.Parse(var2.group(1)) - 2;
          if (var3 == -2) {
             try {

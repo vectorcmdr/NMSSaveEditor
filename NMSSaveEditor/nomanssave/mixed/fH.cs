@@ -29,7 +29,7 @@ class fH {
                }
             }
          } finally {
-            var4.close();
+            var4.Close();
          }
       }
 
@@ -46,7 +46,7 @@ class fH {
          hk.readFully(var3, var4);
          var6 = var4;
       } finally {
-         var3.close();
+         var3.Close();
       }
 
       return var6;
@@ -64,7 +64,7 @@ class fH {
          hk.readFully(var4, var5);
          var7 = var5;
       } finally {
-         var4.close();
+         var4.Close();
       }
 
       return var7;
@@ -78,18 +78,18 @@ class fH {
       FileStream var2 = new FileStream(new File(fA.a(this.ma), this.K()));
 
       try {
-         var2.write(this.lK);
-         var2.write(var1);
+         var2.Write(this.lK);
+         var2.Write(var1);
       } finally {
-         var2.close();
+         var2.Close();
       }
 
    }
 
    void a(string var1, fn var2, string var3, string var4) {
       Dictionary<string, string> var5 = new Dictionary<string, string>();
-      var5.setProperty("StorageFile", this.mh.getName());
-      var5.setProperty("LastModified", Long.toString(this.mh.lastModified()));
+      var5.setProperty("StorageFile", this.mh.Name);
+      var5.setProperty("LastModified", Long.toString(this.mh.LastWriteTimeUtc.Ticks));
       if (var2 != null) {
          var5.setProperty("GameMode", var2.name());
       }
@@ -108,31 +108,31 @@ class fH {
 
       try {
          byte[] var10 = new byte[4096];
-         ZipEntry var11 = new ZipEntry(this.mh.getName());
+         ZipEntry var11 = new ZipEntry(this.mh.Name);
          var8.putNextEntry(var11);
          FileStream var12 = new FileStream(this.mh);
 
          int var9;
          try {
             while((var9 = var12.read(var10)) >= 0) {
-               var8.write(var10, 0, var9);
+               var8.Write(var10, 0, var9);
             }
          } finally {
-            var12.close();
+            var12.Close();
          }
 
          var11 = new ZipEntry("saveinfo.txt");
          var8.putNextEntry(var11);
          var5.store(var8, "");
       } finally {
-         var8.close();
+         var8.Close();
       }
 
-      var7.setLastModified(this.mh.lastModified());
+      var7.setLastModified(this.mh.LastWriteTimeUtc.Ticks);
    }
 
    public string K() {
-      return this.mh.getName();
+      return this.mh.Name;
    }
 }
 

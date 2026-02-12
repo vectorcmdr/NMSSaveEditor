@@ -17,7 +17,7 @@ class dI : object {
    }
 
    public Class getColumnClass(int var1) {
-      return var1 == 1 ? eM.class : string.class;
+      return var1 == 1 ? typeof(eM) : typeof(string);
    }
 
    public int getColumnCount() {
@@ -38,12 +38,12 @@ class dI : object {
    }
 
    public int getRowCount() {
-      gE var1 = (gE)dE.a(this.hE).getSelectedItem();
+      gE var1 = (gE)dE.a(this.hE).SelectedItem;
       return var1 == null ? 0 : var1.dW();
    }
 
    public Object getValueAt(int var1, int var2) {
-      gE var3 = (gE)dE.a(this.hE).getSelectedItem();
+      gE var3 = (gE)dE.a(this.hE).SelectedItem;
       string var4 = var3 == null ? null : var3.aH(var1);
       eM var5 = eM.x(var4);
       switch(var2) {
@@ -66,13 +66,13 @@ class dI : object {
    }
 
    public void setValueAt(Object var1, int var2, int var3) {
-      gE var4 = (gE)dE.a(this.hE).getSelectedItem();
+      gE var4 = (gE)dE.a(this.hE).SelectedItem;
       if (var4 != null && var3 == 1) {
          eM var5 = (eM)var1;
          string var6 = var4.aH(var2);
          if (var5.bb()) {
             int var7 = var6.IndexOf("#");
-            if (var7 >= 0 && var6.Substring(0, var7).equals(var5.getID())) {
+            if (var7 >= 0 && var6.Substring(0, var7).Equals(var5.getID())) {
                return;
             }
 

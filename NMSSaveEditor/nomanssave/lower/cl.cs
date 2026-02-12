@@ -27,8 +27,8 @@ public class cl : OpenFileDialog {
       this.setFileFilter(new cn(this));
       this.addChoosableFileFilter(new co(this));
       this.setDialogTitle("Choose Backup File");
-      SystemInformation.addPropertyChangeListener((var1) -> {
-         if ("lookAndFeel".equals(var1.getPropertyName())) {
+      SystemInformation.addPropertyChangeListener((var1) => {
+         if ("lookAndFeel".Equals(var1.getPropertyName())) {
             Control.updateComponentTreeUI(this);
          }
 

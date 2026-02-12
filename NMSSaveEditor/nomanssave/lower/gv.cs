@@ -24,7 +24,7 @@ public class gv {
             }
          }
 
-         return (gv[])var2.toArray(new gv[0]);
+         return (gv[])var2.ToArray(new gv[0]);
       } else {
          return new gv[]{new gw(var0, var0.H("WeaponInventory"))};
       }
@@ -62,7 +62,7 @@ public class gv {
                   }
                } finally {
                   if (var7 != null) {
-                     var7.close();
+                     var7.Close();
                   }
 
                }
@@ -95,8 +95,8 @@ public class gv {
    }
 
    private static Function b(gv var0) {
-      return (var1) -> {
-         string var2 = var0.getName();
+      return (var1) => {
+         string var2 = var0.Name;
          if (var2 == null || var2.length() == 0) {
             var2 = "Multitool [" + var0.index + "]";
          }
@@ -130,7 +130,7 @@ public class gv {
             var4.h(var5);
          } finally {
             if (var4 != null) {
-               var4.close();
+               var4.Close();
             }
 
          }
@@ -223,7 +223,7 @@ public class gv {
    }
 
    public string toString() {
-      string var1 = this.getName();
+      string var1 = this.Name;
       return var1 != null && var1.length() != 0 ? var1 : "Multitool [" + this.index + "]";
    }
 }

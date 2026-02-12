@@ -44,14 +44,14 @@ class cJ {
       if (this.value == null) {
          throw new Exception("No children for null");
       } else if (this.value is eY) {
-         string var4 = (string)((eY)this.value).names().get(var1);
+         string var4 = (string)((eY)this.value).names()[(var1);
          Object var3 = ((eY)this.value).getValue(var4);
          return new cJ(this.gg, this, var1, var4, var3);
       } else if (this.value is eV) {
          Object var2 = ((eV)this.value).getValue(var1);
          return new cJ(this.gg, this, var1, "[" + var1 + "]", var2);
       } else {
-         throw new Exception("No children for " + this.value.GetType().getName());
+         throw new Exception("No children for " + this.value.GetType().Name);
       }
    }
 
@@ -64,7 +64,7 @@ class cJ {
    }
 
    public string getText() {
-      return fh.a(this.value, 1, (var0) -> {
+      return fh.a(this.value, 1, (var0) => {
          return var0 < 128;
       });
    }

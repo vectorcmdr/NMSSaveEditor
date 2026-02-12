@@ -15,18 +15,18 @@ class cC : EventHandler {
    }
 
    public void actionPerformed(EventArgs var1) {
-      string var2 = cy.c(this.gg).getText().Trim();
+      string var2 = cy.c(this.gg).Text.Trim();
 
       try {
-         cy.d(this.gg).setText(var2);
-         ((cI)cy.e(this.gg).getModel()).a(cy.d(this.gg));
+         cy.d(this.gg).Text = (var2);
+         ((cI)cy.e(this.gg).DataSource).a(cy.d(this.gg));
          cy.e(this.gg).setSelectionRow(0);
-         cy.e(this.gg).setVisible(true);
-         cy.f(this.gg).setVisible(false);
+         cy.e(this.gg).Show();
+         cy.f(this.gg).Hide();
       } catch (eX var4) {
          MessageBox.showOptionDialog(this.gg, "Error on line #" + var4.getLineNumber() + ": " + var4.getMessage(), "Error", 0, 0, (Icon)null, new Object[]{"Cancel"}, (Object)null);
          cy.c(this.gg).setCaretPosition(var4.bD());
-         cy.c(this.gg).requestFocus();
+         cy.c(this.gg).Focus();
       }
 
    }

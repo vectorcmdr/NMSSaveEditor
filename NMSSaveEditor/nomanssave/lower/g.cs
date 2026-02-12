@@ -18,7 +18,7 @@ class g : object {
    }
 
    public int getRowCount() {
-      return (Integer)this.j.get();
+      return (Integer)this.j[();
    }
 
    public int getColumnCount() {
@@ -42,9 +42,9 @@ class g : object {
       switch(var1) {
       case 0:
       case 1:
-         return string.class;
+         return typeof(string);
       default:
-         return Boolean.class;
+         return typeof(Boolean);
       }
    }
 
@@ -58,7 +58,7 @@ class g : object {
       case 0:
          return var3 == null ? "" : var3.getID();
       case 1:
-         return var3 == null ? "" : var3.getName();
+         return var3 == null ? "" : var3.Name;
       case 2:
          return var3 != null && this.i.g != null ? this.i.g.IndexOf(var3.getID()) >= 0 : false;
       default:
@@ -71,7 +71,7 @@ class g : object {
          eI var4 = (eI)this.k.apply(var2);
          if (var3 == 2) {
             int var5 = this.i.g.IndexOf(var4.getID());
-            if (Boolean.TRUE.equals(var1)) {
+            if (Boolean.TRUE.Equals(var1)) {
                if (var5 < 0) {
                   this.i.g.f(var4.getID());
                }
