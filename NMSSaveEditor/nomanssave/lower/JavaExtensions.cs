@@ -807,6 +807,7 @@ namespace NMSSaveEditor
         public void set(object obj, object value) { }
         public Type getType() => typeof(object);
         public void setAccessible(bool flag) { }
+        public static implicit operator Field(System.Reflection.FieldInfo fi) => new Field();
     }
 
     public class Method
@@ -814,6 +815,7 @@ namespace NMSSaveEditor
         public string getName() => "";
         public object invoke(object obj, params object[] args) => null;
         public void setAccessible(bool flag) { }
+        public static implicit operator Method(System.Reflection.MethodInfo mi) => new Method();
     }
 
     // Java WatchService stubs

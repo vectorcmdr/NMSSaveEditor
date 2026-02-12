@@ -52,11 +52,11 @@ public class bl : Panel, eo {
       var4.SetLayout(new BorderLayout());
       var4.Add(var3, "Center");
       Panel var5 = new Panel();
-      this.bQ = new Button("Delete");
+      this.bQ = new Button() { Text = "Delete" };
       this.bQ.SetEnabled(false);
       this.bQ.AddActionListener(new bm(this, var1));
       var5.Add(this.bQ);
-      this.dS = new Button("Copy");
+      this.dS = new Button() { Text = "Copy" };
       this.dS.SetEnabled(false);
       this.dS.AddActionListener(new br(this, var1));
       var5.Add(this.dS);
@@ -116,9 +116,9 @@ public class bl : Panel, eo {
       this.dT.Y();
       Panel var7 = new Panel();
       var7.SetLayout(new FormLayout(new ColumnSpec[]{FormFactory.GLUE_COLSPEC, "default", FormFactory.GLUE_COLSPEC}, new RowSpec[]{"default", "default"}));
-      this.el = new Label("");
+      this.el = new Label() { Text = "" };
       var7.Add(this.el, "2,1");
-      this.em = new Button("Repair");
+      this.em = new Button() { Text = "Repair" };
       this.em.AddActionListener(new bz(this));
       Panel var8 = new Panel();
       var8.Add(this.em);

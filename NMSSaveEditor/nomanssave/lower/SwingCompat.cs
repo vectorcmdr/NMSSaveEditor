@@ -17,10 +17,12 @@ namespace NMSSaveEditor
     public class ColumnSpec
     {
         public static ColumnSpec decode(string s) => new ColumnSpec();
+        public static implicit operator ColumnSpec(string s) => new ColumnSpec();
     }
     public class RowSpec
     {
         public static RowSpec decode(string s) => new RowSpec();
+        public static implicit operator RowSpec(string s) => new RowSpec();
     }
     public static class FormFactory
     {
@@ -32,6 +34,7 @@ namespace NMSSaveEditor
     {
         public int top, left, bottom, right;
         public Insets(int t, int l, int b, int r) { top = t; left = l; bottom = b; right = r; }
+        public static implicit operator Insets(Padding p) => new Insets(p.Top, p.Left, p.Bottom, p.Right);
     }
     public class LineBorder
     {

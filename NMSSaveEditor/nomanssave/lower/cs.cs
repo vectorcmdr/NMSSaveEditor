@@ -35,8 +35,8 @@ public class cs  {
       Panel var1 = new Panel();
       var1.SetLayout(new BoxLayout(var1, 1));
       var1.SetBorder(BorderFactory.createEmptyBorder(2, 5, 2, 2));
-      var1.Add(new Label("Export Options:"));
-      this.fO = new CheckBox("Products/Substances");
+      var1.Add(new Label() { Text = "Export Options:" });
+      this.fO = new CheckBox() { Text = "Products/Substances" };
       var1.Add(this.fO);
       this.setAccessory(var1);
       UIManager.addPropertyChangeListener((var1x) => {

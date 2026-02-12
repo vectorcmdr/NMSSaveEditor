@@ -52,7 +52,7 @@ public class bO : Panel, eo {
       this.eR = var1;
       this.SetLayout(new BorderLayout());
       Panel var2 = new Panel();
-      var2.SetLayout(new FlowLayout());
+      var2.SetLayout(new FlowLayoutPanel());
       this.eS = new Panel();
       this.eS.SetLayout(new GridBagLayout());
       int var3 = 0;
@@ -68,7 +68,7 @@ public class bO : Panel, eo {
       this.eT.SetModel(new bP(this));
       this.eT.setRenderer(new bQ(this));
       var2.Add(this.eT);
-      this.eU = new Button("Resize Inventory");
+      this.eU = new Button() { Text = "Resize Inventory" };
       this.eU.SetVisible(false);
       this.eU.AddActionListener(new bR(this));
       var2.Add(this.eU);

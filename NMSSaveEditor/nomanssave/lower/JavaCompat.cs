@@ -36,6 +36,7 @@ namespace NMSSaveEditor
         public static int CASE_INSENSITIVE = 1;
         public static int DOTALL = 2;
         public static int MULTILINE = 4;
+        public static implicit operator Pattern(Regex r) { return new Pattern { _regex = r }; }
     }
 
     public class Matcher
@@ -778,12 +779,14 @@ public class XmlNodeList {
 public class XmlDocument {
     private System.Xml.XmlDocument doc = new System.Xml.XmlDocument();
     public XmlDocument() {}
+    public XmlDocument(System.Xml.XmlDocument d) { doc = d; }
     public void parse(string xml) { doc.LoadXml(xml); }
     public void parse(System.IO.Stream stream) { doc.Load(stream); }
     public XmlElement getDocumentElement() { return new XmlElement(doc.DocumentElement); }
     public XmlElement DocumentElement => getDocumentElement();
     public XmlElement createElement(string name) { return new XmlElement(doc.CreateElement(name)); }
     public System.Xml.XmlDocument InnerDocument => doc;
+    public static implicit operator XmlDocument(System.Xml.XmlDocument d) { return new XmlDocument(d); }
 }
 
 public class Properties : Dictionary<string, string> {

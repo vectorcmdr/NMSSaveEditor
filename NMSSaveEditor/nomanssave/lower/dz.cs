@@ -34,13 +34,13 @@ public class dz : Form {
       var3.setViewportView(this.hr);
       var2.Add(var3);
       Panel var4 = new Panel();
-      var4.SetLayout(new FlowLayout(2));
+      var4.SetLayout(new FlowLayoutPanel());
       var2.Add(var4, "South");
-      Button var5 = new Button("Replace/Save");
+      Button var5 = new Button() { Text = "Replace/Save" };
       var5.AddActionListener(new dB(this));
       var4.Add(var5);
       this.GetRootPane().setDefaultButton(var5);
-      Button var6 = new Button("Cancel");
+      Button var6 = new Button() { Text = "Cancel" };
       var6.AddActionListener(new dC(this));
       var4.Add(var6);
       this.GetRootPane().registerKeyboardAction(new dD(this), null, 2);

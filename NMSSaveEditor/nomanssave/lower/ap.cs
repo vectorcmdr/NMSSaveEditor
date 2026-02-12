@@ -31,7 +31,7 @@ public class ap : Panel {
       Panel var3 = new Panel();
       this.Add(var3);
       var3.SetLayout(new FormLayout(new ColumnSpec[]{FormFactory.LABEL_COMPONENT_GAP_COLSPEC, ColumnSpec.decode("default:grow"), FormFactory.LABEL_COMPONENT_GAP_COLSPEC}, new RowSpec[]{FormFactory.LINE_GAP_ROWSPEC, "default", FormFactory.LINE_GAP_ROWSPEC, RowSpec.decode("200px:grow"), FormFactory.LINE_GAP_ROWSPEC, "default", FormFactory.LINE_GAP_ROWSPEC}));
-      Label var4 = new Label("Known Technology");
+      Label var4 = new Label() { Text = "Known Technology" };
       var4.putClientProperty("FlatLaf.styleClass", "semibold");
       var3.Add(var4, "2, 2");
       Panel var5 = new Panel();
@@ -46,7 +46,7 @@ public class ap : Panel {
       this.ci.setRowSorter(this.cj);
       var5.setViewportView(this.ci);
       Panel var6 = new Panel();
-      var6.SetLayout(new FlowLayout());
+      var6.SetLayout(new FlowLayoutPanel());
       var3.Add(var6, "2, 6, fill, default");
       Button var7 = new Button();
       var7.SetText("Add Technology");
@@ -59,7 +59,7 @@ public class ap : Panel {
       Panel var9 = new Panel();
       this.Add(var9);
       var9.SetLayout(new FormLayout(new ColumnSpec[]{FormFactory.LABEL_COMPONENT_GAP_COLSPEC, ColumnSpec.decode("default:grow"), FormFactory.LABEL_COMPONENT_GAP_COLSPEC}, new RowSpec[]{FormFactory.LINE_GAP_ROWSPEC, "default", FormFactory.LINE_GAP_ROWSPEC, RowSpec.decode("200px:grow"), FormFactory.LINE_GAP_ROWSPEC, "default", FormFactory.LINE_GAP_ROWSPEC}));
-      var4 = new Label("Known Products");
+      var4 = new Label() { Text = "Known Products" };
       var4.putClientProperty("FlatLaf.styleClass", "semibold");
       var9.Add(var4, "2, 2");
       Panel var10 = new Panel();
@@ -74,7 +74,7 @@ public class ap : Panel {
       this.ck.setRowSorter(this.cl);
       var10.setViewportView(this.ck);
       var6 = new Panel();
-      var6.SetLayout(new FlowLayout());
+      var6.SetLayout(new FlowLayoutPanel());
       var9.Add(var6, "2, 6, fill, default");
       Button var11 = new Button();
       var11.SetText("Add Product");
@@ -87,7 +87,7 @@ public class ap : Panel {
       Panel var13 = new Panel();
       this.Add(var13);
       var13.SetLayout(new FormLayout(new ColumnSpec[]{FormFactory.LABEL_COMPONENT_GAP_COLSPEC, ColumnSpec.decode("default:grow"), FormFactory.LABEL_COMPONENT_GAP_COLSPEC}, new RowSpec[]{FormFactory.LINE_GAP_ROWSPEC, "default", FormFactory.LINE_GAP_ROWSPEC, RowSpec.decode("200px:grow"), FormFactory.LINE_GAP_ROWSPEC, "default", FormFactory.LINE_GAP_ROWSPEC}));
-      var4 = new Label("Known Words");
+      var4 = new Label() { Text = "Known Words" };
       var4.putClientProperty("FlatLaf.styleClass", "semibold");
       var13.Add(var4, "2, 2");
       Panel var14 = new Panel();
@@ -114,7 +114,7 @@ public class ap : Panel {
        this.cn.setRowSorter(this.co);
       var14.setViewportView(this.cn);
       var6 = new Panel();
-      var6.SetLayout(new FlowLayout());
+      var6.SetLayout(new FlowLayoutPanel());
       var13.Add(var6, "2, 6, fill, default");
       Button var24 = new Button();
       var24.SetText("Learn All");
@@ -127,7 +127,7 @@ public class ap : Panel {
       Panel var18 = new Panel();
       this.Add(var18);
       var18.SetLayout(new FormLayout(new ColumnSpec[]{FormFactory.LABEL_COMPONENT_GAP_COLSPEC, ColumnSpec.decode("default:grow"), FormFactory.LABEL_COMPONENT_GAP_COLSPEC}, new RowSpec[]{FormFactory.LINE_GAP_ROWSPEC, "default", FormFactory.LINE_GAP_ROWSPEC, "default", FormFactory.LINE_GAP_ROWSPEC}));
-      var4 = new Label("Known Glyphs");
+      var4 = new Label() { Text = "Known Glyphs" };
       var4.putClientProperty("FlatLaf.styleClass", "semibold");
       var18.Add(var4, "2, 2");
       Panel var19 = new Panel();
@@ -145,7 +145,7 @@ public class ap : Panel {
          if (var23 == null) {
             var4 = new Label(Convert.ToString(var20 + 1));
          } else {
-            var4 = new Label(var23);
+            var4 = new Label() { Text = var23 };
          }
           var19.Add(this.cm[var20], var21 + ", " + var22);
          var19.Add(var4, var21 + 1 + ", " + var22);

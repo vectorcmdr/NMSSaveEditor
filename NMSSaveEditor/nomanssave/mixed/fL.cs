@@ -25,7 +25,7 @@ public class fL : fs {
    public fL(fJ var1, string var2, int var3) {
       this.mt = var1;
       this.mb = var3;
-      this.mc = new FileInfo(aH.cG, var2);
+      this.mc = JavaFile.Create(aH.cG, var2);
       ZipFile var4 = new ZipFile(this.mc);
        try {
          ZipEntry var5 = var4.getEntry("saveinfo.txt");

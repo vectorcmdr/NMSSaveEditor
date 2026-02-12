@@ -43,7 +43,7 @@ public class aQ : Form {
       var3.add(this.dp, "4, 4, fill, default");
       var2.add(var3);
       Panel var6 = new Panel();
-      var6.setLayout(new FlowLayout(2));
+      var6.setLayout(new FlowLayoutPanel());
       var2.add(var6, "South");
       Button var7 = new Button();
       var7.Text = "Save";

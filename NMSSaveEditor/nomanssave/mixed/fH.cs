@@ -19,7 +19,7 @@ public class fH {
 
    public fH(fA var1, string var2, bool var3) {
       this.ma = var1;
-      this.mh = new FileInfo(fA.a(var1), var2);
+      this.mh = JavaFile.Create(fA.a(var1), var2);
       if (var3) {
          FileStream var4 = new FileStream(this.mh);
           try {
@@ -38,7 +38,7 @@ public class fH {
 
    public byte[] readBytes() {
       long var1 = (255L & (long)this.lK[95]) << 24 | (255L & (long)this.lK[94]) << 16 | (255L & (long)this.lK[93]) << 8 | 255L & (long)this.lK[92];
-      FileStream var3 = new FileStream(new FileInfo(fA.a(this.ma), this.K()));
+      FileStream var3 = new FileStream(JavaFile.Create(fA.a(this.ma), this.K()));
        byte[] var6;
       try {
          byte[] var4 = new byte[(int)var1];
@@ -53,7 +53,7 @@ public class fH {
 
    public byte[] ah(int var1) {
       long var2 = (255L & (long)this.lK[95]) << 24 | (255L & (long)this.lK[94]) << 16 | (255L & (long)this.lK[93]) << 8 | 255L & (long)this.lK[92];
-      FileStream var4 = new FileStream(new FileInfo(fA.a(this.ma), this.K()));
+      FileStream var4 = new FileStream(JavaFile.Create(fA.a(this.ma), this.K()));
        byte[] var7;
       try {
          var1 = (int)Math.Min((long)var1, var2);
@@ -72,7 +72,7 @@ public class fH {
       this.lK[93] = (byte)(var1.Length >> 8);
       this.lK[94] = (byte)(var1.Length >> 16);
       this.lK[95] = (byte)(var1.Length >> 24);
-      FileStream var2 = new FileStream(new FileInfo(fA.a(this.ma), this.K()));
+      FileStream var2 = new FileStream(JavaFile.Create(fA.a(this.ma), this.K()));
        try {
          var2.Write(this.lK);
          var2.Write(var1);
@@ -95,7 +95,7 @@ public class fH {
          var5.setProperty("Description", var4);
       }
        string var6 = var1 + "." + DateTimeOffset.UtcNow.ToUnixTimeMilliseconds() + ".zip";
-      FileInfo var7 = new FileInfo(aH.cG, var6);
+      FileInfo var7 = JavaFile.Create(aH.cG, var6);
       ZipOutputStream var8 = new ZipOutputStream(new FileStream(var7));
        try {
          byte[] var10 = new byte[4096];

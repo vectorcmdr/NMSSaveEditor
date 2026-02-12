@@ -68,7 +68,7 @@ public class dN : em {
       this.a((string)"Class", (Control)this.hN);
       this.hO = new dU(this);
       this.a((string)"Seed", (G)this.hO);
-      this.hP = new CheckBox("Use Old Colours");
+      this.hP = new CheckBox() { Text = "Use Old Colours" };
       this.hP.SetEnabled(false);
       this.hP.AddActionListener(new dV(this, var1));
       this.a((string)null, (Control)this.hP);
@@ -87,13 +87,13 @@ public class dN : em {
       this.a((string)"Maneuverability", (Control)this.hV);
       this.Y();
       Panel var2 = new Panel();
-      this.bQ = new Button("Delete Ship");
+      this.bQ = new Button() { Text = "Delete Ship" };
       this.bQ.AddActionListener(new dQ(this, var1));
       var2.Add(this.bQ);
-      this.bR = new Button("Export");
+      this.bR = new Button() { Text = "Export" };
       this.bR.AddActionListener(new dR(this, var1));
       var2.Add(this.bR);
-      this.bS = new Button("Import");
+      this.bS = new Button() { Text = "Import" };
       this.bS.AddActionListener(new dS(this, var1));
       var2.Add(this.bS);
       this.a((Control)var2);

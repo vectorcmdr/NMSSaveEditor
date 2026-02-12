@@ -855,3 +855,12 @@ public static class JFileChooserExtensions {
 }
 
 }
+
+// Java File wrapper - uses static factory since FileInfo is sealed
+public static class JavaFile {
+    public static FileInfo Create(string path) { return new FileInfo(path ?? "."); }
+    public static FileInfo Create(string parent, string child) { return new FileInfo(Path.Combine(parent ?? ".", child ?? "")); }
+    public static FileInfo Create(FileInfo parent, string child) { return new FileInfo(Path.Combine(parent?.FullName ?? ".", child ?? "")); }
+    public static FileInfo Create(DirectoryInfo parent, string child) { return new FileInfo(Path.Combine(parent?.FullName ?? ".", child ?? "")); }
+}
+

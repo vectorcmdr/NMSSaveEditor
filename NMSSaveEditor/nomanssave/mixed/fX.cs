@@ -27,7 +27,7 @@ public abstract class fX {
          int var5 = ((fW)fT.c(var1).Get(var4)).name.CompareTo(var2.mO.name);
          if (var5 == 0) {
             fW var6 = (fW)fT.c(var1).Remove(var4);
-            fT.i(new FileInfo(fT.d(var1), var6.mU));
+            fT.i(JavaFile.Create(fT.d(var1), var6.mU));
          }
           if (var5 >= 0) {
             var3 = var4;
@@ -35,13 +35,13 @@ public abstract class fX {
          }
       }
        this.mO = new fW(var1, var2.mO);
-      FileInfo var9 = new FileInfo(fT.d(var1), this.mO.mU);
+      FileInfo var9 = JavaFile.Create(fT.d(var1), this.mO.mU);
       if (!var9.Create()) {
          throw new IOException("Unable to create container path");
       } else {
-         this.mX = new FileInfo(var9, "container." + this.mO.mT);
-         this.mZ = new fS(new FileInfo(var9, var2.mP));
-         this.mY = new FileInfo(var9, var2.mR);
+         this.mX = JavaFile.Create(var9, "container." + this.mO.mT);
+         this.mZ = new fS(JavaFile.Create(var9, var2.mP));
+         this.mY = JavaFile.Create(var9, var2.mR);
          FileStream var10 = new FileStream(this.mX);
           try {
             var2.a(var10);
@@ -55,11 +55,11 @@ public abstract class fX {
    fX(fT var1, string var2) {
       this.mN = var1;
       this.mO = fT.a(var1, var2);
-      FileInfo var3 = new FileInfo(fT.d(var1), this.mO.mU);
+      FileInfo var3 = JavaFile.Create(fT.d(var1), this.mO.mU);
       if (!var3.isDirectory()) {
          throw new FileNotFoundException(this.mO.mU);
       } else {
-         this.mX = new FileInfo(var3, "container." + this.mO.mT);
+         this.mX = JavaFile.Create(var3, "container." + this.mO.mT);
          hc.info(this.mO.filename);
          FileInfo var4 = null;
          FileInfo var5 = null;
@@ -78,15 +78,15 @@ public abstract class fX {
                   hc.debug("  filename2: " + var12);
                }
                 if (var10.Equals("data")) {
-                  var4 = new FileInfo(var3, var11);
+                  var4 = JavaFile.Create(Path.Combine(var3 is FileInfo _fi_var3 ? _fi_var3.FullName : var3?.ToString() ?? "", var11?.ToString() ?? ""));
                   if (!var4.Exists) {
-                     var4 = new FileInfo(var3, var12);
+                     var4 = JavaFile.Create(Path.Combine(var3 is FileInfo _fi_var3 ? _fi_var3.FullName : var3?.ToString() ?? "", var12?.ToString() ?? ""));
                   }
                }
                 if (var10.Equals("meta")) {
-                  var5 = new FileInfo(var3, var11);
+                  var5 = JavaFile.Create(Path.Combine(var3 is FileInfo _fi_var3 ? _fi_var3.FullName : var3?.ToString() ?? "", var11?.ToString() ?? ""));
                   if (!var5.Exists) {
-                     var5 = new FileInfo(var3, var12);
+                     var5 = JavaFile.Create(Path.Combine(var3 is FileInfo _fi_var3 ? _fi_var3.FullName : var3?.ToString() ?? "", var12?.ToString() ?? ""));
                   }
                }
             }
@@ -290,7 +290,7 @@ public abstract class fX {
       }
        var3.setProperty("IndexData", this.mO.cz());
       string var4 = var1 + "." + DateTimeOffset.UtcNow.ToUnixTimeMilliseconds() + ".zip";
-      FileInfo var5 = new FileInfo(aH.cG, var4);
+      FileInfo var5 = JavaFile.Create(aH.cG, var4);
       ZipOutputStream var6 = new ZipOutputStream(new FileStream(var5));
        try {
          ZipEntry var8 = new ZipEntry(this.mZ.Name);

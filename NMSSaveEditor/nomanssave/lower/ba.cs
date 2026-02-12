@@ -49,14 +49,14 @@ public class ba : Panel {
          this.dA.insertRow(var3, RowSpec.decode("bottom:25px"));
       }
        var3 = this.dA.ColumnCount - 2;
-      Label var4 = new Label(var1);
+      Label var4 = new Label() { Text = var1 };
       var4.putClientProperty("FlatLaf.styleClass", "semibold");
       if (var2 == null) {
          this.Add(var4, "2, " + (this.dA.RowCount - 1) + ", " + var3 + ", 1, left, default");
       } else {
          Panel var5 = new Panel();
-         var5.SetLayout(new FlowLayout(0, 0, 0));
-         var5.Add(new Label(var2));
+         var5.SetLayout(new FlowLayoutPanel());
+         var5.Add(new Label() { Text = var2 });
          var5.Add(var4);
          this.Add(var5, "2, " + (this.dA.RowCount - 1) + ", " + var3 + ", 1, left, default");
       }
@@ -73,7 +73,7 @@ public class ba : Panel {
          this.dA.insertRow(var2, RowSpec.decode("bottom:25px"));
       }
        var2 = this.dA.ColumnCount - 2;
-      Label var3 = new Label(var1);
+      Label var3 = new Label() { Text = var1 };
       this.Add(var3, "2, " + (this.dA.RowCount - 1) + ", " + var2 + ", 1, left, default");
    }
 
@@ -113,8 +113,8 @@ public class ba : Panel {
       Panel var3 = new Panel();
       var3.SetLayout(new BorderLayout(0, 0));
       Panel var4 = new Panel();
-      var4.SetLayout(new FlowLayout(2, 0, 0));
-      Button var5 = new Button("Generate");
+      var4.SetLayout(new FlowLayoutPanel());
+      Button var5 = new Button() { Text = "Generate" };
       var5.SetEnabled(var2.Enabled);
       var5.AddActionListener(new bb(this, var2));
       var2.addPropertyChangeListener("enabled", new bc(this, var5, var2));

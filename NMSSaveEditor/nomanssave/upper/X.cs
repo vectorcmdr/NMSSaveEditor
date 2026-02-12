@@ -51,7 +51,7 @@ public class X : Panel {
       var3.a("Species Seed", (Control)this.bL);
       this.bM = new ag(this);
       var3.a("Genus Seed", (Control)this.bM);
-      this.bN = new CheckBox("Predator");
+      this.bN = new CheckBox() { Text = "Predator" };
       this.bN.SetEnabled(false);
       this.bN.AddActionListener(new ah(this));
       var3.a((string)null, (Control)this.bN);
@@ -73,13 +73,13 @@ public class X : Panel {
       var3.a("Type", (Control)this.bP);
       var3.Y();
       Panel var4 = new Panel();
-      this.bQ = new Button("Delete");
+      this.bQ = new Button() { Text = "Delete" };
       this.bQ.AddActionListener(new ai(this, var1));
       var4.Add(this.bQ);
-      this.bR = new Button("Export");
+      this.bR = new Button() { Text = "Export" };
       this.bR.AddActionListener(new Z(this, var1));
       var4.Add(this.bR);
-      this.bS = new Button("Import");
+      this.bS = new Button() { Text = "Import" };
       this.bS.AddActionListener(new aa(this, var1));
       var4.Add(this.bS);
       var3.a(var4);

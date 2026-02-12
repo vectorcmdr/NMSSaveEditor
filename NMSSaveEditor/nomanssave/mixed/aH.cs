@@ -125,7 +125,7 @@ public class aH {
          if (var0 && var2.getFile().EndsWith(".jar")) {
             var1 = Paths.Get(var2.toURI()).toFile().Directory;
          } else {
-            var1 = (new FileInfo(".")).getCanonicalFile();
+            var1 = (JavaFile.Create(".")).getCanonicalFile();
          }
       } catch (URISyntaxException var20) {
          Console.WriteLine("Error: cannot find working directory");
@@ -141,15 +141,15 @@ public class aH {
          Environment.Exit(1);
       }
        cD = var1;
-      cC = new FileInfo(var1, "NMSSaveEditor.conf");
-      cE = new FileInfo(var1, "bases");
-      cF = new FileInfo(var1, "exported");
-      cG = new FileInfo(var1, "backups");
+      cC = JavaFile.Create(Path.Combine(var1 is FileInfo _fi2_var1 ? _fi2_var1.FullName : var1?.ToString() ?? "", "NMSSaveEditor.conf"));
+      cE = JavaFile.Create(Path.Combine(var1 is FileInfo _fi2_var1 ? _fi2_var1.FullName : var1?.ToString() ?? "", "bases"));
+      cF = JavaFile.Create(Path.Combine(var1 is FileInfo _fi2_var1 ? _fi2_var1.FullName : var1?.ToString() ?? "", "exported"));
+      cG = JavaFile.Create(Path.Combine(var1 is FileInfo _fi2_var1 ? _fi2_var1.FullName : var1?.ToString() ?? "", "backups"));
       if (!cG.Exists && !cG.Create()) {
          Console.WriteLine("Error: cannot create backups folder");
          Environment.Exit(1);
       }
-       hc.k(new FileInfo(var1, "NMSSaveEditor.log"));
+       hc.k(JavaFile.Create(Path.Combine(var1 is FileInfo _fi2_var1 ? _fi2_var1.FullName : var1?.ToString() ?? "", "NMSSaveEditor.log")));
       hc.debug("Java Vendor: " + System.getProperty("java.vendor"));
       hc.debug("Java Version: " + System.getProperty("java.version"));
       hc.debug("Java Architecture: " + System.getProperty("os.arch"));

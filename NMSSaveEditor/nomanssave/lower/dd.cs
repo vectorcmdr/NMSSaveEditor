@@ -35,13 +35,13 @@ public class dd : Form {
       var3.setViewportView(this.gS);
       var2.Add(var3);
       Panel var4 = new Panel();
-      var4.SetLayout(new FlowLayout(2));
+      var4.SetLayout(new FlowLayoutPanel());
       var2.Add(var4, "South");
-      Button var5 = new Button("Move");
+      Button var5 = new Button() { Text = "Move" };
       var5.AddActionListener(new dg(this));
       var4.Add(var5);
       this.GetRootPane().setDefaultButton(var5);
-      Button var6 = new Button("Cancel");
+      Button var6 = new Button() { Text = "Cancel" };
       var6.AddActionListener(new dh(this));
       var4.Add(var6);
       this.GetRootPane().registerKeyboardAction(new di(this), null, 2);

@@ -66,7 +66,7 @@ public class du : Panel {
          Label var9;
          GridBagConstraints var10;
          if (var7 != null) {
-            var9 = new Label(var7);
+            var9 = new Label() { Text = var7 };
             var9.SetPreferredSize(new Size(var5, var5));
             var10 = new GridBagConstraints();
             var10.anchor = 10;
