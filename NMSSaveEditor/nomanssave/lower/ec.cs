@@ -13,7 +13,7 @@ namespace NMSSaveEditor
 
 public class ec : ba {
    private int index;
-   private CheckBox if;
+   private CheckBox @if;
    private ComboBox ig;
    private G bj;
    private ComboBox ih;
@@ -22,22 +22,22 @@ public class ec : ba {
    // $FF: synthetic field
    eb ij;
 
-   ec(eb var1, int var2) {
-      base(aH.cH, aH.cH * 2);
+   ec(eb var1, int var2) : base(aH.cH, aH.cH * 2) {
       this.ij = var1;
       this.index = var2;
       this.k("Wingman " + (var2 + 1));
-      this.if = new CheckBox("Enabled");
-      this.if.AddActionListener(new ed(this, var2));
-      this.a((string)null, this.if);
-      this.SetBorder(new LineBorder(Color.DarkGray));
+      this.@if = new CheckBox();
+      this.@if.Text = "Enabled";
+      this.@if.addActionListener(new ed(this, var2));
+      this.a((string)null, this.@if);
+      this.setBorder(new LineBorder(Color.DarkGray));
       this.ig = new ComboBox();
-      this.ig.SetModel(new ee(this, var2));
+      this.ig.setModel(new ee(this, var2));
       this.a("NPC Race", this.ig);
       this.bj = new ef(this, var2);
       this.a("NPC Seed", this.bj);
       this.ih = new ComboBox();
-      this.ih.SetModel(new eg(this, var2));
+      this.ih.setModel(new eg(this, var2));
       this.a("Ship Type", this.ih);
       this.hO = new eh(this, var2);
       this.a("Ship Seed", this.hO);
@@ -46,22 +46,22 @@ public class ec : ba {
    }
 
    private void aQ() {
-      this.if.setSelected(eb.a(this.ij)[this.index].Enabled);
-      this.ig.SetEnabled(eb.a(this.ij)[this.index].Enabled);
-      this.ig.SetSelectedItem(eb.a(this.ij)[this.index].ed());
-      this.bj.SetEnabled(eb.a(this.ij)[this.index].Enabled);
-      this.bj.SetText(eb.a(this.ij)[this.index].ee());
-      this.ih.SetEnabled(eb.a(this.ij)[this.index].Enabled);
-      this.ih.SetSelectedItem(eb.a(this.ij)[this.index].ef());
-      this.hO.SetEnabled(eb.a(this.ij)[this.index].Enabled);
-      this.hO.SetText(eb.a(this.ij)[this.index].eg());
-      this.ii.SetEnabled(eb.a(this.ij)[this.index].Enabled);
-      this.ii.SetText(Convert.ToString(eb.a(this.ij)[this.index].eh()));
+      this.@if.setSelected(eb.a(this.ij)[this.index].isEnabled());
+      this.ig.setEnabled(eb.a(this.ij)[this.index].isEnabled());
+      this.ig.setSelectedItem(eb.a(this.ij)[this.index].ed());
+      this.bj.setEnabled(eb.a(this.ij)[this.index].isEnabled());
+      this.bj.setText(eb.a(this.ij)[this.index].ee());
+      this.ih.setEnabled(eb.a(this.ij)[this.index].isEnabled());
+      this.ih.setSelectedItem(eb.a(this.ij)[this.index].ef());
+      this.hO.setEnabled(eb.a(this.ij)[this.index].isEnabled());
+      this.hO.setText(eb.a(this.ij)[this.index].eg());
+      this.ii.setEnabled(eb.a(this.ij)[this.index].isEnabled());
+      this.ii.setText(Convert.ToString(eb.a(this.ij)[this.index].eh()));
    }
 
    // $FF: synthetic method
    static CheckBox a(ec var0) {
-      return var0.if;
+      return var0.@if;
    }
 
    // $FF: synthetic method

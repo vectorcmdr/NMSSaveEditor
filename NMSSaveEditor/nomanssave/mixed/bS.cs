@@ -33,54 +33,54 @@ public class bS : Panel {
       this.eX = var1;
       this.x = var2;
       this.y = var3;
-      this.SetLayout(new GridBagLayout());
+      this.setLayout(new GridBagLayout());
       ContextMenuStrip var4 = new ContextMenuStrip();
       this.eY = new ToolStripMenuItem("Enabled");
-      this.eY.AddActionListener(new bT(this, var2, var3));
-      this.eY.SetEnabled(bO.a(var1).dp() || en.aS());
-      var4.Add(this.eY);
+      this.eY.addActionListener(new bT(this, var2, var3));
+      this.eY.setEnabled(bO.a(var1).dp() || en.aS());
+      var4.Items.Add(this.eY);
       this.eZ = new ToolStripMenuItem("Enable All Slots");
-      this.eZ.AddActionListener(new bY(this));
-      this.eZ.SetEnabled(bO.a(var1).dp() || en.aS());
-      var4.Add(this.eZ);
+      this.eZ.addActionListener(new bY(this));
+      this.eZ.setEnabled(bO.a(var1).dp() || en.aS());
+      var4.Items.Add(this.eZ);
       this.fa = new ToolStripMenuItem("Repair Slot");
-      this.fa.AddActionListener(new bZ(this, var2, var3));
-      this.fa.SetVisible(bO.a(var1).dq());
-      var4.Add(this.fa);
+      this.fa.addActionListener(new bZ(this, var2, var3));
+      this.fa.setVisible(bO.a(var1).dq());
+      var4.Items.Add(this.fa);
       this.fb = new ToolStripMenuItem("Repair All Slots");
-      this.fb.AddActionListener(new ca(this));
-      this.fb.SetVisible(bO.a(var1).dq());
-      var4.Add(this.fb);
+      this.fb.addActionListener(new ca(this));
+      this.fb.setVisible(bO.a(var1).dq());
+      var4.Items.Add(this.fb);
       this.fc = new ToolStripMenuItem("Supercharged");
-      this.fc.AddActionListener(new cb(this, var2, var3));
-      this.fc.SetVisible(bO.a(var1).do());
-      var4.Add(this.fc);
+      this.fc.addActionListener(new cb(this, var2, var3));
+      this.fc.setVisible(bO.a(var1).@do());
+      var4.Items.Add(this.fc);
       this.fd = new ToolStripMenuItem("Supercharge All Slots");
-      this.fd.AddActionListener(new cc(this));
-      this.fd.SetVisible(bO.a(var1).do());
-      var4.Add(this.fd);
-      var4.AddSeparator();
+      this.fd.addActionListener(new cc(this));
+      this.fd.setVisible(bO.a(var1).@do());
+      var4.Items.Add(this.fd);
+      var4.Items.Add(new ToolStripSeparator());
       this.fe = new ToolStripMenuItem("Item Details");
-      this.fe.AddActionListener(new cd(this, var2, var3));
-      var4.Add(this.fe);
+      this.fe.addActionListener(new cd(this, var2, var3));
+      var4.Items.Add(this.fe);
       this.ff = new ToolStripMenuItem("Add Item");
-      this.ff.AddActionListener(new ce(this, var2, var3));
-      var4.Add(this.ff);
+      this.ff.addActionListener(new ce(this, var2, var3));
+      var4.Items.Add(this.ff);
       this.fg = new ToolStripMenuItem("Repair Item");
-      this.fg.AddActionListener(new cf(this, var2, var3));
-      var4.Add(this.fg);
+      this.fg.addActionListener(new cf(this, var2, var3));
+      var4.Items.Add(this.fg);
       this.fh = new ToolStripMenuItem("Move Item");
-      this.fh.AddActionListener(new bU(this, var2, var3));
-      var4.Add(this.fh);
+      this.fh.addActionListener(new bU(this, var2, var3));
+      var4.Items.Add(this.fh);
       this.fi = new ToolStripMenuItem("Fill Stack");
-      this.fi.AddActionListener(new bV(this, var2, var3));
-      var4.Add(this.fi);
+      this.fi.addActionListener(new bV(this, var2, var3));
+      var4.Items.Add(this.fi);
       this.fj = new ToolStripMenuItem("Delete Item");
-      this.fj.AddActionListener(new bW(this, var2, var3));
-      var4.Add(this.fj);
-      this.setComponentPopupMenu(var4);
-      this.SetBorder(bO.eP);
-      this.AddMouseListener(new bX(this, var2, var3));
+      this.fj.addActionListener(new bW(this, var2, var3));
+      var4.Items.Add(this.fj);
+      this.ContextMenuStrip = var4;
+      this.setBorder(bO.eP);
+      this.addMouseListener(new bX(this, var2, var3));
       this.aq();
    }
 
@@ -94,23 +94,23 @@ public class bS : Panel {
 
    private void aq() {
       this.Controls.Clear();
-      this.eY.SetEnabled(bO.a(this.eX).dp() || en.aS());
-      this.eZ.SetEnabled(bO.a(this.eX).dp() || en.aS());
-      this.fa.SetVisible(bO.a(this.eX).dq());
-      this.fb.SetVisible(bO.a(this.eX).dq());
+      this.eY.setEnabled(bO.a(this.eX).dp() || en.aS());
+      this.eZ.setEnabled(bO.a(this.eX).dp() || en.aS());
+      this.fa.setVisible(bO.a(this.eX).dq());
+      this.fb.setVisible(bO.a(this.eX).dq());
       if (!bO.a(this.eX).h(this.x, this.y)) {
          this.eY.setSelected(false);
-         this.fa.SetEnabled(false);
-         this.fe.SetVisible(false);
-         this.fg.SetVisible(false);
-         this.ff.SetVisible(true);
-         this.ff.SetEnabled(false);
-         this.fh.SetVisible(false);
-         this.fi.SetVisible(false);
-         this.fj.SetVisible(false);
-         this.fc.SetVisible(false);
-         this.SetBorder(bO.eP);
-         this.SetBackground(bO.ag());
+         this.fa.setEnabled(false);
+         this.fe.setVisible(false);
+         this.fg.setVisible(false);
+         this.ff.setVisible(true);
+         this.ff.setEnabled(false);
+         this.fh.setVisible(false);
+         this.fi.setVisible(false);
+         this.fj.setVisible(false);
+         this.fc.setVisible(false);
+         this.setBorder(bO.eP);
+         this.setBackground(bO.ag());
          this.setToolTipText((string)null);
       } else {
          gu var1;
@@ -119,30 +119,30 @@ public class bS : Panel {
          string var4;
          if (bO.a(this.eX).l(this.x, this.y)) {
             this.eY.setSelected(true);
-            this.fa.SetEnabled(true);
-            this.fe.SetVisible(false);
-            this.fg.SetVisible(false);
-            this.ff.SetVisible(true);
-            this.ff.SetEnabled(false);
-            this.fh.SetVisible(false);
-            this.fi.SetVisible(false);
-            this.fj.SetVisible(false);
-            this.fc.SetVisible(bO.a(this.eX).do());
+            this.fa.setEnabled(true);
+            this.fe.setVisible(false);
+            this.fg.setVisible(false);
+            this.ff.setVisible(true);
+            this.ff.setEnabled(false);
+            this.fh.setVisible(false);
+            this.fi.setVisible(false);
+            this.fj.setVisible(false);
+            this.fc.setVisible(bO.a(this.eX).@do());
             if (bO.a(this.eX).k(this.x, this.y)) {
-               this.SetBorder(bO.ah());
-               this.fc.setState(true);
+               this.setBorder(bO.ah());
+               this.fc.setSelected(true);
             } else {
-               this.SetBorder(bO.eP);
-               this.fc.setState(false);
+               this.setBorder(bO.eP);
+               this.fc.setSelected(false);
             }
 
-            this.SetBackground(bO.ai());
+            this.setBackground(bO.ai());
             var1 = bO.a(this.eX).f(this.x, this.y);
             if (var1 == null) {
                this.setToolTipText((string)null);
             } else {
                var2 = ey.d(var1.dz());
-               var3 = var2 is eQ && var1.dC() != 0.0D;
+               var3 = var2 is eQ && var1.dC() != 0.0;
                var4 = var2 == null ? bO.b(var1.dz()) : var2.Name;
                int var5 = UIManager.getInt("Inventory.iconSize");
                Image var6 = var2 == null ? null : var2.c(var5, var5);
@@ -158,61 +158,61 @@ public class bS : Panel {
             }
          } else {
             this.eY.setSelected(true);
-            this.fa.SetEnabled(false);
-            this.fc.SetVisible(bO.a(this.eX).do());
+            this.fa.setEnabled(false);
+            this.fc.setVisible(bO.a(this.eX).@do());
             if (bO.a(this.eX).k(this.x, this.y)) {
-               this.SetBorder(bO.ah());
-               this.fc.setState(true);
+               this.setBorder(bO.ah());
+               this.fc.setSelected(true);
             } else {
-               this.SetBorder(bO.eP);
-               this.fc.setState(false);
+               this.setBorder(bO.eP);
+               this.fc.setSelected(false);
             }
 
             var1 = bO.a(this.eX).f(this.x, this.y);
             if (var1 == null) {
-               this.fe.SetVisible(false);
-               this.fg.SetVisible(false);
-               this.ff.SetVisible(true);
-               this.ff.SetEnabled(true);
-               this.fh.SetVisible(false);
-               this.fi.SetVisible(false);
-               this.fj.SetVisible(false);
-               this.SetBackground(bO.eK);
+               this.fe.setVisible(false);
+               this.fg.setVisible(false);
+               this.ff.setVisible(true);
+               this.ff.setEnabled(true);
+               this.fh.setVisible(false);
+               this.fi.setVisible(false);
+               this.fj.setVisible(false);
+               this.setBackground(bO.eK);
                this.setToolTipText((string)null);
             } else {
                var2 = ey.d(var1.dz());
-               var3 = var2 is eQ && var1.dC() != 0.0D;
-               this.fe.SetVisible(true);
-               this.fg.SetVisible(var3);
-               this.ff.SetVisible(false);
-               this.ff.SetEnabled(false);
-               this.fh.SetVisible(true);
-               this.fi.SetVisible(false);
-               this.fj.SetVisible(true);
+               var3 = var2 is eQ && var1.dC() != 0.0;
+               this.fe.setVisible(true);
+               this.fg.setVisible(var3);
+               this.ff.setVisible(false);
+               this.ff.setEnabled(false);
+               this.fh.setVisible(true);
+               this.fi.setVisible(false);
+               this.fj.setVisible(true);
                var4 = var1.getType();
                if (var4.Equals("Technology")) {
-                  this.SetBackground(bO.ak());
+                  this.setBackground(bO.ak());
                   if (var1.dA() >= 0 && var1.dA() < var1.dB()) {
-                     this.fi.SetText("Recharge");
-                     this.fi.SetVisible(true);
+                     this.fi.setText("Recharge");
+                     this.fi.setVisible(true);
                   }
                } else if (var4.Equals("Product")) {
-                  this.SetBackground(bO.al());
+                  this.setBackground(bO.al());
                   if (var1.dB() > 1) {
-                     this.fi.SetText("Fill Stack");
-                     this.fi.SetVisible(true);
+                     this.fi.setText("Fill Stack");
+                     this.fi.setVisible(true);
                   }
                } else if (var4.Equals("Substance")) {
-                  this.SetBackground(bO.am());
+                  this.setBackground(bO.am());
                   if (var1.dB() > 1) {
-                     this.fi.SetText("Fill Stack");
-                     this.fi.SetVisible(true);
+                     this.fi.setText("Fill Stack");
+                     this.fi.setVisible(true);
                   }
                } else {
-                  this.SetBackground(bO.an());
+                  this.setBackground(bO.an());
                }
 
-               this.fe.SetEnabled(var2 != null);
+               this.fe.setEnabled(var2 != null);
                string var10 = var2 == null ? bO.b(var1.dz()) : var2.Name;
                int var11 = UIManager.getInt("Inventory.iconSize");
                Image var13 = var2 == null ? null : var2.c(var11, var11);
@@ -230,28 +230,28 @@ public class bS : Panel {
       }
 
       this.PerformLayout();
-      this.updateUI();
+      this.Invalidate();
    }
 
    private void a(Image var1, int var2, int var3) {
-      Label var4 = new Label(var1);
-      var4.SetPreferredSize(new Size(var2, var2));
+      Label var4 = new Label();
+      var4.setPreferredSize(new Size(var2, var2));
       GridBagConstraints var5 = new GridBagConstraints();
       var5.anchor = 10;
       var5.fill = 0;
       var5.insets = new Insets(5, 0, 5, 0);
       var5.gridx = 0;
       var5.gridy = var3;
-      this.Add(var4, var5);
+      this.add(var4, var5);
    }
 
    private void a(string var1, int var2, Color var3) {
       Label var4 = new Label();
-      var4.SetFont(UIManager.getFont("Inventory.font"));
-      var4.SetBackground((Color)null);
-      var4.SetBorder((Border)null);
-      var4.SetText(var1);
-      var4.SetForeground(var3);
+      var4.setFont(UIManager.getFont("Inventory.font"));
+      var4.setBackground(Color.Empty);
+      var4.setBorder((object)null);
+      var4.setText(var1);
+      var4.setForeground(var3);
       GridBagConstraints var5 = new GridBagConstraints();
       var5.anchor = 10;
       var5.fill = 0;
@@ -259,7 +259,7 @@ public class bS : Panel {
       var5.insets = new Insets(var2 == 0 ? var6 + 10 : 0, 0, 0, 0);
       var5.gridx = 0;
       var5.gridy = var2;
-      this.Add(var4, var5);
+      this.add(var4, var5);
    }
 
    // $FF: synthetic method
@@ -293,8 +293,7 @@ public class bS : Panel {
    }
 
    // $FF: synthetic method
-   bS(bO var1, int var2, int var3, bS var4) {
-      // Constructor chain: base(var1, var2, var3)
+   bS(bO var1, int var2, int var3, bS var4) : this(var1, var2, var3) {
    }
 
    // $FF: synthetic method
