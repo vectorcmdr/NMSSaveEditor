@@ -5,10 +5,10 @@ using System.Text;
 
 namespace NMSSaveEditor
 {
-class fK : fQ, fr {
+public class fK : fQ, fr {
    fJ mt;
 
-   fK(fJ var1) {
+   public fK(fJ var1) {
       base(var1, "accountdata.hg", -1, true);
       this.mt = var1;
    }

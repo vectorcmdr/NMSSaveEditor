@@ -14,10 +14,10 @@ public abstract class ey {
    public static int jE = 1;
    public static int jF = 2;
    public static int jG = 3;
-   string id;
-   private static Pattern jH = Pattern.compile("%(\\w+)%");
-   private static List<object> jI;
-   private static List<object> jJ;
+   public string id;
+   public static Pattern jH = Pattern.compile("%(\\w+)%");
+   public static List<object> jI;
+   public static List<object> jJ;
 
    static ey() {
       Element var0 = null;
@@ -79,7 +79,7 @@ public abstract class ey {
       jJ = new List<object>(var11);
    }
 
-   ey(string var1) {
+   public ey(string var1) {
       this.id = var1;
    }
 
@@ -87,7 +87,7 @@ public abstract class ey {
       return this.id;
    }
 
-   private static string L(int var0) {
+   public static string L(int var0) {
       StringBuilder var1 = new StringBuilder();
       var1.Append(Integer.toString(var0));
 
@@ -180,7 +180,7 @@ public abstract class ey {
       return this.id;
    }
 
-   static string a(Element var0) {
+   public static string a(Element var0) {
       if (var0 == null) {
          throw new ArgumentException();
       } else {
@@ -204,7 +204,7 @@ public abstract class ey {
       }
    }
 
-   private static List<object> O(int var0) {
+   public static List<object> O(int var0) {
       List<object> var1 = new List<object>();
       bool var2 = (var0 & 16384) == 0;
       if ((var0 & 4) == 4) {
@@ -351,12 +351,12 @@ public abstract class ey {
       }).findFirst().orElse((object)null);
    }
 
-   static eA p(string var0) {
+   public static eA p(string var0) {
       return (eA)jI.stream().filter((var1) => {
          return var0.Equals(var1.id);
       }).findFirst().orElse((object)null);
    }
-   static Pattern bn() {
+   public static Pattern bn() {
       return jH;
    }
 }

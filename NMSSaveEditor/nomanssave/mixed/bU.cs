@@ -7,12 +7,12 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
-class bU : ActionListener {
+public class bU : ActionListener {
    bS fk;
-   private int fl;
-   private int fm;
+   public int fl;
+   public int fm;
 
-   bU(bS var1, int var2, int var3) {
+   public bU(bS var1, int var2, int var3) {
       this.fk = var1;
       this.fl = var2;
       this.fm = var3;

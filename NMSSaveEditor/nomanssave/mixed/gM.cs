@@ -6,9 +6,9 @@ using System.Text;
 namespace NMSSaveEditor
 {
 public class gM {
-   private eV rH;
-   private eY rI;
-   private int index;
+   public eV rH;
+   public eY rI;
+   public int index;
 
    public static gM[] D(eY var0) {
       eV var1 = var0.d("SquadronUnlockedPilotSlots");
@@ -26,7 +26,7 @@ public class gM {
       }
    }
 
-   private gM(eV var1, eY var2, int var3) {
+   public gM(eV var1, eY var2, int var3) {
       this.rH = var1;
       this.rI = var2;
       this.index = var3;

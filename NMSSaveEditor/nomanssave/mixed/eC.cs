@@ -8,9 +8,9 @@ namespace NMSSaveEditor
 {
 
 public class eC {
-   private static eD[] jS = new eD[2];
-   private eD jT;
-   private eE jU;
+   public static eD[] jS = new eD[2];
+   public eD jT;
+   public eE jU;
 
    static eC() {
       jS[0] = c("db/jsonmap.txt", "NMS 5.21 (savegame)");
@@ -34,7 +34,7 @@ public class eC {
 
    }
 
-   private static string hashName(string var0) {
+   public static string hashName(string var0) {
       long[] var1 = new long[]{8268756125562466087L, 8268756125562466087L};
       hh.a(var0.GetBytes(), var1);
       string var2 = "0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxy";
@@ -51,7 +51,7 @@ public class eC {
       return var2 != null && var2.s(var1) ? new eC(var2) : null;
    }
 
-   private static eD c(string var0, string var1) {
+   public static eD c(string var0, string var1) {
       Stream var2 = typeof(Application).GetManifestResourceStream(var0);
       if (var2 == null) {
          return null;
@@ -65,7 +65,7 @@ public class eC {
       }
    }
 
-   private eC(eD var1) {
+   public eC(eD var1) {
       this.jT = var1;
       this.jU = new eE((eE)null, (eE)null);
    }

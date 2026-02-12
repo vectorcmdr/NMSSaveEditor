@@ -9,7 +9,7 @@ namespace NMSSaveEditor
 {
 
 public class eu {
-   private static List<object> iH = new List<object>();
+   public static List<object> iH = new List<object>();
 
    static eu() {
       Stream var0 = typeof(Application).GetManifestResourceStream("db/inventory.xml");

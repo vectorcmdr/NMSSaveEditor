@@ -8,11 +8,11 @@ using System.Text.RegularExpressions;
 namespace NMSSaveEditor
 {
 
-class fO : FileFilter {
+public class fO : FileFilter {
    fN mw;
-   private List<object> mg;
+   public List<object> mg;
 
-   fO(fN var1, List<object> var2) {
+   public fO(fN var1, List<object> var2) {
       this.mw = var1;
       this.mg = var2;
    }

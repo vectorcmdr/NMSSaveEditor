@@ -8,10 +8,10 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
-class cz : ComponentAdapter {
+public class cz : ComponentAdapter {
    cy gg;
 
-   cz(cy var1) {
+   public cz(cy var1) {
       this.gg = var1;
    }
 

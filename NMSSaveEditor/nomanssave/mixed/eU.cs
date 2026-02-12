@@ -17,9 +17,9 @@ public sealed class eU {
    public static readonly eU kz = new eU("Autophage");
 
 
-   private string name;
+   public string name;
 
-   private eU(string var3) {
+   public eU(string var3) {
       this.name = var3;
    }
 

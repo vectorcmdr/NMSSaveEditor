@@ -8,10 +8,10 @@ namespace NMSSaveEditor
 {
 
 public class cp : JFileChooser {
-   private static cp fJ = null;
-   private static string name = "Companion Export FileInfo";
-   private static Image fK = Application.a("UI-PET.PNG", 16, 16);
-   private static Image fL = Application.a("UI-EGG.PNG", 16, 16);
+   public static cp fJ = null;
+   public static string name = "Companion Export FileInfo";
+   public static Image fK = Application.a("UI-PET.PNG", 16, 16);
+   public static Image fL = Application.a("UI-EGG.PNG", 16, 16);
 
    public static cp at() {
       if (fJ == null) {
@@ -21,7 +21,7 @@ public class cp : JFileChooser {
       return fJ;
    }
 
-   private cp() {
+   public cp() {
       this.setFileSelectionMode(0);
       this.setAcceptAllFileFilterUsed(false);
       this.setFileView(new cq(this));
@@ -34,10 +34,10 @@ public class cp : JFileChooser {
 
       });
    }
-   static Image @as() {
+   public static Image @as() {
       return fK;
    }
-   static Image au() {
+   public static Image au() {
       return fL;
    }
 }

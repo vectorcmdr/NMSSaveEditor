@@ -9,11 +9,11 @@ namespace NMSSaveEditor
 {
 
 public class eR : ey {
-   string kc;
+   public string kc;
    eA kn;
    eQ ko;
 
-   eR(eQ var1, Element var2) {
+   public eR(eQ var1, Element var2) {
       base(var2.getAttribute("id"));
       this.ko = var1;
       this.kc = var2.hasAttribute("icon") ? var2.getAttribute("icon") : null;
@@ -74,7 +74,7 @@ public class eR : ey {
       return this.ko.jY;
    }
 
-   private string y(string var1) {
+   public string y(string var1) {
       if ("NAME".Equals(var1)) {
          return this.ko.name;
       } else {

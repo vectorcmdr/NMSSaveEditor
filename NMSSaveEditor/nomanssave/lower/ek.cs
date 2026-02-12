@@ -7,10 +7,10 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-class ek : FileFilter {
+public class ek : FileFilter {
    ej @is;
 
-   ek(ej var1) {
+   public ek(ej var1) {
       this.@is = var1;
    }
 

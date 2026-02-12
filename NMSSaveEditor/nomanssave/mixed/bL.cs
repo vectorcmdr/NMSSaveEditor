@@ -7,18 +7,18 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
-class bL : TextBox {
+public class bL : TextBox {
    bK eB;
    bE ey;
 
-   bL(bE var1, bK var2, bool var3) {
+   public bL(bE var1, bK var2, bool var3) {
       this.ey = var1;
       this.eB = var2;
       this.Enabled = (var3);
       this.addFocusListener(new bM(this, var2));
    }
 
-   void ac() {
+   public void ac() {
       string var1;
       if (bE.a(this.ey) == null) {
          var1 = "";
@@ -28,7 +28,7 @@ class bL : TextBox {
 
       this.Text = (var1);
    }
-   static bE a(bL var0) {
+   public static bE a(bL var0) {
       return var0.ey;
    }
 }

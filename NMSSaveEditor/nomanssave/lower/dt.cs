@@ -9,10 +9,10 @@ namespace NMSSaveEditor
 {
 
 public class dt : ba {
-   private Application eR;
-   private Panel eS;
+   public Application eR;
+   public Panel eS;
 
-   dt(Application var1) {
+   public dt(Application var1) {
       base(aH.cJ, 0);
       this.eR = var1;
       this.k("Production");
@@ -27,7 +27,7 @@ public class dt : ba {
       });
    }
 
-   private void aL() {
+   public void aL() {
       lock(this.eS.getTreeLock()) {
          Component[] var5;
          int var4 = (var5 = this.eS.getComponents()).Length;
@@ -74,7 +74,7 @@ public class dt : ba {
       this.eS.Refresh();
    }
 
-   private void a(du var1) {
+   public void a(du var1) {
       ey var2 = h.a(this, 28160);
       if (var2 != null) {
          var1.hm.m(var2.aZ());
@@ -84,7 +84,7 @@ public class dt : ba {
 
    }
 
-   private void b(du var1) {
+   public void b(du var1) {
       ey var2 = ey.d(var1.hm.dz());
       if (var2 == null) {
          this.eR.c("Item details not found!");
@@ -103,10 +103,10 @@ public class dt : ba {
 
       }
    }
-   static void a(dt var0, du var1) {
+   public static void a(dt var0, du var1) {
       var0.a(var1);
    }
-   static void b(dt var0, du var1) {
+   public static void b(dt var0, du var1) {
       var0.b(var1);
    }
 }

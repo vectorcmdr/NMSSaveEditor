@@ -8,13 +8,13 @@ namespace NMSSaveEditor
 {
 
 public class p : Form {
-   private DataGridView D;
-   private object E;
-   private List<object> F;
-   private List<object> G = null;
-   private static p H = null;
+   public DataGridView D;
+   public object E;
+   public List<object> F;
+   public List<object> G = null;
+   public static p H = null;
 
-   private p(Frame var1) {
+   public p(Frame var1) {
       base(var1);
       this.Size = new Size(aH.cI * 2, aH.cI + aH.cH);
       this.FormBorderStyle = FormBorderStyle.FixedDialog; //(false);
@@ -46,7 +46,7 @@ public class p : Form {
       this.getRootPane().registerKeyboardAction(new t(this), /* KeyStroke */ Keys.None /* (27, 0) */, 2);
    }
 
-   private string[] d() {
+   public string[] d() {
       this.D.clearSelection();
       this.E.setSortKeys(new List<object>());
       this.E.sort();
@@ -78,16 +78,16 @@ public class p : Form {
       H.Text = ("Add Known Products");
       return H.d();
    }
-   static List<object> a(p var0) {
+   public static List<object> a(p var0) {
       return var0.F;
    }
-   static DataGridView b(p var0) {
+   public static DataGridView b(p var0) {
       return var0.D;
    }
-   static void a(p var0, List<object> var1) {
+   public static void a(p var0, List<object> var1) {
       var0.G = var1;
    }
-   static List<object> c(p var0) {
+   public static List<object> c(p var0) {
       return var0.G;
    }
 }

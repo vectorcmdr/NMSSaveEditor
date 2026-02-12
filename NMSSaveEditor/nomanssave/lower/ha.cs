@@ -8,12 +8,12 @@ namespace NMSSaveEditor
 {
 
 public class ha : FilterInputStream {
-   private bool sj;
-   private byte[] buffer;
-   private int sk;
-   private int sg;
-   private int sl;
-   private bool eof;
+   public bool sj;
+   public byte[] buffer;
+   public int sk;
+   public int sg;
+   public int sl;
+   public bool eof;
 
    public ha(Stream var1, int var2) {
       base(var1);
@@ -30,7 +30,7 @@ public class ha : FilterInputStream {
       this.eof = false;
    }
 
-   private void aJ(int var1) {
+   public void aJ(int var1) {
       if (this.sg + var1 > this.buffer.Length) {
          if (!this.sj) {
             throw new IOException("buffer exceeded");
@@ -49,7 +49,7 @@ public class ha : FilterInputStream {
 
    }
 
-   private bool el() {
+   public bool el() {
       if (this.eof) {
          return false;
       } else {

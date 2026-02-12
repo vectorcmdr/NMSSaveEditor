@@ -9,26 +9,26 @@ namespace NMSSaveEditor
 {
 
 public class cg : Form {
-   private TextBox fn;
-   private Label fo;
-   private TextBox fp;
-   private TextBox fq;
-   private Label fr;
-   private TextBox fs;
-   private G ft;
-   private Label fu;
-   private G fv;
-   private TextBox fw;
-   private TextBox fx;
-   private TextBox fy;
-   private TextBox fz;
-   private ey fA;
-   private gQ fB;
-   private Integer fC;
-   private Integer fD;
+   public TextBox fn;
+   public Label fo;
+   public TextBox fp;
+   public TextBox fq;
+   public Label fr;
+   public TextBox fs;
+   public G ft;
+   public Label fu;
+   public G fv;
+   public TextBox fw;
+   public TextBox fx;
+   public TextBox fy;
+   public TextBox fz;
+   public ey fA;
+   public gQ fB;
+   public Integer fC;
+   public Integer fD;
    public static cg fE = null;
 
-   private cg(Frame var1) {
+   public cg(Frame var1) {
       base(var1);
       this.Size = new Size(600, 480);
       this.setModalExclusionType(ModalExclusionType.APPLICATION_EXCLUDE);
@@ -103,7 +103,7 @@ public class cg : Form {
       this.addWindowListener(new ck(this));
    }
 
-   private void a(gQ var1) {
+   public void a(gQ var1) {
       this.fB = var1;
       object var2 = var1.dz();
       this.fA = ey.d(var2);

@@ -10,11 +10,11 @@ namespace NMSSaveEditor
 public class ba : Panel {
    // TODO: private FormLayout dA;
 
-   ba() {
+   public ba() {
       this(aH.cH, 0);
    }
 
-   ba(params int[] var1) {
+   public ba(params int[] var1) {
       // TODO: this.dA = /* FormLayout */ null;
 
       for(int var2 = 0; var2 < var1.Length; ++var2) {
@@ -30,11 +30,11 @@ public class ba : Panel {
       this.SuspendLayout(); // TODO: set layout this.dA);
    }
 
-   void k(string var1) {
+   public void k(string var1) {
       this.a(var1, (Image)null);
    }
 
-   void a(string var1, Image var2) {
+   public void a(string var1, Image var2) {
       int var3;
       if (this.dA.getRowCount() == 1) {
          // TODO: this.dA.appendRow(FormFactory.DEFAULT_ROWSPEC);
@@ -60,7 +60,7 @@ public class ba : Panel {
 
    }
 
-   void addText(string var1) {
+   public void addText(string var1) {
       int var2;
       if (this.dA.getRowCount() == 1) {
          // TODO: this.dA.appendRow(FormFactory.DEFAULT_ROWSPEC);
@@ -76,24 +76,24 @@ public class ba : Panel {
       this.Add(var3, "2, " + (this.dA.getRowCount() - 1) + ", " + var2 + ", 1, left, default");
    }
 
-   void Y() {
+   public void Y() {
       // TODO: this.dA.appendRow(RowSpec.decode("bottom:10px"));
       // TODO: this.dA.appendRow(FormFactory.LINE_GAP_ROWSPEC);
    }
 
-   void a(string var1, Control var2) {
+   public void a(string var1, Control var2) {
       this.a(var1, false, var2, 1);
    }
 
-   void a(string var1, Control var2, int var3) {
+   public void a(string var1, Control var2, int var3) {
       this.a(var1, false, var2, var3);
    }
 
-   void a(string var1, bool var2, Control var3) {
+   public void a(string var1, bool var2, Control var3) {
       this.a(var1, var2, var3, 1);
    }
 
-   void a(string var1, bool var2, Control var3, int var4) {
+   public void a(string var1, bool var2, Control var3, int var4) {
       var4 = var4 * 2 - 1;
       // TODO: this.dA.appendRow(FormFactory.DEFAULT_ROWSPEC);
       // TODO: this.dA.appendRow(FormFactory.LINE_GAP_ROWSPEC);
@@ -110,7 +110,7 @@ public class ba : Panel {
       this.Add(var3, "4, " + var5 + ", " + var4 + ", 1, fill, default");
    }
 
-   void a(string var1, G var2) {
+   public void a(string var1, G var2) {
       Panel var3 = new Panel();
       var3.SuspendLayout(); // TODO: set layout new TableLayoutPanel(0, 0));
       Panel var4 = new Panel();
@@ -125,7 +125,7 @@ public class ba : Panel {
       this.a(var1, (Control)var3);
    }
 
-   void a(Control var1) {
+   public void a(Control var1) {
       // TODO: this.dA.appendRow(FormFactory.DEFAULT_ROWSPEC);
       // TODO: this.dA.appendRow(FormFactory.LINE_GAP_ROWSPEC);
       int var2 = this.dA.getColumnCount() - 2;

@@ -7,10 +7,10 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
-class bQ : object {
+public class bQ : object {
    bO eX;
 
-   bQ(bO var1) {
+   public bQ(bO var1) {
       this.eX = var1;
    }
 

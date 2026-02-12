@@ -6,12 +6,12 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-class dO : object {
-   private gH hZ;
+public class dO : object {
+   public gH hZ;
    dN ia;
-   private Application bv;
+   public Application bv;
 
-   dO(dN var1, Application var2) {
+   public dO(dN var1, Application var2) {
       this.ia = var1;
       this.bv = var2;
       this.hZ = null;

@@ -7,11 +7,11 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-class bu : Runnable {
+public class bu : Runnable {
    bt es;
-   private Application bv;
+   public Application bv;
 
-   bu(bt var1, Application var2) {
+   public bu(bt var1, Application var2) {
       this.es = var1;
       this.bv = var2;
    }

@@ -8,10 +8,10 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
-class S : FocusListener {
-   Q bD;
+public class S : FocusListener {
+   public Q bD;
 
-   S(Q var1) {
+   public S(Q var1) {
       this.bD = var1;
    }
 

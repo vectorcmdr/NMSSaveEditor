@@ -5,11 +5,11 @@ using System.Text;
 
 namespace NMSSaveEditor
 {
-class bA : G {
-   private int index;
+public class bA : G {
+   public int index;
    bl er;
 
-   private bA(bl var1, int var2) {
+   public bA(bl var1, int var2) {
       this.er = var1;
       this.index = var2;
    }
@@ -32,7 +32,7 @@ class bA : G {
          }
       }
    }
-   bA(bl var1, int var2, bA var3) {
+   public bA(bl var1, int var2, bA var3) {
       this(var1, var2);
    }
 }

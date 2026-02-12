@@ -8,11 +8,11 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-class x : JavaThread {
-   Application aZ;
-   private bool ba;
+public class x : JavaThread {
+   public Application aZ;
+   public bool ba;
 
-   x(Application var1, bool var2) {
+   public x(Application var1, bool var2) {
       this.aZ = var1;
       this.ba = var2;
    }
@@ -53,7 +53,7 @@ class x : JavaThread {
       }
 
    }
-   static Application a(x var0) {
+   public static Application a(x var0) {
       return var0.aZ;
    }
 }

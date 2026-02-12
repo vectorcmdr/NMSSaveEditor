@@ -5,14 +5,14 @@ using System.Text;
 
 namespace NMSSaveEditor
 {
-class cJ {
+public class cJ {
    cJ gi;
-   int gj;
-   string name;
-   object value;
+   public int gj;
+   public string name;
+   public object value;
    cy gg;
 
-   cJ(cy var1, cJ var2, int var3, string var4, object var5) {
+   public cJ(cy var1, cJ var2, int var3, string var4, object var5) {
       this.gg = var1;
       this.gi = var2;
       this.value = var5;
@@ -20,7 +20,7 @@ class cJ {
       this.gj = var3;
    }
 
-   bool isLeaf() {
+   public bool isLeaf() {
       if (this.value == null) {
          return true;
       } else if (this.value is eY) {
@@ -30,7 +30,7 @@ class cJ {
       }
    }
 
-   int getChildCount() {
+   public int getChildCount() {
       if (this.value == null) {
          return 0;
       } else if (this.value is eY) {
@@ -40,7 +40,7 @@ class cJ {
       }
    }
 
-   object x(int var1) {
+   public object x(int var1) {
       if (this.value == null) {
          throw new Exception("No children for null");
       } else if (this.value is eY) {
@@ -55,7 +55,7 @@ class cJ {
       }
    }
 
-   int indexOf(object var1) {
+   public int indexOf(object var1) {
       return var1 is cJ && ((cJ)var1).gi == this ? ((cJ)var1).gj : -1;
    }
 

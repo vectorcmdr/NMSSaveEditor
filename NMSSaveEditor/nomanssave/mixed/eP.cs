@@ -8,18 +8,18 @@ namespace NMSSaveEditor
 {
 
 public class eP : ey {
-   string name;
+   public string name;
    ex jZ;
-   bool special;
-   Integer ka;
-   string jM;
-   bool kb;
-   string kc;
-   int kd;
-   string description;
-   List<object> ke;
+   public bool special;
+   public Integer ka;
+   public string jM;
+   public bool kb;
+   public string kc;
+   public int kd;
+   public string description;
+   public List<object> ke;
 
-   eP(Element var1) {
+   public eP(Element var1) {
       base(var1.getAttribute("id"));
       this.name = var1.getAttribute("name");
       this.jZ = ex.valueOf(var1.getAttribute("category"));

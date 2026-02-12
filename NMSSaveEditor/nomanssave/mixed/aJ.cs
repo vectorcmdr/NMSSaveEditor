@@ -7,22 +7,22 @@ namespace NMSSaveEditor
 {
 
 public class aJ : em {
-   private static int cV = 200;
-   private static int cW = 100;
-   private static int cX = 100;
-   private static long cY = 4294967295L;
-   private static long cZ = 4294967295L;
-   private static long da = 4294967295L;
-   private G db;
-   private G dc;
-   private G dd;
-   private G de;
-   private G df;
-   private G dg;
-   private bO dh;
-   private gz di;
+   public static int cV = 200;
+   public static int cW = 100;
+   public static int cX = 100;
+   public static long cY = 4294967295L;
+   public static long cZ = 4294967295L;
+   public static long da = 4294967295L;
+   public G db;
+   public G dc;
+   public G dd;
+   public G de;
+   public G df;
+   public G dg;
+   public bO dh;
+   public gz di;
 
-   aJ(Application var1) {
+   public aJ(Application var1) {
       this.k("Main Stats");
       this.de = new aK(this);
       this.a("Health", this.de);
@@ -40,31 +40,31 @@ public class aJ : em {
       this.b(this.dh);
    }
 
-   void w() {
+   public void w() {
       this.dh.w();
    }
 
-   void x() {
+   public void x() {
       this.dh.x();
    }
 
-   void y() {
+   public void y() {
       this.dh.y();
    }
 
-   void A() {
+   public void A() {
       this.dh.A();
    }
 
-   void a(gt var1) {
+   public void a(gt var1) {
       this.dh.a(var1);
    }
 
-   gz X() {
+   public gz X() {
       return this.di;
    }
 
-   void a(gz var1) {
+   public void a(gz var1) {
       if (var1 == null) {
          this.di = null;
          this.db.Text = ("");
@@ -86,7 +86,7 @@ public class aJ : em {
       }
 
    }
-   static gz a(aJ var0) {
+   public static gz a(aJ var0) {
       return var0.di;
    }
 }

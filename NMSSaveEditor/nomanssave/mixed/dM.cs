@@ -5,11 +5,11 @@ using System.Text;
 
 namespace NMSSaveEditor
 {
-class dM : G {
-   private gG hH;
+public class dM : G {
+   public gG hH;
    dE hE;
 
-   private dM(dE var1, gG var2) {
+   public dM(dE var1, gG var2) {
       this.hE = var1;
       this.hH = var2;
    }
@@ -33,7 +33,7 @@ class dM : G {
          }
       }
    }
-   dM(dE var1, gG var2, dM var3) {
+   public dM(dE var1, gG var2, dM var3) {
       this(var1, var2);
    }
 }

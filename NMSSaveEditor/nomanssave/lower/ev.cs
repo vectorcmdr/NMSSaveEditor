@@ -7,10 +7,10 @@ using System.Xml;
 namespace NMSSaveEditor
 {
 
-class ev : List<object> {
-   string id;
+public class ev : List<object> {
+   public string id;
 
-   ev(Element var1) {
+   public ev(Element var1) {
       this.id = var1.getAttribute("id");
       XmlNodeList var2 = var1.getChildNodes();
 

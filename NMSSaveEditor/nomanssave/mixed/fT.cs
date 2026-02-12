@@ -9,30 +9,30 @@ namespace NMSSaveEditor
 {
 
 public class fT : fq {
-   private static readonly byte[] lA = "HGSAVEV2\u0000".GetBytes();
-   private static Pattern lV = Pattern.compile("Slot(\\d+)((Auto)|(Manual))");
-   private static Pattern lW = Pattern.compile("wgsbackup(\\d*)\\.\\d*\\.zip");
-   static string mC = "containers.index";
-   private FileInfo lX;
-   private fR lE;
-   private fU mD;
-   private fY[] mE;
-   private int header;
-   private int lL;
-   private string name;
-   private int lM;
-   private int lR;
-   private int lS;
-   private string mF;
-   private int mG;
-   private int mH;
-   private List<object> mI;
-   private static Pattern mJ = Pattern.compile("\"((?:<h0)|(?:CommonStateData))\":\\{\"((?:Pk4)|(?:SaveName))\":\"([^\"]+)\"");
-   private static int mK = 1;
-   private static int mL = 2;
-   private static int mM = 3;
+   public static readonly byte[] lA = "HGSAVEV2\u0000".GetBytes();
+   public static Pattern lV = Pattern.compile("Slot(\\d+)((Auto)|(Manual))");
+   public static Pattern lW = Pattern.compile("wgsbackup(\\d*)\\.\\d*\\.zip");
+   public static string mC = "containers.index";
+   public FileInfo lX;
+   public fR lE;
+   public fU mD;
+   public fY[] mE;
+   public int header;
+   public int lL;
+   public string name;
+   public int lM;
+   public int lR;
+   public int lS;
+   public string mF;
+   public int mG;
+   public int mH;
+   public List<object> mI;
+   public static Pattern mJ = Pattern.compile("\"((?:<h0)|(?:CommonStateData))\":\\{\"((?:Pk4)|(?:SaveName))\":\"([^\"]+)\"");
+   public static int mK = 1;
+   public static int mL = 2;
+   public static int mM = 3;
 
-   fT(FileInfo var1, fR var2) {
+   public fT(FileInfo var1, fR var2) {
       this.lX = var1.Attributes.HasFlag(FileAttributes.Directory) ? var1 : var1.Directory;
       this.lE = var2;
       this.cr();
@@ -70,7 +70,7 @@ public class fT : fq {
       return this.lX;
    }
 
-   private void cr() {
+   public void cr() {
       hc.info("Reading Container Index");
       FileStream var1 = new FileStream(new FileInfo(this.lX, "containers.index"));
 
@@ -128,7 +128,7 @@ public class fT : fq {
 
    }
 
-   private void cs() {
+   public void cs() {
       FileStream var1 = new FileStream(new FileInfo(this.lX, "containers.index"));
 
       try {
@@ -154,7 +154,7 @@ public class fT : fq {
 
    }
 
-   private fW Z(string var1) {
+   public fW Z(string var1) {
       IEnumerator var3 = this.mI.GetEnumerator();
 
       while(var3.MoveNext()) {
@@ -167,7 +167,7 @@ public class fT : fq {
       throw new FileNotFoundException(var1);
    }
 
-   private string ct() {
+   public string ct() {
       bool var1;
       FileInfo var2;
       string var3;
@@ -210,11 +210,11 @@ public class fT : fq {
       return !var2.Matches() ? -1 : int.Parse(var2.group(1));
    }
 
-   private static int an(int var0) {
+   public static int an(int var0) {
       return 2147418112 & var0 | (3584 & var0) >> 9;
    }
 
-   private static bool h(FileInfo var0) {
+   public static bool h(FileInfo var0) {
       FileInfo[] var1 = var0.GetFiles();
       if (var1 != null) {
          FileInfo[] var5 = var1;
@@ -229,7 +229,7 @@ public class fT : fq {
       return var0.Delete();
    }
 
-   private static Stream a(Stream var0, int var1) {
+   public static Stream a(Stream var0, int var1) {
       try {
          bool var2 = true;
          if (!((Stream)var0).markSupported()) {
@@ -270,49 +270,49 @@ public class fT : fq {
          throw var6;
       }
    }
-   static string a(fT var0) {
+   public static string a(fT var0) {
       return var0.ct();
    }
-   static fY[] b(fT var0) {
+   public static fY[] b(fT var0) {
       return var0.mE;
    }
-   static Pattern cu() {
+   public static Pattern cu() {
       return lW;
    }
-   static Pattern cl() {
+   public static Pattern cl() {
       return mJ;
    }
-   static int ao(int var0) {
+   public static int ao(int var0) {
       return an(var0);
    }
-   static List<object> c(fT var0) {
+   public static List<object> c(fT var0) {
       return var0.mI;
    }
-   static FileInfo d(fT var0) {
+   public static FileInfo d(fT var0) {
       return var0.lX;
    }
-   static bool i(FileInfo var0) {
+   public static bool i(FileInfo var0) {
       return h(var0);
    }
-   static fW a(fT var0, string var1) {
+   public static fW a(fT var0, string var1) {
       return var0.Z(var1);
    }
-   static Stream b(Stream var0, int var1) {
+   public static Stream b(Stream var0, int var1) {
       return a(var0, var1);
    }
-   static int cv() {
+   public static int cv() {
       return mM;
    }
-   static int cw() {
+   public static int cw() {
       return mL;
    }
-   static int cx() {
+   public static int cx() {
       return mK;
    }
-   static byte[] cy() {
+   public static byte[] cy() {
       return lA;
    }
-   static void e(fT var0) {
+   public static void e(fT var0) {
       var0.cs();
    }
 }

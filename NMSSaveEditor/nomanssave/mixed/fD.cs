@@ -7,12 +7,12 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-class fD : fH, fs {
-   int lO;
+public class fD : fH, fs {
+   public int lO;
    fn me;
    fA ma;
 
-   fD(fA var1, int var2) {
+   public fD(fA var1, int var2) {
       base(var1, "savedata" + (var2 < 8 ? "0" : "") + Integer.toString(var2 + 2) + ".hg", true);
       this.ma = var1;
       this.lO = var2;
@@ -26,7 +26,7 @@ class fD : fH, fs {
 
    }
 
-   fD(fA var1, int var2, byte[] var3, eY var4) {
+   public fD(fA var1, int var2, byte[] var3, eY var4) {
       base(var1, "savedata" + (var2 < 8 ? "0" : "") + Integer.toString(var2 + 2) + ".hg", false);
       this.ma = var1;
       this.lO = var2;

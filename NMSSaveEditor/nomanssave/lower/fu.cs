@@ -9,14 +9,14 @@ namespace NMSSaveEditor
 {
 
 public class fu : fq {
-   private static readonly byte[] lA = "NOMANSKY".GetBytes();
-   private static readonly byte[] lB = new byte[]{126, -25, 85, -54, -47, 7, 0, 0};
-   private static Pattern lC = Pattern.compile("\\{\"Version\":(\\d*),.*");
-   private FileInfo lD;
-   private fR lE;
-   private fw[] lF;
-   private fv lG;
-   private fx[] lH;
+   public static readonly byte[] lA = "NOMANSKY".GetBytes();
+   public static readonly byte[] lB = new byte[]{126, -25, 85, -54, -47, 7, 0, 0};
+   public static Pattern lC = Pattern.compile("\\{\"Version\":(\\d*),.*");
+   public FileInfo lD;
+   public fR lE;
+   public fw[] lF;
+   public fv lG;
+   public fx[] lH;
 
    public static fn ag(int var0) {
       int var1 = (3584 & var0) >> 9;
@@ -27,7 +27,7 @@ public class fu : fq {
       }
    }
 
-   fu(FileInfo var1, fR var2) {
+   public fu(FileInfo var1, fR var2) {
       this.lD = var1.Exists ? var1 : new FileInfo(var1, "memory.dat");
       this.lE = var2;
       Console.WriteLine(this.lD.FullName);
@@ -137,7 +137,7 @@ public class fu : fq {
       new fu(new FileInfo("D:\\Temp\\PS4_NEW"), (fR)null);
    }
 
-   private static bool a(byte[] var0, byte[] var1) {
+   public static bool a(byte[] var0, byte[] var1) {
       for(int var2 = 0; var2 < var0.Length; ++var2) {
          if (var0[var2] != var1[var2]) {
             return false;
@@ -146,19 +146,19 @@ public class fu : fq {
 
       return true;
    }
-   static fx[] a(fu var0) {
+   public static fx[] a(fu var0) {
       return var0.lH;
    }
-   static byte[] bY() {
+   public static byte[] bY() {
       return lB;
    }
-   static bool b(byte[] var0, byte[] var1) {
+   public static bool b(byte[] var0, byte[] var1) {
       return a(var0, var1);
    }
-   static FileInfo b(fu var0) {
+   public static FileInfo b(fu var0) {
       return var0.lD;
    }
-   static fw[] c(fu var0) {
+   public static fw[] c(fu var0) {
       return var0.lF;
    }
 }

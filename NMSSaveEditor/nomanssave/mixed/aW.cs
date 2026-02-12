@@ -8,14 +8,14 @@ namespace NMSSaveEditor
 {
 
 public class aW : Form {
-   private TextBox ds;
-   private CheckBox dt;
-   private CheckBox du;
-   private RadioButton dv;
-   private RadioButton dw;
-   private static aW dx;
+   public TextBox ds;
+   public CheckBox dt;
+   public CheckBox du;
+   public RadioButton dv;
+   public RadioButton dw;
+   public static aW dx;
 
-   private aW(cy var1) {
+   public aW(cy var1) {
       base(var1);
       this.Size = new Size(400, 250);
       this.FormBorderStyle = FormBorderStyle.FixedDialog; //(false);

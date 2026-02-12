@@ -6,23 +6,23 @@ using System.Text;
 namespace NMSSaveEditor
 {
 public class hh {
-   private static long sx = 255L;
-   private static int sy = 12;
-   private static int sz = 96;
-   private static int sA = 48;
-   private static int sB = 12;
-   private static int sC = 192;
-   private static int sD = 96;
-   private static int sE = 24;
-   private static long sF = -2401053088876216593L;
-   private long sG;
-   private long sH;
+   public static long sx = 255L;
+   public static int sy = 12;
+   public static int sz = 96;
+   public static int sA = 48;
+   public static int sB = 12;
+   public static int sC = 192;
+   public static int sD = 96;
+   public static int sE = 24;
+   public static long sF = -2401053088876216593L;
+   public long sG;
+   public long sH;
 
-   private static long a(byte[] var0, int var1) {
+   public static long a(byte[] var0, int var1) {
       return ((long)var0[var1 + 7] & 255L) << 56 | ((long)var0[var1 + 6] & 255L) << 48 | ((long)var0[var1 + 5] & 255L) << 40 | ((long)var0[var1 + 4] & 255L) << 32 | ((long)var0[var1 + 3] & 255L) << 24 | ((long)var0[var1 + 2] & 255L) << 16 | ((long)var0[var1 + 1] & 255L) << 8 | (long)var0[var1] & 255L;
    }
 
-   private static long b(byte[] var0, int var1, int var2) {
+   public static long b(byte[] var0, int var1, int var2) {
       long var3 = 0L;
       switch(var2) {
       case 7:
@@ -44,7 +44,7 @@ public class hh {
       }
    }
 
-   private static void a(byte[] var0, int var1, int var2, long[] var3) {
+   public static void a(byte[] var0, int var1, int var2, long[] var3) {
       long var4 = var3[0];
       long var6 = var3[1];
       long var8 = -2401053088876216593L;
@@ -390,11 +390,11 @@ public class hh {
       }
    }
 
-   private static long a(CharSequence var0, int var1) {
+   public static long a(CharSequence var0, int var1) {
       return (long)var0[var1 + 3] << 48 | (long)var0[var1 + 2] << 32 | (long)var0[var1 + 1] << 16 | (long)var0[var1];
    }
 
-   private static long a(CharSequence var0, int var1, int var2) {
+   public static long a(CharSequence var0, int var1, int var2) {
       long var3 = 0L;
       switch(var2) {
       case 3:
@@ -408,7 +408,7 @@ public class hh {
       }
    }
 
-   private static void a(CharSequence var0, int var1, int var2, long[] var3) {
+   public static void a(CharSequence var0, int var1, int var2, long[] var3) {
       long var4 = var3[0];
       long var6 = var3[1];
       long var8 = -2401053088876216593L;
@@ -754,7 +754,7 @@ public class hh {
       }
    }
 
-   private static void a(long[] var0, int var1, int var2, long[] var3) {
+   public static void a(long[] var0, int var1, int var2, long[] var3) {
       long var4 = var3[0];
       long var6 = var3[1];
       long var8 = -2401053088876216593L;

@@ -7,18 +7,18 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
-class d : CheckBox, TableCellRenderer {
-   private d() {
+public class d : CheckBox, TableCellRenderer {
+   public d() {
    }
 
-   public Component getTableCellRendererComponent(DataGridView var1, object var2, bool var3, bool var4, int var5, int var6) {
+   public object getTableCellRendererComponent(object table, object value, bool isSelected, bool hasFocus, int row, int column) {
+      DataGridView var1 = (DataGridView)table;
       this.setBackground(var1.getBackground());
       this.setHorizontalAlignment(0);
-      this.Checked = (Boolean.TRUE == var2);
+      this.Checked = (true == (bool?)value);
       return this;
    }
-   d(d var1) {
-      this();
+   public d(d var1) : this() {
    }
 }
 

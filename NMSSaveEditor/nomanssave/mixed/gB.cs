@@ -6,13 +6,13 @@ using System.Text;
 namespace NMSSaveEditor
 {
 public class gB {
-   private eY oI;
+   public eY oI;
 
    public static gB x(eY var0) {
       return new gB(var0);
    }
 
-   private gB(eY var1) {
+   public gB(eY var1) {
       this.oI = var1;
    }
 

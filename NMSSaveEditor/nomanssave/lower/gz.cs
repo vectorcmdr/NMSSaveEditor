@@ -7,10 +7,10 @@ namespace NMSSaveEditor
 {
 
 public class gz {
-   private eY oI;
-   private eV rb;
-   private eV rc;
-   private List<object> gT;
+   public eY oI;
+   public eV rb;
+   public eV rc;
+   public List<object> gT;
 
    public static gz w(eY var0) {
       eV var1 = null;
@@ -28,13 +28,13 @@ public class gz {
       return new gz(var0, var1, var0.H("Inventory"), var0.H("Inventory_TechOnly"), var0.H("Inventory_Cargo"));
    }
 
-   private static Function au(string var0) {
+   public static Function au(string var0) {
       return (var1) => {
          return new string[]{"Exosuit", var0};
       };
    }
 
-   private gz(eY var1, eV var2, eY var3, eY var4, eY var5) {
+   public gz(eY var1, eV var2, eY var3, eY var4, eY var5) {
       this.oI = var1;
       this.rb = var2;
       eV var6 = var1.d("KnownWords");
@@ -230,7 +230,7 @@ public class gz {
       return new gA(this, var1, (gA)null);
    }
 
-   private bool d(string var1, int var2) {
+   public bool d(string var1, int var2) {
       for(int var3 = 0; var3 < this.rc.Count; ++var3) {
          eY var4 = this.rc.V(var3);
          if (var1.Equals(var4.getValueAsString("Group"))) {
@@ -241,7 +241,7 @@ public class gz {
       return false;
    }
 
-   private void a(string var1, int var2, bool var3) {
+   public void a(string var1, int var2, bool var3) {
       eY var4;
       for(int var5 = 0; var5 < this.rc.Count; ++var5) {
          var4 = this.rc.V(var5);
@@ -367,10 +367,10 @@ public class gz {
          this.rb.f(var4);
       }
    }
-   static bool a(gz var0, string var1, int var2) {
+   public static bool a(gz var0, string var1, int var2) {
       return var0.d(var1, var2);
    }
-   static void a(gz var0, string var1, int var2, bool var3) {
+   public static void a(gz var0, string var1, int var2, bool var3) {
       var0.a(var1, var2, var3);
    }
 }

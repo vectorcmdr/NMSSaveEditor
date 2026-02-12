@@ -8,11 +8,11 @@ namespace NMSSaveEditor
 {
 
 public class ew {
-   string iI;
-   int iJ;
-   int iK;
+   public string iI;
+   public int iJ;
+   public int iK;
 
-   ew(Element var1) {
+   public ew(Element var1) {
       this.iI = var1.getAttribute("group");
       this.iJ = int.Parse(var1.getAttribute("substance"));
       this.iK = int.Parse(var1.getAttribute("product"));

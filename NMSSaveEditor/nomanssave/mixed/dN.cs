@@ -8,32 +8,32 @@ namespace NMSSaveEditor
 {
 
 public class dN : em {
-   private static int cV = 500;
-   private static int cW = 200;
-   private static double gX = 1000.0D;
-   private static double hI = 1000.0D;
-   private static double dE = 1000.0D;
-   private static double hJ = 1000.0D;
-   private ComboBox hK = new ComboBox();
-   private G hL;
-   private cN hM;
-   private cN hN;
-   private G hO;
-   private CheckBox hP;
-   private Button bQ;
-   private Button bR;
-   private Button bS;
-   private G hQ;
-   private G hR;
-   private G hS;
-   private G hT;
-   private G hU;
-   private G hV;
-   private bO hW;
-   private gH[] hX;
-   private gC hY;
+   public static int cV = 500;
+   public static int cW = 200;
+   public static double gX = 1000.0D;
+   public static double hI = 1000.0D;
+   public static double dE = 1000.0D;
+   public static double hJ = 1000.0D;
+   public ComboBox hK = new ComboBox();
+   public G hL;
+   public cN hM;
+   public cN hN;
+   public G hO;
+   public CheckBox hP;
+   public Button bQ;
+   public Button bR;
+   public Button bS;
+   public G hQ;
+   public G hR;
+   public G hS;
+   public G hT;
+   public G hU;
+   public G hV;
+   public bO hW;
+   public gH[] hX;
+   public gC hY;
 
-   dN(Application var1) {
+   public dN(Application var1) {
       this.hK.DataSource = (new dO(this, var1));
       this.a("Ship", true, this.hK);
       this.hL = new dT(this);
@@ -100,7 +100,7 @@ public class dN : em {
       this.b(this.hW);
    }
 
-   void w() {
+   public void w() {
       for(int var1 = 0; var1 < this.hX.Length; ++var1) {
          this.hX[var1].cC().stream().forEach((var1x) => {
             if (var1x.dt()) {
@@ -113,7 +113,7 @@ public class dN : em {
 
    }
 
-   void x() {
+   public void x() {
       for(int var1 = 0; var1 < this.hX.Length; ++var1) {
          this.hX[var1].cC().stream().forEach((var1x) => {
             if (var1x.du()) {
@@ -126,7 +126,7 @@ public class dN : em {
 
    }
 
-   void y() {
+   public void y() {
       for(int var1 = 0; var1 < this.hX.Length; ++var1) {
          this.hX[var1].cC().stream().forEach((var1x) => {
             if (var1x.dv()) {
@@ -139,7 +139,7 @@ public class dN : em {
 
    }
 
-   void z() {
+   public void z() {
       for(int var1 = 0; var1 < this.hX.Length; ++var1) {
          this.hX[var1].cC().stream().forEach((var1x) => {
             if (var1x.ds()) {
@@ -152,7 +152,7 @@ public class dN : em {
 
    }
 
-   void A() {
+   public void A() {
       for(int var1 = 0; var1 < this.hX.Length; ++var1) {
          this.hX[var1].cC().stream().forEach((var1x) => {
             if (var1x.dl()) {
@@ -165,15 +165,15 @@ public class dN : em {
 
    }
 
-   void a(gt var1) {
+   public void a(gt var1) {
       this.hW.a(var1);
    }
 
-   gH[] aO() {
+   public gH[] aO() {
       return this.hX;
    }
 
-   void a(gH[] var1, gC var2) {
+   public void a(gH[] var1, gC var2) {
       this.hX = var1;
       this.hY = var2;
       if (var1.Length == 0) {
@@ -197,55 +197,55 @@ public class dN : em {
 
       this.hK.Refresh();
    }
-   static gH[] a(dN var0) {
+   public static gH[] a(dN var0) {
       return var0.hX;
    }
-   static G b(dN var0) {
+   public static G b(dN var0) {
       return var0.hL;
    }
-   static cN c(dN var0) {
+   public static cN c(dN var0) {
       return var0.hM;
    }
-   static cN d(dN var0) {
+   public static cN d(dN var0) {
       return var0.hN;
    }
-   static G e(dN var0) {
+   public static G e(dN var0) {
       return var0.hO;
    }
-   static CheckBox f(dN var0) {
+   public static CheckBox f(dN var0) {
       return var0.hP;
    }
-   static Button g(dN var0) {
+   public static Button g(dN var0) {
       return var0.bQ;
    }
-   static G h(dN var0) {
+   public static G h(dN var0) {
       return var0.hS;
    }
-   static G i(dN var0) {
+   public static G i(dN var0) {
       return var0.hT;
    }
-   static G j(dN var0) {
+   public static G j(dN var0) {
       return var0.hU;
    }
-   static G k(dN var0) {
+   public static G k(dN var0) {
       return var0.hV;
    }
-   static bO l(dN var0) {
+   public static bO l(dN var0) {
       return var0.hW;
    }
-   static G m(dN var0) {
+   public static G m(dN var0) {
       return var0.hQ;
    }
-   static G n(dN var0) {
+   public static G n(dN var0) {
       return var0.hR;
    }
-   static gC o(dN var0) {
+   public static gC o(dN var0) {
       return var0.hY;
    }
-   static ComboBox p(dN var0) {
+   public static ComboBox p(dN var0) {
       return var0.hK;
    }
-   static void a(dN var0, gH[] var1) {
+   public static void a(dN var0, gH[] var1) {
       var0.hX = var1;
    }
 }

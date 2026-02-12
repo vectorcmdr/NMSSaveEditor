@@ -12,74 +12,74 @@ namespace NMSSaveEditor
 public class Application {
    public static string VERSION = "1.19.14";
    public static string RELEASE = "BREACH";
-   private static string J = "https://github.com/goatfungus/NMSSaveEditor";
-   private static string K = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_";
-   private static Application L;
-   private static Dictionary<object, object> M = new Dictionary<object, object>();
-   private Form N;
-   private TabControl O;
-   private Label P;
-   private Label Q;
-   private ComboBox R;
-   private ComboBox S;
-   private Label T;
-   private Label U;
-   private Label V;
-   private Button W;
-   private Button X;
-   private Button Y;
-   private ToolStripMenuItem Z;
-   private ToolStripMenuItem aa;
-   private ToolStripMenuItem ab;
-   private List<object> ac;
-   private ToolStripMenuItem ad;
-   private static int ae = 0;
-   private static int af = 1;
-   private static int ag = 2;
-   private static int ah = 3;
-   private static int ai = 4;
-   private static int aj = 5;
-   private static int ak = 6;
-   private static int al = 7;
-   private static int am = 8;
-   private static int an = 9;
-   private static int ao = 10;
-   private static int ap = 11;
-   private static int aq = 12;
-   private static int ar = 13;
-   private aJ @as;
-   private dj at;
-   private dN au;
-   private eb av;
-   private bd aw;
-   private bl ax;
-   private ep ay;
-   private X az;
-   private I aA;
-   private dE aB;
-   private ap aC;
-   private bE aD;
-   private c aE;
-   private fq aF;
-   private ft[] aG;
-   private int aH;
-   private fs[] aI;
-   private int aJ;
-   private eY aK;
-   private bool aL;
-   private fr aM;
-   private eY aN;
-   private bool aO;
-   private bool aP;
-   private bool aQ;
-   private bool aR;
-   private bool aS;
-   private bool aT;
-   private bool aU;
-   private fe aV;
-   private fe aW;
-   private fR aX;
-   private static int[] aY;
+   public static string J = "https://github.com/goatfungus/NMSSaveEditor";
+   public static string K = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_";
+   public static Application L;
+   public static Dictionary<object, object> M = new Dictionary<object, object>();
+   public Form N;
+   public TabControl O;
+   public Label P;
+   public Label Q;
+   public ComboBox R;
+   public ComboBox S;
+   public Label T;
+   public Label U;
+   public Label V;
+   public Button W;
+   public Button X;
+   public Button Y;
+   public ToolStripMenuItem Z;
+   public ToolStripMenuItem aa;
+   public ToolStripMenuItem ab;
+   public List<object> ac;
+   public ToolStripMenuItem ad;
+   public static int ae = 0;
+   public static int af = 1;
+   public static int ag = 2;
+   public static int ah = 3;
+   public static int ai = 4;
+   public static int aj = 5;
+   public static int ak = 6;
+   public static int al = 7;
+   public static int am = 8;
+   public static int an = 9;
+   public static int ao = 10;
+   public static int ap = 11;
+   public static int aq = 12;
+   public static int ar = 13;
+   public aJ @as;
+   public dj at;
+   public dN au;
+   public eb av;
+   public bd aw;
+   public bl ax;
+   public ep ay;
+   public X az;
+   public I aA;
+   public dE aB;
+   public ap aC;
+   public bE aD;
+   public c aE;
+   public fq aF;
+   public ft[] aG;
+   public int aH;
+   public fs[] aI;
+   public int aJ;
+   public eY aK;
+   public bool aL;
+   public fr aM;
+   public eY aN;
+   public bool aO;
+   public bool aP;
+   public bool aQ;
+   public bool aR;
+   public bool aS;
+   public bool aT;
+   public bool aU;
+   public fe aV;
+   public fe aW;
+   public fR aX;
+   public static int[] aY;
 
    public static string a(long var0) {
       string var2 = "h:mm a, E MMM d, yyyy";
@@ -91,7 +91,7 @@ public class Application {
       return var0.ToString();
    }
 
-   private static string a(string var0, string var1) {
+   public static string a(string var0, string var1) {
       if (var0 == null) {
          return var1;
       } else {
@@ -170,7 +170,7 @@ public class Application {
       return var3 == null ? null : new Bitmap(var3, var1, var2, 4);
    }
 
-   private void f() {
+   public void f() {
       if (this.aR) {
          this.aR = false;
       }
@@ -246,7 +246,7 @@ public class Application {
 
    }
 
-   private Application(bool var1) {
+   public Application(bool var1) {
       this.aQ = false;
       this.aR = false;
       this.aS = false;
@@ -743,7 +743,7 @@ public class Application {
       }
    }
 
-   private void k() {
+   public void k() {
       FileInfo var1 = ej.b(this.aF == null ? null : this.aF.bS());
       if (var1 != null) {
          string var2;
@@ -850,7 +850,7 @@ public class Application {
 
    }
 
-   private void e(int var1) {
+   public void e(int var1) {
       this.aH = var1;
       if (this.aH < 0) {
          this.aI = new fs[0];
@@ -863,7 +863,7 @@ public class Application {
       this.l();
    }
 
-   private void f(int var1) {
+   public void f(int var1) {
       this.aJ = var1;
       this.l();
    }
@@ -876,7 +876,7 @@ public class Application {
       System.Windows.Forms.Application.Run(new A(this, var1));
    }
 
-   private void l() {
+   public void l() {
       this.R.Refresh();
       this.S.Refresh();
       this.aL = false;
@@ -1014,7 +1014,7 @@ public class Application {
 
    }
 
-   private void m() {
+   public void m() {
       try {
          this.aM.k(this.aN);
          this.aO = false;
@@ -1025,7 +1025,7 @@ public class Application {
 
    }
 
-   private void n() {
+   public void n() {
       if (this.aJ < 0) {
          this.b("No save file selected.");
       } else {
@@ -1064,7 +1064,7 @@ public class Application {
       }
    }
 
-   private void o() {
+   public void o() {
       int var1 = this.aG[this.aH].getIndex();
       int var2 = dz.a(this.N, this.aF.bU(), var1);
       if (var2 >= 0 && var2 != var1) {
@@ -1174,7 +1174,7 @@ public class Application {
       return var2;
    }
 
-   private void p() {
+   public void p() {
       eY var1 = this.aK.H("PlayerStateData.UniverseAddress");
       hl var2 = hl.n(var1);
       if ((var2 = nomanssave.aj.a((Container)this.N, var2)) != null) {
@@ -1187,7 +1187,7 @@ public class Application {
 
    }
 
-   private void q() {
+   public void q() {
       hc.info("Starting JSON Editor...");
       if (cy.a(this, this.aI[this.aJ].K(), this.aK)) {
          this.t();
@@ -1195,7 +1195,7 @@ public class Application {
 
    }
 
-   private void r() {
+   public void r() {
       hc.info("Starting JSON Editor...");
       if (cy.a(this, this.aM.K(), this.aN)) {
          try {
@@ -1208,7 +1208,7 @@ public class Application {
 
    }
 
-   private static void a(Window var0) {
+   public static void a(Window var0) {
       Control.updateComponentTreeUI(var0);
       Window[] var4;
       int var3 = (var4 = var0.getOwnedWindows()).Length;
@@ -1220,7 +1220,7 @@ public class Application {
 
    }
 
-   private void s() {
+   public void s() {
       if (nomanssave.aD.d(this.N)) {
          nomanssave.aH.V();
          a((Window)this.N);
@@ -1228,7 +1228,7 @@ public class Application {
 
    }
 
-   private void t() {
+   public void t() {
       this.aL = true;
       eY var1 = this.aK.H("PlayerStateData");
       gz var2 = gz.w(var1);
@@ -1270,7 +1270,7 @@ public class Application {
       this.aD.a(var2);
    }
 
-   private void u() {
+   public void u() {
       hc.info("Exporting JSON...");
       cK var1 = cK.aA();
       string var2 = this.aI[this.aJ].K() + ".json";
@@ -1296,7 +1296,7 @@ public class Application {
 
    }
 
-   private void v() {
+   public void v() {
       hc.info("Importing JSON...");
       cK var1 = cK.aA();
       var1.setCurrentDirectory(nomanssave.aH.cF);
@@ -1317,7 +1317,7 @@ public class Application {
 
    }
 
-   private void w() {
+   public void w() {
       this.@as.w();
       this.at.w();
       this.au.w();
@@ -1326,7 +1326,7 @@ public class Application {
       this.aA.w();
    }
 
-   private void x() {
+   public void x() {
       this.@as.x();
       this.at.x();
       this.au.x();
@@ -1335,7 +1335,7 @@ public class Application {
       this.aA.x();
    }
 
-   private void y() {
+   public void y() {
       this.@as.y();
       this.at.y();
       this.au.y();
@@ -1344,12 +1344,12 @@ public class Application {
       this.aA.y();
    }
 
-   private void z() {
+   public void z() {
       this.at.z();
       this.au.z();
    }
 
-   private void A() {
+   public void A() {
       this.@as.A();
       this.at.A();
       this.au.A();
@@ -1607,7 +1607,7 @@ public class Application {
       return gp.d(var3);
    }
 
-   private void G() {
+   public void G() {
       int var1 = this.aK.J("PlayerStateData.TotalPlayTime");
       int var2 = 0;
       eV var3 = this.aK.d("PlayerStateData.PersistentPlayerBases");
@@ -1650,7 +1650,7 @@ public class Application {
 
    }
 
-   private void initialize() {
+   public void initialize() {
       this.N = new Form();
       Image var1 = a("UI-FILEICON.PNG");
       if (var1 != null) {
@@ -1950,52 +1950,52 @@ public class Application {
       this.N.PerformLayout();
    }
 
-   private static string e(string var0) {
+   public static string e(string var0) {
       return var0 == null ? "(unknown)" : var0;
    }
-   static bool a(Application var0) {
+   public static bool a(Application var0) {
       return var0.aQ;
    }
-   static fq b(Application var0) {
+   public static fq b(Application var0) {
       return var0.aF;
    }
-   static void a(Application var0, bool var1) {
+   public static void a(Application var0, bool var1) {
       var0.aR = var1;
    }
-   static void b(Application var0, bool var1) {
+   public static void b(Application var0, bool var1) {
       var0.aS = var1;
    }
-   static int c(Application var0) {
+   public static int c(Application var0) {
       return var0.aH;
    }
-   static ft[] d(Application var0) {
+   public static ft[] d(Application var0) {
       return var0.aG;
    }
-   static void c(Application var0, bool var1) {
+   public static void c(Application var0, bool var1) {
       var0.aT = var1;
    }
-   static int e(Application var0) {
+   public static int e(Application var0) {
       return var0.aJ;
    }
-   static fs[] f(Application var0) {
+   public static fs[] f(Application var0) {
       return var0.aI;
    }
-   static void d(Application var0, bool var1) {
+   public static void d(Application var0, bool var1) {
       var0.aU = var1;
    }
-   Application(bool var1, Application var2) {
+   public Application(bool var1, Application var2) {
       this(var1);
    }
-   static void g(Application var0) {
+   public static void g(Application var0) {
       L = var0;
    }
-   static Application H() {
+   public static Application H() {
       return L;
    }
-   static Form h(Application var0) {
+   public static Form h(Application var0) {
       return var0.N;
    }
-   static int[] I() {
+   public static int[] I() {
       int[] var10000 = aY;
       if (var10000 != null) {
          return var10000;
@@ -2016,43 +2016,43 @@ public class Application {
          return var0;
       }
    }
-   static bool i(Application var0) {
+   public static bool i(Application var0) {
       return var0.aL;
    }
-   static bool j(Application var0) {
+   public static bool j(Application var0) {
       return var0.aO;
    }
-   static void k(Application var0) {
+   public static void k(Application var0) {
       var0.n();
    }
-   static void l(Application var0) {
+   public static void l(Application var0) {
       var0.m();
    }
-   static void e(Application var0, bool var1) {
+   public static void e(Application var0, bool var1) {
       var0.aQ = var1;
    }
-   static void m(Application var0) {
+   public static void m(Application var0) {
       var0.f();
    }
-   static ComboBox n(Application var0) {
+   public static ComboBox n(Application var0) {
       return var0.R;
    }
-   static void f(Application var0, bool var1) {
+   public static void f(Application var0, bool var1) {
       var0.aL = var1;
    }
-   static void a(Application var0, int var1) {
+   public static void a(Application var0, int var1) {
       var0.e(var1);
    }
-   static ComboBox o(Application var0) {
+   public static ComboBox o(Application var0) {
       return var0.S;
    }
-   static void a(Application var0, fs[] var1) {
+   public static void a(Application var0, fs[] var1) {
       var0.aI = var1;
    }
-   static void b(Application var0, int var1) {
+   public static void b(Application var0, int var1) {
       var0.f(var1);
    }
-   static void p(Application var0) {
+   public static void p(Application var0) {
       var0.k();
    }
 }

@@ -5,11 +5,11 @@ using System.Text;
 
 namespace NMSSaveEditor
 {
-class aN : G {
+public class aN : G {
    aJ dj;
-   private Application bv;
+   public Application bv;
 
-   aN(aJ var1, Application var2) {
+   public aN(aJ var1, Application var2) {
       this.dj = var1;
       this.bv = var2;
    }

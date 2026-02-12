@@ -6,10 +6,10 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-class cB : ActionListener {
+public class cB : ActionListener {
    cy gg;
 
-   cB(cy var1) {
+   public cB(cy var1) {
       this.gg = var1;
    }
 

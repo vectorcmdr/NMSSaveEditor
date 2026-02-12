@@ -9,12 +9,12 @@ namespace NMSSaveEditor
 {
 
 public class hb : FilterOutputStream {
-   private static LZ4Factory se = LZ4Factory.safeInstance();
-   private static int sm = 65536;
-   private LZ4Compressor sf;
-   private byte[] buffer;
-   private int sg;
-   private int si;
+   public static LZ4Factory se = LZ4Factory.safeInstance();
+   public static int sm = 65536;
+   public LZ4Compressor sf;
+   public byte[] buffer;
+   public int sg;
+   public int si;
 
    public hb(Stream var1) {
       base(var1);
@@ -24,7 +24,7 @@ public class hb : FilterOutputStream {
       this.si = 0;
    }
 
-   private void aK(int var1) {
+   public void aK(int var1) {
       if (this.sg + var1 > this.buffer.Length) {
          var1 += this.buffer.Length;
          int var2 = (this.buffer.Length + var1) / 65536;

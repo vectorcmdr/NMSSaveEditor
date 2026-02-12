@@ -14,9 +14,9 @@ public sealed class aI {
    public static readonly aI cS = new aI("macOS Dark");
 
 
-   string cT;
+   public string cT;
 
-   private aI(string var3) {
+   public aI(string var3) {
       this.cT = var3;
    }
 

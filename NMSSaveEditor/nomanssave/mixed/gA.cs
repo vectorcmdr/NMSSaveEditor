@@ -7,10 +7,10 @@ namespace NMSSaveEditor
 {
 
 public class gA {
-   private eS rd;
+   public eS rd;
    gz re;
 
-   private gA(gz var1, eS var2) {
+   public gA(gz var1, eS var2) {
       this.re = var1;
       this.rd = var2;
    }
@@ -43,7 +43,7 @@ public class gA {
       }
 
    }
-   gA(gz var1, eS var2, gA var3) {
+   public gA(gz var1, eS var2, gA var3) {
       this(var1, var2);
    }
 }

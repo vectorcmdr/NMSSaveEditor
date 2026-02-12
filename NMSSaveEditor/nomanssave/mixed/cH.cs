@@ -8,7 +8,7 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
-class cH : TextAction, ClipboardOwner {
+public class cH : TextAction, ClipboardOwner {
    cy gg;
 
    public cH(cy var1) {

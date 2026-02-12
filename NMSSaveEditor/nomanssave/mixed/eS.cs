@@ -9,10 +9,10 @@ namespace NMSSaveEditor
 {
 
 public class eS {
-   string id;
-   string text;
-   private Dictionary<object, object> kp;
-   private static List<object> kq = new List<object>();
+   public string id;
+   public string text;
+   public Dictionary<object, object> kp;
+   public static List<object> kq = new List<object>();
 
    static eS() {
       Stream var0 = typeof(Application).GetManifestResourceStream("db/words.xml");
@@ -37,7 +37,7 @@ public class eS {
       kq.sort(new eT());
    }
 
-   private eS(Element var1) {
+   public eS(Element var1) {
       this.id = var1.getAttribute("id");
       this.text = var1.getAttribute("text");
       this.kp = new Dictionary<object, object>();

@@ -7,17 +7,20 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
-class aC : CheckBox, TableCellRenderer {
-   Label cv = new Label();
+public class aC : CheckBox, TableCellRenderer {
+   public Label cv = new Label();
 
-   public Component getTableCellRendererComponent(DataGridView var1, object var2, bool var3, bool var4, int var5, int var6) {
+   public object getTableCellRendererComponent(object table, object value, bool isSelected, bool hasFocus, int row, int column) {
+      DataGridView var1 = (DataGridView)table;
+      int var5 = row;
+      int var6 = column;
       var5 = var1.convertRowIndexToModel(var5);
       if (!var1.DataSource.isCellEditable(var5, var6)) {
          return this.cv;
       } else {
          this.setBackground(var1.getBackground());
          this.setHorizontalAlignment(0);
-         this.Checked = (Boolean.TRUE == var2);
+         this.Checked = (true == (bool?)value);
          return this;
       }
    }

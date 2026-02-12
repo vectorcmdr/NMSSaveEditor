@@ -8,20 +8,20 @@ namespace NMSSaveEditor
 {
 
 public class h : Form {
-   private ey l = null;
-   private TextBox m;
-   private Button n;
-   private ComboBox o;
-   private ComboBox p;
-   private ComboBox q;
-   private int r;
-   private List<object> s = new List<object>();
-   private List<object> t = new List<object>();
-   private List<object> u = new List<object>();
-   private List<object> v = new List<object>();
-   private static h w = null;
+   public ey l = null;
+   public TextBox m;
+   public Button n;
+   public ComboBox o;
+   public ComboBox p;
+   public ComboBox q;
+   public int r;
+   public List<object> s = new List<object>();
+   public List<object> t = new List<object>();
+   public List<object> u = new List<object>();
+   public List<object> v = new List<object>();
+   public static h w = null;
 
-   private h(Frame var1) {
+   public h(Frame var1) {
       base(var1);
       this.FormBorderStyle = FormBorderStyle.FixedDialog; //(false);
       this.setModalExclusionType(ModalExclusionType.APPLICATION_EXCLUDE);
@@ -73,7 +73,7 @@ public class h : Form {
       this.PerformLayout();
    }
 
-   private void a() {
+   public void a() {
       this.t = (List<object>)this.s.stream().map(ey.ba).distinct().sorted((var0, var1) => {
          return var0.name().CompareTo(var1.name());
       }).collect(Collectors.toList());
@@ -82,7 +82,7 @@ public class h : Form {
       this.b();
    }
 
-   private void b() {
+   public void b() {
       eB var1 = (eB)this.o.SelectedItem;
       this.u = (List<object>)this.s.stream().filter((var1x) => {
          return var1x.ba() == var1;
@@ -94,7 +94,7 @@ public class h : Form {
       this.c();
    }
 
-   private void c() {
+   public void c() {
       eB var1 = (eB)this.o.SelectedItem;
       ex var2 = (ex)this.p.SelectedItem;
       this.v = (List<object>)this.s.stream().filter((var2x) => {
@@ -106,7 +106,7 @@ public class h : Form {
       this.q.Refresh();
    }
 
-   private ey a(int var1) {
+   public ey a(int var1) {
       this.r = var1;
       this.s = ey.b(var1, this.m.Text);
       this.a();

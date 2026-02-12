@@ -6,7 +6,7 @@ using System.Text;
 namespace NMSSaveEditor
 {
 public class eW {
-   eV kE = new eV();
+   public eV kE = new eV();
 
    public eW h(object var1) {
       if (var1 != null && !fh.a(var1.GetType())) {

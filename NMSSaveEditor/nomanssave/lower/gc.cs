@@ -8,7 +8,7 @@ namespace NMSSaveEditor
 {
 
 public class gc {
-   private static long nc = -11644473600000L;
+   public static long nc = -11644473600000L;
 
    public static string a(Stream var0) {
       byte[] var1 = new byte[16];
@@ -22,7 +22,7 @@ public class gc {
       return h(var0);
    }
 
-   private static string h(byte[] var0) {
+   public static string h(byte[] var0) {
       StringBuilder var1 = new StringBuilder();
       a(var0[3], var1);
       a(var0[2], var1);
@@ -43,7 +43,7 @@ public class gc {
       return var1.ToString();
    }
 
-   private static void a(byte var0, StringBuilder var1) {
+   public static void a(byte var0, StringBuilder var1) {
       int var2 = (240 & var0) >> 4;
       int var3 = 15 & var0;
       var1.Append("0123456789ABCDEF"[var2]);

@@ -8,14 +8,14 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
-class du : Panel {
+public class du : Panel {
    gF hm;
-   private ToolStripMenuItem fh;
-   private ToolStripMenuItem hn;
-   private ToolStripMenuItem fe;
+   public ToolStripMenuItem fh;
+   public ToolStripMenuItem hn;
+   public ToolStripMenuItem fe;
    dt ho;
 
-   private du(dt var1, gF var2) {
+   public du(dt var1, gF var2) {
       this.ho = var1;
       this.hm = var2;
       int var3 = SystemInformation.getInt("Inventory.gridSize");
@@ -41,7 +41,7 @@ class du : Panel {
       this.aM();
    }
 
-   private void aM() {
+   public void aM() {
       this.RemoveAll();
       int var1 = SystemInformation.getInt("Inventory.gridSize");
       Size var2 = new Size(var1, var1);
@@ -108,13 +108,13 @@ class du : Panel {
       this.PerformLayout();
       this.Refresh();
    }
-   static void c(du var0) {
+   public static void c(du var0) {
       var0.aM();
    }
-   du(dt var1, gF var2, du var3) {
+   public du(dt var1, gF var2, du var3) {
       this(var1, var2);
    }
-   static dt d(du var0) {
+   public static dt d(du var0) {
       return var0.ho;
    }
 }

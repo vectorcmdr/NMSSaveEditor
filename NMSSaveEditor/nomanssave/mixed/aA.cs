@@ -7,8 +7,8 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
-class aA : object {
-   int f;
+public class aA : DefaultTableCellRenderer {
+   public int f;
 
    public aA(DataGridView var1, int var2) {
       this.f = var2;

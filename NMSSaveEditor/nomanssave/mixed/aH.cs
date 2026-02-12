@@ -12,7 +12,7 @@ namespace NMSSaveEditor
 {
 
 public class aH {
-   private static FileInfo cC;
+   public static FileInfo cC;
    public static FileInfo cD;
    public static FileInfo cE;
    public static FileInfo cF;
@@ -20,9 +20,9 @@ public class aH {
    public static int cH;
    public static int cI;
    public static int cJ;
-   private static eY cK;
-   private static bool cL;
-   private static int[] cM;
+   public static eY cK;
+   public static bool cL;
+   public static int[] cM;
 
    public static string getProperty(string var0) {
       return cK.getValueAsString(var0);
@@ -86,11 +86,11 @@ public class aH {
       cL = true;
    }
 
-   static bool T() {
+   public static bool T() {
       return cL;
    }
 
-   static void U() {
+   public static void U() {
       string var0 = fh.b(cK, true);
 
       try {
@@ -329,7 +329,7 @@ public class aH {
       }
 
    }
-   static int[] W() {
+   public static int[] W() {
       int[] var10000 = cM;
       if (var10000 != null) {
          return var10000;

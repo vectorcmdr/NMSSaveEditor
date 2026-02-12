@@ -5,10 +5,10 @@ using System.Text;
 
 namespace NMSSaveEditor
 {
-class K : G {
-   I bt;
+public class K : G {
+   public I bt;
 
-   K(I var1) {
+   public K(I var1) {
       this.bt = var1;
    }
 

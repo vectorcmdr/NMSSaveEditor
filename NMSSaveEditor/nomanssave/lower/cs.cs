@@ -8,10 +8,10 @@ namespace NMSSaveEditor
 {
 
 public class cs : JFileChooser {
-   private static cs fN = null;
-   private static string name = "Freighter Backup FileInfo";
-   private static Image fH = Application.a("UI-FREIGHTERICON.PNG", 16, 16);
-   private CheckBox fO;
+   public static cs fN = null;
+   public static string name = "Freighter Backup FileInfo";
+   public static Image fH = Application.a("UI-FREIGHTERICON.PNG", 16, 16);
+   public CheckBox fO;
 
    public static cs av() {
       if (fN == null) {
@@ -21,7 +21,7 @@ public class cs : JFileChooser {
       return fN;
    }
 
-   private cs() {
+   public cs() {
       this.setFileSelectionMode(0);
       this.setAcceptAllFileFilterUsed(false);
       this.setFileView(new ct(this));
@@ -55,7 +55,7 @@ public class cs : JFileChooser {
       this.getAccessory().Hide();
       return base.showOpenDialog(var1);
    }
-   static Image @as() {
+   public static Image @as() {
       return fH;
    }
 }

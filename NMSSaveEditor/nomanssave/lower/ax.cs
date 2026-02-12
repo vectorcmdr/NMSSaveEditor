@@ -6,10 +6,10 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-class ax : object {
+public class ax : object {
    ap cu;
 
-   ax(ap var1) {
+   public ax(ap var1) {
       this.cu = var1;
    }
 

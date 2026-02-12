@@ -20,11 +20,11 @@ public sealed class gL : gD {
    public static readonly gL rD = new gL("Starborn Runner", "MODELS/COMMON/SPACECRAFT/FIGHTERS/WRACER.SCENE.MBIN", 4);
    public static readonly gL rE = new gL("Corvette", "MODELS/COMMON/SPACECRAFT/BIGGS/BIGGS.SCENE.MBIN", 4);
 
-   private string name;
-   private string filename;
-   private int rF;
+   public string name;
+   public string filename;
+   public int rF;
 
-   private gL(string var3, string var4, int var5) {
+   public gL(string var3, string var4, int var5) {
       this.name = var3;
       this.filename = var4;
       this.rF = var5;

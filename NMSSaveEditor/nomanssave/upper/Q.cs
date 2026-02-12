@@ -8,15 +8,15 @@ namespace NMSSaveEditor
 {
 
 public class Q : Form {
-   private W bw;
-   private int bx;
-   private int by;
-   private W bz = null;
-   private TextBox bA;
-   private TextBox bB;
-   private static Q bC;
+   public W bw;
+   public int bx;
+   public int by;
+   public W bz = null;
+   public TextBox bA;
+   public TextBox bB;
+   public static Q bC;
 
-   private Q(Frame var1) {
+   public Q(Frame var1) {
       base(var1);
       this.FormBorderStyle = FormBorderStyle.FixedDialog; //(false);
       this.setModalExclusionType(ModalExclusionType.APPLICATION_EXCLUDE);
@@ -54,7 +54,7 @@ public class Q : Form {
       this.PerformLayout();
    }
 
-   private W a(W var1, int var2, int var3) {
+   public W a(W var1, int var2, int var3) {
       this.bw = var1;
       this.bx = var2;
       this.by = var3;

@@ -5,11 +5,11 @@ using System.Text;
 
 namespace NMSSaveEditor
 {
-class fb : fc {
-   string name;
+public class fb : fc {
+   public string name;
    eY kL;
 
-   fb(eY var1, string var2, fc var3) {
+   public fb(eY var1, string var2, fc var3) {
       base(var1, var3);
       this.kL = var1;
       this.name = var2;

@@ -6,15 +6,15 @@ using System.Text;
 namespace NMSSaveEditor
 {
 public interface fs {
-   string K();
+   public string K();
 
-   fn L();
+   public fn L();
 
-   eY M();
+   public eY M();
 
-   string b(eY var1);
+   public string b(eY var1);
 
-   long lastModified();
+   public long lastModified();
    public string getName() {
       return null;
    }

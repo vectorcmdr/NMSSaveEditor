@@ -227,9 +227,15 @@ namespace NMSSaveEditor
     }
 
     // Java table/list types
-    public class TableCellRenderer
+    public interface TableCellRenderer
     {
-        public virtual object getTableCellRendererComponent(object table, object value, bool isSelected, bool hasFocus, int row, int column) { return null; }
+        object getTableCellRendererComponent(object table, object value, bool isSelected, bool hasFocus, int row, int column);
+    }
+
+    // Base class for DefaultTableCellRenderer (Java: extends JLabel implements TableCellRenderer)
+    public class DefaultTableCellRenderer : Label, TableCellRenderer
+    {
+        public virtual object getTableCellRendererComponent(object table, object value, bool isSelected, bool hasFocus, int row, int column) { return this; }
     }
 
     public class ListModel

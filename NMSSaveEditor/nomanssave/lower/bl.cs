@@ -9,36 +9,36 @@ namespace NMSSaveEditor
 {
 
 public class bl : Panel, eo {
-   private static int dQ = 50;
-   private DataGridView dR;
-   private Button bQ;
-   private Button dS;
-   private ba dT;
-   private G dU;
-   private ComboBox dV;
-   private TextBox dW;
-   private cN dX;
-   private G dY;
-   private G dZ;
-   private G[] ea;
-   private ba eb;
-   private ComboBox ec;
-   private ComboBox ed;
-   private ComboBox ee;
-   private ComboBox ef;
-   private ComboBox eg;
-   private G eh;
-   private G ei;
-   private G ej;
-   private G ek;
-   private Label el;
-   private Button em;
-   private er[] en;
-   private er[] eo;
-   private gp[] ep;
-   private int eq;
+   public static int dQ = 50;
+   public DataGridView dR;
+   public Button bQ;
+   public Button dS;
+   public ba dT;
+   public G dU;
+   public ComboBox dV;
+   public TextBox dW;
+   public cN dX;
+   public G dY;
+   public G dZ;
+   public G[] ea;
+   public ba eb;
+   public ComboBox ec;
+   public ComboBox ed;
+   public ComboBox ee;
+   public ComboBox ef;
+   public ComboBox eg;
+   public G eh;
+   public G ei;
+   public G ej;
+   public G ek;
+   public Label el;
+   public Button em;
+   public er[] en;
+   public er[] eo;
+   public gp[] ep;
+   public int eq;
 
-   bl(Application var1) {
+   public bl(Application var1) {
       TableLayoutPanel var2 = new TableLayoutPanel(1, 3);
       this.SuspendLayout(); // TODO: set layout var2);
       Panel var3 = new Panel();
@@ -153,7 +153,7 @@ public class bl : Panel, eo {
 
    }
 
-   void a(gp[] var1) {
+   public void a(gp[] var1) {
       this.ep = var1;
       this.en = null;
       this.eo = null;
@@ -164,97 +164,97 @@ public class bl : Panel, eo {
 
       this.dR.Refresh();
    }
-   static er[] a(bl var0) {
+   public static er[] a(bl var0) {
       return var0.en;
    }
-   static int b(bl var0) {
+   public static int b(bl var0) {
       return var0.eq;
    }
-   static gp[] c(bl var0) {
+   public static gp[] c(bl var0) {
       return var0.ep;
    }
-   static G[] d(bl var0) {
+   public static G[] d(bl var0) {
       return var0.ea;
    }
-   static DataGridView e(bl var0) {
+   public static DataGridView e(bl var0) {
       return var0.dR;
    }
-   static er[] f(bl var0) {
+   public static er[] f(bl var0) {
       return var0.eo;
    }
-   static void a(bl var0, gp[] var1) {
+   public static void a(bl var0, gp[] var1) {
       var0.ep = var1;
    }
-   static Button g(bl var0) {
+   public static Button g(bl var0) {
       return var0.dS;
    }
-   static void a(bl var0, int var1) {
+   public static void a(bl var0, int var1) {
       var0.eq = var1;
    }
-   static void a(bl var0, er[] var1) {
+   public static void a(bl var0, er[] var1) {
       var0.en = var1;
    }
-   static void b(bl var0, er[] var1) {
+   public static void b(bl var0, er[] var1) {
       var0.eo = var1;
    }
-   static ba h(bl var0) {
+   public static ba h(bl var0) {
       return var0.dT;
    }
-   static ba i(bl var0) {
+   public static ba i(bl var0) {
       return var0.eb;
    }
-   static G j(bl var0) {
+   public static G j(bl var0) {
       return var0.dU;
    }
-   static ComboBox k(bl var0) {
+   public static ComboBox k(bl var0) {
       return var0.dV;
    }
-   static TextBox l(bl var0) {
+   public static TextBox l(bl var0) {
       return var0.dW;
    }
-   static cN m(bl var0) {
+   public static cN m(bl var0) {
       return var0.dX;
    }
-   static G n(bl var0) {
+   public static G n(bl var0) {
       return var0.dY;
    }
-   static G o(bl var0) {
+   public static G o(bl var0) {
       return var0.dZ;
    }
-   static ComboBox p(bl var0) {
+   public static ComboBox p(bl var0) {
       return var0.ec;
    }
-   static ComboBox q(bl var0) {
+   public static ComboBox q(bl var0) {
       return var0.ed;
    }
-   static ComboBox r(bl var0) {
+   public static ComboBox r(bl var0) {
       return var0.ee;
    }
-   static ComboBox s(bl var0) {
+   public static ComboBox s(bl var0) {
       return var0.ef;
    }
-   static ComboBox t(bl var0) {
+   public static ComboBox t(bl var0) {
       return var0.eg;
    }
-   static G u(bl var0) {
+   public static G u(bl var0) {
       return var0.eh;
    }
-   static G v(bl var0) {
+   public static G v(bl var0) {
       return var0.ei;
    }
-   static G w(bl var0) {
+   public static G w(bl var0) {
       return var0.ej;
    }
-   static G x(bl var0) {
+   public static G x(bl var0) {
       return var0.ek;
    }
-   static Label y(bl var0) {
+   public static Label y(bl var0) {
       return var0.el;
    }
-   static Button z(bl var0) {
+   public static Button z(bl var0) {
       return var0.em;
    }
-   static Button A(bl var0) {
+   public static Button A(bl var0) {
       return var0.bQ;
    }
 }

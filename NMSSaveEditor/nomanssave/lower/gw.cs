@@ -6,9 +6,9 @@ using System.Text;
 namespace NMSSaveEditor
 {
 public class gw : gv {
-   private eY oI;
+   public eY oI;
 
-   gw(eY var1, eY var2) {
+   public gw(eY var1, eY var2) {
       base(0, (eY)null, var2);
       this.oI = var1;
    }

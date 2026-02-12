@@ -8,13 +8,13 @@ using System.Xml;
 namespace NMSSaveEditor
 {
 
-class eA {
-   string id;
-   string name;
-   string jM;
-   string description;
+public class eA {
+   public string id;
+   public string name;
+   public string jM;
+   public string description;
 
-   eA(Element var1) {
+   public eA(Element var1) {
       this.id = var1.getAttribute("id");
       this.name = var1.getAttribute("name");
       this.jM = var1.getAttribute("subtitle");
@@ -34,7 +34,7 @@ class eA {
       this.description = var2;
    }
 
-   private string a(string var1, Function var2) {
+   public string a(string var1, Function var2) {
       StringBuilder var3 = new StringBuilder();
       int var4 = 0;
 
@@ -47,15 +47,15 @@ class eA {
       return var3.ToString();
    }
 
-   string a(Function var1) {
+   public string a(Function var1) {
       return this.a(this.name, var1);
    }
 
-   string b(Function var1) {
+   public string b(Function var1) {
       return this.a(this.jM, var1);
    }
 
-   string c(Function var1) {
+   public string c(Function var1) {
       return this.description == null ? null : this.a(this.description, var1);
    }
 }

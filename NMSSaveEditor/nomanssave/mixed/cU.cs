@@ -7,10 +7,10 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-class cU : FileView {
+public class cU : FileView {
    cT gw;
 
-   cU(cT var1) {
+   public cU(cT var1) {
       this.gw = var1;
    }
 

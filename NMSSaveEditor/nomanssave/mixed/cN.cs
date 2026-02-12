@@ -9,13 +9,13 @@ namespace NMSSaveEditor
 {
 
 public class cN : ComboBox {
-   private bool gm;
+   public bool gm;
    private readonly Enum[] gn;
-   private List<object> go;
-   private cR gp;
-   private object gq;
-   private static Color gr;
-   private static Color gs;
+   public List<object> go;
+   public cR gp;
+   public object gq;
+   public static Color gr;
+   public static Color gs;
 
    static cN() {
       gr = Color.RED;
@@ -68,28 +68,28 @@ public class cN : ComboBox {
    public void a(cR var1) {
       this.gp = var1;
    }
-   static List<object> a(cN var0) {
+   public static List<object> a(cN var0) {
       return var0.go;
    }
-   static object b(cN var0) {
+   public static object b(cN var0) {
       return var0.gq;
    }
-   static void a(cN var0, object var1) {
+   public static void a(cN var0, object var1) {
       var0.gq = var1;
    }
-   static cR c(cN var0) {
+   public static cR c(cN var0) {
       return var0.gp;
    }
-   static bool d(cN var0) {
+   public static bool d(cN var0) {
       return var0.gm;
    }
-   static Enum[] e(cN var0) {
+   public static Enum[] e(cN var0) {
       return var0.gn;
    }
-   static Color ag() {
+   public static Color ag() {
       return gs;
    }
-   static Color aB() {
+   public static Color aB() {
       return gr;
    }
 }

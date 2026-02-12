@@ -9,14 +9,14 @@ namespace NMSSaveEditor
 {
 
 public class fJ : fq {
-   private static Pattern lV = Pattern.compile("save(\\d*)\\.hg");
-   private static Pattern lW = Pattern.compile("backup(\\d*)\\.\\d*\\.zip");
-   private FileInfo lX;
-   private fR lE;
-   private fK mr;
-   private fM[] ms;
+   public static Pattern lV = Pattern.compile("save(\\d*)\\.hg");
+   public static Pattern lW = Pattern.compile("backup(\\d*)\\.\\d*\\.zip");
+   public FileInfo lX;
+   public fR lE;
+   public fK mr;
+   public fM[] ms;
 
-   fJ(FileInfo var1, fR var2) {
+   public fJ(FileInfo var1, fR var2) {
       this.lX = var1;
       this.lE = var2;
 
@@ -128,7 +128,7 @@ public class fJ : fq {
       return this.ms[var1 * 2].filename;
    }
 
-   private static byte[] a(long[] var0, int var1, int var2) {
+   public static byte[] a(long[] var0, int var1, int var2) {
       byte[] var3 = new byte[var2 * 4];
 
       for(int var4 = 0; var4 < var2; ++var4) {
@@ -141,7 +141,7 @@ public class fJ : fq {
       return var3;
    }
 
-   private static byte[] c(byte[] var0, byte[] var1) {
+   public static byte[] c(byte[] var0, byte[] var1) {
       MemoryStream var2 = new MemoryStream();
       var2.Write(var0, 0, var0.Length);
       var2.Write(var1, 0, var1.Length);
@@ -150,16 +150,16 @@ public class fJ : fq {
       long[] var4 = new long[]{var3[0] & 4294967295L, var3[0] >>> 32 & 4294967295L, var3[1] & 4294967295L, var3[1] >>> 32 & 4294967295L};
       return a(var4, 0, 4);
    }
-   static FileInfo a(fJ var0) {
+   public static FileInfo a(fJ var0) {
       return var0.lX;
    }
-   static byte[] d(byte[] var0, byte[] var1) {
+   public static byte[] d(byte[] var0, byte[] var1) {
       return c(var0, var1);
    }
-   static fM[] b(fJ var0) {
+   public static fM[] b(fJ var0) {
       return var0.ms;
    }
-   static Pattern cl() {
+   public static Pattern cl() {
       return lW;
    }
 }

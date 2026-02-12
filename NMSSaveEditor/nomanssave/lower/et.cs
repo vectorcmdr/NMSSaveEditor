@@ -5,10 +5,10 @@ using System.Text;
 
 namespace NMSSaveEditor
 {
-class et {
-   string id;
+public class et {
+   public string id;
 
-   et(string var1) {
+   public et(string var1) {
       this.id = var1;
    }
 

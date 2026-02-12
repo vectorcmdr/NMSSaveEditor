@@ -8,8 +8,8 @@ namespace NMSSaveEditor
 {
 
 public class cK : JFileChooser {
-   private static cK gk = null;
-   private static string name = "JSON FileInfo";
+   public static cK gk = null;
+   public static string name = "JSON FileInfo";
 
    public static cK aA() {
       if (gk == null) {
@@ -19,7 +19,7 @@ public class cK : JFileChooser {
       return gk;
    }
 
-   private cK() {
+   public cK() {
       this.setFileSelectionMode(0);
       this.setAcceptAllFileFilterUsed(false);
       this.setFileView(new cL(this));

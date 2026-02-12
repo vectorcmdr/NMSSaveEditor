@@ -7,11 +7,11 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-class fi : StringReader {
-   int kF = 1;
-   int kG = 0;
+public class fi : StringReader {
+   public int kF = 1;
+   public int kG = 0;
 
-   fi(string var1) {
+   public fi(string var1) {
       base(var1);
    }
 
@@ -42,7 +42,7 @@ class fi : StringReader {
       return var1;
    }
 
-   private int a(Predicate<object> var1) {
+   public int a(Predicate<object> var1) {
       try {
          this.mark(1);
          int var2 = base.ReadByte();
@@ -61,7 +61,7 @@ class fi : StringReader {
          throw new eX("stream error", var3, this.kF, this.kG);
       }
    }
-   static int a(fi var0, Predicate<object> var1) {
+   public static int a(fi var0, Predicate<object> var1) {
       return var0.a(var1);
    }
 }

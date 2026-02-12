@@ -9,7 +9,7 @@ public class gn {
    eY nj;
    gm oK;
 
-   private gn(gm var1, eY var2) {
+   public gn(gm var1, eY var2) {
       this.oK = var1;
       this.nj = var2;
    }
@@ -42,7 +42,7 @@ public class gn {
    public string toString() {
       return this.nj.getValueAsString("Name");
    }
-   gn(gm var1, eY var2, gn var3) {
+   public gn(gm var1, eY var2, gn var3) {
       this(var1, var2);
    }
 }

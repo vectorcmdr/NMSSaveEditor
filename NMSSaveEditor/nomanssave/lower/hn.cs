@@ -7,11 +7,11 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-class hn : Stream {
-   private int sc;
+public class hn : Stream {
+   public int sc;
    hm sW;
 
-   private hn(hm var1, int var2) {
+   public hn(hm var1, int var2) {
       this.sW = var1;
       this.sc = var2;
    }
@@ -51,7 +51,7 @@ class hn : Stream {
          }
       }
    }
-   hn(hm var1, int var2, hn var3) {
+   public hn(hm var1, int var2, hn var3) {
       this(var1, var2);
    }
 

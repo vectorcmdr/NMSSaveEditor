@@ -7,12 +7,12 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-class he : Stream {
-   StreamWriter ss;
-   string st;
-   MemoryStream su;
+public class he : Stream {
+   public StreamWriter ss;
+   public string st;
+   public MemoryStream su;
 
-   he(StreamWriter var1, string var2) {
+   public he(StreamWriter var1, string var2) {
       this.ss = var1;
       this.st = var2;
       this.su = new MemoryStream();

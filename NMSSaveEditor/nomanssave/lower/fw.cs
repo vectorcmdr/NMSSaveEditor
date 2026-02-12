@@ -7,22 +7,22 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-class fw {
+public class fw {
    public fn be;
    byte[] lK;
-   int lL;
-   int lM;
-   int lN;
-   int lO;
-   long bd;
-   long length;
-   long lP;
-   int lQ;
-   int lR;
-   int lS;
+   public int lL;
+   public int lM;
+   public int lN;
+   public int lO;
+   public long bd;
+   public long length;
+   public long lP;
+   public int lQ;
+   public int lR;
+   public int lS;
    fu lJ;
 
-   fw(fu var1, Stream var2) {
+   public fw(fu var1, Stream var2) {
       this.lJ = var1;
       this.lK = new byte[8];
       hk.readFully(var2, this.lK);
@@ -38,11 +38,11 @@ class fw {
       this.lS = hk.readInt(var2);
    }
 
-   bool isValid() {
+   public bool isValid() {
       return fu.b(this.lK, fu.bY()) && this.lO >= 0;
    }
 
-   int a(Stream var1) {
+   public int a(Stream var1) {
       var1.Write(this.lK);
       hk.a(var1, this.lL);
       hk.a(var1, this.lM);
@@ -57,7 +57,7 @@ class fw {
       return 48;
    }
 
-   void bZ() {
+   public void bZ() {
       Console.WriteLine("  unknown1 = " + this.lL + " 0x" + Convert.ToString(this.lL) + " " + Integer.toBinaryString(this.lL));
       Console.WriteLine("  unknown2 = " + this.lM + " 0x" + Convert.ToString(this.lM) + " " + Integer.toBinaryString(this.lM));
       Console.WriteLine("  fileType = " + this.lN + " 0x" + Convert.ToString(this.lN) + " " + Integer.toBinaryString(this.lN));
@@ -76,7 +76,7 @@ class fw {
 
    }
 
-   byte[] ca() {
+   public byte[] ca() {
       if (!this.isValid()) {
          return null;
       } else {
@@ -108,7 +108,7 @@ class fw {
       }
    }
 
-   void d(byte[] var1) {
+   public void d(byte[] var1) {
       if (!this.isValid()) {
          throw new IOException("header not valid");
       } else {

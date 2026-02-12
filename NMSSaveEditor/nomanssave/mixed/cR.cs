@@ -6,7 +6,7 @@ using System.Text;
 namespace NMSSaveEditor
 {
 public interface cR {
-   void setSelectedValue(string var1);
+   public void setSelectedValue(string var1);
 }
 
 }

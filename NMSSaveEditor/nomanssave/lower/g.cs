@@ -6,12 +6,12 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-class g : object {
+public class g : object {
    f i;
-   private Supplier j;
-   private Function k;
+   public Supplier j;
+   public Function k;
 
-   g(f var1, Supplier var2, Function var3) {
+   public g(f var1, Supplier var2, Function var3) {
       this.i = var1;
       this.j = var2;
       this.k = var3;

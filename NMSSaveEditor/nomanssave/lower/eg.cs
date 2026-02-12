@@ -6,11 +6,11 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-class eg : object {
+public class eg : object {
    ec ik;
-   private int il;
+   public int il;
 
-   eg(ec var1, int var2) {
+   public eg(ec var1, int var2) {
       this.ik = var1;
       this.il = var2;
    }

@@ -8,11 +8,11 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
-class bM : FocusListener {
+public class bM : FocusListener {
    bL eC;
-   private bK eD;
+   public bK eD;
 
-   bM(bL var1, bK var2) {
+   public bM(bL var1, bK var2) {
       this.eC = var1;
       this.eD = var2;
    }

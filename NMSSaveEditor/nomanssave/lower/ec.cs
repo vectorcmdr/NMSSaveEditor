@@ -8,17 +8,17 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
-class ec : ba {
-   private int index;
-   private CheckBox @if;
-   private ComboBox ig;
-   private G bj;
-   private ComboBox ih;
-   private G hO;
-   private G ii;
+public class ec : ba {
+   public int index;
+   public CheckBox @if;
+   public ComboBox ig;
+   public G bj;
+   public ComboBox ih;
+   public G hO;
+   public G ii;
    eb ij;
 
-   ec(eb var1, int var2) {
+   public ec(eb var1, int var2) {
       base(aH.cH, aH.cH * 2);
       this.ij = var1;
       this.index = var2;
@@ -41,7 +41,7 @@ class ec : ba {
       this.a("Pilot Rank", this.ii);
    }
 
-   private void aQ() {
+   public void aQ() {
       this.@if.Checked = (eb.a(this.ij)[this.index].Enabled);
       this.ig.Enabled = (eb.a(this.ij)[this.index].Enabled);
       this.ig.SelectedItem = (eb.a(this.ij)[this.index].ed());
@@ -54,28 +54,28 @@ class ec : ba {
       this.ii.Enabled = (eb.a(this.ij)[this.index].Enabled);
       this.ii.Text = (Integer.toString(eb.a(this.ij)[this.index].eh()));
    }
-   static CheckBox a(ec var0) {
+   public static CheckBox a(ec var0) {
       return var0.@if;
    }
-   static ComboBox b(ec var0) {
+   public static ComboBox b(ec var0) {
       return var0.ig;
    }
-   static G c(ec var0) {
+   public static G c(ec var0) {
       return var0.bj;
    }
-   static ComboBox d(ec var0) {
+   public static ComboBox d(ec var0) {
       return var0.ih;
    }
-   static G e(ec var0) {
+   public static G e(ec var0) {
       return var0.hO;
    }
-   static G f(ec var0) {
+   public static G f(ec var0) {
       return var0.ii;
    }
-   static void g(ec var0) {
+   public static void g(ec var0) {
       var0.aQ();
    }
-   static eb h(ec var0) {
+   public static eb h(ec var0) {
       return var0.ij;
    }
 }

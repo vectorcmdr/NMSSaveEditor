@@ -6,7 +6,7 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-class eL : IComparer<object> {
+public class eL : IComparer<object> {
    public int a(eI var1, eI var2) {
       return var1.name.CompareTo(var2.name);
    }

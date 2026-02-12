@@ -7,10 +7,10 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-class cM : FileFilter {
+public class cM : FileFilter {
    cK gl;
 
-   cM(cK var1) {
+   public cM(cK var1) {
       this.gl = var1;
    }
 

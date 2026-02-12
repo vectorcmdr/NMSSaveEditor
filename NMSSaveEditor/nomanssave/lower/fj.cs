@@ -10,11 +10,11 @@ namespace NMSSaveEditor
 public class fj : Closeable {
    public static int kP = 2;
    public static int kQ = 8;
-   private static readonly byte[] le = "null".GetBytes();
-   private static readonly byte[] lf = "true".GetBytes();
-   private static readonly byte[] lg = "false".GetBytes();
-   private Stream lh;
-   private int flags;
+   public static readonly byte[] le = "null".GetBytes();
+   public static readonly byte[] lf = "true".GetBytes();
+   public static readonly byte[] lg = "false".GetBytes();
+   public Stream lh;
+   public int flags;
 
    public static byte[] j(object var0) {
       MemoryStream var1 = new MemoryStream();
@@ -139,7 +139,7 @@ public class fj : Closeable {
 
    }
 
-   private void a(object var1, eC var2) {
+   public void a(object var1, eC var2) {
       if (var1 == null) {
          this.lh.Write(le);
       } else if (var1.Equals(Boolean.TRUE)) {
@@ -164,11 +164,11 @@ public class fj : Closeable {
 
    }
 
-   private void writeString(string var1) {
+   public void writeString(string var1) {
       this.lh.Write(fh.O(var1).GetBytes());
    }
 
-   private void c(fg var1) {
+   public void c(fg var1) {
       this.lh.Write(34);
       byte[] var5;
       int var4 = (var5 = var1.toByteArray()).Length;
@@ -208,7 +208,7 @@ public class fj : Closeable {
       this.a(var1, var1 is fk ? ((fk)var1).li : null);
    }
 
-   private void a(eY var1, eC var2) {
+   public void a(eY var1, eC var2) {
       this.lh.Write(123);
       if (var1.Length > 0) {
          for(int var3 = 0; var3 < var1.Length; ++var3) {
@@ -229,7 +229,7 @@ public class fj : Closeable {
       this.a((eV)var1, (eC)null);
    }
 
-   private void a(eV var1, eC var2) {
+   public void a(eV var1, eC var2) {
       this.lh.Write(91);
       if (var1.Length > 0) {
          for(int var3 = 0; var3 < var1.Length; ++var3) {
@@ -244,7 +244,7 @@ public class fj : Closeable {
       this.lh.Write(93);
    }
 
-   private void a(Number var1) {
+   public void a(Number var1) {
       if (var1 is BigDecimal) {
          this.lh.Write(((BigDecimal)var1).ToString().Replace('E', 'e').GetBytes());
       } else {

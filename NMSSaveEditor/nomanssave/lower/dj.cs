@@ -8,24 +8,24 @@ namespace NMSSaveEditor
 {
 
 public class dj : em {
-   private static double gX = 1000.0D;
-   private static double gY = 1000.0D;
-   private static double gZ = 1000.0D;
-   private ComboBox ha = new ComboBox();
-   private G hb;
-   private cN hc;
-   private cN hd;
-   private G he;
-   private G hf;
-   private G hg;
-   private G hh;
-   private Button bQ;
-   private Button bR;
-   private Button bS;
-   private bO hi;
-   private gv[] hj;
+   public static double gX = 1000.0D;
+   public static double gY = 1000.0D;
+   public static double gZ = 1000.0D;
+   public ComboBox ha = new ComboBox();
+   public G hb;
+   public cN hc;
+   public cN hd;
+   public G he;
+   public G hf;
+   public G hg;
+   public G hh;
+   public Button bQ;
+   public Button bR;
+   public Button bS;
+   public bO hi;
+   public gv[] hj;
 
-   dj(Application var1) {
+   public dj(Application var1) {
       this.ha.DataSource = (new dk(this));
       this.a("Multitool", true, this.ha);
       this.hb = new dl(this);
@@ -73,35 +73,35 @@ public class dj : em {
       this.b(this.hi);
    }
 
-   void w() {
+   public void w() {
       this.hi.w();
    }
 
-   void x() {
+   public void x() {
       this.hi.x();
    }
 
-   void y() {
+   public void y() {
       this.hi.y();
    }
 
-   void z() {
+   public void z() {
       this.hi.z();
    }
 
-   void A() {
+   public void A() {
       this.hi.A();
    }
 
-   void a(gt var1) {
+   public void a(gt var1) {
       this.hi.a(var1);
    }
 
-   gv[] aK() {
+   public gv[] aK() {
       return this.hj;
    }
 
-   void a(gv[] var1, gB var2) {
+   public void a(gv[] var1, gB var2) {
       this.hj = var1;
       if (var1.Length == 0) {
          this.ha.SelectedIndex = (-1);
@@ -116,37 +116,37 @@ public class dj : em {
 
       this.ha.Refresh();
    }
-   static gv[] a(dj var0) {
+   public static gv[] a(dj var0) {
       return var0.hj;
    }
-   static G b(dj var0) {
+   public static G b(dj var0) {
       return var0.hb;
    }
-   static cN c(dj var0) {
+   public static cN c(dj var0) {
       return var0.hc;
    }
-   static cN d(dj var0) {
+   public static cN d(dj var0) {
       return var0.hd;
    }
-   static G e(dj var0) {
+   public static G e(dj var0) {
       return var0.he;
    }
-   static G f(dj var0) {
+   public static G f(dj var0) {
       return var0.hf;
    }
-   static G g(dj var0) {
+   public static G g(dj var0) {
       return var0.hg;
    }
-   static G h(dj var0) {
+   public static G h(dj var0) {
       return var0.hh;
    }
-   static bO i(dj var0) {
+   public static bO i(dj var0) {
       return var0.hi;
    }
-   static ComboBox j(dj var0) {
+   public static ComboBox j(dj var0) {
       return var0.ha;
    }
-   static void a(dj var0, gv[] var1) {
+   public static void a(dj var0, gv[] var1) {
       var0.hj = var1;
    }
 }

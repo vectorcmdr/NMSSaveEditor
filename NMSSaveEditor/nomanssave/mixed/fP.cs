@@ -6,10 +6,10 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-class fP : IComparer<object> {
+public class fP : IComparer<object> {
    fN mw;
 
-   fP(fN var1) {
+   public fP(fN var1) {
       this.mw = var1;
    }
 

@@ -8,9 +8,9 @@ namespace NMSSaveEditor
 {
 
 public class a : Form {
-   private static a _a_inst = null;
+   public static a _a_inst = null;
 
-   private a(Frame var1) {
+   public a(Frame var1) {
       base(var1);
       this.FormBorderStyle = FormBorderStyle.FixedDialog; //(false);
       this.setModalExclusionType(ModalExclusionType.APPLICATION_EXCLUDE);

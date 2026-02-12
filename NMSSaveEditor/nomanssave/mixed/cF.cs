@@ -7,10 +7,10 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
-class cF : AbstractAction {
+public class cF : AbstractAction {
    cy gg;
 
-   cF(cy var1) {
+   public cF(cy var1) {
       this.gg = var1;
    }
 

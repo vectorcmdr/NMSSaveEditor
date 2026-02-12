@@ -7,21 +7,21 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-class fm : JavaThread {
-   WatchService lk = FileSystems.getDefault().newWatchService();
-   Dictionary<object, object> ll = new WeakHashMap();
+public class fm : JavaThread {
+   public WatchService lk = FileSystems.getDefault().newWatchService();
+   public Dictionary<object, object> ll = new WeakHashMap();
 
-   fm() {
+   public fm() {
       this.IsBackground = (true);
       this.Start();
    }
 
-   void a(fq var1, FileInfo var2) {
+   public void a(fq var1, FileInfo var2) {
       WatchKey var3 = var2.toPath().register(this.lk, StandardWatchEventKinds.ENTRY_CREATE, StandardWatchEventKinds.ENTRY_DELETE, StandardWatchEventKinds.ENTRY_MODIFY);
       this.ll.Put(var1, var3);
    }
 
-   void b(fq var1) {
+   public void b(fq var1) {
       WatchKey var2 = (WatchKey)this.ll.Remove(var1);
       if (var2 != null) {
          var2.cancel();

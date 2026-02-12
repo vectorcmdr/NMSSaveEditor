@@ -8,17 +8,17 @@ namespace NMSSaveEditor
 {
 
 public class hl {
-   private static Pattern sN = Pattern.compile("0x([0-9a-fA-F]{1,16})");
-   private static Pattern sO = Pattern.compile("[0-9a-fA-F]{12}");
-   private static Pattern sP = Pattern.compile("([0-9a-fA-F]{4}):([0-9a-fA-F]{4}):([0-9a-fA-F]{4}):([0-9a-fA-F]{4})");
-   private int sQ;
-   private int sR;
-   private int sS;
-   private int sT;
-   private int sU;
-   private int sV;
+   public static Pattern sN = Pattern.compile("0x([0-9a-fA-F]{1,16})");
+   public static Pattern sO = Pattern.compile("[0-9a-fA-F]{12}");
+   public static Pattern sP = Pattern.compile("([0-9a-fA-F]{4}):([0-9a-fA-F]{4}):([0-9a-fA-F]{4}):([0-9a-fA-F]{4})");
+   public int sQ;
+   public int sR;
+   public int sS;
+   public int sT;
+   public int sU;
+   public int sV;
 
-   private static long aE(string var0) {
+   public static long aE(string var0) {
       long var1 = 0L;
 
       for(int var4 = 0; var4 < var0.length(); ++var4) {
@@ -36,7 +36,7 @@ public class hl {
       return var1;
    }
 
-   private static int a(long var0, int var2) {
+   public static int a(long var0, int var2) {
       int var3 = -1 >>> 32 - var2;
       int var4 = int.MinValue >>> 32 - var2;
       int var5 = (int)(var0 & (long)var3);
@@ -47,7 +47,7 @@ public class hl {
       return var5;
    }
 
-   private static int b(long var0, int var2) {
+   public static int b(long var0, int var2) {
       int var3 = -1 >>> 32 - var2;
       return (int)(var0 & (long)var3);
    }
@@ -117,7 +117,7 @@ public class hl {
       }
    }
 
-   private hl(eY var1) {
+   public hl(eY var1) {
       this.sQ = var1.c("GalacticAddress.PlanetIndex", 0);
       this.sR = var1.c("GalacticAddress.SolarSystemIndex", 0);
       this.sS = var1.c("RealityIndex", 0);
@@ -135,7 +135,7 @@ public class hl {
       this.sV = a(var1 >> 0, 12);
    }
 
-   private hl(int var1, int var2, int var3, int var4, int var5, int var6) {
+   public hl(int var1, int var2, int var3, int var4, int var5, int var6) {
       this.sQ = var1;
       this.sR = var2;
       this.sS = var3;

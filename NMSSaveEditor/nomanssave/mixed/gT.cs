@@ -7,13 +7,13 @@ namespace NMSSaveEditor
 {
 
 public class gT {
-   static int rT = 12;
-   private static double rU = 0.1D;
+   public static int rT = 12;
+   public static double rU = 0.1D;
    private readonly double[] rV;
    private readonly double[] rW;
    private readonly double[] rX;
 
-   private static double[] b(double[] var0) {
+   public static double[] b(double[] var0) {
       double var1 = Math.Sqrt(var0[0] * var0[0] + var0[1] * var0[1] + var0[2] * var0[2]);
       if (var1 < 0.1D) {
          throw new Exception("vector cannot be normalized");
@@ -49,7 +49,7 @@ public class gT {
 
    }
 
-   private static double[] a(double var0, double[] var2, double[] var3) {
+   public static double[] a(double var0, double[] var2, double[] var3) {
       double var4 = Math.cos(var0);
       double var6 = -Math.sin(var0);
       double var8 = var3[0];
@@ -104,7 +104,7 @@ public class gT {
       return new double[]{var2, var4, var6};
    }
 
-   private void a(double[] var1, StringBuilder var2, StringBuilder var3, StringBuilder var4, int var5) {
+   public void a(double[] var1, StringBuilder var2, StringBuilder var3, StringBuilder var4, int var5) {
       int var6 = var2.length();
       var2.Append(a(var1[0], var5));
       var3.Append(a(var1[1], var5));
@@ -125,7 +125,7 @@ public class gT {
 
    }
 
-   private void a(StringBuilder var1, StringBuilder var2, StringBuilder var3, int var4) {
+   public void a(StringBuilder var1, StringBuilder var2, StringBuilder var3, int var4) {
       int var5 = Math.Max(Math.Max(var1.length(), var2.length()), var3.length());
 
       while(var1.length() < var5) {
@@ -173,23 +173,23 @@ public class gT {
       return var5.ToString();
    }
 
-   static string e(double[] var0) {
+   public static string e(double[] var0) {
       return a(var0, 12);
    }
 
-   static string a(double[] var0, int var1) {
+   public static string a(double[] var0, int var1) {
       return "[ " + b(var0[0], var1) + " , " + b(var0[1], var1) + " , " + b(var0[2], var1) + " ]";
    }
 
-   static string f(double[] var0) {
+   public static string f(double[] var0) {
       return b(var0, 12);
    }
 
-   static string b(double[] var0, int var1) {
+   public static string b(double[] var0, int var1) {
       return "[ " + b(var0[0], var1) + " , " + b(var0[1], var1) + " , " + b(var0[2], var1) + " , " + b(var0[3], var1) + " ]";
    }
 
-   static string a(double var0, int var2) {
+   public static string a(double var0, int var2) {
       if (Double.isInfinite(var0)) {
          return "Infinite";
       } else if (Double.isNaN(var0)) {
@@ -201,7 +201,7 @@ public class gT {
       }
    }
 
-   static string b(double var0, int var2) {
+   public static string b(double var0, int var2) {
       if (Double.isInfinite(var0)) {
          return "Infinite";
       } else if (Double.isNaN(var0)) {

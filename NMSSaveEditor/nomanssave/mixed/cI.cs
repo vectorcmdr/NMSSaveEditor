@@ -7,11 +7,11 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
-class cI : TreeModel {
-   private List<object> gh;
+public class cI : TreeModel {
+   public List<object> gh;
    cy gg;
 
-   private cI(cy var1) {
+   public cI(cy var1) {
       this.gg = var1;
       this.gh = new List<object>();
    }
@@ -64,7 +64,7 @@ class cI : TreeModel {
       }
 
    }
-   cI(cy var1, cI var2) {
+   public cI(cy var1, cI var2) {
       this(var1);
    }
 }

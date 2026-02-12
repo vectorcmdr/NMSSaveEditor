@@ -51,9 +51,9 @@ public sealed class ex {
    public static readonly ex jB = new ex("Procedural");
 
 
-   private string name;
+   public string name;
 
-   private ex(string var3) {
+   public ex(string var3) {
       this.name = var3;
    }
 

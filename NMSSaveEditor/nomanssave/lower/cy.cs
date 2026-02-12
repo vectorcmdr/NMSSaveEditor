@@ -10,22 +10,22 @@ namespace NMSSaveEditor
 {
 
 public class cy : Form, TreeSelectionListener {
-   private string fS;
-   private eY fT = null;
-   private Button fU;
-   private JTree fV;
-   private Panel fW;
-   private TextBox fX;
-   private Panel fY;
-   private cJ fZ;
-   private bool ga;
-   private bool gb;
-   private static string gc = "0123456789ABCDEFabcdef";
-   private static cy gd = null;
-   private bool ge = true;
-   private string gf = "";
+   public string fS;
+   public eY fT = null;
+   public Button fU;
+   public JTree fV;
+   public Panel fW;
+   public TextBox fX;
+   public Panel fY;
+   public cJ fZ;
+   public bool ga;
+   public bool gb;
+   public static string gc = "0123456789ABCDEFabcdef";
+   public static cy gd = null;
+   public bool ge = true;
+   public string gf = "";
 
-   private cy(Application var1) {
+   public cy(Application var1) {
       base(var1.g());
       Rectangle var2 = new Rectangle(100, 100, 1000, 700);
       Point var3 = var1.g().getLocation();
@@ -73,7 +73,7 @@ public class cy : Form, TreeSelectionListener {
       this.fX.getActionMap().Put("find", var6);
    }
 
-   private bool a(string var1, eY var2) {
+   public bool a(string var1, eY var2) {
       this.Text = ("JSON Editor (Advanced Users Only)");
       this.fS = var1;
       this.fT = var2;
@@ -102,7 +102,7 @@ public class cy : Form, TreeSelectionListener {
       return this.gb;
    }
 
-   private static string ay() {
+   public static string ay() {
       string var0;
       try {
          var0 = (string)Toolkit.getDefaultToolkit().getSystemClipboard().getData(DataFlavor.stringFlavor);
@@ -141,7 +141,7 @@ public class cy : Form, TreeSelectionListener {
       return var1.ToString();
    }
 
-   private static int a(char var0) {
+   public static int a(char var0) {
       int var1 = "0123456789ABCDEFabcdef".IndexOf(var0);
       if (var1 < 0) {
          throw new Exception("Error decoding hex");
@@ -154,7 +154,7 @@ public class cy : Form, TreeSelectionListener {
       }
    }
 
-   private static void a(string var0, ClipboardOwner var1) {
+   public static void a(string var0, ClipboardOwner var1) {
       StringBuilder var2 = new StringBuilder();
       char[] var3 = var0.ToCharArray();
 
@@ -229,7 +229,7 @@ public class cy : Form, TreeSelectionListener {
       }
    }
 
-   void a(string var1, bool var2, bool var3, bool var4) {
+   public void a(string var1, bool var2, bool var3, bool var4) {
       string var5 = this.fX.Text;
       if (!this.gf.Equals(var1)) {
          Highlighter var6 = this.fX.getHighlighter();
@@ -280,37 +280,37 @@ public class cy : Form, TreeSelectionListener {
       }
 
    }
-   static string az() {
+   public static string az() {
       return ay();
    }
-   static void b(string var0, ClipboardOwner var1) {
+   public static void b(string var0, ClipboardOwner var1) {
       a(var0, var1);
    }
-   static string a(cy var0) {
+   public static string a(cy var0) {
       return var0.fS;
    }
-   static eY b(cy var0) {
+   public static eY b(cy var0) {
       return var0.fT;
    }
-   static void a(cy var0, bool var1) {
+   public static void a(cy var0, bool var1) {
       var0.ga = var1;
    }
-   static void b(cy var0, bool var1) {
+   public static void b(cy var0, bool var1) {
       var0.gb = var1;
    }
-   static TextBox c(cy var0) {
+   public static TextBox c(cy var0) {
       return var0.fX;
    }
-   static cJ d(cy var0) {
+   public static cJ d(cy var0) {
       return var0.fZ;
    }
-   static JTree e(cy var0) {
+   public static JTree e(cy var0) {
       return var0.fV;
    }
-   static Button f(cy var0) {
+   public static Button f(cy var0) {
       return var0.fU;
    }
-   static bool g(cy var0) {
+   public static bool g(cy var0) {
       return var0.ga;
    }
 }

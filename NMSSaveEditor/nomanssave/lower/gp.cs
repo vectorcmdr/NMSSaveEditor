@@ -7,8 +7,8 @@ namespace NMSSaveEditor
 {
 
 public class gp {
-   private int index;
-   private eY oR;
+   public int index;
+   public eY oR;
 
    public static gp[] q(eY var0) {
       eV var1 = var0.d("FleetFrigates");
@@ -31,7 +31,7 @@ public class gp {
       }
    }
 
-   private gp(int var1, eY var2) {
+   public gp(int var1, eY var2) {
       this.index = var1;
       this.oR = var2;
    }

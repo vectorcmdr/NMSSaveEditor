@@ -12,18 +12,18 @@ public class cW : Panel, CaretListener {
    public static float gx = 0.0F;
    public static float gy = 0.5F;
    public static float gz = 1.0F;
-   private static object gA;
-   private static int HEIGHT = 2146483647;
-   private JTextComponent gB;
-   private bool gC;
-   private int gD;
-   private Color gE;
-   private float gF;
-   private int gG;
-   private int gH;
-   private int gI;
-   private int gJ;
-   private Dictionary<object, object> gK;
+   public static object gA;
+   public static int HEIGHT = 2146483647;
+   public JTextComponent gB;
+   public bool gC;
+   public int gD;
+   public Color gE;
+   public float gF;
+   public int gG;
+   public int gH;
+   public int gI;
+   public int gJ;
+   public Dictionary<object, object> gK;
 
    static cW() {
       gA = new MatteBorder(0, 0, 0, 2, Color.GRAY);
@@ -90,7 +90,7 @@ public class cW : Panel, CaretListener {
       this.aI();
    }
 
-   private void aI() {
+   public void aI() {
       Element var1 = this.gB.getDocument().getDefaultRootElement();
       int var2 = var1.getElementCount();
       int var3 = Math.Max(Convert.ToString(var2).length(), this.gG);
@@ -138,7 +138,7 @@ public class cW : Panel, CaretListener {
 
    }
 
-   private bool A(int var1) {
+   public bool A(int var1) {
       int var2 = this.gB.getCaretPosition();
       Element var3 = this.gB.getDocument().getDefaultRootElement();
       return var3.getElementIndex(var1) == var3.getElementIndex(var2);
@@ -151,11 +151,11 @@ public class cW : Panel, CaretListener {
       return var4.getStartOffset() == var1 ? Convert.ToString(var3 + 1) : "";
    }
 
-   private int b(int var1, int var2) {
+   public int b(int var1, int var2) {
       return (int)((float)(var1 - var2) * this.gF);
    }
 
-   private int a(int var1, FontMetrics var2) {
+   public int a(int var1, FontMetrics var2) {
       Rectangle var3 = this.gB.modelToView(var1);
       int var4 = var2.Height;
       int var5 = var3.y + var3.height;
@@ -214,7 +214,7 @@ public class cW : Panel, CaretListener {
       this.aJ();
    }
 
-   private void aJ() {
+   public void aJ() {
       Control.invokeLater(new cX(this));
    }
 
@@ -231,16 +231,16 @@ public class cW : Panel, CaretListener {
       }
 
    }
-   static JTextComponent a(cW var0) {
+   public static JTextComponent a(cW var0) {
       return var0.gB;
    }
-   static int b(cW var0) {
+   public static int b(cW var0) {
       return var0.gI;
    }
-   static void c(cW var0) {
+   public static void c(cW var0) {
       var0.aI();
    }
-   static void a(cW var0, int var1) {
+   public static void a(cW var0, int var1) {
       var0.gI = var1;
    }
 }

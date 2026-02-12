@@ -6,11 +6,11 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-class bt : ActionListener {
+public class bt : ActionListener {
    bl er;
-   private Application bv;
+   public Application bv;
 
-   bt(bl var1, Application var2) {
+   public bt(bl var1, Application var2) {
       this.er = var1;
       this.bv = var2;
    }
@@ -18,7 +18,7 @@ class bt : ActionListener {
    public void valueChanged(EventArgs var1) {
       System.Windows.Forms.Application.Run(new bu(this, this.bv));
    }
-   static bl a(bt var0) {
+   public static bl a(bt var0) {
       return var0.er;
    }
 }

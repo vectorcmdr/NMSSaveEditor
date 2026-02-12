@@ -7,8 +7,8 @@ namespace NMSSaveEditor
 {
 
 public class hg {
-   private static SecureRandom sv = new SecureRandom();
-   private long sw;
+   public static SecureRandom sv = new SecureRandom();
+   public long sw;
 
    public static hg aB(string var0) {
       var0 = var0.Trim();

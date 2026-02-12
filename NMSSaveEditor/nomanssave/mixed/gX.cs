@@ -8,8 +8,8 @@ namespace NMSSaveEditor
 {
 
 public class gX : FilterInputStream {
-   private ha sa;
-   private int sb;
+   public ha sa;
+   public int sb;
 
    public gX(Stream var1, byte[] var2) {
       base(var1);
@@ -23,7 +23,7 @@ public class gX : FilterInputStream {
       return this.sb;
    }
 
-   private bool ej() {
+   public bool ej() {
       byte[] var1 = new byte[16];
       int var2 = this.@in.read(var1, 0, 16);
       if (var2 < 0) {
@@ -53,7 +53,7 @@ public class gX : FilterInputStream {
    public int read(byte[] var1, int var2, int var3) {
       return this.sa != null && (this.sa.Length != 0 || this.ej()) ? this.sa.read(var1, var2, var3) : -1;
    }
-   static Stream a(gX var0) {
+   public static Stream a(gX var0) {
       return var0.@in;
    }
 }

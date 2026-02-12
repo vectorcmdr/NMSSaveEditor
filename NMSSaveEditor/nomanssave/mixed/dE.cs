@@ -9,17 +9,17 @@ namespace NMSSaveEditor
 {
 
 public class dE : Panel {
-   private ba hv;
-   private ba hw;
-   private ComboBox hx;
-   private G hy;
-   private G hz;
-   private G[] ea;
-   private DataGridView hA;
-   private dt hB;
-   private gE[] hC;
+   public ba hv;
+   public ba hw;
+   public ComboBox hx;
+   public G hy;
+   public G hz;
+   public G[] ea;
+   public DataGridView hA;
+   public dt hB;
+   public gE[] hC;
 
-   dE(Application var1) {
+   public dE(Application var1) {
       GridBagLayout var2 = new GridBagLayout();
       var2.columnWidths = new int[]{aH.cI, 0, 0};
       var2.rowHeights = new int[1];
@@ -73,11 +73,11 @@ public class dE : Panel {
       this.Add(this.hB, var3);
    }
 
-   gE[] aN() {
+   public gE[] aN() {
       return this.hC;
    }
 
-   void a(gE[] var1) {
+   public void a(gE[] var1) {
       if (var1.Length == 0) {
          this.hC = new gE[0];
          this.hx.SelectedIndex = (-1);
@@ -88,25 +88,25 @@ public class dE : Panel {
 
       this.hx.Refresh();
    }
-   static ComboBox a(dE var0) {
+   public static ComboBox a(dE var0) {
       return var0.hx;
    }
-   static gE[] b(dE var0) {
+   public static gE[] b(dE var0) {
       return var0.hC;
    }
-   static G c(dE var0) {
+   public static G c(dE var0) {
       return var0.hy;
    }
-   static G d(dE var0) {
+   public static G d(dE var0) {
       return var0.hz;
    }
-   static G[] e(dE var0) {
+   public static G[] e(dE var0) {
       return var0.ea;
    }
-   static dt f(dE var0) {
+   public static dt f(dE var0) {
       return var0.hB;
    }
-   static DataGridView g(dE var0) {
+   public static DataGridView g(dE var0) {
       return var0.hA;
    }
 }

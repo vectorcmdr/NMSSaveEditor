@@ -8,15 +8,15 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-class fC : fs {
-   int mb;
-   FileInfo mc;
-   string md;
+public class fC : fs {
+   public int mb;
+   public FileInfo mc;
+   public string md;
    byte[] lK;
    fn be;
    fA ma;
 
-   fC(fA var1, string var2, int var3) {
+   public fC(fA var1, string var2, int var3) {
       this.ma = var1;
       this.mb = var3;
       this.mc = new FileInfo(aH.cG, var2);

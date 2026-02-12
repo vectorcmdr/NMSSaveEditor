@@ -9,15 +9,15 @@ namespace NMSSaveEditor
 {
 
 public class fA : fq {
-   private static readonly byte[] lA = "NOMANSKY".GetBytes();
-   private static Pattern lV = Pattern.compile("savedata(\\d{2})\\.hg", 2);
-   private static Pattern lW = Pattern.compile("ps4_backup(\\d*)\\.\\d*\\.zip", 2);
-   private FileInfo lX;
-   private fR lE;
-   private fB lY;
-   private fD[] lZ;
+   public static readonly byte[] lA = "NOMANSKY".GetBytes();
+   public static Pattern lV = Pattern.compile("savedata(\\d{2})\\.hg", 2);
+   public static Pattern lW = Pattern.compile("ps4_backup(\\d*)\\.\\d*\\.zip", 2);
+   public FileInfo lX;
+   public fR lE;
+   public fB lY;
+   public fD[] lZ;
 
-   fA(FileInfo var1, fR var2) {
+   public fA(FileInfo var1, fR var2) {
       this.lX = var1;
       this.lE = var2;
 
@@ -44,7 +44,7 @@ public class fA : fq {
       fl.a(this, var1);
    }
 
-   private static eY a(byte[] var0, eG var1) {
+   public static eY a(byte[] var0, eG var1) {
       Throwable var2 = null;
       object var3 = null;
 
@@ -94,7 +94,7 @@ public class fA : fq {
       }
    }
 
-   private static byte[] g(eY var0) {
+   public static byte[] g(eY var0) {
       MemoryStream var1 = new MemoryStream();
       Throwable var2 = null;
       object var3 = null;
@@ -185,22 +185,22 @@ public class fA : fq {
       }
 
    }
-   static FileInfo a(fA var0) {
+   public static FileInfo a(fA var0) {
       return var0.lX;
    }
-   static byte[] bY() {
+   public static byte[] bY() {
       return lA;
    }
-   static eY b(byte[] var0, eG var1) {
+   public static eY b(byte[] var0, eG var1) {
       return a(var0, var1);
    }
-   static byte[] l(eY var0) {
+   public static byte[] l(eY var0) {
       return g(var0);
    }
-   static fD[] b(fA var0) {
+   public static fD[] b(fA var0) {
       return var0.lZ;
    }
-   static Pattern cb() {
+   public static Pattern cb() {
       return lW;
    }
 }

@@ -7,11 +7,11 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-class hj : JavaThread {
-   long sK;
-   string sL;
+public class hj : JavaThread {
+   public long sK;
+   public string sL;
 
-   hj(long var1) {
+   public hj(long var1) {
       this.sK = var1;
       this.sL = aH.getProperty("KnownPlayers." + var1);
       hi.ep().Put(var1, this);

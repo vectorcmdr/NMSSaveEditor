@@ -6,7 +6,7 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-class hd : Handler {
+public class hd : Handler {
    public void publish(LogRecord var1) {
       hc.a(var1);
    }

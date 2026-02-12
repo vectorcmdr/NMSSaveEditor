@@ -6,21 +6,21 @@ using System.Text;
 namespace NMSSaveEditor
 {
 public interface gQ {
-   string getType();
+   public string getType();
 
-   object dz();
+   public object dz();
    public string ei() {
       object var1 = this.dz();
       return var1 is fg ? ((fg)var1).bP() : var1.ToString();
    }
 
-   void m(object var1);
+   public void m(object var1);
 
-   int dA();
+   public int dA();
 
-   void aA(int var1);
+   public void aA(int var1);
 
-   int dB();
+   public int dB();
 }
 
 }

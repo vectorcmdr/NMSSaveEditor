@@ -7,10 +7,10 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-class cX : Runnable {
+public class cX : Runnable {
    cW gL;
 
-   cX(cW var1) {
+   public cX(cW var1) {
       this.gL = var1;
    }
 

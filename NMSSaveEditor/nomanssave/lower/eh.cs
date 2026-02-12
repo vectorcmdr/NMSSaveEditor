@@ -5,11 +5,11 @@ using System.Text;
 
 namespace NMSSaveEditor
 {
-class eh : G {
+public class eh : G {
    ec ik;
-   private int il;
+   public int il;
 
-   eh(ec var1, int var2) {
+   public eh(ec var1, int var2) {
       this.ik = var1;
       this.il = var2;
    }

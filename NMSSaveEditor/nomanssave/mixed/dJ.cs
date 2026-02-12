@@ -7,10 +7,10 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
-class dJ : ComboBox {
+public class dJ : ComboBox {
    dE hE;
 
-   dJ(dE var1) {
+   public dJ(dE var1) {
       this.hE = var1;
       this.DataSource = (new dK(this));
       this.setRenderer(new dL(this));

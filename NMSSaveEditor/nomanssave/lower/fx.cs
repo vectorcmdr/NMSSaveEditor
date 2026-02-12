@@ -7,11 +7,11 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-class fx : fs {
+public class fx : fs {
    fw lI;
    fu lJ;
 
-   fx(fu var1, fw var2) {
+   public fx(fu var1, fw var2) {
       this.lJ = var1;
       this.lI = var2;
    }

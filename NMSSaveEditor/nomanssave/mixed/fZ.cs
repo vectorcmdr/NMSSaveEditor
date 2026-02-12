@@ -6,11 +6,11 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-class fZ : ft {
-   int lT;
+public class fZ : ft {
+   public int lT;
    fT mN;
 
-   fZ(fT var1, int var2) {
+   public fZ(fT var1, int var2) {
       this.mN = var1;
       this.lT = var2;
    }
@@ -84,7 +84,7 @@ class fZ : ft {
 
       return var1.ToString();
    }
-   static fT a(fZ var0) {
+   public static fT a(fZ var0) {
       return var0.mN;
    }
 }

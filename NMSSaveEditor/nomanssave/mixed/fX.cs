@@ -8,15 +8,15 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-abstract class fX {
+public abstract class fX {
    fW mO;
-   FileInfo mX;
-   FileInfo mY;
+   public FileInfo mX;
+   public FileInfo mY;
    fS mZ;
-   int mode;
+   public int mode;
    fT mN;
 
-   fX(fT var1, fV var2) {
+   public fX(fT var1, fV var2) {
       this.mN = var1;
       int var3 = fT.c(var1).Count;
 
@@ -53,7 +53,7 @@ abstract class fX {
       }
    }
 
-   fX(fT var1, string var2) {
+   public fX(fT var1, string var2) {
       this.mN = var1;
       this.mO = fT.a(var1, var2);
       FileInfo var3 = new FileInfo(fT.d(var1), this.mO.mU);
@@ -118,7 +118,7 @@ abstract class fX {
       return this.mO.filename;
    }
 
-   private Stream getInputStream() {
+   public Stream getInputStream() {
       Stream var1 = fT.b(new FileStream(this.mY), this.mZ.ch());
       if (var1 is gX) {
          this.mode = fT.cv();
@@ -131,7 +131,7 @@ abstract class fX {
       return var1;
    }
 
-   private Stream getOutputStream() {
+   public Stream getOutputStream() {
       FileStream var1 = new FileStream(this.mY);
 
       try {
@@ -153,7 +153,7 @@ abstract class fX {
       }
    }
 
-   eY a(eG var1) {
+   public eY a(eG var1) {
       Throwable var2 = null;
       object var3 = null;
 
@@ -203,7 +203,7 @@ abstract class fX {
       }
    }
 
-   byte[] ah(int var1) {
+   public byte[] ah(int var1) {
       MemoryStream var2 = new MemoryStream();
       Throwable var3 = null;
       object var4 = null;
@@ -240,7 +240,7 @@ abstract class fX {
       return var2.toByteArray();
    }
 
-   void h(eY var1) {
+   public void h(eY var1) {
       bool var2 = this.mode == fT.cw();
       MemoryStream var3 = new MemoryStream();
       Throwable var4 = null;
@@ -305,7 +305,7 @@ abstract class fX {
       fT.e(this.mN);
    }
 
-   void a(string var1, fn var2) {
+   public void a(string var1, fn var2) {
       Dictionary<string, string> var3 = new Dictionary<string, string>();
       var3.setProperty("MetaFile", this.mZ.Name);
       var3.setProperty("DataFile", this.mY.Name);

@@ -8,22 +8,22 @@ namespace NMSSaveEditor
 {
 
 public class X : Panel {
-   private ComboBox bG;
-   private ComboBox bH;
-   private G bI;
-   private G bJ;
-   private G bK;
-   private G bL;
-   private G bM;
-   private CheckBox bN;
-   private cN bO;
-   private cN bP;
-   private Button bQ;
-   private Button bR;
-   private Button bS;
-   private gj[] bT;
+   public ComboBox bG;
+   public ComboBox bH;
+   public G bI;
+   public G bJ;
+   public G bK;
+   public G bL;
+   public G bM;
+   public CheckBox bN;
+   public cN bO;
+   public cN bP;
+   public Button bQ;
+   public Button bR;
+   public Button bS;
+   public gj[] bT;
 
-   X(Application var1) {
+   public X(Application var1) {
       TableLayoutPanel var2 = new TableLayoutPanel(1, 3);
       this.SuspendLayout(); // TODO: set layout var2);
       ba var3 = new ba(new int[]{aH.cJ, 0});
@@ -83,7 +83,7 @@ public class X : Panel {
       var3.a(var4);
    }
 
-   void a(gj[] var1) {
+   public void a(gj[] var1) {
       this.bT = var1;
       if (var1.Length == 0) {
          this.bG.SelectedIndex = (-1);
@@ -93,40 +93,40 @@ public class X : Panel {
 
       this.bG.Refresh();
    }
-   static gj[] a(X var0) {
+   public static gj[] a(X var0) {
       return var0.bT;
    }
-   static ComboBox b(X var0) {
+   public static ComboBox b(X var0) {
       return var0.bH;
    }
-   static G c(X var0) {
+   public static G c(X var0) {
       return var0.bI;
    }
-   static G d(X var0) {
+   public static G d(X var0) {
       return var0.bJ;
    }
-   static G e(X var0) {
+   public static G e(X var0) {
       return var0.bK;
    }
-   static G f(X var0) {
+   public static G f(X var0) {
       return var0.bL;
    }
-   static G g(X var0) {
+   public static G g(X var0) {
       return var0.bM;
    }
-   static CheckBox h(X var0) {
+   public static CheckBox h(X var0) {
       return var0.bN;
    }
-   static cN i(X var0) {
+   public static cN i(X var0) {
       return var0.bO;
    }
-   static cN j(X var0) {
+   public static cN j(X var0) {
       return var0.bP;
    }
-   static ComboBox k(X var0) {
+   public static ComboBox k(X var0) {
       return var0.bG;
    }
-   static void a(X var0, gj[] var1) {
+   public static void a(X var0, gj[] var1) {
       var0.bT = var1;
    }
 }

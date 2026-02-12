@@ -5,11 +5,11 @@ using System.Text;
 
 namespace NMSSaveEditor
 {
-abstract class fc {
+public abstract class fc {
    fc kN;
    eY kL;
 
-   fc(eY var1, fc var2) {
+   public fc(eY var1, fc var2) {
       this.kL = var1;
       this.kN = var2;
    }

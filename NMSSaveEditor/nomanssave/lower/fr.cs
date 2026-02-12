@@ -6,11 +6,11 @@ using System.Text;
 namespace NMSSaveEditor
 {
 public interface fr {
-   string K();
+   public string K();
 
-   eY M();
+   public eY M();
 
-   void k(eY var1);
+   public void k(eY var1);
 }
 
 }

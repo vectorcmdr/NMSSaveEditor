@@ -8,19 +8,19 @@ namespace NMSSaveEditor
 {
 
 public class eH : ey {
-   bool jY;
-   string name;
+   public bool jY;
+   public string name;
    ex jZ;
-   bool special;
-   Integer ka;
-   string jM;
-   bool kb;
-   string kc;
-   int kd;
-   string description;
-   List<object> ke;
+   public bool special;
+   public Integer ka;
+   public string jM;
+   public bool kb;
+   public string kc;
+   public int kd;
+   public string description;
+   public List<object> ke;
 
-   eH(Element var1, bool var2) {
+   public eH(Element var1, bool var2) {
       base(var1.getAttribute("id"));
       this.jY = var2;
       this.name = var1.getAttribute("name");

@@ -12,9 +12,9 @@ public sealed class eB {
    public static readonly eB jQ = new eB("TechBox");
 
 
-   private string name;
+   public string name;
 
-   private eB(string var3) {
+   public eB(string var3) {
       this.name = var3;
    }
 

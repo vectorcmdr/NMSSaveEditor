@@ -7,10 +7,10 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
-class cA : DefaultTreeCellRenderer {
+public class cA : DefaultTreeCellRenderer {
    cy gg;
 
-   cA(cy var1) {
+   public cA(cy var1) {
       this.gg = var1;
    }
 

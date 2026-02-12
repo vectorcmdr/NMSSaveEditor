@@ -7,9 +7,9 @@ namespace NMSSaveEditor
 {
 
 public class gO {
-   private int index;
-   private eY rO;
-   private List<object> gT;
+   public int index;
+   public eY rO;
+   public List<object> gT;
 
    public static gO[] E(eY var0) {
       eV var1 = var0.d("VehicleOwnership");
@@ -36,13 +36,13 @@ public class gO {
       }
    }
 
-   private static Function a(gO var0, string var1) {
+   public static Function a(gO var0, string var1) {
       return (var2) => {
          return new string[]{var0.getType(), var1};
       };
    }
 
-   private gO(int var1, eY var2, eY var3, eY var4) {
+   public gO(int var1, eY var2, eY var3, eY var4) {
       this.index = var1;
       this.rO = var2;
       short var5;
@@ -79,7 +79,7 @@ public class gO {
       this.gT = new List<object>(var12);
    }
 
-   private gO(eY var1, eY var2) {
+   public gO(eY var1, eY var2) {
       this.index = 1000;
       this.rO = var1;
       var2.a((var1x, var2x, var3x) => {

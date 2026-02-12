@@ -9,9 +9,9 @@ namespace NMSSaveEditor
 {
 
 public class fq {
-   int lz = 15;
+   public int lz = 15;
 
-   static string c(long var0) {
+   public static string c(long var0) {
       int var2 = (int)(var0 % 60L);
       var0 /= 60L;
       int var3 = (int)(var0 % 60L);
@@ -28,7 +28,7 @@ public class fq {
       return var5.ToString();
    }
 
-   static string c(fq var0) {
+   public static string c(fq var0) {
       if (var0 is fJ) {
          return "Steam";
       } else if (var0 is fT) {
@@ -38,7 +38,7 @@ public class fq {
       }
    }
 
-   static fq a(FileInfo var0, fR var1) {
+   public static fq a(FileInfo var0, fR var1) {
       if (!var0.Exists) {
          return null;
       } else {
@@ -82,7 +82,7 @@ public class fq {
       }
    }
 
-   static fq a(string var0, FileInfo var1, fR var2) {
+   public static fq a(string var0, FileInfo var1, fR var2) {
       if (!var1.Exists) {
          return null;
       } else if (var0 == null) {

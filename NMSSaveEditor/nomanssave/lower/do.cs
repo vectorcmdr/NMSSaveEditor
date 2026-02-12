@@ -7,7 +7,7 @@ namespace NMSSaveEditor
 {
 class @do : G {
    dj hl;
-   @do(dj var1) {
+   public @do(dj var1) {
       this.hl = var1;
    }
 

@@ -8,9 +8,9 @@ namespace NMSSaveEditor
 {
 
 public class cv : JFileChooser {
-   private static cv fQ = null;
-   private static string name = "Weapon Export FileInfo";
-   private static Image fH = Application.a("UI-WEAPONICON.PNG", 16, 16);
+   public static cv fQ = null;
+   public static string name = "Weapon Export FileInfo";
+   public static Image fH = Application.a("UI-WEAPONICON.PNG", 16, 16);
 
    public static cv ax() {
       if (fQ == null) {
@@ -20,7 +20,7 @@ public class cv : JFileChooser {
       return fQ;
    }
 
-   private cv() {
+   public cv() {
       this.setFileSelectionMode(0);
       this.setAcceptAllFileFilterUsed(false);
       this.setFileView(new cw(this));
@@ -33,7 +33,7 @@ public class cv : JFileChooser {
 
       });
    }
-   static Image @as() {
+   public static Image @as() {
       return fH;
    }
 }

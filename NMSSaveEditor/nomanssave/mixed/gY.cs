@@ -7,11 +7,11 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-class gY : Stream {
-   private int sc;
+public class gY : Stream {
+   public int sc;
    gX sd;
 
-   private gY(gX var1, int var2) {
+   public gY(gX var1, int var2) {
       this.sd = var1;
       this.sc = var2;
    }
@@ -51,7 +51,7 @@ class gY : Stream {
          }
       }
    }
-   gY(gX var1, int var2, gY var3) {
+   public gY(gX var1, int var2, gY var3) {
       this(var1, var2);
    }
 

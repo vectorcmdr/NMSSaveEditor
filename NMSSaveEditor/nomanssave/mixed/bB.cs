@@ -6,11 +6,11 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-class bB : object {
+public class bB : object {
    er eu;
    bl er;
 
-   private bB(bl var1) {
+   public bB(bl var1) {
       this.er = var1;
    }
 
@@ -72,7 +72,7 @@ class bB : object {
    public object getElementAt(int var1) {
       return this.v(var1);
    }
-   bB(bl var1, bB var2) {
+   public bB(bl var1, bB var2) {
       this(var1);
    }
 }

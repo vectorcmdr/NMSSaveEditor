@@ -8,20 +8,20 @@ namespace NMSSaveEditor
 {
 
 public class ap : Panel {
-   private DataGridView ci;
-   private object cj;
-   private DataGridView ck;
-   private object cl;
+   public DataGridView ci;
+   public object cj;
+   public DataGridView ck;
+   public object cl;
    private readonly CheckBox[] cm;
-   private DataGridView cn;
-   private object co;
-   private gz cp;
-   private eV cq;
-   private eV cr;
-   private eV cs;
-   private List<object> ct = new List<object>();
+   public DataGridView cn;
+   public object co;
+   public gz cp;
+   public eV cq;
+   public eV cr;
+   public eV cs;
+   public List<object> ct = new List<object>();
 
-   ap(Application var1) {
+   public ap(Application var1) {
       TableLayoutPanel var2 = new TableLayoutPanel(2, 2);
       this.SuspendLayout(); // TODO: set layout var2);
       Panel var3 = new Panel();
@@ -155,7 +155,7 @@ public class ap : Panel {
 
    }
 
-   private void R() {
+   public void R() {
       if (this.cp != null) {
          int var1 = 0;
 

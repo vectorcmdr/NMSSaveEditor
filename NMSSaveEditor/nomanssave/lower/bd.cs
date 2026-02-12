@@ -8,22 +8,22 @@ namespace NMSSaveEditor
 {
 
 public class bd : em {
-   private static double dE = 1000.0D;
-   private static double dF = 1000.0D;
-   private G dG;
-   private cN dH;
-   private cN dI;
-   private G dJ;
-   private G dK;
-   private G dL;
-   private G dM;
-   private TextBox bm;
-   private Button bn;
-   private Button bo;
-   private bO dN;
-   private gm dO;
+   public static double dE = 1000.0D;
+   public static double dF = 1000.0D;
+   public G dG;
+   public cN dH;
+   public cN dI;
+   public G dJ;
+   public G dK;
+   public G dL;
+   public G dM;
+   public TextBox bm;
+   public Button bn;
+   public Button bo;
+   public bO dN;
+   public gm dO;
 
-   bd(Application var1) {
+   public bd(Application var1) {
       this.k("Freighter");
       this.dG = new be(this);
       this.a("Name", this.dG);
@@ -69,31 +69,31 @@ public class bd : em {
       this.b(this.dN);
    }
 
-   void w() {
+   public void w() {
       this.dN.w();
    }
 
-   void x() {
+   public void x() {
       this.dN.x();
    }
 
-   void y() {
+   public void y() {
       this.dN.y();
    }
 
-   void A() {
+   public void A() {
       this.dN.A();
    }
 
-   void a(gt var1) {
+   public void a(gt var1) {
       this.dN.a(var1);
    }
 
-   gm Z() {
+   public gm Z() {
       return this.dO;
    }
 
-   void c(gm var1) {
+   public void c(gm var1) {
       if (var1 == null) {
          this.dO = null;
          this.dG.Text = ("");
@@ -132,13 +132,13 @@ public class bd : em {
       }
 
    }
-   static gm a(bd var0) {
+   public static gm a(bd var0) {
       return var0.dO;
    }
-   static G b(bd var0) {
+   public static G b(bd var0) {
       return var0.dG;
    }
-   static G c(bd var0) {
+   public static G c(bd var0) {
       return var0.dJ;
    }
 }

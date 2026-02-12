@@ -15,11 +15,11 @@ public sealed class gy {
    public static readonly gy qX = new gy("Gek (Old)", null, "MODELS/PLANETS/NPCS/LOWERORDER/LOWERORDER.SCENE.MBIN");
    public static readonly gy qY = new gy("Fourth Race (Old)", null, "MODELS/PLANETS/NPCS/FOURTHRACE/FOURTHRACE.SCENE.MBIN");
 
-   private string name;
-   private string qZ;
-   private string filename;
+   public string name;
+   public string qZ;
+   public string filename;
 
-   private gy(string var3, string var4, string var5) {
+   public gy(string var3, string var4, string var5) {
       this.name = var3;
       this.qZ = var4;
       this.filename = var5;

@@ -5,11 +5,11 @@ using System.Text;
 
 namespace NMSSaveEditor
 {
-class eZ : fc {
-   int index;
+public class eZ : fc {
+   public int index;
    eY kL;
 
-   eZ(eY var1, int var2, fc var3) {
+   public eZ(eY var1, int var2, fc var3) {
       base(var1, var3);
       this.kL = var1;
       this.index = var2;

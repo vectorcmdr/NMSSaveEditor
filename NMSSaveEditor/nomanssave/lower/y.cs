@@ -9,11 +9,11 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
-class y : Runnable {
+public class y : Runnable {
    x bb;
-   private bool ba;
+   public bool ba;
 
-   y(x var1, bool var2) {
+   public y(x var1, bool var2) {
       this.bb = var1;
       this.ba = var2;
    }

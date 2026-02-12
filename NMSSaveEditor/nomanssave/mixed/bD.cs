@@ -7,10 +7,10 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
-class bD : object {
+public class bD : object {
    bl er;
 
-   private bD(bl var1) {
+   public bD(bl var1) {
       this.er = var1;
    }
 
@@ -39,7 +39,7 @@ class bD : object {
 
       return var6;
    }
-   bD(bl var1, bD var2) {
+   public bD(bl var1, bD var2) {
       this(var1);
    }
 }

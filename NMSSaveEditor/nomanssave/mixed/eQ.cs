@@ -8,20 +8,20 @@ namespace NMSSaveEditor
 {
 
 public class eQ : ey {
-   private static string gc = "0123456789ABCDEFabcdef";
-   bool jY;
-   string name;
+   public static string gc = "0123456789ABCDEFabcdef";
+   public bool jY;
+   public string name;
    ex jZ;
-   bool special;
-   Integer ka;
-   string jM;
-   string kc;
-   int kd;
-   string description;
-   List<object> ke;
+   public bool special;
+   public Integer ka;
+   public string jM;
+   public string kc;
+   public int kd;
+   public string description;
+   public List<object> ke;
    eR km;
 
-   eQ(Element var1, bool var2) {
+   public eQ(Element var1, bool var2) {
       base(var1.getAttribute("id"));
       this.jY = var2;
       this.name = var1.getAttribute("name");

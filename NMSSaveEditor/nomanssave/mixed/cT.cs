@@ -8,10 +8,10 @@ namespace NMSSaveEditor
 {
 
 public class cT : JFileChooser {
-   private static cT gv = null;
-   private static string name = "Ship Export FileInfo";
-   private static Image fH = Application.a("UI-SHIPICON.PNG", 16, 16);
-   private CheckBox fO;
+   public static cT gv = null;
+   public static string name = "Ship Export FileInfo";
+   public static Image fH = Application.a("UI-SHIPICON.PNG", 16, 16);
+   public CheckBox fO;
 
    public static cT aC() {
       if (gv == null) {
@@ -21,7 +21,7 @@ public class cT : JFileChooser {
       return gv;
    }
 
-   private cT() {
+   public cT() {
       this.setFileSelectionMode(0);
       this.setAcceptAllFileFilterUsed(false);
       this.setFileView(new cU(this));
@@ -55,7 +55,7 @@ public class cT : JFileChooser {
       this.getAccessory().Hide();
       return base.showOpenDialog(var1);
    }
-   static Image @as() {
+   public static Image @as() {
       return fH;
    }
 }

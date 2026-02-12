@@ -9,12 +9,12 @@ namespace NMSSaveEditor
 {
 
 public class aD : Form {
-   private ComboBox cw;
-   private TextBox cx;
-   private bool cy;
+   public ComboBox cw;
+   public TextBox cx;
+   public bool cy;
    public static aD cz = null;
 
-   private aD(Frame var1) {
+   public aD(Frame var1) {
       base(var1);
       this.setMinimumSize(new Size(400, 10));
       this.setModalExclusionType(ModalExclusionType.APPLICATION_EXCLUDE);
@@ -39,7 +39,7 @@ public class aD : Form {
       this.PerformLayout();
    }
 
-   private bool S() {
+   public bool S() {
       string var1 = aH.getProperty("LookAndFeel");
       aI var2 = (aI)Stream.of(aI.Values).filter((var1x) => {
          return var1x.name().Equals(var1);
@@ -60,13 +60,13 @@ public class aD : Form {
 
       return cz.S();
    }
-   static ComboBox a(aD var0) {
+   public static ComboBox a(aD var0) {
       return var0.cw;
    }
-   static void a(aD var0, bool var1) {
+   public static void a(aD var0, bool var1) {
       var0.cy = var1;
    }
-   static TextBox b(aD var0) {
+   public static TextBox b(aD var0) {
       return var0.cx;
    }
 }

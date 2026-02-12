@@ -9,7 +9,7 @@ namespace NMSSaveEditor
 
 class @as : ActionListener {
    ap cu;
-   @as(ap var1) {
+   public @as(ap var1) {
       this.cu = var1;
    }
 

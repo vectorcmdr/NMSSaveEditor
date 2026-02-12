@@ -9,14 +9,14 @@ namespace NMSSaveEditor
 {
 
 public class er {
-   string id;
-   string name;
+   public string id;
+   public string name;
    gq iB;
-   int iC;
+   public int iC;
    gr iD;
-   bool iE;
+   public bool iE;
    gr[] iF;
-   private static List<object> iG = new List<object>();
+   public static List<object> iG = new List<object>();
 
    static er() {
       Stream var0 = typeof(Application).GetManifestResourceStream("db/frigates.xml");
@@ -41,7 +41,7 @@ public class er {
       iG.sort(new es());
    }
 
-   private er(Element var1) {
+   public er(Element var1) {
       this.id = var1.getAttribute("id");
       this.name = var1.getAttribute("name");
       string var2 = var1.getAttribute("type");
@@ -53,7 +53,7 @@ public class er {
       this.iF = n(var1.getAttribute("secondary"));
    }
 
-   private static gr[] n(string var0) {
+   public static gr[] n(string var0) {
       List<object> var1 = new List<object>();
       int var2 = 0;
 

@@ -19,14 +19,14 @@ public sealed class gq {
    public static readonly gq pc = new gq("Stealth");
 
 
-   private string name;
-   private int pd;
+   public string name;
+   public int pd;
 
-   private gq(string var3) {
+   public gq(string var3) {
       this(var3, 1);
    }
 
-   private gq(string var3, int var4) {
+   public gq(string var3, int var4) {
       this.name = var3;
       this.pd = var4;
    }

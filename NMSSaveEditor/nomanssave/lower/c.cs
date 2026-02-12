@@ -8,11 +8,11 @@ namespace NMSSaveEditor
 {
 
 public class c : Panel {
-   private f _c;
-   private f d;
-   private f e;
+   public f _c;
+   public f d;
+   public f e;
 
-   c(Application var1) {
+   public c(Application var1) {
       TableLayoutPanel var2 = new TableLayoutPanel(2, 3);
       this.SuspendLayout(); // TODO: set layout var2);
       Panel var3 = new Panel();

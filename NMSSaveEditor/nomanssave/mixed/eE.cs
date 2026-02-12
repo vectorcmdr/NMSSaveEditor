@@ -6,8 +6,8 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-class eE : List<object> {
-   private eE() {
+public class eE : List<object> {
+   public eE() {
    }
 
    public bool add(string var1, string var2) {
@@ -61,10 +61,10 @@ class eE : List<object> {
 
       return null;
    }
-   eE(eE var1) {
+   public eE(eE var1) {
       this();
    }
-   eE(eE var1, eE var2) {
+   public eE(eE var1, eE var2) {
       this();
    }
 }

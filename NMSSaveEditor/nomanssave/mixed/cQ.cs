@@ -5,11 +5,11 @@ using System.Text;
 
 namespace NMSSaveEditor
 {
-class cQ {
-   string value;
+public class cQ {
+   public string value;
    cN gt;
 
-   cQ(cN var1, string var2) {
+   public cQ(cN var1, string var2) {
       this.gt = var1;
       this.value = var2;
    }

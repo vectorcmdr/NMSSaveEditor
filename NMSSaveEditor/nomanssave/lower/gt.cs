@@ -31,22 +31,22 @@ public class gt {
    public static int qp = 32768;
    public static int qq = 8;
    public static int qr = 6;
-   private Function qs;
-   private eY qt;
-   private int r;
-   private bool qu;
-   private bool qv;
-   private bool qw;
-   private bool qx;
-   private int width;
-   private int height;
-   private int bE;
-   private int bF;
-   private eY[][] qy;
-   private bool[][] qz;
-   private static int[] qA;
-   private static int[] qB;
-   private static int[] qC;
+   public Function qs;
+   public eY qt;
+   public int r;
+   public bool qu;
+   public bool qv;
+   public bool qw;
+   public bool qx;
+   public int width;
+   public int height;
+   public int bE;
+   public int bF;
+   public eY[][] qy;
+   public bool[][] qz;
+   public static int[] qA;
+   public static int[] qB;
+   public static int[] qC;
 
    public static int a(ex var0) {
       switch(dw()[var0.ordinal()]) {
@@ -91,11 +91,11 @@ public class gt {
       }
    }
 
-   gt(Function var1, eY var2, int var3, int var4, int var5, bool var6, bool var7) {
+   public gt(Function var1, eY var2, int var3, int var4, int var5, bool var6, bool var7) {
       this(var1, var2, var3, var4, var5, var6, var7, true, true);
    }
 
-   gt(Function var1, eY var2, int var3, int var4, int var5, bool var6, bool var7, bool var8, bool var9) {
+   public gt(Function var1, eY var2, int var3, int var4, int var5, bool var6, bool var7, bool var8, bool var9) {
       this.qs = var1;
       this.qt = var2;
       this.r = var3;
@@ -210,7 +210,7 @@ public class gt {
       return this.height;
    }
 
-   bool ao(string var1) {
+   public bool ao(string var1) {
       eV var2 = this.qt.d("BaseStatValues");
       if (var2 == null) {
          return false;
@@ -226,7 +226,7 @@ public class gt {
       }
    }
 
-   double ak(string var1) {
+   public double ak(string var1) {
       eV var2 = this.qt.d("BaseStatValues");
       if (var2 == null) {
          return 0.0D;
@@ -242,7 +242,7 @@ public class gt {
       }
    }
 
-   void d(string var1, double var2) {
+   public void d(string var1, double var2) {
       eV var4 = this.qt.d("BaseStatValues");
       if (var4 == null) {
          throw new Exception("Could not set base stat");
@@ -269,7 +269,7 @@ public class gt {
       }
    }
 
-   bool ap(string var1) {
+   public bool ap(string var1) {
       eV var2 = this.qt.d("BaseStatValues");
       if (var2 == null) {
          return false;
@@ -757,7 +757,7 @@ public class gt {
       }
    }
 
-   private void a(int var1, int var2, string var3, object var4, int var5, int var6, double var7, bool var9) {
+   public void a(int var1, int var2, string var3, object var4, int var5, int var6, double var7, bool var9) {
       eV var10 = this.qt.d("Slots");
       eY var11 = gR.az("slot");
       var11.b("Type.InventoryType", (object)var3);
@@ -982,7 +982,7 @@ public class gt {
       return var1;
    }
 
-   private static string l(object var0) {
+   public static string l(object var0) {
       StringBuilder var1 = new StringBuilder();
       var1.Append(' ');
       if (var0 is fg) {
@@ -1069,19 +1069,19 @@ public class gt {
 
    }
 
-   private static string r_str(eY var0) {
+   public static string r_str(eY var0) {
       return var0.getValueAsString("Type.InventoryType");
    }
 
-   private static object s(eY var0) {
+   public static object s(eY var0) {
       return var0.getValue("Id");
    }
 
-   private static int t(eY var0) {
+   public static int t(eY var0) {
       return var0.J("Amount");
    }
 
-   private static int u(eY var0) {
+   public static int u(eY var0) {
       return var0.J("MaxAmount");
    }
 
@@ -1139,7 +1139,7 @@ public class gt {
    public string toString() {
       return this.getFullName();
    }
-   static int[] dw() {
+   public static int[] dw() {
       int[] var10000 = qA;
       if (var10000 != null) {
          return var10000;
@@ -1365,7 +1365,7 @@ public class gt {
          return var0;
       }
    }
-   static int[] dx() {
+   public static int[] dx() {
       int[] var10000 = qB;
       if (var10000 != null) {
          return var10000;
@@ -1416,7 +1416,7 @@ public class gt {
          return var0;
       }
    }
-   static int[] dy() {
+   public static int[] dy() {
       int[] var10000 = qC;
       if (var10000 != null) {
          return var10000;

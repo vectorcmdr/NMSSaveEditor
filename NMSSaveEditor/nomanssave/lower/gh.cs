@@ -6,11 +6,11 @@ using System.Text;
 namespace NMSSaveEditor
 {
 public class gh {
-   string name;
+   public string name;
    eY nn;
    ge nk;
 
-   private gh(ge var1, string var2, eY var3) {
+   public gh(ge var1, string var2, eY var3) {
       this.nk = var1;
       this.name = var2;
       this.nn = var3;
@@ -31,7 +31,7 @@ public class gh {
    public string toString() {
       return this.name;
    }
-   gh(ge var1, string var2, eY var3, gh var4) {
+   public gh(ge var1, string var2, eY var3, gh var4) {
       this(var1, var2, var3);
    }
 }

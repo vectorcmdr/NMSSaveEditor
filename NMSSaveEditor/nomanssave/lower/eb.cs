@@ -9,15 +9,15 @@ namespace NMSSaveEditor
 {
 
 public class eb : em {
-   private ec[] ib;
-   private gM[] ic;
-   private static readonly gy[] ie;
+   public ec[] ib;
+   public gM[] ic;
+   public static readonly gy[] ie;
 
    static eb() {
       ie = new gy[]{gy.qR, gy.qS, gy.qT};
    }
 
-   eb(Application var1) {
+   public eb(Application var1) {
       GridBagLayout var2 = new GridBagLayout();
       var2.columnWidths = new int[]{aH.cI, aH.cI, aH.cI, aH.cI, 0};
       var2.rowHeights = new int[3];
@@ -28,7 +28,7 @@ public class eb : em {
       this.ib = new ec[0];
    }
 
-   void a(gM[] var1) {
+   public void a(gM[] var1) {
       this.ic = var1;
 
       for(int var2 = var1.Length; var2 < this.ib.Length; ++var2) {
@@ -67,10 +67,10 @@ public class eb : em {
 
       this.Refresh();
    }
-   static gM[] a(eb var0) {
+   public static gM[] a(eb var0) {
       return var0.ic;
    }
-   static gy[] aP() {
+   public static gy[] aP() {
       return ie;
    }
 }

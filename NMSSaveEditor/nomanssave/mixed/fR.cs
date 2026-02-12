@@ -6,9 +6,9 @@ using System.Text;
 namespace NMSSaveEditor
 {
 public interface fR {
-   void a(fq var1);
+   public void a(fq var1);
 
-   void a(fq var1, int var2, string var3);
+   public void a(fq var1, int var2, string var3);
 }
 
 }

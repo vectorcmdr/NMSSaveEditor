@@ -15,9 +15,9 @@ public sealed class gG {
    public static readonly gG rm = new gG(100);
 
 
-   int rn;
+   public int rn;
 
-   private gG(int var3) {
+   public gG(int var3) {
       this.rn = var3;
    }
 

@@ -8,12 +8,12 @@ namespace NMSSaveEditor
 {
 
 public class dz : Form {
-   private ListBox hr;
-   private ft[] hs;
-   private int gU;
-   private static dz ht = null;
+   public ListBox hr;
+   public ft[] hs;
+   public int gU;
+   public static dz ht = null;
 
-   private dz(Frame var1) {
+   public dz(Frame var1) {
       base(var1);
       this.Size = new Size(300, 400);
       this.FormBorderStyle = FormBorderStyle.FixedDialog; //(false);
@@ -42,7 +42,7 @@ public class dz : Form {
       this.getRootPane().registerKeyboardAction(new dD(this), /* KeyStroke */ Keys.None /* (27, 0) */, 2);
    }
 
-   private int a(ft[] var1, int var2) {
+   public int a(ft[] var1, int var2) {
       this.hs = var1;
       this.hr.Refresh();
       this.hr.SelectedIndex = (var2);
@@ -60,13 +60,13 @@ public class dz : Form {
 
       return ht.a(var1, var2);
    }
-   static ft[] a(dz var0) {
+   public static ft[] a(dz var0) {
       return var0.hs;
    }
-   static ListBox b(dz var0) {
+   public static ListBox b(dz var0) {
       return var0.hr;
    }
-   static void a(dz var0, int var1) {
+   public static void a(dz var0, int var1) {
       var0.gU = var1;
    }
 }

@@ -6,7 +6,7 @@ using System.Text;
 namespace NMSSaveEditor
 {
 public interface gD {
-   string K();
+   public string K();
 }
 
 }

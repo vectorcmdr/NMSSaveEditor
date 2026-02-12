@@ -8,9 +8,9 @@ namespace NMSSaveEditor
 {
 
 public class cl : JFileChooser {
-   private static cl fG = null;
-   private static string name = "Planetary Base Backup FileInfo";
-   private static Image fH = Application.a("UI-BASEICON.PNG", 16, 16);
+   public static cl fG = null;
+   public static string name = "Planetary Base Backup FileInfo";
+   public static Image fH = Application.a("UI-BASEICON.PNG", 16, 16);
 
    public static cl ar() {
       if (fG == null) {
@@ -20,7 +20,7 @@ public class cl : JFileChooser {
       return fG;
    }
 
-   private cl() {
+   public cl() {
       this.setFileSelectionMode(0);
       this.setAcceptAllFileFilterUsed(false);
       this.setFileView(new cm(this));
@@ -34,7 +34,7 @@ public class cl : JFileChooser {
 
       });
    }
-   static Image @as() {
+   public static Image @as() {
       return fH;
    }
 }

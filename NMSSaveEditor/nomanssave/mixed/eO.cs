@@ -5,10 +5,10 @@ using System.Text;
 
 namespace NMSSaveEditor
 {
-class eO {
-   string id;
+public class eO {
+   public string id;
 
-   eO(string var1) {
+   public eO(string var1) {
       this.id = var1;
    }
 

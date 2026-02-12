@@ -8,12 +8,12 @@ namespace NMSSaveEditor
 {
 
 public class cY : Form {
-   private ComboBox gM;
-   private List<object> gN = new List<object>();
-   private int gO = -1;
-   private static cY gP = null;
+   public ComboBox gM;
+   public List<object> gN = new List<object>();
+   public int gO = -1;
+   public static cY gP = null;
 
-   private cY(Frame var1) {
+   public cY(Frame var1) {
       base(var1);
       this.FormBorderStyle = FormBorderStyle.FixedDialog; //(false);
       this.setModalExclusionType(ModalExclusionType.APPLICATION_EXCLUDE);
@@ -48,7 +48,7 @@ public class cY : Form {
       this.PerformLayout();
    }
 
-   private int b(List<object> var1) {
+   public int b(List<object> var1) {
       this.gN = var1;
       this.StartPosition = FormStartPosition.CenterParent; //(this.DirectoryName);
       this.gM.SelectedIndex = (0);

@@ -8,12 +8,12 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-class fH {
-   FileInfo mh;
+public class fH {
+   public FileInfo mh;
    byte[] lK;
    fA ma;
 
-   fH(fA var1, string var2, bool var3) {
+   public fH(fA var1, string var2, bool var3) {
       this.ma = var1;
       this.mh = new FileInfo(fA.a(var1), var2);
       if (var3) {
@@ -35,7 +35,7 @@ class fH {
 
    }
 
-   byte[] readBytes() {
+   public byte[] readBytes() {
       long var1 = (255L & (long)this.lK[95]) << 24 | (255L & (long)this.lK[94]) << 16 | (255L & (long)this.lK[93]) << 8 | 255L & (long)this.lK[92];
       FileStream var3 = new FileStream(new FileInfo(fA.a(this.ma), this.K()));
 
@@ -52,7 +52,7 @@ class fH {
       return var6;
    }
 
-   byte[] ah(int var1) {
+   public byte[] ah(int var1) {
       long var2 = (255L & (long)this.lK[95]) << 24 | (255L & (long)this.lK[94]) << 16 | (255L & (long)this.lK[93]) << 8 | 255L & (long)this.lK[92];
       FileStream var4 = new FileStream(new FileInfo(fA.a(this.ma), this.K()));
 
@@ -70,7 +70,7 @@ class fH {
       return var7;
    }
 
-   void writeBytes(byte[] var1) {
+   public void writeBytes(byte[] var1) {
       this.lK[92] = (byte)var1.Length;
       this.lK[93] = (byte)(var1.Length >> 8);
       this.lK[94] = (byte)(var1.Length >> 16);
@@ -86,7 +86,7 @@ class fH {
 
    }
 
-   void a(string var1, fn var2, string var3, string var4) {
+   public void a(string var1, fn var2, string var3, string var4) {
       Dictionary<string, string> var5 = new Dictionary<string, string>();
       var5.setProperty("StorageFile", this.mh.Name);
       var5.setProperty("LastModified", Long.toString(this.mh.LastWriteTimeUtc.Ticks));

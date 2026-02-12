@@ -13,24 +13,24 @@ public class fh {
    public static int kW = 2;
    public static int kX = 3;
    public static int kY = 4;
-   static Predicate<object> kZ = (var0) => {
+   public static Predicate<object> kZ = (var0) => {
       return var0 >= 48 && var0 <= 57;
    };
-   static Predicate<object> la = (var0) => {
+   public static Predicate<object> la = (var0) => {
       return var0 == 46;
    };
-   static Predicate<object> lb = (var0) => {
+   public static Predicate<object> lb = (var0) => {
       return var0 == 101 || var0 == 69;
    };
-   static Predicate<object> lc = (var0) => {
+   public static Predicate<object> lc = (var0) => {
       return var0 >= 48 && var0 <= 57 || var0 == 43 || var0 == 45;
    };
-   static Predicate<object> ld = (var0) => {
+   public static Predicate<object> ld = (var0) => {
       return (var0 & 192) == 128;
    };
-   static string gc = "0123456789ABCDEFabcdef";
+   public static string gc = "0123456789ABCDEFabcdef";
 
-   static bool a(Class var0) {
+   public static bool a(Class var0) {
       if (var0 == null) {
          return true;
       } else if (typeof(Boolean).isAssignableFrom(var0)) {
@@ -73,11 +73,11 @@ public class fh {
       return a(var0, var3, var4, var2);
    }
 
-   static string a(object var0, string var1, bool var2) {
+   public static string a(object var0, string var1, bool var2) {
       return a((object)var0, var1, var2, (Predicate)null);
    }
 
-   private static string a(object var0, string var1, bool var2, Predicate<object> var3) {
+   public static string a(object var0, string var1, bool var2, Predicate<object> var3) {
       if (var0 == null) {
          return "null";
       } else if (var0 is Boolean) {
@@ -99,11 +99,11 @@ public class fh {
       }
    }
 
-   static string a(eV var0, string var1, bool var2) {
+   public static string a(eV var0, string var1, bool var2) {
       return a((eV)var0, var1, var2, (Predicate)null);
    }
 
-   private static string a(eV var0, string var1, bool var2, Predicate<object> var3) {
+   public static string a(eV var0, string var1, bool var2, Predicate<object> var3) {
       StringBuilder var4 = new StringBuilder();
       var4.Append('[');
 
@@ -127,11 +127,11 @@ public class fh {
       return var4.ToString();
    }
 
-   static string a(eY var0, string var1, bool var2) {
+   public static string a(eY var0, string var1, bool var2) {
       return a((eY)var0, var1, var2, (Predicate)null);
    }
 
-   private static string a(eY var0, string var1, bool var2, Predicate<object> var3) {
+   public static string a(eY var0, string var1, bool var2, Predicate<object> var3) {
       StringBuilder var4 = new StringBuilder();
       var4.Append('{');
 
@@ -161,7 +161,7 @@ public class fh {
       return var4.ToString();
    }
 
-   private static string a(fg var0) {
+   public static string a(fg var0) {
       StringBuilder var1 = new StringBuilder();
       byte[] var5;
       int var4 = (var5 = var0.toByteArray()).Length;
@@ -199,7 +199,7 @@ public class fh {
       return var1.ToString();
    }
 
-   private static string b(fg var0) {
+   public static string b(fg var0) {
       StringBuilder var1 = new StringBuilder();
       var1.Append('"');
       var1.Append(a(var0));
@@ -207,7 +207,7 @@ public class fh {
       return var1.ToString();
    }
 
-   private static string a(string var0, Predicate<object> var1) {
+   public static string a(string var0, Predicate<object> var1) {
       StringBuilder var2 = new StringBuilder();
       char[] var6;
       int var5 = (var6 = var0.ToCharArray()).Length;
@@ -242,11 +242,11 @@ public class fh {
       return var2.ToString();
    }
 
-   static string O(string var0) {
+   public static string O(string var0) {
       return b(var0, (Predicate)null);
    }
 
-   private static string b(string var0, Predicate<object> var1) {
+   public static string b(string var0, Predicate<object> var1) {
       StringBuilder var2 = new StringBuilder();
       var2.Append('"');
       var2.Append(a(var0, var1));
@@ -264,7 +264,7 @@ public class fh {
       }
    }
 
-   private static object a(fi var0, int var1) {
+   public static object a(fi var0, int var1) {
       if (var1 < 0) {
          throw new eX("Short read", var0.kF, var0.kG);
       } else if (var1 == 123) {
@@ -331,7 +331,7 @@ public class fh {
       }
    }
 
-   static eY Q(string var0) {
+   public static eY Q(string var0) {
       Throwable var1 = null;
       object var2 = null;
 
@@ -390,7 +390,7 @@ public class fh {
       }
    }
 
-   private static eY a(fi var0) {
+   public static eY a(fi var0) {
       eY var1 = new eY();
       int var2 = var0.bI();
       if (var2 == 34) {
@@ -423,7 +423,7 @@ public class fh {
       return var1;
    }
 
-   static eV R(string var0) {
+   public static eV R(string var0) {
       Throwable var1 = null;
       object var2 = null;
 
@@ -482,7 +482,7 @@ public class fh {
       }
    }
 
-   private static eV b(fi var0) {
+   public static eV b(fi var0) {
       eV var1 = new eV();
       int var2;
       if ((var2 = var0.bI()) != 93) {
@@ -505,7 +505,7 @@ public class fh {
       return var1;
    }
 
-   static int ae(int var0) {
+   public static int ae(int var0) {
       if (var0 < 0) {
          throw new IOException("short read");
       } else {
@@ -522,7 +522,7 @@ public class fh {
       }
    }
 
-   private static string c(fi var0) {
+   public static string c(fi var0) {
       object var1 = d(var0);
       if (var1 is string) {
          return (string)var1;
@@ -531,7 +531,7 @@ public class fh {
       }
    }
 
-   private static object d(fi var0) {
+   public static object d(fi var0) {
       try {
          StringBuilder var1 = new StringBuilder();
          MemoryStream var2 = new MemoryStream();
@@ -618,7 +618,7 @@ public class fh {
       }
    }
 
-   private static fg e(fi var0) {
+   public static fg e(fi var0) {
       MemoryStream var1 = new MemoryStream();
       if (var0.ReadByte() != 48) {
          throw new eX("Invalid hex data", var0.kF, var0.kG);
@@ -659,7 +659,7 @@ public class fh {
       }
    }
 
-   private static Number b(fi var0, int var1) {
+   public static Number b(fi var0, int var1) {
       bool var3 = false;
       if (var1 == 45) {
          var1 = fi.a(var0, kZ);
@@ -739,7 +739,7 @@ public class fh {
       return var2;
    }
 
-   static void i(object var0) {
+   public static void i(object var0) {
       if (var0 is eY) {
          ((eY)var0).kD = null;
       }
@@ -750,7 +750,7 @@ public class fh {
 
    }
 
-   static void a(object var0, object var1) {
+   public static void a(object var0, object var1) {
       if (var0 is eY) {
          ((eY)var0).kD = var1;
       }

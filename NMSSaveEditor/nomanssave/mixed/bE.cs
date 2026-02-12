@@ -8,12 +8,12 @@ namespace NMSSaveEditor
 {
 
 public class bE : Panel {
-   private static int ew = 0;
-   private static int TYPE_DOUBLE = 1;
+   public static int ew = 0;
+   public static int TYPE_DOUBLE = 1;
    private readonly bN[] ex = new bN[3];
-   private gz cp;
+   public gz cp;
 
-   bE(Application var1) {
+   public bE(Application var1) {
       TableLayoutPanel var2 = new TableLayoutPanel(1, 3, 10, 0);
       this.SuspendLayout(); // TODO: set layout var2);
       this.ex[0] = new bN(this);
@@ -71,13 +71,13 @@ public class bE : Panel {
       this.ex[2].a("Distance Warped", gs.pT, false, "See Milestones section for more details");
    }
 
-   void B() {
+   public void B() {
       int var1 = this.cp.bx();
       this.cp.a(gs.pP, var1);
       this.a(gs.pP, Integer.toString(var1));
    }
 
-   void C() {
+   public void C() {
       long var1 = this.cp.dJ();
       int var3 = this.cp.a(gs.pQ);
       if ((long)var3 < var1) {
@@ -88,7 +88,7 @@ public class bE : Panel {
 
    }
 
-   void aa() {
+   public void aa() {
       for(int var2 = 0; var2 < this.ex.Length; ++var2) {
          for(int var3 = 0; var3 < this.ex[var2].Controls.Count; ++var3) {
             Component var1 = this.ex[var2].Controls[var3];
@@ -100,7 +100,7 @@ public class bE : Panel {
 
    }
 
-   private void a(gs var1, string var2) {
+   public void a(gs var1, string var2) {
       for(int var4 = 0; var4 < this.ex.Length; ++var4) {
          for(int var5 = 0; var5 < this.ex[var4].Controls.Count; ++var5) {
             Component var3 = this.ex[var4].Controls[var5];
@@ -112,7 +112,7 @@ public class bE : Panel {
 
    }
 
-   void a(gz var1) {
+   public void a(gz var1) {
       this.cp = var1;
 
       for(int var3 = 0; var3 < this.ex.Length; ++var3) {
@@ -127,10 +127,10 @@ public class bE : Panel {
       }
 
    }
-   static gz a(bE var0) {
+   public static gz a(bE var0) {
       return var0.cp;
    }
-   static void a(bE var0, gs var1, string var2) {
+   public static void a(bE var0, gs var1, string var2) {
       var0.a(var1, var2);
    }
 }

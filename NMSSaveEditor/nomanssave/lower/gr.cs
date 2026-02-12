@@ -18,10 +18,10 @@ public sealed class gr {
    public static readonly gr po = new gr("GhostShip", true);
 
 
-   private string name;
-   private bool special;
+   public string name;
+   public bool special;
 
-   private gr(string var3, bool var4) {
+   public gr(string var3, bool var4) {
       this.name = var3;
       this.special = var4;
    }

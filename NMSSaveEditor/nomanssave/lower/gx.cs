@@ -16,10 +16,10 @@ public sealed class gx : gD {
    public static readonly gx qO = new gx("Atlas", "MODELS/COMMON/WEAPONS/MULTITOOL/ATLASMULTITOOL.SCENE.MBIN");
    public static readonly gx qP = new gx("Atlas Scepter", "MODELS/COMMON/WEAPONS/MULTITOOL/STAFFMULTITOOLATLAS.SCENE.MBIN");
 
-   private string name;
-   private string filename;
+   public string name;
+   public string filename;
 
-   private gx(string var3, string var4) {
+   public gx(string var3, string var4) {
       this.name = var3;
       this.filename = var4;
    }

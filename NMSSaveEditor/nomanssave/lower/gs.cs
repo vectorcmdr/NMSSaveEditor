@@ -39,10 +39,10 @@ public sealed class gs {
    public static readonly gs pU = new gs("^DISC_ALL_CREATU", "Planet Zoology Scanned");
 
 
-   string id;
-   string name;
+   public string id;
+   public string name;
 
-   private gs(string var3, string var4) {
+   public gs(string var3, string var4) {
       this.id = var3;
       this.name = var4;
    }

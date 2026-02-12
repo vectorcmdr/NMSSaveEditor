@@ -5,13 +5,13 @@ using System.Text;
 
 namespace NMSSaveEditor
 {
-class bJ : G {
+public class bJ : G {
    gs ez;
-   int type;
+   public int type;
    bE ey;
-   private static int[] eA;
+   public static int[] eA;
 
-   bJ(bE var1, gs var2, bool var3) {
+   public bJ(bE var1, gs var2, bool var3) {
       this.ey = var1;
       this.ez = var2;
       switch(ad()[var2.ordinal()]) {
@@ -79,7 +79,7 @@ class bJ : G {
       }
    }
 
-   void ac() {
+   public void ac() {
       string var1;
       if (bE.a(this.ey) == null) {
          var1 = "";
@@ -98,7 +98,7 @@ class bJ : G {
 
       this.Text = (var1);
    }
-   static int[] ad() {
+   public static int[] ad() {
       int[] var10000 = eA;
       if (var10000 != null) {
          return var10000;

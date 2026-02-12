@@ -5,10 +5,10 @@ using System.Text;
 
 namespace NMSSaveEditor
 {
-class fd : Exception {
-   private fd() {
+public class fd : Exception {
+   public fd() {
    }
-   fd(fd var1) {
+   public fd(fd var1) {
       this();
    }
 }

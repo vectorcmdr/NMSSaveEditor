@@ -7,10 +7,10 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
-class aV : ActionListener {
+public class aV : ActionListener {
    aQ dr;
 
-   aV(aQ var1) {
+   public aV(aQ var1) {
       this.dr = var1;
    }
 

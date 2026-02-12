@@ -7,10 +7,10 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
-class e : object {
-   int f;
+public class e : DefaultTableCellRenderer {
+   public int f;
 
-   e(int var1) {
+   public e(int var1) {
       this.f = var1;
    }
 

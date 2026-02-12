@@ -9,16 +9,16 @@ namespace NMSSaveEditor
 {
 
 public class eY {
-   private static int kB = 10;
-   private static int kC = 10;
-   private static Pattern kH = Pattern.compile("[^\"\\.\\[\\]]+");
-   int length = 0;
+   public static int kB = 10;
+   public static int kC = 10;
+   public static Pattern kH = Pattern.compile("[^\"\\.\\[\\]]+");
+   public int length = 0;
    string[] names = new string[10];
    object[] values = new object[10];
-   object kD;
+   public object kD;
    fe kI;
-   Dictionary<object, object> kJ = new Dictionary<object, object>();
-   private static Pattern kK = Pattern.compile("([^\\.\\[\\]]+)|(?:\\.([^\\.\\[\\]]+))|(?:\\[(\\d+)\\])");
+   public Dictionary<object, object> kJ = new Dictionary<object, object>();
+   public static Pattern kK = Pattern.compile("([^\\.\\[\\]]+)|(?:\\.([^\\.\\[\\]]+))|(?:\\[(\\d+)\\])");
 
    public static eY E(string var0) {
       return fh.Q(var0);
@@ -28,7 +28,7 @@ public class eY {
       this.kJ.Put(var1, var2);
    }
 
-   void a(string var1, object var2) {
+   public void a(string var1, object var2) {
       for(int var3 = 0; var3 < this.Length; ++var3) {
          if (this.names[var3].Equals(var1)) {
             throw new Exception("duplicate key: " + var1);
@@ -231,7 +231,7 @@ public class eY {
       }
    }
 
-   int indexOf(string var1) {
+   public int indexOf(string var1) {
       for(int var2 = 0; var2 < this.Length; ++var2) {
          if (var1.Equals(this.names[var2])) {
             return var2;
@@ -241,7 +241,7 @@ public class eY {
       return -1;
    }
 
-   object set(int var1, object var2) {
+   public object set(int var1, object var2) {
       object var3 = this.values[var1];
       fh.i(var3);
       this.values[var1] = var2;
@@ -250,7 +250,7 @@ public class eY {
       return var3;
    }
 
-   object remove(int var1) {
+   public object remove(int var1) {
       string var2 = this.names[var1];
       object var3 = this.values[var1];
       fh.i(var3);
@@ -278,7 +278,7 @@ public class eY {
       this.kI = var1;
    }
 
-   void a(object var1, string var2, object var3, object var4) {
+   public void a(object var1, string var2, object var3, object var4) {
       for(int var5 = 0; var5 < this.Length; ++var5) {
          if (var1 == this.values[var5]) {
             this.firePropertyChange(this.names[var5] + var2, var3, var4);
@@ -288,7 +288,7 @@ public class eY {
 
    }
 
-   private void firePropertyChange(string var1, object var2, object var3) {
+   public void firePropertyChange(string var1, object var2, object var3) {
       if (this.kI != null) {
          System.Windows.Forms.Application.Run(() => {
             this.kI.propertyChanged(var1, var2, var3);
@@ -306,7 +306,7 @@ public class eY {
 
    }
 
-   private fc G(string var1) {
+   public fc G(string var1) {
       IEnumerator var3 = this.kJ.entrySet().GetEnumerator();
 
       while(var3.MoveNext()) {
@@ -553,7 +553,7 @@ public class eY {
    public object clone() {
       return this.bE();
    }
-   static Pattern bF() {
+   public static Pattern bF() {
       return kH;
    }
 }

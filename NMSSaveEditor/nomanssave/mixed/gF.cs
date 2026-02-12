@@ -6,10 +6,10 @@ using System.Text;
 namespace NMSSaveEditor
 {
 public class gF : gQ {
-   private eY kM;
+   public eY kM;
    gE rf;
 
-   private gF(gE var1, eY var2) {
+   public gF(gE var1, eY var2) {
       this.rf = var1;
       this.kM = var2;
    }
@@ -44,7 +44,7 @@ public class gF : gQ {
    public int dB() {
       return 999;
    }
-   gF(gE var1, eY var2, gF var3) {
+   public gF(gE var1, eY var2, gF var3) {
       this(var1, var2);
    }
 }

@@ -7,20 +7,20 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
-class aB : object {
+public class aB : DefaultTableCellRenderer {
    ap cu;
 
-   private aB(ap var1) {
+   public aB(ap var1) {
       this.cu = var1;
    }
 
-   public Component getTableCellRendererComponent(DataGridView var1, object var2, bool var3, bool var4, int var5, int var6) {
-      Label var7 = (Label)base.getTableCellRendererComponent(var1, "", var3, var4, var5, var6);
-      var7.setIcon((Image)var2);
+   public override object getTableCellRendererComponent(object table, object value, bool isSelected, bool hasFocus, int row, int column) {
+      DataGridView var1 = (DataGridView)table;
+      Label var7 = (Label)base.getTableCellRendererComponent(var1, "", isSelected, hasFocus, row, column);
+      var7.setIcon((Image)value);
       return var7;
    }
-   aB(ap var1, aB var2) {
-      this(var1);
+   public aB(ap var1, aB var2) : this(var1) {
    }
 }
 

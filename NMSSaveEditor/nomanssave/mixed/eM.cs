@@ -9,12 +9,12 @@ namespace NMSSaveEditor
 {
 
 public class eM {
-   string id;
-   string name;
-   string description;
-   bool iE;
-   bool jY;
-   private static List<object> kl = new List<object>();
+   public string id;
+   public string name;
+   public string description;
+   public bool iE;
+   public bool jY;
+   public static List<object> kl = new List<object>();
 
    static eM() {
       Stream var0 = typeof(Application).GetManifestResourceStream("db/settlements.xml");
@@ -39,7 +39,7 @@ public class eM {
       kl.sort(new eN());
    }
 
-   private eM(Element var1) {
+   public eM(Element var1) {
       this.id = var1.getAttribute("id");
       this.name = var1.getAttribute("name");
       this.description = var1.getAttribute("description");

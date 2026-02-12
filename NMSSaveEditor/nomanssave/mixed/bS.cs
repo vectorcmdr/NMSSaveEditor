@@ -8,24 +8,24 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
-class bS : Panel {
-   private int x;
-   private int y;
-   private ToolStripMenuItem eY;
-   private ToolStripMenuItem eZ;
-   private ToolStripMenuItem fa;
-   private ToolStripMenuItem fb;
-   private ToolStripMenuItem fc;
-   private ToolStripMenuItem fd;
-   private ToolStripMenuItem fe;
-   private ToolStripMenuItem ff;
-   private ToolStripMenuItem fg;
-   private ToolStripMenuItem fh;
-   private ToolStripMenuItem fi;
-   private ToolStripMenuItem fj;
+public class bS : Panel {
+   public int x;
+   public int y;
+   public ToolStripMenuItem eY;
+   public ToolStripMenuItem eZ;
+   public ToolStripMenuItem fa;
+   public ToolStripMenuItem fb;
+   public ToolStripMenuItem fc;
+   public ToolStripMenuItem fd;
+   public ToolStripMenuItem fe;
+   public ToolStripMenuItem ff;
+   public ToolStripMenuItem fg;
+   public ToolStripMenuItem fh;
+   public ToolStripMenuItem fi;
+   public ToolStripMenuItem fj;
    bO eX;
 
-   private bS(bO var1, int var2, int var3) {
+   public bS(bO var1, int var2, int var3) {
       this.eX = var1;
       this.x = var2;
       this.y = var3;
@@ -80,15 +80,15 @@ class bS : Panel {
       this.aq();
    }
 
-   private bool ao() {
+   public bool ao() {
       return bO.a(this.eX).h(this.x, this.y);
    }
 
-   private bool ap() {
+   public bool ap() {
       return bO.a(this.eX).l(this.x, this.y);
    }
 
-   private void aq() {
+   public void aq() {
       this.RemoveAll();
       this.eY.Enabled = (bO.a(this.eX).dp() || en.aS());
       this.eZ.Enabled = (bO.a(this.eX).dp() || en.aS());
@@ -229,7 +229,7 @@ class bS : Panel {
       this.Refresh();
    }
 
-   private void a(Image var1, int var2, int var3) {
+   public void a(Image var1, int var2, int var3) {
       Label var4 = new Label(var1);
       var4.Size = (new Size(var2, var2));
       GridBagConstraints var5 = new GridBagConstraints();
@@ -241,7 +241,7 @@ class bS : Panel {
       this.Add(var4, var5);
    }
 
-   private void a(string var1, int var2, Color var3) {
+   public void a(string var1, int var2, Color var3) {
       Label var4 = new Label();
       var4.setFont(/* UIManager.getFont */ SystemFonts.DefaultFont); //("Inventory.font")
       var4.setBackground((Color)null);
@@ -257,34 +257,34 @@ class bS : Panel {
       var5.gridy = var2;
       this.Add(var4, var5);
    }
-   static ToolStripMenuItem b(bS var0) {
+   public static ToolStripMenuItem b(bS var0) {
       return var0.eY;
    }
-   static void c(bS var0) {
+   public static void c(bS var0) {
       var0.aq();
    }
-   static ToolStripMenuItem d(bS var0) {
+   public static ToolStripMenuItem d(bS var0) {
       return var0.fc;
    }
-   static bool e(bS var0) {
+   public static bool e(bS var0) {
       return var0.ao();
    }
-   static bool f(bS var0) {
+   public static bool f(bS var0) {
       return var0.ap();
    }
-   static ToolStripMenuItem g(bS var0) {
+   public static ToolStripMenuItem g(bS var0) {
       return var0.eZ;
    }
-   bS(bO var1, int var2, int var3, bS var4) {
+   public bS(bO var1, int var2, int var3, bS var4) {
       this(var1, var2, var3);
    }
-   static int h(bS var0) {
+   public static int h(bS var0) {
       return var0.x;
    }
-   static int i(bS var0) {
+   public static int i(bS var0) {
       return var0.y;
    }
-   static bO j(bS var0) {
+   public static bO j(bS var0) {
       return var0.eX;
    }
 }

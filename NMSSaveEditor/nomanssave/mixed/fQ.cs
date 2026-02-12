@@ -8,13 +8,13 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-class fQ {
-   string filename;
-   int lO;
+public class fQ {
+   public string filename;
+   public int lO;
    fI mx;
    fJ mt;
 
-   fQ(fJ var1, string var2, int var3, bool var4) {
+   public fQ(fJ var1, string var2, int var3, bool var4) {
       this.mt = var1;
       this.filename = var2;
       this.lO = var3;
@@ -60,10 +60,10 @@ class fQ {
       return (new FileInfo(fJ.a(this.mt), "mf_" + this.filename)).LastWriteTimeUtc.Ticks;
    }
 
-   eY a(eG param1) {
+   public eY a(eG param1) {
    }
 
-   byte[] ah(int var1) {
+   public byte[] ah(int var1) {
       object var2 = new FileStream(new FileInfo(fJ.a(this.mt), this.filename));
 
       try {
@@ -93,7 +93,7 @@ class fQ {
       }
    }
 
-   void a(string var1, fn var2, string var3, string var4) {
+   public void a(string var1, fn var2, string var3, string var4) {
       FileInfo var5 = new FileInfo(fJ.a(this.mt), "mf_" + this.filename);
       FileInfo var6 = new FileInfo(fJ.a(this.mt), this.filename);
       Dictionary<string, string> var7 = new Dictionary<string, string>();
@@ -154,7 +154,7 @@ class fQ {
       var9.setLastModified(var5.LastWriteTimeUtc.Ticks);
    }
 
-   void a(eY var1, bool var2) {
+   public void a(eY var1, bool var2) {
       MemoryStream var3 = new MemoryStream();
       Throwable var4 = null;
       object var5 = null;

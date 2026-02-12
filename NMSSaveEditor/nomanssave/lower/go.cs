@@ -12,10 +12,10 @@ public sealed class go : gD {
    public static readonly go oO = new go("Capital", "MODELS/COMMON/SPACECRAFT/INDUSTRIAL/CAPITALFREIGHTER_PROC.SCENE.MBIN");
    public static readonly go oP = new go("Pirate", "MODELS/COMMON/SPACECRAFT/INDUSTRIAL/PIRATEFREIGHTER.SCENE.MBIN");
 
-   private string name;
-   private string filename;
+   public string name;
+   public string filename;
 
-   private go(string var3, string var4) {
+   public go(string var3, string var4) {
       this.name = var3;
       this.filename = var4;
    }

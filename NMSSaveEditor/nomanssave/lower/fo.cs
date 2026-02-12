@@ -6,15 +6,15 @@ using System.Text;
 namespace NMSSaveEditor
 {
 public interface fo {
-   bool U(string var1);
+   public bool U(string var1);
 
-   bool V(string var1);
+   public bool V(string var1);
 
-   fn L();
+   public fn L();
 
-   fp[] bR();
+   public fp[] bR();
 
-   string j(eY var1);
+   public string j(eY var1);
 }
 
 }

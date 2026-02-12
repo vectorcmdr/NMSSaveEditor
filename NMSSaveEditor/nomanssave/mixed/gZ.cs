@@ -9,12 +9,12 @@ namespace NMSSaveEditor
 {
 
 public class gZ : FilterOutputStream {
-   private static LZ4Factory se = LZ4Factory.safeInstance();
-   private LZ4Compressor sf;
-   private byte[] buffer;
-   private int sg;
-   private int sh;
-   private int si;
+   public static LZ4Factory se = LZ4Factory.safeInstance();
+   public LZ4Compressor sf;
+   public byte[] buffer;
+   public int sg;
+   public int sh;
+   public int si;
 
    public gZ(Stream var1) {
       base(var1);
@@ -58,7 +58,7 @@ public class gZ : FilterOutputStream {
 
    }
 
-   private void ek() {
+   public void ek() {
       int var1 = this.sf.maxCompressedLength(this.sg);
       byte[] var2 = new byte[var1];
       int var3 = this.sf.compress((byte[])this.buffer, 0, this.sg, (byte[])var2, 0, var1);
