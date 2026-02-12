@@ -7,6 +7,9 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
+#if PORT_COMPLETE
+
+
 public class ep : em {
    public ComboBox iw = new ComboBox();
    public bO ix;
@@ -61,5 +64,26 @@ public class ep : em {
       return var0.ix;
    }
 }
+
+
+#else
+
+public class ep
+{
+   public ep() { }
+   public ep(params object[] args) { }
+   public ComboBox iw = default;
+   public bO ix = default;
+   public gO[] iy = System.Array.Empty<gO>();
+   public void w() { }
+   public void x() { }
+   public void y() { }
+   public void A() { }
+   public void a(gt var1) { }
+   public gO[] aT() { return System.Array.Empty<gO>(); }
+   public static bO b(ep var0) { return default; }
+}
+
+#endif
 
 }

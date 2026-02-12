@@ -7,6 +7,9 @@ using System.Text.RegularExpressions;
 namespace NMSSaveEditor
 {
 
+#if PORT_COMPLETE
+
+
 public sealed class fn {
    public static fn[] Values() { return new fn[] { lm, ln, lo, lp, lq, lr, ls, lt, S, T, i }; }
    public static fn valueOf(string name) { foreach (var v in Values()) if (v.ToString() == name) return v; return null; }
@@ -81,5 +84,29 @@ public sealed class fn {
       return var3 != null ? S(var3) : null;
    }
 }
+
+
+#else
+
+public class fn
+{
+   public fn() { }
+   public fn(params object[] args) { }
+   public static readonly fn lm = default;
+   public static readonly fn ln = default;
+   public static readonly fn lo = default;
+   public static readonly fn lp = default;
+   public static readonly fn lq = default;
+   public static readonly fn lr = default;
+   public static readonly fn ls = default;
+   public static readonly fn lt = default;
+   public static Pattern lu = default;
+   public static Pattern lv = default;
+   public static Pattern lw = default;
+   public static Pattern lx = default;
+   public static fn[] Values() { return System.Array.Empty<fn>(); }
+}
+
+#endif
 
 }

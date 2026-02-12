@@ -8,6 +8,9 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
+#if PORT_COMPLETE
+
+
 public class aD : Form {
    public ComboBox cw;
    public TextBox cx;
@@ -70,5 +73,24 @@ public class aD : Form {
       return var0.cx;
    }
 }
+
+
+#else
+
+public class aD
+{
+   public aD() { }
+   public aD(params object[] args) { }
+   public static aD cz = default;
+   public ComboBox cw = default;
+   public TextBox cx = default;
+   public bool cy = false;
+   public bool S() { return false; }
+   public static bool d(Container var0) { return false; }
+   public static ComboBox a(aD var0) { return default; }
+   public static TextBox b(aD var0) { return default; }
+}
+
+#endif
 
 }

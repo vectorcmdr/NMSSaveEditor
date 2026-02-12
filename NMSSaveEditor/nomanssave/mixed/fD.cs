@@ -7,6 +7,9 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
+#if PORT_COMPLETE
+
+
 public class fD : fH, fs {
    public DateTime LastWriteTimeUtc => DateTimeOffset.FromUnixTimeMilliseconds(lastModified()).UtcDateTime;
    public new string Name => getName();
@@ -59,5 +62,25 @@ public class fD : fH, fs {
       return this.K();
    }
 }
+
+
+#else
+
+public class fD
+{
+   public fD() { }
+   public fD(params object[] args) { }
+   public DateTime LastWriteTimeUtc = default;
+   public int lO = 0;
+   public fn me = default;
+   public fA ma = default;
+   public fn L() { return default; }
+   public eY M() { return default; }
+   public string b(eY var1) { return ""; }
+   public long lastModified() { return 0; }
+   public string toString() { return ""; }
+}
+
+#endif
 
 }

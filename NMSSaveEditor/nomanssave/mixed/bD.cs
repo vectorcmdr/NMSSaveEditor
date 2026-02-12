@@ -7,6 +7,9 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
+#if PORT_COMPLETE
+
+
 public class bD : object {
    public bl er;
 
@@ -43,5 +46,18 @@ public class bD : object {
       this(var1);
    }
 }
+
+
+#else
+
+public class bD
+{
+   public bD() { }
+   public bD(params object[] args) { }
+   public bl er = default;
+   public Component getListCellRendererComponent(ListBox var1, object var2, int var3, bool var4, bool var5) { return default; }
+}
+
+#endif
 
 }

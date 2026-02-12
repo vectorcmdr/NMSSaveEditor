@@ -6,6 +6,9 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
+#if PORT_COMPLETE
+
+
 public class gA {
    public eS rd;
    public gz re;
@@ -47,5 +50,21 @@ public class gA {
       this(var1, var2);
    }
 }
+
+
+#else
+
+public class gA
+{
+   public gA() { }
+   public gA(params object[] args) { }
+   public eS rd = default;
+   public gz re = default;
+   public string getID() { return ""; }
+   public bool c(eU var1) { return false; }
+   public void a(eU var1, bool var2) { }
+}
+
+#endif
 
 }

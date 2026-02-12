@@ -8,6 +8,9 @@ using System.Xml;
 namespace NMSSaveEditor
 {
 
+#if PORT_COMPLETE
+
+
 public class eI {
    public string Name => getName();
    public static int kf = 0;
@@ -99,5 +102,33 @@ public class eI {
       return new List<object>(kj);
    }
 }
+
+
+#else
+
+public class eI
+{
+   public eI() { }
+   public eI(params object[] args) { }
+   public static int kf = 0;
+   public static int kg = 0;
+   public static int kh = 0;
+   public static List<object> ki = default;
+   public static List<object> kj = default;
+   public static List<object> kk = default;
+   public string Name = "";
+   public int type = 0;
+   public string id = "";
+   public string name = "";
+   public string getID() { return ""; }
+   public string getName() { return ""; }
+   public static int bq() { return 0; }
+   public static int br() { return 0; }
+   public static int bs() { return 0; }
+   public static Iterable bt() { return default; }
+   public static Iterable bu() { return default; }
+}
+
+#endif
 
 }

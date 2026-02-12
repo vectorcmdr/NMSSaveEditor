@@ -7,6 +7,9 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
+#if PORT_COMPLETE
+
+
 public class eC {
    public static eD[] jS = new eD[2];
    public eD jT;
@@ -120,5 +123,26 @@ public class eC {
       return this.jT.ToString();
    }
 }
+
+
+#else
+
+public class eC
+{
+   public eC() { }
+   public eC(params object[] args) { }
+   public static eD[] jS = System.Array.Empty<eD>();
+   public eD jT = default;
+   public eE jU = default;
+   public static void main(string[] var0) { }
+   public static string hashName(string var0) { return ""; }
+   public static eD c(string var0, string var1) { return default; }
+   public Dictionary<object, object> bp() { return default; }
+   public string q(string var1) { return ""; }
+   public string r(string var1) { return ""; }
+   public string toString() { return ""; }
+}
+
+#endif
 
 }

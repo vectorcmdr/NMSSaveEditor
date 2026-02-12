@@ -8,6 +8,9 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
+#if PORT_COMPLETE
+
+
 public class ho : FilterOutputStream {
    public static LZ4Factory se = null /*LZ4Factory*/;
    public LZ4Compressor sf;
@@ -97,5 +100,28 @@ public class ho : FilterOutputStream {
 
    }
 }
+
+
+#else
+
+public class ho
+{
+   public ho() { }
+   public ho(params object[] args) { }
+   public static LZ4Factory se = default;
+   public LZ4Compressor sf = default;
+   public byte[] buffer = System.Array.Empty<byte>();
+   public int sg = 0;
+   public int sh = 0;
+   public int si = 0;
+   public void write(int var1) { }
+   public void ek() { }
+   public int ch() { return 0; }
+   public int ci() { return 0; }
+   public void flush() { }
+   public void close() { }
+}
+
+#endif
 
 }

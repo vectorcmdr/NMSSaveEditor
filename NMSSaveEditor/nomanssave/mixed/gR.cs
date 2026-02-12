@@ -7,6 +7,9 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
+#if PORT_COMPLETE
+
+
 public class gR {
    public static Dictionary<object, object> rR = new Dictionary<object, object>();
 
@@ -31,5 +34,18 @@ public class gR {
       return var1 == null ? null : var1.bE();
    }
 }
+
+
+#else
+
+public class gR
+{
+   public gR() { }
+   public gR(params object[] args) { }
+   public static Dictionary<object, object> rR = default;
+   public static eY az(string var0) { return default; }
+}
+
+#endif
 
 }

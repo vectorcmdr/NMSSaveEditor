@@ -6,6 +6,9 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
+#if PORT_COMPLETE
+
+
 public class g : object {
    public f i;
    public Supplier j;
@@ -89,5 +92,28 @@ public class g : object {
    public void removeTableModelListener(EventHandler var1) {
    }
 }
+
+
+#else
+
+public class g
+{
+   public g() { }
+   public g(params object[] args) { }
+   public f i = default;
+   public Supplier j = default;
+   public Function k = default;
+   public int getRowCount() { return 0; }
+   public int getColumnCount() { return 0; }
+   public string getColumnName(int var1) { return ""; }
+   public Class getColumnClass(int var1) { return default; }
+   public bool isCellEditable(int var1, int var2) { return false; }
+   public object getValueAt(int var1, int var2) { return default; }
+   public void setValueAt(object var1, int var2, int var3) { }
+   public void addTableModelListener(EventHandler var1) { }
+   public void removeTableModelListener(EventHandler var1) { }
+}
+
+#endif
 
 }

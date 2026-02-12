@@ -7,6 +7,9 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
+#if PORT_COMPLETE
+
+
 public class dz : Form {
    public ListBox hr;
    public ft[] hs;
@@ -70,5 +73,22 @@ public class dz : Form {
       var0.gU = var1;
    }
 }
+
+
+#else
+
+public class dz
+{
+   public dz() { }
+   public dz(params object[] args) { }
+   public static dz ht = default;
+   public ListBox hr = default;
+   public ft[] hs = System.Array.Empty<ft>();
+   public int gU = 0;
+   public int a(ft[] var1, int var2) { return 0; }
+   public static ListBox b(dz var0) { return default; }
+}
+
+#endif
 
 }

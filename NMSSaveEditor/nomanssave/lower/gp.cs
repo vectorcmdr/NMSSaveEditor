@@ -6,6 +6,9 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
+#if PORT_COMPLETE
+
+
 public class gp {
    public string Name => getName();
    public int index;
@@ -195,5 +198,49 @@ public class gp {
       }
    }
 }
+
+
+#else
+
+public class gp
+{
+   public gp() { }
+   public gp(params object[] args) { }
+   public string Name = "";
+   public int index = 0;
+   public eY oR = default;
+   public static gp[] q(eY var0) { return System.Array.Empty<gp>(); }
+   public static gp[] d(eV var0) { return System.Array.Empty<gp>(); }
+   public int getIndex() { return 0; }
+   public string getName() { return ""; }
+   public void setName(string var1) { }
+   public gr da() { return default; }
+   public void c(gr var1) { }
+   public string cW() { return ""; }
+   public string cU() { return ""; }
+   public void ah(string var1) { }
+   public string cV() { return ""; }
+   public void ai(string var1) { }
+   public string db() { return ""; }
+   public void am(string var1) { }
+   public int aq(int var1) { return 0; }
+   public void e(int var1, int var2) { }
+   public er ar(int var1) { return default; }
+   public void a(int var1, er var2) { }
+   public int dc() { return 0; }
+   public int dd() { return 0; }
+   public void at(int var1) { }
+   public int de() { return 0; }
+   public void au(int var1) { }
+   public int df() { return 0; }
+   public void av(int var1) { }
+   public int dg() { return 0; }
+   public void aw(int var1) { }
+   public int dh() { return 0; }
+   public void ax(int var1) { }
+   public string toString() { return ""; }
+}
+
+#endif
 
 }

@@ -7,6 +7,9 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
+#if PORT_COMPLETE
+
+
 public class hj : JavaThread {
    public long sK;
    public string sL;
@@ -49,5 +52,19 @@ public class hj : JavaThread {
       }
    }
 }
+
+
+#else
+
+public class hj
+{
+   public hj() { }
+   public hj(params object[] args) { }
+   public long sK = 0;
+   public string sL = "";
+   public void run() { }
+}
+
+#endif
 
 }

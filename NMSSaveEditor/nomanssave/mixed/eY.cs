@@ -8,6 +8,9 @@ using System.Text.RegularExpressions;
 namespace NMSSaveEditor
 {
 
+#if PORT_COMPLETE
+
+
 public class eY {
    public static int kB = 10;
    public static int kC = 10;
@@ -562,5 +565,57 @@ public class eY {
       return kH;
    }
 }
+
+
+#else
+
+public class eY
+{
+   public eY() { }
+   public eY(params object[] args) { }
+   public static int kB = 0;
+   public static int kC = 0;
+   public static Pattern kH = default;
+   public static Pattern kK = default;
+   public int length = 0;
+   public int Count = 0;
+   public string[] names = System.Array.Empty<string>();
+   public object[] values = System.Array.Empty<object>();
+   public object kD = default;
+   public fe kI = default;
+   public Dictionary<object, object> kJ = default;
+   public void b(string var1, Function var2) { }
+   public void a(string var1, object var2) { }
+   public string bz() { return ""; }
+   public string toString() { return ""; }
+   public int size() { return 0; }
+   public List<object> getNames() { return default; }
+   public bool contains(string var1) { return false; }
+   public object get(string var1) { return default; }
+   public object Put(string var1, object var2) { return default; }
+   public void Clear() { }
+   public object put(string var1, object var2) { return default; }
+   public object F(string var1) { return default; }
+   public void c(eY var1) { }
+   public int indexOf(string var1) { return 0; }
+   public object set(int var1, object var2) { return default; }
+   public object remove(int var1) { return default; }
+   public void clear() { }
+   public void firePropertyChange(string var1, object var2, object var3) { }
+   public fc G(string var1) { return default; }
+   public object getValue(string var1) { return default; }
+   public eV d(string var1) { return default; }
+   public string getValueAsString(string var1) { return ""; }
+   public string I(string var1) { return ""; }
+   public int J(string var1) { return 0; }
+   public long K(string var1) { return 0; }
+   public double L(string var1) { return 0; }
+   public bool M(string var1) { return false; }
+   public object N(string var1) { return default; }
+   public object clone() { return default; }
+   public static Pattern bF() { return default; }
+}
+
+#endif
 
 }

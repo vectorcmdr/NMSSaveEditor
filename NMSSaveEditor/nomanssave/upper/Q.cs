@@ -7,6 +7,9 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
+#if PORT_COMPLETE
+
+
 public class Q : Form {
    public W bw;
    public int bx;
@@ -93,5 +96,28 @@ public class Q : Form {
       var0.bz = var1;
    }
 }
+
+
+#else
+
+public class Q
+{
+   public Q() { }
+   public Q(params object[] args) { }
+   public static Q bC = default;
+   public W bw = default;
+   public int bx = 0;
+   public int by = 0;
+   public W bz = default;
+   public TextBox bA = default;
+   public TextBox bB = default;
+   public W a(W var1, int var2, int var3) { return default; }
+   public static int b(Q var0) { return 0; }
+   public static W c(Q var0) { return default; }
+   public static TextBox d(Q var0) { return default; }
+   public static int e(Q var0) { return 0; }
+}
+
+#endif
 
 }

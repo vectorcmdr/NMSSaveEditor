@@ -7,6 +7,9 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
+#if PORT_COMPLETE
+
+
 public class fW {
    public string name;
    public string filename;
@@ -86,5 +89,28 @@ public class fW {
       return hk.k(var1.toByteArray());
    }
 }
+
+
+#else
+
+public class fW
+{
+   public fW() { }
+   public fW(params object[] args) { }
+   public string name = "";
+   public string filename = "";
+   public string id = "";
+   public int mT = 0;
+   public int lL = 0;
+   public string mU = "";
+   public long timestamp = 0;
+   public long mV = 0;
+   public long mW = 0;
+   public fT mN = default;
+   public void write(Stream var1) { }
+   public string cz() { return ""; }
+}
+
+#endif
 
 }

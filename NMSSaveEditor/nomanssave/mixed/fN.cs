@@ -6,6 +6,9 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
+#if PORT_COMPLETE
+
+
 public class fN : ft {
    public int lT;
    public fJ mt;
@@ -95,5 +98,24 @@ public class fN : ft {
       return var0.mt;
    }
 }
+
+
+#else
+
+public class fN
+{
+   public fN() { }
+   public fN(params object[] args) { }
+   public int lT = 0;
+   public fJ mt = default;
+   public int getIndex() { return 0; }
+   public bool isEmpty() { return false; }
+   public fs[] bX() { return System.Array.Empty<fs>(); }
+   public fn L() { return default; }
+   public string toString() { return ""; }
+   public static fJ a(fN var0) { return default; }
+}
+
+#endif
 
 }

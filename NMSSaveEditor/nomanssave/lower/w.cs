@@ -5,6 +5,9 @@ using System.Text;
 
 namespace NMSSaveEditor
 {
+
+#if PORT_COMPLETE
+
 public class w : Runnable {
    public bool ba;
 
@@ -23,5 +26,18 @@ public class w : Runnable {
 
    }
 }
+
+
+#else
+
+public class w
+{
+   public w() { }
+   public w(params object[] args) { }
+   public bool ba = false;
+   public void run() { }
+}
+
+#endif
 
 }

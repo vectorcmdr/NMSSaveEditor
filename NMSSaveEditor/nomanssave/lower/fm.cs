@@ -7,6 +7,9 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
+#if PORT_COMPLETE
+
+
 public class fm : JavaThread {
    public WatchService lk = /* FileSystems */ null.newWatchService();
    public Dictionary<object, object> ll = new WeakHashMap();
@@ -123,5 +126,21 @@ public class fm : JavaThread {
 
    }
 }
+
+
+#else
+
+public class fm
+{
+   public fm() { }
+   public fm(params object[] args) { }
+   public WatchService lk = default;
+   public Dictionary<object, object> ll = default;
+   public void a(fq var1, FileInfo var2) { }
+   public void b(fq var1) { }
+   public void run() { }
+}
+
+#endif
 
 }

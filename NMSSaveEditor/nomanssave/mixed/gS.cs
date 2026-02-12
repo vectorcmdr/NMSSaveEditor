@@ -7,6 +7,9 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
+#if PORT_COMPLETE
+
+
 public class gS {
    public static byte[] lA = new byte[]{78, 77, 83, 66};
    public static byte[] rS = new byte[]{50, -99, -78, -55, 92, 88, -34, 74, -57, 17, 57, -108, -94, 127, 97, -79};
@@ -248,5 +251,22 @@ public class gS {
       return var7;
    }
 }
+
+
+#else
+
+public class gS
+{
+   public gS() { }
+   public gS(params object[] args) { }
+   public static byte[] lA = System.Array.Empty<byte>();
+   public static byte[] rS = System.Array.Empty<byte>();
+   public static double[] a(eY var0, string var1) { return System.Array.Empty<double>(); }
+   public static void d(eY var0, FileInfo var1) { }
+   public static void e(eY var0, FileInfo var1) { }
+   public static void b(eY var0, Dictionary<object, object> var1, FileInfo var2) { }
+}
+
+#endif
 
 }

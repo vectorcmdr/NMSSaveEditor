@@ -11,6 +11,9 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
+#if PORT_COMPLETE
+
+
 public class aH {
    public static FileInfo cC;
    public static FileInfo cD;
@@ -371,5 +374,37 @@ public class aH {
       }
    }
 }
+
+
+#else
+
+public class aH
+{
+   public aH() { }
+   public aH(params object[] args) { }
+   public static FileInfo cC = default;
+   public static FileInfo cD = default;
+   public static FileInfo cE = default;
+   public static FileInfo cF = default;
+   public static FileInfo cG = default;
+   public static int cH = 0;
+   public static int cI = 0;
+   public static int cJ = 0;
+   public static eY cK = default;
+   public static bool cL = false;
+   public static int[] cM = System.Array.Empty<int>();
+   public static string getProperty(string var0) { return ""; }
+   public static void setProperty(string var0, string var1) { }
+   public static int j(string var0) { return 0; }
+   public static int a(string var0, int var1) { return 0; }
+   public static void b(string var0, int var1) { }
+   public static bool T() { return false; }
+   public static void U() { }
+   public static void init(bool var0) { }
+   public static void V() { }
+   public static int[] W() { return System.Array.Empty<int>(); }
+}
+
+#endif
 
 }

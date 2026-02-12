@@ -7,6 +7,9 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
+#if PORT_COMPLETE
+
+
 public class cI : TreeModel {
    public List<object> gh;
    public cy gg;
@@ -68,5 +71,27 @@ public class cI : TreeModel {
       this(var1);
    }
 }
+
+
+#else
+
+public class cI
+{
+   public cI() { }
+   public cI(params object[] args) { }
+   public List<object> gh = default;
+   public cy gg = default;
+   public object getRoot() { return default; }
+   public object getChild(object var1, int var2) { return default; }
+   public int getChildCount(object var1) { return 0; }
+   public bool isLeaf(object var1) { return false; }
+   public void valueForPathChanged(TreePath var1, object var2) { }
+   public int getIndexOfChild(object var1, object var2) { return 0; }
+   public void addTreeModelListener(TreeModelListener var1) { }
+   public void removeTreeModelListener(TreeModelListener var1) { }
+   public void a(cJ var1) { }
+}
+
+#endif
 
 }

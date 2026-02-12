@@ -5,6 +5,9 @@ using System.Text;
 
 namespace NMSSaveEditor
 {
+
+#if PORT_COMPLETE
+
 public class bH : bK {
    public bE ey;
 
@@ -28,5 +31,21 @@ public class bH : bK {
       throw new Exception("Cannot set words learnt");
    }
 }
+
+
+#else
+
+public class bH
+{
+   public bH() { }
+   public bH(params object[] args) { }
+   public bE ey = default;
+   public string getID() { return ""; }
+   public bool isSpecial() { return false; }
+   public string ab() { return ""; }
+   public void l(string var1) { }
+}
+
+#endif
 
 }

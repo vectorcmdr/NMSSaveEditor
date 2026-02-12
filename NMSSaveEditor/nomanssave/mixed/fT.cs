@@ -8,6 +8,9 @@ using System.Text.RegularExpressions;
 namespace NMSSaveEditor
 {
 
+#if PORT_COMPLETE
+
+
 public class fT : fq {
    public static readonly byte[] lA = "HGSAVEV2\u0000".GetBytes();
    public static Pattern lV = Pattern.compile("Slot(\\d+)((Auto)|(Manual))");
@@ -316,5 +319,63 @@ public class fT : fq {
       var0.cs();
    }
 }
+
+
+#else
+
+public class fT
+{
+   public fT() { }
+   public fT(params object[] args) { }
+   public static readonly byte[] lA = System.Array.Empty<byte>();
+   public static Pattern lV = default;
+   public static Pattern lW = default;
+   public static string mC = "";
+   public static Pattern mJ = default;
+   public static int mK = 0;
+   public static int mL = 0;
+   public static int mM = 0;
+   public FileInfo lX = default;
+   public fR lE = default;
+   public fU mD = default;
+   public fY[] mE = System.Array.Empty<fY>();
+   public int header = 0;
+   public int lL = 0;
+   public string name = "";
+   public int lM = 0;
+   public int lR = 0;
+   public int lS = 0;
+   public string mF = "";
+   public int mG = 0;
+   public int mH = 0;
+   public List<object> mI = default;
+   public void finalize() { }
+   public void X(string var1) { }
+   public FileInfo bS() { return default; }
+   public void cr() { }
+   public void cs() { }
+   public fW Z(string var1) { return default; }
+   public string ct() { return ""; }
+   public fr bT() { return default; }
+   public ft[] bU() { return System.Array.Empty<ft>(); }
+   public int W(string var1) { return 0; }
+   public static int an(int var0) { return 0; }
+   public static bool h(FileInfo var0) { return false; }
+   public static Stream a(Stream var0, int var1) { return default; }
+   public static fY[] b(fT var0) { return System.Array.Empty<fY>(); }
+   public static Pattern cu() { return default; }
+   public static Pattern cl() { return default; }
+   public static int ao(int var0) { return 0; }
+   public static List<object> c(fT var0) { return default; }
+   public static FileInfo d(fT var0) { return default; }
+   public static bool i(FileInfo var0) { return false; }
+   public static int cv() { return 0; }
+   public static int cw() { return 0; }
+   public static int cx() { return 0; }
+   public static byte[] cy() { return System.Array.Empty<byte>(); }
+   public static void e(fT var0) { }
+}
+
+#endif
 
 }

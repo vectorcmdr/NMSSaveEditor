@@ -6,6 +6,9 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
+#if PORT_COMPLETE
+
+
 public class gI : gt {
    public gH rq;
    public bool rr;
@@ -26,5 +29,21 @@ public class gI : gt {
       return this.rq.dZ() ? "Ship " + this.il + " - Storage Sacs" : base.ToString();
    }
 }
+
+
+#else
+
+public class gI
+{
+   public gI() { }
+   public gI(params object[] args) { }
+   public gH rq = default;
+   public bool rr = false;
+   public int il = 0;
+   public int dj() { return 0; }
+   public string toString() { return ""; }
+}
+
+#endif
 
 }

@@ -7,6 +7,9 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
+#if PORT_COMPLETE
+
+
 public class dy : object {
    public du hp;
    public gF hq;
@@ -24,5 +27,19 @@ public class dy : object {
 
    }
 }
+
+
+#else
+
+public class dy
+{
+   public dy() { }
+   public dy(params object[] args) { }
+   public du hp = default;
+   public gF hq = default;
+   public void mouseClicked(MouseEventArgs var1) { }
+}
+
+#endif
 
 }

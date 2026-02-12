@@ -8,6 +8,9 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
+#if PORT_COMPLETE
+
+
 public class x : JavaThread {
    public Application aZ;
    public bool ba;
@@ -57,5 +60,20 @@ public class x : JavaThread {
       return var0.aZ;
    }
 }
+
+
+#else
+
+public class x
+{
+   public x() { }
+   public x(params object[] args) { }
+   public Application aZ = default;
+   public bool ba = false;
+   public void run() { }
+   public static Application a(x var0) { return default; }
+}
+
+#endif
 
 }

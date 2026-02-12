@@ -41,13 +41,17 @@ namespace NMSSaveEditor
         private Regex _regex;
         private string _input;
         private Match _match;
+        public int _lastIndex;
         public Matcher(Regex regex, string input) { _regex = regex; _input = input; }
-        public bool find() { _match = _regex.Match(_input); return _match.Success; }
+        public bool find() { _match = _regex.Match(_input); _lastIndex = _match?.Index ?? 0; return _match.Success; }
         public bool matches() { _match = _regex.Match(_input); return _match.Success && _match.Value == _input; }
         public string group() { return _match?.Value; }
         public string group(int i) { return _match?.Groups[i]?.Value; }
         public string replaceAll(string replacement) { return _regex.Replace(_input, replacement); }
         public string replaceFirst(string replacement) { return _regex.Replace(_input, replacement, 1); }
+        public int start() { return _match?.Index ?? 0; }
+        public int Start() { return start(); }
+        public int end() { return (_match?.Index ?? 0) + (_match?.Length ?? 0); }
     }
 
     // Java Function<T,R>

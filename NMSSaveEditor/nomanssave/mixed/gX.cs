@@ -7,6 +7,9 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
+#if PORT_COMPLETE
+
+
 public class gX : FilterInputStream {
    public ha sa;
    public int sb;
@@ -57,5 +60,22 @@ public class gX : FilterInputStream {
       return var0.@in;
    }
 }
+
+
+#else
+
+public class gX
+{
+   public gX() { }
+   public gX(params object[] args) { }
+   public ha sa = default;
+   public int sb = 0;
+   public int getFrameCount() { return 0; }
+   public bool ej() { return false; }
+   public int read() { return 0; }
+   public static Stream a(gX var0) { return default; }
+}
+
+#endif
 
 }

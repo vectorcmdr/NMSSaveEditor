@@ -79,9 +79,7 @@ namespace NMSSaveEditor
         // JTree  
         public static object DataSource(this JTree t) => null;
         
-        // Matcher extensions
-        public static int Start(this Matcher m) => m.start();
-        public static int end(this Matcher m) { return m.start() + m.group().Length; }
+        // Matcher extensions now in JavaCompat.cs
         
         // Generic object extensions for dynamic-like dispatch
         public static void allRowsChanged(this object o) { }

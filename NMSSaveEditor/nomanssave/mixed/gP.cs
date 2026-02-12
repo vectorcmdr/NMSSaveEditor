@@ -6,6 +6,9 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
+#if PORT_COMPLETE
+
+
 public class gP : gt {
    public gO rP;
    public bool rr;
@@ -22,5 +25,20 @@ public class gP : gt {
       return this.rr ? 3584 : 3584 | this.rQ;
    }
 }
+
+
+#else
+
+public class gP
+{
+   public gP() { }
+   public gP(params object[] args) { }
+   public gO rP = default;
+   public bool rr = false;
+   public int rQ = 0;
+   public int dj() { return 0; }
+}
+
+#endif
 
 }

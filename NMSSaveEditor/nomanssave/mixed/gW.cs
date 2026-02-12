@@ -5,6 +5,9 @@ using System.Text;
 
 namespace NMSSaveEditor
 {
+
+#if PORT_COMPLETE
+
 public class gW {
    public static void i(byte[] var0) {
       StringBuilder var1 = new StringBuilder();
@@ -57,5 +60,18 @@ public class gW {
       i(var1);
    }
 }
+
+
+#else
+
+public class gW
+{
+   public gW() { }
+   public gW(params object[] args) { }
+   public static void i(byte[] var0) { }
+   public static void a(long[] var0) { }
+}
+
+#endif
 
 }

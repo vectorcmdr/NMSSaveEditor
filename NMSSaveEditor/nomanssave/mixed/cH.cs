@@ -8,6 +8,9 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
+#if PORT_COMPLETE
+
+
 public class cH : TextAction, ClipboardOwner {
    public cy gg;
 
@@ -24,5 +27,19 @@ public class cH : TextAction, ClipboardOwner {
    public void lostOwnership(object var1, Transferable var2) {
    }
 }
+
+
+#else
+
+public class cH
+{
+   public cH() { }
+   public cH(params object[] args) { }
+   public cy gg = default;
+   public void actionPerformed(EventArgs var1) { }
+   public void lostOwnership(object var1, Transferable var2) { }
+}
+
+#endif
 
 }

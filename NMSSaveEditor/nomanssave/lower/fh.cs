@@ -7,6 +7,9 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
+#if PORT_COMPLETE
+
+
 public class fh {
    public static int kU = 0;
    public static int kV = 1;
@@ -761,5 +764,38 @@ public class fh {
 
    }
 }
+
+
+#else
+
+public class fh
+{
+   public fh() { }
+   public fh(params object[] args) { }
+   public static int kU = 0;
+   public static int kV = 0;
+   public static int kW = 0;
+   public static int kX = 0;
+   public static int kY = 0;
+   public static Predicate<object> kZ = default;
+   public static Predicate<object> la = default;
+   public static Predicate<object> lb = default;
+   public static Predicate<object> lc = default;
+   public static Predicate<object> ld = default;
+   public static string gc = "";
+   public static bool a(Class var0) { return false; }
+   public static string b(object var0, bool var1) { return ""; }
+   public static string O(string var0) { return ""; }
+   public static object P(string var0) { return default; }
+   public static eY Q(string var0) { return default; }
+   public static eV R(string var0) { return default; }
+   public static int ae(int var0) { return 0; }
+   public static string c(fi var0) { return ""; }
+   public static object d(fi var0) { return default; }
+   public static fg e(fi var0) { return default; }
+   public static void i(object var0) { }
+}
+
+#endif
 
 }

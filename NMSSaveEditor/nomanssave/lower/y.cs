@@ -9,6 +9,9 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
+#if PORT_COMPLETE
+
+
 public class y : Runnable {
    public x bb;
    public bool ba;
@@ -63,5 +66,19 @@ public class y : Runnable {
 
    }
 }
+
+
+#else
+
+public class y
+{
+   public y() { }
+   public y(params object[] args) { }
+   public x bb = default;
+   public bool ba = false;
+   public void run() { }
+}
+
+#endif
 
 }

@@ -8,6 +8,9 @@ using System.Xml;
 namespace NMSSaveEditor
 {
 
+#if PORT_COMPLETE
+
+
 public class eu {
    public static List<object> iH = new List<object>();
 
@@ -57,5 +60,18 @@ public class eu {
       }
    }
 }
+
+
+#else
+
+public class eu
+{
+   public eu() { }
+   public eu(params object[] args) { }
+   public static List<object> iH = default;
+   public static ew b(string var0, string var1) { return default; }
+}
+
+#endif
 
 }

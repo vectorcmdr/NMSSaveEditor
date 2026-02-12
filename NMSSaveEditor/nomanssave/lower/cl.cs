@@ -7,6 +7,9 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
+#if PORT_COMPLETE
+
+
 public class cl : JFileChooser {
    public static cl fG = null;
    public static string name = "Planetary Base Backup FileInfo";
@@ -33,5 +36,19 @@ public class cl : JFileChooser {
       return fH;
    }
 }
+
+
+#else
+
+public class cl
+{
+   public cl() { }
+   public cl(params object[] args) { }
+   public static cl fG = default;
+   public static string name = "";
+   public static Image fH = default;
+}
+
+#endif
 
 }

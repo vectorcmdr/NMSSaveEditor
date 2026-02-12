@@ -7,6 +7,9 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
+#if PORT_COMPLETE
+
+
 public class fw {
    public fn be;
    public byte[] lK;
@@ -201,5 +204,34 @@ public class fw {
       }
    }
 }
+
+
+#else
+
+public class fw
+{
+   public fw() { }
+   public fw(params object[] args) { }
+   public fn be = default;
+   public byte[] lK = System.Array.Empty<byte>();
+   public int lL = 0;
+   public int lM = 0;
+   public int lN = 0;
+   public int lO = 0;
+   public long bd = 0;
+   public long length = 0;
+   public long lP = 0;
+   public int lQ = 0;
+   public int lR = 0;
+   public int lS = 0;
+   public fu lJ = default;
+   public bool isValid() { return false; }
+   public int a(Stream var1) { return 0; }
+   public void bZ() { }
+   public byte[] ca() { return System.Array.Empty<byte>(); }
+   public void d(byte[] var1) { }
+}
+
+#endif
 
 }

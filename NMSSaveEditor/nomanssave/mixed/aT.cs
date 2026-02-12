@@ -8,6 +8,9 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
+#if PORT_COMPLETE
+
+
 public class aT : ActionListener {
    public aQ dr;
 
@@ -20,5 +23,18 @@ public class aT : ActionListener {
       this.dr.Hide();
    }
 }
+
+
+#else
+
+public class aT
+{
+   public aT() { }
+   public aT(params object[] args) { }
+   public aQ dr = default;
+   public void actionPerformed(EventArgs var1) { }
+}
+
+#endif
 
 }

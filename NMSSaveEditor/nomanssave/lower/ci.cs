@@ -5,6 +5,9 @@ using System.Text;
 
 namespace NMSSaveEditor
 {
+
+#if PORT_COMPLETE
+
 public class ci : G {
    public cg fF;
 
@@ -29,5 +32,18 @@ public class ci : G {
       }
    }
 }
+
+
+#else
+
+public class ci
+{
+   public ci() { }
+   public ci(params object[] args) { }
+   public cg fF = default;
+   public string g(string var1) { return ""; }
+}
+
+#endif
 
 }

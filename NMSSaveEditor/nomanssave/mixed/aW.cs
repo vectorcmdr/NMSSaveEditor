@@ -7,6 +7,9 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
+#if PORT_COMPLETE
+
+
 public class aW : Form {
    public TextBox ds;
    public CheckBox dt;
@@ -97,5 +100,26 @@ public class aW : Form {
       return var0.du;
    }
 }
+
+
+#else
+
+public class aW
+{
+   public aW() { }
+   public aW(params object[] args) { }
+   public static aW dx = default;
+   public TextBox ds = default;
+   public CheckBox dt = default;
+   public CheckBox du = default;
+   public RadioButton dv = default;
+   public RadioButton dw = default;
+   public static void a(cy var0, string var1) { }
+   public static RadioButton b(aW var0) { return default; }
+   public static CheckBox c(aW var0) { return default; }
+   public static CheckBox d(aW var0) { return default; }
+}
+
+#endif
 
 }

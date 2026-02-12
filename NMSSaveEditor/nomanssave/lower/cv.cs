@@ -7,6 +7,9 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
+#if PORT_COMPLETE
+
+
 public class cv : JFileChooser {
    public static cv fQ = null;
    public static string name = "Weapon Export FileInfo";
@@ -32,5 +35,19 @@ public class cv : JFileChooser {
       return fH;
    }
 }
+
+
+#else
+
+public class cv
+{
+   public cv() { }
+   public cv(params object[] args) { }
+   public static cv fQ = default;
+   public static string name = "";
+   public static Image fH = default;
+}
+
+#endif
 
 }

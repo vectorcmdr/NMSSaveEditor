@@ -7,6 +7,9 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
+#if PORT_COMPLETE
+
+
 public class ba : Panel {
    public object dA; // FormLayout stub
    // TODO: private FormLayout dA;
@@ -134,5 +137,21 @@ public class ba : Panel {
       this.Add(var1, "2, " + var3 + ", " + var2 + ", 1, fill, default");
    }
 }
+
+
+#else
+
+public class ba
+{
+   public ba() { }
+   public ba(params object[] args) { }
+   public object dA = default;
+   public void k(string var1) { }
+   public void a(string var1, Image var2) { }
+   public void addText(string var1) { }
+   public void Y() { }
+}
+
+#endif
 
 }

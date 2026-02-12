@@ -8,6 +8,9 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
+#if PORT_COMPLETE
+
+
 public class cg : Form {
    public TextBox fn;
    public Label fo;
@@ -221,5 +224,40 @@ public class cg : Form {
       return var0.fv;
    }
 }
+
+
+#else
+
+public class cg
+{
+   public cg() { }
+   public cg(params object[] args) { }
+   public static cg fE = default;
+   public TextBox fn = default;
+   public Label fo = default;
+   public TextBox fp = default;
+   public TextBox fq = default;
+   public Label fr = default;
+   public TextBox fs = default;
+   public G ft = default;
+   public Label fu = default;
+   public G fv = default;
+   public TextBox fw = default;
+   public TextBox fx = default;
+   public TextBox fy = default;
+   public TextBox fz = default;
+   public ey fA = default;
+   public gQ fB = default;
+   public Integer fC = default;
+   public Integer fD = default;
+   public void a(gQ var1) { }
+   public static gQ b(cg var0) { return default; }
+   public static ey c(cg var0) { return default; }
+   public static Integer d(cg var0) { return default; }
+   public static G e(cg var0) { return default; }
+   public static G f(cg var0) { return default; }
+}
+
+#endif
 
 }

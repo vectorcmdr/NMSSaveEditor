@@ -5,6 +5,9 @@ using System.Text;
 
 namespace NMSSaveEditor
 {
+
+#if PORT_COMPLETE
+
 public class bF : bK {
    public bE ey;
 
@@ -29,5 +32,21 @@ public class bF : bK {
       bE.a(this.ey).g(var2);
    }
 }
+
+
+#else
+
+public class bF
+{
+   public bF() { }
+   public bF(params object[] args) { }
+   public bE ey = default;
+   public string getID() { return ""; }
+   public bool isSpecial() { return false; }
+   public string ab() { return ""; }
+   public void l(string var1) { }
+}
+
+#endif
 
 }

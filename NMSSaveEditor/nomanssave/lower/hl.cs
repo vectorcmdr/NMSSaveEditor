@@ -7,6 +7,9 @@ using System.Text.RegularExpressions;
 namespace NMSSaveEditor
 {
 
+#if PORT_COMPLETE
+
+
 public class hl {
    public static Pattern sN = Pattern.compile("0x([0-9a-fA-F]{1,16})");
    public static Pattern sO = Pattern.compile("[0-9a-fA-F]{12}");
@@ -315,5 +318,47 @@ public class hl {
       return "0x" + Long.toString(this.ex(), 16);
    }
 }
+
+
+#else
+
+public class hl
+{
+   public hl() { }
+   public hl(params object[] args) { }
+   public static Pattern sN = default;
+   public static Pattern sO = default;
+   public static Pattern sP = default;
+   public int sQ = 0;
+   public int sR = 0;
+   public int sS = 0;
+   public int sT = 0;
+   public int sU = 0;
+   public int sV = 0;
+   public static long aE(string var0) { return 0; }
+   public static int a(long var0, int var2) { return 0; }
+   public static int b(long var0, int var2) { return 0; }
+   public int eq() { return 0; }
+   public void aL(int var1) { }
+   public int er() { return 0; }
+   public void aM(int var1) { }
+   public int es() { return 0; }
+   public void aN(int var1) { }
+   public int et() { return 0; }
+   public void aO(int var1) { }
+   public int eu() { return 0; }
+   public void aP(int var1) { }
+   public int ev() { return 0; }
+   public void aQ(int var1) { }
+   public eY ew() { return default; }
+   public long ex() { return 0; }
+   public string ey() { return ""; }
+   public string ez() { return ""; }
+   public bool equals(object var1) { return false; }
+   public int hashCode() { return 0; }
+   public string toString() { return ""; }
+}
+
+#endif
 
 }

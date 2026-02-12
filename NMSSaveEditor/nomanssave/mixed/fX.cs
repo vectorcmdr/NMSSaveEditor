@@ -8,6 +8,9 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
+#if PORT_COMPLETE
+
+
 public abstract class fX {
    public fW mO;
    public FileInfo mX;
@@ -359,5 +362,28 @@ public abstract class fX {
       var5.setLastModified(this.mO.timestamp);
    }
 }
+
+
+#else
+
+public class fX
+{
+   public fX() { }
+   public fX(params object[] args) { }
+   public fW mO = default;
+   public FileInfo mX = default;
+   public FileInfo mY = default;
+   public fS mZ = default;
+   public int mode = 0;
+   public fT mN = default;
+   public string K() { return ""; }
+   public Stream getInputStream() { return default; }
+   public Stream getOutputStream() { return default; }
+   public eY a(eG var1) { return default; }
+   public byte[] ah(int var1) { return System.Array.Empty<byte>(); }
+   public void h(eY var1) { }
+}
+
+#endif
 
 }

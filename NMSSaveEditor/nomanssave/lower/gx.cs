@@ -5,6 +5,9 @@ using System.Text;
 
 namespace NMSSaveEditor
 {
+
+#if PORT_COMPLETE
+
 public sealed class gx : gD {
    public static readonly gx qH = new gx("Standard", "MODELS/COMMON/WEAPONS/MULTITOOL/MULTITOOL.SCENE.MBIN");
    public static readonly gx qI = new gx("Royal", "MODELS/COMMON/WEAPONS/MULTITOOL/ROYALMULTITOOL.SCENE.MBIN");
@@ -46,5 +49,29 @@ public sealed class gx : gD {
       }
    }
 }
+
+
+#else
+
+public class gx
+{
+   public gx() { }
+   public gx(params object[] args) { }
+   public static readonly gx qH = default;
+   public static readonly gx qI = default;
+   public static readonly gx qJ = default;
+   public static readonly gx qK = default;
+   public static readonly gx qL = default;
+   public static readonly gx qM = default;
+   public static readonly gx qN = default;
+   public static readonly gx qO = default;
+   public static readonly gx qP = default;
+   public string name = "";
+   public string filename = "";
+   public string K() { return ""; }
+   public string toString() { return ""; }
+}
+
+#endif
 
 }

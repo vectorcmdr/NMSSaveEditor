@@ -8,6 +8,9 @@ using System.Text.RegularExpressions;
 namespace NMSSaveEditor
 {
 
+#if PORT_COMPLETE
+
+
 public class fY : fX, fs {
    public DateTime LastWriteTimeUtc => DateTimeOffset.FromUnixTimeMilliseconds(lastModified()).UtcDateTime;
    public string Name => getName();
@@ -105,5 +108,29 @@ public class fY : fX, fs {
       return this.mZ.getDescription();
    }
 }
+
+
+#else
+
+public class fY
+{
+   public fY() { }
+   public fY(params object[] args) { }
+   public DateTime LastWriteTimeUtc = default;
+   public string Name = "";
+   public int lO = 0;
+   public fn me = default;
+   public string na = "";
+   public fT mN = default;
+   public fn L() { return default; }
+   public long lastModified() { return 0; }
+   public eY M() { return default; }
+   public string b(eY var1) { return ""; }
+   public string toString() { return ""; }
+   public string getName() { return ""; }
+   public string getDescription() { return ""; }
+}
+
+#endif
 
 }

@@ -6,6 +6,9 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
+#if PORT_COMPLETE
+
+
 public class bt : ActionListener {
    public bl er;
    public Application bv;
@@ -22,5 +25,20 @@ public class bt : ActionListener {
       return var0.er;
    }
 }
+
+
+#else
+
+public class bt
+{
+   public bt() { }
+   public bt(params object[] args) { }
+   public bl er = default;
+   public Application bv = default;
+   public void valueChanged(EventArgs var1) { }
+   public static bl a(bt var0) { return default; }
+}
+
+#endif
 
 }

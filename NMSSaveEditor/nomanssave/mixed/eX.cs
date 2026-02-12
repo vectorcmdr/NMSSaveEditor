@@ -7,6 +7,9 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
+#if PORT_COMPLETE
+
+
 public class eX : IOException {
    public int kF;
    public int kG;
@@ -35,5 +38,20 @@ public class eX : IOException {
       return this.kG;
    }
 }
+
+
+#else
+
+public class eX
+{
+   public eX() { }
+   public eX(params object[] args) { }
+   public int kF = 0;
+   public int kG = 0;
+   public int getLineNumber() { return 0; }
+   public int bD() { return 0; }
+}
+
+#endif
 
 }

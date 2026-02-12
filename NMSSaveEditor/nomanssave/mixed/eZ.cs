@@ -5,6 +5,9 @@ using System.Text;
 
 namespace NMSSaveEditor
 {
+
+#if PORT_COMPLETE
+
 public class eZ : fc {
    public int index;
    public eY kL;
@@ -96,5 +99,22 @@ public class eZ : fc {
       }
    }
 }
+
+
+#else
+
+public class eZ
+{
+   public eZ() { }
+   public eZ(params object[] args) { }
+   public int index = 0;
+   public eY kL = default;
+   public object a(Class var1, bool var2) { return default; }
+   public object getValue() { return default; }
+   public object bG() { return default; }
+   public eY e(eY var1) { return default; }
+}
+
+#endif
 
 }

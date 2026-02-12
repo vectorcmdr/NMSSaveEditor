@@ -7,6 +7,9 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
+#if PORT_COMPLETE
+
+
 public class de : ListModel {
    public dd gW;
 
@@ -31,5 +34,22 @@ public class de : ListModel {
       return this.w(var1);
    }
 }
+
+
+#else
+
+public class de
+{
+   public de() { }
+   public de(params object[] args) { }
+   public dd gW = default;
+   public int getSize() { return 0; }
+   public gt w(int var1) { return default; }
+   public void addListDataListener(EventHandler var1) { }
+   public void removeListDataListener(EventHandler var1) { }
+   public object getElementAt(int var1) { return default; }
+}
+
+#endif
 
 }

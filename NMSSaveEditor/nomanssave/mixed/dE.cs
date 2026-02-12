@@ -8,6 +8,9 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
+#if PORT_COMPLETE
+
+
 public class dE : Panel {
    public ba hv;
    public ba hw;
@@ -110,5 +113,33 @@ public class dE : Panel {
       return var0.hA;
    }
 }
+
+
+#else
+
+public class dE
+{
+   public dE() { }
+   public dE(params object[] args) { }
+   public ba hv = default;
+   public ba hw = default;
+   public ComboBox hx = default;
+   public G hy = default;
+   public G hz = default;
+   public G[] ea = System.Array.Empty<G>();
+   public DataGridView hA = default;
+   public dt hB = default;
+   public gE[] hC = System.Array.Empty<gE>();
+   public gE[] aN() { return System.Array.Empty<gE>(); }
+   public void a(gE[] var1) { }
+   public static gE[] b(dE var0) { return System.Array.Empty<gE>(); }
+   public static G c(dE var0) { return default; }
+   public static G d(dE var0) { return default; }
+   public static G[] e(dE var0) { return System.Array.Empty<G>(); }
+   public static dt f(dE var0) { return default; }
+   public static DataGridView g(dE var0) { return default; }
+}
+
+#endif
 
 }

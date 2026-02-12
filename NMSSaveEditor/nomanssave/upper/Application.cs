@@ -9,6 +9,9 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
+#if PORT_COMPLETE
+
+
 public class Application {
    public static string VERSION = "1.19.14";
    public static string RELEASE = "BREACH";
@@ -2056,5 +2059,121 @@ public class Application {
       var0.k();
    }
 }
+
+
+#else
+
+public class Application
+{
+   public Application() { }
+   public Application(params object[] args) { }
+   public static string VERSION = "";
+   public static string RELEASE = "";
+   public static string J = "";
+   public static string K = "";
+   public static Application L = default;
+   public static Dictionary<object, object> M = default;
+   public static int ae = 0;
+   public static int af = 0;
+   public static int ag = 0;
+   public static int ah = 0;
+   public static int ai = 0;
+   public static int aj = 0;
+   public static int ak = 0;
+   public static int al = 0;
+   public static int am = 0;
+   public static int an = 0;
+   public static int ao = 0;
+   public static int ap = 0;
+   public static int aq = 0;
+   public static int ar = 0;
+   public static int[] aY = System.Array.Empty<int>();
+   public Form N = default;
+   public TabControl O = default;
+   public Label P = default;
+   public Label Q = default;
+   public ComboBox R = default;
+   public ComboBox S = default;
+   public Label T = default;
+   public Label U = default;
+   public Label V = default;
+   public Button W = default;
+   public Button X = default;
+   public Button Y = default;
+   public ToolStripMenuItem Z = default;
+   public ToolStripMenuItem aa = default;
+   public ToolStripMenuItem ab = default;
+   public List<object> ac = default;
+   public ToolStripMenuItem ad = default;
+   public dj at = default;
+   public dN au = default;
+   public eb av = default;
+   public bd aw = default;
+   public bl ax = default;
+   public ep ay = default;
+   public X az = default;
+   public I aA = default;
+   public dE aB = default;
+   public ap aC = default;
+   public bE aD = default;
+   public c aE = default;
+   public fq aF = default;
+   public ft[] aG = System.Array.Empty<ft>();
+   public int aH = 0;
+   public fs[] aI = System.Array.Empty<fs>();
+   public int aJ = 0;
+   public eY aK = default;
+   public bool aL = false;
+   public fr aM = default;
+   public eY aN = default;
+   public bool aO = false;
+   public bool aP = false;
+   public bool aQ = false;
+   public bool aR = false;
+   public bool aS = false;
+   public bool aT = false;
+   public bool aU = false;
+   public fe aV = default;
+   public fe aW = default;
+   public fR aX = default;
+   public static string a(long var0) { return ""; }
+   public static string b(long var0) { return ""; }
+   public static void main(string[] var0) { }
+   public void f() { }
+   public Form g() { return default; }
+   public gH h() { return default; }
+   public gv i() { return default; }
+   public gj j() { return default; }
+   public void k() { }
+   public void e(int var1) { }
+   public void c(string var1) { }
+   public void l() { }
+   public void m() { }
+   public void n() { }
+   public void o() { }
+   public void p() { }
+   public void q() { }
+   public void r() { }
+   public void s() { }
+   public void t() { }
+   public void u() { }
+   public void v() { }
+   public void w() { }
+   public void x() { }
+   public void y() { }
+   public void z() { }
+   public void A() { }
+   public void B() { }
+   public void C() { }
+   public eV d(string var1) { return default; }
+   public bool D() { return false; }
+   public string E() { return ""; }
+   public fn F() { return default; }
+   public void G() { }
+   public void initialize() { }
+   public static int[] I() { return System.Array.Empty<int>(); }
+}
+
+#endif
 
 }

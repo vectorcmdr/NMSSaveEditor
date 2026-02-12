@@ -5,6 +5,9 @@ using System.Text;
 
 namespace NMSSaveEditor
 {
+
+#if PORT_COMPLETE
+
 public class dU : G {
    public dN ia;
 
@@ -30,5 +33,18 @@ public class dU : G {
       }
    }
 }
+
+
+#else
+
+public class dU
+{
+   public dU() { }
+   public dU(params object[] args) { }
+   public dN ia = default;
+   public string g(string var1) { return ""; }
+}
+
+#endif
 
 }

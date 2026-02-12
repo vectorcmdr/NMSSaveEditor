@@ -7,6 +7,9 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
+#if PORT_COMPLETE
+
+
 public class dj : em {
    public static double gX = 1000.0D;
    public static double gY = 1000.0D;
@@ -150,5 +153,48 @@ public class dj : em {
       var0.hj = var1;
    }
 }
+
+
+#else
+
+public class dj
+{
+   public dj() { }
+   public dj(params object[] args) { }
+   public static double gX = 0;
+   public static double gY = 0;
+   public static double gZ = 0;
+   public ComboBox ha = default;
+   public G hb = default;
+   public cN hc = default;
+   public cN hd = default;
+   public G he = default;
+   public G hf = default;
+   public G hg = default;
+   public G hh = default;
+   public Button bQ = default;
+   public Button bR = default;
+   public Button bS = default;
+   public bO hi = default;
+   public gv[] hj = System.Array.Empty<gv>();
+   public void w() { }
+   public void x() { }
+   public void y() { }
+   public void z() { }
+   public void A() { }
+   public void a(gt var1) { }
+   public gv[] aK() { return System.Array.Empty<gv>(); }
+   public static G b(dj var0) { return default; }
+   public static cN c(dj var0) { return default; }
+   public static cN d(dj var0) { return default; }
+   public static G e(dj var0) { return default; }
+   public static G f(dj var0) { return default; }
+   public static G g(dj var0) { return default; }
+   public static G h(dj var0) { return default; }
+   public static bO i(dj var0) { return default; }
+   public static ComboBox j(dj var0) { return default; }
+}
+
+#endif
 
 }

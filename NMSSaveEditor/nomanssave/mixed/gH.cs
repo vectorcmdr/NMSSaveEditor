@@ -7,6 +7,9 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
+#if PORT_COMPLETE
+
+
 public class gH {
    public string Name => getName();
    public int index;
@@ -336,5 +339,46 @@ public class gH {
       return var0.ea();
    }
 }
+
+
+#else
+
+public class gH
+{
+   public gH() { }
+   public gH(params object[] args) { }
+   public string Name = "";
+   public int index = 0;
+   public eY rp = default;
+   public List<object> gT = default;
+   public static gH[] C(eY var0) { return System.Array.Empty<gH>(); }
+   public static Function a(gH var0, string[] var1) { return default; }
+   public int getIndex() { return 0; }
+   public string getName() { return ""; }
+   public void setName(string var1) { }
+   public bool dZ() { return false; }
+   public int ea() { return 0; }
+   public string cT() { return ""; }
+   public void ag(string var1) { }
+   public string cK() { return ""; }
+   public void aa(string var1) { }
+   public void cm() { }
+   public string cW() { return ""; }
+   public void aj(string var1) { }
+   public List<object> cC() { return default; }
+   public double ak(string var1) { return 0; }
+   public void d(string var1, double var2) { }
+   public void av(string var1) { }
+   public double dF() { return 0; }
+   public double eb() { return 0; }
+   public void h(double var1) { }
+   public double cX() { return 0; }
+   public double ec() { return 0; }
+   public void i(double var1) { }
+   public string toString() { return ""; }
+   public static int b(gH var0) { return 0; }
+}
+
+#endif
 
 }

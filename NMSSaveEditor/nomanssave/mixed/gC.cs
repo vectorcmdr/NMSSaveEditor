@@ -5,6 +5,9 @@ using System.Text;
 
 namespace NMSSaveEditor
 {
+
+#if PORT_COMPLETE
+
 public class gC {
    public eY oI;
 
@@ -40,5 +43,23 @@ public class gC {
       this.oI.b("ShipShield", (object)(((int)(var1))));
    }
 }
+
+
+#else
+
+public class gC
+{
+   public gC() { }
+   public gC(params object[] args) { }
+   public eY oI = default;
+   public int dV() { return 0; }
+   public void aG(int var1) { }
+   public int dM() { return 0; }
+   public void aB(int var1) { }
+   public int dN() { return 0; }
+   public void aC(int var1) { }
+}
+
+#endif
 
 }

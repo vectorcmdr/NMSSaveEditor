@@ -7,6 +7,9 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
+#if PORT_COMPLETE
+
+
 public class aA : DefaultTableCellRenderer {
    public int f;
 
@@ -20,5 +23,18 @@ public class aA : DefaultTableCellRenderer {
       return var7;
    }
 }
+
+
+#else
+
+public class aA
+{
+   public aA() { }
+   public aA(params object[] args) { }
+   public int f = 0;
+   public Component getTableCellRendererComponent(DataGridView var1, object var2, bool var3, bool var4, int var5, int var6) { return default; }
+}
+
+#endif
 
 }

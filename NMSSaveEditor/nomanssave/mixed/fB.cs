@@ -5,6 +5,9 @@ using System.Text;
 
 namespace NMSSaveEditor
 {
+
+#if PORT_COMPLETE
+
 public class fB : fH, fr {
    public fA ma;
 
@@ -22,5 +25,19 @@ public class fB : fH, fr {
       this.writeBytes(fA.l(var1));
    }
 }
+
+
+#else
+
+public class fB
+{
+   public fB() { }
+   public fB(params object[] args) { }
+   public fA ma = default;
+   public eY M() { return default; }
+   public void k(eY var1) { }
+}
+
+#endif
 
 }

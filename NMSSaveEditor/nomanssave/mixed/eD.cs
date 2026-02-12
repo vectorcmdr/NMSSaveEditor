@@ -7,6 +7,9 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
+#if PORT_COMPLETE
+
+
 public class eD : eE {
    public string version;
 
@@ -78,5 +81,18 @@ public class eD : eE {
       this(var1, var2);
    }
 }
+
+
+#else
+
+public class eD
+{
+   public eD() { }
+   public eD(params object[] args) { }
+   public string version = "";
+   public string toString() { return ""; }
+}
+
+#endif
 
 }

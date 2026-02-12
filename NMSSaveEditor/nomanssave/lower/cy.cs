@@ -9,6 +9,9 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
+#if PORT_COMPLETE
+
+
 public class cy : Form, TreeSelectionListener {
    public string fS;
    public eY fT = null;
@@ -314,5 +317,40 @@ public class cy : Form, TreeSelectionListener {
       return var0.ga;
    }
 }
+
+
+#else
+
+public class cy
+{
+   public cy() { }
+   public cy(params object[] args) { }
+   public static string gc = "";
+   public static cy gd = default;
+   public string fS = "";
+   public eY fT = default;
+   public Button fU = default;
+   public JTree fV = default;
+   public Panel fW = default;
+   public TextBox fX = default;
+   public Panel fY = default;
+   public cJ fZ = default;
+   public bool ga = false;
+   public bool gb = false;
+   public bool ge = false;
+   public string gf = "";
+   public bool a(string var1, eY var2) { return false; }
+   public static string ay() { return ""; }
+   public void valueChanged(TreeSelectionEvent var1) { }
+   public static string az() { return ""; }
+   public static void b(string var0, ClipboardOwner var1) { }
+   public static TextBox c(cy var0) { return default; }
+   public static cJ d(cy var0) { return default; }
+   public static JTree e(cy var0) { return default; }
+   public static Button f(cy var0) { return default; }
+   public static bool g(cy var0) { return false; }
+}
+
+#endif
 
 }

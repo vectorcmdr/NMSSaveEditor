@@ -7,6 +7,9 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
+#if PORT_COMPLETE
+
+
 public class fI {
    public static int mi = 2001;
    public static int mj = 2002;
@@ -412,5 +415,56 @@ public class fI {
       return var3;
    }
 }
+
+
+#else
+
+public class fI
+{
+   public fI() { }
+   public fI(params object[] args) { }
+   public static int mi = 0;
+   public static int mj = 0;
+   public static int mk = 0;
+   public static int ml = 0;
+   public static int mm = 0;
+   public static int mn = 0;
+   public static int mo = 0;
+   public int mp = 0;
+   public int lO = 0;
+   public int mq = 0;
+   public byte[] data = System.Array.Empty<byte>();
+   public static bool ai(int var0) { return false; }
+   public int cc() { return 0; }
+   public int cd() { return 0; }
+   public bool ce() { return false; }
+   public byte[] cf() { return System.Array.Empty<byte>(); }
+   public void e(byte[] var1) { }
+   public byte[] cg() { return System.Array.Empty<byte>(); }
+   public void f(byte[] var1) { }
+   public int ch() { return 0; }
+   public void aj(int var1) { }
+   public int ci() { return 0; }
+   public void ak(int var1) { }
+   public int cj() { return 0; }
+   public void al(int var1) { }
+   public string ck() { return ""; }
+   public void Y(string var1) { }
+   public string getDescription() { return ""; }
+   public void setDescription(string var1) { }
+   public byte[] encode() { return System.Array.Empty<byte>(); }
+   public int getInt(int var1) { return 0; }
+   public void setInt(int var1, int var2) { }
+   public string getString(int var1) { return ""; }
+   public void setString(int var1, string var2) { }
+   public byte[] d(int var1, int var2) { return System.Array.Empty<byte>(); }
+   public void setBytes(int var1, byte[] var2) { }
+   public string toString() { return ""; }
+   public static long rotateLeft(long var0, int var2) { return 0; }
+   public static byte[] a(long[] var0, int var1, int var2) { return System.Array.Empty<byte>(); }
+   public static long[] g(byte[] var0) { return System.Array.Empty<long>(); }
+}
+
+#endif
 
 }

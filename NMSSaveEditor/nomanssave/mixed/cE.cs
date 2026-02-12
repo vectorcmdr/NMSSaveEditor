@@ -7,6 +7,9 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
+#if PORT_COMPLETE
+
+
 public class cE : object {
    public cy gg;
 
@@ -38,5 +41,18 @@ public class cE : object {
 
    }
 }
+
+
+#else
+
+public class cE
+{
+   public cE() { }
+   public cE(params object[] args) { }
+   public cy gg = default;
+   public void windowClosing(FormClosedEventArgs var1) { }
+}
+
+#endif
 
 }

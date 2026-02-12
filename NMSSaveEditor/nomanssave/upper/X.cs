@@ -7,6 +7,9 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
+#if PORT_COMPLETE
+
+
 public class X : Panel {
    public ComboBox bG;
    public ComboBox bH;
@@ -130,5 +133,41 @@ public class X : Panel {
       var0.bT = var1;
    }
 }
+
+
+#else
+
+public class X
+{
+   public X() { }
+   public X(params object[] args) { }
+   public ComboBox bG = default;
+   public ComboBox bH = default;
+   public G bI = default;
+   public G bJ = default;
+   public G bK = default;
+   public G bL = default;
+   public G bM = default;
+   public CheckBox bN = default;
+   public cN bO = default;
+   public cN bP = default;
+   public Button bQ = default;
+   public Button bR = default;
+   public Button bS = default;
+   public gj[] bT = System.Array.Empty<gj>();
+   public void a(gj[] var1) { }
+   public static ComboBox b(X var0) { return default; }
+   public static G c(X var0) { return default; }
+   public static G d(X var0) { return default; }
+   public static G e(X var0) { return default; }
+   public static G f(X var0) { return default; }
+   public static G g(X var0) { return default; }
+   public static CheckBox h(X var0) { return default; }
+   public static cN i(X var0) { return default; }
+   public static cN j(X var0) { return default; }
+   public static ComboBox k(X var0) { return default; }
+}
+
+#endif
 
 }

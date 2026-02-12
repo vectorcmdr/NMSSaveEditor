@@ -7,6 +7,9 @@ using System.Xml;
 namespace NMSSaveEditor
 {
 
+#if PORT_COMPLETE
+
+
 public class eP : ey {
    public string name;
    public ex jZ;
@@ -110,5 +113,40 @@ public class eP : ey {
       return this.name.length() == 0 ? this.id : this.name;
    }
 }
+
+
+#else
+
+public class eP
+{
+   public eP() { }
+   public eP(params object[] args) { }
+   public string name = "";
+   public ex jZ = default;
+   public bool special = false;
+   public Integer ka = default;
+   public string jM = "";
+   public bool kb = false;
+   public string kc = "";
+   public int kd = 0;
+   public string description = "";
+   public List<object> ke = default;
+   public eB ba() { return default; }
+   public bool bb() { return false; }
+   public string getName() { return ""; }
+   public ex bc() { return default; }
+   public bool bd() { return false; }
+   public bool be() { return false; }
+   public Integer bf() { return default; }
+   public string bg() { return ""; }
+   public bool bh() { return false; }
+   public string bi() { return ""; }
+   public int bj() { return 0; }
+   public string getDescription() { return ""; }
+   public List<object> bk() { return default; }
+   public string toString() { return ""; }
+}
+
+#endif
 
 }

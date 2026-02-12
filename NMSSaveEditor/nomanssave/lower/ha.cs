@@ -7,6 +7,9 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
+#if PORT_COMPLETE
+
+
 public class ha : FilterInputStream {
    public bool sj;
    public byte[] buffer;
@@ -178,5 +181,26 @@ public class ha : FilterInputStream {
       }
    }
 }
+
+
+#else
+
+public class ha
+{
+   public ha() { }
+   public ha(params object[] args) { }
+   public bool sj = false;
+   public byte[] buffer = System.Array.Empty<byte>();
+   public int sk = 0;
+   public int sg = 0;
+   public int sl = 0;
+   public bool eof = false;
+   public void aJ(int var1) { }
+   public bool el() { return false; }
+   public int available() { return 0; }
+   public int read() { return 0; }
+}
+
+#endif
 
 }

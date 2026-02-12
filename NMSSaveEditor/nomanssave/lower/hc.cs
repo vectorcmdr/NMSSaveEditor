@@ -7,6 +7,9 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
+#if PORT_COMPLETE
+
+
 public class hc {
    public static Handler sn = new hd();
    public static StreamWriter so;
@@ -234,5 +237,33 @@ public class hc {
       return sq;
    }
 }
+
+
+#else
+
+public class hc
+{
+   public hc() { }
+   public hc(params object[] args) { }
+   public static Handler sn = default;
+   public static StreamWriter so = default;
+   public static StreamWriter sp = default;
+   public static StreamWriter sq = default;
+   public static int sr = 0;
+   public static void em() { }
+   public static void k(FileInfo var0) { }
+   public static void aA(string var0) { }
+   public static void debug(string var0) { }
+   public static void info(string var0) { }
+   public static string d(string var0, string var1) { return ""; }
+   public static void warn(string var0) { }
+   public static void a(string var0, Exception var1) { }
+   public static void error(string var0, Exception var1) { }
+   public static void log(LogRecord var0) { }
+   public static void close() { }
+   public static StreamWriter en() { return default; }
+}
+
+#endif
 
 }

@@ -8,6 +8,9 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
+#if PORT_COMPLETE
+
+
 public class fV : fs {
    public string Name => getName();
    public fW mO;
@@ -129,5 +132,35 @@ public class fV : fs {
       return this.mQ.getDescription();
    }
 }
+
+
+#else
+
+public class fV
+{
+   public fV() { }
+   public fV(params object[] args) { }
+   public string Name = "";
+   public fW mO = default;
+   public int mb = 0;
+   public FileInfo mc = default;
+   public string mP = "";
+   public fS mQ = default;
+   public string mR = "";
+   public string mS = "";
+   public fn be = default;
+   public fT mN = default;
+   public void a(FileStream var1) { }
+   public string K() { return ""; }
+   public fn L() { return default; }
+   public eY M() { return default; }
+   public string b(eY var1) { return ""; }
+   public long lastModified() { return 0; }
+   public string toString() { return ""; }
+   public string getName() { return ""; }
+   public string getDescription() { return ""; }
+}
+
+#endif
 
 }

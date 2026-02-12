@@ -9,6 +9,9 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
+#if PORT_COMPLETE
+
+
 public class ej : JFileChooser {
    public static Image im = Application.a("UI-FILEICON.PNG", 16, 16);
    public static Image io = Application.a("UI-GAMEPASS.PNG", 16, 16);
@@ -74,5 +77,25 @@ public class ej : JFileChooser {
       return ip;
    }
 }
+
+
+#else
+
+public class ej
+{
+   public ej() { }
+   public ej(params object[] args) { }
+   public static Image im = default;
+   public static Image io = default;
+   public static Image ip = default;
+   public static Pattern iq = default;
+   public static ej ir = default;
+   public string a(FileInfo var1) { return ""; }
+   public static FileInfo b(FileInfo var0) { return default; }
+   public static Image au() { return default; }
+   public static Image aR() { return default; }
+}
+
+#endif
 
 }

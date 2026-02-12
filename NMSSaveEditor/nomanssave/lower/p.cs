@@ -7,6 +7,9 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
+#if PORT_COMPLETE
+
+
 public class p : Form {
    public DataGridView D;
    public object E;
@@ -91,5 +94,25 @@ public class p : Form {
       return var0.G;
    }
 }
+
+
+#else
+
+public class p
+{
+   public p() { }
+   public p(params object[] args) { }
+   public static p H = default;
+   public DataGridView D = default;
+   public object E = default;
+   public List<object> F = default;
+   public List<object> G = default;
+   public string[] d() { return System.Array.Empty<string>(); }
+   public static string[] b(Container var0) { return System.Array.Empty<string>(); }
+   public static string[] c(Container var0) { return System.Array.Empty<string>(); }
+   public static List<object> a(p var0) { return default; }
+}
+
+#endif
 
 }

@@ -5,6 +5,9 @@ using System.Text;
 
 namespace NMSSaveEditor
 {
+
+#if PORT_COMPLETE
+
 public sealed class eU {
    public static eU[] Values() { return new eU[] { kr, ks, kt, ku, kv, kw, kx, ky, kz, C }; }
    public static eU valueOf(string name) { foreach (var v in Values()) if (v.ToString() == name) return v; return null; }
@@ -44,5 +47,28 @@ public sealed class eU {
       return null;
    }
 }
+
+
+#else
+
+public class eU
+{
+   public eU() { }
+   public eU(params object[] args) { }
+   public static readonly eU kr = default;
+   public static readonly eU ks = default;
+   public static readonly eU kt = default;
+   public static readonly eU ku = default;
+   public static readonly eU kv = default;
+   public static readonly eU kw = default;
+   public static readonly eU kx = default;
+   public static readonly eU ky = default;
+   public static readonly eU kz = default;
+   public string name = "";
+   public static eU[] Values() { return System.Array.Empty<eU>(); }
+   public string toString() { return ""; }
+}
+
+#endif
 
 }

@@ -9,6 +9,9 @@ using System.Xml;
 namespace NMSSaveEditor
 {
 
+#if PORT_COMPLETE
+
+
 public abstract class ey {
    public static int jD = 0;
    public static int jE = 1;
@@ -360,5 +363,38 @@ public abstract class ey {
       return jH;
    }
 }
+
+
+#else
+
+public class ey
+{
+   public ey() { }
+   public ey(params object[] args) { }
+   public static int jD = 0;
+   public static int jE = 0;
+   public static int jF = 0;
+   public static int jG = 0;
+   public static Pattern jH = default;
+   public static List<object> jI = default;
+   public static List<object> jJ = default;
+   public string id = "";
+   public string getID() { return ""; }
+   public static string L(int var0) { return ""; }
+   public object aZ() { return default; }
+   public object M(int var1) { return default; }
+   public Image N(int var1) { return default; }
+   public Image c(int var1, int var2) { return default; }
+   public string toString() { return ""; }
+   public static string a(Element var0) { return ""; }
+   public static List<object> O(int var0) { return default; }
+   public static List<object> b(int var0, string var1) { return default; }
+   public static List<object> bl() { return default; }
+   public static List<object> bm() { return default; }
+   public static eA p(string var0) { return default; }
+   public static Pattern bn() { return default; }
+}
+
+#endif
 
 }

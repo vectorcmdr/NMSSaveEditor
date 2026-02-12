@@ -6,6 +6,9 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
+#if PORT_COMPLETE
+
+
 public class df : object {
    public dd gW;
 
@@ -21,5 +24,18 @@ public class df : object {
 
    }
 }
+
+
+#else
+
+public class df
+{
+   public df() { }
+   public df(params object[] args) { }
+   public dd gW = default;
+   public void mouseClicked(MouseEventArgs var1) { }
+}
+
+#endif
 
 }

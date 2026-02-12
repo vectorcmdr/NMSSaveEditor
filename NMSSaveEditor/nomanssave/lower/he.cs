@@ -7,6 +7,9 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
+#if PORT_COMPLETE
+
+
 public class he : Stream {
    public StreamWriter ss;
    public string st;
@@ -86,5 +89,26 @@ public class he : Stream {
    public override void SetLength(long value) { }
    public override void Write(byte[] buffer, int offset, int count) { }
 }
+
+
+#else
+
+public class he
+{
+   public he() { }
+   public he(params object[] args) { }
+   public StreamWriter ss = default;
+   public string st = "";
+   public MemoryStream su = default;
+   public void write(int var1) { }
+   public void flush() { }
+   public void Flush() { }
+   public int Read(byte[] buffer, int offset, int count) { return 0; }
+   public long Seek(long offset, SeekOrigin origin) { return 0; }
+   public void SetLength(long value) { }
+   public void Write(byte[] buffer, int offset, int count) { }
+}
+
+#endif
 
 }

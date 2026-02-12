@@ -8,6 +8,9 @@ using System.Text.RegularExpressions;
 namespace NMSSaveEditor
 {
 
+#if PORT_COMPLETE
+
+
 public class fq {
    public int lz = 15;
 
@@ -131,5 +134,26 @@ public class fq {
 
    public virtual void X(string var1) { }
 }
+
+
+#else
+
+public class fq
+{
+   public fq() { }
+   public fq(params object[] args) { }
+   public int lz = 0;
+   public static string c(long var0) { return ""; }
+   public FileInfo bS() { return default; }
+   public fr bT() { return default; }
+   public ft[] bU() { return System.Array.Empty<ft>(); }
+   public ft[] bV() { return System.Array.Empty<ft>(); }
+   public int W(string var1) { return 0; }
+   public bool bW() { return false; }
+   public string a(int var1, eY var2) { return ""; }
+   public void X(string var1) { }
+}
+
+#endif
 
 }

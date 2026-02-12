@@ -7,6 +7,9 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
+#if PORT_COMPLETE
+
+
 public class cA : DefaultTreeCellRenderer {
    public cy gg;
 
@@ -29,5 +32,18 @@ public class cA : DefaultTreeCellRenderer {
       return var8;
    }
 }
+
+
+#else
+
+public class cA
+{
+   public cA() { }
+   public cA(params object[] args) { }
+   public cy gg = default;
+   public Component getTreeCellRendererComponent(JTree var1, object var2, bool var3, bool var4, bool var5, int var6, bool var7) { return default; }
+}
+
+#endif
 
 }

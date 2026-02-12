@@ -8,6 +8,9 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
+#if PORT_COMPLETE
+
+
 public class C : ComponentAdapter {
    public Application aZ;
 
@@ -27,5 +30,19 @@ public class C : ComponentAdapter {
       aH.b("MainFrame.Height", var2.height);
    }
 }
+
+
+#else
+
+public class C
+{
+   public C() { }
+   public C(params object[] args) { }
+   public Application aZ = default;
+   public void componentMoved(ComponentEvent var1) { }
+   public void componentResized(ComponentEvent var1) { }
+}
+
+#endif
 
 }

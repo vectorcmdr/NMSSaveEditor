@@ -8,6 +8,9 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
+#if PORT_COMPLETE
+
+
 public class cz : ComponentAdapter {
    public cy gg;
 
@@ -27,5 +30,19 @@ public class cz : ComponentAdapter {
       aH.b("JSONEditor.Height", var2.height);
    }
 }
+
+
+#else
+
+public class cz
+{
+   public cz() { }
+   public cz(params object[] args) { }
+   public cy gg = default;
+   public void componentMoved(ComponentEvent var1) { }
+   public void componentResized(ComponentEvent var1) { }
+}
+
+#endif
 
 }

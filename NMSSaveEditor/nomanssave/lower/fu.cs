@@ -8,6 +8,9 @@ using System.Text.RegularExpressions;
 namespace NMSSaveEditor
 {
 
+#if PORT_COMPLETE
+
+
 public class fu : fq {
    public static readonly byte[] lA = "NOMANSKY".GetBytes();
    public static readonly byte[] lB = new byte[]{126, -25, 85, -54, -47, 7, 0, 0};
@@ -162,5 +165,35 @@ public class fu : fq {
       return var0.lF;
    }
 }
+
+
+#else
+
+public class fu
+{
+   public fu() { }
+   public fu(params object[] args) { }
+   public static readonly byte[] lA = System.Array.Empty<byte>();
+   public static readonly byte[] lB = System.Array.Empty<byte>();
+   public static Pattern lC = default;
+   public FileInfo lD = default;
+   public fR lE = default;
+   public fw[] lF = System.Array.Empty<fw>();
+   public fv lG = default;
+   public fx[] lH = System.Array.Empty<fx>();
+   public static fn ag(int var0) { return default; }
+   public FileInfo bS() { return default; }
+   public fr bT() { return default; }
+   public ft[] bU() { return System.Array.Empty<ft>(); }
+   public int W(string var1) { return 0; }
+   public void X(string var1) { }
+   public static void main(string[] var0) { }
+   public static bool a(byte[] var0, byte[] var1) { return false; }
+   public static byte[] bY() { return System.Array.Empty<byte>(); }
+   public static bool b(byte[] var0, byte[] var1) { return false; }
+   public static fw[] c(fu var0) { return System.Array.Empty<fw>(); }
+}
+
+#endif
 
 }

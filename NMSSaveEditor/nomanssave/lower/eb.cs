@@ -8,6 +8,9 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
+#if PORT_COMPLETE
+
+
 public class eb : em {
    public ec[] ib;
    public gM[] ic;
@@ -74,5 +77,21 @@ public class eb : em {
       return ie;
    }
 }
+
+
+#else
+
+public class eb
+{
+   public eb() { }
+   public eb(params object[] args) { }
+   public static readonly gy[] ie = System.Array.Empty<gy>();
+   public ec[] ib = System.Array.Empty<ec>();
+   public gM[] ic = System.Array.Empty<gM>();
+   public void a(gM[] var1) { }
+   public static gy[] aP() { return System.Array.Empty<gy>(); }
+}
+
+#endif
 
 }

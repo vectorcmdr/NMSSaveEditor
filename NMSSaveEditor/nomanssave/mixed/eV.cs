@@ -6,6 +6,9 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
+#if PORT_COMPLETE
+
+
 public class eV {
    public static int kB = 10;
    public static int kC = 10;
@@ -321,5 +324,49 @@ public class eV {
       return this.bA();
    }
 }
+
+
+#else
+
+public class eV
+{
+   public eV() { }
+   public eV(params object[] args) { }
+   public static int kB = 0;
+   public static int kC = 0;
+   public int length = 0;
+   public int Count = 0;
+   public object[] values = System.Array.Empty<object>();
+   public object kD = default;
+   public void Add(object var1) { }
+   public void e(object var1) { }
+   public object U(int var1) { return default; }
+   public string bz() { return ""; }
+   public string toString() { return ""; }
+   public int size() { return 0; }
+   public int indexOf(object var1) { return 0; }
+   public object get(int var1) { return default; }
+   public object set(int var1, object var2) { return default; }
+   public void add(object var1) { }
+   public object remove(int var1) { return default; }
+   public void clear() { }
+   public void a(object var1, string var2, object var3, object var4) { }
+   public void firePropertyChange(string var1, object var2, object var3) { }
+   public object getValue(int var1) { return default; }
+   public eY V(int var1) { return default; }
+   public string X(int var1) { return ""; }
+   public int Y(int var1) { return 0; }
+   public long Z(int var1) { return 0; }
+   public double aa(int var1) { return 0; }
+   public bool ab(int var1) { return false; }
+   public void f(object var1) { }
+   public bool hasValue(object var1) { return false; }
+   public bool ac(int var1) { return false; }
+   public bool g(object var1) { return false; }
+   public Stream bB() { return default; }
+   public object clone() { return default; }
+}
+
+#endif
 
 }

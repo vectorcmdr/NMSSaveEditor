@@ -5,6 +5,9 @@ using System.Text;
 
 namespace NMSSaveEditor
 {
+
+#if PORT_COMPLETE
+
 public class hh {
    public static long sx = 255L;
    public static int sy = 12;
@@ -1101,5 +1104,31 @@ public class hh {
       return this.b((long[])var1, 0, var1.Length);
    }
 }
+
+
+#else
+
+public class hh
+{
+   public hh() { }
+   public hh(params object[] args) { }
+   public static long sx = 0;
+   public static int sy = 0;
+   public static int sz = 0;
+   public static int sA = 0;
+   public static int sB = 0;
+   public static int sC = 0;
+   public static int sD = 0;
+   public static int sE = 0;
+   public static long sF = 0;
+   public long sG = 0;
+   public long sH = 0;
+   public static long a(byte[] var0, int var1) { return 0; }
+   public static long b(byte[] var0, int var1, int var2) { return 0; }
+   public long[] c(byte[] var1, int var2, int var3) { return System.Array.Empty<long>(); }
+   public long[] j(byte[] var1) { return System.Array.Empty<long>(); }
+}
+
+#endif
 
 }

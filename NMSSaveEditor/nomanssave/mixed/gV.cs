@@ -6,6 +6,9 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
+#if PORT_COMPLETE
+
+
 public class gV {
    public static double[] a(eY var0, string var1) {
       eV var2 = var0.d(var1);
@@ -144,5 +147,20 @@ public class gV {
 
    }
 }
+
+
+#else
+
+public class gV
+{
+   public gV() { }
+   public gV(params object[] args) { }
+   public static double[] a(eY var0, string var1) { return System.Array.Empty<double>(); }
+   public static bool F(eY var0) { return false; }
+   public static bool b(eY var0, string var1) { return false; }
+   public static List<object> G(eY var0) { return default; }
+}
+
+#endif
 
 }

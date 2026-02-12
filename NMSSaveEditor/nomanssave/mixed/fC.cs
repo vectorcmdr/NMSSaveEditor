@@ -8,6 +8,9 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
+#if PORT_COMPLETE
+
+
 public class fC : fs {
    public int mb;
    public FileInfo mc;
@@ -136,5 +139,28 @@ public class fC : fs {
       return this.mc.Name;
    }
 }
+
+
+#else
+
+public class fC
+{
+   public fC() { }
+   public fC(params object[] args) { }
+   public int mb = 0;
+   public FileInfo mc = default;
+   public string md = "";
+   public byte[] lK = System.Array.Empty<byte>();
+   public fn be = default;
+   public fA ma = default;
+   public fn L() { return default; }
+   public string K() { return ""; }
+   public long lastModified() { return 0; }
+   public eY M() { return default; }
+   public string b(eY var1) { return ""; }
+   public string toString() { return ""; }
+}
+
+#endif
 
 }

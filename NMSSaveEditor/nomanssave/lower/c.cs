@@ -7,6 +7,9 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
+#if PORT_COMPLETE
+
+
 public class c : Panel {
    public f _c;
    public f d;
@@ -71,5 +74,20 @@ public class c : Panel {
       this.Refresh();
    }
 }
+
+
+#else
+
+public class c
+{
+   public c() { }
+   public c(params object[] args) { }
+   public f _c = default;
+   public f d = default;
+   public f e = default;
+   public void a(eY var1) { }
+}
+
+#endif
 
 }

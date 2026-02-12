@@ -7,6 +7,9 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
+#if PORT_COMPLETE
+
+
 public class bu : Runnable {
    public bt es;
    public Application bv;
@@ -100,5 +103,19 @@ public class bu : Runnable {
       }
    }
 }
+
+
+#else
+
+public class bu
+{
+   public bu() { }
+   public bu(params object[] args) { }
+   public bt es = default;
+   public Application bv = default;
+   public void run() { }
+}
+
+#endif
 
 }

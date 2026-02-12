@@ -5,6 +5,9 @@ using System.Text;
 
 namespace NMSSaveEditor
 {
+
+#if PORT_COMPLETE
+
 public class gh {
    public string name;
    public eY nn;
@@ -35,5 +38,23 @@ public class gh {
       this(var1, var2, var3);
    }
 }
+
+
+#else
+
+public class gh
+{
+   public gh() { }
+   public gh(params object[] args) { }
+   public string name = "";
+   public eY nn = default;
+   public ge nk = default;
+   public gy cJ() { return default; }
+   public string cK() { return ""; }
+   public void aa(string var1) { }
+   public string toString() { return ""; }
+}
+
+#endif
 
 }
