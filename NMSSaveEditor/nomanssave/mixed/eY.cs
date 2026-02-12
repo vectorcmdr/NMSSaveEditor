@@ -278,6 +278,8 @@ public class eY {
       this.Length = 0;
    }
 
+   public void Clear() { clear(); }
+
    public void a(fe var1) {
       this.kI = var1;
    }

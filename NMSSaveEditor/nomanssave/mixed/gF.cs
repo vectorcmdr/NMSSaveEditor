@@ -30,6 +30,11 @@ public class gF : gQ {
       return "Product";
    }
 
+   public string ei() {
+      Object var1 = this.dz();
+      return var1 is fg ? ((fg)var1).bP() : var1.ToString();
+   }
+
    public Object dz() {
       return this.kM.getValue("ElementId");
    }

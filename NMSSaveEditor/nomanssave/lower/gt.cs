@@ -43,6 +43,9 @@ public class gt {
    public bool qx;
    public int width;
    public int height;
+   public int Width { get => width; set => width = value; }
+   public int Height { get => height; set => height = value; }
+   public Size Size { get => new Size(width, height); set { width = value.Width; height = value.Height; } }
    public int bE;
    public int bF;
    public eY[][] qy;

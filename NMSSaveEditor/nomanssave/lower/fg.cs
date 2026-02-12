@@ -47,6 +47,10 @@ public class fg {
       return new string(this.bytes, var1, var2, kT);
    }
 
+   public string Substring(int start, int length) {
+      return substring(start, length);
+   }
+
    public string bP() {
       StringBuilder var1 = new StringBuilder();
       bool var2 = false;

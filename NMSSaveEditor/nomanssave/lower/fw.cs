@@ -20,6 +20,7 @@ public class fw {
    public int lO;
    public long bd;
    public long length;
+   public long Length { get => length; set => length = value; }
    public long lP;
    public int lQ;
    public int lR;

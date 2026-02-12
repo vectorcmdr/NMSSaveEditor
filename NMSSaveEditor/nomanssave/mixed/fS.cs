@@ -206,6 +206,8 @@ public class fS {
       return this.mh.Length;
    }
 
+   public long Length => length();
+
    public void a(fS var1) {
       this.lL = var1.lL;
       this.version = var1.version;

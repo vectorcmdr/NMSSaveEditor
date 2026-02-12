@@ -38,6 +38,8 @@ public class gM {
       this.index = var3;
    }
 
+   public bool Enabled { get => isEnabled(); set => setEnabled(value); }
+
    public bool isEnabled() {
       return this.rH.ab(this.index);
    }
