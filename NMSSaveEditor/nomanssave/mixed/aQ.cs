@@ -8,7 +8,6 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 
 public class aQ : Form {
@@ -20,8 +19,7 @@ public class aQ : Form {
    public TextBox dp;
    public static aQ dq;
 
-   public aQ(Frame var1) {
-      base(var1);
+public aQ(Frame var1) : base(var1) {
       this.FormBorderStyle = FormBorderStyle.FixedDialog; //(false);
       this.setModalExclusionType(/* ModalExclusionType */ 0);
       this.Text = ("Expand Inventory");
@@ -97,25 +95,5 @@ public class aQ : Form {
 }
 
 
-#else
-
-public class aQ
-{
-   public aQ() { }
-   public aQ(params object[] args) { }
-   public static aQ dq = default;
-   public Size dk = default;
-   public Size dl = default;
-   public Size dm = default;
-   public Size dn = default;
-   public TextBox dp = default;
-   public Size a(Size var1, Size var2, Size var3) { return default; }
-   public static Size b(aQ var0) { return default; }
-   public static Size c(aQ var0) { return default; }
-   public static Size d(aQ var0) { return default; }
-   public static TextBox e(aQ var0) { return default; }
-}
-
-#endif
 
 }

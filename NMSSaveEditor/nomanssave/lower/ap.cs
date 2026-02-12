@@ -7,7 +7,6 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 
 public class ap : Panel {
@@ -41,7 +40,7 @@ public class ap : Panel {
       this.ci.getColumnModel().getColumn(0).setMaxWidth(24);
       this.ci.getColumnModel().getColumn(0).setCellRenderer(new aB(this, (aB)null));
       this.cj = ((object)(this.ci.DataSource));
-      this.cj.setSortable(0, false);
+      this.// cj.setSortable(0, false); // setSortable not available in WinForms
       this.ci.setRowSorter(this.cj);
       var5.setViewportView(this.ci);
       Panel var6 = new Panel();
@@ -69,7 +68,7 @@ public class ap : Panel {
       this.ck.getColumnModel().getColumn(0).setMaxWidth(24);
       this.ck.getColumnModel().getColumn(0).setCellRenderer(new aB(this, (aB)null));
       this.cl = ((object)(this.ck.DataSource));
-      this.cl.setSortable(0, false);
+      this.// cl.setSortable(0, false); // setSortable not available in WinForms
       this.ck.setRowSorter(this.cl);
       var10.setViewportView(this.ck);
       var6 = new Panel();
@@ -111,7 +110,7 @@ public class ap : Panel {
       this.co = ((object)(this.cn.DataSource));
 
       for(var16 = 2; var16 < this.cn.DataSource.getColumnCount(); ++var16) {
-         this.co.setSortable(var16, false);
+         this.// co.setSortable(var16, false); // setSortable not available in WinForms
       }
 
       this.cn.setRowSorter(this.co);
@@ -250,37 +249,5 @@ public class ap : Panel {
 }
 
 
-#else
-
-public class ap
-{
-   public ap() { }
-   public ap(params object[] args) { }
-   public DataGridView ci = default;
-   public object cj = default;
-   public DataGridView ck = default;
-   public object cl = default;
-   public DataGridView cn = default;
-   public object co = default;
-   public gz cp = default;
-   public eV cq = default;
-   public eV cr = default;
-   public eV cs = default;
-   public List<object> ct = default;
-   public void R() { }
-   public void a(gz var1) { }
-   public static object b(ap var0) { return default; }
-   public static DataGridView c(ap var0) { return default; }
-   public static List<object> d(ap var0) { return default; }
-   public static eV e(ap var0) { return default; }
-   public static eV f(ap var0) { return default; }
-   public static object g(ap var0) { return default; }
-   public static DataGridView h(ap var0) { return default; }
-   public static gz i(ap var0) { return default; }
-   public static DataGridView j(ap var0) { return default; }
-   public static void k(ap var0) { }
-}
-
-#endif
 
 }

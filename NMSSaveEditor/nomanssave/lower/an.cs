@@ -7,7 +7,6 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 
 public class an : ActionListener {
@@ -23,16 +22,5 @@ public class an : ActionListener {
 }
 
 
-#else
-
-public class an
-{
-   public an() { }
-   public an(params object[] args) { }
-   public aj cg = default;
-   public void actionPerformed(EventArgs var1) { }
-}
-
-#endif
 
 }

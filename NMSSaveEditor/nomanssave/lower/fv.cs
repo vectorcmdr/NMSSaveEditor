@@ -7,7 +7,6 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 
 public class fv : fr {
@@ -105,19 +104,5 @@ public class fv : fr {
 }
 
 
-#else
-
-public class fv
-{
-   public fv() { }
-   public fv(params object[] args) { }
-   public fw lI = default;
-   public fu lJ = default;
-   public string K() { return ""; }
-   public eY M() { return default; }
-   public void k(eY var1) { }
-}
-
-#endif
 
 }

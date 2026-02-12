@@ -8,7 +8,6 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 
 public class bl : Panel, eo {
@@ -263,69 +262,5 @@ public class bl : Panel, eo {
 }
 
 
-#else
-
-public class bl
-{
-   public bl() { }
-   public bl(params object[] args) { }
-   public static int dQ = 0;
-   public DataGridView dR = default;
-   public Button bQ = default;
-   public Button dS = default;
-   public ba dT = default;
-   public G dU = default;
-   public ComboBox dV = default;
-   public TextBox dW = default;
-   public cN dX = default;
-   public G dY = default;
-   public G dZ = default;
-   public G[] ea = System.Array.Empty<G>();
-   public ba eb = default;
-   public ComboBox ec = default;
-   public ComboBox ed = default;
-   public ComboBox ee = default;
-   public ComboBox ef = default;
-   public ComboBox eg = default;
-   public G eh = default;
-   public G ei = default;
-   public G ej = default;
-   public G ek = default;
-   public Label el = default;
-   public Button em = default;
-   public er[] en = System.Array.Empty<er>();
-   public er[] eo = System.Array.Empty<er>();
-   public gp[] ep = System.Array.Empty<gp>();
-   public int eq = 0;
-   public void a(bool var1) { }
-   public static int b(bl var0) { return 0; }
-   public static gp[] c(bl var0) { return System.Array.Empty<gp>(); }
-   public static G[] d(bl var0) { return System.Array.Empty<G>(); }
-   public static DataGridView e(bl var0) { return default; }
-   public static er[] f(bl var0) { return System.Array.Empty<er>(); }
-   public static Button g(bl var0) { return default; }
-   public static ba h(bl var0) { return default; }
-   public static ba i(bl var0) { return default; }
-   public static G j(bl var0) { return default; }
-   public static ComboBox k(bl var0) { return default; }
-   public static TextBox l(bl var0) { return default; }
-   public static cN m(bl var0) { return default; }
-   public static G n(bl var0) { return default; }
-   public static G o(bl var0) { return default; }
-   public static ComboBox p(bl var0) { return default; }
-   public static ComboBox q(bl var0) { return default; }
-   public static ComboBox r(bl var0) { return default; }
-   public static ComboBox s(bl var0) { return default; }
-   public static ComboBox t(bl var0) { return default; }
-   public static G u(bl var0) { return default; }
-   public static G v(bl var0) { return default; }
-   public static G w(bl var0) { return default; }
-   public static G x(bl var0) { return default; }
-   public static Label y(bl var0) { return default; }
-   public static Button z(bl var0) { return default; }
-   public static Button A(bl var0) { return default; }
-}
-
-#endif
 
 }

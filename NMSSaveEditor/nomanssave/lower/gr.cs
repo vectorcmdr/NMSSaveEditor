@@ -6,7 +6,6 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 public sealed class gr {
    public static gr[] Values() { return new gr[] { pf, pg, ph, pi, pj, pk, pl, pm, pn, po, an }; }
@@ -52,29 +51,5 @@ public sealed class gr {
 }
 
 
-#else
-
-public class gr
-{
-   public gr() { }
-   public gr(params object[] args) { }
-   public static readonly gr pf = default;
-   public static readonly gr pg = default;
-   public static readonly gr ph = default;
-   public static readonly gr pi = default;
-   public static readonly gr pj = default;
-   public static readonly gr pk = default;
-   public static readonly gr pl = default;
-   public static readonly gr pm = default;
-   public static readonly gr pn = default;
-   public static readonly gr po = default;
-   public string name = "";
-   public bool special = false;
-   public static gr[] Values() { return System.Array.Empty<gr>(); }
-   public bool isSpecial() { return false; }
-   public string toString() { return ""; }
-}
-
-#endif
 
 }

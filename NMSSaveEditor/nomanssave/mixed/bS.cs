@@ -8,7 +8,6 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 
 public class bS : Panel {
@@ -293,42 +292,5 @@ public class bS : Panel {
 }
 
 
-#else
-
-public class bS
-{
-   public bS() { }
-   public bS(params object[] args) { }
-   public int x = 0;
-   public int y = 0;
-   public ToolStripMenuItem eY = default;
-   public ToolStripMenuItem eZ = default;
-   public ToolStripMenuItem fa = default;
-   public ToolStripMenuItem fb = default;
-   public ToolStripMenuItem fc = default;
-   public ToolStripMenuItem fd = default;
-   public ToolStripMenuItem fe = default;
-   public ToolStripMenuItem ff = default;
-   public ToolStripMenuItem fg = default;
-   public ToolStripMenuItem fh = default;
-   public ToolStripMenuItem fi = default;
-   public ToolStripMenuItem fj = default;
-   public bO eX = default;
-   public bool ao() { return false; }
-   public bool ap() { return false; }
-   public void aq() { }
-   public void a(Image var1, int var2, int var3) { }
-   public static ToolStripMenuItem b(bS var0) { return default; }
-   public static void c(bS var0) { }
-   public static ToolStripMenuItem d(bS var0) { return default; }
-   public static bool e(bS var0) { return false; }
-   public static bool f(bS var0) { return false; }
-   public static ToolStripMenuItem g(bS var0) { return default; }
-   public static int h(bS var0) { return 0; }
-   public static int i(bS var0) { return 0; }
-   public static bO j(bS var0) { return default; }
-}
-
-#endif
 
 }

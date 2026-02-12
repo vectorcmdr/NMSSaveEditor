@@ -7,7 +7,6 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 
 public class fS {
@@ -231,45 +230,5 @@ public class fS {
 }
 
 
-#else
-
-public class fS
-{
-   public fS() { }
-   public fS(params object[] args) { }
-   public DateTime LastWriteTimeUtc = default;
-   public string Name = "";
-   public FileInfo mh = default;
-   public int lL = 0;
-   public int version = 0;
-   public long my = 0;
-   public int mz = 0;
-   public int mA = 0;
-   public byte[] mB = System.Array.Empty<byte>();
-   public string name = "";
-   public string description = "";
-   public int lM = 0;
-   public void cn() { }
-   public void read(Stream var1) { }
-   public void write() { }
-   public byte[] co() { return System.Array.Empty<byte>(); }
-   public bool cp() { return false; }
-   public int getVersion() { return 0; }
-   public void setVersion(int var1) { }
-   public int ch() { return 0; }
-   public void aj(int var1) { }
-   public int ci() { return 0; }
-   public void ak(int var1) { }
-   public string ck() { return ""; }
-   public void Y(string var1) { }
-   public string getDescription() { return ""; }
-   public long cq() { return 0; }
-   public void d(long var1) { }
-   public string getName() { return ""; }
-   public long length() { return 0; }
-   public void a(fS var1) { }
-}
-
-#endif
 
 }

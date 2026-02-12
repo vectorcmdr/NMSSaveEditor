@@ -8,7 +8,6 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 
 public class hb : FilterOutputStream {
@@ -19,8 +18,7 @@ public class hb : FilterOutputStream {
    public int sg;
    public int si;
 
-   public hb(Stream var1) {
-      base(var1);
+public hb(Stream var1) : base(var1) {
       this.sf = se.fastCompressor();
       this.buffer = new byte[65536];
       this.sg = 0;
@@ -86,26 +84,5 @@ public class hb : FilterOutputStream {
 }
 
 
-#else
-
-public class hb
-{
-   public hb() { }
-   public hb(params object[] args) { }
-   public static LZ4Factory se = default;
-   public static int sm = 0;
-   public LZ4Compressor sf = default;
-   public byte[] buffer = System.Array.Empty<byte>();
-   public int sg = 0;
-   public int si = 0;
-   public void aK(int var1) { }
-   public void write(int var1) { }
-   public int ch() { return 0; }
-   public int ci() { return 0; }
-   public void flush() { }
-   public void close() { }
-}
-
-#endif
 
 }

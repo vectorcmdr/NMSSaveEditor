@@ -7,7 +7,6 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 
 public class Q : Form {
@@ -19,8 +18,7 @@ public class Q : Form {
    public TextBox bB;
    public static Q bC;
 
-   public Q(Frame var1) {
-      base(var1);
+public Q(Frame var1) : base(var1) {
       this.FormBorderStyle = FormBorderStyle.FixedDialog; //(false);
       this.setModalExclusionType(/* ModalExclusionType */ 0);
       this.Text = ("Change Stack Sizes");
@@ -98,26 +96,5 @@ public class Q : Form {
 }
 
 
-#else
-
-public class Q
-{
-   public Q() { }
-   public Q(params object[] args) { }
-   public static Q bC = default;
-   public W bw = default;
-   public int bx = 0;
-   public int by = 0;
-   public W bz = default;
-   public TextBox bA = default;
-   public TextBox bB = default;
-   public W a(W var1, int var2, int var3) { return default; }
-   public static int b(Q var0) { return 0; }
-   public static W c(Q var0) { return default; }
-   public static TextBox d(Q var0) { return default; }
-   public static int e(Q var0) { return 0; }
-}
-
-#endif
 
 }

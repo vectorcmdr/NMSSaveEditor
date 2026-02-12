@@ -6,7 +6,6 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 
 public class hd : Handler {
@@ -22,17 +21,5 @@ public class hd : Handler {
 }
 
 
-#else
-
-public class hd
-{
-   public hd() { }
-   public hd(params object[] args) { }
-   public void publish(LogRecord var1) { }
-   public void flush() { }
-   public void close() { }
-}
-
-#endif
 
 }

@@ -9,7 +9,6 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 
 public class Application {
@@ -145,7 +144,6 @@ public class Application {
                M.Put(var0, var1);
             } catch (IOException var4) {
                hc.info("Error loading icon: " + var0);
-            } catch (Exception var5) {
                hc.info("Error loading icon: " + var0);
             }
          }
@@ -164,7 +162,6 @@ public class Application {
                M.Put(var0, var3);
             } catch (IOException var6) {
                hc.info("Error loading icon: " + var0);
-            } catch (Exception var7) {
                hc.info("Error loading icon: " + var0);
             }
          }
@@ -350,7 +347,7 @@ public class Application {
 
    public void a(gH var1) {
       FileInfo var2 = NMSSaveEditor.aH.cF;
-      if (!var2.Exists && !var2.Create()) {
+      if (!var2.Exists && (var2.Create()) == null) {
          var2 = NMSSaveEditor.aH.cD;
       }
 
@@ -379,7 +376,7 @@ public class Application {
 
    public void a(gv var1) {
       FileInfo var2 = NMSSaveEditor.aH.cF;
-      if (!var2.Exists && !var2.Create()) {
+      if (!var2.Exists && (var2.Create()) == null) {
          var2 = NMSSaveEditor.aH.cD;
       }
 
@@ -408,7 +405,7 @@ public class Application {
 
    public void a(gj var1) {
       FileInfo var2 = NMSSaveEditor.aH.cF;
-      if (!var2.Exists && !var2.Create()) {
+      if (!var2.Exists && (var2.Create()) == null) {
          var2 = NMSSaveEditor.aH.cD;
       }
 
@@ -519,7 +516,7 @@ public class Application {
 
    public void a(gf var1) {
       FileInfo var2 = NMSSaveEditor.aH.cE;
-      if (!var2.Exists && !var2.Create()) {
+      if (!var2.Exists && (var2.Create()) == null) {
          var2 = NMSSaveEditor.aH.cD;
       }
 
@@ -545,7 +542,6 @@ public class Application {
          } catch (IOException var7) {
             hc.a("Base backup error", var7);
             this.c("An error occured during backup.");
-         } catch (Exception var8) {
             hc.a("Base backup error", var8);
             this.c("An error occured during backup.");
          }
@@ -570,7 +566,6 @@ public class Application {
          } catch (IOException var5) {
             hc.a("Base restore error", var5);
             this.c("An error occured during backup.");
-         } catch (Exception var6) {
             hc.a("Base restore error", var6);
             this.c("An error occured during backup.");
          }
@@ -583,7 +578,7 @@ public class Application {
       gn var2 = var1.cZ();
       if (var2 != null) {
          FileInfo var3 = NMSSaveEditor.aH.cE;
-         if (!var3.Exists && !var3.Create()) {
+         if (!var3.Exists && (var3.Create()) == null) {
             var3 = NMSSaveEditor.aH.cD;
          }
 
@@ -646,7 +641,6 @@ public class Application {
             } catch (IOException var16) {
                hc.a("Freighter backup error", var16);
                this.c("An error occured during backup.");
-            } catch (Exception var17) {
                hc.a("Freighter backup error", var17);
                this.c("An error occured during backup.");
             }
@@ -674,10 +668,10 @@ public class Application {
                gS.b(var2.cH(), var6, var5);
                eY var7 = this.aK.H("PlayerStateData");
                bool var8 = false;
-               IEnumerator var10 = var6.entrySet().GetEnumerator();
+               IEnumerator<object> var10 = var6.entrySet().GetEnumerator();
 
                while(var10.MoveNext()) {
-                  Entry var9 = (Entry)var10.Current;
+                  KeyValuePair<object, object> var9 = (KeyValuePair<object, object>)var10.Current;
                   if (((string)var9.getKey()).Equals("HomeSeed")) {
                      var1.ah((string)var9.getValue());
                   }
@@ -736,7 +730,6 @@ public class Application {
             } catch (IOException var11) {
                hc.a("Freighter restore error", var11);
                this.c("An error occured during restore.");
-            } catch (Exception var12) {
                hc.a("Freighter restore error", var12);
                this.c("An error occured during restore.");
             }
@@ -963,7 +956,7 @@ public class Application {
          this.Z.Enabled = (true);
          this.aa.Enabled = (true);
          this.ab.Enabled = (var20);
-         IEnumerator var17 = this.ac.GetEnumerator();
+         IEnumerator<object> var17 = this.ac.GetEnumerator();
 
          while(var17.MoveNext()) {
             ToolStripMenuItem var16 = (ToolStripMenuItem)var17.Current;
@@ -976,7 +969,7 @@ public class Application {
          this.Z.Enabled = (false);
          this.aa.Enabled = (false);
          this.ab.Enabled = (false);
-         IEnumerator var3 = this.ac.GetEnumerator();
+         IEnumerator<object> var3 = this.ac.GetEnumerator();
 
          while(var3.MoveNext()) {
             ToolStripMenuItem var2 = (ToolStripMenuItem)var3.Current;
@@ -1918,7 +1911,7 @@ public class Application {
          this.r();
       });
       var9.Add(this.ad);
-      IEnumerator var22 = this.ac.GetEnumerator();
+      IEnumerator<object> var22 = this.ac.GetEnumerator();
 
       while(var22.MoveNext()) {
          ToolStripMenuItem var21 = (ToolStripMenuItem)var22.Current;
@@ -2061,119 +2054,5 @@ public class Application {
 }
 
 
-#else
-
-public class Application
-{
-   public Application() { }
-   public Application(params object[] args) { }
-   public static string VERSION = "";
-   public static string RELEASE = "";
-   public static string J = "";
-   public static string K = "";
-   public static Application L = default;
-   public static Dictionary<object, object> M = default;
-   public static int ae = 0;
-   public static int af = 0;
-   public static int ag = 0;
-   public static int ah = 0;
-   public static int ai = 0;
-   public static int aj = 0;
-   public static int ak = 0;
-   public static int al = 0;
-   public static int am = 0;
-   public static int an = 0;
-   public static int ao = 0;
-   public static int ap = 0;
-   public static int aq = 0;
-   public static int ar = 0;
-   public static int[] aY = System.Array.Empty<int>();
-   public Form N = default;
-   public TabControl O = default;
-   public Label P = default;
-   public Label Q = default;
-   public ComboBox R = default;
-   public ComboBox S = default;
-   public Label T = default;
-   public Label U = default;
-   public Label V = default;
-   public Button W = default;
-   public Button X = default;
-   public Button Y = default;
-   public ToolStripMenuItem Z = default;
-   public ToolStripMenuItem aa = default;
-   public ToolStripMenuItem ab = default;
-   public List<object> ac = default;
-   public ToolStripMenuItem ad = default;
-   public dj at = default;
-   public dN au = default;
-   public eb av = default;
-   public bd aw = default;
-   public bl ax = default;
-   public ep ay = default;
-   public X az = default;
-   public I aA = default;
-   public dE aB = default;
-   public ap aC = default;
-   public bE aD = default;
-   public c aE = default;
-   public fq aF = default;
-   public ft[] aG = System.Array.Empty<ft>();
-   public int aH = 0;
-   public fs[] aI = System.Array.Empty<fs>();
-   public int aJ = 0;
-   public eY aK = default;
-   public bool aL = false;
-   public fr aM = default;
-   public eY aN = default;
-   public bool aO = false;
-   public bool aP = false;
-   public bool aQ = false;
-   public bool aR = false;
-   public bool aS = false;
-   public bool aT = false;
-   public bool aU = false;
-   public fe aV = default;
-   public fe aW = default;
-   public fR aX = default;
-   public static string a(long var0) { return ""; }
-   public static string b(long var0) { return ""; }
-   public static void main(string[] var0) { }
-   public void f() { }
-   public Form g() { return default; }
-   public gH h() { return default; }
-   public gv i() { return default; }
-   public gj j() { return default; }
-   public void k() { }
-   public void e(int var1) { }
-   public void c(string var1) { }
-   public void l() { }
-   public void m() { }
-   public void n() { }
-   public void o() { }
-   public void p() { }
-   public void q() { }
-   public void r() { }
-   public void s() { }
-   public void t() { }
-   public void u() { }
-   public void v() { }
-   public void w() { }
-   public void x() { }
-   public void y() { }
-   public void z() { }
-   public void A() { }
-   public void B() { }
-   public void C() { }
-   public eV d(string var1) { return default; }
-   public bool D() { return false; }
-   public string E() { return ""; }
-   public fn F() { return default; }
-   public void G() { }
-   public void initialize() { }
-   public static int[] I() { return System.Array.Empty<int>(); }
-}
-
-#endif
 
 }

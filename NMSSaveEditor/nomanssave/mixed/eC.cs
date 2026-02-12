@@ -7,7 +7,6 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 
 public class eC {
@@ -23,7 +22,7 @@ public class eC {
    public static void main(string[] var0) {
       for(int var1 = 0; var1 < jS.Length; ++var1) {
          if (jS[var1] != null) {
-            IEnumerator var3 = jS[var1].GetEnumerator();
+            IEnumerator<object> var3 = jS[var1].GetEnumerator();
 
             while(var3.MoveNext()) {
                eF var2 = (eF)var3.Current;
@@ -39,7 +38,7 @@ public class eC {
 
    public static string hashName(string var0) {
       long[] var1 = new long[]{8268756125562466087L, 8268756125562466087L};
-      hh.a(var0.GetBytes(), var1);
+      hh.a(var0.GetBytes(System.Text.Encoding.UTF8), var1);
       string var2 = "0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxy";
       long var3 = 4294967295L & var1[0] >> 32;
       var3 = var3 % 68L << 32 | 4294967295L & var1[0];
@@ -125,24 +124,5 @@ public class eC {
 }
 
 
-#else
-
-public class eC
-{
-   public eC() { }
-   public eC(params object[] args) { }
-   public static eD[] jS = System.Array.Empty<eD>();
-   public eD jT = default;
-   public eE jU = default;
-   public static void main(string[] var0) { }
-   public static string hashName(string var0) { return ""; }
-   public static eD c(string var0, string var1) { return default; }
-   public Dictionary<object, object> bp() { return default; }
-   public string q(string var1) { return ""; }
-   public string r(string var1) { return ""; }
-   public string toString() { return ""; }
-}
-
-#endif
 
 }

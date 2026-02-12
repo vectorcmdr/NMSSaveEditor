@@ -7,7 +7,6 @@ using System.Text.RegularExpressions;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 
 public class hl {
@@ -58,7 +57,7 @@ public class hl {
    public static hl e(string var0, int var1) {
       Matcher var2;
       long var3;
-      if ((var2 = sP.matcher(var0)).Matches()) {
+      if ((var2 = sP.matcher(var0)).System.Text.RegularExpressions.Regex.IsMatch()) {
          var3 = aE(var2.group(1)) - 2047L;
          if (var3 > 2047L) {
             throw new Exception("Invalid galactic coordinates");
@@ -80,7 +79,7 @@ public class hl {
                }
             }
          }
-      } else if (sO.matcher(var0).Matches()) {
+      } else if (sO.matcher(var0).System.Text.RegularExpressions.Regex.IsMatch()) {
          var3 = aE(var0);
          int var5 = b(var3 >> 44, 4);
          int var6 = b(var3 >> 32, 12);
@@ -102,7 +101,7 @@ public class hl {
       } else if (var0 is string) {
          string var5 = (string)var0;
          Matcher var2;
-         if ((var2 = sN.matcher(var5)).Matches()) {
+         if ((var2 = sN.matcher(var5)).System.Text.RegularExpressions.Regex.IsMatch()) {
             long var3 = aE(var2.group(1));
             return new hl(var3);
          } else {
@@ -229,26 +228,26 @@ public class hl {
 
    public string ey() {
       StringBuilder var1 = new StringBuilder();
-      var1.Append(Integer.toString(this.sQ & 15, 16));
-      var1.Append(Integer.toString(this.sR & 4095, 16));
+      var1.Append(Convert.ToString(this.sQ & 15, 16));
+      var1.Append(Convert.ToString(this.sR & 4095, 16));
 
       while(var1.length() < 4) {
          var1.Insert(1, '0');
       }
 
-      var1.Append(Integer.toString(this.sT & 255, 16));
+      var1.Append(Convert.ToString(this.sT & 255, 16));
 
       while(var1.length() < 6) {
          var1.Insert(4, '0');
       }
 
-      var1.Append(Integer.toString(this.sU & 4095, 16));
+      var1.Append(Convert.ToString(this.sU & 4095, 16));
 
       while(var1.length() < 9) {
          var1.Insert(6, '0');
       }
 
-      var1.Append(Integer.toString(this.sV & 4095, 16));
+      var1.Append(Convert.ToString(this.sV & 4095, 16));
 
       while(var1.length() < 12) {
          var1.Insert(9, '0');
@@ -259,28 +258,28 @@ public class hl {
 
    public string ez() {
       StringBuilder var1 = new StringBuilder();
-      var1.Append(Integer.toString(this.sV + 2047, 16));
+      var1.Append(Convert.ToString(this.sV + 2047, 16));
 
       while(var1.length() < 4) {
          var1.Insert(0, '0');
       }
 
       var1.Append(':');
-      var1.Append(Integer.toString(this.sT + 127, 16));
+      var1.Append(Convert.ToString(this.sT + 127, 16));
 
       while(var1.length() < 9) {
          var1.Insert(5, '0');
       }
 
       var1.Append(':');
-      var1.Append(Integer.toString(this.sU + 2047, 16));
+      var1.Append(Convert.ToString(this.sU + 2047, 16));
 
       while(var1.length() < 14) {
          var1.Insert(10, '0');
       }
 
       var1.Append(':');
-      var1.Append(Integer.toString(this.sQ << 12 | this.sR, 16));
+      var1.Append(Convert.ToString(this.sQ << 12 | this.sR, 16));
 
       while(var1.length() < 19) {
          var1.Insert(15, '0');
@@ -315,50 +314,10 @@ public class hl {
    }
 
    public string toString() {
-      return "0x" + Long.toString(this.ex(), 16);
+      return "0x" + Convert.ToString(this.ex(), 16);
    }
 }
 
 
-#else
-
-public class hl
-{
-   public hl() { }
-   public hl(params object[] args) { }
-   public static Pattern sN = default;
-   public static Pattern sO = default;
-   public static Pattern sP = default;
-   public int sQ = 0;
-   public int sR = 0;
-   public int sS = 0;
-   public int sT = 0;
-   public int sU = 0;
-   public int sV = 0;
-   public static long aE(string var0) { return 0; }
-   public static int a(long var0, int var2) { return 0; }
-   public static int b(long var0, int var2) { return 0; }
-   public int eq() { return 0; }
-   public void aL(int var1) { }
-   public int er() { return 0; }
-   public void aM(int var1) { }
-   public int es() { return 0; }
-   public void aN(int var1) { }
-   public int et() { return 0; }
-   public void aO(int var1) { }
-   public int eu() { return 0; }
-   public void aP(int var1) { }
-   public int ev() { return 0; }
-   public void aQ(int var1) { }
-   public eY ew() { return default; }
-   public long ex() { return 0; }
-   public string ey() { return ""; }
-   public string ez() { return ""; }
-   public bool equals(object var1) { return false; }
-   public int hashCode() { return 0; }
-   public string toString() { return ""; }
-}
-
-#endif
 
 }

@@ -6,7 +6,6 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 public class gn {
    public string Name => getName();
@@ -51,23 +50,5 @@ public class gn {
 }
 
 
-#else
-
-public class gn
-{
-   public gn() { }
-   public gn(params object[] args) { }
-   public string Name = "";
-   public eY nj = default;
-   public gm oK = default;
-   public string cF() { return ""; }
-   public string getName() { return ""; }
-   public void setName(string var1) { }
-   public int cG() { return 0; }
-   public eY cH() { return default; }
-   public string toString() { return ""; }
-}
-
-#endif
 
 }

@@ -7,7 +7,6 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 
 public class fD : fH, fs {
@@ -17,8 +16,7 @@ public class fD : fH, fs {
    public fn me;
    public fA ma;
 
-   public fD(fA var1, int var2) {
-      base(var1, "savedata" + (var2 < 8 ? "0" : "") + Integer.toString(var2 + 2) + ".hg", true);
+public fD(fA var1, int var2) : base(var1, "savedata" + (var2 < 8 ? "0" : "") + Integer.toString(var2 + 2) + ".hg", true) {
       this.ma = var1;
       this.lO = var2;
 
@@ -31,8 +29,7 @@ public class fD : fH, fs {
 
    }
 
-   public fD(fA var1, int var2, byte[] var3, eY var4) {
-      base(var1, "savedata" + (var2 < 8 ? "0" : "") + Integer.toString(var2 + 2) + ".hg", false);
+public fD(fA var1, int var2, byte[] var3, eY var4) : base(var1, "savedata" + (var2 < 8 ? "0" : "") + Integer.toString(var2 + 2) + ".hg", false) {
       this.ma = var1;
       this.lO = var2;
       this.lK = var3;
@@ -64,23 +61,5 @@ public class fD : fH, fs {
 }
 
 
-#else
-
-public class fD
-{
-   public fD() { }
-   public fD(params object[] args) { }
-   public DateTime LastWriteTimeUtc = default;
-   public int lO = 0;
-   public fn me = default;
-   public fA ma = default;
-   public fn L() { return default; }
-   public eY M() { return default; }
-   public string b(eY var1) { return ""; }
-   public long lastModified() { return 0; }
-   public string toString() { return ""; }
-}
-
-#endif
 
 }

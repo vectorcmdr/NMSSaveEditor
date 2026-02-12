@@ -7,14 +7,12 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 
 public class eD : eE {
    public string version;
 
-   public eD(Stream var1, string var2) {
-      base((eE)null);
+public eD(Stream var1, string var2) : base((eE)null) {
       this.version = var2;
       List<object> var3 = new List<object>();
       StreamReader var4 = new StreamReader(new StreamReader(var1));
@@ -57,7 +55,7 @@ public class eD : eE {
          var4.Close();
       }
 
-      IEnumerator var15 = var3.GetEnumerator();
+      IEnumerator<object> var15 = var3.GetEnumerator();
 
       while(var15.MoveNext()) {
          var5 = (string)var15.Current;
@@ -83,16 +81,5 @@ public class eD : eE {
 }
 
 
-#else
-
-public class eD
-{
-   public eD() { }
-   public eD(params object[] args) { }
-   public string version = "";
-   public string toString() { return ""; }
-}
-
-#endif
 
 }

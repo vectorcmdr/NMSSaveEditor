@@ -8,7 +8,6 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 
 public class ec : ba {
@@ -21,8 +20,7 @@ public class ec : ba {
    public G ii;
    public eb ij;
 
-   public ec(eb var1, int var2) {
-      base(aH.cH, aH.cH * 2);
+public ec(eb var1, int var2) : base(aH.cH, aH.cH * 2) {
       this.ij = var1;
       this.index = var2;
       this.k("Wingman " + (var2 + 1));
@@ -84,30 +82,5 @@ public class ec : ba {
 }
 
 
-#else
-
-public class ec
-{
-   public ec() { }
-   public ec(params object[] args) { }
-   public int index = 0;
-   public ComboBox ig = default;
-   public G bj = default;
-   public ComboBox ih = default;
-   public G hO = default;
-   public G ii = default;
-   public eb ij = default;
-   public void aQ() { }
-   public static CheckBox a(ec var0) { return default; }
-   public static ComboBox b(ec var0) { return default; }
-   public static G c(ec var0) { return default; }
-   public static ComboBox d(ec var0) { return default; }
-   public static G e(ec var0) { return default; }
-   public static G f(ec var0) { return default; }
-   public static void g(ec var0) { }
-   public static eb h(ec var0) { return default; }
-}
-
-#endif
 
 }

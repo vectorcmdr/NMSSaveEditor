@@ -6,13 +6,11 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 public class fB : fH, fr {
    public fA ma;
 
-   public fB(fA var1) {
-      base(var1, "savedata00.hg", true);
+public fB(fA var1) : base(var1, "savedata00.hg", true) {
       this.ma = var1;
    }
 
@@ -27,17 +25,5 @@ public class fB : fH, fr {
 }
 
 
-#else
-
-public class fB
-{
-   public fB() { }
-   public fB(params object[] args) { }
-   public fA ma = default;
-   public eY M() { return default; }
-   public void k(eY var1) { }
-}
-
-#endif
 
 }

@@ -8,7 +8,6 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 
 public class du : Panel {
@@ -123,22 +122,5 @@ public class du : Panel {
 }
 
 
-#else
-
-public class du
-{
-   public du() { }
-   public du(params object[] args) { }
-   public gF hm = default;
-   public ToolStripMenuItem fh = default;
-   public ToolStripMenuItem hn = default;
-   public ToolStripMenuItem fe = default;
-   public dt ho = default;
-   public void aM() { }
-   public static void c(du var0) { }
-   public static dt d(du var0) { return default; }
-}
-
-#endif
 
 }

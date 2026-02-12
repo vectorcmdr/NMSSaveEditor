@@ -8,12 +8,11 @@ using System.Text.RegularExpressions;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 
 public class fu : fq {
-   public static readonly byte[] lA = "NOMANSKY".GetBytes();
-   public static readonly byte[] lB = new byte[]{126, -25, 85, -54, -47, 7, 0, 0};
+   public static readonly byte[] lA = "NOMANSKY".GetBytes(System.Text.Encoding.UTF8);
+   public static readonly byte[] lB = new byte[] {126, unchecked((byte)-25), 85, unchecked((byte)-54), unchecked((byte)-47), 7, 0, 0};
    public static Pattern lC = Pattern.compile("\\{\"Version\":(\\d*),.*");
    public FileInfo lD;
    public fR lE;
@@ -78,7 +77,7 @@ public class fu : fq {
                int var10 = var3.read(var9);
                string var11 = new string(var9, 0, var10, "ISO-8859-1");
                Matcher var12 = lC.matcher(var11);
-               if (var12.Matches()) {
+               if (var12.System.Text.RegularExpressions.Regex.IsMatch()) {
                   try {
                      this.lF[var8].be = ag(int.Parse(var12.group(1)));
                   } catch (Exception var17) {
@@ -167,33 +166,5 @@ public class fu : fq {
 }
 
 
-#else
-
-public class fu
-{
-   public fu() { }
-   public fu(params object[] args) { }
-   public static readonly byte[] lA = System.Array.Empty<byte>();
-   public static readonly byte[] lB = System.Array.Empty<byte>();
-   public static Pattern lC = default;
-   public FileInfo lD = default;
-   public fR lE = default;
-   public fw[] lF = System.Array.Empty<fw>();
-   public fv lG = default;
-   public fx[] lH = System.Array.Empty<fx>();
-   public static fn ag(int var0) { return default; }
-   public FileInfo bS() { return default; }
-   public fr bT() { return default; }
-   public ft[] bU() { return System.Array.Empty<ft>(); }
-   public int W(string var1) { return 0; }
-   public void X(string var1) { }
-   public static void main(string[] var0) { }
-   public static bool a(byte[] var0, byte[] var1) { return false; }
-   public static byte[] bY() { return System.Array.Empty<byte>(); }
-   public static bool b(byte[] var0, byte[] var1) { return false; }
-   public static fw[] c(fu var0) { return System.Array.Empty<fw>(); }
-}
-
-#endif
 
 }

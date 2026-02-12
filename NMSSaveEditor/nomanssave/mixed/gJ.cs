@@ -6,15 +6,13 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 
 public class gJ : gt {
    public gH rq;
    public int il;
 
-   public gJ(gH var1, Function var2, eY var3, int var4, int var5, int var6, bool var7, bool var8, int var9) {
-      base(var2, var3, var4, var5, var6, var7, var8);
+public gJ(gH var1, Function var2, eY var3, int var4, int var5, int var6, bool var7, bool var8, int var9) : base(var2, var3, var4, var5, var6, var7, var8) {
       this.rq = var1;
       this.il = var9;
    }
@@ -29,18 +27,5 @@ public class gJ : gt {
 }
 
 
-#else
-
-public class gJ
-{
-   public gJ() { }
-   public gJ(params object[] args) { }
-   public gH rq = default;
-   public int il = 0;
-   public int dj() { return 0; }
-   public string toString() { return ""; }
-}
-
-#endif
 
 }

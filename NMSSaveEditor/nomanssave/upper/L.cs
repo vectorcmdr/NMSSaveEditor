@@ -6,7 +6,6 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 
 public class L : object {
@@ -61,23 +60,5 @@ public class L : object {
 }
 
 
-#else
-
-public class L
-{
-   public L() { }
-   public L(params object[] args) { }
-   public gf bu = default;
-   public I bt = default;
-   public int getSize() { return 0; }
-   public gf p(int var1) { return default; }
-   public void addListDataListener(EventHandler var1) { }
-   public void removeListDataListener(EventHandler var1) { }
-   public void setSelectedItem(object var1) { }
-   public object getSelectedItem() { return default; }
-   public object getElementAt(int var1) { return default; }
-}
-
-#endif
 
 }

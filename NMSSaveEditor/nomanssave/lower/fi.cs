@@ -7,15 +7,13 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 
 public class fi : StringReader {
    public int kF = 1;
    public int kG = 0;
 
-   public fi(string var1) {
-      base(var1);
+public fi(string var1) : base(var1) {
    }
 
    public int bI() {
@@ -70,19 +68,5 @@ public class fi : StringReader {
 }
 
 
-#else
-
-public class fi
-{
-   public fi() { }
-   public fi(params object[] args) { }
-   public int kF = 0;
-   public int kG = 0;
-   public int bI() { return 0; }
-   public int read() { return 0; }
-   public int a(Predicate<object> var1) { return 0; }
-}
-
-#endif
 
 }

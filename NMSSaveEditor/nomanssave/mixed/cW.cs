@@ -8,7 +8,6 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 
 public class cW : Panel, CaretListener {
@@ -249,49 +248,5 @@ public class cW : Panel, CaretListener {
 }
 
 
-#else
-
-public class cW
-{
-   public cW() { }
-   public cW(params object[] args) { }
-   public static float gx = 0;
-   public static float gy = 0;
-   public static float gz = 0;
-   public static object gA = default;
-   public static int HEIGHT = 0;
-   public JTextComponent gB = default;
-   public bool gC = false;
-   public int gD = 0;
-   public Color gE = default;
-   public float gF = 0;
-   public int gG = 0;
-   public int gH = 0;
-   public int gI = 0;
-   public int gJ = 0;
-   public Dictionary<object, object> gK = default;
-   public bool aD() { return false; }
-   public void b(bool var1) { }
-   public int aE() { return 0; }
-   public void y(int var1) { }
-   public Color aF() { return default; }
-   public void a(Color var1) { }
-   public float aG() { return 0; }
-   public int aH() { return 0; }
-   public void z(int var1) { }
-   public void aI() { }
-   public void paintComponent(Graphics var1) { }
-   public bool A(int var1) { return false; }
-   public string B(int var1) { return ""; }
-   public void caretUpdate(CaretEvent var1) { }
-   public void changedUpdate(EventArgs var1) { }
-   public void insertUpdate(EventArgs var1) { }
-   public void removeUpdate(EventArgs var1) { }
-   public void aJ() { }
-   public void propertyChange(EventArgs var1) { }
-   public static void c(cW var0) { }
-}
-
-#endif
 
 }

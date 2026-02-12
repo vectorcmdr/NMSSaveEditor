@@ -6,7 +6,6 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 public class ei : G {
    public ec ik;
@@ -32,17 +31,5 @@ public class ei : G {
 }
 
 
-#else
-
-public class ei
-{
-   public ei() { }
-   public ei(params object[] args) { }
-   public ec ik = default;
-   public int il = 0;
-   public string g(string var1) { return ""; }
-}
-
-#endif
 
 }

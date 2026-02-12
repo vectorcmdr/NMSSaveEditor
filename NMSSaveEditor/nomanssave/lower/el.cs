@@ -7,7 +7,6 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 
 public class el : FileView {
@@ -44,17 +43,5 @@ public class el : FileView {
 }
 
 
-#else
-
-public class el
-{
-   public el() { }
-   public el(params object[] args) { }
-   public string Name = "";
-   public Icon getIcon(FileInfo var1) { return default; }
-   public string getName(FileInfo var1) { return ""; }
-}
-
-#endif
 
 }

@@ -7,7 +7,6 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 
 public class ay : ActionListener {
@@ -18,7 +17,7 @@ public class ay : ActionListener {
    }
 
    public void actionPerformed(EventArgs var1) {
-      IEnumerator var4 = eS.by().GetEnumerator();
+      IEnumerator<object> var4 = eS.by().GetEnumerator();
 
       while(var4.MoveNext()) {
          eS var3 = (eS)var4.Current;
@@ -49,16 +48,5 @@ public class ay : ActionListener {
 }
 
 
-#else
-
-public class ay
-{
-   public ay() { }
-   public ay(params object[] args) { }
-   public ap cu = default;
-   public void actionPerformed(EventArgs var1) { }
-}
-
-#endif
 
 }

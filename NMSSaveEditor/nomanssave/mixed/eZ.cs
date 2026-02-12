@@ -6,14 +6,12 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 public class eZ : fc {
    public int index;
    public eY kL;
 
-   public eZ(eY var1, int var2, fc var3) {
-      base(var1, var3);
+public eZ(eY var1, int var2, fc var3) : base(var1, var3) {
       this.kL = var1;
       this.index = var2;
    }
@@ -25,14 +23,12 @@ public class eZ : fc {
          eV var3 = (eV)this.kN.a(typeof(eV), var2);
          if (this.index >= 0 && this.index <= var3.Length) {
             if (this.index == var3.Length) {
-               if (!var2) {
+               if (var2 == null) {
                   throw new fd((fd)null);
                } else {
                   object var4;
                   try {
-                     var4 = var1.newInstance();
-                  } catch (Exception var6) {
-                     throw new Exception("Unexpected error", var6);
+                     var4 = var1.newInstance(var6);
                   }
 
                   var3.Add(var4);
@@ -101,20 +97,5 @@ public class eZ : fc {
 }
 
 
-#else
-
-public class eZ
-{
-   public eZ() { }
-   public eZ(params object[] args) { }
-   public int index = 0;
-   public eY kL = default;
-   public object a(Class var1, bool var2) { return default; }
-   public object getValue() { return default; }
-   public object bG() { return default; }
-   public eY e(eY var1) { return default; }
-}
-
-#endif
 
 }

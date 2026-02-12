@@ -6,7 +6,6 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 
 public class ge {
@@ -111,22 +110,5 @@ public class ge {
 }
 
 
-#else
-
-public class ge
-{
-   public ge() { }
-   public ge(params object[] args) { }
-   public List<object> gT = default;
-   public List<object> nh = default;
-   public List<object> ni = default;
-   public static Function ap(int var0) { return default; }
-   public static Function cB() { return default; }
-   public List<object> cC() { return default; }
-   public List<object> cD() { return default; }
-   public List<object> cE() { return default; }
-}
-
-#endif
 
 }

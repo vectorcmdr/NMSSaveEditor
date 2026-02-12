@@ -7,7 +7,6 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 
 public class ba : Panel {
@@ -139,19 +138,5 @@ public class ba : Panel {
 }
 
 
-#else
-
-public class ba
-{
-   public ba() { }
-   public ba(params object[] args) { }
-   public object dA = default;
-   public void k(string var1) { }
-   public void a(string var1, Image var2) { }
-   public void addText(string var1) { }
-   public void Y() { }
-}
-
-#endif
 
 }

@@ -7,7 +7,6 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 
 public class gv {
@@ -28,7 +27,7 @@ public class gv {
             }
          }
 
-         return (gv[])var2.ToArray(new gv[0]);
+         return (gv[])var2.ToArray();
       } else {
          return new gv[]{new gw(var0, var0.H("WeaponInventory"))};
       }
@@ -233,40 +232,5 @@ public class gv {
 }
 
 
-#else
-
-public class gv
-{
-   public gv() { }
-   public gv(params object[] args) { }
-   public string Name = "";
-   public int index = 0;
-   public eY qF = default;
-   public gt qG = default;
-   public static gv[] v(eY var0) { return System.Array.Empty<gv>(); }
-   public static Function b(gv var0) { return default; }
-   public void j(FileInfo var1) { }
-   public int getIndex() { return 0; }
-   public string getName() { return ""; }
-   public void setName(string var1) { }
-   public string cT() { return ""; }
-   public void ag(string var1) { }
-   public string cK() { return ""; }
-   public void aa(string var1) { }
-   public string cW() { return ""; }
-   public void aj(string var1) { }
-   public gt dE() { return default; }
-   public double ak(string var1) { return 0; }
-   public void d(string var1, double var2) { }
-   public double dF() { return 0; }
-   public double dG() { return 0; }
-   public void e(double var1) { }
-   public double dH() { return 0; }
-   public void f(double var1) { }
-   public void cm() { }
-   public string toString() { return ""; }
-}
-
-#endif
 
 }

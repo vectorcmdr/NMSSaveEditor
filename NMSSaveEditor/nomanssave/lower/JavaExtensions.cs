@@ -207,7 +207,7 @@ namespace NMSSaveEditor
         public static void pack(this Form f) { /* TODO */ }
         public static void setDefaultCloseOperation(this Form f, int op) { /* TODO */ }
         public static void setLocationRelativeTo(this Form f, Control c) { f.StartPosition = FormStartPosition.CenterParent; }
-        public static void setResizable(this Form f, bool r) { if (!r) f.FormBorderStyle = FormBorderStyle.FixedDialog; }
+        public static void setResizable(this Form f, bool r) { if (r == null) f.FormBorderStyle = FormBorderStyle.FixedDialog; }
         public static void setModal(this Form f, bool m) { /* TODO */ }
         public static void setIconImage(this Form f, Image img) { /* TODO */ }
         public static void setTitle(this Form f, string title) { f.Text = title; }
@@ -892,34 +892,9 @@ namespace NMSSaveEditor
         public static bool isInfinite(double d) => double.IsInfinity(d);
 
         // XmlDocument factory
-        public static DocumentBuilderFactory newInstance() => DocumentBuilderFactory.newInstance();
+        public static DocumentBuilderFactory newInstance() => new DocumentBuilderFactory();
 
-        // System helpers
-        public static long currentTimeMillis() => DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
-        public static long nanoTime() => DateTime.UtcNow.Ticks * 100;
-    }
-
-    // Color constants
-    public static class JavaColor
-    {
-        public static Color RED = Color.Red;
-        public static Color GREEN = Color.Green;
-        public static Color BLUE = Color.Blue;
-        public static Color WHITE = Color.White;
-        public static Color BLACK = Color.Black;
-        public static Color GRAY = Color.Gray;
-        public static Color YELLOW = Color.Yellow;
-        public static Color ORANGE = Color.Orange;
-        public static Color CYAN = Color.Cyan;
-        public static Color MAGENTA = Color.Magenta;
-        public static Color PINK = Color.Pink;
-        public static Color LIGHT_GRAY = Color.LightGray;
-        public static Color DARK_GRAY = Color.DarkGray;
-    }
-
-    // JTree extensions
-    public static class JTreeExtensions
-    {
+        // JTree
         public static void setCellRenderer(this TreeView tree, object renderer) { /* TODO */ }
         public static void setModel(this TreeView tree, object model) { /* TODO */ }
         public static object getModel(this TreeView tree) => null;
@@ -961,12 +936,12 @@ namespace NMSSaveEditor
         public static long lastModified(this DirectoryInfo di) => di.LastWriteTimeUtc.Ticks;
         
         // Matcher fix
-        public static bool Matches(this Matcher m) => m.matches();
+        public static bool System.Text.RegularExpressions.Regex.IsMatch(this Matcher m) => m.matches();
         
         // Level
         public static int intValue(this Level l) => 0;
         
-        // Function<T,R> delegate
+        // Function<T, R> delegate
         public static R apply<T, R>(this Func<T, R> func, T arg) => func(arg);
         
         // Rectangle
@@ -1025,10 +1000,9 @@ namespace NMSSaveEditor
         public static Number AsNumber(this BigDecimal bd) => new NumberWrapper(bd.intValue(), bd.longValue(), (float)bd.doubleValue(), bd.doubleValue());
         
         // XmlDocument factory pattern
-        public static DocumentBuilderFactory newInstance(this Type t) => DocumentBuilderFactory.newInstance();
+        public static DocumentBuilderFactory newInstance(this Type t) => new DocumentBuilderFactory();
     }
 
-    // Number wrapper for BigDecimal -> Number conversion
     public class NumberWrapper : Number
     {
         private int _int;

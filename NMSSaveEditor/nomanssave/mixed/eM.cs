@@ -8,7 +8,6 @@ using System.Xml;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 
 public class eM {
@@ -35,7 +34,6 @@ public class eM {
                }
             }
          } catch (Exception var6) {
-         } catch (Exception var7) {
          } catch (IOException var8) {
          }
       }
@@ -102,30 +100,5 @@ public class eM {
 }
 
 
-#else
-
-public class eM
-{
-   public eM() { }
-   public eM(params object[] args) { }
-   public static List<object> kl = default;
-   public string Name = "";
-   public string id = "";
-   public string name = "";
-   public string description = "";
-   public bool iE = false;
-   public bool jY = false;
-   public string getID() { return ""; }
-   public string getName() { return ""; }
-   public string getDescription() { return ""; }
-   public bool aW() { return false; }
-   public bool bb() { return false; }
-   public bool equals(object var1) { return false; }
-   public string toString() { return ""; }
-   public static int getCount() { return 0; }
-   public static int w(string var0) { return 0; }
-}
-
-#endif
 
 }

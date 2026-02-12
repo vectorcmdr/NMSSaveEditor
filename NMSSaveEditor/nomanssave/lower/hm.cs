@@ -7,15 +7,13 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 
 public class hm : FilterInputStream {
    public ha sa;
    public int sb;
 
-   public hm(Stream var1) {
-      base(var1);
+public hm(Stream var1) : base(var1) {
       byte[] var2 = new byte[8];
       hk.readFully(var1, var2);
       int var3 = 255 & var2[0] | (255 & var2[1]) << 8 | (255 & var2[2]) << 16 | (255 & var2[3]) << 24;
@@ -55,20 +53,5 @@ public class hm : FilterInputStream {
 }
 
 
-#else
-
-public class hm
-{
-   public hm() { }
-   public hm(params object[] args) { }
-   public ha sa = default;
-   public int sb = 0;
-   public int getFrameCount() { return 0; }
-   public bool ej() { return false; }
-   public int read() { return 0; }
-   public static Stream a(hm var0) { return default; }
-}
-
-#endif
 
 }

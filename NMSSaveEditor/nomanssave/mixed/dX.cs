@@ -6,7 +6,6 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 public class dX : G {
    public dN ia;
@@ -36,16 +35,5 @@ public class dX : G {
 }
 
 
-#else
-
-public class dX
-{
-   public dX() { }
-   public dX(params object[] args) { }
-   public dN ia = default;
-   public string g(string var1) { return ""; }
-}
-
-#endif
 
 }

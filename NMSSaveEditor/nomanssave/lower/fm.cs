@@ -7,7 +7,6 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 
 public class fm : JavaThread {
@@ -50,7 +49,7 @@ public class fm : JavaThread {
                      var1.Put(var3, var2);
                   }
 
-                  IEnumerator var5 = var3.pollEvents().GetEnumerator();
+                  IEnumerator<object> var5 = var3.pollEvents().GetEnumerator();
 
                   while(var5.MoveNext()) {
                      WatchEvent var4 = (WatchEvent)var5.Current;
@@ -72,7 +71,7 @@ public class fm : JavaThread {
 
                lock(fl.bQ()) {
                   bool var23 = false;
-                  IEnumerator var8 = var1.entrySet().GetEnumerator();
+                  IEnumerator<object> var8 = var1.entrySet().GetEnumerator();
 
                   label156:
                   while(true) {
@@ -81,30 +80,30 @@ public class fm : JavaThread {
                         break;
                      }
 
-                     Entry var25 = (Entry)var8.Current;
+                     KeyValuePair<object, object> var25 = (KeyValuePair<object, object>)var8.Current;
                      var3 = (WatchKey)var25.getKey();
                      List<object> var22 = (List<object>)var25.getValue();
                      var23 = false;
-                     IEnumerator var10 = this.ll.entrySet().GetEnumerator();
+                     IEnumerator<object> var10 = this.ll.entrySet().GetEnumerator();
 
                      while(true) {
-                        Entry var9;
+                        KeyValuePair<object, object> var9;
                         fq var24;
                         do {
                            do {
                               if (!var10.MoveNext()) {
-                                 if (!var23) {
+                                 if (var23 == null) {
                                     var3.cancel();
                                  }
                                  goto label156;
                               }
 
-                              var9 = (Entry)var10.Current;
+                              var9 = (KeyValuePair<object, object>)var10.Current;
                            } while(var9.getValue() != var3);
                         } while((var24 = (fq)var9.getKey()) == null);
 
                         var23 = true;
-                        IEnumerator var12 = var22.GetEnumerator();
+                        IEnumerator<object> var12 = var22.GetEnumerator();
 
                         while(var12.MoveNext()) {
                            string var11 = (string)var12.Current;
@@ -128,19 +127,5 @@ public class fm : JavaThread {
 }
 
 
-#else
-
-public class fm
-{
-   public fm() { }
-   public fm(params object[] args) { }
-   public WatchService lk = default;
-   public Dictionary<object, object> ll = default;
-   public void a(fq var1, FileInfo var2) { }
-   public void b(fq var1) { }
-   public void run() { }
-}
-
-#endif
 
 }

@@ -7,7 +7,6 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 
 public class bd : em {
@@ -147,36 +146,5 @@ public class bd : em {
 }
 
 
-#else
-
-public class bd
-{
-   public bd() { }
-   public bd(params object[] args) { }
-   public static double dE = 0;
-   public static double dF = 0;
-   public G dG = default;
-   public cN dH = default;
-   public cN dI = default;
-   public G dJ = default;
-   public G dK = default;
-   public G dL = default;
-   public G dM = default;
-   public TextBox bm = default;
-   public Button bn = default;
-   public Button bo = default;
-   public bO dN = default;
-   public gm dO = default;
-   public void w() { }
-   public void x() { }
-   public void y() { }
-   public void A() { }
-   public void a(gt var1) { }
-   public gm Z() { return default; }
-   public void c(gm var1) { }
-   public static G b(bd var0) { return default; }
-}
-
-#endif
 
 }

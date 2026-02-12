@@ -7,7 +7,6 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 
 public class hc {
@@ -92,7 +91,7 @@ public class hc {
             sq.println("[DEBUG] " + var0.Trim());
             if (var1 != null) {
                sq.print("[DEBUG] ");
-               var1.printStackTrace(sq);
+               var1.ToString();
             }
          }
       }
@@ -116,7 +115,7 @@ public class hc {
             sq.println("[INFO] " + var0.Trim());
             if (var1 != null) {
                sq.print("[INFO] ");
-               var1.printStackTrace(sq);
+               var1.ToString();
             }
          }
       }
@@ -150,7 +149,7 @@ public class hc {
             sq.println("[WARNING] " + var0.Trim());
             if (var1 != null) {
                sq.print("[WARNING] ");
-               var1.printStackTrace(sq);
+               var1.ToString();
             }
          }
       }
@@ -164,7 +163,7 @@ public class hc {
             sq.println("[ERROR] " + var0.Trim());
             if (var1 != null) {
                sq.print("[ERROR] ");
-               var1.printStackTrace(sq);
+               var1.ToString();
             }
          }
       }
@@ -219,7 +218,7 @@ public class hc {
                sq.println("[" + var3 + "] " + var2.Trim());
                if (var0.getThrown() != null) {
                   sq.print("[" + var3 + "] ");
-                  var0.getThrown().printStackTrace(sq);
+                  var0.getThrown().ToString();
                }
             }
          }
@@ -239,31 +238,5 @@ public class hc {
 }
 
 
-#else
-
-public class hc
-{
-   public hc() { }
-   public hc(params object[] args) { }
-   public static Handler sn = default;
-   public static StreamWriter so = default;
-   public static StreamWriter sp = default;
-   public static StreamWriter sq = default;
-   public static int sr = 0;
-   public static void em() { }
-   public static void k(FileInfo var0) { }
-   public static void aA(string var0) { }
-   public static void debug(string var0) { }
-   public static void info(string var0) { }
-   public static string d(string var0, string var1) { return ""; }
-   public static void warn(string var0) { }
-   public static void a(string var0, Exception var1) { }
-   public static void error(string var0, Exception var1) { }
-   public static void log(LogRecord var0) { }
-   public static void close() { }
-   public static StreamWriter en() { return default; }
-}
-
-#endif
 
 }

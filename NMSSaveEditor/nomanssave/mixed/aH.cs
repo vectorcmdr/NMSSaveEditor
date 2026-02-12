@@ -11,7 +11,6 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 
 public class aH {
@@ -66,9 +65,9 @@ public class aH {
    public static object[] a(string var0, Class var1) {
       eV var2 = cK.d(var0);
       if (var2 == null) {
-         return (object[])Array.newInstance(var1, 0);
+         return (object[])Array.newInstance(0);
       } else {
-         object var3 = Array.newInstance(var1, var2.Count);
+         object var3 = Array.newInstance(var2.Count);
 
          for(int var4 = 0; var4 < var2.Count; ++var4) {
             Array.set(var3, var4, var1.cast(var2.getValue(var4)));
@@ -104,7 +103,7 @@ public class aH {
             FileStream var3 = new FileStream((cC).ToString(), System.IO.FileMode.Open);
 
             try {
-               var3.Write(var0.GetBytes());
+               var3.Write(var0.GetBytes(System.Text.Encoding.UTF8));
                cL = false;
             } finally {
                if (var3 != null) {
@@ -158,7 +157,7 @@ public class aH {
       cE = new FileInfo(System.IO.Path.Combine((var1).ToString(), ("bases").ToString()));
       cF = new FileInfo(System.IO.Path.Combine((var1).ToString(), ("exported").ToString()));
       cG = new FileInfo(System.IO.Path.Combine((var1).ToString(), ("backups").ToString()));
-      if (!cG.Exists && !cG.Create()) {
+      if (!cG.Exists && (cG.Create()) == null) {
          Console.WriteLine("Error: cannot create backups folder");
          Environment.Exit(1);
       }
@@ -187,7 +186,7 @@ public class aH {
                }
 
                eV var6 = new eV();
-               IEnumerator var8 = var3.stringPropertyNames().GetEnumerator();
+               IEnumerator<object> var8 = var3.stringPropertyNames().GetEnumerator();
 
                while(var8.MoveNext()) {
                   string var7 = (string)var8.Current;
@@ -376,35 +375,5 @@ public class aH {
 }
 
 
-#else
-
-public class aH
-{
-   public aH() { }
-   public aH(params object[] args) { }
-   public static FileInfo cC = default;
-   public static FileInfo cD = default;
-   public static FileInfo cE = default;
-   public static FileInfo cF = default;
-   public static FileInfo cG = default;
-   public static int cH = 0;
-   public static int cI = 0;
-   public static int cJ = 0;
-   public static eY cK = default;
-   public static bool cL = false;
-   public static int[] cM = System.Array.Empty<int>();
-   public static string getProperty(string var0) { return ""; }
-   public static void setProperty(string var0, string var1) { }
-   public static int j(string var0) { return 0; }
-   public static int a(string var0, int var1) { return 0; }
-   public static void b(string var0, int var1) { }
-   public static bool T() { return false; }
-   public static void U() { }
-   public static void init(bool var0) { }
-   public static void V() { }
-   public static int[] W() { return System.Array.Empty<int>(); }
-}
-
-#endif
 
 }

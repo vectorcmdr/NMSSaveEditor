@@ -6,7 +6,6 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 
 public class fE : ft {
@@ -37,9 +36,9 @@ public class fE : ft {
          var1.Add(fA.b(this.ma)[this.lT * 2 + 1]);
       }
 
-      aH.cG.listFiles(new fF(this, var1));
+      aH.cG.GetFiles());
       var1.sort(new fG(this));
-      return (fs[])var1.ToArray(new fs[0]);
+      return (fs[])var1.ToArray();
    }
 
    public fn L() {
@@ -93,22 +92,5 @@ public class fE : ft {
 }
 
 
-#else
-
-public class fE
-{
-   public fE() { }
-   public fE(params object[] args) { }
-   public int lT = 0;
-   public fA ma = default;
-   public int getIndex() { return 0; }
-   public bool isEmpty() { return false; }
-   public fs[] bX() { return System.Array.Empty<fs>(); }
-   public fn L() { return default; }
-   public string toString() { return ""; }
-   public static fA a(fE var0) { return default; }
-}
-
-#endif
 
 }

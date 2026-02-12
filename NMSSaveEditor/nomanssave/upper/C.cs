@@ -8,7 +8,6 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 
 public class C : ComponentAdapter {
@@ -32,17 +31,5 @@ public class C : ComponentAdapter {
 }
 
 
-#else
-
-public class C
-{
-   public C() { }
-   public C(params object[] args) { }
-   public Application aZ = default;
-   public void componentMoved(ComponentEvent var1) { }
-   public void componentResized(ComponentEvent var1) { }
-}
-
-#endif
 
 }

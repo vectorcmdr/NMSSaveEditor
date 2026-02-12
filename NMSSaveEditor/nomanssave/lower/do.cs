@@ -6,7 +6,6 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 class @do : G {
    public dj hl;
    public @do(dj var1) {
@@ -33,13 +32,5 @@ class @do : G {
       }
    }
 }
-#else
-public class @do
-{
-   public @do() { }
-   public @do(params object[] args) { }
-   public string g(string var1) { return ""; }
-}
-#endif
 
 }

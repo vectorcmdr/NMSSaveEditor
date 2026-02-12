@@ -6,14 +6,12 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 public class gw : gv {
    public string Name => getName();
    public eY oI;
 
-   public gw(eY var1, eY var2) {
-      base(0, (eY)null, var2);
+public gw(eY var1, eY var2) : base(0, (eY)null, var2) {
       this.oI = var1;
    }
 
@@ -68,27 +66,5 @@ public class gw : gv {
 }
 
 
-#else
-
-public class gw
-{
-   public gw() { }
-   public gw(params object[] args) { }
-   public string Name = "";
-   public eY oI = default;
-   public string getName() { return ""; }
-   public void setName(string var1) { }
-   public string cT() { return ""; }
-   public void ag(string var1) { }
-   public gx dI() { return default; }
-   public void a(gx var1) { }
-   public string cK() { return ""; }
-   public void aa(string var1) { }
-   public string cW() { return ""; }
-   public void aj(string var1) { }
-   public string toString() { return ""; }
-}
-
-#endif
 
 }

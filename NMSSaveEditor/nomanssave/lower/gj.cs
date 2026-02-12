@@ -7,7 +7,6 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 
 public class gj {
@@ -44,7 +43,7 @@ public class gj {
          }
       }
 
-      return (gj[])var1.ToArray(new gj[0]);
+      return (gj[])var1.ToArray();
    }
 
    public static gj a(eY var0, FileInfo var1) {
@@ -247,42 +246,5 @@ public class gj {
 }
 
 
-#else
-
-public class gj
-{
-   public gj() { }
-   public gj(params object[] args) { }
-   public string Name = "";
-   public gl nF = default;
-   public int index = 0;
-   public eY bf = default;
-   public static bool n(eY var0) { return false; }
-   public static gj[] o(eY var0) { return System.Array.Empty<gj>(); }
-   public int getIndex() { return 0; }
-   public void cm() { }
-   public void j(FileInfo var1) { }
-   public gl cL() { return default; }
-   public string getName() { return ""; }
-   public void setName(string var1) { }
-   public string cM() { return ""; }
-   public string cK() { return ""; }
-   public void aa(string var1) { }
-   public string cN() { return ""; }
-   public void ab(string var1) { }
-   public string cO() { return ""; }
-   public void ac(string var1) { }
-   public string cP() { return ""; }
-   public void ad(string var1) { }
-   public bool cQ() { return false; }
-   public void d(bool var1) { }
-   public string cR() { return ""; }
-   public void ae(string var1) { }
-   public string cS() { return ""; }
-   public void af(string var1) { }
-   public string toString() { return ""; }
-}
-
-#endif
 
 }

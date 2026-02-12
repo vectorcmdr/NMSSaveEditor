@@ -6,7 +6,6 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 
 public class gz {
@@ -63,7 +62,7 @@ public class gz {
                   hc.warn("Could not build word groups: " + var9.getValueAsString("id"));
                   ++var8;
                } else {
-                  IEnumerator var12 = var10.bw().GetEnumerator();
+                  IEnumerator<object> var12 = var10.bw().GetEnumerator();
 
                   while(var12.MoveNext()) {
                      string var11 = (string)var12.Current;
@@ -262,7 +261,7 @@ public class gz {
                var3 |= var6.ab(var7);
             }
 
-            if (!var3) {
+            if (var3 == null) {
                hc.debug("Removing word: " + var1);
                this.rc.ac(var5);
             }
@@ -379,42 +378,5 @@ public class gz {
 }
 
 
-#else
-
-public class gz
-{
-   public gz() { }
-   public gz(params object[] args) { }
-   public eY oI = default;
-   public eV rb = default;
-   public eV rc = default;
-   public List<object> gT = default;
-   public static Function au(string var0) { return default; }
-   public long dJ() { return 0; }
-   public void e(long var1) { }
-   public long dK() { return 0; }
-   public void f(long var1) { }
-   public long dL() { return 0; }
-   public void g(long var1) { }
-   public int dM() { return 0; }
-   public void aB(int var1) { }
-   public int dN() { return 0; }
-   public void aC(int var1) { }
-   public int dO() { return 0; }
-   public void aD(int var1) { }
-   public List<object> cC() { return default; }
-   public int dP() { return 0; }
-   public void aE(int var1) { }
-   public eV dQ() { return default; }
-   public eV dR() { return default; }
-   public eV dS() { return default; }
-   public int bx() { return 0; }
-   public int b(eU var1) { return 0; }
-   public gA a(eS var1) { return default; }
-   public bool d(string var1, int var2) { return false; }
-   public double dT() { return 0; }
-}
-
-#endif
 
 }

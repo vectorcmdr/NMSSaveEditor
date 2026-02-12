@@ -7,7 +7,6 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 
 public class hj : JavaThread {
@@ -36,7 +35,7 @@ public class hj : JavaThread {
             bool var4 = new List<object>(new object[]{var3}).Any((var1x) => {
                return var1x.Equals(this.sK);
             });
-            if (!var4) {
+            if (var4 == null) {
                Long[] var5 = new Long[var3.Length + 1];
                Array.Copy(var3, 0, var5, 0, var3.Length);
                var5[var3.Length] = this.sK;
@@ -54,17 +53,5 @@ public class hj : JavaThread {
 }
 
 
-#else
-
-public class hj
-{
-   public hj() { }
-   public hj(params object[] args) { }
-   public long sK = 0;
-   public string sL = "";
-   public void run() { }
-}
-
-#endif
 
 }

@@ -8,7 +8,6 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 
 public class R : FocusListener {
@@ -41,17 +40,5 @@ public class R : FocusListener {
 }
 
 
-#else
-
-public class R
-{
-   public R() { }
-   public R(params object[] args) { }
-   public Q bD = default;
-   public void focusGained(FocusEvent var1) { }
-   public void focusLost(FocusEvent var1) { }
-}
-
-#endif
 
 }

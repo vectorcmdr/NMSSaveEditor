@@ -7,7 +7,6 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 
 public class dN : em {
@@ -254,60 +253,5 @@ public class dN : em {
 }
 
 
-#else
-
-public class dN
-{
-   public dN() { }
-   public dN(params object[] args) { }
-   public static int cV = 0;
-   public static int cW = 0;
-   public static double gX = 0;
-   public static double hI = 0;
-   public static double dE = 0;
-   public static double hJ = 0;
-   public ComboBox hK = default;
-   public G hL = default;
-   public cN hM = default;
-   public cN hN = default;
-   public G hO = default;
-   public CheckBox hP = default;
-   public Button bQ = default;
-   public Button bR = default;
-   public Button bS = default;
-   public G hQ = default;
-   public G hR = default;
-   public G hS = default;
-   public G hT = default;
-   public G hU = default;
-   public G hV = default;
-   public bO hW = default;
-   public gH[] hX = System.Array.Empty<gH>();
-   public gC hY = default;
-   public void w() { }
-   public void x() { }
-   public void y() { }
-   public void z() { }
-   public void A() { }
-   public void a(gt var1) { }
-   public gH[] aO() { return System.Array.Empty<gH>(); }
-   public static G b(dN var0) { return default; }
-   public static cN c(dN var0) { return default; }
-   public static cN d(dN var0) { return default; }
-   public static G e(dN var0) { return default; }
-   public static CheckBox f(dN var0) { return default; }
-   public static Button g(dN var0) { return default; }
-   public static G h(dN var0) { return default; }
-   public static G i(dN var0) { return default; }
-   public static G j(dN var0) { return default; }
-   public static G k(dN var0) { return default; }
-   public static bO l(dN var0) { return default; }
-   public static G m(dN var0) { return default; }
-   public static G n(dN var0) { return default; }
-   public static gC o(dN var0) { return default; }
-   public static ComboBox p(dN var0) { return default; }
-}
-
-#endif
 
 }

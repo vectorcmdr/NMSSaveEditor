@@ -7,7 +7,6 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 
 public class f : DataGridView {
@@ -22,7 +21,7 @@ public class f : DataGridView {
       this.getColumnModel().setColumnMargin(2);
       this.DataSource = (var5);
       object var6 = ((object)(var5));
-      var6.setSortable(2, false);
+      // var6.setSortable(2, false); // setSortable not available in WinForms
       this.setRowSorter(var6);
       this.getTableHeader().getColumnModel().getColumn(0).setHeaderRenderer(new e(2));
       this.getTableHeader().getColumnModel().getColumn(1).setHeaderRenderer(new e(2));
@@ -40,17 +39,5 @@ public class f : DataGridView {
 }
 
 
-#else
-
-public class f
-{
-   public f() { }
-   public f(params object[] args) { }
-   public eV g = default;
-   public c h = default;
-   public void a(eV var1) { }
-}
-
-#endif
 
 }

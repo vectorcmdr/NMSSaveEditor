@@ -7,7 +7,6 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 
 public class p : Form {
@@ -17,8 +16,7 @@ public class p : Form {
    public List<object> G = null;
    public static p H = null;
 
-   public p(Frame var1) {
-      base(var1);
+public p(Frame var1) : base(var1) {
       this.Size = new Size(aH.cI * 2, aH.cI + aH.cH);
       this.FormBorderStyle = FormBorderStyle.FixedDialog; //(false);
       this.setModalExclusionType(/* ModalExclusionType */ 0);
@@ -32,7 +30,7 @@ public class p : Form {
       this.D.DataSource = (new q(this));
       this.D.getColumnModel().getColumn(0).setMaxWidth(24);
       this.E = ((object)(this.D.DataSource));
-      this.E.setSortable(0, false);
+      this.// E.setSortable(0, false); // setSortable not available in WinForms
       this.D.setRowSorter(this.E);
       var3.setViewportView(this.D);
       var2.Add(var3);
@@ -57,7 +55,7 @@ public class p : Form {
       this.G = null;
       this.StartPosition = FormStartPosition.CenterParent; //(this.DirectoryName);
       this.Show();
-      return this.G == null ? new string[0] : (string[])this.G.ToArray(new string[0]);
+      return this.G == null ? new string[0] : (string[])this.G.ToArray();
    }
 
    public static string[] b(Container var0) {
@@ -96,23 +94,5 @@ public class p : Form {
 }
 
 
-#else
-
-public class p
-{
-   public p() { }
-   public p(params object[] args) { }
-   public static p H = default;
-   public DataGridView D = default;
-   public object E = default;
-   public List<object> F = default;
-   public List<object> G = default;
-   public string[] d() { return System.Array.Empty<string>(); }
-   public static string[] b(Container var0) { return System.Array.Empty<string>(); }
-   public static string[] c(Container var0) { return System.Array.Empty<string>(); }
-   public static List<object> a(p var0) { return default; }
-}
-
-#endif
 
 }

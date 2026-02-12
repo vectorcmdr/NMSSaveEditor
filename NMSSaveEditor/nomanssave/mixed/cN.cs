@@ -8,7 +8,6 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 
 public class cN : ComboBox {
@@ -98,28 +97,5 @@ public class cN : ComboBox {
 }
 
 
-#else
-
-public class cN
-{
-   public cN() { }
-   public cN(params object[] args) { }
-   public static Color gr = default;
-   public static Color gs = default;
-   public bool gm = false;
-   public List<object> go = default;
-   public cR gp = default;
-   public object gq = default;
-   public void m(string var1) { }
-   public void a(cR var1) { }
-   public static object b(cN var0) { return default; }
-   public static cR c(cN var0) { return default; }
-   public static bool d(cN var0) { return false; }
-   public static Enum[] e(cN var0) { return System.Array.Empty<Enum>(); }
-   public static Color ag() { return default; }
-   public static Color aB() { return default; }
-}
-
-#endif
 
 }

@@ -6,7 +6,6 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 public class hh {
    public static long sx = 255L;
@@ -30,18 +29,25 @@ public class hh {
       switch(var2) {
       case 7:
          var3 += ((long)var0[var1 + 6] & 255L) << 48;
+         break;
       case 6:
          var3 += ((long)var0[var1 + 5] & 255L) << 40;
+         break;
       case 5:
          var3 += ((long)var0[var1 + 4] & 255L) << 32;
+         break;
       case 4:
          var3 += ((long)var0[var1 + 3] & 255L) << 24;
+         break;
       case 3:
          var3 += ((long)var0[var1 + 2] & 255L) << 16;
+         break;
       case 2:
          var3 += ((long)var0[var1 + 1] & 255L) << 8;
+         break;
       case 1:
          var3 += (long)var0[var1] & 255L;
+         break;
       default:
          return var3;
       }
@@ -324,26 +330,37 @@ public class hh {
          switch(var31) {
          case 11:
             var24 += a(var0, var29 + 80);
+            break;
          case 10:
             var22 += a(var0, var29 + 72);
+            break;
          case 9:
             var20 += a(var0, var29 + 64);
+            break;
          case 8:
             var18 += a(var0, var29 + 56);
+            break;
          case 7:
             var16 += a(var0, var29 + 48);
+            break;
          case 6:
             var14 += a(var0, var29 + 40);
+            break;
          case 5:
             var12 += a(var0, var29 + 32);
+            break;
          case 4:
             var10 += a(var0, var29 + 24);
+            break;
          case 3:
             var8 += a(var0, var29 + 16);
+            break;
          case 2:
             var6 += a(var0, var29 + 8);
+            break;
          case 1:
             var4 += a(var0, var29);
+            break;
          default:
             var26 += (long)var28 << 56;
 
@@ -402,10 +419,13 @@ public class hh {
       switch(var2) {
       case 3:
          var3 += (long)var0[var1 + 2] << 32;
+         break;
       case 2:
          var3 += (long)var0[var1 + 1] << 16;
+         break;
       case 1:
          var3 += (long)var0[var1];
+         break;
       default:
          return var3;
       }
@@ -688,26 +708,37 @@ public class hh {
          switch(var31) {
          case 11:
             var24 += a(var0, var29 + 40);
+            break;
          case 10:
             var22 += a(var0, var29 + 36);
+            break;
          case 9:
             var20 += a(var0, var29 + 32);
+            break;
          case 8:
             var18 += a(var0, var29 + 28);
+            break;
          case 7:
             var16 += a(var0, var29 + 24);
+            break;
          case 6:
             var14 += a(var0, var29 + 20);
+            break;
          case 5:
             var12 += a(var0, var29 + 16);
+            break;
          case 4:
             var10 += a(var0, var29 + 12);
+            break;
          case 3:
             var8 += a(var0, var29 + 8);
+            break;
          case 2:
             var6 += a(var0, var29 + 4);
+            break;
          case 1:
             var4 += a(var0, var29);
+            break;
          default:
             var26 += (long)var28 << 1 << 56;
 
@@ -984,26 +1015,37 @@ public class hh {
          switch(var29) {
          case 11:
             var24 += var0[var28 + 10];
+            break;
          case 10:
             var22 += var0[var28 + 9];
+            break;
          case 9:
             var20 += var0[var28 + 8];
+            break;
          case 8:
             var18 += var0[var28 + 7];
+            break;
          case 7:
             var16 += var0[var28 + 6];
+            break;
          case 6:
             var14 += var0[var28 + 5];
+            break;
          case 5:
             var12 += var0[var28 + 4];
+            break;
          case 4:
             var10 += var0[var28 + 3];
+            break;
          case 3:
             var8 += var0[var28 + 2];
+            break;
          case 2:
             var6 += var0[var28 + 1];
+            break;
          case 1:
             var4 += var0[var28];
+            break;
          default:
             var26 += (long)(var29 << 3) << 56;
 
@@ -1106,29 +1148,5 @@ public class hh {
 }
 
 
-#else
-
-public class hh
-{
-   public hh() { }
-   public hh(params object[] args) { }
-   public static long sx = 0;
-   public static int sy = 0;
-   public static int sz = 0;
-   public static int sA = 0;
-   public static int sB = 0;
-   public static int sC = 0;
-   public static int sD = 0;
-   public static int sE = 0;
-   public static long sF = 0;
-   public long sG = 0;
-   public long sH = 0;
-   public static long a(byte[] var0, int var1) { return 0; }
-   public static long b(byte[] var0, int var1, int var2) { return 0; }
-   public long[] c(byte[] var1, int var2, int var3) { return System.Array.Empty<long>(); }
-   public long[] j(byte[] var1) { return System.Array.Empty<long>(); }
-}
-
-#endif
 
 }

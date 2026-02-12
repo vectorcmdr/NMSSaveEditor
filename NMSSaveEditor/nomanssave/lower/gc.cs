@@ -7,7 +7,6 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 
 public class gc {
@@ -114,7 +113,7 @@ public class gc {
    }
 
    public static void c(Stream var0, string var1) {
-      byte[] var2 = var1.GetBytes();
+      byte[] var2 = var1.GetBytes(System.Text.Encoding.UTF8);
       if (var2.Length < 128) {
          byte[] var3 = new byte[128];
          Array.Copy(var2, 0, var3, 0, var2.Length);
@@ -127,22 +126,5 @@ public class gc {
 }
 
 
-#else
-
-public class gc
-{
-   public gc() { }
-   public gc(params object[] args) { }
-   public static long nc = 0;
-   public static string a(Stream var0) { return ""; }
-   public static string cA() { return ""; }
-   public static string h(byte[] var0) { return ""; }
-   public static long b(Stream var0) { return 0; }
-   public static string c(Stream var0) { return ""; }
-   public static string d(Stream var0) { return ""; }
-   public static string e(Stream var0) { return ""; }
-}
-
-#endif
 
 }

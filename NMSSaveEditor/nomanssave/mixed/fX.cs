@@ -8,7 +8,6 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 
 public abstract class fX {
@@ -38,7 +37,7 @@ public abstract class fX {
 
       this.mO = new fW(var1, var2.mO);
       FileInfo var9 = new FileInfo(System.IO.Path.Combine((fT.d(var1)).ToString(), (this.mO.mU).ToString()));
-      if (!var9.Create()) {
+      if ((var9.Create()) == null) {
          throw new IOException("Unable to create container path");
       } else {
          this.mX = new FileInfo(System.IO.Path.Combine((var9).ToString(), ("container." + this.mO.mT).ToString()));
@@ -364,26 +363,5 @@ public abstract class fX {
 }
 
 
-#else
-
-public class fX
-{
-   public fX() { }
-   public fX(params object[] args) { }
-   public fW mO = default;
-   public FileInfo mX = default;
-   public FileInfo mY = default;
-   public fS mZ = default;
-   public int mode = 0;
-   public fT mN = default;
-   public string K() { return ""; }
-   public Stream getInputStream() { return default; }
-   public Stream getOutputStream() { return default; }
-   public eY a(eG var1) { return default; }
-   public byte[] ah(int var1) { return System.Array.Empty<byte>(); }
-   public void h(eY var1) { }
-}
-
-#endif
 
 }

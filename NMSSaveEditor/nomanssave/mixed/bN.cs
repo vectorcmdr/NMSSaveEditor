@@ -7,14 +7,12 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 
 public class bN : ba {
    public bE ey;
 
-   public bN(bE var1) {
-      base(aH.cJ, 0);
+public bN(bE var1) : base(aH.cJ, 0) {
       this.ey = var1;
    }
 
@@ -46,16 +44,5 @@ public class bN : ba {
 }
 
 
-#else
-
-public class bN
-{
-   public bN() { }
-   public bN(params object[] args) { }
-   public bE ey = default;
-   public void a(string var1, gs var2) { }
-}
-
-#endif
 
 }

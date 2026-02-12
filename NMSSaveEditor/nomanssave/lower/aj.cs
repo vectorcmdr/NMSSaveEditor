@@ -8,7 +8,6 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 
 public class aj : Form {
@@ -24,8 +23,7 @@ public class aj : Form {
    public static string ce = "0123456789ABCDEF";
    public static aj cf = null;
 
-   public aj(Frame var1) {
-      base(var1);
+public aj(Frame var1) : base(var1) {
       this.FormBorderStyle = FormBorderStyle.FixedDialog; //(false);
       this.setModalExclusionType(/* ModalExclusionType */ 0);
       this.Text = ("Coordinate Viewer");
@@ -149,30 +147,5 @@ public class aj : Form {
 }
 
 
-#else
-
-public class aj
-{
-   public aj() { }
-   public aj(params object[] args) { }
-   public static List<object> bW = default;
-   public static string ce = "";
-   public static aj cf = default;
-   public ComboBox bX = default;
-   public TextBox bY = default;
-   public TextBox bZ = default;
-   public Label[] ca = System.Array.Empty<Label>();
-   public TextBox m = default;
-   public Image[] cb = System.Array.Empty<Image>();
-   public hl cc = default;
-   public bool cd = false;
-   public void P() { }
-   public hl a(hl var1) { return default; }
-   public static ComboBox b(aj var0) { return default; }
-   public static void c(aj var0) { }
-   public static List<object> Q() { return default; }
-}
-
-#endif
 
 }

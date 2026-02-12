@@ -6,7 +6,6 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 public class cJ {
    public string Text => getText();
@@ -108,28 +107,5 @@ public class cJ {
 }
 
 
-#else
-
-public class cJ
-{
-   public cJ() { }
-   public cJ(params object[] args) { }
-   public string Text = "";
-   public cJ gi = default;
-   public int gj = 0;
-   public string name = "";
-   public object value = default;
-   public cy gg = default;
-   public bool isLeaf() { return false; }
-   public int getChildCount() { return 0; }
-   public object x(int var1) { return default; }
-   public int indexOf(object var1) { return 0; }
-   public string toString() { return ""; }
-   public string getText() { return ""; }
-   public void setText(string var1) { }
-   public void remove() { }
-}
-
-#endif
 
 }

@@ -7,7 +7,6 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 
 public class cY : Form {
@@ -16,8 +15,7 @@ public class cY : Form {
    public int gO = -1;
    public static cY gP = null;
 
-   public cY(Frame var1) {
-      base(var1);
+public cY(Frame var1) : base(var1) {
       this.FormBorderStyle = FormBorderStyle.FixedDialog; //(false);
       this.setModalExclusionType(/* ModalExclusionType */ 0);
       this.Text = ("Move Base Computer");
@@ -81,20 +79,5 @@ public class cY : Form {
 }
 
 
-#else
-
-public class cY
-{
-   public cY() { }
-   public cY(params object[] args) { }
-   public static cY gP = default;
-   public ComboBox gM = default;
-   public List<object> gN = default;
-   public int gO = 0;
-   public int b(List<object> var1) { return 0; }
-   public static int a(Container var0, List<object> var1) { return 0; }
-}
-
-#endif
 
 }

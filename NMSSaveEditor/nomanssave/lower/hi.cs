@@ -8,7 +8,6 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 
 public class hi {
@@ -79,21 +78,5 @@ public class hi {
 }
 
 
-#else
-
-public class hi
-{
-   public hi() { }
-   public hi(params object[] args) { }
-   public static string sI = "";
-   public static Dictionary<object, object> sJ = default;
-   public static string h(long var0) { return ""; }
-   public static string i(long var0) { return ""; }
-   public static eY aC(string var0) { return default; }
-   public static Dictionary<object, object> ep() { return default; }
-   public static string j(long var0) { return ""; }
-}
-
-#endif
 
 }

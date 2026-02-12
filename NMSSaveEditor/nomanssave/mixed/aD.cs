@@ -8,7 +8,6 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 
 public class aD : Form {
@@ -17,8 +16,7 @@ public class aD : Form {
    public bool cy;
    public static aD cz = null;
 
-   public aD(Frame var1) {
-      base(var1);
+public aD(Frame var1) : base(var1) {
       this.setMinimumSize(new Size(400, 10));
       this.setModalExclusionType(/* ModalExclusionType */ 0);
       this.Text = ("Editor Settings");
@@ -75,22 +73,5 @@ public class aD : Form {
 }
 
 
-#else
-
-public class aD
-{
-   public aD() { }
-   public aD(params object[] args) { }
-   public static aD cz = default;
-   public ComboBox cw = default;
-   public TextBox cx = default;
-   public bool cy = false;
-   public bool S() { return false; }
-   public static bool d(Container var0) { return false; }
-   public static ComboBox a(aD var0) { return default; }
-   public static TextBox b(aD var0) { return default; }
-}
-
-#endif
 
 }

@@ -7,14 +7,12 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 
 public class a : Form {
    public static a _a_inst = null;
 
-   public a(Frame var1) {
-      base(var1);
+public a(Frame var1) : base(var1) {
       this.FormBorderStyle = FormBorderStyle.FixedDialog; //(false);
       this.setModalExclusionType(/* ModalExclusionType */ 0);
       this.Text = ("About Save Editor");
@@ -55,16 +53,5 @@ public class a : Form {
 }
 
 
-#else
-
-public class a
-{
-   public a() { }
-   public a(params object[] args) { }
-   public static a _a_inst = default;
-   public static void a_init(Container var0) { }
-}
-
-#endif
 
 }

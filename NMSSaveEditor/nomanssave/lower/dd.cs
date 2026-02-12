@@ -7,7 +7,6 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 
 public class dd : Form {
@@ -16,8 +15,7 @@ public class dd : Form {
    public int gU;
    public static dd gV = null;
 
-   public dd(Frame var1) {
-      base(var1);
+public dd(Frame var1) : base(var1) {
       this.Size = new Size(300, 300);
       this.FormBorderStyle = FormBorderStyle.FixedDialog; //(false);
       this.setModalExclusionType(/* ModalExclusionType */ 0);
@@ -76,20 +74,5 @@ public class dd : Form {
 }
 
 
-#else
-
-public class dd
-{
-   public dd() { }
-   public dd(params object[] args) { }
-   public static dd gV = default;
-   public ListBox gS = default;
-   public List<object> gT = default;
-   public int gU = 0;
-   public int a(List<object> var1, int var2) { return 0; }
-   public static ListBox b(dd var0) { return default; }
-}
-
-#endif
 
 }

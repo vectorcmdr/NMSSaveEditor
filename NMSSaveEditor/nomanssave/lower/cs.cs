@@ -7,7 +7,6 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 
 public class cs : JFileChooser {
@@ -59,21 +58,5 @@ public class cs : JFileChooser {
 }
 
 
-#else
-
-public class cs
-{
-   public cs() { }
-   public cs(params object[] args) { }
-   public static cs fN = default;
-   public static string name = "";
-   public static Image fH = default;
-   public CheckBox fO = default;
-   public bool aw() { return false; }
-   public int showSaveDialog(Component var1) { return 0; }
-   public int showOpenDialog(Component var1) { return 0; }
-}
-
-#endif
 
 }

@@ -6,7 +6,6 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 
 public class gO {
@@ -33,7 +32,7 @@ public class gO {
             var2.Add(new gO(var5, var4));
          }
 
-         return (gO[])var2.ToArray(new gO[0]);
+         return (gO[])var2.ToArray();
       } else {
          return new gO[0];
       }
@@ -127,22 +126,5 @@ public class gO {
 }
 
 
-#else
-
-public class gO
-{
-   public gO() { }
-   public gO(params object[] args) { }
-   public int index = 0;
-   public eY rO = default;
-   public List<object> gT = default;
-   public static gO[] E(eY var0) { return System.Array.Empty<gO>(); }
-   public static Function a(gO var0, string var1) { return default; }
-   public string getType() { return ""; }
-   public List<object> cC() { return default; }
-   public string toString() { return ""; }
-}
-
-#endif
 
 }

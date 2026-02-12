@@ -7,7 +7,6 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 
 public class cX : Runnable {
@@ -33,16 +32,5 @@ public class cX : Runnable {
 }
 
 
-#else
-
-public class cX
-{
-   public cX() { }
-   public cX(params object[] args) { }
-   public cW gL = default;
-   public void run() { }
-}
-
-#endif
 
 }

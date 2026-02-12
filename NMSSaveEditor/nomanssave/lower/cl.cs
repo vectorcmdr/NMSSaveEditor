@@ -7,7 +7,6 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 
 public class cl : JFileChooser {
@@ -38,17 +37,5 @@ public class cl : JFileChooser {
 }
 
 
-#else
-
-public class cl
-{
-   public cl() { }
-   public cl(params object[] args) { }
-   public static cl fG = default;
-   public static string name = "";
-   public static Image fH = default;
-}
-
-#endif
 
 }

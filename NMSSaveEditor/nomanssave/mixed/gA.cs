@@ -6,7 +6,6 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 
 public class gA {
@@ -23,7 +22,7 @@ public class gA {
    }
 
    public bool c(eU var1) {
-      IEnumerator var3 = this.rd.bw().GetEnumerator();
+      IEnumerator<object> var3 = this.rd.bw().GetEnumerator();
 
       while(var3.MoveNext()) {
          string var2 = (string)var3.Current;
@@ -36,7 +35,7 @@ public class gA {
    }
 
    public void a(eU var1, bool var2) {
-      IEnumerator var4 = this.rd.bw().GetEnumerator();
+      IEnumerator<object> var4 = this.rd.bw().GetEnumerator();
 
       while(var4.MoveNext()) {
          string var3 = (string)var4.Current;
@@ -52,19 +51,5 @@ public class gA {
 }
 
 
-#else
-
-public class gA
-{
-   public gA() { }
-   public gA(params object[] args) { }
-   public eS rd = default;
-   public gz re = default;
-   public string getID() { return ""; }
-   public bool c(eU var1) { return false; }
-   public void a(eU var1, bool var2) { }
-}
-
-#endif
 
 }

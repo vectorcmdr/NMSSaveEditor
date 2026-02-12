@@ -8,7 +8,6 @@ using System.Xml;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 
 public class eR : ey {
@@ -16,8 +15,7 @@ public class eR : ey {
    public eA kn;
    public eQ ko;
 
-   public eR(eQ var1, Element var2) {
-      base(var2.getAttribute("id"));
+public eR(eQ var1, Element var2) : base(var2.getAttribute("id")) {
       this.ko = var1;
       this.kc = var2.hasAttribute("icon") ? var2.getAttribute("icon") : null;
       this.kn = ey.p(var2.getAttribute("template"));
@@ -135,34 +133,5 @@ public class eR : ey {
 }
 
 
-#else
-
-public class eR
-{
-   public eR() { }
-   public eR(params object[] args) { }
-   public string kc = "";
-   public eA kn = default;
-   public eQ ko = default;
-   public object aZ() { return default; }
-   public object M(int var1) { return default; }
-   public eB ba() { return default; }
-   public bool bb() { return false; }
-   public string y(string var1) { return ""; }
-   public string getName() { return ""; }
-   public ex bc() { return default; }
-   public bool bd() { return false; }
-   public bool be() { return false; }
-   public Integer bf() { return default; }
-   public string bg() { return ""; }
-   public bool bh() { return false; }
-   public string bi() { return ""; }
-   public int bj() { return 0; }
-   public string getDescription() { return ""; }
-   public List<object> bk() { return default; }
-   public string toString() { return ""; }
-}
-
-#endif
 
 }

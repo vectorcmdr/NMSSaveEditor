@@ -8,7 +8,6 @@ using System.Text.RegularExpressions;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 
 public class fJ : fq {
@@ -65,7 +64,7 @@ public class fJ : fq {
       }
 
       Matcher var2 = lV.matcher(var1);
-      if (var2.Matches()) {
+      if (var2.System.Text.RegularExpressions.Regex.IsMatch()) {
          int var3 = var2.group(1).length() == 0 ? 0 : int.Parse(var2.group(1)) - 1;
 
          try {
@@ -104,7 +103,7 @@ public class fJ : fq {
 
    public int W(string var1) {
       Matcher var2 = lV.matcher(var1);
-      if (!var2.Matches()) {
+      if (!var2.System.Text.RegularExpressions.Regex.IsMatch()) {
          return -1;
       } else {
          int var3 = var2.group(1).length() == 0 ? 0 : int.Parse(var2.group(1)) - 1;
@@ -168,32 +167,5 @@ public class fJ : fq {
 }
 
 
-#else
-
-public class fJ
-{
-   public fJ() { }
-   public fJ(params object[] args) { }
-   public static Pattern lV = default;
-   public static Pattern lW = default;
-   public FileInfo lX = default;
-   public fR lE = default;
-   public fK mr = default;
-   public fM[] ms = System.Array.Empty<fM>();
-   public void finalize() { }
-   public void X(string var1) { }
-   public FileInfo bS() { return default; }
-   public fr bT() { return default; }
-   public ft[] bU() { return System.Array.Empty<ft>(); }
-   public int W(string var1) { return 0; }
-   public bool bW() { return false; }
-   public string a(int var1, eY var2) { return ""; }
-   public static byte[] c(byte[] var0, byte[] var1) { return System.Array.Empty<byte>(); }
-   public static byte[] d(byte[] var0, byte[] var1) { return System.Array.Empty<byte>(); }
-   public static fM[] b(fJ var0) { return System.Array.Empty<fM>(); }
-   public static Pattern cl() { return default; }
-}
-
-#endif
 
 }

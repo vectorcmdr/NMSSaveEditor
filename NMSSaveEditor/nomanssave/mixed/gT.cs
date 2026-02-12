@@ -6,7 +6,6 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 
 public class gT {
@@ -53,12 +52,12 @@ public class gT {
    }
 
    public static double[] a(double var0, double[] var2, double[] var3) {
-      double var4 = Math.cos(var0);
-      double var6 = -Math.sin(var0);
+      double var4 = Math.Cos(var0);
+      double var6 = -Math.Sin(var0);
       double var8 = var3[0];
       double var10 = var3[1];
       double var12 = var3[2];
-      double[][] var14 = new double[3][3];
+      double[][] var14 = new double[3][];
       var14[0][0] = var8 * var8 * (1.0D - var4) + var4;
       var14[0][1] = var8 * var10 * (1.0D - var4) + var12 * var6;
       var14[0][2] = var8 * var12 * (1.0D - var4) - var10 * var6;
@@ -161,7 +160,7 @@ public class gT {
    }
 
    public string toString() {
-      return this.toString(12);
+      return this.ToString();
    }
 
    public string toString(int var1) {
@@ -227,23 +226,5 @@ public class gT {
 }
 
 
-#else
-
-public class gT
-{
-   public gT() { }
-   public gT(params object[] args) { }
-   public static int rT = 0;
-   public static double rU = 0;
-   public static double[] b(double[] var0) { return System.Array.Empty<double>(); }
-   public static double[] a(double var0, double[] var2, double[] var3) { return System.Array.Empty<double>(); }
-   public double[] c(double[] var1) { return System.Array.Empty<double>(); }
-   public double[] d(double[] var1) { return System.Array.Empty<double>(); }
-   public string toString() { return ""; }
-   public static string e(double[] var0) { return ""; }
-   public static string f(double[] var0) { return ""; }
-}
-
-#endif
 
 }

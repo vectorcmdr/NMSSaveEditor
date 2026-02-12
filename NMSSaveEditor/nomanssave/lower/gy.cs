@@ -6,7 +6,6 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 public sealed class gy {
    public static readonly gy qR = new gy("Vy’keen", "Warriors", "MODELS/COMMON/PLAYER/PLAYERCHARACTER/NPCVYKEEN.SCENE.MBIN");
@@ -58,27 +57,5 @@ public sealed class gy {
 }
 
 
-#else
-
-public class gy
-{
-   public gy() { }
-   public gy(params object[] args) { }
-   public static readonly gy qR = default;
-   public static readonly gy qS = default;
-   public static readonly gy qT = default;
-   public static readonly gy qU = default;
-   public static readonly gy qV = default;
-   public static readonly gy qW = default;
-   public static readonly gy qX = default;
-   public static readonly gy qY = default;
-   public string name = "";
-   public string qZ = "";
-   public string filename = "";
-   public string K() { return ""; }
-   public string toString() { return ""; }
-}
-
-#endif
 
 }

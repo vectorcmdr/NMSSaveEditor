@@ -7,15 +7,14 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 
 public class fj : Closeable {
    public static int kP = 2;
    public static int kQ = 8;
-   public static readonly byte[] le = "null".GetBytes();
-   public static readonly byte[] lf = "true".GetBytes();
-   public static readonly byte[] lg = "false".GetBytes();
+   public static readonly byte[] le = "null".GetBytes(System.Text.Encoding.UTF8);
+   public static readonly byte[] lf = "true".GetBytes(System.Text.Encoding.UTF8);
+   public static readonly byte[] lg = "false".GetBytes(System.Text.Encoding.UTF8);
    public Stream lh;
    public int flags;
 
@@ -168,7 +167,7 @@ public class fj : Closeable {
    }
 
    public void writeString(string var1) {
-      this.lh.Write(fh.O(var1).GetBytes());
+      this.lh.Write(fh.O(var1).GetBytes(System.Text.Encoding.UTF8));
    }
 
    public void c(fg var1) {
@@ -180,19 +179,19 @@ public class fj : Closeable {
          byte var2 = var5[var3];
          int var6 = var2 & 255;
          if (var6 == 13) {
-            this.lh.Write("\\r".GetBytes());
+            this.lh.Write("\\r".GetBytes(System.Text.Encoding.UTF8));
          } else if (var6 == 10) {
-            this.lh.Write("\\n".GetBytes());
+            this.lh.Write("\\n".GetBytes(System.Text.Encoding.UTF8));
          } else if (var6 == 9) {
-            this.lh.Write("\\t".GetBytes());
+            this.lh.Write("\\t".GetBytes(System.Text.Encoding.UTF8));
          } else if (var6 == 12) {
-            this.lh.Write("\\f".GetBytes());
+            this.lh.Write("\\f".GetBytes(System.Text.Encoding.UTF8));
          } else if (var6 == 8) {
-            this.lh.Write("\\b".GetBytes());
+            this.lh.Write("\\b".GetBytes(System.Text.Encoding.UTF8));
          } else if (var6 == 34) {
-            this.lh.Write("\\\"".GetBytes());
+            this.lh.Write("\\\"".GetBytes(System.Text.Encoding.UTF8));
          } else if (var6 == 92) {
-            this.lh.Write("\\\\".GetBytes());
+            this.lh.Write("\\\\".GetBytes(System.Text.Encoding.UTF8));
          } else if (var6 >= 32) {
             this.lh.Write(var6);
          } else {
@@ -200,7 +199,7 @@ public class fj : Closeable {
             var7.Append("\\u00");
             var7.Append("0123456789ABCDEFabcdef"[var6 >> 4 & 15]);
             var7.Append("0123456789ABCDEFabcdef"[var6 & 15]);
-            this.lh.Write(var7.ToString().GetBytes());
+            this.lh.Write(var7.ToString().GetBytes(System.Text.Encoding.UTF8));
          }
       }
 
@@ -249,9 +248,9 @@ public class fj : Closeable {
 
    public void a(Number var1) {
       if (var1 is BigDecimal) {
-         this.lh.Write(((BigDecimal)var1).ToString().Replace('E', 'e').GetBytes());
+         this.lh.Write(((BigDecimal)var1).ToString().Replace('E', 'e').GetBytes(System.Text.Encoding.UTF8));
       } else {
-         this.lh.Write(var1.ToString().GetBytes());
+         this.lh.Write(var1.ToString().GetBytes(System.Text.Encoding.UTF8));
       }
 
    }
@@ -273,31 +272,5 @@ public class fj : Closeable {
 }
 
 
-#else
-
-public class fj
-{
-   public fj() { }
-   public fj(params object[] args) { }
-   public static int kP = 0;
-   public static int kQ = 0;
-   public static readonly byte[] le = System.Array.Empty<byte>();
-   public static readonly byte[] lf = System.Array.Empty<byte>();
-   public static readonly byte[] lg = System.Array.Empty<byte>();
-   public Stream lh = default;
-   public int flags = 0;
-   public static byte[] j(object var0) { return System.Array.Empty<byte>(); }
-   public static byte[] g(eY var0) { return System.Array.Empty<byte>(); }
-   public static byte[] b(eV var0) { return System.Array.Empty<byte>(); }
-   public void k(object var1) { }
-   public void a(object var1, eC var2) { }
-   public void writeString(string var1) { }
-   public void c(fg var1) { }
-   public void h(eY var1) { }
-   public void Dispose() { }
-   public void close() { }
-}
-
-#endif
 
 }

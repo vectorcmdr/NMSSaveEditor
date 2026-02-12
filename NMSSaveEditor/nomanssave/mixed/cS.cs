@@ -6,7 +6,6 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 public class cS : gD {
    public string filename;
@@ -29,19 +28,5 @@ public class cS : gD {
 }
 
 
-#else
-
-public class cS
-{
-   public cS() { }
-   public cS(params object[] args) { }
-   public string filename = "";
-   public int index = 0;
-   public cN gt = default;
-   public string K() { return ""; }
-   public string toString() { return ""; }
-}
-
-#endif
 
 }

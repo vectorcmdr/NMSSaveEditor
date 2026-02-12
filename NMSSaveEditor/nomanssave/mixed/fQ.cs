@@ -8,7 +8,6 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 
 public class fQ {
@@ -206,7 +205,7 @@ public class fQ {
 
       byte[] var7 = new byte[32];
       byte[] var8 = new byte[16];
-      if (!var2) {
+      if (var2 == null) {
          try {
             MessageDigest var9 = MessageDigest.getInstance("SHA-256");
             var7 = var9.digest(var35);
@@ -232,22 +231,5 @@ public class fQ {
 }
 
 
-#else
-
-public class fQ
-{
-   public fQ() { }
-   public fQ(params object[] args) { }
-   public string filename = "";
-   public int lO = 0;
-   public fI mx = default;
-   public fJ mt = default;
-   public string K() { return ""; }
-   public long lastModified() { return 0; }
-   public eY a(eG param1) { return default; }
-   public byte[] ah(int var1) { return System.Array.Empty<byte>(); }
-}
-
-#endif
 
 }

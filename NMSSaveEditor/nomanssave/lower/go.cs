@@ -6,7 +6,6 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 public sealed class go : gD {
    public static readonly go oL = new go("Tiny", "MODELS/COMMON/SPACECRAFT/INDUSTRIAL/FREIGHTERTINY_PROC.SCENE.MBIN");
@@ -43,23 +42,5 @@ public sealed class go : gD {
 }
 
 
-#else
-
-public class go
-{
-   public go() { }
-   public go(params object[] args) { }
-   public static readonly go oL = default;
-   public static readonly go oM = default;
-   public static readonly go oN = default;
-   public static readonly go oO = default;
-   public static readonly go oP = default;
-   public string name = "";
-   public string filename = "";
-   public string K() { return ""; }
-   public string toString() { return ""; }
-}
-
-#endif
 
 }

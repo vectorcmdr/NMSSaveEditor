@@ -7,7 +7,6 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 
 public class he : Stream {
@@ -27,7 +26,7 @@ public class he : Stream {
       if (var1 == 10) {
          if (hc.en() != null) {
             lock(hc.en()) {
-               hc.en().Write(this.st.GetBytes());
+               hc.en().Write(this.st.GetBytes(System.Text.Encoding.UTF8));
                hc.en().Write(this.su.toByteArray());
             }
          }
@@ -47,7 +46,7 @@ public class he : Stream {
             this.su.Write(var1, var2, var4 + 1);
             if (hc.en() != null) {
                lock(hc.en()) {
-                  hc.en().Write(this.st.GetBytes());
+                  hc.en().Write(this.st.GetBytes(System.Text.Encoding.UTF8));
                   hc.en().Write(this.su.toByteArray());
                }
             }
@@ -64,10 +63,10 @@ public class he : Stream {
 
    public void flush() {
       if (this.su.Count > 0) {
-         this.su.Write(System.lineSeparator().GetBytes());
+         this.su.Write(Environment.NewLine.GetBytes(System.Text.Encoding.UTF8));
          if (hc.en() != null) {
             lock(hc.en()) {
-               hc.en().Write(this.st.GetBytes());
+               hc.en().Write(this.st.GetBytes(System.Text.Encoding.UTF8));
                hc.en().Write(this.su.toByteArray());
             }
          }
@@ -91,24 +90,5 @@ public class he : Stream {
 }
 
 
-#else
-
-public class he
-{
-   public he() { }
-   public he(params object[] args) { }
-   public StreamWriter ss = default;
-   public string st = "";
-   public MemoryStream su = default;
-   public void write(int var1) { }
-   public void flush() { }
-   public void Flush() { }
-   public int Read(byte[] buffer, int offset, int count) { return 0; }
-   public long Seek(long offset, SeekOrigin origin) { return 0; }
-   public void SetLength(long value) { }
-   public void Write(byte[] buffer, int offset, int count) { }
-}
-
-#endif
 
 }

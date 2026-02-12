@@ -7,7 +7,6 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 
 public class cP : object {
@@ -38,7 +37,7 @@ public class cP : object {
          }
 
          Label var13 = (Label)var6;
-         if (!var12) {
+         if (var12 == null) {
             if (var4) {
                var13.setBackground(cN.ag());
             } else {
@@ -52,16 +51,5 @@ public class cP : object {
 }
 
 
-#else
-
-public class cP
-{
-   public cP() { }
-   public cP(params object[] args) { }
-   public cN gt = default;
-   public Component getListCellRendererComponent(ListBox var1, object var2, int var3, bool var4, bool var5) { return default; }
-}
-
-#endif
 
 }

@@ -7,7 +7,6 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 
 public class fM : fQ, fs {
@@ -16,8 +15,7 @@ public class fM : fQ, fs {
    public fn me;
    public fJ mt;
 
-   public fM(fJ var1, int var2) {
-      base(var1, var2 == 0 ? "save.hg" : "save" + (var2 + 1) + ".hg", var2, true);
+public fM(fJ var1, int var2) : base(var1, var2 == 0 ? "save.hg" : "save" + (var2 + 1) + ".hg", var2, true) {
       this.mt = var1;
 
       try {
@@ -29,8 +27,7 @@ public class fM : fQ, fs {
 
    }
 
-   public fM(fJ var1, int var2, eY var3) {
-      base(var1, var2 == 0 ? "save.hg" : "save" + (var2 + 1) + ".hg", var2, false);
+public fM(fJ var1, int var2, eY var3) : base(var1, var2 == 0 ? "save.hg" : "save" + (var2 + 1) + ".hg", var2, false) {
       this.mt = var1;
       this.me = fn.i(var3);
       this.a(var3, true);
@@ -73,25 +70,5 @@ public class fM : fQ, fs {
 }
 
 
-#else
-
-public class fM
-{
-   public fM() { }
-   public fM(params object[] args) { }
-   public DateTime LastWriteTimeUtc = default;
-   public string Name = "";
-   public fn me = default;
-   public fJ mt = default;
-   public fn L() { return default; }
-   public eY M() { return default; }
-   public void cm() { }
-   public string b(eY var1) { return ""; }
-   public string toString() { return ""; }
-   public string getName() { return ""; }
-   public string getDescription() { return ""; }
-}
-
-#endif
 
 }

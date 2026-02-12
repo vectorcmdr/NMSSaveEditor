@@ -6,7 +6,6 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 public class bJ : G {
    public gs ez;
@@ -270,21 +269,5 @@ public class bJ : G {
 }
 
 
-#else
-
-public class bJ
-{
-   public bJ() { }
-   public bJ(params object[] args) { }
-   public static int[] eA = System.Array.Empty<int>();
-   public gs ez = default;
-   public int type = 0;
-   public bE ey = default;
-   public string g(string var1) { return ""; }
-   public void ac() { }
-   public static int[] ad() { return System.Array.Empty<int>(); }
-}
-
-#endif
 
 }

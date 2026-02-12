@@ -6,7 +6,6 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 public sealed class gq {
    public static gq[] Values() { return new gq[] { oS, oT, oU, oV, oW, oX, oY, oZ, pa, pb, pc }; }
@@ -47,30 +46,5 @@ public sealed class gq {
 }
 
 
-#else
-
-public class gq
-{
-   public gq() { }
-   public gq(params object[] args) { }
-   public static readonly gq oS = default;
-   public static readonly gq oT = default;
-   public static readonly gq oU = default;
-   public static readonly gq oV = default;
-   public static readonly gq oW = default;
-   public static readonly gq oX = default;
-   public static readonly gq oY = default;
-   public static readonly gq oZ = default;
-   public static readonly gq pa = default;
-   public static readonly gq pb = default;
-   public static readonly gq pc = default;
-   public string name = "";
-   public int pd = 0;
-   public static gq[] Values() { return System.Array.Empty<gq>(); }
-   public int di() { return 0; }
-   public string toString() { return ""; }
-}
-
-#endif
 
 }

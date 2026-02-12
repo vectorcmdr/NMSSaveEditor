@@ -8,7 +8,6 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 
 public class em : Panel {
@@ -64,19 +63,5 @@ public class em : Panel {
 }
 
 
-#else
-
-public class em
-{
-   public em() { }
-   public em(params object[] args) { }
-   public ba it = default;
-   public void b(Control var1) { }
-   public void k(string var1) { }
-   public void a(string var1, G var2) { }
-   public void Y() { }
-}
-
-#endif
 
 }

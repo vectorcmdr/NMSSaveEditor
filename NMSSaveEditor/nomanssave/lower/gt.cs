@@ -8,7 +8,6 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 
 public class gt {
@@ -262,7 +261,7 @@ public class gt {
             }
          }
 
-         if (!var5) {
+         if (var5 == null) {
             eY var8 = new eY();
             var8.b("BaseStatID", (object)var1);
             var8.b("Value", (object)var2);
@@ -624,7 +623,7 @@ public class gt {
             }
          }
 
-         if (!var10) {
+         if (var10 == null) {
             return false;
          } else {
             if (var6 == 0) {
@@ -854,7 +853,7 @@ public class gt {
       for(int var5 = 0; var5 < var4.Count; ++var5) {
          eY var6 = var4.V(var5);
          if (var6.J("Index.X") == var1 && var6.J("Index.Y") == var2) {
-            if (!var3) {
+            if (var3 == null) {
                var4.ac(var5);
             } else {
                var6.b("Type.InventorySpecialSlotType", (object)"TechBonus");
@@ -1454,96 +1453,5 @@ public class gt {
 }
 
 
-#else
-
-public class gt
-{
-   public gt() { }
-   public gt(params object[] args) { }
-   public static int pW = 0;
-   public static int pX = 0;
-   public static int pY = 0;
-   public static int pZ = 0;
-   public static int qa = 0;
-   public static int qb = 0;
-   public static int qc = 0;
-   public static int qd = 0;
-   public static int qe = 0;
-   public static int qf = 0;
-   public static int qg = 0;
-   public static int qh = 0;
-   public static int qi = 0;
-   public static int qj = 0;
-   public static int qk = 0;
-   public static int ql = 0;
-   public static int qm = 0;
-   public static int qn = 0;
-   public static int qo = 0;
-   public static int qp = 0;
-   public static int qq = 0;
-   public static int qr = 0;
-   public static int[] qA = System.Array.Empty<int>();
-   public static int[] qB = System.Array.Empty<int>();
-   public static int[] qC = System.Array.Empty<int>();
-   public string Name = "";
-   public Function qs = default;
-   public eY qt = default;
-   public int r = 0;
-   public bool qu = false;
-   public bool qv = false;
-   public bool qw = false;
-   public bool qx = false;
-   public int width = 0;
-   public int height = 0;
-   public int bE = 0;
-   public int bF = 0;
-   public static int a(ex var0) { return 0; }
-   public string getSimpleName() { return ""; }
-   public string getFullName() { return ""; }
-   public string getName() { return ""; }
-   public void setName(string var1) { }
-   public int dj() { return 0; }
-   public bool ay(int var1) { return false; }
-   public bool dk() { return false; }
-   public int getWidth() { return 0; }
-   public int getHeight() { return 0; }
-   public bool ao(string var1) { return false; }
-   public double ak(string var1) { return 0; }
-   public void d(string var1, double var2) { }
-   public bool ap(string var1) { return false; }
-   public Size getSize() { return default; }
-   public bool dl() { return false; }
-   public Size dm() { return default; }
-   public Size dn() { return default; }
-   public void b(int var1, int var2, int var3, int var4) { }
-   public void c(int var1, int var2, int var3, int var4) { }
-   public gu f(int var1, int var2) { return default; }
-   public void az(int var1) { }
-   public bool g(int var1, int var2) { return false; }
-   public bool aq(string var1) { return false; }
-   public bool h(int var1, int var2) { return false; }
-   public void i(int var1, int var2) { }
-   public void j(int var1, int var2) { }
-   public bool dp() { return false; }
-   public bool dq() { return false; }
-   public bool k(int var1, int var2) { return false; }
-   public bool dr() { return false; }
-   public bool l(int var1, int var2) { return false; }
-   public void m(int var1, int var2) { }
-   public bool ds() { return false; }
-   public static string r_str(eY var0) { return ""; }
-   public static object s(eY var0) { return default; }
-   public static int t(eY var0) { return 0; }
-   public static int u(eY var0) { return 0; }
-   public bool dt() { return false; }
-   public bool du() { return false; }
-   public bool dv() { return false; }
-   public string toString() { return ""; }
-   public static int[] dw() { return System.Array.Empty<int>(); }
-   public static int[] dx() { return System.Array.Empty<int>(); }
-   public static int[] dy() { return System.Array.Empty<int>(); }
-}
-
-#endif
 
 }

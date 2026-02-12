@@ -9,7 +9,6 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 
 public class ej : JFileChooser {
@@ -30,7 +29,7 @@ public class ej : JFileChooser {
 
    public string a(FileInfo var1) {
       Matcher var2 = iq.matcher(var1.Name);
-      if (var2.Matches()) {
+      if (var2.System.Text.RegularExpressions.Regex.IsMatch()) {
          long var3 = long.Parse(var2.group(1));
          return hi.h(var3);
       } else {
@@ -79,23 +78,5 @@ public class ej : JFileChooser {
 }
 
 
-#else
-
-public class ej
-{
-   public ej() { }
-   public ej(params object[] args) { }
-   public static Image im = default;
-   public static Image io = default;
-   public static Image ip = default;
-   public static Pattern iq = default;
-   public static ej ir = default;
-   public string a(FileInfo var1) { return ""; }
-   public static FileInfo b(FileInfo var0) { return default; }
-   public static Image au() { return default; }
-   public static Image aR() { return default; }
-}
-
-#endif
 
 }

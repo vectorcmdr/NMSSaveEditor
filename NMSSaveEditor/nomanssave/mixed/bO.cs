@@ -8,7 +8,6 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 
 public class bO : Panel, eo {
@@ -313,53 +312,5 @@ public class bO : Panel, eo {
 }
 
 
-#else
-
-public class bO
-{
-   public bO() { }
-   public bO(params object[] args) { }
-   public static Color eE = default;
-   public static Color eF = default;
-   public static Color eG = default;
-   public static Color eH = default;
-   public static Color eI = default;
-   public static Color eJ = default;
-   public static Color eK = default;
-   public static Color eL = default;
-   public static Color eM = default;
-   public static Color eN = default;
-   public static Color eO = default;
-   public static object eP = default;
-   public static object eQ = default;
-   public Application eR = default;
-   public Panel eS = default;
-   public ComboBox eT = default;
-   public Button eU = default;
-   public List<object> eV = default;
-   public gt eW = default;
-   public void a(bool var1) { }
-   public void w() { }
-   public void x() { }
-   public void y() { }
-   public void z() { }
-   public void A() { }
-   public void ae() { }
-   public void af() { }
-   public static Application b(bO var0) { return default; }
-   public static void c(bO var0) { }
-   public static Color ag() { return default; }
-   public static object ah() { return default; }
-   public static Color ai() { return default; }
-   public static Color aj() { return default; }
-   public static Color ak() { return default; }
-   public static Color al() { return default; }
-   public static Color am() { return default; }
-   public static Color an() { return default; }
-   public static List<object> d(bO var0) { return default; }
-   public static Button e(bO var0) { return default; }
-}
-
-#endif
 
 }

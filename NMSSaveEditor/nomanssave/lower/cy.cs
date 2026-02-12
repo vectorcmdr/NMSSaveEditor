@@ -9,7 +9,6 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 
 public class cy : Form, TreeSelectionListener {
@@ -28,8 +27,7 @@ public class cy : Form, TreeSelectionListener {
    public bool ge = true;
    public string gf = "";
 
-   public cy(Application var1) {
-      base(var1.g());
+public cy(Application var1) : base(var1.g()) {
       Rectangle var2 = new Rectangle(100, 100, 1000, 700);
       Point var3 = var1.g().getLocation();
       var2.x = aH.a("JSONEditor.X", var3.x + 10);
@@ -86,7 +84,7 @@ public class cy : Form, TreeSelectionListener {
       this.fV.Refresh();
       int var3 = 0;
       int var4 = 0;
-      IEnumerator var6 = var2.names().GetEnumerator();
+      IEnumerator<object> var6 = var2.names().GetEnumerator();
 
       while(var6.MoveNext()) {
          string var5 = (string)var6.Current;
@@ -249,7 +247,7 @@ public class cy : Form, TreeSelectionListener {
          }
       }
 
-      if (!var3) {
+      if (var3 == null) {
          var5 = var5.ToUpper();
          var1 = var1.ToUpper();
       }
@@ -319,38 +317,5 @@ public class cy : Form, TreeSelectionListener {
 }
 
 
-#else
-
-public class cy
-{
-   public cy() { }
-   public cy(params object[] args) { }
-   public static string gc = "";
-   public static cy gd = default;
-   public string fS = "";
-   public eY fT = default;
-   public Button fU = default;
-   public JTree fV = default;
-   public Panel fW = default;
-   public TextBox fX = default;
-   public Panel fY = default;
-   public cJ fZ = default;
-   public bool ga = false;
-   public bool gb = false;
-   public bool ge = false;
-   public string gf = "";
-   public bool a(string var1, eY var2) { return false; }
-   public static string ay() { return ""; }
-   public void valueChanged(TreeSelectionEvent var1) { }
-   public static string az() { return ""; }
-   public static void b(string var0, ClipboardOwner var1) { }
-   public static TextBox c(cy var0) { return default; }
-   public static cJ d(cy var0) { return default; }
-   public static JTree e(cy var0) { return default; }
-   public static Button f(cy var0) { return default; }
-   public static bool g(cy var0) { return false; }
-}
-
-#endif
 
 }

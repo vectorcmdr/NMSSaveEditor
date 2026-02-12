@@ -6,7 +6,6 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 public sealed class gL : gD {
    public static gL[] Values() { return new gL[] { rs, rt, ru, rv, rw, rx, ry, rz, rA, rB, rC, rD, rE, aw }; }
@@ -60,34 +59,5 @@ public sealed class gL : gD {
 }
 
 
-#else
-
-public class gL
-{
-   public gL() { }
-   public gL(params object[] args) { }
-   public static readonly gL rs = default;
-   public static readonly gL rt = default;
-   public static readonly gL ru = default;
-   public static readonly gL rv = default;
-   public static readonly gL rw = default;
-   public static readonly gL rx = default;
-   public static readonly gL ry = default;
-   public static readonly gL rz = default;
-   public static readonly gL rA = default;
-   public static readonly gL rB = default;
-   public static readonly gL rC = default;
-   public static readonly gL rD = default;
-   public static readonly gL rE = default;
-   public string name = "";
-   public string filename = "";
-   public int rF = 0;
-   public static gL[] Values() { return System.Array.Empty<gL>(); }
-   public string K() { return ""; }
-   public int ea() { return 0; }
-   public string toString() { return ""; }
-}
-
-#endif
 
 }

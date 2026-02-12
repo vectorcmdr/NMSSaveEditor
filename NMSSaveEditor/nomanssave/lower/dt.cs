@@ -8,15 +8,13 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 
 public class dt : ba {
    public Application eR;
    public Panel eS;
 
-   public dt(Application var1) {
-      base(aH.cJ, 0);
+public dt(Application var1) : base(aH.cJ, 0) {
       this.eR = var1;
       this.k("Production");
       this.eS = new Panel();
@@ -110,19 +108,5 @@ public class dt : ba {
 }
 
 
-#else
-
-public class dt
-{
-   public dt() { }
-   public dt(params object[] args) { }
-   public Application eR = default;
-   public Panel eS = default;
-   public void aL() { }
-   public void a(gF[] var1) { }
-   public void b(du var1) { }
-}
-
-#endif
 
 }

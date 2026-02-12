@@ -7,12 +7,11 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 
 public class gS {
    public static byte[] lA = new byte[]{78, 77, 83, 66};
-   public static byte[] rS = new byte[]{50, -99, -78, -55, 92, 88, -34, 74, -57, 17, 57, -108, -94, 127, 97, -79};
+   public static byte[] rS = new byte[] {50, unchecked((byte)-99), unchecked((byte)-78), unchecked((byte)-55), 92, 88, unchecked((byte)-34), 74, unchecked((byte)-57), 17, 57, unchecked((byte)-108), unchecked((byte)-94), 127, 97, unchecked((byte)-79)};
 
    public static double[] a(eY var0, string var1) {
       eV var2 = var0.d(var1);
@@ -69,11 +68,11 @@ public class gS {
          byte[] var23 = fj.b(var4);
          hk.a((Stream)var22, var23.Length);
          ((Stream)var22).Write(var23);
-         IEnumerator var13 = var1.entrySet().GetEnumerator();
+         IEnumerator<object> var13 = var1.entrySet().GetEnumerator();
 
          while(var13.MoveNext()) {
-            Entry var24 = (Entry)var13.Current;
-            var23 = ((string)var24.getKey()).GetBytes();
+            KeyValuePair<object, object> var24 = (KeyValuePair<object, object>)var13.Current;
+            var23 = ((string)var24.getKey()).GetBytes(System.Text.Encoding.UTF8);
             if (var23.Length <= 255) {
                ((Stream)var22).Write(var23.Length);
                ((Stream)var22).Write(var23);
@@ -253,20 +252,5 @@ public class gS {
 }
 
 
-#else
-
-public class gS
-{
-   public gS() { }
-   public gS(params object[] args) { }
-   public static byte[] lA = System.Array.Empty<byte>();
-   public static byte[] rS = System.Array.Empty<byte>();
-   public static double[] a(eY var0, string var1) { return System.Array.Empty<double>(); }
-   public static void d(eY var0, FileInfo var1) { }
-   public static void e(eY var0, FileInfo var1) { }
-   public static void b(eY var0, Dictionary<object, object> var1, FileInfo var2) { }
-}
-
-#endif
 
 }

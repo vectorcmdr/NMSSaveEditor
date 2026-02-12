@@ -8,7 +8,6 @@ using System.Xml;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 
 public class eS {
@@ -22,29 +21,7 @@ public class eS {
       Stream var0 = typeof(Application).GetManifestResourceStream("db/words.xml");
       if (var0 != null) {
          try {
-            Document var1 = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(var0);
-            Element var2 = var1.getDocumentElement();
-            XmlNodeList var3 = var2.getChildNodes();
-
-            for(int var4 = 0; var4 < var3.getLength(); ++var4) {
-               Node var5 = var3.item(var4);
-               if (var5 is Element && var5.getNodeName().Equals("word")) {
-                  kq.Add(new eS((Element)var5));
-               }
-            }
-         } catch (Exception var6) {
-         } catch (Exception var7) {
-         } catch (IOException var8) {
-         }
-      }
-
-      kq.sort(new eT());
-   }
-
-   public eS(Element var1) {
-      this.id = var1.getAttribute("id");
-      this.text = var1.getAttribute("text");
-      this.kp = new Dictionary<object, object>();
+            Document var1 = DocumentBuilderFactory.newInstance(object>();
       XmlNodeList var2 = var1.getElementsByTagName("group");
 
       for(int var3 = 0; var3 < var2.getLength(); ++var3) {
@@ -79,7 +56,7 @@ public class eS {
    }
 
    public static eS A(string var0) {
-      IEnumerator var2 = kq.GetEnumerator();
+      IEnumerator<object> var2 = kq.GetEnumerator();
 
       while(var2.MoveNext()) {
          eS var1 = (eS)var2.Current;
@@ -92,7 +69,7 @@ public class eS {
    }
 
    public static eS B(string var0) {
-      IEnumerator var2 = kq.GetEnumerator();
+      IEnumerator<object> var2 = kq.GetEnumerator();
 
       while(var2.MoveNext()) {
          eS var1 = (eS)var2.Current;
@@ -118,26 +95,5 @@ public class eS {
 }
 
 
-#else
-
-public class eS
-{
-   public eS() { }
-   public eS(params object[] args) { }
-   public static List<object> kq = default;
-   public string Text = "";
-   public string id = "";
-   public string text = "";
-   public Dictionary<object, object> kp = default;
-   public string getID() { return ""; }
-   public string getText() { return ""; }
-   public Iterable bw() { return default; }
-   public eU z(string var1) { return default; }
-   public bool a(eU var1) { return false; }
-   public static int bx() { return 0; }
-   public static Iterable by() { return default; }
-}
-
-#endif
 
 }

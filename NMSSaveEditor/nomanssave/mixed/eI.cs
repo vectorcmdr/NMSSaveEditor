@@ -8,7 +8,6 @@ using System.Xml;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 
 public class eI {
@@ -27,14 +26,7 @@ public class eI {
       Stream var0 = typeof(Application).GetManifestResourceStream("db/rewards.xml");
       if (var0 != null) {
          try {
-            Document var1 = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(var0);
-            Element var2 = var1.getDocumentElement();
-            XmlNodeList var3 = var2.getChildNodes();
-
-            for(int var4 = 0; var4 < var3.getLength(); ++var4) {
-               Node var5 = var3.item(var4);
-               if (var5 is Element && var5.getNodeName().Equals("season")) {
-                  ki.Add(new eI((Element)var5, 0));
+            Document var1 = DocumentBuilderFactory.newInstance(0));
                }
 
                if (var5 is Element && var5.getNodeName().Equals("twitch")) {
@@ -46,7 +38,6 @@ public class eI {
                }
             }
          } catch (Exception var6) {
-         } catch (Exception var7) {
          } catch (IOException var8) {
          }
       }
@@ -104,31 +95,5 @@ public class eI {
 }
 
 
-#else
-
-public class eI
-{
-   public eI() { }
-   public eI(params object[] args) { }
-   public static int kf = 0;
-   public static int kg = 0;
-   public static int kh = 0;
-   public static List<object> ki = default;
-   public static List<object> kj = default;
-   public static List<object> kk = default;
-   public string Name = "";
-   public int type = 0;
-   public string id = "";
-   public string name = "";
-   public string getID() { return ""; }
-   public string getName() { return ""; }
-   public static int bq() { return 0; }
-   public static int br() { return 0; }
-   public static int bs() { return 0; }
-   public static Iterable bt() { return default; }
-   public static Iterable bu() { return default; }
-}
-
-#endif
 
 }

@@ -7,7 +7,6 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 
 public class ff : Closeable {
@@ -609,34 +608,5 @@ public class ff : Closeable {
 }
 
 
-#else
-
-public class ff
-{
-   public ff() { }
-   public ff(params object[] args) { }
-   public static int kO = 0;
-   public static int kP = 0;
-   public static int kQ = 0;
-   public int flags = 0;
-   public int kR = 0;
-   public CharsetDecoder kS = default;
-   public static object a(byte[] var0) { return default; }
-   public static eY b(byte[] var0) { return default; }
-   public static eV c(byte[] var0) { return default; }
-   public int read() { return 0; }
-   public int bI() { return 0; }
-   public void Dispose() { }
-   public void close() { }
-   public object bJ() { return default; }
-   public eY bK() { return default; }
-   public eV bL() { return default; }
-   public Number ad(int var1) { return default; }
-   public byte[] bM() { return System.Array.Empty<byte>(); }
-   public string bN() { return ""; }
-   public object bO() { return default; }
-}
-
-#endif
 
 }

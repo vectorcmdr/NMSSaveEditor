@@ -6,7 +6,6 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 
 public class hg {
@@ -37,17 +36,5 @@ public class hg {
 }
 
 
-#else
-
-public class hg
-{
-   public hg() { }
-   public hg(params object[] args) { }
-   public static SecureRandom sv = default;
-   public long sw = 0;
-   public string toString() { return ""; }
-}
-
-#endif
 
 }

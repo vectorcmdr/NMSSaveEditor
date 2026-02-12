@@ -6,7 +6,6 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 
 public class gE {
@@ -33,7 +32,7 @@ public class gE {
             }
          }
 
-         return (gE[])var4.ToArray(new gE[0]);
+         return (gE[])var4.ToArray();
       } else {
          return new gE[0];
       }
@@ -104,7 +103,7 @@ public class gE {
             var2.Add(new gF(this, var4, (gF)null));
          }
 
-         return (gF[])var2.ToArray(new gF[0]);
+         return (gF[])var2.ToArray();
       }
    }
 
@@ -114,31 +113,5 @@ public class gE {
 }
 
 
-#else
-
-public class gE
-{
-   public gE() { }
-   public gE(params object[] args) { }
-   public string Name = "";
-   public int index = 0;
-   public eY bf = default;
-   public static gE[] z(eY var0) { return System.Array.Empty<gE>(); }
-   public int getIndex() { return 0; }
-   public string getName() { return ""; }
-   public void setName(string var1) { }
-   public int aq(int var1) { return 0; }
-   public void e(int var1, int var2) { }
-   public int a(gG var1) { return 0; }
-   public int dW() { return 0; }
-   public string aH(int var1) { return ""; }
-   public void c(int var1, string var2) { }
-   public string cK() { return ""; }
-   public void aa(string var1) { }
-   public gF[] dX() { return System.Array.Empty<gF>(); }
-   public string toString() { return ""; }
-}
-
-#endif
 
 }

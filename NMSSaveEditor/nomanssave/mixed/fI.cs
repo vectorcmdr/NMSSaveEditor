@@ -7,7 +7,6 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 
 public class fI {
@@ -292,7 +291,7 @@ public class fI {
    public void setString(int var1, string var2) {
       if (var1 >= 8 && var1 % 4 == 0) {
          var1 -= 8;
-         byte[] var3 = var2.GetBytes();
+         byte[] var3 = var2.GetBytes(System.Text.Encoding.UTF8);
          Array.Copy(var3, 0, this.data, var1, var3.Length);
          var1 += var3.Length;
 
@@ -343,17 +342,17 @@ public class fI {
 
       for(int var4 = 0; var4 < this.data.Length; ++var4) {
          if ((var4 + var3) % 16 == 0) {
-            var1.Append(System.lineSeparator());
+            var1.Append(Environment.NewLine);
 
             string var5;
-            for(var5 = Integer.toString((var4 + 1 + var3) / 16, 16) + "0"; var5.length() < 8; var5 = "0" + var5) {
+            for(var5 = Convert.ToString((var4 + 1 + var3) / 16, 16) + "0"; var5.length() < 8; var5 = "0" + var5) {
             }
 
             var1.Append(var5 + "    ");
          }
 
-         var1.Append(Integer.toString((this.data[var4] & 240) >> 4, 16));
-         var1.Append(Integer.toString(this.data[var4] & 15, 16));
+         var1.Append(Convert.ToString((this.data[var4] & 240) >> 4, 16));
+         var1.Append(Convert.ToString(this.data[var4] & 15, 16));
          var1.Append(' ');
          if (this.data[var4] == 32) {
             var2.Append('.');
@@ -417,54 +416,5 @@ public class fI {
 }
 
 
-#else
-
-public class fI
-{
-   public fI() { }
-   public fI(params object[] args) { }
-   public static int mi = 0;
-   public static int mj = 0;
-   public static int mk = 0;
-   public static int ml = 0;
-   public static int mm = 0;
-   public static int mn = 0;
-   public static int mo = 0;
-   public int mp = 0;
-   public int lO = 0;
-   public int mq = 0;
-   public byte[] data = System.Array.Empty<byte>();
-   public static bool ai(int var0) { return false; }
-   public int cc() { return 0; }
-   public int cd() { return 0; }
-   public bool ce() { return false; }
-   public byte[] cf() { return System.Array.Empty<byte>(); }
-   public void e(byte[] var1) { }
-   public byte[] cg() { return System.Array.Empty<byte>(); }
-   public void f(byte[] var1) { }
-   public int ch() { return 0; }
-   public void aj(int var1) { }
-   public int ci() { return 0; }
-   public void ak(int var1) { }
-   public int cj() { return 0; }
-   public void al(int var1) { }
-   public string ck() { return ""; }
-   public void Y(string var1) { }
-   public string getDescription() { return ""; }
-   public void setDescription(string var1) { }
-   public byte[] encode() { return System.Array.Empty<byte>(); }
-   public int getInt(int var1) { return 0; }
-   public void setInt(int var1, int var2) { }
-   public string getString(int var1) { return ""; }
-   public void setString(int var1, string var2) { }
-   public byte[] d(int var1, int var2) { return System.Array.Empty<byte>(); }
-   public void setBytes(int var1, byte[] var2) { }
-   public string toString() { return ""; }
-   public static long rotateLeft(long var0, int var2) { return 0; }
-   public static byte[] a(long[] var0, int var1, int var2) { return System.Array.Empty<byte>(); }
-   public static long[] g(byte[] var0) { return System.Array.Empty<long>(); }
-}
-
-#endif
 
 }

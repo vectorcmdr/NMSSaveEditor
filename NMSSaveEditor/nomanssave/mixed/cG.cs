@@ -8,14 +8,12 @@ using System.Windows.Forms;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 
 public class cG : TextAction, ClipboardOwner {
    public cy gg;
 
-   public cG(cy var1) {
-      base("Copy From Clipboard");
+public cG(cy var1) : base("Copy From Clipboard") {
       this.gg = var1;
    }
 
@@ -32,17 +30,5 @@ public class cG : TextAction, ClipboardOwner {
 }
 
 
-#else
-
-public class cG
-{
-   public cG() { }
-   public cG(params object[] args) { }
-   public cy gg = default;
-   public void actionPerformed(EventArgs var1) { }
-   public void lostOwnership(object var1, Transferable var2) { }
-}
-
-#endif
 
 }

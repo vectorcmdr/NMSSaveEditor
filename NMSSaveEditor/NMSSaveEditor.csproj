@@ -3,11 +3,13 @@
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net10.0-windows</TargetFramework>
-    <Nullable>enable</Nullable>
+    <Nullable>disable</Nullable>
+    <NoWarn>CS0108;CS0114;CS0162;CS0168;CS0219;CS0414;CS0649;CS0693;CS8600;CS8601;CS8602;CS8603;CS8604;CS8618;CS8625;CS8767;WFO1001</NoWarn>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
     <EnableWindowsTargeting>true</EnableWindowsTargeting>
     <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <DefineConstants>PORT_COMPLETE</DefineConstants>
     <ApplicationIcon />
     <AssemblyVersion>1.19.14.0</AssemblyVersion>
     <FileVersion>1.19.14.0</FileVersion>

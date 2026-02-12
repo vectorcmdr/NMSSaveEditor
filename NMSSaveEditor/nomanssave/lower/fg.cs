@@ -6,7 +6,6 @@ using System.Text;
 namespace NMSSaveEditor
 {
 
-#if PORT_COMPLETE
 
 
 public class fg {
@@ -98,21 +97,5 @@ public class fg {
 }
 
 
-#else
-
-public class fg
-{
-   public fg() { }
-   public fg(params object[] args) { }
-   public byte[] bytes = System.Array.Empty<byte>();
-   public byte[] toByteArray() { return System.Array.Empty<byte>(); }
-   public int indexOf(int var1) { return 0; }
-   public string substring(int var1) { return ""; }
-   public string bP() { return ""; }
-   public bool equals(object var1) { return false; }
-   public string toString() { return ""; }
-}
-
-#endif
 
 }
