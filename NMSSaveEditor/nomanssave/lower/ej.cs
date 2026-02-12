@@ -57,7 +57,7 @@ public class ej : JFileChooser {
          } else if (var3.Attributes.HasFlag(FileAttributes.Directory)) {
             ir.setCurrentDirectory(var3.FullName.FullName);
          } else {
-            ir.setCurrentDirectory(var1.FullName.FullName);
+                        ir.setCurrentDirectory(var1.FullName);
          }
       }
 

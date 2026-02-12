@@ -97,7 +97,6 @@ public class bE : Panel {
             }
          }
       }
-
    }
 
    public void a(gs var1, string var2) {
@@ -109,7 +108,6 @@ public class bE : Panel {
             }
          }
       }
-
    }
 
    public void a(gz var1) {
@@ -125,7 +123,6 @@ public class bE : Panel {
             }
          }
       }
-
    }
 
    public static gz a(bE var0) {
