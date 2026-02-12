@@ -49,7 +49,7 @@ public class Application {
    private static int ap = 11;
    private static int aq = 12;
    private static int ar = 13;
-   private aJ as;
+   private aJ @as;
    private dj at;
    private dN au;
    private eb av;
@@ -101,7 +101,7 @@ public class Application {
          StringBuffer var2 = new StringBuffer();
 
          for(int var4 = 0; var4 < var0.Length; ++var4) {
-            char var3 = var0[var4);
+            char var3 = var0[var4];
             if ("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_".IndexOf(var3) >= 0) {
                var2.append(var3);
             } else if (Character.isWhitespace(var3)) {
@@ -182,11 +182,9 @@ public class Application {
       if (this.aS) {
          this.aS = false;
          var1 = this.aH < 0 ? -1 : this.aG[this.aH].getIndex();
-         this.aG = (ft[])new List<object> {this.aF.bU()).filter((var1x) => {
-            return var1x.getIndex() == var1 || !var1x.Length == 0;
-         }).ToArray((var0) => {
-            return new ft[var0];
-         });
+         this.aG = this.aF.bU().Where(var1x => {
+            return var1x.getIndex() == var1 || !var1x.isEmpty();
+         }).ToArray();
          this.aH = -1;
 
          for(int var2 = 0; var2 < this.aG.length; ++var2) {
@@ -801,7 +799,6 @@ public class Application {
             this.aI = new fs[0];
             this.aJ = -1;
             if (var2 != null) {
-               label85:
                for(int var5 = 0; var5 < this.aG.length; ++var5) {
                   if (this.aF.W(var2) == this.aG[var5].getIndex()) {
                      this.aH = var5;
@@ -810,18 +807,19 @@ public class Application {
 
                      while(true) {
                         if (var6 >= this.aI.length) {
-                           break label85;
+                           goto afterLabel85;
                         }
 
                         if (var2.Equals(this.aI[var6].K())) {
                            this.aJ = var6;
-                           break label85;
+                           goto afterLabel85;
                         }
 
                         ++var6;
                      }
                   }
                }
+               afterLabel85:;
             }
 
             this.aM = null;
@@ -937,7 +935,7 @@ public class Application {
          gj[] var14 = gj.o(var1);
          ge var15 = ge.m(var1);
          this.O.SetEnabledAt(1, var21 != null);
-         this.as.a(var21);
+         this.@as.a(var21);
          this.O.SetEnabledAt(2, var4.length > 0);
          this.at.a(var4, var5);
          this.O.SetEnabledAt(3, var6.length > 0);
@@ -986,7 +984,7 @@ public class Application {
             var2.SetEnabled(false);
          }
 
-         this.as.a((gz)null);
+         this.@as.a((gz)null);
          this.at.a((gv[])(new gv[0]), (gB)null);
          this.au.a((gH[])(new gH[0]), (gC)null);
          this.av.a(new gM[0]);
@@ -1083,7 +1081,6 @@ public class Application {
             this.aI = new fs[0];
             this.aJ = -1;
 
-            label38:
             for(int var4 = 0; var4 < this.aG.length; ++var4) {
                if (this.aF.W(var3) == this.aG[var4].getIndex()) {
                   this.aH = var4;
@@ -1092,18 +1089,19 @@ public class Application {
 
                   while(true) {
                      if (var5 >= this.aI.length) {
-                        break label38;
+                        goto afterLabel38;
                      }
 
                      if (var3.Equals(this.aI[var5].K())) {
                         this.aJ = var5;
-                        break label38;
+                        goto afterLabel38;
                      }
 
                      ++var5;
                   }
                }
             }
+            afterLabel38:
 
             this.aL = false;
             this.R.updateUI();
@@ -1130,9 +1128,9 @@ public class Application {
 
    public List<object> g(int var1) {
       List<object> var2 = new List<object>();
-      gz var4 = this.as.X();
+      gz var4 = this.@as.X();
       if (var4 != null) {
-         var2.AddRange((Collection)var4.cC().filter((var1x) => {
+         var2.AddRange(var4.cC().Where(var1x => {
             return var1x.ay(var1);
          }).ToList());
       }
@@ -1149,14 +1147,14 @@ public class Application {
       gH[] var10 = this.au.aO();
 
       for(int var7 = 0; var7 < var10.length; ++var7) {
-         var2.AddRange((Collection)var10[var7].cC().filter((var1x) => {
+         var2.AddRange(var10[var7].cC().Where(var1x => {
             return var1x.ay(var1);
          }).ToList());
       }
 
       gm var11 = this.aw.Z();
       if (var11 != null) {
-         var2.AddRange((Collection)var11.cC().filter((var1x) => {
+         var2.AddRange(var11.cC().Where(var1x => {
             return var1x.ay(var1);
          }).ToList());
       }
@@ -1164,14 +1162,14 @@ public class Application {
       gO[] var8 = this.ay.aT();
 
       for(int var9 = 0; var9 < var8.length; ++var9) {
-         var2.AddRange((Collection)var8[var9].cC().filter((var1x) => {
+         var2.AddRange(var8[var9].cC().Where(var1x => {
             return var1x.ay(var1);
          }).ToList());
       }
 
       ge var12 = this.aA.O();
       if (var12 != null) {
-         var2.AddRange((Collection)var12.cC().filter((var1x) => {
+         var2.AddRange(var12.cC().Where(var1x => {
             return var1x.ay(var1);
          }).ToList());
       }
@@ -1250,7 +1248,7 @@ public class Application {
       gj[] var13 = gj.o(var1);
       ge var14 = ge.m(var1);
       this.O.SetEnabledAt(1, var2 != null);
-      this.as.a(var2);
+      this.@as.a(var2);
       this.O.SetEnabledAt(2, var3.length > 0);
       this.at.a(var3, var4);
       this.O.SetEnabledAt(3, var5.length > 0);
@@ -1323,7 +1321,7 @@ public class Application {
    }
 
    private void w() {
-      this.as.w();
+      this.@as.w();
       this.at.w();
       this.au.w();
       this.aw.w();
@@ -1332,7 +1330,7 @@ public class Application {
    }
 
    private void x() {
-      this.as.x();
+      this.@as.x();
       this.at.x();
       this.au.x();
       this.aw.x();
@@ -1341,7 +1339,7 @@ public class Application {
    }
 
    private void y() {
-      this.as.y();
+      this.@as.y();
       this.at.y();
       this.au.y();
       this.aw.y();
@@ -1355,7 +1353,7 @@ public class Application {
    }
 
    private void A() {
-      this.as.A();
+      this.@as.A();
       this.at.A();
       this.au.A();
       this.aw.A();
@@ -1364,7 +1362,7 @@ public class Application {
    }
 
    public void a(gt var1) {
-      this.as.a(var1);
+      this.@as.a(var1);
       this.at.a(var1);
       this.au.a(var1);
       this.aw.a(var1);
@@ -1723,8 +1721,8 @@ public class Application {
       });
       var4.Add(this.Y);
       var3.a((string)null, var4, 2);
-      this.as = new aJ(this);
-      this.O.AddTab("Exosuit", (Icon)null, this.as, (string)null);
+      this.@as = new aJ(this);
+      this.O.AddTab("Exosuit", (Icon)null, this.@as, (string)null);
       this.O.SetEnabledAt(1, false);
       this.at = new dj(this);
       this.O.AddTab("Multitool", (Icon)null, this.at, (string)null);
