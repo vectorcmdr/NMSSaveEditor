@@ -112,19 +112,19 @@ public class ax : TableModel {
       gA var5 = ap.i(this.cu).a(var4);
       switch(var3) {
       case 2:
-         var5.a(eU.kr, Boolean.TRUE.Equals(var1));
+         var5.a(eU.kr, true.Equals(var1));
          break;
       case 3:
-         var5.a(eU.ks, Boolean.TRUE.Equals(var1));
+         var5.a(eU.ks, true.Equals(var1));
          break;
       case 4:
-         var5.a(eU.kt, Boolean.TRUE.Equals(var1));
+         var5.a(eU.kt, true.Equals(var1));
          break;
       case 5:
-         var5.a(eU.kv, Boolean.TRUE.Equals(var1));
+         var5.a(eU.kv, true.Equals(var1));
          break;
       case 6:
-         var5.a(eU.kz, Boolean.TRUE.Equals(var1));
+         var5.a(eU.kz, true.Equals(var1));
       }
     }
 

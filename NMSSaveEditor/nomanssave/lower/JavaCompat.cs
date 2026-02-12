@@ -91,6 +91,7 @@ namespace NMSSaveEditor
         public System.Reflection.MethodInfo getDeclaredMethod(string name, params Type[] paramTypes) { return _type?.GetMethod(name, System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.Static); }
         public object cast(object obj) { return obj; }
         public static implicit operator Class(Type t) { return new Class(t); }
+        public static Class forName(string name) { return new Class(Type.GetType(name)); }
     }
 
     // Java Integer wrapper

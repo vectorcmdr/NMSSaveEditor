@@ -69,5 +69,7 @@ public sealed class gL : gD {
 
       return null;
    }
+
+   public static gL[] Values() { return new gL[] { rs, rt, ru, rv, rw, rx, ry, rz, rA, rB, rC, rD, rE, valueOf, aw }; }
 }
 }

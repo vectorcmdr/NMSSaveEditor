@@ -69,8 +69,8 @@ public class gz {
                      if (var13 != null) {
                         eY var14 = new eY();
                         var14.b("Group", (Object)var11);
-                        eV var15 = new eV(new Object[]{Boolean.FALSE, Boolean.FALSE, Boolean.FALSE, Boolean.FALSE, Boolean.FALSE, Boolean.FALSE, Boolean.FALSE, Boolean.FALSE});
-                        var15.a(var13.ordinal(), Boolean.TRUE);
+                        eV var15 = new eV(new Object[]{false, false, false, false, false, false, false, false});
+                        var15.a(var13.ordinal(), true);
                         var14.b("Races", (Object)var15);
                         var7.f(var14);
                         hc.debug("Creating word: " + var11 + "[" + var13.ordinal() + "] = true");
@@ -245,7 +245,7 @@ public class gz {
             hc.debug("Updating word: " + var1 + "[" + var2 + "] = " + var3);
             eV var6 = var4.d("Races");
              while(var6.Count < eU.Values.Length) {
-               var6.Add(Boolean.FALSE);
+               var6.Add(false);
             }
              var6.a(var2, new Boolean(var3));
              for(int var7 = 0; var7 < var6.Count; ++var7) {
@@ -264,7 +264,7 @@ public class gz {
          var4.b("Group", (Object)var1);
          eV var8 = new eV();
           while(var8.Count < eU.Values.Length) {
-            var8.Add(Boolean.FALSE);
+            var8.Add(false);
          }
           var8.a(var2, new Boolean(var3));
          var4.b("Races", (Object)var8);

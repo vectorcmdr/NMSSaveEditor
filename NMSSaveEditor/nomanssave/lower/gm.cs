@@ -111,10 +111,10 @@ public class gm {
    public void ah(string var1) {
       eV var2 = this.oI.d("CurrentFreighterHomeSystemSeed");
       if (var2 == null) {
-         var2 = new eV(new Object[]{Boolean.FALSE, "0x0"});
+         var2 = new eV(new Object[]{false, "0x0"});
          this.oI.b("CurrentFreighterHomeSystemSeed", (Object)var2);
       }
-       var2.a(0, Boolean.TRUE);
+       var2.a(0, true);
       var2.a(1, var1.Length == 0 ? "0x0" : var1);
    }
 

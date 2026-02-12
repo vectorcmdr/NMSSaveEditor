@@ -119,9 +119,9 @@ public class fj : Closeable {
    public void k(Object var1) {
       if (var1 == null) {
          this.lh.Write(le);
-      } else if (var1.Equals(Boolean.TRUE)) {
+      } else if (var1.Equals(true)) {
          this.lh.Write(lf);
-      } else if (var1.Equals(Boolean.FALSE)) {
+      } else if (var1.Equals(false)) {
          this.lh.Write(lg);
       } else if (var1 is string) {
          this.writeString((string)var1);
@@ -144,9 +144,9 @@ public class fj : Closeable {
    public void a(Object var1, eC var2) {
       if (var1 == null) {
          this.lh.Write(le);
-      } else if (var1.Equals(Boolean.TRUE)) {
+      } else if (var1.Equals(true)) {
          this.lh.Write(lf);
-      } else if (var1.Equals(Boolean.FALSE)) {
+      } else if (var1.Equals(false)) {
          this.lh.Write(lg);
       } else if (var1 is string) {
          this.writeString((string)var1);

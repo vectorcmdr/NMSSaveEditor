@@ -71,5 +71,7 @@ public sealed class gs {
    public string toString() {
       return this.displayName;
    }
+
+   public static gs[] Values() { return new gs[] { pq, pr, ps, pt, pu, pv, pw, px, py, pz, pA, pB, pC, pD, pE, pF, pG, pH, pI, pJ, pK, pL, pM, pN, pO, pP, pQ, pR, pS, pT, pU, valueOf }; }
 }
 }

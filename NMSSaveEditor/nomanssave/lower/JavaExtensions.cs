@@ -976,7 +976,7 @@ namespace NMSSaveEditor
         // Control tree lock
         public static object getTreeLock(this Control c) => c;
         
-        // Boolean.TRUE/FALSE fix - these are in the code as true/false
+        // true/FALSE fix - these are in the code as true/false
         // We need to handle this differently - via static helpers
         
         // BigDecimal missing methods

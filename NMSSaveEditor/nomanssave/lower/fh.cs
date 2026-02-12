@@ -282,7 +282,7 @@ public class fh {
          } else if (var0.ReadByte() != 101) {
             throw new eX("Invalid token", var0.kF, var0.kG);
          } else {
-            return Boolean.FALSE;
+            return false;
          }
       } else if (var1 == 116) {
          if (var0.ReadByte() != 114) {
@@ -292,7 +292,7 @@ public class fh {
          } else if (var0.ReadByte() != 101) {
             throw new eX("Invalid token", var0.kF, var0.kG);
          } else {
-            return Boolean.TRUE;
+            return true;
          }
       } else if (var1 == 110) {
          if (var0.ReadByte() != 117) {

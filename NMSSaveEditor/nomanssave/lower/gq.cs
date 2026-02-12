@@ -54,5 +54,7 @@ public sealed class gq {
    public string toString() {
       return this.displayName;
    }
+
+   public static gq[] Values() { return new gq[] { oS, oT, oU, oV, oW, oX, oY, oZ, pa, pb, pc, valueOf }; }
 }
 }

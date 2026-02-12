@@ -105,7 +105,6 @@ namespace NMSSaveEditor
         public static Size getSize(this Control c) => c.Size;
         public static void setComponentPopupMenu(this Control c, object menu) { }
         public static void addComponentListener(this Control c, object listener) { }
-        public static void addMouseListener(this Control c, object listener) { }
         public static void addPropertyChangeListener(this Control c, object listener) { }
         public static void addPropertyChangeListener(this Control c, string prop, object listener) { }
         public static void addWindowListener(this Form f, object listener) { }
@@ -268,7 +267,6 @@ public static class ContextMenuStripExtensions2 {
 public static class CheckBoxExtensions2 {
     public static void AddActionListener(this CheckBox cb, object listener) { cb.CheckedChanged += (s, e) => { }; }
     public static void SetSelected(this CheckBox cb, bool selected) { cb.Checked = selected; }
-    public static void setSelected(this CheckBox cb, bool selected) { cb.Checked = selected; }
     public static bool IsSelected(this CheckBox cb) { return cb.Checked; }
     public static bool isSelected(this CheckBox cb) { return cb.Checked; }
     public static void SetText(this CheckBox cb, string text) { cb.Text = text; }
@@ -429,20 +427,12 @@ public static class FileInfoExtensions2 {
     public static string getName(this FileInfo fi) { return fi.Name; }
     public static string getAbsolutePath(this FileInfo fi) { return fi.FullName; }
     public static string getPath(this FileInfo fi) { return fi.FullName; }
-    public static string getParent(this FileInfo fi) { return fi.DirectoryName; }
-    public static FileInfo getParentFile(this FileInfo fi) { return fi.Directory != null ? new FileInfo(fi.Directory.FullName) : null; }
-    public static bool isDirectory(this FileInfo fi) { fi.Refresh(); return (fi.Attributes & FileAttributes.Directory) != 0; }
     public static bool isFile(this FileInfo fi) { fi.Refresh(); return fi.Exists && !fi.isDirectory(); }
-    public static long length(this FileInfo fi) { fi.Refresh(); return fi.Exists ? fi.Length : 0; }
-    public static long lastModified(this FileInfo fi) { fi.Refresh(); return fi.Exists ? new DateTimeOffset(fi.LastWriteTimeUtc).ToUnixTimeMilliseconds() : 0; }
     public static bool delete(this FileInfo fi) { try { fi.Delete(); return true; } catch { return false; } }
-    public static bool renameTo(this FileInfo fi, FileInfo dest) { try { fi.MoveTo(dest.FullName); return true; } catch { return false; } }
     public static string[] list(this FileInfo fi) { if (!fi.isDirectory()) return null; return Directory.GetFiles(fi.FullName).Select(Path.GetFileName).ToArray(); }
-    public static FileInfo[] listFiles(this FileInfo fi) { if (!fi.isDirectory()) return null; return Directory.GetFiles(fi.FullName).Select(f => new FileInfo(f)).ToArray(); }
     public static bool mkdir(this FileInfo fi) { try { Directory.CreateDirectory(fi.FullName); return true; } catch { return false; } }
     public static bool mkdirs(this FileInfo fi) { return fi.mkdir(); }
     public static string toPath(this FileInfo fi) { return fi.FullName; }
-    public static bool canRead(this FileInfo fi) { return fi.Exists; }
     public static bool canWrite(this FileInfo fi) { return fi.Exists && !fi.IsReadOnly; }
     public static Uri toURI(this FileInfo fi) { return new Uri(fi.FullName); }
 }
@@ -604,6 +594,9 @@ public static class JavaCompat {
         return doc;
     }
     public static Level LevelInfo = Level.INFO;
+    public static Image ImageRead(Stream stream) { return stream != null ? Image.FromStream(stream) : null; }
+    public static Image ImageRead(FileInfo file) { return file?.Exists == true ? Image.FromFile(file.FullName) : null; }
+    public static object GetCipher(int mode, byte[] key) { return null; }
 }
 
 
@@ -874,3 +867,25 @@ public static class StreamOf {
 }
 
 }
+
+namespace NMSSaveEditor {
+
+
+// FormFactory additions
+public static class FormFactory2 {
+    public static ColumnSpec GLUE_COLSPEC = new ColumnSpec();
+    public static ColumnSpec GROWING_BUTTON_COLSPEC = new ColumnSpec();
+    public static ColumnSpec BUTTON_COLSPEC = new ColumnSpec();
+    public static ColumnSpec PREF_COLSPEC = new ColumnSpec();
+    public static RowSpec PREF_ROWSPEC = new RowSpec();
+    public static RowSpec GLUE_ROWSPEC = new RowSpec();
+}
+
+// Pattern.Matches extension
+public static class PatternExtensions {
+    public static bool Matches(this Pattern p, string input) { return p.matcher(input).matches(); }
+}
+
+// Class.forName
+}
+

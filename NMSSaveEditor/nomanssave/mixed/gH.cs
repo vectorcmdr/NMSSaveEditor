@@ -230,7 +230,7 @@ public class gH {
 
    public void cm() {
       this.rp.b("Resource.Filename", (Object)"");
-      this.rp.d("Resource.Seed").a(0, Boolean.FALSE);
+      this.rp.d("Resource.Seed").a(0, false);
       this.rp.d("Resource.Seed").a(1, "0x0");
    }
 

@@ -57,5 +57,7 @@ public sealed class eU {
 
       return null;
    }
+
+   public static eU[] Values() { return new eU[] { kr, ks, kt, ku, kv, kw, kx, ky, kz, valueOf, C }; }
 }
 }

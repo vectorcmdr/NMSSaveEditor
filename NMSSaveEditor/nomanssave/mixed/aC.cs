@@ -21,7 +21,7 @@ public class aC : CheckBox, TableCellRenderer {
       } else {
          this.SetBackground(var1.BackColor);
          this.setHorizontalAlignment(0);
-         this.setSelected(Boolean.TRUE == var2);
+         this.setSelected(true == var2);
          return this;
       }
    }

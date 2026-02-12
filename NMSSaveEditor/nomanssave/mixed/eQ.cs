@@ -38,7 +38,7 @@ public class eQ : ey {
       } catch (ArgumentException var10) {
          throw new Exception("Error in tech: " + this.id, var10);
       }
-       this.special = var1.HasAttribute("special") ? Boolean.valueOf(var1.GetAttribute("special")) : false;
+       this.special = var1.HasAttribute("special") ? (var1.GetAttribute("special")) : false;
       this.ka = var1.HasAttribute("chargeable") ? new Integer(var1.GetAttribute("chargeable")) : null;
       this.jM = var1.GetAttribute("subtitle");
       this.kc = var1.HasAttribute("icon") ? var1.GetAttribute("icon") : null;

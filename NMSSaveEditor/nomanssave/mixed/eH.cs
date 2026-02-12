@@ -33,10 +33,10 @@ public class eH : ey {
       } else {
          this.jZ = ex.valueOf(var1.GetAttribute("category"));
       }
-       this.special = var1.HasAttribute("special") ? Boolean.valueOf(var1.GetAttribute("special")) : false;
+       this.special = var1.HasAttribute("special") ? (var1.GetAttribute("special")) : false;
       this.ka = var1.HasAttribute("chargeable") ? new Integer(var1.GetAttribute("chargeable")) : null;
       this.jM = var1.GetAttribute("subtitle");
-      this.kb = var1.HasAttribute("cooking") ? Boolean.valueOf(var1.GetAttribute("cooking")) : false;
+      this.kb = var1.HasAttribute("cooking") ? (var1.GetAttribute("cooking")) : false;
       this.kc = var1.HasAttribute("icon") ? var1.GetAttribute("icon") : null;
       if (var1.HasAttribute("multiplier")) {
          this.kd = int.Parse(var1.GetAttribute("multiplier"));

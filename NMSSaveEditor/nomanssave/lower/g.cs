@@ -79,7 +79,7 @@ public class g : TableModel {
          eI var4 = (eI)this.k.apply(var2);
          if (var3 == 2) {
             int var5 = this.i.g.IndexOf(var4.getID());
-            if (Boolean.TRUE.Equals(var1)) {
+            if (true.Equals(var1)) {
                if (var5 < 0) {
                   this.i.g.f(var4.getID());
                }

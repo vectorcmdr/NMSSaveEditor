@@ -59,5 +59,7 @@ public sealed class gr {
       }
        return null;
    }
+
+   public static gr[] Values() { return new gr[] { pf, pg, ph, pi, pj, pk, pl, pm, pn, po, valueOf, an }; }
 }
 }

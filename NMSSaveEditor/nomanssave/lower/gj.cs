@@ -116,7 +116,7 @@ public class gj {
    }
 
    public void cm() {
-      this.bf.d("CreatureSeed").a(0, Boolean.FALSE);
+      this.bf.d("CreatureSeed").a(0, false);
       this.bf.d("CreatureSeed").a(1, "0x0");
    }
 
