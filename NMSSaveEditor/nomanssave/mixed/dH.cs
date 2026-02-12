@@ -1,0 +1,34 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace NMSSaveEditor
+{
+class dH : G {
+   dE hE;
+
+   dH(dE var1) {
+      this.hE = var1;
+   }
+
+   protected string g(string var1) {
+      gE var2 = (gE)dE.a(this.hE).getSelectedItem();
+      if (var2 == null) {
+         return "";
+      } else {
+         try {
+            var1 = hg.aB(var1).ToString();
+            if (!var1.equals(var2.cK())) {
+               var2.aa(var1);
+            }
+
+            return var1;
+         } catch (Exception var4) {
+            return var2.cK();
+         }
+      }
+   }
+}
+
+}

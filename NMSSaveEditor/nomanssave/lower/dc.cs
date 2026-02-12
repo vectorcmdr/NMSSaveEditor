@@ -1,0 +1,22 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+
+namespace NMSSaveEditor
+{
+
+class dc : EventHandler {
+   cY gR;
+
+   dc(cY var1) {
+      this.gR = var1;
+   }
+
+   public void actionPerformed(EventArgs var1) {
+      this.gR.setVisible(false);
+   }
+}
+
+}

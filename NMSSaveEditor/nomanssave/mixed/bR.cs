@@ -1,0 +1,29 @@
+using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+
+namespace NMSSaveEditor
+{
+
+class bR : EventHandler {
+   bO eX;
+
+   bR(bO var1) {
+      this.eX = var1;
+   }
+
+   public void actionPerformed(EventArgs var1) {
+      if (bO.a(this.eX) != null) {
+         Size var2 = aQ.a(this.eX, bO.a(this.eX).getSize(), bO.a(this.eX).dm(), bO.a(this.eX).dn());
+         if (var2 != null && bO.a(this.eX).a(var2)) {
+            bO.c(this.eX);
+         }
+
+      }
+   }
+}
+
+}

@@ -1,0 +1,25 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+
+namespace NMSSaveEditor
+{
+
+class cF : AbstractAction {
+   cy gg;
+
+   cF(cy var1) {
+      this.gg = var1;
+   }
+
+   public void actionPerformed(EventArgs var1) {
+      int var2 = cy.c(this.gg).getSelectionStart();
+      int var3 = cy.c(this.gg).getSelectionEnd();
+      string var4 = var3 > var2 ? cy.c(this.gg).getText().Substring(var2, var3) : null;
+      aW.a(this.gg, var4);
+   }
+}
+
+}

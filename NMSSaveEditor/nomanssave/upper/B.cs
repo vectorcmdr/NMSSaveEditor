@@ -1,0 +1,48 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+
+namespace NMSSaveEditor
+{
+
+class B : object {
+   Application aZ;
+
+   B(Application var1) {
+      this.aZ = var1;
+   }
+
+   public void windowClosing(FormClosedEventArgs var1) {
+      if (Application.i(this.aZ) || Application.j(this.aZ)) {
+         int var2 = MessageBox.showConfirmDialog(Application.h(this.aZ), "Save data before closing?", "Save", 0);
+         if (var2 == 0) {
+            if (Application.i(this.aZ)) {
+               Application.k(this.aZ);
+            }
+
+            if (Application.j(this.aZ)) {
+               Application.l(this.aZ);
+            }
+         }
+      }
+
+      if (aH.T()) {
+         aH.U();
+      }
+
+      Application.h(this.aZ).dispose();
+   }
+
+   public void windowDeactivated(FormClosedEventArgs var1) {
+      Application.e(this.aZ, true);
+   }
+
+   public void windowActivated(FormClosedEventArgs var1) {
+      Application.e(this.aZ, false);
+      Application.m(this.aZ);
+   }
+}
+
+}

@@ -1,0 +1,82 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+
+namespace NMSSaveEditor
+{
+
+class eD : eE {
+   private string version;
+
+   private eD(Stream var1, string var2) {
+      base((eE)null);
+      this.version = var2;
+      List<object> var3 = new List<object>();
+      StreamReader var4 = new StreamReader(new StreamReader(var1));
+
+      string var5;
+      try {
+         while((var5 = var4.readLine()) != null) {
+            try {
+               if (var5.length() != 0) {
+                  int var9 = var5.IndexOf("\t");
+                  if (var9 < 0) {
+                     hc.debug("Mapping not available: " + var5);
+                     var3.Add(var5);
+                  } else {
+                     string var6 = var5.Substring(0, var9);
+                     string var7 = var5.Substring(var9 + 1, var5.length());
+                     eF var8;
+                     if ((var8 = this.t(var6)) != null) {
+                        if (!var7.equals(var8.name)) {
+                           throw new IOException("Mapping error: " + var6);
+                        }
+
+                        hc.debug("Mapping duplicated: " + var6);
+                     } else if ((var8 = this.u(var7)) != null) {
+                        if (!var6.equals(var8.key)) {
+                           throw new IOException("Reverse error: " + var7);
+                        }
+
+                        hc.debug("Reverse duplicated: " + var7);
+                     } else {
+                        this.Add(var6, var7);
+                     }
+                  }
+               }
+            } catch (Exception var13) {
+               hc.a("Ignoring: " + var5, var13);
+            }
+         }
+      } finally {
+         var4.close();
+      }
+
+      IEnumerator var15 = var3.iterator();
+
+      while(var15.hasNext()) {
+         var5 = (string)var15.next();
+         if (this.t(var5) != null) {
+            throw new IOException("Mapping error: " + var5);
+         }
+
+         if (this.u(var5) != null) {
+            throw new IOException("Reverse error: " + var5);
+         }
+
+         this.Add(var5, var5);
+      }
+
+   }
+
+   public string toString() {
+      return this.version;
+   }
+   eD(Stream var1, string var2, eD var3) {
+      this(var1, var2);
+   }
+}
+
+}

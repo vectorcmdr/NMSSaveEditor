@@ -1,0 +1,67 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace NMSSaveEditor
+{
+
+public class gf {
+   eY nj;
+   ge nk;
+
+   private gf(ge var1, eY var2) {
+      this.nk = var1;
+      this.nj = var2;
+   }
+
+   public string cF() {
+      Object var1 = this.nj.getValue("GalacticAddress");
+      if (var1 is string) {
+         return (string)var1;
+      } else {
+         return var1 is Number ? "0x" + Long.toHexString(((Number)var1).longValue()) : null;
+      }
+   }
+
+   public string getName() {
+      return this.nj.getValueAsString("Name");
+   }
+
+   public void setName(string var1) {
+      this.nj.b("Name", (Object)var1);
+   }
+
+   public int cG() {
+      return this.nj.d("Objects").Count;
+   }
+
+   public eY cH() {
+      return this.nj;
+   }
+
+   public List cI() {
+      List<object> var1 = new List<object>();
+      IEnumerator var3 = gV.G(this.nj).iterator();
+
+      while(var3.hasNext()) {
+         eY var2 = (eY)var3.next();
+         var1.Add(new gg(this, var2));
+      }
+
+      return var1;
+   }
+
+   public bool a(gg var1) {
+      return gV.a(this.nj, var1.nl);
+   }
+
+   public string toString() {
+      return this.nj.getValueAsString("Name");
+   }
+   gf(ge var1, eY var2, gf var3) {
+      this(var1, var2);
+   }
+}
+
+}

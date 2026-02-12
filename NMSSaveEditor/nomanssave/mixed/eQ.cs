@@ -1,0 +1,134 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Xml;
+
+namespace NMSSaveEditor
+{
+
+public class eQ : ey {
+   private static string gc = "0123456789ABCDEFabcdef";
+   bool jY;
+   string name;
+   ex jZ;
+   bool special;
+   Integer ka;
+   string jM;
+   string kc;
+   int kd;
+   string description;
+   List ke;
+   eR km;
+
+   eQ(Element var1, bool var2) {
+      base(var1.getAttribute("id"));
+      this.jY = var2;
+      this.name = var1.getAttribute("name");
+
+      try {
+         if (var2) {
+            this.jZ = ex.valueOf("PROC_" + var1.getAttribute("category"));
+         } else {
+            this.jZ = ex.valueOf(var1.getAttribute("category"));
+         }
+      } catch (ArgumentException var10) {
+         throw new Exception("Error in tech: " + this.id, var10);
+      }
+
+      this.special = var1.hasAttribute("special") ? Boolean.valueOf(var1.getAttribute("special")) : false;
+      this.ka = var1.hasAttribute("chargeable") ? new Integer(var1.getAttribute("chargeable")) : null;
+      this.jM = var1.getAttribute("subtitle");
+      this.kc = var1.hasAttribute("icon") ? var1.getAttribute("icon") : null;
+      if (var1.hasAttribute("multiplier")) {
+         this.kd = int.Parse(var1.getAttribute("multiplier"));
+      } else {
+         this.kd = 0;
+      }
+
+      string var3 = null;
+      List<object> var4 = new List<object>();
+      eR var5 = null;
+      XmlNodeList var6 = var1.getChildNodes();
+
+      for(int var9 = 0; var9 < var6.getLength(); ++var9) {
+         Node var7 = var6.item(var9);
+         if (var7 is Element) {
+            Element var8 = (Element)var7;
+            if (var8.getNodeName().equals("description")) {
+               var3 = a(var8);
+            } else if (var8.getNodeName().equals("requirement")) {
+               var4.Add(new ez(this, var8));
+            } else if (var8.getNodeName().equals("techbox")) {
+               var5 = new eR(this, var8);
+            }
+         }
+      }
+
+      this.description = var3;
+      this.ke = new List<object>(var4);
+      this.km = var5;
+   }
+
+   public eB ba() {
+      return eB.jN;
+   }
+
+   public bool bb() {
+      return this.jY;
+   }
+
+   public string getName() {
+      return this.name;
+   }
+
+   public ex bc() {
+      return this.jZ;
+   }
+
+   public bool bd() {
+      return !this.jY && this.jZ != ex.ja && this.jZ != ex.iZ;
+   }
+
+   public bool be() {
+      return !this.jY && this.special;
+   }
+
+   public Integer bf() {
+      return this.ka;
+   }
+
+   public string bg() {
+      return this.jM;
+   }
+
+   public bool bh() {
+      return false;
+   }
+
+   public string bi() {
+      return this.kc;
+   }
+
+   public int bj() {
+      return this.kd;
+   }
+
+   public string getDescription() {
+      return this.description;
+   }
+
+   public List bk() {
+      return this.ke;
+   }
+
+   public eR bv() {
+      return this.km;
+   }
+
+   public string toString() {
+      return this.name.length() == 0 ? this.id : this.name;
+   }
+}
+
+}

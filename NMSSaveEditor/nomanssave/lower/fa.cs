@@ -1,0 +1,29 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace NMSSaveEditor
+{
+public class fa {
+   eY kM = new eY();
+
+   public fa d(string var1, Object var2) {
+      if (var1 == null) {
+         throw new NullReferenceException();
+      } else if (!eY.bF().matcher(var1).matches()) {
+         throw new Exception("Invalid name: " + var1);
+      } else if (var2 != null && !fh.a(var2.GetType())) {
+         throw new Exception("Unsupported type: " + var2.GetType().getSimpleName());
+      } else {
+         this.kM.a(var1, var2);
+         return this;
+      }
+   }
+
+   public eY bH() {
+      return this.kM;
+   }
+}
+
+}

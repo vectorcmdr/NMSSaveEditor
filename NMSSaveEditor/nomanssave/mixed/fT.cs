@@ -1,0 +1,320 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Text.RegularExpressions;
+
+namespace NMSSaveEditor
+{
+
+public class fT : fq {
+   private static readonly byte[] lA = "HGSAVEV2\u0000".GetBytes();
+   private static Pattern lV = Pattern.compile("Slot(\\d+)((Auto)|(Manual))");
+   private static Pattern lW = Pattern.compile("wgsbackup(\\d*)\\.\\d*\\.zip");
+   static string mC = "containers.index";
+   private File lX;
+   private fR lE;
+   private fU mD;
+   private fY[] mE;
+   private int header;
+   private int lL;
+   private string name;
+   private int lM;
+   private int lR;
+   private int lS;
+   private string mF;
+   private int mG;
+   private int mH;
+   private List mI;
+   private static Pattern mJ = Pattern.compile("\"((?:<h0)|(?:CommonStateData))\":\\{\"((?:Pk4)|(?:SaveName))\":\"([^\"]+)\"");
+   private static int mK = 1;
+   private static int mL = 2;
+   private static int mM = 3;
+
+   fT(File var1, fR var2) {
+      this.lX = var1.isDirectory() ? var1 : var1.getParentFile();
+      this.lE = var2;
+      this.cr();
+
+      try {
+         this.mD = new fU(this);
+      } catch (FileNotFoundException var7) {
+      } catch (IOException var8) {
+         hc.a("Cannot read account data", var8);
+      }
+
+      this.mE = new fY[30];
+
+      for(int var3 = 0; var3 < this.mE.Length; ++var3) {
+         try {
+            this.mE[var3] = new fY(this, var3);
+         } catch (FileNotFoundException var5) {
+         } catch (IOException var6) {
+            hc.a("Cannot read file data", var6);
+         }
+      }
+
+      fl.a(this, this.lX);
+   }
+
+   protected void finalize() {
+      fl.b(this);
+   }
+
+   public void X(string var1) {
+      var1.equals("containers.index");
+   }
+
+   public File bS() {
+      return this.lX;
+   }
+
+   private void cr() {
+      hc.info("Reading Container Index");
+      FileStream var1 = new FileStream(new File(this.lX, "containers.index"));
+
+      try {
+         this.header = hk.readInt(var1);
+         hc.debug("  header: " + this.header);
+         int var2 = hk.readInt(var1);
+         hc.debug("  count: " + var2);
+         this.lL = hk.readInt(var1);
+         if (this.lL != 0) {
+            hc.debug("  unknown1: " + this.lL);
+         }
+
+         this.name = gc.c(var1);
+         hc.debug("  name: " + this.name);
+         this.lM = hk.readInt(var1);
+         if (this.lM != 0) {
+            hc.debug("  unknown2: " + this.lM);
+         }
+
+         this.lR = hk.readInt(var1);
+         if (this.lR != 0) {
+            hc.debug("  unknown3: " + this.lR);
+         }
+
+         this.lS = hk.readInt(var1);
+         if (this.lS != 0) {
+            hc.debug("  unknown4: " + this.lS);
+         }
+
+         this.mF = gc.c(var1);
+         hc.debug("  appid: " + this.mF);
+         this.mG = hk.readInt(var1);
+         if (this.mG != 0) {
+            hc.debug("  unknown5: " + this.mG);
+         }
+
+         this.mH = hk.readInt(var1);
+         if (this.mH != 0) {
+            hc.debug("  unknown6: " + this.mH);
+         }
+
+         this.mI = new List<object>();
+
+         for(int var3 = 0; var3 < var2; ++var3) {
+            this.mI.Add(new fW(this, var1));
+         }
+
+         if (var1.read() >= 0) {
+            throw new IOException("Invalid footer");
+         }
+      } finally {
+         var1.close();
+      }
+
+   }
+
+   private void cs() {
+      FileStream var1 = new FileStream(new File(this.lX, "containers.index"));
+
+      try {
+         hk.a(var1, this.header);
+         hk.a(var1, this.mI.Count);
+         hk.a(var1, this.lL);
+         gc.b(var1, this.name);
+         hk.a(var1, this.lM);
+         hk.a(var1, this.lR);
+         hk.a(var1, this.lS);
+         gc.b(var1, this.mF);
+         hk.a(var1, this.mG);
+         hk.a(var1, this.mH);
+         IEnumerator var3 = this.mI.iterator();
+
+         while(var3.hasNext()) {
+            fW var2 = (fW)var3.next();
+            var2.write(var1);
+         }
+      } finally {
+         var1.close();
+      }
+
+   }
+
+   private fW Z(string var1) {
+      IEnumerator var3 = this.mI.iterator();
+
+      while(var3.hasNext()) {
+         fW var2 = (fW)var3.next();
+         if (var2.name.equals(var1)) {
+            return var2;
+         }
+      }
+
+      throw new FileNotFoundException(var1);
+   }
+
+   private string ct() {
+      bool var1;
+      File var2;
+      string var3;
+      do {
+         var1 = true;
+         var3 = gc.cA();
+
+         fW var4;
+         for(IEnumerator var5 = this.mI.iterator(); var5.hasNext(); var1 &= var4.mU.equals(var3)) {
+            var4 = (fW)var5.next();
+         }
+
+         var2 = new File(this.lX, var3);
+         var1 &= var2.exists();
+      } while(!var1);
+
+      if (!var2.mkdir()) {
+         throw new FileNotFoundException(var3);
+      } else {
+         return var3;
+      }
+   }
+
+   public fr bT() {
+      return this.mD;
+   }
+
+   public ft[] bU() {
+      ft[] var1 = new ft[15];
+
+      for(int var2 = 0; var2 < 15; ++var2) {
+         var1[var2] = new fZ(this, var2);
+      }
+
+      return var1;
+   }
+
+   public int W(string var1) {
+      Matcher var2 = lV.matcher(var1);
+      return !var2.matches() ? -1 : int.Parse(var2.group(1));
+   }
+
+   private static int an(int var0) {
+      return 2147418112 & var0 | (3584 & var0) >> 9;
+   }
+
+   private static bool h(File var0) {
+      File[] var1 = var0.listFiles();
+      if (var1 != null) {
+         File[] var5 = var1;
+         int var4 = var1.Length;
+
+         for(int var3 = 0; var3 < var4; ++var3) {
+            File var2 = var5[var3];
+            h(var2);
+         }
+      }
+
+      return var0.delete();
+   }
+
+   private static Stream a(Stream var0, int var1) {
+      try {
+         bool var2 = true;
+         if (!((Stream)var0).markSupported()) {
+            var0 = new BufferedInputStream((Stream)var0);
+         }
+
+         ((Stream)var0).mark(lA.Length);
+         byte[] var3 = new byte[lA.Length];
+         hk.readFully((Stream)var0, var3);
+
+         for(int var4 = 0; var4 < lA.Length; ++var4) {
+            if (var3[var4] != lA[var4]) {
+               var2 = false;
+               break;
+            }
+         }
+
+         if (var2) {
+            return new hm((Stream)var0);
+         } else {
+            ((Stream)var0).reset();
+            byte[] var7 = new byte[16];
+            ((Stream)var0).mark(var7.Length);
+            hk.readFully((Stream)var0, var7);
+            if ((255 & var7[0]) == 229 && (255 & var7[1]) == 161 && (255 & var7[2]) == 237 && (255 & var7[3]) == 254) {
+               return new gX((Stream)var0, var7);
+            } else {
+               ((Stream)var0).reset();
+               return new ha((Stream)var0, var1);
+            }
+         }
+      } catch (IOException var6) {
+         try {
+            ((Stream)var0).close();
+         } catch (IOException var5) {
+         }
+
+         throw var6;
+      }
+   }
+   static string a(fT var0) {
+      return var0.ct();
+   }
+   static fY[] b(fT var0) {
+      return var0.mE;
+   }
+   static Pattern cu() {
+      return lW;
+   }
+   static Pattern cl() {
+      return mJ;
+   }
+   static int ao(int var0) {
+      return an(var0);
+   }
+   static List c(fT var0) {
+      return var0.mI;
+   }
+   static File d(fT var0) {
+      return var0.lX;
+   }
+   static bool i(File var0) {
+      return h(var0);
+   }
+   static fW a(fT var0, string var1) {
+      return var0.Z(var1);
+   }
+   static Stream b(Stream var0, int var1) {
+      return a(var0, var1);
+   }
+   static int cv() {
+      return mM;
+   }
+   static int cw() {
+      return mL;
+   }
+   static int cx() {
+      return mK;
+   }
+   static byte[] cy() {
+      return lA;
+   }
+   static void e(fT var0) {
+      var0.cs();
+   }
+}
+
+}

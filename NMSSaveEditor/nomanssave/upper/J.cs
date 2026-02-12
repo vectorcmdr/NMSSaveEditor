@@ -1,0 +1,55 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace NMSSaveEditor
+{
+
+class J : object {
+   gh bs;
+   I bt;
+
+   J(I var1) {
+      this.bt = var1;
+      this.bs = null;
+   }
+
+   public int getSize() {
+      return I.a(this.bt) == null ? 0 : I.a(this.bt).cD().Count;
+   }
+
+   public gh o(int var1) {
+      return I.a(this.bt) == null ? null : (gh)I.a(this.bt).cD().get(var1);
+   }
+
+   public void addListDataListener(EventHandler var1) {
+   }
+
+   public void removeListDataListener(EventHandler var1) {
+   }
+
+   public void setSelectedItem(Object var1) {
+      this.bs = (gh)var1;
+      if (this.bs == null) {
+         I.b(this.bt).setText("");
+         I.c(this.bt).setText("");
+         I.c(this.bt).setEnabled(false);
+      } else {
+         gy var2 = this.bs.cJ();
+         I.b(this.bt).setText(var2 == null ? "" : var2.ToString());
+         I.c(this.bt).setText(this.bs.cK());
+         I.c(this.bt).setEnabled(true);
+      }
+
+   }
+
+   public Object getSelectedItem() {
+      return this.bs;
+   }
+   public Object getElementAt(int var1) {
+      return this.o(var1);
+   }
+}
+
+}

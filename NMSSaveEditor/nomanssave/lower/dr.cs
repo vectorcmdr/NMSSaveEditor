@@ -1,0 +1,27 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+
+namespace NMSSaveEditor
+{
+
+class dr : EventHandler {
+   dj hl;
+   private Application bv;
+
+   dr(dj var1, Application var2) {
+      this.hl = var1;
+      this.bv = var2;
+   }
+
+   public void actionPerformed(EventArgs var1) {
+      int var2 = dj.j(this.hl).getSelectedIndex();
+      if (var2 >= 0 && var2 < dj.a(this.hl).Length) {
+         this.bv.a(dj.a(this.hl)[var2]);
+      }
+   }
+}
+
+}

@@ -1,0 +1,74 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+
+namespace NMSSaveEditor
+{
+
+public class dz : Form {
+   private ListBox hr;
+   private ft[] hs;
+   private int gU;
+   private static dz ht = null;
+
+   private dz(Frame var1) {
+      base(var1);
+      this.setSize(300, 400);
+      this.setResizable(false);
+      this.setModalExclusionType(ModalExclusionType.APPLICATION_EXCLUDE);
+      this.setTitle("Save File As");
+      this.setModal(true);
+      Panel var2 = new Panel();
+      this.setContentPane(var2);
+      var2.setLayout(new TableLayoutPanel(0, 0));
+      Panel var3 = new Panel();
+      this.hr = new ListBox();
+      this.hr.setSelectionMode(0);
+      this.hr.setModel(new dA(this));
+      var3.setViewportView(this.hr);
+      var2.Add(var3);
+      Panel var4 = new Panel();
+      var4.setLayout(new FlowLayoutPanel(2));
+      var2.Add(var4, "South");
+      Button var5 = new Button("Replace/Save");
+      var5.addActionListener(new dB(this));
+      var4.Add(var5);
+      this.getRootPane().setDefaultButton(var5);
+      Button var6 = new Button("Cancel");
+      var6.addActionListener(new dC(this));
+      var4.Add(var6);
+      this.getRootPane().registerKeyboardAction(new dD(this), Keys.getKeyStroke(27, 0), 2);
+   }
+
+   private int a(ft[] var1, int var2) {
+      this.hs = var1;
+      this.hr.updateUI();
+      this.hr.setSelectedIndex(var2);
+      this.gU = -1;
+      this.setLocationRelativeTo(this.getParent());
+      this.setVisible(true);
+      return this.gU;
+   }
+
+   public static int a(Container var0, ft[] var1, int var2) {
+      if (ht == null) {
+         Frame var3 = MessageBox.getFrameForComponent(var0);
+         ht = new dz(var3);
+      }
+
+      return ht.a(var1, var2);
+   }
+   static ft[] a(dz var0) {
+      return var0.hs;
+   }
+   static ListBox b(dz var0) {
+      return var0.hr;
+   }
+   static void a(dz var0, int var1) {
+      var0.gU = var1;
+   }
+}
+
+}
