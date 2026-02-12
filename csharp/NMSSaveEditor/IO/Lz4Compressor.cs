@@ -17,8 +17,12 @@ public static class Lz4Compressor
     private const int RunBits = 4;
     private const int RunMask = (1 << RunBits) - 1;
 
-    public static int MaxCompressedLength(int inputLength) =>
-        inputLength + (inputLength / 255) + 16;
+    public static int MaxCompressedLength(int inputLength)
+    {
+        if (inputLength < 0 || inputLength > MaxInputSize)
+            throw new ArgumentOutOfRangeException(nameof(inputLength));
+        return inputLength + (inputLength / 255) + 16;
+    }
 
     public static int Compress(byte[] source, int sourceOffset, int sourceLength,
                                 byte[] dest, int destOffset, int maxDestLength)

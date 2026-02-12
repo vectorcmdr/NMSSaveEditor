@@ -138,6 +138,10 @@ public class SaveFileManager
                                  (data[offset + 10] << 16) | (data[offset + 11] << 24);
             offset += 16;
 
+            if (compressedLen < 0 || uncompressedLen < 0)
+                throw new IOException("Corrupt save file: negative length values");
+            if (compressedLen > 256 * 1024 * 1024 || uncompressedLen > 256 * 1024 * 1024)
+                throw new IOException("Corrupt save file: block size exceeds 256MB limit");
             if (offset + compressedLen > data.Length)
                 throw new IOException("Corrupt save file: compressed data exceeds file length");
 

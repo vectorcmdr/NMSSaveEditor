@@ -6,6 +6,7 @@ namespace NMSSaveEditor.IO;
 /// </summary>
 public class Lz4DecompressorStream : Stream
 {
+    private const int MaxDecompressedSize = 256 * 1024 * 1024; // 256MB safety limit
     private readonly Stream _inner;
     private readonly bool _dynamicSize;
     private byte[] _buffer;
@@ -23,6 +24,8 @@ public class Lz4DecompressorStream : Stream
         }
         else
         {
+            if (uncompressedSize > MaxDecompressedSize)
+                throw new IOException($"Decompressed size {uncompressedSize} exceeds maximum allowed {MaxDecompressedSize}");
             _dynamicSize = false;
             _buffer = new byte[uncompressedSize];
         }
@@ -36,10 +39,14 @@ public class Lz4DecompressorStream : Stream
         if (_writePos + additional <= _buffer.Length) return;
         if (!_dynamicSize) throw new IOException("Buffer exceeded");
 
-        int newSize = _buffer.Length;
-        do { newSize += 1048576; }
-        while (_writePos + additional > newSize);
+        long newSizeL = _buffer.Length;
+        do { newSizeL += 1048576; }
+        while (_writePos + additional > newSizeL);
 
+        if (newSizeL > MaxDecompressedSize)
+            throw new IOException($"Decompressed data exceeds maximum allowed size of {MaxDecompressedSize} bytes");
+
+        int newSize = (int)newSizeL;
         var newBuffer = new byte[newSize];
         Buffer.BlockCopy(_buffer, 0, newBuffer, 0, _writePos);
         _buffer = newBuffer;
