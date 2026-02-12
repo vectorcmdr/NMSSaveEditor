@@ -268,11 +268,14 @@ public static class ContextMenuStripExtensions2 {
 public static class CheckBoxExtensions2 {
     public static void AddActionListener(this CheckBox cb, object listener) { cb.CheckedChanged += (s, e) => { }; }
     public static void SetSelected(this CheckBox cb, bool selected) { cb.Checked = selected; }
+    public static void setSelected(this CheckBox cb, bool selected) { cb.Checked = selected; }
     public static bool IsSelected(this CheckBox cb) { return cb.Checked; }
+    public static bool isSelected(this CheckBox cb) { return cb.Checked; }
     public static void SetText(this CheckBox cb, string text) { cb.Text = text; }
     public static string GetText(this CheckBox cb) { return cb.Text; }
     public static void SetEnabled(this CheckBox cb, bool enabled) { cb.Enabled = enabled; }
     public static void SetToolTipText(this CheckBox cb, string text) { }
+    public static void setEnabled(this CheckBox cb, bool enabled) { cb.Enabled = enabled; }
 }
 
 public static class TabControlExtensions2 {
@@ -283,9 +286,15 @@ public static class TabControlExtensions2 {
     public static void SetTitleAt(this TabControl tc, int index, string title) { if (index >= 0 && index < tc.TabCount) tc.TabPages[index].Text = title; }
     public static string GetTitleAt(this TabControl tc, int index) { return index >= 0 && index < tc.TabCount ? tc.TabPages[index].Text : ""; }
     public static void SetEnabledAt(this TabControl tc, int index, bool enabled) { }
-    public static void InsertTab(this TabControl tc, string title, object icon, Control component, string tip) { var tp = new TabPage(title); tp.Controls.Add(component); tc.TabPages.Add(tp); }
+    public static void InsertTab(this TabControl tc, string title, object icon, Control component, string tip) { var tp = new TabPage(title); if (component != null) tp.Controls.Add(component); tc.TabPages.Add(tp); }
     public static void RemoveAll(this TabControl tc) { tc.TabPages.Clear(); }
     public static void SetComponentAt(this TabControl tc, int index, Control c) { if (index >= 0 && index < tc.TabCount) { tc.TabPages[index].Controls.Clear(); tc.TabPages[index].Controls.Add(c); } }
+    public static void AddTab(this TabControl tc, string title, Control component) { var tp = new TabPage(title); if (component != null) { component.Dock = DockStyle.Fill; tp.Controls.Add(component); } tc.TabPages.Add(tp); }
+    public static void AddTab(this TabControl tc, string title, object icon, Control component) { tc.AddTab(title, component); }
+    public static void addTab(this TabControl tc, string title, Control component) { tc.AddTab(title, component); }
+    public static void addTab(this TabControl tc, string title, object icon, Control component) { tc.AddTab(title, component); }
+    public static void setTabComponentAt(this TabControl tc, int index, Control c) { }
+    public static int indexOfTab(this TabControl tc, string title) { for (int i = 0; i < tc.TabCount; i++) { if (tc.TabPages[i].Text == title) return i; } return -1; }
 }
 
 public static class TreeViewExtensions2 {
@@ -355,6 +364,11 @@ public static class DataGridViewExtensions2 {
     public static void ScrollRectToVisible(this DataGridView dgv, System.Drawing.Rectangle rect) { }
     public static int GetEditingRow(this DataGridView dgv) { return dgv.CurrentCell?.RowIndex ?? -1; }
     public static void SetDefaultEditor(this DataGridView dgv, Type type, object editor) { }
+    public static DataGridViewColumnCollection GetColumnModel(this DataGridView dgv) { return dgv.Columns; }
+    public static object getColumnModel(this DataGridView dgv) { return dgv.Columns; }
+    public static void SetGridColor(this DataGridView dgv, Color c) { dgv.GridColor = c; }
+    public static void SetFont(this DataGridView dgv, Font f) { dgv.Font = f; }
+    public static void AddListSelectionListener(this DataGridView dgv, object listener) { dgv.SelectionChanged += (s, e) => { }; }
 }
 
 public static class FormExtensions2 {
@@ -558,6 +572,38 @@ public static class JavaCompat {
     public static void sleep(long millis) { Thread.Sleep((int)millis); }
     public static string getenv(string key) { return Environment.GetEnvironmentVariable(key); }
     public static string setProperty(string key, string value) { Environment.SetEnvironmentVariable(key, value); return value; }
+    
+    // Additional methods used throughout the codebase
+    public static void InvokeLater(Action action) { action?.Invoke(); }
+    public static void InvokeLater(object runnable) { }
+    public static int ShowOptionDialog(Control parent, object message, string title, int optionType, int messageType, object icon, object[] options, object initialValue) {
+        return (int)MessageBox.Show(message?.ToString() ?? "", title, MessageBoxButtons.YesNoCancel);
+    }
+    public static int ShowConfirmDialog(Control parent, object message, string title, int optionType) {
+        var result = MessageBox.Show(message?.ToString() ?? "", title, MessageBoxButtons.YesNo);
+        return result == DialogResult.Yes ? 0 : 1;
+    }
+    public static void ShowMessageDialog(Control parent, object message) {
+        MessageBox.Show(message?.ToString() ?? "");
+    }
+    public static void ShowMessageDialog(Control parent, object message, string title, int type) {
+        MessageBox.Show(message?.ToString() ?? "", title);
+    }
+    public static Stream GetResourceStream(string path) {
+        var asm = System.Reflection.Assembly.GetExecutingAssembly();
+        return asm.GetManifestResourceStream(path);
+    }
+    public static System.Xml.XmlDocument ParseXml(Stream stream) {
+        var doc = new System.Xml.XmlDocument();
+        doc.Load(stream);
+        return doc;
+    }
+    public static System.Xml.XmlDocument ParseXml(string xml) {
+        var doc = new System.Xml.XmlDocument();
+        doc.LoadXml(xml);
+        return doc;
+    }
+    public static Level LevelInfo = Level.INFO;
 }
 
 

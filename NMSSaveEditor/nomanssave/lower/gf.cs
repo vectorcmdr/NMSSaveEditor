@@ -33,6 +33,7 @@ public class gf {
    public string getName() {
       return this.nj.getValueAsString("Name");
    }
+   public string Name => getName();
 
    public void setName(string var1) {
       this.nj.b("Name", (Object)var1);

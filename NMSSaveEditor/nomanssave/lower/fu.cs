@@ -29,7 +29,7 @@ public class fu : fq {
       }
    }
     public fu(FileInfo var1, fR var2) {
-      this.lD = var1.IsFile() ? var1 : new FileInfo(var1, "memory.dat");
+      this.lD = var1.isFile() ? var1 : new FileInfo(var1, "memory.dat");
       this.lE = var2;
       Console.WriteLine(this.lD.FullName);
       FileStream var3 = new FileStream(this.lD);

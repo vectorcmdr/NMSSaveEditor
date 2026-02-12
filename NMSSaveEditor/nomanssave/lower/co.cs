@@ -24,7 +24,7 @@ public class co : FileFilter {
    }
 
    public bool accept(FileInfo var1) {
-      if (var1.IsDirectory()) {
+      if (var1.isDirectory()) {
          return !var1.isHidden();
       } else {
          string var2 = var1.Name;

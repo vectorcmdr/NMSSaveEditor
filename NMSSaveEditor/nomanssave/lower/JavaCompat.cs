@@ -755,6 +755,7 @@ public class XmlNode {
     public XmlNode() {}
     public XmlNode(System.Xml.XmlNode inner) { Inner = inner; }
     public string getNodeName() { return Inner?.Name ?? ""; }
+    public string Name => getNodeName();
     public string getTextContent() { return Inner?.InnerText ?? ""; }
     public void setTextContent(string text) { if (Inner != null) Inner.InnerText = text; }
     public XmlNodeList getChildNodes() { return new XmlNodeList(Inner?.ChildNodes); }
@@ -769,7 +770,9 @@ public class XmlNodeList {
     public XmlNodeList(System.Xml.XmlNodeList list) { inner = list; }
     public int getLength() { return inner?.Count ?? 0; }
     public int Length => getLength();
+    public int Count => getLength();
     public XmlNode item(int index) { return inner != null ? new XmlNode(inner[index]) : null; }
+    public XmlNode this[int index] { get { return item(index); } }
 }
 
 public class XmlDocument {
@@ -778,6 +781,7 @@ public class XmlDocument {
     public void parse(string xml) { doc.LoadXml(xml); }
     public void parse(System.IO.Stream stream) { doc.Load(stream); }
     public XmlElement getDocumentElement() { return new XmlElement(doc.DocumentElement); }
+    public XmlElement DocumentElement => getDocumentElement();
     public XmlElement createElement(string name) { return new XmlElement(doc.CreateElement(name)); }
     public System.Xml.XmlDocument InnerDocument => doc;
 }

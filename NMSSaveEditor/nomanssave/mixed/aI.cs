@@ -40,5 +40,7 @@ public sealed class aI {
    public string toString() {
       return this.cT;
    }
+
+   public static aI[] Values() { return new aI[] { cN, cO, cP, cQ, cR, cS, valueOf }; }
 }
 }

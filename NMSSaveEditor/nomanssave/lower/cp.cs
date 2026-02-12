@@ -34,7 +34,7 @@ public class cp  {
       this.setDialogTitle("Choose Companion Export File");
       UIManager.addPropertyChangeListener((var1) => {
          if ("lookAndFeel".Equals(var1.getPropertyName())) {
-            SwingUtilities.updateComponentTreeUI(this);
+            ;
          }
        });
    }

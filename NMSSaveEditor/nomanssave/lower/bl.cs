@@ -115,7 +115,7 @@ public class bl : Panel, eo {
       this.dT.a(this.eg);
       this.dT.Y();
       Panel var7 = new Panel();
-      var7.SetLayout(new FormLayout(new ColumnSpec[]{FormFactory.GLUE_COLSPEC, FormFactory.DEFAULT_COLSPEC, FormFactory.GLUE_COLSPEC}, new RowSpec[]{FormFactory.DEFAULT_ROWSPEC, FormFactory.DEFAULT_ROWSPEC}));
+      var7.SetLayout(new FormLayout(new ColumnSpec[]{FormFactory.GLUE_COLSPEC, "default", FormFactory.GLUE_COLSPEC}, new RowSpec[]{"default", "default"}));
       this.el = new Label("");
       var7.Add(this.el, "2,1");
       this.em = new Button("Repair");

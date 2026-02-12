@@ -131,6 +131,7 @@ public class ey {
    public virtual bool bb() { return false; }
 
    public virtual string getName() { return ""; }
+   public string Name => getName();
 
    public virtual ex bc() { return null; }
 

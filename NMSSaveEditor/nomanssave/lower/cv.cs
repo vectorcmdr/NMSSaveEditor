@@ -33,7 +33,7 @@ public class cv  {
       this.setDialogTitle("Choose Weapon Export File");
       UIManager.addPropertyChangeListener((var1) => {
          if ("lookAndFeel".Equals(var1.getPropertyName())) {
-            SwingUtilities.updateComponentTreeUI(this);
+            ;
          }
        });
    }

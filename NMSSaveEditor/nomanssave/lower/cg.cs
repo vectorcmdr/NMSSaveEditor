@@ -38,7 +38,7 @@ public class cg : Form {
       this.SetTitle("Item Details");
       this.SetModal(true);
       Panel var2 = new Panel();
-      var2.SetLayout(new FormLayout(new ColumnSpec[]{FormFactory.LABEL_COMPONENT_GAP_COLSPEC, ColumnSpec.decode("100px"), FormFactory.LABEL_COMPONENT_GAP_COLSPEC, ColumnSpec.decode("default:grow"), FormFactory.LABEL_COMPONENT_GAP_COLSPEC, ColumnSpec.decode("100px"), FormFactory.LABEL_COMPONENT_GAP_COLSPEC}, new RowSpec[]{FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, RowSpec.decode("64px"), FormFactory.LINE_GAP_ROWSPEC, RowSpec.decode("default:grow"), FormFactory.LINE_GAP_ROWSPEC}));
+      var2.SetLayout(new FormLayout(new ColumnSpec[]{FormFactory.LABEL_COMPONENT_GAP_COLSPEC, ColumnSpec.decode("100px"), FormFactory.LABEL_COMPONENT_GAP_COLSPEC, ColumnSpec.decode("default:grow"), FormFactory.LABEL_COMPONENT_GAP_COLSPEC, ColumnSpec.decode("100px"), FormFactory.LABEL_COMPONENT_GAP_COLSPEC}, new RowSpec[]{FormFactory.LINE_GAP_ROWSPEC, "default", FormFactory.LINE_GAP_ROWSPEC, "default", FormFactory.LINE_GAP_ROWSPEC, "default", FormFactory.LINE_GAP_ROWSPEC, "default", FormFactory.LINE_GAP_ROWSPEC, "default", FormFactory.LINE_GAP_ROWSPEC, "default", FormFactory.LINE_GAP_ROWSPEC, RowSpec.decode("64px"), FormFactory.LINE_GAP_ROWSPEC, RowSpec.decode("default:grow"), FormFactory.LINE_GAP_ROWSPEC}));
       var2.Add(new Label("Type:"), "2, 2, left, center");
       this.fn = new TextBox();
       this.fn.setEditable(false);
@@ -55,7 +55,7 @@ public class cg : Form {
       var2.Add(this.fq, "4, 6, fill, default");
       var2.Add(new Label("ID:"), "2, 8, left, center");
       Panel var3 = new Panel();
-      var3.SetLayout(new FormLayout(new ColumnSpec[]{ColumnSpec.decode("default:grow"), FormFactory.DEFAULT_COLSPEC, ColumnSpec.decode("100px")}, new RowSpec[]{FormFactory.DEFAULT_ROWSPEC}));
+      var3.SetLayout(new FormLayout(new ColumnSpec[]{ColumnSpec.decode("default:grow"), "default", ColumnSpec.decode("100px")}, new RowSpec[]{"default"}));
       this.fs = new TextBox();
       this.fs.setEditable(false);
       var3.Add(this.fs, "1, 1");
@@ -68,7 +68,7 @@ public class cg : Form {
       this.fu = new Label("Quantity:");
       var2.Add(this.fu, "2, 10, left, center");
       var3 = new Panel();
-      var3.SetLayout(new FormLayout(new ColumnSpec[]{ColumnSpec.decode("100px"), FormFactory.DEFAULT_COLSPEC, ColumnSpec.decode("100px")}, new RowSpec[]{FormFactory.DEFAULT_ROWSPEC}));
+      var3.SetLayout(new FormLayout(new ColumnSpec[]{ColumnSpec.decode("100px"), "default", ColumnSpec.decode("100px")}, new RowSpec[]{"default"}));
       this.fv = new ci(this);
       this.fv.setEditable(false);
       var3.Add(this.fv, "1, 1");
@@ -102,7 +102,7 @@ public class cg : Form {
       this.fz.SetFont(this.fx.Font);
       var2.Add(this.fz, "4, 16, 3, 1, fill, fill");
       this.SetContentPane(var2);
-      this.GetRootPane().registerKeyboardAction(new cj(this), Keys.getKeyStroke(27, 0), 2);
+      this.GetRootPane().registerKeyboardAction(new cj(this), null, 2);
       this.AddWindowListener(new ck(this));
    }
 

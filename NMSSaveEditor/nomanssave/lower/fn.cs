@@ -96,5 +96,7 @@ public sealed class fn {
       string var3 = var0.getValueAsString("PlayerStateData.DifficultyState.Preset.DifficultyPresetType");
       return var3 != null ? S(var3) : null;
    }
+
+   public static fn[] Values() { return new fn[] { lm, ln, lo, lp, lq, lr, ls, lt, valueOf, S, T, i }; }
 }
 }

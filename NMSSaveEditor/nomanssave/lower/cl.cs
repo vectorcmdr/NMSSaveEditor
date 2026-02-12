@@ -34,7 +34,7 @@ public class cl  {
       this.setDialogTitle("Choose Backup File");
       UIManager.addPropertyChangeListener((var1) => {
          if ("lookAndFeel".Equals(var1.getPropertyName())) {
-            SwingUtilities.updateComponentTreeUI(this);
+            ;
          }
        });
    }

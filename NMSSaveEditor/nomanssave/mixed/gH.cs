@@ -183,6 +183,7 @@ public class gH {
    public string getName() {
       return this.rp.getValueAsString("Name");
    }
+   public string Name => getName();
 
    public void setName(string var1) {
       this.rp.b("Name", (Object)var1);

@@ -18,7 +18,7 @@ public class eD : eE {
       // base((eE)null);
       this.version = var2;
       List<object> var3 = new List<object>();
-      StreamReader var4 = new StreamReader(new StreamReader(var1));
+      StreamReader var4 = new StreamReader(new StreamReader(var1.FullName));
        string var5;
       try {
          while((var5 = var4.ReadLine()) != null) {

@@ -35,7 +35,7 @@ public class h : Form {
       this.SetContentPane(var2);
       var2.SetLayout(new BorderLayout(0, 0));
       Panel var3 = new Panel();
-      var3.SetLayout(new FormLayout(new ColumnSpec[]{FormFactory.LABEL_COMPONENT_GAP_COLSPEC, ColumnSpec.decode("100px"), FormFactory.LABEL_COMPONENT_GAP_COLSPEC, ColumnSpec.decode("280px"), FormFactory.LABEL_COMPONENT_GAP_COLSPEC}, new RowSpec[]{FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC}));
+      var3.SetLayout(new FormLayout(new ColumnSpec[]{FormFactory.LABEL_COMPONENT_GAP_COLSPEC, ColumnSpec.decode("100px"), FormFactory.LABEL_COMPONENT_GAP_COLSPEC, ColumnSpec.decode("280px"), FormFactory.LABEL_COMPONENT_GAP_COLSPEC}, new RowSpec[]{FormFactory.LINE_GAP_ROWSPEC, "default", FormFactory.LINE_GAP_ROWSPEC, "default", FormFactory.LINE_GAP_ROWSPEC, "default", FormFactory.LINE_GAP_ROWSPEC, "default", FormFactory.LINE_GAP_ROWSPEC}));
       Label var4 = new Label("Search:");
       var3.Add(var4, "2, 2, left, center");
       Panel var5 = new Panel();
@@ -73,7 +73,7 @@ public class h : Form {
       Button var11 = new Button("Cancel");
       var11.AddActionListener(new n(this));
       var9.Add(var11);
-      this.GetRootPane().registerKeyboardAction(new o(this), Keys.getKeyStroke(27, 0), 2);
+      this.GetRootPane().registerKeyboardAction(new o(this), null, 2);
       this.Pack();
    }
 

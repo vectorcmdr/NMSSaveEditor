@@ -21,7 +21,7 @@ public class el : FileView {
 
    public Image getIcon(FileInfo var1) {
       string var2;
-      if (var1.IsFile()) {
+      if (var1.isFile()) {
          var2 = var1.Name;
          if (var2.EndsWith(".hg") && !var2.StartsWith("mf_")) {
             return ej.@as();
@@ -35,7 +35,7 @@ public class el : FileView {
    }
 
    public string getName(FileInfo var1) {
-      if (var1.IsFile()) {
+      if (var1.isFile()) {
          return var1.Name;
       } else {
          string var2 = ej.a(this.@is, var1);

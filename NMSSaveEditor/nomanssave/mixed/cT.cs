@@ -41,7 +41,7 @@ public class cT  {
       this.setAccessory(var1);
       UIManager.addPropertyChangeListener((var1x) => {
          if ("lookAndFeel".Equals(var1x.getPropertyName())) {
-            SwingUtilities.updateComponentTreeUI(this);
+            ;
          }
        });
    }

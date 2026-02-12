@@ -50,6 +50,7 @@ public class gE {
    public string getName() {
       return this.bf.getValueAsString("Name");
    }
+   public string Name => getName();
 
    public void setName(string var1) {
       this.bf.b("Name", (Object)var1);

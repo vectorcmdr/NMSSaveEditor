@@ -69,9 +69,9 @@ public class cy : Form, TreeSelectionListener {
       this.SetContentPane(var5);
       this.AddWindowListener(new cE(this));
       cF var6 = new cF(this);
-      this.fV.getInputMap().Put(Keys.getKeyStroke(70, 2), "find");
+      this.fV.getInputMap().Put(null, "find");
       this.fV.getActionMap().Put("find", var6);
-      this.fX.getInputMap().Put(Keys.getKeyStroke(70, 2), "find");
+      this.fX.getInputMap().Put(null, "find");
       this.fX.getActionMap().Put("find", var6);
    }
 
@@ -105,7 +105,7 @@ public class cy : Form, TreeSelectionListener {
    public static string ay() {
       string var0;
       try {
-         var0 = (string)Toolkit.getDefaultToolkit().getSystemClipboard().getData(DataFormats.Text);
+         var0 = (string)Clipboard.GetDataObject().getData(DataFormats.Text);
       } catch (Exception var4) {
          hc.error("Could not retrieve clipboard contents", var4);
          return "";
@@ -176,7 +176,7 @@ public class cy : Form, TreeSelectionListener {
          }
       }
        StringSelection var8 = new StringSelection(var2.ToString());
-      Clipboard var6 = Toolkit.getDefaultToolkit().getSystemClipboard();
+      Clipboard var6 = Clipboard.GetDataObject();
       var6.setContents(var8, var1);
    }
 

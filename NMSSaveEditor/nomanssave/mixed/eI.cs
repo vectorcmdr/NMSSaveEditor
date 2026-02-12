@@ -64,6 +64,7 @@ public class eI {
    public string getName() {
       return this.name;
    }
+   public string Name => getName();
 
    public static int bq() {
       return ki.Count;

@@ -64,6 +64,7 @@ public class fM : fQ, fs {
    public string getName() {
       return this.mx.ck();
    }
+   public string Name => getName();
 
    public string getDescription() {
       return this.mx.getDescription();

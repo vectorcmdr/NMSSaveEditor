@@ -22,6 +22,7 @@ public class gw : gv {
    public string getName() {
       return this.oI.getValueAsString("PlayerWeaponName");
    }
+   public string Name => getName();
 
    public void setName(string var1) {
       this.oI.b("PlayerWeaponName", (Object)var1);

@@ -183,6 +183,7 @@ public class gt {
    public string getName() {
       return this.qt.getValueAsString("Name");
    }
+   public string Name => getName();
 
    public void setName(string var1) {
       if (var1 == null) {

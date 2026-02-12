@@ -136,7 +136,7 @@ public class aH {
          var21.printStackTrace();
          Environment.Exit(1);
       }
-       if (!var1.IsDirectory()) {
+       if (!var1.isDirectory()) {
          Console.WriteLine("Error: working directory error: " + var1.FullName);
          Environment.Exit(1);
       }

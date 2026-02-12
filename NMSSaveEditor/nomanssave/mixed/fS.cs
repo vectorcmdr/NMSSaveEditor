@@ -201,6 +201,7 @@ public class fS {
    public string getName() {
       return this.mh.Name;
    }
+   public string Name => getName();
 
    public long length() {
       return this.mh.Length;

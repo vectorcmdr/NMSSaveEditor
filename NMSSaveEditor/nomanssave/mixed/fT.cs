@@ -35,7 +35,7 @@ public class fT : fq {
    public static int mL = 2;
    public static int mM = 3;
     public fT(FileInfo var1, fR var2) {
-      this.lX = var1.IsDirectory() ? var1 : var1.Directory;
+      this.lX = var1.isDirectory() ? var1 : var1.Directory;
       this.lE = var2;
       this.cr();
        try {

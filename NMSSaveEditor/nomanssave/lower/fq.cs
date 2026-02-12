@@ -46,7 +46,7 @@ public interface fq {
          return null;
       } else {
          try {
-            if (var0.IsDirectory()) {
+            if (var0.isDirectory()) {
                if (var0.listFiles((var0x) => {
                   return var0x.Name.Equals("containers.index");
                }).Length > 0) {

@@ -31,7 +31,7 @@ public class cY : Form {
       var3.Add(new Label("Please select a base part to swap your base computer with."));
       var2.Add(var3, "North");
       Panel var4 = new Panel();
-      var4.SetLayout(new FormLayout(new ColumnSpec[]{FormFactory.LABEL_COMPONENT_GAP_COLSPEC, ColumnSpec.decode("100px"), FormFactory.LABEL_COMPONENT_GAP_COLSPEC, ColumnSpec.decode("250px"), FormFactory.LABEL_COMPONENT_GAP_COLSPEC}, new RowSpec[]{FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC}));
+      var4.SetLayout(new FormLayout(new ColumnSpec[]{FormFactory.LABEL_COMPONENT_GAP_COLSPEC, ColumnSpec.decode("100px"), FormFactory.LABEL_COMPONENT_GAP_COLSPEC, ColumnSpec.decode("250px"), FormFactory.LABEL_COMPONENT_GAP_COLSPEC}, new RowSpec[]{FormFactory.LINE_GAP_ROWSPEC, "default", FormFactory.LINE_GAP_ROWSPEC}));
       Label var5 = new Label("Base Part:");
       var4.Add(var5, "2, 2, left, center");
       this.gM = new ComboBox();
@@ -48,7 +48,7 @@ public class cY : Form {
       Button var8 = new Button("Cancel");
       var8.AddActionListener(new db(this));
       var6.Add(var8);
-      this.GetRootPane().registerKeyboardAction(new dc(this), Keys.getKeyStroke(27, 0), 2);
+      this.GetRootPane().registerKeyboardAction(new dc(this), null, 2);
       this.Pack();
    }
 

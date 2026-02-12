@@ -24,7 +24,7 @@ public class ek : FileFilter {
    }
 
    public bool accept(FileInfo var1) {
-      if (var1.IsDirectory()) {
+      if (var1.isDirectory()) {
          return true;
       } else {
          string var2 = var1.Name;

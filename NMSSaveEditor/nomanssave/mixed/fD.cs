@@ -12,6 +12,8 @@ namespace NMSSaveEditor
 {
 
 public class fD : fH, fs {
+   public string getName() { return ""; }
+   public string Name => getName();
    public int lO;
    public fn me;
    // $FF: synthetic field

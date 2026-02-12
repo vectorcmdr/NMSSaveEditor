@@ -41,5 +41,7 @@ public sealed class gG {
    public int dY() {
       return this.rn;
    }
+
+   public static gG[] Values() { return new gG[] { rg, rh, ri, rj, rk, rl, rm, valueOf }; }
 }
 }

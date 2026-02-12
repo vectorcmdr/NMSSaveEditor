@@ -24,7 +24,7 @@ public class cV : FileFilter {
    }
 
    public bool accept(FileInfo var1) {
-      if (var1.IsDirectory()) {
+      if (var1.isDirectory()) {
          return !var1.isHidden();
       } else {
          return var1.Name.EndsWith(".sh0");

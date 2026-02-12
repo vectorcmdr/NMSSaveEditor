@@ -44,7 +44,7 @@ public class dd : Form {
       Button var6 = new Button("Cancel");
       var6.AddActionListener(new dh(this));
       var4.Add(var6);
-      this.GetRootPane().registerKeyboardAction(new di(this), Keys.getKeyStroke(27, 0), 2);
+      this.GetRootPane().registerKeyboardAction(new di(this), null, 2);
    }
 
    public int a(List<object> var1, int var2) {

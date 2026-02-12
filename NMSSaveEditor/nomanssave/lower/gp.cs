@@ -46,6 +46,7 @@ public class gp {
    public string getName() {
       return this.oR.getValueAsString("CustomName");
    }
+   public string Name => getName();
 
    public void setName(string var1) {
       this.oR.b("CustomName", (Object)var1);

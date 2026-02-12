@@ -691,7 +691,7 @@ public class Application {
       if (var1 != null) {
          string var2;
          FileInfo var3;
-         if (var1.IsDirectory()) {
+         if (var1.isDirectory()) {
             var3 = var1;
             var2 = null;
          } else {
@@ -699,9 +699,9 @@ public class Application {
             var2 = var1.Name;
          }
           if (this.aF != null) {
-            if (this.aF.bS().IsDirectory() && !this.aF.bS().Equals(var3)) {
+            if (this.aF.bS().isDirectory() && !this.aF.bS().Equals(var3)) {
                this.aF = null;
-            } else if (this.aF.bS().IsFile() && !this.aF.bS().Equals(var1)) {
+            } else if (this.aF.bS().isFile() && !this.aF.bS().Equals(var1)) {
                this.aF = null;
             }
          }
@@ -1110,7 +1110,7 @@ public class Application {
    }
 
    public static void a(Form var0) {
-      SwingUtilities.updateComponentTreeUI(var0);
+      ;
       Form[] var4;
       int var3 = (var4 = var0.getOwnedWindows()).Length;
        for(int var2 = 0; var2 < var3; ++var2) {
@@ -1656,21 +1656,21 @@ public class Application {
       ToolStripMenuItem var6 = new ToolStripMenuItem("File");
       var5.Add(var6);
       ToolStripMenuItem var7 = new ToolStripMenuItem("Open File/Path");
-      var7.SetAccelerator(Keys.getKeyStroke(79, 2));
+      var7.SetAccelerator(null);
       var7.AddActionListener((var1x) => {
          this.k();
       });
       var6.Add(var7);
       this.Z = new ToolStripMenuItem("Reload File");
       this.Z.SetEnabled(false);
-      this.Z.SetAccelerator(Keys.getKeyStroke(82, 2));
+      this.Z.SetAccelerator(null);
       this.Z.AddActionListener((var1x) => {
          this.l();
       });
       var6.Add(this.Z);
       this.aa = new ToolStripMenuItem("Save File");
       this.aa.SetEnabled(false);
-      this.aa.SetAccelerator(Keys.getKeyStroke(83, 2));
+      this.aa.SetAccelerator(null);
       this.aa.AddActionListener((var1x) => {
          Component var2 = this.N.getFocusOwner();
          if (var2 is G) {

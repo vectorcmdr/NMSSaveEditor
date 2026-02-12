@@ -38,7 +38,7 @@ public class a : Form {
       }
        var2.setEditable(false);
       this.GetContentPane().Add(var2, "Center");
-      this.GetRootPane().registerKeyboardAction(new b(this), Keys.getKeyStroke(27, 0), 2);
+      this.GetRootPane().registerKeyboardAction(new b(this), null, 2);
       this.Pack();
    }
 

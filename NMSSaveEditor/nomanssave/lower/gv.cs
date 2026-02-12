@@ -142,6 +142,7 @@ public class gv {
    public string getName() {
       return this.qF.getValueAsString("Name");
    }
+   public string Name => getName();
 
    public void setName(string var1) {
       this.qF.b("Name", (Object)var1);

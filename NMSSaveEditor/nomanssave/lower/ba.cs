@@ -41,11 +41,11 @@ public class ba : Panel {
    public void a(string var1, Image var2) {
       int var3;
       if (this.dA.RowCount == 1) {
-         this.dA.appendRow(FormFactory.DEFAULT_ROWSPEC);
+         this.dA.appendRow("default");
          this.dA.appendRow(FormFactory.LINE_GAP_ROWSPEC);
       } else {
          var3 = this.dA.RowCount;
-         this.dA.insertRow(var3, FormFactory.DEFAULT_ROWSPEC);
+         this.dA.insertRow(var3, "default");
          this.dA.insertRow(var3, RowSpec.decode("bottom:25px"));
       }
        var3 = this.dA.ColumnCount - 2;
@@ -65,11 +65,11 @@ public class ba : Panel {
    public void addText(string var1) {
       int var2;
       if (this.dA.RowCount == 1) {
-         this.dA.appendRow(FormFactory.DEFAULT_ROWSPEC);
+         this.dA.appendRow("default");
          this.dA.appendRow(FormFactory.LINE_GAP_ROWSPEC);
       } else {
          var2 = this.dA.RowCount;
-         this.dA.insertRow(var2, FormFactory.DEFAULT_ROWSPEC);
+         this.dA.insertRow(var2, "default");
          this.dA.insertRow(var2, RowSpec.decode("bottom:25px"));
       }
        var2 = this.dA.ColumnCount - 2;
@@ -96,7 +96,7 @@ public class ba : Panel {
 
    public void a(string var1, bool var2, JComponent var3, int var4) {
       var4 = var4 * 2 - 1;
-      this.dA.appendRow(FormFactory.DEFAULT_ROWSPEC);
+      this.dA.appendRow("default");
       this.dA.appendRow(FormFactory.LINE_GAP_ROWSPEC);
       int var5 = this.dA.RowCount - 1;
       if (var1 != null) {
@@ -125,7 +125,7 @@ public class ba : Panel {
    }
 
    public void a(JComponent var1) {
-      this.dA.appendRow(FormFactory.DEFAULT_ROWSPEC);
+      this.dA.appendRow("default");
       this.dA.appendRow(FormFactory.LINE_GAP_ROWSPEC);
       int var2 = this.dA.ColumnCount - 2;
       int var3 = this.dA.RowCount - 1;

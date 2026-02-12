@@ -84,6 +84,7 @@ public class gm {
    public string getName() {
       return this.oI.getValueAsString("PlayerFreighterName");
    }
+   public string Name => getName();
 
    public void setName(string var1) {
       this.oI.b("PlayerFreighterName", (Object)var1);

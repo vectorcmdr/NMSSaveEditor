@@ -56,7 +56,7 @@ public abstract class fX {
       this.mN = var1;
       this.mO = fT.a(var1, var2);
       FileInfo var3 = new FileInfo(fT.d(var1), this.mO.mU);
-      if (!var3.IsDirectory()) {
+      if (!var3.isDirectory()) {
          throw new FileNotFoundException(this.mO.mU);
       } else {
          this.mX = new FileInfo(var3, "container." + this.mO.mT);

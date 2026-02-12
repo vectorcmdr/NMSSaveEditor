@@ -150,6 +150,7 @@ public class gj {
    public string getName() {
       return this.bf.getValueAsString("CustomName");
    }
+   public string Name => getName();
 
    public void setName(string var1) {
       this.bf.b("CustomName", (Object)var1);

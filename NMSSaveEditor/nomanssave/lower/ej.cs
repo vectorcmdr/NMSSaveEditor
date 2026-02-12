@@ -27,7 +27,7 @@ public class ej  {
       this.setDialogTitle("Choose Save Path");
       UIManager.addPropertyChangeListener((var1) => {
          if ("lookAndFeel".Equals(var1.getPropertyName())) {
-            SwingUtilities.updateComponentTreeUI(this);
+            ;
          }
        });
    }
@@ -47,7 +47,7 @@ public class ej  {
          ir = new ej();
       }
        if (var0 != null && var0.Exists) {
-         if (var0.IsFile()) {
+         if (var0.isFile()) {
             var0 = var0.Directory;
          }
           ir.setCurrentDirectory(var0);
@@ -55,9 +55,9 @@ public class ej  {
          FileInfo var1 = new FileInfo(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile));
          FileInfo var2 = new FileInfo(var1, "AppData\\Roaming\\HelloGames\\NMS");
          FileInfo var3 = new FileInfo(var1, "AppData\\Local\\Packages\\HelloGames.NoMansSky_bs190hzg1sesy\\SystemAppData");
-         if (var2.IsDirectory()) {
+         if (var2.isDirectory()) {
             ir.setCurrentDirectory(var2);
-         } else if (var3.IsDirectory()) {
+         } else if (var3.isDirectory()) {
             ir.setCurrentDirectory(var3);
          } else {
             ir.setCurrentDirectory(var1);
