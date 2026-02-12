@@ -1,16 +1,22 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
-public class eW {
-   public eV kE = new eV();
 
-   public eW h(object var1) {
+public class eW {
+   eV kE = new eV();
+
+   public eW h(Object var1) {
       if (var1 != null && !fh.a(var1.GetType())) {
-         throw new Exception("Unsupported type: " + var1.GetType().getSimpleName());
+         throw new Exception("Unsupported type: " + var1.GetType().Name);
       } else {
          this.kE.e(var1);
          return this;

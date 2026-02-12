@@ -1,34 +1,35 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
-
-
 public class cG : TextAction, ClipboardOwner {
-   public cy gg;
+   // $FF: synthetic field
+   cy gg;
 
-// PORT_TODO: public cG(cy var1) : base("Copy From Clipboard") {
-      // PORT_TODO: this.gg = var1;
-   // PORT_TODO: }
+   public cG(cy var1) {
+      base("Copy From Clipboard");
+      this.gg = var1;
+   }
 
-   public void actionPerformed(EventArgs var1) {
-      // PORT_TODO: string var2 = ((TextBox)var1.getSource()).getSelectedText();
-      if (true) { // PORT_TODO: original condition had errors
-         // PORT_TODO: cy.b(var2, this);
+   public void actionPerformed(ActionEvent var1) {
+      string var2 = ((TextBox)var1.getSource()).getSelectedText();
+      if (var2 != null) {
+         cy.b(var2, this);
       }
 
    }
 
-   public void lostOwnership(object var1, Transferable var2) {
+   public void lostOwnership(Clipboard var1, Transferable var2) {
    }
 }
-
-
 
 }

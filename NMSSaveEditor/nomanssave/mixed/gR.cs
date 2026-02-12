@@ -1,23 +1,25 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
-
-
 public class gR {
-   public static Dictionary<object, object> rR = new Dictionary<object, object>();
+   private static Dictionary<object, object> rR = new Dictionary<object, object>();
 
    public static eY az(string var0) {
       eY var1 = null;
       if (rR.ContainsKey(var0)) {
-         var1 = (eY)rR[var0];
+         var1 = (eY)rR.Get(var0);
       } else {
-         Stream var2 = typeof(Application).GetManifestResourceStream("templates/" + var0 + ".json");
+         Stream var2 = JavaCompat.GetResourceStream("templates/" + var0 + ".json");
          if (var2 != null) {
             try {
                byte[] var3 = hk.g(var2);
@@ -33,7 +35,5 @@ public class gR {
       return var1 == null ? null : var1.bE();
    }
 }
-
-
 
 }

@@ -1,25 +1,29 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
+public class bC : ComboBoxModel {
+   int ev;
+   er eu;
+   // $FF: synthetic field
+   bl er;
 
-
-public class bC : object {
-   public int ev;
-   public er eu;
-   public bl er;
-
-   public bC(bl var1, int var2) {
+   bC(bl var1, int var2) {
       this.er = var1;
       this.ev = var2;
    }
 
    public int getSize() {
-      return 1 + (bl.f(this.er) == null ? 0 : bl.f(this.er).Length);
+      return 1 + (bl.f(this.er) == null ? 0 : bl.f(this.er).length);
    }
 
    public er v(int var1) {
@@ -30,13 +34,13 @@ public class bC : object {
       }
    }
 
-   public void addListDataListener(EventHandler var1) {
+   public void addListDataListener(ListDataListener var1) {
    }
 
-   public void removeListDataListener(EventHandler var1) {
+   public void removeListDataListener(ListDataListener var1) {
    }
 
-   public void setSelectedItem(object var1) {
+   public void setSelectedItem(Object var1) {
       this.eu = (er)var1;
       if (bl.b(this.er) >= 0) {
          er var2 = bl.c(this.er)[bl.b(this.er)].ar(this.ev);
@@ -51,7 +55,7 @@ public class bC : object {
                }
 
                bl.c(this.er)[bl.b(this.er)].e(var3, var4);
-               bl.d(this.er)[var3].Text = ((var4).ToString());
+               bl.d(this.er)[var3].SetText(Convert.ToString(var4));
             }
 
             if (this.eu == null) {
@@ -65,23 +69,23 @@ public class bC : object {
                }
 
                bl.c(this.er)[bl.b(this.er)].e(var3, var4);
-               bl.d(this.er)[var3].Text = ((var4).ToString());
+               bl.d(this.er)[var3].SetText(Convert.ToString(var4));
             }
 
-            bl.e(this.er).Refresh();
+            bl.e(this.er).updateUI();
          }
       }
 
    }
 
-   public object getSelectedItem() {
+   public Object getSelectedItem() {
       return this.eu;
    }
-   public object getElementAt(int var1) {
+
+   // $FF: synthetic method
+   public Object getElementAt(int var1) {
       return this.v(var1);
    }
 }
-
-
 
 }

@@ -1,31 +1,44 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
+
 public sealed class aI {
-   public static aI[] Values() { return new aI[] { cN, cO, cP, cQ, cR, cS }; }
-   public static aI valueOf(string name) { foreach (var v in Values()) if (v.ToString() == name) return v; return null; }
+   public static readonly aI cN = new aI("cN", "Light");
+   public static readonly aI cO = new aI("cO", "Dark");
+   public static readonly aI cP = new aI("cP", "IntelliJ");
+   public static readonly aI cQ = new aI("cQ", "Darcula");
+   public static readonly aI cR = new aI("cR", "macOS Light");
+   public static readonly aI cS = new aI("cS", "macOS Dark");
 
-   public static readonly aI cN = new aI("Light");
-   public static readonly aI cO = new aI("Dark");
-   public static readonly aI cP = new aI("IntelliJ");
-   public static readonly aI cQ = new aI("Darcula");
-   public static readonly aI cR = new aI("macOS Light");
-   public static readonly aI cS = new aI("macOS Dark");
+   private int _ordinal;
+   private string _name;
+   public readonly string cT;
 
-
-   public string cT;
-
-   public aI(string var3) {
+   private aI(string __name, string var3) {
+      this._ordinal = _nextOrdinal++;
+      this._name = __name;
       this.cT = var3;
    }
+
+   private static int _nextOrdinal = 0;
+   private static readonly aI[] _values = new aI[] { cN, cO, cP, cQ, cR, cS };
+   public static aI[] values() { return _values; }
+   public static aI valueOf(string n) { return _values.FirstOrDefault(v => v._name == n); }
+   public int ordinal() { return _ordinal; }
+   public string name() { return _name; }
+   public override string ToString() { return _name; }
 
    public string toString() {
       return this.cT;
    }
 }
-
 }

@@ -1,26 +1,29 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
-
-
 public class bL : TextBox {
-   public bK eB;
-   public bE ey;
+   bK eB;
+   // $FF: synthetic field
+   bE ey;
 
-   public bL(bE var1, bK var2, bool var3) {
+   bL(bE var1, bK var2, bool var3) {
       this.ey = var1;
       this.eB = var2;
-      this.Enabled = (var3);
+      this.SetEnabled(var3);
       this.addFocusListener(new bM(this, var2));
    }
 
-   public void ac() {
+   void ac() {
       string var1;
       if (bE.a(this.ey) == null) {
          var1 = "";
@@ -28,13 +31,13 @@ public class bL : TextBox {
          var1 = this.eB.ab();
       }
 
-      this.Text = (var1);
+      this.SetText(var1);
    }
-   public static bE a(bL var0) {
+
+   // $FF: synthetic method
+   static bE a(bL var0) {
       return var0.ey;
    }
 }
-
-
 
 }

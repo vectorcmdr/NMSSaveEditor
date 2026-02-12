@@ -1,39 +1,40 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
-
-
 public class cC : ActionListener {
-   public cy gg;
+   // $FF: synthetic field
+   cy gg;
 
-   public cC(cy var1) {
+   cC(cy var1) {
       this.gg = var1;
    }
 
-   public void actionPerformed(EventArgs var1) {
-      string var2 = cy.c(this.gg).Text.Trim();
+   public void actionPerformed(ActionEvent var1) {
+      string var2 = cy.c(this.gg).GetText().Trim();
 
       try {
-         // PORT_TODO: cy.d(this.gg).Text = (var2);
-      // PORT_TODO: // PORT_TODO: ((cI)cy.e(this.gg).DataSource).a(cy.d(this.gg));
+         cy.d(this.gg).SetText(var2);
+         ((cI)cy.e(this.gg).GetModel()).a(cy.d(this.gg));
          cy.e(this.gg).setSelectionRow(0);
-         cy.e(this.gg).Show();
-         cy.f(this.gg).Hide();
+         cy.e(this.gg).SetVisible(true);
+         cy.f(this.gg).SetVisible(false);
       } catch (eX var4) {
-         MessageBox.Show("Error on line #" + var4.getLineNumber() + ": " + var4.getMessage(), "Error");
+         JavaCompat.ShowOptionDialog(this.gg, "Error on line #" + var4.getLineNumber() + ": " + var4.getMessage(), "Error", 0, 0, (Icon)null, new Object[]{"Cancel"}, (Object)null);
          cy.c(this.gg).setCaretPosition(var4.bD());
          cy.c(this.gg).Focus();
       }
 
    }
 }
-
-
 
 }

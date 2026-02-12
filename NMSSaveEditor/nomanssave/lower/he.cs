@@ -1,20 +1,22 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
-
-
 public class he : Stream {
-   public StreamWriter ss;
-   public string st;
-   public MemoryStream su;
+   StreamWriter ss;
+   string st;
+   MemoryStream su;
 
-   public he(StreamWriter var1, string var2) {
+   he(StreamWriter var1, string var2) {
       this.ss = var1;
       this.st = var2;
       this.su = new MemoryStream();
@@ -25,33 +27,33 @@ public class he : Stream {
       this.su.Write(var1);
       if (var1 == 10) {
          if (hc.en() != null) {
-            lock(hc.en()) {
-               // PORT_TODO: hc.en().Write(this.st.GetBytes(System.Text.Encoding.UTF8));
-               hc.en().Write(this.su.ToArray());
+            (hc.en()) {
+               hc.en().Write(this.st.GetBytes());
+               hc.en().Write(this.su.toByteArray());
             }
          }
 
-         // this.su.reset() - C# streams use Position property
+         this.su.reset();
       }
 
    }
 
    public void write(byte[] var1, int var2, int var3) {
       if (this.ss != null) {
-         // PORT_TODO: this.ss.Write(var1, var2, var3);
+         this.ss.Write(var1, var2, var3);
       }
 
       for(int var4 = 0; var4 < var3; ++var4) {
          if (var1[var2 + var4] == 10) {
             this.su.Write(var1, var2, var4 + 1);
             if (hc.en() != null) {
-               lock(hc.en()) {
-                  // PORT_TODO: hc.en().Write(this.st.GetBytes(System.Text.Encoding.UTF8));
-                  hc.en().Write(this.su.ToArray());
+               (hc.en()) {
+                  hc.en().Write(this.st.GetBytes());
+                  hc.en().Write(this.su.toByteArray());
                }
             }
 
-            // this.su.reset() - C# streams use Position property
+            this.su.reset();
             var3 -= var4 + 1;
             var2 = var4 + 1;
             var4 = -1;
@@ -62,33 +64,19 @@ public class he : Stream {
    }
 
    public void flush() {
-      if (true) { // PORT_TODO: original condition had errors
-         // PORT_TODO: this.su.Write(Environment.NewLine.GetBytes(System.Text.Encoding.UTF8));
+      if (this.su.Count > 0) {
+         this.su.Write(System.lineSeparator().GetBytes());
          if (hc.en() != null) {
-            lock(hc.en()) {
-               // PORT_TODO: hc.en().Write(this.st.GetBytes(System.Text.Encoding.UTF8));
-               hc.en().Write(this.su.ToArray());
+            (hc.en()) {
+               hc.en().Write(this.st.GetBytes());
+               hc.en().Write(this.su.toByteArray());
             }
          }
 
-         // this.su.reset() - C# streams use Position property
+         this.su.reset();
       }
 
    }
-
-   // Stream abstract member stubs
-   public override bool CanRead => true;
-   public override bool CanSeek => false;
-   public override bool CanWrite => true;
-   public override long Length => 0;
-   public override long Position { get => 0; set { } }
-   public override void Flush() { }
-   public override int Read(byte[] buffer, int offset, int count) { return 0; }
-   public override long Seek(long offset, SeekOrigin origin) { return 0; }
-   public override void SetLength(long value) { }
-   public override void Write(byte[] buffer, int offset, int count) { }
 }
-
-
 
 }

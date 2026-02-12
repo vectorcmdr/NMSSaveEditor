@@ -1,91 +1,100 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
-
-
 public sealed class fn {
-      // PORT_TODO: // PORT_TODO: // PORT_TODO: // PORT_TODO: // PORT_TODO: // PORT_TODO: public static fn[] Values() { return new fn[] { lm, ln, lo, lp, lq, lr, ls, lt, S, T, i }; }
-   // PORT_TODO: public static fn valueOf(string name) { foreach (var v in Values()) if (v.ToString() == name) return v; return null; }
+   public static readonly fn lm = new fn("lm");
+   public static readonly fn ln = new fn("ln");
+   public static readonly fn lo = new fn("lo");
+   public static readonly fn lp = new fn("lp");
+   public static readonly fn lq = new fn("lq");
+   public static readonly fn lr = new fn("lr");
+   public static readonly fn ls = new fn("ls");
+   public static readonly fn lt = new fn("lt");
 
-   public static readonly fn lm = new fn();
-   public static readonly fn ln = new fn();
-   public static readonly fn lo = new fn();
-   public static readonly fn lp = new fn();
-   public static readonly fn lq = new fn();
-   public static readonly fn lr = new fn();
-   public static readonly fn ls = new fn();
-   public static readonly fn lt = new fn();
+   private int _ordinal;
+   private string _name;
 
+   private fn(string __name) {
+      this._ordinal = _nextOrdinal++;
+      this._name = __name;
+   }
 
-   public static Pattern lu = Pattern.compile("\"((?:XTp)|(?:ActiveContext))\":\"([^\"]+)\",");
-   public static Pattern lv = Pattern.compile("\"((?:vLc)|(?:BaseContext))\":\\{\"((?:idA)|(?:GameMode))\":(\\d+)");
-   public static Pattern lw = Pattern.compile("\"((?:2YS)|(?:ExpeditionContext))\":\\{\"((?:idA)|(?:GameMode))\":(\\d+)");
-   public static Pattern lx = Pattern.compile("\"((?:7ND)|(?:DifficultyPresetType))\":\"(\\w+)\"");
+   private static int _nextOrdinal = 0;
+   private static readonly fn[] _values = new fn[] { lm, ln, lo, lp, lq, lr, ls, lt };
+   public static fn[] values() { return _values; }
+   public static fn valueOf(string n) { return _values.FirstOrDefault(v => v._name == n); }
+   public int ordinal() { return _ordinal; }
+   public string name() { return _name; }
+   public override string ToString() { return _name; }
 
-   public static fn S(string var0) {
+   private static readonly Regex lu = new Regex("\"((?:XTp)|(?:ActiveContext))\":\"([^\"]+)\",");
+   private static readonly Regex lv = new Regex("\"((?:vLc)|(?:BaseContext))\":\\{\"((?:idA)|(?:GameMode))\":(\\d+)");
+   private static readonly Regex lw = new Regex("\"((?:2YS)|(?:ExpeditionContext))\":\\{\"((?:idA)|(?:GameMode))\":(\\d+)");
+   private static readonly Regex lx = new Regex("\"((?:7ND)|(?:DifficultyPresetType))\":\"(\\w+)\"");
+
+   private static fn S(string var0) {
       fn[] var4;
-      // PORT_TODO: int var3 = (var4 = Values()).Length;
+      int var3 = (var4 = values()).Length;
 
-      if (false) { // PORT_TODO: original loop had errors
-         // PORT_TODO: fn var1 = var4[var2];
-         // PORT_TODO: if (var0.Equals(var1.ToString())) {
-      // PORT_TODO: fn var1 = null; // PORT_TODO: stub declaration
-            // PORT_TODO: return var1;
-         // PORT_TODO: }
+      for(int var2 = 0; var2 < var3; ++var2) {
+         fn var1 = var4[var2];
+         if (var0.Equals(var1.name(), StringComparison.OrdinalIgnoreCase)) {
+            return var1;
+         }
       }
 
       return null;
    }
 
    public static fn T(string var0) {
-      Matcher var1 = lu.matcher(var0);
-      if (var1.find()) {
-         string var2 = var1.group(2);
+      Match var1 = lu.Match(var0);
+      if (var1.Success) {
+         string var2 = var1.Groups[2].Value;
          if ("Main".Equals(var2)) {
-            var1 = lv.matcher(var0);
+            var1 = lv.Match(var0);
          } else if ("Season".Equals(var2)) {
-            var1 = lw.matcher(var0);
+            var1 = lw.Match(var0);
          }
 
-         if (var1.find()) {
-            int var3 = int.Parse(var1.group(3));
-            if (true) { // PORT_TODO: original condition had errors
-               // PORT_TODO: return Values()[var3 - 1];
+         if (var1.Success) {
+            int var3 = int.Parse(var1.Groups[3].Value);
+            if (var3 > 0 && var3 <= values().Length) {
+               return values()[var3 - 1];
             }
          }
       }
 
-      var1 = lx.matcher(var0);
-      return var1.find() ? S(var1.group(2)) : null;
+      var1 = lx.Match(var0);
+      return var1.Success ? S(var1.Groups[2].Value) : null;
    }
 
    public static fn i(eY var0) {
-      // PORT_TODO: string var1 = var0.getValueAsString("ActiveContext");
+      string var1 = var0.getValueAsString("ActiveContext");
       int var2;
-      // PORT_TODO: if ("Main".Equals(var1)) {
-         // PORT_TODO: var2 = var0.J("BaseContext.GameMode");
-         // PORT_TODO: if (true) { // PORT_TODO: original condition had errors
-            // PORT_TODO: return Values()[var2 - 1];
-         // PORT_TODO: }
-      // PORT_TODO: } else if ("Season".Equals(var1)) {
-         // PORT_TODO: var2 = var0.J("ExpeditionContext.GameMode");
-         // PORT_TODO: if (true) { // PORT_TODO: original condition had errors
-            // PORT_TODO: return Values()[var2 - 1];
-         // PORT_TODO: }
-      // PORT_TODO: }
+      if ("Main".Equals(var1)) {
+         var2 = var0.J("BaseContext.GameMode");
+         if (var2 > 0 && var2 <= values().Length) {
+            return values()[var2 - 1];
+         }
+      } else if ("Season".Equals(var1)) {
+         var2 = var0.J("ExpeditionContext.GameMode");
+         if (var2 > 0 && var2 <= values().Length) {
+            return values()[var2 - 1];
+         }
+      }
 
-      // PORT_TODO: string var3 = var0.getValueAsString("PlayerStateData.DifficultyState.Preset.DifficultyPresetType");
-      // PORT_TODO: return var3 != null ? S(var3) : null;
-      return default;
+      string var3 = var0.getValueAsString("PlayerStateData.DifficultyState.Preset.DifficultyPresetType");
+      return var3 != null ? S(var3) : null;
    }
 }
-
-
-
 }

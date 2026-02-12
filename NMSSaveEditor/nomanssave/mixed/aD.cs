@@ -1,78 +1,83 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
-
-
 public class aD : Form {
-   public ComboBox cw;
-   public TextBox cx;
-   public bool cy;
+   private ComboBox cw;
+   private TextBox cx;
+   private bool cy;
    public static aD cz = null;
 
-// PORT_TODO: public aD(Frame var1) : base(var1) {
-      // PORT_TODO: this.setMinimumSize(new Size(400, 10));
-      // setModalExclusionType not available in WinForms
-      // PORT_TODO: this.Text = ("Editor Settings");
-      // PORT_TODO: // PORT_TODO: this/* setModal */(true);
-      // PORT_TODO: ba var2 = new ba();
-      // PORT_TODO: this.cw = new ComboBox();
-      // PORT_TODO: this.cw.DataSource = (new aE(this));
-      // PORT_TODO: var2.a("Look & Feel", (Control)this.cw);
-      // PORT_TODO: this.cx = new TextBox();
-      // PORT_TODO: var2.a("Inventory Scale", (Control)this.cx);
-      // PORT_TODO: var2.Y();
-      // PORT_TODO: Panel var3 = new Panel();
-      // PORT_TODO: var2.a(var3);
-      // PORT_TODO: Button var4 = new Button() { Text = "Apply" };
-      // PORT_TODO: var4.Click += (new aF(this));
-      // PORT_TODO: var3.Add(var4);
-      // PORT_TODO: Button var5 = new Button() { Text = "Cancel" };
-      // PORT_TODO: var5.Click += (new aG(this));
-      // PORT_TODO: var3.Add(var5);
-      // PORT_TODO: this.setContentPane(var2);
-      // PORT_TODO: this.PerformLayout();
-   // PORT_TODO: }
+   private aD(Form var1) {
+      base(var1);
+      this.SetMinimumSize(new Size(400, 10));
+      this.setModalExclusionType(ModalExclusionType.APPLICATION_EXCLUDE);
+      this.SetTitle("Editor Settings");
+      this.SetModal(true);
+      ba var2 = new ba();
+      this.cw = new ComboBox();
+      this.cw.SetModel(new aE(this));
+      var2.a("Look & Feel", (JComponent)this.cw);
+      this.cx = new TextBox();
+      var2.a("Inventory Scale", (JComponent)this.cx);
+      var2.Y();
+      Panel var3 = new Panel();
+      var2.a(var3);
+      Button var4 = new Button("Apply");
+      var4.AddActionListener(new aF(this));
+      var3.Add(var4);
+      Button var5 = new Button("Cancel");
+      var5.AddActionListener(new aG(this));
+      var3.Add(var5);
+      this.SetContentPane(var2);
+      this.Pack();
+   }
 
-   public bool S() {
+   private bool S() {
       string var1 = aH.getProperty("LookAndFeel");
-      // PORT_TODO: aI var2 = (aI)Stream.of(aI.Values).filter((var1x) => {
-         // PORT_TODO: return var1x.Name.Equals(var1);
-      // PORT_TODO: }).findFirst().orElse(aI.cN);
-      // PORT_TODO: this.cw.SelectedItem = (var2);
-      // PORT_TODO: this.cx.Text = ((aH.a("InventoryScaling", 1.0D).ToString()));
-      // PORT_TODO: this.StartPosition = FormStartPosition.CenterParent; //(this.DirectoryName);
-      // PORT_TODO: this.cy = false;
-      // PORT_TODO: this.Show();
-      // PORT_TODO: return this.cy;
-       return false; // PORT_TODO: stub return
-    }
+      aI var2 = (aI)Stream.of(aI.Values).filter((var1x) => {
+         return var1x.ToString().Equals(var1);
+      }).findFirst().orElse(aI.cN);
+      this.cw.SetSelectedItem(var2);
+      this.cx.SetText(Double.toString(aH.a("InventoryScaling", 1.0D)));
+      this.SetLocationRelativeTo(this.Parent);
+      this.cy = false;
+      this.SetVisible(true);
+      return this.cy;
+   }
 
    public static bool d(Container var0) {
       if (cz == null) {
-         Frame var1 = null;
-         // PORT_TODO: cz = new aD(var1);
+         Form var1 = JOptionPane.getFrameForComponent(var0);
+         cz = new aD(var1);
       }
 
       return cz.S();
    }
-   public static ComboBox a(aD var0) {
+
+   // $FF: synthetic method
+   static ComboBox a(aD var0) {
       return var0.cw;
    }
-   public static void a(aD var0, bool var1) {
+
+   // $FF: synthetic method
+   static void a(aD var0, bool var1) {
       var0.cy = var1;
    }
-   public static TextBox b(aD var0) {
+
+   // $FF: synthetic method
+   static TextBox b(aD var0) {
       return var0.cx;
    }
 }
-
-
 
 }

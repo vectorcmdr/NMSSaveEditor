@@ -1,27 +1,29 @@
 using System;
 using System.Collections.Generic;
-using System.Collections.Specialized;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
-
-
 public class fC : fs {
-   public int mb;
-   public FileInfo mc;
-   public string md;
-   public byte[] lK;
-   public fn be;
-   public fA ma;
+   int mb;
+   FileInfo mc;
+   string md;
+   byte[] lK;
+   fn be;
+   // $FF: synthetic field
+   fA ma;
 
-   public fC(fA var1, string var2, int var3) {
+   fC(fA var1, string var2, int var3) {
       this.ma = var1;
       this.mb = var3;
-      this.mc = new FileInfo(System.IO.Path.Combine((aH.cG).ToString(), (var2).ToString()));
+      this.mc = new File(aH.cG, var2);
       ZipFile var4 = new ZipFile(this.mc);
 
       try {
@@ -30,7 +32,7 @@ public class fC : fs {
             throw new IOException("Invalid backup file");
          }
 
-         Dictionary<string, string> var6 = new Dictionary<string, string>();
+         Properties var6 = new Properties();
          var6.load(var4.getInputStream(var5));
          this.md = var6.getProperty("StorageFile");
          if (this.md == null) {
@@ -38,7 +40,7 @@ public class fC : fs {
          }
 
          string var7 = var6.getProperty("GameMode");
-         // PORT_TODO: this.be = var7 == null ? null : fn.valueOf(var7);
+         this.be = var7 == null ? null : fn.valueOf(var7);
          var5 = var4.getEntry(this.md);
          Stream var8 = var4.getInputStream(var5);
 
@@ -46,7 +48,7 @@ public class fC : fs {
             this.lK = new byte[112];
             hk.readFully(var8, this.lK);
 
-            for(int var9 = 0; var9 < fA.bY().Length; ++var9) {
+            for(int var9 = 0; var9 < fA.bY().length; ++var9) {
                if (this.lK[var9] != fA.bY()[var9]) {
                   throw new IOException("Invalid header");
                }
@@ -77,7 +79,7 @@ public class fC : fs {
    public eY M() {
       MemoryStream var1 = new MemoryStream();
       Exception var2 = null;
-      object var3 = null;
+      Object var3 = null;
 
       try {
          ZipFile var4 = new ZipFile(this.mc);
@@ -117,7 +119,7 @@ public class fC : fs {
          throw var2;
       }
 
-      return fA.b(var1.ToArray(), eG.jV);
+      return fA.b(var1.toByteArray(), eG.jV);
    }
 
    public string b(eY var1) {
@@ -138,7 +140,5 @@ public class fC : fs {
       return this.mc.Name;
    }
 }
-
-
 
 }

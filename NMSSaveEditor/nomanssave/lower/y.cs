@@ -1,21 +1,23 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Net;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
-
-
 public class y : Runnable {
-   public x bb;
-   public bool ba;
+   // $FF: synthetic field
+   x bb;
+   // $FF: synthetic field
+   private bool ba;
 
-   public y(x var1, bool var2) {
+   y(x var1, bool var2) {
       this.bb = var1;
       this.ba = var2;
    }
@@ -24,21 +26,21 @@ public class y : Runnable {
       string var1 = "A newer version of the save editor is available.\n";
       if (!this.ba) {
          var1 = var1 + "Please visit https://github.com/goatfungus/NMSSaveEditor to download the latest release.";
-         MessageBox.Show(var1, "New Version Available");
+         JavaCompat.ShowOptionDialog(Application.h(x.a(this.bb)), var1, "New Version Available", 0, 1, (Icon)null, new Object[]{"OK"}, (Object)null);
       } else {
          var1 = var1 + "Would you like to download and install? (will require app restart)";
-         int var2 = (int)(int)MessageBox.Show(Application.h(x.a(this.bb)), var1, "New Version Available", 0);
+         int var2 = MessageBox.Show(var1.ToString(), "New Version Available".ToString(), MessageBoxButtons.YesNo);
          if (var2 == 0) {
             Application.h(x.a(this.bb)).Dispose();
             hc.info("Starting download...");
-            FileInfo var3 = new FileInfo("~NMSSaveEditor.dl");
+            FileInfo var3 = new File("~NMSSaveEditor.dl");
 
             try {
                URL var4 = new URL("https://github.com/goatfungus/NMSSaveEditor/raw/master/NMSSaveEditor.jar");
                URLConnection var5 = var4.openConnection();
                int var6 = var5.getContentLength();
                Stream var7 = var5.getInputStream();
-               FileStream var8 = new FileStream((var3).ToString(), System.IO.FileMode.Open);
+               FileStream var8 = new FileStream(var3);
 
                try {
                   int var10;
@@ -65,7 +67,5 @@ public class y : Runnable {
 
    }
 }
-
-
 
 }

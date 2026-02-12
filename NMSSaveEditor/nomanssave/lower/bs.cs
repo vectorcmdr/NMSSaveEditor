@@ -1,19 +1,25 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
-public class bs : object {
-   public bl er;
+public class bs : TableModel {
+   // $FF: synthetic field
+   bl er;
 
-   public bs(bl var1) {
+   bs(bl var1) {
       this.er = var1;
    }
 
-   public void addTableModelListener(EventHandler var1) {
+   public void addTableModelListener(TableModelListener var1) {
    }
 
    public Class getColumnClass(int var1) {
@@ -38,10 +44,10 @@ public class bs : object {
    }
 
    public int getRowCount() {
-      return bl.c(this.er) == null ? 0 : bl.c(this.er).Length;
+      return bl.c(this.er) == null ? 0 : bl.c(this.er).length;
    }
 
-   public object getValueAt(int var1, int var2) {
+   public Object getValueAt(int var1, int var2) {
       switch(var2) {
       case 0:
          return bl.c(this.er) == null ? null : bl.c(this.er)[var1].ToString();
@@ -59,10 +65,10 @@ public class bs : object {
       return false;
    }
 
-   public void removeTableModelListener(EventHandler var1) {
+   public void removeTableModelListener(TableModelListener var1) {
    }
 
-   public void setValueAt(object var1, int var2, int var3) {
+   public void setValueAt(Object var1, int var2, int var3) {
    }
 }
 

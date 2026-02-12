@@ -1,39 +1,42 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
-
-
 public class dA : ListModel {
-   public dz hu;
+   // $FF: synthetic field
+   dz hu;
 
-   public dA(dz var1) {
+   dA(dz var1) {
       this.hu = var1;
    }
 
    public int getSize() {
-      return dz.a(this.hu).Length;
+      return dz.a(this.hu).length;
    }
 
    public ft m(int var1) {
       return dz.a(this.hu)[var1];
    }
 
-   public void addListDataListener(EventHandler var1) {
+   public void addListDataListener(ListDataListener var1) {
    }
 
-   public void removeListDataListener(EventHandler var1) {
+   public void removeListDataListener(ListDataListener var1) {
    }
-   public object getElementAt(int var1) {
+
+   // $FF: synthetic method
+   public Object getElementAt(int var1) {
       return this.m(var1);
    }
 }
-
-
 
 }

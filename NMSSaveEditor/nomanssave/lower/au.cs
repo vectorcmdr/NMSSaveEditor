@@ -1,21 +1,25 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
+public class au : TableModel {
+   // $FF: synthetic field
+   ap cu;
 
-
-public class au : object {
-   public ap cu;
-
-   public au(ap var1) {
+   au(ap var1) {
       this.cu = var1;
    }
 
-   public void addTableModelListener(EventHandler var1) {
+   public void addTableModelListener(TableModelListener var1) {
    }
 
    public Class getColumnClass(int var1) {
@@ -45,14 +49,14 @@ public class au : object {
       return ap.d(this.cu) == null ? 0 : ap.d(this.cu).Count;
    }
 
-   public object getValueAt(int var1, int var2) {
-      string var3 = (string)ap.d(this.cu)[var1];
+   public Object getValueAt(int var1, int var2) {
+      string var3 = (string)ap.d(this.cu).Get(var1);
       ey var4 = ey.d(var3);
       switch(var2) {
       case 0:
          return var4 == null ? null : var4.N(3);
       case 1:
-         // PORT_TODO: return var4 == null ? "" : var4.Name;
+         return var4 == null ? "" : var4.Name;
       case 2:
          return var4 == null ? "" : var4.bc().ToString();
       case 3:
@@ -66,13 +70,11 @@ public class au : object {
       return false;
    }
 
-   public void removeTableModelListener(EventHandler var1) {
+   public void removeTableModelListener(TableModelListener var1) {
    }
 
-   public void setValueAt(object var1, int var2, int var3) {
+   public void setValueAt(Object var1, int var2, int var3) {
    }
 }
-
-
 
 }

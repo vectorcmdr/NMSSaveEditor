@@ -1,36 +1,40 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
+public class bB : ComboBoxModel {
+   er eu;
+   // $FF: synthetic field
+   bl er;
 
-
-public class bB : object {
-   public er eu;
-   public bl er;
-
-   public bB(bl var1) {
+   private bB(bl var1) {
       this.er = var1;
    }
 
    public int getSize() {
-      return bl.a(this.er) == null ? 0 : bl.a(this.er).Length;
+      return bl.a(this.er) == null ? 0 : bl.a(this.er).length;
    }
 
    public er v(int var1) {
       return bl.a(this.er) == null ? null : bl.a(this.er)[var1];
    }
 
-   public void addListDataListener(EventHandler var1) {
+   public void addListDataListener(ListDataListener var1) {
    }
 
-   public void removeListDataListener(EventHandler var1) {
+   public void removeListDataListener(ListDataListener var1) {
    }
 
-   public void setSelectedItem(object var1) {
+   public void setSelectedItem(Object var1) {
       this.eu = (er)var1;
       if (bl.b(this.er) >= 0) {
          er var2 = bl.c(this.er)[bl.b(this.er)].ar(0);
@@ -45,7 +49,7 @@ public class bB : object {
                }
 
                bl.c(this.er)[bl.b(this.er)].e(var3, var4);
-               bl.d(this.er)[var3].Text = ((var4).ToString());
+               bl.d(this.er)[var3].SetText(Convert.ToString(var4));
             }
 
             if (this.eu == null) {
@@ -59,26 +63,28 @@ public class bB : object {
                }
 
                bl.c(this.er)[bl.b(this.er)].e(var3, var4);
-               bl.d(this.er)[var3].Text = ((var4).ToString());
+               bl.d(this.er)[var3].SetText(Convert.ToString(var4));
             }
 
-            bl.e(this.er).Refresh();
+            bl.e(this.er).updateUI();
          }
       }
 
    }
 
-   public object getSelectedItem() {
+   public Object getSelectedItem() {
       return this.eu;
    }
-   public object getElementAt(int var1) {
+
+   // $FF: synthetic method
+   public Object getElementAt(int var1) {
       return this.v(var1);
    }
-   public bB(bl var1, bB var2) {
-      // PORT_TODO: // PORT_TODO: this(var1);
+
+   // $FF: synthetic method
+   bB(bl var1, bB var2) {
+      // Constructor chain: base(var1)
    }
 }
-
-
 
 }

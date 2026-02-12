@@ -1,17 +1,21 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
+public class bP : ComboBoxModel {
+   // $FF: synthetic field
+   bO eX;
 
-
-public class bP : object {
-   public bO eX;
-
-   public bP(bO var1) {
+   bP(bO var1) {
       this.eX = var1;
    }
 
@@ -20,29 +24,29 @@ public class bP : object {
    }
 
    public gt w(int var1) {
-      return (gt)bO.d(this.eX)[var1];
+      return (gt)bO.d(this.eX).Get(var1);
    }
 
-   public void addListDataListener(EventHandler var1) {
+   public void addListDataListener(ListDataListener var1) {
    }
 
-   public void removeListDataListener(EventHandler var1) {
+   public void removeListDataListener(ListDataListener var1) {
    }
 
-   public void setSelectedItem(object var1) {
+   public void setSelectedItem(Object var1) {
       bO.a(this.eX, (gt)var1);
-      bO.e(this.eX).setVisible(bO.a(this.eX) == null ? false : en.aS() || bO.a(this.eX).dk());
+      bO.e(this.eX).SetVisible(bO.a(this.eX) == null ? false : en.aS() || bO.a(this.eX).dk());
       bO.c(this.eX);
    }
 
-   public object getSelectedItem() {
+   public Object getSelectedItem() {
       return bO.a(this.eX);
    }
-   public object getElementAt(int var1) {
+
+   // $FF: synthetic method
+   public Object getElementAt(int var1) {
       return this.w(var1);
    }
 }
-
-
 
 }

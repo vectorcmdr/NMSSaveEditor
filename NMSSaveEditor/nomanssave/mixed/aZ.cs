@@ -1,26 +1,27 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
-
-
 public class aZ : ActionListener {
-   public aW dy;
+   // $FF: synthetic field
+   aW dy;
 
-   public aZ(aW var1) {
+   aZ(aW var1) {
       this.dy = var1;
    }
 
-   public void actionPerformed(EventArgs var1) {
-      this.dy.Hide();
+   public void actionPerformed(ActionEvent var1) {
+      this.dy.SetVisible(false);
    }
 }
-
-
 
 }

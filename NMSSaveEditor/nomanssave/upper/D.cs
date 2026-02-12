@@ -1,41 +1,44 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
+public class D : ComboBoxModel {
+   // $FF: synthetic field
+   Application aZ;
 
-
-public class D : object {
-   public Application aZ;
-
-   public D(Application var1) {
+   D(Application var1) {
       this.aZ = var1;
    }
 
    public int getSize() {
-      return Application.d(this.aZ).Length;
+      return Application.d(this.aZ).length;
    }
 
    public ft m(int var1) {
       return Application.d(this.aZ)[var1];
    }
 
-   public void addListDataListener(EventHandler var1) {
+   public void addListDataListener(ListDataListener var1) {
    }
 
-   public void removeListDataListener(EventHandler var1) {
+   public void removeListDataListener(ListDataListener var1) {
    }
 
-   public void setSelectedItem(object var1) {
+   public void setSelectedItem(Object var1) {
       int var2;
       if (Application.i(this.aZ)) {
          Application.n(this.aZ).hidePopup();
-         // PORT_TODO: var2 = MessageBox.Show(Application.h(this.aZ), "Save data before switching slots?", "Save", 1);
-         if (true) { // PORT_TODO: original condition had errors
+         var2 = MessageBox.Show("Save data before switching slots?".ToString(), "Save".ToString(), MessageBoxButtons.YesNo);
+         if (var2 == 0) {
             Application.k(this.aZ);
          } else {
             if (var2 == 2) {
@@ -47,10 +50,10 @@ public class D : object {
       }
 
       var2 = -1;
-      lock(Application.n(this.aZ)) {
+      (Application.n(this.aZ)) {
          int var4 = 0;
 
-         while(var4 < Application.d(this.aZ).Length) {
+         while(var4 < Application.d(this.aZ).length) {
             if (Application.d(this.aZ)[var4] != var1) {
                ++var4;
             } else {
@@ -63,14 +66,14 @@ public class D : object {
       Application.a(this.aZ, var2);
    }
 
-   public object getSelectedItem() {
+   public Object getSelectedItem() {
       return Application.c(this.aZ) < 0 ? null : Application.d(this.aZ)[Application.c(this.aZ)];
    }
-   public object getElementAt(int var1) {
+
+   // $FF: synthetic method
+   public Object getElementAt(int var1) {
       return this.m(var1);
    }
 }
-
-
 
 }

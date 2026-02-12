@@ -1,52 +1,53 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Xml;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
-
-
 public class eM {
-   public string Name => getName();
-   public string id;
-   public string name;
-   public string description;
-   public bool iE;
-   public bool jY;
-   public static List<object> kl = new List<object>();
+   string id;
+   string name;
+   string description;
+   bool iE;
+   bool jY;
+   private static List<object> kl = new List<object>();
 
    static eM() {
-      Stream var0 = typeof(Application).GetManifestResourceStream("db/settlements.xml");
+      Stream var0 = JavaCompat.GetResourceStream("db/settlements.xml");
       if (var0 != null) {
          try {
-            Document var1 = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(var0);
-            Element var2 = var1.getDocumentElement();
-            XmlNodeList var3 = var2.getChildNodes();
+            XmlDocument var1 = JavaCompat.ParseXml(var0);
+            XmlElement var2 = var1.DocumentElement;
+            XmlNodeList var3 = var2.ChildNodes;
 
-            for(int var4 = 0; var4 < var3.getLength(); ++var4) {
-               Node var5 = var3.item(var4);
-               if (var5 is Element && var5.getNodeName().Equals("perk")) {
-                  kl.Add(new eM((Element)var5));
+            for(int var4 = 0; var4 < var3.Count; ++var4) {
+               XmlNode var5 = var3.Item(var4);
+               if (var5 is XmlElement && var5.Name.Equals("perk")) {
+                  kl.Add(new eM((System.Xml.XmlElement)var5));
                }
             }
-         } catch (Exception var6) {
-      // // } catch (IOException var8) {
+         } catch (ParserConfigurationException var6) {
+         } catch (SAXException var7) {
+         } catch (IOException var8) {
          }
       }
 
       kl.sort(new eN());
    }
 
-   public eM(Element var1) {
-      this.id = var1.getAttribute("id");
-      this.name = var1.getAttribute("name");
-      this.description = var1.getAttribute("description");
-      this.iE = bool.Parse(var1.getAttribute("beneficial"));
-      this.jY = bool.Parse(var1.getAttribute("procedural"));
+   private eM(XmlElement var1) {
+      this.id = var1.GetAttribute("id");
+      this.name = var1.GetAttribute("name");
+      this.description = var1.GetAttribute("description");
+      this.iE = bool.Parse(var1.GetAttribute("beneficial"));
+      this.jY = bool.Parse(var1.GetAttribute("procedural"));
    }
 
    public string getID() {
@@ -69,7 +70,7 @@ public class eM {
       return this.jY;
    }
 
-   public bool equals(object var1) {
+   public bool equals(Object var1) {
       if (var1 is string) {
          return this.jY ? ((string)var1).StartsWith(this.id + "#") : ((string)var1).Equals(this.id);
       } else {
@@ -86,7 +87,7 @@ public class eM {
    }
 
    public static eM S(int var0) {
-      return (eM)kl[var0];
+      return (eM)kl.Get(var0);
    }
 
    public static int w(string var0) {
@@ -95,10 +96,8 @@ public class eM {
 
    public static eM x(string var0) {
       int var1 = kl.IndexOf(new eO(var0));
-      return var1 >= 0 ? (eM)kl[var1] : null;
+      return var1 >= 0 ? (eM)kl.Get(var1) : null;
    }
 }
-
-
 
 }

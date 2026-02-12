@@ -1,17 +1,21 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
 public class H : FocusListener {
-   public G bg;
+   // $FF: synthetic field
+   G bg;
 
-   public H(G var1) {
+   H(G var1) {
       this.bg = var1;
    }
 

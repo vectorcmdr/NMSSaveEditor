@@ -1,19 +1,21 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
-
-
 public class R : FocusListener {
-   public Q bD;
+   // $FF: synthetic field
+   Q bD;
 
-   public R(Q var1) {
+   R(Q var1) {
       this.bD = var1;
    }
 
@@ -21,10 +23,10 @@ public class R : FocusListener {
    }
 
    public void focusLost(FocusEvent var1) {
-      int var2 = 0;
+      int var2;
       try {
-         // PORT_TODO: var2 = int.Parse(Q.a(this.bD).Text);
-         if (true) { // PORT_TODO: original condition had errors
+         var2 = int.Parse(Q.a(this.bD).GetText());
+         if (var2 % 250 != 0) {
             var2 = (int)Math.Round((double)var2 / 250.0D);
          }
 
@@ -35,10 +37,8 @@ public class R : FocusListener {
          var2 = Q.c(this.bD).bE;
       }
 
-      // PORT_TODO: Q.a(this.bD).Text = ((var2).ToString());
+      Q.a(this.bD).SetText(Convert.ToString(var2));
    }
 }
-
-
 
 }

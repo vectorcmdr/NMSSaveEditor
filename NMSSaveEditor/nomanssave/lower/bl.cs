@@ -1,269 +1,327 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
-
-
 public class bl : Panel, eo {
-   public static int dQ = 50;
-   public DataGridView dR;
-   public Button bQ;
-   public Button dS;
-   public ba dT;
-   public G dU;
-   public ComboBox dV;
-   public TextBox dW;
-   public cN dX;
-   public G dY;
-   public G dZ;
-   public G[] ea;
-   public ba eb;
-   public ComboBox ec;
-   public ComboBox ed;
-   public ComboBox ee;
-   public ComboBox ef;
-   public ComboBox eg;
-   public G eh;
-   public G ei;
-   public G ej;
-   public G ek;
-   public Label el;
-   public Button em;
-   public er[] en;
-   public er[] eo;
-   public gp[] ep;
-   public int eq;
+   private static int dQ = 50;
+   private DataGridView dR;
+   private Button bQ;
+   private Button dS;
+   private ba dT;
+   private G dU;
+   private ComboBox dV;
+   private TextBox dW;
+   private cN dX;
+   private G dY;
+   private G dZ;
+   private G[] ea;
+   private ba eb;
+   private ComboBox ec;
+   private ComboBox ed;
+   private ComboBox ee;
+   private ComboBox ef;
+   private ComboBox eg;
+   private G eh;
+   private G ei;
+   private G ej;
+   private G ek;
+   private Label el;
+   private Button em;
+   private er[] en;
+   private er[] eo;
+   private gp[] ep;
+   private int eq;
 
-   public bl(Application var1) {
-      TableLayoutPanel var2 = new TableLayoutPanel();
-      this.SuspendLayout(); // TODO: set layout var2);
+   bl(Application var1) {
+      GridLayout var2 = new GridLayout(1, 3);
+      this.SetLayout(var2);
       Panel var3 = new Panel();
-      var3.setMinimumSize(new Size(300, 0));
-      var3.setMaximumSize(new Size(300, int.MaxValue));
-      var3.Size = (new Size(300, 0));
+      var3.SetMinimumSize(new Size(300, 0));
+      var3.SetMaximumSize(new Size(300, int.MaxValue));
+      var3.SetPreferredSize(new Size(300, 0));
       Panel var4 = new Panel();
-      var4.SuspendLayout(); // TODO: set layout new TableLayoutPanel());
-      var4.Controls.Add(var3);
+      var4.SetLayout(new BorderLayout());
+      var4.Add(var3, "Center");
       Panel var5 = new Panel();
-      this.bQ = new Button() { Text = "Delete" };
-      this.bQ.Enabled = (false);
-      // PORT_TODO: this.bQ.Click += (new bm(this, var1));
+      this.bQ = new Button("Delete");
+      this.bQ.SetEnabled(false);
+      this.bQ.AddActionListener(new bm(this, var1));
       var5.Add(this.bQ);
-      this.dS = new Button() { Text = "Copy" };
-      this.dS.Enabled = (false);
-      // PORT_TODO: this.dS.Click += (new br(this, var1));
+      this.dS = new Button("Copy");
+      this.dS.SetEnabled(false);
+      this.dS.AddActionListener(new br(this, var1));
       var5.Add(this.dS);
-      var4.Controls.Add(var5);
+      var4.Add(var5, "South");
       this.Add(var4);
       this.dR = new DataGridView();
-      this.dR.setSelectionMode(0);
-      this.dR.DataSource = (new bs(this));
-      // PORT_TODO: this.dR.getColumnModel().getColumn(2).setMaxWidth(60);
-      // PORT_TODO: this.dR.getSelectionModel().addListSelectionListener(new bt(this, var1));
+      this.dR.SetSelectionMode(0);
+      this.dR.SetModel(new bs(this));
+      this.dR.GetColumnModel().getColumn(2).setMaxWidth(60);
+      this.dR.getSelectionModel().AddListSelectionListener(new bt(this, var1));
       var3.setViewportView(this.dR);
       this.dT = new ba(new int[]{aH.cJ, 0});
-      this.dT.Hide();
+      this.dT.SetVisible(false);
       this.Add(this.dT);
       this.dT.k("Frigate Info");
       this.dU = new bv(this);
-      this.dT.a("Name", (Control)this.dU);
+      this.dT.a("Name", (JComponent)this.dU);
       this.dV = new ComboBox();
-      this.dV.DataSource = (new bw(this));
-      this.dT.a("Type", (Control)this.dV);
+      this.dV.SetModel(new bw(this));
+      this.dT.a("Type", (JComponent)this.dV);
       this.dW = new TextBox();
       this.dW.setEditable(false);
-      this.dT.a("Class", (Control)this.dW);
+      this.dT.a("Class", (JComponent)this.dW);
       this.dX = new cN(typeof(gd));
-      // PORT_TODO: this.dX.a((var1x) => {
-         // PORT_TODO: if (this.eq >= 0) {
-            // PORT_TODO: this.ep[this.eq].am(var1x);
-         // PORT_TODO: }
+      this.dX.a((var1x) => {
+         if (this.eq >= 0) {
+            this.ep[this.eq].am(var1x);
+         }
 
-// PORT_TODO: 
-      // PORT_TODO: });
-      // PORT_TODO: this.dT.a("NPC Race", (Control)this.dX);
-      // PORT_TODO: this.dY = new bx(this);
-      // PORT_TODO: this.dT.a("Home Seed", (Control)this.dY);
-      // PORT_TODO: this.dZ = new by(this);
-      // PORT_TODO: this.dT.a("Model Seed", this.dZ);
-      // PORT_TODO: this.dT.k("Traits");
-      // PORT_TODO: bD var6 = new bD(this, (bD)null);
-      // PORT_TODO: this.ec = new ComboBox();
-      // PORT_TODO: this.ec.DataSource = (new bB(this, (bB)null));
-      // PORT_TODO: this.ec.setRenderer(var6);
-      // PORT_TODO: this.dT.a(this.ec);
-      // PORT_TODO: this.ed = new ComboBox();
-      // PORT_TODO: this.ed.DataSource = (new bC(this, 1));
-      // PORT_TODO: this.ed.setRenderer(var6);
-      // PORT_TODO: this.dT.a(this.ed);
-      // PORT_TODO: this.ee = new ComboBox();
-      // PORT_TODO: this.ee.DataSource = (new bC(this, 2));
-      // PORT_TODO: this.ee.setRenderer(var6);
-      // PORT_TODO: this.dT.a(this.ee);
-      // PORT_TODO: this.ef = new ComboBox();
-      // PORT_TODO: this.ef.DataSource = (new bC(this, 3));
-      // PORT_TODO: this.ef.setRenderer(var6);
-      // PORT_TODO: this.dT.a(this.ef);
-      // PORT_TODO: this.eg = new ComboBox();
-      // PORT_TODO: this.eg.DataSource = (new bC(this, 4));
-      // PORT_TODO: this.eg.setRenderer(var6);
-      // PORT_TODO: this.dT.a(this.eg);
-      // PORT_TODO: this.dT.Y();
-      // PORT_TODO: Panel var7 = new Panel();
-      // TODO: var7.SuspendLayout(); // TODO: set layout /* FormLayout */ null);
-      // PORT_TODO: this.el = new Label() { Text = "" };
-      // PORT_TODO: var7.Add(this.el, "2,1");
-      // PORT_TODO: this.em = new Button() { Text = "Repair" };
-      // PORT_TODO: this.em.Click += (new bz(this));
-      // PORT_TODO: Panel var8 = new Panel();
-      // PORT_TODO: var8.Add(this.em);
-      // PORT_TODO: var7.Controls.Add(var8);
-      // PORT_TODO: this.dT.a(var7);
-      // PORT_TODO: this.eb = new ba(new int[]{aH.cJ, 0});
-      // PORT_TODO: this.eb.Hide();
-      // PORT_TODO: this.Add(this.eb);
-      // PORT_TODO: this.eb.k("Stats");
-      // PORT_TODO: this.ea = new G[gq.Values.Length];
+      });
+      this.dT.a("NPC Race", (JComponent)this.dX);
+      this.dY = new bx(this);
+      this.dT.a("Home Seed", (JComponent)this.dY);
+      this.dZ = new by(this);
+      this.dT.a("Model Seed", this.dZ);
+      this.dT.k("Traits");
+      bD var6 = new bD(this, (bD)null);
+      this.ec = new ComboBox();
+      this.ec.SetModel(new bB(this, (bB)null));
+      this.ec.setRenderer(var6);
+      this.dT.a(this.ec);
+      this.ed = new ComboBox();
+      this.ed.SetModel(new bC(this, 1));
+      this.ed.setRenderer(var6);
+      this.dT.a(this.ed);
+      this.ee = new ComboBox();
+      this.ee.SetModel(new bC(this, 2));
+      this.ee.setRenderer(var6);
+      this.dT.a(this.ee);
+      this.ef = new ComboBox();
+      this.ef.SetModel(new bC(this, 3));
+      this.ef.setRenderer(var6);
+      this.dT.a(this.ef);
+      this.eg = new ComboBox();
+      this.eg.SetModel(new bC(this, 4));
+      this.eg.setRenderer(var6);
+      this.dT.a(this.eg);
+      this.dT.Y();
+      Panel var7 = new Panel();
+      var7.SetLayout(new FormLayout(new ColumnSpec[]{FormFactory.GLUE_COLSPEC, FormFactory.DEFAULT_COLSPEC, FormFactory.GLUE_COLSPEC}, new RowSpec[]{FormFactory.DEFAULT_ROWSPEC, FormFactory.DEFAULT_ROWSPEC}));
+      this.el = new Label("");
+      var7.Add(this.el, "2,1");
+      this.em = new Button("Repair");
+      this.em.AddActionListener(new bz(this));
+      Panel var8 = new Panel();
+      var8.Add(this.em);
+      var7.Add(var8, "2,2");
+      this.dT.a(var7);
+      this.eb = new ba(new int[]{aH.cJ, 0});
+      this.eb.SetVisible(false);
+      this.Add(this.eb);
+      this.eb.k("Stats");
+      this.ea = new G[gq.Values.length];
 
-// PORT_TODO: 
-      // PORT_TODO: for(int var9 = 0; var9 < this.ea.Length; ++var9) {
-         // PORT_TODO: this.ea[var9] = new bA(this, var9, (bA)null);
-         // PORT_TODO: this.eb.a(gq.Values[var9].ToString(), (Control)this.ea[var9]);
-      // PORT_TODO: }
+      for(int var9 = 0; var9 < this.ea.length; ++var9) {
+         this.ea[var9] = new bA(this, var9, (bA)null);
+         this.eb.a(gq.Values[var9].ToString(), (JComponent)this.ea[var9]);
+      }
 
-// PORT_TODO: 
-      // PORT_TODO: this.eb.Y();
-      // PORT_TODO: this.eb.k("Totals");
-      // PORT_TODO: this.eh = new bn(this);
-      // PORT_TODO: this.eb.a("Expeditions", (Control)this.eh);
-      // PORT_TODO: this.ei = new bo(this);
-      // PORT_TODO: this.eb.a("Successful", (Control)this.ei);
-      // PORT_TODO: this.ej = new bp(this);
-      // PORT_TODO: this.eb.a("Failed", (Control)this.ej);
-      // PORT_TODO: this.ek = new bq(this);
-      // PORT_TODO: this.eb.a("Damaged", (Control)this.ek);
-      // PORT_TODO: NMSSaveEditor.en.a(this);
+      this.eb.Y();
+      this.eb.k("Totals");
+      this.eh = new bn(this);
+      this.eb.a("Expeditions", (JComponent)this.eh);
+      this.ei = new bo(this);
+      this.eb.a("Successful", (JComponent)this.ei);
+      this.ej = new bp(this);
+      this.eb.a("Failed", (JComponent)this.ej);
+      this.ek = new bq(this);
+      this.eb.a("Damaged", (JComponent)this.ek);
+      nomanssave.en.a(this);
    }
 
    public void a(bool var1) {
-      if (this.dR.getSelectedRow() >= 0) {
-         this.dS.Enabled = (this.ep.Length < 30 || NMSSaveEditor.en.aS());
+      if (this.dR.GetSelectedRow() >= 0) {
+         this.dS.SetEnabled(this.ep.length < 30 || nomanssave.en.aS());
       }
 
    }
 
-   public void a(gp[] var1) {
+   void a(gp[] var1) {
       this.ep = var1;
       this.en = null;
       this.eo = null;
       this.dR.clearSelection();
-      if (var1.Length > 0) {
+      if (var1.length > 0) {
          this.dR.setRowSelectionInterval(0, 0);
       }
 
-      this.dR.Refresh();
+      this.dR.updateUI();
    }
-   public static er[] a(bl var0) {
+
+   // $FF: synthetic method
+   static er[] a(bl var0) {
       return var0.en;
    }
-   public static int b(bl var0) {
+
+   // $FF: synthetic method
+   static int b(bl var0) {
       return var0.eq;
    }
-   public static gp[] c(bl var0) {
+
+   // $FF: synthetic method
+   static gp[] c(bl var0) {
       return var0.ep;
    }
-   public static G[] d(bl var0) {
+
+   // $FF: synthetic method
+   static G[] d(bl var0) {
       return var0.ea;
    }
-   public static DataGridView e(bl var0) {
+
+   // $FF: synthetic method
+   static DataGridView e(bl var0) {
       return var0.dR;
    }
-   public static er[] f(bl var0) {
+
+   // $FF: synthetic method
+   static er[] f(bl var0) {
       return var0.eo;
    }
-   public static void a(bl var0, gp[] var1) {
+
+   // $FF: synthetic method
+   static void a(bl var0, gp[] var1) {
       var0.ep = var1;
    }
-   public static Button g(bl var0) {
+
+   // $FF: synthetic method
+   static Button g(bl var0) {
       return var0.dS;
    }
-   public static void a(bl var0, int var1) {
+
+   // $FF: synthetic method
+   static void a(bl var0, int var1) {
       var0.eq = var1;
    }
-   public static void a(bl var0, er[] var1) {
+
+   // $FF: synthetic method
+   static void a(bl var0, er[] var1) {
       var0.en = var1;
    }
-   public static void b(bl var0, er[] var1) {
+
+   // $FF: synthetic method
+   static void b(bl var0, er[] var1) {
       var0.eo = var1;
    }
-   public static ba h(bl var0) {
+
+   // $FF: synthetic method
+   static ba h(bl var0) {
       return var0.dT;
    }
-   public static ba i(bl var0) {
+
+   // $FF: synthetic method
+   static ba i(bl var0) {
       return var0.eb;
    }
-   public static G j(bl var0) {
+
+   // $FF: synthetic method
+   static G j(bl var0) {
       return var0.dU;
    }
-   public static ComboBox k(bl var0) {
+
+   // $FF: synthetic method
+   static ComboBox k(bl var0) {
       return var0.dV;
    }
-   public static TextBox l(bl var0) {
+
+   // $FF: synthetic method
+   static TextBox l(bl var0) {
       return var0.dW;
    }
-   public static cN m(bl var0) {
+
+   // $FF: synthetic method
+   static cN m(bl var0) {
       return var0.dX;
    }
-   public static G n(bl var0) {
+
+   // $FF: synthetic method
+   static G n(bl var0) {
       return var0.dY;
    }
-   public static G o(bl var0) {
+
+   // $FF: synthetic method
+   static G o(bl var0) {
       return var0.dZ;
    }
-   public static ComboBox p(bl var0) {
+
+   // $FF: synthetic method
+   static ComboBox p(bl var0) {
       return var0.ec;
    }
-   public static ComboBox q(bl var0) {
+
+   // $FF: synthetic method
+   static ComboBox q(bl var0) {
       return var0.ed;
    }
-   public static ComboBox r(bl var0) {
+
+   // $FF: synthetic method
+   static ComboBox r(bl var0) {
       return var0.ee;
    }
-   public static ComboBox s(bl var0) {
+
+   // $FF: synthetic method
+   static ComboBox s(bl var0) {
       return var0.ef;
    }
-   public static ComboBox t(bl var0) {
+
+   // $FF: synthetic method
+   static ComboBox t(bl var0) {
       return var0.eg;
    }
-   public static G u(bl var0) {
+
+   // $FF: synthetic method
+   static G u(bl var0) {
       return var0.eh;
    }
-   public static G v(bl var0) {
+
+   // $FF: synthetic method
+   static G v(bl var0) {
       return var0.ei;
    }
-   public static G w(bl var0) {
+
+   // $FF: synthetic method
+   static G w(bl var0) {
       return var0.ej;
    }
-   public static G x(bl var0) {
+
+   // $FF: synthetic method
+   static G x(bl var0) {
       return var0.ek;
    }
-   public static Label y(bl var0) {
+
+   // $FF: synthetic method
+   static Label y(bl var0) {
       return var0.el;
    }
-   public static Button z(bl var0) {
+
+   // $FF: synthetic method
+   static Button z(bl var0) {
       return var0.em;
    }
-   public static Button A(bl var0) {
+
+   // $FF: synthetic method
+   static Button A(bl var0) {
       return var0.bQ;
    }
 }
-
-
 
 }

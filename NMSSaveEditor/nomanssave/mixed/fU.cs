@@ -1,16 +1,22 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
-
 public class fU : fX, fr {
-   public fT mN;
+   // $FF: synthetic field
+   fT mN;
 
-public fU(fT var1) : base(var1, "AccountData") {
+   fU(fT var1) {
+      base(var1, "AccountData");
       this.mN = var1;
    }
 
@@ -23,7 +29,5 @@ public fU(fT var1) : base(var1, "AccountData") {
       this.h(var1);
    }
 }
-
-
 
 }

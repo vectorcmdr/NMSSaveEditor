@@ -1,18 +1,22 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
-
-
 public class fy : ft {
-   public int lT;
-   public fu lJ;
+   int lT;
+   // $FF: synthetic field
+   fu lJ;
 
-   public fy(fu var1, int var2) {
+   fy(fu var1, int var2) {
       this.lJ = var1;
       this.lT = var2;
    }
@@ -26,7 +30,7 @@ public class fy : ft {
    }
 
    public fn L() {
-      long var1 = long.MinValue;
+      long var1 = Long.MIN_VALUE;
       fn var3 = null;
       if (fu.a(this.lJ)[this.lT * 2] != null) {
          var3 = fu.a(this.lJ)[this.lT * 2].L();
@@ -55,13 +59,13 @@ public class fy : ft {
       }
 
       var1.sort(new fz(this));
-      return (fs[])var1.ToArray();
+      return (fs[])var1.ToArray(new fs[0]);
    }
 
    public string toString() {
       StringBuilder var1 = new StringBuilder();
-      var1.Append("Slot " + (this.lT + 1) + " - ");
-      long var2 = long.MinValue;
+      var1.append("Slot " + (this.lT + 1) + " - ");
+      long var2 = Long.MIN_VALUE;
       fn var4 = null;
       if (fu.a(this.lJ)[this.lT * 2] != null) {
          var4 = fu.a(this.lJ)[this.lT * 2].L();
@@ -77,16 +81,14 @@ public class fy : ft {
       }
 
       if (var4 != null) {
-         var1.Append(var4.ToString());
-         var1.Append(" - " + Application.b(var2));
+         var1.append(var4.ToString());
+         var1.append(" - " + Application.b(var2));
       } else {
-         var1.Append("[EMPTY]");
+         var1.append("[EMPTY]");
       }
 
       return var1.ToString();
    }
 }
-
-
 
 }

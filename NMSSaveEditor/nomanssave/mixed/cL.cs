@@ -1,19 +1,21 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
-
-
 public class cL : FileView {
-   // PORT_TODO: public string Name => getName();
-   public cK gl;
+   // $FF: synthetic field
+   cK gl;
 
-   public cL(cK var1) {
+   cL(cK var1) {
       this.gl = var1;
    }
 
@@ -22,7 +24,5 @@ public class cL : FileView {
       return var2.EndsWith(".json") ? var2.Substring(0, var2.Length - 5) : var2;
    }
 }
-
-
 
 }

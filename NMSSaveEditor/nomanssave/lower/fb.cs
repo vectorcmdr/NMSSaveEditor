@@ -1,22 +1,28 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
-
 public class fb : fc {
-   public string name;
-   public eY kL;
+   string name;
+   // $FF: synthetic field
+   eY kL;
 
-   public fb(eY var1, string var2, fc var3) : base(var1, var3) {
+   fb(eY var1, string var2, fc var3) {
+      base(var1, var3);
       this.kL = var1;
       this.name = var2;
    }
 
-   public override object a(Class var1, bool var2) {
+   Object a(Class var1, bool var2) {
       eY var3;
       if (this.kN == null) {
          var3 = this.kL;
@@ -24,30 +30,29 @@ public class fb : fc {
          var3 = (eY)this.kN.a(typeof(eY), var2);
       }
 
-      // PORT_TODO: int var4 = var3.IndexOf(this.name);
-      if (true) { // PORT_TODO: original condition had errors
+      int var4 = var3.IndexOf(this.name);
+      if (var4 < 0) {
          if (!var2) {
             throw new fd((fd)null);
          } else {
-            object var5 = default;
+            Object var5;
             try {
-               // PORT_TODO: var5 = Activator.CreateInstance(var1);
+               var5 = var1.GetType().Assembly.CreateInstance("");
             } catch (Exception var7) {
                throw new Exception("Unexpected error", var7);
             }
 
-            // PORT_TODO: var3.put(this.name, var5);
+            var3.Put(this.name, var5);
             return var5;
          }
-      // PORT_TODO: } else if (var1.IsInstanceOfType(var3.values[var4])) {
-      int var4 = 0; // PORT_TODO: stub declaration
-         // PORT_TODO: return var3.values[var4];
+      } else if (var1.IsInstanceOfType(var3.values[var4])) {
+         return var1.cast(var3.values[var4]);
       } else {
          throw new Exception("Unexpected path");
       }
    }
 
-   public override object getValue() {
+   Object getValue() {
       eY var1;
       if (this.kN == null) {
          var1 = this.kL;
@@ -55,10 +60,10 @@ public class fb : fc {
          var1 = (eY)this.kN.a(typeof(eY), false);
       }
 
-      return var1.get(this.name);
+      return var1.Get(this.name);
    }
 
-   public override object a(object var1, bool var2) {
+   Object a(Object var1, bool var2) {
       eY var3;
       if (this.kN == null) {
          var3 = this.kL;
@@ -66,10 +71,10 @@ public class fb : fc {
          var3 = (eY)this.kN.a(typeof(eY), var2);
       }
 
-      return var3.put(this.name, var1);
+      return var3.Put(this.name, var1);
    }
 
-   public override object bG() {
+   Object bG() {
       eY var1;
       if (this.kN == null) {
          var1 = this.kL;
@@ -80,7 +85,7 @@ public class fb : fc {
       return var1.F(this.name);
    }
 
-   public override eY e(eY var1) {
+   eY e(eY var1) {
       eY var2;
       if (this.kN == null) {
          var2 = this.kL;
@@ -88,9 +93,9 @@ public class fb : fc {
          var2 = (eY)this.kN.a(typeof(eY), false);
       }
 
-      object var3 = var2.get(this.name);
+      Object var3 = var2.Get(this.name);
       if (var3 == null) {
-         var2.put(this.name, var1);
+         var2.Put(this.name, var1);
          return null;
       } else if (var3 is eY) {
          ((eY)var3).c(var1);
@@ -100,7 +105,5 @@ public class fb : fc {
       }
    }
 }
-
-
 
 }

@@ -1,36 +1,38 @@
 using System;
 using System.Collections.Generic;
-using System.Collections.Specialized;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
-
-
 public class fQ {
-   public string filename;
-   public int lO;
-   public fI mx;
-   public fJ mt;
+   string filename;
+   int lO;
+   fI mx;
+   // $FF: synthetic field
+   fJ mt;
 
-   public fQ(fJ var1, string var2, int var3, bool var4) {
+   fQ(fJ var1, string var2, int var3, bool var4) {
       this.mt = var1;
       this.filename = var2;
       this.lO = var3;
       if (var4) {
-         // PORT_TODO: FileStream var5 = new FileStream((new FileInfo(System.IO.Path.Combine((fJ.a(var1).ToString(), System.IO.FileMode.Open)).ToString(), ("mf_" + var2).ToString())));
+         FileStream var5 = new FileStream(new File(fJ.a(var1), "mf_" + var2));
 
-         int var7 = 0;
+         int var7;
          try {
             hc.info("Reading metadata for " + var2);
             byte[] var6 = new byte[1024];
-            // PORT_TODO: var7 = var5.read(var6);
+            var7 = var5.read(var6);
             this.mx = fI.a(var3, var6, 0, var7);
          } finally {
-            // PORT_TODO: var5.Close();
+            var5.Close();
          }
 
          int var11 = this.mx.ch();
@@ -59,23 +61,21 @@ public class fQ {
    }
 
    public long lastModified() {
-      return (new FileInfo(System.IO.Path.Combine((fJ.a(this.mt)).ToString(), ("mf_" + this.filename).ToString()))).LastWriteTimeUtc.Ticks;
+      return (new File(fJ.a(this.mt), "mf_" + this.filename)).LastWriteTimeUtc.Ticks;
    }
 
-   public eY a(eG param1) {
-      return default;
+   eY a(eG param1) {
+      // $FF: Couldn't be decompiled
    }
 
-   public byte[] ah(int var1) {
-      // PORT_TODO: object var2 = new FileStream((new FileInfo(System.IO.Path.Combine((fJ.a(this.mt).ToString(), System.IO.FileMode.Open)).ToString(), (this.filename).ToString())));
+   byte[] ah(int var1) {
+      Object var2 = new FileStream(new File(fJ.a(this.mt), this.filename));
 
       try {
-      object var2 = null; // PORT_TODO: stub declaration
          MemoryStream var3 = new MemoryStream();
          byte[] var4 = new byte[1024];
          hk.readFully((Stream)var2, var4, 0, 16);
          if ((255 & var4[0]) == 229 && (255 & var4[1]) == 161 && (255 & var4[2]) == 237 && (255 & var4[3]) == 254) {
-      var2 = null; // PORT_TODO: stub declaration
             var2 = new gX((Stream)var2, var4);
          } else {
             var3.Write(var4, 0, 16);
@@ -84,32 +84,30 @@ public class fQ {
          while(true) {
             int var5;
             if ((var5 = ((Stream)var2).read(var4)) >= 0) {
-      var2 = null; // PORT_TODO: stub declaration
-               // PORT_TODO: var3.Write(var4, 0, var5);
-               if (true) { // PORT_TODO: original condition had errors
+               var3.Write(var4, 0, var5);
+               if (var3.Count < var1) {
                   continue;
                }
             }
 
-            byte[] var7 = var3.ToArray();
+            byte[] var7 = var3.toByteArray();
             return var7;
          }
       } finally {
-      object var2 = null; // PORT_TODO: stub declaration
          ((Stream)var2).Close();
       }
    }
 
-   public void a(string var1, fn var2, string var3, string var4) {
-      FileInfo var5 = new FileInfo(System.IO.Path.Combine((fJ.a(this.mt)).ToString(), ("mf_" + this.filename).ToString()));
-      FileInfo var6 = new FileInfo(System.IO.Path.Combine((fJ.a(this.mt)).ToString(), (this.filename).ToString()));
-      Dictionary<string, string> var7 = new Dictionary<string, string>();
-      var7.setProperty("ArchiveNumber", (this.lO).ToString());
+   void a(string var1, fn var2, string var3, string var4) {
+      FileInfo var5 = new File(fJ.a(this.mt), "mf_" + this.filename);
+      FileInfo var6 = new File(fJ.a(this.mt), this.filename);
+      Properties var7 = new Properties();
+      var7.setProperty("ArchiveNumber", Convert.ToString(this.lO));
       var7.setProperty("ManifestFile", "mf_" + this.filename);
       var7.setProperty("StorageFile", this.filename);
-      var7.setProperty("LastModified", (var5.LastWriteTimeUtc.Ticks).ToString());
-      if (true) { // PORT_TODO: original condition had errors
-         // PORT_TODO: var7.setProperty("GameMode", var2.Name);
+      var7.setProperty("LastModified", Convert.ToString(var5.LastWriteTimeUtc.Ticks));
+      if (var2 != null) {
+         var7.setProperty("GameMode", var2.ToString());
       }
 
       if (var3 != null) {
@@ -121,14 +119,14 @@ public class fQ {
       }
 
       string var8 = var1 + "." + DateTimeOffset.UtcNow.ToUnixTimeMilliseconds() + ".zip";
-      FileInfo var9 = new FileInfo(System.IO.Path.Combine((aH.cG).ToString(), (var8).ToString()));
-      ZipOutputStream var10 = new ZipOutputStream(new FileStream((var9).ToString(), System.IO.FileMode.Open));
+      FileInfo var9 = new File(aH.cG, var8);
+      ZipOutputStream var10 = new ZipOutputStream(new FileStream(var9));
 
       try {
          byte[] var12 = new byte[1024];
          ZipEntry var13 = new ZipEntry(var5.Name);
          var10.putNextEntry(var13);
-         FileStream var14 = new FileStream((var5).ToString(), System.IO.FileMode.Open);
+         FileStream var14 = new FileStream(var5);
 
          int var11;
          try {
@@ -141,7 +139,7 @@ public class fQ {
 
          var13 = new ZipEntry(var6.Name);
          var10.putNextEntry(var13);
-         FileStream var15 = new FileStream((var6).ToString(), System.IO.FileMode.Open);
+         FileStream var15 = new FileStream(var6);
 
          try {
             while((var11 = var15.read(var12)) >= 0) {
@@ -161,10 +159,10 @@ public class fQ {
       var9.setLastModified(var5.LastWriteTimeUtc.Ticks);
    }
 
-   public void a(eY var1, bool var2) {
+   void a(eY var1, bool var2) {
       MemoryStream var3 = new MemoryStream();
       Exception var4 = null;
-      object var5 = null;
+      Object var5 = null;
 
       try {
          fj var6 = new fj(var3, 2);
@@ -187,23 +185,20 @@ public class fQ {
          throw var4;
       }
 
-      byte[] var35 = var3.ToArray();
-      // PORT_TODO: int var36 = 0;
-      // PORT_TODO: object var37 = new FileStream((new FileInfo(System.IO.Path.Combine((fJ.a(this.mt).ToString(), System.IO.FileMode.Open)).ToString(), (this.filename).ToString())));
+      byte[] var35 = var3.toByteArray();
+      int var36 = 0;
+      Object var37 = new FileStream(new File(fJ.a(this.mt), this.filename));
 
       try {
-      object var37 = null; // PORT_TODO: stub declaration
          if (var2) {
-      var37 = null; // PORT_TODO: stub declaration
             var37 = new gZ((Stream)var37);
          }
 
          ((Stream)var37).Write(var35);
          if (var2) {
-            // PORT_TODO: var36 = ((gZ)var37).ci();
+            var36 = ((gZ)var37).ci();
          }
       } finally {
-      object var37 = null; // PORT_TODO: stub declaration
          ((Stream)var37).Close();
       }
 
@@ -213,7 +208,7 @@ public class fQ {
 
       byte[] var7 = new byte[32];
       byte[] var8 = new byte[16];
-      if (var2 == null) {
+      if (!var2) {
          try {
             MessageDigest var9 = MessageDigest.getInstance("SHA-256");
             var7 = var9.digest(var35);
@@ -225,21 +220,17 @@ public class fQ {
 
       this.mx.e(var7);
       this.mx.f(var8);
-      // PORT_TODO: this.mx.ak(var36);
-      // PORT_TODO: this.mx.aj(var35.Length);
-      // PORT_TODO: FileStream var38 = new FileStream((new FileInfo(System.IO.Path.Combine((fJ.a(this.mt).ToString(), System.IO.FileMode.Open)).ToString(), ("mf_" + this.filename).ToString())));
+      this.mx.ak(var36);
+      this.mx.aj(var35.length);
+      FileStream var38 = new FileStream(new File(fJ.a(this.mt), "mf_" + this.filename));
 
       try {
-      FileStream var38 = null; // PORT_TODO: stub declaration
          var38.Write(this.mx.encode());
       } finally {
-      FileStream var38 = null; // PORT_TODO: stub declaration
          var38.Close();
       }
 
    }
 }
-
-
 
 }

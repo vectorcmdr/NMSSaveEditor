@@ -1,20 +1,24 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
-
 public class fd : Exception {
-   public fd() {
+   private fd() {
    }
-   public fd(fd var1) {
-      // PORT_TODO: // PORT_TODO: this();
+
+   // $FF: synthetic method
+   fd(fd var1) {
+      // Constructor chain: base()
    }
 }
-
-
 
 }

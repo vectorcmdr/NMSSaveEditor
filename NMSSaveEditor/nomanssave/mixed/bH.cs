@@ -1,16 +1,21 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
-
 public class bH : bK {
-   public bE ey;
+   // $FF: synthetic field
+   bE ey;
 
-   public bH(bE var1) {
+   bH(bE var1) {
       this.ey = var1;
    }
 
@@ -23,15 +28,12 @@ public class bH : bK {
    }
 
    public string ab() {
-      // PORT_TODO: return (bE.a(this.ey).ToString().b(eU.ks));
-      return default;
+      return Convert.ToString(bE.a(this.ey).b(eU.ks));
    }
 
    public void l(string var1) {
       throw new Exception("Cannot set words learnt");
    }
 }
-
-
 
 }

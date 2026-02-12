@@ -1,20 +1,25 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
-
 public class aP : G {
-   public aJ dj;
+   // $FF: synthetic field
+   aJ dj;
 
-   public aP(aJ var1) {
+   aP(aJ var1) {
       this.dj = var1;
    }
 
-   public override string g(string var1) {
+   protected string g(string var1) {
       if (aJ.a(this.dj) == null) {
          return "";
       } else {
@@ -26,14 +31,12 @@ public class aP : G {
                aJ.a(this.dj).g(var4);
             }
 
-            return (var4).ToString();
+            return Convert.ToString(var4);
          } catch (Exception var6) {
-            return (var2).ToString();
+            return Convert.ToString(var2);
          }
       }
    }
 }
-
-
 
 }

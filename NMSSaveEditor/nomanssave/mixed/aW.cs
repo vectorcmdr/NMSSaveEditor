@@ -1,104 +1,113 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
-
-
 public class aW : Form {
-   public TextBox ds;
-   public CheckBox dt;
-   public CheckBox du;
-   public RadioButton dv;
-   public RadioButton dw;
-   public static aW dx;
+   private TextBox ds;
+   private CheckBox dt;
+   private CheckBox du;
+   private RadioButton dv;
+   private RadioButton dw;
+   private static aW dx;
 
-// PORT_TODO: public aW(cy var1) : base(var1) {
-      // PORT_TODO: this.Size = new Size(400, 250);
-      // PORT_TODO: this.FormBorderStyle = FormBorderStyle.FixedDialog; //(false);
-      // setModalExclusionType not available in WinForms
-      // PORT_TODO: this.Text = ("Find");
-      // PORT_TODO: // PORT_TODO: this/* setModal */(true);
-      // PORT_TODO: Panel var2 = new Panel();
-      // PORT_TODO: this.setContentPane(var2);
-      // PORT_TODO: var2.SuspendLayout(); // TODO: set layout new TableLayoutPanel());
-      // PORT_TODO: Panel var3 = new Panel();
-      // TODO: var3.SuspendLayout(); // TODO: set layout /* FormLayout */ null, FormFactory.LABEL_COMPONENT_GAP_COLSPEC, ColumnSpec.decode("250px"), FormFactory.LABEL_COMPONENT_GAP_COLSPEC}, new RowSpec[]{FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC}));
-      // PORT_TODO: Label var4 = new Label() { Text = "Find:" };
-      // PORT_TODO: var3.Controls.Add(var4);
-      // PORT_TODO: this.ds = new TextBox();
-      // PORT_TODO: var3.Add(this.ds, "4, 2, fill, default");
-      // PORT_TODO: var2.Add(var3);
-      // PORT_TODO: Panel var5 = new Panel();
-      // PORT_TODO: var5.SuspendLayout(); // TODO: set layout new TableLayoutPanel());
-      // PORT_TODO: var5.Padding = new Padding(0); /* setBorder */ //(null /* CompoundBorder */);
-      // PORT_TODO: this.dv = new RadioButton() { Text = "Forward" };
-      // PORT_TODO: this.dv.Checked = (true);
-      // PORT_TODO: var5.Add(this.dv);
-      // PORT_TODO: this.dw = new RadioButton() { Text = "Backward" };
-      // PORT_TODO: var5.Add(this.dw);
-      // PORT_TODO: object var6 = new object();
-      // PORT_TODO: var6.Add(this.dv);
-      // PORT_TODO: var6.Add(this.dw);
-      // PORT_TODO: var3.Controls.Add(var5);
-      // PORT_TODO: Panel var7 = new Panel();
-      // PORT_TODO: var7.SuspendLayout(); // TODO: set layout new TableLayoutPanel());
-      // PORT_TODO: var7.Padding = new Padding(0); /* setBorder */ //(null /* CompoundBorder */);
-      // PORT_TODO: this.dt = new CheckBox() { Text = "Case Sensitive" };
-      // PORT_TODO: this.dt.Checked = (true);
-      // PORT_TODO: var7.Add(this.dt);
-      // PORT_TODO: this.du = new CheckBox() { Text = "Wrap Search" };
-      // PORT_TODO: var7.Add(this.du);
-      // PORT_TODO: var3.Controls.Add(var7);
-      // PORT_TODO: Panel var8 = new Panel();
-      // PORT_TODO: var8.SuspendLayout(); // TODO: set layout new FlowLayoutPanel(2));
-      // PORT_TODO: var2.Controls.Add(var8);
-      // PORT_TODO: Button var9 = new Button() { Text = "Find" };
-      // var9.setMnemonic - not directly available in WinForms
-      // PORT_TODO: var9.Click += (new aX(this, var1));
-      // PORT_TODO: var8.Add(var9);
-      // PORT_TODO: this.getRootPane().setDefaultButton(var9);
-      // PORT_TODO: Button var10 = new Button() { Text = "Cancel" };
-      // var10.setMnemonic - not directly available in WinForms
-      // PORT_TODO: var10.Click += (new aY(this));
-      // PORT_TODO: var8.Add(var10);
-      // PORT_TODO: this.getRootPane().registerKeyboardAction(new aZ(this), /* KeyStroke */ Keys.None /* (27, 0) */, 2);
-      // PORT_TODO: this.PerformLayout();
-   // PORT_TODO: }
+   private aW(cy var1) {
+      base(var1);
+      this.SetSize(400, 250);
+      this.SetResizable(false);
+      this.setModalExclusionType(ModalExclusionType.APPLICATION_EXCLUDE);
+      this.SetTitle("Find");
+      this.SetModal(true);
+      Panel var2 = new Panel();
+      this.SetContentPane(var2);
+      var2.SetLayout(new BorderLayout(0, 0));
+      Panel var3 = new Panel();
+      var3.SetLayout(new FormLayout(new ColumnSpec[]{FormFactory.LABEL_COMPONENT_GAP_COLSPEC, ColumnSpec.decode("100px"), FormFactory.LABEL_COMPONENT_GAP_COLSPEC, ColumnSpec.decode("250px"), FormFactory.LABEL_COMPONENT_GAP_COLSPEC}, new RowSpec[]{FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC}));
+      Label var4 = new Label("Find:");
+      var3.Add(var4, "2, 2, left, center");
+      this.ds = new TextBox();
+      var3.Add(this.ds, "4, 2, fill, default");
+      var2.Add(var3);
+      Panel var5 = new Panel();
+      var5.SetLayout(new GridLayout(1, 2));
+      var5.SetBorder(BorderFactory.createCompoundBorder(BorderFactory.createTitledBorder("Direction"), BorderFactory.createEmptyBorder(5, 5, 5, 5)));
+      this.dv = new RadioButton("Forward");
+      this.dv.setSelected(true);
+      var5.Add(this.dv);
+      this.dw = new RadioButton("Backward");
+      var5.Add(this.dw);
+      ButtonGroup var6 = new ButtonGroup();
+      var6.Add(this.dv);
+      var6.Add(this.dw);
+      var3.Add(var5, "2, 4, 3, 1");
+      Panel var7 = new Panel();
+      var7.SetLayout(new GridLayout(1, 2));
+      var7.SetBorder(BorderFactory.createCompoundBorder(BorderFactory.createTitledBorder("Options"), BorderFactory.createEmptyBorder(5, 5, 5, 5)));
+      this.dt = new CheckBox("Case Sensitive");
+      this.dt.setSelected(true);
+      var7.Add(this.dt);
+      this.du = new CheckBox("Wrap Search");
+      var7.Add(this.du);
+      var3.Add(var7, "2, 6, 3, 1");
+      Panel var8 = new Panel();
+      var8.SetLayout(new FlowLayout(2));
+      var2.Add(var8, "South");
+      Button var9 = new Button("Find");
+      var9.SetMnemonic(10);
+      var9.AddActionListener(new aX(this, var1));
+      var8.Add(var9);
+      this.GetRootPane().setDefaultButton(var9);
+      Button var10 = new Button("Cancel");
+      var10.SetMnemonic(27);
+      var10.AddActionListener(new aY(this));
+      var8.Add(var10);
+      this.GetRootPane().registerKeyboardAction(new aZ(this), Keys.getKeyStroke(27, 0), 2);
+      this.Pack();
+   }
 
    public static void a(cy var0, string var1) {
       if (dx == null) {
-         // PORT_TODO: dx = new aW(var0);
+         dx = new aW(var0);
       }
 
-      dx.StartPosition = FormStartPosition.CenterParent; //(var0);
+      dx.SetLocationRelativeTo(var0);
       if (var1 != null) {
-         dx.ds.Text = (var1);
+         dx.ds.SetText(var1);
       }
 
       dx.ds.setSelectionStart(0);
-      dx.ds.setSelectionEnd(dx.ds.Text.Length);
+      dx.ds.setSelectionEnd(dx.ds.GetText().Length);
       dx.ds.Focus();
-      dx.Show();
+      dx.SetVisible(true);
    }
+
+   // $FF: synthetic method
    static TextBox a(aW var0) {
       return var0.ds;
    }
-   public static RadioButton b(aW var0) {
+
+   // $FF: synthetic method
+   static RadioButton b(aW var0) {
       return var0.dw;
    }
-   public static CheckBox c(aW var0) {
+
+   // $FF: synthetic method
+   static CheckBox c(aW var0) {
       return var0.dt;
    }
-   public static CheckBox d(aW var0) {
+
+   // $FF: synthetic method
+   static CheckBox d(aW var0) {
       return var0.du;
    }
 }
-
-
 
 }

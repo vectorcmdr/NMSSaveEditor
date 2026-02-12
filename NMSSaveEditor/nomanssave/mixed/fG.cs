@@ -1,15 +1,21 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
-public class fG : IComparer<object> {
-   public fE mf;
+public class fG : Comparator {
+   // $FF: synthetic field
+   fE mf;
 
-   public fG(fE var1) {
+   fG(fE var1) {
       this.mf = var1;
    }
 
@@ -21,7 +27,9 @@ public class fG : IComparer<object> {
          return var3 > 2147483647L ? int.MaxValue : (int)var3;
       }
    }
-   public int Compare(object var1, object var2) {
+
+   // $FF: synthetic method
+   public int compare(Object var1, Object var2) {
       return this.a((fs)var1, (fs)var2);
    }
 }

@@ -1,69 +1,71 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
+public class dk : ComboBoxModel {
+   private gv hk;
+   // $FF: synthetic field
+   dj hl;
 
-
-public class dk : object {
-   public gv hk;
-   public dj hl;
-
-   public dk(dj var1) {
+   dk(dj var1) {
       this.hl = var1;
       this.hk = null;
    }
 
    public int getSize() {
-      // PORT_TODO: return dj.a(this.hl) == null ? 0 : dj.a(this.hl).Length;
-      return 0;
+      return dj.a(this.hl) == null ? 0 : dj.a(this.hl).length;
    }
 
    public gv D(int var1) {
-      // PORT_TODO: return dj.a(this.hl)[var1];
-      return default;
+      return dj.a(this.hl)[var1];
    }
 
-   public void addListDataListener(EventHandler var1) {
+   public void addListDataListener(ListDataListener var1) {
    }
 
-   public void removeListDataListener(EventHandler var1) {
+   public void removeListDataListener(ListDataListener var1) {
    }
 
-   public void setSelectedItem(object var1) {
+   public void setSelectedItem(Object var1) {
       this.hk = (gv)var1;
       if (this.hk == null) {
-         // PORT_TODO: dj.b(this.hl).Text = ("");
-         // PORT_TODO: dj.c(this.hl).SelectedIndex = (-1);
-         // PORT_TODO: dj.d(this.hl).SelectedIndex = (-1);
-         // PORT_TODO: dj.e(this.hl).Text = ("");
-         // PORT_TODO: dj.f(this.hl).Text = ("");
-         // PORT_TODO: dj.g(this.hl).Text = ("");
-         // PORT_TODO: dj.h(this.hl).Text = ("");
-         // PORT_TODO: dj.i(this.hl).a(new List<object>());
+         dj.b(this.hl).SetText("");
+         dj.c(this.hl).SetSelectedIndex(-1);
+         dj.d(this.hl).SetSelectedIndex(-1);
+         dj.e(this.hl).SetText("");
+         dj.f(this.hl).SetText("");
+         dj.g(this.hl).SetText("");
+         dj.h(this.hl).SetText("");
+         dj.i(this.hl).a(new List<object>());
       } else {
-         // PORT_TODO: dj.b(this.hl).Text = (this.hk.Name);
-         // PORT_TODO: dj.c(this.hl).m(this.hk.cT());
-         // PORT_TODO: dj.d(this.hl).m(this.hk.cW());
-         // PORT_TODO: dj.e(this.hl).Text = (this.hk.cK());
-         // PORT_TODO: dj.f(this.hl).Text = ((this.hk.dF().ToString()));
-         // PORT_TODO: dj.g(this.hl).Text = ((this.hk.dG().ToString()));
-         // PORT_TODO: dj.h(this.hl).Text = ((this.hk.dH().ToString()));
-         // PORT_TODO: dj.i(this.hl).a(new List<object> { this.hk.dE() });
+         dj.b(this.hl).SetText(this.hk.Name);
+         dj.c(this.hl).m(this.hk.cT());
+         dj.d(this.hl).m(this.hk.cW());
+         dj.e(this.hl).SetText(this.hk.cK());
+         dj.f(this.hl).SetText(Double.toString(this.hk.dF()));
+         dj.g(this.hl).SetText(Double.toString(this.hk.dG()));
+         dj.h(this.hl).SetText(Double.toString(this.hk.dH()));
+         dj.i(this.hl).a(new List<object> { this.hk.dE()));
       }
    }
 
-   public object getSelectedItem() {
+   public Object getSelectedItem() {
       return this.hk;
    }
-   public object getElementAt(int var1) {
+
+   // $FF: synthetic method
+   public Object getElementAt(int var1) {
       return this.D(var1);
    }
 }
-
-
 
 }

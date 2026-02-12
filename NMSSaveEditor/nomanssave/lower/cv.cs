@@ -1,18 +1,20 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
-
-
-public class cv : JFileChooser {
-   public static cv fQ = null;
-   public static string name = "Weapon Export FileInfo";
-   public static Image fH = Application.a("UI-WEAPONICON.PNG", 16, 16);
+public class cv : OpenFileDialog {
+   private static cv fQ = null;
+   private static string name = "Weapon Export File";
+   private static Image fH = Application.a("UI-WEAPONICON.PNG", 16, 16);
 
    public static cv ax() {
       if (fQ == null) {
@@ -22,19 +24,24 @@ public class cv : JFileChooser {
       return fQ;
    }
 
-   public cv() {
-      // this.setFileSelectionMode - WinForms uses separate dialog types
-      // this.setAcceptAllFileFilterUsed - not needed in WinForms
+   private cv() {
+      this.setFileSelectionMode(0);
+      this.setAcceptAllFileFilterUsed(false);
       this.setFileView(new cw(this));
       this.setFileFilter(new cx(this));
-      this.setDialogTitle("Choose Weapon Export FileInfo");
-      /* TODO: port from Java - addPropertyChangeListener for lookAndFeel */
+      this.setDialogTitle("Choose Weapon Export File");
+      UIManager.addPropertyChangeListener((var1) => {
+         if ("lookAndFeel".Equals(var1.getPropertyName())) {
+            SwingUtilities.updateComponentTreeUI(this);
+         }
+
+      });
    }
-   public static Image @as() {
+
+   // $FF: synthetic method
+   static Image as() {
       return fH;
    }
 }
-
-
 
 }

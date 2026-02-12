@@ -1,32 +1,33 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
-
-
 public class i : ActionListener {
-   public h z;
+   // $FF: synthetic field
+   h z;
 
-   public i(h var1) {
+   i(h var1) {
       this.z = var1;
    }
 
-   public void actionPerformed(EventArgs var1) {
-      // PORT_TODO: string var2 = h.a(this.z).Text;
-      // PORT_TODO: h.a(this.z, ey.b(h.b(this.z), var2));
-      // PORT_TODO: h.c(this.z);
+   public void actionPerformed(ActionEvent var1) {
+      string var2 = h.a(this.z).GetText();
+      h.a(this.z, ey.b(h.b(this.z), var2));
+      h.c(this.z);
       if (h.d(this.z).Count == 0) {
-         MessageBox.Show("Item not found.", "Warning");
+         JavaCompat.ShowOptionDialog(this.z, "Item not found.", "Warning", 0, 2, (Icon)null, new Object[]{"OK"}, (Object)null);
       }
 
    }
 }
-
-
 
 }

@@ -1,27 +1,29 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
-
-
 public class eE : List<object> {
-   public eE() {
+   private eE() {
    }
 
    public bool add(string var1, string var2) {
-      // PORT_TODO: return this.Add(new eF(var1, var2));
-      return default;
+      return this.Add(new eF(var1, var2));
    }
 
    public bool s(string var1) {
       if (this.Count == 0) {
          return false;
       } else {
-         eF var2 = (eF)this[0];
+         eF var2 = (eF)this.Get(0);
          return var2.key.Equals(var1) || var2.name.Equals(var1);
       }
    }
@@ -64,14 +66,16 @@ public class eE : List<object> {
 
       return null;
    }
-   public eE(eE var1) {
-      // PORT_TODO: // PORT_TODO: this();
+
+   // $FF: synthetic method
+   eE(eE var1) {
+      // Constructor chain: base()
    }
-   public eE(eE var1, eE var2) {
-      // PORT_TODO: // PORT_TODO: this();
+
+   // $FF: synthetic method
+   eE(eE var1, eE var2) {
+      // Constructor chain: base()
    }
 }
-
-
 
 }

@@ -1,35 +1,37 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
-
 public class be : G {
-   public bd dP;
+   // $FF: synthetic field
+   bd dP;
 
-   public be(bd var1) {
+   be(bd var1) {
       this.dP = var1;
    }
 
-   public override string g(string var1) {
-      // PORT_TODO: if (bd.a(this.dP) == null) {
-         // PORT_TODO: return "";
-      // PORT_TODO: } else {
-         // PORT_TODO: var1 = var1.Trim();
-         // PORT_TODO: if (!var1.Equals(bd.a(this.dP).Name)) {
-            // PORT_TODO: bd.a(this.dP).setName(var1);
-            // PORT_TODO: bd.b(this.dP).Text = (var1);
-         // PORT_TODO: }
+   protected string g(string var1) {
+      if (bd.a(this.dP) == null) {
+         return "";
+      } else {
+         var1 = var1.Trim();
+         if (!var1.Equals(bd.a(this.dP).Name)) {
+            bd.a(this.dP).setName(var1);
+            bd.b(this.dP).SetText(var1);
+         }
 
-         // PORT_TODO: return var1;
-      // PORT_TODO: }
-      return default;
+         return var1;
+      }
    }
 }
-
-
 
 }

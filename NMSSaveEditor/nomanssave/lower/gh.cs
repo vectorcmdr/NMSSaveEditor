@@ -1,45 +1,48 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
-
 public class gh {
-   public string name;
-   public eY nn;
-   public ge nk;
+   string name;
+   eY nn;
+   // $FF: synthetic field
+   ge nk;
 
-   public gh(ge var1, string var2, eY var3) {
+   private gh(ge var1, string var2, eY var3) {
       this.nk = var1;
       this.name = var2;
       this.nn = var3;
    }
 
    public gy cJ() {
-      // PORT_TODO: return gy.@as(this.nn.getValueAsString("ResourceElement.Filename"));
-      return default;
+      return gy.as(this.nn.getValueAsString("ResourceElement.Filename"));
    }
 
    public string cK() {
-      // PORT_TODO: return this.nn.d("ResourceElement.Seed").X(1);
-      return default;
+      return this.nn.d("ResourceElement.Seed").X(1);
    }
 
    public void aa(string var1) {
-      // PORT_TODO: this.nn.d("ResourceElement.Seed").a(1, var1);
+      this.nn.d("ResourceElement.Seed").a(1, var1);
    }
 
    public string toString() {
       return this.name;
    }
-   public gh(ge var1, string var2, eY var3, gh var4) {
-      // PORT_TODO: // PORT_TODO: this(var1, var2, var3);
+
+   // $FF: synthetic method
+   gh(ge var1, string var2, eY var3, gh var4) {
+      // Constructor chain: base(var1, var2, var3)
    }
 }
-
-
 
 }

@@ -1,25 +1,28 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
-
-
 public class eD : eE {
-   public string version;
+   private string version;
 
-public eD(Stream var1, string var2) : base((eE)null) {
+   private eD(Stream var1, string var2) {
+      base((eE)null);
       this.version = var2;
       List<object> var3 = new List<object>();
-      // PORT_TODO: StreamReader var4 = new StreamReader(new StreamReader(var1));
+      StreamReader var4 = new StreamReader(new StreamReader(var1));
 
       string var5;
       try {
-         if (false) { // PORT_TODO: original while had errors
+         while((var5 = var4.ReadLine()) != null) {
             try {
                if (var5.Length != 0) {
                   int var9 = var5.IndexOf("\t");
@@ -43,7 +46,7 @@ public eD(Stream var1, string var2) : base((eE)null) {
 
                         hc.debug("Reverse duplicated: " + var7);
                      } else {
-                        // PORT_TODO: this.Add(var6, var7);
+                        this.Add(var6, var7);
                      }
                   }
                }
@@ -52,7 +55,7 @@ public eD(Stream var1, string var2) : base((eE)null) {
             }
          }
       } finally {
-         // PORT_TODO: var4.Close();
+         var4.Close();
       }
 
       IEnumerator<object> var15 = var3.GetEnumerator();
@@ -67,7 +70,7 @@ public eD(Stream var1, string var2) : base((eE)null) {
             throw new IOException("Reverse error: " + var5);
          }
 
-         // PORT_TODO: this.Add(var5, var5);
+         this.Add(var5, var5);
       }
 
    }
@@ -75,11 +78,11 @@ public eD(Stream var1, string var2) : base((eE)null) {
    public string toString() {
       return this.version;
    }
-   public eD(Stream var1, string var2, eD var3) {
-      // PORT_TODO: // PORT_TODO: this(var1, var2);
+
+   // $FF: synthetic method
+   eD(Stream var1, string var2, eD var3) {
+      // Constructor chain: base(var1, var2)
    }
 }
-
-
 
 }

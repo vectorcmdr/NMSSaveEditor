@@ -1,18 +1,23 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
 public class F : fs {
-   public string filename;
-   public long bd;
-   public fn be;
-   public eY bf;
-   public Application aZ;
+   string filename;
+   long bd;
+   fn be;
+   eY bf;
+   // $FF: synthetic field
+   Application aZ;
 
    public F(Application var1, string var2, long var3, fn var5, eY var6) {
       this.aZ = var1;

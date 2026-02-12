@@ -1,26 +1,27 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
-
-
 public class cw : FileView {
-   // PORT_TODO: public string Name => getName();
-   public cv fR;
+   // $FF: synthetic field
+   cv fR;
 
-   public cw(cv var1) {
+   cw(cv var1) {
       this.fR = var1;
    }
 
-   public Icon getIcon(FileInfo var1) {
+   public Image getIcon(FileInfo var1) {
       string var2 = var1.Name;
-      // PORT_TODO: return (Icon)(var2.EndsWith(".wp0") ? cv.@as() : base.getIcon(var1));
-      return default;
+      return (Icon)(var2.EndsWith(".wp0") ? cv.as() : base.getIcon(var1));
    }
 
    public string getName(FileInfo var1) {
@@ -28,7 +29,5 @@ public class cw : FileView {
       return var2.EndsWith(".wp0") ? var2.Substring(0, var2.Length - 4) : var2;
    }
 }
-
-
 
 }

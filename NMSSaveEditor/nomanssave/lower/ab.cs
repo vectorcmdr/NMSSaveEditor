@@ -1,47 +1,49 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
+public class ab : ComboBoxModel {
+   // $FF: synthetic field
+   X bV;
 
-
-public class ab : object {
-   public X bV;
-
-   public ab(X var1) {
+   ab(X var1) {
       this.bV = var1;
    }
 
    public int getSize() {
-      // PORT_TODO: return gl.Values.Length;
-      return default;
+      return gl.Values.length;
    }
 
    public gl r(int var1) {
-      // PORT_TODO: return gl.Values[var1];
-      return default;
+      return gl.Values[var1];
    }
 
-   public void addListDataListener(EventHandler var1) {
+   public void addListDataListener(ListDataListener var1) {
    }
 
-   public void removeListDataListener(EventHandler var1) {
+   public void removeListDataListener(ListDataListener var1) {
    }
 
-   public void setSelectedItem(object var1) {
+   public void setSelectedItem(Object var1) {
    }
 
-   public object getSelectedItem() {
+   public Object getSelectedItem() {
       return gl.oF;
    }
-   public object getElementAt(int var1) {
+
+   // $FF: synthetic method
+   public Object getElementAt(int var1) {
       return this.r(var1);
    }
 }
-
-
 
 }

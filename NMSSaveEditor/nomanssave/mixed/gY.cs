@@ -1,19 +1,22 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
-
-
 public class gY : Stream {
-   public int sc;
-   public gX sd;
+   private int sc;
+   // $FF: synthetic field
+   gX sd;
 
-   public gY(gX var1, int var2) {
+   private gY(gX var1, int var2) {
       this.sd = var1;
       this.sc = var2;
    }
@@ -33,7 +36,7 @@ public class gY : Stream {
    }
 
    public int read(byte[] var1) {
-      return this.read(var1, 0, var1.Length);
+      return this.read(var1, 0, var1.length);
    }
 
    public int read(byte[] var1, int var2, int var3) {
@@ -53,23 +56,11 @@ public class gY : Stream {
          }
       }
    }
-   public gY(gX var1, int var2, gY var3) {
-      // PORT_TODO: // PORT_TODO: this(var1, var2);
+
+   // $FF: synthetic method
+   gY(gX var1, int var2, gY var3) {
+      // Constructor chain: base(var1, var2)
    }
-
-   // Stream abstract member stubs
-   public override bool CanRead => true;
-   public override bool CanSeek => false;
-   public override bool CanWrite => true;
-   public override long Length => 0;
-   public override long Position { get => 0; set { } }
-   public override void Flush() { }
-   public override int Read(byte[] buffer, int offset, int count) { return 0; }
-   public override long Seek(long offset, SeekOrigin origin) { return 0; }
-   public override void SetLength(long value) { }
-   public override void Write(byte[] buffer, int offset, int count) { }
 }
-
-
 
 }

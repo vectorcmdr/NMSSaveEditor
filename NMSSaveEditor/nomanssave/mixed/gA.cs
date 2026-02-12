@@ -1,18 +1,22 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
-
-
 public class gA {
-   public eS rd;
-   public gz re;
+   private eS rd;
+   // $FF: synthetic field
+   gz re;
 
-   public gA(gz var1, eS var2) {
+   private gA(gz var1, eS var2) {
       this.re = var1;
       this.rd = var2;
    }
@@ -45,11 +49,11 @@ public class gA {
       }
 
    }
-   public gA(gz var1, eS var2, gA var3) {
-      // PORT_TODO: // PORT_TODO: this(var1, var2);
+
+   // $FF: synthetic method
+   gA(gz var1, eS var2, gA var3) {
+      // Constructor chain: base(var1, var2)
    }
 }
-
-
 
 }

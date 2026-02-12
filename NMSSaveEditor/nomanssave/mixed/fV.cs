@@ -1,31 +1,32 @@
 using System;
 using System.Collections.Generic;
-using System.Collections.Specialized;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
-
-
 public class fV : fs {
-   public string Name => getName();
-   public fW mO;
-   public int mb;
-   public FileInfo mc;
-   public string mP;
-   public fS mQ;
-   public string mR;
-   public string mS;
-   public fn be;
-   public fT mN;
+   fW mO;
+   int mb;
+   FileInfo mc;
+   string mP;
+   fS mQ;
+   string mR;
+   string mS;
+   fn be;
+   // $FF: synthetic field
+   fT mN;
 
-   public fV(fT var1, string var2, int var3) {
+   fV(fT var1, string var2, int var3) {
       this.mN = var1;
       this.mb = var3;
-      this.mc = new FileInfo(System.IO.Path.Combine((aH.cG).ToString(), (var2).ToString()));
+      this.mc = new File(aH.cG, var2);
       ZipFile var4 = new ZipFile(this.mc);
 
       try {
@@ -34,7 +35,7 @@ public class fV : fs {
             throw new IOException("Invalid backup file");
          }
 
-         Dictionary<string, string> var6 = new Dictionary<string, string>();
+         Properties var6 = new Properties();
          var6.load(var4.getInputStream(var5));
          this.mP = var6.getProperty("MetaFile");
          this.mR = var6.getProperty("DataFile");
@@ -45,14 +46,14 @@ public class fV : fs {
          }
 
          string var8 = var6.getProperty("GameMode");
-         // PORT_TODO: this.be = var8 == null ? null : fn.valueOf(var8);
+         this.be = var8 == null ? null : fn.valueOf(var8);
          this.mO = new fW(var1, var7);
          var5 = var4.getEntry(this.mP);
          if (var5 == null) {
             throw new IOException("Invalid backup file");
          }
 
-         this.mQ = new fS((FileInfo)null);
+         this.mQ = new fS((File)null);
          this.mQ.read(var4.getInputStream(var5));
       } catch (FormatException var12) {
          throw new IOException("Invalid backup file");
@@ -62,7 +63,7 @@ public class fV : fs {
 
    }
 
-   public void a(FileStream var1) {
+   void a(FileStream var1) {
       ZipFile var2 = new ZipFile(this.mc);
 
       try {
@@ -98,7 +99,7 @@ public class fV : fs {
    }
 
    public eY M() {
-      return default;
+      // $FF: Couldn't be decompiled
    }
 
    public string b(eY var1) {
@@ -132,7 +133,5 @@ public class fV : fs {
       return this.mQ.getDescription();
    }
 }
-
-
 
 }

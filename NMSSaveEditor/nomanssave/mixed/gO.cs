@@ -1,51 +1,53 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
-
-
 public class gO {
-   public int index;
-   public eY rO;
-   public List<object> gT;
+   private int index;
+   private eY rO;
+   private List<object> gT;
 
    public static gO[] E(eY var0) {
-      // PORT_TODO: eV var1 = var0.d("VehicleOwnership");
-      // PORT_TODO: if (var1 != null && var1.Count != 0) {
-         // PORT_TODO: List<object> var2 = new List<object>();
+      eV var1 = var0.d("VehicleOwnership");
+      if (var1 != null && var1.Count != 0) {
+         List<object> var2 = new List<object>();
 
-         // PORT_TODO: eY var4;
-         // PORT_TODO: for(int var3 = 0; var3 < var1.Count; ++var3) {
-            // PORT_TODO: var4 = var1.V(var3);
-            // PORT_TODO: if (var3 != 4) {
-               // PORT_TODO: var2.Add(new gO(var3, var4, var4.H("Inventory"), var4.H("Inventory_TechOnly")));
-            // PORT_TODO: }
-         // PORT_TODO: }
+         eY var4;
+         for(int var3 = 0; var3 < var1.Count; ++var3) {
+            var4 = var1.V(var3);
+            if (var3 != 4) {
+               var2.Add(new gO(var3, var4, var4.H("Inventory"), var4.H("Inventory_TechOnly")));
+            }
+         }
 
-         // PORT_TODO: eY var5 = var0.H("FishPlatformLayout");
-         // PORT_TODO: var4 = var0.H("FishPlatformInventory");
-         // PORT_TODO: if (var5 != null && var4 != null) {
-            // PORT_TODO: var2.Add(new gO(var5, var4));
-         // PORT_TODO: }
+         eY var5 = var0.H("FishPlatformLayout");
+         var4 = var0.H("FishPlatformInventory");
+         if (var5 != null && var4 != null) {
+            var2.Add(new gO(var5, var4));
+         }
 
-         // PORT_TODO: return (gO[])var2.ToArray();
-      // PORT_TODO: } else {
-         // PORT_TODO: return new gO[0];
-      // PORT_TODO: }
-      return null;
+         return (gO[])var2.ToArray(new gO[0]);
+      } else {
+         return new gO[0];
+      }
    }
 
-   public static Function a(gO var0, string var1) {
+   private static Function a(gO var0, string var1) {
       return (var2) => {
          return new string[]{var0.getType(), var1};
       };
    }
 
-   public gO(int var1, eY var2, eY var3, eY var4) {
+   private gO(int var1, eY var2, eY var3, eY var4) {
       this.index = var1;
       this.rO = var2;
       short var5;
@@ -79,25 +81,24 @@ public class gO {
          var12.Add(new gt(a(this, "Technology"), var4, var5, var9, var10, true, false, false, false));
       }
 
-      this.gT = new List<object>(var12);
+      this.gT = JavaCollections.UnmodifiableList(var12);
    }
 
-   public gO(eY var1, eY var2) {
+   private gO(eY var1, eY var2) {
       this.index = 1000;
       this.rO = var1;
-      // PORT_TODO: var2.a((var1x, var2x, var3x) => {
-         // PORT_TODO: if ("ValidSlotIndices".Equals(var1x) && var3x is eV) {
-            // PORT_TODO: int var4 = ((eV)var3x).Count;
-            // PORT_TODO: var1.b("Slots", (object)var4);
-         // PORT_TODO: }
+      var2.a((var1x, var2x, var3x) => {
+         if ("ValidSlotIndices".Equals(var1x) && var3x is eV) {
+            int var4 = ((eV)var3x).Count;
+            var1.b("Slots", (Object)var4);
+         }
 
-// PORT_TODO: 
-      // PORT_TODO: });
-      // PORT_TODO: byte var3 = 8;
-      // PORT_TODO: byte var4 = 6;
-      // PORT_TODO: List<object> var5 = new List<object>();
-      // PORT_TODO: var5.Add(new gt(a(this, "Cold Storage"), var2, 2048, var3, var4, false, false, true, false));
-      // PORT_TODO: this.gT = new List<object>(var5);
+      });
+      byte var3 = 8;
+      byte var4 = 6;
+      List<object> var5 = new List<object>();
+      var5.Add(new gt(a(this, "Cold Storage"), var2, 2048, var3, var4, false, false, true, false));
+      this.gT = JavaCollections.UnmodifiableList(var5);
    }
 
    public string getType() {
@@ -126,7 +127,5 @@ public class gO {
       return this.getType();
    }
 }
-
-
 
 }

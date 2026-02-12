@@ -1,32 +1,34 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
-
-
 public class fI {
-   public static int mi = 2001;
-   public static int mj = 2002;
-   public static int mk = 2003;
-   public static int ml = 2004;
-   public static int mm = 6;
-   public static int mn = 2004;
-   public static int mo = 384;
-   public int mp;
-   public int lO;
-   public int mq;
-   public byte[] data;
+   private static int mi = 2001;
+   private static int mj = 2002;
+   private static int mk = 2003;
+   private static int ml = 2004;
+   private static int mm = 6;
+   private static int mn = 2004;
+   private static int mo = 384;
+   private int mp;
+   private int lO;
+   private int mq;
+   private byte[] data;
 
-   public static bool ai(int var0) {
+   private static bool ai(int var0) {
       return var0 == 2001 || var0 == 2002 || var0 == 2003 || var0 == 2004;
    }
 
-   public fI(int var1, int var2, int var3, byte[] var4) {
+   private fI(int var1, int var2, int var3, byte[] var4) {
       this.mp = var1;
       this.lO = var2;
       this.mq = var3;
@@ -45,9 +47,9 @@ public class fI {
       if (this.mq == 2001) {
          return false;
       } else {
-         if (this.data.Length < 376) {
+         if (this.data.length < 376) {
             byte[] var1 = new byte[376];
-            Array.Copy(this.data, 0, var1, 0, this.data.Length);
+            Array.Copy(this.data, 0, var1, 0, this.data.length);
             this.data = var1;
          }
 
@@ -61,7 +63,7 @@ public class fI {
    }
 
    public void e(byte[] var1) {
-      if (var1.Length != 32) {
+      if (var1.length != 32) {
          throw new ArgumentException("SHA-256 must be 32 bytes");
       } else {
          this.setBytes(24, var1);
@@ -73,7 +75,7 @@ public class fI {
    }
 
    public void f(byte[] var1) {
-      if (var1.Length != 16) {
+      if (var1.length != 16) {
          throw new ArgumentException("SpookyHash must be 16 bytes");
       } else {
          this.setBytes(8, var1);
@@ -123,7 +125,6 @@ public class fI {
          this.setString(216, var1);
          return;
       default:
-         break;
       }
    }
 
@@ -146,7 +147,6 @@ public class fI {
          this.setString(216, var1);
          return;
       default:
-         break;
       }
    }
 
@@ -155,7 +155,7 @@ public class fI {
    }
 
    public static fI a(int var0, byte[] var1) {
-      return a(var0, var1, 0, var1.Length);
+      return a(var0, var1, 0, var1.length);
    }
 
    public static fI a(int var0, byte[] var1, int var2, int var3) {
@@ -170,9 +170,9 @@ public class fI {
             var6 &= 4294967295L;
          }
 
-         var8 = var5.Length - 1;
+         var8 = var5.length - 1;
          long var9 = (long)(var0 + 2) ^ 337824652L;
-         byte[] var11 = "NAESEVADNAYRTNRG".getBytes(Encoding.ASCII);
+         byte[] var11 = "NAESEVADNAYRTNRG".GetBytes(Encoding.ASCII);
          long[] var12 = g(var11);
          var12[0] = rotateLeft(var9, 13) * 5L + 3864292196L & 4294967295L;
 
@@ -199,13 +199,13 @@ public class fI {
          }
 
          if (var5[0] != 4008636094L) {
-            throw new IOException("Invalid metadata header: " + (var5[0]).ToString("X"));
+            throw new IOException("Invalid metadata header: " + Convert.ToString((long)var5[0]));
          } else {
             var13 = (int)var5[1];
             if (!ai(var13)) {
-               throw new IOException("Invalid or unsupported format in metadata header: " + Convert.ToString(var13));
+               throw new IOException("Invalid or unsupported format in metadata header: " + Convert.ToString((int)var13));
             } else {
-               byte[] var21 = a((long[])var5, 2, var5.Length - 2);
+               byte[] var21 = a((long[])var5, 2, var5.length - 2);
                return new fI(var4, var0, var13, var21);
             }
          }
@@ -216,15 +216,15 @@ public class fI {
 
    public byte[] encode() {
       long var1 = (long)(this.lO + 2) ^ 337824652L;
-      byte[] var3 = "NAESEVADNAYRTNRG".getBytes(Encoding.ASCII);
+      byte[] var3 = "NAESEVADNAYRTNRG".GetBytes(Encoding.ASCII);
       long[] var4 = g(var3);
       var4[0] = rotateLeft(var1, 13) * 5L + 3864292196L & 4294967295L;
       long[] var5 = g(this.data);
-      long[] var6 = new long[2 + var5.Length];
+      long[] var6 = new long[2 + var5.length];
       var6[0] = 4008636094L;
       var6[1] = (long)this.mq;
-      Array.Copy(var5, 0, var6, 2, var5.Length);
-      int var7 = var6.Length - 1;
+      Array.Copy(var5, 0, var6, 2, var5.length);
+      int var7 = var6.length - 1;
       long var8 = 0L;
       long var10 = 0L;
 
@@ -250,10 +250,10 @@ public class fI {
          var10 = var6[var7];
       }
 
-      return a((long[])var6, 0, var6.Length);
+      return a((long[])var6, 0, var6.length);
    }
 
-   public int getInt(int var1) {
+   private int getInt(int var1) {
       if (var1 >= 8 && var1 % 4 == 0) {
          var1 -= 8;
          return this.data[var1] & 255 | (this.data[var1 + 1] & 255) << 8 | (this.data[var1 + 2] & 255) << 16 | (this.data[var1 + 3] & 255) << 24;
@@ -262,7 +262,7 @@ public class fI {
       }
    }
 
-   public void setInt(int var1, int var2) {
+   private void setInt(int var1, int var2) {
       if (var1 >= 8 && var1 % 4 == 0) {
          var1 -= 8;
          this.data[var1] = (byte)(var2 & 255);
@@ -274,13 +274,13 @@ public class fI {
       }
    }
 
-   public string getString(int var1) {
+   private string getString(int var1) {
       if (var1 >= 8 && var1 % 4 == 0) {
          var1 -= 8;
 
-         if (false) { // PORT_TODO: original loop had errors
-            if (true) { // PORT_TODO: original condition had errors
-               // PORT_TODO: return new string(this.data, var1, var2 - var1);
+         for(int var2 = var1; var2 < this.data.length; ++var2) {
+            if (this.data[var2] == 0) {
+               return new string(this.data, var1, var2 - var1);
             }
          }
 
@@ -290,25 +290,23 @@ public class fI {
       }
    }
 
-   public void setString(int var1, string var2) {
-      if (true) { // PORT_TODO: original condition had errors
-      object var3 = null; // PORT_TODO: stub declaration
+   private void setString(int var1, string var2) {
+      if (var1 >= 8 && var1 % 4 == 0) {
          var1 -= 8;
-         // PORT_TODO: byte[] var3 = var2.GetBytes(System.Text.Encoding.UTF8);
-         // PORT_TODO: Array.Copy(var3, 0, this.data, var1, var3.Length);
-         // PORT_TODO: var1 += var3.Length;
+         byte[] var3 = var2.GetBytes();
+         Array.Copy(var3, 0, this.data, var1, var3.length);
+         var1 += var3.length;
 
-         // PORT_TODO: for(int var4 = 4 - var3.Length % 4; var4 > 0; --var4) {
-      // PORT_TODO: var3 = null; // PORT_TODO: stub declaration
-            // PORT_TODO: this.data[var1++] = 0;
-         // PORT_TODO: }
+         for(int var4 = 4 - var3.length % 4; var4 > 0; --var4) {
+            this.data[var1++] = 0;
+         }
 
       } else {
          throw new ArgumentException("Invalid offset: " + var1);
       }
    }
 
-   public byte[] d(int var1, int var2) {
+   private byte[] d(int var1, int var2) {
       if (var1 >= 8 && var1 % 4 == 0) {
          if (var2 % 4 != 0) {
             throw new ArgumentException("Invalid length: " + var2);
@@ -323,13 +321,13 @@ public class fI {
       }
    }
 
-   public void setBytes(int var1, byte[] var2) {
+   private void setBytes(int var1, byte[] var2) {
       if (var1 >= 8 && var1 % 4 == 0) {
-         if (var2.Length % 4 != 0) {
-            throw new ArgumentException("Invalid length: " + var2.Length);
+         if (var2.length % 4 != 0) {
+            throw new ArgumentException("Invalid length: " + var2.length);
          } else {
             var1 -= 8;
-            Array.Copy(var2, 0, this.data, var1, var2.Length);
+            Array.Copy(var2, 0, this.data, var1, var2.length);
          }
       } else {
          throw new ArgumentException("Invalid offset: " + var1);
@@ -338,60 +336,60 @@ public class fI {
 
    public string toString() {
       StringBuilder var1 = new StringBuilder();
-      var1.Append("00000000    ");
-      var1.Append("## ## ## ## ## ## ## ## ");
+      var1.append("00000000    ");
+      var1.append("## ## ## ## ## ## ## ## ");
       StringBuilder var2 = new StringBuilder();
-      var2.Append("########");
+      var2.append("########");
       byte var3 = 8;
 
-      for(int var4 = 0; var4 < this.data.Length; ++var4) {
+      for(int var4 = 0; var4 < this.data.length; ++var4) {
          if ((var4 + var3) % 16 == 0) {
-            var1.Append(Environment.NewLine);
+            var1.append(System.lineSeparator());
 
             string var5;
             for(var5 = Convert.ToString((var4 + 1 + var3) / 16, 16) + "0"; var5.Length < 8; var5 = "0" + var5) {
             }
 
-            var1.Append(var5 + "    ");
+            var1.append(var5 + "    ");
          }
 
-         var1.Append(Convert.ToString((this.data[var4] & 240) >> 4, 16));
-         var1.Append(Convert.ToString(this.data[var4] & 15, 16));
-         var1.Append(' ');
+         var1.append(Convert.ToString((this.data[var4] & 240) >> 4, 16));
+         var1.append(((int)this.data[var4] & 15).ToString("X"));
+         var1.append(' ');
          if (this.data[var4] == 32) {
-            var2.Append('.');
+            var2.append('.');
          } else if (this.data[var4] >= 32 && this.data[var4] < 127) {
-            var2.Append((char)(this.data[var4] & 255));
+            var2.append((char)(this.data[var4] & 255));
          } else {
-            var2.Append('?');
+            var2.append('?');
          }
 
          if ((var4 + var3) % 16 == 15) {
-            var1.Append("   ");
-            var1.Append(var2);
+            var1.append("   ");
+            var1.append(var2);
             var2 = new StringBuilder();
          }
       }
 
       if (var2.Length > 0) {
          while(var2.Length < 16) {
-            var1.Append("   ");
-            var2.Append(" ");
+            var1.append("   ");
+            var2.append(" ");
          }
 
-         var1.Append("   ");
-         var1.Append(var2);
+         var1.append("   ");
+         var1.append(var2);
       }
 
       return var1.ToString();
    }
 
-   public static long rotateLeft(long var0, int var2) {
+   private static long rotateLeft(long var0, int var2) {
       long var3 = (long)Math.Pow(2.0D, (double)(32 - var2)) - 1L;
       return (var0 & var3) << var2 | var0 >>> 32 - var2;
    }
 
-   public static byte[] a(long[] var0, int var1, int var2) {
+   private static byte[] a(long[] var0, int var1, int var2) {
       byte[] var3 = new byte[var2 * 4];
 
       for(int var4 = 0; var4 < var2; ++var4) {
@@ -404,11 +402,11 @@ public class fI {
       return var3;
    }
 
-   public static long[] g(byte[] var0) {
-      return a((byte[])var0, 0, var0.Length);
+   private static long[] g(byte[] var0) {
+      return a((byte[])var0, 0, var0.length);
    }
 
-   public static long[] a(byte[] var0, int var1, int var2) {
+   private static long[] a(byte[] var0, int var1, int var2) {
       long[] var3 = new long[var2 / 4];
 
       for(int var4 = 0; var4 < var2; var4 += 4) {
@@ -418,7 +416,5 @@ public class fI {
       return var3;
    }
 }
-
-
 
 }

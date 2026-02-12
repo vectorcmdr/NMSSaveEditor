@@ -1,26 +1,27 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
 public class aC : CheckBox, TableCellRenderer {
-   public Label cv = new Label();
+   Label cv = new Label();
 
-   public object getTableCellRendererComponent(object table, object value, bool isSelected, bool hasFocus, int row, int column) {
-      DataGridView var1 = (DataGridView)table;
-      int var5 = row;
-      int var6 = column;
+   public Component getTableCellRendererComponent(DataGridView var1, Object var2, bool var3, bool var4, int var5, int var6) {
       var5 = var1.convertRowIndexToModel(var5);
-      if (!var1.DataSource.isCellEditable(var5, var6)) {
+      if (!var1.GetModel().isCellEditable(var5, var6)) {
          return this.cv;
       } else {
-         this.setBackground(var1.getBackground());
+         this.SetBackground(var1.BackColor);
          this.setHorizontalAlignment(0);
-         this.Checked = (true == (bool?)value);
+         this.setSelected(Boolean.TRUE == var2);
          return this;
       }
    }

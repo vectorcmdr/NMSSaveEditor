@@ -1,35 +1,36 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
-
-
 public class gm {
-   public string Name => getName();
-   public eY oI;
-   public List<object> gT;
-   public gn oJ;
+   private eY oI;
+   private List<object> gT;
+   private gn oJ;
 
    public static gm p(eY var0) {
-      // PORT_TODO: return var0.d("CurrentFreighter.Seed").ab(0) && !isEmpty(var0.getValueAsString("CurrentFreighter.Filename")) ? new gm(var0, var0.H("FreighterInventory"), var0.H("FreighterInventory_TechOnly"), var0.H("FreighterInventory_Cargo")) : null;
-      return default;
+      return var0.d("CurrentFreighter.Seed").ab(0) && !isEmpty(var0.getValueAsString("CurrentFreighter.Filename")) ? new gm(var0, var0.H("FreighterInventory"), var0.H("FreighterInventory_TechOnly"), var0.H("FreighterInventory_Cargo")) : null;
    }
 
-   public static bool isEmpty(string var0) {
+   private static bool isEmpty(string var0) {
       return var0 == null || var0.Length == 0;
    }
 
-   public static Function a(gm var0, string var1) {
+   private static Function a(gm var0, string var1) {
       return (var1x) => {
          return new string[]{"Freighter", var1};
       };
    }
 
-   public gm(eY var1, eY var2, eY var3, eY var4) {
+   private gm(eY var1, eY var2, eY var3, eY var4) {
       this.oI = var1;
       bool var7 = false;
       bool var8 = false;
@@ -70,86 +71,81 @@ public class gm {
          var14.Add(new gt(a(this, var6), var4, var9, 8, 6, false, true));
       }
 
-      this.gT = new List<object>(var14);
-      // PORT_TODO: eV var15 = var1.d("PersistentPlayerBases");
+      this.gT = JavaCollections.UnmodifiableList(var14);
+      eV var15 = var1.d("PersistentPlayerBases");
       eY var17 = null;
 
-      // PORT_TODO: for(int var18 = 0; var18 < var15.Count; ++var18) {
-         // PORT_TODO: eY var16 = var15.V(var18);
-         // PORT_TODO: if ("FreighterBase".Equals(var16.getValueAsString("BaseType.PersistentBaseTypes")) && var16.J("BaseVersion") >= 3) {
-            // PORT_TODO: var17 = var16;
-            // PORT_TODO: break;
-         // PORT_TODO: }
-      // PORT_TODO: }
+      for(int var18 = 0; var18 < var15.Count; ++var18) {
+         eY var16 = var15.V(var18);
+         if ("FreighterBase".Equals(var16.getValueAsString("BaseType.PersistentBaseTypes")) && var16.J("BaseVersion") >= 3) {
+            var17 = var16;
+            break;
+         }
+      }
 
       this.oJ = var17 == null ? null : new gn(this, var17, (gn)null);
    }
 
    public string getName() {
-      // PORT_TODO: return this.oI.getValueAsString("PlayerFreighterName");
-      return default;
+      return this.oI.getValueAsString("PlayerFreighterName");
    }
 
    public void setName(string var1) {
-      // PORT_TODO: this.oI.b("PlayerFreighterName", (object)var1);
+      this.oI.b("PlayerFreighterName", (Object)var1);
    }
 
    public string cT() {
-      // PORT_TODO: return this.oI.getValueAsString("CurrentFreighter.Filename");
-      return default;
+      return this.oI.getValueAsString("CurrentFreighter.Filename");
    }
 
    public void ag(string var1) {
-      // PORT_TODO: this.oI.b("CurrentFreighter.Filename", (object)var1);
+      this.oI.b("CurrentFreighter.Filename", (Object)var1);
    }
 
    public string cU() {
-      // PORT_TODO: eV var1 = this.oI.d("CurrentFreighterHomeSystemSeed");
-      // PORT_TODO: if (var1 != null && var1.ab(0)) {
-         // PORT_TODO: string var2 = var1.X(1);
-         // PORT_TODO: return "0x0".Equals(var2) ? "" : var2;
-      // PORT_TODO: } else {
-         // PORT_TODO: return "";
-      // PORT_TODO: }
-      return default;
+      eV var1 = this.oI.d("CurrentFreighterHomeSystemSeed");
+      if (var1 != null && var1.ab(0)) {
+         string var2 = var1.X(1);
+         return "0x0".Equals(var2) ? "" : var2;
+      } else {
+         return "";
+      }
    }
 
    public void ah(string var1) {
-      // PORT_TODO: eV var2 = this.oI.d("CurrentFreighterHomeSystemSeed");
-      // PORT_TODO: if (var2 == null) {
-         // PORT_TODO: var2 = new eV(new object[]{Boolean.FALSE, "0x0"});
-         // PORT_TODO: this.oI.b("CurrentFreighterHomeSystemSeed", (object)var2);
-      // PORT_TODO: }
+      eV var2 = this.oI.d("CurrentFreighterHomeSystemSeed");
+      if (var2 == null) {
+         var2 = new eV(new Object[]{Boolean.FALSE, "0x0"});
+         this.oI.b("CurrentFreighterHomeSystemSeed", (Object)var2);
+      }
 
-      // PORT_TODO: var2.a(0, Boolean.TRUE);
-      // PORT_TODO: var2.a(1, var1.Length == 0 ? "0x0" : var1);
+      var2.a(0, Boolean.TRUE);
+      var2.a(1, var1.Length == 0 ? "0x0" : var1);
    }
 
    public string cV() {
-      // PORT_TODO: return this.oI.d("CurrentFreighter.Seed").X(1);
-      return default;
+      return this.oI.d("CurrentFreighter.Seed").X(1);
    }
 
    public void ai(string var1) {
-      // PORT_TODO: this.oI.d("CurrentFreighter.Seed").a(1, var1);
+      this.oI.d("CurrentFreighter.Seed").a(1, var1);
    }
 
    public string cW() {
-      // PORT_TODO: return this.oI.getValueAsString("FreighterInventory.Class.InventoryClass");
-      return default;
+      return this.oI.getValueAsString("FreighterInventory.Class.InventoryClass");
    }
 
    public void aj(string var1) {
-      // PORT_TODO: this.oI.b("FreighterInventory.Class.InventoryClass", (object)var1);
-      // PORT_TODO: eY var2 = this.oI.H("FreighterInventory_TechOnly.Class");
-      // PORT_TODO: if (var2 != null) {
-         // PORT_TODO: var2.b("InventoryClass", (object)var1);
-      // PORT_TODO: }
+      this.oI.b("FreighterInventory.Class.InventoryClass", (Object)var1);
+      eY var2 = this.oI.H("FreighterInventory_TechOnly.Class");
+      if (var2 != null) {
+         var2.b("InventoryClass", (Object)var1);
+      }
 
-      // PORT_TODO: var2 = this.oI.H("FreighterInventory_Cargo.Class");
-      // PORT_TODO: if (var2 != null) {
-         // PORT_TODO: var2.b("InventoryClass", (object)var1);
-      // PORT_TODO: }
+      var2 = this.oI.H("FreighterInventory_Cargo.Class");
+      if (var2 != null) {
+         var2.b("InventoryClass", (Object)var1);
+      }
 
    }
 
@@ -157,13 +153,13 @@ public class gm {
       return this.gT;
    }
 
-   public double ak(string var1) {
-      return ((gt)this.gT[0]).ak(var1);
+   private double ak(string var1) {
+      return ((gt)this.gT.Get(0)).ak(var1);
    }
 
-   public void d(string var1, double var2) {
-      this.gT.stream().forEach((var3) => {
-         // PORT_TODO: var3.d(var1, var2);
+   private void d(string var1, double var2) {
+      this.gT.forEach((var3) => {
+         var3.d(var1, var2);
       });
    }
 
@@ -192,7 +188,5 @@ public class gm {
       return var1 != null && var1.Length != 0 ? var1 : "Freighter";
    }
 }
-
-
 
 }

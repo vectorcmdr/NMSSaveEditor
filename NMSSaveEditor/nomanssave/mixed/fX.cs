@@ -1,32 +1,34 @@
 using System;
 using System.Collections.Generic;
-using System.Collections.Specialized;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
-
-
 public abstract class fX {
-   public fW mO;
-   public FileInfo mX;
-   public FileInfo mY;
-   public fS mZ;
-   public int mode;
-   public fT mN;
+   fW mO;
+   FileInfo mX;
+   FileInfo mY;
+   fS mZ;
+   int mode;
+   // $FF: synthetic field
+   fT mN;
 
-   public fX(fT var1, fV var2) {
+   fX(fT var1, fV var2) {
       this.mN = var1;
       int var3 = fT.c(var1).Count;
 
       for(int var4 = 0; var4 < fT.c(var1).Count; ++var4) {
-         int var5 = ((fW)fT.c(var1)[var4]).name.CompareTo(var2.mO.name);
+         int var5 = ((fW)fT.c(var1).Get(var4)).name.CompareTo(var2.mO.name);
          if (var5 == 0) {
-      // PORT_TODO: // PORT_TODO: fW var6 = (fW)fT.c(var1).Remove(var4);
-            // PORT_TODO: fT.i(new FileInfo(System.IO.Path.Combine((fT.d(var1)).ToString(), (var6.mU).ToString())));
+            fW var6 = (fW)fT.c(var1).Remove(var4);
+            fT.i(new File(fT.d(var1), var6.mU));
          }
 
          if (var5 >= 0) {
@@ -36,14 +38,14 @@ public abstract class fX {
       }
 
       this.mO = new fW(var1, var2.mO);
-      FileInfo var9 = new FileInfo(System.IO.Path.Combine((fT.d(var1)).ToString(), (this.mO.mU).ToString()));
-      if ((var9.Create()) == null) {
+      FileInfo var9 = new File(fT.d(var1), this.mO.mU);
+      if (!var9.Create()) {
          throw new IOException("Unable to create container path");
       } else {
-         this.mX = new FileInfo(System.IO.Path.Combine((var9).ToString(), ("container." + this.mO.mT).ToString()));
-         this.mZ = new fS(new FileInfo(System.IO.Path.Combine((var9).ToString(), (var2.mP).ToString())));
-         this.mY = new FileInfo(System.IO.Path.Combine((var9).ToString(), (var2.mR).ToString()));
-         FileStream var10 = new FileStream((this.mX).ToString(), System.IO.FileMode.Open);
+         this.mX = new File(var9, "container." + this.mO.mT);
+         this.mZ = new fS(new File(var9, var2.mP));
+         this.mY = new File(var9, var2.mR);
+         FileStream var10 = new FileStream(this.mX);
 
          try {
             var2.a(var10);
@@ -51,26 +53,26 @@ public abstract class fX {
             var10.Close();
          }
 
-         // PORT_TODO: fT.c(var1).Add(var3, this.mO);
+         fT.c(var1).Add(var3, this.mO);
       }
    }
 
-   public fX(fT var1, string var2) {
+   fX(fT var1, string var2) {
       this.mN = var1;
       this.mO = fT.a(var1, var2);
-      FileInfo var3 = new FileInfo(System.IO.Path.Combine((fT.d(var1)).ToString(), (this.mO.mU).ToString()));
-      if (!var3.Attributes.HasFlag(FileAttributes.Directory)) {
+      FileInfo var3 = new File(fT.d(var1), this.mO.mU);
+      if (!var3.IsDirectory()) {
          throw new FileNotFoundException(this.mO.mU);
       } else {
-         this.mX = new FileInfo(System.IO.Path.Combine((var3).ToString(), ("container." + this.mO.mT).ToString()));
+         this.mX = new File(var3, "container." + this.mO.mT);
          hc.info(this.mO.filename);
          FileInfo var4 = null;
          FileInfo var5 = null;
-         FileStream var6 = new FileStream((this.mX).ToString(), System.IO.FileMode.Open);
+         FileStream var6 = new FileStream(this.mX);
 
          try {
             int var7 = hk.readInt(var6);
-            hc.debug("  header: " + Convert.ToString(var7));
+            hc.debug("  header: " + Convert.ToString((int)var7));
             int var8 = hk.readInt(var6);
 
             for(int var9 = 0; var9 < var8; ++var9) {
@@ -84,16 +86,16 @@ public abstract class fX {
                }
 
                if (var10.Equals("data")) {
-                  var4 = new FileInfo(System.IO.Path.Combine((var3).ToString(), (var11).ToString()));
+                  var4 = new File(var3, var11);
                   if (!var4.Exists) {
-                     var4 = new FileInfo(System.IO.Path.Combine((var3).ToString(), (var12).ToString()));
+                     var4 = new File(var3, var12);
                   }
                }
 
                if (var10.Equals("meta")) {
-                  var5 = new FileInfo(System.IO.Path.Combine((var3).ToString(), (var11).ToString()));
+                  var5 = new File(var3, var11);
                   if (!var5.Exists) {
-                     var5 = new FileInfo(System.IO.Path.Combine((var3).ToString(), (var12).ToString()));
+                     var5 = new File(var3, var12);
                   }
                }
             }
@@ -120,8 +122,8 @@ public abstract class fX {
       return this.mO.filename;
    }
 
-   public Stream getInputStream() {
-      Stream var1 = fT.b(new FileStream((this.mY).ToString(), System.IO.FileMode.Open), this.mZ.ch());
+   private Stream getInputStream() {
+      Stream var1 = fT.b(new FileStream(this.mY), this.mZ.ch());
       if (var1 is gX) {
          this.mode = fT.cv();
       } else if (var1 is hm) {
@@ -133,8 +135,8 @@ public abstract class fX {
       return var1;
    }
 
-   public Stream getOutputStream() {
-      FileStream var1 = new FileStream((this.mY).ToString(), System.IO.FileMode.Open);
+   private Stream getOutputStream() {
+      FileStream var1 = new FileStream(this.mY);
 
       try {
          if (this.mode == fT.cv()) {
@@ -155,9 +157,9 @@ public abstract class fX {
       }
    }
 
-   public eY a(eG var1) {
+   eY a(eG var1) {
       Exception var2 = null;
-      object var3 = null;
+      Object var3 = null;
 
       try {
          ff var4 = new ff(this.getInputStream(), 2);
@@ -171,7 +173,7 @@ public abstract class fX {
             } catch (Exception var15) {
                var10000 = var15;
                var10001 = false;
-               goto label173;
+               break label173;
             }
 
             if (var4 != null) {
@@ -184,7 +186,7 @@ public abstract class fX {
             } catch (Exception var14) {
                var10000 = var14;
                var10001 = false;
-               goto label162;
+               break label162;
             }
          }
 
@@ -205,10 +207,10 @@ public abstract class fX {
       }
    }
 
-   public byte[] ah(int var1) {
+   byte[] ah(int var1) {
       MemoryStream var2 = new MemoryStream();
       Exception var3 = null;
-      object var4 = null;
+      Object var4 = null;
 
       try {
          Stream var5 = this.getInputStream();
@@ -219,7 +221,7 @@ public abstract class fX {
             int var7;
             while((var7 = var5.read(var6)) >= 0) {
                var2.Write(var6, 0, var7);
-               if (true) { // PORT_TODO: original condition had errors
+               if (var2.Count >= var1) {
                   break;
                }
             }
@@ -239,10 +241,10 @@ public abstract class fX {
          throw var3;
       }
 
-      return var2.ToArray();
+      return var2.toByteArray();
    }
 
-   public void h(eY var1) {
+   void h(eY var1) {
       bool var2 = this.mode == fT.cw();
       MemoryStream var3 = new MemoryStream();
       Exception var4 = null;
@@ -270,8 +272,8 @@ public abstract class fX {
          throw var4;
       }
 
-      byte[] var28 = var3.ToArray();
-      this.mZ.aj(var28.Length);
+      byte[] var28 = var3.toByteArray();
+      this.mZ.aj(var28.length);
       var5 = null;
       var6 = null;
 
@@ -301,25 +303,25 @@ public abstract class fX {
       }
 
       this.mZ.ak((int)this.mY.Length);
-      // PORT_TODO: this.mZ.Write();
+      this.mZ.Write();
       this.mO.timestamp = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
-      // PORT_TODO: this.mO.mW = this.mY.Length + this.mZ.Length;
+      this.mO.mW = this.mY.Length + this.mZ.Length;
       fT.e(this.mN);
    }
 
-   public void a(string var1, fn var2) {
-      Dictionary<string, string> var3 = new Dictionary<string, string>();
+   void a(string var1, fn var2) {
+      Properties var3 = new Properties();
       var3.setProperty("MetaFile", this.mZ.Name);
       var3.setProperty("DataFile", this.mY.Name);
       var3.setProperty("ContainerFile", this.mX.Name);
       if (var2 != null) {
-         // PORT_TODO: var3.setProperty("GameMode", var2.Name);
+         var3.setProperty("GameMode", var2.ToString());
       }
 
       var3.setProperty("IndexData", this.mO.cz());
       string var4 = var1 + "." + DateTimeOffset.UtcNow.ToUnixTimeMilliseconds() + ".zip";
-      FileInfo var5 = new FileInfo(System.IO.Path.Combine((aH.cG).ToString(), (var4).ToString()));
-      ZipOutputStream var6 = new ZipOutputStream(new FileStream((var5).ToString(), System.IO.FileMode.Open));
+      FileInfo var5 = new File(aH.cG, var4);
+      ZipOutputStream var6 = new ZipOutputStream(new FileStream(var5));
 
       try {
          ZipEntry var8 = new ZipEntry(this.mZ.Name);
@@ -328,7 +330,7 @@ public abstract class fX {
          var8 = new ZipEntry(this.mY.Name);
          var6.putNextEntry(var8);
          byte[] var9 = new byte[1024];
-         FileStream var10 = new FileStream((this.mY).ToString(), System.IO.FileMode.Open);
+         FileStream var10 = new FileStream(this.mY);
 
          int var7;
          try {
@@ -341,7 +343,7 @@ public abstract class fX {
 
          var8 = new ZipEntry(this.mX.Name);
          var6.putNextEntry(var8);
-         var10 = new FileStream((this.mX).ToString(), System.IO.FileMode.Open);
+         var10 = new FileStream(this.mX);
 
          try {
             while((var7 = var10.read(var9)) > 0) {
@@ -361,7 +363,5 @@ public abstract class fX {
       var5.setLastModified(this.mO.timestamp);
    }
 }
-
-
 
 }

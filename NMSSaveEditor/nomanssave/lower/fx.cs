@@ -1,20 +1,22 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
-
-
 public class fx : fs {
-   public DateTime LastWriteTimeUtc => DateTimeOffset.FromUnixTimeMilliseconds(lastModified()).UtcDateTime;
-   public fw lI;
-   public fu lJ;
+   fw lI;
+   // $FF: synthetic field
+   fu lJ;
 
-   public fx(fu var1, fw var2) {
+   fx(fu var1, fw var2) {
       this.lJ = var1;
       this.lI = var2;
    }
@@ -30,7 +32,7 @@ public class fx : fs {
    public eY M() {
       byte[] var1 = this.lI.ca();
       Exception var2 = null;
-      object var3 = null;
+      Object var3 = null;
 
       try {
          ff var4 = new ff(new MemoryStream(var1), 2);
@@ -44,7 +46,7 @@ public class fx : fs {
             } catch (Exception var15) {
                var10000 = var15;
                var10001 = false;
-               goto label173;
+               break label173;
             }
 
             if (var4 != null) {
@@ -57,7 +59,7 @@ public class fx : fs {
             } catch (Exception var14) {
                var10000 = var14;
                var10001 = false;
-               goto label162;
+               break label162;
             }
          }
 
@@ -81,7 +83,7 @@ public class fx : fs {
    public string b(eY var1) {
       MemoryStream var2 = new MemoryStream();
       Exception var3 = null;
-      object var4 = null;
+      Object var4 = null;
 
       try {
          fj var5 = new fj(var2, 2);
@@ -104,7 +106,7 @@ public class fx : fs {
          throw var3;
       }
 
-      this.lI.d(var2.ToArray());
+      this.lI.d(var2.toByteArray());
       return this.K();
    }
 
@@ -116,7 +118,5 @@ public class fx : fs {
       return this.K();
    }
 }
-
-
 
 }

@@ -1,105 +1,104 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
-
-
 public class gH {
-   public string Name => getName();
-   public int index;
-   public eY rp;
-   public List<object> gT;
+   private int index;
+   private eY rp;
+   private List<object> gT;
 
    public static gH[] C(eY var0) {
-      // PORT_TODO: eV var1 = var0.d("ShipOwnership");
-      // PORT_TODO: if (var1 != null && var1.Count != 0) {
-         // PORT_TODO: List<object> var2 = new List<object>();
+      eV var1 = var0.d("ShipOwnership");
+      if (var1 != null && var1.Count != 0) {
+         List<object> var2 = new List<object>();
 
-         // PORT_TODO: for(int var3 = 0; var3 < var1.Count; ++var3) {
-            // PORT_TODO: eY var4 = var1.V(var3);
-            // PORT_TODO: if (var4.d("Resource.Seed").ab(0)) {
-               // PORT_TODO: var2.Add(new gH(var3, var4, var4.H("Inventory"), var4.H("Inventory_TechOnly"), var4.H("Inventory_Cargo")));
-            // PORT_TODO: }
-         // PORT_TODO: }
+         for(int var3 = 0; var3 < var1.Count; ++var3) {
+            eY var4 = var1.V(var3);
+            if (var4.d("Resource.Seed").ab(0)) {
+               var2.Add(new gH(var3, var4, var4.H("Inventory"), var4.H("Inventory_TechOnly"), var4.H("Inventory_Cargo")));
+            }
+         }
 
-         // PORT_TODO: return (gH[])var2.ToArray();
-      // PORT_TODO: } else {
-         // PORT_TODO: return new gH[0];
-      // PORT_TODO: }
-      return null;
+         return (gH[])var2.ToArray(new gH[0]);
+      } else {
+         return new gH[0];
+      }
    }
 
    public static gH c(eY var0, FileInfo var1) {
-      // PORT_TODO: eV var2 = var0.d("ShipOwnership");
-      // PORT_TODO: if (var2 != null && var2.Count != 0) {
-         // PORT_TODO: int var3 = -1;
+      eV var2 = var0.d("ShipOwnership");
+      if (var2 != null && var2.Count != 0) {
+         int var3 = -1;
 
-         // PORT_TODO: eY var5;
-         // PORT_TODO: for(int var4 = 0; var4 < var2.Count; ++var4) {
-            // PORT_TODO: var5 = var2.V(var4);
-            // PORT_TODO: if (!var5.d("Resource.Seed").ab(0)) {
-               // PORT_TODO: var3 = var4;
-               // PORT_TODO: break;
-            // PORT_TODO: }
-         // PORT_TODO: }
+         eY var5;
+         for(int var4 = 0; var4 < var2.Count; ++var4) {
+            var5 = var2.V(var4);
+            if (!var5.d("Resource.Seed").ab(0)) {
+               var3 = var4;
+               break;
+            }
+         }
 
-         // PORT_TODO: if (var3 < 0) {
-            // PORT_TODO: throw new Exception("Ship cannot be imported to current file!");
-         // PORT_TODO: } else {
-            // PORT_TODO: eY var14 = gR.az("ship");
-            // PORT_TODO: Exception var15 = null;
-            // PORT_TODO: eV var6 = null;
+         if (var3 < 0) {
+            throw new Exception("Ship cannot be imported to current file!");
+         } else {
+            eY var14 = gR.az("ship");
+            Exception var15 = null;
+            eV var6 = null;
 
-            // PORT_TODO: try {
-               // PORT_TODO: ff var7 = new ff(new FileStream((var1).ToString(), System.IO.FileMode.Open));
+            try {
+               ff var7 = new ff(new FileStream(var1));
 
-               // PORT_TODO: try {
-                  // PORT_TODO: if (var14 == null) {
-                     // PORT_TODO: var14 = var7.bK();
-                  // PORT_TODO: } else {
-                     // PORT_TODO: var14.c(var7.bK());
-                  // PORT_TODO: }
-               // PORT_TODO: } finally {
-                  // PORT_TODO: if (var7 != null) {
-                     // PORT_TODO: var7.Close();
-                  // PORT_TODO: }
+               try {
+                  if (var14 == null) {
+                     var14 = var7.bK();
+                  } else {
+                     var14.c(var7.bK());
+                  }
+               } finally {
+                  if (var7 != null) {
+                     var7.Close();
+                  }
 
-               // PORT_TODO: }
-            // PORT_TODO: } catch (Exception var13) {
-               // PORT_TODO: if (var15 == null) {
-                  // PORT_TODO: var15 = var13;
-               // PORT_TODO: } else if (var15 != var13) {
-                  // PORT_TODO: var15.addSuppressed(var13);
-               // PORT_TODO: }
+               }
+            } catch (Exception var13) {
+               if (var15 == null) {
+                  var15 = var13;
+               } else if (var15 != var13) {
+                  var15.addSuppressed(var13);
+               }
 
-               // PORT_TODO: throw var15;
-            // PORT_TODO: }
+               throw var15;
+            }
 
-            // PORT_TODO: var5 = var14.H("Inventory");
-            // PORT_TODO: if (var5 == null) {
-               // PORT_TODO: throw new Exception("Invalid ship data");
-            // PORT_TODO: } else {
-               // PORT_TODO: var6 = var14.d("Resource.Seed");
-               // PORT_TODO: if (var6 != null && var6.ab(0)) {
-                  // PORT_TODO: var2.a(var3, var14);
-                  // PORT_TODO: return new gH(var3, var14, var5, var14.H("Inventory_TechOnly"), var14.H("Inventory_Cargo"));
-               // PORT_TODO: } else {
-                  // PORT_TODO: throw new Exception("Invalid ship data");
-               // PORT_TODO: }
-            // PORT_TODO: }
-         // PORT_TODO: }
-      // PORT_TODO: } else {
-         // PORT_TODO: throw new Exception("Ship cannot be imported to current file!");
-      // PORT_TODO: }
-      return default;
+            var5 = var14.H("Inventory");
+            if (var5 == null) {
+               throw new Exception("Invalid ship data");
+            } else {
+               var6 = var14.d("Resource.Seed");
+               if (var6 != null && var6.ab(0)) {
+                  var2.a(var3, var14);
+                  return new gH(var3, var14, var5, var14.H("Inventory_TechOnly"), var14.H("Inventory_Cargo"));
+               } else {
+                  throw new Exception("Invalid ship data");
+               }
+            }
+         }
+      } else {
+         throw new Exception("Ship cannot be imported to current file!");
+      }
    }
 
-   public static Function a(gH var0, string[] var1) {
+   private static Function a(gH var0, string[] var1) {
       return (var2) => {
          string var3 = var0.Name;
          if (var3 == null || var3.Length == 0) {
@@ -110,7 +109,7 @@ public class gH {
       };
    }
 
-   public gH(int var1, eY var2, eY var3, eY var4, eY var5) {
+   private gH(int var1, eY var2, eY var3, eY var4, eY var5) {
       this.index = var1;
       this.rp = var2;
       string[] var7 = new string[]{"Technology", "Organ Chamber"};
@@ -146,38 +145,38 @@ public class gH {
          var15.Add(new gK(this, a(this, var8), var5, var9, 8, 6, false, true, var1));
       }
 
-      this.gT = new List<object>(var15);
+      this.gT = JavaCollections.UnmodifiableList(var15);
    }
 
    public void a(FileInfo var1, bool var2) {
       Exception var3 = null;
-      object var4 = null;
+      Object var4 = null;
 
       try {
-         fj var5 = new fj(new FileStream((var1).ToString(), System.IO.FileMode.Open));
+         fj var5 = new fj(new FileStream(var1));
 
          try {
             eY var6 = this.rp.bE();
-            if (var2 == null) {
-               // PORT_TODO: eV var7 = var6.d("Inventory.Slots");
+            if (!var2) {
+               eV var7 = var6.d("Inventory.Slots");
 
                int var8;
                eY var9;
-               // PORT_TODO: for(var8 = 0; var8 < var7.Count; ++var8) {
-                  // PORT_TODO: var9 = var7.V(var8);
-                  // PORT_TODO: if (!var9.getValueAsString("Type.InventoryType").Equals("Technology")) {
-                     // PORT_TODO: var7.ac(var8--);
-                  // PORT_TODO: }
-               // PORT_TODO: }
+               for(var8 = 0; var8 < var7.Count; ++var8) {
+                  var9 = var7.V(var8);
+                  if (!var9.getValueAsString("Type.InventoryType").Equals("Technology")) {
+                     var7.ac(var8--);
+                  }
+               }
 
-               // PORT_TODO: var7 = var6.d("Inventory_Cargo.Slots");
+               var7 = var6.d("Inventory_Cargo.Slots");
 
-               // PORT_TODO: for(var8 = 0; var8 < var7.Count; ++var8) {
-                  // PORT_TODO: var9 = var7.V(var8);
-                  // PORT_TODO: if (!var9.getValueAsString("Type.InventoryType").Equals("Technology")) {
-                     // PORT_TODO: var7.ac(var8--);
-                  // PORT_TODO: }
-               // PORT_TODO: }
+               for(var8 = 0; var8 < var7.Count; ++var8) {
+                  var9 = var7.V(var8);
+                  if (!var9.getValueAsString("Type.InventoryType").Equals("Technology")) {
+                     var7.ac(var8--);
+                  }
+               }
             }
 
             var5.h(var6);
@@ -204,33 +203,31 @@ public class gH {
    }
 
    public string getName() {
-      // PORT_TODO: return this.rp.getValueAsString("Name");
-      return default;
+      return this.rp.getValueAsString("Name");
    }
 
    public void setName(string var1) {
-      // PORT_TODO: this.rp.b("Name", (object)var1);
+      this.rp.b("Name", (Object)var1);
    }
 
    public bool dZ() {
       return gL.aw(this.cT()) == gL.rx;
    }
 
-   public int ea() {
+   private int ea() {
       gL var1 = gL.aw(this.cT());
       return var1 == null ? 4 : var1.ea();
    }
 
    public string cT() {
-      // PORT_TODO: return this.rp.getValueAsString("Resource.Filename");
-      return default;
+      return this.rp.getValueAsString("Resource.Filename");
    }
 
    public void ag(string var1) {
-      // PORT_TODO: this.rp.b("Resource.Filename", (object)var1);
+      this.rp.b("Resource.Filename", (Object)var1);
       gL var2 = gL.aw(var1);
-      this.gT.stream().forEach((var1x) => {
-         // PORT_TODO: var1x.az(var2 == null ? 4 : var2.ea());
+      this.gT.forEach((var1x) => {
+         var1x.az(var2 == null ? 4 : var2.ea());
       });
       if (var2 == gL.rx) {
          this.d("^ALIEN_SHIP", 1.0D);
@@ -246,36 +243,34 @@ public class gH {
    }
 
    public string cK() {
-      // PORT_TODO: return this.rp.d("Resource.Seed").X(1);
-      return default;
+      return this.rp.d("Resource.Seed").X(1);
    }
 
    public void aa(string var1) {
-      // PORT_TODO: this.rp.d("Resource.Seed").a(1, var1);
+      this.rp.d("Resource.Seed").a(1, var1);
    }
 
    public void cm() {
-      // PORT_TODO: this.rp.b("Resource.Filename", (object)"");
-      // PORT_TODO: this.rp.d("Resource.Seed").a(0, Boolean.FALSE);
-      // PORT_TODO: this.rp.d("Resource.Seed").a(1, "0x0");
+      this.rp.b("Resource.Filename", (Object)"");
+      this.rp.d("Resource.Seed").a(0, Boolean.FALSE);
+      this.rp.d("Resource.Seed").a(1, "0x0");
    }
 
    public string cW() {
-      // PORT_TODO: return this.rp.getValueAsString("Inventory.Class.InventoryClass");
-      return default;
+      return this.rp.getValueAsString("Inventory.Class.InventoryClass");
    }
 
    public void aj(string var1) {
-      // PORT_TODO: this.rp.b("Inventory.Class.InventoryClass", (object)var1);
-      // PORT_TODO: eY var2 = this.rp.H("Inventory_TechOnly.Class");
-      // PORT_TODO: if (var2 != null) {
-         // PORT_TODO: var2.b("InventoryClass", (object)var1);
-      // PORT_TODO: }
+      this.rp.b("Inventory.Class.InventoryClass", (Object)var1);
+      eY var2 = this.rp.H("Inventory_TechOnly.Class");
+      if (var2 != null) {
+         var2.b("InventoryClass", (Object)var1);
+      }
 
-      // PORT_TODO: var2 = this.rp.H("Inventory_Cargo.Class");
-      // PORT_TODO: if (var2 != null) {
-         // PORT_TODO: var2.b("InventoryClass", (object)var1);
-      // PORT_TODO: }
+      var2 = this.rp.H("Inventory_Cargo.Class");
+      if (var2 != null) {
+         var2.b("InventoryClass", (Object)var1);
+      }
 
    }
 
@@ -283,19 +278,19 @@ public class gH {
       return this.gT;
    }
 
-   public double ak(string var1) {
-      return ((gt)this.gT[0]).ak(var1);
+   private double ak(string var1) {
+      return ((gt)this.gT.Get(0)).ak(var1);
    }
 
-   public void d(string var1, double var2) {
-      this.gT.stream().forEach((var3) => {
-         // PORT_TODO: var3.d(var1, var2);
+   private void d(string var1, double var2) {
+      this.gT.forEach((var3) => {
+         var3.d(var1, var2);
       });
    }
 
-   public void av(string var1) {
-      this.gT.stream().forEach((var1x) => {
-         // PORT_TODO: var1x.ap(var1);
+   private void av(string var1) {
+      this.gT.forEach((var1x) => {
+         var1x.ap(var1);
       });
    }
 
@@ -340,11 +335,11 @@ public class gH {
          return var2 == null ? "Unknown [" + this.index + "]" : var2 + " [" + this.index + "]";
       }
    }
-   public static int b(gH var0) {
+
+   // $FF: synthetic method
+   static int b(gH var0) {
       return var0.ea();
    }
 }
-
-
 
 }

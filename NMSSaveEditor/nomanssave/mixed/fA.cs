@@ -1,25 +1,26 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
-
-
 public class fA : fq {
-   // PORT_TODO: public static readonly byte[] lA = "NOMANSKY".GetBytes(System.Text.Encoding.UTF8);
-   public static Pattern lV = Pattern.compile("savedata(\\d{2})\\.hg", 2);
-   public static Pattern lW = Pattern.compile("ps4_backup(\\d*)\\.\\d*\\.zip", 2);
-   public FileInfo lX;
-   public fR lE;
-   public fB lY;
-   public fD[] lZ;
+   private static byte[] lA = "NOMANSKY".GetBytes();
+   private static Pattern lV = new Regex("savedata(\\d{2})\\.hg", 2);
+   private static Pattern lW = new Regex("ps4_backup(\\d*)\\.\\d*\\.zip", 2);
+   private FileInfo lX;
+   private fR lE;
+   private fB lY;
+   private fD[] lZ;
 
-   public fA(FileInfo var1, fR var2) {
+   fA(FileInfo var1, fR var2) {
       this.lX = var1;
       this.lE = var2;
 
@@ -32,13 +33,13 @@ public class fA : fq {
 
       this.lZ = new fD[30];
 
-      for(int var3 = 0; var3 < this.lZ.Length; ++var3) {
+      for(int var3 = 0; var3 < this.lZ.length; ++var3) {
          try {
             this.lZ[var3] = new fD(this, var3);
          } catch (FileNotFoundException var9) {
          } catch (IOException var10) {
             int var5 = var3 + 2;
-            string var6 = "savedata" + (var5 < 10 ? "0" : "") + (var5).ToString() + ".hg";
+            string var6 = "savedata" + (var5 < 10 ? "0" : "") + Convert.ToString(var5) + ".hg";
             hc.a("cannot read file metadata: " + var6, var10);
          }
       }
@@ -46,9 +47,9 @@ public class fA : fq {
       fl.a(this, var1);
    }
 
-   public static eY a(byte[] var0, eG var1) {
+   private static eY a(byte[] var0, eG var1) {
       Exception var2 = null;
-      object var3 = null;
+      Object var3 = null;
 
       try {
          ff var4 = new ff(new MemoryStream(var0), 2);
@@ -62,7 +63,7 @@ public class fA : fq {
             } catch (Exception var15) {
                var10000 = var15;
                var10001 = false;
-               goto label173;
+               break label173;
             }
 
             if (var4 != null) {
@@ -75,7 +76,7 @@ public class fA : fq {
             } catch (Exception var14) {
                var10000 = var14;
                var10001 = false;
-               goto label162;
+               break label162;
             }
          }
 
@@ -96,10 +97,10 @@ public class fA : fq {
       }
    }
 
-   public static byte[] g(eY var0) {
+   private static byte[] g(eY var0) {
       MemoryStream var1 = new MemoryStream();
       Exception var2 = null;
-      object var3 = null;
+      Object var3 = null;
 
       try {
          fj var4 = new fj(var1, 2);
@@ -122,7 +123,7 @@ public class fA : fq {
          throw var2;
       }
 
-      return var1.ToArray();
+      return var1.toByteArray();
    }
 
    public FileInfo bS() {
@@ -144,19 +145,19 @@ public class fA : fq {
    }
 
    public int W(string var1) {
-      Matcher var2 = lV.matcher(var1);
-      if (!var2.matches()) {
+      Matcher var2 = lV.Match(var1);
+      if (!var2.Matches()) {
          return -1;
       } else {
-         int var3 = int.Parse(var2.group(1)) - 2;
+         int var3 = int.Parse(var2.Groups[1)) - 2;
          return var3 >= 0 ? var3 / 2 : -1;
       }
    }
 
    public void X(string var1) {
-      Matcher var2 = lV.matcher(var1);
+      Matcher var2 = lV.Match(var1);
       if (var2.Matches()) {
-         int var3 = int.Parse(var2.group(1)) - 2;
+         int var3 = int.Parse(var2.Groups[1)) - 2;
          if (var3 == -2) {
             try {
                this.lY = new fB(this);
@@ -187,27 +188,36 @@ public class fA : fq {
       }
 
    }
-   public static FileInfo a(fA var0) {
+
+   // $FF: synthetic method
+   static FileInfo a(fA var0) {
       return var0.lX;
    }
-   public static byte[] bY() {
-      // PORT_TODO: return lA;
-      return null;
+
+   // $FF: synthetic method
+   static byte[] bY() {
+      return lA;
    }
-   public static eY b(byte[] var0, eG var1) {
+
+   // $FF: synthetic method
+   static eY b(byte[] var0, eG var1) {
       return a(var0, var1);
    }
-   public static byte[] l(eY var0) {
+
+   // $FF: synthetic method
+   static byte[] l(eY var0) {
       return g(var0);
    }
-   public static fD[] b(fA var0) {
+
+   // $FF: synthetic method
+   static fD[] b(fA var0) {
       return var0.lZ;
    }
-   public static Pattern cb() {
+
+   // $FF: synthetic method
+   static Pattern cb() {
       return lW;
    }
 }
-
-
 
 }

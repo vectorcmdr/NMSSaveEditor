@@ -1,30 +1,33 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
-
-
 public class fw {
    public fn be;
-   public byte[] lK;
-   public int lL;
-   public int lM;
-   public int lN;
-   public int lO;
-   public long bd;
-   public long length;
-   public long lP;
-   public int lQ;
-   public int lR;
-   public int lS;
-   public fu lJ;
+   byte[] lK;
+   int lL;
+   int lM;
+   int lN;
+   int lO;
+   long bd;
+   long length;
+   long lP;
+   int lQ;
+   int lR;
+   int lS;
+   // $FF: synthetic field
+   fu lJ;
 
-   public fw(fu var1, Stream var2) {
+   fw(fu var1, Stream var2) {
       this.lJ = var1;
       this.lK = new byte[8];
       hk.readFully(var2, this.lK);
@@ -40,11 +43,11 @@ public class fw {
       this.lS = hk.readInt(var2);
    }
 
-   public bool isValid() {
+   bool isValid() {
       return fu.b(this.lK, fu.bY()) && this.lO >= 0;
    }
 
-   public int a(Stream var1) {
+   int a(Stream var1) {
       var1.Write(this.lK);
       hk.a(var1, this.lL);
       hk.a(var1, this.lM);
@@ -59,40 +62,40 @@ public class fw {
       return 48;
    }
 
-   public void bZ() {
-      Console.WriteLine("  unknown1 = " + this.lL + " 0x" + Convert.ToString(this.lL) + " " + Integer.toBinaryString(this.lL));
-      Console.WriteLine("  unknown2 = " + this.lM + " 0x" + Convert.ToString(this.lM) + " " + Integer.toBinaryString(this.lM));
-      Console.WriteLine("  fileType = " + this.lN + " 0x" + Convert.ToString(this.lN) + " " + Integer.toBinaryString(this.lN));
-      Console.WriteLine("  archiveNumber = " + this.lO + " 0x" + Convert.ToString(this.lO) + " " + Integer.toBinaryString(this.lO));
-      Console.WriteLine("  modified = " + new DateTime(this.bd));
+   void bZ() {
+      Console.WriteLine("  unknown1 = " + this.lL + " 0x" + Convert.ToString((int)this.lL) + " " + Integer.toBinaryString(this.lL));
+      Console.WriteLine("  unknown2 = " + this.lM + " 0x" + Convert.ToString((int)this.lM) + " " + Integer.toBinaryString(this.lM));
+      Console.WriteLine("  fileType = " + this.lN + " 0x" + Convert.ToString((int)this.lN) + " " + Integer.toBinaryString(this.lN));
+      Console.WriteLine("  archiveNumber = " + this.lO + " 0x" + Convert.ToString((int)this.lO) + " " + Integer.toBinaryString(this.lO));
+      Console.WriteLine("  modified = " + new Date(this.bd));
       Console.WriteLine("  length = " + this.length);
-      Console.WriteLine("  startPos = 0x" + (this.lP).ToString("X"));
+      Console.WriteLine("  startPos = 0x" + Convert.ToString((long)this.lP));
       Console.WriteLine("  valid = " + this.lQ);
       if (this.lR != 0) {
-         Console.WriteLine("  unknown3 = " + this.lR + " 0x" + Convert.ToString(this.lR) + " " + Integer.toBinaryString(this.lR) + " date:" + new DateTime(1000L * (long)this.lR));
+         Console.WriteLine("  unknown3 = " + this.lR + " 0x" + Convert.ToString((int)this.lR) + " " + Integer.toBinaryString(this.lR) + " date:" + new Date(1000L * (long)this.lR));
       }
 
       if (this.lS != 0) {
-         Console.WriteLine("  unknown4 = " + this.lS + " 0x" + Convert.ToString(this.lS) + " " + Integer.toBinaryString(this.lS) + " len:" + (4294967295L & (long)this.lS));
+         Console.WriteLine("  unknown4 = " + this.lS + " 0x" + Convert.ToString((int)this.lS) + " " + Integer.toBinaryString(this.lS) + " len:" + (4294967295L & (long)this.lS));
       }
 
    }
 
-   public byte[] ca() {
+   byte[] ca() {
       if (!this.isValid()) {
          return null;
       } else {
-         // PORT_TODO: FileStream var1 = new FileStream((fu.b(this.lJ).ToString(), System.IO.FileMode.Open));
+         FileStream var1 = new FileStream(fu.b(this.lJ));
 
          byte[] var8;
          try {
-            // PORT_TODO: var1.skip(this.lP);
+            var1.skip(this.lP);
             MemoryStream var2 = new MemoryStream();
             byte[] var3 = new byte[4096];
             long var4 = this.length;
 
             int var6;
-            if (false) { // PORT_TODO: original while had errors
+            while(var4 > 0L && (var6 = var1.read(var3, 0, (int)Math.Min((long)var3.length, var4))) > 0) {
                var4 -= (long)var6;
                var2.Write(var3, 0, var6);
             }
@@ -101,22 +104,22 @@ public class fw {
                throw new IOException("short read");
             }
 
-            var8 = var2.ToArray();
+            var8 = var2.toByteArray();
          } finally {
-            // PORT_TODO: var1.Close();
+            var1.Close();
          }
 
          return var8;
       }
    }
 
-   public void d(byte[] var1) {
+   void d(byte[] var1) {
       if (!this.isValid()) {
          throw new IOException("header not valid");
       } else {
          int var2 = -1;
 
-         for(int var3 = 0; var3 < fu.c(this.lJ).Length; ++var3) {
+         for(int var3 = 0; var3 < fu.c(this.lJ).length; ++var3) {
             if (fu.c(this.lJ)[var3] == this) {
                var2 = var3;
                break;
@@ -127,44 +130,40 @@ public class fw {
             throw new IOException("header not valid");
          } else {
             long var25 = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
-            // PORT_TODO: FileInfo var5 = new FileInfo(fu.b(this.lJ).Directory, "~" + fu.b(this.lJ).Name);
-            // PORT_TODO: FileStream var6 = new FileStream((var5).ToString(), System.IO.FileMode.Open);
+            FileInfo var5 = new File(fu.b(this.lJ).Directory, "~" + fu.b(this.lJ).Name);
+            FileStream var6 = new FileStream(var5);
 
             try {
-               // PORT_TODO: FileStream var7 = new FileStream((fu.b(this.lJ).ToString(), System.IO.FileMode.Open));
+               FileStream var7 = new FileStream(fu.b(this.lJ));
 
                try {
-      FileStream var6 = null; // PORT_TODO: stub declaration
-      // PORT_TODO: object var6 = null; // PORT_TODO: stub declaration
                   Console.WriteLine("Reading header");
                   byte[] var8 = new byte[64];
-                  // PORT_TODO: hk.readFully(var7, var8);
+                  hk.readFully(var7, var8);
                   var6.Write(var8);
-                  // PORT_TODO: long var9 = (long)var1.length - fu.c(this.lJ)[var2].length;
+                  long var9 = (long)var1.length - fu.c(this.lJ)[var2].length;
                   long var11 = 64L;
 
                   int var13;
                   fw var10000;
                   for(var13 = 0; var13 < var2; ++var13) {
-      var6 = null; // PORT_TODO: stub declaration
                      if (fu.c(this.lJ)[var13].lP < fu.c(this.lJ)[var2].lP) {
                         var10000 = fu.c(this.lJ)[var13];
-                        // PORT_TODO: var10000.lP += var9;
+                        var10000.lP += var9;
                      }
 
                      var11 += (long)fu.c(this.lJ)[var13].a(var6);
                   }
 
                   var6.Write(fu.bY());
-                  // PORT_TODO: fu.c(this.lJ)[var2].length = (long)var1.length;
+                  fu.c(this.lJ)[var2].length = (long)var1.length;
                   fu.c(this.lJ)[var2].bd = var25;
                   var11 += (long)fu.c(this.lJ)[var2].a(var6);
 
-                  for(var13 = var2 + 1; var13 < fu.c(this.lJ).Length; ++var13) {
-      var6 = null; // PORT_TODO: stub declaration
+                  for(var13 = var2 + 1; var13 < fu.c(this.lJ).length; ++var13) {
                      if (fu.c(this.lJ)[var13].lP < fu.c(this.lJ)[var2].lP) {
                         var10000 = fu.c(this.lJ)[var13];
-                        // PORT_TODO: var10000.lP += var9;
+                        var10000.lP += var9;
                      }
 
                      var11 += (long)fu.c(this.lJ)[var13].a(var6);
@@ -174,8 +173,7 @@ public class fw {
 
                   byte[] var15;
                   int var16;
-                  if (false) { // PORT_TODO: original loop had errors
-      var6 = null; // PORT_TODO: stub declaration
+                  for(var15 = new byte[4096]; var26 > 0L && (var16 = var7.read(var15, 0, (int)Math.Min((long)var15.length, var26))) > 0; var26 -= (long)var16) {
                      var6.Write(var15, 0, var16);
                      var11 += (long)var16;
                   }
@@ -185,32 +183,28 @@ public class fw {
                   }
 
                   var6.Write(var1);
-                  long var27 = var11 + (long)var1.Length;
+                  long var27 = var11 + (long)var1.length;
 
-                  if (false) { // PORT_TODO: original loop had errors
+                  for(var26 = (long)var1.length - var9; var26 > 0L && (var16 = var7.read(var15, 0, (int)Math.Min((long)var15.length, var26))) > 0; var26 -= (long)var16) {
                   }
 
                   if (var26 > 0L) {
                      throw new IOException("short read");
                   }
 
-                  if (false) { // PORT_TODO: original while had errors
-      var6 = null; // PORT_TODO: stub declaration
+                  while((var16 = var7.read(var15)) > 0) {
                      var6.Write(var15, 0, var16);
                   }
                } finally {
-                  // PORT_TODO: var7.Close();
+                  var7.Close();
                }
             } finally {
-      object var6 = null; // PORT_TODO: stub declaration
-               // PORT_TODO: var6.Close();
+               var6.Close();
             }
 
          }
       }
    }
 }
-
-
 
 }

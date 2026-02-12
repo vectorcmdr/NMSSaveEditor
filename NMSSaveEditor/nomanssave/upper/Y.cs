@@ -1,88 +1,90 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
+public class Y : ComboBoxModel {
+   private gj bU;
+   // $FF: synthetic field
+   X bV;
 
-
-public class Y : object {
-   public gj bU;
-   public X bV;
-
-   public Y(X var1) {
+   Y(X var1) {
       this.bV = var1;
       this.bU = null;
    }
 
    public int getSize() {
-      // PORT_TODO: return X.a(this.bV) == null ? 0 : X.a(this.bV).Length;
-      return 0;
+      return X.a(this.bV) == null ? 0 : X.a(this.bV).length;
    }
 
    public gj q(int var1) {
-      // PORT_TODO: return X.a(this.bV)[var1];
-      return default;
+      return X.a(this.bV)[var1];
    }
 
-   public void addListDataListener(EventHandler var1) {
+   public void addListDataListener(ListDataListener var1) {
    }
 
-   public void removeListDataListener(EventHandler var1) {
+   public void removeListDataListener(ListDataListener var1) {
    }
 
-   public void setSelectedItem(object var1) {
+   public void setSelectedItem(Object var1) {
       this.bU = (gj)var1;
       if (this.bU == null) {
-         // PORT_TODO: X.b(this.bV).SelectedIndex = (-1);
-         // PORT_TODO: X.c(this.bV).Text = ("");
-         // PORT_TODO: X.c(this.bV).Enabled = (false);
-         // PORT_TODO: X.d(this.bV).Text = ("");
-         // PORT_TODO: X.d(this.bV).Enabled = (false);
-         // PORT_TODO: X.e(this.bV).Text = ("");
-         // PORT_TODO: X.e(this.bV).Enabled = (false);
-         // PORT_TODO: X.f(this.bV).Text = ("");
-         // PORT_TODO: X.f(this.bV).Enabled = (false);
-         // PORT_TODO: X.g(this.bV).Text = ("");
-         // PORT_TODO: X.g(this.bV).Enabled = (false);
-         // PORT_TODO: X.h(this.bV).Checked = (false);
-         // PORT_TODO: X.h(this.bV).Enabled = (false);
-         // PORT_TODO: X.i(this.bV).SelectedIndex = (-1);
-         // PORT_TODO: X.i(this.bV).Enabled = (false);
-         // PORT_TODO: X.j(this.bV).SelectedIndex = (-1);
-         // PORT_TODO: X.j(this.bV).Enabled = (false);
+         X.b(this.bV).SetSelectedIndex(-1);
+         X.c(this.bV).SetText("");
+         X.c(this.bV).SetEnabled(false);
+         X.d(this.bV).SetText("");
+         X.d(this.bV).SetEnabled(false);
+         X.e(this.bV).SetText("");
+         X.e(this.bV).SetEnabled(false);
+         X.f(this.bV).SetText("");
+         X.f(this.bV).SetEnabled(false);
+         X.g(this.bV).SetText("");
+         X.g(this.bV).SetEnabled(false);
+         X.h(this.bV).setSelected(false);
+         X.h(this.bV).SetEnabled(false);
+         X.i(this.bV).SetSelectedIndex(-1);
+         X.i(this.bV).SetEnabled(false);
+         X.j(this.bV).SetSelectedIndex(-1);
+         X.j(this.bV).SetEnabled(false);
       } else {
-         // PORT_TODO: X.b(this.bV).SelectedIndex = (this.bU.cL().ordinal());
-         // PORT_TODO: X.c(this.bV).Text = (this.bU.Name);
-         // PORT_TODO: X.c(this.bV).Enabled = (true);
-         // PORT_TODO: X.d(this.bV).Text = (this.bU.cK());
-         // PORT_TODO: X.d(this.bV).Enabled = (true);
-         // PORT_TODO: X.e(this.bV).Text = (this.bU.cN());
-         // PORT_TODO: X.e(this.bV).Enabled = (true);
-         // PORT_TODO: X.f(this.bV).Text = (this.bU.cO());
-         // PORT_TODO: X.f(this.bV).Enabled = (true);
-         // PORT_TODO: X.g(this.bV).Text = (this.bU.cP());
-         // PORT_TODO: X.g(this.bV).Enabled = (true);
-         // PORT_TODO: X.h(this.bV).Checked = (this.bU.cQ());
-         // PORT_TODO: X.h(this.bV).Enabled = (true);
-         // PORT_TODO: X.i(this.bV).m(this.bU.cR());
-         // PORT_TODO: X.i(this.bV).Enabled = (true);
-         // PORT_TODO: X.j(this.bV).m(this.bU.cS());
-         // PORT_TODO: X.j(this.bV).Enabled = (true);
+         X.b(this.bV).SetSelectedIndex(this.bU.cL().ordinal());
+         X.c(this.bV).SetText(this.bU.Name);
+         X.c(this.bV).SetEnabled(true);
+         X.d(this.bV).SetText(this.bU.cK());
+         X.d(this.bV).SetEnabled(true);
+         X.e(this.bV).SetText(this.bU.cN());
+         X.e(this.bV).SetEnabled(true);
+         X.f(this.bV).SetText(this.bU.cO());
+         X.f(this.bV).SetEnabled(true);
+         X.g(this.bV).SetText(this.bU.cP());
+         X.g(this.bV).SetEnabled(true);
+         X.h(this.bV).setSelected(this.bU.cQ());
+         X.h(this.bV).SetEnabled(true);
+         X.i(this.bV).m(this.bU.cR());
+         X.i(this.bV).SetEnabled(true);
+         X.j(this.bV).m(this.bU.cS());
+         X.j(this.bV).SetEnabled(true);
       }
 
    }
 
-   public object getSelectedItem() {
+   public Object getSelectedItem() {
       return this.bU;
    }
-   public object getElementAt(int var1) {
+
+   // $FF: synthetic method
+   public Object getElementAt(int var1) {
       return this.q(var1);
    }
 }
-
-
 
 }

@@ -1,22 +1,25 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
-
-
 public class ay : ActionListener {
-   public ap cu;
+   // $FF: synthetic field
+   ap cu;
 
-   public ay(ap var1) {
+   ay(ap var1) {
       this.cu = var1;
    }
 
-   public void actionPerformed(EventArgs var1) {
+   public void actionPerformed(ActionEvent var1) {
       IEnumerator<object> var4 = eS.by().GetEnumerator();
 
       while(var4.MoveNext()) {
@@ -43,10 +46,8 @@ public class ay : ActionListener {
          }
       }
 
-      ap.j(this.cu).Refresh();
+      ap.j(this.cu).updateUI();
    }
 }
-
-
 
 }

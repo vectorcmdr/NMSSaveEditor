@@ -1,22 +1,23 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
-
-
 public class gp {
-   public string Name => getName();
-   public int index;
-   public eY oR;
+   private int index;
+   private eY oR;
 
    public static gp[] q(eY var0) {
-      // PORT_TODO: eV var1 = var0.d("FleetFrigates");
-      // PORT_TODO: return var1 == null ? new gp[0] : d(var1);
-      return null;
+      eV var1 = var0.d("FleetFrigates");
+      return var1 == null ? new gp[0] : d(var1);
    }
 
    public static gp[] d(eV var0) {
@@ -26,16 +27,16 @@ public class gp {
          List<object> var1 = new List<object>();
          gp[] var2 = new gp[var0 == null ? 0 : var0.Count];
 
-         for(int var3 = 0; var3 < var2.Length; ++var3) {
+         for(int var3 = 0; var3 < var2.length; ++var3) {
             eY var4 = var0.V(var3);
             var1.Add(new gp(var3, var4));
          }
 
-         return (gp[])var1.ToArray();
+         return (gp[])var1.ToArray(new gp[0]);
       }
    }
 
-   public gp(int var1, eY var2) {
+   private gp(int var1, eY var2) {
       this.index = var1;
       this.oR = var2;
    }
@@ -45,35 +46,32 @@ public class gp {
    }
 
    public string getName() {
-      // PORT_TODO: return this.oR.getValueAsString("CustomName");
-      return default;
+      return this.oR.getValueAsString("CustomName");
    }
 
    public void setName(string var1) {
-      // PORT_TODO: this.oR.b("CustomName", (object)var1);
+      this.oR.b("CustomName", (Object)var1);
    }
 
    public gr da() {
-      // PORT_TODO: return gr.an(this.oR.getValueAsString("FrigateClass.FrigateClass"));
-      return default;
+      return gr.an(this.oR.getValueAsString("FrigateClass.FrigateClass"));
    }
 
    public void c(gr var1) {
-      // PORT_TODO: this.oR.b("FrigateClass.FrigateClass", (object)var1.ToString());
+      this.oR.b("FrigateClass.FrigateClass", (Object)var1.ToString());
    }
 
    public string cW() {
       int var1 = -2;
-      // PORT_TODO: eV var2 = this.oR.d("TraitIDs");
+      eV var2 = this.oR.d("TraitIDs");
 
-      // PORT_TODO: for(int var3 = 0; var3 < var2.Count; ++var3) {
-         // PORT_TODO: string var4 = var2.X(var3);
-         // PORT_TODO: er var5 = er.o(var4);
-         // PORT_TODO: if (var5 != null && var5.aW()) {
-            // PORT_TODO: ++var1;
-            // PORT_TODO: return default;
-         // PORT_TODO: }
-      // PORT_TODO: }
+      for(int var3 = 0; var3 < var2.Count; ++var3) {
+         string var4 = var2.X(var3);
+         er var5 = er.o(var4);
+         if (var5 != null && var5.aW()) {
+            ++var1;
+         }
+      }
 
       if (var1 < 0) {
          var1 = 0;
@@ -83,124 +81,112 @@ public class gp {
          var1 = 3;
       }
 
-      // PORT_TODO: return gN.Values[var1].Name;
-      return default;
+      return gN.Values[var1].ToString();
    }
 
    public string cU() {
-      // PORT_TODO: return this.oR.d("HomeSystemSeed").X(1);
-      return default;
+      return this.oR.d("HomeSystemSeed").X(1);
    }
 
    public void ah(string var1) {
-      // PORT_TODO: this.oR.d("HomeSystemSeed").a(1, var1);
+      this.oR.d("HomeSystemSeed").a(1, var1);
    }
 
    public string cV() {
-      // PORT_TODO: return this.oR.d("ResourceSeed").X(1);
-      return default;
+      return this.oR.d("ResourceSeed").X(1);
    }
 
    public void ai(string var1) {
-      // PORT_TODO: this.oR.d("ResourceSeed").a(1, var1);
+      this.oR.d("ResourceSeed").a(1, var1);
    }
 
    public string db() {
-      // PORT_TODO: return this.oR.getValueAsString("Race.AlienRace");
-      return default;
+      return this.oR.getValueAsString("Race.AlienRace");
    }
 
    public void am(string var1) {
-      // PORT_TODO: this.oR.b("Race.AlienRace", (object)var1);
+      this.oR.b("Race.AlienRace", (Object)var1);
    }
 
    public int aq(int var1) {
-      // PORT_TODO: eV var2 = this.oR.d("Stats");
-      // PORT_TODO: return var2.Count <= var1 ? 0 : var2.Y(var1);
-      return 0;
+      eV var2 = this.oR.d("Stats");
+      return var2.Count <= var1 ? 0 : var2.Y(var1);
    }
 
    public void e(int var1, int var2) {
-      // PORT_TODO: eV var3 = this.oR.d("Stats");
+      eV var3 = this.oR.d("Stats");
 
-      // PORT_TODO: while(var3.Count <= var1) {
-         // PORT_TODO: var3.f(0);
-      // PORT_TODO: }
+      while(var3.Count <= var1) {
+         var3.f(0);
+      }
 
-      // PORT_TODO: var3.a(var1, ((int)(var2)));
+      var3.a(var1, new Integer(var2));
    }
 
    public er ar(int var1) {
-      // PORT_TODO: eV var2 = this.oR.d("TraitIDs");
-      // PORT_TODO: if (var1 < var2.Count) {
-         // PORT_TODO: string var3 = var2.X(var1);
-         // PORT_TODO: return er.o(var3);
-      // PORT_TODO: } else {
-         // PORT_TODO: return null;
-      // PORT_TODO: }
-      return default;
+      eV var2 = this.oR.d("TraitIDs");
+      if (var1 < var2.Count) {
+         string var3 = var2.X(var1);
+         return er.o(var3);
+      } else {
+         return null;
+      }
    }
 
    public void a(int var1, er var2) {
-      // PORT_TODO: eV var3 = this.oR.d("TraitIDs");
-      // PORT_TODO: if (var1 < var3.Count) {
-         // PORT_TODO: var3.a(var1, var2 == null ? "^" : var2.getID());
-      // PORT_TODO: }
+      eV var3 = this.oR.d("TraitIDs");
+      if (var1 < var3.Count) {
+         var3.a(var1, var2 == null ? "^" : var2.getID());
+      }
 
    }
 
    public int dc() {
-      // PORT_TODO: return this.oR.J("TotalNumberOfExpeditions");
-      return 0;
+      return this.oR.J("TotalNumberOfExpeditions");
    }
 
-   public void @as(int var1) {
-      // PORT_TODO: this.oR.b("TotalNumberOfExpeditions", (object)(((int)(var1))));
+   public void as(int var1) {
+      this.oR.b("TotalNumberOfExpeditions", (Object)(new Integer(var1)));
    }
 
    public int dd() {
-      // PORT_TODO: return this.oR.J("TotalNumberOfSuccessfulEvents");
-      return 0;
+      return this.oR.J("TotalNumberOfSuccessfulEvents");
    }
 
    public void at(int var1) {
-      // PORT_TODO: this.oR.b("TotalNumberOfSuccessfulEvents", (object)(((int)(var1))));
+      this.oR.b("TotalNumberOfSuccessfulEvents", (Object)(new Integer(var1)));
    }
 
    public int de() {
-      // PORT_TODO: return this.oR.J("TotalNumberOfFailedEvents");
-      return 0;
+      return this.oR.J("TotalNumberOfFailedEvents");
    }
 
    public void au(int var1) {
-      // PORT_TODO: this.oR.b("TotalNumberOfFailedEvents", (object)(((int)(var1))));
+      this.oR.b("TotalNumberOfFailedEvents", (Object)(new Integer(var1)));
    }
 
    public int df() {
-      // PORT_TODO: return this.oR.J("NumberOfTimesDamaged");
-      return 0;
+      return this.oR.J("NumberOfTimesDamaged");
    }
 
    public void av(int var1) {
-      // PORT_TODO: this.oR.b("NumberOfTimesDamaged", (object)(((int)(var1))));
+      this.oR.b("NumberOfTimesDamaged", (Object)(new Integer(var1)));
    }
 
    public int dg() {
-      // PORT_TODO: return this.oR.J("RepairsMade");
-      return 0;
+      return this.oR.J("RepairsMade");
    }
 
    public void aw(int var1) {
-      // PORT_TODO: this.oR.b("RepairsMade", (object)(((int)(var1))));
+      this.oR.b("RepairsMade", (Object)(new Integer(var1)));
    }
 
    public int dh() {
-      // PORT_TODO: return this.oR.J("DamageTaken");
-      return 0;
+      return this.oR.J("DamageTaken");
    }
 
    public void ax(int var1) {
-      // PORT_TODO: this.oR.b("DamageTaken", (object)(((int)(var1))));
+      this.oR.b("DamageTaken", (Object)(new Integer(var1)));
    }
 
    public string toString() {
@@ -213,7 +199,5 @@ public class gp {
       }
    }
 }
-
-
 
 }

@@ -1,16 +1,21 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
-
 public class u : fR {
-   public Application aZ;
+   // $FF: synthetic field
+   Application aZ;
 
-   public u(Application var1) {
+   u(Application var1) {
       this.aZ = var1;
    }
 
@@ -33,7 +38,5 @@ public class u : fR {
       }
    }
 }
-
-
 
 }

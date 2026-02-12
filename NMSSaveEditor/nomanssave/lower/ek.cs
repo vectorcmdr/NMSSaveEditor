@@ -1,17 +1,22 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
 public class ek : FileFilter {
-   public ej @is;
+   // $FF: synthetic field
+   ej is;
 
-   public ek(ej var1) {
-      this.@is = var1;
+   ek(ej var1) {
+      this.is = var1;
    }
 
    public string getDescription() {
@@ -19,7 +24,7 @@ public class ek : FileFilter {
    }
 
    public bool accept(FileInfo var1) {
-      if (var1.Attributes.HasFlag(FileAttributes.Directory)) {
+      if (var1.IsDirectory()) {
          return true;
       } else {
          string var2 = var1.Name;

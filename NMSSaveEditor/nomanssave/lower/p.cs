@@ -1,109 +1,107 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
-
-
 public class p : Form {
-   public DataGridView D;
-   public object E;
-   public List<object> F;
-   public List<object> G = null;
-   public static p H = null;
+   private DataGridView D;
+   private TableRowSorter E;
+   private List<object> F;
+   private List<object> G = null;
+   private static p H = null;
 
-   public p(Form var1) {
-      this.Owner = var1;
-      this.Size = new Size(aH.cI * 2, aH.cI + aH.cH);
-      this.FormBorderStyle = FormBorderStyle.FixedDialog;
-      this.StartPosition = FormStartPosition.CenterParent;
-
+   private p(Form var1) {
+      base(var1);
+      this.SetSize(aH.cI * 2, aH.cI + aH.cH);
+      this.SetResizable(false);
+      this.setModalExclusionType(ModalExclusionType.APPLICATION_EXCLUDE);
+      this.SetModal(true);
       Panel var2 = new Panel();
-      var2.Dock = DockStyle.Fill;
-      this.Controls.Add(var2);
-
+      this.SetContentPane(var2);
+      var2.SetLayout(new BorderLayout(0, 0));
       Panel var3 = new Panel();
       this.D = new DataGridView();
-      this.D.MultiSelect = true;
-      this.D.DataSource = new q(this);
-      this.E = this.D.DataSource;
-      var3.Controls.Add(this.D);
-      var2.Controls.Add(var3);
-
+      this.D.SetSelectionMode(2);
+      this.D.SetModel(new q(this));
+      this.D.GetColumnModel().getColumn(0).setMaxWidth(24);
+      this.E = new TableRowSorter(this.D.GetModel());
+      this.E.setSortable(0, false);
+      this.D.setRowSorter(this.E);
+      var3.setViewportView(this.D);
+      var2.Add(var3);
       Panel var4 = new Panel();
-      var4.Dock = DockStyle.Bottom;
-      var2.Controls.Add(var4);
-
-      Button var5 = new Button() { Text = "Add" };
-      var5.Click += new EventHandler((s, e) => new r(this).actionPerformed(null));
-      var4.Controls.Add(var5);
-      this.AcceptButton = var5;
-
-      Button var6 = new Button() { Text = "Cancel" };
-      var6.Click += new EventHandler((s, e) => new s(this).actionPerformed(null));
-      var4.Controls.Add(var6);
-
-      this.KeyPreview = true;
-      this.KeyDown += (s, e) => {
-         if (e.KeyCode == Keys.Escape) {
-            new t(this).actionPerformed(null);
-         }
-      };
+      var4.SetLayout(new FlowLayout(2));
+      var2.Add(var4, "South");
+      Button var5 = new Button("Add");
+      var5.AddActionListener(new r(this));
+      var4.Add(var5);
+      this.GetRootPane().setDefaultButton(var5);
+      Button var6 = new Button("Cancel");
+      var6.AddActionListener(new s(this));
+      var4.Add(var6);
+      this.GetRootPane().registerKeyboardAction(new t(this), Keys.getKeyStroke(27, 0), 2);
    }
 
-   public string[] d() {
-      this.D.ClearSelection();
-      this.D.Refresh();
+   private string[] d() {
+      this.D.clearSelection();
+      this.E.setSortKeys(new List<object>());
+      this.E.sort();
+      this.D.updateUI();
       this.G = null;
-      this.StartPosition = FormStartPosition.CenterParent;
-      this.ShowDialog();
-      return this.G == null ? new string[0] : this.G.Cast<string>().ToArray();
+      this.SetLocationRelativeTo(this.Parent);
+      this.SetVisible(true);
+      return this.G == null ? new string[0] : (string[])this.G.ToArray(new string[0]);
    }
 
-   public static string[] b(Control var0) {
+   public static string[] b(Container var0) {
       if (H == null) {
-         Form var1 = var0.FindForm();
+         Form var1 = JOptionPane.getFrameForComponent(var0);
          H = new p(var1);
       }
 
       H.F = ey.bl();
-      H.Text = "Add Known Technologies";
+      H.SetTitle("Add Known Technologies");
       return H.d();
    }
 
-   public static string[] c(Control var0) {
+   public static string[] c(Container var0) {
       if (H == null) {
-         Form var1 = var0.FindForm();
+         Form var1 = JOptionPane.getFrameForComponent(var0);
          H = new p(var1);
       }
 
       H.F = ey.bm();
-      H.Text = "Add Known Products";
+      H.SetTitle("Add Known Products");
       return H.d();
    }
 
-   public static List<object> a(p var0) {
+   // $FF: synthetic method
+   static List<object> a(p var0) {
       return var0.F;
    }
 
-   public static DataGridView b(p var0) {
+   // $FF: synthetic method
+   static DataGridView b(p var0) {
       return var0.D;
    }
 
-   public static void a(p var0, List<object> var1) {
+   // $FF: synthetic method
+   static void a(p var0, List<object> var1) {
       var0.G = var1;
    }
 
-   public static List<object> c(p var0) {
+   // $FF: synthetic method
+   static List<object> c(p var0) {
       return var0.G;
    }
 }
-
-
 
 }

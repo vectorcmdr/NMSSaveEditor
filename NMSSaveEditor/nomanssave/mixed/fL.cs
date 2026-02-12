@@ -1,30 +1,31 @@
 using System;
 using System.Collections.Generic;
-using System.Collections.Specialized;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
-
-
 public class fL : fs {
-   public string Name => getName();
-   public int mb;
-   public FileInfo mc;
-   public string mu;
-   public string md;
-   public fn be;
-   public string mv;
-   public string description;
-   public fJ mt;
+   int mb;
+   FileInfo mc;
+   string mu;
+   string md;
+   fn be;
+   string mv;
+   string description;
+   // $FF: synthetic field
+   fJ mt;
 
-   public fL(fJ var1, string var2, int var3) {
+   fL(fJ var1, string var2, int var3) {
       this.mt = var1;
       this.mb = var3;
-      this.mc = new FileInfo(System.IO.Path.Combine((aH.cG).ToString(), (var2).ToString()));
+      this.mc = new File(aH.cG, var2);
       ZipFile var4 = new ZipFile(this.mc);
 
       try {
@@ -33,7 +34,7 @@ public class fL : fs {
             throw new IOException("Invalid backup file");
          }
 
-         Dictionary<string, string> var6 = new Dictionary<string, string>();
+         Properties var6 = new Properties();
          var6.load(var4.getInputStream(var5));
          this.mu = var6.getProperty("ManifestFile");
          this.md = var6.getProperty("StorageFile");
@@ -42,7 +43,7 @@ public class fL : fs {
          }
 
          string var7 = var6.getProperty("GameMode");
-         // PORT_TODO: this.be = var7 == null ? null : fn.valueOf(var7);
+         this.be = var7 == null ? null : fn.valueOf(var7);
          this.mv = var6.getProperty("SaveName");
          this.description = var6.getProperty("Description");
       } catch (FormatException var11) {
@@ -74,7 +75,7 @@ public class fL : fs {
    }
 
    public eY M() {
-      return default;
+      // $FF: Couldn't be decompiled
    }
 
    public string b(eY var1) {
@@ -95,7 +96,5 @@ public class fL : fs {
       return this.mc.Name;
    }
 }
-
-
 
 }

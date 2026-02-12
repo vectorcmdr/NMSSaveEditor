@@ -1,20 +1,27 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
-public class cQ {
-   public string value;
-   public cN gt;
 
-   public cQ(cN var1, string var2) {
+public class cQ {
+   string value;
+   // $FF: synthetic field
+   cN gt;
+
+   cQ(cN var1, string var2) {
       this.gt = var1;
       this.value = var2;
    }
 
-   public bool equals(object var1) {
+   public bool equals(Object var1) {
       if (var1 is string) {
          return this.value.Equals(var1);
       } else {

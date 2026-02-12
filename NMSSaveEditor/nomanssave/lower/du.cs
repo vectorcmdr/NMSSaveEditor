@@ -1,126 +1,132 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
-
-
 public class du : Panel {
-   public gF hm;
-   public ToolStripMenuItem fh;
-   public ToolStripMenuItem hn;
-   public ToolStripMenuItem fe;
-   public dt ho;
+   gF hm;
+   private ToolStripMenuItem fh;
+   private ToolStripMenuItem hn;
+   private ToolStripMenuItem fe;
+   // $FF: synthetic field
+   dt ho;
 
-   public du(dt var1, gF var2) {
+   private du(dt var1, gF var2) {
       this.ho = var1;
       this.hm = var2;
-      int var3 = 0 /* UIManager.getInt("Inventory.gridSize") */;
+      int var3 = UIManager.getInt("Inventory.gridSize");
       Size var4 = new Size(var3, var3);
-      this.setBackground(bO.eK);
-      this.setMinimumSize(var4);
-      this.setMaximumSize(var4);
-      this.Size = (var4);
-      this.SuspendLayout(); // TODO: set layout new GridBagLayout());
-      this.Padding = new Padding(0); /* setBorder */ //(bO.eP);
-      JPopupMenu var5 = new JPopupMenu();
+      this.SetBackground(bO.eK);
+      this.SetMinimumSize(var4);
+      this.SetMaximumSize(var4);
+      this.SetPreferredSize(var4);
+      this.SetLayout(new GridBagLayout());
+      this.SetBorder(bO.eP);
+      ContextMenuStrip var5 = new ContextMenuStrip();
       this.fe = new ToolStripMenuItem("Item Details");
-      // PORT_TODO: this.fe.Click += (new dv(this, var2));
+      this.fe.AddActionListener(new dv(this, var2));
       var5.Add(this.fe);
       this.hn = new ToolStripMenuItem("Change Item");
-      // PORT_TODO: this.hn.Click += (new dw(this, var2));
+      this.hn.AddActionListener(new dw(this, var2));
       var5.Add(this.hn);
       this.fh = new ToolStripMenuItem("Move Item");
-      // PORT_TODO: this.fh.Click += (new dx(this, var2));
+      this.fh.AddActionListener(new dx(this, var2));
       var5.Add(this.fh);
       this.setComponentPopupMenu(var5);
-      // this.addMouseListener - use MouseClick event instead
+      this.AddMouseListener(new dy(this, var2));
       this.aM();
    }
 
-   public void aM() {
-      // PORT_TODO: this.RemoveAll();
-      int var1 = 0 /* UIManager.getInt("Inventory.gridSize") */;
+   private void aM() {
+      this.Controls.Clear();
+      int var1 = UIManager.getInt("Inventory.gridSize");
       Size var2 = new Size(var1, var1);
-      this.setBackground(bO.eK);
-      this.setMinimumSize(var2);
-      this.setMaximumSize(var2);
-      this.Size = (var2);
+      this.SetBackground(bO.eK);
+      this.SetMinimumSize(var2);
+      this.SetMaximumSize(var2);
+      this.SetPreferredSize(var2);
       if (this.hm != null && this.hm.isValid()) {
-         this.fe.Enabled = (true);
-         this.hn.Enabled = (true);
-         this.fh.Enabled = (this.hm.dA() > 0);
+         this.fe.SetEnabled(true);
+         this.hn.SetEnabled(true);
+         this.fh.SetEnabled(this.hm.dA() > 0);
          ey var3 = ey.d(this.hm.dz());
-         // PORT_TODO: string var4 = var3 == null ? this.hm.ei() : var3.Name;
-         int var5 = 0 /* UIManager.getInt("Inventory.iconSize") */;
-         Font var6 = /* UIManager.getFont */ SystemFonts.DefaultFont; //("Inventory.font");
+         string var4 = var3 == null ? this.hm.ei() : var3.Name;
+         int var5 = UIManager.getInt("Inventory.iconSize");
+         Font var6 = UIManager.getFont("Inventory.font");
          Image var7 = var3 == null ? null : var3.c(var5, var5);
          int var8 = 0;
-         Label var9 = default;
+         Label var9;
          GridBagConstraints var10;
          if (var7 != null) {
-            // PORT_TODO: var9 = new Label() { Text = var7 };
-            // PORT_TODO: var9.Size = (new Size(var5, var5));
+            var9 = new Label(var7);
+            var9.SetPreferredSize(new Size(var5, var5));
             var10 = new GridBagConstraints();
             var10.anchor = 10;
             var10.fill = 0;
-            var10.insets = new Padding(5, 0, 5, 0);
+            var10.insets = new Insets(5, 0, 5, 0);
             var10.gridx = 0;
             var10.gridy = var8++;
             this.Add(var9, var10);
          }
 
          var9 = new Label();
-         var9.setFont(var6);
-         // PORT_TODO: var9.setBackground((Color)null);
-         var9.Padding = new Padding(0); /* setBorder */ //((Border)null);
-         // PORT_TODO: var9.Text = (var4);
-         var9.setForeground(bO.eO);
+         var9.SetFont(var6);
+         var9.SetBackground((Color)null);
+         var9.SetBorder((Border)null);
+         var9.SetText(var4);
+         var9.SetForeground(bO.eO);
          var10 = new GridBagConstraints();
          var10.anchor = 10;
          var10.fill = 0;
-         var10.insets = new Padding(var8 == 0 ? var5 + 10 : 0, 0, 0, 0);
+         var10.insets = new Insets(var8 == 0 ? var5 + 10 : 0, 0, 0, 0);
          var10.gridx = 0;
          var10.gridy = var8++;
          this.Add(var9, var10);
          var9 = new Label();
-         var9.setFont(var6);
-         // PORT_TODO: var9.setBackground((Color)null);
-         var9.Padding = new Padding(0); /* setBorder */ //((Border)null);
-         var9.Text = ((this.hm.dA().ToString()) + "/" + (this.hm.dB().ToString()));
-         var9.setForeground(bO.eO);
+         var9.SetFont(var6);
+         var9.SetBackground((Color)null);
+         var9.SetBorder((Border)null);
+         var9.SetText(Convert.ToString(this.hm.dA()) + "/" + Convert.ToString(this.hm.dB()));
+         var9.SetForeground(bO.eO);
          var10 = new GridBagConstraints();
          var10.anchor = 10;
          var10.fill = 0;
-         var10.insets = new Padding(0, 0, 0, 0);
+         var10.insets = new Insets(0, 0, 0, 0);
          var10.gridx = 0;
          var10.gridy = var8++;
          this.Add(var9, var10);
       } else {
-         this.fe.Enabled = (false);
-         this.hn.Enabled = (false);
-         this.fh.Enabled = (false);
+         this.fe.SetEnabled(false);
+         this.hn.SetEnabled(false);
+         this.fh.SetEnabled(false);
       }
 
       this.PerformLayout();
-      this.Refresh();
+      this.updateUI();
    }
-   public static void c(du var0) {
+
+   // $FF: synthetic method
+   static void c(du var0) {
       var0.aM();
    }
-   public du(dt var1, gF var2, du var3) {
-      // PORT_TODO: // PORT_TODO: this(var1, var2);
+
+   // $FF: synthetic method
+   du(dt var1, gF var2, du var3) {
+      // Constructor chain: base(var1, var2)
    }
-   public static dt d(du var0) {
+
+   // $FF: synthetic method
+   static dt d(du var0) {
       return var0.ho;
    }
 }
-
-
 
 }

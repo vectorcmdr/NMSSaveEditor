@@ -1,19 +1,22 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
-
-
 public class gX : FilterInputStream {
-   public ha sa;
-   public int sb;
+   private ha sa;
+   private int sb;
 
-public gX(Stream var1, byte[] var2) : base(var1) {
+   public gX(Stream var1, byte[] var2) {
+      base(var1);
       int var3 = 255 & var2[4] | (255 & var2[5]) << 8 | (255 & var2[6]) << 16 | (255 & var2[7]) << 24;
       int var4 = 255 & var2[8] | (255 & var2[9]) << 8 | (255 & var2[10]) << 16 | (255 & var2[11]) << 24;
       this.sa = new ha(new gY(this, var3, (gY)null), var4);
@@ -24,9 +27,9 @@ public gX(Stream var1, byte[] var2) : base(var1) {
       return this.sb;
    }
 
-   public bool ej() {
+   private bool ej() {
       byte[] var1 = new byte[16];
-      int var2 = this.@in.read(var1, 0, 16);
+      int var2 = this.in.read(var1, 0, 16);
       if (var2 < 0) {
          this.sa = null;
          return false;
@@ -44,21 +47,21 @@ public gX(Stream var1, byte[] var2) : base(var1) {
    }
 
    public int read() {
-      return this.sa != null && (this.sa.Length != 0 || this.ej()) ? this.sa.ReadByte() : -1;
+      return this.sa != null && (this.sa.available() != 0 || this.ej()) ? this.sa.ReadByte() : -1;
    }
 
    public int read(byte[] var1) {
-      return this.read(var1, 0, var1.Length);
+      return this.read(var1, 0, var1.length);
    }
 
    public int read(byte[] var1, int var2, int var3) {
-      return this.sa != null && (this.sa.Length != 0 || this.ej()) ? this.sa.read(var1, var2, var3) : -1;
+      return this.sa != null && (this.sa.available() != 0 || this.ej()) ? this.sa.read(var1, var2, var3) : -1;
    }
-   public static Stream a(gX var0) {
-      return var0.@in;
+
+   // $FF: synthetic method
+   static Stream a(gX var0) {
+      return var0.in;
    }
 }
-
-
 
 }

@@ -1,27 +1,31 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
 public class bE : Panel {
-   public static int ew = 0;
-   public static int TYPE_DOUBLE = 1;
-   public bN[] ex = new bN[3];
-   public gz cp;
+   private static int ew = 0;
+   private static int TYPE_DOUBLE = 1;
+   private bN[] ex = new bN[3];
+   private gz cp;
 
-   public bE(Application var1) {
-      TableLayoutPanel var2 = new TableLayoutPanel();
-      // this.setLayout(var2) - WinForms layout
+   bE(Application var1) {
+      GridLayout var2 = new GridLayout(1, 3, 10, 0);
+      this.SetLayout(var2);
       this.ex[0] = new bN(this);
-      this.Controls.Add(this.ex[0]);
+      this.Add(this.ex[0]);
       this.ex[1] = new bN(this);
-      this.Controls.Add(this.ex[1]);
+      this.Add(this.ex[1]);
       this.ex[2] = new bN(this);
-      this.Controls.Add(this.ex[2]);
+      this.Add(this.ex[2]);
       this.ex[0].a("Milestones", (Image)Application.a("UI-MILESTONES.PNG", 32, 32));
       this.ex[0].a("On Foot Exploration", gs.pN);
       this.ex[0].a("Alien Colonist Encounters", gs.pO);
@@ -71,65 +75,70 @@ public class bE : Panel {
       this.ex[2].a("Distance Warped", gs.pT, false, "See Milestones section for more details");
    }
 
-   public void B() {
+   void B() {
       int var1 = this.cp.bx();
       this.cp.a(gs.pP, var1);
-      this.a(gs.pP, var1.ToString());
+      this.a(gs.pP, Convert.ToString(var1));
    }
 
-   public void C() {
+   void C() {
       long var1 = this.cp.dJ();
       int var3 = this.cp.a(gs.pQ);
       if ((long)var3 < var1) {
          var3 = (int)Math.Min(var1, 2147483647L);
          this.cp.a(gs.pQ, var3);
-         this.a(gs.pQ, var3.ToString());
+         this.a(gs.pQ, Convert.ToString(var3));
       }
 
    }
 
-   public void aa() {
-      for(int var2 = 0; var2 < this.ex.Length; ++var2) {
-         for(int var3 = 0; var3 < this.ex[var2].Controls.Count; ++var3) {
-            Component var1 = (Component)this.ex[var2].Controls[var3];
-            if (true) { // PORT_TODO: original condition had errors
-               // PORT_TODO: ((bL)var1).ac();
+   void aa() {
+      for(int var2 = 0; var2 < this.ex.length; ++var2) {
+         for(int var3 = 0; var3 < this.ex[var2].getComponentCount(); ++var3) {
+            Component var1 = this.ex[var2].getComponent(var3);
+            if (var1 is bL && ((bL)var1).eB.isSpecial()) {
+               ((bL)var1).ac();
             }
          }
       }
+
    }
 
-   public void a(gs var1, string var2) {
-      for(int var4 = 0; var4 < this.ex.Length; ++var4) {
-         for(int var5 = 0; var5 < this.ex[var4].Controls.Count; ++var5) {
-            Component var3 = (Component)this.ex[var4].Controls[var5];
-            if (true) { // PORT_TODO: original condition had errors
-               // PORT_TODO: ((bJ)var3).Text = var2;
+   private void a(gs var1, string var2) {
+      for(int var4 = 0; var4 < this.ex.length; ++var4) {
+         for(int var5 = 0; var5 < this.ex[var4].getComponentCount(); ++var5) {
+            Component var3 = this.ex[var4].getComponent(var5);
+            if (var3 is bJ && ((bJ)var3).ez == var1) {
+               ((bJ)var3).SetText(var2);
             }
          }
       }
+
    }
 
-   public void a(gz var1) {
+   void a(gz var1) {
       this.cp = var1;
 
-      for(int var3 = 0; var3 < this.ex.Length; ++var3) {
-         for(int var4 = 0; var4 < this.ex[var3].Controls.Count; ++var4) {
-            Component var2 = (Component)this.ex[var3].Controls[var4];
+      for(int var3 = 0; var3 < this.ex.length; ++var3) {
+         for(int var4 = 0; var4 < this.ex[var3].getComponentCount(); ++var4) {
+            Component var2 = this.ex[var3].getComponent(var4);
             if (var2 is bJ) {
-               // PORT_TODO: ((bJ)var2).ac();
+               ((bJ)var2).ac();
             } else if (var2 is bL) {
-               // PORT_TODO: ((bL)var2).ac();
+               ((bL)var2).ac();
             }
          }
       }
+
    }
 
-   public static gz a(bE var0) {
+   // $FF: synthetic method
+   static gz a(bE var0) {
       return var0.cp;
    }
 
-   public static void a(bE var0, gs var1, string var2) {
+   // $FF: synthetic method
+   static void a(bE var0, gs var1, string var2) {
       var0.a(var1, var2);
    }
 }

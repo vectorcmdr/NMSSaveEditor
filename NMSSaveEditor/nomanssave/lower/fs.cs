@@ -1,26 +1,32 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
+
 public interface fs {
-   public string Name => getName();
-   public DateTime LastWriteTimeUtc => DateTimeOffset.FromUnixTimeMilliseconds(lastModified()).UtcDateTime;
-   public string K();
+   string K();
 
-   public fn L();
+   fn L();
 
-   public eY M();
+   eY M();
 
-   public string b(eY var1);
+   string b(eY var1);
 
-   public long lastModified();
-   public string getName() {
+   long lastModified();
+
+   default string getName() {
       return null;
    }
-   public string getDescription() {
+
+   default string getDescription() {
       return null;
    }
 }

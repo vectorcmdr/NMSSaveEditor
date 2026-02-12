@@ -1,18 +1,20 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
-
-
 public class eC {
-   public static eD[] jS = new eD[2];
-   public eD jT;
-   public eE jU;
+   private static eD[] jS = new eD[2];
+   private eD jT;
+   private eE jU;
 
    static eC() {
       jS[0] = c("db/jsonmap.txt", "NMS 5.21 (savegame)");
@@ -20,7 +22,7 @@ public class eC {
    }
 
    public static void main(string[] var0) {
-      for(int var1 = 0; var1 < jS.Length; ++var1) {
+      for(int var1 = 0; var1 < jS.length; ++var1) {
          if (jS[var1] != null) {
             IEnumerator<object> var3 = jS[var1].GetEnumerator();
 
@@ -36,16 +38,16 @@ public class eC {
 
    }
 
-   public static string hashName(string var0) {
+   private static string hashName(string var0) {
       long[] var1 = new long[]{8268756125562466087L, 8268756125562466087L};
-      // PORT_TODO: hh.a(var0.GetBytes(System.Text.Encoding.UTF8), var1);
+      hh.a(var0.GetBytes(Encoding.UTF8), var1);
       string var2 = "0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxy";
       long var3 = 4294967295L & var1[0] >> 32;
       var3 = var3 % 68L << 32 | 4294967295L & var1[0];
       int var5 = (int)(var3 % 68L);
       int var6 = (int)((8796093022207L & var1[0] >> 21) % 68L);
       int var7 = (int)((4194303L & var1[0] >> 42) % 68L);
-      return new string(new char[]{var2[var5], var2[var6], var2[var7]});
+      return new string(new char[]{var2[var5), var2[var6), var2[var7)});
    }
 
    public static eC a(eG var0, string var1) {
@@ -53,8 +55,8 @@ public class eC {
       return var2 != null && var2.s(var1) ? new eC(var2) : null;
    }
 
-   public static eD c(string var0, string var1) {
-      Stream var2 = typeof(Application).GetManifestResourceStream(var0);
+   private static eD c(string var0, string var1) {
+      Stream var2 = JavaCompat.GetResourceStream(var0);
       if (var2 == null) {
          return null;
       } else {
@@ -67,19 +69,18 @@ public class eC {
       }
    }
 
-   public eC(eD var1) {
+   private eC(eD var1) {
       this.jT = var1;
       this.jU = new eE((eE)null, (eE)null);
    }
 
    public Dictionary<object, object> bp() {
-      // PORT_TODO: return (Dictionary<object, object>)this.jU.stream().collect(Collectors.toMap((var0) => {
-         // PORT_TODO: return var0.key;
-      // PORT_TODO: }, (var0) => {
-         // PORT_TODO: return var0.name;
-      // PORT_TODO: }));
-       return new Dictionary<object, object>(); // PORT_TODO: stub return
-    }
+      return (Map)this.jU.collect(Collectors.toMap((var0) => {
+         return var0.key;
+      }, (var0) => {
+         return var0.name;
+      }));
+   }
 
    public string q(string var1) {
       string var2;
@@ -96,7 +97,7 @@ public class eC {
             var2 = var1;
          }
 
-         // PORT_TODO: this.jU.Add(var1, var2);
+         this.jU.Add(var1, var2);
       }
 
       return var2;
@@ -123,7 +124,5 @@ public class eC {
       return this.jT.ToString();
    }
 }
-
-
 
 }

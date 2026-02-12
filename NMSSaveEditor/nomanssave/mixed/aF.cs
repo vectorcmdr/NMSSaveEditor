@@ -1,51 +1,49 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
-
-
 public class aF : ActionListener {
-   public aD cB;
+   // $FF: synthetic field
+   aD cB;
 
-   public aF(aD var1) {
+   aF(aD var1) {
       this.cB = var1;
    }
 
-   public void actionPerformed(EventArgs var1) {
+   public void actionPerformed(ActionEvent var1) {
       string var2 = aH.getProperty("LookAndFeel");
-      // PORT_TODO: aI var3 = (aI)Stream.of(aI.Values).filter((var1x) => {
-         // PORT_TODO: return var1x.Name.Equals(var2);
-      // PORT_TODO: }).findFirst().orElse(aI.cN);
-      // PORT_TODO: aI var4 = (aI)aD.a(this.cB).SelectedItem;
-      // PORT_TODO: aD.a(this.cB, false);
-      // PORT_TODO: if (var4 == null) {
-         // PORT_TODO: if (var3 != null) {
-            // PORT_TODO: aH.setProperty("LookAndFeel", null);
-            // PORT_TODO: aD.a(this.cB, true);
-         // PORT_TODO: }
-      // PORT_TODO: } else if (var3 == null || var3 != var4) {
-         // PORT_TODO: aH.setProperty("LookAndFeel", var4.Name);
-         // PORT_TODO: aD.a(this.cB, true);
-      // PORT_TODO: }
+      aI var3 = (aI)Stream.of(aI.Values).filter((var1x) => {
+         return var1x.ToString().Equals(var2);
+      }).findFirst().orElse(aI.cN);
+      aI var4 = (aI)aD.a(this.cB).SelectedItem;
+      aD.a(this.cB, false);
+      if (var4 == null) {
+         if (var3 != null) {
+            aH.setProperty("LookAndFeel", (string)null);
+            aD.a(this.cB, true);
+         }
+      } else if (var3 == null || var3 != var4) {
+         aH.setProperty("LookAndFeel", var4.ToString());
+         aD.a(this.cB, true);
+      }
 
-// PORT_TODO: 
-      // PORT_TODO: double var5 = double.Parse(aD.b(this.cB).Text);
-      // PORT_TODO: if (var5 != aH.a("InventoryScaling", 1.0D)) {
-         // PORT_TODO: aH.b("InventoryScaling", var5);
-         // PORT_TODO: aD.a(this.cB, true);
-      // PORT_TODO: }
+      double var5 = double.Parse(aD.b(this.cB).GetText());
+      if (var5 != aH.a("InventoryScaling", 1.0D)) {
+         aH.b("InventoryScaling", var5);
+         aD.a(this.cB, true);
+      }
 
-// PORT_TODO: 
-      // PORT_TODO: this.cB.Hide();
-   // PORT_TODO: }
+      this.cB.SetVisible(false);
+   }
 }
 
-
-
-}
 }

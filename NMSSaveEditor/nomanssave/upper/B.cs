@@ -1,24 +1,27 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
+public class B : WindowAdapter {
+   // $FF: synthetic field
+   Application aZ;
 
-
-public class B : object {
-   public Application aZ;
-
-   public B(Application var1) {
+   B(Application var1) {
       this.aZ = var1;
    }
 
-   public void windowClosing(FormClosedEventArgs var1) {
+   public void windowClosing(WindowEvent var1) {
       if (Application.i(this.aZ) || Application.j(this.aZ)) {
-         int var2 = (int)(int)MessageBox.Show(Application.h(this.aZ), "Save data before closing?", "Save", 0);
+         int var2 = MessageBox.Show("Save data before closing?".ToString(), "Save".ToString(), MessageBoxButtons.YesNo);
          if (var2 == 0) {
             if (Application.i(this.aZ)) {
                Application.k(this.aZ);
@@ -37,16 +40,14 @@ public class B : object {
       Application.h(this.aZ).Dispose();
    }
 
-   public void windowDeactivated(FormClosedEventArgs var1) {
+   public void windowDeactivated(WindowEvent var1) {
       Application.e(this.aZ, true);
    }
 
-   public void windowActivated(FormClosedEventArgs var1) {
+   public void windowActivated(WindowEvent var1) {
       Application.e(this.aZ, false);
       Application.m(this.aZ);
    }
 }
-
-
 
 }

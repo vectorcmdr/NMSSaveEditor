@@ -1,30 +1,32 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
-
-
 public class hl {
-   public static Pattern sN = Pattern.compile("0x([0-9a-fA-F]{1,16})");
-   public static Pattern sO = Pattern.compile("[0-9a-fA-F]{12}");
-   public static Pattern sP = Pattern.compile("([0-9a-fA-F]{4}):([0-9a-fA-F]{4}):([0-9a-fA-F]{4}):([0-9a-fA-F]{4})");
-   public int sQ;
-   public int sR;
-   public int sS;
-   public int sT;
-   public int sU;
-   public int sV;
+   private static Pattern sN = new Regex("0x([0-9a-fA-F]{1,16})");
+   private static Pattern sO = new Regex("[0-9a-fA-F]{12}");
+   private static Pattern sP = new Regex("([0-9a-fA-F]{4}):([0-9a-fA-F]{4}):([0-9a-fA-F]{4}):([0-9a-fA-F]{4})");
+   private int sQ;
+   private int sR;
+   private int sS;
+   private int sT;
+   private int sU;
+   private int sV;
 
-   public static long aE(string var0) {
+   private static long aE(string var0) {
       long var1 = 0L;
 
       for(int var4 = 0; var4 < var0.Length; ++var4) {
-         char var3 = var0[var4];
+         char var3 = var0[var4);
          var1 <<= 4;
          if (var3 >= 'A' && var3 <= 'F') {
             var1 |= (long)(var3 - 55);
@@ -38,7 +40,7 @@ public class hl {
       return var1;
    }
 
-   public static int a(long var0, int var2) {
+   private static int a(long var0, int var2) {
       int var3 = -1 >>> 32 - var2;
       int var4 = int.MinValue >>> 32 - var2;
       int var5 = (int)(var0 & (long)var3);
@@ -49,7 +51,7 @@ public class hl {
       return var5;
    }
 
-   public static int b(long var0, int var2) {
+   private static int b(long var0, int var2) {
       int var3 = -1 >>> 32 - var2;
       return (int)(var0 & (long)var3);
    }
@@ -57,20 +59,20 @@ public class hl {
    public static hl e(string var0, int var1) {
       Matcher var2;
       long var3;
-      if ((var2 = sP.matcher(var0)).matches()) {
-         var3 = aE(var2.group(1)) - 2047L;
+      if ((var2 = sP.Match(var0)).Matches()) {
+         var3 = aE(var2.Groups[1)) - 2047L;
          if (var3 > 2047L) {
             throw new Exception("Invalid galactic coordinates");
          } else {
-            long var11 = aE(var2.group(2)) - 127L;
+            long var11 = aE(var2.Groups[2)) - 127L;
             if (var11 > 127L) {
                throw new Exception("Invalid galactic coordinates");
             } else {
-               long var12 = aE(var2.group(3)) - 2047L;
+               long var12 = aE(var2.Groups[3)) - 2047L;
                if (var12 > 2047L) {
                   throw new Exception("Invalid galactic coordinates");
                } else {
-                  long var13 = aE(var2.group(4));
+                  long var13 = aE(var2.Groups[4));
                   if (var13 > 65535L) {
                      throw new Exception("Invalid galactic coordinates");
                   } else {
@@ -79,7 +81,7 @@ public class hl {
                }
             }
          }
-      } else if (sO.matcher(var0).matches()) {
+      } else if (sO.Match(var0).Matches()) {
          var3 = aE(var0);
          int var5 = b(var3 >> 44, 4);
          int var6 = b(var3 >> 32, 12);
@@ -92,7 +94,7 @@ public class hl {
       }
    }
 
-   public static hl n(object var0) {
+   public static hl n(Object var0) {
       if (var0 == null) {
          return null;
       } else if (var0 is Number) {
@@ -101,8 +103,8 @@ public class hl {
       } else if (var0 is string) {
          string var5 = (string)var0;
          Matcher var2;
-         if ((var2 = sN.matcher(var5)).matches()) {
-            long var3 = aE(var2.group(1));
+         if ((var2 = sN.Match(var5)).Matches()) {
+            long var3 = aE(var2.Groups[1));
             return new hl(var3);
          } else {
             return e(var5, 0);
@@ -110,7 +112,7 @@ public class hl {
       } else {
          if (var0 is eY) {
             eY var1 = (eY)var0;
-            if (true) { // PORT_TODO: original condition had errors
+            if (var1.Contains("GalacticAddress")) {
                return new hl((eY)var0);
             }
          }
@@ -119,13 +121,13 @@ public class hl {
       }
    }
 
-   public hl(eY var1) {
-      // PORT_TODO: this.sQ = var1.c("GalacticAddress.PlanetIndex", 0);
-      // PORT_TODO: this.sR = var1.c("GalacticAddress.SolarSystemIndex", 0);
-      // PORT_TODO: this.sS = var1.c("RealityIndex", 0);
-      // PORT_TODO: this.sT = var1.c("GalacticAddress.VoxelY", 0);
-      // PORT_TODO: this.sU = var1.c("GalacticAddress.VoxelZ", 0);
-      // PORT_TODO: this.sV = var1.c("GalacticAddress.VoxelX", 0);
+   private hl(eY var1) {
+      this.sQ = var1.c("GalacticAddress.PlanetIndex", 0);
+      this.sR = var1.c("GalacticAddress.SolarSystemIndex", 0);
+      this.sS = var1.c("RealityIndex", 0);
+      this.sT = var1.c("GalacticAddress.VoxelY", 0);
+      this.sU = var1.c("GalacticAddress.VoxelZ", 0);
+      this.sV = var1.c("GalacticAddress.VoxelX", 0);
    }
 
    public hl(long var1) {
@@ -137,7 +139,7 @@ public class hl {
       this.sV = a(var1 >> 0, 12);
    }
 
-   public hl(int var1, int var2, int var3, int var4, int var5, int var6) {
+   private hl(int var1, int var2, int var3, int var4, int var5, int var6) {
       this.sQ = var1;
       this.sR = var2;
       this.sS = var3;
@@ -228,29 +230,29 @@ public class hl {
 
    public string ey() {
       StringBuilder var1 = new StringBuilder();
-      var1.Append(Convert.ToString(this.sQ & 15, 16));
-      var1.Append(Convert.ToString(this.sR & 4095, 16));
+      var1.append(((int)this.sQ & 15).ToString("X"));
+      var1.append(((int)this.sR & 4095).ToString("X"));
 
       while(var1.Length < 4) {
-         var1.Insert(1, '0');
+         var1.insert(1, '0');
       }
 
-      var1.Append(Convert.ToString(this.sT & 255, 16));
+      var1.append(((int)this.sT & 255).ToString("X"));
 
       while(var1.Length < 6) {
-         var1.Insert(4, '0');
+         var1.insert(4, '0');
       }
 
-      var1.Append(Convert.ToString(this.sU & 4095, 16));
+      var1.append(((int)this.sU & 4095).ToString("X"));
 
       while(var1.Length < 9) {
-         var1.Insert(6, '0');
+         var1.insert(6, '0');
       }
 
-      var1.Append(Convert.ToString(this.sV & 4095, 16));
+      var1.append(((int)this.sV & 4095).ToString("X"));
 
       while(var1.Length < 12) {
-         var1.Insert(9, '0');
+         var1.insert(9, '0');
       }
 
       return var1.ToString().ToUpper();
@@ -258,37 +260,37 @@ public class hl {
 
    public string ez() {
       StringBuilder var1 = new StringBuilder();
-      var1.Append(Convert.ToString(this.sV + 2047, 16));
+      var1.append(((int)this.sV + 2047).ToString("X"));
 
       while(var1.Length < 4) {
-         var1.Insert(0, '0');
+         var1.insert(0, '0');
       }
 
-      var1.Append(':');
-      var1.Append(Convert.ToString(this.sT + 127, 16));
+      var1.append(':');
+      var1.append(((int)this.sT + 127).ToString("X"));
 
       while(var1.Length < 9) {
-         var1.Insert(5, '0');
+         var1.insert(5, '0');
       }
 
-      var1.Append(':');
-      var1.Append(Convert.ToString(this.sU + 2047, 16));
+      var1.append(':');
+      var1.append(((int)this.sU + 2047).ToString("X"));
 
       while(var1.Length < 14) {
-         var1.Insert(10, '0');
+         var1.insert(10, '0');
       }
 
-      var1.Append(':');
-      var1.Append(Convert.ToString(this.sQ << 12 | this.sR, 16));
+      var1.append(':');
+      var1.append(((int)this.sQ << 12 | this.sR).ToString("X"));
 
       while(var1.Length < 19) {
-         var1.Insert(15, '0');
+         var1.insert(15, '0');
       }
 
       return var1.ToString().ToUpper();
    }
 
-   public bool equals(object var1) {
+   public bool equals(Object var1) {
       if (var1 is hl) {
          hl var2 = (hl)var1;
          if (this.sQ != var2.sQ) {
@@ -317,7 +319,5 @@ public class hl {
       return "0x" + Convert.ToString(this.ex(), 16);
    }
 }
-
-
 
 }

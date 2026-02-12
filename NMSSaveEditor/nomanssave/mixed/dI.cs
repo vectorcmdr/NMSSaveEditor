@@ -1,21 +1,25 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
+public class dI : TableModel {
+   // $FF: synthetic field
+   dE hE;
 
-
-public class dI : object {
-   public dE hE;
-
-   public dI(dE var1) {
+   dI(dE var1) {
       this.hE = var1;
    }
 
-   public void addTableModelListener(EventHandler var1) {
+   public void addTableModelListener(TableModelListener var1) {
    }
 
    public Class getColumnClass(int var1) {
@@ -44,7 +48,7 @@ public class dI : object {
       return var1 == null ? 0 : var1.dW();
    }
 
-   public object getValueAt(int var1, int var2) {
+   public Object getValueAt(int var1, int var2) {
       gE var3 = (gE)dE.a(this.hE).SelectedItem;
       string var4 = var3 == null ? null : var3.aH(var1);
       eM var5 = eM.x(var4);
@@ -64,10 +68,10 @@ public class dI : object {
       return var2 == 1;
    }
 
-   public void removeTableModelListener(EventHandler var1) {
+   public void removeTableModelListener(TableModelListener var1) {
    }
 
-   public void setValueAt(object var1, int var2, int var3) {
+   public void setValueAt(Object var1, int var2, int var3) {
       gE var4 = (gE)dE.a(this.hE).SelectedItem;
       if (var4 != null && var3 == 1) {
          eM var5 = (eM)var1;
@@ -91,7 +95,5 @@ public class dI : object {
       }
    }
 }
-
-
 
 }

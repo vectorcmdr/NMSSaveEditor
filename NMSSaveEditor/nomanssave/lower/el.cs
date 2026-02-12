@@ -1,49 +1,47 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
-
-
 public class el : FileView {
-   // PORT_TODO: public string Name => getName();
-   public ej @is;
+   // $FF: synthetic field
+   ej is;
 
-   public el(ej var1) {
-      this.@is = var1;
+   el(ej var1) {
+      this.is = var1;
    }
 
-   public Icon getIcon(FileInfo var1) {
+   public Image getIcon(FileInfo var1) {
       string var2;
-      if (var1.Exists) {
+      if (var1.IsFile()) {
          var2 = var1.Name;
          if (var2.EndsWith(".hg") && !var2.StartsWith("mf_")) {
-            // PORT_TODO: return ej.@as();
+            return ej.as();
          } else {
-            // PORT_TODO: return var2.Equals("containers.index") ? ej.au() : null;
-            return default;
+            return var2.Equals("containers.index") ? ej.au() : null;
          }
       } else {
-         var2 = ej.a(this.@is, var1);
-         // PORT_TODO: return var2 == null ? null : ej.aR();
+         var2 = ej.a(this.is, var1);
+         return var2 == null ? null : ej.aR();
       }
-      return default;
    }
 
    public string getName(FileInfo var1) {
-      if (var1.Exists) {
+      if (var1.IsFile()) {
          return var1.Name;
       } else {
-         string var2 = ej.a(this.@is, var1);
+         string var2 = ej.a(this.is, var1);
          return var2 == null ? var1.Name : "[" + var2 + "] " + var1.Name;
       }
    }
 }
-
-
 
 }

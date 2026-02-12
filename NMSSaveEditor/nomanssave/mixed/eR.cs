@@ -1,32 +1,35 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Xml;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
-
-
 public class eR : ey {
-   public string kc;
-   public eA kn;
-   public eQ ko;
+   string kc;
+   eA kn;
+   // $FF: synthetic field
+   eQ ko;
 
-public eR(eQ var1, Element var2) : base(var2.getAttribute("id")) {
+   eR(eQ var1, XmlElement var2) {
+      base(var2.GetAttribute("id"));
       this.ko = var1;
-      this.kc = var2.hasAttribute("icon") ? var2.getAttribute("icon") : null;
-      this.kn = ey.p(var2.getAttribute("template"));
+      this.kc = var2.HasAttribute("icon") ? var2.GetAttribute("icon") : null;
+      this.kn = ey.p(var2.GetAttribute("template"));
    }
 
-   public object aZ() {
+   public Object aZ() {
       return this.M(this.ko.jY ? (int)Math.Floor(new Random().NextDouble() * 100000.0D) : 0);
    }
 
-   public object M(int var1) {
-      if (this.id.Length == 13 && this.id[0] == '^') {
+   public Object M(int var1) {
+      if (this.id.Length == 13 && this.id[0) == '^') {
          if (var1 >= 0 && var1 < 100000) {
             MemoryStream var2 = new MemoryStream();
             var2.Write(94);
@@ -34,8 +37,8 @@ public eR(eQ var1, Element var2) : base(var2.getAttribute("id")) {
             int var3;
             int var4;
             for(var3 = 0; var3 < 6; ++var3) {
-               var4 = "0123456789ABCDEFabcdef".IndexOf(this.id[var3 * 2 + 1]);
-               int var5 = "0123456789ABCDEFabcdef".IndexOf(this.id[var3 * 2 + 2]);
+               var4 = "0123456789ABCDEFabcdef".IndexOf(this.id[var3 * 2 + 1));
+               int var5 = "0123456789ABCDEFabcdef".IndexOf(this.id[var3 * 2 + 2));
                if (var4 < 0 || var5 < 0) {
                   throw new Exception("Cannot create ID: invalid hex");
                }
@@ -55,10 +58,10 @@ public eR(eQ var1, Element var2) : base(var2.getAttribute("id")) {
 
             for(var3 = 100000; var3 > 1; var3 /= 10) {
                var4 = var1 * 10 / var3 % 10;
-               var2.Write("0123456789ABCDEFabcdef"[var4]);
+               var2.Write("0123456789ABCDEFabcdef"[var4));
             }
 
-            return new fg(var2.ToArray());
+            return new fg(var2.toByteArray());
          } else {
             throw new Exception("Cannot create ID: invalid proc");
          }
@@ -67,15 +70,15 @@ public eR(eQ var1, Element var2) : base(var2.getAttribute("id")) {
       }
    }
 
-   public override eB ba() {
+   public eB ba() {
       return eB.jO;
    }
 
-   public override bool bb() {
+   public bool bb() {
       return this.ko.jY;
    }
 
-   public string y(string var1) {
+   private string y(string var1) {
       if ("NAME".Equals(var1)) {
          return this.ko.name;
       } else {
@@ -83,50 +86,47 @@ public eR(eQ var1, Element var2) : base(var2.getAttribute("id")) {
       }
    }
 
-   public override string getName() {
-      // PORT_TODO: return this.kn.a(this.y);
-      return default;
+   public string getName() {
+      return this.kn.a(this.y);
    }
 
-   public override ex bc() {
+   public ex bc() {
       return ex.jd;
    }
 
-   public override bool bd() {
+   public bool bd() {
       return false;
    }
 
-   public override bool be() {
+   public bool be() {
       return false;
    }
 
-   public override int? bf() {
+   public Integer bf() {
       return null;
    }
 
-   public override string bg() {
-      // PORT_TODO: return this.kn.b(this.y);
-      return default;
+   public string bg() {
+      return this.kn.b(this.y);
    }
 
-   public override bool bh() {
+   public bool bh() {
       return false;
    }
 
-   public override string bi() {
+   public string bi() {
       return this.kc;
    }
 
-   public override int bj() {
+   public int bj() {
       return 0;
    }
 
-   public override string getDescription() {
-      // PORT_TODO: return this.kn.c(this.y);
-      return default;
+   public string getDescription() {
+      return this.kn.c(this.y);
    }
 
-   public override List<object> bk() {
+   public List<object> bk() {
       return this.ko.ke;
    }
 
@@ -134,7 +134,5 @@ public eR(eQ var1, Element var2) : base(var2.getAttribute("id")) {
       return this.ko.name.Length == 0 ? this.id : this.ko.name;
    }
 }
-
-
 
 }

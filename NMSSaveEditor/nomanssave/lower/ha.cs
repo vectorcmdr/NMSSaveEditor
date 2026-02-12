@@ -1,23 +1,26 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
-
-
 public class ha : FilterInputStream {
-   public bool sj;
-   public byte[] buffer;
-   public int sk;
-   public int sg;
-   public int sl;
-   public bool eof;
+   private bool sj;
+   private byte[] buffer;
+   private int sk;
+   private int sg;
+   private int sl;
+   private bool eof;
 
-public ha(Stream var1, int var2) : base(var1) {
+   public ha(Stream var1, int var2) {
+      base(var1);
       if (var2 == 0) {
          this.sj = true;
          this.buffer = new byte[1048576];
@@ -31,13 +34,13 @@ public ha(Stream var1, int var2) : base(var1) {
       this.eof = false;
    }
 
-   public void aJ(int var1) {
-      if (this.sg + var1 > this.buffer.Length) {
+   private void aJ(int var1) {
+      if (this.sg + var1 > this.buffer.length) {
          if (!this.sj) {
             throw new IOException("buffer exceeded");
          }
 
-         int var2 = this.buffer.Length;
+         int var2 = this.buffer.length;
 
          do {
             var2 += 1048576;
@@ -50,7 +53,7 @@ public ha(Stream var1, int var2) : base(var1) {
 
    }
 
-   public bool el() {
+   private bool el() {
       if (this.eof) {
          return false;
       } else {
@@ -81,11 +84,11 @@ public ha(Stream var1, int var2) : base(var1) {
                var4 = var2;
                this.aJ(var2);
 
-               if (false) { // PORT_TODO: original while had errors
+               while((var1 = base.read(this.buffer, this.sg, var4)) > 0) {
                   this.sg += var1;
                   var4 -= var1;
                   if (var4 == 0) {
-                     // PORT_TODO: break;
+                     break;
                   }
                }
 
@@ -94,7 +97,7 @@ public ha(Stream var1, int var2) : base(var1) {
                }
             }
 
-            if (this.sg == this.buffer.Length && !this.sj) {
+            if (this.sg == this.buffer.length && !this.sj) {
                this.eof = true;
                return true;
             } else {
@@ -165,7 +168,7 @@ public ha(Stream var1, int var2) : base(var1) {
    }
 
    public int read(byte[] var1) {
-      return this.read(var1, 0, var1.Length);
+      return this.read(var1, 0, var1.length);
    }
 
    public int read(byte[] var1, int var2, int var3) {
@@ -179,7 +182,5 @@ public ha(Stream var1, int var2) : base(var1) {
       }
    }
 }
-
-
 
 }

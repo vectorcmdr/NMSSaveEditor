@@ -1,100 +1,111 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
-
-
 public class aQ : Form {
-   public Size dk;
-   public Size dl;
-   public Size dm;
-   // PORT_TODO: public Size dn = null;
-   public TextBox @do;
-   public TextBox dp;
-   public static aQ dq;
+   private Size dk;
+   private Size dl;
+   private Size dm;
+   private Size dn = null;
+   private TextBox do;
+   private TextBox dp;
+   private static aQ dq;
 
-// PORT_TODO: public aQ(Frame var1) : base(var1) {
-      // PORT_TODO: this.FormBorderStyle = FormBorderStyle.FixedDialog; //(false);
-      // setModalExclusionType not available in WinForms
-      // PORT_TODO: this.Text = ("Expand Inventory");
-      // PORT_TODO: // PORT_TODO: this/* setModal */(true);
-      // PORT_TODO: Panel var2 = new Panel();
-      // PORT_TODO: this.setContentPane(var2);
-      // PORT_TODO: var2.SuspendLayout(); // TODO: set layout new TableLayoutPanel());
-      // PORT_TODO: Panel var3 = new Panel();
-      // TODO: var3.SuspendLayout(); // TODO: set layout /* FormLayout */ null, FormFactory.LABEL_COMPONENT_GAP_COLSPEC, ColumnSpec.decode("250px"), FormFactory.LABEL_COMPONENT_GAP_COLSPEC}, new RowSpec[]{FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC}));
-      // PORT_TODO: Label var4 = new Label() { Text = "Width:" };
-      // PORT_TODO: var3.Controls.Add(var4);
-      // PORT_TODO: this.@do = new TextBox();
-      // PORT_TODO: this.@do.addFocusListener(new aR(this));
-      // PORT_TODO: var3.Add(this.@do, "4, 2, fill, default");
-      // PORT_TODO: Label var5 = new Label() { Text = "Height:" };
-      // PORT_TODO: var3.Controls.Add(var5);
-      // PORT_TODO: this.dp = new TextBox();
-      // PORT_TODO: this.dp.addFocusListener(new aS(this));
-      // PORT_TODO: var3.Add(this.dp, "4, 4, fill, default");
-      // PORT_TODO: var2.Add(var3);
-      // PORT_TODO: Panel var6 = new Panel();
-      // PORT_TODO: var6.SuspendLayout(); // TODO: set layout new FlowLayoutPanel(2));
-      // PORT_TODO: var2.Controls.Add(var6);
-      // PORT_TODO: Button var7 = new Button() { Text = "Save" };
-      // PORT_TODO: var7.Click += (new aT(this));
-      // PORT_TODO: var6.Add(var7);
-      // PORT_TODO: this.getRootPane().setDefaultButton(var7);
-      // PORT_TODO: Button var8 = new Button() { Text = "Cancel" };
-      // PORT_TODO: var8.Click += (new aU(this));
-      // PORT_TODO: var6.Add(var8);
-      // PORT_TODO: this.getRootPane().registerKeyboardAction(new aV(this), /* KeyStroke */ Keys.None /* (27, 0) */, 2);
-      // PORT_TODO: this.PerformLayout();
-   // PORT_TODO: }
+   private aQ(Form var1) {
+      base(var1);
+      this.SetResizable(false);
+      this.setModalExclusionType(ModalExclusionType.APPLICATION_EXCLUDE);
+      this.SetTitle("Expand Inventory");
+      this.SetModal(true);
+      Panel var2 = new Panel();
+      this.SetContentPane(var2);
+      var2.SetLayout(new BorderLayout(0, 0));
+      Panel var3 = new Panel();
+      var3.SetLayout(new FormLayout(new ColumnSpec[]{FormFactory.LABEL_COMPONENT_GAP_COLSPEC, ColumnSpec.decode("100px"), FormFactory.LABEL_COMPONENT_GAP_COLSPEC, ColumnSpec.decode("250px"), FormFactory.LABEL_COMPONENT_GAP_COLSPEC}, new RowSpec[]{FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC}));
+      Label var4 = new Label("Width:");
+      var3.Add(var4, "2, 2, left, center");
+      this.do = new TextBox();
+      this.do.addFocusListener(new aR(this));
+      var3.Add(this.do, "4, 2, fill, default");
+      Label var5 = new Label("Height:");
+      var3.Add(var5, "2, 4, left, center");
+      this.dp = new TextBox();
+      this.dp.addFocusListener(new aS(this));
+      var3.Add(this.dp, "4, 4, fill, default");
+      var2.Add(var3);
+      Panel var6 = new Panel();
+      var6.SetLayout(new FlowLayout(2));
+      var2.Add(var6, "South");
+      Button var7 = new Button("Save");
+      var7.AddActionListener(new aT(this));
+      var6.Add(var7);
+      this.GetRootPane().setDefaultButton(var7);
+      Button var8 = new Button("Cancel");
+      var8.AddActionListener(new aU(this));
+      var6.Add(var8);
+      this.GetRootPane().registerKeyboardAction(new aV(this), Keys.getKeyStroke(27, 0), 2);
+      this.Pack();
+   }
 
-   public Size a(Size var1, Size var2, Size var3) {
+   private Size a(Size var1, Size var2, Size var3) {
       this.dk = var1;
       this.dl = var2;
       this.dm = var3;
-      // PORT_TODO: this.@do.Text = ((var1.width).ToString());
-      // PORT_TODO: this.dp.Text = ((var1.height).ToString());
-      // PORT_TODO: this.dn = null;
-      this.StartPosition = FormStartPosition.CenterParent; //(this.DirectoryName);
-      this.Show();
-      // PORT_TODO: return this.dn;
-      return default;
+      this.do.SetText(Convert.ToString(var1.width));
+      this.dp.SetText(Convert.ToString(var1.height));
+      this.dn = null;
+      this.SetLocationRelativeTo(this.Parent);
+      this.SetVisible(true);
+      return this.dn;
    }
 
    public static Size a(Container var0, Size var1, Size var2, Size var3) {
       if (dq == null) {
-         Frame var4 = null;
-         // PORT_TODO: dq = new aQ(var4);
+         Form var4 = JOptionPane.getFrameForComponent(var0);
+         dq = new aQ(var4);
       }
 
       return dq.a(var1, var2, var3);
    }
+
+   // $FF: synthetic method
    static TextBox a(aQ var0) {
-      return var0.@do;
+      return var0.do;
    }
-   public static Size b(aQ var0) {
+
+   // $FF: synthetic method
+   static Size b(aQ var0) {
       return var0.dk;
    }
-   public static Size c(aQ var0) {
+
+   // $FF: synthetic method
+   static Size c(aQ var0) {
       return var0.dl;
    }
-   public static Size d(aQ var0) {
+
+   // $FF: synthetic method
+   static Size d(aQ var0) {
       return var0.dm;
    }
-   public static TextBox e(aQ var0) {
+
+   // $FF: synthetic method
+   static TextBox e(aQ var0) {
       return var0.dp;
    }
+
+   // $FF: synthetic method
    static void a(aQ var0, Size var1) {
-      // PORT_TODO: var0.dn = var1;
+      var0.dn = var1;
    }
 }
-
-
 
 }

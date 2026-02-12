@@ -1,62 +1,64 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Xml;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
-
-
 public class eI {
-   public string Name => getName();
    public static int kf = 0;
    public static int kg = 1;
    public static int kh = 2;
-   public int type;
-   public string id;
-   public string name;
-   public static List<object> ki = new List<object>();
-   public static List<object> kj = new List<object>();
-   public static List<object> kk = new List<object>();
+   int type;
+   string id;
+   string name;
+   private static List<object> ki = new List<object>();
+   private static List<object> kj = new List<object>();
+   private static List<object> kk = new List<object>();
 
    static eI() {
-      Stream var0 = typeof(Application).Assembly.GetManifestResourceStream("NMSSaveEditor.Resources.db.rewards.xml");
+      Stream var0 = JavaCompat.GetResourceStream("db/rewards.xml");
       if (var0 != null) {
          try {
-            XmlDocument doc = new XmlDocument();
-            doc.Load(var0);
-            XmlElement var2 = doc.DocumentElement;
+            XmlDocument var1 = JavaCompat.ParseXml(var0);
+            XmlElement var2 = var1.DocumentElement;
             XmlNodeList var3 = var2.ChildNodes;
 
             for(int var4 = 0; var4 < var3.Count; ++var4) {
-               XmlNode var5 = var3[var4];
+               XmlNode var5 = var3.Item(var4);
                if (var5 is XmlElement && var5.Name.Equals("season")) {
-                  ki.Add(new eI((XmlElement)var5, 0));
+                  ki.Add(new eI((System.Xml.XmlElement)var5, 0));
                }
 
                if (var5 is XmlElement && var5.Name.Equals("twitch")) {
-                  kj.Add(new eI((XmlElement)var5, 1));
+                  kj.Add(new eI((System.Xml.XmlElement)var5, 1));
                }
 
                if (var5 is XmlElement && var5.Name.Equals("platform")) {
-                  kk.Add(new eI((XmlElement)var5, 2));
+                  kk.Add(new eI((System.Xml.XmlElement)var5, 2));
                }
             }
-         } catch (Exception) { }
+         } catch (ParserConfigurationException var6) {
+         } catch (SAXException var7) {
+         } catch (IOException var8) {
+         }
       }
 
-      ki.Sort(new eJ());
-      kj.Sort(new eK());
-      kk.Sort(new eL());
+      ki.sort(new eJ());
+      kj.sort(new eK());
+      kk.sort(new eL());
    }
 
-   public eI(XmlElement var1, int var2) {
+   private eI(XmlElement var1, int var2) {
       this.type = var2;
-      this.id = ((XmlElement)var1).GetAttribute("id");
-      this.name = ((XmlElement)var1).GetAttribute("name");
+      this.id = var1.GetAttribute("id");
+      this.name = var1.GetAttribute("name");
    }
 
    public string getID() {
@@ -72,7 +74,7 @@ public class eI {
    }
 
    public static eI P(int var0) {
-      return (eI)ki[var0];
+      return (eI)ki.Get(var0);
    }
 
    public static int br() {
@@ -80,7 +82,7 @@ public class eI {
    }
 
    public static eI Q(int var0) {
-      return (eI)kj[var0];
+      return (eI)kj.Get(var0);
    }
 
    public static int bs() {
@@ -88,18 +90,16 @@ public class eI {
    }
 
    public static eI R(int var0) {
-      return (eI)kk[var0];
+      return (eI)kk.Get(var0);
    }
 
-   public static IEnumerable<object> bt() {
-      return new List<object>(ki);
+   public static Iterable bt() {
+      return JavaCollections.UnmodifiableList(ki);
    }
 
-   public static IEnumerable<object> bu() {
-      return new List<object>(kj);
+   public static Iterable bu() {
+      return JavaCollections.UnmodifiableList(kj);
    }
 }
-
-
 
 }

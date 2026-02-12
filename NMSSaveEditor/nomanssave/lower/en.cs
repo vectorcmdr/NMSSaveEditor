@@ -1,16 +1,19 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
-
-
 public class en {
-   public static bool iu = false;
-   public static List<object> iv = new List<object>();
+   private static bool iu = false;
+   private static List<object> iv = new List<object>();
 
    public static void a(eo var0) {
       iv.Add(var0);
@@ -31,7 +34,5 @@ public class en {
 
    }
 }
-
-
 
 }

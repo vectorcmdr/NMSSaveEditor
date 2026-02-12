@@ -1,21 +1,24 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
-
-
 public class gT {
-   public static int rT = 12;
-   public static double rU = 0.1D;
-   public readonly double[] rV;
-   public readonly double[] rW;
-   public readonly double[] rX;
+   static int rT = 12;
+   private static double rU = 0.1D;
+   private double[] rV;
+   private double[] rW;
+   private double[] rX;
 
-   public static double[] b(double[] var0) {
+   private static double[] b(double[] var0) {
       double var1 = Math.Sqrt(var0[0] * var0[0] + var0[1] * var0[1] + var0[2] * var0[2]);
       if (var1 < 0.1D) {
          throw new Exception("vector cannot be normalized");
@@ -51,13 +54,13 @@ public class gT {
 
    }
 
-   public static double[] a(double var0, double[] var2, double[] var3) {
+   private static double[] a(double var0, double[] var2, double[] var3) {
       double var4 = Math.Cos(var0);
       double var6 = -Math.Sin(var0);
       double var8 = var3[0];
       double var10 = var3[1];
       double var12 = var3[2];
-      double[][] var14 = new double[3][];
+      double[][] var14 = new double[3][3];
       var14[0][0] = var8 * var8 * (1.0D - var4) + var4;
       var14[0][1] = var8 * var10 * (1.0D - var4) + var12 * var6;
       var14[0][2] = var8 * var12 * (1.0D - var4) - var10 * var6;
@@ -106,111 +109,111 @@ public class gT {
       return new double[]{var2, var4, var6};
    }
 
-   public void a(double[] var1, StringBuilder var2, StringBuilder var3, StringBuilder var4, int var5) {
+   private void a(double[] var1, StringBuffer var2, StringBuffer var3, StringBuffer var4, int var5) {
       int var6 = var2.Length;
-      var2.Append(a(var1[0], var5));
-      var3.Append(a(var1[1], var5));
-      var4.Append(a(var1[2], var5));
+      var2.append(a(var1[0], var5));
+      var3.append(a(var1[1], var5));
+      var4.append(a(var1[2], var5));
       int var7 = Math.Max(Math.Max(var2.Length, var3.Length), var4.Length);
 
       while(var2.Length < var7) {
-         var2.Insert(var6, ' ');
+         var2.insert(var6, ' ');
       }
 
       while(var3.Length < var7) {
-         var3.Insert(var6, ' ');
+         var3.insert(var6, ' ');
       }
 
       while(var4.Length < var7) {
-         var4.Insert(var6, ' ');
+         var4.insert(var6, ' ');
       }
 
    }
 
-   public void a(StringBuilder var1, StringBuilder var2, StringBuilder var3, int var4) {
+   private void a(StringBuffer var1, StringBuffer var2, StringBuffer var3, int var4) {
       int var5 = Math.Max(Math.Max(var1.Length, var2.Length), var3.Length);
 
       while(var1.Length < var5) {
-         var1.Append(' ');
+         var1.append(' ');
       }
 
       while(var2.Length < var5) {
-         var2.Append(' ');
+         var2.append(' ');
       }
 
       while(var3.Length < var5) {
-         var3.Append(' ');
+         var3.append(' ');
       }
 
-      var1.Append("| ");
-      var2.Append("| ");
-      var3.Append("| ");
+      var1.append("| ");
+      var2.append("| ");
+      var3.append("| ");
       this.a(this.rV, var1, var2, var3, var4);
-      var1.Append(' ');
-      var2.Append(' ');
-      var3.Append(' ');
+      var1.append(' ');
+      var2.append(' ');
+      var3.append(' ');
       this.a(this.rW, var1, var2, var3, var4);
-      var1.Append(' ');
-      var2.Append(' ');
-      var3.Append(' ');
+      var1.append(' ');
+      var2.append(' ');
+      var3.append(' ');
       this.a(this.rX, var1, var2, var3, var4);
-      var1.Append(" |");
-      var2.Append(" |");
-      var3.Append(" |");
+      var1.append(" |");
+      var2.append(" |");
+      var3.append(" |");
    }
 
    public string toString() {
-      return this.ToString();
+      return this.toString(12);
    }
 
    public string toString(int var1) {
-      StringBuilder var2 = new StringBuilder();
-      StringBuilder var3 = new StringBuilder();
-      StringBuilder var4 = new StringBuilder();
+      StringBuffer var2 = new StringBuffer();
+      StringBuffer var3 = new StringBuffer();
+      StringBuffer var4 = new StringBuffer();
       this.a(var2, var3, var4, var1);
-      StringBuilder var5 = new StringBuilder();
-      var5.Append(var2).Append("\n");
-      var5.Append(var3).Append("\n");
-      var5.Append(var4).Append("\n");
+      StringBuffer var5 = new StringBuffer();
+      var5.append(var2).append("\n");
+      var5.append(var3).append("\n");
+      var5.append(var4).append("\n");
       return var5.ToString();
    }
 
-   public static string e(double[] var0) {
+   static string e(double[] var0) {
       return a(var0, 12);
    }
 
-   public static string a(double[] var0, int var1) {
+   static string a(double[] var0, int var1) {
       return "[ " + b(var0[0], var1) + " , " + b(var0[1], var1) + " , " + b(var0[2], var1) + " ]";
    }
 
-   public static string f(double[] var0) {
+   static string f(double[] var0) {
       return b(var0, 12);
    }
 
-   public static string b(double[] var0, int var1) {
+   static string b(double[] var0, int var1) {
       return "[ " + b(var0[0], var1) + " , " + b(var0[1], var1) + " , " + b(var0[2], var1) + " , " + b(var0[3], var1) + " ]";
    }
 
-   public static string a(double var0, int var2) {
-      if (true) { // PORT_TODO: original condition had errors
+   static string a(double var0, int var2) {
+      if (double.IsInfinity(var0)) {
          return "Infinite";
-      // PORT_TODO: } else if (Double.isNaN(var0)) {
+      } else if (double.IsNaN(var0)) {
          return "NaN";
       } else {
          BigDecimal var3 = new BigDecimal(var0);
-         var3 = var3.setScale(var2, /* RoundingMode */ 0);
+         var3 = var3.setScale(var2, RoundingMode.HALF_UP);
          return var3.toPlainString();
       }
    }
 
-   public static string b(double var0, int var2) {
-      if (true) { // PORT_TODO: original condition had errors
+   static string b(double var0, int var2) {
+      if (double.IsInfinity(var0)) {
          return "Infinite";
-      // PORT_TODO: } else if (Double.isNaN(var0)) {
+      } else if (double.IsNaN(var0)) {
          return "NaN";
       } else {
          BigDecimal var3 = new BigDecimal(var0);
-         var3 = var3.setScale(var2, /* RoundingMode */ 0);
+         var3 = var3.setScale(var2, RoundingMode.HALF_UP);
          string var4 = var3.toPlainString();
          if (var2 <= 0) {
             return var4;
@@ -224,7 +227,5 @@ public class gT {
       }
    }
 }
-
-
 
 }

@@ -1,35 +1,35 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
-
-
 public class C : ComponentAdapter {
-   public Application aZ;
+   // $FF: synthetic field
+   Application aZ;
 
-   public C(Application var1) {
+   C(Application var1) {
       this.aZ = var1;
    }
 
    public void componentMoved(ComponentEvent var1) {
-      // PORT_TODO: Point var2 = Application.h(this.aZ).getBounds().getLocation();
-      // PORT_TODO: aH.b("MainFrame.X", var2.x);
-      // PORT_TODO: aH.b("MainFrame.Y", var2.y);
+      Point var2 = Application.h(this.aZ).Bounds.Location;
+      aH.b("MainFrame.X", var2.x);
+      aH.b("MainFrame.Y", var2.y);
    }
 
    public void componentResized(ComponentEvent var1) {
-      // PORT_TODO: Size var2 = Application.h(this.aZ).getBounds().getSize();
-      // PORT_TODO: aH.b("MainFrame.Width", var2.width);
-      // PORT_TODO: aH.b("MainFrame.Height", var2.height);
+      Size var2 = Application.h(this.aZ).Bounds.Size;
+      aH.b("MainFrame.Width", var2.width);
+      aH.b("MainFrame.Height", var2.height);
    }
 }
-
-
 
 }

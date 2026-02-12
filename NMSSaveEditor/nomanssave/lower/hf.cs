@@ -1,10 +1,16 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
+
 public class hf {
    public static int b(string var0, int var1, int var2) {
       var0 = var0.Trim();
@@ -15,7 +21,7 @@ public class hf {
 
          for(int var6 = 0; var6 < var0.Length; ++var6) {
             var3 *= 10L;
-            char var5 = var0[var6];
+            char var5 = var0[var6);
             if (var5 < '0' || var5 > '9') {
                throw new Exception("Invalid digit: " + var5);
             }
@@ -43,7 +49,7 @@ public class hf {
 
          for(int var8 = 0; var8 < var0.Length; ++var8) {
             var5 *= 10L;
-            char var7 = var0[var8];
+            char var7 = var0[var8);
             if (var7 < '0' || var7 > '9') {
                throw new Exception("Invalid digit: " + var7);
             }

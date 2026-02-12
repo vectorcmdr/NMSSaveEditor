@@ -1,27 +1,30 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
-
 public class gw : gv {
-   public string Name => getName();
-   public eY oI;
+   private eY oI;
 
-public gw(eY var1, eY var2) : base(0, (eY)null, var2) {
+   gw(eY var1, eY var2) {
+      base(0, (eY)null, var2);
       this.oI = var1;
    }
 
    public string getName() {
-      // PORT_TODO: return this.oI.getValueAsString("PlayerWeaponName");
-      return default;
+      return this.oI.getValueAsString("PlayerWeaponName");
    }
 
    public void setName(string var1) {
-      // PORT_TODO: this.oI.b("PlayerWeaponName", (object)var1);
+      this.oI.b("PlayerWeaponName", (Object)var1);
    }
 
    public string cT() {
@@ -45,21 +48,19 @@ public gw(eY var1, eY var2) : base(0, (eY)null, var2) {
    }
 
    public string cK() {
-      // PORT_TODO: return this.oI.d("CurrentWeapon.GenerationSeed").X(1);
-      return default;
+      return this.oI.d("CurrentWeapon.GenerationSeed").X(1);
    }
 
    public void aa(string var1) {
-      // PORT_TODO: this.oI.d("CurrentWeapon.GenerationSeed").a(1, var1);
+      this.oI.d("CurrentWeapon.GenerationSeed").a(1, var1);
    }
 
    public string cW() {
-      // PORT_TODO: return this.oI.getValueAsString("WeaponInventory.Class.InventoryClass");
-      return default;
+      return this.oI.getValueAsString("WeaponInventory.Class.InventoryClass");
    }
 
    public void aj(string var1) {
-      // PORT_TODO: this.oI.b("WeaponInventory.Class.InventoryClass", (object)var1);
+      this.oI.b("WeaponInventory.Class.InventoryClass", (Object)var1);
    }
 
    public string toString() {
@@ -67,7 +68,5 @@ public gw(eY var1, eY var2) : base(0, (eY)null, var2) {
       return var1 != null && var1.Length != 0 ? var1 : "Multitool";
    }
 }
-
-
 
 }

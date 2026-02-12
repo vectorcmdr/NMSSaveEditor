@@ -1,27 +1,30 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
-
-
 public class fW {
-   public string name;
-   public string filename;
-   public string id;
-   public int mT;
-   public int lL;
-   public string mU;
-   public long timestamp;
-   public long mV;
-   public long mW;
-   public fT mN;
+   string name;
+   string filename;
+   string id;
+   int mT;
+   int lL;
+   string mU;
+   long timestamp;
+   long mV;
+   long mW;
+   // $FF: synthetic field
+   fT mN;
 
-   public fW(fT var1, Stream var2) {
+   fW(fT var1, Stream var2) {
       this.mN = var1;
       this.name = gc.c(var2);
       hc.info("  " + this.name);
@@ -36,16 +39,16 @@ public class fW {
          hc.debug("    suffix: " + this.mT);
          this.lL = hk.readInt(var2);
          if (this.lL != 0) {
-            hc.debug("    unknown1: " + Convert.ToString(this.lL));
+            hc.debug("    unknown1: " + Convert.ToString((int)this.lL));
          }
 
          this.mU = gc.a(var2);
          hc.debug("    containerPath: " + this.mU);
          this.timestamp = gc.b(var2);
-         hc.debug("    timestamp: " + new DateTime(this.timestamp));
+         hc.debug("    timestamp: " + new Date(this.timestamp));
          this.mV = hk.f(var2);
          if (this.mV != 0L) {
-            hc.debug("    unknown2: " + (this.mV).ToString("X"));
+            hc.debug("    unknown2: " + Convert.ToString((long)this.mV));
          }
 
          this.mW = hk.f(var2);
@@ -53,11 +56,11 @@ public class fW {
       }
    }
 
-   public fW(fT var1, string var2) {
-      // PORT_TODO: // PORT_TODO: this(var1, (Stream)(new MemoryStream(hk.aD(var2))));
+   fW(fT var1, string var2) {
+      this(var1, (Stream)(new MemoryStream(hk.aD(var2))));
    }
 
-   public fW(fT var1, fW var2) {
+   fW(fT var1, fW var2) {
       this.mN = var1;
       this.name = var2.name;
       this.filename = var2.filename;
@@ -70,7 +73,7 @@ public class fW {
       this.mW = var2.mW;
    }
 
-   public void write(Stream var1) {
+   void write(Stream var1) {
       gc.b(var1, this.name);
       gc.b(var1, this.filename);
       gc.b(var1, this.id);
@@ -82,13 +85,11 @@ public class fW {
       hk.b(var1, this.mW);
    }
 
-   public string cz() {
+   string cz() {
       MemoryStream var1 = new MemoryStream();
-      // PORT_TODO: this.Write(var1);
-      return hk.k(var1.ToArray());
+      this.Write(var1);
+      return hk.k(var1.toByteArray());
    }
 }
-
-
 
 }

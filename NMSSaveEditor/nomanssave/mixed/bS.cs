@@ -1,148 +1,150 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
-
-
 public class bS : Panel {
-   public int x;
-   public int y;
-   public ToolStripMenuItem eY;
-   public ToolStripMenuItem eZ;
-   public ToolStripMenuItem fa;
-   public ToolStripMenuItem fb;
-   public ToolStripMenuItem fc;
-   public ToolStripMenuItem fd;
-   public ToolStripMenuItem fe;
-   public ToolStripMenuItem ff;
-   public ToolStripMenuItem fg;
-   public ToolStripMenuItem fh;
-   public ToolStripMenuItem fi;
-   public ToolStripMenuItem fj;
-   public bO eX;
+   private int x;
+   private int y;
+   private ToolStripMenuItem eY;
+   private ToolStripMenuItem eZ;
+   private ToolStripMenuItem fa;
+   private ToolStripMenuItem fb;
+   private ToolStripMenuItem fc;
+   private ToolStripMenuItem fd;
+   private ToolStripMenuItem fe;
+   private ToolStripMenuItem ff;
+   private ToolStripMenuItem fg;
+   private ToolStripMenuItem fh;
+   private ToolStripMenuItem fi;
+   private ToolStripMenuItem fj;
+   // $FF: synthetic field
+   bO eX;
 
-   public bS(bO var1, int var2, int var3) {
+   private bS(bO var1, int var2, int var3) {
       this.eX = var1;
       this.x = var2;
       this.y = var3;
-      this.SuspendLayout(); // TODO: set layout new GridBagLayout());
-      JPopupMenu var4 = new JPopupMenu();
+      this.SetLayout(new GridBagLayout());
+      ContextMenuStrip var4 = new ContextMenuStrip();
       this.eY = new ToolStripMenuItem("Enabled");
-      // PORT_TODO: this.eY.Click += (new bT(this, var2, var3));
-      this.eY.Enabled = (bO.a(var1).dp() || en.aS());
+      this.eY.AddActionListener(new bT(this, var2, var3));
+      this.eY.SetEnabled(bO.a(var1).dp() || en.aS());
       var4.Add(this.eY);
       this.eZ = new ToolStripMenuItem("Enable All Slots");
-      // PORT_TODO: this.eZ.Click += (new bY(this));
-      this.eZ.Enabled = (bO.a(var1).dp() || en.aS());
+      this.eZ.AddActionListener(new bY(this));
+      this.eZ.SetEnabled(bO.a(var1).dp() || en.aS());
       var4.Add(this.eZ);
       this.fa = new ToolStripMenuItem("Repair Slot");
-      // PORT_TODO: this.fa.Click += (new bZ(this, var2, var3));
-      this.fa.setVisible(bO.a(var1).dq());
+      this.fa.AddActionListener(new bZ(this, var2, var3));
+      this.fa.SetVisible(bO.a(var1).dq());
       var4.Add(this.fa);
       this.fb = new ToolStripMenuItem("Repair All Slots");
-      // PORT_TODO: this.fb.Click += (new ca(this));
-      this.fb.setVisible(bO.a(var1).dq());
+      this.fb.AddActionListener(new ca(this));
+      this.fb.SetVisible(bO.a(var1).dq());
       var4.Add(this.fb);
       this.fc = new ToolStripMenuItem("Supercharged");
-      // PORT_TODO: this.fc.Click += (new cb(this, var2, var3));
-      this.fc.setVisible(bO.a(var1).@do());
+      this.fc.AddActionListener(new cb(this, var2, var3));
+      this.fc.SetVisible(bO.a(var1).do());
       var4.Add(this.fc);
       this.fd = new ToolStripMenuItem("Supercharge All Slots");
-      // PORT_TODO: this.fd.Click += (new cc(this));
-      this.fd.setVisible(bO.a(var1).@do());
+      this.fd.AddActionListener(new cc(this));
+      this.fd.SetVisible(bO.a(var1).do());
       var4.Add(this.fd);
-      // PORT_TODO: var4.addSeparator();
+      var4.AddSeparator();
       this.fe = new ToolStripMenuItem("Item Details");
-      // PORT_TODO: this.fe.Click += (new cd(this, var2, var3));
+      this.fe.AddActionListener(new cd(this, var2, var3));
       var4.Add(this.fe);
       this.ff = new ToolStripMenuItem("Add Item");
-      // PORT_TODO: this.ff.Click += (new ce(this, var2, var3));
+      this.ff.AddActionListener(new ce(this, var2, var3));
       var4.Add(this.ff);
       this.fg = new ToolStripMenuItem("Repair Item");
-      // PORT_TODO: this.fg.Click += (new cf(this, var2, var3));
+      this.fg.AddActionListener(new cf(this, var2, var3));
       var4.Add(this.fg);
       this.fh = new ToolStripMenuItem("Move Item");
-      // PORT_TODO: this.fh.Click += (new bU(this, var2, var3));
+      this.fh.AddActionListener(new bU(this, var2, var3));
       var4.Add(this.fh);
       this.fi = new ToolStripMenuItem("Fill Stack");
-      // PORT_TODO: this.fi.Click += (new bV(this, var2, var3));
+      this.fi.AddActionListener(new bV(this, var2, var3));
       var4.Add(this.fi);
       this.fj = new ToolStripMenuItem("Delete Item");
-      // PORT_TODO: this.fj.Click += (new bW(this, var2, var3));
+      this.fj.AddActionListener(new bW(this, var2, var3));
       var4.Add(this.fj);
       this.setComponentPopupMenu(var4);
-      this.Padding = new Padding(0); /* setBorder */ //(bO.eP);
-      // this.addMouseListener - use MouseClick event instead
+      this.SetBorder(bO.eP);
+      this.AddMouseListener(new bX(this, var2, var3));
       this.aq();
    }
 
-   public bool ao() {
+   private bool ao() {
       return bO.a(this.eX).h(this.x, this.y);
    }
 
-   public bool ap() {
+   private bool ap() {
       return bO.a(this.eX).l(this.x, this.y);
    }
 
-   public void aq() {
-      // PORT_TODO: this.RemoveAll();
-      this.eY.Enabled = (bO.a(this.eX).dp() || en.aS());
-      this.eZ.Enabled = (bO.a(this.eX).dp() || en.aS());
-      this.fa.setVisible(bO.a(this.eX).dq());
-      this.fb.setVisible(bO.a(this.eX).dq());
+   private void aq() {
+      this.Controls.Clear();
+      this.eY.SetEnabled(bO.a(this.eX).dp() || en.aS());
+      this.eZ.SetEnabled(bO.a(this.eX).dp() || en.aS());
+      this.fa.SetVisible(bO.a(this.eX).dq());
+      this.fb.SetVisible(bO.a(this.eX).dq());
       if (!bO.a(this.eX).h(this.x, this.y)) {
-         this.eY.Checked = (false);
-         this.fa.Enabled = (false);
-         this.fe.Hide();
-         this.fg.Hide();
-         this.ff.Show();
-         this.ff.Enabled = (false);
-         this.fh.Hide();
-         this.fi.Hide();
-         this.fj.Hide();
-         this.fc.Hide();
-         this.Padding = new Padding(0); /* setBorder */ //(bO.eP);
-         this.setBackground(bO.ag());
-         this.setToolTipText(null);
+         this.eY.setSelected(false);
+         this.fa.SetEnabled(false);
+         this.fe.SetVisible(false);
+         this.fg.SetVisible(false);
+         this.ff.SetVisible(true);
+         this.ff.SetEnabled(false);
+         this.fh.SetVisible(false);
+         this.fi.SetVisible(false);
+         this.fj.SetVisible(false);
+         this.fc.SetVisible(false);
+         this.SetBorder(bO.eP);
+         this.SetBackground(bO.ag());
+         this.setToolTipText((string)null);
       } else {
          gu var1;
          ey var2;
          bool var3;
          string var4;
          if (bO.a(this.eX).l(this.x, this.y)) {
-            this.eY.Checked = (true);
-            this.fa.Enabled = (true);
-            this.fe.Hide();
-            this.fg.Hide();
-            this.ff.Show();
-            this.ff.Enabled = (false);
-            this.fh.Hide();
-            this.fi.Hide();
-            this.fj.Hide();
-            this.fc.setVisible(bO.a(this.eX).@do());
+            this.eY.setSelected(true);
+            this.fa.SetEnabled(true);
+            this.fe.SetVisible(false);
+            this.fg.SetVisible(false);
+            this.ff.SetVisible(true);
+            this.ff.SetEnabled(false);
+            this.fh.SetVisible(false);
+            this.fi.SetVisible(false);
+            this.fj.SetVisible(false);
+            this.fc.SetVisible(bO.a(this.eX).do());
             if (bO.a(this.eX).k(this.x, this.y)) {
-               this.Padding = new Padding(0); /* setBorder */ //(bO.ah());
+               this.SetBorder(bO.ah());
                this.fc.setState(true);
             } else {
-               this.Padding = new Padding(0); /* setBorder */ //(bO.eP);
+               this.SetBorder(bO.eP);
                this.fc.setState(false);
             }
 
-            this.setBackground(bO.ai());
+            this.SetBackground(bO.ai());
             var1 = bO.a(this.eX).f(this.x, this.y);
             if (var1 == null) {
-               this.setToolTipText(null);
+               this.setToolTipText((string)null);
             } else {
                var2 = ey.d(var1.dz());
                var3 = var2 is eQ && var1.dC() != 0.0D;
-               // PORT_TODO: var4 = var2 == null ? bO.b(var1.dz()) : var2.Name;
-               int var5 = 0 /* UIManager.getInt("Inventory.iconSize") */;
+               var4 = var2 == null ? bO.b(var1.dz()) : var2.Name;
+               int var5 = UIManager.getInt("Inventory.iconSize");
                Image var6 = var2 == null ? null : var2.c(var5, var5);
                int var7 = 0;
                if (var6 != null) {
@@ -150,69 +152,69 @@ public class bS : Panel {
                }
 
                Color var8 = var3 ? bO.aj() : bO.eO;
-               // PORT_TODO: this.a(var4, var7++, var8);
+               this.a(var4, var7++, var8);
                this.a(var1.dA() < 0 ? "" : var1.dA() + "/" + var1.dB(), var7++, var8);
-               // PORT_TODO: this.setToolTipText(var4);
+               this.setToolTipText(var4);
             }
          } else {
-            this.eY.Checked = (true);
-            this.fa.Enabled = (false);
-            this.fc.setVisible(bO.a(this.eX).@do());
+            this.eY.setSelected(true);
+            this.fa.SetEnabled(false);
+            this.fc.SetVisible(bO.a(this.eX).do());
             if (bO.a(this.eX).k(this.x, this.y)) {
-               this.Padding = new Padding(0); /* setBorder */ //(bO.ah());
+               this.SetBorder(bO.ah());
                this.fc.setState(true);
             } else {
-               this.Padding = new Padding(0); /* setBorder */ //(bO.eP);
+               this.SetBorder(bO.eP);
                this.fc.setState(false);
             }
 
             var1 = bO.a(this.eX).f(this.x, this.y);
             if (var1 == null) {
-               this.fe.Hide();
-               this.fg.Hide();
-               this.ff.Show();
-               this.ff.Enabled = (true);
-               this.fh.Hide();
-               this.fi.Hide();
-               this.fj.Hide();
-               this.setBackground(bO.eK);
-               this.setToolTipText(null);
+               this.fe.SetVisible(false);
+               this.fg.SetVisible(false);
+               this.ff.SetVisible(true);
+               this.ff.SetEnabled(true);
+               this.fh.SetVisible(false);
+               this.fi.SetVisible(false);
+               this.fj.SetVisible(false);
+               this.SetBackground(bO.eK);
+               this.setToolTipText((string)null);
             } else {
                var2 = ey.d(var1.dz());
                var3 = var2 is eQ && var1.dC() != 0.0D;
-               this.fe.Show();
-               this.fg.setVisible(var3);
-               this.ff.Hide();
-               this.ff.Enabled = (false);
-               this.fh.Show();
-               this.fi.Hide();
-               this.fj.Show();
+               this.fe.SetVisible(true);
+               this.fg.SetVisible(var3);
+               this.ff.SetVisible(false);
+               this.ff.SetEnabled(false);
+               this.fh.SetVisible(true);
+               this.fi.SetVisible(false);
+               this.fj.SetVisible(true);
                var4 = var1.getType();
                if (var4.Equals("Technology")) {
-                  this.setBackground(bO.ak());
+                  this.SetBackground(bO.ak());
                   if (var1.dA() >= 0 && var1.dA() < var1.dB()) {
-                     this.fi.Text = ("Recharge");
-                     this.fi.Show();
+                     this.fi.SetText("Recharge");
+                     this.fi.SetVisible(true);
                   }
                } else if (var4.Equals("Product")) {
-                  this.setBackground(bO.al());
+                  this.SetBackground(bO.al());
                   if (var1.dB() > 1) {
-                     this.fi.Text = ("Fill Stack");
-                     this.fi.Show();
+                     this.fi.SetText("Fill Stack");
+                     this.fi.SetVisible(true);
                   }
                } else if (var4.Equals("Substance")) {
-                  this.setBackground(bO.am());
+                  this.SetBackground(bO.am());
                   if (var1.dB() > 1) {
-                     this.fi.Text = ("Fill Stack");
-                     this.fi.Show();
+                     this.fi.SetText("Fill Stack");
+                     this.fi.SetVisible(true);
                   }
                } else {
-                  this.setBackground(bO.an());
+                  this.SetBackground(bO.an());
                }
 
-               this.fe.Enabled = (var2 != null);
-               // PORT_TODO: string var10 = var2 == null ? bO.b(var1.dz()) : var2.Name;
-               int var11 = 0 /* UIManager.getInt("Inventory.iconSize") */;
+               this.fe.SetEnabled(var2 != null);
+               string var10 = var2 == null ? bO.b(var1.dz()) : var2.Name;
+               int var11 = UIManager.getInt("Inventory.iconSize");
                Image var13 = var2 == null ? null : var2.c(var11, var11);
                int var12 = 0;
                if (var13 != null) {
@@ -220,77 +222,95 @@ public class bS : Panel {
                }
 
                Color var9 = var3 ? bO.aj() : bO.eO;
-               // PORT_TODO: this.a(var10, var12++, var9);
+               this.a(var10, var12++, var9);
                this.a(var1.dA() < 0 ? " " : var1.dA() + "/" + var1.dB(), var12++, var9);
-               // PORT_TODO: this.setToolTipText(var10);
+               this.setToolTipText(var10);
             }
          }
       }
 
       this.PerformLayout();
-      this.Refresh();
+      this.updateUI();
    }
 
-   public void a(Image var1, int var2, int var3) {
-      // PORT_TODO: Label var4 = new Label() { Text = var1 };
-      // PORT_TODO: var4.Size = (new Size(var2, var2));
+   private void a(Image var1, int var2, int var3) {
+      Label var4 = new Label(var1);
+      var4.SetPreferredSize(new Size(var2, var2));
       GridBagConstraints var5 = new GridBagConstraints();
       var5.anchor = 10;
       var5.fill = 0;
-      var5.insets = new Padding(5, 0, 5, 0);
+      var5.insets = new Insets(5, 0, 5, 0);
       var5.gridx = 0;
       var5.gridy = var3;
-      // PORT_TODO: this.Add(var4, var5);
+      this.Add(var4, var5);
    }
 
-   public void a(string var1, int var2, Color var3) {
+   private void a(string var1, int var2, Color var3) {
       Label var4 = new Label();
-      var4.setFont(/* UIManager.getFont */ SystemFonts.DefaultFont); //("Inventory.font")
-      // PORT_TODO: var4.setBackground((Color)null);
-      var4.Padding = new Padding(0); /* setBorder */ //((Border)null);
-      var4.Text = (var1);
-      var4.setForeground(var3);
+      var4.SetFont(UIManager.getFont("Inventory.font"));
+      var4.SetBackground((Color)null);
+      var4.SetBorder((Border)null);
+      var4.SetText(var1);
+      var4.SetForeground(var3);
       GridBagConstraints var5 = new GridBagConstraints();
       var5.anchor = 10;
       var5.fill = 0;
-      int var6 = 0 /* UIManager.getInt("Inventory.iconSize") */;
-      var5.insets = new Padding(var2 == 0 ? var6 + 10 : 0, 0, 0, 0);
+      int var6 = UIManager.getInt("Inventory.iconSize");
+      var5.insets = new Insets(var2 == 0 ? var6 + 10 : 0, 0, 0, 0);
       var5.gridx = 0;
       var5.gridy = var2;
       this.Add(var4, var5);
    }
-   public static ToolStripMenuItem b(bS var0) {
+
+   // $FF: synthetic method
+   static ToolStripMenuItem b(bS var0) {
       return var0.eY;
    }
-   public static void c(bS var0) {
+
+   // $FF: synthetic method
+   static void c(bS var0) {
       var0.aq();
    }
-   public static ToolStripMenuItem d(bS var0) {
+
+   // $FF: synthetic method
+   static ToolStripMenuItem d(bS var0) {
       return var0.fc;
    }
-   public static bool e(bS var0) {
+
+   // $FF: synthetic method
+   static bool e(bS var0) {
       return var0.ao();
    }
-   public static bool f(bS var0) {
+
+   // $FF: synthetic method
+   static bool f(bS var0) {
       return var0.ap();
    }
-   public static ToolStripMenuItem g(bS var0) {
+
+   // $FF: synthetic method
+   static ToolStripMenuItem g(bS var0) {
       return var0.eZ;
    }
-   public bS(bO var1, int var2, int var3, bS var4) {
-      // PORT_TODO: // PORT_TODO: this(var1, var2, var3);
+
+   // $FF: synthetic method
+   bS(bO var1, int var2, int var3, bS var4) {
+      // Constructor chain: base(var1, var2, var3)
    }
-   public static int h(bS var0) {
+
+   // $FF: synthetic method
+   static int h(bS var0) {
       return var0.x;
    }
-   public static int i(bS var0) {
+
+   // $FF: synthetic method
+   static int i(bS var0) {
       return var0.y;
    }
-   public static bO j(bS var0) {
+
+   // $FF: synthetic method
+   static bO j(bS var0) {
       return var0.eX;
    }
 }
-
-
 
 }

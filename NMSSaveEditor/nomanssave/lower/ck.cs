@@ -1,19 +1,25 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
-public class ck : object {
-   public cg fF;
+public class ck : WindowAdapter {
+   // $FF: synthetic field
+   cg fF;
 
-   public ck(cg var1) {
+   ck(cg var1) {
       this.fF = var1;
    }
 
-   public void windowClosing(FormClosedEventArgs var1) {
+   public void windowClosing(WindowEvent var1) {
       cg.e(this.fF).N();
       cg.f(this.fF).N();
    }

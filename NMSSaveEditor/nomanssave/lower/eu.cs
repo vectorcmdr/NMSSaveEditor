@@ -1,34 +1,37 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Xml;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
-
-
 public class eu {
-   public static List<object> iH = new List<object>();
+   private static List<object> iH = new List<object>();
 
    static eu() {
-      Stream var0 = typeof(Application).Assembly.GetManifestResourceStream("NMSSaveEditor.Resources.db.inventory.xml");
+      Stream var0 = JavaCompat.GetResourceStream("db/inventory.xml");
       if (var0 != null) {
          try {
-            XmlDocument doc = new XmlDocument();
-            doc.Load(var0);
-            XmlElement var2 = doc.DocumentElement;
+            XmlDocument var1 = JavaCompat.ParseXml(var0);
+            XmlElement var2 = var1.DocumentElement;
             XmlNodeList var3 = var2.ChildNodes;
 
             for(int var4 = 0; var4 < var3.Count; ++var4) {
-               XmlNode var5 = var3[var4];
+               XmlNode var5 = var3.Item(var4);
                if (var5 is XmlElement && var5.Name.Equals("difficulty")) {
-                  iH.Add(new ev((XmlElement)var5));
+                  iH.Add(new ev((System.Xml.XmlElement)var5));
                }
             }
-         } catch (Exception) { }
+         } catch (ParserConfigurationException var6) {
+         } catch (SAXException var7) {
+         } catch (IOException var8) {
+         }
       }
 
    }
@@ -57,7 +60,5 @@ public class eu {
       }
    }
 }
-
-
 
 }

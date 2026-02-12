@@ -1,102 +1,100 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
-
-
 public class eV {
-   public static int kB = 10;
-   public static int kC = 10;
-   public int length;
-   public int Length { get => length; set => length = value; }
-   public int Count => length;
-   public object[] values;
-   public object kD;
-
-   public void Add(object var1) => add(var1);
-   public void Add(int var1, object var2) => add(var1, var2);
+   private static int kB = 10;
+   private static int kC = 10;
+   int length;
+   Object[] values;
+   Object kD;
 
    public static eV D(string var0) {
       return fh.R(var0);
    }
 
    public eV() {
-      this.Length = 0;
-      this.values = new object[10];
+      this.length = 0;
+      this.values = new Object[10];
    }
 
-   public eV(params object[] var1) {
-      this.Length = var1.Length;
-      this.values = new object[var1.Length];
+   public eV(params Object[] var1) {
+      this.length = var1.length;
+      this.values = new Object[var1.length];
 
-      for(int var2 = 0; var2 < this.Length; ++var2) {
+      for(int var2 = 0; var2 < this.length; ++var2) {
          if (var1[var2] != null && !fh.a(var1[var2].GetType())) {
-            throw new Exception("Unsupported type: " + var1[var2].GetType().getSimpleName());
+            throw new Exception("Unsupported type: " + var1[var2].GetType().Name);
          }
 
          this.values[var2] = var1[var2];
-         fh.a((object)var1[var2], (object)this);
+         fh.a((Object)var1[var2], (Object)this);
       }
 
    }
 
-   public void e(object var1) {
-      if (this.values.Length == this.Length) {
-         object[] var2 = new object[this.Length + 10];
-         Array.Copy(this.values, 0, var2, 0, this.Length);
+   void e(Object var1) {
+      if (this.values.length == this.length) {
+         Object[] var2 = new Object[this.length + 10];
+         Array.Copy(this.values, 0, var2, 0, this.length);
          this.values = var2;
       }
 
-      this.values[this.Length] = var1;
-      fh.a((object)var1, (object)this);
-      ++this.Length;
+      this.values[this.length] = var1;
+      fh.a((Object)var1, (Object)this);
+      ++this.length;
    }
 
-   public object U(int var1) {
+   Object U(int var1) {
       return this.values[var1];
    }
 
    public string bz() {
-      return fh.a(this, Environment.NewLine, true);
+      return fh.a(this, System.lineSeparator(), true);
    }
 
    public string toString() {
-      return fh.a((eV)this, null, false);
+      return fh.a((eV)this, (string)null, false);
    }
 
    public eV bA() {
       eV var1 = new eV();
-      var1.values = new object[this.values.Length];
+      var1.values = new Object[this.values.length];
 
-      for(int var2 = 0; var2 < this.Length; ++var2) {
+      for(int var2 = 0; var2 < this.length; ++var2) {
          if (this.values[var2] is eY) {
             var1.values[var2] = ((eY)this.values[var2]).bE();
-            fh.a((object)var1.values[var2], (object)var1);
+            fh.a((Object)var1.values[var2], (Object)var1);
          } else if (this.values[var2] is eV) {
             var1.values[var2] = ((eV)this.values[var2]).bA();
-            fh.a((object)var1.values[var2], (object)var1);
+            fh.a((Object)var1.values[var2], (Object)var1);
          } else {
             var1.values[var2] = this.values[var2];
          }
       }
 
-      var1.Length = this.Length;
+      var1.length = this.length;
       return var1;
    }
 
    public int size() {
-      return this.Length;
+      return this.length;
    }
 
-   public int indexOf(object var1) {
+   public int indexOf(Object var1) {
       if (var1 == null) {
          throw new NullReferenceException();
       } else {
-         for(int var2 = 0; var2 < this.Length; ++var2) {
+         for(int var2 = 0; var2 < this.length; ++var2) {
             if (var1.Equals(this.values[var2])) {
                return var2;
             }
@@ -106,124 +104,124 @@ public class eV {
       }
    }
 
-   public object get(int var1) {
-      if (var1 >= 0 && var1 < this.Length) {
+   public Object get(int var1) {
+      if (var1 >= 0 && var1 < this.length) {
          return this.values[var1];
       } else {
-         throw new IndexOutOfBoundsException();
+         throw new IndexOutOfRangeException();
       }
    }
 
-   public object set(int var1, object var2) {
-      if (var1 >= 0 && var1 < this.Length) {
+   public Object set(int var1, Object var2) {
+      if (var1 >= 0 && var1 < this.length) {
          if (var2 != null && !fh.a(var2.GetType())) {
-            throw new Exception("Unsupported type: " + var2.GetType().getSimpleName());
+            throw new Exception("Unsupported type: " + var2.GetType().Name);
          } else {
-            object var3 = this.values[var1];
+            Object var3 = this.values[var1];
             fh.i(var3);
             this.values[var1] = var2;
-            fh.a((object)var2, (object)this);
+            fh.a((Object)var2, (Object)this);
             this.firePropertyChange("[" + var1 + "]", var3, var2);
             return var3;
          }
       } else {
-         throw new IndexOutOfBoundsException();
+         throw new IndexOutOfRangeException();
       }
    }
 
-   public void add(object var1) {
+   public void add(Object var1) {
       if (var1 != null && !fh.a(var1.GetType())) {
-         throw new Exception("Unsupported type: " + var1.GetType().getSimpleName());
+         throw new Exception("Unsupported type: " + var1.GetType().Name);
       } else {
          eV var2 = new eV();
-         if (this.values.Length == this.Length) {
+         if (this.values.length == this.length) {
             var2.values = this.values;
-            var2.Length = this.Length;
-            object[] var3 = new object[this.Length + 10];
-            Array.Copy(this.values, 0, var3, 0, this.Length);
+            var2.length = this.length;
+            Object[] var3 = new Object[this.length + 10];
+            Array.Copy(this.values, 0, var3, 0, this.length);
             this.values = var3;
          } else {
-            var2.values = new object[this.values.Length];
-            Array.Copy(this.values, 0, var2.values, 0, this.Length);
-            var2.Length = this.Length;
+            var2.values = new Object[this.values.length];
+            Array.Copy(this.values, 0, var2.values, 0, this.length);
+            var2.length = this.length;
          }
 
-         this.values[this.Length] = var1;
-         fh.a((object)var1, (object)this);
-         ++this.Length;
+         this.values[this.length] = var1;
+         fh.a((Object)var1, (Object)this);
+         ++this.length;
          this.firePropertyChange("", var2, this);
       }
    }
 
-   public void add(int var1, object var2) {
-      if (var1 >= 0 && var1 <= this.Length) {
+   public void add(int var1, Object var2) {
+      if (var1 >= 0 && var1 <= this.length) {
          if (var2 != null && !fh.a(var2.GetType())) {
-            throw new Exception("Unsupported type: " + var2.GetType().getSimpleName());
+            throw new Exception("Unsupported type: " + var2.GetType().Name);
          } else {
             eV var3 = new eV();
-            if (this.values.Length == this.Length) {
+            if (this.values.length == this.length) {
                var3.values = this.values;
-               var3.Length = this.Length;
-               object[] var4 = new object[this.Length + 10];
-               Array.Copy(this.values, 0, var4, 0, this.Length);
+               var3.length = this.length;
+               Object[] var4 = new Object[this.length + 10];
+               Array.Copy(this.values, 0, var4, 0, this.length);
                this.values = var4;
             } else {
-               var3.values = new object[this.values.Length];
-               Array.Copy(this.values, 0, var3.values, 0, this.Length);
-               var3.Length = this.Length;
+               var3.values = new Object[this.values.length];
+               Array.Copy(this.values, 0, var3.values, 0, this.length);
+               var3.length = this.length;
             }
 
-            for(int var5 = this.Length; var5 > var1; ++var5) {
+            for(int var5 = this.length; var5 > var1; ++var5) {
                this.values[var5] = this.values[var5 - 1];
             }
 
             this.values[var1] = var2;
-            fh.a((object)var2, (object)this);
-            ++this.Length;
+            fh.a((Object)var2, (Object)this);
+            ++this.length;
             this.firePropertyChange("", var3, this);
          }
       } else {
-         throw new IndexOutOfBoundsException();
+         throw new IndexOutOfRangeException();
       }
    }
 
-   public object remove(int var1) {
-      if (var1 >= 0 && var1 < this.Length) {
+   public Object remove(int var1) {
+      if (var1 >= 0 && var1 < this.length) {
          eV var2 = new eV();
-         var2.values = new object[this.values.Length];
-         Array.Copy(this.values, 0, var2.values, 0, this.Length);
-         var2.Length = this.Length;
-         object var3 = this.values[var1];
+         var2.values = new Object[this.values.length];
+         Array.Copy(this.values, 0, var2.values, 0, this.length);
+         var2.length = this.length;
+         Object var3 = this.values[var1];
          fh.i(var3);
 
-         for(int var4 = var1; var4 < this.Length - 1; ++var4) {
+         for(int var4 = var1; var4 < this.length - 1; ++var4) {
             this.values[var4] = this.values[var4 + 1];
          }
 
-         --this.Length;
+         --this.length;
          this.firePropertyChange("", var2, this);
          return var3;
       } else {
-         throw new IndexOutOfBoundsException();
+         throw new IndexOutOfRangeException();
       }
    }
 
    public void clear() {
       eV var1 = new eV();
-      var1.values = new object[this.values.Length];
-      Array.Copy(this.values, 0, var1.values, 0, this.Length);
-      var1.Length = this.Length;
+      var1.values = new Object[this.values.length];
+      Array.Copy(this.values, 0, var1.values, 0, this.length);
+      var1.length = this.length;
 
-      for(int var2 = 0; var2 < this.Length; ++var2) {
+      for(int var2 = 0; var2 < this.length; ++var2) {
          fh.i(this.values[var2]);
       }
 
-      this.Length = 0;
+      this.length = 0;
       this.firePropertyChange("", var1, this);
    }
 
-   public void a(object var1, string var2, object var3, object var4) {
-      for(int var5 = 0; var5 < this.Length; ++var5) {
+   void a(Object var1, string var2, Object var3, Object var4) {
+      for(int var5 = 0; var5 < this.length; ++var5) {
          if (var1 == this.values[var5]) {
             this.firePropertyChange("[" + var5 + "]" + var2, var3, var4);
             return;
@@ -232,7 +230,7 @@ public class eV {
 
    }
 
-   public void firePropertyChange(string var1, object var2, object var3) {
+   private void firePropertyChange(string var1, Object var2, Object var3) {
       if (this.kD is eY) {
          ((eY)this.kD).a(this, var1, var2, var3);
       }
@@ -243,9 +241,8 @@ public class eV {
 
    }
 
-   public object getValue(int var1) {
-      // PORT_TODO: return this[var1];
-      return default;
+   public Object getValue(int var1) {
+      return this.Get(var1);
    }
 
    public eY V(int var1) {
@@ -257,78 +254,74 @@ public class eV {
    }
 
    public string X(int var1) {
-      object var2 = this.getValue(var1);
+      Object var2 = this.getValue(var1);
       return var2 is fg ? var2.ToString() : (string)var2;
    }
 
    public int Y(int var1) {
-      object var2 = this.getValue(var1);
+      Object var2 = this.getValue(var1);
       return var2 == null ? 0 : ((Number)var2).intValue();
    }
 
    public long Z(int var1) {
-      object var2 = this.getValue(var1);
+      Object var2 = this.getValue(var1);
       return var2 == null ? 0L : ((Number)var2).longValue();
    }
 
    public double aa(int var1) {
-      object var2 = this.getValue(var1);
+      Object var2 = this.getValue(var1);
       return var2 == null ? 0.0D : ((Number)var2).doubleValue();
    }
 
    public bool ab(int var1) {
-      object var2 = this.getValue(var1);
+      Object var2 = this.getValue(var1);
       return var2 == null ? false : (Boolean)var2;
    }
 
-   public void a(int var1, object var2) {
-      this.set(var1, var2);
+   public void a(int var1, Object var2) {
+      this.Set(var1, var2);
    }
 
-   public void f(object var1) {
+   public void f(Object var1) {
       this.Add(var1);
    }
 
-   public bool hasValue(object var1) {
-      // PORT_TODO: return this.IndexOf(var1) >= 0;
-      return false;
+   public bool hasValue(Object var1) {
+      return this.IndexOf(var1) >= 0;
    }
 
    public bool ac(int var1) {
-      // PORT_TODO: this.Remove(var1);
+      this.Remove(var1);
       return true;
    }
 
-   public bool g(object var1) {
-      // PORT_TODO: int var2 = this.IndexOf(var1);
-      // PORT_TODO: if (var2 < 0) {
-      // PORT_TODO: int var2 = 0; // PORT_TODO: stub declaration
-         // PORT_TODO: return false;
-      // PORT_TODO: } else {
-         // PORT_TODO: this.Remove(var2);
-         // PORT_TODO: return true;
-      // PORT_TODO: }
-      return false;
+   public bool g(Object var1) {
+      int var2 = this.IndexOf(var1);
+      if (var2 < 0) {
+         return false;
+      } else {
+         this.Remove(var2);
+         return true;
+      }
    }
 
    public Stream bB() {
-      eY[] var1 = new eY[this.Length];
+      eY[] var1 = new eY[this.length];
       int var2 = 0;
 
-      for(int var3 = 0; var3 < this.Length; ++var3) {
+      for(int var3 = 0; var3 < this.length; ++var3) {
          if (this.values[var3] is eY) {
             var1[var2++] = (eY)this.values[var3];
          }
       }
 
-      // PORT_TODO: return Arrays.stream(var1, 0, var2);
-      return default;
+      return Arrays.stream(var1, 0, var2);
    }
-   public object clone() {
+
+   // $FF: synthetic method
+   public Object clone() {
       return this.bA();
    }
 }
-
-
 
 }

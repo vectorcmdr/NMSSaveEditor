@@ -1,36 +1,41 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
+public class ej : OpenFileDialog {
+   private static Image im = Application.a("UI-FILEICON.PNG", 16, 16);
+   private static Image io = Application.a("UI-GAMEPASS.PNG", 16, 16);
+   private static Image ip = Application.a("UI-STEAMLOGO.PNG", 16, 16);
+   private static Pattern iq = new Regex("st_(\\d*)");
+   private static ej ir = null;
 
-
-public class ej : JFileChooser {
-   public static Image im = Application.a("UI-FILEICON.PNG", 16, 16);
-   public static Image io = Application.a("UI-GAMEPASS.PNG", 16, 16);
-   public static Image ip = Application.a("UI-STEAMLOGO.PNG", 16, 16);
-   public static Pattern iq = Pattern.compile("st_(\\d*)");
-   public static ej ir = null;
-
-   public ej() {
-      // this.setFileSelectionMode - WinForms uses separate dialog types
-      // this.setAcceptAllFileFilterUsed - not needed in WinForms
+   private ej() {
+      this.setFileSelectionMode(2);
+      this.setAcceptAllFileFilterUsed(false);
       this.setFileFilter(new ek(this));
       this.setFileView(new el(this));
       this.setDialogTitle("Choose Save Path");
-      /* TODO: port from Java - addPropertyChangeListener for lookAndFeel */
+      UIManager.addPropertyChangeListener((var1) => {
+         if ("lookAndFeel".Equals(var1.getPropertyName())) {
+            SwingUtilities.updateComponentTreeUI(this);
+         }
+
+      });
    }
 
-   public string a(FileInfo var1) {
-      Matcher var2 = iq.matcher(var1.Name);
-      if (var2.matches()) {
-         long var3 = long.Parse(var2.group(1));
+   private string a(FileInfo var1) {
+      Matcher var2 = iq.Match(var1.Name);
+      if (var2.Matches()) {
+         long var3 = long.Parse(var2.Groups[1));
          return hi.h(var3);
       } else {
          return null;
@@ -40,45 +45,49 @@ public class ej : JFileChooser {
    public static FileInfo b(FileInfo var0) {
       if (ir == null) {
          ir = new ej();
-         return default;
       }
 
       if (var0 != null && var0.Exists) {
-         if (var0.Exists) {
-            // PORT_TODO: var0 = var0.Directory;
+         if (var0.IsFile()) {
+            var0 = var0.Directory;
          }
 
-         // PORT_TODO: ir.setCurrentDirectory(var0.FullName.FullName);
+         ir.setCurrentDirectory(var0);
       } else {
-         FileInfo var1 = new FileInfo(Environment.GetEnvironmentVariable("user.home"));
-         FileInfo var2 = new FileInfo(System.IO.Path.Combine((var1).ToString(), ("AppData\\Roaming\\HelloGames\\NMS").ToString()));
-         FileInfo var3 = new FileInfo(System.IO.Path.Combine((var1).ToString(), ("AppData\\Local\\Packages\\HelloGames.NoMansSky_bs190hzg1sesy\\SystemAppData").ToString()));
-         if (var2.Attributes.HasFlag(FileAttributes.Directory)) {
-            // PORT_TODO: ir.setCurrentDirectory(var2.FullName.FullName);
-         } else if (var3.Attributes.HasFlag(FileAttributes.Directory)) {
-            // PORT_TODO: ir.setCurrentDirectory(var3.FullName.FullName);
+         FileInfo var1 = new File(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile));
+         FileInfo var2 = new File(var1, "AppData\\Roaming\\HelloGames\\NMS");
+         FileInfo var3 = new File(var1, "AppData\\Local\\Packages\\HelloGames.NoMansSky_bs190hzg1sesy\\SystemAppData");
+         if (var2.IsDirectory()) {
+            ir.setCurrentDirectory(var2);
+         } else if (var3.IsDirectory()) {
+            ir.setCurrentDirectory(var3);
          } else {
-                        ir.setCurrentDirectory(var1.FullName);
+            ir.setCurrentDirectory(var1);
          }
       }
 
-      // PORT_TODO: return ir.showOpenDialog((Component)null) == 0 ? ir.getSelectedFile() : null;
-      return default;
+      return ir.showOpenDialog((Component)null) == 0 ? ir.getSelectedFile() : null;
    }
-   public static Image @as() {
+
+   // $FF: synthetic method
+   static Image as() {
       return im;
    }
-   public static Image au() {
+
+   // $FF: synthetic method
+   static Image au() {
       return io;
    }
-   public static string a(ej var0, FileInfo var1) {
+
+   // $FF: synthetic method
+   static string a(ej var0, FileInfo var1) {
       return var0.a(var1);
    }
-   public static Image aR() {
+
+   // $FF: synthetic method
+   static Image aR() {
       return ip;
    }
 }
-
-
 
 }

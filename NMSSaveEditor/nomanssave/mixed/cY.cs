@@ -1,83 +1,90 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
-
-
 public class cY : Form {
-   public ComboBox gM;
-   public List<object> gN = new List<object>();
-   public int gO = -1;
-   public static cY gP = null;
+   private ComboBox gM;
+   private List<object> gN = new List<object>();
+   private int gO = -1;
+   private static cY gP = null;
 
-// PORT_TODO: public cY(Frame var1) : base(var1) {
-      // PORT_TODO: this.FormBorderStyle = FormBorderStyle.FixedDialog; //(false);
-      // setModalExclusionType not available in WinForms
-      // PORT_TODO: this.Text = ("Move Base Computer");
-      // PORT_TODO: // PORT_TODO: this/* setModal */(true);
-      // PORT_TODO: Panel var2 = new Panel();
-      // PORT_TODO: this.setContentPane(var2);
-      // PORT_TODO: var2.SuspendLayout(); // TODO: set layout new TableLayoutPanel());
-      // PORT_TODO: Panel var3 = new Panel();
-      // PORT_TODO: var3.SuspendLayout(); // TODO: set layout new FlowLayoutPanel(0));
-      // PORT_TODO: var3.Add(new Label() { Text = "Please select a base part to swap your base computer with." });
-      // PORT_TODO: var2.Controls.Add(var3);
-      // PORT_TODO: Panel var4 = new Panel();
-      // TODO: var4.SuspendLayout(); // TODO: set layout /* FormLayout */ null, FormFactory.LABEL_COMPONENT_GAP_COLSPEC, ColumnSpec.decode("250px"), FormFactory.LABEL_COMPONENT_GAP_COLSPEC}, new RowSpec[]{FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC}));
-      // PORT_TODO: Label var5 = new Label() { Text = "Base Part:" };
-      // PORT_TODO: var4.Controls.Add(var5);
-      // PORT_TODO: this.gM = new ComboBox();
-      // PORT_TODO: this.gM.DataSource = (new cZ(this));
-      // PORT_TODO: var4.Add(this.gM, "4, 2, fill, default");
-      // PORT_TODO: var2.Controls.Add(var4);
-      // PORT_TODO: Panel var6 = new Panel();
-      // PORT_TODO: var6.SuspendLayout(); // TODO: set layout new FlowLayoutPanel(2));
-      // PORT_TODO: var2.Controls.Add(var6);
-      // PORT_TODO: Button var7 = new Button() { Text = "Save" };
-      // PORT_TODO: var7.Click += (new da(this));
-      // PORT_TODO: var6.Add(var7);
-      // PORT_TODO: this.getRootPane().setDefaultButton(var7);
-      // PORT_TODO: Button var8 = new Button() { Text = "Cancel" };
-      // PORT_TODO: var8.Click += (new db(this));
-      // PORT_TODO: var6.Add(var8);
-      // PORT_TODO: this.getRootPane().registerKeyboardAction(new dc(this), /* KeyStroke */ Keys.None /* (27, 0) */, 2);
-      // PORT_TODO: this.PerformLayout();
-   // PORT_TODO: }
+   private cY(Form var1) {
+      base(var1);
+      this.SetResizable(false);
+      this.setModalExclusionType(ModalExclusionType.APPLICATION_EXCLUDE);
+      this.SetTitle("Move Base Computer");
+      this.SetModal(true);
+      Panel var2 = new Panel();
+      this.SetContentPane(var2);
+      var2.SetLayout(new BorderLayout(0, 0));
+      Panel var3 = new Panel();
+      var3.SetLayout(new FlowLayout(0));
+      var3.Add(new Label("Please select a base part to swap your base computer with."));
+      var2.Add(var3, "North");
+      Panel var4 = new Panel();
+      var4.SetLayout(new FormLayout(new ColumnSpec[]{FormFactory.LABEL_COMPONENT_GAP_COLSPEC, ColumnSpec.decode("100px"), FormFactory.LABEL_COMPONENT_GAP_COLSPEC, ColumnSpec.decode("250px"), FormFactory.LABEL_COMPONENT_GAP_COLSPEC}, new RowSpec[]{FormFactory.LINE_GAP_ROWSPEC, FormFactory.DEFAULT_ROWSPEC, FormFactory.LINE_GAP_ROWSPEC}));
+      Label var5 = new Label("Base Part:");
+      var4.Add(var5, "2, 2, left, center");
+      this.gM = new ComboBox();
+      this.gM.SetModel(new cZ(this));
+      var4.Add(this.gM, "4, 2, fill, default");
+      var2.Add(var4, "Center");
+      Panel var6 = new Panel();
+      var6.SetLayout(new FlowLayout(2));
+      var2.Add(var6, "South");
+      Button var7 = new Button("Save");
+      var7.AddActionListener(new da(this));
+      var6.Add(var7);
+      this.GetRootPane().setDefaultButton(var7);
+      Button var8 = new Button("Cancel");
+      var8.AddActionListener(new db(this));
+      var6.Add(var8);
+      this.GetRootPane().registerKeyboardAction(new dc(this), Keys.getKeyStroke(27, 0), 2);
+      this.Pack();
+   }
 
-   public int b(List<object> var1) {
+   private int b(List<object> var1) {
       this.gN = var1;
-      this.StartPosition = FormStartPosition.CenterParent; //(this.DirectoryName);
-      this.gM.SelectedIndex = (0);
-      this.gM.Refresh();
+      this.SetLocationRelativeTo(this.Parent);
+      this.gM.SetSelectedIndex(0);
+      this.gM.updateUI();
       this.gO = -1;
-      this.Show();
+      this.SetVisible(true);
       return this.gO;
    }
 
    public static int a(Container var0, List<object> var1) {
       if (gP == null) {
-         Frame var2 = null;
-         // PORT_TODO: gP = new cY(var2);
+         Form var2 = JOptionPane.getFrameForComponent(var0);
+         gP = new cY(var2);
       }
 
       return gP.b(var1);
    }
+
+   // $FF: synthetic method
    static List<object> a(cY var0) {
       return var0.gN;
    }
+
+   // $FF: synthetic method
    static ComboBox b(cY var0) {
       return var0.gM;
    }
+
+   // $FF: synthetic method
    static void a(cY var0, int var1) {
       var0.gO = var1;
    }
 }
-
-
 
 }

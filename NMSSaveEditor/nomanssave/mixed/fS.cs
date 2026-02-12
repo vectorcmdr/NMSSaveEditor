@@ -1,38 +1,38 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
-
-
 public class fS {
-   // PORT_TODO: public DateTime LastWriteTimeUtc => DateTimeOffset.FromUnixTimeMilliseconds(lastModified()).UtcDateTime;
-   public string Name => getName();
-   public FileInfo mh;
-   public int lL;
-   public int version;
-   public long my;
-   public int mz;
-   public int mA;
-   public byte[] mB;
-   public string name;
-   public string description;
-   public int lM;
+   private FileInfo mh;
+   private int lL;
+   private int version;
+   private long my;
+   private int mz;
+   private int mA;
+   private byte[] mB;
+   private string name;
+   private string description;
+   private int lM;
 
-   public fS(FileInfo var1) {
+   fS(FileInfo var1) {
       this.mh = var1;
    }
 
-   public void cn() {
+   void cn() {
       Exception var1 = null;
-      object var2 = null;
+      Object var2 = null;
 
       try {
-         FileStream var3 = new FileStream((this.mh).ToString(), System.IO.FileMode.Open);
+         FileStream var3 = new FileStream(this.mh);
 
          try {
             this.read(var3);
@@ -54,10 +54,10 @@ public class fS {
       }
    }
 
-   public void read(Stream var1) {
+   void read(Stream var1) {
       this.lL = hk.readInt(var1);
       if (this.lL != 0) {
-         hc.debug("  unknown1: " + Convert.ToString(this.lL));
+         hc.debug("  unknown1: " + Convert.ToString((int)this.lL));
       }
 
       this.version = hk.readInt(var1);
@@ -100,20 +100,20 @@ public class fS {
 
       this.lM = hk.readInt(var1);
       if (this.lM != 0) {
-         hc.debug("  unknown2: " + Convert.ToString(this.lM));
+         hc.debug("  unknown2: " + Convert.ToString((int)this.lM));
       }
 
    }
 
-   public void write() {
+   void write() {
       Exception var1 = null;
-      object var2 = null;
+      Object var2 = null;
 
       try {
-         FileStream var3 = new FileStream((this.mh).ToString(), System.IO.FileMode.Open);
+         FileStream var3 = new FileStream(this.mh);
 
          try {
-            // PORT_TODO: this.Write(var3);
+            this.Write(var3);
          } finally {
             if (var3 != null) {
                var3.Close();
@@ -132,7 +132,7 @@ public class fS {
       }
    }
 
-   public void write(Stream var1) {
+   void write(Stream var1) {
       hk.a(var1, this.lL);
       hk.a(var1, this.version);
       hk.b(var1, this.my);
@@ -148,75 +148,75 @@ public class fS {
       hk.a(var1, this.lM);
    }
 
-   public byte[] co() {
+   byte[] co() {
       MemoryStream var1 = new MemoryStream();
-      // PORT_TODO: this.Write(var1);
-      return var1.ToArray();
+      this.Write(var1);
+      return var1.toByteArray();
    }
 
-   public bool cp() {
+   bool cp() {
       return this.mB == null;
    }
 
-   public int getVersion() {
+   int getVersion() {
       return this.version;
    }
 
-   public void setVersion(int var1) {
+   void setVersion(int var1) {
       this.version = var1;
    }
 
-   public int ch() {
+   int ch() {
       return this.mz;
    }
 
-   public void aj(int var1) {
+   void aj(int var1) {
       if (this.mB != null) {
          this.mz = var1;
       }
 
    }
 
-   public int ci() {
+   int ci() {
       return this.mA;
    }
 
-   public void ak(int var1) {
+   void ak(int var1) {
       if (this.mB == null) {
          this.mA = var1;
       }
 
    }
 
-   public string ck() {
+   string ck() {
       return this.name;
    }
 
-   public void Y(string var1) {
+   void Y(string var1) {
       this.name = var1;
    }
 
-   public string getDescription() {
+   string getDescription() {
       return this.description;
    }
 
-   public long cq() {
+   long cq() {
       return this.my;
    }
 
-   public void d(long var1) {
+   void d(long var1) {
       this.my = var1;
    }
 
-   public string getName() {
+   string getName() {
       return this.mh.Name;
    }
 
-   public long length() {
+   long length() {
       return this.mh.Length;
    }
 
-   public void a(fS var1) {
+   void a(fS var1) {
       this.lL = var1.lL;
       this.version = var1.version;
       this.my = var1.my;
@@ -228,7 +228,5 @@ public class fS {
       this.lM = var1.lM;
    }
 }
-
-
 
 }

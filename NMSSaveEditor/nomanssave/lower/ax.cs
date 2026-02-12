@@ -1,17 +1,21 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
+public class ax : TableModel {
+   // $FF: synthetic field
+   ap cu;
 
-
-public class ax : object {
-   public ap cu;
-
-   public ax(ap var1) {
+   ax(ap var1) {
       this.cu = var1;
    }
 
@@ -55,7 +59,7 @@ public class ax : object {
    }
 
    public bool isCellEditable(int var1, int var2) {
-      if (var2 >= 2 && var2 < this.getColumnCount()) {
+      if (var2 >= 2 && var2 < this.ColumnCount) {
          eS var3 = eS.T(var1);
          if (var3 == null) {
             return false;
@@ -80,12 +84,12 @@ public class ax : object {
       }
    }
 
-   public object getValueAt(int var1, int var2) {
+   public Object getValueAt(int var1, int var2) {
       eS var3 = eS.T(var1);
       gA var4 = ap.i(this.cu).a(var3);
       switch(var2) {
       case 0:
-         return var3 == null ? "" : var3.Text;
+         return var3 == null ? "" : var3.GetText();
       case 1:
          return var4.getID();
       case 2:
@@ -103,36 +107,33 @@ public class ax : object {
       }
    }
 
-   public void setValueAt(object var1, int var2, int var3) {
+   public void setValueAt(Object var1, int var2, int var3) {
       eS var4 = eS.T(var2);
       gA var5 = ap.i(this.cu).a(var4);
       switch(var3) {
       case 2:
-         // PORT_TODO: var5.a(eU.kr, Boolean.TRUE.Equals(var1));
+         var5.a(eU.kr, Boolean.TRUE.Equals(var1));
          break;
       case 3:
-         // PORT_TODO: var5.a(eU.ks, Boolean.TRUE.Equals(var1));
+         var5.a(eU.ks, Boolean.TRUE.Equals(var1));
          break;
       case 4:
-         // PORT_TODO: var5.a(eU.kt, Boolean.TRUE.Equals(var1));
+         var5.a(eU.kt, Boolean.TRUE.Equals(var1));
          break;
       case 5:
-         // PORT_TODO: var5.a(eU.kv, Boolean.TRUE.Equals(var1));
+         var5.a(eU.kv, Boolean.TRUE.Equals(var1));
          break;
       case 6:
-         // PORT_TODO: var5.a(eU.kz, Boolean.TRUE.Equals(var1));
-         break;
+         var5.a(eU.kz, Boolean.TRUE.Equals(var1));
       }
 
    }
 
-   public void addTableModelListener(EventHandler var1) {
+   public void addTableModelListener(TableModelListener var1) {
    }
 
-   public void removeTableModelListener(EventHandler var1) {
+   public void removeTableModelListener(TableModelListener var1) {
    }
 }
-
-
 
 }

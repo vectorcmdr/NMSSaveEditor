@@ -1,35 +1,47 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
-
 public sealed class gr {
-      // PORT_TODO: // PORT_TODO: public static gr[] Values() { return new gr[] { pf, pg, ph, pi, pj, pk, pl, pm, pn, po, an }; }
-   // PORT_TODO: public static gr valueOf(string name) { foreach (var v in Values()) if (v.ToString() == name) return v; return null; }
+   public static readonly gr pf = new gr("pf", "Combat", false);
+   public static readonly gr pg = new gr("pg", "Exploration", false);
+   public static readonly gr ph = new gr("ph", "Mining", false);
+   public static readonly gr pi = new gr("pi", "Diplomacy", false);
+   public static readonly gr pj = new gr("pj", "Support", false);
+   public static readonly gr pk = new gr("pk", "Normandy", true);
+   public static readonly gr pl = new gr("pl", "DeepSpace", true);
+   public static readonly gr pm = new gr("pm", "DeepSpaceCommon", true);
+   public static readonly gr pn = new gr("pn", "Pirate", false);
+   public static readonly gr po = new gr("po", "GhostShip", true);
 
-   public static readonly gr pf = new gr("Combat", false);
-   public static readonly gr pg = new gr("Exploration", false);
-   public static readonly gr ph = new gr("Mining", false);
-   public static readonly gr pi = new gr("Diplomacy", false);
-   public static readonly gr pj = new gr("Support", false);
-   public static readonly gr pk = new gr("Normandy", true);
-   public static readonly gr pl = new gr("DeepSpace", true);
-   public static readonly gr pm = new gr("DeepSpaceCommon", true);
-   public static readonly gr pn = new gr("Pirate", false);
-   public static readonly gr po = new gr("GhostShip", true);
+   private int _ordinal;
+   private string _name;
+   private string name;
+   private bool special;
 
-
-   public string name;
-   public bool special;
-
-   public gr(string var3, bool var4) {
+   private gr(string __name, string var3, bool var4) {
+      this._ordinal = _nextOrdinal++;
+      this._name = __name;
       this.name = var3;
       this.special = var4;
    }
+
+   private static int _nextOrdinal = 0;
+   private static readonly gr[] _values = new gr[] { pf, pg, ph, pi, pj, pk, pl, pm, pn, po };
+   public static gr[] values() { return _values; }
+   public static gr valueOf(string n) { return _values.FirstOrDefault(v => v._name == n); }
+   public int ordinal() { return _ordinal; }
+   public string name() { return _name; }
+   public override string ToString() { return _name; }
 
    public bool isSpecial() {
       return this.special;
@@ -40,16 +52,13 @@ public sealed class gr {
    }
 
    public static gr an(string var0) {
-      if (false) { // PORT_TODO: original loop had errors
-         if (true) { // PORT_TODO: original condition had errors
-            // PORT_TODO: return Values()[var1];
+      for(int var1 = 0; var1 < values().Length; ++var1) {
+         if (var0.Equals(values()[var1].name, StringComparison.OrdinalIgnoreCase)) {
+            return values()[var1];
          }
       }
 
       return null;
    }
 }
-
-
-
 }

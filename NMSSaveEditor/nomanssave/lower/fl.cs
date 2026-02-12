@@ -1,18 +1,22 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
 public class fl {
-   public static object @lock = new object();
-   public static fm lj;
+   private static Object lock = new Object();
+   private static fm lj;
 
    public static void a(fq var0, FileInfo var1) {
-      lock(@lock) {
+      lock(lock) {
          try {
             if (lj == null) {
                lj = new fm();
@@ -27,7 +31,7 @@ public class fl {
    }
 
    public static void b(fq var0) {
-      lock(@lock) {
+      lock(lock) {
          try {
             if (lj != null) {
                lj.b(var0);
@@ -38,8 +42,10 @@ public class fl {
 
       }
    }
-   public static object bQ() {
-      return @lock;
+
+   // $FF: synthetic method
+   static Object bQ() {
+      return lock;
    }
 }
 

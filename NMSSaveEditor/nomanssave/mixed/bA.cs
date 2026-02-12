@@ -1,22 +1,27 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
-
 public class bA : G {
-   public int index;
-   public bl er;
+   private int index;
+   // $FF: synthetic field
+   bl er;
 
-   public bA(bl var1, int var2) {
+   private bA(bl var1, int var2) {
       this.er = var1;
       this.index = var2;
    }
 
-   public override string g(string var1) {
+   protected string g(string var1) {
       if (bl.b(this.er) < 0) {
          return "";
       } else {
@@ -28,17 +33,17 @@ public class bA : G {
                bl.c(this.er)[bl.b(this.er)].e(this.index, var3);
             }
 
-            return (var3).ToString();
+            return Convert.ToString(var3);
          } catch (Exception var4) {
-            return (var2).ToString();
+            return Convert.ToString(var2);
          }
       }
    }
-   public bA(bl var1, int var2, bA var3) {
-      // PORT_TODO: // PORT_TODO: this(var1, var2);
+
+   // $FF: synthetic method
+   bA(bl var1, int var2, bA var3) {
+      // Constructor chain: base(var1, var2)
    }
 }
-
-
 
 }

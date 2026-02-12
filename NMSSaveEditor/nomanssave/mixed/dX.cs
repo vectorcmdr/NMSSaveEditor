@@ -1,40 +1,42 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
-
 public class dX : G {
-   public dN ia;
+   // $FF: synthetic field
+   dN ia;
 
-   public dX(dN var1) {
+   dX(dN var1) {
       this.ia = var1;
    }
 
-   public override string g(string var1) {
-      // PORT_TODO: if (dN.o(this.ia) == null) {
-         // PORT_TODO: return "";
-      // PORT_TODO: } else {
-         // PORT_TODO: int var2 = dN.o(this.ia).dN();
+   protected string g(string var1) {
+      if (dN.o(this.ia) == null) {
+         return "";
+      } else {
+         int var2 = dN.o(this.ia).dN();
 
-         // PORT_TODO: try {
-            // PORT_TODO: int var3 = hf.b(var1, 1, 200);
-            // PORT_TODO: if (var3 != var2) {
-               // PORT_TODO: dN.o(this.ia).aC(var3);
-            // PORT_TODO: }
+         try {
+            int var3 = hf.b(var1, 1, 200);
+            if (var3 != var2) {
+               dN.o(this.ia).aC(var3);
+            }
 
-            // PORT_TODO: return (var3).ToString();
-         // PORT_TODO: } catch (Exception var4) {
-            // PORT_TODO: return (var2).ToString();
-         // PORT_TODO: }
-      // PORT_TODO: }
-      return default;
+            return Convert.ToString(var3);
+         } catch (Exception var4) {
+            return Convert.ToString(var2);
+         }
+      }
    }
 }
-
-
 
 }

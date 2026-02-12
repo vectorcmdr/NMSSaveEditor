@@ -1,59 +1,61 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
-
 public class gF : gQ {
-   public eY kM;
-   public gE rf;
+   private eY kM;
+   // $FF: synthetic field
+   gE rf;
 
-   public gF(gE var1, eY var2) {
+   private gF(gE var1, eY var2) {
       this.rf = var1;
       this.kM = var2;
    }
 
    public bool isValid() {
-      // PORT_TODO: string var1 = this.kM.getValueAsString("ElementId");
-      // PORT_TODO: return var1 != null && var1.Length > 1;
-      return false;
+      string var1 = this.kM.getValueAsString("ElementId");
+      return var1 != null && var1.Length > 1;
    }
 
    public string getType() {
       return "Product";
    }
 
-   public object dz() {
-      // PORT_TODO: return this.kM.getValue("ElementId");
-      return default;
+   public Object dz() {
+      return this.kM.getValue("ElementId");
    }
 
-   public void m(object var1) {
-      // PORT_TODO: this.kM.b("ElementId", var1);
-      // PORT_TODO: this.kM.b("LastChangeTimestamp", (object)((int)(DateTimeOffset.UtcNow.ToUnixTimeMilliseconds() / 1000L)));
+   public void m(Object var1) {
+      this.kM.b("ElementId", var1);
+      this.kM.b("LastChangeTimestamp", (Object)((int)(DateTimeOffset.UtcNow.ToUnixTimeMilliseconds() / 1000L)));
    }
 
    public int dA() {
-      // PORT_TODO: return this.kM.J("Amount");
-      return 0;
+      return this.kM.J("Amount");
    }
 
    public void aA(int var1) {
-      // PORT_TODO: this.kM.b("Amount", (object)var1);
-      // PORT_TODO: this.kM.b("LastChangeTimestamp", (object)((int)(DateTimeOffset.UtcNow.ToUnixTimeMilliseconds() / 1000L)));
+      this.kM.b("Amount", (Object)var1);
+      this.kM.b("LastChangeTimestamp", (Object)((int)(DateTimeOffset.UtcNow.ToUnixTimeMilliseconds() / 1000L)));
    }
 
    public int dB() {
       return 999;
    }
-   public gF(gE var1, eY var2, gF var3) {
-      // PORT_TODO: // PORT_TODO: this(var1, var2);
+
+   // $FF: synthetic method
+   gF(gE var1, eY var2, gF var3) {
+      // Constructor chain: base(var1, var2)
    }
 }
-
-
 
 }

@@ -1,35 +1,38 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
-
-
 public class fD : fH, fs {
-   public DateTime LastWriteTimeUtc => DateTimeOffset.FromUnixTimeMilliseconds(lastModified()).UtcDateTime;
-   // PORT_TODO: public new string Name => getName();
-   public int lO;
-   public fn me;
-   public fA ma;
+   int lO;
+   fn me;
+   // $FF: synthetic field
+   fA ma;
 
-public fD(fA var1, int var2) : base(var1, "savedata" + (var2 < 8 ? "0" : "") + (var2 + 2).ToString() + ".hg", true) {
+   fD(fA var1, int var2) {
+      base(var1, "savedata" + (var2 < 8 ? "0" : "") + Convert.ToString(var2 + 2) + ".hg", true);
       this.ma = var1;
       this.lO = var2;
 
       try {
-         // PORT_TODO: string var3 = new string(this.ah(65536));
-         // PORT_TODO: this.me = fn.T(var3);
+         string var3 = new string(this.ah(65536));
+         this.me = fn.T(var3);
       } catch (IOException var4) {
          hc.a("Could not read game mode from " + this.mh.Name, var4);
       }
 
    }
 
-public fD(fA var1, int var2, byte[] var3, eY var4) : base(var1, "savedata" + (var2 < 8 ? "0" : "") + (var2 + 2).ToString() + ".hg", false) {
+   fD(fA var1, int var2, byte[] var3, eY var4) {
+      base(var1, "savedata" + (var2 < 8 ? "0" : "") + Convert.ToString(var2 + 2) + ".hg", false);
       this.ma = var1;
       this.lO = var2;
       this.lK = var3;
@@ -46,7 +49,7 @@ public fD(fA var1, int var2, byte[] var3, eY var4) : base(var1, "savedata" + (va
    }
 
    public string b(eY var1) {
-      // PORT_TODO: this.a(this.lO == 0 ? "ps4_backup" : "ps4_backup" + (this.lO + 1), this.me, this.Name, this.getDescription());
+      this.a(this.lO == 0 ? "ps4_backup" : "ps4_backup" + (this.lO + 1), this.me, this.Name, this.getDescription());
       this.writeBytes(fA.l(var1));
       return this.K();
    }
@@ -59,7 +62,5 @@ public fD(fA var1, int var2, byte[] var3, eY var4) : base(var1, "savedata" + (va
       return this.K();
    }
 }
-
-
 
 }

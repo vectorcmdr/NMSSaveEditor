@@ -1,71 +1,70 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
-
 public class gu : gQ {
-   public eY qD;
-   public gt qE;
+   private eY qD;
+   // $FF: synthetic field
+   gt qE;
 
-   public gu(gt var1, eY var2) {
+   private gu(gt var1, eY var2) {
       this.qE = var1;
       this.qD = var2;
    }
 
    public string getType() {
-      // PORT_TODO: return this.qD.getValueAsString("Type.InventoryType");
-      return default;
+      return this.qD.getValueAsString("Type.InventoryType");
    }
 
-   public object dz() {
-      // PORT_TODO: return this.qD.getValue("Id");
-      return default;
+   public Object dz() {
+      return this.qD.getValue("Id");
    }
 
-   public void m(object var1) {
-      // PORT_TODO: this.qD.b("Id", var1);
+   public void m(Object var1) {
+      this.qD.b("Id", var1);
    }
 
    public int dA() {
-      // PORT_TODO: return this.qD.J("Amount");
-      return 0;
+      return this.qD.J("Amount");
    }
 
    public void aA(int var1) {
-      // PORT_TODO: this.qD.b("Amount", (object)(((int)(var1))));
+      this.qD.b("Amount", (Object)(new Integer(var1)));
    }
 
    public int dB() {
-      // PORT_TODO: return this.qD.J("MaxAmount");
-      return 0;
+      return this.qD.J("MaxAmount");
    }
 
    public double dC() {
-      // PORT_TODO: return this.qD.L("DamageFactor");
-      return 0.0;
+      return this.qD.L("DamageFactor");
    }
 
    public void c(double var1) {
-      // PORT_TODO: this.qD.b("DamageFactor", (object)(new Double(var1)));
+      this.qD.b("DamageFactor", (Object)(new Double(var1)));
    }
 
    public bool dD() {
-      // PORT_TODO: return this.qD.M("FullyInstalled");
-      return false;
+      return this.qD.M("FullyInstalled");
    }
 
    public void e(bool var1) {
-      // PORT_TODO: this.qD.b("FullyInstalled", (object)(new Boolean(var1)));
+      this.qD.b("FullyInstalled", (Object)(new Boolean(var1)));
    }
-   public gu(gt var1, eY var2, gu var3) {
-      // PORT_TODO: // PORT_TODO: this(var1, var2);
+
+   // $FF: synthetic method
+   gu(gt var1, eY var2, gu var3) {
+      // Constructor chain: base(var1, var2)
    }
 }
-
-
 
 }

@@ -1,18 +1,20 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
-
-
-public class cl : JFileChooser {
-   public static cl fG = null;
-   public static string name = "Planetary Base Backup FileInfo";
-   public static Image fH = Application.a("UI-BASEICON.PNG", 16, 16);
+public class cl : OpenFileDialog {
+   private static cl fG = null;
+   private static string name = "Planetary Base Backup File";
+   private static Image fH = Application.a("UI-BASEICON.PNG", 16, 16);
 
    public static cl ar() {
       if (fG == null) {
@@ -22,20 +24,25 @@ public class cl : JFileChooser {
       return fG;
    }
 
-   public cl() {
-      // this.setFileSelectionMode - WinForms uses separate dialog types
-      // this.setAcceptAllFileFilterUsed - not needed in WinForms
+   private cl() {
+      this.setFileSelectionMode(0);
+      this.setAcceptAllFileFilterUsed(false);
       this.setFileView(new cm(this));
       this.setFileFilter(new cn(this));
-      // PORT_TODO: this.addChoosableFileFilter(new co(this));
-      this.setDialogTitle("Choose Backup FileInfo");
-      /* TODO: port from Java - addPropertyChangeListener for lookAndFeel */
+      this.addChoosableFileFilter(new co(this));
+      this.setDialogTitle("Choose Backup File");
+      UIManager.addPropertyChangeListener((var1) => {
+         if ("lookAndFeel".Equals(var1.getPropertyName())) {
+            SwingUtilities.updateComponentTreeUI(this);
+         }
+
+      });
    }
-   public static Image @as() {
+
+   // $FF: synthetic method
+   static Image as() {
       return fH;
    }
 }
-
-
 
 }

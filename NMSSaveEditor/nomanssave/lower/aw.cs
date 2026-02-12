@@ -1,35 +1,38 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
-
-
 public class aw : ActionListener {
-   public ap cu;
+   // $FF: synthetic field
+   ap cu;
 
-   public aw(ap var1) {
+   aw(ap var1) {
       this.cu = var1;
    }
 
-   public void actionPerformed(EventArgs var1) {
-      int[] var2 = ap.h(this.cu).getSelectedRows();
+   public void actionPerformed(ActionEvent var1) {
+      int[] var2 = ap.h(this.cu).GetSelectedRows();
       bool var3 = false;
 
-      for(int var4 = var2.Length - 1; var4 >= 0; --var4) {
+      for(int var4 = var2.length - 1; var4 >= 0; --var4) {
          int var5 = ap.h(this.cu).convertRowIndexToModel(var2[var4]);
-         string var6 = (string)ap.d(this.cu)[var5];
+         string var6 = (string)ap.d(this.cu).Get(var5);
          ap.d(this.cu).Remove(var5);
 
-         if (false) { // PORT_TODO: original while had errors
+         while((var5 = ap.e(this.cu).IndexOf(var6)) >= 0) {
             ap.e(this.cu).ac(var5);
          }
 
-         if (false) { // PORT_TODO: original while had errors
+         while((var5 = ap.f(this.cu).IndexOf(var6)) >= 0) {
             ap.f(this.cu).ac(var5);
          }
 
@@ -38,13 +41,11 @@ public class aw : ActionListener {
 
       if (var3) {
          ap.h(this.cu).clearSelection();
-         // PORT_TODO: ap.g(this.cu).sort();
-         ap.h(this.cu).Refresh();
+         ap.g(this.cu).sort();
+         ap.h(this.cu).updateUI();
       }
 
    }
 }
-
-
 
 }

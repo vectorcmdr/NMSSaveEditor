@@ -1,32 +1,34 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
-
-
 public class aX : ActionListener {
-   public aW dy;
-   public cy dz;
+   // $FF: synthetic field
+   aW dy;
+   // $FF: synthetic field
+   private cy dz;
 
-   public aX(aW var1, cy var2) {
+   aX(aW var1, cy var2) {
       this.dy = var1;
       this.dz = var2;
    }
 
-   public void actionPerformed(EventArgs var1) {
-      // PORT_TODO: string var2 = aW.a(this.dy).Text;
-      if (true) { // PORT_TODO: original condition had errors
-         // PORT_TODO: this.dz.a(var2, aW.b(this.dy).Checked, aW.c(this.dy).Checked, aW.d(this.dy).Checked);
+   public void actionPerformed(ActionEvent var1) {
+      string var2 = aW.a(this.dy).GetText();
+      if (var2.Length > 0) {
+         this.dz.a(var2, aW.b(this.dy).isSelected(), aW.c(this.dy).isSelected(), aW.d(this.dy).isSelected());
       }
 
    }
 }
-
-
 
 }

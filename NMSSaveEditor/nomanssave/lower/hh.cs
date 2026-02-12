@@ -1,62 +1,56 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
 
-
 public class hh {
-   public static long sx = 255L;
-   public static int sy = 12;
-   public static int sz = 96;
-   public static int sA = 48;
-   public static int sB = 12;
-   public static int sC = 192;
-   public static int sD = 96;
-   public static int sE = 24;
-   public static long sF = -2401053088876216593L;
-   public long sG;
-   public long sH;
+   private static long sx = 255L;
+   private static int sy = 12;
+   private static int sz = 96;
+   private static int sA = 48;
+   private static int sB = 12;
+   private static int sC = 192;
+   private static int sD = 96;
+   private static int sE = 24;
+   private static long sF = -2401053088876216593L;
+   private long sG;
+   private long sH;
 
-   public static long a(byte[] var0, int var1) {
+   private static long a(byte[] var0, int var1) {
       return ((long)var0[var1 + 7] & 255L) << 56 | ((long)var0[var1 + 6] & 255L) << 48 | ((long)var0[var1 + 5] & 255L) << 40 | ((long)var0[var1 + 4] & 255L) << 32 | ((long)var0[var1 + 3] & 255L) << 24 | ((long)var0[var1 + 2] & 255L) << 16 | ((long)var0[var1 + 1] & 255L) << 8 | (long)var0[var1] & 255L;
    }
 
-   public static long b(byte[] var0, int var1, int var2) {
+   private static long b(byte[] var0, int var1, int var2) {
       long var3 = 0L;
       switch(var2) {
       case 7:
          var3 += ((long)var0[var1 + 6] & 255L) << 48;
-         break;
       case 6:
          var3 += ((long)var0[var1 + 5] & 255L) << 40;
-         break;
       case 5:
          var3 += ((long)var0[var1 + 4] & 255L) << 32;
-         break;
       case 4:
          var3 += ((long)var0[var1 + 3] & 255L) << 24;
-         break;
       case 3:
          var3 += ((long)var0[var1 + 2] & 255L) << 16;
-         break;
       case 2:
          var3 += ((long)var0[var1 + 1] & 255L) << 8;
-         break;
       case 1:
          var3 += (long)var0[var1] & 255L;
-         break;
       default:
          return var3;
-         return default;
-         return default;
       }
-      return 0L;
    }
 
-   public static void a(byte[] var0, int var1, int var2, long[] var3) {
+   private static void a(byte[] var0, int var1, int var2, long[] var3) {
       long var4 = var3[0];
       long var6 = var3[1];
       long var8 = -2401053088876216593L;
@@ -327,44 +321,32 @@ public class hh {
                break;
             case 11:
                var26 += var32;
-               return default;
             }
          }
 
          switch(var31) {
          case 11:
             var24 += a(var0, var29 + 80);
-            break;
          case 10:
             var22 += a(var0, var29 + 72);
-            break;
          case 9:
             var20 += a(var0, var29 + 64);
-            break;
          case 8:
             var18 += a(var0, var29 + 56);
-            break;
          case 7:
             var16 += a(var0, var29 + 48);
-            break;
          case 6:
             var14 += a(var0, var29 + 40);
-            break;
          case 5:
             var12 += a(var0, var29 + 32);
-            break;
          case 4:
             var10 += a(var0, var29 + 24);
-            break;
          case 3:
             var8 += a(var0, var29 + 16);
-            break;
          case 2:
             var6 += a(var0, var29 + 8);
-            break;
          case 1:
             var4 += a(var0, var29);
-            break;
          default:
             var26 += (long)var28 << 56;
 
@@ -412,36 +394,27 @@ public class hh {
             return var4;
          }
       }
-      return 0L;
    }
 
-   public static long a(CharSequence var0, int var1) {
-      // PORT_TODO: return (long)var0[var1 + 3] << 48 | (long)var0[var1 + 2] << 32 | (long)var0[var1 + 1] << 16 | (long)var0[var1];
-      return 0;
+   private static long a(CharSequence var0, int var1) {
+      return (long)var0[var1 + 3) << 48 | (long)var0[var1 + 2) << 32 | (long)var0[var1 + 1) << 16 | (long)var0[var1);
    }
 
-   public static long a(CharSequence var0, int var1, int var2) {
+   private static long a(CharSequence var0, int var1, int var2) {
       long var3 = 0L;
       switch(var2) {
-      // break; // PORT_TODO: prevent fall-through
-
       case 3:
-         // PORT_TODO: var3 += (long)var0[var1 + 2] << 32;
-         break; // PORT_TODO: prevent fall-through
-         // PORT_TODO: break;
+         var3 += (long)var0[var1 + 2) << 32;
       case 2:
-         // PORT_TODO: var3 += (long)var0[var1 + 1] << 16;
-         // PORT_TODO: break;
+         var3 += (long)var0[var1 + 1) << 16;
       case 1:
-         // PORT_TODO: var3 += (long)var0[var1];
-         break;
+         var3 += (long)var0[var1);
       default:
          return var3;
       }
-      return 0L;
    }
 
-   public static void a(CharSequence var0, int var1, int var2, long[] var3) {
+   private static void a(CharSequence var0, int var1, int var2, long[] var3) {
       long var4 = var3[0];
       long var6 = var3[1];
       long var8 = -2401053088876216593L;
@@ -712,44 +685,32 @@ public class hh {
                break;
             case 11:
                var26 += var32;
-               return default;
             }
          }
 
          switch(var31) {
          case 11:
             var24 += a(var0, var29 + 40);
-            break;
          case 10:
             var22 += a(var0, var29 + 36);
-            break;
          case 9:
             var20 += a(var0, var29 + 32);
-            break;
          case 8:
             var18 += a(var0, var29 + 28);
-            break;
          case 7:
             var16 += a(var0, var29 + 24);
-            break;
          case 6:
             var14 += a(var0, var29 + 20);
-            break;
          case 5:
             var12 += a(var0, var29 + 16);
-            break;
          case 4:
             var10 += a(var0, var29 + 12);
-            break;
          case 3:
             var8 += a(var0, var29 + 8);
-            break;
          case 2:
             var6 += a(var0, var29 + 4);
-            break;
          case 1:
             var4 += a(var0, var29);
-            break;
          default:
             var26 += (long)var28 << 1 << 56;
 
@@ -797,10 +758,9 @@ public class hh {
             return var4;
          }
       }
-      return 0L;
    }
 
-   public static void a(long[] var0, int var1, int var2, long[] var3) {
+   private static void a(long[] var0, int var1, int var2, long[] var3) {
       long var4 = var3[0];
       long var6 = var3[1];
       long var8 = -2401053088876216593L;
@@ -936,9 +896,8 @@ public class hh {
       var6 ^= var4;
       var4 = var4 << 63 | var4 >>> 1;
       var6 += var4;
-      // PORT_TODO: var3[0] = var4;
-      // PORT_TODO: var3[1] = var6;
-      // PORT_TODO: return default;
+      var3[0] = var4;
+      var3[1] = var6;
    }
 
    public static long b(long[] var0, int var1, int var2, long[] var3) {
@@ -1028,37 +987,26 @@ public class hh {
          switch(var29) {
          case 11:
             var24 += var0[var28 + 10];
-            break;
          case 10:
             var22 += var0[var28 + 9];
-            break;
          case 9:
             var20 += var0[var28 + 8];
-            break;
          case 8:
             var18 += var0[var28 + 7];
-            break;
          case 7:
             var16 += var0[var28 + 6];
-            break;
          case 6:
             var14 += var0[var28 + 5];
-            break;
          case 5:
             var12 += var0[var28 + 4];
-            break;
          case 4:
             var10 += var0[var28 + 3];
-            break;
          case 3:
             var8 += var0[var28 + 2];
-            break;
          case 2:
             var6 += var0[var28 + 1];
-            break;
          case 1:
             var4 += var0[var28];
-            break;
          default:
             var26 += (long)(var29 << 3) << 56;
 
@@ -1106,11 +1054,10 @@ public class hh {
             return var4;
          }
       }
-      return 0L;
    }
 
    public hh() {
-      // PORT_TODO: // PORT_TODO: this(0L, 0L);
+      // Constructor chain: base(0L, 0L)
    }
 
    public hh(long var1, long var3) {
@@ -1119,7 +1066,7 @@ public class hh {
    }
 
    public static long a(byte[] var0, long[] var1) {
-      return b((byte[])var0, 0, var0.Length, var1);
+      return b((byte[])var0, 0, var0.length, var1);
    }
 
    public long[] c(byte[] var1, int var2, int var3) {
@@ -1129,29 +1076,25 @@ public class hh {
    }
 
    public long[] j(byte[] var1) {
-      // PORT_TODO: return this.c(var1, 0, var1.Length);
-      return null;
+      return this.c(var1, 0, var1.length);
    }
 
    public static long a(CharSequence var0, long[] var1) {
-      // PORT_TODO: return b((CharSequence)var0, 0, var0.Length, var1);
-      return 0;
+      return b((CharSequence)var0, 0, var0.Length, var1);
    }
 
    public long[] b(CharSequence var1, int var2, int var3) {
       long[] var4 = new long[]{this.sG, this.sH};
       b(var1, var2, var3, var4);
-      // PORT_TODO: return var4;
-      return null;
+      return var4;
    }
 
    public long[] a(CharSequence var1) {
-      // PORT_TODO: return this.b((CharSequence)var1, 0, var1.Length);
-      return null;
+      return this.b((CharSequence)var1, 0, var1.Length);
    }
 
    public static long a(long[] var0, long[] var1) {
-      return b((long[])var0, 0, var0.Length, var1);
+      return b((long[])var0, 0, var0.length, var1);
    }
 
    public long[] b(long[] var1, int var2, int var3) {
@@ -1161,10 +1104,8 @@ public class hh {
    }
 
    public long[] b(long[] var1) {
-      return this.b((long[])var1, 0, var1.Length);
+      return this.b((long[])var1, 0, var1.length);
    }
 }
-
-
 
 }

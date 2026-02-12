@@ -1,35 +1,37 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Xml;
+using System.Windows.Forms;
+using System.Globalization;
 
 namespace NMSSaveEditor
 {
-
-
 
 public abstract class ey {
    public static int jD = 0;
    public static int jE = 1;
    public static int jF = 2;
    public static int jG = 3;
-   public string id;
-   public static Regex jH = new Regex("%(\\w+)%");
-   public static List<object> jI;
-   public static List<object> jJ;
+   string id;
+   private static Pattern jH = new Regex("%(\\w+)%");
+   private static List<object> jI;
+   private static List<object> jJ;
 
    static ey() {
       XmlElement var0 = null;
-      Stream var1 = typeof(Application).Assembly.GetManifestResourceStream("NMSSaveEditor.Resources.db.items.xml");
+      Stream var1 = JavaCompat.GetResourceStream("db/items.xml");
       if (var1 != null) {
          try {
-            XmlDocument doc = new XmlDocument();
-            doc.Load(var1);
-            var0 = doc.DocumentElement;
-         } catch (Exception) { }
+            XmlDocument var2 = JavaCompat.ParseXml(var1);
+            var0 = var2.DocumentElement;
+         } catch (ParserConfigurationException var7) {
+         } catch (SAXException var8) {
+         } catch (IOException var9) {
+         }
       }
 
       List<object> var10 = new List<object>();
@@ -37,49 +39,49 @@ public abstract class ey {
          XmlNodeList var3 = var0.ChildNodes;
 
          for(int var4 = 0; var4 < var3.Count; ++var4) {
-            XmlNode var5 = var3[var4];
+            XmlNode var5 = var3.Item(var4);
             if (var5 is XmlElement && var5.Name.Equals("product-template")) {
-               var10.Add(new eA((XmlElement)var5));
+               var10.Add(new eA((System.Xml.XmlElement)var5));
             }
          }
       }
 
-      jI = new List<object>(var10);
+      jI = JavaCollections.UnmodifiableList(var10);
       List<object> var11 = new List<object>();
       if (var0 != null) {
          XmlNodeList var12 = var0.ChildNodes;
 
          for(int var14 = 0; var14 < var12.Count; ++var14) {
-            XmlNode var6 = var12[var14];
+            XmlNode var6 = var12.Item(var14);
             if (var6 is XmlElement && var6.Name.Equals("substance")) {
-               var11.Add(new eP((XmlElement)var6));
+               var11.Add(new eP((System.Xml.XmlElement)var6));
             } else if (var6 is XmlElement && var6.Name.Equals("product")) {
-               var11.Add(new eH((XmlElement)var6, false));
+               var11.Add(new eH((System.Xml.XmlElement)var6, false));
             } else if (var6 is XmlElement && var6.Name.Equals("procedural-product")) {
-               var11.Add(new eH((XmlElement)var6, true));
+               var11.Add(new eH((System.Xml.XmlElement)var6, true));
             } else if (var6 is XmlElement && var6.Name.Equals("technology")) {
-               var11.Add(new eQ((XmlElement)var6, false));
+               var11.Add(new eQ((System.Xml.XmlElement)var6, false));
             } else if (var6 is XmlElement && var6.Name.Equals("procedural-technology")) {
-               var11.Add(new eQ((XmlElement)var6, true));
+               var11.Add(new eQ((System.Xml.XmlElement)var6, true));
             }
          }
       }
 
-      List<object> var13 = var11.Where((var0x) => {
+      List<object> var13 = (List)var11.filter((var0x) => {
          return var0x is eQ;
-      }).Select((var0x) => (eQ)var0x).Select((var0x) => {
-         return (object)var0x.bv();
-      }).Where((var0x) => {
+      }).map(typeof(eQ).cast).map((var0x) => {
+         return var0x.bv();
+      }).filter((var0x) => {
          return var0x != null;
       }).ToList();
       var11.AddRange(var13);
-      var13.Sort((var0x, var1x) => {
-         return ((ey)var0x).getName().CompareTo(((ey)var1x).getName());
+      var13.sort((var0x, var1x) => {
+         return var0x.Name.CompareTo(var1x.Name);
       });
-      jJ = new List<object>(var11);
+      jJ = JavaCollections.UnmodifiableList(var11);
    }
 
-   public ey(string var1) {
+   ey(string var1) {
       this.id = var1;
    }
 
@@ -87,21 +89,21 @@ public abstract class ey {
       return this.id;
    }
 
-   public static string L(int var0) {
+   private static string L(int var0) {
       StringBuilder var1 = new StringBuilder();
-      var1.Append(var0.ToString());
+      var1.append(Convert.ToString(var0));
 
       while(var1.Length < 5) {
-         var1.Insert(0, '0');
+         var1.insert(0, '0');
       }
 
       return var1.ToString();
    }
 
-   public object aZ() {
-      if (this.id.Length >= 2 && this.id[0] == '^') {
+   public Object aZ() {
+      if (this.id.Length >= 2 && this.id[0) == '^') {
          if (this.bb()) {
-            int var1 = (int)Math.Floor(new Random().NextDouble() * 100000.0);
+            int var1 = (int)Math.Floor(new Random().NextDouble() * 100000.0D);
             return this.id + "#" + L(var1);
          } else {
             return this.id;
@@ -111,8 +113,8 @@ public abstract class ey {
       }
    }
 
-   public object M(int var1) {
-      if (this.id.Length >= 2 && this.id[0] == '^') {
+   public Object M(int var1) {
+      if (this.id.Length >= 2 && this.id[0) == '^') {
          if (this.bb()) {
             if (var1 >= 0 && var1 < 100000) {
                return this.id + "#" + L(var1);
@@ -141,7 +143,7 @@ public abstract class ey {
 
    public abstract bool be();
 
-   public abstract int? bf();
+   public abstract Integer bf();
 
    public abstract string bg();
 
@@ -176,22 +178,22 @@ public abstract class ey {
 
    public abstract List<object> bk();
 
-   public override string ToString() {
+   public string toString() {
       return this.id;
    }
 
-   public static string a(XmlElement var0) {
+   static string a(XmlElement var0) {
       if (var0 == null) {
          throw new ArgumentException();
       } else {
          XmlNodeList var1 = var0.ChildNodes;
-         StringBuilder var2 = new StringBuilder();
+         StringBuffer var2 = new StringBuffer();
          bool var3 = false;
 
          for(int var5 = 0; var5 < var1.Count; ++var5) {
-            XmlNode var4 = var1[var5];
-            if (var4.NodeType == XmlNodeType.Text) {
-               var2.Append(var4.Value);
+            XmlNode var4 = var1.Item(var5);
+            if (var4.NodeType == 3) {
+               var2.append(var4.Value);
                var3 = true;
             }
          }
@@ -204,7 +206,7 @@ public abstract class ey {
       }
    }
 
-   public static List<object> O(int var0) {
+   private static List<object> O(int var0) {
       List<object> var1 = new List<object>();
       bool var2 = (var0 & 16384) == 0;
       if ((var0 & 4) == 4) {
@@ -278,7 +280,7 @@ public abstract class ey {
          }
       }
 
-      bool var3 = (var0 & 0x8080) != 0;
+      bool var3 = (var0 & '耀') != 0;
       if ((var0 & 1024) == 1024) {
          if (var3) {
             var1.Add(ex.iL);
@@ -327,41 +329,40 @@ public abstract class ey {
 
    public static List<object> b(int var0, string var1) {
       string var2 = var1.ToUpper();
-      return jJ.Cast<ey>().Where((var2x) => {
-         return var2x.getName().ToUpper().IndexOf(var2) >= 0 && O(var0).Contains(var2x.bc());
-      }).Cast<object>().ToList();
+      return (List)jJ.filter((var2x) => {
+         return var2x.Name.ToUpper().IndexOf(var2) >= 0 && O(var0).Contains(var2x.bc());
+      }).ToList();
    }
 
    public static List<object> bl() {
-      return jJ.Cast<ey>().Where((var0) => {
+      return (List)jJ.filter((var0) => {
          return var0 is eQ && !var0.bb() && var0.bc() != ex.jz;
-      }).Cast<object>().ToList();
+      }).ToList();
    }
 
    public static List<object> bm() {
-      return jJ.Cast<ey>().Where((var0) => {
+      return (List)jJ.filter((var0) => {
          return var0 is eH && !var0.bb();
-      }).Cast<object>().ToList();
+      }).ToList();
    }
 
-   public static ey d(object var0) {
+   public static ey d(Object var0) {
       string var1 = var0 is fg ? ((fg)var0).bP() : var0.ToString();
-      return jJ.Cast<ey>().Where((var2) => {
+      return (ey)jJ.filter((var2) => {
          return !var2.bb() && !(var2 is eR) ? var0.Equals(var2.id) : var1.StartsWith(var2.id + "#");
-      }).FirstOrDefault();
+      }).findFirst().orElse((Object)null);
    }
 
-   public static eA p(string var0) {
-      return jI.Cast<eA>().Where((var1) => {
+   static eA p(string var0) {
+      return (eA)jI.filter((var1) => {
          return var0.Equals(var1.id);
-      }).FirstOrDefault();
+      }).findFirst().orElse((Object)null);
    }
 
-   public static Regex bn() {
+   // $FF: synthetic method
+   static Pattern bn() {
       return jH;
    }
 }
-
-
 
 }
