@@ -5,16 +5,28 @@ namespace NMSSaveEditor.UI;
 
 public class ShipPanel : UserControl
 {
+    private static readonly string[] ShipClasses = { "C", "B", "A", "S" };
+
     private readonly ComboBox _shipSelector;
     private readonly TextBox _shipName;
-    private readonly TextBox _shipSeed;
+    private readonly ComboBox _shipClass;
     private readonly TextBox _shipType;
+    private readonly TextBox _shipSeed;
+    private readonly Button _generateSeedBtn;
+    private readonly CheckBox _useOldColours;
+    private readonly NumericUpDown _healthField;
+    private readonly NumericUpDown _shieldField;
+    private readonly Button _deleteBtn;
+    private readonly Button _exportBtn;
+    private readonly Button _importBtn;
     private readonly TabControl _invTabs;
     private readonly InventoryGridPanel _inventoryGrid;
     private readonly InventoryGridPanel _techGrid;
+    private readonly InventoryGridPanel _cargoGrid;
     private JsonArray? _shipOwnership;
     private JsonObject? _playerState;
     private GameItemDatabase? _database;
+    private readonly Random _rng = new();
 
     public ShipPanel()
     {
@@ -23,19 +35,18 @@ public class ShipPanel : UserControl
         var layout = new TableLayoutPanel
         {
             Dock = DockStyle.Fill,
-            ColumnCount = 2,
-            RowCount = 6,
+            ColumnCount = 3,
+            RowCount = 12,
             Padding = new Padding(10)
         };
         layout.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize));
         layout.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100));
-        layout.RowStyles.Add(new RowStyle(SizeType.AutoSize));
-        layout.RowStyles.Add(new RowStyle(SizeType.AutoSize));
-        layout.RowStyles.Add(new RowStyle(SizeType.AutoSize));
-        layout.RowStyles.Add(new RowStyle(SizeType.AutoSize));
-        layout.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+        layout.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize));
+        for (int i = 0; i < 11; i++)
+            layout.RowStyles.Add(new RowStyle(SizeType.AutoSize));
         layout.RowStyles.Add(new RowStyle(SizeType.Percent, 100));
 
+        int row = 0;
         var titleLabel = new Label
         {
             Text = "Ships",
@@ -43,35 +54,104 @@ public class ShipPanel : UserControl
             AutoSize = true,
             Padding = new Padding(0, 0, 0, 5)
         };
-        layout.Controls.Add(titleLabel, 0, 0);
-        layout.SetColumnSpan(titleLabel, 2);
+        layout.Controls.Add(titleLabel, 0, row);
+        layout.SetColumnSpan(titleLabel, 3);
+        row++;
 
+        // Ship selector
         _shipSelector = new ComboBox { Dock = DockStyle.Fill, DropDownStyle = ComboBoxStyle.DropDownList };
         _shipSelector.SelectedIndexChanged += OnShipSelected;
-        AddRow(layout, "Select Ship:", _shipSelector, 1);
+        AddRow(layout, "Select Ship:", _shipSelector, row); row++;
 
+        // Name
         _shipName = new TextBox { Dock = DockStyle.Fill };
-        AddRow(layout, "Name:", _shipName, 2);
+        AddRow(layout, "Name:", _shipName, row); row++;
 
+        // Type (read-only)
         _shipType = new TextBox { Dock = DockStyle.Fill, ReadOnly = true };
-        AddRow(layout, "Type:", _shipType, 3);
+        AddRow(layout, "Type:", _shipType, row); row++;
 
-        _shipSeed = new TextBox { Dock = DockStyle.Fill, ReadOnly = true };
-        AddRow(layout, "Seed:", _shipSeed, 4);
+        // Class
+        _shipClass = new ComboBox { Dock = DockStyle.Fill, DropDownStyle = ComboBoxStyle.DropDownList };
+        _shipClass.Items.AddRange(ShipClasses);
+        AddRow(layout, "Class:", _shipClass, row); row++;
 
+        // Seed with Generate button
+        var seedPanel = new Panel { Dock = DockStyle.Fill, Height = 26 };
+        _shipSeed = new TextBox { Dock = DockStyle.Fill };
+        _generateSeedBtn = new Button { Text = "Generate", Dock = DockStyle.Right, Width = 70 };
+        _generateSeedBtn.Click += (s, e) =>
+        {
+            byte[] bytes = new byte[8];
+            _rng.NextBytes(bytes);
+            _shipSeed.Text = "0x" + BitConverter.ToString(bytes).Replace("-", "");
+        };
+        seedPanel.Controls.Add(_shipSeed);
+        seedPanel.Controls.Add(_generateSeedBtn);
+        AddRow(layout, "Seed:", seedPanel, row); row++;
+
+        // Use Old Colours
+        _useOldColours = new CheckBox { Text = "Use Old Colours", AutoSize = true };
+        layout.Controls.Add(new Label(), 0, row);
+        layout.Controls.Add(_useOldColours, 1, row);
+        row++;
+
+        // Base Stats separator
+        var statsLabel = new Label
+        {
+            Text = "Base Stats",
+            Font = new Font(Font.FontFamily, 10, FontStyle.Bold),
+            AutoSize = true,
+            Padding = new Padding(0, 8, 0, 4)
+        };
+        layout.Controls.Add(statsLabel, 0, row);
+        layout.SetColumnSpan(statsLabel, 3);
+        row++;
+
+        _healthField = new NumericUpDown { Dock = DockStyle.Fill, Maximum = 999999 };
+        AddRow(layout, "Health:", _healthField, row); row++;
+
+        _shieldField = new NumericUpDown { Dock = DockStyle.Fill, Maximum = 999999 };
+        AddRow(layout, "Shield:", _shieldField, row); row++;
+
+        // Buttons panel
+        var buttonPanel = new FlowLayoutPanel
+        {
+            Dock = DockStyle.Fill,
+            AutoSize = true,
+            FlowDirection = FlowDirection.LeftToRight
+        };
+        _deleteBtn = new Button { Text = "Delete Ship", Width = 90 };
+        _deleteBtn.Click += OnDeleteShip;
+        _exportBtn = new Button { Text = "Export", Width = 70 };
+        _exportBtn.Click += OnExportShip;
+        _importBtn = new Button { Text = "Import", Width = 70 };
+        _importBtn.Click += OnImportShip;
+        buttonPanel.Controls.Add(_deleteBtn);
+        buttonPanel.Controls.Add(_exportBtn);
+        buttonPanel.Controls.Add(_importBtn);
+        layout.Controls.Add(buttonPanel, 0, row);
+        layout.SetColumnSpan(buttonPanel, 3);
+        row++;
+
+        // Inventory tabs (3 tabs: Inventory, Technology, Cargo)
         _inventoryGrid = new InventoryGridPanel { Dock = DockStyle.Fill };
         _techGrid = new InventoryGridPanel { Dock = DockStyle.Fill };
+        _cargoGrid = new InventoryGridPanel { Dock = DockStyle.Fill };
 
         _invTabs = new TabControl { Dock = DockStyle.Fill };
         var invPage = new TabPage("Inventory");
         invPage.Controls.Add(_inventoryGrid);
         var techPage = new TabPage("Technology");
         techPage.Controls.Add(_techGrid);
+        var cargoPage = new TabPage("Cargo");
+        cargoPage.Controls.Add(_cargoGrid);
         _invTabs.TabPages.Add(invPage);
         _invTabs.TabPages.Add(techPage);
+        _invTabs.TabPages.Add(cargoPage);
 
-        layout.Controls.Add(_invTabs, 0, 5);
-        layout.SetColumnSpan(_invTabs, 2);
+        layout.Controls.Add(_invTabs, 0, row);
+        layout.SetColumnSpan(_invTabs, 3);
 
         Controls.Add(layout);
         ResumeLayout(false);
@@ -83,12 +163,14 @@ public class ShipPanel : UserControl
         _database = database;
         _inventoryGrid.SetDatabase(database);
         _techGrid.SetDatabase(database);
+        _cargoGrid.SetDatabase(database);
     }
 
     public void SetIconManager(IconManager? iconManager)
     {
         _inventoryGrid.SetIconManager(iconManager);
         _techGrid.SetIconManager(iconManager);
+        _cargoGrid.SetIconManager(iconManager);
     }
 
     private static void AddRow(TableLayoutPanel layout, string label, Control field, int row)
@@ -118,17 +200,47 @@ public class ShipPanel : UserControl
                 try
                 {
                     var ship = _shipOwnership.GetObject(i);
-                    string name = ship.GetString("Name") ?? $"Ship {i + 1}";
-                    _shipSelector.Items.Add(name);
+                    var resource = ship.GetObject("Resource");
+                    bool hasSeed = false;
+                    try
+                    {
+                        var seedArr = resource?.GetArray("Seed");
+                        if (seedArr != null && seedArr.Length > 0)
+                            hasSeed = seedArr.GetBool(0);
+                    }
+                    catch { }
+
+                    if (!hasSeed) continue;
+
+                    string name = ship.GetString("Name") ?? "";
+                    if (string.IsNullOrEmpty(name))
+                        name = $"Ship {i + 1}";
+                    _shipSelector.Items.Add(new ShipListItem(name, i));
                 }
                 catch
                 {
-                    _shipSelector.Items.Add($"Ship {i + 1}");
+                    _shipSelector.Items.Add(new ShipListItem($"Ship {i + 1}", i));
                 }
             }
 
+            // Load health/shield from PlayerStateData
+            try { _healthField.Value = _playerState.GetInt("ShipHealth"); } catch { _healthField.Value = 0; }
+            try { _shieldField.Value = _playerState.GetInt("ShipShield"); } catch { _shieldField.Value = 0; }
+
             if (_shipSelector.Items.Count > 0)
-                _shipSelector.SelectedIndex = Math.Min(primaryShip, _shipSelector.Items.Count - 1);
+            {
+                // Find the item matching PrimaryShip index
+                int selectIdx = 0;
+                for (int i = 0; i < _shipSelector.Items.Count; i++)
+                {
+                    if (((ShipListItem)_shipSelector.Items[i]!).DataIndex == primaryShip)
+                    {
+                        selectIdx = i;
+                        break;
+                    }
+                }
+                _shipSelector.SelectedIndex = selectIdx;
+            }
         }
         catch { }
     }
@@ -143,15 +255,46 @@ public class ShipPanel : UserControl
             var ships = playerState.GetArray("ShipOwnership");
             if (ships == null || _shipSelector.SelectedIndex < 0) return;
 
-            int idx = _shipSelector.SelectedIndex;
+            var item = (ShipListItem)_shipSelector.Items[_shipSelector.SelectedIndex]!;
+            int idx = item.DataIndex;
             if (idx >= ships.Length) return;
 
             var ship = ships.GetObject(idx);
+
+            // Save name
             if (!string.IsNullOrEmpty(_shipName.Text))
                 ship.Set("Name", _shipName.Text);
 
+            // Save class to all three inventories
+            if (_shipClass.SelectedIndex >= 0)
+            {
+                string cls = ShipClasses[_shipClass.SelectedIndex];
+                SetInventoryClass(ship.GetObject("Inventory"), cls);
+                SetInventoryClass(ship.GetObject("Inventory_TechOnly"), cls);
+                SetInventoryClass(ship.GetObject("Inventory_Cargo"), cls);
+            }
+
+            // Save seed
+            try
+            {
+                var resource = ship.GetObject("Resource");
+                var seedArr = resource?.GetArray("Seed");
+                if (seedArr != null && seedArr.Length > 1 && !string.IsNullOrEmpty(_shipSeed.Text))
+                    seedArr.Set(1, _shipSeed.Text);
+            }
+            catch { }
+
+            // Save health/shield to PlayerStateData
+            try { playerState.Set("ShipHealth", (int)_healthField.Value); } catch { }
+            try { playerState.Set("ShipShield", (int)_shieldField.Value); } catch { }
+
+            // Save use old colours
+            try { playerState.Set("ShipUsesLegacyColours", _useOldColours.Checked); } catch { }
+
+            // Save inventories
             _inventoryGrid.SaveInventory(ship.GetObject("Inventory"));
             _techGrid.SaveInventory(ship.GetObject("Inventory_TechOnly"));
+            _cargoGrid.SaveInventory(ship.GetObject("Inventory_Cargo"));
         }
         catch { }
     }
@@ -161,12 +304,14 @@ public class ShipPanel : UserControl
         try
         {
             if (_shipOwnership == null || _shipSelector.SelectedIndex < 0) return;
-            int idx = _shipSelector.SelectedIndex;
+            var item = (ShipListItem)_shipSelector.Items[_shipSelector.SelectedIndex]!;
+            int idx = item.DataIndex;
             if (idx >= _shipOwnership.Length) return;
 
             var ship = _shipOwnership.GetObject(idx);
             _shipName.Text = ship.GetString("Name") ?? "";
 
+            // Type (filename)
             string filename = "";
             string seed = "";
             try
@@ -184,9 +329,158 @@ public class ShipPanel : UserControl
             _shipType.Text = filename;
             _shipSeed.Text = seed;
 
+            // Class from Inventory.Class.InventoryClass
+            string cls = "";
+            try
+            {
+                var inv = ship.GetObject("Inventory");
+                var classObj = inv?.GetObject("Class");
+                cls = classObj?.GetString("InventoryClass") ?? "";
+            }
+            catch { }
+            int classIdx = Array.IndexOf(ShipClasses, cls);
+            _shipClass.SelectedIndex = classIdx >= 0 ? classIdx : -1;
+
+            // Use Old Colours
+            try
+            {
+                if (_playerState != null)
+                    _useOldColours.Checked = _playerState.GetBool("ShipUsesLegacyColours");
+            }
+            catch { _useOldColours.Checked = false; }
+
+            // Load all three inventories
             _inventoryGrid.LoadInventory(ship.GetObject("Inventory"));
             _techGrid.LoadInventory(ship.GetObject("Inventory_TechOnly"));
+            _cargoGrid.LoadInventory(ship.GetObject("Inventory_Cargo"));
         }
         catch { }
+    }
+
+    private void OnDeleteShip(object? sender, EventArgs e)
+    {
+        try
+        {
+            if (_shipOwnership == null || _shipSelector.SelectedIndex < 0) return;
+
+            var result = MessageBox.Show(
+                "Are you sure you want to delete this ship?",
+                "Delete Ship",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning);
+
+            if (result != DialogResult.Yes) return;
+
+            var item = (ShipListItem)_shipSelector.Items[_shipSelector.SelectedIndex]!;
+            int idx = item.DataIndex;
+            if (idx >= _shipOwnership.Length) return;
+
+            var ship = _shipOwnership.GetObject(idx);
+            var resource = ship.GetObject("Resource");
+            if (resource != null)
+            {
+                resource.Set("Filename", "");
+                var seedArr = resource.GetArray("Seed");
+                if (seedArr != null && seedArr.Length > 1)
+                {
+                    seedArr.Set(0, false);
+                    seedArr.Set(1, "0x0");
+                }
+            }
+
+            // Refresh the list
+            int selIdx = _shipSelector.SelectedIndex;
+            _shipSelector.Items.RemoveAt(selIdx);
+            if (_shipSelector.Items.Count > 0)
+                _shipSelector.SelectedIndex = Math.Min(selIdx, _shipSelector.Items.Count - 1);
+        }
+        catch { }
+    }
+
+    private void OnExportShip(object? sender, EventArgs e)
+    {
+        try
+        {
+            if (_shipOwnership == null || _shipSelector.SelectedIndex < 0) return;
+
+            var item = (ShipListItem)_shipSelector.Items[_shipSelector.SelectedIndex]!;
+            int idx = item.DataIndex;
+            if (idx >= _shipOwnership.Length) return;
+
+            var ship = _shipOwnership.GetObject(idx);
+
+            using var dialog = new SaveFileDialog
+            {
+                Filter = "JSON files (*.json)|*.json|All files (*.*)|*.*",
+                DefaultExt = "json",
+                FileName = $"ship_{_shipName.Text}.json"
+            };
+
+            if (dialog.ShowDialog() == DialogResult.OK)
+                ship.ExportToFile(dialog.FileName);
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show($"Export failed: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+    }
+
+    private void OnImportShip(object? sender, EventArgs e)
+    {
+        try
+        {
+            if (_shipOwnership == null || _shipSelector.SelectedIndex < 0) return;
+
+            using var dialog = new OpenFileDialog
+            {
+                Filter = "JSON files (*.json)|*.json|All files (*.*)|*.*"
+            };
+
+            if (dialog.ShowDialog() != DialogResult.OK) return;
+
+            var imported = JsonObject.ImportFromFile(dialog.FileName);
+            var item = (ShipListItem)_shipSelector.Items[_shipSelector.SelectedIndex]!;
+            int idx = item.DataIndex;
+            if (idx >= _shipOwnership.Length) return;
+
+            var ship = _shipOwnership.GetObject(idx);
+
+            // Copy all properties from imported ship to current slot
+            foreach (var name in imported.Names())
+                ship.Set(name, imported.Get(name));
+
+            // Refresh display
+            OnShipSelected(this, EventArgs.Empty);
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show($"Import failed: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+    }
+
+    private static void SetInventoryClass(JsonObject? inventory, string cls)
+    {
+        if (inventory == null) return;
+        try
+        {
+            var classObj = inventory.GetObject("Class");
+            classObj?.Set("InventoryClass", cls);
+        }
+        catch { }
+    }
+
+    /// <summary>Helper to track the original array index for each ship in the selector.</summary>
+    private sealed class ShipListItem
+    {
+        public string DisplayName { get; }
+        public int DataIndex { get; }
+
+        public ShipListItem(string displayName, int dataIndex)
+        {
+            DisplayName = displayName;
+            DataIndex = dataIndex;
+        }
+
+        public override string ToString() => DisplayName;
     }
 }
