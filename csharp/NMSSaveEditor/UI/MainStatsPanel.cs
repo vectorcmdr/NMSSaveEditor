@@ -17,9 +17,9 @@ public class MainStatsPanel : UserControl
         _healthField = new NumericUpDown { Maximum = 999999, Width = 150, Anchor = AnchorStyles.Left | AnchorStyles.Top };
         _shieldField = new NumericUpDown { Maximum = 999999, Width = 150, Anchor = AnchorStyles.Left | AnchorStyles.Top };
         _energyField = new NumericUpDown { Maximum = 999999, Width = 150, Anchor = AnchorStyles.Left | AnchorStyles.Top };
-        _unitsField = new NumericUpDown { Maximum = int.MaxValue, Width = 150, Anchor = AnchorStyles.Left | AnchorStyles.Top };
-        _nanitesField = new NumericUpDown { Maximum = int.MaxValue, Width = 150, Anchor = AnchorStyles.Left | AnchorStyles.Top };
-        _quicksilverField = new NumericUpDown { Maximum = int.MaxValue, Width = 150, Anchor = AnchorStyles.Left | AnchorStyles.Top };
+        _unitsField = new NumericUpDown { Maximum = uint.MaxValue, Width = 150, Anchor = AnchorStyles.Left | AnchorStyles.Top };
+        _nanitesField = new NumericUpDown { Maximum = uint.MaxValue, Width = 150, Anchor = AnchorStyles.Left | AnchorStyles.Top };
+        _quicksilverField = new NumericUpDown { Maximum = uint.MaxValue, Width = 150, Anchor = AnchorStyles.Left | AnchorStyles.Top };
 
         InitializeLayout();
         ResumeLayout(false);
@@ -94,28 +94,34 @@ public class MainStatsPanel : UserControl
         playerState.Set("Health", (int)_healthField.Value);
         playerState.Set("Shield", (int)_shieldField.Value);
         playerState.Set("Energy", (int)_energyField.Value);
-        playerState.Set("Units", (int)_unitsField.Value);
-        playerState.Set("Nanites", (int)_nanitesField.Value);
-        playerState.Set("Specials", (int)_quicksilverField.Value);
+        // Units/Nanites/Specials: store as signed int for NMS save format compatibility
+        playerState.Set("Units", unchecked((int)(uint)_unitsField.Value));
+        playerState.Set("Nanites", unchecked((int)(uint)_nanitesField.Value));
+        playerState.Set("Specials", unchecked((int)(uint)_quicksilverField.Value));
     }
 
     private static void SetNumericValue(NumericUpDown field, JsonObject data, string key)
     {
         try
         {
-            // Try direct Get first (avoids path resolution overhead), then GetValue for path support
-            var value = data.Get(key) ?? data.GetValue(key);
+            var value = data.Get(key);
+            if (value == null) value = data.GetValue(key);
             if (value == null) return;
 
-            long numericValue;
+            // Convert the value to a long, treating negative ints as unsigned 32-bit
+            decimal numericValue;
             if (value is int i)
-                numericValue = (uint)i; // treat as unsigned 32-bit
+                numericValue = (uint)i; // treat as unsigned 32-bit (Java: & 0xFFFFFFFFL)
             else if (value is long l)
-                numericValue = l & 0xFFFFFFFFL;
+                numericValue = (decimal)(l & 0xFFFFFFFFL);
+            else if (value is decimal d)
+                numericValue = d;
             else
-                numericValue = Convert.ToInt64(value) & 0xFFFFFFFFL;
+                numericValue = Convert.ToDecimal(value);
 
-            field.Value = Math.Min(numericValue, (long)field.Maximum);
+            if (numericValue < field.Minimum) numericValue = field.Minimum;
+            if (numericValue > field.Maximum) numericValue = field.Maximum;
+            field.Value = numericValue;
         }
         catch { }
     }

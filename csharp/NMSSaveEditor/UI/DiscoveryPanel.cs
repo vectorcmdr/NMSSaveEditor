@@ -28,6 +28,7 @@ public class DiscoveryPanel : UserControl
     private readonly Button _learnAllWordsButton;
     private readonly Button _unlearnAllWordsButton;
     private PictureBox[] _raceIcons = Array.Empty<PictureBox>();
+    private Label[] _raceLabels = Array.Empty<Label>();
 
     // Tab 4: Known Glyphs
     private readonly CheckBox[] _glyphCheckBoxes = new CheckBox[16];
@@ -121,46 +122,35 @@ public class DiscoveryPanel : UserControl
             ColumnCount = 1,
             RowCount = 3,
         };
-        wordLayout.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+        wordLayout.RowStyles.Add(new RowStyle(SizeType.Absolute, 40));
         wordLayout.RowStyles.Add(new RowStyle(SizeType.Percent, 100));
         wordLayout.RowStyles.Add(new RowStyle(SizeType.AutoSize));
 
-        // Race icons header panel
-        var raceIconPanel = new FlowLayoutPanel
+        // Race icons header panel - uses absolute positioning to align over grid columns
+        var raceIconPanel = new Panel
         {
             Dock = DockStyle.Fill,
-            AutoSize = true,
-            FlowDirection = FlowDirection.LeftToRight,
-            WrapContents = false,
-            Padding = new Padding(5, 5, 5, 0),
+            Height = 40,
         };
         string[] raceIconFiles = { "UI-GEK.PNG", "UI-VYKEEN.PNG", "UI-KORVAX.PNG", "UI-GEK.PNG", "UI-KORVAX.PNG" };
         string[] raceLabels = { "Gek", "Vy'keen", "Korvax", "Atlas", "Autophage" };
         _raceIcons = new PictureBox[raceLabels.Length];
+        _raceLabels = new Label[raceLabels.Length];
         for (int i = 0; i < raceLabels.Length; i++)
         {
-            var iconContainer = new FlowLayoutPanel
-            {
-                FlowDirection = FlowDirection.LeftToRight,
-                AutoSize = true,
-                WrapContents = false,
-                Margin = new Padding(0, 0, 15, 0),
-            };
             _raceIcons[i] = new PictureBox
             {
                 Size = new Size(24, 24),
                 SizeMode = PictureBoxSizeMode.Zoom,
-                Margin = new Padding(0, 2, 4, 0),
             };
-            iconContainer.Controls.Add(_raceIcons[i]);
-            iconContainer.Controls.Add(new Label
+            _raceLabels[i] = new Label
             {
                 Text = raceLabels[i],
                 AutoSize = true,
                 Font = new Font(Font.FontFamily, 9, FontStyle.Bold),
-                Padding = new Padding(0, 4, 0, 0),
-            });
-            raceIconPanel.Controls.Add(iconContainer);
+            };
+            raceIconPanel.Controls.Add(_raceIcons[i]);
+            raceIconPanel.Controls.Add(_raceLabels[i]);
         }
         wordLayout.Controls.Add(raceIconPanel, 0, 0);
 
@@ -181,6 +171,9 @@ public class DiscoveryPanel : UserControl
         {
             _wordGrid.Columns.Add(new DataGridViewCheckBoxColumn { Name = name, HeaderText = name });
         }
+        // Align race icons over their column headers when layout changes
+        _wordGrid.Layout += (_, _) => AlignRaceIcons();
+        _wordGrid.ColumnWidthChanged += (_, _) => AlignRaceIcons();
         wordLayout.Controls.Add(_wordGrid, 0, 1);
 
         var wordButtonPanel = new FlowLayoutPanel
@@ -289,6 +282,35 @@ public class DiscoveryPanel : UserControl
             var icon = _iconManager.GetIcon(raceIconFiles[i]);
             if (icon != null)
                 _raceIcons[i].Image = icon;
+        }
+    }
+
+    /// <summary>
+    /// Align race icons and labels over their corresponding DataGridView column headers.
+    /// </summary>
+    private void AlignRaceIcons()
+    {
+        if (_wordGrid == null || _raceIcons.Length == 0) return;
+
+        // Column order: Word, WordIndex, Gek, Vy'keen, Korvax, Atlas, Autophage
+        // Race columns start at index 2
+        for (int i = 0; i < _raceIcons.Length && i < _raceLabels.Length; i++)
+        {
+            int colIdx = i + 2; // Skip Word and WordIndex columns
+            if (colIdx >= _wordGrid.Columns.Count) break;
+
+            var rect = _wordGrid.GetColumnDisplayRectangle(colIdx, true);
+            if (rect.Width == 0) continue;
+
+            int centerX = _wordGrid.Left + rect.Left + (rect.Width / 2);
+
+            // Position icon centered above column
+            _raceIcons[i].Left = centerX - _raceIcons[i].Width / 2;
+            _raceIcons[i].Top = 2;
+
+            // Position label below icon, also centered
+            _raceLabels[i].Left = centerX - _raceLabels[i].Width / 2;
+            _raceLabels[i].Top = 26;
         }
     }
 
@@ -525,7 +547,30 @@ public class DiscoveryPanel : UserControl
         for (int i = 0; i < 16; i++)
         {
             string filename = $"UI-GLYPH{i + 1}.PNG";
-            _glyphIcons[i].Image = _iconManager.GetIcon(filename);
+            var icon = _iconManager.GetIcon(filename);
+            if (icon != null)
+            {
+                // Dispose previous image to prevent GDI resource leaks
+                _glyphIcons[i].Image?.Dispose();
+
+                // Draw glyph icon on dark grey circle background for visibility
+                int size = 36;
+                var composite = new Bitmap(size, size);
+                using (var g = Graphics.FromImage(composite))
+                {
+                    g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+                    // Draw dark grey filled circle
+                    using var brush = new SolidBrush(Color.FromArgb(60, 60, 60));
+                    g.FillEllipse(brush, 0, 0, size - 1, size - 1);
+                    // Draw the glyph icon centered on the circle
+                    int iconSize = 24;
+                    int offset = (size - iconSize) / 2;
+                    g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
+                    g.DrawImage(icon, offset, offset, iconSize, iconSize);
+                }
+                _glyphIcons[i].Image = composite;
+                _glyphIcons[i].Size = new Size(size, size);
+            }
         }
     }
 

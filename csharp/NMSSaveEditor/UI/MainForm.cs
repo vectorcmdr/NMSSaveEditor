@@ -323,6 +323,9 @@ public class MainForm : Form
         // Store file paths for later use
         _saveSlotFiles = saveFiles;
 
+        // Load account data (accountdata.hg is in the same directory)
+        _accountPanel.LoadAccountFile(dir);
+
         if (_saveSlotCombo.Items.Count > 0)
         {
             _saveSlotCombo.SelectedIndex = 0;
@@ -358,6 +361,9 @@ public class MainForm : Form
             _milestonePanel.LoadData(_currentSaveData);
             _settlementPanel.LoadData(_currentSaveData);
             _accountPanel.LoadData(_currentSaveData);
+            // Also try to load account data from the same directory
+            string? saveDir = Path.GetDirectoryName(filePath);
+            if (saveDir != null) _accountPanel.LoadAccountFile(saveDir);
             _rawJsonPanel.LoadData(_currentSaveData);
 
             // Enable save controls
