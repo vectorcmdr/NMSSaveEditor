@@ -1,3 +1,4 @@
+using NMSSaveEditor.Data;
 using NMSSaveEditor.Models;
 
 namespace NMSSaveEditor.UI;
@@ -5,6 +6,22 @@ namespace NMSSaveEditor.UI;
 public class MilestonePanel : UserControl
 {
     private readonly Dictionary<string, NumericUpDown> _fields = new();
+    private IconManager? _iconManager;
+
+    // Icon file mappings for sections
+    private readonly Dictionary<string, PictureBox> _sectionIcons = new();
+
+    private static readonly Dictionary<string, string> SectionIconMap = new()
+    {
+        { "Milestones", "UI-MILESTONES.PNG" },
+        { "Kills", "UI-CREATURES.PNG" },
+        { "Gek", "UI-GEK.PNG" },
+        { "Vy'keen", "UI-VYKEEN.PNG" },
+        { "Korvax", "UI-KORVAX.PNG" },
+        { "Traders", "UI-TRADERS.PNG" },
+        { "Warriors", "UI-WARRIORS.PNG" },
+        { "Explorers", "UI-EXPLORERS.PNG" },
+    };
 
     public MilestonePanel()
     {
@@ -84,6 +101,26 @@ public class MilestonePanel : UserControl
         PerformLayout();
     }
 
+    public void SetIconManager(IconManager? iconManager)
+    {
+        _iconManager = iconManager;
+        LoadSectionIcons();
+    }
+
+    private void LoadSectionIcons()
+    {
+        if (_iconManager == null) return;
+        foreach (var kvp in _sectionIcons)
+        {
+            if (SectionIconMap.TryGetValue(kvp.Key, out string? filename))
+            {
+                var icon = _iconManager.GetIcon(filename);
+                if (icon != null)
+                    kvp.Value.Image = icon;
+            }
+        }
+    }
+
     private static Panel CreateColumnPanel()
     {
         var panel = new Panel { Dock = DockStyle.Fill, AutoScroll = true };
@@ -101,10 +138,32 @@ public class MilestonePanel : UserControl
         return panel;
     }
 
-    private static void AddSectionTitle(TableLayoutPanel panel, string title)
+    private void AddSectionTitle(TableLayoutPanel panel, string title)
     {
         int row = panel.RowCount++;
         panel.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+
+        var container = new FlowLayoutPanel
+        {
+            FlowDirection = FlowDirection.LeftToRight,
+            AutoSize = true,
+            WrapContents = false,
+            Margin = Padding.Empty,
+        };
+
+        // Add icon placeholder (loaded when SetIconManager is called)
+        if (SectionIconMap.ContainsKey(title))
+        {
+            var iconBox = new PictureBox
+            {
+                Size = new Size(24, 24),
+                SizeMode = PictureBoxSizeMode.Zoom,
+                Margin = new Padding(0, 4, 4, 0),
+            };
+            _sectionIcons[title] = iconBox;
+            container.Controls.Add(iconBox);
+        }
+
         var label = new Label
         {
             Text = title,
@@ -112,8 +171,10 @@ public class MilestonePanel : UserControl
             AutoSize = true,
             Padding = new Padding(0, 6, 0, 2),
         };
-        panel.Controls.Add(label, 0, row);
-        panel.SetColumnSpan(label, 2);
+        container.Controls.Add(label);
+
+        panel.Controls.Add(container, 0, row);
+        panel.SetColumnSpan(container, 2);
     }
 
     private void AddField(TableLayoutPanel panel, string labelText, string statId)

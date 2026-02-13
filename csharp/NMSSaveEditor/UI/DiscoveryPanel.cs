@@ -27,6 +27,7 @@ public class DiscoveryPanel : UserControl
     private readonly DataGridView _wordGrid;
     private readonly Button _learnAllWordsButton;
     private readonly Button _unlearnAllWordsButton;
+    private PictureBox[] _raceIcons = Array.Empty<PictureBox>();
 
     // Tab 4: Known Glyphs
     private readonly CheckBox[] _glyphCheckBoxes = new CheckBox[16];
@@ -118,10 +119,50 @@ public class DiscoveryPanel : UserControl
         {
             Dock = DockStyle.Fill,
             ColumnCount = 1,
-            RowCount = 2,
+            RowCount = 3,
         };
+        wordLayout.RowStyles.Add(new RowStyle(SizeType.AutoSize));
         wordLayout.RowStyles.Add(new RowStyle(SizeType.Percent, 100));
         wordLayout.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+
+        // Race icons header panel
+        var raceIconPanel = new FlowLayoutPanel
+        {
+            Dock = DockStyle.Fill,
+            AutoSize = true,
+            FlowDirection = FlowDirection.LeftToRight,
+            WrapContents = false,
+            Padding = new Padding(5, 5, 5, 0),
+        };
+        string[] raceIconFiles = { "UI-GEK.PNG", "UI-VYKEEN.PNG", "UI-KORVAX.PNG", "UI-GEK.PNG", "UI-KORVAX.PNG" };
+        string[] raceLabels = { "Gek", "Vy'keen", "Korvax", "Atlas", "Autophage" };
+        _raceIcons = new PictureBox[raceLabels.Length];
+        for (int i = 0; i < raceLabels.Length; i++)
+        {
+            var iconContainer = new FlowLayoutPanel
+            {
+                FlowDirection = FlowDirection.LeftToRight,
+                AutoSize = true,
+                WrapContents = false,
+                Margin = new Padding(0, 0, 15, 0),
+            };
+            _raceIcons[i] = new PictureBox
+            {
+                Size = new Size(24, 24),
+                SizeMode = PictureBoxSizeMode.Zoom,
+                Margin = new Padding(0, 2, 4, 0),
+            };
+            iconContainer.Controls.Add(_raceIcons[i]);
+            iconContainer.Controls.Add(new Label
+            {
+                Text = raceLabels[i],
+                AutoSize = true,
+                Font = new Font(Font.FontFamily, 9, FontStyle.Bold),
+                Padding = new Padding(0, 4, 0, 0),
+            });
+            raceIconPanel.Controls.Add(iconContainer);
+        }
+        wordLayout.Controls.Add(raceIconPanel, 0, 0);
 
         _wordGrid = new DataGridView
         {
@@ -140,7 +181,7 @@ public class DiscoveryPanel : UserControl
         {
             _wordGrid.Columns.Add(new DataGridViewCheckBoxColumn { Name = name, HeaderText = name });
         }
-        wordLayout.Controls.Add(_wordGrid, 0, 0);
+        wordLayout.Controls.Add(_wordGrid, 0, 1);
 
         var wordButtonPanel = new FlowLayoutPanel
         {
@@ -154,7 +195,7 @@ public class DiscoveryPanel : UserControl
         _unlearnAllWordsButton.Click += UnlearnAllWords_Click;
         wordButtonPanel.Controls.Add(_learnAllWordsButton);
         wordButtonPanel.Controls.Add(_unlearnAllWordsButton);
-        wordLayout.Controls.Add(wordButtonPanel, 0, 1);
+        wordLayout.Controls.Add(wordButtonPanel, 0, 2);
 
         wordTab.Controls.Add(wordLayout);
         _tabControl.TabPages.Add(wordTab);
@@ -236,6 +277,19 @@ public class DiscoveryPanel : UserControl
     {
         _iconManager = iconManager;
         LoadGlyphIcons();
+        LoadRaceIcons();
+    }
+
+    private void LoadRaceIcons()
+    {
+        if (_iconManager == null || _raceIcons.Length == 0) return;
+        string[] raceIconFiles = { "UI-GEK.PNG", "UI-VYKEEN.PNG", "UI-KORVAX.PNG", "UI-GEK.PNG", "UI-KORVAX.PNG" };
+        for (int i = 0; i < _raceIcons.Length && i < raceIconFiles.Length; i++)
+        {
+            var icon = _iconManager.GetIcon(raceIconFiles[i]);
+            if (icon != null)
+                _raceIcons[i].Image = icon;
+        }
     }
 
     public void LoadData(JsonObject saveData)

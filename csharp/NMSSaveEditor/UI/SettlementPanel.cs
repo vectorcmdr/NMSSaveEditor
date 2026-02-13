@@ -1,3 +1,4 @@
+using NMSSaveEditor.Data;
 using NMSSaveEditor.Models;
 
 namespace NMSSaveEditor.UI;
@@ -6,7 +7,7 @@ public class SettlementPanel : UserControl
 {
     // Max values for Stats[0..6], matching gG enum ordinals
     private static readonly int[] StatMaxValues = { 200, 100, 1000000, 1000000, 100, 10000000, 100 };
-    private static readonly string[] StatLabels = { "Stat 1", "Stat 2", "Stat 3", "Stat 4", "Stat 5", "Stat 6", "Stat 7" };
+    private static readonly string[] StatLabels = { "Productivity", "Happiness", "Population", "Resources", "Maintenance", "Trade Value", "Debt Level" };
     private const int StatCount = 7;
     private const int ProductionMaxAmount = 999;
 
@@ -23,6 +24,9 @@ public class SettlementPanel : UserControl
     private readonly List<int> _filteredIndices = new();
     private JsonArray? _settlements;
     private readonly Random _rng = new();
+    private GameItemDatabase? _database;
+
+    public void SetDatabase(GameItemDatabase? database) => _database = database;
 
     public SettlementPanel()
     {
@@ -174,24 +178,31 @@ public class SettlementPanel : UserControl
         };
         _productionGrid.Columns.Add(new DataGridViewTextBoxColumn
         {
+            Name = "ItemName",
+            HeaderText = "Name",
+            ReadOnly = true,
+            FillWeight = 30,
+        });
+        _productionGrid.Columns.Add(new DataGridViewTextBoxColumn
+        {
             Name = "ElementId",
             HeaderText = "Element ID",
             ReadOnly = false,
-            FillWeight = 50,
+            FillWeight = 30,
         });
         _productionGrid.Columns.Add(new DataGridViewTextBoxColumn
         {
             Name = "Amount",
             HeaderText = "Amount",
             ReadOnly = false,
-            FillWeight = 25,
+            FillWeight = 20,
         });
         _productionGrid.Columns.Add(new DataGridViewTextBoxColumn
         {
             Name = "Timestamp",
             HeaderText = "Last Change",
             ReadOnly = true,
-            FillWeight = 25,
+            FillWeight = 20,
         });
         layout.RowStyles.Add(new RowStyle(SizeType.Percent, 100));
         layout.Controls.Add(_productionGrid, 0, row);
@@ -430,11 +441,12 @@ public class SettlementPanel : UserControl
                     {
                         var prodObj = prodArr.GetObject(i);
                         string elementId = prodObj.GetString("ElementId") ?? prodObj.Get("ElementId")?.ToString() ?? "";
+                        string itemName = _database?.GetItem(elementId)?.Name ?? elementId;
                         int amount = 0;
                         try { amount = prodObj.GetInt("Amount"); } catch { }
                         string timestamp = "";
                         try { timestamp = prodObj.Get("LastChangeTimestamp")?.ToString() ?? ""; } catch { }
-                        _productionGrid.Rows.Add(elementId, amount, timestamp);
+                        _productionGrid.Rows.Add(itemName, elementId, amount, timestamp);
                     }
                     catch { }
                 }

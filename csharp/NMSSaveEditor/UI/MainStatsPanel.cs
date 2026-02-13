@@ -38,6 +38,9 @@ public class MainStatsPanel : UserControl
         };
         layout.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize));
         layout.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100));
+        // Explicit row styles for consistent spacing
+        for (int i = 0; i < 7; i++)
+            layout.RowStyles.Add(new RowStyle(SizeType.AutoSize));
 
         var titleLabel = new Label
         {
@@ -61,7 +64,7 @@ public class MainStatsPanel : UserControl
 
     private static void AddRow(TableLayoutPanel layout, string label, Control field, int row)
     {
-        var lbl = new Label { Text = label, AutoSize = true, Anchor = AnchorStyles.Left, Padding = new Padding(0, 6, 10, 0) };
+        var lbl = new Label { Text = label, AutoSize = true, Anchor = AnchorStyles.Left | AnchorStyles.Top, Padding = new Padding(0, 5, 10, 0) };
         layout.Controls.Add(lbl, 0, row);
         layout.Controls.Add(field, 1, row);
     }
@@ -98,15 +101,22 @@ public class MainStatsPanel : UserControl
 
     private static void SetNumericValue(NumericUpDown field, JsonObject data, string key)
     {
-        if (data.Contains(key))
+        try
         {
-            try
-            {
-                var value = data.GetValue(key);
-                long numericValue = Convert.ToInt64(value) & 0xFFFFFFFFL; // unsigned 32-bit mask
-                field.Value = Math.Min(numericValue, (long)field.Maximum);
-            }
-            catch { }
+            // Try direct Get first (avoids path resolution overhead), then GetValue for path support
+            var value = data.Get(key) ?? data.GetValue(key);
+            if (value == null) return;
+
+            long numericValue;
+            if (value is int i)
+                numericValue = (uint)i; // treat as unsigned 32-bit
+            else if (value is long l)
+                numericValue = l & 0xFFFFFFFFL;
+            else
+                numericValue = Convert.ToInt64(value) & 0xFFFFFFFFL;
+
+            field.Value = Math.Min(numericValue, (long)field.Maximum);
         }
+        catch { }
     }
 }

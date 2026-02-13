@@ -1,3 +1,4 @@
+using NMSSaveEditor.Data;
 using NMSSaveEditor.Models;
 
 namespace NMSSaveEditor.UI;
@@ -6,6 +7,17 @@ public class FrigatePanel : UserControl
 {
     private readonly DataGridView _frigateGrid;
     private readonly Label _countLabel;
+    private GameItemDatabase? _database;
+
+    // Frigate type names (gr enum from Java)
+    private static readonly string[] FrigateTypes =
+    {
+        "Combat", "Exploration", "Mining", "Diplomacy", "Support",
+        "Normandy", "DeepSpace", "DeepSpaceCommon", "Pirate", "GhostShip"
+    };
+
+    // Frigate grade names (gN enum from Java - based on beneficial trait count)
+    private static readonly string[] FrigateGrades = { "C", "B", "A", "S" };
 
     public FrigatePanel()
     {
@@ -40,23 +52,47 @@ public class FrigatePanel : UserControl
             AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill,
             AllowUserToAddRows = false,
             AllowUserToDeleteRows = false,
-            ReadOnly = true,
             SelectionMode = DataGridViewSelectionMode.FullRowSelect,
             RowHeadersVisible = false
         };
         _frigateGrid.Columns.Add("Index", "#");
         _frigateGrid.Columns.Add("Name", "Name");
-        _frigateGrid.Columns.Add("Type", "Type");
-        _frigateGrid.Columns.Add("Class", "Class");
+
+        var typeCol = new DataGridViewComboBoxColumn
+        {
+            Name = "Type",
+            HeaderText = "Type",
+            FlatStyle = FlatStyle.Flat,
+            DisplayStyle = DataGridViewComboBoxDisplayStyle.DropDownButton,
+        };
+        typeCol.Items.AddRange(FrigateTypes);
+        _frigateGrid.Columns.Add(typeCol);
+
+        var classCol = new DataGridViewComboBoxColumn
+        {
+            Name = "Class",
+            HeaderText = "Class",
+            FlatStyle = FlatStyle.Flat,
+            DisplayStyle = DataGridViewComboBoxDisplayStyle.DropDownButton,
+        };
+        classCol.Items.AddRange(FrigateGrades);
+        _frigateGrid.Columns.Add(classCol);
+
         _frigateGrid.Columns.Add("Level", "Level");
+
         _frigateGrid.Columns["Index"]!.Width = 40;
         _frigateGrid.Columns["Index"]!.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+        _frigateGrid.Columns["Index"]!.ReadOnly = true;
+        _frigateGrid.Columns["Name"]!.ReadOnly = false;
+        _frigateGrid.Columns["Level"]!.ReadOnly = true;
         layout.Controls.Add(_frigateGrid, 0, 2);
 
         Controls.Add(layout);
         ResumeLayout(false);
         PerformLayout();
     }
+
+    public void SetDatabase(GameItemDatabase? database) => _database = database;
 
     public void LoadData(JsonObject saveData)
     {
@@ -78,18 +114,49 @@ public class FrigatePanel : UserControl
                 try
                 {
                     var frigate = frigates.GetObject(i);
-                    string name = frigate.GetString("Name") ?? frigate.GetString("CustomName") ?? $"Frigate {i + 1}";
-                    string type = frigate.GetString("FrigateType") ?? frigate.GetString("Type") ?? "";
+
+                    // Name: CustomName field
+                    string name = frigate.GetString("CustomName") ?? $"Frigate {i + 1}";
+
+                    // Type: FrigateClass.FrigateClass (string like "Combat", "Exploration", etc.)
+                    string type = "";
+                    try
+                    {
+                        type = frigate.GetString("FrigateClass.FrigateClass")
+                            ?? frigate.GetObject("FrigateClass")?.GetString("FrigateClass")
+                            ?? "";
+                    }
+                    catch { }
+
+                    // Level/Grade: calculated from TraitIDs beneficial count
+                    int gradeIndex = 0;
                     string cls = "";
                     try
                     {
-                        var classObj = frigate.GetObject("Class");
-                        cls = classObj?.GetString("FrigateClass") ?? frigate.GetString("Class") ?? "";
+                        var traits = frigate.GetArray("TraitIDs");
+                        if (traits != null)
+                        {
+                            int beneficialCount = CountBeneficialTraits(traits);
+                            gradeIndex = Math.Clamp(beneficialCount - 2, 0, 3);
+                        }
+                        cls = FrigateGrades[gradeIndex];
                     }
-                    catch { cls = frigate.GetString("Class") ?? ""; }
+                    catch { cls = "C"; }
 
+                    // Level: NumberOfTraits or TraitIDs length
                     string level = "";
-                    try { level = frigate.GetInt("Level").ToString(); } catch { }
+                    try
+                    {
+                        var traits = frigate.GetArray("TraitIDs");
+                        level = traits != null ? traits.Length.ToString() : "0";
+                    }
+                    catch { }
+
+                    // Ensure type is a valid ComboBox item
+                    if (!Array.Exists(FrigateTypes, t => t.Equals(type, StringComparison.OrdinalIgnoreCase)))
+                        type = FrigateTypes.Length > 0 ? FrigateTypes[0] : "";
+                    if (!Array.Exists(FrigateGrades, g => g.Equals(cls, StringComparison.OrdinalIgnoreCase)))
+                        cls = FrigateGrades[0];
 
                     _frigateGrid.Rows.Add(i.ToString(), name, type, cls, level);
                 }
@@ -101,8 +168,52 @@ public class FrigatePanel : UserControl
         catch { _countLabel.Text = "Failed to load frigate data."; }
     }
 
+    private int CountBeneficialTraits(JsonArray traitIds)
+    {
+        int count = 0;
+        // Load frigate traits from frigates.xml via database
+        for (int i = 0; i < traitIds.Length; i++)
+        {
+            try
+            {
+                string traitId = traitIds.GetString(i);
+                // If the trait is in the database and is marked beneficial, count it
+                // For now, use a heuristic: traits without "NEG" or "BAD" in the ID are beneficial
+                if (!string.IsNullOrEmpty(traitId) && !traitId.Contains("NEG", StringComparison.OrdinalIgnoreCase)
+                    && !traitId.Contains("BAD", StringComparison.OrdinalIgnoreCase))
+                    count++;
+            }
+            catch { }
+        }
+        return count;
+    }
+
     public void SaveData(JsonObject saveData)
     {
-        // Frigates are read-only in this panel
+        try
+        {
+            var playerState = saveData.GetObject("PlayerStateData");
+            if (playerState == null) return;
+
+            var frigates = playerState.GetArray("FleetFrigates");
+            if (frigates == null) return;
+
+            for (int i = 0; i < _frigateGrid.Rows.Count && i < frigates.Length; i++)
+            {
+                var row = _frigateGrid.Rows[i];
+                var frigate = frigates.GetObject(i);
+
+                // Save name
+                string name = row.Cells["Name"].Value?.ToString() ?? "";
+                frigate.Set("CustomName", name);
+
+                // Save type (FrigateClass.FrigateClass)
+                string type = row.Cells["Type"].Value?.ToString() ?? "";
+                var frigateClassObj = frigate.GetObject("FrigateClass");
+                if (frigateClassObj != null)
+                    frigateClassObj.Set("FrigateClass", type);
+            }
+        }
+        catch { }
     }
 }

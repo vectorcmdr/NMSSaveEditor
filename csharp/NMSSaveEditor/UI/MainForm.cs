@@ -234,6 +234,8 @@ public class MainForm : Form
             _multitoolPanel.SetDatabase(_database);
             _vehiclePanel.SetDatabase(_database);
             _discoveryPanel.SetDatabase(_database);
+            _settlementPanel.SetDatabase(_database);
+            _frigatePanel.SetDatabase(_database);
 
             _exosuitPanel.SetIconManager(_iconManager);
             _shipPanel.SetIconManager(_iconManager);
@@ -241,13 +243,17 @@ public class MainForm : Form
             _multitoolPanel.SetIconManager(_iconManager);
             _vehiclePanel.SetIconManager(_iconManager);
             _discoveryPanel.SetIconManager(_iconManager);
+            _milestonePanel.SetIconManager(_iconManager);
 
             // Load JSON name mapper for obfuscated NMS save file keys
             var mapperPath = Path.Combine(dbPath, "jsonmap.txt");
+            var mapperAcPath = Path.Combine(dbPath, "jsonmapac.txt");
             if (File.Exists(mapperPath))
             {
                 var mapper = new JsonNameMapper();
                 mapper.Load(mapperPath);
+                if (File.Exists(mapperAcPath))
+                    mapper.Load(mapperAcPath);
                 JsonParser.SetDefaultMapper(mapper);
                 _statusLabel.Text = $"Loaded {_database.Items.Count} game items, {mapper.Count} name mappings";
             }
