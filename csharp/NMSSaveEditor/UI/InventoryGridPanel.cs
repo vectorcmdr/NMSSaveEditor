@@ -310,6 +310,7 @@ public class InventoryGridPanel : UserControl
         _removeItemMenuItem = new ToolStripMenuItem("Remove Item", null, OnRemoveItem);
         _cellContextMenu.Items.Add(_addItemMenuItem);
         _cellContextMenu.Items.Add(_removeItemMenuItem);
+        _cellContextMenu.Opening += OnContextMenuOpening;
 
         Controls.Add(splitContainer);
         ResumeLayout(false);
@@ -581,7 +582,7 @@ public class InventoryGridPanel : UserControl
                 }
 
                 cell.Click += OnCellClicked;
-                cell.MouseUp += OnCellMouseUp;
+                cell.ContextMenuStrip = _cellContextMenu;
                 _gridContainer.Controls.Add(cell);
                 _cells.Add(cell);
             }
@@ -653,9 +654,12 @@ public class InventoryGridPanel : UserControl
         SelectCell(cell);
     }
 
-    private void OnCellMouseUp(object? sender, MouseEventArgs e)
+    private void OnContextMenuOpening(object? sender, CancelEventArgs e)
     {
-        if (e.Button != MouseButtons.Right || sender is not SlotCell cell) return;
+        // Find the SlotCell that was right-clicked
+        var source = _cellContextMenu.SourceControl;
+        SlotCell? cell = source as SlotCell ?? source?.Parent as SlotCell;
+        if (cell == null) { e.Cancel = true; return; }
 
         _contextCell = cell;
 
@@ -667,8 +671,8 @@ public class InventoryGridPanel : UserControl
         _addItemMenuItem.Text = hasItem ? "Replace Item" : "Add Item";
         _removeItemMenuItem.Visible = hasItem;
 
-        if (_addItemMenuItem.Visible || _removeItemMenuItem.Visible)
-            _cellContextMenu.Show(cell, e.Location);
+        if (!_addItemMenuItem.Visible && !_removeItemMenuItem.Visible)
+            e.Cancel = true;
     }
 
     private void SelectCell(SlotCell cell)
@@ -1065,13 +1069,26 @@ public class InventoryGridPanel : UserControl
             Controls.Add(_iconBox);
             Controls.Add(_nameLabel);
 
-            // Forward child clicks and mouse events to this panel
+            // Forward child clicks to this panel for cell selection
             _iconBox.Click += (s, e) => OnClick(e);
             _amountLabel.Click += (s, e) => OnClick(e);
             _nameLabel.Click += (s, e) => OnClick(e);
-            _iconBox.MouseUp += (s, e) => OnMouseUp(e);
-            _amountLabel.MouseUp += (s, e) => OnMouseUp(e);
-            _nameLabel.MouseUp += (s, e) => OnMouseUp(e);
+        }
+
+        /// <summary>
+        /// Override to propagate ContextMenuStrip to all child controls,
+        /// ensuring right-click works regardless of which child is clicked.
+        /// </summary>
+        public override ContextMenuStrip? ContextMenuStrip
+        {
+            get => base.ContextMenuStrip;
+            set
+            {
+                base.ContextMenuStrip = value;
+                _iconBox.ContextMenuStrip = value;
+                _nameLabel.ContextMenuStrip = value;
+                _amountLabel.ContextMenuStrip = value;
+            }
         }
 
         public void UpdateDisplay()
