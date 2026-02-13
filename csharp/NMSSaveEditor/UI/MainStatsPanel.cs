@@ -78,7 +78,7 @@ public class MainStatsPanel : UserControl
             SetNumericValue(_energyField, playerState, "Energy");
             SetNumericValue(_unitsField, playerState, "Units");
             SetNumericValue(_nanitesField, playerState, "Nanites");
-            SetNumericValue(_quicksilverField, playerState, "Quicksilver");
+            SetNumericValue(_quicksilverField, playerState, "Specials");
         }
         catch { /* Ignore missing fields */ }
     }
@@ -93,14 +93,20 @@ public class MainStatsPanel : UserControl
         playerState.Set("Energy", (int)_energyField.Value);
         playerState.Set("Units", (int)_unitsField.Value);
         playerState.Set("Nanites", (int)_nanitesField.Value);
-        playerState.Set("Quicksilver", (int)_quicksilverField.Value);
+        playerState.Set("Specials", (int)_quicksilverField.Value);
     }
 
     private static void SetNumericValue(NumericUpDown field, JsonObject data, string key)
     {
         if (data.Contains(key))
         {
-            try { field.Value = Math.Min(data.GetInt(key), (int)field.Maximum); }
+            try
+            {
+                var value = data.GetValue(key);
+                long numericValue = Convert.ToInt64(value);
+                // Clamp to field's Maximum (which is int.MaxValue for units/nanites)
+                field.Value = Math.Min(numericValue, (long)field.Maximum);
+            }
             catch { }
         }
     }

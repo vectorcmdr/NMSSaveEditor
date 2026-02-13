@@ -67,7 +67,7 @@ public class RawJsonPanel : UserControl
 
     public void LoadData(JsonObject saveData)
     {
-        _jsonTextBox.Text = saveData.ToFormattedString();
+        _jsonTextBox.Text = saveData.ToDisplayString();
         _statusLabel.Text = $"Loaded {_jsonTextBox.Text.Length:N0} characters";
         _statusLabel.ForeColor = Color.Gray;
     }

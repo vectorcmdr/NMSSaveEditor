@@ -6,16 +6,31 @@ public static class JsonParser
 {
     private const string HexChars = "0123456789ABCDEFabcdef";
 
+    /// <summary>
+    /// Default name mapper loaded from jsonmap.txt, used to auto-detect and translate
+    /// obfuscated NMS save file key names during parsing.
+    /// </summary>
+    private static NMSSaveEditor.Data.JsonNameMapper? _defaultSaveMapper;
+
+    /// <summary>
+    /// Set the default name mapper for save file parsing.
+    /// Called at application startup with the mapper loaded from jsonmap.txt.
+    /// </summary>
+    public static void SetDefaultMapper(NMSSaveEditor.Data.JsonNameMapper mapper) =>
+        _defaultSaveMapper = mapper;
+
     // === SERIALIZATION ===
 
-    public static string Serialize(object? value, bool formatted)
+    public static string Serialize(object? value, bool formatted, bool skipReverseMapping = false)
     {
         string? newline = formatted ? Environment.NewLine : null;
         bool spaces = formatted;
-        return SerializeValue(value, newline, spaces);
+        // Extract the mapper from the root object if it's a JsonObject
+        var mapper = skipReverseMapping ? null : (value as JsonObject)?.NameMapper;
+        return SerializeValue(value, newline, spaces, mapper);
     }
 
-    private static string SerializeValue(object? value, string? newline, bool spaces)
+    private static string SerializeValue(object? value, string? newline, bool spaces, NMSSaveEditor.Data.JsonNameMapper? mapper = null)
     {
         return value switch
         {
@@ -27,34 +42,38 @@ public static class JsonParser
             float f => f.ToString("G"),
             double d => d.ToString("G"),
             string s => QuoteString(s),
-            JsonObject obj => SerializeObject(obj, newline, spaces),
-            JsonArray arr => SerializeArray(arr, newline, spaces),
+            JsonObject obj => SerializeObject(obj, newline, spaces, mapper),
+            JsonArray arr => SerializeArray(arr, newline, spaces, mapper),
             BinaryData bin => QuoteBinaryData(bin),
             _ => throw new InvalidOperationException($"Unsupported type: {value.GetType().Name}")
         };
     }
 
-    private static string SerializeObject(JsonObject obj, string? newline, bool spaces)
+    private static string SerializeObject(JsonObject obj, string? newline, bool spaces, NMSSaveEditor.Data.JsonNameMapper? mapper = null)
     {
         var sb = new StringBuilder();
         sb.Append('{');
         var names = obj.GetRawNames();
         var values = obj.GetRawValues();
+        // Use mapper from the object itself, or fall back to the one passed from the parent
+        var activeMapper = obj.NameMapper ?? mapper;
         for (int i = 0; i < obj.Length; i++)
         {
             if (i > 0) sb.Append(',');
             if (newline != null) sb.Append(newline + "\t");
-            sb.Append(QuoteString(names[i]));
+            // Reverse-map human-readable name back to obfuscated key for saving
+            string name = activeMapper != null ? activeMapper.ToKey(names[i]) : names[i];
+            sb.Append(QuoteString(name));
             sb.Append(':');
             if (spaces) sb.Append(' ');
-            sb.Append(SerializeValue(values[i], newline == null ? null : newline + "\t", spaces));
+            sb.Append(SerializeValue(values[i], newline == null ? null : newline + "\t", spaces, activeMapper));
         }
         if (obj.Length > 0 && newline != null) sb.Append(newline);
         sb.Append('}');
         return sb.ToString();
     }
 
-    private static string SerializeArray(JsonArray arr, string? newline, bool spaces)
+    private static string SerializeArray(JsonArray arr, string? newline, bool spaces, NMSSaveEditor.Data.JsonNameMapper? mapper = null)
     {
         var sb = new StringBuilder();
         sb.Append('[');
@@ -63,7 +82,7 @@ public static class JsonParser
         {
             if (i > 0) sb.Append(',');
             if (newline != null) sb.Append(newline + "\t");
-            sb.Append(SerializeValue(values[i], newline == null ? null : newline + "\t", spaces));
+            sb.Append(SerializeValue(values[i], newline == null ? null : newline + "\t", spaces, mapper));
         }
         if (arr.Length > 0 && newline != null) sb.Append(newline);
         sb.Append(']');
@@ -142,18 +161,18 @@ public static class JsonParser
     public static object? ParseValue(string json)
     {
         using var reader = new JsonReader(json);
-        var result = ParseValue(reader, reader.ReadSkipWhitespace());
+        var result = ParseValue(reader, reader.ReadSkipWhitespace(), null);
         if (reader.ReadSkipWhitespace() >= 0)
             throw new JsonException("Invalid trailing data", reader.Line, reader.Column);
         return result;
     }
 
-    public static JsonObject ParseObject(string json)
+    public static JsonObject ParseObject(string json, NMSSaveEditor.Data.JsonNameMapper? mapper = null)
     {
         using var reader = new JsonReader(json);
         if (reader.ReadSkipWhitespace() != '{')
             throw new JsonException("Invalid object string", reader.Line, reader.Column);
-        var result = ParseObjectBody(reader);
+        var result = ParseObjectBody(reader, mapper);
         if (reader.ReadSkipWhitespace() >= 0)
             throw new JsonException("Invalid trailing data", reader.Line, reader.Column);
         return result;
@@ -164,20 +183,20 @@ public static class JsonParser
         using var reader = new JsonReader(json);
         if (reader.ReadSkipWhitespace() != '[')
             throw new JsonException("Invalid array string", reader.Line, reader.Column);
-        var result = ParseArrayBody(reader);
+        var result = ParseArrayBody(reader, null);
         if (reader.ReadSkipWhitespace() >= 0)
             throw new JsonException("Invalid trailing data", reader.Line, reader.Column);
         return result;
     }
 
-    private static object? ParseValue(JsonReader reader, int c)
+    private static object? ParseValue(JsonReader reader, int c, NMSSaveEditor.Data.JsonNameMapper? mapper)
     {
         if (c < 0) throw new JsonException("Short read", reader.Line, reader.Column);
 
         return c switch
         {
-            '{' => ParseObjectBody(reader),
-            '[' => ParseArrayBody(reader),
+            '{' => ParseObjectBody(reader, mapper),
+            '[' => ParseArrayBody(reader, mapper),
             '"' => ParseString(reader),
             'f' => ParseFalse(reader),
             't' => ParseTrue(reader),
@@ -188,18 +207,33 @@ public static class JsonParser
         };
     }
 
-    private static JsonObject ParseObjectBody(JsonReader reader)
+    private static JsonObject ParseObjectBody(JsonReader reader, NMSSaveEditor.Data.JsonNameMapper? mapper)
     {
         var obj = new JsonObject();
+        NMSSaveEditor.Data.JsonNameMapper? activeMapper = mapper;
         int c = reader.ReadSkipWhitespace();
         if (c == '"')
         {
+            bool shouldAutoDetect = (mapper == null); // Only auto-detect on first key if no mapper provided
             while (true)
             {
                 string key = ParseStringValue(reader);
+
+                // Auto-detect obfuscated keys on the first key of the root object
+                if (shouldAutoDetect && activeMapper == null)
+                {
+                    shouldAutoDetect = false;
+                    if (mapper == null && _defaultSaveMapper != null && _defaultSaveMapper.IsObfuscatedKey(key))
+                        activeMapper = _defaultSaveMapper;
+                }
+
+                // Translate obfuscated key to human-readable name
+                if (activeMapper != null)
+                    key = activeMapper.ToName(key);
+
                 if (reader.ReadSkipWhitespace() != ':')
                     throw new JsonException("Invalid token", reader.Line, reader.Column);
-                object? value = ParseValue(reader, reader.ReadSkipWhitespace());
+                object? value = ParseValue(reader, reader.ReadSkipWhitespace(), activeMapper);
                 obj.Add(key, value);
                 c = reader.ReadSkipWhitespace();
                 if (c == '}') break;
@@ -212,10 +246,15 @@ public static class JsonParser
         {
             throw new JsonException("Invalid token", reader.Line, reader.Column);
         }
+
+        // Store the mapper on the root object for use during serialization
+        if (activeMapper != null)
+            obj.NameMapper = activeMapper;
+
         return obj;
     }
 
-    private static JsonArray ParseArrayBody(JsonReader reader)
+    private static JsonArray ParseArrayBody(JsonReader reader, NMSSaveEditor.Data.JsonNameMapper? mapper)
     {
         var arr = new JsonArray();
         int c = reader.ReadSkipWhitespace();
@@ -223,7 +262,7 @@ public static class JsonParser
         {
             while (true)
             {
-                arr.Add(ParseValue(reader, c));
+                arr.Add(ParseValue(reader, c, mapper));
                 c = reader.ReadSkipWhitespace();
                 if (c == ']') break;
                 if (c != ',') throw new JsonException("Invalid token", reader.Line, reader.Column);

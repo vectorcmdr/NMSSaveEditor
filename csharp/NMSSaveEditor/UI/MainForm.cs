@@ -215,7 +215,20 @@ public class MainForm : Form
             string dbPath = Path.Combine(basePath, "Resources", "db");
             _database.LoadItems(Path.Combine(dbPath, "items.xml"));
             _database.LoadInventoryData(Path.Combine(dbPath, "inventory.xml"));
-            _statusLabel.Text = $"Loaded {_database.Items.Count} game items";
+
+            // Load JSON name mapper for obfuscated NMS save file keys
+            var mapperPath = Path.Combine(dbPath, "jsonmap.txt");
+            if (File.Exists(mapperPath))
+            {
+                var mapper = new JsonNameMapper();
+                mapper.Load(mapperPath);
+                JsonParser.SetDefaultMapper(mapper);
+                _statusLabel.Text = $"Loaded {_database.Items.Count} game items, {mapper.Count} name mappings";
+            }
+            else
+            {
+                _statusLabel.Text = $"Loaded {_database.Items.Count} game items (jsonmap.txt not found)";
+            }
         }
         catch (Exception ex)
         {

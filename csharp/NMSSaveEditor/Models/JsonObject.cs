@@ -12,6 +12,13 @@ public partial class JsonObject
     public IPropertyChangeListener? Listener { get; set; }
     private readonly Dictionary<string, Func<object?, object?>> _transforms = new();
 
+    /// <summary>
+    /// The name mapper used to translate between obfuscated and human-readable keys.
+    /// Set on the root object during parsing if the save uses obfuscated names.
+    /// Used during serialization to reverse-map names back to obfuscated form.
+    /// </summary>
+    public NMSSaveEditor.Data.JsonNameMapper? NameMapper { get; set; }
+
     [GeneratedRegex(@"([^\.\[\]]+)|(?:\.([^\.\[\]]+))|(?:\[(\d+)\])")]
     private static partial Regex PathPattern();
 
@@ -203,6 +210,10 @@ public partial class JsonObject
 
     public override string ToString() => JsonParser.Serialize(this, false);
     public string ToFormattedString() => JsonParser.Serialize(this, true);
+    /// <summary>
+    /// Serialize with human-readable names (no reverse mapping), for display purposes.
+    /// </summary>
+    public string ToDisplayString() => JsonParser.Serialize(this, true, skipReverseMapping: true);
 
     private static void SetParent(object? value, object parent)
     {
