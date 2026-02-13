@@ -229,11 +229,13 @@ public class MainForm : Form
             _shipPanel.SetDatabase(_database);
             _freighterPanel.SetDatabase(_database);
             _multitoolPanel.SetDatabase(_database);
+            _vehiclePanel.SetDatabase(_database);
 
             _exosuitPanel.SetIconManager(_iconManager);
             _shipPanel.SetIconManager(_iconManager);
             _freighterPanel.SetIconManager(_iconManager);
             _multitoolPanel.SetIconManager(_iconManager);
+            _vehiclePanel.SetIconManager(_iconManager);
 
             // Load JSON name mapper for obfuscated NMS save file keys
             var mapperPath = Path.Combine(dbPath, "jsonmap.txt");

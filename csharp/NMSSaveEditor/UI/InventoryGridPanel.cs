@@ -453,6 +453,7 @@ public class InventoryGridPanel : UserControl
     private class SlotCell : Panel
     {
         private readonly PictureBox _iconBox;
+        private readonly Label _nameLabel;
         private readonly Label _amountLabel;
         private readonly ToolTip _toolTip;
 
@@ -498,6 +499,17 @@ public class InventoryGridPanel : UserControl
             Cursor = Cursors.Hand;
             BackColor = Color.FromArgb(50, 50, 50);
 
+            _nameLabel = new Label
+            {
+                Dock = DockStyle.Top,
+                ForeColor = Color.White,
+                BackColor = Color.FromArgb(160, 0, 0, 0),
+                Font = new Font("Segoe UI", 5.5f, FontStyle.Regular),
+                TextAlign = ContentAlignment.MiddleCenter,
+                Height = 13,
+                AutoEllipsis = true
+            };
+
             _iconBox = new PictureBox
             {
                 Dock = DockStyle.Fill,
@@ -518,12 +530,15 @@ public class InventoryGridPanel : UserControl
 
             _toolTip = new ToolTip();
 
+            // Add in z-order: amount (bottom), icon (fill), name (top)
             Controls.Add(_amountLabel);
             Controls.Add(_iconBox);
+            Controls.Add(_nameLabel);
 
             // Forward child clicks to this panel
             _iconBox.Click += (s, e) => OnClick(e);
             _amountLabel.Click += (s, e) => OnClick(e);
+            _nameLabel.Click += (s, e) => OnClick(e);
         }
 
         public void UpdateDisplay()
@@ -532,6 +547,8 @@ public class InventoryGridPanel : UserControl
             {
                 BackColor = Color.FromArgb(25, 25, 25);
                 _iconBox.Image = null;
+                _nameLabel.Text = "";
+                _nameLabel.Visible = false;
                 _amountLabel.Text = "";
                 _amountLabel.Visible = false;
                 Cursor = Cursors.Default;
@@ -557,13 +574,20 @@ public class InventoryGridPanel : UserControl
             // Display icon
             _iconBox.Image = IconImage;
 
-            // If no icon, show item name/ID as text in the icon area
-            if (IconImage == null && !string.IsNullOrEmpty(ItemId))
+            // Display item name at top
+            string nameText = !string.IsNullOrEmpty(DisplayName) ? DisplayName : ItemId;
+            if (!string.IsNullOrEmpty(nameText))
             {
-                // No icon available - will show tooltip only
+                _nameLabel.Text = nameText;
+                _nameLabel.Visible = true;
+            }
+            else
+            {
+                _nameLabel.Text = "";
+                _nameLabel.Visible = false;
             }
 
-            // Display amount overlay
+            // Display amount overlay at bottom
             if (Amount > 0 || MaxAmount > 0)
             {
                 _amountLabel.Text = Amount.ToString();
@@ -582,6 +606,7 @@ public class InventoryGridPanel : UserControl
             _toolTip.SetToolTip(this, tip);
             _toolTip.SetToolTip(_iconBox, tip);
             _toolTip.SetToolTip(_amountLabel, tip);
+            _toolTip.SetToolTip(_nameLabel, tip);
         }
     }
 }

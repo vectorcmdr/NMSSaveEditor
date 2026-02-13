@@ -8,9 +8,7 @@ public class MultitoolPanel : UserControl
     private readonly ComboBox _toolSelector;
     private readonly TextBox _toolName;
     private readonly TextBox _toolClass;
-    private readonly TabControl _invTabs;
-    private readonly InventoryGridPanel _inventoryGrid;
-    private readonly InventoryGridPanel _techGrid;
+    private readonly InventoryGridPanel _storeGrid;
     private JsonArray? _multitools;
     private JsonObject? _playerState;
     private GameItemDatabase? _database;
@@ -54,19 +52,10 @@ public class MultitoolPanel : UserControl
         _toolClass = new TextBox { Dock = DockStyle.Fill, ReadOnly = true };
         AddRow(layout, "Class:", _toolClass, 3);
 
-        _inventoryGrid = new InventoryGridPanel { Dock = DockStyle.Fill };
-        _techGrid = new InventoryGridPanel { Dock = DockStyle.Fill };
-
-        _invTabs = new TabControl { Dock = DockStyle.Fill };
-        var invPage = new TabPage("Inventory");
-        invPage.Controls.Add(_inventoryGrid);
-        var techPage = new TabPage("Technology");
-        techPage.Controls.Add(_techGrid);
-        _invTabs.TabPages.Add(invPage);
-        _invTabs.TabPages.Add(techPage);
-
-        layout.Controls.Add(_invTabs, 0, 4);
-        layout.SetColumnSpan(_invTabs, 2);
+        // Multitools use a single "Store" inventory (not separate Inventory/Technology)
+        _storeGrid = new InventoryGridPanel { Dock = DockStyle.Fill };
+        layout.Controls.Add(_storeGrid, 0, 4);
+        layout.SetColumnSpan(_storeGrid, 2);
 
         Controls.Add(layout);
         ResumeLayout(false);
@@ -76,14 +65,12 @@ public class MultitoolPanel : UserControl
     public void SetDatabase(GameItemDatabase? database)
     {
         _database = database;
-        _inventoryGrid.SetDatabase(database);
-        _techGrid.SetDatabase(database);
+        _storeGrid.SetDatabase(database);
     }
 
     public void SetIconManager(IconManager? iconManager)
     {
-        _inventoryGrid.SetIconManager(iconManager);
-        _techGrid.SetIconManager(iconManager);
+        _storeGrid.SetIconManager(iconManager);
     }
 
     private static void AddRow(TableLayoutPanel layout, string label, Control field, int row)
@@ -103,39 +90,39 @@ public class MultitoolPanel : UserControl
             _multitools = _playerState.GetArray("Multitools");
             _toolSelector.Items.Clear();
 
-            if (_multitools != null)
+            if (_multitools != null && _multitools.Length > 0)
             {
                 for (int i = 0; i < _multitools.Length; i++)
                 {
                     try
                     {
                         var tool = _multitools.GetObject(i);
-                        string name = tool.GetString("Name") ?? $"Multitool {i + 1}";
+                        string name = tool?.GetString("Name") ?? "";
+                        if (string.IsNullOrEmpty(name))
+                            name = $"Multitool [{i}]";
                         _toolSelector.Items.Add(name);
                     }
                     catch
                     {
-                        _toolSelector.Items.Add($"Multitool {i + 1}");
+                        _toolSelector.Items.Add($"Multitool [{i}]");
                     }
                 }
-            }
 
-            if (_toolSelector.Items.Count == 0)
-            {
-                // Older saves use WeaponInventory directly
-                var weaponInv = _playerState.GetObject("WeaponInventory");
-                if (weaponInv != null)
-                {
-                    _toolSelector.Items.Add("Primary Weapon");
-                    _toolName.Text = "Primary Weapon";
-                    _inventoryGrid.LoadInventory(weaponInv);
-                }
+                int current = 0;
+                try { current = _playerState.GetInt("ActiveMultioolIndex"); } catch { }
+                _toolSelector.SelectedIndex = Math.Clamp(current, 0, _toolSelector.Items.Count - 1);
             }
             else
             {
-                int current = 0;
-                try { current = _playerState.GetInt("CurrentWeapon"); } catch { }
-                _toolSelector.SelectedIndex = Math.Min(current, _toolSelector.Items.Count - 1);
+                // Older saves without Multitools array use WeaponInventory directly
+                var weaponInv = _playerState.GetObject("WeaponInventory");
+                if (weaponInv != null)
+                {
+                    string name = _playerState.GetString("PlayerWeaponName") ?? "Primary Weapon";
+                    _toolSelector.Items.Add(name);
+                    _toolName.Text = name;
+                    _storeGrid.LoadInventory(weaponInv);
+                }
             }
         }
         catch { }
@@ -154,13 +141,12 @@ public class MultitoolPanel : UserControl
                 var tool = multitools.GetObject(_toolSelector.SelectedIndex);
                 if (!string.IsNullOrEmpty(_toolName.Text))
                     tool.Set("Name", _toolName.Text);
-                _inventoryGrid.SaveInventory(tool.GetObject("Inventory"));
-                _techGrid.SaveInventory(tool.GetObject("Inventory_TechOnly"));
+                _storeGrid.SaveInventory(tool.GetObject("Store"));
             }
             else
             {
                 var weaponInv = playerState.GetObject("WeaponInventory");
-                _inventoryGrid.SaveInventory(weaponInv);
+                _storeGrid.SaveInventory(weaponInv);
             }
         }
         catch { }
@@ -177,18 +163,19 @@ public class MultitoolPanel : UserControl
             var tool = _multitools.GetObject(idx);
             _toolName.Text = tool.GetString("Name") ?? "";
 
+            // Multitool inventory class is at Store.Class.InventoryClass
             string cls = "";
             try
             {
-                var inv = tool.GetObject("Inventory");
-                var classObj = inv?.GetObject("Class");
+                var store = tool.GetObject("Store");
+                var classObj = store?.GetObject("Class");
                 cls = classObj?.GetString("InventoryClass") ?? "";
             }
             catch { }
             _toolClass.Text = cls;
 
-            _inventoryGrid.LoadInventory(tool.GetObject("Inventory"));
-            _techGrid.LoadInventory(tool.GetObject("Inventory_TechOnly"));
+            // Multitools use "Store" field for their inventory (not "Inventory")
+            _storeGrid.LoadInventory(tool.GetObject("Store"));
         }
         catch { }
     }

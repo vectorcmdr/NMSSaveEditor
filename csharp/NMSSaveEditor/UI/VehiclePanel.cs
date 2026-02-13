@@ -1,3 +1,4 @@
+using NMSSaveEditor.Data;
 using NMSSaveEditor.Models;
 
 namespace NMSSaveEditor.UI;
@@ -15,7 +16,9 @@ public class VehiclePanel : UserControl
     ];
 
     private readonly ComboBox _vehicleSelector;
-    private readonly DataGridView _inventoryGrid;
+    private readonly TabControl _invTabs;
+    private readonly InventoryGridPanel _inventoryGrid;
+    private readonly InventoryGridPanel _techGrid;
     private JsonArray? _vehicleOwnership;
     private readonly List<int> _addedVehicleIndices = new();
 
@@ -52,33 +55,43 @@ public class VehiclePanel : UserControl
         layout.Controls.Add(lbl, 0, 1);
         layout.Controls.Add(_vehicleSelector, 1, 1);
 
-        _inventoryGrid = new DataGridView
-        {
-            Dock = DockStyle.Fill,
-            AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill,
-            AllowUserToAddRows = false,
-            AllowUserToDeleteRows = false,
-            SelectionMode = DataGridViewSelectionMode.FullRowSelect,
-            RowHeadersVisible = false
-        };
-        _inventoryGrid.Columns.Add("Slot", "Slot #");
-        _inventoryGrid.Columns.Add("ItemId", "Item ID");
-        _inventoryGrid.Columns.Add("Amount", "Amount");
-        _inventoryGrid.Columns.Add("MaxAmount", "Max");
-        _inventoryGrid.Columns["Slot"]!.ReadOnly = true;
-        layout.Controls.Add(_inventoryGrid, 0, 2);
-        layout.SetColumnSpan(_inventoryGrid, 2);
+        _inventoryGrid = new InventoryGridPanel { Dock = DockStyle.Fill };
+        _techGrid = new InventoryGridPanel { Dock = DockStyle.Fill };
+
+        _invTabs = new TabControl { Dock = DockStyle.Fill };
+        var invPage = new TabPage("Inventory");
+        invPage.Controls.Add(_inventoryGrid);
+        var techPage = new TabPage("Technology");
+        techPage.Controls.Add(_techGrid);
+        _invTabs.TabPages.Add(invPage);
+        _invTabs.TabPages.Add(techPage);
+
+        layout.Controls.Add(_invTabs, 0, 2);
+        layout.SetColumnSpan(_invTabs, 2);
 
         Controls.Add(layout);
         ResumeLayout(false);
         PerformLayout();
     }
 
+    public void SetDatabase(GameItemDatabase? database)
+    {
+        _inventoryGrid.SetDatabase(database);
+        _techGrid.SetDatabase(database);
+    }
+
+    public void SetIconManager(IconManager? iconManager)
+    {
+        _inventoryGrid.SetIconManager(iconManager);
+        _techGrid.SetIconManager(iconManager);
+    }
+
     public void LoadData(JsonObject saveData)
     {
         _vehicleSelector.Items.Clear();
-        _inventoryGrid.Rows.Clear();
         _addedVehicleIndices.Clear();
+        _inventoryGrid.LoadInventory(null);
+        _techGrid.LoadInventory(null);
         try
         {
             var playerState = saveData.GetObject("PlayerStateData");
@@ -117,14 +130,14 @@ public class VehiclePanel : UserControl
             int arrIdx = _addedVehicleIndices[selIdx];
 
             var vehicle = vehicles.GetObject(arrIdx);
-            SaveInventory(_inventoryGrid, vehicle.GetObject("Inventory"));
+            _inventoryGrid.SaveInventory(vehicle.GetObject("Inventory"));
+            _techGrid.SaveInventory(vehicle.GetObject("Inventory_TechOnly"));
         }
         catch { }
     }
 
     private void OnVehicleSelected(object? sender, EventArgs e)
     {
-        _inventoryGrid.Rows.Clear();
         try
         {
             if (_vehicleOwnership == null || _vehicleSelector.SelectedIndex < 0) return;
@@ -133,53 +146,9 @@ public class VehiclePanel : UserControl
             int arrIdx = _addedVehicleIndices[selIdx];
 
             var vehicle = _vehicleOwnership.GetObject(arrIdx);
-            LoadInventory(_inventoryGrid, vehicle.GetObject("Inventory"));
+            _inventoryGrid.LoadInventory(vehicle.GetObject("Inventory"));
+            _techGrid.LoadInventory(vehicle.GetObject("Inventory_TechOnly"));
         }
         catch { }
-    }
-
-    private static void LoadInventory(DataGridView grid, JsonObject? inventory)
-    {
-        grid.Rows.Clear();
-        if (inventory == null) return;
-
-        var slots = inventory.GetArray("Slots");
-        if (slots == null) return;
-
-        for (int i = 0; i < slots.Length; i++)
-        {
-            try
-            {
-                var slot = slots.GetObject(i);
-                string itemId = slot.GetString("Id") ?? slot.GetObject("Id")?.GetString("Id") ?? "";
-                int amount = 0;
-                int maxAmount = 0;
-                try { amount = slot.GetInt("Amount"); } catch { }
-                try { maxAmount = slot.GetInt("MaxAmount"); } catch { }
-                grid.Rows.Add(i.ToString(), itemId, amount.ToString(), maxAmount.ToString());
-            }
-            catch { }
-        }
-    }
-
-    private static void SaveInventory(DataGridView grid, JsonObject? inventory)
-    {
-        if (inventory == null) return;
-        var slots = inventory.GetArray("Slots");
-        if (slots == null) return;
-
-        for (int i = 0; i < grid.Rows.Count && i < slots.Length; i++)
-        {
-            try
-            {
-                var slot = slots.GetObject(i);
-                var row = grid.Rows[i];
-                if (int.TryParse(row.Cells["Amount"].Value?.ToString(), out int amount))
-                    slot.Set("Amount", amount);
-                if (int.TryParse(row.Cells["MaxAmount"].Value?.ToString(), out int maxAmount))
-                    slot.Set("MaxAmount", maxAmount);
-            }
-            catch { }
-        }
     }
 }
