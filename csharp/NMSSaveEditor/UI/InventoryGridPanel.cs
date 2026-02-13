@@ -582,7 +582,7 @@ public class InventoryGridPanel : UserControl
                 }
 
                 cell.Click += OnCellClicked;
-                cell.ContextMenuStrip = _cellContextMenu;
+                AttachRightClickHandler(cell);
                 _gridContainer.Controls.Add(cell);
                 _cells.Add(cell);
             }
@@ -654,23 +654,50 @@ public class InventoryGridPanel : UserControl
         SelectCell(cell);
     }
 
-    private void OnContextMenuOpening(object? sender, CancelEventArgs e)
+    /// <summary>
+    /// Attach explicit MouseUp handlers to a cell and all its children so that
+    /// right-click reliably shows the context menu regardless of which child
+    /// control the cursor is over.
+    /// </summary>
+    private void AttachRightClickHandler(SlotCell cell)
     {
-        // Find the SlotCell that was right-clicked
-        var source = _cellContextMenu.SourceControl;
-        SlotCell? cell = source as SlotCell ?? source?.Parent as SlotCell;
-        if (cell == null) { e.Cancel = true; return; }
+        void Handler(object? s, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Right) return;
+            _contextCell = cell;
+            ConfigureContextMenuItems(cell);
+            var screenPoint = (s as Control)?.PointToScreen(e.Location) ?? Cursor.Position;
+            _cellContextMenu.Show(screenPoint);
+        }
 
-        _contextCell = cell;
+        cell.MouseUp += Handler;
+        foreach (Control child in cell.Controls)
+            child.MouseUp += Handler;
+    }
 
-        // Configure menu items based on cell state
+    /// <summary>
+    /// Configure context menu item visibility based on the cell state.
+    /// </summary>
+    private void ConfigureContextMenuItems(SlotCell cell)
+    {
         bool hasItem = cell.SlotData != null && !string.IsNullOrEmpty(cell.ItemId) && !cell.IsValidEmpty;
         bool canAdd = cell.IsValidEmpty || (!cell.IsEmpty);
 
         _addItemMenuItem.Visible = canAdd;
         _addItemMenuItem.Text = hasItem ? "Replace Item" : "Add Item";
         _removeItemMenuItem.Visible = hasItem;
+    }
 
+    private void OnContextMenuOpening(object? sender, CancelEventArgs e)
+    {
+        // Cell already tracked by AttachRightClickHandler / ConfigureContextMenuItems
+        if (_contextCell == null)
+        {
+            e.Cancel = true;
+            return;
+        }
+
+        // Cancel if there's nothing useful to show
         if (!_addItemMenuItem.Visible && !_removeItemMenuItem.Visible)
             e.Cancel = true;
     }
@@ -1073,22 +1100,6 @@ public class InventoryGridPanel : UserControl
             _iconBox.Click += (s, e) => OnClick(e);
             _amountLabel.Click += (s, e) => OnClick(e);
             _nameLabel.Click += (s, e) => OnClick(e);
-        }
-
-        /// <summary>
-        /// Override to propagate ContextMenuStrip to all child controls,
-        /// ensuring right-click works regardless of which child is clicked.
-        /// </summary>
-        public override ContextMenuStrip? ContextMenuStrip
-        {
-            get => base.ContextMenuStrip;
-            set
-            {
-                base.ContextMenuStrip = value;
-                _iconBox.ContextMenuStrip = value;
-                _nameLabel.ContextMenuStrip = value;
-                _amountLabel.ContextMenuStrip = value;
-            }
         }
 
         public void UpdateDisplay()
