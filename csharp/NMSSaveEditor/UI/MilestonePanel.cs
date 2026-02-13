@@ -4,210 +4,199 @@ namespace NMSSaveEditor.UI;
 
 public class MilestonePanel : UserControl
 {
-    private readonly DataGridView _milestoneGrid;
-    private readonly Label _countLabel;
-    private enum DataSource { None, MilestoneStates, GlobalStats }
-    private DataSource _source = DataSource.None;
+    private readonly Dictionary<string, NumericUpDown> _fields = new();
 
     public MilestonePanel()
     {
         SuspendLayout();
 
-        var layout = new TableLayoutPanel
+        var outerLayout = new TableLayoutPanel
         {
             Dock = DockStyle.Fill,
-            ColumnCount = 1,
-            RowCount = 3,
-            Padding = new Padding(10)
+            ColumnCount = 3,
+            RowCount = 1,
+            Padding = new Padding(5),
         };
-        layout.RowStyles.Add(new RowStyle(SizeType.AutoSize));
-        layout.RowStyles.Add(new RowStyle(SizeType.AutoSize));
-        layout.RowStyles.Add(new RowStyle(SizeType.Percent, 100));
+        outerLayout.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.33f));
+        outerLayout.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.33f));
+        outerLayout.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.34f));
+        outerLayout.RowStyles.Add(new RowStyle(SizeType.Percent, 100));
 
-        var titleLabel = new Label
-        {
-            Text = "Milestones",
-            Font = new Font(Font.FontFamily, 14, FontStyle.Bold),
-            AutoSize = true,
-            Padding = new Padding(0, 0, 0, 5)
-        };
-        layout.Controls.Add(titleLabel, 0, 0);
+        // Column 1: Milestones
+        var col1 = CreateColumnPanel();
+        var col1Inner = (TableLayoutPanel)col1.Controls[0];
+        AddSectionTitle(col1Inner, "Milestones");
+        AddField(col1Inner, "On Foot Exploration", "^DIST_WALKED");
+        AddField(col1Inner, "Alien Encounters", "^ALIENS_MET");
+        AddField(col1Inner, "Words Collected", "^WORDS_LEARNT");
+        AddField(col1Inner, "Most Units Accrued", "^MONEY");
+        AddField(col1Inner, "Ships Destroyed", "^ENEMIES_KILLED");
+        AddField(col1Inner, "Sentinels Destroyed", "^SENTINEL_KILLS");
+        AddField(col1Inner, "Space Exploration", "^DIST_WARP");
+        AddField(col1Inner, "Planet Zoology Scanned", "^DISC_ALL_CREATU");
+        AddSectionTitle(col1Inner, "Kills");
+        AddField(col1Inner, "Predators", "^PREDS_KILLED");
+        AddField(col1Inner, "Sentinel Drones", "^DRONES_KILLED");
+        AddField(col1Inner, "Sentinel Quads", "^QUADS_KILLED");
+        AddField(col1Inner, "Sentinel Walkers", "^WALKERS_KILLED");
+        AddField(col1Inner, "Pirates", "^PIRATES_KILLED");
+        AddField(col1Inner, "Police", "^POLICE_KILLED");
 
-        _countLabel = new Label { Text = "No milestone data loaded.", AutoSize = true };
-        layout.Controls.Add(_countLabel, 0, 1);
+        // Column 2: Alien Factions
+        var col2 = CreateColumnPanel();
+        var col2Inner = (TableLayoutPanel)col2.Controls[0];
+        AddSectionTitle(col2Inner, "Alien Factions");
+        AddSectionTitle(col2Inner, "Gek");
+        AddField(col2Inner, "Standing", "^TRA_STANDING");
+        AddField(col2Inner, "Missions", "^TDONE_MISSIONS");
+        AddField(col2Inner, "Systems Visited", "^TSEEN_SYSTEMS");
+        AddSectionTitle(col2Inner, "Vy'keen");
+        AddField(col2Inner, "Standing", "^WAR_STANDING");
+        AddField(col2Inner, "Missions", "^WDONE_MISSIONS");
+        AddField(col2Inner, "Systems Visited", "^WSEEN_SYSTEMS");
+        AddSectionTitle(col2Inner, "Korvax");
+        AddField(col2Inner, "Standing", "^EXP_STANDING");
+        AddField(col2Inner, "Missions", "^EDONE_MISSIONS");
+        AddField(col2Inner, "Systems Visited", "^ESEEN_SYSTEMS");
 
-        _milestoneGrid = new DataGridView
-        {
-            Dock = DockStyle.Fill,
-            AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill,
-            AllowUserToAddRows = false,
-            AllowUserToDeleteRows = false,
-            SelectionMode = DataGridViewSelectionMode.FullRowSelect,
-            RowHeadersVisible = false
-        };
-        _milestoneGrid.Columns.Add("MilestoneId", "Milestone ID");
-        _milestoneGrid.Columns.Add("Value", "Value");
-        _milestoneGrid.Columns["MilestoneId"]!.ReadOnly = true;
-        layout.Controls.Add(_milestoneGrid, 0, 2);
+        // Column 3: Guilds
+        var col3 = CreateColumnPanel();
+        var col3Inner = (TableLayoutPanel)col3.Controls[0];
+        AddSectionTitle(col3Inner, "Guilds");
+        AddSectionTitle(col3Inner, "Traders");
+        AddField(col3Inner, "Standing", "^TGUILD_STAND");
+        AddField(col3Inner, "Missions", "^TGDONE_MISSIONS");
+        AddField(col3Inner, "Plants Farmed", "^PLANTS_PLANTED");
+        AddSectionTitle(col3Inner, "Warriors");
+        AddField(col3Inner, "Standing", "^WGUILD_STAND");
+        AddField(col3Inner, "Missions", "^WGDONE_MISSIONS");
+        AddSectionTitle(col3Inner, "Explorers");
+        AddField(col3Inner, "Standing", "^EGUILD_STAND");
+        AddField(col3Inner, "Missions", "^EGDONE_MISSIONS");
+        AddField(col3Inner, "Rare Creatures", "^RARE_SCANNED");
 
-        Controls.Add(layout);
+        outerLayout.Controls.Add(col1, 0, 0);
+        outerLayout.Controls.Add(col2, 1, 0);
+        outerLayout.Controls.Add(col3, 2, 0);
+
+        Controls.Add(outerLayout);
         ResumeLayout(false);
         PerformLayout();
     }
 
+    private static Panel CreateColumnPanel()
+    {
+        var panel = new Panel { Dock = DockStyle.Fill, AutoScroll = true };
+        var inner = new TableLayoutPanel
+        {
+            Dock = DockStyle.Top,
+            AutoSize = true,
+            ColumnCount = 2,
+            RowCount = 0,
+            Padding = new Padding(5),
+        };
+        inner.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50));
+        inner.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50));
+        panel.Controls.Add(inner);
+        return panel;
+    }
+
+    private static void AddSectionTitle(TableLayoutPanel panel, string title)
+    {
+        int row = panel.RowCount++;
+        panel.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+        var label = new Label
+        {
+            Text = title,
+            Font = new Font(Control.DefaultFont.FontFamily, 10, FontStyle.Bold),
+            AutoSize = true,
+            Padding = new Padding(0, 6, 0, 2),
+        };
+        panel.Controls.Add(label, 0, row);
+        panel.SetColumnSpan(label, 2);
+    }
+
+    private void AddField(TableLayoutPanel panel, string labelText, string statId)
+    {
+        int row = panel.RowCount++;
+        panel.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+
+        var label = new Label
+        {
+            Text = labelText,
+            AutoSize = true,
+            Anchor = AnchorStyles.Left,
+            Padding = new Padding(10, 3, 0, 0),
+        };
+        panel.Controls.Add(label, 0, row);
+
+        var nud = new NumericUpDown
+        {
+            Minimum = int.MinValue,
+            Maximum = int.MaxValue,
+            Dock = DockStyle.Fill,
+        };
+        panel.Controls.Add(nud, 1, row);
+        _fields[statId] = nud;
+    }
+
+    private static JsonArray? FindGlobalStats(JsonObject saveData)
+    {
+        var playerState = saveData.GetObject("PlayerStateData");
+        if (playerState == null) return null;
+        var statsArr = playerState.GetArray("Stats");
+        if (statsArr == null) return null;
+        for (int i = 0; i < statsArr.Length; i++)
+        {
+            var group = statsArr.GetObject(i);
+            if (group != null && (group.GetString("GroupId") ?? "") == "^GLOBAL_STATS")
+                return group.GetArray("Stats");
+        }
+        return null;
+    }
+
     public void LoadData(JsonObject saveData)
     {
-        _milestoneGrid.Rows.Clear();
-        _source = DataSource.None;
-        try
+        foreach (var nud in _fields.Values)
+            nud.Value = 0;
+
+        var entries = FindGlobalStats(saveData);
+        if (entries == null) return;
+
+        for (int i = 0; i < entries.Length; i++)
         {
-            var playerState = saveData.GetObject("PlayerStateData");
-            if (playerState == null) return;
+            var entry = entries.GetObject(i);
+            if (entry == null) continue;
+            string? id = entry.GetString("Id");
+            if (id == null || !_fields.TryGetValue(id, out var nud)) continue;
 
-            // Try MilestoneStates array first
-            var milestoneArr = playerState.GetArray("MilestoneStates")
-                               ?? playerState.GetArray("MilestoneData");
-            if (milestoneArr != null && milestoneArr.Length > 0)
+            int val = 0;
+            try
             {
-                _source = DataSource.MilestoneStates;
-                for (int i = 0; i < milestoneArr.Length; i++)
-                {
-                    try
-                    {
-                        var milestone = milestoneArr.GetObject(i);
-                        string id = milestone.GetString("Id") ?? milestone.GetString("Name") ?? $"Milestone {i}";
-                        string value = "";
-                        try { value = (milestone.Get("AmountCompleted") ?? milestone.Get("Value") ?? milestone.Get("Progress"))?.ToString() ?? ""; }
-                        catch { }
-                        _milestoneGrid.Rows.Add(id, value);
-                    }
-                    catch { }
-                }
-                _countLabel.Text = $"Total milestones: {milestoneArr.Length}";
-                return;
+                var valueObj = entry.GetObject("Value");
+                if (valueObj != null)
+                    val = valueObj.GetInt("IntValue");
             }
-
-            // Fallback: Stats array with ^GLOBAL_STATS group
-            var statsArr = playerState.GetArray("Stats");
-            if (statsArr != null)
-            {
-                for (int i = 0; i < statsArr.Length; i++)
-                {
-                    try
-                    {
-                        var statGroup = statsArr.GetObject(i);
-                        var groupId = statGroup.GetString("GroupId") ?? "";
-                        if (groupId != "^GLOBAL_STATS") continue;
-
-                        _source = DataSource.GlobalStats;
-                        var entries = statGroup.GetArray("Stats") ?? statGroup.GetArray("Entries");
-                        if (entries == null) continue;
-                        for (int j = 0; j < entries.Length; j++)
-                        {
-                            try
-                            {
-                                var entry = entries.GetObject(j);
-                                string id = entry.GetString("Id") ?? entry.GetString("Name") ?? $"Stat {j}";
-                                string value = "";
-                                try { value = (entry.Get("Value") ?? entry.Get("IntValue") ?? entry.Get("FloatValue"))?.ToString() ?? ""; }
-                                catch { }
-                                _milestoneGrid.Rows.Add(id, value);
-                            }
-                            catch { }
-                        }
-                        break;
-                    }
-                    catch { }
-                }
-                if (_milestoneGrid.Rows.Count > 0)
-                {
-                    _countLabel.Text = $"Total milestones: {_milestoneGrid.Rows.Count}";
-                    return;
-                }
-            }
-
-            _countLabel.Text = "No milestone data found.";
+            catch { }
+            nud.Value = Math.Max(nud.Minimum, Math.Min(nud.Maximum, val));
         }
-        catch { _countLabel.Text = "Failed to load milestone data."; }
     }
 
     public void SaveData(JsonObject saveData)
     {
-        if (_source == DataSource.None) return;
-        try
+        var entries = FindGlobalStats(saveData);
+        if (entries == null) return;
+
+        for (int i = 0; i < entries.Length; i++)
         {
-            var playerState = saveData.GetObject("PlayerStateData");
-            if (playerState == null) return;
+            var entry = entries.GetObject(i);
+            if (entry == null) continue;
+            string? id = entry.GetString("Id");
+            if (id == null || !_fields.TryGetValue(id, out var nud)) continue;
 
-            if (_source == DataSource.MilestoneStates)
-            {
-                var milestoneArr = playerState.GetArray("MilestoneStates")
-                                   ?? playerState.GetArray("MilestoneData");
-                if (milestoneArr == null) return;
-
-                for (int i = 0; i < _milestoneGrid.Rows.Count && i < milestoneArr.Length; i++)
-                {
-                    try
-                    {
-                        var row = _milestoneGrid.Rows[i];
-                        string? valStr = row.Cells["Value"].Value?.ToString();
-                        if (valStr == null) continue;
-                        if (!int.TryParse(valStr, out int intVal)) continue;
-
-                        var milestone = milestoneArr.GetObject(i);
-                        if (milestone.Contains("AmountCompleted"))
-                            milestone.Set("AmountCompleted", intVal);
-                        else if (milestone.Contains("Value"))
-                            milestone.Set("Value", intVal);
-                        else if (milestone.Contains("Progress"))
-                            milestone.Set("Progress", intVal);
-                    }
-                    catch { }
-                }
-            }
-            else if (_source == DataSource.GlobalStats)
-            {
-                var statsArr = playerState.GetArray("Stats");
-                if (statsArr == null) return;
-
-                for (int i = 0; i < statsArr.Length; i++)
-                {
-                    try
-                    {
-                        var statGroup = statsArr.GetObject(i);
-                        if ((statGroup.GetString("GroupId") ?? "") != "^GLOBAL_STATS") continue;
-
-                        var entries = statGroup.GetArray("Stats") ?? statGroup.GetArray("Entries");
-                        if (entries == null) break;
-
-                        for (int j = 0; j < _milestoneGrid.Rows.Count && j < entries.Length; j++)
-                        {
-                            try
-                            {
-                                var row = _milestoneGrid.Rows[j];
-                                string? valStr = row.Cells["Value"].Value?.ToString();
-                                if (valStr == null) continue;
-
-                                var entry = entries.GetObject(j);
-                                if (int.TryParse(valStr, out int intVal))
-                                {
-                                    if (entry.Contains("Value")) entry.Set("Value", intVal);
-                                    else if (entry.Contains("IntValue")) entry.Set("IntValue", intVal);
-                                }
-                                else if (double.TryParse(valStr, out double dblVal))
-                                {
-                                    if (entry.Contains("FloatValue")) entry.Set("FloatValue", dblVal);
-                                    else if (entry.Contains("Value")) entry.Set("Value", dblVal);
-                                }
-                            }
-                            catch { }
-                        }
-                        break;
-                    }
-                    catch { }
-                }
-            }
+            var valueObj = entry.GetObject("Value");
+            if (valueObj != null)
+                valueObj.Set("IntValue", (int)nud.Value);
         }
-        catch { }
     }
 }
