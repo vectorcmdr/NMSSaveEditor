@@ -53,8 +53,8 @@ public class MainForm : Form
         _statusStrip = new StatusStrip();
         _tabControl = new TabControl();
         _statusLabel = new ToolStripStatusLabel("Ready");
-        _directoryCombo = new ToolStripComboBox { Width = 300 };
-        _saveSlotCombo = new ToolStripComboBox { Width = 150 };
+        _directoryCombo = new ToolStripComboBox { Width = 900 };
+        _saveSlotCombo = new ToolStripComboBox { Width = 75 };
         _loadButton = new ToolStripButton("Load");
         _saveButton = new ToolStripButton("Save") { Enabled = false };
 

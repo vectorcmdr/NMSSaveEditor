@@ -14,12 +14,12 @@ public class MainStatsPanel : UserControl
     public MainStatsPanel()
     {
         SuspendLayout();
-        _healthField = new NumericUpDown { Maximum = 999999, Width = 150 };
-        _shieldField = new NumericUpDown { Maximum = 999999, Width = 150 };
-        _energyField = new NumericUpDown { Maximum = 999999, Width = 150 };
-        _unitsField = new NumericUpDown { Maximum = int.MaxValue, Width = 150 };
-        _nanitesField = new NumericUpDown { Maximum = int.MaxValue, Width = 150 };
-        _quicksilverField = new NumericUpDown { Maximum = int.MaxValue, Width = 150 };
+        _healthField = new NumericUpDown { Maximum = 999999, Width = 150, Anchor = AnchorStyles.Left | AnchorStyles.Top };
+        _shieldField = new NumericUpDown { Maximum = 999999, Width = 150, Anchor = AnchorStyles.Left | AnchorStyles.Top };
+        _energyField = new NumericUpDown { Maximum = 999999, Width = 150, Anchor = AnchorStyles.Left | AnchorStyles.Top };
+        _unitsField = new NumericUpDown { Maximum = int.MaxValue, Width = 150, Anchor = AnchorStyles.Left | AnchorStyles.Top };
+        _nanitesField = new NumericUpDown { Maximum = int.MaxValue, Width = 150, Anchor = AnchorStyles.Left | AnchorStyles.Top };
+        _quicksilverField = new NumericUpDown { Maximum = int.MaxValue, Width = 150, Anchor = AnchorStyles.Left | AnchorStyles.Top };
 
         InitializeLayout();
         ResumeLayout(false);
@@ -61,7 +61,7 @@ public class MainStatsPanel : UserControl
 
     private static void AddRow(TableLayoutPanel layout, string label, Control field, int row)
     {
-        var lbl = new Label { Text = label, AutoSize = true, Anchor = AnchorStyles.Left, Padding = new Padding(0, 5, 10, 0) };
+        var lbl = new Label { Text = label, AutoSize = true, Anchor = AnchorStyles.Left, Padding = new Padding(0, 6, 10, 0) };
         layout.Controls.Add(lbl, 0, row);
         layout.Controls.Add(field, 1, row);
     }

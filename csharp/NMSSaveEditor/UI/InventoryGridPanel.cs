@@ -41,10 +41,22 @@ public class InventoryGridPanel : UserControl
     private readonly TextBox _searchBox;
     private readonly Button _searchButton;
 
+    // Resize controls
+    private readonly NumericUpDown _resizeWidth;
+    private readonly NumericUpDown _resizeHeight;
+    private readonly Button _resizeButton;
+
     // Context menu
     private readonly ContextMenuStrip _cellContextMenu;
     private readonly ToolStripMenuItem _addItemMenuItem;
     private readonly ToolStripMenuItem _removeItemMenuItem;
+    private readonly ToolStripMenuItem _enableSlotMenuItem;
+    private readonly ToolStripMenuItem _enableAllSlotsMenuItem;
+    private readonly ToolStripMenuItem _repairSlotMenuItem;
+    private readonly ToolStripMenuItem _repairAllSlotsMenuItem;
+    private readonly ToolStripMenuItem _superchargeSlotMenuItem;
+    private readonly ToolStripMenuItem _superchargeAllSlotsMenuItem;
+    private readonly ToolStripMenuItem _fillStackMenuItem;
 
     // State
     private readonly List<SlotCell> _cells = new();
@@ -71,6 +83,33 @@ public class InventoryGridPanel : UserControl
             SplitterDistance = 280
         };
 
+        // Set SplitterDistance after the control is sized so Panel2 gets a proper initial width
+        splitContainer.SizeChanged += (s, e) =>
+        {
+            if (splitContainer.Width > 300 && splitContainer.SplitterDistance > splitContainer.Width - 290)
+                splitContainer.SplitterDistance = splitContainer.Width - 290;
+        };
+
+        // Left: resize controls above the grid
+        var resizePanel = new Panel
+        {
+            Dock = DockStyle.Top,
+            Height = 32,
+            Padding = new Padding(4, 4, 4, 0)
+        };
+        var resizeWidthLabel = new Label { Text = "Width:", AutoSize = true, Dock = DockStyle.Left, Padding = new Padding(0, 4, 2, 0) };
+        _resizeWidth = new NumericUpDown { Minimum = 1, Maximum = 20, Value = 10, Width = 50, Dock = DockStyle.Left };
+        var resizeHeightLabel = new Label { Text = "Height:", AutoSize = true, Dock = DockStyle.Left, Padding = new Padding(8, 4, 2, 0) };
+        _resizeHeight = new NumericUpDown { Minimum = 1, Maximum = 20, Value = 6, Width = 50, Dock = DockStyle.Left };
+        _resizeButton = new Button { Text = "Resize", Width = 60, Dock = DockStyle.Left };
+        _resizeButton.Click += OnResizeInventory;
+        resizePanel.Controls.Add(_resizeButton);
+        resizePanel.Controls.Add(resizeHeightLabel);
+        resizePanel.Controls.Add(_resizeHeight);
+        resizePanel.Controls.Add(resizeWidthLabel);
+        resizePanel.Controls.Add(_resizeWidth);
+        // Note: Dock=Left controls are added in reverse visual order
+
         // Left: grid of slot cells
         _gridContainer = new Panel
         {
@@ -79,6 +118,7 @@ public class InventoryGridPanel : UserControl
             BackColor = Color.FromArgb(30, 30, 30)
         };
         splitContainer.Panel1.Controls.Add(_gridContainer);
+        splitContainer.Panel1.Controls.Add(resizePanel);
 
         // Right: detail/editor panel
         _detailPanel = new Panel
@@ -308,8 +348,26 @@ public class InventoryGridPanel : UserControl
         _cellContextMenu = new ContextMenuStrip();
         _addItemMenuItem = new ToolStripMenuItem("Add Item", null, OnAddItem);
         _removeItemMenuItem = new ToolStripMenuItem("Remove Item", null, OnRemoveItem);
+        _enableSlotMenuItem = new ToolStripMenuItem("Enable/Disable Slot", null, OnEnableSlot);
+        _enableAllSlotsMenuItem = new ToolStripMenuItem("Enable All Slots", null, OnEnableAllSlots);
+        _repairSlotMenuItem = new ToolStripMenuItem("Repair Slot", null, OnRepairSlot);
+        _repairAllSlotsMenuItem = new ToolStripMenuItem("Repair All Slots", null, OnRepairAllSlots);
+        _superchargeSlotMenuItem = new ToolStripMenuItem("Supercharge Slot", null, OnSuperchargeSlot);
+        _superchargeAllSlotsMenuItem = new ToolStripMenuItem("Supercharge All Slots", null, OnSuperchargeAllSlots);
+        _fillStackMenuItem = new ToolStripMenuItem("Fill Stack", null, OnFillStack);
         _cellContextMenu.Items.Add(_addItemMenuItem);
         _cellContextMenu.Items.Add(_removeItemMenuItem);
+        _cellContextMenu.Items.Add(new ToolStripSeparator());
+        _cellContextMenu.Items.Add(_enableSlotMenuItem);
+        _cellContextMenu.Items.Add(_enableAllSlotsMenuItem);
+        _cellContextMenu.Items.Add(new ToolStripSeparator());
+        _cellContextMenu.Items.Add(_repairSlotMenuItem);
+        _cellContextMenu.Items.Add(_repairAllSlotsMenuItem);
+        _cellContextMenu.Items.Add(new ToolStripSeparator());
+        _cellContextMenu.Items.Add(_superchargeSlotMenuItem);
+        _cellContextMenu.Items.Add(_superchargeAllSlotsMenuItem);
+        _cellContextMenu.Items.Add(new ToolStripSeparator());
+        _cellContextMenu.Items.Add(_fillStackMenuItem);
         _cellContextMenu.Opening += OnContextMenuOpening;
 
         Controls.Add(splitContainer);
@@ -454,13 +512,15 @@ public class InventoryGridPanel : UserControl
             _detailIcon.Image = _iconManager.GetIcon(selectedItem.Icon);
 
         // Set sensible defaults for amount based on item type
-        if (selectedItem.ItemType.Equals("substance", StringComparison.OrdinalIgnoreCase) ||
-            selectedItem.ItemType.Equals("product", StringComparison.OrdinalIgnoreCase))
+        if (selectedItem.ItemType.Equals("substance", StringComparison.OrdinalIgnoreCase))
         {
-            int maxStack = _database?.GetStackSize(selectedItem.Id, "normal") ?? 250;
-            if (maxStack <= 0) maxStack = 250;
-            _detailAmount.Value = maxStack;
-            _detailMaxAmount.Value = maxStack;
+            _detailAmount.Value = 9999;
+            _detailMaxAmount.Value = 9999;
+        }
+        else if (selectedItem.ItemType.Equals("product", StringComparison.OrdinalIgnoreCase))
+        {
+            _detailAmount.Value = 10;
+            _detailMaxAmount.Value = 10;
         }
         else
         {
@@ -622,6 +682,12 @@ public class InventoryGridPanel : UserControl
         cell.MaxAmount = maxAmount;
         cell.DamageFactor = damageFactor;
 
+        // Check activation status (whether position is in ValidSlotIndices)
+        cell.IsActivated = IsSlotInValidIndices(cell.GridX, cell.GridY);
+
+        // Check supercharged status (SpecialSlots entry with matching X,Y and TechBonus type)
+        cell.IsSupercharged = IsSlotSupercharged(cell.GridX, cell.GridY);
+
         // Check if slot has an actual item or is empty-with-position
         if (string.IsNullOrEmpty(itemId) || itemId == "^" || itemId == "^YOURSLOTITEM")
         {
@@ -646,6 +712,49 @@ public class InventoryGridPanel : UserControl
         }
 
         cell.UpdateDisplay();
+    }
+
+    private bool IsSlotInValidIndices(int x, int y)
+    {
+        if (_currentInventory == null) return false;
+        try
+        {
+            var validSlots = _currentInventory.GetArray("ValidSlotIndices");
+            if (validSlots == null) return false;
+            for (int i = 0; i < validSlots.Length; i++)
+            {
+                var idx = validSlots.GetObject(i);
+                if (idx != null && idx.GetInt("X") == x && idx.GetInt("Y") == y)
+                    return true;
+            }
+        }
+        catch { }
+        return false;
+    }
+
+    private bool IsSlotSupercharged(int x, int y)
+    {
+        if (_currentInventory == null) return false;
+        try
+        {
+            var specialSlots = _currentInventory.GetArray("SpecialSlots");
+            if (specialSlots == null) return false;
+            for (int i = 0; i < specialSlots.Length; i++)
+            {
+                var entry = specialSlots.GetObject(i);
+                if (entry == null) continue;
+                var typeObj = entry.GetObject("Type");
+                if (typeObj == null) continue;
+                string slotType = typeObj.GetString("InventorySpecialSlotType") ?? "";
+                if (slotType != "TechBonus") continue;
+                var idxObj = entry.GetObject("Index");
+                if (idxObj == null) continue;
+                if (idxObj.GetInt("X") == x && idxObj.GetInt("Y") == y)
+                    return true;
+            }
+        }
+        catch { }
+        return false;
     }
 
     private void OnCellClicked(object? sender, EventArgs e)
@@ -682,24 +791,33 @@ public class InventoryGridPanel : UserControl
     {
         bool hasItem = cell.SlotData != null && !string.IsNullOrEmpty(cell.ItemId) && !cell.IsValidEmpty;
         bool canAdd = cell.IsValidEmpty || (!cell.IsEmpty);
+        bool isActivated = cell.IsActivated;
 
         _addItemMenuItem.Visible = canAdd;
         _addItemMenuItem.Text = hasItem ? "Replace Item" : "Add Item";
         _removeItemMenuItem.Visible = hasItem;
+
+        _enableSlotMenuItem.Visible = true;
+        _enableSlotMenuItem.Text = isActivated ? "Disable Slot" : "Enable Slot";
+        _enableAllSlotsMenuItem.Visible = _currentInventory != null;
+
+        _repairSlotMenuItem.Visible = hasItem;
+        _repairAllSlotsMenuItem.Visible = _currentInventory != null;
+
+        _superchargeSlotMenuItem.Visible = true;
+        _superchargeSlotMenuItem.Text = cell.IsSupercharged ? "Remove Supercharge" : "Supercharge Slot";
+        _superchargeAllSlotsMenuItem.Visible = _currentInventory != null;
+
+        _fillStackMenuItem.Visible = hasItem && cell.MaxAmount > 0;
     }
 
     private void OnContextMenuOpening(object? sender, CancelEventArgs e)
     {
-        // Cell already tracked by AttachRightClickHandler / ConfigureContextMenuItems
-        if (_contextCell == null)
+        if (_contextCell == null || _currentInventory == null)
         {
             e.Cancel = true;
             return;
         }
-
-        // Cancel if there's nothing useful to show
-        if (!_addItemMenuItem.Visible && !_removeItemMenuItem.Visible)
-            e.Cancel = true;
     }
 
     private void SelectCell(SlotCell cell)
@@ -1035,6 +1153,294 @@ public class InventoryGridPanel : UserControl
             ClearDetailPanel();
     }
 
+    private void OnEnableSlot(object? sender, EventArgs e)
+    {
+        if (_contextCell == null || _currentInventory == null) return;
+        var validSlots = _currentInventory.GetArray("ValidSlotIndices");
+        if (validSlots == null) return;
+
+        int x = _contextCell.GridX, y = _contextCell.GridY;
+        bool found = false;
+        for (int i = 0; i < validSlots.Length; i++)
+        {
+            var idx = validSlots.GetObject(i);
+            if (idx != null && idx.GetInt("X") == x && idx.GetInt("Y") == y)
+            {
+                validSlots.RemoveAt(i);
+                found = true;
+                break;
+            }
+        }
+        if (!found)
+        {
+            var newIdx = new JsonObject();
+            newIdx.Add("X", x);
+            newIdx.Add("Y", y);
+            validSlots.Add(newIdx);
+        }
+        _contextCell.IsActivated = !found;
+        _contextCell.UpdateDisplay();
+    }
+
+    private void OnEnableAllSlots(object? sender, EventArgs e)
+    {
+        if (_currentInventory == null) return;
+        var validSlots = _currentInventory.GetArray("ValidSlotIndices");
+        if (validSlots == null) return;
+
+        var existing = new HashSet<(int, int)>();
+        for (int i = 0; i < validSlots.Length; i++)
+        {
+            try
+            {
+                var idx = validSlots.GetObject(i);
+                if (idx != null) existing.Add((idx.GetInt("X"), idx.GetInt("Y")));
+            }
+            catch { }
+        }
+
+        foreach (var cell in _cells)
+        {
+            if (!existing.Contains((cell.GridX, cell.GridY)))
+            {
+                var newIdx = new JsonObject();
+                newIdx.Add("X", cell.GridX);
+                newIdx.Add("Y", cell.GridY);
+                validSlots.Add(newIdx);
+            }
+            cell.IsActivated = true;
+            cell.UpdateDisplay();
+        }
+    }
+
+    private void RepairSlotData(SlotCell cell)
+    {
+        if (cell.SlotData == null || _currentInventory == null) return;
+        try { cell.SlotData.Set("DamageFactor", 0.0); } catch { }
+        cell.DamageFactor = 0;
+
+        // Remove BlockedByBrokenTech from SpecialSlots
+        try
+        {
+            var specialSlots = _currentInventory.GetArray("SpecialSlots");
+            if (specialSlots != null)
+            {
+                for (int i = specialSlots.Length - 1; i >= 0; i--)
+                {
+                    var entry = specialSlots.GetObject(i);
+                    if (entry == null) continue;
+                    var typeObj = entry.GetObject("Type");
+                    if (typeObj == null) continue;
+                    string slotType = typeObj.GetString("InventorySpecialSlotType") ?? "";
+                    if (slotType != "BlockedByBrokenTech") continue;
+                    var idxObj = entry.GetObject("Index");
+                    if (idxObj == null) continue;
+                    if (idxObj.GetInt("X") == cell.GridX && idxObj.GetInt("Y") == cell.GridY)
+                        specialSlots.RemoveAt(i);
+                }
+            }
+        }
+        catch { }
+    }
+
+    private void OnRepairSlot(object? sender, EventArgs e)
+    {
+        if (_contextCell == null) return;
+        RepairSlotData(_contextCell);
+        _contextCell.UpdateDisplay();
+    }
+
+    private void OnRepairAllSlots(object? sender, EventArgs e)
+    {
+        foreach (var cell in _cells)
+        {
+            RepairSlotData(cell);
+            cell.UpdateDisplay();
+        }
+    }
+
+    private void ToggleSupercharge(SlotCell cell, bool forceAdd)
+    {
+        if (_currentInventory == null) return;
+        var specialSlots = _currentInventory.GetArray("SpecialSlots");
+        if (specialSlots == null)
+        {
+            specialSlots = new JsonArray();
+            _currentInventory.Set("SpecialSlots", specialSlots);
+        }
+
+        int x = cell.GridX, y = cell.GridY;
+        // Check if already supercharged
+        if (!forceAdd)
+        {
+            for (int i = specialSlots.Length - 1; i >= 0; i--)
+            {
+                try
+                {
+                    var entry = specialSlots.GetObject(i);
+                    if (entry == null) continue;
+                    var typeObj = entry.GetObject("Type");
+                    if (typeObj == null) continue;
+                    string slotType = typeObj.GetString("InventorySpecialSlotType") ?? "";
+                    if (slotType != "TechBonus") continue;
+                    var idxObj = entry.GetObject("Index");
+                    if (idxObj == null) continue;
+                    if (idxObj.GetInt("X") == x && idxObj.GetInt("Y") == y)
+                    {
+                        specialSlots.RemoveAt(i);
+                        cell.IsSupercharged = false;
+                        return;
+                    }
+                }
+                catch { }
+            }
+        }
+
+        // Not found or forceAdd - check not already present when forceAdd
+        if (forceAdd && IsSlotSupercharged(x, y))
+        {
+            cell.IsSupercharged = true;
+            return;
+        }
+
+        var newEntry = new JsonObject();
+        var newType = new JsonObject();
+        newType.Add("InventorySpecialSlotType", "TechBonus");
+        newEntry.Add("Type", newType);
+        var newIndex = new JsonObject();
+        newIndex.Add("X", x);
+        newIndex.Add("Y", y);
+        newEntry.Add("Index", newIndex);
+        specialSlots.Add(newEntry);
+        cell.IsSupercharged = true;
+    }
+
+    private void OnSuperchargeSlot(object? sender, EventArgs e)
+    {
+        if (_contextCell == null) return;
+        ToggleSupercharge(_contextCell, false);
+        _contextCell.UpdateDisplay();
+    }
+
+    private void OnSuperchargeAllSlots(object? sender, EventArgs e)
+    {
+        foreach (var cell in _cells)
+        {
+            ToggleSupercharge(cell, true);
+            cell.UpdateDisplay();
+        }
+    }
+
+    private void OnFillStack(object? sender, EventArgs e)
+    {
+        if (_contextCell?.SlotData == null) return;
+        int max = _contextCell.MaxAmount;
+        if (max <= 0) return;
+        _contextCell.SlotData.Set("Amount", max);
+        _contextCell.Amount = max;
+        _contextCell.UpdateDisplay();
+        if (_selectedCell == _contextCell)
+            _detailAmount.Value = max;
+    }
+
+    private void OnResizeInventory(object? sender, EventArgs e)
+    {
+        if (_currentInventory == null) return;
+
+        int newWidth = (int)_resizeWidth.Value;
+        int newHeight = (int)_resizeHeight.Value;
+
+        var validSlots = _currentInventory.GetArray("ValidSlotIndices");
+        if (validSlots == null)
+        {
+            validSlots = new JsonArray();
+            _currentInventory.Set("ValidSlotIndices", validSlots);
+        }
+        var slots = _currentInventory.GetArray("Slots");
+        if (slots == null)
+        {
+            slots = new JsonArray();
+            _currentInventory.Set("Slots", slots);
+        }
+
+        // Build sets of existing valid indices and slot positions
+        var existingValid = new HashSet<(int, int)>();
+        for (int i = 0; i < validSlots.Length; i++)
+        {
+            try
+            {
+                var idx = validSlots.GetObject(i);
+                if (idx != null) existingValid.Add((idx.GetInt("X"), idx.GetInt("Y")));
+            }
+            catch { }
+        }
+
+        var existingSlots = new HashSet<(int, int)>();
+        for (int i = 0; i < slots.Length; i++)
+        {
+            try
+            {
+                var slot = slots.GetObject(i);
+                var idx = slot.GetObject("Index");
+                if (idx != null) existingSlots.Add((idx.GetInt("X"), idx.GetInt("Y")));
+            }
+            catch { }
+        }
+
+        // Remove ValidSlotIndices outside new dimensions
+        for (int i = validSlots.Length - 1; i >= 0; i--)
+        {
+            try
+            {
+                var idx = validSlots.GetObject(i);
+                if (idx != null)
+                {
+                    int x = idx.GetInt("X"), y = idx.GetInt("Y");
+                    if (x >= newWidth || y >= newHeight)
+                        validSlots.RemoveAt(i);
+                }
+            }
+            catch { }
+        }
+
+        // Add ValidSlotIndices and empty slots for new positions
+        for (int y = 0; y < newHeight; y++)
+        {
+            for (int x = 0; x < newWidth; x++)
+            {
+                if (!existingValid.Contains((x, y)))
+                {
+                    var newIdx = new JsonObject();
+                    newIdx.Add("X", x);
+                    newIdx.Add("Y", y);
+                    validSlots.Add(newIdx);
+                }
+                if (!existingSlots.Contains((x, y)))
+                {
+                    var newSlot = new JsonObject();
+                    var typeObj = new JsonObject();
+                    typeObj.Add("InventoryType", "Product");
+                    newSlot.Add("Type", typeObj);
+                    var idObj = new JsonObject();
+                    idObj.Add("Id", "");
+                    newSlot.Add("Id", idObj);
+                    newSlot.Add("Amount", 0);
+                    newSlot.Add("MaxAmount", 0);
+                    newSlot.Add("DamageFactor", 0.0);
+                    newSlot.Add("FullyInstalled", false);
+                    var indexObj = new JsonObject();
+                    indexObj.Add("X", x);
+                    indexObj.Add("Y", y);
+                    newSlot.Add("Index", indexObj);
+                    slots.Add(newSlot);
+                }
+            }
+        }
+
+        // Reload the grid
+        LoadInventory(_currentInventory);
+    }
+
     private void ClearDetailPanel()
     {
         _detailItemName.Text = "(no slot selected)";
@@ -1096,6 +1502,10 @@ public class InventoryGridPanel : UserControl
         public bool IsValidEmpty { get; set; }
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public Image? IconImage { get; set; }
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        public bool IsActivated { get; set; }
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        public bool IsSupercharged { get; set; }
 
         private bool _isSelected;
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
@@ -1160,6 +1570,7 @@ public class InventoryGridPanel : UserControl
             if (IsEmpty)
             {
                 BackColor = Color.FromArgb(25, 25, 25);
+                BorderStyle = BorderStyle.FixedSingle;
                 _iconBox.Image = null;
                 _nameLabel.Text = "";
                 _nameLabel.Visible = false;
@@ -1174,10 +1585,13 @@ public class InventoryGridPanel : UserControl
             if (IsValidEmpty && string.IsNullOrEmpty(ItemId))
             {
                 // Valid empty slot - available for adding items
-                BackColor = _isSelected ? Color.FromArgb(70, 100, 160) : Color.FromArgb(45, 45, 50);
+                Color bg = _isSelected ? Color.FromArgb(70, 100, 160) : Color.FromArgb(45, 45, 50);
+                if (!IsActivated) bg = Color.FromArgb(20, 20, 22);
+                BackColor = bg;
+                BorderStyle = IsSupercharged ? BorderStyle.Fixed3D : BorderStyle.FixedSingle;
                 _iconBox.Image = null;
-                _nameLabel.Text = "";
-                _nameLabel.Visible = false;
+                _nameLabel.Text = IsSupercharged ? "⚡" : "";
+                _nameLabel.Visible = IsSupercharged;
                 _amountLabel.Text = "";
                 _amountLabel.Visible = false;
                 Cursor = Cursors.Hand;
@@ -1188,27 +1602,38 @@ public class InventoryGridPanel : UserControl
             }
 
             // Set background color by item type
+            Color baseColor;
             if (_isSelected)
-                BackColor = Color.FromArgb(80, 120, 200);
+                baseColor = Color.FromArgb(80, 120, 200);
             else if (ItemType.Contains("technology", StringComparison.OrdinalIgnoreCase))
-                BackColor = Color.FromArgb(40, 60, 120);
+                baseColor = Color.FromArgb(40, 60, 120);
             else if (ItemType.Contains("product", StringComparison.OrdinalIgnoreCase))
-                BackColor = Color.FromArgb(120, 80, 30);
+                baseColor = Color.FromArgb(120, 80, 30);
             else if (ItemType.Contains("substance", StringComparison.OrdinalIgnoreCase))
-                BackColor = Color.FromArgb(30, 100, 100);
+                baseColor = Color.FromArgb(30, 100, 100);
             else if (!string.IsNullOrEmpty(ItemId))
-                BackColor = Color.FromArgb(60, 60, 60);
+                baseColor = Color.FromArgb(60, 60, 60);
             else
-                BackColor = Color.FromArgb(50, 50, 50);
+                baseColor = Color.FromArgb(50, 50, 50);
+
+            // Non-activated slots are darker/grayed out
+            if (!IsActivated && !_isSelected)
+                baseColor = Color.FromArgb(baseColor.R / 3, baseColor.G / 3, baseColor.B / 3);
+
+            BackColor = baseColor;
+            BorderStyle = IsSupercharged ? BorderStyle.Fixed3D : BorderStyle.FixedSingle;
 
             // Display icon
             _iconBox.Image = IconImage;
 
-            // Display item name at top
+            // Display item name at top (with supercharge indicator)
             string nameText = !string.IsNullOrEmpty(DisplayName) ? DisplayName : ItemId;
+            if (IsSupercharged && !string.IsNullOrEmpty(nameText))
+                nameText = "⚡" + nameText;
             if (!string.IsNullOrEmpty(nameText))
             {
                 _nameLabel.Text = nameText;
+                _nameLabel.ForeColor = IsSupercharged ? Color.Gold : Color.White;
                 _nameLabel.Visible = true;
             }
             else
@@ -1231,6 +1656,8 @@ public class InventoryGridPanel : UserControl
 
             // Tooltip
             string tip2 = !string.IsNullOrEmpty(DisplayName) ? DisplayName : ItemId;
+            if (IsSupercharged) tip2 = "⚡ " + tip2;
+            if (!IsActivated) tip2 += " [disabled]";
             if (Amount > 0)
                 tip2 += $" ({Amount}/{MaxAmount})";
             _toolTip.SetToolTip(this, tip2);
