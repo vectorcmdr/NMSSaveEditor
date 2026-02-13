@@ -220,6 +220,15 @@ public class MainForm : Form
             _database.LoadItems(Path.Combine(dbPath, "items.xml"));
             _database.LoadInventoryData(Path.Combine(dbPath, "inventory.xml"));
 
+            // Load word database for Known Words feature
+            var wordDbPath = Path.Combine(dbPath, "words.xml");
+            if (File.Exists(wordDbPath))
+            {
+                var wordDb = new WordDatabase();
+                wordDb.Load(wordDbPath);
+                _discoveryPanel.SetWordDatabase(wordDb);
+            }
+
             // Load icon images
             string iconsPath = Path.Combine(basePath, "Resources", "icons");
             if (Directory.Exists(iconsPath))

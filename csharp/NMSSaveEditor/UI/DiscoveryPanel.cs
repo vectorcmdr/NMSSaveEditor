@@ -10,6 +10,10 @@ public class DiscoveryPanel : UserControl
     private readonly Dictionary<string, Image> _scaledIconCache = new(StringComparer.OrdinalIgnoreCase);
     private GameItemDatabase? _database;
     private IconManager? _iconManager;
+    private WordDatabase? _wordDatabase;
+
+    // Reference to save data's KnownWordGroups for word state operations
+    private JsonArray? _knownWordGroups;
 
     private readonly TabControl _tabControl;
 
@@ -46,7 +50,7 @@ public class DiscoveryPanel : UserControl
         ("Autophage", 8),
     };
 
-    // Maps race prefix patterns to race index
+    // Maps race prefix patterns to race index (used for fallback when no WordDatabase)
     private static readonly (string Prefix, int RaceIndex)[] RacePrefixes =
     {
         ("^TRA_", 0),    // Gek (Traders)
@@ -56,6 +60,9 @@ public class DiscoveryPanel : UserControl
         ("^ROBOT_", 3),  // Robot
         ("^AUTO_", 8),   // Autophage
     };
+
+    // Total race count in the Races boolean array (matches Java eU enum length)
+    private const int TotalRaceCount = 9;
 
     public DiscoveryPanel()
     {
@@ -284,6 +291,11 @@ public class DiscoveryPanel : UserControl
         _database = database;
     }
 
+    public void SetWordDatabase(WordDatabase? wordDatabase)
+    {
+        _wordDatabase = wordDatabase;
+    }
+
     public void SetIconManager(IconManager? iconManager)
     {
         _iconManager = iconManager;
@@ -496,96 +508,179 @@ public class DiscoveryPanel : UserControl
 
     // --- Tab 3: Known Words ---
 
-    private void LoadKnownWords(JsonObject playerState)
+    /// <summary>
+    /// Checks if a word group is known for a specific race in KnownWordGroups.
+    /// Matches Java gz.d(String, int) method.
+    /// </summary>
+    private bool IsWordKnown(string groupName, int raceOrdinal)
     {
-        _wordGrid.Rows.Clear();
-        var wordGroups = playerState.GetArray("KnownWordGroups");
-        if (wordGroups == null) return;
-
-        for (int i = 0; i < wordGroups.Length; i++)
+        if (_knownWordGroups == null) return false;
+        for (int i = 0; i < _knownWordGroups.Length; i++)
         {
-            var group = wordGroups.GetObject(i);
-            string groupName = group?.GetString("Group") ?? "";
-            var races = group?.GetArray("Races");
-
-            // Extract clean display word from group name
-            // Group names are like "YOURWORD" or "Gek_Hello" - strip race prefix
-            string displayWord = ExtractWordFromGroup(groupName);
-
-            var rowValues = new object[2 + RaceColumns.Length];
-            rowValues[0] = displayWord;
-            rowValues[1] = groupName;
-            for (int c = 0; c < RaceColumns.Length; c++)
+            var entry = _knownWordGroups.GetObject(i);
+            if (entry != null && groupName.Equals(entry.GetString("Group"), StringComparison.Ordinal))
             {
-                int raceIdx = RaceColumns[c].Index;
-                bool known = races != null && raceIdx < races.Length && races.GetBool(raceIdx);
-                rowValues[2 + c] = known;
+                var races = entry.GetArray("Races");
+                return races != null && raceOrdinal < races.Length && races.GetBool(raceOrdinal);
             }
-            _wordGrid.Rows.Add(rowValues);
         }
+        return false;
     }
 
     /// <summary>
-    /// Extracts a clean display word from a KnownWordGroups Group name.
-    /// Group names can be like "YOURWORD", "TRA_HELLO", "WAR_GREETING", etc.
-    /// Strips known race prefixes and formats for display.
+    /// Sets a word group's known state for a specific race in KnownWordGroups.
+    /// Matches Java gz.a(String, int, boolean) method.
+    /// Creates entries as needed, removes entries with no known races.
     /// </summary>
-    private static string ExtractWordFromGroup(string groupName)
+    private void SetWordKnown(string groupName, int raceOrdinal, bool known)
     {
-        if (string.IsNullOrEmpty(groupName)) return "";
+        if (_knownWordGroups == null) return;
 
-        string name = groupName;
-
-        // Strip common race prefixes from group names
-        string[] prefixes = { "TRA_", "WAR_", "EXP_", "ATLAS_", "ROBOT_", "AUTO_", "DIP_", "EXOTIC_" };
-        foreach (var prefix in prefixes)
+        // Look for existing entry
+        for (int i = 0; i < _knownWordGroups.Length; i++)
         {
-            if (name.StartsWith(prefix, StringComparison.OrdinalIgnoreCase))
+            var entry = _knownWordGroups.GetObject(i);
+            if (entry != null && groupName.Equals(entry.GetString("Group"), StringComparison.Ordinal))
             {
-                name = name[prefix.Length..];
-                break;
+                var races = entry.GetArray("Races");
+                if (races == null) return;
+
+                // Ensure array is large enough
+                for (int ri = races.Length; ri < TotalRaceCount; ri++)
+                    races.Add(false);
+
+                races.Set(raceOrdinal, known);
+
+                // If no race is true, remove the entry entirely
+                bool anyKnown = false;
+                for (int r = 0; r < races.Length; r++)
+                {
+                    if (races.GetBool(r)) { anyKnown = true; break; }
+                }
+                if (!anyKnown)
+                    _knownWordGroups.RemoveAt(i);
+
+                return;
             }
         }
 
-        // Format: capitalize first letter, lowercase rest
-        if (name.Length > 1)
-            name = char.ToUpper(name[0]) + name[1..].ToLower();
-        else if (name.Length == 1)
-            name = name.ToUpper();
+        // Entry doesn't exist - create it if setting to true
+        if (known)
+        {
+            var newEntry = new JsonObject();
+            newEntry.Set("Group", groupName);
+            var races = new JsonArray();
+            for (int r = 0; r < TotalRaceCount; r++)
+                races.Add(false);
+            races.Set(raceOrdinal, true);
+            newEntry.Set("Races", races);
+            _knownWordGroups.Add(newEntry);
+        }
+    }
 
-        return name;
+    private void LoadKnownWords(JsonObject playerState)
+    {
+        _wordGrid.Rows.Clear();
+        _wordGrid.CellValueChanged -= WordGrid_CellValueChanged;
+
+        _knownWordGroups = playerState.GetArray("KnownWordGroups");
+        if (_knownWordGroups == null)
+        {
+            _knownWordGroups = new JsonArray();
+            playerState.Set("KnownWordGroups", _knownWordGroups);
+        }
+
+        if (_wordDatabase == null || _wordDatabase.Words.Count == 0) return;
+
+        // Show ALL possible words from the database
+        foreach (var word in _wordDatabase.Words)
+        {
+            var rowValues = new object[2 + RaceColumns.Length];
+            rowValues[0] = word.Text;
+            rowValues[1] = word.Id;
+            for (int c = 0; c < RaceColumns.Length; c++)
+            {
+                int raceOrdinal = RaceColumns[c].Index;
+                string? groupForRace = word.GetGroupForRace(raceOrdinal);
+                bool known = groupForRace != null && IsWordKnown(groupForRace, raceOrdinal);
+                rowValues[2 + c] = known;
+            }
+            int rowIdx = _wordGrid.Rows.Add(rowValues);
+
+            // Make non-applicable race cells read-only (word doesn't have a group for that race)
+            var row = _wordGrid.Rows[rowIdx];
+            for (int c = 0; c < RaceColumns.Length; c++)
+            {
+                int raceOrdinal = RaceColumns[c].Index;
+                bool hasGroup = word.HasRace(raceOrdinal);
+                row.Cells[RaceColumns[c].Name].ReadOnly = !hasGroup;
+                if (!hasGroup)
+                {
+                    row.Cells[RaceColumns[c].Name].Style.BackColor = Color.FromArgb(240, 240, 240);
+                    row.Cells[RaceColumns[c].Name].Style.ForeColor = Color.LightGray;
+                }
+            }
+
+            // Store the word entry reference in the row's Tag for quick lookup
+            row.Tag = word;
+        }
+
+        _wordGrid.CellValueChanged += WordGrid_CellValueChanged;
+    }
+
+    /// <summary>
+    /// When a race checkbox is toggled, immediately update KnownWordGroups in the save data.
+    /// This matches the Java app behavior where changes are written immediately.
+    /// </summary>
+    private void WordGrid_CellValueChanged(object? sender, DataGridViewCellEventArgs e)
+    {
+        if (e.RowIndex < 0 || e.ColumnIndex < 2) return;
+
+        var row = _wordGrid.Rows[e.RowIndex];
+        if (row.Tag is not WordEntry word) return;
+
+        int colOffset = e.ColumnIndex - 2;
+        if (colOffset < 0 || colOffset >= RaceColumns.Length) return;
+
+        int raceOrdinal = RaceColumns[colOffset].Index;
+        string? groupName = word.GetGroupForRace(raceOrdinal);
+        if (groupName == null) return;
+
+        bool value = row.Cells[e.ColumnIndex].Value is true;
+        SetWordKnown(groupName, raceOrdinal, value);
     }
 
     private void SaveKnownWords(JsonObject playerState)
     {
-        var wordGroups = playerState.GetArray("KnownWordGroups");
-        if (wordGroups == null) return;
-
-        for (int i = 0; i < _wordGrid.Rows.Count && i < wordGroups.Length; i++)
-        {
-            var group = wordGroups.GetObject(i);
-            var races = group.GetArray("Races");
-            if (races == null) continue;
-
-            var row = _wordGrid.Rows[i];
-            for (int c = 0; c < RaceColumns.Length; c++)
-            {
-                int raceIdx = RaceColumns[c].Index;
-                if (raceIdx < races.Length)
-                {
-                    bool val = row.Cells[RaceColumns[c].Name].Value is true;
-                    races.Set(raceIdx, val);
-                }
-            }
-        }
+        // Changes are written immediately via WordGrid_CellValueChanged,
+        // but ensure the reference is set
+        if (_knownWordGroups != null)
+            playerState.Set("KnownWordGroups", _knownWordGroups);
     }
 
     private void SetAllWordFlags(bool value)
     {
-        foreach (DataGridViewRow row in _wordGrid.Rows)
+        _wordGrid.CellValueChanged -= WordGrid_CellValueChanged;
+        try
         {
-            for (int c = 0; c < RaceColumns.Length; c++)
-                row.Cells[RaceColumns[c].Name].Value = value;
+            foreach (DataGridViewRow row in _wordGrid.Rows)
+            {
+                if (row.Tag is not WordEntry word) continue;
+                for (int c = 0; c < RaceColumns.Length; c++)
+                {
+                    int raceOrdinal = RaceColumns[c].Index;
+                    string? groupName = word.GetGroupForRace(raceOrdinal);
+                    if (groupName != null)
+                    {
+                        row.Cells[RaceColumns[c].Name].Value = value;
+                        SetWordKnown(groupName, raceOrdinal, value);
+                    }
+                }
+            }
+        }
+        finally
+        {
+            _wordGrid.CellValueChanged += WordGrid_CellValueChanged;
         }
     }
 
