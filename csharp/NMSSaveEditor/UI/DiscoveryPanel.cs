@@ -53,9 +53,8 @@ public class DiscoveryPanel : UserControl
         _discoveryTree.Nodes.Clear();
         try
         {
-            var playerState = saveData.GetObject("PlayerStateData");
-            var discoveryData = playerState?.GetObject("DiscoveryManagerData")
-                                ?? saveData.GetObject("DiscoveryManagerData");
+            // DiscoveryManagerData is at ROOT level, not under PlayerStateData
+            var discoveryData = saveData.GetObject("DiscoveryManagerData");
 
             if (discoveryData == null)
             {
@@ -63,25 +62,23 @@ public class DiscoveryPanel : UserControl
                 return;
             }
 
-            var stores = discoveryData.GetArray("DiscoveryData-v1")
-                         ?? discoveryData.GetArray("Store")
-                         ?? discoveryData.GetArray("ReserveStore");
+            // Navigate: DiscoveryManagerData.Store.Record
+            JsonArray? records = null;
+            var store = discoveryData.GetObject("Store");
+            if (store != null)
+                records = store.GetArray("Record");
 
-            if (stores == null || stores.Length == 0)
+            // Fallback paths
+            if (records == null || records.Length == 0)
             {
-                // Try nested structure
-                var store = discoveryData.GetObject("Store");
-                if (store != null)
-                {
-                    var records = store.GetArray("Record");
-                    if (records != null)
-                        stores = records;
-                }
+                records = discoveryData.GetArray("DiscoveryData-v1")
+                          ?? discoveryData.GetArray("Store")
+                          ?? discoveryData.GetArray("ReserveStore");
             }
 
-            if (stores == null || stores.Length == 0)
+            if (records == null || records.Length == 0)
             {
-                // Fallback: show raw keys
+                // Show raw structure for debugging
                 var rootNode = new TreeNode("DiscoveryManagerData");
                 foreach (var key in discoveryData.Names())
                 {
@@ -99,25 +96,32 @@ public class DiscoveryPanel : UserControl
                 return;
             }
 
-            int systemCount = 0, planetCount = 0, faunaCount = 0, floraCount = 0, otherCount = 0;
+            int systemCount = 0, planetCount = 0, faunaCount = 0, floraCount = 0, mineralCount = 0, otherCount = 0;
 
             var systemsNode = new TreeNode("Star Systems");
             var planetsNode = new TreeNode("Planets");
             var faunaNode = new TreeNode("Fauna");
             var floraNode = new TreeNode("Flora");
+            var mineralNode = new TreeNode("Minerals");
             var otherNode = new TreeNode("Other");
 
-            for (int i = 0; i < stores.Length; i++)
+            for (int i = 0; i < records.Length; i++)
             {
                 try
                 {
-                    var record = stores.Get(i) as JsonObject;
+                    var record = records.Get(i) as JsonObject;
                     if (record == null) continue;
 
-                    string discType = record.GetString("DD") ?? record.GetString("DT")
-                                      ?? record.GetString("DiscoveryType") ?? "";
-                    string name = record.GetString("N") ?? record.GetString("Name")
-                                  ?? record.GetString("CustomName") ?? $"Discovery {i}";
+                    // Type is in DD.DT
+                    string discType = "";
+                    var dd = record.GetObject("DD");
+                    if (dd != null)
+                        discType = dd.GetString("DT") ?? "";
+
+                    // Name from DN, N, or fallback
+                    string name = record.GetString("DN") ?? record.GetString("N")
+                                  ?? record.GetString("Name") ?? record.GetString("CustomName")
+                                  ?? $"Discovery {i}";
 
                     var node = new TreeNode(name);
 
@@ -145,7 +149,13 @@ public class DiscoveryPanel : UserControl
                             floraNode.Nodes.Add(node);
                             floraCount++;
                             break;
+                        case "Mineral":
+                        case "5":
+                            mineralNode.Nodes.Add(node);
+                            mineralCount++;
+                            break;
                         default:
+                            node.Text = string.IsNullOrEmpty(discType) ? name : $"{name} ({discType})";
                             otherNode.Nodes.Add(node);
                             otherCount++;
                             break;
@@ -158,10 +168,11 @@ public class DiscoveryPanel : UserControl
             if (planetsNode.Nodes.Count > 0) { planetsNode.Text = $"Planets ({planetCount})"; _discoveryTree.Nodes.Add(planetsNode); }
             if (faunaNode.Nodes.Count > 0) { faunaNode.Text = $"Fauna ({faunaCount})"; _discoveryTree.Nodes.Add(faunaNode); }
             if (floraNode.Nodes.Count > 0) { floraNode.Text = $"Flora ({floraCount})"; _discoveryTree.Nodes.Add(floraNode); }
+            if (mineralNode.Nodes.Count > 0) { mineralNode.Text = $"Minerals ({mineralCount})"; _discoveryTree.Nodes.Add(mineralNode); }
             if (otherNode.Nodes.Count > 0) { otherNode.Text = $"Other ({otherCount})"; _discoveryTree.Nodes.Add(otherNode); }
 
-            int total = systemCount + planetCount + faunaCount + floraCount + otherCount;
-            _countLabel.Text = $"Total discoveries: {total} (Systems: {systemCount}, Planets: {planetCount}, Fauna: {faunaCount}, Flora: {floraCount})";
+            int total = systemCount + planetCount + faunaCount + floraCount + mineralCount + otherCount;
+            _countLabel.Text = $"Total discoveries: {total} (Systems: {systemCount}, Planets: {planetCount}, Fauna: {faunaCount}, Flora: {floraCount}, Minerals: {mineralCount})";
         }
         catch { _countLabel.Text = "Failed to load discovery data."; }
     }

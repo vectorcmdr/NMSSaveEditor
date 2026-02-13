@@ -6,6 +6,8 @@ public class MilestonePanel : UserControl
 {
     private readonly DataGridView _milestoneGrid;
     private readonly Label _countLabel;
+    private enum DataSource { None, MilestoneStates, GlobalStats }
+    private DataSource _source = DataSource.None;
 
     public MilestonePanel()
     {
@@ -43,9 +45,9 @@ public class MilestonePanel : UserControl
             SelectionMode = DataGridViewSelectionMode.FullRowSelect,
             RowHeadersVisible = false
         };
-        _milestoneGrid.Columns.Add("Category", "Category");
-        _milestoneGrid.Columns.Add("Progress", "Progress");
-        _milestoneGrid.Columns["Category"]!.ReadOnly = true;
+        _milestoneGrid.Columns.Add("MilestoneId", "Milestone ID");
+        _milestoneGrid.Columns.Add("Value", "Value");
+        _milestoneGrid.Columns["MilestoneId"]!.ReadOnly = true;
         layout.Controls.Add(_milestoneGrid, 0, 2);
 
         Controls.Add(layout);
@@ -56,65 +58,72 @@ public class MilestonePanel : UserControl
     public void LoadData(JsonObject saveData)
     {
         _milestoneGrid.Rows.Clear();
+        _source = DataSource.None;
         try
         {
             var playerState = saveData.GetObject("PlayerStateData");
             if (playerState == null) return;
 
-            // Try newer MilestoneStates first, then MilestoneData
-            var milestones = playerState.GetObject("MilestoneStates")
-                             ?? playerState.GetObject("MilestoneData");
-
-            if (milestones != null)
-            {
-                var names = milestones.Names();
-                foreach (var name in names)
-                {
-                    try
-                    {
-                        var val = milestones.Get(name);
-                        string progress;
-                        if (val is JsonObject obj)
-                        {
-                            // Try to get a progress/value field from the milestone object
-                            string? p = null;
-                            try { p = obj.Get("Value")?.ToString(); } catch { }
-                            if (p == null) try { p = obj.Get("Progress")?.ToString(); } catch { }
-                            if (p == null) try { p = obj.Get("Amount")?.ToString(); } catch { }
-                            progress = p ?? obj.Length.ToString() + " fields";
-                        }
-                        else
-                        {
-                            progress = val?.ToString() ?? "";
-                        }
-                        _milestoneGrid.Rows.Add(name, progress);
-                    }
-                    catch { }
-                }
-                _countLabel.Text = $"Total milestones: {names.Count}";
-                return;
-            }
-
-            // Try array-based milestone data
+            // Try MilestoneStates array first
             var milestoneArr = playerState.GetArray("MilestoneStates")
                                ?? playerState.GetArray("MilestoneData");
-            if (milestoneArr != null)
+            if (milestoneArr != null && milestoneArr.Length > 0)
             {
+                _source = DataSource.MilestoneStates;
                 for (int i = 0; i < milestoneArr.Length; i++)
                 {
                     try
                     {
                         var milestone = milestoneArr.GetObject(i);
-                        string category = milestone.GetString("Id") ?? milestone.GetString("Name") ?? $"Milestone {i}";
-                        string progress = "";
-                        try { progress = milestone.Get("Value")?.ToString() ?? milestone.Get("Progress")?.ToString() ?? ""; }
+                        string id = milestone.GetString("Id") ?? milestone.GetString("Name") ?? $"Milestone {i}";
+                        string value = "";
+                        try { value = (milestone.Get("AmountCompleted") ?? milestone.Get("Value") ?? milestone.Get("Progress"))?.ToString() ?? ""; }
                         catch { }
-                        _milestoneGrid.Rows.Add(category, progress);
+                        _milestoneGrid.Rows.Add(id, value);
                     }
                     catch { }
                 }
                 _countLabel.Text = $"Total milestones: {milestoneArr.Length}";
                 return;
+            }
+
+            // Fallback: Stats array with ^GLOBAL_STATS group
+            var statsArr = playerState.GetArray("Stats");
+            if (statsArr != null)
+            {
+                for (int i = 0; i < statsArr.Length; i++)
+                {
+                    try
+                    {
+                        var statGroup = statsArr.GetObject(i);
+                        var groupId = statGroup.GetString("GroupId") ?? "";
+                        if (groupId != "^GLOBAL_STATS") continue;
+
+                        _source = DataSource.GlobalStats;
+                        var entries = statGroup.GetArray("Stats") ?? statGroup.GetArray("Entries");
+                        if (entries == null) continue;
+                        for (int j = 0; j < entries.Length; j++)
+                        {
+                            try
+                            {
+                                var entry = entries.GetObject(j);
+                                string id = entry.GetString("Id") ?? entry.GetString("Name") ?? $"Stat {j}";
+                                string value = "";
+                                try { value = (entry.Get("Value") ?? entry.Get("IntValue") ?? entry.Get("FloatValue"))?.ToString() ?? ""; }
+                                catch { }
+                                _milestoneGrid.Rows.Add(id, value);
+                            }
+                            catch { }
+                        }
+                        break;
+                    }
+                    catch { }
+                }
+                if (_milestoneGrid.Rows.Count > 0)
+                {
+                    _countLabel.Text = $"Total milestones: {_milestoneGrid.Rows.Count}";
+                    return;
+                }
             }
 
             _countLabel.Text = "No milestone data found.";
@@ -124,38 +133,79 @@ public class MilestonePanel : UserControl
 
     public void SaveData(JsonObject saveData)
     {
+        if (_source == DataSource.None) return;
         try
         {
             var playerState = saveData.GetObject("PlayerStateData");
             if (playerState == null) return;
 
-            var milestones = playerState.GetObject("MilestoneStates")
-                             ?? playerState.GetObject("MilestoneData");
-            if (milestones == null) return;
-
-            for (int i = 0; i < _milestoneGrid.Rows.Count; i++)
+            if (_source == DataSource.MilestoneStates)
             {
-                try
-                {
-                    var row = _milestoneGrid.Rows[i];
-                    string? category = row.Cells["Category"].Value?.ToString();
-                    string? progress = row.Cells["Progress"].Value?.ToString();
-                    if (category == null || progress == null) continue;
+                var milestoneArr = playerState.GetArray("MilestoneStates")
+                                   ?? playerState.GetArray("MilestoneData");
+                if (milestoneArr == null) return;
 
-                    var val = milestones.Get(category);
-                    if (val is JsonObject obj)
+                for (int i = 0; i < _milestoneGrid.Rows.Count && i < milestoneArr.Length; i++)
+                {
+                    try
                     {
-                        if (obj.Contains("Value") && int.TryParse(progress, out int intVal))
-                            obj.Set("Value", intVal);
-                        else if (obj.Contains("Progress") && int.TryParse(progress, out int progVal))
-                            obj.Set("Progress", progVal);
+                        var row = _milestoneGrid.Rows[i];
+                        string? valStr = row.Cells["Value"].Value?.ToString();
+                        if (valStr == null) continue;
+                        if (!int.TryParse(valStr, out int intVal)) continue;
+
+                        var milestone = milestoneArr.GetObject(i);
+                        if (milestone.Contains("AmountCompleted"))
+                            milestone.Set("AmountCompleted", intVal);
+                        else if (milestone.Contains("Value"))
+                            milestone.Set("Value", intVal);
+                        else if (milestone.Contains("Progress"))
+                            milestone.Set("Progress", intVal);
                     }
-                    else if (int.TryParse(progress, out int directVal))
-                    {
-                        milestones.Set(category, directVal);
-                    }
+                    catch { }
                 }
-                catch { }
+            }
+            else if (_source == DataSource.GlobalStats)
+            {
+                var statsArr = playerState.GetArray("Stats");
+                if (statsArr == null) return;
+
+                for (int i = 0; i < statsArr.Length; i++)
+                {
+                    try
+                    {
+                        var statGroup = statsArr.GetObject(i);
+                        if ((statGroup.GetString("GroupId") ?? "") != "^GLOBAL_STATS") continue;
+
+                        var entries = statGroup.GetArray("Stats") ?? statGroup.GetArray("Entries");
+                        if (entries == null) break;
+
+                        for (int j = 0; j < _milestoneGrid.Rows.Count && j < entries.Length; j++)
+                        {
+                            try
+                            {
+                                var row = _milestoneGrid.Rows[j];
+                                string? valStr = row.Cells["Value"].Value?.ToString();
+                                if (valStr == null) continue;
+
+                                var entry = entries.GetObject(j);
+                                if (int.TryParse(valStr, out int intVal))
+                                {
+                                    if (entry.Contains("Value")) entry.Set("Value", intVal);
+                                    else if (entry.Contains("IntValue")) entry.Set("IntValue", intVal);
+                                }
+                                else if (double.TryParse(valStr, out double dblVal))
+                                {
+                                    if (entry.Contains("FloatValue")) entry.Set("FloatValue", dblVal);
+                                    else if (entry.Contains("Value")) entry.Set("Value", dblVal);
+                                }
+                            }
+                            catch { }
+                        }
+                        break;
+                    }
+                    catch { }
+                }
             }
         }
         catch { }
