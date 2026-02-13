@@ -1,3 +1,4 @@
+using NMSSaveEditor.Data;
 using NMSSaveEditor.Models;
 
 namespace NMSSaveEditor.UI;
@@ -8,9 +9,9 @@ public class FreighterPanel : UserControl
     private readonly TextBox _freighterClass;
     private readonly TextBox _freighterSeed;
     private readonly TabControl _invTabs;
-    private readonly DataGridView _generalGrid;
-    private readonly DataGridView _techGrid;
-    private readonly DataGridView _cargoGrid;
+    private readonly InventoryGridPanel _generalGrid;
+    private readonly InventoryGridPanel _techGrid;
+    private readonly InventoryGridPanel _cargoGrid;
 
     public FreighterPanel()
     {
@@ -50,14 +51,20 @@ public class FreighterPanel : UserControl
         _freighterSeed = new TextBox { Dock = DockStyle.Fill, ReadOnly = true };
         AddRow(layout, "Seed:", _freighterSeed, 3);
 
-        _generalGrid = CreateInventoryGrid();
-        _techGrid = CreateInventoryGrid();
-        _cargoGrid = CreateInventoryGrid();
+        _generalGrid = new InventoryGridPanel { Dock = DockStyle.Fill };
+        _techGrid = new InventoryGridPanel { Dock = DockStyle.Fill };
+        _cargoGrid = new InventoryGridPanel { Dock = DockStyle.Fill };
 
         _invTabs = new TabControl { Dock = DockStyle.Fill };
-        _invTabs.TabPages.Add(CreateGridTab("General", _generalGrid));
-        _invTabs.TabPages.Add(CreateGridTab("Technology", _techGrid));
-        _invTabs.TabPages.Add(CreateGridTab("Cargo", _cargoGrid));
+        var generalPage = new TabPage("General");
+        generalPage.Controls.Add(_generalGrid);
+        var techPage = new TabPage("Technology");
+        techPage.Controls.Add(_techGrid);
+        var cargoPage = new TabPage("Cargo");
+        cargoPage.Controls.Add(_cargoGrid);
+        _invTabs.TabPages.Add(generalPage);
+        _invTabs.TabPages.Add(techPage);
+        _invTabs.TabPages.Add(cargoPage);
         layout.Controls.Add(_invTabs, 0, 4);
         layout.SetColumnSpan(_invTabs, 2);
 
@@ -66,38 +73,18 @@ public class FreighterPanel : UserControl
         PerformLayout();
     }
 
+    public void SetDatabase(GameItemDatabase? database)
+    {
+        _generalGrid.SetDatabase(database);
+        _techGrid.SetDatabase(database);
+        _cargoGrid.SetDatabase(database);
+    }
+
     private static void AddRow(TableLayoutPanel layout, string label, Control field, int row)
     {
         var lbl = new Label { Text = label, AutoSize = true, Anchor = AnchorStyles.Left, Padding = new Padding(0, 5, 10, 0) };
         layout.Controls.Add(lbl, 0, row);
         layout.Controls.Add(field, 1, row);
-    }
-
-    private static DataGridView CreateInventoryGrid()
-    {
-        var grid = new DataGridView
-        {
-            Dock = DockStyle.Fill,
-            AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill,
-            AllowUserToAddRows = false,
-            AllowUserToDeleteRows = false,
-            SelectionMode = DataGridViewSelectionMode.FullRowSelect,
-            RowHeadersVisible = false
-        };
-        grid.Columns.Add("Slot", "Slot #");
-        grid.Columns.Add("ItemId", "Item ID");
-        grid.Columns.Add("Amount", "Amount");
-        grid.Columns.Add("MaxAmount", "Max");
-        grid.Columns["Slot"]!.ReadOnly = true;
-        return grid;
-    }
-
-    private static TabPage CreateGridTab(string name, DataGridView grid)
-    {
-        var page = new TabPage(name);
-        grid.Dock = DockStyle.Fill;
-        page.Controls.Add(grid);
-        return page;
     }
 
     public void LoadData(JsonObject saveData)
@@ -131,9 +118,9 @@ public class FreighterPanel : UserControl
             }
             catch { _freighterSeed.Text = ""; }
 
-            LoadInventory(_generalGrid, playerState.GetObject("FreighterInventory"));
-            LoadInventory(_techGrid, playerState.GetObject("FreighterInventory_TechOnly"));
-            LoadInventory(_cargoGrid, playerState.GetObject("FreighterInventory_Cargo"));
+            _generalGrid.LoadInventory(playerState.GetObject("FreighterInventory"));
+            _techGrid.LoadInventory(playerState.GetObject("FreighterInventory_TechOnly"));
+            _cargoGrid.LoadInventory(playerState.GetObject("FreighterInventory_Cargo"));
         }
         catch { }
     }
@@ -148,55 +135,10 @@ public class FreighterPanel : UserControl
             if (!string.IsNullOrEmpty(_freighterName.Text))
                 playerState.Set("PlayerFreighterName", _freighterName.Text);
 
-            SaveInventory(_generalGrid, playerState.GetObject("FreighterInventory"));
-            SaveInventory(_techGrid, playerState.GetObject("FreighterInventory_TechOnly"));
-            SaveInventory(_cargoGrid, playerState.GetObject("FreighterInventory_Cargo"));
+            _generalGrid.SaveInventory(playerState.GetObject("FreighterInventory"));
+            _techGrid.SaveInventory(playerState.GetObject("FreighterInventory_TechOnly"));
+            _cargoGrid.SaveInventory(playerState.GetObject("FreighterInventory_Cargo"));
         }
         catch { }
-    }
-
-    private static void LoadInventory(DataGridView grid, JsonObject? inventory)
-    {
-        grid.Rows.Clear();
-        if (inventory == null) return;
-
-        var slots = inventory.GetArray("Slots");
-        if (slots == null) return;
-
-        for (int i = 0; i < slots.Length; i++)
-        {
-            try
-            {
-                var slot = slots.GetObject(i);
-                string itemId = slot.GetString("Id") ?? slot.GetObject("Id")?.GetString("Id") ?? "";
-                int amount = 0;
-                int maxAmount = 0;
-                try { amount = slot.GetInt("Amount"); } catch { }
-                try { maxAmount = slot.GetInt("MaxAmount"); } catch { }
-                grid.Rows.Add(i.ToString(), itemId, amount.ToString(), maxAmount.ToString());
-            }
-            catch { }
-        }
-    }
-
-    private static void SaveInventory(DataGridView grid, JsonObject? inventory)
-    {
-        if (inventory == null) return;
-        var slots = inventory.GetArray("Slots");
-        if (slots == null) return;
-
-        for (int i = 0; i < grid.Rows.Count && i < slots.Length; i++)
-        {
-            try
-            {
-                var slot = slots.GetObject(i);
-                var row = grid.Rows[i];
-                if (int.TryParse(row.Cells["Amount"].Value?.ToString(), out int amount))
-                    slot.Set("Amount", amount);
-                if (int.TryParse(row.Cells["MaxAmount"].Value?.ToString(), out int maxAmount))
-                    slot.Set("MaxAmount", maxAmount);
-            }
-            catch { }
-        }
     }
 }

@@ -1,3 +1,4 @@
+using NMSSaveEditor.Data;
 using NMSSaveEditor.Models;
 
 namespace NMSSaveEditor.UI;
@@ -5,9 +6,9 @@ namespace NMSSaveEditor.UI;
 public class ExosuitPanel : UserControl
 {
     private readonly TabControl _invTabs;
-    private readonly DataGridView _generalGrid;
-    private readonly DataGridView _techGrid;
-    private readonly DataGridView _cargoGrid;
+    private readonly InventoryGridPanel _generalGrid;
+    private readonly InventoryGridPanel _techGrid;
+    private readonly InventoryGridPanel _cargoGrid;
     private JsonObject? _playerState;
 
     public ExosuitPanel()
@@ -33,14 +34,20 @@ public class ExosuitPanel : UserControl
         };
         layout.Controls.Add(titleLabel, 0, 0);
 
-        _generalGrid = CreateInventoryGrid();
-        _techGrid = CreateInventoryGrid();
-        _cargoGrid = CreateInventoryGrid();
+        _generalGrid = new InventoryGridPanel { Dock = DockStyle.Fill };
+        _techGrid = new InventoryGridPanel { Dock = DockStyle.Fill };
+        _cargoGrid = new InventoryGridPanel { Dock = DockStyle.Fill };
 
         _invTabs = new TabControl { Dock = DockStyle.Fill };
-        _invTabs.TabPages.Add(CreateGridTab("General", _generalGrid));
-        _invTabs.TabPages.Add(CreateGridTab("Technology", _techGrid));
-        _invTabs.TabPages.Add(CreateGridTab("Cargo", _cargoGrid));
+        var generalPage = new TabPage("General");
+        generalPage.Controls.Add(_generalGrid);
+        var techPage = new TabPage("Technology");
+        techPage.Controls.Add(_techGrid);
+        var cargoPage = new TabPage("Cargo");
+        cargoPage.Controls.Add(_cargoGrid);
+        _invTabs.TabPages.Add(generalPage);
+        _invTabs.TabPages.Add(techPage);
+        _invTabs.TabPages.Add(cargoPage);
         layout.Controls.Add(_invTabs, 0, 1);
 
         Controls.Add(layout);
@@ -48,31 +55,11 @@ public class ExosuitPanel : UserControl
         PerformLayout();
     }
 
-    private static DataGridView CreateInventoryGrid()
+    public void SetDatabase(GameItemDatabase? database)
     {
-        var grid = new DataGridView
-        {
-            Dock = DockStyle.Fill,
-            AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill,
-            AllowUserToAddRows = false,
-            AllowUserToDeleteRows = false,
-            SelectionMode = DataGridViewSelectionMode.FullRowSelect,
-            RowHeadersVisible = false
-        };
-        grid.Columns.Add("Slot", "Slot #");
-        grid.Columns.Add("ItemId", "Item ID");
-        grid.Columns.Add("Amount", "Amount");
-        grid.Columns.Add("MaxAmount", "Max");
-        grid.Columns["Slot"]!.ReadOnly = true;
-        return grid;
-    }
-
-    private static TabPage CreateGridTab(string name, DataGridView grid)
-    {
-        var page = new TabPage(name);
-        grid.Dock = DockStyle.Fill;
-        page.Controls.Add(grid);
-        return page;
+        _generalGrid.SetDatabase(database);
+        _techGrid.SetDatabase(database);
+        _cargoGrid.SetDatabase(database);
     }
 
     public void LoadData(JsonObject saveData)
@@ -82,9 +69,9 @@ public class ExosuitPanel : UserControl
             _playerState = saveData.GetObject("PlayerStateData");
             if (_playerState == null) return;
 
-            LoadInventory(_generalGrid, _playerState.GetObject("Inventory"));
-            LoadInventory(_techGrid, _playerState.GetObject("Inventory_TechOnly"));
-            LoadInventory(_cargoGrid, _playerState.GetObject("Inventory_Cargo"));
+            _generalGrid.LoadInventory(_playerState.GetObject("Inventory"));
+            _techGrid.LoadInventory(_playerState.GetObject("Inventory_TechOnly"));
+            _cargoGrid.LoadInventory(_playerState.GetObject("Inventory_Cargo"));
         }
         catch { /* Save structure varies between versions */ }
     }
@@ -96,55 +83,10 @@ public class ExosuitPanel : UserControl
             var playerState = saveData.GetObject("PlayerStateData");
             if (playerState == null) return;
 
-            SaveInventory(_generalGrid, playerState.GetObject("Inventory"));
-            SaveInventory(_techGrid, playerState.GetObject("Inventory_TechOnly"));
-            SaveInventory(_cargoGrid, playerState.GetObject("Inventory_Cargo"));
+            _generalGrid.SaveInventory(playerState.GetObject("Inventory"));
+            _techGrid.SaveInventory(playerState.GetObject("Inventory_TechOnly"));
+            _cargoGrid.SaveInventory(playerState.GetObject("Inventory_Cargo"));
         }
         catch { }
-    }
-
-    private static void LoadInventory(DataGridView grid, JsonObject? inventory)
-    {
-        grid.Rows.Clear();
-        if (inventory == null) return;
-
-        var slots = inventory.GetArray("Slots");
-        if (slots == null) return;
-
-        for (int i = 0; i < slots.Length; i++)
-        {
-            try
-            {
-                var slot = slots.GetObject(i);
-                string itemId = slot.GetString("Id") ?? slot.GetObject("Id")?.GetString("Id") ?? "";
-                int amount = 0;
-                int maxAmount = 0;
-                try { amount = slot.GetInt("Amount"); } catch { }
-                try { maxAmount = slot.GetInt("MaxAmount"); } catch { }
-                grid.Rows.Add(i.ToString(), itemId, amount.ToString(), maxAmount.ToString());
-            }
-            catch { }
-        }
-    }
-
-    private static void SaveInventory(DataGridView grid, JsonObject? inventory)
-    {
-        if (inventory == null) return;
-        var slots = inventory.GetArray("Slots");
-        if (slots == null) return;
-
-        for (int i = 0; i < grid.Rows.Count && i < slots.Length; i++)
-        {
-            try
-            {
-                var slot = slots.GetObject(i);
-                var row = grid.Rows[i];
-                if (int.TryParse(row.Cells["Amount"].Value?.ToString(), out int amount))
-                    slot.Set("Amount", amount);
-                if (int.TryParse(row.Cells["MaxAmount"].Value?.ToString(), out int maxAmount))
-                    slot.Set("MaxAmount", maxAmount);
-            }
-            catch { }
-        }
     }
 }

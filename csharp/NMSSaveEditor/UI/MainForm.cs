@@ -216,6 +216,11 @@ public class MainForm : Form
             _database.LoadItems(Path.Combine(dbPath, "items.xml"));
             _database.LoadInventoryData(Path.Combine(dbPath, "inventory.xml"));
 
+            // Pass item database to inventory panels for name/icon resolution
+            _exosuitPanel.SetDatabase(_database);
+            _shipPanel.SetDatabase(_database);
+            _freighterPanel.SetDatabase(_database);
+
             // Load JSON name mapper for obfuscated NMS save file keys
             var mapperPath = Path.Combine(dbPath, "jsonmap.txt");
             if (File.Exists(mapperPath))

@@ -1,3 +1,4 @@
+using NMSSaveEditor.Data;
 using NMSSaveEditor.Models;
 
 namespace NMSSaveEditor.UI;
@@ -8,9 +9,12 @@ public class ShipPanel : UserControl
     private readonly TextBox _shipName;
     private readonly TextBox _shipSeed;
     private readonly TextBox _shipType;
-    private readonly DataGridView _inventoryGrid;
+    private readonly TabControl _invTabs;
+    private readonly InventoryGridPanel _inventoryGrid;
+    private readonly InventoryGridPanel _techGrid;
     private JsonArray? _shipOwnership;
     private JsonObject? _playerState;
+    private GameItemDatabase? _database;
 
     public ShipPanel()
     {
@@ -55,13 +59,30 @@ public class ShipPanel : UserControl
         _shipSeed = new TextBox { Dock = DockStyle.Fill, ReadOnly = true };
         AddRow(layout, "Seed:", _shipSeed, 4);
 
-        _inventoryGrid = CreateInventoryGrid();
-        layout.Controls.Add(_inventoryGrid, 0, 5);
-        layout.SetColumnSpan(_inventoryGrid, 2);
+        _inventoryGrid = new InventoryGridPanel { Dock = DockStyle.Fill };
+        _techGrid = new InventoryGridPanel { Dock = DockStyle.Fill };
+
+        _invTabs = new TabControl { Dock = DockStyle.Fill };
+        var invPage = new TabPage("Inventory");
+        invPage.Controls.Add(_inventoryGrid);
+        var techPage = new TabPage("Technology");
+        techPage.Controls.Add(_techGrid);
+        _invTabs.TabPages.Add(invPage);
+        _invTabs.TabPages.Add(techPage);
+
+        layout.Controls.Add(_invTabs, 0, 5);
+        layout.SetColumnSpan(_invTabs, 2);
 
         Controls.Add(layout);
         ResumeLayout(false);
         PerformLayout();
+    }
+
+    public void SetDatabase(GameItemDatabase? database)
+    {
+        _database = database;
+        _inventoryGrid.SetDatabase(database);
+        _techGrid.SetDatabase(database);
     }
 
     private static void AddRow(TableLayoutPanel layout, string label, Control field, int row)
@@ -69,25 +90,6 @@ public class ShipPanel : UserControl
         var lbl = new Label { Text = label, AutoSize = true, Anchor = AnchorStyles.Left, Padding = new Padding(0, 5, 10, 0) };
         layout.Controls.Add(lbl, 0, row);
         layout.Controls.Add(field, 1, row);
-    }
-
-    private static DataGridView CreateInventoryGrid()
-    {
-        var grid = new DataGridView
-        {
-            Dock = DockStyle.Fill,
-            AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill,
-            AllowUserToAddRows = false,
-            AllowUserToDeleteRows = false,
-            SelectionMode = DataGridViewSelectionMode.FullRowSelect,
-            RowHeadersVisible = false
-        };
-        grid.Columns.Add("Slot", "Slot #");
-        grid.Columns.Add("ItemId", "Item ID");
-        grid.Columns.Add("Amount", "Amount");
-        grid.Columns.Add("MaxAmount", "Max");
-        grid.Columns["Slot"]!.ReadOnly = true;
-        return grid;
     }
 
     public void LoadData(JsonObject saveData)
@@ -142,7 +144,8 @@ public class ShipPanel : UserControl
             if (!string.IsNullOrEmpty(_shipName.Text))
                 ship.Set("Name", _shipName.Text);
 
-            SaveInventory(_inventoryGrid, ship.GetObject("Inventory"));
+            _inventoryGrid.SaveInventory(ship.GetObject("Inventory"));
+            _techGrid.SaveInventory(ship.GetObject("Inventory_TechOnly"));
         }
         catch { }
     }
@@ -175,53 +178,9 @@ public class ShipPanel : UserControl
             _shipType.Text = filename;
             _shipSeed.Text = seed;
 
-            LoadInventory(_inventoryGrid, ship.GetObject("Inventory"));
+            _inventoryGrid.LoadInventory(ship.GetObject("Inventory"));
+            _techGrid.LoadInventory(ship.GetObject("Inventory_TechOnly"));
         }
         catch { }
-    }
-
-    private static void LoadInventory(DataGridView grid, JsonObject? inventory)
-    {
-        grid.Rows.Clear();
-        if (inventory == null) return;
-
-        var slots = inventory.GetArray("Slots");
-        if (slots == null) return;
-
-        for (int i = 0; i < slots.Length; i++)
-        {
-            try
-            {
-                var slot = slots.GetObject(i);
-                string itemId = slot.GetString("Id") ?? slot.GetObject("Id")?.GetString("Id") ?? "";
-                int amount = 0;
-                int maxAmount = 0;
-                try { amount = slot.GetInt("Amount"); } catch { }
-                try { maxAmount = slot.GetInt("MaxAmount"); } catch { }
-                grid.Rows.Add(i.ToString(), itemId, amount.ToString(), maxAmount.ToString());
-            }
-            catch { }
-        }
-    }
-
-    private static void SaveInventory(DataGridView grid, JsonObject? inventory)
-    {
-        if (inventory == null) return;
-        var slots = inventory.GetArray("Slots");
-        if (slots == null) return;
-
-        for (int i = 0; i < grid.Rows.Count && i < slots.Length; i++)
-        {
-            try
-            {
-                var slot = slots.GetObject(i);
-                var row = grid.Rows[i];
-                if (int.TryParse(row.Cells["Amount"].Value?.ToString(), out int amount))
-                    slot.Set("Amount", amount);
-                if (int.TryParse(row.Cells["MaxAmount"].Value?.ToString(), out int maxAmount))
-                    slot.Set("MaxAmount", maxAmount);
-            }
-            catch { }
-        }
     }
 }
