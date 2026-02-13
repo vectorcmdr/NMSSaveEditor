@@ -68,13 +68,7 @@ public class InventoryGridPanel : UserControl
             Dock = DockStyle.Fill,
             Orientation = Orientation.Vertical,
             FixedPanel = FixedPanel.Panel2,
-            Panel2MinSize = 280
-        };
-        // Set SplitterDistance after the control is sized so Panel2 gets a proper initial width
-        splitContainer.SizeChanged += (s, e) =>
-        {
-            if (splitContainer.Width > 300 && splitContainer.SplitterDistance > splitContainer.Width - 290)
-                splitContainer.SplitterDistance = splitContainer.Width - 290;
+            SplitterDistance = 280
         };
 
         // Left: grid of slot cells
@@ -775,60 +769,113 @@ public class InventoryGridPanel : UserControl
 
     private void OnApplyChanges(object? sender, EventArgs e)
     {
-        if (_selectedCell?.SlotData == null || _slots == null) return;
+        if (_selectedCell == null || _slots == null) return;
 
-        var slot = _selectedCell.SlotData;
-
-        // Update Item ID
         string newItemId = _detailItemId.Text.Trim();
-        try
+        if (string.IsNullOrEmpty(newItemId))
         {
-            var idObj = slot.GetObject("Id");
-            if (idObj != null)
-                idObj.Set("Id", newItemId);
-            else
-                slot.Set("Id", newItemId);
+            MessageBox.Show("Enter or select an Item ID first.", "Apply Changes",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
+            return;
         }
-        catch { }
 
-        // Update Amount / MaxAmount
-        slot.Set("Amount", (int)_detailAmount.Value);
-        slot.Set("MaxAmount", (int)_detailMaxAmount.Value);
+        int amount = (int)_detailAmount.Value;
+        int maxAmount = (int)_detailMaxAmount.Value;
+        if (amount <= 0) amount = 1;
+        if (maxAmount <= 0) maxAmount = amount;
 
-        // Update DamageFactor
-        try { slot.Set("DamageFactor", (double)_detailDamageFactor.Value); } catch { }
-
-        // Update inventory type based on item
-        if (_database != null && !string.IsNullOrEmpty(newItemId))
+        // If the cell has no existing slot data (valid empty slot), create a new slot
+        if (_selectedCell.SlotData == null)
         {
-            var gameItem = _database.GetItem(newItemId) ?? _database.GetItem("^" + newItemId);
-            if (gameItem != null)
+            string invType = "Product";
+            if (_database != null)
             {
-                try
-                {
-                    var typeObj = slot.GetObject("Type");
-                    if (typeObj != null)
+                var gi = _database.GetItem(newItemId) ?? _database.GetItem("^" + newItemId);
+                if (gi != null)
+                    invType = gi.ItemType switch
                     {
-                        string invType = gameItem.ItemType switch
+                        "substance" => "Substance",
+                        "product" => "Product",
+                        "technology" or "proceduralTechnology" => "Technology",
+                        _ => "Product"
+                    };
+            }
+
+            var newSlot = new JsonObject();
+            var typeObj = new JsonObject();
+            typeObj.Add("InventoryType", invType);
+            newSlot.Add("Type", typeObj);
+            var idObj = new JsonObject();
+            idObj.Add("Id", newItemId);
+            newSlot.Add("Id", idObj);
+            newSlot.Add("Amount", amount);
+            newSlot.Add("MaxAmount", maxAmount);
+            newSlot.Add("DamageFactor", (double)_detailDamageFactor.Value);
+            newSlot.Add("FullyInstalled", true);
+            var indexObj = new JsonObject();
+            indexObj.Add("X", _selectedCell.GridX);
+            indexObj.Add("Y", _selectedCell.GridY);
+            newSlot.Add("Index", indexObj);
+
+            _slots.Add(newSlot);
+            _selectedCell.SlotIndex = _slots.Length - 1;
+            _selectedCell.SlotData = newSlot;
+        }
+        else
+        {
+            var slot = _selectedCell.SlotData;
+
+            // Update Item ID
+            try
+            {
+                var idObj = slot.GetObject("Id");
+                if (idObj != null)
+                    idObj.Set("Id", newItemId);
+                else
+                    slot.Set("Id", newItemId);
+            }
+            catch { }
+
+            // Update Amount / MaxAmount
+            slot.Set("Amount", amount);
+            slot.Set("MaxAmount", maxAmount);
+
+            // Update DamageFactor
+            try { slot.Set("DamageFactor", (double)_detailDamageFactor.Value); } catch { }
+
+            // Update inventory type based on item
+            if (_database != null && !string.IsNullOrEmpty(newItemId))
+            {
+                var gameItem = _database.GetItem(newItemId) ?? _database.GetItem("^" + newItemId);
+                if (gameItem != null)
+                {
+                    try
+                    {
+                        var typeObj = slot.GetObject("Type");
+                        if (typeObj != null)
                         {
-                            "substance" => "Substance",
-                            "product" => "Product",
-                            "technology" or "proceduralTechnology" => "Technology",
-                            _ => "Product"
-                        };
-                        typeObj.Set("InventoryType", invType);
+                            string invType = gameItem.ItemType switch
+                            {
+                                "substance" => "Substance",
+                                "product" => "Product",
+                                "technology" or "proceduralTechnology" => "Technology",
+                                _ => "Product"
+                            };
+                            typeObj.Set("InventoryType", invType);
+                        }
                     }
+                    catch { }
                 }
-                catch { }
             }
         }
 
         // Refresh cell display
         _selectedCell.ItemId = newItemId;
-        _selectedCell.Amount = (int)_detailAmount.Value;
-        _selectedCell.MaxAmount = (int)_detailMaxAmount.Value;
+        _selectedCell.Amount = amount;
+        _selectedCell.MaxAmount = maxAmount;
         _selectedCell.DamageFactor = (double)_detailDamageFactor.Value;
         _selectedCell.IsValidEmpty = false;
+        _selectedCell.IsEmpty = false;
 
         if (_database != null && !string.IsNullOrEmpty(newItemId))
         {
