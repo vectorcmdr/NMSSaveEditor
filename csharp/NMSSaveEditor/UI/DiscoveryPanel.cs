@@ -43,7 +43,18 @@ public class DiscoveryPanel : UserControl
         ("Vy'keen", 1),
         ("Korvax", 2),
         ("Atlas", 4),
-        ("Autophage", 7),
+        ("Autophage", 8),
+    };
+
+    // Maps race prefix patterns to race index
+    private static readonly (string Prefix, int RaceIndex)[] RacePrefixes =
+    {
+        ("^TRA_", 0),    // Gek (Traders)
+        ("^WAR_", 1),    // Vy'keen (Warriors)
+        ("^EXP_", 2),    // Korvax (Explorers)
+        ("^ATLAS_", 4),  // Atlas
+        ("^ROBOT_", 3),  // Robot
+        ("^AUTO_", 8),   // Autophage
     };
 
     public DiscoveryPanel()
@@ -122,7 +133,7 @@ public class DiscoveryPanel : UserControl
             ColumnCount = 1,
             RowCount = 3,
         };
-        wordLayout.RowStyles.Add(new RowStyle(SizeType.Absolute, 40));
+        wordLayout.RowStyles.Add(new RowStyle(SizeType.Absolute, 70));
         wordLayout.RowStyles.Add(new RowStyle(SizeType.Percent, 100));
         wordLayout.RowStyles.Add(new RowStyle(SizeType.AutoSize));
 
@@ -130,7 +141,7 @@ public class DiscoveryPanel : UserControl
         var raceIconPanel = new Panel
         {
             Dock = DockStyle.Fill,
-            Height = 40,
+            Height = 70,
         };
         string[] raceIconFiles = { "UI-GEK.PNG", "UI-VYKEEN.PNG", "UI-KORVAX.PNG", "UI-GEK.PNG", "UI-KORVAX.PNG" };
         string[] raceLabels = { "Gek", "Vy'keen", "Korvax", "Atlas", "Autophage" };
@@ -140,7 +151,7 @@ public class DiscoveryPanel : UserControl
         {
             _raceIcons[i] = new PictureBox
             {
-                Size = new Size(24, 24),
+                Size = new Size(32, 32),
                 SizeMode = PictureBoxSizeMode.Zoom,
             };
             _raceLabels[i] = new Label
@@ -165,11 +176,11 @@ public class DiscoveryPanel : UserControl
             RowHeadersVisible = false,
             ReadOnly = false,
         };
-        _wordGrid.Columns.Add(new DataGridViewTextBoxColumn { Name = "Word", HeaderText = "Word", ReadOnly = true });
-        _wordGrid.Columns.Add(new DataGridViewTextBoxColumn { Name = "WordIndex", HeaderText = "Word ID", ReadOnly = true });
+        _wordGrid.Columns.Add(new DataGridViewTextBoxColumn { Name = "Word", HeaderText = "Word", ReadOnly = true, FillWeight = 40 });
+        _wordGrid.Columns.Add(new DataGridViewTextBoxColumn { Name = "IndvWordId", HeaderText = "Indv Word ID", ReadOnly = true, FillWeight = 40 });
         foreach (var (name, _) in RaceColumns)
         {
-            _wordGrid.Columns.Add(new DataGridViewCheckBoxColumn { Name = name, HeaderText = name });
+            _wordGrid.Columns.Add(new DataGridViewCheckBoxColumn { Name = name, HeaderText = name, FillWeight = 20 });
         }
         // Align race icons over their column headers when layout changes
         _wordGrid.Layout += (_, _) => AlignRaceIcons();
@@ -204,40 +215,47 @@ public class DiscoveryPanel : UserControl
         glyphLayout.RowStyles.Add(new RowStyle(SizeType.Percent, 100));
         glyphLayout.RowStyles.Add(new RowStyle(SizeType.AutoSize));
 
-        var glyphPanel = new FlowLayoutPanel
+        // 4×4 grid layout for glyphs
+        var glyphGrid = new TableLayoutPanel
         {
             Dock = DockStyle.Fill,
-            AutoScroll = true,
-            FlowDirection = FlowDirection.LeftToRight,
-            WrapContents = true,
-            Padding = new Padding(10),
+            ColumnCount = 4,
+            RowCount = 4,
+            Padding = new Padding(20),
         };
+        for (int c = 0; c < 4; c++)
+            glyphGrid.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25));
+        for (int r = 0; r < 4; r++)
+            glyphGrid.RowStyles.Add(new RowStyle(SizeType.Percent, 25));
 
         for (int i = 0; i < 16; i++)
         {
             var container = new FlowLayoutPanel
             {
-                FlowDirection = FlowDirection.LeftToRight,
+                FlowDirection = FlowDirection.TopDown,
                 AutoSize = true,
+                Anchor = AnchorStyles.None,
                 Margin = new Padding(5),
             };
             _glyphIcons[i] = new PictureBox
             {
-                Size = new Size(32, 32),
+                Size = new Size(64, 64),
                 SizeMode = PictureBoxSizeMode.Zoom,
-                Margin = new Padding(0, 4, 4, 0),
+                Margin = new Padding(4, 4, 4, 2),
             };
             _glyphCheckBoxes[i] = new CheckBox
             {
                 Text = $"Glyph {i + 1}",
                 AutoSize = true,
-                Margin = new Padding(0, 8, 0, 0),
+                Margin = new Padding(8, 0, 0, 0),
             };
             container.Controls.Add(_glyphIcons[i]);
             container.Controls.Add(_glyphCheckBoxes[i]);
-            glyphPanel.Controls.Add(container);
+            int row = i / 4;
+            int col = i % 4;
+            glyphGrid.Controls.Add(container, col, row);
         }
-        glyphLayout.Controls.Add(glyphPanel, 0, 0);
+        glyphLayout.Controls.Add(glyphGrid, 0, 0);
 
         var glyphButtonPanel = new FlowLayoutPanel
         {
@@ -292,11 +310,11 @@ public class DiscoveryPanel : UserControl
     {
         if (_wordGrid == null || _raceIcons.Length == 0) return;
 
-        // Column order: Word, WordIndex, Gek, Vy'keen, Korvax, Atlas, Autophage
+        // Column order: Word, IndvWordId, Gek, Vy'keen, Korvax, Atlas, Autophage
         // Race columns start at index 2
         for (int i = 0; i < _raceIcons.Length && i < _raceLabels.Length; i++)
         {
-            int colIdx = i + 2; // Skip Word and WordIndex columns
+            int colIdx = i + 2; // Skip Word and IndvWordId columns
             if (colIdx >= _wordGrid.Columns.Count) break;
 
             var rect = _wordGrid.GetColumnDisplayRectangle(colIdx, true);
@@ -310,7 +328,7 @@ public class DiscoveryPanel : UserControl
 
             // Position label below icon, also centered
             _raceLabels[i].Left = centerX - _raceLabels[i].Width / 2;
-            _raceLabels[i].Top = 26;
+            _raceLabels[i].Top = 36;
         }
     }
 
@@ -487,12 +505,16 @@ public class DiscoveryPanel : UserControl
         for (int i = 0; i < wordGroups.Length; i++)
         {
             var group = wordGroups.GetObject(i);
-            string word = group.GetString("Group") ?? "";
-            var races = group.GetArray("Races");
+            string groupName = group?.GetString("Group") ?? "";
+            var races = group?.GetArray("Races");
+
+            // Extract clean display word from group name
+            // Group names are like "YOURWORD" or "Gek_Hello" - strip race prefix
+            string displayWord = ExtractWordFromGroup(groupName);
 
             var rowValues = new object[2 + RaceColumns.Length];
-            rowValues[0] = word;
-            rowValues[1] = i.ToString();
+            rowValues[0] = displayWord;
+            rowValues[1] = groupName;
             for (int c = 0; c < RaceColumns.Length; c++)
             {
                 int raceIdx = RaceColumns[c].Index;
@@ -501,6 +523,37 @@ public class DiscoveryPanel : UserControl
             }
             _wordGrid.Rows.Add(rowValues);
         }
+    }
+
+    /// <summary>
+    /// Extracts a clean display word from a KnownWordGroups Group name.
+    /// Group names can be like "YOURWORD", "TRA_HELLO", "WAR_GREETING", etc.
+    /// Strips known race prefixes and formats for display.
+    /// </summary>
+    private static string ExtractWordFromGroup(string groupName)
+    {
+        if (string.IsNullOrEmpty(groupName)) return "";
+
+        string name = groupName;
+
+        // Strip common race prefixes from group names
+        string[] prefixes = { "TRA_", "WAR_", "EXP_", "ATLAS_", "ROBOT_", "AUTO_", "DIP_", "EXOTIC_" };
+        foreach (var prefix in prefixes)
+        {
+            if (name.StartsWith(prefix, StringComparison.OrdinalIgnoreCase))
+            {
+                name = name[prefix.Length..];
+                break;
+            }
+        }
+
+        // Format: capitalize first letter, lowercase rest
+        if (name.Length > 1)
+            name = char.ToUpper(name[0]) + name[1..].ToLower();
+        else if (name.Length == 1)
+            name = name.ToUpper();
+
+        return name;
     }
 
     private void SaveKnownWords(JsonObject playerState)
@@ -554,7 +607,7 @@ public class DiscoveryPanel : UserControl
                 _glyphIcons[i].Image?.Dispose();
 
                 // Draw glyph icon on dark grey circle background for visibility
-                int size = 36;
+                int size = 64;
                 var composite = new Bitmap(size, size);
                 using (var g = Graphics.FromImage(composite))
                 {
@@ -563,7 +616,7 @@ public class DiscoveryPanel : UserControl
                     using var brush = new SolidBrush(Color.FromArgb(60, 60, 60));
                     g.FillEllipse(brush, 0, 0, size - 1, size - 1);
                     // Draw the glyph icon centered on the circle
-                    int iconSize = 24;
+                    int iconSize = 48;
                     int offset = (size - iconSize) / 2;
                     g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
                     g.DrawImage(icon, offset, offset, iconSize, iconSize);

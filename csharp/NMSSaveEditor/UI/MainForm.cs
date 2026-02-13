@@ -245,6 +245,9 @@ public class MainForm : Form
             _discoveryPanel.SetIconManager(_iconManager);
             _milestonePanel.SetIconManager(_iconManager);
 
+            // Load rewards database for Account panel
+            _accountPanel.LoadRewardsDatabase(dbPath);
+
             // Load JSON name mapper for obfuscated NMS save file keys
             var mapperPath = Path.Combine(dbPath, "jsonmap.txt");
             var mapperAcPath = Path.Combine(dbPath, "jsonmapac.txt");

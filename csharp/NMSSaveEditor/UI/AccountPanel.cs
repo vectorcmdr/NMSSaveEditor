@@ -1,5 +1,6 @@
 using NMSSaveEditor.IO;
 using NMSSaveEditor.Models;
+using System.Xml;
 
 namespace NMSSaveEditor.UI;
 
@@ -13,6 +14,11 @@ public class AccountPanel : UserControl
     private JsonObject? _accountData;
     private string? _accountFilePath;
 
+    // Rewards database from rewards.xml
+    private readonly List<(string Id, string Name)> _seasonRewardsDb = new();
+    private readonly List<(string Id, string Name)> _twitchRewardsDb = new();
+    private readonly List<(string Id, string Name)> _platformRewardsDb = new();
+
     public AccountPanel()
     {
         SuspendLayout();
@@ -21,28 +27,34 @@ public class AccountPanel : UserControl
         {
             Dock = DockStyle.Fill,
             ColumnCount = 1,
-            RowCount = 3,
+            RowCount = 4,
         };
+        mainLayout.RowStyles.Add(new RowStyle(SizeType.AutoSize));
         mainLayout.RowStyles.Add(new RowStyle(SizeType.AutoSize));
         mainLayout.RowStyles.Add(new RowStyle(SizeType.Percent, 100));
         mainLayout.RowStyles.Add(new RowStyle(SizeType.AutoSize));
 
         // Top: account file info
-        var infoPanel = new FlowLayoutPanel
-        {
-            Dock = DockStyle.Fill,
-            AutoSize = true,
-            FlowDirection = FlowDirection.LeftToRight,
-            Padding = new Padding(5),
-        };
         _statusLabel = new Label
         {
             Text = "Account data: Not loaded. Select a save directory to auto-detect accountdata.hg.",
             AutoSize = true,
-            Padding = new Padding(0, 5, 0, 5),
+            Padding = new Padding(5),
+            Dock = DockStyle.Fill,
         };
-        infoPanel.Controls.Add(_statusLabel);
-        mainLayout.Controls.Add(infoPanel, 0, 0);
+        mainLayout.Controls.Add(_statusLabel, 0, 0);
+
+        // Warning label about Twitch drops
+        var warningLabel = new Label
+        {
+            Text = "NOTE: To use twitch drops, you must go offline before you start the game. You can claim them at the Synthesis vendor in the Anomaly.",
+            AutoSize = true,
+            Padding = new Padding(5, 2, 5, 5),
+            Dock = DockStyle.Fill,
+            ForeColor = Color.DarkOrange,
+            Font = new Font(Font.FontFamily, 9, FontStyle.Bold),
+        };
+        mainLayout.Controls.Add(warningLabel, 0, 1);
 
         // Middle: tabs
         _tabControl = new TabControl { Dock = DockStyle.Fill };
@@ -55,7 +67,7 @@ public class AccountPanel : UserControl
         _tabControl.TabPages.Add(CreateTab("Twitch Rewards", _twitchGrid));
         _tabControl.TabPages.Add(CreateTab("Platform Rewards", _platformGrid));
 
-        mainLayout.Controls.Add(_tabControl, 0, 1);
+        mainLayout.Controls.Add(_tabControl, 0, 2);
 
         // Bottom: save button
         var bottomPanel = new FlowLayoutPanel
@@ -68,12 +80,50 @@ public class AccountPanel : UserControl
         var saveAccountButton = new Button { Text = "Save Account Data", AutoSize = true };
         saveAccountButton.Click += OnSaveAccount;
         bottomPanel.Controls.Add(saveAccountButton);
-        mainLayout.Controls.Add(bottomPanel, 0, 2);
+        mainLayout.Controls.Add(bottomPanel, 0, 3);
 
         Controls.Add(mainLayout);
 
         ResumeLayout(false);
         PerformLayout();
+    }
+
+    /// <summary>
+    /// Load the rewards database from rewards.xml so we can show names and all possible rewards.
+    /// </summary>
+    public void LoadRewardsDatabase(string dbPath)
+    {
+        _seasonRewardsDb.Clear();
+        _twitchRewardsDb.Clear();
+        _platformRewardsDb.Clear();
+
+        string rewardsPath = Path.Combine(dbPath, "rewards.xml");
+        if (!File.Exists(rewardsPath)) return;
+
+        try
+        {
+            var doc = new XmlDocument();
+            doc.Load(rewardsPath);
+            var root = doc.DocumentElement;
+            if (root == null) return;
+
+            foreach (XmlNode node in root.ChildNodes)
+            {
+                if (node is not XmlElement elem) continue;
+                string id = elem.GetAttribute("id");
+                string name = elem.GetAttribute("name");
+                if (string.IsNullOrEmpty(id)) continue;
+
+                var entry = (id, name);
+                switch (elem.Name.ToLowerInvariant())
+                {
+                    case "season": _seasonRewardsDb.Add(entry); break;
+                    case "twitch": _twitchRewardsDb.Add(entry); break;
+                    case "platform": _platformRewardsDb.Add(entry); break;
+                }
+            }
+        }
+        catch { /* ignore parse errors */ }
     }
 
     private static DataGridView CreateRewardGrid()
@@ -90,59 +140,31 @@ public class AccountPanel : UserControl
         };
         grid.Columns.Add(new DataGridViewTextBoxColumn
         {
-            Name = "Index",
-            HeaderText = "Index",
+            Name = "RewardId",
+            HeaderText = "Reward ID",
             ReadOnly = true,
-            FillWeight = 20,
+            FillWeight = 40,
         });
         grid.Columns.Add(new DataGridViewTextBoxColumn
         {
-            Name = "RewardId",
-            HeaderText = "Reward ID",
-            ReadOnly = false,
-            FillWeight = 80,
+            Name = "RewardName",
+            HeaderText = "Name",
+            ReadOnly = true,
+            FillWeight = 40,
+        });
+        grid.Columns.Add(new DataGridViewCheckBoxColumn
+        {
+            Name = "Unlocked",
+            HeaderText = "Unlocked",
+            FillWeight = 20,
         });
         return grid;
     }
 
-    private TabPage CreateTab(string title, DataGridView grid)
+    private static TabPage CreateTab(string title, DataGridView grid)
     {
         var page = new TabPage(title);
-        var panel = new Panel { Dock = DockStyle.Fill };
-
-        var buttonPanel = new FlowLayoutPanel
-        {
-            Dock = DockStyle.Bottom,
-            Height = 35,
-            FlowDirection = FlowDirection.LeftToRight,
-            Padding = new Padding(5),
-        };
-
-        var addButton = new Button { Text = "Add Reward", AutoSize = true };
-        var removeButton = new Button { Text = "Remove Selected", AutoSize = true };
-
-        addButton.Click += (_, _) =>
-        {
-            int index = grid.Rows.Count;
-            grid.Rows.Add(index, "");
-        };
-
-        removeButton.Click += (_, _) =>
-        {
-            if (grid.SelectedRows.Count == 0) return;
-            foreach (DataGridViewRow row in grid.SelectedRows)
-                if (!row.IsNewRow) grid.Rows.Remove(row);
-            // Re-index
-            for (int i = 0; i < grid.Rows.Count; i++)
-                grid.Rows[i].Cells["Index"].Value = i;
-        };
-
-        buttonPanel.Controls.Add(addButton);
-        buttonPanel.Controls.Add(removeButton);
-
-        panel.Controls.Add(grid);
-        panel.Controls.Add(buttonPanel);
-        page.Controls.Add(panel);
+        page.Controls.Add(grid);
         return page;
     }
 
@@ -173,16 +195,70 @@ public class AccountPanel : UserControl
             var userSettings = _accountData.GetObject("UserSettingsData")
                             ?? _accountData; // fallback: root may be the settings
 
-            LoadRewardList(_seasonGrid, userSettings.GetArray("UnlockedSeasonRewards"));
-            LoadRewardList(_twitchGrid, userSettings.GetArray("UnlockedTwitchRewards"));
-            LoadRewardList(_platformGrid, userSettings.GetArray("UnlockedPlatformRewards"));
+            var seasonUnlocked = GetUnlockedSet(userSettings.GetArray("UnlockedSeasonRewards"));
+            var twitchUnlocked = GetUnlockedSet(userSettings.GetArray("UnlockedTwitchRewards"));
+            var platformUnlocked = GetUnlockedSet(userSettings.GetArray("UnlockedPlatformRewards"));
 
-            int total = _seasonGrid.Rows.Count + _twitchGrid.Rows.Count + _platformGrid.Rows.Count;
-            _statusLabel.Text = $"Account data: Loaded from {Path.GetFileName(accountPath)} ({total} rewards)";
+            PopulateRewardGrid(_seasonGrid, _seasonRewardsDb, seasonUnlocked);
+            PopulateRewardGrid(_twitchGrid, _twitchRewardsDb, twitchUnlocked);
+            PopulateRewardGrid(_platformGrid, _platformRewardsDb, platformUnlocked);
+
+            int total = seasonUnlocked.Count + twitchUnlocked.Count + platformUnlocked.Count;
+            _statusLabel.Text = $"Account data: Loaded from {Path.GetFileName(accountPath)} ({total} unlocked rewards)";
         }
         catch (Exception ex)
         {
             _statusLabel.Text = $"Account data: Error loading {accountPath}: {ex.Message}";
+        }
+    }
+
+    private static HashSet<string> GetUnlockedSet(JsonArray? array)
+    {
+        var set = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+        if (array == null) return set;
+        for (int i = 0; i < array.Length; i++)
+        {
+            var val = array.GetString(i);
+            if (!string.IsNullOrEmpty(val))
+                set.Add(val);
+        }
+        return set;
+    }
+
+    private static void PopulateRewardGrid(DataGridView grid, List<(string Id, string Name)> rewardsDb, HashSet<string> unlocked)
+    {
+        grid.Rows.Clear();
+
+        if (rewardsDb.Count > 0)
+        {
+            // Show all possible rewards from database with unlock status
+            foreach (var (id, name) in rewardsDb)
+            {
+                bool isUnlocked = unlocked.Contains(id);
+                grid.Rows.Add(id, name, isUnlocked);
+            }
+
+            // Also add any unlocked rewards that aren't in the database
+            foreach (var id in unlocked)
+            {
+                bool found = false;
+                foreach (var (dbId, _) in rewardsDb)
+                {
+                    if (string.Equals(dbId, id, StringComparison.OrdinalIgnoreCase))
+                    {
+                        found = true;
+                        break;
+                    }
+                }
+                if (!found)
+                    grid.Rows.Add(id, "(unknown)", true);
+            }
+        }
+        else
+        {
+            // No database loaded - just show unlocked rewards
+            foreach (var id in unlocked)
+                grid.Rows.Add(id, "", true);
         }
     }
 
@@ -194,18 +270,6 @@ public class AccountPanel : UserControl
     {
         // Account rewards are in accountdata.hg, not in the save file.
         // LoadAccountFile() handles the actual loading.
-    }
-
-    private static void LoadRewardList(DataGridView grid, JsonArray? rewards)
-    {
-        grid.Rows.Clear();
-        if (rewards == null) return;
-
-        for (int i = 0; i < rewards.Length; i++)
-        {
-            var rewardId = rewards.GetString(i) ?? "";
-            grid.Rows.Add(i, rewardId);
-        }
     }
 
     public void SaveData(JsonObject saveData)
@@ -251,9 +315,13 @@ public class AccountPanel : UserControl
         array.Clear();
         foreach (DataGridViewRow row in grid.Rows)
         {
-            var rewardId = row.Cells["RewardId"].Value?.ToString() ?? "";
-            if (!string.IsNullOrEmpty(rewardId))
-                array.Add(rewardId);
+            bool unlocked = row.Cells["Unlocked"].Value is true;
+            if (unlocked)
+            {
+                var rewardId = row.Cells["RewardId"].Value?.ToString() ?? "";
+                if (!string.IsNullOrEmpty(rewardId))
+                    array.Add(rewardId);
+            }
         }
     }
 }
