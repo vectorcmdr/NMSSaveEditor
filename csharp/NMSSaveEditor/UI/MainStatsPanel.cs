@@ -104,18 +104,32 @@ public class MainStatsPanel : UserControl
     {
         try
         {
-            var value = data.Get(key);
-            if (value == null) value = data.GetValue(key);
+            // Try direct Get first, then GetValue (which supports path resolution)
+            var value = data.Get(key) ?? data.GetValue(key);
             if (value == null) return;
 
-            // Convert the value to a long, treating negative ints as unsigned 32-bit
+            // Handle JsonObject wrapping (some saves nest values)
+            if (value is JsonObject jobj)
+            {
+                value = jobj.Get("Value") ?? jobj.Get("value");
+                if (value == null) return;
+            }
+
+            // Convert the value, treating negative ints as unsigned 32-bit (Java: & 0xFFFFFFFFL)
             decimal numericValue;
             if (value is int i)
-                numericValue = (uint)i; // treat as unsigned 32-bit (Java: & 0xFFFFFFFFL)
+                numericValue = (decimal)(uint)i;
             else if (value is long l)
                 numericValue = (decimal)(l & 0xFFFFFFFFL);
             else if (value is decimal d)
-                numericValue = d;
+            {
+                // The parser stores all numbers as decimal internally before narrowing
+                // If the decimal represents a negative int (from signed NMS save), convert
+                if (d < 0 && d >= int.MinValue)
+                    numericValue = (decimal)(uint)(int)d;
+                else
+                    numericValue = d;
+            }
             else
                 numericValue = Convert.ToDecimal(value);
 
@@ -123,6 +137,9 @@ public class MainStatsPanel : UserControl
             if (numericValue > field.Maximum) numericValue = field.Maximum;
             field.Value = numericValue;
         }
-        catch { }
+        catch (Exception ex)
+        {
+            System.Diagnostics.Debug.WriteLine($"SetNumericValue({key}): {ex.Message}");
+        }
     }
 }

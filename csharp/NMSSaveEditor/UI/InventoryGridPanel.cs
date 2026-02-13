@@ -547,28 +547,59 @@ public class InventoryGridPanel : UserControl
         _slots = inventory.GetArray("Slots");
         if (_slots == null) return;
 
-        // Determine grid dimensions from inventory metadata
+        // Determine grid dimensions from inventory Width/Height fields (matching Java gt.java)
         int width = GridColumns;
-        int height = (_slots.Length + width - 1) / width;
+        int height = 1;
         try
         {
-            var validSlots = inventory.GetArray("ValidSlotIndices");
-            if (validSlots != null && validSlots.Length > 0)
+            int invWidth = 0, invHeight = 0;
+            try { invWidth = inventory.GetInt("Width"); } catch { }
+            try { invHeight = inventory.GetInt("Height"); } catch { }
+            if (invWidth > 0 && invHeight > 0)
             {
+                width = invWidth;
+                height = invHeight;
+            }
+            else
+            {
+                // Fallback: infer from ValidSlotIndices + Slots
+                var validSlots = inventory.GetArray("ValidSlotIndices");
                 int maxX = 0, maxY = 0;
-                for (int i = 0; i < validSlots.Length; i++)
+                if (validSlots != null)
                 {
-                    var idx = validSlots.GetObject(i);
-                    if (idx != null)
+                    for (int i = 0; i < validSlots.Length; i++)
                     {
-                        try { maxX = Math.Max(maxX, idx.GetInt("X")); } catch { }
-                        try { maxY = Math.Max(maxY, idx.GetInt("Y")); } catch { }
+                        var idx = validSlots.GetObject(i);
+                        if (idx != null)
+                        {
+                            try { maxX = Math.Max(maxX, idx.GetInt("X")); } catch { }
+                            try { maxY = Math.Max(maxY, idx.GetInt("Y")); } catch { }
+                        }
                     }
+                }
+                // Also check Slots for items beyond ValidSlotIndices
+                for (int i = 0; i < _slots.Length; i++)
+                {
+                    try
+                    {
+                        var slot = _slots.GetObject(i);
+                        var si = slot?.GetObject("Index");
+                        if (si != null)
+                        {
+                            maxX = Math.Max(maxX, si.GetInt("X"));
+                            maxY = Math.Max(maxY, si.GetInt("Y"));
+                        }
+                    }
+                    catch { }
                 }
                 if (maxX > 0 || maxY > 0)
                 {
                     width = maxX + 1;
                     height = maxY + 1;
+                }
+                else
+                {
+                    height = (_slots.Length + width - 1) / width;
                 }
             }
         }
@@ -637,10 +668,13 @@ public class InventoryGridPanel : UserControl
                 {
                     // Valid slot but empty - can add items here
                     cell.IsValidEmpty = true;
+                    cell.IsActivated = true; // In ValidSlotIndices = enabled
                 }
                 else
                 {
+                    // Not in ValidSlotIndices and no data = disabled slot
                     cell.IsEmpty = true;
+                    cell.IsActivated = false;
                 }
 
                 cell.Click += OnCellClicked;

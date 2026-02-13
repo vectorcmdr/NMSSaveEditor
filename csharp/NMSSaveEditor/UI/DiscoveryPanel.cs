@@ -724,7 +724,7 @@ public class DiscoveryPanel : UserControl
 
     private void LoadKnownGlyphs(JsonObject playerState)
     {
-        var glyphData = playerState.GetArray("PortalGlyphData");
+        var glyphData = playerState.GetArray("KnownPortalRunes");
         for (int i = 0; i < 16; i++)
         {
             bool known = false;
@@ -739,11 +739,11 @@ public class DiscoveryPanel : UserControl
 
     private void SaveKnownGlyphs(JsonObject playerState)
     {
-        var glyphData = playerState.GetArray("PortalGlyphData");
+        var glyphData = playerState.GetArray("KnownPortalRunes");
         if (glyphData == null)
         {
             glyphData = new JsonArray();
-            playerState.Set("PortalGlyphData", glyphData);
+            playerState.Set("KnownPortalRunes", glyphData);
         }
 
         // Ensure the array has at least 16 entries
