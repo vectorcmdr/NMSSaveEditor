@@ -280,10 +280,10 @@ public class MultitoolPanel : UserControl
                 _storeGrid.SaveInventory(tool.GetObject("Store"));
 
                 // Save base stats to Store.BaseStatValues
-                var store2 = tool.GetObject("Store");
-                WriteBaseStatValue(store2, "^MT_DAMAGE", (double)_damageField.Value);
-                WriteBaseStatValue(store2, "^MT_MINING", (double)_miningField.Value);
-                WriteBaseStatValue(store2, "^MT_SCAN", (double)_scanField.Value);
+                var toolStore = tool.GetObject("Store");
+                WriteBaseStatValue(toolStore, "^MT_DAMAGE", (double)_damageField.Value);
+                WriteBaseStatValue(toolStore, "^MT_MINING", (double)_miningField.Value);
+                WriteBaseStatValue(toolStore, "^MT_SCAN", (double)_scanField.Value);
             }
             else
             {
@@ -336,10 +336,10 @@ public class MultitoolPanel : UserControl
                 _storeGrid.LoadInventory(tool.GetObject("Store"));
 
                 // Load base stats from Store.BaseStatValues
-                var store2 = tool.GetObject("Store");
-                try { _damageField.Value = (decimal)ReadBaseStatValue(store2, "^MT_DAMAGE"); } catch { _damageField.Value = 0; }
-                try { _miningField.Value = (decimal)ReadBaseStatValue(store2, "^MT_MINING"); } catch { _miningField.Value = 0; }
-                try { _scanField.Value = (decimal)ReadBaseStatValue(store2, "^MT_SCAN"); } catch { _scanField.Value = 0; }
+                var toolStore = tool.GetObject("Store");
+                try { _damageField.Value = (decimal)ReadBaseStatValue(toolStore, "^MT_DAMAGE"); } catch { _damageField.Value = 0; }
+                try { _miningField.Value = (decimal)ReadBaseStatValue(toolStore, "^MT_MINING"); } catch { _miningField.Value = 0; }
+                try { _scanField.Value = (decimal)ReadBaseStatValue(toolStore, "^MT_SCAN"); } catch { _scanField.Value = 0; }
             }
         }
         catch { }
