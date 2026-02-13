@@ -1588,7 +1588,7 @@ public class InventoryGridPanel : UserControl
             {
                 // Valid empty slot - available for adding items
                 Color bg = _isSelected ? Color.FromArgb(70, 100, 160) : Color.FromArgb(45, 45, 50);
-                if (!IsActivated) bg = Color.FromArgb(20, 20, 22);
+                if (!IsActivated) bg = Color.FromArgb(80, 30, 30); // Inactive = transparent red tint
                 BackColor = bg;
                 BorderStyle = IsSupercharged ? BorderStyle.Fixed3D : BorderStyle.FixedSingle;
                 _iconBox.Image = null;
@@ -1618,9 +1618,12 @@ public class InventoryGridPanel : UserControl
             else
                 baseColor = Color.FromArgb(50, 50, 50);
 
-            // Non-activated slots are darker/grayed out
+            // Non-activated slots get a red tint overlay for clear visual distinction
             if (!IsActivated && !_isSelected)
-                baseColor = Color.FromArgb(baseColor.R / DisabledDarkenFactor, baseColor.G / DisabledDarkenFactor, baseColor.B / DisabledDarkenFactor);
+                baseColor = Color.FromArgb(
+                    Math.Min(255, baseColor.R / 2 + 60),
+                    baseColor.G / 4,
+                    baseColor.B / 4);
 
             BackColor = baseColor;
             BorderStyle = IsSupercharged ? BorderStyle.Fixed3D : BorderStyle.FixedSingle;
