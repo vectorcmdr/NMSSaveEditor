@@ -34,6 +34,7 @@ public class MainForm : Form
     private readonly DiscoveryPanel _discoveryPanel;
     private readonly MilestonePanel _milestonePanel;
     private readonly SettlementPanel _settlementPanel;
+    private readonly AccountPanel _accountPanel;
     private readonly RawJsonPanel _rawJsonPanel;
 
     // Data
@@ -71,6 +72,7 @@ public class MainForm : Form
         _discoveryPanel = new DiscoveryPanel();
         _milestonePanel = new MilestonePanel();
         _settlementPanel = new SettlementPanel();
+        _accountPanel = new AccountPanel();
         _rawJsonPanel = new RawJsonPanel();
 
         InitializeForm();
@@ -177,6 +179,7 @@ public class MainForm : Form
         _tabControl.TabPages.Add(CreateTab("Discoveries", _discoveryPanel));
         _tabControl.TabPages.Add(CreateTab("Milestones", _milestonePanel));
         _tabControl.TabPages.Add(CreateTab("Settlements", _settlementPanel));
+        _tabControl.TabPages.Add(CreateTab("Account", _accountPanel));
         _tabControl.TabPages.Add(CreateTab("Raw JSON", _rawJsonPanel));
     }
 
@@ -348,6 +351,7 @@ public class MainForm : Form
             _discoveryPanel.LoadData(_currentSaveData);
             _milestonePanel.LoadData(_currentSaveData);
             _settlementPanel.LoadData(_currentSaveData);
+            _accountPanel.LoadData(_currentSaveData);
             _rawJsonPanel.LoadData(_currentSaveData);
 
             // Enable save controls
@@ -442,6 +446,7 @@ public class MainForm : Form
             _discoveryPanel.SaveData(_currentSaveData);
             _milestonePanel.SaveData(_currentSaveData);
             _settlementPanel.SaveData(_currentSaveData);
+            _accountPanel.SaveData(_currentSaveData);
             _rawJsonPanel.SaveData(_currentSaveData);
 
             SaveFileManager.SaveToFile(_currentFilePath, _currentSaveData);
@@ -536,6 +541,7 @@ public class MainForm : Form
                 _discoveryPanel.LoadData(_currentSaveData);
                 _milestonePanel.LoadData(_currentSaveData);
                 _settlementPanel.LoadData(_currentSaveData);
+                _accountPanel.LoadData(_currentSaveData);
                 _rawJsonPanel.LoadData(_currentSaveData);
                 _statusLabel.Text = $"Imported from {Path.GetFileName(dialog.FileName)}";
             }
