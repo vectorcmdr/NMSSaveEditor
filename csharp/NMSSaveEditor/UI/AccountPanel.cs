@@ -47,7 +47,7 @@ public class AccountPanel : UserControl
         // Warning label about Twitch drops
         var warningLabel = new Label
         {
-            Text = "NOTE: To use twitch drops, you must go offline before you start the game. You can claim them at the Synthesis vendor in the Anomaly.",
+            Text = "NOTE: To use Twitch drops, you must go offline before you start the game. You can claim them at the Synthesis vendor in the Anomaly.",
             AutoSize = true,
             Padding = new Padding(5, 2, 5, 5),
             Dock = DockStyle.Fill,
