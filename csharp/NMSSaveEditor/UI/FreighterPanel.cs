@@ -14,15 +14,14 @@ public class FreighterPanel : UserControl
     private readonly Button _generateHomeSeedBtn;
     private readonly TextBox _modelSeed;
     private readonly Button _generateModelSeedBtn;
-    private readonly TextBox _hyperdriveField;
-    private readonly TextBox _fleetField;
+    private readonly NumericUpDown _hyperdriveField;
+    private readonly NumericUpDown _fleetField;
     private readonly TextBox _baseItemsField;
     private readonly Button _backupBtn;
     private readonly Button _restoreBtn;
     private readonly TabControl _invTabs;
     private readonly InventoryGridPanel _generalGrid;
     private readonly InventoryGridPanel _techGrid;
-    private readonly InventoryGridPanel _cargoGrid;
     private JsonObject? _playerState;
     private JsonObject? _freighterBase;
     private readonly Random _rng = new();
@@ -112,11 +111,11 @@ public class FreighterPanel : UserControl
         row++;
 
         // Row 7: Hyperdrive
-        _hyperdriveField = new TextBox { Dock = DockStyle.Fill, ReadOnly = true };
+        _hyperdriveField = new NumericUpDown { Dock = DockStyle.Fill, DecimalPlaces = 2, Minimum = 0, Maximum = 999999, Increment = 0.01m };
         AddRow(layout, "Hyperdrive:", _hyperdriveField, row); row++;
 
         // Row 8: Fleet Coordination
-        _fleetField = new TextBox { Dock = DockStyle.Fill, ReadOnly = true };
+        _fleetField = new NumericUpDown { Dock = DockStyle.Fill, DecimalPlaces = 2, Minimum = 0, Maximum = 999999, Increment = 0.01m };
         AddRow(layout, "Fleet Coordination:", _fleetField, row); row++;
 
         // Row 9: Base Info separator
@@ -155,18 +154,14 @@ public class FreighterPanel : UserControl
         // Row 12: Inventory tabs (fill)
         _generalGrid = new InventoryGridPanel { Dock = DockStyle.Fill };
         _techGrid = new InventoryGridPanel { Dock = DockStyle.Fill };
-        _cargoGrid = new InventoryGridPanel { Dock = DockStyle.Fill };
 
         _invTabs = new TabControl { Dock = DockStyle.Fill };
-        var generalPage = new TabPage("General");
+        var generalPage = new TabPage("Cargo");
         generalPage.Controls.Add(_generalGrid);
         var techPage = new TabPage("Technology");
         techPage.Controls.Add(_techGrid);
-        var cargoPage = new TabPage("Cargo");
-        cargoPage.Controls.Add(_cargoGrid);
         _invTabs.TabPages.Add(generalPage);
         _invTabs.TabPages.Add(techPage);
-        _invTabs.TabPages.Add(cargoPage);
         layout.Controls.Add(_invTabs, 0, row);
         layout.SetColumnSpan(_invTabs, 2);
 
@@ -179,14 +174,12 @@ public class FreighterPanel : UserControl
     {
         _generalGrid.SetDatabase(database);
         _techGrid.SetDatabase(database);
-        _cargoGrid.SetDatabase(database);
     }
 
     public void SetIconManager(IconManager? iconManager)
     {
         _generalGrid.SetIconManager(iconManager);
         _techGrid.SetIconManager(iconManager);
-        _cargoGrid.SetIconManager(iconManager);
     }
 
     private static void AddRow(TableLayoutPanel layout, string label, Control field, int row)
@@ -249,8 +242,8 @@ public class FreighterPanel : UserControl
             catch { _modelSeed.Text = ""; }
 
             // Base Stats: read from FreighterInventory.BaseStatValues
-            _hyperdriveField.Text = ReadStatBonus(_playerState.GetObject("FreighterInventory"), "^FREI_HYPERDRIVE").ToString();
-            _fleetField.Text = ReadStatBonus(_playerState.GetObject("FreighterInventory"), "^FREI_FLEET").ToString();
+            _hyperdriveField.Value = (decimal)ReadStatBonus(_playerState.GetObject("FreighterInventory"), "^FREI_HYPERDRIVE");
+            _fleetField.Value = (decimal)ReadStatBonus(_playerState.GetObject("FreighterInventory"), "^FREI_FLEET");
 
             // Freighter base info
             _freighterBase = FindFreighterBase(_playerState);
@@ -273,7 +266,6 @@ public class FreighterPanel : UserControl
             // Load inventories
             _generalGrid.LoadInventory(_playerState.GetObject("FreighterInventory"));
             _techGrid.LoadInventory(_playerState.GetObject("FreighterInventory_TechOnly"));
-            _cargoGrid.LoadInventory(_playerState.GetObject("FreighterInventory_Cargo"));
         }
         catch { }
     }
@@ -289,13 +281,12 @@ public class FreighterPanel : UserControl
             if (!string.IsNullOrEmpty(_freighterName.Text))
                 playerState.Set("PlayerFreighterName", _freighterName.Text);
 
-            // Class - write to all three inventories
+            // Class - write to both inventories
             if (_freighterClass.SelectedIndex >= 0)
             {
                 string cls = FreighterClasses[_freighterClass.SelectedIndex];
                 SetInventoryClass(playerState.GetObject("FreighterInventory"), cls);
                 SetInventoryClass(playerState.GetObject("FreighterInventory_TechOnly"), cls);
-                SetInventoryClass(playerState.GetObject("FreighterInventory_Cargo"), cls);
             }
 
             // Home Seed
@@ -317,10 +308,13 @@ public class FreighterPanel : UserControl
             }
             catch { }
 
+            // Save base stats
+            WriteStatBonus(playerState.GetObject("FreighterInventory"), "^FREI_HYPERDRIVE", (double)_hyperdriveField.Value);
+            WriteStatBonus(playerState.GetObject("FreighterInventory"), "^FREI_FLEET", (double)_fleetField.Value);
+
             // Save inventories
             _generalGrid.SaveInventory(playerState.GetObject("FreighterInventory"));
             _techGrid.SaveInventory(playerState.GetObject("FreighterInventory_TechOnly"));
-            _cargoGrid.SaveInventory(playerState.GetObject("FreighterInventory_Cargo"));
         }
         catch { }
     }
@@ -341,6 +335,26 @@ public class FreighterPanel : UserControl
         }
         catch { }
         return 0.0;
+    }
+
+    private static void WriteStatBonus(JsonObject? inventory, string statId, double value)
+    {
+        if (inventory == null) return;
+        try
+        {
+            var baseStatValues = inventory.GetArray("BaseStatValues");
+            if (baseStatValues == null) return;
+            for (int i = 0; i < baseStatValues.Length; i++)
+            {
+                var entry = baseStatValues.GetObject(i);
+                if (entry.GetString("BaseStatID") == statId)
+                {
+                    entry.Set("Value", value);
+                    return;
+                }
+            }
+        }
+        catch { }
     }
 
     private static JsonObject? FindFreighterBase(JsonObject playerState)

@@ -14,15 +14,16 @@ public class ShipPanel : UserControl
     private readonly TextBox _shipSeed;
     private readonly Button _generateSeedBtn;
     private readonly CheckBox _useOldColours;
-    private readonly NumericUpDown _healthField;
+    private readonly NumericUpDown _damageField;
     private readonly NumericUpDown _shieldField;
+    private readonly NumericUpDown _hyperdriveField;
+    private readonly NumericUpDown _maneuverField;
     private readonly Button _deleteBtn;
     private readonly Button _exportBtn;
     private readonly Button _importBtn;
     private readonly TabControl _invTabs;
     private readonly InventoryGridPanel _inventoryGrid;
     private readonly InventoryGridPanel _techGrid;
-    private readonly InventoryGridPanel _cargoGrid;
     private JsonArray? _shipOwnership;
     private JsonObject? _playerState;
     private GameItemDatabase? _database;
@@ -36,13 +37,13 @@ public class ShipPanel : UserControl
         {
             Dock = DockStyle.Fill,
             ColumnCount = 3,
-            RowCount = 12,
+            RowCount = 14,
             Padding = new Padding(10)
         };
         layout.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize));
         layout.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100));
         layout.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize));
-        for (int i = 0; i < 11; i++)
+        for (int i = 0; i < 13; i++)
             layout.RowStyles.Add(new RowStyle(SizeType.AutoSize));
         layout.RowStyles.Add(new RowStyle(SizeType.Percent, 100));
 
@@ -108,11 +109,17 @@ public class ShipPanel : UserControl
         layout.SetColumnSpan(statsLabel, 3);
         row++;
 
-        _healthField = new NumericUpDown { Dock = DockStyle.Fill, Maximum = 999999 };
-        AddRow(layout, "Health:", _healthField, row); row++;
+        _damageField = new NumericUpDown { Dock = DockStyle.Fill, DecimalPlaces = 2, Minimum = 0, Maximum = 999999, Increment = 0.01m };
+        AddRow(layout, "Damage:", _damageField, row); row++;
 
-        _shieldField = new NumericUpDown { Dock = DockStyle.Fill, Maximum = 999999 };
+        _shieldField = new NumericUpDown { Dock = DockStyle.Fill, DecimalPlaces = 2, Minimum = 0, Maximum = 999999, Increment = 0.01m };
         AddRow(layout, "Shield:", _shieldField, row); row++;
+
+        _hyperdriveField = new NumericUpDown { Dock = DockStyle.Fill, DecimalPlaces = 2, Minimum = 0, Maximum = 999999, Increment = 0.01m };
+        AddRow(layout, "Hyperdrive:", _hyperdriveField, row); row++;
+
+        _maneuverField = new NumericUpDown { Dock = DockStyle.Fill, DecimalPlaces = 2, Minimum = 0, Maximum = 999999, Increment = 0.01m };
+        AddRow(layout, "Maneuverability:", _maneuverField, row); row++;
 
         // Buttons panel
         var buttonPanel = new FlowLayoutPanel
@@ -134,21 +141,17 @@ public class ShipPanel : UserControl
         layout.SetColumnSpan(buttonPanel, 3);
         row++;
 
-        // Inventory tabs (3 tabs: Inventory, Technology, Cargo)
+        // Inventory tabs (2 tabs: Cargo, Technology)
         _inventoryGrid = new InventoryGridPanel { Dock = DockStyle.Fill };
         _techGrid = new InventoryGridPanel { Dock = DockStyle.Fill };
-        _cargoGrid = new InventoryGridPanel { Dock = DockStyle.Fill };
 
         _invTabs = new TabControl { Dock = DockStyle.Fill };
-        var invPage = new TabPage("Inventory");
+        var invPage = new TabPage("Cargo");
         invPage.Controls.Add(_inventoryGrid);
         var techPage = new TabPage("Technology");
         techPage.Controls.Add(_techGrid);
-        var cargoPage = new TabPage("Cargo");
-        cargoPage.Controls.Add(_cargoGrid);
         _invTabs.TabPages.Add(invPage);
         _invTabs.TabPages.Add(techPage);
-        _invTabs.TabPages.Add(cargoPage);
 
         layout.Controls.Add(_invTabs, 0, row);
         layout.SetColumnSpan(_invTabs, 3);
@@ -163,14 +166,12 @@ public class ShipPanel : UserControl
         _database = database;
         _inventoryGrid.SetDatabase(database);
         _techGrid.SetDatabase(database);
-        _cargoGrid.SetDatabase(database);
     }
 
     public void SetIconManager(IconManager? iconManager)
     {
         _inventoryGrid.SetIconManager(iconManager);
         _techGrid.SetIconManager(iconManager);
-        _cargoGrid.SetIconManager(iconManager);
     }
 
     private static void AddRow(TableLayoutPanel layout, string label, Control field, int row)
@@ -222,10 +223,6 @@ public class ShipPanel : UserControl
                     _shipSelector.Items.Add(new ShipListItem($"Ship {i + 1}", i));
                 }
             }
-
-            // Load health/shield from PlayerStateData
-            try { _healthField.Value = _playerState.GetInt("ShipHealth"); } catch { _healthField.Value = 0; }
-            try { _shieldField.Value = _playerState.GetInt("ShipShield"); } catch { _shieldField.Value = 0; }
 
             if (_shipSelector.Items.Count > 0)
             {
@@ -284,17 +281,19 @@ public class ShipPanel : UserControl
             }
             catch { }
 
-            // Save health/shield to PlayerStateData
-            try { playerState.Set("ShipHealth", (int)_healthField.Value); } catch { }
-            try { playerState.Set("ShipShield", (int)_shieldField.Value); } catch { }
-
             // Save use old colours
             try { playerState.Set("ShipUsesLegacyColours", _useOldColours.Checked); } catch { }
+
+            // Save base stats to ship's Inventory.BaseStatValues
+            var shipInv = ship.GetObject("Inventory");
+            WriteBaseStatValue(shipInv, "^SHIP_DAMAGE", (double)_damageField.Value);
+            WriteBaseStatValue(shipInv, "^SHIP_SHIELD", (double)_shieldField.Value);
+            WriteBaseStatValue(shipInv, "^SHIP_HYPERDRIVE", (double)_hyperdriveField.Value);
+            WriteBaseStatValue(shipInv, "^SHIP_AGILE", (double)_maneuverField.Value);
 
             // Save inventories
             _inventoryGrid.SaveInventory(ship.GetObject("Inventory"));
             _techGrid.SaveInventory(ship.GetObject("Inventory_TechOnly"));
-            _cargoGrid.SaveInventory(ship.GetObject("Inventory_Cargo"));
         }
         catch { }
     }
@@ -349,10 +348,16 @@ public class ShipPanel : UserControl
             }
             catch { _useOldColours.Checked = false; }
 
-            // Load all three inventories
+            // Load all inventories
             _inventoryGrid.LoadInventory(ship.GetObject("Inventory"));
             _techGrid.LoadInventory(ship.GetObject("Inventory_TechOnly"));
-            _cargoGrid.LoadInventory(ship.GetObject("Inventory_Cargo"));
+
+            // Load base stats from ship's Inventory.BaseStatValues
+            var shipInv = ship.GetObject("Inventory");
+            try { _damageField.Value = (decimal)ReadBaseStatValue(shipInv, "^SHIP_DAMAGE"); } catch { _damageField.Value = 0; }
+            try { _shieldField.Value = (decimal)ReadBaseStatValue(shipInv, "^SHIP_SHIELD"); } catch { _shieldField.Value = 0; }
+            try { _hyperdriveField.Value = (decimal)ReadBaseStatValue(shipInv, "^SHIP_HYPERDRIVE"); } catch { _hyperdriveField.Value = 0; }
+            try { _maneuverField.Value = (decimal)ReadBaseStatValue(shipInv, "^SHIP_AGILE"); } catch { _maneuverField.Value = 0; }
         }
         catch { }
     }
@@ -465,6 +470,44 @@ public class ShipPanel : UserControl
         {
             var classObj = inventory.GetObject("Class");
             classObj?.Set("InventoryClass", cls);
+        }
+        catch { }
+    }
+
+    private static double ReadBaseStatValue(JsonObject? inventory, string statId)
+    {
+        if (inventory == null) return 0.0;
+        try
+        {
+            var baseStatValues = inventory.GetArray("BaseStatValues");
+            if (baseStatValues == null) return 0.0;
+            for (int i = 0; i < baseStatValues.Length; i++)
+            {
+                var entry = baseStatValues.GetObject(i);
+                if (entry.GetString("BaseStatID") == statId)
+                    return entry.GetDouble("Value");
+            }
+        }
+        catch { }
+        return 0.0;
+    }
+
+    private static void WriteBaseStatValue(JsonObject? inventory, string statId, double value)
+    {
+        if (inventory == null) return;
+        try
+        {
+            var baseStatValues = inventory.GetArray("BaseStatValues");
+            if (baseStatValues == null) return;
+            for (int i = 0; i < baseStatValues.Length; i++)
+            {
+                var entry = baseStatValues.GetObject(i);
+                if (entry.GetString("BaseStatID") == statId)
+                {
+                    entry.Set("Value", value);
+                    return;
+                }
+            }
         }
         catch { }
     }

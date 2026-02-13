@@ -37,7 +37,7 @@ public class ExosuitPanel : UserControl
         _techGrid = new InventoryGridPanel { Dock = DockStyle.Fill };
 
         _invTabs = new TabControl { Dock = DockStyle.Fill };
-        var generalPage = new TabPage("General");
+        var generalPage = new TabPage("Cargo");
         generalPage.Controls.Add(_generalGrid);
         var techPage = new TabPage("Technology");
         techPage.Controls.Add(_techGrid);

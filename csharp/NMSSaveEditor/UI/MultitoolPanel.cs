@@ -15,6 +15,9 @@ public class MultitoolPanel : UserControl
     private readonly Button _deleteBtn;
     private readonly Button _exportBtn;
     private readonly Button _importBtn;
+    private readonly NumericUpDown _damageField;
+    private readonly NumericUpDown _miningField;
+    private readonly NumericUpDown _scanField;
     private readonly InventoryGridPanel _storeGrid;
     private JsonArray? _multitools;
     private JsonObject? _playerState;
@@ -31,12 +34,12 @@ public class MultitoolPanel : UserControl
         {
             Dock = DockStyle.Fill,
             ColumnCount = 2,
-            RowCount = 8,
+            RowCount = 11,
             Padding = new Padding(10)
         };
         layout.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize));
         layout.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100));
-        for (int i = 0; i < 7; i++)
+        for (int i = 0; i < 10; i++)
             layout.RowStyles.Add(new RowStyle(SizeType.AutoSize));
         layout.RowStyles.Add(new RowStyle(SizeType.Percent, 100));
 
@@ -94,7 +97,19 @@ public class MultitoolPanel : UserControl
         layout.SetColumnSpan(statsLabel, 2);
         row++;
 
-        // Row 6: Buttons panel
+        // Row 6: Damage
+        _damageField = new NumericUpDown { Dock = DockStyle.Fill, DecimalPlaces = 2, Minimum = 0, Maximum = 999999, Increment = 0.01m };
+        AddRow(layout, "Damage:", _damageField, row); row++;
+
+        // Row 7: Mining
+        _miningField = new NumericUpDown { Dock = DockStyle.Fill, DecimalPlaces = 2, Minimum = 0, Maximum = 999999, Increment = 0.01m };
+        AddRow(layout, "Mining:", _miningField, row); row++;
+
+        // Row 8: Scan
+        _scanField = new NumericUpDown { Dock = DockStyle.Fill, DecimalPlaces = 2, Minimum = 0, Maximum = 999999, Increment = 0.01m };
+        AddRow(layout, "Scan:", _scanField, row); row++;
+
+        // Row 9: Buttons panel
         var buttonPanel = new FlowLayoutPanel
         {
             Dock = DockStyle.Fill,
@@ -114,7 +129,7 @@ public class MultitoolPanel : UserControl
         layout.SetColumnSpan(buttonPanel, 2);
         row++;
 
-        // Row 7 (fill): Store inventory grid
+        // Row 10 (fill): Store inventory grid
         _storeGrid = new InventoryGridPanel { Dock = DockStyle.Fill };
         layout.Controls.Add(_storeGrid, 0, row);
         layout.SetColumnSpan(_storeGrid, 2);
@@ -263,6 +278,12 @@ public class MultitoolPanel : UserControl
                 catch { }
 
                 _storeGrid.SaveInventory(tool.GetObject("Store"));
+
+                // Save base stats to Store.BaseStatValues
+                var store2 = tool.GetObject("Store");
+                WriteBaseStatValue(store2, "^MT_DAMAGE", (double)_damageField.Value);
+                WriteBaseStatValue(store2, "^MT_MINING", (double)_miningField.Value);
+                WriteBaseStatValue(store2, "^MT_SCAN", (double)_scanField.Value);
             }
             else
             {
@@ -313,6 +334,12 @@ public class MultitoolPanel : UserControl
                 _toolSeed.Text = seed;
 
                 _storeGrid.LoadInventory(tool.GetObject("Store"));
+
+                // Load base stats from Store.BaseStatValues
+                var store2 = tool.GetObject("Store");
+                try { _damageField.Value = (decimal)ReadBaseStatValue(store2, "^MT_DAMAGE"); } catch { _damageField.Value = 0; }
+                try { _miningField.Value = (decimal)ReadBaseStatValue(store2, "^MT_MINING"); } catch { _miningField.Value = 0; }
+                try { _scanField.Value = (decimal)ReadBaseStatValue(store2, "^MT_SCAN"); } catch { _scanField.Value = 0; }
             }
         }
         catch { }
@@ -441,5 +468,43 @@ public class MultitoolPanel : UserControl
         {
             MessageBox.Show($"Import failed: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
+    }
+
+    private static double ReadBaseStatValue(JsonObject? inventory, string statId)
+    {
+        if (inventory == null) return 0.0;
+        try
+        {
+            var baseStatValues = inventory.GetArray("BaseStatValues");
+            if (baseStatValues == null) return 0.0;
+            for (int i = 0; i < baseStatValues.Length; i++)
+            {
+                var entry = baseStatValues.GetObject(i);
+                if (entry.GetString("BaseStatID") == statId)
+                    return entry.GetDouble("Value");
+            }
+        }
+        catch { }
+        return 0.0;
+    }
+
+    private static void WriteBaseStatValue(JsonObject? inventory, string statId, double value)
+    {
+        if (inventory == null) return;
+        try
+        {
+            var baseStatValues = inventory.GetArray("BaseStatValues");
+            if (baseStatValues == null) return;
+            for (int i = 0; i < baseStatValues.Length; i++)
+            {
+                var entry = baseStatValues.GetObject(i);
+                if (entry.GetString("BaseStatID") == statId)
+                {
+                    entry.Set("Value", value);
+                    return;
+                }
+            }
+        }
+        catch { }
     }
 }
