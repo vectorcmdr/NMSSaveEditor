@@ -4,6 +4,9 @@ csharp/**/obj/
 csharp/**/.vs/
 csharp/**/*.user
 
+# Extracted JAR artifacts
+nomanssave/
+
 # IDE
 .idea/
 *.suo
