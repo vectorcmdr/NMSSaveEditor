@@ -669,12 +669,14 @@ public class InventoryGridPanel : UserControl
                     // Valid slot but empty - can add items here
                     cell.IsValidEmpty = true;
                     cell.IsActivated = true; // In ValidSlotIndices = enabled
+                    cell.UpdateDisplay();
                 }
                 else
                 {
                     // Not in ValidSlotIndices and no data = disabled slot
                     cell.IsEmpty = true;
                     cell.IsActivated = false;
+                    cell.UpdateDisplay();
                 }
 
                 cell.Click += OnCellClicked;
@@ -729,6 +731,7 @@ public class InventoryGridPanel : UserControl
         {
             cell.IsValidEmpty = true;
             cell.SlotData = cell.SlotData; // Keep slot data for position
+            cell.UpdateDisplay();
             return;
         }
 
@@ -1193,28 +1196,47 @@ public class InventoryGridPanel : UserControl
     {
         if (_contextCell == null || _currentInventory == null) return;
         var validSlots = _currentInventory.GetArray("ValidSlotIndices");
-        if (validSlots == null) return;
+        if (validSlots == null)
+        {
+            validSlots = new JsonArray();
+            _currentInventory.Set("ValidSlotIndices", validSlots);
+        }
 
         int x = _contextCell.GridX, y = _contextCell.GridY;
-        bool found = false;
-        for (int i = 0; i < validSlots.Length; i++)
+
+        if (_contextCell.IsActivated)
         {
-            var idx = validSlots.GetObject(i);
-            if (idx != null && idx.GetInt("X") == x && idx.GetInt("Y") == y)
+            // Disable: only allowed if slot has no item (matches Java gt.java j() method)
+            if (_contextCell.SlotData != null && !string.IsNullOrEmpty(_contextCell.ItemId)
+                && _contextCell.ItemId != "^" && _contextCell.ItemId != "^YOURSLOTITEM")
             {
-                validSlots.RemoveAt(i);
-                found = true;
-                break;
+                MessageBox.Show("Cannot disable a slot that contains an item. Remove the item first.",
+                    "Cannot Disable", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
+            // Remove from ValidSlotIndices
+            for (int i = 0; i < validSlots.Length; i++)
+            {
+                var idx = validSlots.GetObject(i);
+                if (idx != null && idx.GetInt("X") == x && idx.GetInt("Y") == y)
+                {
+                    validSlots.RemoveAt(i);
+                    break;
+                }
+            }
+            _contextCell.IsActivated = false;
         }
-        if (!found)
+        else
         {
+            // Enable: add to ValidSlotIndices (matches Java gt.java i() method)
             var newIdx = new JsonObject();
             newIdx.Add("X", x);
             newIdx.Add("Y", y);
             validSlots.Add(newIdx);
+            _contextCell.IsActivated = true;
+            _contextCell.IsEmpty = false;
+            _contextCell.IsValidEmpty = true;
         }
-        _contextCell.IsActivated = !found;
         _contextCell.UpdateDisplay();
     }
 
@@ -1222,7 +1244,11 @@ public class InventoryGridPanel : UserControl
     {
         if (_currentInventory == null) return;
         var validSlots = _currentInventory.GetArray("ValidSlotIndices");
-        if (validSlots == null) return;
+        if (validSlots == null)
+        {
+            validSlots = new JsonArray();
+            _currentInventory.Set("ValidSlotIndices", validSlots);
+        }
 
         var existing = new HashSet<(int, int)>();
         for (int i = 0; i < validSlots.Length; i++)
@@ -1605,16 +1631,20 @@ public class InventoryGridPanel : UserControl
         {
             if (IsEmpty)
             {
-                BackColor = Color.FromArgb(25, 25, 25);
+                // Disabled slot - not in ValidSlotIndices and no data
+                Color bg = _isSelected ? Color.FromArgb(70, 80, 100) : Color.FromArgb(25, 25, 25);
+                if (!IsActivated) bg = Color.FromArgb(80, 20, 20); // Red tint for disabled
+                BackColor = bg;
                 BorderStyle = BorderStyle.FixedSingle;
                 _iconBox.Image = null;
                 _nameLabel.Text = "";
                 _nameLabel.Visible = false;
                 _amountLabel.Text = "";
                 _amountLabel.Visible = false;
-                Cursor = Cursors.Default;
-                _toolTip.SetToolTip(this, "");
-                _toolTip.SetToolTip(_iconBox, "");
+                Cursor = Cursors.Hand; // Allow right-click to enable
+                string tip = IsActivated ? $"Empty slot ({GridX}, {GridY})" : $"Disabled slot ({GridX}, {GridY}) - Right-click to enable";
+                _toolTip.SetToolTip(this, tip);
+                _toolTip.SetToolTip(_iconBox, tip);
                 return;
             }
 

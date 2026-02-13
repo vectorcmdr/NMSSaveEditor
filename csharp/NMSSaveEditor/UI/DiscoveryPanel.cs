@@ -724,34 +724,34 @@ public class DiscoveryPanel : UserControl
 
     private void LoadKnownGlyphs(JsonObject playerState)
     {
-        var glyphData = playerState.GetArray("KnownPortalRunes");
+        // Java stores KnownPortalRunes as a single integer bitfield (each bit = one glyph)
+        int runesBitfield = 0;
+        try
+        {
+            var val = playerState.Get("KnownPortalRunes");
+            if (val is int i) runesBitfield = i;
+            else if (val is long l) runesBitfield = (int)l;
+            else if (val != null) runesBitfield = Convert.ToInt32(val);
+        }
+        catch { }
+
         for (int i = 0; i < 16; i++)
         {
-            bool known = false;
-            if (glyphData != null && i < glyphData.Length)
-            {
-                try { known = glyphData.GetBool(i); }
-                catch { /* treat non-boolean as false */ }
-            }
-            _glyphCheckBoxes[i].Checked = known;
+            int mask = 1 << i;
+            _glyphCheckBoxes[i].Checked = (runesBitfield & mask) == mask;
         }
     }
 
     private void SaveKnownGlyphs(JsonObject playerState)
     {
-        var glyphData = playerState.GetArray("KnownPortalRunes");
-        if (glyphData == null)
-        {
-            glyphData = new JsonArray();
-            playerState.Set("KnownPortalRunes", glyphData);
-        }
-
-        // Ensure the array has at least 16 entries
-        while (glyphData.Length < 16)
-            glyphData.Add(false);
-
+        // Write back as integer bitfield (matching Java format)
+        int runesBitfield = 0;
         for (int i = 0; i < 16; i++)
-            glyphData.Set(i, _glyphCheckBoxes[i].Checked);
+        {
+            if (_glyphCheckBoxes[i].Checked)
+                runesBitfield |= (1 << i);
+        }
+        playerState.Set("KnownPortalRunes", runesBitfield);
     }
 
     private void SetAllGlyphs(bool value)
