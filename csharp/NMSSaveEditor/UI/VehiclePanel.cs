@@ -17,6 +17,7 @@ public class VehiclePanel : UserControl
     private readonly ComboBox _vehicleSelector;
     private readonly DataGridView _inventoryGrid;
     private JsonArray? _vehicleOwnership;
+    private readonly List<int> _addedVehicleIndices = new();
 
     public VehiclePanel()
     {
@@ -77,6 +78,7 @@ public class VehiclePanel : UserControl
     {
         _vehicleSelector.Items.Clear();
         _inventoryGrid.Rows.Clear();
+        _addedVehicleIndices.Clear();
         try
         {
             var playerState = saveData.GetObject("PlayerStateData");
@@ -88,7 +90,10 @@ public class VehiclePanel : UserControl
             foreach (var (index, name) in VehicleTypes)
             {
                 if (index < _vehicleOwnership.Length)
+                {
                     _vehicleSelector.Items.Add(name);
+                    _addedVehicleIndices.Add(index);
+                }
             }
 
             if (_vehicleSelector.Items.Count > 0)
@@ -108,9 +113,8 @@ public class VehiclePanel : UserControl
             if (vehicles == null || _vehicleSelector.SelectedIndex < 0) return;
 
             int selIdx = _vehicleSelector.SelectedIndex;
-            if (selIdx >= VehicleTypes.Length) return;
-            int arrIdx = VehicleTypes[selIdx].Index;
-            if (arrIdx >= vehicles.Length) return;
+            if (selIdx < 0 || selIdx >= _addedVehicleIndices.Count) return;
+            int arrIdx = _addedVehicleIndices[selIdx];
 
             var vehicle = vehicles.GetObject(arrIdx);
             SaveInventory(_inventoryGrid, vehicle.GetObject("Inventory"));
@@ -125,9 +129,8 @@ public class VehiclePanel : UserControl
         {
             if (_vehicleOwnership == null || _vehicleSelector.SelectedIndex < 0) return;
             int selIdx = _vehicleSelector.SelectedIndex;
-            if (selIdx >= VehicleTypes.Length) return;
-            int arrIdx = VehicleTypes[selIdx].Index;
-            if (arrIdx >= _vehicleOwnership.Length) return;
+            if (selIdx >= _addedVehicleIndices.Count) return;
+            int arrIdx = _addedVehicleIndices[selIdx];
 
             var vehicle = _vehicleOwnership.GetObject(arrIdx);
             LoadInventory(_inventoryGrid, vehicle.GetObject("Inventory"));
