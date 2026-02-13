@@ -16,6 +16,8 @@ public class InventoryGridPanel : UserControl
     private const int GridColumns = 10;
     private const int CellSize = 56;
     private const int CellPadding = 2;
+    private const string SuperchargeIndicator = "⚡";
+    private const int DisabledDarkenFactor = 3;
 
     // Grid area
     private readonly Panel _gridContainer;
@@ -1590,7 +1592,7 @@ public class InventoryGridPanel : UserControl
                 BackColor = bg;
                 BorderStyle = IsSupercharged ? BorderStyle.Fixed3D : BorderStyle.FixedSingle;
                 _iconBox.Image = null;
-                _nameLabel.Text = IsSupercharged ? "⚡" : "";
+                _nameLabel.Text = IsSupercharged ? SuperchargeIndicator : "";
                 _nameLabel.Visible = IsSupercharged;
                 _amountLabel.Text = "";
                 _amountLabel.Visible = false;
@@ -1618,7 +1620,7 @@ public class InventoryGridPanel : UserControl
 
             // Non-activated slots are darker/grayed out
             if (!IsActivated && !_isSelected)
-                baseColor = Color.FromArgb(baseColor.R / 3, baseColor.G / 3, baseColor.B / 3);
+                baseColor = Color.FromArgb(baseColor.R / DisabledDarkenFactor, baseColor.G / DisabledDarkenFactor, baseColor.B / DisabledDarkenFactor);
 
             BackColor = baseColor;
             BorderStyle = IsSupercharged ? BorderStyle.Fixed3D : BorderStyle.FixedSingle;
@@ -1629,7 +1631,7 @@ public class InventoryGridPanel : UserControl
             // Display item name at top (with supercharge indicator)
             string nameText = !string.IsNullOrEmpty(DisplayName) ? DisplayName : ItemId;
             if (IsSupercharged && !string.IsNullOrEmpty(nameText))
-                nameText = "⚡" + nameText;
+                nameText = SuperchargeIndicator + nameText;
             if (!string.IsNullOrEmpty(nameText))
             {
                 _nameLabel.Text = nameText;
@@ -1656,7 +1658,7 @@ public class InventoryGridPanel : UserControl
 
             // Tooltip
             string tip2 = !string.IsNullOrEmpty(DisplayName) ? DisplayName : ItemId;
-            if (IsSupercharged) tip2 = "⚡ " + tip2;
+            if (IsSupercharged) tip2 = SuperchargeIndicator + " " + tip2;
             if (!IsActivated) tip2 += " [disabled]";
             if (Amount > 0)
                 tip2 += $" ({Amount}/{MaxAmount})";
