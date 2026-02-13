@@ -301,6 +301,17 @@ public class MainForm : Form
 
             // Update all panels
             _mainStatsPanel.LoadData(_currentSaveData);
+            _exosuitPanel.LoadData(_currentSaveData);
+            _multitoolPanel.LoadData(_currentSaveData);
+            _shipPanel.LoadData(_currentSaveData);
+            _freighterPanel.LoadData(_currentSaveData);
+            _frigatePanel.LoadData(_currentSaveData);
+            _vehiclePanel.LoadData(_currentSaveData);
+            _companionPanel.LoadData(_currentSaveData);
+            _basePanel.LoadData(_currentSaveData);
+            _discoveryPanel.LoadData(_currentSaveData);
+            _milestonePanel.LoadData(_currentSaveData);
+            _settlementPanel.LoadData(_currentSaveData);
             _rawJsonPanel.LoadData(_currentSaveData);
 
             // Enable save controls
@@ -384,6 +395,17 @@ public class MainForm : Form
         {
             // Collect data from all panels
             _mainStatsPanel.SaveData(_currentSaveData);
+            _exosuitPanel.SaveData(_currentSaveData);
+            _multitoolPanel.SaveData(_currentSaveData);
+            _shipPanel.SaveData(_currentSaveData);
+            _freighterPanel.SaveData(_currentSaveData);
+            _frigatePanel.SaveData(_currentSaveData);
+            _vehiclePanel.SaveData(_currentSaveData);
+            _companionPanel.SaveData(_currentSaveData);
+            _basePanel.SaveData(_currentSaveData);
+            _discoveryPanel.SaveData(_currentSaveData);
+            _milestonePanel.SaveData(_currentSaveData);
+            _settlementPanel.SaveData(_currentSaveData);
             _rawJsonPanel.SaveData(_currentSaveData);
 
             SaveFileManager.SaveToFile(_currentFilePath, _currentSaveData);
@@ -467,6 +489,17 @@ public class MainForm : Form
             {
                 _currentSaveData = JsonObject.ImportFromFile(dialog.FileName);
                 _mainStatsPanel.LoadData(_currentSaveData);
+                _exosuitPanel.LoadData(_currentSaveData);
+                _multitoolPanel.LoadData(_currentSaveData);
+                _shipPanel.LoadData(_currentSaveData);
+                _freighterPanel.LoadData(_currentSaveData);
+                _frigatePanel.LoadData(_currentSaveData);
+                _vehiclePanel.LoadData(_currentSaveData);
+                _companionPanel.LoadData(_currentSaveData);
+                _basePanel.LoadData(_currentSaveData);
+                _discoveryPanel.LoadData(_currentSaveData);
+                _milestonePanel.LoadData(_currentSaveData);
+                _settlementPanel.LoadData(_currentSaveData);
                 _rawJsonPanel.LoadData(_currentSaveData);
                 _statusLabel.Text = $"Imported from {Path.GetFileName(dialog.FileName)}";
             }
