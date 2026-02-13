@@ -67,8 +67,14 @@ public class InventoryGridPanel : UserControl
         {
             Dock = DockStyle.Fill,
             Orientation = Orientation.Vertical,
-            SplitterDistance = 400,
-            FixedPanel = FixedPanel.Panel2
+            FixedPanel = FixedPanel.Panel2,
+            Panel2MinSize = 280
+        };
+        // Set SplitterDistance after the control is sized so Panel2 gets a proper initial width
+        splitContainer.SizeChanged += (s, e) =>
+        {
+            if (splitContainer.Width > 300 && splitContainer.SplitterDistance > splitContainer.Width - 290)
+                splitContainer.SplitterDistance = splitContainer.Width - 290;
         };
 
         // Left: grid of slot cells
