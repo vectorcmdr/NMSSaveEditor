@@ -8,7 +8,6 @@ public class ExosuitPanel : UserControl
     private readonly TabControl _invTabs;
     private readonly InventoryGridPanel _generalGrid;
     private readonly InventoryGridPanel _techGrid;
-    private readonly InventoryGridPanel _cargoGrid;
     private JsonObject? _playerState;
 
     public ExosuitPanel()
@@ -36,18 +35,14 @@ public class ExosuitPanel : UserControl
 
         _generalGrid = new InventoryGridPanel { Dock = DockStyle.Fill };
         _techGrid = new InventoryGridPanel { Dock = DockStyle.Fill };
-        _cargoGrid = new InventoryGridPanel { Dock = DockStyle.Fill };
 
         _invTabs = new TabControl { Dock = DockStyle.Fill };
         var generalPage = new TabPage("General");
         generalPage.Controls.Add(_generalGrid);
         var techPage = new TabPage("Technology");
         techPage.Controls.Add(_techGrid);
-        var cargoPage = new TabPage("Cargo");
-        cargoPage.Controls.Add(_cargoGrid);
         _invTabs.TabPages.Add(generalPage);
         _invTabs.TabPages.Add(techPage);
-        _invTabs.TabPages.Add(cargoPage);
         layout.Controls.Add(_invTabs, 0, 1);
 
         Controls.Add(layout);
@@ -59,14 +54,12 @@ public class ExosuitPanel : UserControl
     {
         _generalGrid.SetDatabase(database);
         _techGrid.SetDatabase(database);
-        _cargoGrid.SetDatabase(database);
     }
 
     public void SetIconManager(IconManager? iconManager)
     {
         _generalGrid.SetIconManager(iconManager);
         _techGrid.SetIconManager(iconManager);
-        _cargoGrid.SetIconManager(iconManager);
     }
 
     public void LoadData(JsonObject saveData)
@@ -78,7 +71,6 @@ public class ExosuitPanel : UserControl
 
             _generalGrid.LoadInventory(_playerState.GetObject("Inventory"));
             _techGrid.LoadInventory(_playerState.GetObject("Inventory_TechOnly"));
-            _cargoGrid.LoadInventory(_playerState.GetObject("Inventory_Cargo"));
         }
         catch { /* Save structure varies between versions */ }
     }
@@ -92,7 +84,6 @@ public class ExosuitPanel : UserControl
 
             _generalGrid.SaveInventory(playerState.GetObject("Inventory"));
             _techGrid.SaveInventory(playerState.GetObject("Inventory_TechOnly"));
-            _cargoGrid.SaveInventory(playerState.GetObject("Inventory_Cargo"));
         }
         catch { }
     }
