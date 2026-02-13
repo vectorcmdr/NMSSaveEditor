@@ -5,18 +5,19 @@ using NMSSaveEditor.Models;
 namespace NMSSaveEditor.UI;
 
 /// <summary>
-/// A reusable inventory grid panel that displays slots as a visual grid of colored cells
-/// with a side detail panel for viewing and editing the selected slot's properties.
+/// A reusable inventory grid panel that displays slots as a visual grid of cells
+/// with item icons and a side detail panel for viewing and editing slot properties.
 /// Mirrors the Java original's grid-based inventory display (bO.java / bS.java).
 /// </summary>
 public class InventoryGridPanel : UserControl
 {
     private const int GridColumns = 10;
-    private const int CellSize = 52;
+    private const int CellSize = 56;
     private const int CellPadding = 2;
 
     private readonly Panel _gridContainer;
     private readonly Panel _detailPanel;
+    private readonly PictureBox _detailIcon;
     private readonly Label _detailItemName;
     private readonly Label _detailItemType;
     private readonly Label _detailItemCategory;
@@ -30,6 +31,7 @@ public class InventoryGridPanel : UserControl
     private SlotCell? _selectedCell;
     private JsonArray? _slots;
     private GameItemDatabase? _database;
+    private IconManager? _iconManager;
 
     public InventoryGridPanel()
     {
@@ -83,6 +85,20 @@ public class InventoryGridPanel : UserControl
         };
         detailLayout.Controls.Add(detailTitle, 0, row);
         detailLayout.SetColumnSpan(detailTitle, 2);
+        detailLayout.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+        row++;
+
+        // Icon preview
+        _detailIcon = new PictureBox
+        {
+            Size = new Size(64, 64),
+            SizeMode = PictureBoxSizeMode.Zoom,
+            BackColor = Color.FromArgb(40, 40, 40),
+            BorderStyle = BorderStyle.FixedSingle,
+            Padding = new Padding(0, 0, 0, 4)
+        };
+        detailLayout.Controls.Add(_detailIcon, 0, row);
+        detailLayout.SetColumnSpan(_detailIcon, 2);
         detailLayout.RowStyles.Add(new RowStyle(SizeType.AutoSize));
         row++;
 
@@ -172,6 +188,11 @@ public class InventoryGridPanel : UserControl
     public void SetDatabase(GameItemDatabase? database)
     {
         _database = database;
+    }
+
+    public void SetIconManager(IconManager? iconManager)
+    {
+        _iconManager = iconManager;
     }
 
     public void LoadInventory(JsonObject? inventory)
@@ -298,6 +319,10 @@ public class InventoryGridPanel : UserControl
                 cell.DisplayName = gameItem.Name;
                 cell.ItemType = gameItem.ItemType;
                 cell.Category = gameItem.Category;
+
+                // Load icon image
+                if (_iconManager != null && !string.IsNullOrEmpty(gameItem.Icon))
+                    cell.IconImage = _iconManager.GetIcon(gameItem.Icon);
             }
         }
 
@@ -330,6 +355,9 @@ public class InventoryGridPanel : UserControl
 
         _detailItemType.Text = cell.ItemType;
         _detailItemCategory.Text = cell.Category;
+
+        // Show icon in detail panel
+        _detailIcon.Image = cell.IconImage;
 
         // Show description from database
         if (_database != null && !string.IsNullOrEmpty(cell.ItemId))
@@ -382,6 +410,13 @@ public class InventoryGridPanel : UserControl
                 _detailItemType.Text = gameItem.ItemType;
                 _detailItemCategory.Text = gameItem.Category;
                 _detailDescription.Text = gameItem.Description;
+
+                // Update icon
+                if (_iconManager != null && !string.IsNullOrEmpty(gameItem.Icon))
+                {
+                    _selectedCell.IconImage = _iconManager.GetIcon(gameItem.Icon);
+                    _detailIcon.Image = _selectedCell.IconImage;
+                }
             }
         }
 
@@ -397,6 +432,7 @@ public class InventoryGridPanel : UserControl
         _detailAmount.Value = 0;
         _detailMaxAmount.Value = 0;
         _detailDescription.Text = "";
+        _detailIcon.Image = null;
         _applyButton.Enabled = false;
     }
 
@@ -410,14 +446,15 @@ public class InventoryGridPanel : UserControl
     }
 
     /// <summary>
-    /// Individual slot cell in the inventory grid. Renders as a colored panel
-    /// showing item name/ID and quantity. Color indicates item type:
-    /// - Technology = blue, Product = orange, Substance = teal, empty = dark gray.
+    /// Individual slot cell in the inventory grid. Renders with an icon image
+    /// (if available) and an amount label overlay. Color indicates item type:
+    /// Technology = blue, Product = orange, Substance = teal, empty = dark gray.
     /// </summary>
     private class SlotCell : Panel
     {
-        private readonly Label _nameLabel;
+        private readonly PictureBox _iconBox;
         private readonly Label _amountLabel;
+        private readonly ToolTip _toolTip;
 
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public int GridX { get; }
@@ -441,6 +478,8 @@ public class InventoryGridPanel : UserControl
         public int MaxAmount { get; set; }
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public bool IsEmpty { get; set; }
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        public Image? IconImage { get; set; }
 
         private bool _isSelected;
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
@@ -459,30 +498,31 @@ public class InventoryGridPanel : UserControl
             Cursor = Cursors.Hand;
             BackColor = Color.FromArgb(50, 50, 50);
 
-            _nameLabel = new Label
+            _iconBox = new PictureBox
             {
-                Dock = DockStyle.Top,
-                ForeColor = Color.White,
-                Font = new Font("Segoe UI", 7f),
-                TextAlign = ContentAlignment.MiddleCenter,
-                Height = size / 2,
-                AutoEllipsis = true
+                Dock = DockStyle.Fill,
+                SizeMode = PictureBoxSizeMode.Zoom,
+                BackColor = Color.Transparent
             };
 
             _amountLabel = new Label
             {
                 Dock = DockStyle.Bottom,
-                ForeColor = Color.LightGray,
-                Font = new Font("Segoe UI", 6.5f),
+                ForeColor = Color.White,
+                BackColor = Color.FromArgb(128, 0, 0, 0),
+                Font = new Font("Segoe UI", 6.5f, FontStyle.Bold),
                 TextAlign = ContentAlignment.MiddleCenter,
-                Height = size / 2 - 2
+                Height = 14,
+                AutoEllipsis = true
             };
 
-            Controls.Add(_amountLabel);
-            Controls.Add(_nameLabel);
+            _toolTip = new ToolTip();
 
-            // Forward child label clicks to this panel
-            _nameLabel.Click += (s, e) => OnClick(e);
+            Controls.Add(_amountLabel);
+            Controls.Add(_iconBox);
+
+            // Forward child clicks to this panel
+            _iconBox.Click += (s, e) => OnClick(e);
             _amountLabel.Click += (s, e) => OnClick(e);
         }
 
@@ -491,35 +531,57 @@ public class InventoryGridPanel : UserControl
             if (IsEmpty)
             {
                 BackColor = Color.FromArgb(25, 25, 25);
-                _nameLabel.Text = "";
+                _iconBox.Image = null;
                 _amountLabel.Text = "";
+                _amountLabel.Visible = false;
                 Cursor = Cursors.Default;
+                _toolTip.SetToolTip(this, "");
+                _toolTip.SetToolTip(_iconBox, "");
                 return;
             }
 
-            // Set color by item type
+            // Set background color by item type
             if (_isSelected)
                 BackColor = Color.FromArgb(80, 120, 200);
             else if (ItemType.Contains("technology", StringComparison.OrdinalIgnoreCase))
-                BackColor = Color.FromArgb(40, 60, 120); // blue for tech
+                BackColor = Color.FromArgb(40, 60, 120);
             else if (ItemType.Contains("product", StringComparison.OrdinalIgnoreCase))
-                BackColor = Color.FromArgb(120, 80, 30); // orange for product
+                BackColor = Color.FromArgb(120, 80, 30);
             else if (ItemType.Contains("substance", StringComparison.OrdinalIgnoreCase))
-                BackColor = Color.FromArgb(30, 100, 100); // teal for substance
+                BackColor = Color.FromArgb(30, 100, 100);
             else if (!string.IsNullOrEmpty(ItemId))
-                BackColor = Color.FromArgb(60, 60, 60); // populated but unknown
+                BackColor = Color.FromArgb(60, 60, 60);
             else
-                BackColor = Color.FromArgb(50, 50, 50); // empty slot
+                BackColor = Color.FromArgb(50, 50, 50);
 
-            // Display name or ID
-            _nameLabel.Text = !string.IsNullOrEmpty(DisplayName) ? DisplayName : ItemId;
-            _nameLabel.ForeColor = _isSelected ? Color.White : Color.FromArgb(220, 220, 220);
+            // Display icon
+            _iconBox.Image = IconImage;
 
-            // Display amount
+            // If no icon, show item name/ID as text in the icon area
+            if (IconImage == null && !string.IsNullOrEmpty(ItemId))
+            {
+                // No icon available - will show tooltip only
+            }
+
+            // Display amount overlay
             if (Amount > 0 || MaxAmount > 0)
-                _amountLabel.Text = $"{Amount}/{MaxAmount}";
+            {
+                _amountLabel.Text = Amount.ToString();
+                _amountLabel.Visible = true;
+            }
             else
+            {
                 _amountLabel.Text = "";
+                _amountLabel.Visible = false;
+            }
+
+            // Tooltip with full item info
+            string tip = !string.IsNullOrEmpty(DisplayName) ? DisplayName : ItemId;
+            if (Amount > 0)
+                tip += $" ({Amount}/{MaxAmount})";
+            _toolTip.SetToolTip(this, tip);
+            _toolTip.SetToolTip(_iconBox, tip);
+            _toolTip.SetToolTip(_amountLabel, tip);
         }
     }
 }

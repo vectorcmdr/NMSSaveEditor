@@ -80,6 +80,13 @@ public class FreighterPanel : UserControl
         _cargoGrid.SetDatabase(database);
     }
 
+    public void SetIconManager(IconManager? iconManager)
+    {
+        _generalGrid.SetIconManager(iconManager);
+        _techGrid.SetIconManager(iconManager);
+        _cargoGrid.SetIconManager(iconManager);
+    }
+
     private static void AddRow(TableLayoutPanel layout, string label, Control field, int row)
     {
         var lbl = new Label { Text = label, AutoSize = true, Anchor = AnchorStyles.Left, Padding = new Padding(0, 5, 10, 0) };

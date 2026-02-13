@@ -1,3 +1,4 @@
+using NMSSaveEditor.Data;
 using NMSSaveEditor.Models;
 
 namespace NMSSaveEditor.UI;
@@ -7,9 +8,12 @@ public class MultitoolPanel : UserControl
     private readonly ComboBox _toolSelector;
     private readonly TextBox _toolName;
     private readonly TextBox _toolClass;
-    private readonly DataGridView _inventoryGrid;
+    private readonly TabControl _invTabs;
+    private readonly InventoryGridPanel _inventoryGrid;
+    private readonly InventoryGridPanel _techGrid;
     private JsonArray? _multitools;
     private JsonObject? _playerState;
+    private GameItemDatabase? _database;
 
     public MultitoolPanel()
     {
@@ -50,13 +54,36 @@ public class MultitoolPanel : UserControl
         _toolClass = new TextBox { Dock = DockStyle.Fill, ReadOnly = true };
         AddRow(layout, "Class:", _toolClass, 3);
 
-        _inventoryGrid = CreateInventoryGrid();
-        layout.Controls.Add(_inventoryGrid, 0, 4);
-        layout.SetColumnSpan(_inventoryGrid, 2);
+        _inventoryGrid = new InventoryGridPanel { Dock = DockStyle.Fill };
+        _techGrid = new InventoryGridPanel { Dock = DockStyle.Fill };
+
+        _invTabs = new TabControl { Dock = DockStyle.Fill };
+        var invPage = new TabPage("Inventory");
+        invPage.Controls.Add(_inventoryGrid);
+        var techPage = new TabPage("Technology");
+        techPage.Controls.Add(_techGrid);
+        _invTabs.TabPages.Add(invPage);
+        _invTabs.TabPages.Add(techPage);
+
+        layout.Controls.Add(_invTabs, 0, 4);
+        layout.SetColumnSpan(_invTabs, 2);
 
         Controls.Add(layout);
         ResumeLayout(false);
         PerformLayout();
+    }
+
+    public void SetDatabase(GameItemDatabase? database)
+    {
+        _database = database;
+        _inventoryGrid.SetDatabase(database);
+        _techGrid.SetDatabase(database);
+    }
+
+    public void SetIconManager(IconManager? iconManager)
+    {
+        _inventoryGrid.SetIconManager(iconManager);
+        _techGrid.SetIconManager(iconManager);
     }
 
     private static void AddRow(TableLayoutPanel layout, string label, Control field, int row)
@@ -64,25 +91,6 @@ public class MultitoolPanel : UserControl
         var lbl = new Label { Text = label, AutoSize = true, Anchor = AnchorStyles.Left, Padding = new Padding(0, 5, 10, 0) };
         layout.Controls.Add(lbl, 0, row);
         layout.Controls.Add(field, 1, row);
-    }
-
-    private static DataGridView CreateInventoryGrid()
-    {
-        var grid = new DataGridView
-        {
-            Dock = DockStyle.Fill,
-            AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill,
-            AllowUserToAddRows = false,
-            AllowUserToDeleteRows = false,
-            SelectionMode = DataGridViewSelectionMode.FullRowSelect,
-            RowHeadersVisible = false
-        };
-        grid.Columns.Add("Slot", "Slot #");
-        grid.Columns.Add("ItemId", "Item ID");
-        grid.Columns.Add("Amount", "Amount");
-        grid.Columns.Add("MaxAmount", "Max");
-        grid.Columns["Slot"]!.ReadOnly = true;
-        return grid;
     }
 
     public void LoadData(JsonObject saveData)
@@ -120,7 +128,7 @@ public class MultitoolPanel : UserControl
                 {
                     _toolSelector.Items.Add("Primary Weapon");
                     _toolName.Text = "Primary Weapon";
-                    LoadInventory(_inventoryGrid, weaponInv);
+                    _inventoryGrid.LoadInventory(weaponInv);
                 }
             }
             else
@@ -146,12 +154,13 @@ public class MultitoolPanel : UserControl
                 var tool = multitools.GetObject(_toolSelector.SelectedIndex);
                 if (!string.IsNullOrEmpty(_toolName.Text))
                     tool.Set("Name", _toolName.Text);
-                SaveInventory(_inventoryGrid, tool.GetObject("Inventory"));
+                _inventoryGrid.SaveInventory(tool.GetObject("Inventory"));
+                _techGrid.SaveInventory(tool.GetObject("Inventory_TechOnly"));
             }
             else
             {
                 var weaponInv = playerState.GetObject("WeaponInventory");
-                SaveInventory(_inventoryGrid, weaponInv);
+                _inventoryGrid.SaveInventory(weaponInv);
             }
         }
         catch { }
@@ -178,53 +187,9 @@ public class MultitoolPanel : UserControl
             catch { }
             _toolClass.Text = cls;
 
-            LoadInventory(_inventoryGrid, tool.GetObject("Inventory"));
+            _inventoryGrid.LoadInventory(tool.GetObject("Inventory"));
+            _techGrid.LoadInventory(tool.GetObject("Inventory_TechOnly"));
         }
         catch { }
-    }
-
-    private static void LoadInventory(DataGridView grid, JsonObject? inventory)
-    {
-        grid.Rows.Clear();
-        if (inventory == null) return;
-
-        var slots = inventory.GetArray("Slots");
-        if (slots == null) return;
-
-        for (int i = 0; i < slots.Length; i++)
-        {
-            try
-            {
-                var slot = slots.GetObject(i);
-                string itemId = slot.GetString("Id") ?? slot.GetObject("Id")?.GetString("Id") ?? "";
-                int amount = 0;
-                int maxAmount = 0;
-                try { amount = slot.GetInt("Amount"); } catch { }
-                try { maxAmount = slot.GetInt("MaxAmount"); } catch { }
-                grid.Rows.Add(i.ToString(), itemId, amount.ToString(), maxAmount.ToString());
-            }
-            catch { }
-        }
-    }
-
-    private static void SaveInventory(DataGridView grid, JsonObject? inventory)
-    {
-        if (inventory == null) return;
-        var slots = inventory.GetArray("Slots");
-        if (slots == null) return;
-
-        for (int i = 0; i < grid.Rows.Count && i < slots.Length; i++)
-        {
-            try
-            {
-                var slot = slots.GetObject(i);
-                var row = grid.Rows[i];
-                if (int.TryParse(row.Cells["Amount"].Value?.ToString(), out int amount))
-                    slot.Set("Amount", amount);
-                if (int.TryParse(row.Cells["MaxAmount"].Value?.ToString(), out int maxAmount))
-                    slot.Set("MaxAmount", maxAmount);
-            }
-            catch { }
-        }
     }
 }

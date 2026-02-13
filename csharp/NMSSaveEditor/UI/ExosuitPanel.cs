@@ -62,6 +62,13 @@ public class ExosuitPanel : UserControl
         _cargoGrid.SetDatabase(database);
     }
 
+    public void SetIconManager(IconManager? iconManager)
+    {
+        _generalGrid.SetIconManager(iconManager);
+        _techGrid.SetIconManager(iconManager);
+        _cargoGrid.SetIconManager(iconManager);
+    }
+
     public void LoadData(JsonObject saveData)
     {
         try

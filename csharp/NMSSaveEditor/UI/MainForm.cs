@@ -38,6 +38,7 @@ public class MainForm : Form
 
     // Data
     private readonly GameItemDatabase _database = new();
+    private IconManager? _iconManager;
     private List<string> _saveSlotFiles = new();
     private JsonObject? _currentSaveData;
     private string? _currentFilePath;
@@ -216,10 +217,23 @@ public class MainForm : Form
             _database.LoadItems(Path.Combine(dbPath, "items.xml"));
             _database.LoadInventoryData(Path.Combine(dbPath, "inventory.xml"));
 
-            // Pass item database to inventory panels for name/icon resolution
+            // Load icon images
+            string iconsPath = Path.Combine(basePath, "Resources", "icons");
+            if (Directory.Exists(iconsPath))
+            {
+                _iconManager = new IconManager(iconsPath);
+            }
+
+            // Pass item database and icons to inventory panels
             _exosuitPanel.SetDatabase(_database);
             _shipPanel.SetDatabase(_database);
             _freighterPanel.SetDatabase(_database);
+            _multitoolPanel.SetDatabase(_database);
+
+            _exosuitPanel.SetIconManager(_iconManager);
+            _shipPanel.SetIconManager(_iconManager);
+            _freighterPanel.SetIconManager(_iconManager);
+            _multitoolPanel.SetIconManager(_iconManager);
 
             // Load JSON name mapper for obfuscated NMS save file keys
             var mapperPath = Path.Combine(dbPath, "jsonmap.txt");

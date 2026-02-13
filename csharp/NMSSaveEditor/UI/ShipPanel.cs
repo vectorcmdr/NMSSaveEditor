@@ -85,6 +85,12 @@ public class ShipPanel : UserControl
         _techGrid.SetDatabase(database);
     }
 
+    public void SetIconManager(IconManager? iconManager)
+    {
+        _inventoryGrid.SetIconManager(iconManager);
+        _techGrid.SetIconManager(iconManager);
+    }
+
     private static void AddRow(TableLayoutPanel layout, string label, Control field, int row)
     {
         var lbl = new Label { Text = label, AutoSize = true, Anchor = AnchorStyles.Left, Padding = new Padding(0, 5, 10, 0) };
