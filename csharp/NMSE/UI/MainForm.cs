@@ -194,7 +194,7 @@ public partial class MainFormResources : Form
         _tabControl.TabPages.Add(CreateTab("Frigates", _frigatePanel));
         _tabControl.TabPages.Add(CreateTab("Vehicles", _vehiclePanel));
         _tabControl.TabPages.Add(CreateTab("Companions", _companionPanel));
-        _tabControl.TabPages.Add(CreateTab("Bases", _basePanel));
+        _tabControl.TabPages.Add(CreateTab("Bases & Storage", _basePanel));
         _tabControl.TabPages.Add(CreateTab("Discoveries", _discoveryPanel));
         _tabControl.TabPages.Add(CreateTab("Milestones", _milestonePanel));
         _tabControl.TabPages.Add(CreateTab("Settlements", _settlementPanel));
@@ -265,6 +265,7 @@ public partial class MainFormResources : Form
             _discoveryPanel.SetDatabase(_database);
             _settlementPanel.SetDatabase(_database);
             _frigatePanel.SetDatabase(_database);
+            _basePanel.SetDatabase(_database);
 
             _exosuitPanel.SetIconManager(_iconManager);
             _shipPanel.SetIconManager(_iconManager);
@@ -273,6 +274,7 @@ public partial class MainFormResources : Form
             _vehiclePanel.SetIconManager(_iconManager);
             _discoveryPanel.SetIconManager(_iconManager);
             _milestonePanel.SetIconManager(_iconManager);
+            _basePanel.SetIconManager(_iconManager);
 
             // Load rewards database for Account panel
             _accountPanel.LoadRewardsDatabase(dbPath);
