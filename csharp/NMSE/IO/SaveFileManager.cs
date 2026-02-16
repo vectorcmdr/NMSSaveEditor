@@ -1,3 +1,4 @@
+using System.Text;
 using NMSE.Models;
 
 namespace NMSE.IO;
@@ -8,6 +9,15 @@ namespace NMSE.IO;
 /// </summary>
 public class SaveFileManager
 {
+    /// <summary>
+    /// ISO-8859-1 (Latin-1) encoding which maps bytes 0x00-0xFF to Unicode code points 1:1.
+    /// Used instead of UTF-8 when reading save files so that binary data embedded in JSON
+    /// string values (e.g. TechBox item IDs) is preserved as individual characters rather
+    /// than being corrupted by invalid-UTF-8 replacement.  The JSON parser then detects
+    /// characters ≥ 0x80 inside string tokens and produces BinaryData objects just like the
+    /// original Java app.
+    /// </summary>
+    private static readonly Encoding Latin1 = Encoding.GetEncoding(28591);
     public enum Platform { Steam, XboxGamePass, PS4, GOG, Unknown }
 
     public class SaveSlot
@@ -76,7 +86,7 @@ public class SaveFileManager
         }
         else
         {
-            json = System.Text.Encoding.UTF8.GetString(fileData);
+            json = Latin1.GetString(fileData);
         }
 
         var result = JsonObject.Parse(json);
@@ -107,7 +117,7 @@ public class SaveFileManager
     public static void SaveToFile(string filePath, JsonObject data, bool compress = true)
     {
         string json = data.ToFormattedString();
-        byte[] jsonBytes = System.Text.Encoding.UTF8.GetBytes(json);
+        byte[] jsonBytes = Latin1.GetBytes(json);
 
         // Create backup
         if (File.Exists(filePath))
@@ -179,7 +189,7 @@ public class SaveFileManager
             offset += compressedLen;
         }
 
-        return System.Text.Encoding.UTF8.GetString(ms.ToArray());
+        return Latin1.GetString(ms.ToArray());
     }
 
     /// <summary>

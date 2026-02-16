@@ -322,6 +322,7 @@ public static class JsonParser
         var sb = new StringBuilder();
         MemoryStream? byteStream = new MemoryStream();
         bool hasStringContent = true;
+        bool hasHighBytes = false; // Track bytes >= 0x80 (non-ASCII) that signal binary data
 
         int c;
         while ((c = reader.Read()) != '"')
@@ -348,6 +349,7 @@ public static class JsonParser
                         {
                             if (hasStringContent) sb.Append((char)c);
                             byteStream?.WriteByte((byte)c);
+                            if (c >= 0x80) hasHighBytes = true;
                         }
                         else
                         {
@@ -370,7 +372,16 @@ public static class JsonParser
 
             if (hasStringContent) sb.Append((char)c);
             byteStream?.WriteByte((byte)c);
+            // Detect raw bytes >= 0x80 which indicate binary data in the string.
+            // These come from Latin-1 decoded save file bytes that would fail strict
+            // UTF-8 decoding (matching the Java parser's CharacterCodingException path).
+            if (c >= 0x80 && c <= 0xFF) hasHighBytes = true;
         }
+
+        // If any high bytes (0x80-0xFF) were found, this is binary data, not a valid
+        // UTF-8 string.  Return as BinaryData to mirror the Java fg/bP() handling.
+        if (hasHighBytes && byteStream != null)
+            return new BinaryData(byteStream.ToArray());
 
         return hasStringContent ? sb.ToString() : new BinaryData(byteStream!.ToArray());
     }
