@@ -349,7 +349,7 @@ public static class JsonParser
                         {
                             if (hasStringContent) sb.Append((char)c);
                             byteStream?.WriteByte((byte)c);
-                            if (c >= 0x80) hasHighBytes = true;
+                            if (c >= 0x80 && c <= 0xFF) hasHighBytes = true;
                         }
                         else
                         {
