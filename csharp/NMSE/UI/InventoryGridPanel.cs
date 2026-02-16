@@ -741,6 +741,16 @@ public class InventoryGridPanel : UserControl
         return sb.ToString();
     }
 
+    /// <summary>
+    /// Extract an item ID string from a raw value that may be a string or BinaryData.
+    /// </summary>
+    private static string ExtractItemId(object? rawId)
+    {
+        if (rawId is BinaryData binData)
+            return BinaryDataToItemId(binData);
+        return rawId as string ?? "";
+    }
+
     private void LoadCellData(SlotCell cell)
     {
         if (cell.SlotData == null) return;
@@ -750,22 +760,9 @@ public class InventoryGridPanel : UserControl
         {
             var idObj = cell.SlotData.GetObject("Id");
             if (idObj != null)
-            {
-                // Handle both string and BinaryData item IDs (TechBox items use BinaryData)
-                var rawId = idObj.Get("Id");
-                if (rawId is BinaryData binData)
-                    itemId = BinaryDataToItemId(binData);
-                else
-                    itemId = rawId as string ?? "";
-            }
+                itemId = ExtractItemId(idObj.Get("Id"));
             else
-            {
-                var rawId = cell.SlotData.Get("Id");
-                if (rawId is BinaryData binData)
-                    itemId = BinaryDataToItemId(binData);
-                else
-                    itemId = rawId as string ?? "";
-            }
+                itemId = ExtractItemId(cell.SlotData.Get("Id"));
         }
         catch { }
 
