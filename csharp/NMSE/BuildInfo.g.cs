@@ -2,6 +2,6 @@ namespace NMSE.UI
 {
     public partial class MainFormResources
     {
-        public const string Build = "95";
+        public const string Build = "96";
     }
 }
