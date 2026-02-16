@@ -137,13 +137,13 @@ internal class BasesSubPanel : UserControl
         {
             Dock = DockStyle.Fill,
             ColumnCount = 3,
-            RowCount = 12,
+            RowCount = 11,
             Padding = new Padding(10)
         };
         layout.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize));
         layout.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100));
         layout.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize));
-        for (int i = 0; i < 11; i++)
+        for (int i = 0; i < 10; i++)
             layout.RowStyles.Add(new RowStyle(SizeType.AutoSize));
         layout.RowStyles.Add(new RowStyle(SizeType.Percent, 100));
 
@@ -423,10 +423,14 @@ internal class BasesSubPanel : UserControl
         if (!string.IsNullOrEmpty(newName) && newName != item.Data.GetString("Name"))
         {
             item.Data.Set("Name", newName);
-            // Update the combo box display text
+            // Update the combo box display text by removing and re-inserting the item
             item.DisplayName = newName;
             var idx = _baseSelector.SelectedIndex;
-            _baseSelector.Items[idx] = item;
+            _baseSelector.SelectedIndexChanged -= OnBaseSelected;
+            _baseSelector.Items.RemoveAt(idx);
+            _baseSelector.Items.Insert(idx, item);
+            _baseSelector.SelectedIndex = idx;
+            _baseSelector.SelectedIndexChanged += OnBaseSelected;
         }
     }
 
