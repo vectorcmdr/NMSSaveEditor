@@ -1,9 +1,14 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Text.Json;
+
 namespace NMSE.Data;
 
 /// <summary>
 /// Maps obfuscated 3-character NMS save file JSON key names to human-readable names and vice versa.
-/// Loads db/jsonmap.txt.
-/// NMS saves use hashed key names like "6f=" for "PlayerStateData", ";l5" for "Inventory", etc.
+/// Loads Resources/db/mapping.json (JSON format).
+/// Legacy tab-separated mapping files are no longer supported.
 /// </summary>
 public class JsonNameMapper
 {
@@ -11,38 +16,47 @@ public class JsonNameMapper
     private readonly Dictionary<string, string> _nameToKey = new();
 
     /// <summary>
-    /// Load a mapping file (tab-separated: obfuscated_key\thuman_readable_name).
+    /// Load a mapping from a stream. Expects the JSON mapping format.
     /// </summary>
     public void Load(Stream stream)
     {
-        using var reader = new StreamReader(stream);
-        var unmapped = new List<string>();
-        string? line;
-        while ((line = reader.ReadLine()) != null)
+        using var reader = new StreamReader(stream, leaveOpen: true);
+        string content = reader.ReadToEnd();
+
+        var trimmed = content.TrimStart();
+        if (!trimmed.StartsWith("{"))
+            throw new InvalidDataException("Mapping file is not JSON. Only Resources/db/mapping.json (JSON) is supported.");
+
+        try
         {
-            if (string.IsNullOrEmpty(line)) continue;
-            int tab = line.IndexOf('\t');
-            if (tab < 0)
+            using var doc = JsonDocument.Parse(content);
+            if (doc.RootElement.TryGetProperty("Mapping", out JsonElement mappingArray) && mappingArray.ValueKind == JsonValueKind.Array)
             {
-                unmapped.Add(line);
-                continue;
+                foreach (var entry in mappingArray.EnumerateArray())
+                {
+                    if (entry.ValueKind != JsonValueKind.Object) continue;
+                    if (!entry.TryGetProperty("Key", out JsonElement keyEl)) continue;
+                    if (!entry.TryGetProperty("Value", out JsonElement valEl)) continue;
+                    if (keyEl.ValueKind != JsonValueKind.String || valEl.ValueKind != JsonValueKind.String) continue;
+
+                    string key = keyEl.GetString()!;
+                    string name = valEl.GetString()!;
+
+                    if (!_keyToName.ContainsKey(key) && !_nameToKey.ContainsKey(name))
+                    {
+                        _keyToName[key] = name;
+                        _nameToKey[name] = key;
+                    }
+                }
             }
-            string key = line.Substring(0, tab);
-            string name = line.Substring(tab + 1);
-            if (!_keyToName.ContainsKey(key) && !_nameToKey.ContainsKey(name))
+            else
             {
-                _keyToName[key] = name;
-                _nameToKey[name] = key;
+                throw new InvalidDataException("mapping.json does not contain a valid \"Mapping\" array.");
             }
         }
-        // Lines without tabs that aren't already mapped get identity mapping
-        foreach (string s in unmapped)
+        catch (JsonException ex)
         {
-            if (!_keyToName.ContainsKey(s) && !_nameToKey.ContainsKey(s))
-            {
-                _keyToName[s] = s;
-                _nameToKey[s] = s;
-            }
+            throw new InvalidDataException("Failed to parse mapping.json", ex);
         }
     }
 

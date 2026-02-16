@@ -230,6 +230,7 @@ public partial class MainFormResources : Form
         }
     }
 
+    // (Partial file — full file retained; only LoadDatabase shown here for clarity)
     private void LoadDatabase()
     {
         try
@@ -276,21 +277,19 @@ public partial class MainFormResources : Form
             // Load rewards database for Account panel
             _accountPanel.LoadRewardsDatabase(dbPath);
 
-            // Load JSON name mapper for obfuscated NMS save file keys
-            var mapperPath = Path.Combine(dbPath, "jsonmap.txt");
-            var mapperAcPath = Path.Combine(dbPath, "jsonmapac.txt");
-            if (File.Exists(mapperPath))
+            // Load JSON name mapper for obfuscated NMS save file keys (JSON only)
+            var mapperJsonPath = Path.Combine(dbPath, "mapping.json");
+
+            if (File.Exists(mapperJsonPath))
             {
                 var mapper = new JsonNameMapper();
-                mapper.Load(mapperPath);
-                if (File.Exists(mapperAcPath))
-                    mapper.Load(mapperAcPath);
+                mapper.Load(mapperJsonPath);
                 JsonParser.SetDefaultMapper(mapper);
                 _statusLabel.Text = $"Loaded {_database.Items.Count} game items, {mapper.Count} name mappings";
             }
             else
             {
-                _statusLabel.Text = $"Loaded {_database.Items.Count} game items (jsonmap.txt not found)";
+                _statusLabel.Text = $"Loaded {_database.Items.Count} game items (mapping.json not found)";
             }
         }
         catch (Exception ex)
