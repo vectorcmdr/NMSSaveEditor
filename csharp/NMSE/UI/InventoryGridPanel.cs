@@ -703,6 +703,44 @@ public class InventoryGridPanel : UserControl
         }
     }
 
+    /// <summary>
+    /// Convert a BinaryData item ID to its display string form,
+    /// matching the Java fg.bP() method used for TechBox items.
+    /// Binary format: ^(hex-encoded-bytes)#(variant-digits)
+    /// </summary>
+    private static string BinaryDataToItemId(BinaryData data)
+    {
+        var bytes = data.ToByteArray();
+        var sb = new System.Text.StringBuilder();
+        bool afterHash = false;
+        for (int i = 0; i < bytes.Length; i++)
+        {
+            int b = bytes[i] & 0xFF;
+            if (i == 0)
+            {
+                if (b != 0x5E) // '^'
+                    return data.ToString();
+                sb.Append('^');
+            }
+            else if (b == 0x23) // '#'
+            {
+                sb.Append('#');
+                afterHash = true;
+            }
+            else if (afterHash)
+            {
+                sb.Append((char)b);
+            }
+            else
+            {
+                const string hexChars = "0123456789ABCDEF";
+                sb.Append(hexChars[(b >> 4) & 0xF]);
+                sb.Append(hexChars[b & 0xF]);
+            }
+        }
+        return sb.ToString();
+    }
+
     private void LoadCellData(SlotCell cell)
     {
         if (cell.SlotData == null) return;
@@ -712,9 +750,22 @@ public class InventoryGridPanel : UserControl
         {
             var idObj = cell.SlotData.GetObject("Id");
             if (idObj != null)
-                itemId = idObj.GetString("Id") ?? "";
+            {
+                // Handle both string and BinaryData item IDs (TechBox items use BinaryData)
+                var rawId = idObj.Get("Id");
+                if (rawId is BinaryData binData)
+                    itemId = BinaryDataToItemId(binData);
+                else
+                    itemId = rawId as string ?? "";
+            }
             else
-                itemId = cell.SlotData.GetString("Id") ?? "";
+            {
+                var rawId = cell.SlotData.Get("Id");
+                if (rawId is BinaryData binData)
+                    itemId = BinaryDataToItemId(binData);
+                else
+                    itemId = rawId as string ?? "";
+            }
         }
         catch { }
 

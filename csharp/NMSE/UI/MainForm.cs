@@ -59,7 +59,7 @@ public partial class MainFormResources : Form
         _tabControl = new TabControl();
         _statusLabel = new ToolStripStatusLabel("Ready");
         _directoryCombo = new ToolStripComboBox { AutoSize = false, Width = 448 };
-        _saveSlotCombo = new ToolStripComboBox { AutoSize = false, Width = 64 };
+        _saveSlotCombo = new ToolStripComboBox { AutoSize = false, Width = 164 };
         _loadButton = new ToolStripButton("Load");
         _saveButton = new ToolStripButton("Save") { Enabled = false };
 
@@ -335,7 +335,11 @@ public partial class MainFormResources : Form
                     bestPath = autoPath;
 
                 saveFiles.Add(bestPath);
-                _saveSlotCombo.Items.Add($"Slot {i + 1}");
+                string difficulty = DetectDifficulty(bestPath);
+                string label = string.IsNullOrEmpty(difficulty)
+                    ? $"Slot {i + 1}"
+                    : $"Slot {i + 1} - {difficulty}";
+                _saveSlotCombo.Items.Add(label);
             }
         }
 
@@ -348,7 +352,11 @@ public partial class MainFormResources : Form
             for (int i = 0; i < ps4Files.Length; i++)
             {
                 saveFiles.Add(ps4Files[i]);
-                _saveSlotCombo.Items.Add($"Save {i + 1}");
+                string difficulty = DetectDifficulty(ps4Files[i]);
+                string label = string.IsNullOrEmpty(difficulty)
+                    ? $"Save {i + 1}"
+                    : $"Save {i + 1} - {difficulty}";
+                _saveSlotCombo.Items.Add(label);
             }
         }
 
@@ -367,6 +375,65 @@ public partial class MainFormResources : Form
         {
             _statusLabel.Text = "No save files found in selected directory";
         }
+    }
+
+    /// <summary>
+    /// Detect the difficulty/game mode from a save file by scanning the raw JSON text.
+    /// Mirrors the Java fn.T(String) method using regex patterns on the decompressed JSON.
+    /// Game modes (1-indexed): Normal, Survival, Permadeath, Creative, Custom, ...
+    /// </summary>
+    private static string DetectDifficulty(string filePath)
+    {
+        try
+        {
+            // Load and decompress the save to get raw JSON text
+            var data = SaveFileManager.LoadSaveFile(filePath);
+
+            // Try via parsed data: check ActiveContext → BaseContext/ExpeditionContext → GameMode
+            string? activeContext = null;
+            try { activeContext = data.GetString("ActiveContext"); } catch { }
+
+            int gameMode = 0;
+            if ("Main".Equals(activeContext, StringComparison.Ordinal))
+            {
+                try { gameMode = data.GetInt("BaseContext.GameMode"); } catch { }
+            }
+            else if ("Season".Equals(activeContext, StringComparison.Ordinal))
+            {
+                try { gameMode = data.GetInt("ExpeditionContext.GameMode"); } catch { }
+            }
+
+            if (gameMode > 0)
+                return GameModeToString(gameMode);
+
+            // Fallback: check DifficultyPresetType
+            string? preset = null;
+            try { preset = data.GetString("PlayerStateData.DifficultyState.Preset.DifficultyPresetType"); } catch { }
+            if (!string.IsNullOrEmpty(preset))
+                return preset.ToUpperInvariant();
+        }
+        catch { }
+        return "";
+    }
+
+    /// <summary>
+    /// Map a 1-based game mode integer to a display string.
+    /// Matches the Java fn enum ordering.
+    /// </summary>
+    private static string GameModeToString(int mode)
+    {
+        return mode switch
+        {
+            1 => "NORMAL",
+            2 => "SURVIVAL",
+            3 => "PERMADEATH",
+            4 => "CREATIVE",
+            5 => "CUSTOM",
+            6 => "SEASONAL",
+            7 => "RELAXED",
+            8 => "HARDCORE",
+            _ => $"MODE {mode}"
+        };
     }
 
     private void LoadSaveData(string filePath)

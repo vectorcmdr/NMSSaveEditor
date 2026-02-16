@@ -27,10 +27,10 @@ public static class JsonParser
         bool spaces = formatted;
         // Extract the mapper from the root object if it's a JsonObject
         var mapper = skipReverseMapping ? null : (value as JsonObject)?.NameMapper;
-        return SerializeValue(value, newline, spaces, mapper);
+        return SerializeValue(value, newline, spaces, mapper, skipReverseMapping);
     }
 
-    private static string SerializeValue(object? value, string? newline, bool spaces, NMSE.Data.JsonNameMapper? mapper = null)
+    private static string SerializeValue(object? value, string? newline, bool spaces, NMSE.Data.JsonNameMapper? mapper = null, bool skipReverseMapping = false)
     {
         return value switch
         {
@@ -42,21 +42,22 @@ public static class JsonParser
             float f => f.ToString("G"),
             double d => d.ToString("G"),
             string s => QuoteString(s),
-            JsonObject obj => SerializeObject(obj, newline, spaces, mapper),
-            JsonArray arr => SerializeArray(arr, newline, spaces, mapper),
+            JsonObject obj => SerializeObject(obj, newline, spaces, mapper, skipReverseMapping),
+            JsonArray arr => SerializeArray(arr, newline, spaces, mapper, skipReverseMapping),
             BinaryData bin => QuoteBinaryData(bin),
             _ => throw new InvalidOperationException($"Unsupported type: {value.GetType().Name}")
         };
     }
 
-    private static string SerializeObject(JsonObject obj, string? newline, bool spaces, NMSE.Data.JsonNameMapper? mapper = null)
+    private static string SerializeObject(JsonObject obj, string? newline, bool spaces, NMSE.Data.JsonNameMapper? mapper = null, bool skipReverseMapping = false)
     {
         var sb = new StringBuilder();
         sb.Append('{');
         var names = obj.GetRawNames();
         var values = obj.GetRawValues();
-        // Use mapper from the object itself, or fall back to the one passed from the parent
-        var activeMapper = obj.NameMapper ?? mapper;
+        // Use mapper from the object itself, or fall back to the one passed from the parent.
+        // When skipReverseMapping is true, never reverse-map (display mode).
+        var activeMapper = skipReverseMapping ? null : (obj.NameMapper ?? mapper);
         for (int i = 0; i < obj.Length; i++)
         {
             if (i > 0) sb.Append(',');
@@ -66,14 +67,14 @@ public static class JsonParser
             sb.Append(QuoteString(name));
             sb.Append(':');
             if (spaces) sb.Append(' ');
-            sb.Append(SerializeValue(values[i], newline == null ? null : newline + "\t", spaces, activeMapper));
+            sb.Append(SerializeValue(values[i], newline == null ? null : newline + "\t", spaces, activeMapper, skipReverseMapping));
         }
         if (obj.Length > 0 && newline != null) sb.Append(newline);
         sb.Append('}');
         return sb.ToString();
     }
 
-    private static string SerializeArray(JsonArray arr, string? newline, bool spaces, NMSE.Data.JsonNameMapper? mapper = null)
+    private static string SerializeArray(JsonArray arr, string? newline, bool spaces, NMSE.Data.JsonNameMapper? mapper = null, bool skipReverseMapping = false)
     {
         var sb = new StringBuilder();
         sb.Append('[');
@@ -82,7 +83,7 @@ public static class JsonParser
         {
             if (i > 0) sb.Append(',');
             if (newline != null) sb.Append(newline + "\t");
-            sb.Append(SerializeValue(values[i], newline == null ? null : newline + "\t", spaces, mapper));
+            sb.Append(SerializeValue(values[i], newline == null ? null : newline + "\t", spaces, mapper, skipReverseMapping));
         }
         if (arr.Length > 0 && newline != null) sb.Append(newline);
         sb.Append(']');
