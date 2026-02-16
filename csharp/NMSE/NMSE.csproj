@@ -1,0 +1,107 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net10.0-windows</TargetFramework>
+		<Nullable>enable</Nullable>
+		<UseWindowsForms>true</UseWindowsForms>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<EnableWindowsTargeting>true</EnableWindowsTargeting>
+		<PlatformTarget>x64</PlatformTarget>
+		<RuntimeIdentifier>win-x64</RuntimeIdentifier>
+		<AssemblyTitle>NO MAN'S SAVE EDITOR</AssemblyTitle>
+		<Description>NO MAN'S SAVE EDITOR (Open Source Save Editor for No Man's Sky)</Description>
+		<ApplicationIcon>Resources\app\NMSE.ico</ApplicationIcon>
+
+		<!-- Build number settings -->
+		<BuildMajor>1</BuildMajor>
+		<BuildMinor>1</BuildMinor>
+		<BuildPatchFile>$(MSBuildProjectDirectory)\build.patch</BuildPatchFile>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Content Include="Resources\db\**\*">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+		<Content Include="Resources\templates\**\*">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+		<Content Include="Resources\icons\**\*">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+	</ItemGroup>
+
+	<ItemGroup>
+		<EmbeddedResource Include="Resources\app\NMSE.ico" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Update="UI\MainForm.Designer.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>MainForm.resx</DependentUpon>
+		</Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+		<EmbeddedResource Update="UI\MainForm.resx">
+			<Generator>PublicResXFileCodeGenerator</Generator>
+			<LastGenOutput>MainForm.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
+	</ItemGroup>
+
+	<!-- Generate and include build info before every build -->
+	<Target Name="GenerateBuildInfo" BeforeTargets="BeforeBuild">
+		<!-- Read existing patch if file exists -->
+		<ReadLinesFromFile File="$(BuildPatchFile)" Condition="Exists('$(BuildPatchFile)')">
+			<Output TaskParameter="Lines" ItemName="PatchLines" />
+		</ReadLinesFromFile>
+
+		<PropertyGroup>
+			<CurrentPatch>%(PatchLines.Identity)</CurrentPatch>
+			<CurrentPatch Condition="'$(CurrentPatch)'==''">0</CurrentPatch>
+			<!-- compute the value to embed in the generated file, but do NOT persist it yet -->
+			<NextPatch>$([MSBuild]::Add('$(CurrentPatch)', '1'))</NextPatch>
+			<BuildString>$(NextPatch)</BuildString>
+			<GeneratedDir>$(MSBuildProjectDirectory)</GeneratedDir>
+			<GeneratedFile>$(GeneratedDir)\BuildInfo.g.cs</GeneratedFile>
+		</PropertyGroup>
+
+		<!-- Ensure generated dir exists -->
+		<MakeDir Directories="$(GeneratedDir)" />
+
+		<!-- Write the generated partial class that defines Build -->
+		<WriteLinesToFile File="$(GeneratedFile)" Overwrite="true" Lines="namespace NMSE.UI&#xD;&#xA;{&#xD;&#xA;    public partial class MainFormResources&#xD;&#xA;    {&#xD;&#xA;        public const string Build = &quot;$(BuildString)&quot;%3b&#xD;&#xA;    }&#xD;&#xA;}" />
+
+		<!-- Ensure the generated file is compiled -->
+		<ItemGroup>
+			<Compile Include="$(GeneratedFile)" />
+		</ItemGroup>
+	</Target>
+
+	<PropertyGroup>
+		<Version>$(BuildString)</Version>
+	</PropertyGroup>
+
+	<!-- Persist the incremented patch only after a successful Build -->
+	<Target Name="PersistBuildPatch" AfterTargets="Build" Condition="'$(MSBuildLastTaskResult)' == 'True'">
+		<!-- Read current patch again (recompute to avoid scope issues) -->
+		<ReadLinesFromFile File="$(BuildPatchFile)" Condition="Exists('$(BuildPatchFile)')">
+			<Output TaskParameter="Lines" ItemName="PatchLines" />
+		</ReadLinesFromFile>
+
+		<PropertyGroup>
+			<CurrentPatch>%(PatchLines.Identity)</CurrentPatch>
+			<CurrentPatch Condition="'$(CurrentPatch)'==''">0</CurrentPatch>
+			<NextPatch>$([MSBuild]::Add('$(CurrentPatch)', '1'))</NextPatch>
+		</PropertyGroup>
+
+		<!-- Persist the incremented patch only because the build succeeded -->
+		<WriteLinesToFile File="$(BuildPatchFile)" Lines="$(NextPatch)" Overwrite="true" />
+	</Target>
+
+	<Target Name="ZipBuildOutput" AfterTargets="Build">
+		<ZipDirectory SourceDirectory="$(OutputPath)" DestinationFile="$(MSBuildProjectDirectory)\bin\NMSE-$(Version)-$(Configuration)-$(RuntimeIdentifier).zip" Overwrite="true" />
+	</Target>
+
+</Project>
