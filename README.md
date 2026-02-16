@@ -1,12 +1,43 @@
-# No Man's Sky - Save Editor (for WORLDS)
+# No Man's Sky - Save Editor (vector_cmdr hotfix version)
+
+<br>
 
 ## Introduction
 
-Since No Man's Sky first came out, there have been many notable game-breaking bugs as well as many parts of the game that seemed too grindy and not much fun. Some of the bugs had workarounds or later patches to fix them, but others simply stopped your progress. Either way, I just want to enjoy the game!
+No Man's Sky Save Editor is a java based save editor for No Man's Sky (duh! 😉).
 
-After many tedious searches trying to find a solution, I came across a save editor that allowed me to make a change to the save file, but it was very limited in what it could do, and unless you were very careful you could screw up your save file completely. So I decided to rewrite it in Java for fun, with a simpler user interface, and as I dug deeper and added more functionality I decided to release it publicly. It has grown to become a pretty useful tool.
+This is a hotfix fork of the original (_now unmaintained?_) project by [goatfungus](https://github.com/goatfungus/NMSSaveEditor) that aims to keep the program up to date when possible.
 
-### Features
+_It is no longer contributing PRs back to the original due to it's current frozen state._
+
+## Future Goals:
+
+A modernized C# port is currently underway that will be **completely open source** and encourage the community to help keep it up to date as there are sadly little to no up-to-date open source save editors, only closed source or semi source available ones.
+
+## Compatibility
+
+Requirements:
+- No Man's Sky (PC/Xbox/PS4)
+- <a href="https://www.savewizard.net/" target="_blank">Save Wizard</a> (PS4 only)
+- <a href="https://java.com/en/download/manual.jsp" target="_blank">Java Runtime Environment 8</a>
+
+## Installation
+
+### Grab the latest release
+
+1. Head to the [releases page](https://github.com/vectorcmdr/NMSSaveEditor/releases) and grab the latest version.
+2. Use the zip file to extract the program to a folder of your choice. Don't try to run it from within the zip folder!
+3. Run the batch (bat) file (or jar file if the file extension is associated to java).
+4. When the main window opens, locate the folder that your saves are in, and choose the most recent.
+
+**_OR:_**
+
+### Option 2 - Manual Zip Download
+
+Grab a copy of the zip file from the repo directly as a "code download" or raw file the way you used to from the original repo.
+Though going via the [releases page](https://github.com/vectorcmdr/NMSSaveEditor/releases) is more sensible...
+
+## Features
 
 - Easy to use UI.
   - Ability to customise Look & Feel (Light / Dark modes, inventory scaling)
@@ -38,57 +69,15 @@ After many tedious searches trying to find a solution, I came across a save edit
   - Your account data and unlocks.
 - Currently supports Steam/GOG, PS4 (via Save Wizard), and MS Game Pass (Xbox).
 
-### Screenshots
+## Acknowledgements & Contributions
 
-<img src="screenshots/exosuit.png" width="32%"/> <img src="screenshots/multitool.png" width="32%"/> <img src="screenshots/ships.png" width="32%"/>
-<img src="screenshots/freighter.png" width="32%"/> <img src="screenshots/frigates.png" width="32%"/> <img src="screenshots/vehicles.png" width="32%"/>
-<img src="screenshots/companions.png" width="32%"/> <img src="screenshots/base.png" width="32%"/> <img src="screenshots/settlements.png" width="32%"/>
-<img src="screenshots/discovery.png" width="32%"/> <img src="screenshots/milestones.png" width="32%"/> <img src="screenshots/account.png" width="32%"/>
-<img src="screenshots/jsoneditor.png" width="56%"/> <img src="screenshots/darkmode.png" width="32%"/> More screenshots can be found [here](screenshots).
+This tool will always be released publicly for free just like the original!
 
-## Compatibility
+If you would like to donate to me to say thanks for the updates, please head to my [Sponsor](https://github.com/sponsors/vectorcmdr) page or my [Ko-fi](https://ko-fi.com/vector_cmdr).
 
-Requirements:
-- No Man's Sky - WORLDS (PC/Xbox/PS4)
-- <a href="https://www.savewizard.net/" target="_blank">Save Wizard</a> (PS4 only)
-- <a href="https://java.com/en/download/manual.jsp" target="_blank">Java Runtime Environment 8</a>
 
-## Installation
+A massive thanks to [goatfungus for creating the original editor](https://github.com/goatfungus/NMSSaveEditor).
 
-### Option 1 - Self-Extracting Zip Archive
+**The updates would not exist without it (obviously!).**
 
-1. Download the [latest version](../../raw/master/NMSSaveEditor.exe).
-2. Run the exe and extract the contents of the zip file to an empty folder somewhere.
-3. Run the bat file (or the jar file if the file extension is associated to java).
-4. When the main window opens, locate the folder that your saves are in, and choose the most recent.
-5. Start tinkering!
-
-_NOTE: Some antivirus solutions actually falsely flag the above EXE file as a "virus". If this happens for you, try option 2 instead._
-
-### Option 2 - Manual Zip Download
-
-1. Download the zip file manually from here: [https://github.com/goatfungus/NMSSaveEditor/raw/master/NMSSaveEditor.zip](../../raw/master/NMSSaveEditor.zip).
-2. Open the zip file with 7-Zip / WinRar (or equivalent).
-<img src="zipcontents.png"/>
-
-3. Extract the files to an empty folder somewhere. DO NOT try to run the program from inside the zip file!
-4. Run the bat file (or the jar file if the file extension is associated to java).
-5. When the main window opens, locate the folder that your saves are in, and choose the most recent.
-6. Start tinkering!
-
-## Frequently Asked Questions
-
-Frequently asked questions can be found [here](FAQ.md).
-
-## Contribution
-
-This tool will always be released publicly for free, and I intend to continue maintaining it for as long as there is interest in the game. If this tool has been useful and you want to contribute to it's further development, feel free to visit me on Patreon:
-https://www.patreon.com/goatfungus
-
-## Previous Releases
-
-- [Atlas Rises (1.3)](../atlasRises/README.md)
-- [Next / Visions (1.5)](../nextVisions/README.md)
-- [Beyond (2.0)](../expeditionsPrisms/README.md)
-- [Interceptor - Legacy UI](../legacyUI/README.md)
-- [Adrift (4.5)](../adrift/README.md)
+If you want to donate to him to say thank you, please head to his [Patreon](https://www.patreon.com/goatfungus)!

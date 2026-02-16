@@ -1,5 +1,13 @@
 # Change Log
 
+## 1.20.1 - Update (17 February 2026)
+- Add support for EXP21 rewards.
+- Add support for 6.20 (Remnant) new items.
+- Fix for some EXP rewards.
+- Diverge repo from master (PR) to main as default.
+- Add db_updater folder with the jar, 7z, db and icons and jar packing script for myself & contributors to help with db updates.
+- Self extracting EXE no longer maintained. It's problematic.
+
 ## 1.19.14 - Update (9 November 2025)
 - Renamed Elixir of Blood items to add glyph number.
 
