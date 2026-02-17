@@ -3,6 +3,7 @@ using System.IO;
 using System.Text.Json;
 using System.Xml.Linq;
 using System.Collections.Generic;
+using System.Linq;
 
 // The worlds laziest, ugliest mbin JSON parser for xml output.
 // Don't judge me, I just wanted to get this done quickly.
@@ -12,13 +13,30 @@ class CorvetteEntry
     public string BuildableShipTechID { get; set; }
     public string Name { get; set; }
     public string Id { get; set; }
+    public string BuildableShipTechName { get; set; }
     public string Group { get; set; }
     public string AltDescription { get; set; }
 }
 
+class UpgradeEntry
+{
+    public string Id { get; set; }
+    public string Name { get; set; }
+    public string Group { get; set; }
+    public string Description { get; set; }
+}
+
+class CuriosityEntry
+{
+    public string Id { get; set; }
+    public string Name { get; set; }
+    public string Group { get; set; }
+    public string Description { get; set; }
+}
+
 class Program
 {
-    public static bool PreventDouble = false;
+    public static bool PreventDouble = true;
 
     static void Main(string[] args)
     {
@@ -32,85 +50,166 @@ class Program
             }
         }
 
-        // TODO: add parser for all json files to get xml db out in all formats.
-        string jsonPath = "data/json/Corvette.json";
-        string xmlPath = "data/xml_out/output.xml";
-        try
+        ProcessCorvetteProcedurals();
+        ProcessFossilCurios();
+    }
+
+    static void ProcessCorvetteProcedurals()
+    {
+        string upgradesJsonPath = "data/json/Upgrades.json";
+        string xmlPath = "data/xml_out/output_corvette_procedurals.xml";
+
+        var corvetteEntries = new List<CorvetteEntry>();
+        var seenIds = new HashSet<string>();
+        var corvetteTechIds = new HashSet<string>();
+
+        // Load Upgrades.json and process CV_ entries
+        var upgradeEntries = new List<UpgradeEntry>();
+        if (File.Exists(upgradesJsonPath))
         {
-            string json = File.ReadAllText(jsonPath);
-            if (string.IsNullOrWhiteSpace(json))
+            string upgradesJson = File.ReadAllText(upgradesJsonPath);
+            if (!string.IsNullOrWhiteSpace(upgradesJson))
             {
-                Console.WriteLine("JSON file is empty or null.");
-                return;
-            }
-
-            var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
-            var doc = JsonDocument.Parse(json);
-
-            var entries = new List<CorvetteEntry>();
-            var seenIds = new HashSet<string>();
-            foreach (var element in doc.RootElement.EnumerateArray())
-            {
-                if (element.TryGetProperty("BuildableShipTechID", out var techId) &&
-                    element.TryGetProperty("Name", out var name) &&
-                    element.TryGetProperty("Id", out var id) &&
-                    element.TryGetProperty("Group", out var group) &&
-                    element.TryGetProperty("AltDescription", out var altDesc) &&
-                    techId.ValueKind != JsonValueKind.Null &&
-                    name.ValueKind != JsonValueKind.Null &&
-                    id.ValueKind != JsonValueKind.Null &&
-                    group.ValueKind != JsonValueKind.Null &&
-                    altDesc.ValueKind != JsonValueKind.Null)
+                var doc = JsonDocument.Parse(upgradesJson);
+                foreach (var element in doc.RootElement.EnumerateArray())
                 {
-                    if (PreventDouble)
+                    if (element.TryGetProperty("Id", out var idProp) &&
+                        idProp.ValueKind == JsonValueKind.String)
                     {
-                        var techIdValue = techId.GetString();
-                        if (!seenIds.Contains(techIdValue))
+                        var idValue = idProp.GetString();
+                        if (idValue != null && idValue.StartsWith("CV_"))
                         {
-                            entries.Add(new CorvetteEntry
+                            string name = element.TryGetProperty("Name", out var nameProp) && nameProp.ValueKind == JsonValueKind.String
+                                ? nameProp.GetString() : idValue;
+                            string group = element.TryGetProperty("Group", out var groupProp) && groupProp.ValueKind == JsonValueKind.String
+                                ? groupProp.GetString() : "";
+                            string description = element.TryGetProperty("Description", out var descProp) && descProp.ValueKind == JsonValueKind.String
+                                ? descProp.GetString() : "";
+
+                            // Only use up to the first "."
+                            int dotIdx = description.IndexOf('.');
+                            if (dotIdx >= 0)
+                                description = description.Substring(0, dotIdx + 1);
+
+                            upgradeEntries.Add(new UpgradeEntry
                             {
-                                BuildableShipTechID = techIdValue,
-                                Name = name.GetString(),
-                                Id = id.GetString(),
-                                Group = group.GetString(),
-                                AltDescription = altDesc.GetString()
+                                Id = idValue,
+                                Name = name,
+                                Group = group,
+                                Description = description
                             });
-                            seenIds.Add(techIdValue);
                         }
-                    }
-                    else
-                    {
-                        entries.Add(new CorvetteEntry
-                        {
-                            BuildableShipTechID = techId.GetString(),
-                            Name = name.GetString(),
-                            Id = id.GetString(),
-                            Group = group.GetString(),
-                            AltDescription = altDesc.GetString()
-                        });
                     }
                 }
             }
-
-            var xml = new XElement("procedural-technologies",
-                entries.ConvertAll(e =>
-                    new XElement("procedural-technology",
-                        new XAttribute("category", "CORVETTE"),
-                        new XAttribute("icon", $"PRODUCT-{e.Id}.PNG"),
-                        new XAttribute("id", $"^{e.BuildableShipTechID}"),
-                        new XAttribute("name", e.Name),
-                        new XAttribute("subtitle", e.Group),
-                        new XElement("description", e.AltDescription ?? "")
-                    )
-                )
-            );
-
-            xml.Save(xmlPath);
-            Console.WriteLine($"XML written to {xmlPath}");
         }
-        catch (Exception ex)
+
+        // Helper to strip trailing digits from an id
+        string StripTrailingNumber(string id)
         {
-            Console.WriteLine($"Error reading or parsing JSON: {ex.Message}");
+            if (string.IsNullOrEmpty(id)) return id;
+            int i = id.Length - 1;
+            while (i >= 0 && char.IsDigit(id[i])) i--;
+            return id.Substring(0, i + 1);
         }
+
+        // Build XML
+        var xml = new XElement("procedural-technologies");
+        var allEntries = new List<XElement>();
+
+        // No Corvette.json entries
+
+        // Upgrades.json CV_ entries
+        foreach (var e in upgradeEntries)
+        {
+            string strippedId = StripTrailingNumber(e.Id);
+            string icon = $"PRODUCT-{e.Id}.PNG";
+
+            allEntries.Add(new XElement("procedural-technology",
+                new XAttribute("category", "CORVETTE"),
+                new XAttribute("icon", icon),
+                new XAttribute("id", $"^{e.Id}"),
+                new XAttribute("name", e.Name),
+                new XAttribute("subtitle", e.Group),
+                new XElement("description", e.Description ?? "")
+            ));
+        }
+
+        // Sort by id attribute alphabetically
+        foreach (var entry in allEntries.OrderBy(x => (string)x.Attribute("id")))
+        {
+            xml.Add(entry);
+        }
+
+        xml.Save(xmlPath);
+        Console.WriteLine($"XML written to {xmlPath}");
+    }
+
+    static void ProcessFossilCurios()
+    {
+        string curiosJsonPath = "data/json/Curiosities.json";
+        string xmlPath = "data/xml_out/output_fossils_curio.xml";
+
+        var curiosityEntries = new List<CuriosityEntry>();
+        var seenIds = new HashSet<string>();
+
+        if (File.Exists(curiosJsonPath))
+        {
+            string curiosJson = File.ReadAllText(curiosJsonPath);
+            if (!string.IsNullOrWhiteSpace(curiosJson))
+            {
+                var doc = JsonDocument.Parse(curiosJson);
+                foreach (var element in doc.RootElement.EnumerateArray())
+                {
+                    if (element.TryGetProperty("Id", out var idProp) &&
+                        idProp.ValueKind == JsonValueKind.String)
+                    {
+                        var idValue = idProp.GetString();
+                        if (idValue != null && idValue.StartsWith("FOS_"))
+                        {
+                            // PreventDouble logic: skip if already seen
+                            string idKey = idValue;
+                            if (PreventDouble && seenIds.Contains(idKey))
+                                continue;
+                            seenIds.Add(idKey);
+
+                            string name = element.TryGetProperty("Name", out var nameProp) && nameProp.ValueKind == JsonValueKind.String
+                                ? nameProp.GetString() : idValue;
+                            string group = element.TryGetProperty("Group", out var groupProp) && groupProp.ValueKind == JsonValueKind.String
+                                ? groupProp.GetString() : "";
+                            string description = element.TryGetProperty("Description", out var descProp) && descProp.ValueKind == JsonValueKind.String
+                                ? descProp.GetString() : "";
+
+                            curiosityEntries.Add(new CuriosityEntry
+                            {
+                                Id = idValue,
+                                Name = name,
+                                Group = group,
+                                Description = description
+                            });
+                        }
+                    }
+                }
+            }
+        }
+
+        var xmlRoot = new XElement("products");
+        foreach (var entry in curiosityEntries)
+        {
+            var productElem = new XElement("product",
+                new XAttribute("category", "CURIOSITY"),
+                new XAttribute("icon", $"PRODUCT-{entry.Id}.PNG"),
+                new XAttribute("id", $"^{entry.Id}"),
+                new XAttribute("multiplier", "1"),
+                new XAttribute("name", entry.Name),
+                new XAttribute("subtitle", entry.Group),
+                new XElement("description", entry.Description)
+            );
+            xmlRoot.Add(productElem);
+        }
+
+        Directory.CreateDirectory(Path.GetDirectoryName(xmlPath));
+        var docOut = new XDocument(new XDeclaration("1.0", "utf-8", "yes"), xmlRoot);
+        docOut.Save(xmlPath);
     }
 }

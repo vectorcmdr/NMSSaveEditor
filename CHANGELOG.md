@@ -1,5 +1,11 @@
 # Change Log
 
+## 1.20.3 - Update (17 February 2026)
+- Add newer 6.20 mappings.
+- Add fossil curiosities parts.
+- Add temporary info for loading Corvette procedural components using internal icons (CV_x).
+- Fix for Vesper components with incorrect names.
+
 ## 1.20.2 - Update (17 February 2026)
 - Fix for Gravitino Coil.
 

@@ -20917,6 +20917,721 @@ When wired to both a power source and another short-range teleporter, allows nea
 
 Constructing the Electrical Cloaking Unit within a powered base will reduce the visual prominence of all local Electrical Wiring. Hidden wires will continue to supply electricity, provided they are sufficiently powered.</description>
   </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_AN.PNG" id="^FOS_HEAD_AN" multiplier="1" name="Predator Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_AA.PNG" id="^FOS_HEAD_AA" multiplier="1" name="Mono-horn Predator Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_AB.PNG" id="^FOS_HEAD_AB" multiplier="1" name="Horned Predator Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_AC.PNG" id="^FOS_HEAD_AC" multiplier="1" name="Diabolic Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_AD.PNG" id="^FOS_HEAD_AD" multiplier="1" name="Vicious Predator Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_BN.PNG" id="^FOS_HEAD_BN" multiplier="1" name="Herbivore Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_BA.PNG" id="^FOS_HEAD_BA" multiplier="1" name="Forest Warrior Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_BB.PNG" id="^FOS_HEAD_BB" multiplier="1" name="Skull of the Cursed Doe" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_BC.PNG" id="^FOS_HEAD_BC" multiplier="1" name="Pachyovine Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_BD.PNG" id="^FOS_HEAD_BD" multiplier="1" name="Armoured Ovine Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_BE.PNG" id="^FOS_HEAD_BE" multiplier="1" name="Ovine Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_BF.PNG" id="^FOS_HEAD_BF" multiplier="1" name="Skull of the Golden Hart" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_BG.PNG" id="^FOS_HEAD_BG" multiplier="1" name="Crown of Bones" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_BH.PNG" id="^FOS_HEAD_BH" multiplier="1" name="Longhorn Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_BI.PNG" id="^FOS_HEAD_BI" multiplier="1" name="Grazer Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_BJ.PNG" id="^FOS_HEAD_BJ" multiplier="1" name="Skull of the Watcher" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_CN.PNG" id="^FOS_HEAD_CN" multiplier="1" name="Rodent Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_CA.PNG" id="^FOS_HEAD_CA" multiplier="1" name="Spiked Rodent Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_CB.PNG" id="^FOS_HEAD_CB" multiplier="1" name="Gnarled Rodent Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_CC.PNG" id="^FOS_HEAD_CC" multiplier="1" name="Flared Rodent Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_CD.PNG" id="^FOS_HEAD_CD" multiplier="1" name="Armoured Rodent Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_CE.PNG" id="^FOS_HEAD_CE" multiplier="1" name="Magnificent Rodent Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_CF.PNG" id="^FOS_HEAD_CF" multiplier="1" name="Statuesque Rodent Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_CG.PNG" id="^FOS_HEAD_CG" multiplier="1" name="Midnight Nibbler Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_CH.PNG" id="^FOS_HEAD_CH" multiplier="1" name="Skull of the Forest King" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_CI.PNG" id="^FOS_HEAD_CI" multiplier="1" name="Longhorn Rodent Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_CJ.PNG" id="^FOS_HEAD_CJ" multiplier="1" name="Glorious Rodent Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_DN.PNG" id="^FOS_HEAD_DN" multiplier="1" name="Boar Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_DA.PNG" id="^FOS_HEAD_DA" multiplier="1" name="Wattlehog Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_DB.PNG" id="^FOS_HEAD_DB" multiplier="1" name="Saddleback Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_DC.PNG" id="^FOS_HEAD_DC" multiplier="1" name="Bullhog Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_DD.PNG" id="^FOS_HEAD_DD" multiplier="1" name="Warthog Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_DE.PNG" id="^FOS_HEAD_DE" multiplier="1" name="Swinehorn Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_DF.PNG" id="^FOS_HEAD_DF" multiplier="1" name="Hornboare Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_DG.PNG" id="^FOS_HEAD_DG" multiplier="1" name="Hammerhead Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_DH.PNG" id="^FOS_HEAD_DH" multiplier="1" name="Charger Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_DI.PNG" id="^FOS_HEAD_DI" multiplier="1" name="Flathead Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_DJ.PNG" id="^FOS_HEAD_DJ" multiplier="1" name="Moustachioed Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_EN.PNG" id="^FOS_HEAD_EN" multiplier="1" name="Canine Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_EA.PNG" id="^FOS_HEAD_EA" multiplier="1" name="Warhound Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_EB.PNG" id="^FOS_HEAD_EB" multiplier="1" name="Fearsome Canine Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_EC.PNG" id="^FOS_HEAD_EC" multiplier="1" name="Armoured Canine Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_ED.PNG" id="^FOS_HEAD_ED" multiplier="1" name="Scavenger Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_EE.PNG" id="^FOS_HEAD_EE" multiplier="1" name="Skull of the Bone Thief" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_EF.PNG" id="^FOS_HEAD_EF" multiplier="1" name="Carbuncle Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_EG.PNG" id="^FOS_HEAD_EG" multiplier="1" name="Infernal Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_EH.PNG" id="^FOS_HEAD_EH" multiplier="1" name="Malevolent Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_EI.PNG" id="^FOS_HEAD_EI" multiplier="1" name="Skull of the Wild Hunter" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_EJ.PNG" id="^FOS_HEAD_EJ" multiplier="1" name="Haunted Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_FN.PNG" id="^FOS_HEAD_FN" multiplier="1" name="Megafauna Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_FA.PNG" id="^FOS_HEAD_FA" multiplier="1" name="Skull of the Goring Wall" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_FB.PNG" id="^FOS_HEAD_FB" multiplier="1" name="Colossal Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_FC.PNG" id="^FOS_HEAD_FC" multiplier="1" name="Mammoth Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_FD.PNG" id="^FOS_HEAD_FD" multiplier="1" name="Behemoth Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_FE.PNG" id="^FOS_HEAD_FE" multiplier="1" name="Styrax Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_FF.PNG" id="^FOS_HEAD_FF" multiplier="1" name="&quot;dragon&quot; Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_FG.PNG" id="^FOS_HEAD_FG" multiplier="1" name="Monstrous Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_FH.PNG" id="^FOS_HEAD_FH" multiplier="1" name="Oceanid Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_FI.PNG" id="^FOS_HEAD_FI" multiplier="1" name="Vy'keen Spirit Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_FJ.PNG" id="^FOS_HEAD_FJ" multiplier="1" name="Giganto-skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_FK.PNG" id="^FOS_HEAD_FK" multiplier="1" name="Elephantine Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_FL.PNG" id="^FOS_HEAD_FL" multiplier="1" name="Cyclopean Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_FM.PNG" id="^FOS_HEAD_FM" multiplier="1" name="Gargantuan Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_GN.PNG" id="^FOS_HEAD_GN" multiplier="1" name="Protoform Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_GA.PNG" id="^FOS_HEAD_GA" multiplier="1" name="Masked Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_GB.PNG" id="^FOS_HEAD_GB" multiplier="1" name="Warrior Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_GC.PNG" id="^FOS_HEAD_GC" multiplier="1" name="Bonehair Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_GD.PNG" id="^FOS_HEAD_GD" multiplier="1" name="Unnameable Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_GE.PNG" id="^FOS_HEAD_GE" multiplier="1" name="Nightmare Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_GF.PNG" id="^FOS_HEAD_GF" multiplier="1" name="Skull of the Midnight Visitor" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_HN.PNG" id="^FOS_HEAD_HN" multiplier="1" name="Skull of the Ocean King" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_HA.PNG" id="^FOS_HEAD_HA" multiplier="1" name="Leviathan Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_HB.PNG" id="^FOS_HEAD_HB" multiplier="1" name="Worm Lord Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_HC.PNG" id="^FOS_HEAD_HC" multiplier="1" name="Titanworm Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_HD.PNG" id="^FOS_HEAD_HD" multiplier="1" name="Skull of the Consumer" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_HE.PNG" id="^FOS_HEAD_HE" multiplier="1" name="Feasting Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_HF.PNG" id="^FOS_HEAD_HF" multiplier="1" name="Cetenid Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_HG.PNG" id="^FOS_HEAD_HG" multiplier="1" name="Skull of the Master" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_IN.PNG" id="^FOS_HEAD_IN" multiplier="1" name="Blunted Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_IA.PNG" id="^FOS_HEAD_IA" multiplier="1" name="Fleshripper Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_IB.PNG" id="^FOS_HEAD_IB" multiplier="1" name="Avian Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_IC.PNG" id="^FOS_HEAD_IC" multiplier="1" name="Divewing Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_ID.PNG" id="^FOS_HEAD_ID" multiplier="1" name="Pterosaur Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_IE.PNG" id="^FOS_HEAD_IE" multiplier="1" name="Hookbeak Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_IF.PNG" id="^FOS_HEAD_IF" multiplier="1" name="Proto-parrot Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_IG.PNG" id="^FOS_HEAD_IG" multiplier="1" name="Snapbeak Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_JN.PNG" id="^FOS_HEAD_JN" multiplier="1" name="Crocodilian Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_JA.PNG" id="^FOS_HEAD_JA" multiplier="1" name="Swamp Dweller Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_JB.PNG" id="^FOS_HEAD_JB" multiplier="1" name="Mega-newt Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_JC.PNG" id="^FOS_HEAD_JC" multiplier="1" name="Pond Beast Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_JD.PNG" id="^FOS_HEAD_JD" multiplier="1" name="Bogsnapper Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_JE.PNG" id="^FOS_HEAD_JE" multiplier="1" name="Marshdipper Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_JF.PNG" id="^FOS_HEAD_JF" multiplier="1" name="Mudskipper Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_JG.PNG" id="^FOS_HEAD_JG" multiplier="1" name="Sarco-skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_JH.PNG" id="^FOS_HEAD_JH" multiplier="1" name="Sawtooth Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_JI.PNG" id="^FOS_HEAD_JI" multiplier="1" name="Reptile Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_JJ.PNG" id="^FOS_HEAD_JJ" multiplier="1" name="Skull of the Legsnapper" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_KN.PNG" id="^FOS_HEAD_KN" multiplier="1" name="Equuleus Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_KA.PNG" id="^FOS_HEAD_KA" multiplier="1" name="Pincer Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_KB.PNG" id="^FOS_HEAD_KB" multiplier="1" name="Monoceros Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_KC.PNG" id="^FOS_HEAD_KC" multiplier="1" name="Direhorn Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_KD.PNG" id="^FOS_HEAD_KD" multiplier="1" name="Broadbore Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_KE.PNG" id="^FOS_HEAD_KE" multiplier="1" name="Skull of the Plains Menace" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_KF.PNG" id="^FOS_HEAD_KF" multiplier="1" name="Skull of the Untameable" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_KG.PNG" id="^FOS_HEAD_KG" multiplier="1" name="Skull of the Unbroken" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_KH.PNG" id="^FOS_HEAD_KH" multiplier="1" name="Gnawing Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_KI.PNG" id="^FOS_HEAD_KI" multiplier="1" name="Pegasus Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_KJ.PNG" id="^FOS_HEAD_KJ" multiplier="1" name="Longtooth Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_KK.PNG" id="^FOS_HEAD_KK" multiplier="1" name="Horned Bounder Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_HEAD_KL.PNG" id="^FOS_HEAD_KL" multiplier="1" name="Drayflare Skull" subtitle="Living Ship Component">
+    <description>The skull of some ancient beast, in remarkable condition given its apparent age.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_LIMBS_A.PNG" id="^FOS_LIMBS_A" multiplier="1" name="Hunter's Forearms" subtitle="Living Ship Component">
+    <description>This ancient fossil has been rendered ambiguous by the passage of time. It is clearly the limb of an ancient beast, but it is difficult to be any more precise.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_LIMBS_B.PNG" id="^FOS_LIMBS_B" multiplier="1" name="Ungulate Fossil" subtitle="Living Ship Component">
+    <description>This ancient fossil has been rendered ambiguous by the passage of time. It is clearly the limb of an ancient beast, but it is difficult to be any more precise.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_LIMBS_C.PNG" id="^FOS_LIMBS_C" multiplier="1" name="Dangling Forearms" subtitle="Living Ship Component">
+    <description>This ancient fossil has been rendered ambiguous by the passage of time. It is clearly the limb of an ancient beast, but it is difficult to be any more precise.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_LIMBS_D.PNG" id="^FOS_LIMBS_D" multiplier="1" name="Grasping Forearms" subtitle="Living Ship Component">
+    <description>This ancient fossil has been rendered ambiguous by the passage of time. It is clearly the limb of an ancient beast, but it is difficult to be any more precise.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_LIMBS_E.PNG" id="^FOS_LIMBS_E" multiplier="1" name="Stalking Leg Bones" subtitle="Living Ship Component">
+    <description>This ancient fossil has been rendered ambiguous by the passage of time. It is clearly the limb of an ancient beast, but it is difficult to be any more precise.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_LIMBS_F.PNG" id="^FOS_LIMBS_F" multiplier="1" name="Fossilised Biped Legs" subtitle="Living Ship Component">
+    <description>This ancient fossil has been rendered ambiguous by the passage of time. It is clearly the limb of an ancient beast, but it is difficult to be any more precise.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_LIMBS_G.PNG" id="^FOS_LIMBS_G" multiplier="1" name="Swift Leg Bones" subtitle="Living Ship Component">
+    <description>This ancient fossil has been rendered ambiguous by the passage of time. It is clearly the limb of an ancient beast, but it is difficult to be any more precise.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_LIMBS_H.PNG" id="^FOS_LIMBS_H" multiplier="1" name="Fossilised Flippers" subtitle="Living Ship Component">
+    <description>This ancient fossil has been rendered ambiguous by the passage of time. It is clearly the limb of an ancient beast, but it is difficult to be any more precise.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_LIMBS_I.PNG" id="^FOS_LIMBS_I" multiplier="1" name="Fossilised Fins" subtitle="Living Ship Component">
+    <description>This ancient fossil has been rendered ambiguous by the passage of time. It is clearly the limb of an ancient beast, but it is difficult to be any more precise.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_LIMBS_J.PNG" id="^FOS_LIMBS_J" multiplier="1" name="Fossilised Wing Stubs" subtitle="Living Ship Component">
+    <description>This ancient fossil has been rendered ambiguous by the passage of time. It is clearly the limb of an ancient beast, but it is difficult to be any more precise.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_BI_BODY_AN.PNG" id="^FOS_BI_BODY_AN" multiplier="1" name="Lengthy Ribcage" subtitle="Living Ship Component">
+    <description>These stained and pitted bones once formed the torso of some ancient organism.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_BI_BODY_AA.PNG" id="^FOS_BI_BODY_AA" multiplier="1" name="Lengthy Plated Ribcage" subtitle="Living Ship Component">
+    <description>These stained and pitted bones once formed the torso of some ancient organism.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_BI_BODY_AB.PNG" id="^FOS_BI_BODY_AB" multiplier="1" name="Gargantuan Ribcage" subtitle="Living Ship Component">
+    <description>These stained and pitted bones once formed the torso of some ancient organism.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_BI_BODY_AC.PNG" id="^FOS_BI_BODY_AC" multiplier="1" name="Mighty Ribcage" subtitle="Living Ship Component">
+    <description>These stained and pitted bones once formed the torso of some ancient organism.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_BI_BODY_AD.PNG" id="^FOS_BI_BODY_AD" multiplier="1" name="Lengthy Flared Ribcage" subtitle="Living Ship Component">
+    <description>These stained and pitted bones once formed the torso of some ancient organism.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_BI_BODY_AE.PNG" id="^FOS_BI_BODY_AE" multiplier="1" name="Lengthy Finned Ribcage" subtitle="Living Ship Component">
+    <description>These stained and pitted bones once formed the torso of some ancient organism.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_BI_BODY_BN.PNG" id="^FOS_BI_BODY_BN" multiplier="1" name="Ancient Ribcage" subtitle="Living Ship Component">
+    <description>These stained and pitted bones once formed the torso of some ancient organism.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_BI_BODY_BA.PNG" id="^FOS_BI_BODY_BA" multiplier="1" name="Plated Ribcage" subtitle="Living Ship Component">
+    <description>These stained and pitted bones once formed the torso of some ancient organism.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_BI_BODY_BB.PNG" id="^FOS_BI_BODY_BB" multiplier="1" name="Spiked Ribcage" subtitle="Living Ship Component">
+    <description>These stained and pitted bones once formed the torso of some ancient organism.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_BI_BODY_BC.PNG" id="^FOS_BI_BODY_BC" multiplier="1" name="Armoured Ribcage" subtitle="Living Ship Component">
+    <description>These stained and pitted bones once formed the torso of some ancient organism.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_BI_BODY_BD.PNG" id="^FOS_BI_BODY_BD" multiplier="1" name="Flared Ribcage" subtitle="Living Ship Component">
+    <description>These stained and pitted bones once formed the torso of some ancient organism.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_BI_BODY_BE.PNG" id="^FOS_BI_BODY_BE" multiplier="1" name="Finned Ribcage" subtitle="Living Ship Component">
+    <description>These stained and pitted bones once formed the torso of some ancient organism.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_BI_TAIL_AN.PNG" id="^FOS_BI_TAIL_AN" multiplier="1" name="Ancient Tailbone" subtitle="Living Ship Component">
+    <description>Bleached by the years, it is nonetheless evident that this was once the tail-bone of a long-extinct creature.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_BI_TAIL_AA.PNG" id="^FOS_BI_TAIL_AA" multiplier="1" name="Fearsome Lashbone" subtitle="Living Ship Component">
+    <description>Bleached by the years, it is nonetheless evident that this was once the tail-bone of a long-extinct creature.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_BI_TAIL_BN.PNG" id="^FOS_BI_TAIL_BN" multiplier="1" name="Mace-like Tailbone" subtitle="Living Ship Component">
+    <description>Bleached by the years, it is nonetheless evident that this was once the tail-bone of a long-extinct creature.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_BI_TAIL_BA.PNG" id="^FOS_BI_TAIL_BA" multiplier="1" name="Flailing Tailbone" subtitle="Living Ship Component">
+    <description>Bleached by the years, it is nonetheless evident that this was once the tail-bone of a long-extinct creature.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_BI_TAIL_CN.PNG" id="^FOS_BI_TAIL_CN" multiplier="1" name="Lengthy Tailbone" subtitle="Living Ship Component">
+    <description>Bleached by the years, it is nonetheless evident that this was once the tail-bone of a long-extinct creature.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_BI_TAIL_CA.PNG" id="^FOS_BI_TAIL_CA" multiplier="1" name="Plated Tailbone" subtitle="Living Ship Component">
+    <description>Bleached by the years, it is nonetheless evident that this was once the tail-bone of a long-extinct creature.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_BI_TAIL_DN.PNG" id="^FOS_BI_TAIL_DN" multiplier="1" name="Coiled Tailbone" subtitle="Living Ship Component">
+    <description>Bleached by the years, it is nonetheless evident that this was once the tail-bone of a long-extinct creature.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_BI_TAIL_DA.PNG" id="^FOS_BI_TAIL_DA" multiplier="1" name="Slashing Springtail" subtitle="Living Ship Component">
+    <description>Bleached by the years, it is nonetheless evident that this was once the tail-bone of a long-extinct creature.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_BI_TAIL_E.PNG" id="^FOS_BI_TAIL_E" multiplier="1" name="Upturned Tailfan" subtitle="Living Ship Component">
+    <description>Bleached by the years, it is nonetheless evident that this was once the tail-bone of a long-extinct creature.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_BI_TAIL_F.PNG" id="^FOS_BI_TAIL_F" multiplier="1" name="Downturned Tailfan" subtitle="Living Ship Component">
+    <description>Bleached by the years, it is nonetheless evident that this was once the tail-bone of a long-extinct creature.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
+  <product category="CURIOSITY" icon="PRODUCT-FOS_BI_TAIL_G.PNG" id="^FOS_BI_TAIL_G" multiplier="1" name="Stubtail" subtitle="Living Ship Component">
+    <description>Bleached by the years, it is nonetheless evident that this was once the tail-bone of a long-extinct creature.
+
+Construct a fossil display case within your base to display this find. Add additional bone samples to recreate the entire creature.</description>
+  </product>
   <procedural-product category="PROCEDURAL" icon="PRODUCT-PROC_LOOT.PNG" id="^PROC_LOOT" name="Unearthed Treasure" subtitle="Unearthed Treasure">
     <description>Unearthed Treasure</description>
   </procedural-product>
@@ -24022,20 +24737,6 @@ Potential improvements include: starship manoeuvrability and speed.</description
     <techbox icon="TECHBOX-VEHICLEBOOST.PNG" id="^8080BF848A0E" template="^U_TECHPACK_CORE"/>
   </procedural-technology>
   <procedural-technology category="ALLSHIPSEXCEPTALIEN" icon="TECHNOLOGY-UT_PULSEFUEL.PNG" id="^UP_PULSE0" name="Rusted Pulse Engine Upgrade" subtitle="Rusted Pulse Engine Upgrade"/>
-  <procedural-technology category="ALLSHIPSEXCEPTALIEN" icon="TECHNOLOGY-UT_PULSEFUEL.PNG" id="^CV_PULSE2" name="B-Class Pulse Engine Upgrade" subtitle="B-Class Pulse Engine Upgrade">
-    <description>A significant upgrade for the Starship Pulse Engine. Use FE_ALT1 to begin upgrade installation process.
-
-The module is flexible, and exact upgrade statistics are unknown until installation is complete.
-
-Potential improvements include: starship manoeuvrability and speed.</description>
-  </procedural-technology>
-  <procedural-technology category="ALLSHIPSEXCEPTALIEN" icon="TECHNOLOGY-UT_PULSEFUEL.PNG" id="^CV_PULSE3" name="A-Class Pulse Engine Upgrade" subtitle="A-Class Pulse Engine Upgrade">
-    <description>An extremely powerful upgrade for the Starship Pulse Engine. Use FE_ALT1 to begin upgrade installation process.
-
-The module is flexible, and exact upgrade statistics are unknown until installation is complete.
-
-Potential improvements include: starship manoeuvrability and speed.</description>
-  </procedural-technology>
   <procedural-technology category="ALLSHIPSEXCEPTALIEN" icon="TECHNOLOGY-UT_LAUNCHER.PNG" id="^UP_LAUN1" name="C-Class Launch Thruster Upgrade" subtitle="C-Class Launch Thruster Upgrade">
     <description>A moderate upgrade for the Starship Launch Thrusters. Use FE_ALT1 to begin upgrade installation process.
 
@@ -24072,20 +24773,6 @@ Potential improvements include: launch efficiency and speed.</description>
     <techbox icon="TECHBOX-VEHICLEBOOST.PNG" id="^80804F143059" template="^U_TECHPACK_CORE"/>
   </procedural-technology>
   <procedural-technology category="ALLSHIPSEXCEPTALIEN" icon="TECHNOLOGY-UT_LAUNCHER.PNG" id="^UP_LAUN0" name="Rusted Launch Thruster Upgrade" subtitle="Rusted Launch Thruster Upgrade"/>
-  <procedural-technology category="ALLSHIPSEXCEPTALIEN" icon="TECHNOLOGY-UT_LAUNCHER.PNG" id="^CV_LAUN2" name="B-Class Launch Thruster Upgrade" subtitle="B-Class Launch Thruster Upgrade">
-    <description>A significant upgrade for the Starship Launch Thrusters. Use FE_ALT1 to begin upgrade installation process.
-
-The module is flexible, and exact upgrade statistics are unknown until installation is complete.
-
-Potential improvements include: launch efficiency and speed.</description>
-  </procedural-technology>
-  <procedural-technology category="ALLSHIPSEXCEPTALIEN" icon="TECHNOLOGY-UT_LAUNCHER.PNG" id="^CV_LAUN3" name="A-Class Launch Thruster Upgrade" subtitle="A-Class Launch Thruster Upgrade">
-    <description>An extremely powerful upgrade for the Starship Launch Thrusters. Use FE_ALT1 to begin upgrade installation process.
-
-The module is flexible, and exact upgrade statistics are unknown until installation is complete.
-
-Potential improvements include: launch efficiency and speed.</description>
-  </procedural-technology>
   <procedural-technology category="ALLSHIPSEXCEPTALIEN" icon="TECHNOLOGY-UT_QUICKWARP.PNG" id="^UP_HYP1" name="C-Class Hyperdrive Upgrade" subtitle="C-Class Hyperdrive Upgrade">
     <description>A moderate upgrade for the Hyperdrive. Use FE_ALT1 to begin upgrade installation process.
 
@@ -24122,20 +24809,6 @@ Potential improvements include: warp-drive efficiency and jump distance.</descri
     <techbox icon="TECHBOX-HYPERDRIVE.PNG" id="^8082244EC6E8" template="^U_TECHPACK_CORE"/>
   </procedural-technology>
   <procedural-technology category="ALLSHIPSEXCEPTALIEN" icon="TECHNOLOGY-UT_QUICKWARP.PNG" id="^UP_HYP0" name="Rusted Hyperdrive Upgrade" subtitle="Rusted Hyperdrive Upgrade"/>
-  <procedural-technology category="ALLSHIPSEXCEPTALIEN" icon="TECHNOLOGY-UT_QUICKWARP.PNG" id="^CV_HYP2" name="B-Class Hyperdrive Upgrade" subtitle="B-Class Hyperdrive Upgrade">
-    <description>A significant upgrade for the Hyperdrive. Use FE_ALT1 to begin upgrade installation process.
-
-The module is flexible, and exact upgrade statistics are unknown until installation is complete.
-
-Potential improvements include: warp-drive efficiency and jump distance.</description>
-  </procedural-technology>
-  <procedural-technology category="ALLSHIPSEXCEPTALIEN" icon="TECHNOLOGY-UT_QUICKWARP.PNG" id="^CV_HYP3" name="A-Class Hyperdrive Upgrade" subtitle="A-Class Hyperdrive Upgrade">
-    <description>An extremely powerful upgrade for the Hyperdrive. Use FE_ALT1 to begin upgrade installation process.
-
-The module is flexible, and exact upgrade statistics are unknown until installation is complete.
-
-Potential improvements include: warp-drive efficiency and jump distance.</description>
-  </procedural-technology>
   <procedural-technology category="ALLSHIPSEXCEPTALIEN" icon="TECHNOLOGY-SHIPSHIELD.PNG" id="^UP_S_SHL1" name="C-Class Deflector Shield Upgrade" subtitle="C-Class Deflector Shield Upgrade">
     <description>A moderate upgrade for the Starship Defensive Shielding. Use FE_ALT1 to begin upgrade installation process.
 
@@ -24172,20 +24845,6 @@ Dramatically improves ship strength for increased combat endurance.</description
     <techbox icon="TECHBOX-SHIELD.PNG" id="^80825852E822" template="^U_TECHPACK_CORE"/>
   </procedural-technology>
   <procedural-technology category="ALLSHIPSEXCEPTALIEN" icon="TECHNOLOGY-SHIPSHIELD.PNG" id="^UP_S_SHL0" name="Rusted Deflector Shield Upgrade" subtitle="Rusted Deflector Shield Upgrade"/>
-  <procedural-technology category="ALLSHIPSEXCEPTALIEN" icon="TECHNOLOGY-SHIPSHIELD.PNG" id="^CV_S_SHL2" name="B-Class Deflector Shield Upgrade" subtitle="B-Class Deflector Shield Upgrade">
-    <description>A significant upgrade for the Starship Defensive Shielding. Use FE_ALT1 to begin upgrade installation process.
-
-The module is flexible, and exact upgrade statistics are unknown until installation is complete.
-
-Significantly improves ship strength for increased combat endurance.</description>
-  </procedural-technology>
-  <procedural-technology category="ALLSHIPSEXCEPTALIEN" icon="TECHNOLOGY-SHIPSHIELD.PNG" id="^CV_S_SHL3" name="A-Class Deflector Shield Upgrade" subtitle="A-Class Deflector Shield Upgrade">
-    <description>An extremely powerful upgrade for the Starship Defensive Shielding. Use FE_ALT1 to begin upgrade installation process.
-
-The module is flexible, and exact upgrade statistics are unknown until installation is complete.
-
-Dramatically improves ship strength for increased combat endurance.</description>
-  </procedural-technology>
   <procedural-technology category="ALLSHIPSEXCEPTALIEN" icon="TECHNOLOGY-UT_SHIPGUN.PNG" id="^UP_SGUN1" name="C-Class Photon Cannon Upgrade" subtitle="C-Class Photon Cannon Upgrade">
     <description>A moderate upgrade for the Starship Photon Cannon. Use FE_ALT1 to begin upgrade installation process.
 
@@ -24222,14 +24881,6 @@ Potential improvements include: damage, fire rate and overheat times.</descripti
     <techbox icon="TECHBOX-SHIPGUN.PNG" id="^808043CAEB14" template="^U_TECHPACK_CORE"/>
   </procedural-technology>
   <procedural-technology category="ALLSHIPSEXCEPTALIEN" icon="TECHNOLOGY-UT_SHIPGUN.PNG" id="^UP_SGUN0" name="Rusted Photon Cannon Upgrade" subtitle="Rusted Photon Cannon Upgrade"/>
-  <procedural-technology category="ALLSHIPSEXCEPTALIEN" icon="TECHNOLOGY-UT_SHIPGUN.PNG" id="^CV_SGUN3" name="A-Class Photon Cannon Upgrade" subtitle="A-Class Photon Cannon Upgrade">
-    <description>An extremely powerful upgrade for the Starship Photon Cannon. Use FE_ALT1 to begin upgrade installation process.
-
-The module is flexible, and exact upgrade statistics are unknown until installation is complete.
-
-Potential improvements include: damage, fire rate and overheat times.</description>
-  </procedural-technology>
-  <procedural-technology category="ALLSHIPSEXCEPTALIEN" icon="TECHNOLOGY-UT_ROCKETS.PNG" id="^CV_SROC3" name="A-Class Rocket Launcher Upgrade" subtitle="A-Class Rocket Launcher Upgrade"/>
   <procedural-technology category="ALLSHIPSEXCEPTALIEN" icon="TECHNOLOGY-UT_SHIPLAS.PNG" id="^UP_SLASR1" name="C-Class Phase Beam Upgrade" subtitle="C-Class Phase Beam Upgrade">
     <description>A moderate upgrade for the Starship Phase Beam. Use FE_ALT1 to begin upgrade installation process.
 
@@ -24264,13 +24915,6 @@ Potential improvements include: damage output, and overheat tolerance.</descript
   </procedural-technology>
   <procedural-technology category="ALLSHIPSEXCEPTALIEN" icon="TECHNOLOGY-UT_SHIPLAS.PNG" id="^UP_SLASRX" name="Illegal Phase Beam Upgrade" subtitle="Illegal Phase Beam Upgrade">
     <techbox icon="TECHBOX-SHIPLASER.PNG" id="^8080FA27BC4D" template="^U_TECHPACK_CORE"/>
-  </procedural-technology>
-  <procedural-technology category="ALLSHIPSEXCEPTALIEN" icon="TECHNOLOGY-UT_SHIPLAS.PNG" id="^CV_SLASR3" name="A-Class Phase Beam Upgrade" subtitle="A-Class Phase Beam Upgrade">
-    <description>An extremely powerful upgrade for the Starship Phase Beam. Use FE_ALT1 to begin upgrade installation process.
-
-The module is flexible, and exact upgrade statistics are unknown until installation is complete.
-
-Potential improvements include: damage output, and overheat tolerance.</description>
   </procedural-technology>
   <procedural-technology category="ALLSHIPSEXCEPTALIEN" icon="TECHNOLOGY-UT_SHIPSHOT.PNG" id="^UP_SSHOT1" name="C-Class Positron Ejector Upgrade" subtitle="C-Class Positron Ejector Upgrade">
     <description>A moderate upgrade for the Positron Ejector. Use FE_ALT1 to begin upgrade installation process.
@@ -24307,13 +24951,6 @@ Potential improvements include: damage output, fire rate and overheat times.</de
   <procedural-technology category="ALLSHIPSEXCEPTALIEN" icon="TECHNOLOGY-UT_SHIPSHOT.PNG" id="^UP_SSHOTX" name="Illegal Positron Ejector Upgrade" subtitle="Illegal Positron Ejector Upgrade">
     <techbox icon="TECHBOX-SHOTGUN.PNG" id="^80804853DF89" template="^U_TECHPACK_CORE"/>
   </procedural-technology>
-  <procedural-technology category="ALLSHIPSEXCEPTALIEN" icon="TECHNOLOGY-UT_SHIPSHOT.PNG" id="^CV_SSHOT3" name="A-Class Positron Ejector Upgrade" subtitle="A-Class Positron Ejector Upgrade">
-    <description>An extremely powerful upgrade for the Positron Ejector. Use FE_ALT1 to begin upgrade installation process.
-
-The module is flexible, and exact upgrade statistics are unknown until installation is complete.
-
-Potential improvements include: damage output, fire rate and overheat times.</description>
-  </procedural-technology>
   <procedural-technology category="ALLSHIPSEXCEPTALIEN" icon="TECHNOLOGY-UT_SHIPMINI.PNG" id="^UP_SMINI1" name="C-Class Infra-Knife Accelerator Upgrade" subtitle="C-Class Infra-Knife Accelerator Upgrade">
     <description>A moderate upgrade for the Infra-Knife Accelerator. Use FE_ALT1 to begin upgrade installation process.
 
@@ -24349,13 +24986,6 @@ Potential improvements include: damage output, fire rate and overheat times.</de
   <procedural-technology category="ALLSHIPSEXCEPTALIEN" icon="TECHNOLOGY-UT_SHIPMINI.PNG" id="^UP_SMINIX" name="Illegal Infra-Knife Accelerator Upgrade" subtitle="Illegal Infra-Knife Accelerator Upgrade">
     <techbox icon="TECHBOX-SMG.PNG" id="^80895621D754" template="^U_TECHPACK_CORE"/>
   </procedural-technology>
-  <procedural-technology category="ALLSHIPSEXCEPTALIEN" icon="TECHNOLOGY-UT_SHIPMINI.PNG" id="^CV_SMINI3" name="A-Class Infra-Knife Accelerator Upgrade" subtitle="A-Class Infra-Knife Accelerator Upgrade">
-    <description>An extremely powerful upgrade for the Infra-Knife Accelerator. Use FE_ALT1 to begin upgrade installation process.
-
-The module is flexible, and exact upgrade statistics are unknown until installation is complete.
-
-Potential improvements include: damage output, fire rate and overheat times.</description>
-  </procedural-technology>
   <procedural-technology category="ALLSHIPSEXCEPTALIEN" icon="TECHNOLOGY-UT_SHIPBLOB.PNG" id="^UP_SBLOB1" name="C-Class Cyclotron Ballista Upgrade" subtitle="C-Class Cyclotron Ballista Upgrade">
     <description>A moderate upgrade for the Cyclotron Ballista. Use FE_ALT1 to begin upgrade installation process.
 
@@ -24390,13 +25020,6 @@ Potential improvements include: damage output, fire rate and overheat times.</de
   </procedural-technology>
   <procedural-technology category="ALLSHIPSEXCEPTALIEN" icon="TECHNOLOGY-UT_SHIPBLOB.PNG" id="^UP_SBLOBX" name="Illegal Cyclotron Ballista Upgrade" subtitle="Illegal Cyclotron Ballista Upgrade">
     <techbox icon="TECHBOX-RAILGUN.PNG" id="^808059A553E2" template="^U_TECHPACK_CORE"/>
-  </procedural-technology>
-  <procedural-technology category="ALLSHIPSEXCEPTALIEN" icon="TECHNOLOGY-UT_SHIPBLOB.PNG" id="^CV_SBLOB3" name="A-Class Cyclotron Ballista Upgrade" subtitle="A-Class Cyclotron Ballista Upgrade">
-    <description>An extremely powerful upgrade for the Cyclotron Ballista. Use FE_ALT1 to begin upgrade installation process.
-
-The module is flexible, and exact upgrade statistics are unknown until installation is complete.
-
-Potential improvements include: damage output, fire rate and overheat times.</description>
   </procedural-technology>
   <procedural-technology category="VEHICLE" icon="TECHNOLOGY-VEHICLE_FLAME.PNG" id="^UP_EXGUN1" name="C-Class Mounted Cannon Upgrade" subtitle="C-Class Mounted Cannon Upgrade">
     <techbox icon="TECHBOX-SHIPGUN.PNG" id="^808247514222" template="^U_TECHPACK_CORE"/>
@@ -24878,22 +25501,96 @@ The unit offers improvements to the industrial abilities of all expeditions.</de
 The unit offers improvements to the industrial abilities of all expeditions.</description>
     <techbox icon="TECHBOX-LASER.PNG" id="^808022F4E707" template="^U_TECHPACK_CORE"/>
   </procedural-technology>
-  <procedural-technology category="CORVETTE" icon="TECHNOLOGY-UT_SHIPLAS.PNG" id="^CV_FIT1" name="UT_CR_FIGHT_NAME_L"/>
-  <procedural-technology category="CORVETTE" icon="TECHNOLOGY-UT_SHIPLAS.PNG" id="^CV_FIT2" name="UT_CR_FIGHT_NAME_L"/>
-  <procedural-technology category="CORVETTE" icon="TECHNOLOGY-UT_SHIPLAS.PNG" id="^CV_FIT3" name="UT_CR_FIGHT_NAME_L"/>
-  <procedural-technology category="CORVETTE" icon="TECHNOLOGY-UT_SHIPLAS.PNG" id="^CV_FIT4" name="UT_CR_FIGHT_NAME_L"/>
-  <procedural-technology category="CORVETTE" icon="TECHNOLOGY-UT_QUICKWARP.PNG" id="^CV_SCI1" name="UT_CR_SCI_NAME_L"/>
-  <procedural-technology category="CORVETTE" icon="TECHNOLOGY-UT_QUICKWARP.PNG" id="^CV_SCI2" name="UT_CR_SCI_NAME_L"/>
-  <procedural-technology category="CORVETTE" icon="TECHNOLOGY-UT_QUICKWARP.PNG" id="^CV_SCI3" name="UT_CR_SCI_NAME_L"/>
-  <procedural-technology category="CORVETTE" icon="TECHNOLOGY-UT_QUICKWARP.PNG" id="^CV_SCI4" name="UT_CR_SCI_NAME_L"/>
-  <procedural-technology category="CORVETTE" icon="TECHNOLOGY-UT_PULSEFUEL.PNG" id="^CV_TRA1" name="UT_CR_TRADE_NAME_L"/>
-  <procedural-technology category="CORVETTE" icon="TECHNOLOGY-UT_PULSEFUEL.PNG" id="^CV_TRA2" name="UT_CR_TRADE_NAME_L"/>
-  <procedural-technology category="CORVETTE" icon="TECHNOLOGY-UT_PULSEFUEL.PNG" id="^CV_TRA3" name="UT_CR_TRADE_NAME_L"/>
-  <procedural-technology category="CORVETTE" icon="TECHNOLOGY-UT_PULSEFUEL.PNG" id="^CV_TRA4" name="UT_CR_TRADE_NAME_L"/>
-  <procedural-technology category="CORVETTE" icon="TECHNOLOGY-UT_LAUNCHER.PNG" id="^CV_INV1" name="UT_CR_MINE_NAME_L"/>
-  <procedural-technology category="CORVETTE" icon="TECHNOLOGY-UT_LAUNCHER.PNG" id="^CV_INV2" name="UT_CR_MINE_NAME_L"/>
-  <procedural-technology category="CORVETTE" icon="TECHNOLOGY-UT_LAUNCHER.PNG" id="^CV_INV3" name="UT_CR_MINE_NAME_L"/>
-  <procedural-technology category="CORVETTE" icon="TECHNOLOGY-UT_LAUNCHER.PNG" id="^CV_INV4" name="UT_CR_MINE_NAME_L"/>
+  <procedural-technology category="CORVETTE" icon="PRODUCT-CV_FIT1.PNG" id="^CV_FIT1" name="C-Class Corvette flight control systems Component" subtitle="C-Class Corvette flight control systems Component">
+    <description>A moderate upgrade for the flight control systems.</description>
+  </procedural-technology>
+  <procedural-technology category="CORVETTE" icon="PRODUCT-CV_FIT2.PNG" id="^CV_FIT2" name="B-Class Corvette flight control systems Component" subtitle="B-Class Corvette flight control systems Component">
+    <description>A significant upgrade for the flight control systems.</description>
+  </procedural-technology>
+  <procedural-technology category="CORVETTE" icon="PRODUCT-CV_FIT3.PNG" id="^CV_FIT3" name="A-Class Corvette flight control systems Component" subtitle="A-Class Corvette flight control systems Component">
+    <description>A extremely powerful upgrade for the flight control systems.</description>
+  </procedural-technology>
+  <procedural-technology category="CORVETTE" icon="PRODUCT-CV_FIT4.PNG" id="^CV_FIT4" name="S-Class Corvette flight control systems Component" subtitle="S-Class Corvette flight control systems Component">
+    <description>A supremely powerful upgrade for the flight control systems.</description>
+  </procedural-technology>
+  <procedural-technology category="CORVETTE" icon="PRODUCT-CV_HYP2.PNG" id="^CV_HYP2" name="B-Class Corvette warp core Component" subtitle="B-Class Corvette warp core Component">
+    <description>A significant upgrade for the Hyperdrive.</description>
+  </procedural-technology>
+  <procedural-technology category="CORVETTE" icon="PRODUCT-CV_HYP3.PNG" id="^CV_HYP3" name="A-Class Corvette warp core Component" subtitle="A-Class Corvette warp core Component">
+    <description>An extremely powerful upgrade for the Hyperdrive.</description>
+  </procedural-technology>
+  <procedural-technology category="CORVETTE" icon="PRODUCT-CV_INV1.PNG" id="^CV_INV1" name="C-Class Corvette cargo systems Component" subtitle="C-Class Corvette cargo systems Component">
+    <description>A moderate upgrade for the cargo systems.</description>
+  </procedural-technology>
+  <procedural-technology category="CORVETTE" icon="PRODUCT-CV_INV2.PNG" id="^CV_INV2" name="B-Class Corvette cargo systems Component" subtitle="B-Class Corvette cargo systems Component">
+    <description>A significant upgrade for the cargo systems.</description>
+  </procedural-technology>
+  <procedural-technology category="CORVETTE" icon="PRODUCT-CV_INV3.PNG" id="^CV_INV3" name="A-Class Corvette cargo systems Component" subtitle="A-Class Corvette cargo systems Component">
+    <description>A extremely powerful upgrade for the cargo systems.</description>
+  </procedural-technology>
+  <procedural-technology category="CORVETTE" icon="PRODUCT-CV_INV4.PNG" id="^CV_INV4" name="S-Class Corvette cargo systems Component" subtitle="S-Class Corvette cargo systems Component">
+    <description>A supremely powerful upgrade for the cargo systems.</description>
+  </procedural-technology>
+  <procedural-technology category="CORVETTE" icon="PRODUCT-CV_LAUN2.PNG" id="^CV_LAUN2" name="B-Class Corvette launch systems Component" subtitle="B-Class Corvette launch systems Component">
+    <description>A significant upgrade for the Starship Launch Thrusters.</description>
+  </procedural-technology>
+  <procedural-technology category="CORVETTE" icon="PRODUCT-CV_LAUN3.PNG" id="^CV_LAUN3" name="A-Class Corvette launch systems Component" subtitle="A-Class Corvette launch systems Component">
+    <description>An extremely powerful upgrade for the Starship Launch Thrusters.</description>
+  </procedural-technology>
+  <procedural-technology category="CORVETTE" icon="PRODUCT-CV_PULSE2.PNG" id="^CV_PULSE2" name="B-Class Corvette main engines Component" subtitle="B-Class Corvette main engines Component">
+    <description>A significant upgrade for the Starship Pulse Engine.</description>
+  </procedural-technology>
+  <procedural-technology category="CORVETTE" icon="PRODUCT-CV_PULSE3.PNG" id="^CV_PULSE3" name="A-Class Corvette main engines Component" subtitle="A-Class Corvette main engines Component">
+    <description>An extremely powerful upgrade for the Starship Pulse Engine.</description>
+  </procedural-technology>
+  <procedural-technology category="CORVETTE" icon="PRODUCT-CV_S_SHL2.PNG" id="^CV_S_SHL2" name="B-Class Corvette shielding system Component" subtitle="B-Class Corvette shielding system Component">
+    <description>A significant upgrade for the Starship Defensive Shielding.</description>
+  </procedural-technology>
+  <procedural-technology category="CORVETTE" icon="PRODUCT-CV_S_SHL3.PNG" id="^CV_S_SHL3" name="A-Class Corvette shielding system Component" subtitle="A-Class Corvette shielding system Component">
+    <description>An extremely powerful upgrade for the Starship Defensive Shielding.</description>
+  </procedural-technology>
+  <procedural-technology category="CORVETTE" icon="PRODUCT-CV_SBLOB3.PNG" id="^CV_SBLOB3" name="A-Class Corvette Cyclotron defence array Component" subtitle="A-Class Corvette Cyclotron defence array Component">
+    <description>An extremely powerful upgrade for the Cyclotron Ballista.</description>
+  </procedural-technology>
+  <procedural-technology category="CORVETTE" icon="PRODUCT-CV_SCI1.PNG" id="^CV_SCI1" name="C-Class Corvette navigation systems Component" subtitle="C-Class Corvette navigation systems Component">
+    <description>A moderate upgrade for the navigation systems.</description>
+  </procedural-technology>
+  <procedural-technology category="CORVETTE" icon="PRODUCT-CV_SCI2.PNG" id="^CV_SCI2" name="B-Class Corvette navigation systems Component" subtitle="B-Class Corvette navigation systems Component">
+    <description>A significant upgrade for the navigation systems.</description>
+  </procedural-technology>
+  <procedural-technology category="CORVETTE" icon="PRODUCT-CV_SCI3.PNG" id="^CV_SCI3" name="A-Class Corvette navigation systems Component" subtitle="A-Class Corvette navigation systems Component">
+    <description>A extremely powerful upgrade for the navigation systems.</description>
+  </procedural-technology>
+  <procedural-technology category="CORVETTE" icon="PRODUCT-CV_SCI4.PNG" id="^CV_SCI4" name="S-Class Corvette navigation systems Component" subtitle="S-Class Corvette navigation systems Component">
+    <description>A supremely powerful upgrade for the navigation systems.</description>
+  </procedural-technology>
+  <procedural-technology category="CORVETTE" icon="PRODUCT-CV_SGUN3.PNG" id="^CV_SGUN3" name="A-Class Corvette Photon Cannon array Component" subtitle="A-Class Corvette Photon Cannon array Component">
+    <description>An extremely powerful upgrade for the Starship Photon Cannon.</description>
+  </procedural-technology>
+  <procedural-technology category="CORVETTE" icon="PRODUCT-CV_SLASR3.PNG" id="^CV_SLASR3" name="A-Class Corvette laser defence array Component" subtitle="A-Class Corvette laser defence array Component">
+    <description>An extremely powerful upgrade for the Starship Phase Beam.</description>
+  </procedural-technology>
+  <procedural-technology category="CORVETTE" icon="PRODUCT-CV_SMINI3.PNG" id="^CV_SMINI3" name="A-Class Corvette Infra-Knife Accelerator array Component" subtitle="A-Class Corvette Infra-Knife Accelerator array Component">
+    <description>An extremely powerful upgrade for the Infra-Knife Accelerator.</description>
+  </procedural-technology>
+  <procedural-technology category="CORVETTE" icon="PRODUCT-CV_SROC3.PNG" id="^CV_SROC3" name="A-Class Corvette rocket batteries Component" subtitle="A-Class Corvette rocket batteries Component">
+    <description>A extremely powerful upgrade for the rocket batteries.</description>
+  </procedural-technology>
+  <procedural-technology category="CORVETTE" icon="PRODUCT-CV_SSHOT3.PNG" id="^CV_SSHOT3" name="A-Class Corvette Positron Ejector array Component" subtitle="A-Class Corvette Positron Ejector array Component">
+    <description>An extremely powerful upgrade for the Positron Ejector.</description>
+  </procedural-technology>
+  <procedural-technology category="CORVETTE" icon="PRODUCT-CV_TRA1.PNG" id="^CV_TRA1" name="C-Class Corvette defensive systems Component" subtitle="C-Class Corvette defensive systems Component">
+    <description>A moderate upgrade for the defensive systems.</description>
+  </procedural-technology>
+  <procedural-technology category="CORVETTE" icon="PRODUCT-CV_TRA2.PNG" id="^CV_TRA2" name="B-Class Corvette defensive systems Component" subtitle="B-Class Corvette defensive systems Component">
+    <description>A significant upgrade for the defensive systems.</description>
+  </procedural-technology>
+  <procedural-technology category="CORVETTE" icon="PRODUCT-CV_TRA3.PNG" id="^CV_TRA3" name="A-Class Corvette defensive systems Component" subtitle="A-Class Corvette defensive systems Component">
+    <description>A extremely powerful upgrade for the defensive systems.</description>
+  </procedural-technology>
+  <procedural-technology category="CORVETTE" icon="PRODUCT-CV_TRA4.PNG" id="^CV_TRA4" name="S-Class Corvette defensive systems Component" subtitle="S-Class Corvette defensive systems Component">
+    <description>A supremely powerful upgrade for the defensive systems.</description>
+  </procedural-technology>
   <product-template id="^U_TECHPACK_CORE" name="%NAME% Package" subtitle="Archived Technology Package">
     <description>An archived wiring package, designed to allow easy storage of core technology. Use FE_ALT1 to begin the installation process.
 
