@@ -14,6 +14,8 @@ _It is no longer contributing PRs back to the original due to it's current froze
 
 A modernized C# port is currently underway that will be **completely open source** and encourage the community to help keep it up to date as there are sadly little to no up-to-date open source save editors, only closed source or semi source available ones.
 
+You can check on progress [here](https://github.com/vectorcmdr/NMSSaveEditor/issues/20)!
+
 ## Compatibility
 
 Requirements:
