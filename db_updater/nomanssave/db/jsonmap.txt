@@ -1196,3 +1196,6 @@ FA8	VehicleCargo
 xvv	OutfitNames
 MXH	CustomTruckPresets
 man	CustomTruckPresetNames
+LOB	DirectionRight
+Bt6	DirectionUp
+RM1	DirectionAt

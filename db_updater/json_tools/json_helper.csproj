@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <RootNamespace>Development_Helper</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+	<ItemGroup>
+		<Content Include="data\**">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+			<DestinationRelativePath>$(OutputPath)data\%(RecursiveDir)%(Filename)%(Extension)</DestinationRelativePath>
+		</Content>
+	</ItemGroup>
+
+</Project>
