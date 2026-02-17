@@ -39,6 +39,8 @@ Though going via the [releases page](https://github.com/vectorcmdr/NMSSaveEditor
 
 ## Features
 
+<details><summary>Unfold to view 🔽</summary>
+  
 - Easy to use UI.
   - Ability to customise Look & Feel (Light / Dark modes, inventory scaling)
 - Change data values:
@@ -68,6 +70,8 @@ Though going via the [releases page](https://github.com/vectorcmdr/NMSSaveEditor
   - Known Technologies, Products, Words and Glyphs.
   - Your account data and unlocks.
 - Currently supports Steam/GOG, PS4 (via Save Wizard), and MS Game Pass (Xbox).
+
+</details>
 
 ## Acknowledgements & Contributions
 
