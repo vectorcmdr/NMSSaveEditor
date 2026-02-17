@@ -1,5 +1,8 @@
 # Change Log
 
+## 1.20.2 - Update (17 February 2026)
+- Fix for Gravitino Coil.
+
 ## 1.20.1 - Update (17 February 2026)
 - Add support for EXP21 rewards.
 - Add support for 6.20 (Remnant) new items.
