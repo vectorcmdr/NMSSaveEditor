@@ -1,6 +1,5 @@
-# No Man's Sky - Save Editor (vector_cmdr hotfix version)
+# No Man's Sky Save Editor (vector_cmdr hotfix ver)
 
-<br>
 
 ## Introduction
 
@@ -16,14 +15,10 @@ A modernized C# port is currently underway that will be **completely open source
 
 You can check on progress [here](https://github.com/vectorcmdr/NMSSaveEditor/issues/20)!
 
-## Compatibility
+## 🔽 Installation
 
 Requirements:
-- No Man's Sky (PC/Xbox/PS4)
-- <a href="https://www.savewizard.net/" target="_blank">Save Wizard</a> (PS4 only)
-- <a href="https://java.com/en/download/manual.jsp" target="_blank">Java Runtime Environment 8</a>
-
-## Installation
+- <a href="https://java.com/en/download/manual.jsp" target="_blank">Java Runtime Environment 8</a> ( + for PS4 saves: <a href="https://www.savewizard.net/" target="_blank">Save Wizard</a>).
 
 ### Grab the latest release
 
@@ -32,16 +27,14 @@ Requirements:
 3. Run the batch (bat) file (or jar file if the file extension is associated to java).
 4. When the main window opens, locate the folder that your saves are in, and choose the most recent.
 
-**_OR:_**
+## 👨‍💻 Contributing Fixes
 
-### Option 2 - Manual Zip Download
+To help out by contributing to the current java editor, you can add [issues](https://github.com/vectorcmdr/NMSSaveEditor/issues) or add fixes and additions to the ingest [database](https://github.com/vectorcmdr/NMSSaveEditor/tree/main/db_updater/nomanssave) and make a pull request!
+I welcome any help in keeping it up to date.
 
-Grab a copy of the zip file from the repo directly as a "code download" or raw file the way you used to from the original repo.
-Though going via the [releases page](https://github.com/vectorcmdr/NMSSaveEditor/releases) is more sensible...
+## 🔍 Features
 
-## Features
-
-<details><summary>Unfold to view 🔽</summary>
+<details><summary>Unfold to view...</summary>
   
 - Easy to use UI.
   - Ability to customise Look & Feel (Light / Dark modes, inventory scaling)
@@ -75,7 +68,7 @@ Though going via the [releases page](https://github.com/vectorcmdr/NMSSaveEditor
 
 </details>
 
-## Acknowledgements & Contributions
+## ❤️ Acknowledgements & Supporting
 
 This tool will always be released publicly for free just like the original!
 
@@ -84,6 +77,6 @@ If you would like to donate to me to say thanks for the updates, please head to 
 
 A massive thanks to [goatfungus for creating the original editor](https://github.com/goatfungus/NMSSaveEditor).
 
-**The updates would not exist without it (obviously!).**
-
 If you want to donate to him to say thank you, please head to his [Patreon](https://www.patreon.com/goatfungus)!
+
+**The updates would not exist without it (obviously!).**
