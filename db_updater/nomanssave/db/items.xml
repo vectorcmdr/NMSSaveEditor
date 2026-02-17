@@ -22621,7 +22621,7 @@ Powered by Carbon-based Elements. Fire the beam with ATTACK.</description>
 
 The unit is able to process the most complex recipes, but requires its own independent fuel source.</description>
   </technology>
-  <technology category="WEAPON" chargeable="600" icon="TECHNOLOGY-GRAVITYGUN.PNG" id="^GRAVITY_GUN" name="Gravitino Coil" subtitle="Industrial Waste Manipulation Device">
+  <technology category="WEAPON" chargeable="600" icon="TECHNOLOGY-GRAVITYGUN.PNG" id="^GRAVITYGUN" name="Gravitino Coil" subtitle="Industrial Waste Manipulation Device">
     <requirement id="^MAGNET" quantity="3"/>
     <requirement id="^GRAVBALL" quantity="1"/>
     <requirement id="^STELLAR2" quantity="50"/>
