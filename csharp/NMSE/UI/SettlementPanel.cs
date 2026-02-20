@@ -13,6 +13,8 @@ public class SettlementPanel : UserControl
 
     private readonly ComboBox _settlementSelector;
     private readonly TextBox _settlementName;
+    private readonly TextBox _ownerUsnField;
+    private readonly TextBox _ownerUidField;
     private readonly TextBox _seedField;
     private readonly Button _generateSeedBtn;
     private readonly NumericUpDown[] _statFields;
@@ -32,15 +34,21 @@ public class SettlementPanel : UserControl
     {
         SuspendLayout();
 
-        var layout = new TableLayoutPanel
+        // Create a scrollable container panel
+        var scrollPanel = new Panel
         {
             Dock = DockStyle.Fill,
-            ColumnCount = 2,
             AutoScroll = true,
+            Padding = new Padding(0)
+        };
+
+        var layout = new TableLayoutPanel
+        {
+            Dock = DockStyle.Top, // Important: use Top so it doesn't stretch vertically
+            ColumnCount = 1,
+            AutoSize = true,
             Padding = new Padding(10)
         };
-        layout.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize));
-        layout.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100));
 
         int row = 0;
 
@@ -53,47 +61,60 @@ public class SettlementPanel : UserControl
             Padding = new Padding(0, 0, 0, 5)
         };
         layout.RowStyles.Add(new RowStyle(SizeType.AutoSize));
-        layout.Controls.Add(titleLabel, 0, row);
-        layout.SetColumnSpan(titleLabel, 2);
-        row++;
+        layout.Controls.Add(titleLabel, 0, row++);
 
-        // Settlement selector
+        // --- Top section layout ---
+        var topPanel = new TableLayoutPanel
+        {
+            Dock = DockStyle.Top,
+            ColumnCount = 2,
+            AutoSize = true,
+            Padding = new Padding(0, 0, 0, 10)
+        };
+        topPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50));
+        topPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50));
+
+        // Left stack for basic info
+        var infoPanel = new TableLayoutPanel
+        {
+            Dock = DockStyle.Fill,
+            ColumnCount = 2,
+            AutoSize = true
+        };
+        int infoRow = 0;
         _settlementSelector = new ComboBox { Dock = DockStyle.Fill, DropDownStyle = ComboBoxStyle.DropDownList };
         _settlementSelector.SelectedIndexChanged += OnSettlementSelected;
-        AddRow(layout, "Settlement:", _settlementSelector, row); row++;
-
-        // Name
+        AddRow(infoPanel, "Settlement:", _settlementSelector, infoRow++);
         _settlementName = new TextBox { Dock = DockStyle.Fill };
-        AddRow(layout, "Name:", _settlementName, row); row++;
-
-        // Seed with Generate button
-        var seedPanel = new Panel { Dock = DockStyle.Fill, Height = 26 };
+        AddRow(infoPanel, "Name:", _settlementName, infoRow++);
+        _ownerUsnField = new TextBox { Dock = DockStyle.Fill, ReadOnly = true, TabStop = false };
+        AddRow(infoPanel, "Owner USN:", _ownerUsnField, infoRow++);
+        _ownerUidField = new TextBox { Dock = DockStyle.Fill, ReadOnly = true, TabStop = false };
+        AddRow(infoPanel, "Owner UID:", _ownerUidField, infoRow++);
         _seedField = new TextBox { Dock = DockStyle.Fill };
-        _generateSeedBtn = new Button { Text = "Generate", Dock = DockStyle.Right, Width = 70 };
+        AddRow(infoPanel, "Seed:", _seedField, infoRow++);
+        _generateSeedBtn = new Button
+        {
+            Text = "Generate",
+            AutoSize = true,
+            Width = 30,
+            Height = 9
+        };
         _generateSeedBtn.Click += (s, e) =>
         {
             byte[] bytes = new byte[8];
             _rng.NextBytes(bytes);
             _seedField.Text = "0x" + BitConverter.ToString(bytes).Replace("-", "");
         };
-        seedPanel.Controls.Add(_seedField);
-        seedPanel.Controls.Add(_generateSeedBtn);
-        AddRow(layout, "Seed:", seedPanel, row); row++;
+        AddRow(infoPanel, "", _generateSeedBtn, infoRow++);
 
-        // Stats section header
-        var statsLabel = new Label
+        // Right stack for stats
+        var statsPanel = new TableLayoutPanel
         {
-            Text = "Stats",
-            Font = new Font(Font.FontFamily, 10, FontStyle.Bold),
-            AutoSize = true,
-            Padding = new Padding(0, 8, 0, 4)
+            Dock = DockStyle.Fill,
+            ColumnCount = 2,
+            AutoSize = true
         };
-        layout.RowStyles.Add(new RowStyle(SizeType.AutoSize));
-        layout.Controls.Add(statsLabel, 0, row);
-        layout.SetColumnSpan(statsLabel, 2);
-        row++;
-
-        // 7 stat NumericUpDown fields
         _statFields = new NumericUpDown[StatCount];
         for (int i = 0; i < StatCount; i++)
         {
@@ -103,9 +124,16 @@ public class SettlementPanel : UserControl
                 Maximum = StatMaxValues[i],
                 Minimum = 0,
             };
-            string label = $"{StatLabels[i]} (max {StatMaxValues[i]}):";
-            AddRow(layout, label, _statFields[i], row); row++;
+            AddRow(statsPanel, $"{StatLabels[i]} (max {StatMaxValues[i]}):", _statFields[i], i);
         }
+
+        // Add both panels to topPanel
+        topPanel.Controls.Add(infoPanel, 0, 0);
+        topPanel.Controls.Add(statsPanel, 1, 0);
+
+        // Add topPanel to main layout
+        layout.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+        layout.Controls.Add(topPanel, 0, row++);
 
         // Perks section header
         var perksLabel = new Label
@@ -116,9 +144,7 @@ public class SettlementPanel : UserControl
             Padding = new Padding(0, 8, 0, 4)
         };
         layout.RowStyles.Add(new RowStyle(SizeType.AutoSize));
-        layout.Controls.Add(perksLabel, 0, row);
-        layout.SetColumnSpan(perksLabel, 2);
-        row++;
+        layout.Controls.Add(perksLabel, 0, row++);
 
         // Perks DataGridView
         _perksGrid = new DataGridView
@@ -147,9 +173,7 @@ public class SettlementPanel : UserControl
             FillWeight = 80,
         });
         layout.RowStyles.Add(new RowStyle(SizeType.Absolute, 160));
-        layout.Controls.Add(_perksGrid, 0, row);
-        layout.SetColumnSpan(_perksGrid, 2);
-        row++;
+        layout.Controls.Add(_perksGrid, 0, row++);
 
         // Production section header
         var productionLabel = new Label
@@ -160,9 +184,7 @@ public class SettlementPanel : UserControl
             Padding = new Padding(0, 8, 0, 4)
         };
         layout.RowStyles.Add(new RowStyle(SizeType.AutoSize));
-        layout.Controls.Add(productionLabel, 0, row);
-        layout.SetColumnSpan(productionLabel, 2);
-        row++;
+        layout.Controls.Add(productionLabel, 0, row++);
 
         // Production DataGridView
         _productionGrid = new DataGridView
@@ -205,9 +227,7 @@ public class SettlementPanel : UserControl
             FillWeight = 20,
         });
         layout.RowStyles.Add(new RowStyle(SizeType.Percent, 100));
-        layout.Controls.Add(_productionGrid, 0, row);
-        layout.SetColumnSpan(_productionGrid, 2);
-        row++;
+        layout.Controls.Add(_productionGrid, 0, row++);
 
         // Info label
         _infoLabel = new Label
@@ -218,10 +238,11 @@ public class SettlementPanel : UserControl
         };
         layout.RowStyles.Add(new RowStyle(SizeType.AutoSize));
         layout.Controls.Add(_infoLabel, 0, row);
-        layout.SetColumnSpan(_infoLabel, 2);
 
         layout.RowCount = row + 1;
-        Controls.Add(layout);
+        scrollPanel.Controls.Add(layout);
+        Controls.Add(scrollPanel);
+
         ResumeLayout(false);
         PerformLayout();
     }
@@ -396,6 +417,13 @@ public class SettlementPanel : UserControl
             // Name
             _settlementName.Text = settlement.GetString("Name") ?? "";
 
+            // USN
+            var ownerObj = settlement.GetObject("Owner");
+            _ownerUsnField.Text = ownerObj?.GetString("USN") ?? "";
+
+            // UID
+            _ownerUidField.Text = ownerObj?.GetString("UID") ?? "";
+
             // Seed
             _seedField.Text = settlement.GetString("SeedValue") ?? "";
 
@@ -458,6 +486,8 @@ public class SettlementPanel : UserControl
     private void ClearFields()
     {
         _settlementName.Text = "";
+        _ownerUsnField.Text = "";
+        _ownerUidField.Text = "";
         _seedField.Text = "";
         for (int i = 0; i < StatCount; i++)
             _statFields[i].Value = 0;

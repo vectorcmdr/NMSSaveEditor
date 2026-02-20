@@ -1,4 +1,6 @@
 using NMSE.Models;
+using System.IO.Compression;
+using System.Text;
 
 namespace NMSE.IO;
 
@@ -8,6 +10,14 @@ namespace NMSE.IO;
 /// </summary>
 public class SaveFileManager
 {
+    /// <summary>
+    /// ISO-8859-1 (Latin-1) encoding which maps bytes 0x00-0xFF to Unicode code points 1:1.
+    /// Used instead of UTF-8 when reading save files so that binary data embedded in JSON
+    /// string values (e.g. TechBox item IDs) is preserved as individual characters rather
+    /// than being corrupted by invalid-UTF-8 replacement.  The JSON parser then detects
+    /// characters ≥ 0x80 inside string tokens and produces BinaryData objects.
+    /// </summary>
+    private static readonly Encoding Latin1 = Encoding.GetEncoding(28591);
     public enum Platform { Steam, XboxGamePass, PS4, GOG, Unknown }
 
     public class SaveSlot
@@ -61,6 +71,36 @@ public class SaveFileManager
         return null;
     }
 
+    public static void BackupSaveDirectory(string saveDirectory)
+    {
+        string exeDir = AppDomain.CurrentDomain.BaseDirectory;
+        string backupRoot = Path.Combine(exeDir, "Save Backups");
+        Directory.CreateDirectory(backupRoot);
+
+        string dirName = new DirectoryInfo(saveDirectory).Name;
+        string backupPattern = $"{dirName}_*.zip";
+        var existingBackups = Directory.GetFiles(backupRoot, backupPattern)
+            .OrderBy(f => File.GetCreationTimeUtc(f))
+            .ToList();
+
+        // If there are 10 or more backups, delete the oldest one
+        if (existingBackups.Count >= 10)
+        {
+            File.Delete(existingBackups[0]);
+            existingBackups.RemoveAt(0);
+        }
+
+        string timestamp = DateTime.Now.ToString("yyyyMMdd_HHmmss");
+        string backupName = $"{dirName}_{timestamp}.zip";
+        string backupPath = Path.Combine(backupRoot, backupName);
+
+        // Avoid zipping if already exists for this second
+        if (!File.Exists(backupPath))
+        {
+            ZipFile.CreateFromDirectory(saveDirectory, backupPath, CompressionLevel.Optimal, false);
+        }
+    }
+
     /// <summary>
     /// Load a save file and return the JSON data.
     /// Handles both compressed (LZ4) and uncompressed save files.
@@ -76,7 +116,7 @@ public class SaveFileManager
         }
         else
         {
-            json = System.Text.Encoding.UTF8.GetString(fileData);
+            json = Latin1.GetString(fileData);
         }
 
         var result = JsonObject.Parse(json);
@@ -107,7 +147,7 @@ public class SaveFileManager
     public static void SaveToFile(string filePath, JsonObject data, bool compress = true)
     {
         string json = data.ToFormattedString();
-        byte[] jsonBytes = System.Text.Encoding.UTF8.GetBytes(json);
+        byte[] jsonBytes = Latin1.GetBytes(json);
 
         // Create backup
         if (File.Exists(filePath))
@@ -179,7 +219,7 @@ public class SaveFileManager
             offset += compressedLen;
         }
 
-        return System.Text.Encoding.UTF8.GetString(ms.ToArray());
+        return Latin1.GetString(ms.ToArray());
     }
 
     /// <summary>

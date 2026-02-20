@@ -26,52 +26,94 @@ public class MultitoolPanel : UserControl
     // Track which indices in the Multitools array are valid (have Seed[0] == true)
     private readonly List<int> _validIndices = new();
 
+    private static readonly (string Name, string Filename)[] ToolTypes = new[]
+    {
+        ("Standard", "MODELS/COMMON/WEAPONS/MULTITOOL/MULTITOOL.SCENE.MBIN"),
+        ("Royal", "MODELS/COMMON/WEAPONS/MULTITOOL/ROYALMULTITOOL.SCENE.MBIN"),
+        ("Sentinel", "MODELS/COMMON/WEAPONS/MULTITOOL/SENTINELMULTITOOL.SCENE.MBIN"),
+        ("Sentinel B", "MODELS/COMMON/WEAPONS/MULTITOOL/SENTINELMULTITOOLB.SCENE.MBIN"),
+        ("Switch", "MODELS/COMMON/WEAPONS/MULTITOOL/SWITCHMULTITOOL.SCENE.MBIN"),
+        ("Staff", "MODELS/COMMON/WEAPONS/MULTITOOL/STAFFMULTITOOL.SCENE.MBIN"),
+        ("Staff NPC", "MODELS/COMMON/WEAPONS/MULTITOOL/STAFFNPCMULTITOOL.SCENE.MBIN"),
+        ("Atlas", "MODELS/COMMON/WEAPONS/MULTITOOL/ATLASMULTITOOL.SCENE.MBIN"),
+        ("Atlas Scepter", "MODELS/COMMON/WEAPONS/MULTITOOL/STAFFMULTITOOLATLAS.SCENE.MBIN"),
+    };
+    private readonly ComboBox _toolType;
+
     public MultitoolPanel()
     {
         SuspendLayout();
 
-        var layout = new TableLayoutPanel
+        // Main layout: 1 column, stack everything vertically
+        var rootLayout = new TableLayoutPanel
         {
             Dock = DockStyle.Fill,
-            ColumnCount = 2,
-            RowCount = 11,
-            Padding = new Padding(10)
+            ColumnCount = 1,
+            RowCount = 3,
+            Padding = new Padding(10),
+            AutoSize = true
         };
-        layout.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize));
-        layout.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100));
-        for (int i = 0; i < 10; i++)
-            layout.RowStyles.Add(new RowStyle(SizeType.AutoSize));
-        layout.RowStyles.Add(new RowStyle(SizeType.Percent, 100));
 
-        int row = 0;
-
-        // Row 0: Title
+        // Title
         var titleLabel = new Label
         {
             Text = "Multitools",
             Font = new Font(Font.FontFamily, 14, FontStyle.Bold),
             AutoSize = true,
-            Padding = new Padding(0, 0, 0, 5)
+            Padding = new Padding(0, 0, 0, 1)
         };
-        layout.Controls.Add(titleLabel, 0, row);
-        layout.SetColumnSpan(titleLabel, 2);
-        row++;
+        rootLayout.Controls.Add(titleLabel, 0, 0);
 
-        // Row 1: Selector
+        // Main two-column panel
+        var mainPanel = new TableLayoutPanel
+        {
+            Dock = DockStyle.Top,
+            ColumnCount = 2,
+            RowCount = 1,
+            AutoSize = true
+        };
+        mainPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent) { Width = 50 });
+        mainPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent) { Width = 50 });
+
+        // Left panel: selector, name, class, seed
+        var leftPanel = new TableLayoutPanel
+        {
+            Dock = DockStyle.Top,
+            ColumnCount = 2, // Changed from 1 to 2
+            RowCount = 4,
+            AutoSize = true
+        };
+        leftPanel.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize)); // Label column
+        leftPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F)); // Field column
+        int leftRow = 0;
+
+        var detailsLabel = new Label
+        {
+            Text = "Multitool Details",
+            Font = new Font(Font.FontFamily, 10, FontStyle.Bold),
+            AutoSize = true,
+            Padding = new Padding(0, 8, 0, 1)
+        };
+        // Span the detailsLabel across both columns
+        leftPanel.Controls.Add(detailsLabel, 0, leftRow);
+        leftPanel.SetColumnSpan(detailsLabel, 2);
+        leftRow++;
+
         _toolSelector = new ComboBox { Dock = DockStyle.Fill, DropDownStyle = ComboBoxStyle.DropDownList };
         _toolSelector.SelectedIndexChanged += OnToolSelected;
-        AddRow(layout, "Select Multitool:", _toolSelector, row); row++;
+        AddRow(leftPanel, "Select Multitool:", _toolSelector, leftRow++);
 
-        // Row 2: Name
         _toolName = new TextBox { Dock = DockStyle.Fill };
-        AddRow(layout, "Name:", _toolName, row); row++;
+        AddRow(leftPanel, "Name:", _toolName, leftRow++);
 
-        // Row 3: Class
+        _toolType = new ComboBox { Dock = DockStyle.Fill, DropDownStyle = ComboBoxStyle.DropDownList };
+        _toolType.Items.AddRange(ToolTypes.Select(t => t.Name).ToArray());
+        AddRow(leftPanel, "Type:", _toolType, leftRow++);
+
         _toolClass = new ComboBox { Dock = DockStyle.Fill, DropDownStyle = ComboBoxStyle.DropDownList };
         _toolClass.Items.AddRange(ToolClasses);
-        AddRow(layout, "Class:", _toolClass, row); row++;
+        AddRow(leftPanel, "Class:", _toolClass, leftRow++);
 
-        // Row 4: Seed with Generate button
         var seedPanel = new Panel { Dock = DockStyle.Fill, Height = 26 };
         _toolSeed = new TextBox { Dock = DockStyle.Fill };
         _generateSeedBtn = new Button { Text = "Generate", Dock = DockStyle.Right, Width = 70 };
@@ -83,36 +125,50 @@ public class MultitoolPanel : UserControl
         };
         seedPanel.Controls.Add(_toolSeed);
         seedPanel.Controls.Add(_generateSeedBtn);
-        AddRow(layout, "Seed:", seedPanel, row); row++;
+        AddRow(leftPanel, "Seed:", seedPanel, leftRow++);
 
-        // Row 5: Base Stats separator
+        // Right panel: Base Stats
+        var rightPanel = new TableLayoutPanel
+        {
+            Dock = DockStyle.Top,
+            ColumnCount = 2, // Changed from 1 to 2
+            RowCount = 4,
+            AutoSize = true
+        };
+        rightPanel.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize)); // Label column
+        rightPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F)); // Field column
+        int rightRow = 0;
+
         var statsLabel = new Label
         {
             Text = "Base Stats",
             Font = new Font(Font.FontFamily, 10, FontStyle.Bold),
             AutoSize = true,
-            Padding = new Padding(0, 8, 0, 4)
+            Padding = new Padding(0, 8, 0, 1)
         };
-        layout.Controls.Add(statsLabel, 0, row);
-        layout.SetColumnSpan(statsLabel, 2);
-        row++;
+        // Span the statsLabel across both columns
+        rightPanel.Controls.Add(statsLabel, 0, rightRow);
+        rightPanel.SetColumnSpan(statsLabel, 2);
+        rightRow++;
 
-        // Row 6: Damage
         _damageField = new NumericUpDown { Dock = DockStyle.Fill, DecimalPlaces = 2, Minimum = 0, Maximum = 999999, Increment = 0.01m };
-        AddRow(layout, "Damage:", _damageField, row); row++;
+        AddRow(rightPanel, "Damage:", _damageField, rightRow++);
 
-        // Row 7: Mining
         _miningField = new NumericUpDown { Dock = DockStyle.Fill, DecimalPlaces = 2, Minimum = 0, Maximum = 999999, Increment = 0.01m };
-        AddRow(layout, "Mining:", _miningField, row); row++;
+        AddRow(rightPanel, "Mining:", _miningField, rightRow++);
 
-        // Row 8: Scan
         _scanField = new NumericUpDown { Dock = DockStyle.Fill, DecimalPlaces = 2, Minimum = 0, Maximum = 999999, Increment = 0.01m };
-        AddRow(layout, "Scan:", _scanField, row); row++;
+        AddRow(rightPanel, "Scan:", _scanField, rightRow++);
 
-        // Row 9: Buttons panel
+        mainPanel.Controls.Add(leftPanel, 0, 0);
+        mainPanel.Controls.Add(rightPanel, 1, 0);
+
+        rootLayout.Controls.Add(mainPanel, 0, 1);
+
+        // Buttons panel
         var buttonPanel = new FlowLayoutPanel
         {
-            Dock = DockStyle.Fill,
+            Dock = DockStyle.Top,
             AutoSize = true,
             FlowDirection = FlowDirection.LeftToRight
         };
@@ -125,16 +181,18 @@ public class MultitoolPanel : UserControl
         buttonPanel.Controls.Add(_deleteBtn);
         buttonPanel.Controls.Add(_exportBtn);
         buttonPanel.Controls.Add(_importBtn);
-        layout.Controls.Add(buttonPanel, 0, row);
-        layout.SetColumnSpan(buttonPanel, 2);
-        row++;
 
-        // Row 10 (fill): Store inventory grid
+        rootLayout.Controls.Add(buttonPanel, 0, 2);
+
+        // Inventory grid (fills remaining space)
         _storeGrid = new InventoryGridPanel { Dock = DockStyle.Fill };
-        layout.Controls.Add(_storeGrid, 0, row);
-        layout.SetColumnSpan(_storeGrid, 2);
+        rootLayout.Controls.Add(_storeGrid);
 
-        Controls.Add(layout);
+        Controls.Add(rootLayout);
+
+        // Set Max Supported label for multitool technology
+        _storeGrid.SetMaxSupportedLabel("Max Supported: 10x6");
+
         ResumeLayout(false);
         PerformLayout();
     }
@@ -268,6 +326,11 @@ public class MultitoolPanel : UserControl
                     classObj?.Set("InventoryClass", ToolClasses[_toolClass.SelectedIndex]);
                 }
 
+                if (_toolType.SelectedIndex >= 0)
+                {
+                    tool.Set("Filename", ToolTypes[_toolType.SelectedIndex].Filename);
+                }
+
                 // Save seed to Seed[1]
                 try
                 {
@@ -281,9 +344,9 @@ public class MultitoolPanel : UserControl
 
                 // Save base stats to Store.BaseStatValues
                 var toolStore = tool.GetObject("Store");
-                WriteBaseStatValue(toolStore, "^MT_DAMAGE", (double)_damageField.Value);
-                WriteBaseStatValue(toolStore, "^MT_MINING", (double)_miningField.Value);
-                WriteBaseStatValue(toolStore, "^MT_SCAN", (double)_scanField.Value);
+                WriteBaseStatValue(toolStore, "^WEAPON_DAMAGE", (double)_damageField.Value);
+                WriteBaseStatValue(toolStore, "^WEAPON_MINING", (double)_miningField.Value);
+                WriteBaseStatValue(toolStore, "^WEAPON_SCAN", (double)_scanField.Value);
             }
             else
             {
@@ -309,6 +372,16 @@ public class MultitoolPanel : UserControl
 
                 var tool = _multitools.GetObject(idx);
                 _toolName.Text = tool.GetString("Name") ?? "";
+
+                // Type / filename
+                string scene = "";
+                try
+                {
+                    scene = tool.GetString("Filename") ?? "";
+                }
+                catch { }
+                int typeIdx = Array.FindIndex(ToolTypes, t => t.Filename.Equals(scene, StringComparison.OrdinalIgnoreCase));
+                _toolType.SelectedIndex = typeIdx >= 0 ? typeIdx : 0;
 
                 // Class from Store.Class.InventoryClass
                 string cls = "";
@@ -337,9 +410,9 @@ public class MultitoolPanel : UserControl
 
                 // Load base stats from Store.BaseStatValues
                 var toolStore = tool.GetObject("Store");
-                try { _damageField.Value = (decimal)ReadBaseStatValue(toolStore, "^MT_DAMAGE"); } catch { _damageField.Value = 0; }
-                try { _miningField.Value = (decimal)ReadBaseStatValue(toolStore, "^MT_MINING"); } catch { _miningField.Value = 0; }
-                try { _scanField.Value = (decimal)ReadBaseStatValue(toolStore, "^MT_SCAN"); } catch { _scanField.Value = 0; }
+                try { _damageField.Value = (decimal)ReadBaseStatValue(toolStore, "^WEAPON_DAMAGE"); } catch { _damageField.Value = 0; }
+                try { _miningField.Value = (decimal)ReadBaseStatValue(toolStore, "^WEAPON_MINING"); } catch { _miningField.Value = 0; }
+                try { _scanField.Value = (decimal)ReadBaseStatValue(toolStore, "^WEAPON_SCAN"); } catch { _scanField.Value = 0; }
             }
         }
         catch { }

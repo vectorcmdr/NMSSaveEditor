@@ -1,0 +1,8278 @@
+[
+	{
+		"Id": "REFINERECIPE_1",
+		"Inputs": [
+			{
+				"Id": "BP_SALVAGE",
+				"Name": "Salvaged Data",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "TECHFRAG",
+			"Name": "Nanite Cluster",
+			"Quantity": 15
+		},
+		"Time": "320.0",
+		"Operation": "Nanite Extraction",
+		"Slug": "refinery/REFINERECIPE_1"
+	},
+	{
+		"Id": "REFINERECIPE_2",
+		"Inputs": [
+			{
+				"Id": "CLAMPEARL",
+				"Name": "Living Pearl",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "ASTEROID2",
+			"Name": "Gold",
+			"Quantity": 100
+		},
+		"Time": "60.0",
+		"Operation": "Calcite Transmutation",
+		"Slug": "refinery/REFINERECIPE_2"
+	},
+	{
+		"Id": "REFINERECIPE_3",
+		"Inputs": [
+			{
+				"Id": "EYEBALL",
+				"Name": "Hypnotic Eye",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "SPACEGUNK4",
+			"Name": "Living Slime",
+			"Quantity": 50
+		},
+		"Time": "60.0",
+		"Operation": "Biological Purge",
+		"Slug": "refinery/REFINERECIPE_3"
+	},
+	{
+		"Id": "REFINERECIPE_4",
+		"Inputs": [
+			{
+				"Id": "FISHCORE",
+				"Name": "Hadal Core",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "TECHFRAG",
+			"Name": "Nanite Cluster",
+			"Quantity": 50
+		},
+		"Time": "60.0",
+		"Operation": "Doom Cycling",
+		"Slug": "refinery/REFINERECIPE_4"
+	},
+	{
+		"Id": "REFINERECIPE_5",
+		"Inputs": [
+			{
+				"Id": "VENTGEM",
+				"Name": "Crystal Sulphide",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "CATALYST2",
+			"Name": "Sodium Nitrate",
+			"Quantity": 50
+		},
+		"Time": "60.0",
+		"Operation": "Sulphur Release",
+		"Slug": "refinery/REFINERECIPE_5"
+	},
+	{
+		"Id": "REFINERECIPE_6",
+		"Inputs": [
+			{
+				"Id": "FIENDCORE",
+				"Name": "Larval Core",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "TECHFRAG",
+			"Name": "Nanite Cluster",
+			"Quantity": 50
+		},
+		"Time": "60.0",
+		"Operation": "NOT RECOMMENDED",
+		"Slug": "refinery/REFINERECIPE_6"
+	},
+	{
+		"Id": "REFINERECIPE_7",
+		"Inputs": [
+			{
+				"Id": "WATERPLANT",
+				"Name": "Cyto-phosphate",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "FUEL2",
+			"Name": "Condensed Carbon",
+			"Quantity": 1
+		},
+		"Time": "60.0",
+		"Operation": "Algal Processing",
+		"Slug": "refinery/REFINERECIPE_7"
+	},
+	{
+		"Id": "REFINERECIPE_8",
+		"Inputs": [
+			{
+				"Id": "SPECIAL_POOP",
+				"Name": "Hexite",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "ASTEROID2",
+			"Name": "Gold",
+			"Quantity": 1
+		},
+		"Time": "60.0",
+		"Operation": "Alchemical Construction",
+		"Slug": "refinery/REFINERECIPE_8"
+	},
+	{
+		"Id": "REFINERECIPE_9",
+		"Inputs": [
+			{
+				"Id": "PLANT_SNOW",
+				"Name": "Frost Crystal",
+				"Quantity": 40
+			}
+		],
+		"Output": {
+			"Id": "FARMPROD3",
+			"Name": "Glass",
+			"Quantity": 1
+		},
+		"Time": "60.0",
+		"Operation": "Polish Crystals",
+		"Slug": "refinery/REFINERECIPE_9"
+	},
+	{
+		"Id": "REFINERECIPE_10",
+		"Inputs": [
+			{
+				"Id": "ASTEROID2",
+				"Name": "Gold",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "DUSTY1",
+			"Name": "Pyrite",
+			"Quantity": 1
+		},
+		"Time": "60.0",
+		"Operation": "Metal Restructuring",
+		"Slug": "refinery/REFINERECIPE_10"
+	},
+	{
+		"Id": "REFINERECIPE_11",
+		"Inputs": [
+			{
+				"Id": "ASTEROID3",
+				"Name": "Platinum",
+				"Quantity": 35
+			}
+		],
+		"Output": {
+			"Id": "TECHFRAG",
+			"Name": "Nanite Cluster",
+			"Quantity": 1
+		},
+		"Time": "60.0",
+		"Operation": "Reality Warping",
+		"Slug": "refinery/REFINERECIPE_11"
+	},
+	{
+		"Id": "REFINERECIPE_12",
+		"Inputs": [
+			{
+				"Id": "ROBOT1",
+				"Name": "Pugneum",
+				"Quantity": 25
+			}
+		],
+		"Output": {
+			"Id": "TECHFRAG",
+			"Name": "Nanite Cluster",
+			"Quantity": 1
+		},
+		"Time": "30.0",
+		"Operation": "Reality Filtering",
+		"Slug": "refinery/REFINERECIPE_12"
+	},
+	{
+		"Id": "REFINERECIPE_13",
+		"Inputs": [
+			{
+				"Id": "CREATURE1",
+				"Name": "Mordite",
+				"Quantity": 3
+			}
+		],
+		"Output": {
+			"Id": "PLANT_POOP",
+			"Name": "Faecium",
+			"Quantity": 1
+		},
+		"Time": "60.0",
+		"Operation": "Assisted Decomposition",
+		"Slug": "refinery/REFINERECIPE_13"
+	},
+	{
+		"Id": "REFINERECIPE_14",
+		"Inputs": [
+			{
+				"Id": "OXYGEN",
+				"Name": "Oxygen",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "FUEL1",
+			"Name": "Carbon",
+			"Quantity": 1
+		},
+		"Time": "20.0",
+		"Operation": "Inefficient Burn",
+		"Slug": "refinery/REFINERECIPE_14"
+	},
+	{
+		"Id": "REFINERECIPE_15",
+		"Inputs": [
+			{
+				"Id": "LAUNCHSUB",
+				"Name": "Di-hydrogen",
+				"Quantity": 30
+			}
+		],
+		"Output": {
+			"Id": "JELLY",
+			"Name": "Di-hydrogen Jelly",
+			"Quantity": 1
+		},
+		"Time": "120.0",
+		"Operation": "Condense Di-hydrogen",
+		"Slug": "refinery/REFINERECIPE_15"
+	},
+	{
+		"Id": "REFINERECIPE_22",
+		"Inputs": [
+			{
+				"Id": "JELLY",
+				"Name": "Di-hydrogen Jelly",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "LAUNCHSUB",
+			"Name": "Di-hydrogen",
+			"Quantity": 40
+		},
+		"Time": "1000.0",
+		"Operation": "Di-hydrogen Cycling",
+		"Slug": "refinery/REFINERECIPE_22"
+	},
+	{
+		"Id": "REFINERECIPE_23",
+		"Inputs": [
+			{
+				"Id": "CAVE1",
+				"Name": "Cobalt",
+				"Quantity": 2
+			}
+		],
+		"Output": {
+			"Id": "CAVE2",
+			"Name": "Ionised Cobalt",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Ionise Mineral",
+		"Slug": "refinery/REFINERECIPE_23"
+	},
+	{
+		"Id": "REFINERECIPE_24",
+		"Inputs": [
+			{
+				"Id": "CAVE2",
+				"Name": "Ionised Cobalt",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "CAVE1",
+			"Name": "Cobalt",
+			"Quantity": 2
+		},
+		"Time": "30.0",
+		"Operation": "Deionise Mineral",
+		"Slug": "refinery/REFINERECIPE_24"
+	},
+	{
+		"Id": "REFINERECIPE_25",
+		"Inputs": [
+			{
+				"Id": "FUEL2",
+				"Name": "Condensed Carbon",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "FUEL1",
+			"Name": "Carbon",
+			"Quantity": 2
+		},
+		"Time": "30.0",
+		"Operation": "Release Carbon",
+		"Slug": "refinery/REFINERECIPE_25"
+	},
+	{
+		"Id": "REFINERECIPE_26",
+		"Inputs": [
+			{
+				"Id": "FUEL1",
+				"Name": "Carbon",
+				"Quantity": 2
+			}
+		],
+		"Output": {
+			"Id": "FUEL2",
+			"Name": "Condensed Carbon",
+			"Quantity": 1
+		},
+		"Time": "45.0",
+		"Operation": "Condense Carbon",
+		"Slug": "refinery/REFINERECIPE_26"
+	},
+	{
+		"Id": "REFINERECIPE_27",
+		"Inputs": [
+			{
+				"Id": "CATALYST1",
+				"Name": "Sodium",
+				"Quantity": 2
+			}
+		],
+		"Output": {
+			"Id": "CATALYST2",
+			"Name": "Sodium Nitrate",
+			"Quantity": 1
+		},
+		"Time": "100.0",
+		"Operation": "Process Sodium",
+		"Slug": "refinery/REFINERECIPE_27"
+	},
+	{
+		"Id": "REFINERECIPE_28",
+		"Inputs": [
+			{
+				"Id": "CATALYST2",
+				"Name": "Sodium Nitrate",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "CATALYST1",
+			"Name": "Sodium",
+			"Quantity": 2
+		},
+		"Time": "60.0",
+		"Operation": "Free Sodium",
+		"Slug": "refinery/REFINERECIPE_28"
+	},
+	{
+		"Id": "REFINERECIPE_29",
+		"Inputs": [
+			{
+				"Id": "LAND1",
+				"Name": "Ferrite Dust",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "LAND2",
+			"Name": "Pure Ferrite",
+			"Quantity": 1
+		},
+		"Time": "30.0",
+		"Operation": "Extract Metallic Elements",
+		"Slug": "refinery/REFINERECIPE_29"
+	},
+	{
+		"Id": "REFINERECIPE_30",
+		"Inputs": [
+			{
+				"Id": "LAND2",
+				"Name": "Pure Ferrite",
+				"Quantity": 2
+			}
+		],
+		"Output": {
+			"Id": "LAND3",
+			"Name": "Magnetised Ferrite",
+			"Quantity": 1
+		},
+		"Time": "60.0",
+		"Operation": "Magnetise Metal",
+		"Slug": "refinery/REFINERECIPE_30"
+	},
+	{
+		"Id": "REFINERECIPE_31",
+		"Inputs": [
+			{
+				"Id": "LAND3",
+				"Name": "Magnetised Ferrite",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "LAND2",
+			"Name": "Pure Ferrite",
+			"Quantity": 2
+		},
+		"Time": "40.0",
+		"Operation": "Demagnetise Metal",
+		"Slug": "refinery/REFINERECIPE_31"
+	},
+	{
+		"Id": "REFINERECIPE_32",
+		"Inputs": [
+			{
+				"Id": "RED2",
+				"Name": "Cadmium",
+				"Quantity": 2
+			}
+		],
+		"Output": {
+			"Id": "STELLAR2",
+			"Name": "Chromatic Metal",
+			"Quantity": 1
+		},
+		"Time": "70.0",
+		"Operation": "Extract Chromatic Material",
+		"Slug": "refinery/REFINERECIPE_32"
+	},
+	{
+		"Id": "REFINERECIPE_33",
+		"Inputs": [
+			{
+				"Id": "BLUE2",
+				"Name": "Indium",
+				"Quantity": 2
+			}
+		],
+		"Output": {
+			"Id": "STELLAR2",
+			"Name": "Chromatic Metal",
+			"Quantity": 4
+		},
+		"Time": "25.0",
+		"Operation": "Extract Chromatic Material",
+		"Slug": "refinery/REFINERECIPE_33"
+	},
+	{
+		"Id": "REFINERECIPE_34",
+		"Inputs": [
+			{
+				"Id": "GREEN2",
+				"Name": "Emeril",
+				"Quantity": 2
+			}
+		],
+		"Output": {
+			"Id": "STELLAR2",
+			"Name": "Chromatic Metal",
+			"Quantity": 3
+		},
+		"Time": "40.0",
+		"Operation": "Extract Chromatic Material",
+		"Slug": "refinery/REFINERECIPE_34"
+	},
+	{
+		"Id": "REFINERECIPE_35",
+		"Inputs": [
+			{
+				"Id": "YELLOW2",
+				"Name": "Copper",
+				"Quantity": 2
+			}
+		],
+		"Output": {
+			"Id": "STELLAR2",
+			"Name": "Chromatic Metal",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Extract Chromatic Material",
+		"Slug": "refinery/REFINERECIPE_35"
+	},
+	{
+		"Id": "REFINERECIPE_36",
+		"Inputs": [
+			{
+				"Id": "EX_RED",
+				"Name": "Activated Cadmium",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "STELLAR2",
+			"Name": "Chromatic Metal",
+			"Quantity": 2
+		},
+		"Time": "50.0",
+		"Operation": "Extract Chromatic Material",
+		"Slug": "refinery/REFINERECIPE_36"
+	},
+	{
+		"Id": "REFINERECIPE_37",
+		"Inputs": [
+			{
+				"Id": "EX_BLUE",
+				"Name": "Activated Indium",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "STELLAR2",
+			"Name": "Chromatic Metal",
+			"Quantity": 4
+		},
+		"Time": "30.0",
+		"Operation": "Extract Chromatic Material",
+		"Slug": "refinery/REFINERECIPE_37"
+	},
+	{
+		"Id": "REFINERECIPE_38",
+		"Inputs": [
+			{
+				"Id": "EX_GREEN",
+				"Name": "Activated Emeril",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "STELLAR2",
+			"Name": "Chromatic Metal",
+			"Quantity": 3
+		},
+		"Time": "40.0",
+		"Operation": "Extract Chromatic Material",
+		"Slug": "refinery/REFINERECIPE_38"
+	},
+	{
+		"Id": "REFINERECIPE_39",
+		"Inputs": [
+			{
+				"Id": "EX_YELLOW",
+				"Name": "Activated Copper",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "STELLAR2",
+			"Name": "Chromatic Metal",
+			"Quantity": 1
+		},
+		"Time": "60.0",
+		"Operation": "Extract Chromatic Material",
+		"Slug": "refinery/REFINERECIPE_39"
+	},
+	{
+		"Id": "REFINERECIPE_40",
+		"Inputs": [
+			{
+				"Id": "LUSH1",
+				"Name": "Paraffinium",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "LAND1",
+			"Name": "Ferrite Dust",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Ferrite Dust Extraction",
+		"Slug": "refinery/REFINERECIPE_40"
+	},
+	{
+		"Id": "REFINERECIPE_41",
+		"Inputs": [
+			{
+				"Id": "DUSTY1",
+				"Name": "Pyrite",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "LAND1",
+			"Name": "Ferrite Dust",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Ferrite Dust Extraction",
+		"Slug": "refinery/REFINERECIPE_41"
+	},
+	{
+		"Id": "REFINERECIPE_42",
+		"Inputs": [
+			{
+				"Id": "TOXIC1",
+				"Name": "Ammonia",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "LAND1",
+			"Name": "Ferrite Dust",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Ferrite Dust Extraction",
+		"Slug": "refinery/REFINERECIPE_42"
+	},
+	{
+		"Id": "REFINERECIPE_43",
+		"Inputs": [
+			{
+				"Id": "RADIO1",
+				"Name": "Uranium",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "LAND1",
+			"Name": "Ferrite Dust",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Ferrite Dust Extraction",
+		"Slug": "refinery/REFINERECIPE_43"
+	},
+	{
+		"Id": "REFINERECIPE_44",
+		"Inputs": [
+			{
+				"Id": "COLD1",
+				"Name": "Dioxite",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "LAND1",
+			"Name": "Ferrite Dust",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Ferrite Dust Extraction",
+		"Slug": "refinery/REFINERECIPE_44"
+	},
+	{
+		"Id": "REFINERECIPE_45",
+		"Inputs": [
+			{
+				"Id": "HOT1",
+				"Name": "Phosphorus",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "LAND1",
+			"Name": "Ferrite Dust",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Ferrite Dust Extraction",
+		"Slug": "refinery/REFINERECIPE_45"
+	},
+	{
+		"Id": "REFINERECIPE_46",
+		"Inputs": [
+			{
+				"Id": "WATER1",
+				"Name": "Salt",
+				"Quantity": 2
+			}
+		],
+		"Output": {
+			"Id": "WATER2",
+			"Name": "Chlorine",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Concentrate Salt",
+		"Slug": "refinery/REFINERECIPE_46"
+	},
+	{
+		"Id": "REFINERECIPE_47",
+		"Inputs": [
+			{
+				"Id": "WATER2",
+				"Name": "Chlorine",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "WATER1",
+			"Name": "Salt",
+			"Quantity": 2
+		},
+		"Time": "60.0",
+		"Operation": "Salt Production",
+		"Slug": "refinery/REFINERECIPE_47"
+	},
+	{
+		"Id": "REFINERECIPE_48",
+		"Inputs": [
+			{
+				"Id": "GAS1",
+				"Name": "Sulphurine",
+				"Quantity": 3
+			}
+		],
+		"Output": {
+			"Id": "GAS2",
+			"Name": "Radon",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Gas Transfer",
+		"Slug": "refinery/REFINERECIPE_48"
+	},
+	{
+		"Id": "REFINERECIPE_49",
+		"Inputs": [
+			{
+				"Id": "GAS2",
+				"Name": "Radon",
+				"Quantity": 3
+			}
+		],
+		"Output": {
+			"Id": "GAS3",
+			"Name": "Nitrogen",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Gas Transfer",
+		"Slug": "refinery/REFINERECIPE_49"
+	},
+	{
+		"Id": "REFINERECIPE_50",
+		"Inputs": [
+			{
+				"Id": "GAS3",
+				"Name": "Nitrogen",
+				"Quantity": 3
+			}
+		],
+		"Output": {
+			"Id": "GAS1",
+			"Name": "Sulphurine",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Gas Transfer",
+		"Slug": "refinery/REFINERECIPE_50"
+	},
+	{
+		"Id": "REFINERECIPE_51",
+		"Inputs": [
+			{
+				"Id": "SPACEGUNK1",
+				"Name": "Residual Goop",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "SPACEGUNK5",
+			"Name": "Viscous Fluids",
+			"Quantity": 1
+		},
+		"Time": "150.0",
+		"Operation": "Recycle Waste Materials",
+		"Slug": "refinery/REFINERECIPE_51"
+	},
+	{
+		"Id": "REFINERECIPE_52",
+		"Inputs": [
+			{
+				"Id": "SPACEGUNK2",
+				"Name": "Runaway Mould",
+				"Quantity": 5
+			}
+		],
+		"Output": {
+			"Id": "TECHFRAG",
+			"Name": "Nanite Cluster",
+			"Quantity": 1
+		},
+		"Time": "150.0",
+		"Operation": "Recycle Waste Materials",
+		"Slug": "refinery/REFINERECIPE_52"
+	},
+	{
+		"Id": "REFINERECIPE_53",
+		"Inputs": [
+			{
+				"Id": "SPACEGUNK3",
+				"Name": "Rusted Metal",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "LAND1",
+			"Name": "Ferrite Dust",
+			"Quantity": 2
+		},
+		"Time": "160.0",
+		"Operation": "Recycle Waste Materials",
+		"Slug": "refinery/REFINERECIPE_53"
+	},
+	{
+		"Id": "REFINERECIPE_54",
+		"Inputs": [
+			{
+				"Id": "SPACEGUNK4",
+				"Name": "Living Slime",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "SPACEGUNK2",
+			"Name": "Runaway Mould",
+			"Quantity": 1
+		},
+		"Time": "150.0",
+		"Operation": "Recycle Waste Materials",
+		"Slug": "refinery/REFINERECIPE_54"
+	},
+	{
+		"Id": "REFINERECIPE_55",
+		"Inputs": [
+			{
+				"Id": "SPACEGUNK5",
+				"Name": "Viscous Fluids",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "SPACEGUNK4",
+			"Name": "Living Slime",
+			"Quantity": 1
+		},
+		"Time": "150.0",
+		"Operation": "Recycle Waste Materials",
+		"Slug": "refinery/REFINERECIPE_55"
+	},
+	{
+		"Id": "REFINERECIPE_56",
+		"Inputs": [
+			{
+				"Id": "ROCKETSUB",
+				"Name": "Tritium",
+				"Quantity": 5
+			}
+		],
+		"Output": {
+			"Id": "LAUNCHSUB",
+			"Name": "Di-hydrogen",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Tritium Cycling",
+		"Slug": "refinery/REFINERECIPE_56"
+	},
+	{
+		"Id": "REFINERECIPE_58",
+		"Inputs": [
+			{
+				"Id": "PLANT_TOXIC",
+				"Name": "Fungal Mould",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "FUEL1",
+			"Name": "Carbon",
+			"Quantity": 2
+		},
+		"Time": "30.0",
+		"Operation": "Burn Plantlife",
+		"Slug": "refinery/REFINERECIPE_58"
+	},
+	{
+		"Id": "REFINERECIPE_60",
+		"Inputs": [
+			{
+				"Id": "PLANT_RADIO",
+				"Name": "Gamma Root",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "FUEL1",
+			"Name": "Carbon",
+			"Quantity": 2
+		},
+		"Time": "30.0",
+		"Operation": "Burn Plantlife",
+		"Slug": "refinery/REFINERECIPE_60"
+	},
+	{
+		"Id": "REFINERECIPE_61",
+		"Inputs": [
+			{
+				"Id": "PLANT_DUST",
+				"Name": "Cactus Flesh",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "FUEL1",
+			"Name": "Carbon",
+			"Quantity": 2
+		},
+		"Time": "30.0",
+		"Operation": "Burn Plantlife",
+		"Slug": "refinery/REFINERECIPE_61"
+	},
+	{
+		"Id": "REFINERECIPE_62",
+		"Inputs": [
+			{
+				"Id": "PLANT_HOT",
+				"Name": "Solanium",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "FUEL1",
+			"Name": "Carbon",
+			"Quantity": 2
+		},
+		"Time": "30.0",
+		"Operation": "Burn Plantlife",
+		"Slug": "refinery/REFINERECIPE_62"
+	},
+	{
+		"Id": "REFINERECIPE_63",
+		"Inputs": [
+			{
+				"Id": "PLANT_LUSH",
+				"Name": "Star Bulb",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "FUEL1",
+			"Name": "Carbon",
+			"Quantity": 2
+		},
+		"Time": "30.0",
+		"Operation": "Burn Plantlife",
+		"Slug": "refinery/REFINERECIPE_63"
+	},
+	{
+		"Id": "REFINERECIPE_64",
+		"Inputs": [
+			{
+				"Id": "PLANT_CAVE",
+				"Name": "Marrow Bulb",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "CATALYST1",
+			"Name": "Sodium",
+			"Quantity": 1
+		},
+		"Time": "60.0",
+		"Operation": "Extract Organic Sodium",
+		"Slug": "refinery/REFINERECIPE_64"
+	},
+	{
+		"Id": "REFINERECIPE_65",
+		"Inputs": [
+			{
+				"Id": "PLANT_WATER",
+				"Name": "Kelp Sac",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "OXYGEN",
+			"Name": "Oxygen",
+			"Quantity": 1
+		},
+		"Time": "60.0",
+		"Operation": "Extract Micro-Bubbles",
+		"Slug": "refinery/REFINERECIPE_65"
+	},
+	{
+		"Id": "REFINERECIPE_66",
+		"Inputs": [
+			{
+				"Id": "PLANT_POOP",
+				"Name": "Faecium",
+				"Quantity": 3
+			}
+		],
+		"Output": {
+			"Id": "CREATURE1",
+			"Name": "Mordite",
+			"Quantity": 2
+		},
+		"Time": "180.0",
+		"Operation": "Organic Reassembly",
+		"Slug": "refinery/REFINERECIPE_66"
+	},
+	{
+		"Id": "REFINERECIPE_67",
+		"Inputs": [
+			{
+				"Id": "ALLOY1",
+				"Name": "Aronium",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "ASTEROID1",
+			"Name": "Silver",
+			"Quantity": 250
+		},
+		"Time": "300.0",
+		"Operation": "Extreme Alloy Separation",
+		"Slug": "refinery/REFINERECIPE_67"
+	},
+	{
+		"Id": "REFINERECIPE_68",
+		"Inputs": [
+			{
+				"Id": "ALLOY2",
+				"Name": "Dirty Bronze",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "ASTEROID1",
+			"Name": "Silver",
+			"Quantity": 250
+		},
+		"Time": "300.0",
+		"Operation": "Extreme Alloy Separation",
+		"Slug": "refinery/REFINERECIPE_68"
+	},
+	{
+		"Id": "REFINERECIPE_69",
+		"Inputs": [
+			{
+				"Id": "ALLOY3",
+				"Name": "Herox",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "ASTEROID1",
+			"Name": "Silver",
+			"Quantity": 250
+		},
+		"Time": "250.0",
+		"Operation": "Extreme Alloy Separation",
+		"Slug": "refinery/REFINERECIPE_69"
+	},
+	{
+		"Id": "REFINERECIPE_70",
+		"Inputs": [
+			{
+				"Id": "ALLOY4",
+				"Name": "Lemmium",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "ASTEROID2",
+			"Name": "Gold",
+			"Quantity": 125
+		},
+		"Time": "300.0",
+		"Operation": "Extreme Alloy Separation",
+		"Slug": "refinery/REFINERECIPE_70"
+	},
+	{
+		"Id": "REFINERECIPE_71",
+		"Inputs": [
+			{
+				"Id": "ALLOY5",
+				"Name": "Magno-gold",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "ASTEROID2",
+			"Name": "Gold",
+			"Quantity": 125
+		},
+		"Time": "300.0",
+		"Operation": "Extreme Alloy Separation",
+		"Slug": "refinery/REFINERECIPE_71"
+	},
+	{
+		"Id": "REFINERECIPE_72",
+		"Inputs": [
+			{
+				"Id": "ALLOY6",
+				"Name": "Grantine",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "ASTEROID2",
+			"Name": "Gold",
+			"Quantity": 125
+		},
+		"Time": "300.0",
+		"Operation": "Extreme Alloy Separation",
+		"Slug": "refinery/REFINERECIPE_72"
+	},
+	{
+		"Id": "REFINERECIPE_73",
+		"Inputs": [
+			{
+				"Id": "ALLOY7",
+				"Name": "Geodesite",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "ASTEROID3",
+			"Name": "Platinum",
+			"Quantity": 250
+		},
+		"Time": "300.0",
+		"Operation": "Extreme Alloy Separation",
+		"Slug": "refinery/REFINERECIPE_73"
+	},
+	{
+		"Id": "REFINERECIPE_74",
+		"Inputs": [
+			{
+				"Id": "ALLOY8",
+				"Name": "Iridesite",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "ASTEROID3",
+			"Name": "Platinum",
+			"Quantity": 250
+		},
+		"Time": "300.0",
+		"Operation": "Extreme Alloy Separation",
+		"Slug": "refinery/REFINERECIPE_74"
+	},
+	{
+		"Id": "REFINERECIPE_76",
+		"Inputs": [
+			{
+				"Id": "WATERPLANT",
+				"Name": "Cyto-phosphate",
+				"Quantity": 50
+			},
+			{
+				"Id": "WATER1",
+				"Name": "Salt",
+				"Quantity": 50
+			}
+		],
+		"Output": {
+			"Id": "FARMPROD3",
+			"Name": "Glass",
+			"Quantity": 1
+		},
+		"Time": "20.0",
+		"Operation": "Salt Crystal Polishing",
+		"Slug": "refinery/REFINERECIPE_76"
+	},
+	{
+		"Id": "REFINERECIPE_78",
+		"Inputs": [
+			{
+				"Id": "PLANT_POOP",
+				"Name": "Faecium",
+				"Quantity": 1
+			},
+			{
+				"Id": "SPECIAL_POOP",
+				"Name": "Hexite",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "TECHFRAG",
+			"Name": "Nanite Cluster",
+			"Quantity": 1
+		},
+		"Time": "60.0",
+		"Operation": "Alchemical Construction",
+		"Slug": "refinery/REFINERECIPE_78"
+	},
+	{
+		"Id": "REFINERECIPE_79",
+		"Inputs": [
+			{
+				"Id": "PLANT_POOP",
+				"Name": "Faecium",
+				"Quantity": 1
+			},
+			{
+				"Id": "SPACEGUNK1",
+				"Name": "Residual Goop",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "ASTEROID2",
+			"Name": "Gold",
+			"Quantity": 1
+		},
+		"Time": "60.0",
+		"Operation": "Alchemical Construction",
+		"Slug": "refinery/REFINERECIPE_79"
+	},
+	{
+		"Id": "REFINERECIPE_80",
+		"Inputs": [
+			{
+				"Id": "ASTEROID2",
+				"Name": "Gold",
+				"Quantity": 1
+			},
+			{
+				"Id": "ASTEROID1",
+				"Name": "Silver",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "ASTEROID3",
+			"Name": "Platinum",
+			"Quantity": 1
+		},
+		"Time": "60.0",
+		"Operation": "Transmutation",
+		"Slug": "refinery/REFINERECIPE_80"
+	},
+	{
+		"Id": "REFINERECIPE_81",
+		"Inputs": [
+			{
+				"Id": "RADIO1",
+				"Name": "Uranium",
+				"Quantity": 1
+			},
+			{
+				"Id": "LAUNCHSUB",
+				"Name": "Di-hydrogen",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "FUEL2",
+			"Name": "Condensed Carbon",
+			"Quantity": 2
+		},
+		"Time": "10.0",
+		"Operation": "Harness Energy",
+		"Slug": "refinery/REFINERECIPE_81"
+	},
+	{
+		"Id": "REFINERECIPE_82",
+		"Inputs": [
+			{
+				"Id": "GAS1",
+				"Name": "Sulphurine",
+				"Quantity": 1
+			},
+			{
+				"Id": "LAUNCHSUB",
+				"Name": "Di-hydrogen",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "PLANT_HOT",
+			"Name": "Solanium",
+			"Quantity": 1
+		},
+		"Time": "40.0",
+		"Operation": "Sulphur Injection",
+		"Slug": "refinery/REFINERECIPE_82"
+	},
+	{
+		"Id": "REFINERECIPE_83",
+		"Inputs": [
+			{
+				"Id": "GAS2",
+				"Name": "Radon",
+				"Quantity": 1
+			},
+			{
+				"Id": "LAUNCHSUB",
+				"Name": "Di-hydrogen",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "RADIO1",
+			"Name": "Uranium",
+			"Quantity": 1
+		},
+		"Time": "40.0",
+		"Operation": "Catalyse Radiation",
+		"Slug": "refinery/REFINERECIPE_83"
+	},
+	{
+		"Id": "REFINERECIPE_84",
+		"Inputs": [
+			{
+				"Id": "GAS3",
+				"Name": "Nitrogen",
+				"Quantity": 1
+			},
+			{
+				"Id": "LAUNCHSUB",
+				"Name": "Di-hydrogen",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "TOXIC1",
+			"Name": "Ammonia",
+			"Quantity": 1
+		},
+		"Time": "40.0",
+		"Operation": "Organic Fusion",
+		"Slug": "refinery/REFINERECIPE_84"
+	},
+	{
+		"Id": "REFINERECIPE_85",
+		"Inputs": [
+			{
+				"Id": "LAUNCHSUB",
+				"Name": "Di-hydrogen",
+				"Quantity": 1
+			},
+			{
+				"Id": "OXYGEN",
+				"Name": "Oxygen",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "WATER1",
+			"Name": "Salt",
+			"Quantity": 1
+		},
+		"Time": "20.0",
+		"Operation": "Rapid Formation / Evaporation",
+		"Slug": "refinery/REFINERECIPE_85"
+	},
+	{
+		"Id": "REFINERECIPE_86",
+		"Inputs": [
+			{
+				"Id": "LAUNCHSUB",
+				"Name": "Di-hydrogen",
+				"Quantity": 1
+			},
+			{
+				"Id": "FUEL1",
+				"Name": "Carbon",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "PLANT_POOP",
+			"Name": "Faecium",
+			"Quantity": 1
+		},
+		"Time": "20.0",
+		"Operation": "Assisted Decomposition",
+		"Slug": "refinery/REFINERECIPE_86"
+	},
+	{
+		"Id": "REFINERECIPE_87",
+		"Inputs": [
+			{
+				"Id": "LAUNCHSUB",
+				"Name": "Di-hydrogen",
+				"Quantity": 1
+			},
+			{
+				"Id": "FUEL2",
+				"Name": "Condensed Carbon",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "CREATURE1",
+			"Name": "Mordite",
+			"Quantity": 1
+		},
+		"Time": "20.0",
+		"Operation": "Organic Reassembly",
+		"Slug": "refinery/REFINERECIPE_87"
+	},
+	{
+		"Id": "REFINERECIPE_88",
+		"Inputs": [
+			{
+				"Id": "LAND1",
+				"Name": "Ferrite Dust",
+				"Quantity": 1
+			},
+			{
+				"Id": "FUEL1",
+				"Name": "Carbon",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "LAND3",
+			"Name": "Magnetised Ferrite",
+			"Quantity": 1
+		},
+		"Time": "60.0",
+		"Operation": "Carbonise Metal",
+		"Slug": "refinery/REFINERECIPE_88"
+	},
+	{
+		"Id": "REFINERECIPE_89",
+		"Inputs": [
+			{
+				"Id": "LAND1",
+				"Name": "Ferrite Dust",
+				"Quantity": 1
+			},
+			{
+				"Id": "FUEL2",
+				"Name": "Condensed Carbon",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "LAND3",
+			"Name": "Magnetised Ferrite",
+			"Quantity": 2
+		},
+		"Time": "60.0",
+		"Operation": "Carbonise Metal",
+		"Slug": "refinery/REFINERECIPE_89"
+	},
+	{
+		"Id": "REFINERECIPE_90",
+		"Inputs": [
+			{
+				"Id": "LAND2",
+				"Name": "Pure Ferrite",
+				"Quantity": 1
+			},
+			{
+				"Id": "FUEL1",
+				"Name": "Carbon",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "LAND3",
+			"Name": "Magnetised Ferrite",
+			"Quantity": 2
+		},
+		"Time": "60.0",
+		"Operation": "Carbonise Metal",
+		"Slug": "refinery/REFINERECIPE_90"
+	},
+	{
+		"Id": "REFINERECIPE_91",
+		"Inputs": [
+			{
+				"Id": "LAND2",
+				"Name": "Pure Ferrite",
+				"Quantity": 1
+			},
+			{
+				"Id": "FUEL2",
+				"Name": "Condensed Carbon",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "LAND3",
+			"Name": "Magnetised Ferrite",
+			"Quantity": 3
+		},
+		"Time": "60.0",
+		"Operation": "Carbonise Metal",
+		"Slug": "refinery/REFINERECIPE_91"
+	},
+	{
+		"Id": "REFINERECIPE_92",
+		"Inputs": [
+			{
+				"Id": "LAUNCHSUB",
+				"Name": "Di-hydrogen",
+				"Quantity": 1
+			},
+			{
+				"Id": "ROCKETSUB",
+				"Name": "Tritium",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "LAUNCHSUB2",
+			"Name": "Deuterium",
+			"Quantity": 1
+		},
+		"Time": "60.0",
+		"Operation": "Di-hydrogen Cycling",
+		"Slug": "refinery/REFINERECIPE_92"
+	},
+	{
+		"Id": "REFINERECIPE_93",
+		"Inputs": [
+			{
+				"Id": "LAND2",
+				"Name": "Pure Ferrite",
+				"Quantity": 1
+			},
+			{
+				"Id": "OXYGEN",
+				"Name": "Oxygen",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "SPACEGUNK3",
+			"Name": "Rusted Metal",
+			"Quantity": 2
+		},
+		"Time": "100.0",
+		"Operation": "Oxidise Metal",
+		"Slug": "refinery/REFINERECIPE_93"
+	},
+	{
+		"Id": "REFINERECIPE_94",
+		"Inputs": [
+			{
+				"Id": "LAND1",
+				"Name": "Ferrite Dust",
+				"Quantity": 1
+			},
+			{
+				"Id": "OXYGEN",
+				"Name": "Oxygen",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "SPACEGUNK3",
+			"Name": "Rusted Metal",
+			"Quantity": 1
+		},
+		"Time": "100.0",
+		"Operation": "Oxidise Metal",
+		"Slug": "refinery/REFINERECIPE_94"
+	},
+	{
+		"Id": "REFINERECIPE_95",
+		"Inputs": [
+			{
+				"Id": "FUEL1",
+				"Name": "Carbon",
+				"Quantity": 2
+			},
+			{
+				"Id": "OXYGEN",
+				"Name": "Oxygen",
+				"Quantity": 2
+			}
+		],
+		"Output": {
+			"Id": "FUEL2",
+			"Name": "Condensed Carbon",
+			"Quantity": 5
+		},
+		"Time": "90.0",
+		"Operation": "Oxygenate Carbon",
+		"Slug": "refinery/REFINERECIPE_95"
+	},
+	{
+		"Id": "REFINERECIPE_96",
+		"Inputs": [
+			{
+				"Id": "FUEL2",
+				"Name": "Condensed Carbon",
+				"Quantity": 1
+			},
+			{
+				"Id": "OXYGEN",
+				"Name": "Oxygen",
+				"Quantity": 2
+			}
+		],
+		"Output": {
+			"Id": "FUEL2",
+			"Name": "Condensed Carbon",
+			"Quantity": 6
+		},
+		"Time": "90.0",
+		"Operation": "Oxygenate Carbon",
+		"Slug": "refinery/REFINERECIPE_96"
+	},
+	{
+		"Id": "REFINERECIPE_97",
+		"Inputs": [
+			{
+				"Id": "CATALYST1",
+				"Name": "Sodium",
+				"Quantity": 1
+			},
+			{
+				"Id": "OXYGEN",
+				"Name": "Oxygen",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "CATALYST2",
+			"Name": "Sodium Nitrate",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Oxygenate Sodium",
+		"Slug": "refinery/REFINERECIPE_97"
+	},
+	{
+		"Id": "REFINERECIPE_98",
+		"Inputs": [
+			{
+				"Id": "CATALYST2",
+				"Name": "Sodium Nitrate",
+				"Quantity": 1
+			},
+			{
+				"Id": "OXYGEN",
+				"Name": "Oxygen",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "CATALYST2",
+			"Name": "Sodium Nitrate",
+			"Quantity": 2
+		},
+		"Time": "90.0",
+		"Operation": "Oxygenate Sodium",
+		"Slug": "refinery/REFINERECIPE_98"
+	},
+	{
+		"Id": "REFINERECIPE_99",
+		"Inputs": [
+			{
+				"Id": "FUEL1",
+				"Name": "Carbon",
+				"Quantity": 1
+			},
+			{
+				"Id": "CATALYST1",
+				"Name": "Sodium",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "CATALYST2",
+			"Name": "Sodium Nitrate",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Catalyse Carbon",
+		"Slug": "refinery/REFINERECIPE_99"
+	},
+	{
+		"Id": "REFINERECIPE_100",
+		"Inputs": [
+			{
+				"Id": "FUEL2",
+				"Name": "Condensed Carbon",
+				"Quantity": 1
+			},
+			{
+				"Id": "CATALYST1",
+				"Name": "Sodium",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "CATALYST2",
+			"Name": "Sodium Nitrate",
+			"Quantity": 2
+		},
+		"Time": "90.0",
+		"Operation": "Catalyse Carbon",
+		"Slug": "refinery/REFINERECIPE_100"
+	},
+	{
+		"Id": "REFINERECIPE_101",
+		"Inputs": [
+			{
+				"Id": "FUEL1",
+				"Name": "Carbon",
+				"Quantity": 1
+			},
+			{
+				"Id": "CATALYST2",
+				"Name": "Sodium Nitrate",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "COLD1",
+			"Name": "Dioxite",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Advanced Carbon Processing",
+		"Slug": "refinery/REFINERECIPE_101"
+	},
+	{
+		"Id": "REFINERECIPE_102",
+		"Inputs": [
+			{
+				"Id": "FUEL2",
+				"Name": "Condensed Carbon",
+				"Quantity": 1
+			},
+			{
+				"Id": "CATALYST2",
+				"Name": "Sodium Nitrate",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "COLD1",
+			"Name": "Dioxite",
+			"Quantity": 2
+		},
+		"Time": "90.0",
+		"Operation": "Advanced Carbon Processing",
+		"Slug": "refinery/REFINERECIPE_102"
+	},
+	{
+		"Id": "REFINERECIPE_103",
+		"Inputs": [
+			{
+				"Id": "FUEL1",
+				"Name": "Carbon",
+				"Quantity": 1
+			},
+			{
+				"Id": "ROBOT1",
+				"Name": "Pugneum",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "CREATURE1",
+			"Name": "Mordite",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Anomaly / Organic Hybridisation",
+		"Slug": "refinery/REFINERECIPE_103"
+	},
+	{
+		"Id": "REFINERECIPE_104",
+		"Inputs": [
+			{
+				"Id": "FUEL2",
+				"Name": "Condensed Carbon",
+				"Quantity": 1
+			},
+			{
+				"Id": "ROBOT1",
+				"Name": "Pugneum",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "CREATURE1",
+			"Name": "Mordite",
+			"Quantity": 2
+		},
+		"Time": "90.0",
+		"Operation": "Anomaly / Organic Hybridisation",
+		"Slug": "refinery/REFINERECIPE_104"
+	},
+	{
+		"Id": "REFINERECIPE_105",
+		"Inputs": [
+			{
+				"Id": "CATALYST1",
+				"Name": "Sodium",
+				"Quantity": 1
+			},
+			{
+				"Id": "ROBOT1",
+				"Name": "Pugneum",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "CATALYST2",
+			"Name": "Sodium Nitrate",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Sentinel Catalysation",
+		"Slug": "refinery/REFINERECIPE_105"
+	},
+	{
+		"Id": "REFINERECIPE_106",
+		"Inputs": [
+			{
+				"Id": "CATALYST2",
+				"Name": "Sodium Nitrate",
+				"Quantity": 1
+			},
+			{
+				"Id": "ROBOT1",
+				"Name": "Pugneum",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "CATALYST2",
+			"Name": "Sodium Nitrate",
+			"Quantity": 3
+		},
+		"Time": "90.0",
+		"Operation": "Sentinel Catalysation",
+		"Slug": "refinery/REFINERECIPE_106"
+	},
+	{
+		"Id": "REFINERECIPE_107",
+		"Inputs": [
+			{
+				"Id": "FUEL1",
+				"Name": "Carbon",
+				"Quantity": 2
+			},
+			{
+				"Id": "CREATURE1",
+				"Name": "Mordite",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "PLANT_POOP",
+			"Name": "Faecium",
+			"Quantity": 3
+		},
+		"Time": "90.0",
+		"Operation": "Runaway Decomposition",
+		"Slug": "refinery/REFINERECIPE_107"
+	},
+	{
+		"Id": "REFINERECIPE_108",
+		"Inputs": [
+			{
+				"Id": "FUEL2",
+				"Name": "Condensed Carbon",
+				"Quantity": 1
+			},
+			{
+				"Id": "CREATURE1",
+				"Name": "Mordite",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "PLANT_POOP",
+			"Name": "Faecium",
+			"Quantity": 4
+		},
+		"Time": "90.0",
+		"Operation": "Runaway Decomposition",
+		"Slug": "refinery/REFINERECIPE_108"
+	},
+	{
+		"Id": "REFINERECIPE_109",
+		"Inputs": [
+			{
+				"Id": "CATALYST1",
+				"Name": "Sodium",
+				"Quantity": 2
+			},
+			{
+				"Id": "CREATURE1",
+				"Name": "Mordite",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "PLANT_CAVE",
+			"Name": "Marrow Bulb",
+			"Quantity": 3
+		},
+		"Time": "90.0",
+		"Operation": "Fertiliser Synthesis",
+		"Slug": "refinery/REFINERECIPE_109"
+	},
+	{
+		"Id": "REFINERECIPE_110",
+		"Inputs": [
+			{
+				"Id": "CATALYST2",
+				"Name": "Sodium Nitrate",
+				"Quantity": 1
+			},
+			{
+				"Id": "CREATURE1",
+				"Name": "Mordite",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "PLANT_CAVE",
+			"Name": "Marrow Bulb",
+			"Quantity": 4
+		},
+		"Time": "90.0",
+		"Operation": "Fertiliser Synthesis",
+		"Slug": "refinery/REFINERECIPE_110"
+	},
+	{
+		"Id": "REFINERECIPE_111",
+		"Inputs": [
+			{
+				"Id": "LAND1",
+				"Name": "Ferrite Dust",
+				"Quantity": 2
+			},
+			{
+				"Id": "ROBOT1",
+				"Name": "Pugneum",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "LAND2",
+			"Name": "Pure Ferrite",
+			"Quantity": 3
+		},
+		"Time": "90.0",
+		"Operation": "Matter Expansion",
+		"Slug": "refinery/REFINERECIPE_111"
+	},
+	{
+		"Id": "REFINERECIPE_112",
+		"Inputs": [
+			{
+				"Id": "LAND2",
+				"Name": "Pure Ferrite",
+				"Quantity": 2
+			},
+			{
+				"Id": "ROBOT1",
+				"Name": "Pugneum",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "LAND3",
+			"Name": "Magnetised Ferrite",
+			"Quantity": 3
+		},
+		"Time": "90.0",
+		"Operation": "Matter Expansion",
+		"Slug": "refinery/REFINERECIPE_112"
+	},
+	{
+		"Id": "REFINERECIPE_113",
+		"Inputs": [
+			{
+				"Id": "LAND3",
+				"Name": "Magnetised Ferrite",
+				"Quantity": 3
+			},
+			{
+				"Id": "ROBOT1",
+				"Name": "Pugneum",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "LAND3",
+			"Name": "Magnetised Ferrite",
+			"Quantity": 4
+		},
+		"Time": "90.0",
+		"Operation": "Matter Expansion",
+		"Slug": "refinery/REFINERECIPE_113"
+	},
+	{
+		"Id": "REFINERECIPE_114",
+		"Inputs": [
+			{
+				"Id": "RED2",
+				"Name": "Cadmium",
+				"Quantity": 1
+			},
+			{
+				"Id": "STELLAR2",
+				"Name": "Chromatic Metal",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "RED2",
+			"Name": "Cadmium",
+			"Quantity": 2
+		},
+		"Time": "90.0",
+		"Operation": "Chromatic Expansion",
+		"Slug": "refinery/REFINERECIPE_114"
+	},
+	{
+		"Id": "REFINERECIPE_115",
+		"Inputs": [
+			{
+				"Id": "BLUE2",
+				"Name": "Indium",
+				"Quantity": 1
+			},
+			{
+				"Id": "STELLAR2",
+				"Name": "Chromatic Metal",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "BLUE2",
+			"Name": "Indium",
+			"Quantity": 2
+		},
+		"Time": "90.0",
+		"Operation": "Chromatic Expansion",
+		"Slug": "refinery/REFINERECIPE_115"
+	},
+	{
+		"Id": "REFINERECIPE_116",
+		"Inputs": [
+			{
+				"Id": "GREEN2",
+				"Name": "Emeril",
+				"Quantity": 1
+			},
+			{
+				"Id": "STELLAR2",
+				"Name": "Chromatic Metal",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "GREEN2",
+			"Name": "Emeril",
+			"Quantity": 2
+		},
+		"Time": "90.0",
+		"Operation": "Chromatic Expansion",
+		"Slug": "refinery/REFINERECIPE_116"
+	},
+	{
+		"Id": "REFINERECIPE_117",
+		"Inputs": [
+			{
+				"Id": "YELLOW2",
+				"Name": "Copper",
+				"Quantity": 1
+			},
+			{
+				"Id": "STELLAR2",
+				"Name": "Chromatic Metal",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "YELLOW2",
+			"Name": "Copper",
+			"Quantity": 2
+		},
+		"Time": "90.0",
+		"Operation": "Chromatic Expansion",
+		"Slug": "refinery/REFINERECIPE_117"
+	},
+	{
+		"Id": "REFINERECIPE_118",
+		"Inputs": [
+			{
+				"Id": "LUSH1",
+				"Name": "Paraffinium",
+				"Quantity": 1
+			},
+			{
+				"Id": "PLANT_LUSH",
+				"Name": "Star Bulb",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "PLANT_LUSH",
+			"Name": "Star Bulb",
+			"Quantity": 2
+		},
+		"Time": "90.0",
+		"Operation": "Organic Expansion",
+		"Slug": "refinery/REFINERECIPE_118"
+	},
+	{
+		"Id": "REFINERECIPE_119",
+		"Inputs": [
+			{
+				"Id": "DUSTY1",
+				"Name": "Pyrite",
+				"Quantity": 1
+			},
+			{
+				"Id": "PLANT_DUST",
+				"Name": "Cactus Flesh",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "PLANT_DUST",
+			"Name": "Cactus Flesh",
+			"Quantity": 2
+		},
+		"Time": "90.0",
+		"Operation": "Organic Expansion",
+		"Slug": "refinery/REFINERECIPE_119"
+	},
+	{
+		"Id": "REFINERECIPE_120",
+		"Inputs": [
+			{
+				"Id": "TOXIC1",
+				"Name": "Ammonia",
+				"Quantity": 1
+			},
+			{
+				"Id": "PLANT_TOXIC",
+				"Name": "Fungal Mould",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "PLANT_TOXIC",
+			"Name": "Fungal Mould",
+			"Quantity": 2
+		},
+		"Time": "90.0",
+		"Operation": "Organic Expansion",
+		"Slug": "refinery/REFINERECIPE_120"
+	},
+	{
+		"Id": "REFINERECIPE_121",
+		"Inputs": [
+			{
+				"Id": "RADIO1",
+				"Name": "Uranium",
+				"Quantity": 1
+			},
+			{
+				"Id": "PLANT_RADIO",
+				"Name": "Gamma Root",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "PLANT_RADIO",
+			"Name": "Gamma Root",
+			"Quantity": 2
+		},
+		"Time": "90.0",
+		"Operation": "Organic Expansion",
+		"Slug": "refinery/REFINERECIPE_121"
+	},
+	{
+		"Id": "REFINERECIPE_122",
+		"Inputs": [
+			{
+				"Id": "COLD1",
+				"Name": "Dioxite",
+				"Quantity": 1
+			},
+			{
+				"Id": "PLANT_SNOW",
+				"Name": "Frost Crystal",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "PLANT_SNOW",
+			"Name": "Frost Crystal",
+			"Quantity": 2
+		},
+		"Time": "90.0",
+		"Operation": "Organic Expansion",
+		"Slug": "refinery/REFINERECIPE_122"
+	},
+	{
+		"Id": "REFINERECIPE_123",
+		"Inputs": [
+			{
+				"Id": "HOT1",
+				"Name": "Phosphorus",
+				"Quantity": 1
+			},
+			{
+				"Id": "PLANT_HOT",
+				"Name": "Solanium",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "PLANT_HOT",
+			"Name": "Solanium",
+			"Quantity": 2
+		},
+		"Time": "90.0",
+		"Operation": "Organic Expansion",
+		"Slug": "refinery/REFINERECIPE_123"
+	},
+	{
+		"Id": "REFINERECIPE_124",
+		"Inputs": [
+			{
+				"Id": "WATER1",
+				"Name": "Salt",
+				"Quantity": 2
+			},
+			{
+				"Id": "OXYGEN",
+				"Name": "Oxygen",
+				"Quantity": 2
+			}
+		],
+		"Output": {
+			"Id": "WATER2",
+			"Name": "Chlorine",
+			"Quantity": 5
+		},
+		"Time": "90.0",
+		"Operation": "Efficient Salt Evaporation",
+		"Slug": "refinery/REFINERECIPE_124"
+	},
+	{
+		"Id": "REFINERECIPE_125",
+		"Inputs": [
+			{
+				"Id": "WATER2",
+				"Name": "Chlorine",
+				"Quantity": 1
+			},
+			{
+				"Id": "OXYGEN",
+				"Name": "Oxygen",
+				"Quantity": 2
+			}
+		],
+		"Output": {
+			"Id": "WATER2",
+			"Name": "Chlorine",
+			"Quantity": 6
+		},
+		"Time": "90.0",
+		"Operation": "Chlorine Expansion",
+		"Slug": "refinery/REFINERECIPE_125"
+	},
+	{
+		"Id": "REFINERECIPE_126",
+		"Inputs": [
+			{
+				"Id": "CAVE1",
+				"Name": "Cobalt",
+				"Quantity": 2
+			},
+			{
+				"Id": "OXYGEN",
+				"Name": "Oxygen",
+				"Quantity": 2
+			}
+		],
+		"Output": {
+			"Id": "CAVE2",
+			"Name": "Ionised Cobalt",
+			"Quantity": 5
+		},
+		"Time": "90.0",
+		"Operation": "Efficient Cobalt Ionisation",
+		"Slug": "refinery/REFINERECIPE_126"
+	},
+	{
+		"Id": "REFINERECIPE_127",
+		"Inputs": [
+			{
+				"Id": "CAVE2",
+				"Name": "Ionised Cobalt",
+				"Quantity": 1
+			},
+			{
+				"Id": "OXYGEN",
+				"Name": "Oxygen",
+				"Quantity": 2
+			}
+		],
+		"Output": {
+			"Id": "CAVE2",
+			"Name": "Ionised Cobalt",
+			"Quantity": 6
+		},
+		"Time": "90.0",
+		"Operation": "Efficient Cobalt Ionisation",
+		"Slug": "refinery/REFINERECIPE_127"
+	},
+	{
+		"Id": "REFINERECIPE_128",
+		"Inputs": [
+			{
+				"Id": "CREATURE1",
+				"Name": "Mordite",
+				"Quantity": 1
+			},
+			{
+				"Id": "ROBOT1",
+				"Name": "Pugneum",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "ASTEROID2",
+			"Name": "Gold",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Organic / Anomaly Synthesis",
+		"Slug": "refinery/REFINERECIPE_128"
+	},
+	{
+		"Id": "REFINERECIPE_129",
+		"Inputs": [
+			{
+				"Id": "ASTEROID1",
+				"Name": "Silver",
+				"Quantity": 1
+			},
+			{
+				"Id": "OXYGEN",
+				"Name": "Oxygen",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "LUSH1",
+			"Name": "Paraffinium",
+			"Quantity": 2
+		},
+		"Time": "90.0",
+		"Operation": "Mineral Alchemy",
+		"Slug": "refinery/REFINERECIPE_129"
+	},
+	{
+		"Id": "REFINERECIPE_130",
+		"Inputs": [
+			{
+				"Id": "ASTEROID2",
+				"Name": "Gold",
+				"Quantity": 1
+			},
+			{
+				"Id": "OXYGEN",
+				"Name": "Oxygen",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "DUSTY1",
+			"Name": "Pyrite",
+			"Quantity": 2
+		},
+		"Time": "90.0",
+		"Operation": "Mineral Alchemy",
+		"Slug": "refinery/REFINERECIPE_130"
+	},
+	{
+		"Id": "REFINERECIPE_131",
+		"Inputs": [
+			{
+				"Id": "ASTEROID3",
+				"Name": "Platinum",
+				"Quantity": 1
+			},
+			{
+				"Id": "OXYGEN",
+				"Name": "Oxygen",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "LAND3",
+			"Name": "Magnetised Ferrite",
+			"Quantity": 10
+		},
+		"Time": "90.0",
+		"Operation": "Mineral Alchemy",
+		"Slug": "refinery/REFINERECIPE_131"
+	},
+	{
+		"Id": "REFINERECIPE_132",
+		"Inputs": [
+			{
+				"Id": "GAS1",
+				"Name": "Sulphurine",
+				"Quantity": 1
+			},
+			{
+				"Id": "OXYGEN",
+				"Name": "Oxygen",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "GAS2",
+			"Name": "Radon",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Gas Transfer",
+		"Slug": "refinery/REFINERECIPE_132"
+	},
+	{
+		"Id": "REFINERECIPE_133",
+		"Inputs": [
+			{
+				"Id": "GAS2",
+				"Name": "Radon",
+				"Quantity": 1
+			},
+			{
+				"Id": "OXYGEN",
+				"Name": "Oxygen",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "GAS3",
+			"Name": "Nitrogen",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Gas Transfer",
+		"Slug": "refinery/REFINERECIPE_133"
+	},
+	{
+		"Id": "REFINERECIPE_134",
+		"Inputs": [
+			{
+				"Id": "GAS3",
+				"Name": "Nitrogen",
+				"Quantity": 1
+			},
+			{
+				"Id": "OXYGEN",
+				"Name": "Oxygen",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "GAS1",
+			"Name": "Sulphurine",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Gas Transfer",
+		"Slug": "refinery/REFINERECIPE_134"
+	},
+	{
+		"Id": "REFINERECIPE_135",
+		"Inputs": [
+			{
+				"Id": "GAS1",
+				"Name": "Sulphurine",
+				"Quantity": 1
+			},
+			{
+				"Id": "STELLAR2",
+				"Name": "Chromatic Metal",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "GAS2",
+			"Name": "Radon",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Gas Catalysation",
+		"Slug": "refinery/REFINERECIPE_135"
+	},
+	{
+		"Id": "REFINERECIPE_136",
+		"Inputs": [
+			{
+				"Id": "GAS2",
+				"Name": "Radon",
+				"Quantity": 1
+			},
+			{
+				"Id": "STELLAR2",
+				"Name": "Chromatic Metal",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "GAS3",
+			"Name": "Nitrogen",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Gas Catalysation",
+		"Slug": "refinery/REFINERECIPE_136"
+	},
+	{
+		"Id": "REFINERECIPE_137",
+		"Inputs": [
+			{
+				"Id": "GAS3",
+				"Name": "Nitrogen",
+				"Quantity": 1
+			},
+			{
+				"Id": "STELLAR2",
+				"Name": "Chromatic Metal",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "GAS1",
+			"Name": "Sulphurine",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Gas Catalysation",
+		"Slug": "refinery/REFINERECIPE_137"
+	},
+	{
+		"Id": "REFINERECIPE_138",
+		"Inputs": [
+			{
+				"Id": "GAS3",
+				"Name": "Nitrogen",
+				"Quantity": 1
+			},
+			{
+				"Id": "CATALYST1",
+				"Name": "Sodium",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "CATALYST2",
+			"Name": "Sodium Nitrate",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Gas Catalysation",
+		"Slug": "refinery/REFINERECIPE_138"
+	},
+	{
+		"Id": "REFINERECIPE_139",
+		"Inputs": [
+			{
+				"Id": "GAS3",
+				"Name": "Nitrogen",
+				"Quantity": 1
+			},
+			{
+				"Id": "CATALYST2",
+				"Name": "Sodium Nitrate",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "CATALYST2",
+			"Name": "Sodium Nitrate",
+			"Quantity": 2
+		},
+		"Time": "90.0",
+		"Operation": "Gas Catalysation",
+		"Slug": "refinery/REFINERECIPE_139"
+	},
+	{
+		"Id": "REFINERECIPE_140",
+		"Inputs": [
+			{
+				"Id": "PLANT_CAVE",
+				"Name": "Marrow Bulb",
+				"Quantity": 1
+			},
+			{
+				"Id": "OXYGEN",
+				"Name": "Oxygen",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "CAVE2",
+			"Name": "Ionised Cobalt",
+			"Quantity": 2
+		},
+		"Time": "90.0",
+		"Operation": "Bonded Cobalt Extraction",
+		"Slug": "refinery/REFINERECIPE_140"
+	},
+	{
+		"Id": "REFINERECIPE_141",
+		"Inputs": [
+			{
+				"Id": "PLANT_WATER",
+				"Name": "Kelp Sac",
+				"Quantity": 1
+			},
+			{
+				"Id": "OXYGEN",
+				"Name": "Oxygen",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "WATER2",
+			"Name": "Chlorine",
+			"Quantity": 2
+		},
+		"Time": "90.0",
+		"Operation": "Bonded Chlorine Extraction",
+		"Slug": "refinery/REFINERECIPE_141"
+	},
+	{
+		"Id": "REFINERECIPE_142",
+		"Inputs": [
+			{
+				"Id": "PLANT_POOP",
+				"Name": "Faecium",
+				"Quantity": 1
+			},
+			{
+				"Id": "OXYGEN",
+				"Name": "Oxygen",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "PLANT_POOP",
+			"Name": "Faecium",
+			"Quantity": 3
+		},
+		"Time": "90.0",
+		"Operation": "Oxygenate Microbes",
+		"Slug": "refinery/REFINERECIPE_142"
+	},
+	{
+		"Id": "REFINERECIPE_143",
+		"Inputs": [
+			{
+				"Id": "PLANT_CAVE",
+				"Name": "Marrow Bulb",
+				"Quantity": 1
+			},
+			{
+				"Id": "ROBOT1",
+				"Name": "Pugneum",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "CAVE2",
+			"Name": "Ionised Cobalt",
+			"Quantity": 2
+		},
+		"Time": "90.0",
+		"Operation": "Pugneum Washing",
+		"Slug": "refinery/REFINERECIPE_143"
+	},
+	{
+		"Id": "REFINERECIPE_144",
+		"Inputs": [
+			{
+				"Id": "PLANT_WATER",
+				"Name": "Kelp Sac",
+				"Quantity": 1
+			},
+			{
+				"Id": "ROBOT1",
+				"Name": "Pugneum",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "WATER2",
+			"Name": "Chlorine",
+			"Quantity": 2
+		},
+		"Time": "90.0",
+		"Operation": "Pugneum Washing",
+		"Slug": "refinery/REFINERECIPE_144"
+	},
+	{
+		"Id": "REFINERECIPE_145",
+		"Inputs": [
+			{
+				"Id": "PLANT_CAVE",
+				"Name": "Marrow Bulb",
+				"Quantity": 1
+			},
+			{
+				"Id": "FUEL1",
+				"Name": "Carbon",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "CATALYST1",
+			"Name": "Sodium",
+			"Quantity": 2
+		},
+		"Time": "90.0",
+		"Operation": "Extract Organic Sodium",
+		"Slug": "refinery/REFINERECIPE_145"
+	},
+	{
+		"Id": "REFINERECIPE_146",
+		"Inputs": [
+			{
+				"Id": "PLANT_WATER",
+				"Name": "Kelp Sac",
+				"Quantity": 1
+			},
+			{
+				"Id": "FUEL1",
+				"Name": "Carbon",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "OXYGEN",
+			"Name": "Oxygen",
+			"Quantity": 2
+		},
+		"Time": "90.0",
+		"Operation": "Release Captured Oxygen",
+		"Slug": "refinery/REFINERECIPE_146"
+	},
+	{
+		"Id": "REFINERECIPE_147",
+		"Inputs": [
+			{
+				"Id": "PLANT_POOP",
+				"Name": "Faecium",
+				"Quantity": 1
+			},
+			{
+				"Id": "FUEL1",
+				"Name": "Carbon",
+				"Quantity": 2
+			}
+		],
+		"Output": {
+			"Id": "FUEL2",
+			"Name": "Condensed Carbon",
+			"Quantity": 2
+		},
+		"Time": "90.0",
+		"Operation": "Feed Microbes",
+		"Slug": "refinery/REFINERECIPE_147"
+	},
+	{
+		"Id": "REFINERECIPE_148",
+		"Inputs": [
+			{
+				"Id": "PLANT_CAVE",
+				"Name": "Marrow Bulb",
+				"Quantity": 1
+			},
+			{
+				"Id": "CATALYST1",
+				"Name": "Sodium",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "CATALYST2",
+			"Name": "Sodium Nitrate",
+			"Quantity": 2
+		},
+		"Time": "90.0",
+		"Operation": "Harness Organic Nitrogren",
+		"Slug": "refinery/REFINERECIPE_148"
+	},
+	{
+		"Id": "REFINERECIPE_149",
+		"Inputs": [
+			{
+				"Id": "PLANT_WATER",
+				"Name": "Kelp Sac",
+				"Quantity": 1
+			},
+			{
+				"Id": "CATALYST1",
+				"Name": "Sodium",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "CATALYST2",
+			"Name": "Sodium Nitrate",
+			"Quantity": 2
+		},
+		"Time": "90.0",
+		"Operation": "Harness Organic Nitrogren",
+		"Slug": "refinery/REFINERECIPE_149"
+	},
+	{
+		"Id": "REFINERECIPE_150",
+		"Inputs": [
+			{
+				"Id": "PLANT_POOP",
+				"Name": "Faecium",
+				"Quantity": 1
+			},
+			{
+				"Id": "CATALYST1",
+				"Name": "Sodium",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "CATALYST2",
+			"Name": "Sodium Nitrate",
+			"Quantity": 2
+		},
+		"Time": "90.0",
+		"Operation": "Feed Microbes",
+		"Slug": "refinery/REFINERECIPE_150"
+	},
+	{
+		"Id": "REFINERECIPE_151",
+		"Inputs": [
+			{
+				"Id": "PLANT_CAVE",
+				"Name": "Marrow Bulb",
+				"Quantity": 1
+			},
+			{
+				"Id": "FUEL2",
+				"Name": "Condensed Carbon",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "CATALYST1",
+			"Name": "Sodium",
+			"Quantity": 2
+		},
+		"Time": "90.0",
+		"Operation": "Extract Organic Sodium",
+		"Slug": "refinery/REFINERECIPE_151"
+	},
+	{
+		"Id": "REFINERECIPE_152",
+		"Inputs": [
+			{
+				"Id": "PLANT_WATER",
+				"Name": "Kelp Sac",
+				"Quantity": 1
+			},
+			{
+				"Id": "FUEL2",
+				"Name": "Condensed Carbon",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "OXYGEN",
+			"Name": "Oxygen",
+			"Quantity": 2
+		},
+		"Time": "90.0",
+		"Operation": "Release Captured Oxygen",
+		"Slug": "refinery/REFINERECIPE_152"
+	},
+	{
+		"Id": "REFINERECIPE_153",
+		"Inputs": [
+			{
+				"Id": "PLANT_POOP",
+				"Name": "Faecium",
+				"Quantity": 1
+			},
+			{
+				"Id": "FUEL2",
+				"Name": "Condensed Carbon",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "FUEL2",
+			"Name": "Condensed Carbon",
+			"Quantity": 3
+		},
+		"Time": "90.0",
+		"Operation": "Feed Microbes",
+		"Slug": "refinery/REFINERECIPE_153"
+	},
+	{
+		"Id": "REFINERECIPE_154",
+		"Inputs": [
+			{
+				"Id": "PLANT_CAVE",
+				"Name": "Marrow Bulb",
+				"Quantity": 1
+			},
+			{
+				"Id": "CATALYST2",
+				"Name": "Sodium Nitrate",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "CATALYST2",
+			"Name": "Sodium Nitrate",
+			"Quantity": 2
+		},
+		"Time": "90.0",
+		"Operation": "Harness Organic Nitrogren",
+		"Slug": "refinery/REFINERECIPE_154"
+	},
+	{
+		"Id": "REFINERECIPE_155",
+		"Inputs": [
+			{
+				"Id": "PLANT_WATER",
+				"Name": "Kelp Sac",
+				"Quantity": 1
+			},
+			{
+				"Id": "CATALYST2",
+				"Name": "Sodium Nitrate",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "CATALYST2",
+			"Name": "Sodium Nitrate",
+			"Quantity": 2
+		},
+		"Time": "90.0",
+		"Operation": "Harness Organic Nitrogren",
+		"Slug": "refinery/REFINERECIPE_155"
+	},
+	{
+		"Id": "REFINERECIPE_156",
+		"Inputs": [
+			{
+				"Id": "PLANT_POOP",
+				"Name": "Faecium",
+				"Quantity": 1
+			},
+			{
+				"Id": "CATALYST2",
+				"Name": "Sodium Nitrate",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "CATALYST2",
+			"Name": "Sodium Nitrate",
+			"Quantity": 2
+		},
+		"Time": "90.0",
+		"Operation": "Feed Microbes",
+		"Slug": "refinery/REFINERECIPE_156"
+	},
+	{
+		"Id": "REFINERECIPE_157",
+		"Inputs": [
+			{
+				"Id": "PLANT_CAVE",
+				"Name": "Marrow Bulb",
+				"Quantity": 1
+			},
+			{
+				"Id": "CAVE1",
+				"Name": "Cobalt",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "CAVE2",
+			"Name": "Ionised Cobalt",
+			"Quantity": 2
+		},
+		"Time": "90.0",
+		"Operation": "Ionise Bulbs",
+		"Slug": "refinery/REFINERECIPE_157"
+	},
+	{
+		"Id": "REFINERECIPE_158",
+		"Inputs": [
+			{
+				"Id": "PLANT_WATER",
+				"Name": "Kelp Sac",
+				"Quantity": 1
+			},
+			{
+				"Id": "WATER1",
+				"Name": "Salt",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "WATER2",
+			"Name": "Chlorine",
+			"Quantity": 2
+		},
+		"Time": "90.0",
+		"Operation": "Dissolve Natural Salts",
+		"Slug": "refinery/REFINERECIPE_158"
+	},
+	{
+		"Id": "REFINERECIPE_159",
+		"Inputs": [
+			{
+				"Id": "PLANT_CAVE",
+				"Name": "Marrow Bulb",
+				"Quantity": 1
+			},
+			{
+				"Id": "CAVE2",
+				"Name": "Ionised Cobalt",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "CAVE2",
+			"Name": "Ionised Cobalt",
+			"Quantity": 2
+		},
+		"Time": "90.0",
+		"Operation": "Ionise Bulbs",
+		"Slug": "refinery/REFINERECIPE_159"
+	},
+	{
+		"Id": "REFINERECIPE_160",
+		"Inputs": [
+			{
+				"Id": "PLANT_WATER",
+				"Name": "Kelp Sac",
+				"Quantity": 1
+			},
+			{
+				"Id": "WATER2",
+				"Name": "Chlorine",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "WATER2",
+			"Name": "Chlorine",
+			"Quantity": 2
+		},
+		"Time": "90.0",
+		"Operation": "Dissolve Natural Salts",
+		"Slug": "refinery/REFINERECIPE_160"
+	},
+	{
+		"Id": "REFINERECIPE_161",
+		"Inputs": [
+			{
+				"Id": "PLANT_POOP",
+				"Name": "Faecium",
+				"Quantity": 1
+			},
+			{
+				"Id": "ROBOT1",
+				"Name": "Pugneum",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "ASTEROID2",
+			"Name": "Gold",
+			"Quantity": 2
+		},
+		"Time": "90.0",
+		"Operation": "Pugneum Alchemy",
+		"Slug": "refinery/REFINERECIPE_161"
+	},
+	{
+		"Id": "REFINERECIPE_162",
+		"Inputs": [
+			{
+				"Id": "PLANT_POOP",
+				"Name": "Faecium",
+				"Quantity": 1
+			},
+			{
+				"Id": "CREATURE1",
+				"Name": "Mordite",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "FUEL2",
+			"Name": "Condensed Carbon",
+			"Quantity": 2
+		},
+		"Time": "90.0",
+		"Operation": "Feed Microbes",
+		"Slug": "refinery/REFINERECIPE_162"
+	},
+	{
+		"Id": "REFINERECIPE_163",
+		"Inputs": [
+			{
+				"Id": "BLUE2",
+				"Name": "Indium",
+				"Quantity": 1
+			},
+			{
+				"Id": "LAND1",
+				"Name": "Ferrite Dust",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "LAND3",
+			"Name": "Magnetised Ferrite",
+			"Quantity": 4
+		},
+		"Time": "90.0",
+		"Operation": "Chromatic Metal Fusion",
+		"Slug": "refinery/REFINERECIPE_163"
+	},
+	{
+		"Id": "REFINERECIPE_164",
+		"Inputs": [
+			{
+				"Id": "RED2",
+				"Name": "Cadmium",
+				"Quantity": 1
+			},
+			{
+				"Id": "LAND1",
+				"Name": "Ferrite Dust",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "LAND3",
+			"Name": "Magnetised Ferrite",
+			"Quantity": 2
+		},
+		"Time": "90.0",
+		"Operation": "Chromatic Metal Fusion",
+		"Slug": "refinery/REFINERECIPE_164"
+	},
+	{
+		"Id": "REFINERECIPE_165",
+		"Inputs": [
+			{
+				"Id": "GREEN2",
+				"Name": "Emeril",
+				"Quantity": 1
+			},
+			{
+				"Id": "LAND1",
+				"Name": "Ferrite Dust",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "LAND3",
+			"Name": "Magnetised Ferrite",
+			"Quantity": 3
+		},
+		"Time": "90.0",
+		"Operation": "Chromatic Metal Fusion",
+		"Slug": "refinery/REFINERECIPE_165"
+	},
+	{
+		"Id": "REFINERECIPE_166",
+		"Inputs": [
+			{
+				"Id": "YELLOW2",
+				"Name": "Copper",
+				"Quantity": 1
+			},
+			{
+				"Id": "LAND1",
+				"Name": "Ferrite Dust",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "LAND3",
+			"Name": "Magnetised Ferrite",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Chromatic Metal Fusion",
+		"Slug": "refinery/REFINERECIPE_166"
+	},
+	{
+		"Id": "REFINERECIPE_167",
+		"Inputs": [
+			{
+				"Id": "RED2",
+				"Name": "Cadmium",
+				"Quantity": 1
+			},
+			{
+				"Id": "LAND2",
+				"Name": "Pure Ferrite",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "STELLAR2",
+			"Name": "Chromatic Metal",
+			"Quantity": 2
+		},
+		"Time": "90.0",
+		"Operation": "Chromatic Metal Fusion",
+		"Slug": "refinery/REFINERECIPE_167"
+	},
+	{
+		"Id": "REFINERECIPE_168",
+		"Inputs": [
+			{
+				"Id": "GREEN2",
+				"Name": "Emeril",
+				"Quantity": 1
+			},
+			{
+				"Id": "LAND2",
+				"Name": "Pure Ferrite",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "STELLAR2",
+			"Name": "Chromatic Metal",
+			"Quantity": 3
+		},
+		"Time": "90.0",
+		"Operation": "Chromatic Metal Fusion",
+		"Slug": "refinery/REFINERECIPE_168"
+	},
+	{
+		"Id": "REFINERECIPE_169",
+		"Inputs": [
+			{
+				"Id": "YELLOW2",
+				"Name": "Copper",
+				"Quantity": 1
+			},
+			{
+				"Id": "LAND2",
+				"Name": "Pure Ferrite",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "STELLAR2",
+			"Name": "Chromatic Metal",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Chromatic Metal Fusion",
+		"Slug": "refinery/REFINERECIPE_169"
+	},
+	{
+		"Id": "REFINERECIPE_170",
+		"Inputs": [
+			{
+				"Id": "BLUE2",
+				"Name": "Indium",
+				"Quantity": 1
+			},
+			{
+				"Id": "LAND2",
+				"Name": "Pure Ferrite",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "STELLAR2",
+			"Name": "Chromatic Metal",
+			"Quantity": 4
+		},
+		"Time": "90.0",
+		"Operation": "Chromatic Metal Fusion",
+		"Slug": "refinery/REFINERECIPE_170"
+	},
+	{
+		"Id": "REFINERECIPE_171",
+		"Inputs": [
+			{
+				"Id": "EX_RED",
+				"Name": "Activated Cadmium",
+				"Quantity": 1
+			},
+			{
+				"Id": "LAND1",
+				"Name": "Ferrite Dust",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "LAND3",
+			"Name": "Magnetised Ferrite",
+			"Quantity": 4
+		},
+		"Time": "90.0",
+		"Operation": "Chromatic Metal Fusion",
+		"Slug": "refinery/REFINERECIPE_171"
+	},
+	{
+		"Id": "REFINERECIPE_172",
+		"Inputs": [
+			{
+				"Id": "EX_BLUE",
+				"Name": "Activated Indium",
+				"Quantity": 1
+			},
+			{
+				"Id": "LAND1",
+				"Name": "Ferrite Dust",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "LAND3",
+			"Name": "Magnetised Ferrite",
+			"Quantity": 8
+		},
+		"Time": "90.0",
+		"Operation": "Chromatic Metal Fusion",
+		"Slug": "refinery/REFINERECIPE_172"
+	},
+	{
+		"Id": "REFINERECIPE_173",
+		"Inputs": [
+			{
+				"Id": "EX_GREEN",
+				"Name": "Activated Emeril",
+				"Quantity": 1
+			},
+			{
+				"Id": "LAND1",
+				"Name": "Ferrite Dust",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "LAND3",
+			"Name": "Magnetised Ferrite",
+			"Quantity": 6
+		},
+		"Time": "90.0",
+		"Operation": "Chromatic Metal Fusion",
+		"Slug": "refinery/REFINERECIPE_173"
+	},
+	{
+		"Id": "REFINERECIPE_174",
+		"Inputs": [
+			{
+				"Id": "EX_YELLOW",
+				"Name": "Activated Copper",
+				"Quantity": 1
+			},
+			{
+				"Id": "LAND1",
+				"Name": "Ferrite Dust",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "LAND3",
+			"Name": "Magnetised Ferrite",
+			"Quantity": 2
+		},
+		"Time": "90.0",
+		"Operation": "Chromatic Metal Fusion",
+		"Slug": "refinery/REFINERECIPE_174"
+	},
+	{
+		"Id": "REFINERECIPE_175",
+		"Inputs": [
+			{
+				"Id": "EX_RED",
+				"Name": "Activated Cadmium",
+				"Quantity": 1
+			},
+			{
+				"Id": "LAND2",
+				"Name": "Pure Ferrite",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "STELLAR2",
+			"Name": "Chromatic Metal",
+			"Quantity": 4
+		},
+		"Time": "90.0",
+		"Operation": "Chromatic Metal Fusion",
+		"Slug": "refinery/REFINERECIPE_175"
+	},
+	{
+		"Id": "REFINERECIPE_176",
+		"Inputs": [
+			{
+				"Id": "EX_BLUE",
+				"Name": "Activated Indium",
+				"Quantity": 1
+			},
+			{
+				"Id": "LAND2",
+				"Name": "Pure Ferrite",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "STELLAR2",
+			"Name": "Chromatic Metal",
+			"Quantity": 8
+		},
+		"Time": "90.0",
+		"Operation": "Chromatic Metal Fusion",
+		"Slug": "refinery/REFINERECIPE_176"
+	},
+	{
+		"Id": "REFINERECIPE_177",
+		"Inputs": [
+			{
+				"Id": "EX_GREEN",
+				"Name": "Activated Emeril",
+				"Quantity": 1
+			},
+			{
+				"Id": "LAND2",
+				"Name": "Pure Ferrite",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "STELLAR2",
+			"Name": "Chromatic Metal",
+			"Quantity": 6
+		},
+		"Time": "90.0",
+		"Operation": "Chromatic Metal Fusion",
+		"Slug": "refinery/REFINERECIPE_177"
+	},
+	{
+		"Id": "REFINERECIPE_178",
+		"Inputs": [
+			{
+				"Id": "EX_YELLOW",
+				"Name": "Activated Copper",
+				"Quantity": 1
+			},
+			{
+				"Id": "LAND2",
+				"Name": "Pure Ferrite",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "STELLAR2",
+			"Name": "Chromatic Metal",
+			"Quantity": 2
+		},
+		"Time": "90.0",
+		"Operation": "Chromatic Metal Fusion",
+		"Slug": "refinery/REFINERECIPE_178"
+	},
+	{
+		"Id": "REFINERECIPE_179",
+		"Inputs": [
+			{
+				"Id": "LUSH1",
+				"Name": "Paraffinium",
+				"Quantity": 2
+			},
+			{
+				"Id": "OXYGEN",
+				"Name": "Oxygen",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "PLANT_LUSH",
+			"Name": "Star Bulb",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Encourage Growth",
+		"Slug": "refinery/REFINERECIPE_179"
+	},
+	{
+		"Id": "REFINERECIPE_180",
+		"Inputs": [
+			{
+				"Id": "DUSTY1",
+				"Name": "Pyrite",
+				"Quantity": 2
+			},
+			{
+				"Id": "OXYGEN",
+				"Name": "Oxygen",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "PLANT_DUST",
+			"Name": "Cactus Flesh",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Encourage Growth",
+		"Slug": "refinery/REFINERECIPE_180"
+	},
+	{
+		"Id": "REFINERECIPE_181",
+		"Inputs": [
+			{
+				"Id": "TOXIC1",
+				"Name": "Ammonia",
+				"Quantity": 2
+			},
+			{
+				"Id": "OXYGEN",
+				"Name": "Oxygen",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "PLANT_TOXIC",
+			"Name": "Fungal Mould",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Encourage Growth",
+		"Slug": "refinery/REFINERECIPE_181"
+	},
+	{
+		"Id": "REFINERECIPE_182",
+		"Inputs": [
+			{
+				"Id": "RADIO1",
+				"Name": "Uranium",
+				"Quantity": 2
+			},
+			{
+				"Id": "OXYGEN",
+				"Name": "Oxygen",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "PLANT_RADIO",
+			"Name": "Gamma Root",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Encourage Growth",
+		"Slug": "refinery/REFINERECIPE_182"
+	},
+	{
+		"Id": "REFINERECIPE_183",
+		"Inputs": [
+			{
+				"Id": "COLD1",
+				"Name": "Dioxite",
+				"Quantity": 2
+			},
+			{
+				"Id": "OXYGEN",
+				"Name": "Oxygen",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "PLANT_SNOW",
+			"Name": "Frost Crystal",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Encourage Growth",
+		"Slug": "refinery/REFINERECIPE_183"
+	},
+	{
+		"Id": "REFINERECIPE_184",
+		"Inputs": [
+			{
+				"Id": "HOT1",
+				"Name": "Phosphorus",
+				"Quantity": 2
+			},
+			{
+				"Id": "OXYGEN",
+				"Name": "Oxygen",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "PLANT_HOT",
+			"Name": "Solanium",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Encourage Growth",
+		"Slug": "refinery/REFINERECIPE_184"
+	},
+	{
+		"Id": "REFINERECIPE_185",
+		"Inputs": [
+			{
+				"Id": "LUSH1",
+				"Name": "Paraffinium",
+				"Quantity": 2
+			},
+			{
+				"Id": "LAND1",
+				"Name": "Ferrite Dust",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "TOXIC1",
+			"Name": "Ammonia",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Environmental Element Transfer",
+		"Slug": "refinery/REFINERECIPE_185"
+	},
+	{
+		"Id": "REFINERECIPE_186",
+		"Inputs": [
+			{
+				"Id": "DUSTY1",
+				"Name": "Pyrite",
+				"Quantity": 2
+			},
+			{
+				"Id": "LAND1",
+				"Name": "Ferrite Dust",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "LUSH1",
+			"Name": "Paraffinium",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Environmental Element Transfer",
+		"Slug": "refinery/REFINERECIPE_186"
+	},
+	{
+		"Id": "REFINERECIPE_187",
+		"Inputs": [
+			{
+				"Id": "TOXIC1",
+				"Name": "Ammonia",
+				"Quantity": 2
+			},
+			{
+				"Id": "LAND1",
+				"Name": "Ferrite Dust",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "COLD1",
+			"Name": "Dioxite",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Environmental Element Transfer",
+		"Slug": "refinery/REFINERECIPE_187"
+	},
+	{
+		"Id": "REFINERECIPE_188",
+		"Inputs": [
+			{
+				"Id": "RADIO1",
+				"Name": "Uranium",
+				"Quantity": 2
+			},
+			{
+				"Id": "LAND1",
+				"Name": "Ferrite Dust",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "DUSTY1",
+			"Name": "Pyrite",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Environmental Element Transfer",
+		"Slug": "refinery/REFINERECIPE_188"
+	},
+	{
+		"Id": "REFINERECIPE_189",
+		"Inputs": [
+			{
+				"Id": "COLD1",
+				"Name": "Dioxite",
+				"Quantity": 2
+			},
+			{
+				"Id": "LAND1",
+				"Name": "Ferrite Dust",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "HOT1",
+			"Name": "Phosphorus",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Environmental Element Transfer",
+		"Slug": "refinery/REFINERECIPE_189"
+	},
+	{
+		"Id": "REFINERECIPE_190",
+		"Inputs": [
+			{
+				"Id": "HOT1",
+				"Name": "Phosphorus",
+				"Quantity": 2
+			},
+			{
+				"Id": "LAND1",
+				"Name": "Ferrite Dust",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "RADIO1",
+			"Name": "Uranium",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Environmental Element Transfer",
+		"Slug": "refinery/REFINERECIPE_190"
+	},
+	{
+		"Id": "REFINERECIPE_191",
+		"Inputs": [
+			{
+				"Id": "LUSH1",
+				"Name": "Paraffinium",
+				"Quantity": 2
+			},
+			{
+				"Id": "LAND2",
+				"Name": "Pure Ferrite",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "TOXIC1",
+			"Name": "Ammonia",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Environmental Element Transfer",
+		"Slug": "refinery/REFINERECIPE_191"
+	},
+	{
+		"Id": "REFINERECIPE_192",
+		"Inputs": [
+			{
+				"Id": "DUSTY1",
+				"Name": "Pyrite",
+				"Quantity": 2
+			},
+			{
+				"Id": "LAND2",
+				"Name": "Pure Ferrite",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "LUSH1",
+			"Name": "Paraffinium",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Environmental Element Transfer",
+		"Slug": "refinery/REFINERECIPE_192"
+	},
+	{
+		"Id": "REFINERECIPE_193",
+		"Inputs": [
+			{
+				"Id": "TOXIC1",
+				"Name": "Ammonia",
+				"Quantity": 2
+			},
+			{
+				"Id": "LAND2",
+				"Name": "Pure Ferrite",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "COLD1",
+			"Name": "Dioxite",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Environmental Element Transfer",
+		"Slug": "refinery/REFINERECIPE_193"
+	},
+	{
+		"Id": "REFINERECIPE_194",
+		"Inputs": [
+			{
+				"Id": "RADIO1",
+				"Name": "Uranium",
+				"Quantity": 2
+			},
+			{
+				"Id": "LAND2",
+				"Name": "Pure Ferrite",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "DUSTY1",
+			"Name": "Pyrite",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Environmental Element Transfer",
+		"Slug": "refinery/REFINERECIPE_194"
+	},
+	{
+		"Id": "REFINERECIPE_195",
+		"Inputs": [
+			{
+				"Id": "COLD1",
+				"Name": "Dioxite",
+				"Quantity": 2
+			},
+			{
+				"Id": "LAND2",
+				"Name": "Pure Ferrite",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "HOT1",
+			"Name": "Phosphorus",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Environmental Element Transfer",
+		"Slug": "refinery/REFINERECIPE_195"
+	},
+	{
+		"Id": "REFINERECIPE_196",
+		"Inputs": [
+			{
+				"Id": "HOT1",
+				"Name": "Phosphorus",
+				"Quantity": 2
+			},
+			{
+				"Id": "LAND2",
+				"Name": "Pure Ferrite",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "RADIO1",
+			"Name": "Uranium",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Environmental Element Transfer",
+		"Slug": "refinery/REFINERECIPE_196"
+	},
+	{
+		"Id": "REFINERECIPE_197",
+		"Inputs": [
+			{
+				"Id": "PLANT_TOXIC",
+				"Name": "Fungal Mould",
+				"Quantity": 2
+			},
+			{
+				"Id": "WATER1",
+				"Name": "Salt",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "TOXIC1",
+			"Name": "Ammonia",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Floral Titration",
+		"Slug": "refinery/REFINERECIPE_197"
+	},
+	{
+		"Id": "REFINERECIPE_198",
+		"Inputs": [
+			{
+				"Id": "PLANT_SNOW",
+				"Name": "Frost Crystal",
+				"Quantity": 2
+			},
+			{
+				"Id": "WATER1",
+				"Name": "Salt",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "COLD1",
+			"Name": "Dioxite",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Floral Titration",
+		"Slug": "refinery/REFINERECIPE_198"
+	},
+	{
+		"Id": "REFINERECIPE_199",
+		"Inputs": [
+			{
+				"Id": "PLANT_RADIO",
+				"Name": "Gamma Root",
+				"Quantity": 2
+			},
+			{
+				"Id": "WATER1",
+				"Name": "Salt",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "RADIO1",
+			"Name": "Uranium",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Floral Titration",
+		"Slug": "refinery/REFINERECIPE_199"
+	},
+	{
+		"Id": "REFINERECIPE_200",
+		"Inputs": [
+			{
+				"Id": "PLANT_DUST",
+				"Name": "Cactus Flesh",
+				"Quantity": 2
+			},
+			{
+				"Id": "WATER1",
+				"Name": "Salt",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "DUSTY1",
+			"Name": "Pyrite",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Floral Titration",
+		"Slug": "refinery/REFINERECIPE_200"
+	},
+	{
+		"Id": "REFINERECIPE_201",
+		"Inputs": [
+			{
+				"Id": "PLANT_HOT",
+				"Name": "Solanium",
+				"Quantity": 2
+			},
+			{
+				"Id": "WATER1",
+				"Name": "Salt",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "HOT1",
+			"Name": "Phosphorus",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Floral Titration",
+		"Slug": "refinery/REFINERECIPE_201"
+	},
+	{
+		"Id": "REFINERECIPE_202",
+		"Inputs": [
+			{
+				"Id": "PLANT_LUSH",
+				"Name": "Star Bulb",
+				"Quantity": 2
+			},
+			{
+				"Id": "WATER1",
+				"Name": "Salt",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "LUSH1",
+			"Name": "Paraffinium",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Floral Titration",
+		"Slug": "refinery/REFINERECIPE_202"
+	},
+	{
+		"Id": "REFINERECIPE_209",
+		"Inputs": [
+			{
+				"Id": "GAS1",
+				"Name": "Sulphurine",
+				"Quantity": 1
+			},
+			{
+				"Id": "LAND1",
+				"Name": "Ferrite Dust",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "LUSH1",
+			"Name": "Paraffinium",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Loosen Bonds",
+		"Slug": "refinery/REFINERECIPE_209"
+	},
+	{
+		"Id": "REFINERECIPE_210",
+		"Inputs": [
+			{
+				"Id": "LAND1",
+				"Name": "Ferrite Dust",
+				"Quantity": 1
+			},
+			{
+				"Id": "GAS2",
+				"Name": "Radon",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "RADIO1",
+			"Name": "Uranium",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Metal Enrichment",
+		"Slug": "refinery/REFINERECIPE_210"
+	},
+	{
+		"Id": "REFINERECIPE_211",
+		"Inputs": [
+			{
+				"Id": "GAS3",
+				"Name": "Nitrogen",
+				"Quantity": 1
+			},
+			{
+				"Id": "LAND1",
+				"Name": "Ferrite Dust",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "CATALYST2",
+			"Name": "Sodium Nitrate",
+			"Quantity": 1
+		},
+		"Time": "120.0",
+		"Operation": "Gas Catalysation",
+		"Slug": "refinery/REFINERECIPE_211"
+	},
+	{
+		"Id": "REFINERECIPE_212",
+		"Inputs": [
+			{
+				"Id": "GAS1",
+				"Name": "Sulphurine",
+				"Quantity": 1
+			},
+			{
+				"Id": "LAND2",
+				"Name": "Pure Ferrite",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "LUSH1",
+			"Name": "Paraffinium",
+			"Quantity": 2
+		},
+		"Time": "90.0",
+		"Operation": "Loosen Bonds",
+		"Slug": "refinery/REFINERECIPE_212"
+	},
+	{
+		"Id": "REFINERECIPE_213",
+		"Inputs": [
+			{
+				"Id": "GAS2",
+				"Name": "Radon",
+				"Quantity": 1
+			},
+			{
+				"Id": "LAND2",
+				"Name": "Pure Ferrite",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "RADIO1",
+			"Name": "Uranium",
+			"Quantity": 2
+		},
+		"Time": "90.0",
+		"Operation": "Metal Enrichment",
+		"Slug": "refinery/REFINERECIPE_213"
+	},
+	{
+		"Id": "REFINERECIPE_214",
+		"Inputs": [
+			{
+				"Id": "GAS3",
+				"Name": "Nitrogen",
+				"Quantity": 1
+			},
+			{
+				"Id": "LAND2",
+				"Name": "Pure Ferrite",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "CATALYST2",
+			"Name": "Sodium Nitrate",
+			"Quantity": 2
+		},
+		"Time": "120.0",
+		"Operation": "Gas Catalysation",
+		"Slug": "refinery/REFINERECIPE_214"
+	},
+	{
+		"Id": "REFINERECIPE_215",
+		"Inputs": [
+			{
+				"Id": "GAS1",
+				"Name": "Sulphurine",
+				"Quantity": 1
+			},
+			{
+				"Id": "LAND3",
+				"Name": "Magnetised Ferrite",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "LUSH1",
+			"Name": "Paraffinium",
+			"Quantity": 3
+		},
+		"Time": "90.0",
+		"Operation": "Loosen Bonds",
+		"Slug": "refinery/REFINERECIPE_215"
+	},
+	{
+		"Id": "REFINERECIPE_216",
+		"Inputs": [
+			{
+				"Id": "GAS2",
+				"Name": "Radon",
+				"Quantity": 1
+			},
+			{
+				"Id": "LAND3",
+				"Name": "Magnetised Ferrite",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "RADIO1",
+			"Name": "Uranium",
+			"Quantity": 3
+		},
+		"Time": "90.0",
+		"Operation": "Metal Enrichment",
+		"Slug": "refinery/REFINERECIPE_216"
+	},
+	{
+		"Id": "REFINERECIPE_217",
+		"Inputs": [
+			{
+				"Id": "GAS3",
+				"Name": "Nitrogen",
+				"Quantity": 1
+			},
+			{
+				"Id": "LAND3",
+				"Name": "Magnetised Ferrite",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "CATALYST2",
+			"Name": "Sodium Nitrate",
+			"Quantity": 3
+		},
+		"Time": "120.0",
+		"Operation": "Gas Catalysation",
+		"Slug": "refinery/REFINERECIPE_217"
+	},
+	{
+		"Id": "REFINERECIPE_218",
+		"Inputs": [
+			{
+				"Id": "TOXIC1",
+				"Name": "Ammonia",
+				"Quantity": 1
+			},
+			{
+				"Id": "GAS3",
+				"Name": "Nitrogen",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "PLANT_TOXIC",
+			"Name": "Fungal Mould",
+			"Quantity": 1
+		},
+		"Time": "60.0",
+		"Operation": "Encourage Growth",
+		"Slug": "refinery/REFINERECIPE_218"
+	},
+	{
+		"Id": "REFINERECIPE_219",
+		"Inputs": [
+			{
+				"Id": "COLD1",
+				"Name": "Dioxite",
+				"Quantity": 1
+			},
+			{
+				"Id": "GAS2",
+				"Name": "Radon",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "PLANT_SNOW",
+			"Name": "Frost Crystal",
+			"Quantity": 1
+		},
+		"Time": "60.0",
+		"Operation": "Encourage Growth",
+		"Slug": "refinery/REFINERECIPE_219"
+	},
+	{
+		"Id": "REFINERECIPE_220",
+		"Inputs": [
+			{
+				"Id": "RADIO1",
+				"Name": "Uranium",
+				"Quantity": 1
+			},
+			{
+				"Id": "GAS2",
+				"Name": "Radon",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "PLANT_RADIO",
+			"Name": "Gamma Root",
+			"Quantity": 1
+		},
+		"Time": "60.0",
+		"Operation": "Encourage Growth",
+		"Slug": "refinery/REFINERECIPE_220"
+	},
+	{
+		"Id": "REFINERECIPE_221",
+		"Inputs": [
+			{
+				"Id": "DUSTY1",
+				"Name": "Pyrite",
+				"Quantity": 1
+			},
+			{
+				"Id": "GAS1",
+				"Name": "Sulphurine",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "PLANT_DUST",
+			"Name": "Cactus Flesh",
+			"Quantity": 1
+		},
+		"Time": "60.0",
+		"Operation": "Encourage Growth",
+		"Slug": "refinery/REFINERECIPE_221"
+	},
+	{
+		"Id": "REFINERECIPE_222",
+		"Inputs": [
+			{
+				"Id": "HOT1",
+				"Name": "Phosphorus",
+				"Quantity": 1
+			},
+			{
+				"Id": "GAS1",
+				"Name": "Sulphurine",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "PLANT_HOT",
+			"Name": "Solanium",
+			"Quantity": 1
+		},
+		"Time": "60.0",
+		"Operation": "Encourage Growth",
+		"Slug": "refinery/REFINERECIPE_222"
+	},
+	{
+		"Id": "REFINERECIPE_223",
+		"Inputs": [
+			{
+				"Id": "LUSH1",
+				"Name": "Paraffinium",
+				"Quantity": 1
+			},
+			{
+				"Id": "GAS3",
+				"Name": "Nitrogen",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "PLANT_LUSH",
+			"Name": "Star Bulb",
+			"Quantity": 1
+		},
+		"Time": "60.0",
+		"Operation": "Encourage Growth",
+		"Slug": "refinery/REFINERECIPE_223"
+	},
+	{
+		"Id": "REFINERECIPE_224",
+		"Inputs": [
+			{
+				"Id": "CAVE1",
+				"Name": "Cobalt",
+				"Quantity": 1
+			},
+			{
+				"Id": "GAS3",
+				"Name": "Nitrogen",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "PLANT_CAVE",
+			"Name": "Marrow Bulb",
+			"Quantity": 1
+		},
+		"Time": "60.0",
+		"Operation": "Encourage Growth",
+		"Slug": "refinery/REFINERECIPE_224"
+	},
+	{
+		"Id": "REFINERECIPE_225",
+		"Inputs": [
+			{
+				"Id": "WATER1",
+				"Name": "Salt",
+				"Quantity": 1
+			},
+			{
+				"Id": "GAS3",
+				"Name": "Nitrogen",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "PLANT_WATER",
+			"Name": "Kelp Sac",
+			"Quantity": 1
+		},
+		"Time": "60.0",
+		"Operation": "Encourage Growth",
+		"Slug": "refinery/REFINERECIPE_225"
+	},
+	{
+		"Id": "REFINERECIPE_226",
+		"Inputs": [
+			{
+				"Id": "GAS1",
+				"Name": "Sulphurine",
+				"Quantity": 1
+			},
+			{
+				"Id": "GAS3",
+				"Name": "Nitrogen",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "PLANT_POOP",
+			"Name": "Faecium",
+			"Quantity": 1
+		},
+		"Time": "60.0",
+		"Operation": "Encourage Growth",
+		"Slug": "refinery/REFINERECIPE_226"
+	},
+	{
+		"Id": "REFINERECIPE_228",
+		"Inputs": [
+			{
+				"Id": "ASTEROID1",
+				"Name": "Silver",
+				"Quantity": 15
+			},
+			{
+				"Id": "ASTEROID2",
+				"Name": "Gold",
+				"Quantity": 15
+			},
+			{
+				"Id": "ASTEROID3",
+				"Name": "Platinum",
+				"Quantity": 25
+			}
+		],
+		"Output": {
+			"Id": "TECHFRAG",
+			"Name": "Nanite Cluster",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Transmutation",
+		"Slug": "refinery/REFINERECIPE_228"
+	},
+	{
+		"Id": "REFINERECIPE_229",
+		"Inputs": [
+			{
+				"Id": "LAND1",
+				"Name": "Ferrite Dust",
+				"Quantity": 1
+			},
+			{
+				"Id": "LAND2",
+				"Name": "Pure Ferrite",
+				"Quantity": 1
+			},
+			{
+				"Id": "ASTEROID1",
+				"Name": "Silver",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "LAND3",
+			"Name": "Magnetised Ferrite",
+			"Quantity": 5
+		},
+		"Time": "120.0",
+		"Operation": "Deep Metal Compression",
+		"Slug": "refinery/REFINERECIPE_229"
+	},
+	{
+		"Id": "REFINERECIPE_230",
+		"Inputs": [
+			{
+				"Id": "LAND1",
+				"Name": "Ferrite Dust",
+				"Quantity": 1
+			},
+			{
+				"Id": "LAND2",
+				"Name": "Pure Ferrite",
+				"Quantity": 1
+			},
+			{
+				"Id": "ASTEROID2",
+				"Name": "Gold",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "LAND3",
+			"Name": "Magnetised Ferrite",
+			"Quantity": 8
+		},
+		"Time": "120.0",
+		"Operation": "Deep Metal Compression",
+		"Slug": "refinery/REFINERECIPE_230"
+	},
+	{
+		"Id": "REFINERECIPE_231",
+		"Inputs": [
+			{
+				"Id": "LAND1",
+				"Name": "Ferrite Dust",
+				"Quantity": 1
+			},
+			{
+				"Id": "LAND2",
+				"Name": "Pure Ferrite",
+				"Quantity": 1
+			},
+			{
+				"Id": "ASTEROID3",
+				"Name": "Platinum",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "LAND3",
+			"Name": "Magnetised Ferrite",
+			"Quantity": 12
+		},
+		"Time": "120.0",
+		"Operation": "R 3input Land3 3",
+		"Slug": "refinery/REFINERECIPE_231"
+	},
+	{
+		"Id": "REFINERECIPE_238",
+		"Inputs": [
+			{
+				"Id": "PLANT_TOXIC",
+				"Name": "Fungal Mould",
+				"Quantity": 1
+			},
+			{
+				"Id": "PLANT_WATER",
+				"Name": "Kelp Sac",
+				"Quantity": 1
+			},
+			{
+				"Id": "FUEL2",
+				"Name": "Condensed Carbon",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "OXYGEN",
+			"Name": "Oxygen",
+			"Quantity": 10
+		},
+		"Time": "900.0",
+		"Operation": "Artificial Photosynthesis",
+		"Slug": "refinery/REFINERECIPE_238"
+	},
+	{
+		"Id": "REFINERECIPE_239",
+		"Inputs": [
+			{
+				"Id": "PLANT_SNOW",
+				"Name": "Frost Crystal",
+				"Quantity": 1
+			},
+			{
+				"Id": "PLANT_WATER",
+				"Name": "Kelp Sac",
+				"Quantity": 1
+			},
+			{
+				"Id": "FUEL2",
+				"Name": "Condensed Carbon",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "OXYGEN",
+			"Name": "Oxygen",
+			"Quantity": 10
+		},
+		"Time": "900.0",
+		"Operation": "Artificial Photosynthesis",
+		"Slug": "refinery/REFINERECIPE_239"
+	},
+	{
+		"Id": "REFINERECIPE_240",
+		"Inputs": [
+			{
+				"Id": "PLANT_DUST",
+				"Name": "Cactus Flesh",
+				"Quantity": 1
+			},
+			{
+				"Id": "PLANT_WATER",
+				"Name": "Kelp Sac",
+				"Quantity": 1
+			},
+			{
+				"Id": "FUEL2",
+				"Name": "Condensed Carbon",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "OXYGEN",
+			"Name": "Oxygen",
+			"Quantity": 10
+		},
+		"Time": "900.0",
+		"Operation": "Artificial Photosynthesis",
+		"Slug": "refinery/REFINERECIPE_240"
+	},
+	{
+		"Id": "REFINERECIPE_241",
+		"Inputs": [
+			{
+				"Id": "PLANT_HOT",
+				"Name": "Solanium",
+				"Quantity": 1
+			},
+			{
+				"Id": "PLANT_WATER",
+				"Name": "Kelp Sac",
+				"Quantity": 1
+			},
+			{
+				"Id": "FUEL2",
+				"Name": "Condensed Carbon",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "OXYGEN",
+			"Name": "Oxygen",
+			"Quantity": 10
+		},
+		"Time": "900.0",
+		"Operation": "Artificial Photosynthesis",
+		"Slug": "refinery/REFINERECIPE_241"
+	},
+	{
+		"Id": "REFINERECIPE_242",
+		"Inputs": [
+			{
+				"Id": "PLANT_RADIO",
+				"Name": "Gamma Root",
+				"Quantity": 1
+			},
+			{
+				"Id": "PLANT_WATER",
+				"Name": "Kelp Sac",
+				"Quantity": 1
+			},
+			{
+				"Id": "FUEL2",
+				"Name": "Condensed Carbon",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "OXYGEN",
+			"Name": "Oxygen",
+			"Quantity": 10
+		},
+		"Time": "900.0",
+		"Operation": "Artificial Photosynthesis",
+		"Slug": "refinery/REFINERECIPE_242"
+	},
+	{
+		"Id": "REFINERECIPE_243",
+		"Inputs": [
+			{
+				"Id": "PLANT_LUSH",
+				"Name": "Star Bulb",
+				"Quantity": 1
+			},
+			{
+				"Id": "PLANT_WATER",
+				"Name": "Kelp Sac",
+				"Quantity": 1
+			},
+			{
+				"Id": "FUEL2",
+				"Name": "Condensed Carbon",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "OXYGEN",
+			"Name": "Oxygen",
+			"Quantity": 10
+		},
+		"Time": "900.0",
+		"Operation": "Artificial Photosynthesis",
+		"Slug": "refinery/REFINERECIPE_243"
+	},
+	{
+		"Id": "REFINERECIPE_244",
+		"Inputs": [
+			{
+				"Id": "ASTEROID1",
+				"Name": "Silver",
+				"Quantity": 1
+			},
+			{
+				"Id": "ASTEROID2",
+				"Name": "Gold",
+				"Quantity": 1
+			},
+			{
+				"Id": "YELLOW2",
+				"Name": "Copper",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "STELLAR2",
+			"Name": "Chromatic Metal",
+			"Quantity": 5
+		},
+		"Time": "1200.0",
+		"Operation": "Chromatic Stellar Fusion",
+		"Slug": "refinery/REFINERECIPE_244"
+	},
+	{
+		"Id": "REFINERECIPE_245",
+		"Inputs": [
+			{
+				"Id": "ASTEROID1",
+				"Name": "Silver",
+				"Quantity": 1
+			},
+			{
+				"Id": "ASTEROID2",
+				"Name": "Gold",
+				"Quantity": 1
+			},
+			{
+				"Id": "RED2",
+				"Name": "Cadmium",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "STELLAR2",
+			"Name": "Chromatic Metal",
+			"Quantity": 10
+		},
+		"Time": "1200.0",
+		"Operation": "Chromatic Stellar Fusion",
+		"Slug": "refinery/REFINERECIPE_245"
+	},
+	{
+		"Id": "REFINERECIPE_246",
+		"Inputs": [
+			{
+				"Id": "ASTEROID1",
+				"Name": "Silver",
+				"Quantity": 1
+			},
+			{
+				"Id": "ASTEROID2",
+				"Name": "Gold",
+				"Quantity": 1
+			},
+			{
+				"Id": "GREEN2",
+				"Name": "Emeril",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "STELLAR2",
+			"Name": "Chromatic Metal",
+			"Quantity": 20
+		},
+		"Time": "1200.0",
+		"Operation": "Chromatic Stellar Fusion",
+		"Slug": "refinery/REFINERECIPE_246"
+	},
+	{
+		"Id": "REFINERECIPE_247",
+		"Inputs": [
+			{
+				"Id": "ASTEROID1",
+				"Name": "Silver",
+				"Quantity": 1
+			},
+			{
+				"Id": "ASTEROID2",
+				"Name": "Gold",
+				"Quantity": 1
+			},
+			{
+				"Id": "BLUE2",
+				"Name": "Indium",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "STELLAR2",
+			"Name": "Chromatic Metal",
+			"Quantity": 30
+		},
+		"Time": "1200.0",
+		"Operation": "Chromatic Stellar Fusion",
+		"Slug": "refinery/REFINERECIPE_247"
+	},
+	{
+		"Id": "REFINERECIPE_248",
+		"Inputs": [
+			{
+				"Id": "LAND1",
+				"Name": "Ferrite Dust",
+				"Quantity": 1
+			},
+			{
+				"Id": "OXYGEN",
+				"Name": "Oxygen",
+				"Quantity": 1
+			},
+			{
+				"Id": "GREEN2",
+				"Name": "Emeril",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "ASTEROID2",
+			"Name": "Gold",
+			"Quantity": 10
+		},
+		"Time": "1200.0",
+		"Operation": "Chromatic Alchemy",
+		"Slug": "refinery/REFINERECIPE_248"
+	},
+	{
+		"Id": "REFINERECIPE_249",
+		"Inputs": [
+			{
+				"Id": "LAND1",
+				"Name": "Ferrite Dust",
+				"Quantity": 1
+			},
+			{
+				"Id": "OXYGEN",
+				"Name": "Oxygen",
+				"Quantity": 1
+			},
+			{
+				"Id": "STELLAR2",
+				"Name": "Chromatic Metal",
+				"Quantity": 250
+			}
+		],
+		"Output": {
+			"Id": "ASTEROID3",
+			"Name": "Platinum",
+			"Quantity": 10
+		},
+		"Time": "1200.0",
+		"Operation": "Chromatic Alchemy",
+		"Slug": "refinery/REFINERECIPE_249"
+	},
+	{
+		"Id": "REFINERECIPE_250",
+		"Inputs": [
+			{
+				"Id": "FUEL2",
+				"Name": "Condensed Carbon",
+				"Quantity": 25
+			},
+			{
+				"Id": "CATALYST1",
+				"Name": "Sodium",
+				"Quantity": 10
+			},
+			{
+				"Id": "STELLAR2",
+				"Name": "Chromatic Metal",
+				"Quantity": 250
+			}
+		],
+		"Output": {
+			"Id": "HYPERFUEL1",
+			"Name": "Warp Cell",
+			"Quantity": 1
+		},
+		"Time": "600.0",
+		"Operation": "Antimatter Bypass",
+		"Slug": "refinery/REFINERECIPE_250"
+	},
+	{
+		"Id": "REFINERECIPE_251",
+		"Inputs": [
+			{
+				"Id": "FUEL1",
+				"Name": "Carbon",
+				"Quantity": 50
+			},
+			{
+				"Id": "CATALYST2",
+				"Name": "Sodium Nitrate",
+				"Quantity": 5
+			},
+			{
+				"Id": "STELLAR2",
+				"Name": "Chromatic Metal",
+				"Quantity": 250
+			}
+		],
+		"Output": {
+			"Id": "HYPERFUEL1",
+			"Name": "Warp Cell",
+			"Quantity": 1
+		},
+		"Time": "600.0",
+		"Operation": "Antimatter Bypass",
+		"Slug": "refinery/REFINERECIPE_251"
+	},
+	{
+		"Id": "REFINERECIPE_252",
+		"Inputs": [
+			{
+				"Id": "FUEL2",
+				"Name": "Condensed Carbon",
+				"Quantity": 25
+			},
+			{
+				"Id": "CATALYST2",
+				"Name": "Sodium Nitrate",
+				"Quantity": 5
+			},
+			{
+				"Id": "STELLAR2",
+				"Name": "Chromatic Metal",
+				"Quantity": 250
+			}
+		],
+		"Output": {
+			"Id": "HYPERFUEL1",
+			"Name": "Warp Cell",
+			"Quantity": 1
+		},
+		"Time": "600.0",
+		"Operation": "Antimatter Bypass",
+		"Slug": "refinery/REFINERECIPE_252"
+	},
+	{
+		"Id": "REFINERECIPE_253",
+		"Inputs": [
+			{
+				"Id": "OXYGEN",
+				"Name": "Oxygen",
+				"Quantity": 10
+			},
+			{
+				"Id": "LAND1",
+				"Name": "Ferrite Dust",
+				"Quantity": 20
+			},
+			{
+				"Id": "FUEL1",
+				"Name": "Carbon",
+				"Quantity": 20
+			}
+		],
+		"Output": {
+			"Id": "GRENFUEL1",
+			"Name": "Unstable Plasma",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Plasma Pressurisation",
+		"Slug": "refinery/REFINERECIPE_253"
+	},
+	{
+		"Id": "REFINERECIPE_254",
+		"Inputs": [
+			{
+				"Id": "OXYGEN",
+				"Name": "Oxygen",
+				"Quantity": 10
+			},
+			{
+				"Id": "LAND1",
+				"Name": "Ferrite Dust",
+				"Quantity": 20
+			},
+			{
+				"Id": "FUEL2",
+				"Name": "Condensed Carbon",
+				"Quantity": 10
+			}
+		],
+		"Output": {
+			"Id": "GRENFUEL1",
+			"Name": "Unstable Plasma",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Plasma Pressurisation",
+		"Slug": "refinery/REFINERECIPE_254"
+	},
+	{
+		"Id": "REFINERECIPE_255",
+		"Inputs": [
+			{
+				"Id": "OXYGEN",
+				"Name": "Oxygen",
+				"Quantity": 10
+			},
+			{
+				"Id": "LAND2",
+				"Name": "Pure Ferrite",
+				"Quantity": 20
+			},
+			{
+				"Id": "FUEL1",
+				"Name": "Carbon",
+				"Quantity": 20
+			}
+		],
+		"Output": {
+			"Id": "GRENFUEL1",
+			"Name": "Unstable Plasma",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Plasma Pressurisation",
+		"Slug": "refinery/REFINERECIPE_255"
+	},
+	{
+		"Id": "REFINERECIPE_256",
+		"Inputs": [
+			{
+				"Id": "OXYGEN",
+				"Name": "Oxygen",
+				"Quantity": 10
+			},
+			{
+				"Id": "FUEL2",
+				"Name": "Condensed Carbon",
+				"Quantity": 10
+			},
+			{
+				"Id": "LAND2",
+				"Name": "Pure Ferrite",
+				"Quantity": 20
+			}
+		],
+		"Output": {
+			"Id": "GRENFUEL1",
+			"Name": "Unstable Plasma",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Plasma Pressurisation",
+		"Slug": "refinery/REFINERECIPE_256"
+	},
+	{
+		"Id": "REFINERECIPE_257",
+		"Inputs": [
+			{
+				"Id": "OXYGEN",
+				"Name": "Oxygen",
+				"Quantity": 10
+			},
+			{
+				"Id": "FUEL2",
+				"Name": "Condensed Carbon",
+				"Quantity": 10
+			},
+			{
+				"Id": "LAUNCHSUB",
+				"Name": "Di-hydrogen",
+				"Quantity": 10
+			}
+		],
+		"Output": {
+			"Id": "PRODFUEL2",
+			"Name": "Life Support Gel",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Advanced Oxygen Capture",
+		"Slug": "refinery/REFINERECIPE_257"
+	},
+	{
+		"Id": "REFINERECIPE_258",
+		"Inputs": [
+			{
+				"Id": "LAUNCHSUB",
+				"Name": "Di-hydrogen",
+				"Quantity": 10
+			},
+			{
+				"Id": "LAND1",
+				"Name": "Ferrite Dust",
+				"Quantity": 20
+			},
+			{
+				"Id": "CATALYST2",
+				"Name": "Sodium Nitrate",
+				"Quantity": 5
+			}
+		],
+		"Output": {
+			"Id": "LAUNCHFUEL",
+			"Name": "Starship Launch Fuel",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Di-hydrogen Capture",
+		"Slug": "refinery/REFINERECIPE_258"
+	},
+	{
+		"Id": "REFINERECIPE_259",
+		"Inputs": [
+			{
+				"Id": "LAUNCHSUB",
+				"Name": "Di-hydrogen",
+				"Quantity": 10
+			},
+			{
+				"Id": "LAND2",
+				"Name": "Pure Ferrite",
+				"Quantity": 20
+			},
+			{
+				"Id": "CATALYST1",
+				"Name": "Sodium",
+				"Quantity": 10
+			}
+		],
+		"Output": {
+			"Id": "LAUNCHFUEL",
+			"Name": "Starship Launch Fuel",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Di-hydrogen Capture",
+		"Slug": "refinery/REFINERECIPE_259"
+	},
+	{
+		"Id": "REFINERECIPE_260",
+		"Inputs": [
+			{
+				"Id": "LAUNCHSUB",
+				"Name": "Di-hydrogen",
+				"Quantity": 10
+			},
+			{
+				"Id": "LAND3",
+				"Name": "Magnetised Ferrite",
+				"Quantity": 10
+			},
+			{
+				"Id": "CATALYST2",
+				"Name": "Sodium Nitrate",
+				"Quantity": 5
+			}
+		],
+		"Output": {
+			"Id": "LAUNCHFUEL",
+			"Name": "Starship Launch Fuel",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Di-hydrogen Capture",
+		"Slug": "refinery/REFINERECIPE_260"
+	},
+	{
+		"Id": "REFINERECIPE_261",
+		"Inputs": [
+			{
+				"Id": "LAND1",
+				"Name": "Ferrite Dust",
+				"Quantity": 10
+			},
+			{
+				"Id": "ASTEROID1",
+				"Name": "Silver",
+				"Quantity": 10
+			},
+			{
+				"Id": "CATALYST1",
+				"Name": "Sodium",
+				"Quantity": 10
+			}
+		],
+		"Output": {
+			"Id": "POWERCELL",
+			"Name": "Ion Battery",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Ion Capture",
+		"Slug": "refinery/REFINERECIPE_261"
+	},
+	{
+		"Id": "REFINERECIPE_263",
+		"Inputs": [
+			{
+				"Id": "LUSH1",
+				"Name": "Paraffinium",
+				"Quantity": 30
+			},
+			{
+				"Id": "CAVE1",
+				"Name": "Cobalt",
+				"Quantity": 60
+			},
+			{
+				"Id": "ROCKETSUB",
+				"Name": "Tritium",
+				"Quantity": 20
+			}
+		],
+		"Output": {
+			"Id": "ALLOY1",
+			"Name": "Aronium",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Alloy Latticing",
+		"Slug": "refinery/REFINERECIPE_263"
+	},
+	{
+		"Id": "REFINERECIPE_264",
+		"Inputs": [
+			{
+				"Id": "LUSH1",
+				"Name": "Paraffinium",
+				"Quantity": 30
+			},
+			{
+				"Id": "CAVE2",
+				"Name": "Ionised Cobalt",
+				"Quantity": 30
+			},
+			{
+				"Id": "ROCKETSUB",
+				"Name": "Tritium",
+				"Quantity": 20
+			}
+		],
+		"Output": {
+			"Id": "ALLOY1",
+			"Name": "Aronium",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Alloy Latticing",
+		"Slug": "refinery/REFINERECIPE_264"
+	},
+	{
+		"Id": "REFINERECIPE_265",
+		"Inputs": [
+			{
+				"Id": "LUSH1",
+				"Name": "Paraffinium",
+				"Quantity": 30
+			},
+			{
+				"Id": "CAVE1",
+				"Name": "Cobalt",
+				"Quantity": 60
+			},
+			{
+				"Id": "ASTEROID1",
+				"Name": "Silver",
+				"Quantity": 20
+			}
+		],
+		"Output": {
+			"Id": "ALLOY1",
+			"Name": "Aronium",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Alloy Latticing",
+		"Slug": "refinery/REFINERECIPE_265"
+	},
+	{
+		"Id": "REFINERECIPE_266",
+		"Inputs": [
+			{
+				"Id": "LUSH1",
+				"Name": "Paraffinium",
+				"Quantity": 30
+			},
+			{
+				"Id": "CAVE2",
+				"Name": "Ionised Cobalt",
+				"Quantity": 30
+			},
+			{
+				"Id": "ASTEROID1",
+				"Name": "Silver",
+				"Quantity": 20
+			}
+		],
+		"Output": {
+			"Id": "ALLOY1",
+			"Name": "Aronium",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Alloy Latticing",
+		"Slug": "refinery/REFINERECIPE_266"
+	},
+	{
+		"Id": "REFINERECIPE_267",
+		"Inputs": [
+			{
+				"Id": "LUSH1",
+				"Name": "Paraffinium",
+				"Quantity": 30
+			},
+			{
+				"Id": "CAVE1",
+				"Name": "Cobalt",
+				"Quantity": 60
+			},
+			{
+				"Id": "ASTEROID2",
+				"Name": "Gold",
+				"Quantity": 10
+			}
+		],
+		"Output": {
+			"Id": "ALLOY1",
+			"Name": "Aronium",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Alloy Latticing",
+		"Slug": "refinery/REFINERECIPE_267"
+	},
+	{
+		"Id": "REFINERECIPE_268",
+		"Inputs": [
+			{
+				"Id": "LUSH1",
+				"Name": "Paraffinium",
+				"Quantity": 30
+			},
+			{
+				"Id": "CAVE2",
+				"Name": "Ionised Cobalt",
+				"Quantity": 30
+			},
+			{
+				"Id": "ASTEROID2",
+				"Name": "Gold",
+				"Quantity": 10
+			}
+		],
+		"Output": {
+			"Id": "ALLOY1",
+			"Name": "Aronium",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Alloy Latticing",
+		"Slug": "refinery/REFINERECIPE_268"
+	},
+	{
+		"Id": "REFINERECIPE_269",
+		"Inputs": [
+			{
+				"Id": "LUSH1",
+				"Name": "Paraffinium",
+				"Quantity": 30
+			},
+			{
+				"Id": "CAVE1",
+				"Name": "Cobalt",
+				"Quantity": 60
+			},
+			{
+				"Id": "ASTEROID3",
+				"Name": "Platinum",
+				"Quantity": 5
+			}
+		],
+		"Output": {
+			"Id": "ALLOY1",
+			"Name": "Aronium",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Alloy Latticing",
+		"Slug": "refinery/REFINERECIPE_269"
+	},
+	{
+		"Id": "REFINERECIPE_270",
+		"Inputs": [
+			{
+				"Id": "LUSH1",
+				"Name": "Paraffinium",
+				"Quantity": 30
+			},
+			{
+				"Id": "CAVE2",
+				"Name": "Ionised Cobalt",
+				"Quantity": 30
+			},
+			{
+				"Id": "ASTEROID3",
+				"Name": "Platinum",
+				"Quantity": 5
+			}
+		],
+		"Output": {
+			"Id": "ALLOY1",
+			"Name": "Aronium",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Alloy Latticing",
+		"Slug": "refinery/REFINERECIPE_270"
+	},
+	{
+		"Id": "REFINERECIPE_271",
+		"Inputs": [
+			{
+				"Id": "DUSTY1",
+				"Name": "Pyrite",
+				"Quantity": 30
+			},
+			{
+				"Id": "LAND1",
+				"Name": "Ferrite Dust",
+				"Quantity": 120
+			},
+			{
+				"Id": "ROCKETSUB",
+				"Name": "Tritium",
+				"Quantity": 20
+			}
+		],
+		"Output": {
+			"Id": "ALLOY2",
+			"Name": "Dirty Bronze",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Alloy Latticing",
+		"Slug": "refinery/REFINERECIPE_271"
+	},
+	{
+		"Id": "REFINERECIPE_272",
+		"Inputs": [
+			{
+				"Id": "DUSTY1",
+				"Name": "Pyrite",
+				"Quantity": 30
+			},
+			{
+				"Id": "LAND2",
+				"Name": "Pure Ferrite",
+				"Quantity": 60
+			},
+			{
+				"Id": "ROCKETSUB",
+				"Name": "Tritium",
+				"Quantity": 20
+			}
+		],
+		"Output": {
+			"Id": "ALLOY2",
+			"Name": "Dirty Bronze",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Alloy Latticing",
+		"Slug": "refinery/REFINERECIPE_272"
+	},
+	{
+		"Id": "REFINERECIPE_273",
+		"Inputs": [
+			{
+				"Id": "DUSTY1",
+				"Name": "Pyrite",
+				"Quantity": 30
+			},
+			{
+				"Id": "LAND1",
+				"Name": "Ferrite Dust",
+				"Quantity": 120
+			},
+			{
+				"Id": "ASTEROID1",
+				"Name": "Silver",
+				"Quantity": 20
+			}
+		],
+		"Output": {
+			"Id": "ALLOY2",
+			"Name": "Dirty Bronze",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Alloy Latticing",
+		"Slug": "refinery/REFINERECIPE_273"
+	},
+	{
+		"Id": "REFINERECIPE_274",
+		"Inputs": [
+			{
+				"Id": "DUSTY1",
+				"Name": "Pyrite",
+				"Quantity": 30
+			},
+			{
+				"Id": "LAND2",
+				"Name": "Pure Ferrite",
+				"Quantity": 60
+			},
+			{
+				"Id": "ASTEROID1",
+				"Name": "Silver",
+				"Quantity": 20
+			}
+		],
+		"Output": {
+			"Id": "ALLOY2",
+			"Name": "Dirty Bronze",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Alloy Latticing",
+		"Slug": "refinery/REFINERECIPE_274"
+	},
+	{
+		"Id": "REFINERECIPE_275",
+		"Inputs": [
+			{
+				"Id": "DUSTY1",
+				"Name": "Pyrite",
+				"Quantity": 30
+			},
+			{
+				"Id": "LAND1",
+				"Name": "Ferrite Dust",
+				"Quantity": 120
+			},
+			{
+				"Id": "ASTEROID2",
+				"Name": "Gold",
+				"Quantity": 10
+			}
+		],
+		"Output": {
+			"Id": "ALLOY2",
+			"Name": "Dirty Bronze",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Alloy Latticing",
+		"Slug": "refinery/REFINERECIPE_275"
+	},
+	{
+		"Id": "REFINERECIPE_276",
+		"Inputs": [
+			{
+				"Id": "DUSTY1",
+				"Name": "Pyrite",
+				"Quantity": 30
+			},
+			{
+				"Id": "LAND2",
+				"Name": "Pure Ferrite",
+				"Quantity": 60
+			},
+			{
+				"Id": "ASTEROID2",
+				"Name": "Gold",
+				"Quantity": 10
+			}
+		],
+		"Output": {
+			"Id": "ALLOY2",
+			"Name": "Dirty Bronze",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Alloy Latticing",
+		"Slug": "refinery/REFINERECIPE_276"
+	},
+	{
+		"Id": "REFINERECIPE_277",
+		"Inputs": [
+			{
+				"Id": "DUSTY1",
+				"Name": "Pyrite",
+				"Quantity": 30
+			},
+			{
+				"Id": "LAND1",
+				"Name": "Ferrite Dust",
+				"Quantity": 120
+			},
+			{
+				"Id": "ASTEROID3",
+				"Name": "Platinum",
+				"Quantity": 5
+			}
+		],
+		"Output": {
+			"Id": "ALLOY2",
+			"Name": "Dirty Bronze",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Alloy Latticing",
+		"Slug": "refinery/REFINERECIPE_277"
+	},
+	{
+		"Id": "REFINERECIPE_278",
+		"Inputs": [
+			{
+				"Id": "DUSTY1",
+				"Name": "Pyrite",
+				"Quantity": 30
+			},
+			{
+				"Id": "LAND2",
+				"Name": "Pure Ferrite",
+				"Quantity": 60
+			},
+			{
+				"Id": "ASTEROID3",
+				"Name": "Platinum",
+				"Quantity": 5
+			}
+		],
+		"Output": {
+			"Id": "ALLOY2",
+			"Name": "Dirty Bronze",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Alloy Latticing",
+		"Slug": "refinery/REFINERECIPE_278"
+	},
+	{
+		"Id": "REFINERECIPE_279",
+		"Inputs": [
+			{
+				"Id": "TOXIC1",
+				"Name": "Ammonia",
+				"Quantity": 30
+			},
+			{
+				"Id": "CAVE1",
+				"Name": "Cobalt",
+				"Quantity": 60
+			},
+			{
+				"Id": "ROCKETSUB",
+				"Name": "Tritium",
+				"Quantity": 20
+			}
+		],
+		"Output": {
+			"Id": "ALLOY3",
+			"Name": "Herox",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Alloy Latticing",
+		"Slug": "refinery/REFINERECIPE_279"
+	},
+	{
+		"Id": "REFINERECIPE_280",
+		"Inputs": [
+			{
+				"Id": "TOXIC1",
+				"Name": "Ammonia",
+				"Quantity": 30
+			},
+			{
+				"Id": "CAVE2",
+				"Name": "Ionised Cobalt",
+				"Quantity": 30
+			},
+			{
+				"Id": "ROCKETSUB",
+				"Name": "Tritium",
+				"Quantity": 20
+			}
+		],
+		"Output": {
+			"Id": "ALLOY3",
+			"Name": "Herox",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Alloy Latticing",
+		"Slug": "refinery/REFINERECIPE_280"
+	},
+	{
+		"Id": "REFINERECIPE_281",
+		"Inputs": [
+			{
+				"Id": "TOXIC1",
+				"Name": "Ammonia",
+				"Quantity": 30
+			},
+			{
+				"Id": "CAVE1",
+				"Name": "Cobalt",
+				"Quantity": 60
+			},
+			{
+				"Id": "ASTEROID1",
+				"Name": "Silver",
+				"Quantity": 20
+			}
+		],
+		"Output": {
+			"Id": "ALLOY3",
+			"Name": "Herox",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Alloy Latticing",
+		"Slug": "refinery/REFINERECIPE_281"
+	},
+	{
+		"Id": "REFINERECIPE_282",
+		"Inputs": [
+			{
+				"Id": "TOXIC1",
+				"Name": "Ammonia",
+				"Quantity": 30
+			},
+			{
+				"Id": "CAVE2",
+				"Name": "Ionised Cobalt",
+				"Quantity": 30
+			},
+			{
+				"Id": "ASTEROID1",
+				"Name": "Silver",
+				"Quantity": 20
+			}
+		],
+		"Output": {
+			"Id": "ALLOY3",
+			"Name": "Herox",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Alloy Latticing",
+		"Slug": "refinery/REFINERECIPE_282"
+	},
+	{
+		"Id": "REFINERECIPE_283",
+		"Inputs": [
+			{
+				"Id": "TOXIC1",
+				"Name": "Ammonia",
+				"Quantity": 30
+			},
+			{
+				"Id": "CAVE1",
+				"Name": "Cobalt",
+				"Quantity": 60
+			},
+			{
+				"Id": "ASTEROID2",
+				"Name": "Gold",
+				"Quantity": 10
+			}
+		],
+		"Output": {
+			"Id": "ALLOY3",
+			"Name": "Herox",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Alloy Latticing",
+		"Slug": "refinery/REFINERECIPE_283"
+	},
+	{
+		"Id": "REFINERECIPE_284",
+		"Inputs": [
+			{
+				"Id": "TOXIC1",
+				"Name": "Ammonia",
+				"Quantity": 30
+			},
+			{
+				"Id": "CAVE2",
+				"Name": "Ionised Cobalt",
+				"Quantity": 30
+			},
+			{
+				"Id": "ASTEROID2",
+				"Name": "Gold",
+				"Quantity": 10
+			}
+		],
+		"Output": {
+			"Id": "ALLOY3",
+			"Name": "Herox",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Alloy Latticing",
+		"Slug": "refinery/REFINERECIPE_284"
+	},
+	{
+		"Id": "REFINERECIPE_285",
+		"Inputs": [
+			{
+				"Id": "TOXIC1",
+				"Name": "Ammonia",
+				"Quantity": 30
+			},
+			{
+				"Id": "CAVE1",
+				"Name": "Cobalt",
+				"Quantity": 60
+			},
+			{
+				"Id": "ASTEROID3",
+				"Name": "Platinum",
+				"Quantity": 5
+			}
+		],
+		"Output": {
+			"Id": "ALLOY3",
+			"Name": "Herox",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Alloy Latticing",
+		"Slug": "refinery/REFINERECIPE_285"
+	},
+	{
+		"Id": "REFINERECIPE_286",
+		"Inputs": [
+			{
+				"Id": "TOXIC1",
+				"Name": "Ammonia",
+				"Quantity": 30
+			},
+			{
+				"Id": "CAVE2",
+				"Name": "Ionised Cobalt",
+				"Quantity": 30
+			},
+			{
+				"Id": "ASTEROID3",
+				"Name": "Platinum",
+				"Quantity": 5
+			}
+		],
+		"Output": {
+			"Id": "ALLOY3",
+			"Name": "Herox",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Alloy Latticing",
+		"Slug": "refinery/REFINERECIPE_286"
+	},
+	{
+		"Id": "REFINERECIPE_287",
+		"Inputs": [
+			{
+				"Id": "RADIO1",
+				"Name": "Uranium",
+				"Quantity": 30
+			},
+			{
+				"Id": "LAND1",
+				"Name": "Ferrite Dust",
+				"Quantity": 120
+			},
+			{
+				"Id": "ROCKETSUB",
+				"Name": "Tritium",
+				"Quantity": 20
+			}
+		],
+		"Output": {
+			"Id": "ALLOY4",
+			"Name": "Lemmium",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Alloy Latticing",
+		"Slug": "refinery/REFINERECIPE_287"
+	},
+	{
+		"Id": "REFINERECIPE_288",
+		"Inputs": [
+			{
+				"Id": "RADIO1",
+				"Name": "Uranium",
+				"Quantity": 30
+			},
+			{
+				"Id": "LAND2",
+				"Name": "Pure Ferrite",
+				"Quantity": 60
+			},
+			{
+				"Id": "ROCKETSUB",
+				"Name": "Tritium",
+				"Quantity": 20
+			}
+		],
+		"Output": {
+			"Id": "ALLOY4",
+			"Name": "Lemmium",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Alloy Latticing",
+		"Slug": "refinery/REFINERECIPE_288"
+	},
+	{
+		"Id": "REFINERECIPE_289",
+		"Inputs": [
+			{
+				"Id": "RADIO1",
+				"Name": "Uranium",
+				"Quantity": 30
+			},
+			{
+				"Id": "LAND1",
+				"Name": "Ferrite Dust",
+				"Quantity": 120
+			},
+			{
+				"Id": "ASTEROID1",
+				"Name": "Silver",
+				"Quantity": 20
+			}
+		],
+		"Output": {
+			"Id": "ALLOY4",
+			"Name": "Lemmium",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Alloy Latticing",
+		"Slug": "refinery/REFINERECIPE_289"
+	},
+	{
+		"Id": "REFINERECIPE_290",
+		"Inputs": [
+			{
+				"Id": "RADIO1",
+				"Name": "Uranium",
+				"Quantity": 30
+			},
+			{
+				"Id": "LAND2",
+				"Name": "Pure Ferrite",
+				"Quantity": 60
+			},
+			{
+				"Id": "ASTEROID1",
+				"Name": "Silver",
+				"Quantity": 20
+			}
+		],
+		"Output": {
+			"Id": "ALLOY4",
+			"Name": "Lemmium",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Alloy Latticing",
+		"Slug": "refinery/REFINERECIPE_290"
+	},
+	{
+		"Id": "REFINERECIPE_291",
+		"Inputs": [
+			{
+				"Id": "RADIO1",
+				"Name": "Uranium",
+				"Quantity": 30
+			},
+			{
+				"Id": "LAND1",
+				"Name": "Ferrite Dust",
+				"Quantity": 120
+			},
+			{
+				"Id": "ASTEROID2",
+				"Name": "Gold",
+				"Quantity": 10
+			}
+		],
+		"Output": {
+			"Id": "ALLOY4",
+			"Name": "Lemmium",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Alloy Latticing",
+		"Slug": "refinery/REFINERECIPE_291"
+	},
+	{
+		"Id": "REFINERECIPE_292",
+		"Inputs": [
+			{
+				"Id": "RADIO1",
+				"Name": "Uranium",
+				"Quantity": 30
+			},
+			{
+				"Id": "LAND2",
+				"Name": "Pure Ferrite",
+				"Quantity": 60
+			},
+			{
+				"Id": "ASTEROID2",
+				"Name": "Gold",
+				"Quantity": 10
+			}
+		],
+		"Output": {
+			"Id": "ALLOY4",
+			"Name": "Lemmium",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Alloy Latticing",
+		"Slug": "refinery/REFINERECIPE_292"
+	},
+	{
+		"Id": "REFINERECIPE_293",
+		"Inputs": [
+			{
+				"Id": "RADIO1",
+				"Name": "Uranium",
+				"Quantity": 30
+			},
+			{
+				"Id": "LAND1",
+				"Name": "Ferrite Dust",
+				"Quantity": 120
+			},
+			{
+				"Id": "ASTEROID3",
+				"Name": "Platinum",
+				"Quantity": 5
+			}
+		],
+		"Output": {
+			"Id": "ALLOY4",
+			"Name": "Lemmium",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Alloy Latticing",
+		"Slug": "refinery/REFINERECIPE_293"
+	},
+	{
+		"Id": "REFINERECIPE_294",
+		"Inputs": [
+			{
+				"Id": "RADIO1",
+				"Name": "Uranium",
+				"Quantity": 30
+			},
+			{
+				"Id": "LAND2",
+				"Name": "Pure Ferrite",
+				"Quantity": 60
+			},
+			{
+				"Id": "ASTEROID3",
+				"Name": "Platinum",
+				"Quantity": 5
+			}
+		],
+		"Output": {
+			"Id": "ALLOY4",
+			"Name": "Lemmium",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Alloy Latticing",
+		"Slug": "refinery/REFINERECIPE_294"
+	},
+	{
+		"Id": "REFINERECIPE_295",
+		"Inputs": [
+			{
+				"Id": "HOT1",
+				"Name": "Phosphorus",
+				"Quantity": 30
+			},
+			{
+				"Id": "CAVE1",
+				"Name": "Cobalt",
+				"Quantity": 60
+			},
+			{
+				"Id": "ROCKETSUB",
+				"Name": "Tritium",
+				"Quantity": 20
+			}
+		],
+		"Output": {
+			"Id": "ALLOY5",
+			"Name": "Magno-gold",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Alloy Latticing",
+		"Slug": "refinery/REFINERECIPE_295"
+	},
+	{
+		"Id": "REFINERECIPE_296",
+		"Inputs": [
+			{
+				"Id": "HOT1",
+				"Name": "Phosphorus",
+				"Quantity": 30
+			},
+			{
+				"Id": "CAVE2",
+				"Name": "Ionised Cobalt",
+				"Quantity": 30
+			},
+			{
+				"Id": "ROCKETSUB",
+				"Name": "Tritium",
+				"Quantity": 20
+			}
+		],
+		"Output": {
+			"Id": "ALLOY5",
+			"Name": "Magno-gold",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Alloy Latticing",
+		"Slug": "refinery/REFINERECIPE_296"
+	},
+	{
+		"Id": "REFINERECIPE_297",
+		"Inputs": [
+			{
+				"Id": "HOT1",
+				"Name": "Phosphorus",
+				"Quantity": 30
+			},
+			{
+				"Id": "CAVE1",
+				"Name": "Cobalt",
+				"Quantity": 60
+			},
+			{
+				"Id": "ASTEROID1",
+				"Name": "Silver",
+				"Quantity": 20
+			}
+		],
+		"Output": {
+			"Id": "ALLOY5",
+			"Name": "Magno-gold",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Alloy Latticing",
+		"Slug": "refinery/REFINERECIPE_297"
+	},
+	{
+		"Id": "REFINERECIPE_298",
+		"Inputs": [
+			{
+				"Id": "HOT1",
+				"Name": "Phosphorus",
+				"Quantity": 30
+			},
+			{
+				"Id": "CAVE2",
+				"Name": "Ionised Cobalt",
+				"Quantity": 30
+			},
+			{
+				"Id": "ASTEROID1",
+				"Name": "Silver",
+				"Quantity": 20
+			}
+		],
+		"Output": {
+			"Id": "ALLOY5",
+			"Name": "Magno-gold",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Alloy Latticing",
+		"Slug": "refinery/REFINERECIPE_298"
+	},
+	{
+		"Id": "REFINERECIPE_299",
+		"Inputs": [
+			{
+				"Id": "HOT1",
+				"Name": "Phosphorus",
+				"Quantity": 30
+			},
+			{
+				"Id": "CAVE1",
+				"Name": "Cobalt",
+				"Quantity": 60
+			},
+			{
+				"Id": "ASTEROID2",
+				"Name": "Gold",
+				"Quantity": 10
+			}
+		],
+		"Output": {
+			"Id": "ALLOY5",
+			"Name": "Magno-gold",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Alloy Latticing",
+		"Slug": "refinery/REFINERECIPE_299"
+	},
+	{
+		"Id": "REFINERECIPE_300",
+		"Inputs": [
+			{
+				"Id": "HOT1",
+				"Name": "Phosphorus",
+				"Quantity": 30
+			},
+			{
+				"Id": "CAVE2",
+				"Name": "Ionised Cobalt",
+				"Quantity": 30
+			},
+			{
+				"Id": "ASTEROID2",
+				"Name": "Gold",
+				"Quantity": 10
+			}
+		],
+		"Output": {
+			"Id": "ALLOY5",
+			"Name": "Magno-gold",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Alloy Latticing",
+		"Slug": "refinery/REFINERECIPE_300"
+	},
+	{
+		"Id": "REFINERECIPE_301",
+		"Inputs": [
+			{
+				"Id": "HOT1",
+				"Name": "Phosphorus",
+				"Quantity": 30
+			},
+			{
+				"Id": "CAVE1",
+				"Name": "Cobalt",
+				"Quantity": 60
+			},
+			{
+				"Id": "ASTEROID3",
+				"Name": "Platinum",
+				"Quantity": 5
+			}
+		],
+		"Output": {
+			"Id": "ALLOY5",
+			"Name": "Magno-gold",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Alloy Latticing",
+		"Slug": "refinery/REFINERECIPE_301"
+	},
+	{
+		"Id": "REFINERECIPE_302",
+		"Inputs": [
+			{
+				"Id": "HOT1",
+				"Name": "Phosphorus",
+				"Quantity": 30
+			},
+			{
+				"Id": "CAVE2",
+				"Name": "Ionised Cobalt",
+				"Quantity": 30
+			},
+			{
+				"Id": "ASTEROID3",
+				"Name": "Platinum",
+				"Quantity": 5
+			}
+		],
+		"Output": {
+			"Id": "ALLOY5",
+			"Name": "Magno-gold",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Alloy Latticing",
+		"Slug": "refinery/REFINERECIPE_302"
+	},
+	{
+		"Id": "REFINERECIPE_303",
+		"Inputs": [
+			{
+				"Id": "COLD1",
+				"Name": "Dioxite",
+				"Quantity": 30
+			},
+			{
+				"Id": "CAVE1",
+				"Name": "Cobalt",
+				"Quantity": 60
+			},
+			{
+				"Id": "ROCKETSUB",
+				"Name": "Tritium",
+				"Quantity": 20
+			}
+		],
+		"Output": {
+			"Id": "ALLOY6",
+			"Name": "Grantine",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Alloy Latticing",
+		"Slug": "refinery/REFINERECIPE_303"
+	},
+	{
+		"Id": "REFINERECIPE_304",
+		"Inputs": [
+			{
+				"Id": "COLD1",
+				"Name": "Dioxite",
+				"Quantity": 30
+			},
+			{
+				"Id": "CAVE2",
+				"Name": "Ionised Cobalt",
+				"Quantity": 30
+			},
+			{
+				"Id": "ROCKETSUB",
+				"Name": "Tritium",
+				"Quantity": 20
+			}
+		],
+		"Output": {
+			"Id": "ALLOY6",
+			"Name": "Grantine",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Alloy Latticing",
+		"Slug": "refinery/REFINERECIPE_304"
+	},
+	{
+		"Id": "REFINERECIPE_305",
+		"Inputs": [
+			{
+				"Id": "COLD1",
+				"Name": "Dioxite",
+				"Quantity": 30
+			},
+			{
+				"Id": "CAVE1",
+				"Name": "Cobalt",
+				"Quantity": 60
+			},
+			{
+				"Id": "ASTEROID1",
+				"Name": "Silver",
+				"Quantity": 20
+			}
+		],
+		"Output": {
+			"Id": "ALLOY6",
+			"Name": "Grantine",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Alloy Latticing",
+		"Slug": "refinery/REFINERECIPE_305"
+	},
+	{
+		"Id": "REFINERECIPE_306",
+		"Inputs": [
+			{
+				"Id": "COLD1",
+				"Name": "Dioxite",
+				"Quantity": 30
+			},
+			{
+				"Id": "CAVE2",
+				"Name": "Ionised Cobalt",
+				"Quantity": 30
+			},
+			{
+				"Id": "ASTEROID1",
+				"Name": "Silver",
+				"Quantity": 20
+			}
+		],
+		"Output": {
+			"Id": "ALLOY6",
+			"Name": "Grantine",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Alloy Latticing",
+		"Slug": "refinery/REFINERECIPE_306"
+	},
+	{
+		"Id": "REFINERECIPE_307",
+		"Inputs": [
+			{
+				"Id": "COLD1",
+				"Name": "Dioxite",
+				"Quantity": 30
+			},
+			{
+				"Id": "CAVE1",
+				"Name": "Cobalt",
+				"Quantity": 60
+			},
+			{
+				"Id": "ASTEROID2",
+				"Name": "Gold",
+				"Quantity": 10
+			}
+		],
+		"Output": {
+			"Id": "ALLOY6",
+			"Name": "Grantine",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Alloy Latticing",
+		"Slug": "refinery/REFINERECIPE_307"
+	},
+	{
+		"Id": "REFINERECIPE_308",
+		"Inputs": [
+			{
+				"Id": "COLD1",
+				"Name": "Dioxite",
+				"Quantity": 30
+			},
+			{
+				"Id": "CAVE2",
+				"Name": "Ionised Cobalt",
+				"Quantity": 30
+			},
+			{
+				"Id": "ASTEROID2",
+				"Name": "Gold",
+				"Quantity": 10
+			}
+		],
+		"Output": {
+			"Id": "ALLOY6",
+			"Name": "Grantine",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Alloy Latticing",
+		"Slug": "refinery/REFINERECIPE_308"
+	},
+	{
+		"Id": "REFINERECIPE_309",
+		"Inputs": [
+			{
+				"Id": "COLD1",
+				"Name": "Dioxite",
+				"Quantity": 30
+			},
+			{
+				"Id": "CAVE1",
+				"Name": "Cobalt",
+				"Quantity": 60
+			},
+			{
+				"Id": "ASTEROID3",
+				"Name": "Platinum",
+				"Quantity": 5
+			}
+		],
+		"Output": {
+			"Id": "ALLOY6",
+			"Name": "Grantine",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Alloy Latticing",
+		"Slug": "refinery/REFINERECIPE_309"
+	},
+	{
+		"Id": "REFINERECIPE_310",
+		"Inputs": [
+			{
+				"Id": "COLD1",
+				"Name": "Dioxite",
+				"Quantity": 30
+			},
+			{
+				"Id": "CAVE2",
+				"Name": "Ionised Cobalt",
+				"Quantity": 30
+			},
+			{
+				"Id": "ASTEROID3",
+				"Name": "Platinum",
+				"Quantity": 5
+			}
+		],
+		"Output": {
+			"Id": "ALLOY6",
+			"Name": "Grantine",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Alloy Latticing",
+		"Slug": "refinery/REFINERECIPE_310"
+	},
+	{
+		"Id": "REFINERECIPE_311",
+		"Inputs": [
+			{
+				"Id": "GAS1",
+				"Name": "Sulphurine",
+				"Quantity": 100
+			},
+			{
+				"Id": "FUEL1",
+				"Name": "Carbon",
+				"Quantity": 20
+			},
+			{
+				"Id": "WATER1",
+				"Name": "Salt",
+				"Quantity": 10
+			}
+		],
+		"Output": {
+			"Id": "REACTION1",
+			"Name": "Thermic Condensate",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "High-Speed Sublimation",
+		"Slug": "refinery/REFINERECIPE_311"
+	},
+	{
+		"Id": "REFINERECIPE_312",
+		"Inputs": [
+			{
+				"Id": "GAS2",
+				"Name": "Radon",
+				"Quantity": 100
+			},
+			{
+				"Id": "FUEL1",
+				"Name": "Carbon",
+				"Quantity": 20
+			},
+			{
+				"Id": "WATER1",
+				"Name": "Salt",
+				"Quantity": 10
+			}
+		],
+		"Output": {
+			"Id": "REACTION2",
+			"Name": "Enriched Carbon",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "High-Speed Sublimation",
+		"Slug": "refinery/REFINERECIPE_312"
+	},
+	{
+		"Id": "REFINERECIPE_313",
+		"Inputs": [
+			{
+				"Id": "GAS3",
+				"Name": "Nitrogen",
+				"Quantity": 100
+			},
+			{
+				"Id": "FUEL1",
+				"Name": "Carbon",
+				"Quantity": 20
+			},
+			{
+				"Id": "WATER1",
+				"Name": "Salt",
+				"Quantity": 10
+			}
+		],
+		"Output": {
+			"Id": "REACTION3",
+			"Name": "Nitrogen Salt",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "High-Speed Sublimation",
+		"Slug": "refinery/REFINERECIPE_313"
+	},
+	{
+		"Id": "REFINERECIPE_314",
+		"Inputs": [
+			{
+				"Id": "GAS1",
+				"Name": "Sulphurine",
+				"Quantity": 100
+			},
+			{
+				"Id": "FUEL2",
+				"Name": "Condensed Carbon",
+				"Quantity": 10
+			},
+			{
+				"Id": "WATER1",
+				"Name": "Salt",
+				"Quantity": 10
+			}
+		],
+		"Output": {
+			"Id": "REACTION1",
+			"Name": "Thermic Condensate",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "High-Speed Sublimation",
+		"Slug": "refinery/REFINERECIPE_314"
+	},
+	{
+		"Id": "REFINERECIPE_315",
+		"Inputs": [
+			{
+				"Id": "GAS2",
+				"Name": "Radon",
+				"Quantity": 100
+			},
+			{
+				"Id": "FUEL2",
+				"Name": "Condensed Carbon",
+				"Quantity": 10
+			},
+			{
+				"Id": "WATER1",
+				"Name": "Salt",
+				"Quantity": 10
+			}
+		],
+		"Output": {
+			"Id": "REACTION2",
+			"Name": "Enriched Carbon",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "High-Speed Sublimation",
+		"Slug": "refinery/REFINERECIPE_315"
+	},
+	{
+		"Id": "REFINERECIPE_316",
+		"Inputs": [
+			{
+				"Id": "GAS3",
+				"Name": "Nitrogen",
+				"Quantity": 100
+			},
+			{
+				"Id": "FUEL2",
+				"Name": "Condensed Carbon",
+				"Quantity": 10
+			},
+			{
+				"Id": "WATER1",
+				"Name": "Salt",
+				"Quantity": 10
+			}
+		],
+		"Output": {
+			"Id": "REACTION3",
+			"Name": "Nitrogen Salt",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "High-Speed Sublimation",
+		"Slug": "refinery/REFINERECIPE_316"
+	},
+	{
+		"Id": "REFINERECIPE_317",
+		"Inputs": [
+			{
+				"Id": "GAS1",
+				"Name": "Sulphurine",
+				"Quantity": 100
+			},
+			{
+				"Id": "FUEL1",
+				"Name": "Carbon",
+				"Quantity": 20
+			},
+			{
+				"Id": "WATER2",
+				"Name": "Chlorine",
+				"Quantity": 5
+			}
+		],
+		"Output": {
+			"Id": "REACTION1",
+			"Name": "Thermic Condensate",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "High-Speed Sublimation",
+		"Slug": "refinery/REFINERECIPE_317"
+	},
+	{
+		"Id": "REFINERECIPE_318",
+		"Inputs": [
+			{
+				"Id": "GAS2",
+				"Name": "Radon",
+				"Quantity": 100
+			},
+			{
+				"Id": "FUEL1",
+				"Name": "Carbon",
+				"Quantity": 20
+			},
+			{
+				"Id": "WATER2",
+				"Name": "Chlorine",
+				"Quantity": 5
+			}
+		],
+		"Output": {
+			"Id": "REACTION2",
+			"Name": "Enriched Carbon",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "High-Speed Sublimation",
+		"Slug": "refinery/REFINERECIPE_318"
+	},
+	{
+		"Id": "REFINERECIPE_319",
+		"Inputs": [
+			{
+				"Id": "GAS3",
+				"Name": "Nitrogen",
+				"Quantity": 100
+			},
+			{
+				"Id": "FUEL1",
+				"Name": "Carbon",
+				"Quantity": 20
+			},
+			{
+				"Id": "WATER2",
+				"Name": "Chlorine",
+				"Quantity": 5
+			}
+		],
+		"Output": {
+			"Id": "REACTION3",
+			"Name": "Nitrogen Salt",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "High-Speed Sublimation",
+		"Slug": "refinery/REFINERECIPE_319"
+	},
+	{
+		"Id": "REFINERECIPE_320",
+		"Inputs": [
+			{
+				"Id": "GAS1",
+				"Name": "Sulphurine",
+				"Quantity": 100
+			},
+			{
+				"Id": "FUEL2",
+				"Name": "Condensed Carbon",
+				"Quantity": 10
+			},
+			{
+				"Id": "WATER2",
+				"Name": "Chlorine",
+				"Quantity": 5
+			}
+		],
+		"Output": {
+			"Id": "REACTION1",
+			"Name": "Thermic Condensate",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "High-Speed Sublimation",
+		"Slug": "refinery/REFINERECIPE_320"
+	},
+	{
+		"Id": "REFINERECIPE_321",
+		"Inputs": [
+			{
+				"Id": "GAS2",
+				"Name": "Radon",
+				"Quantity": 100
+			},
+			{
+				"Id": "FUEL2",
+				"Name": "Condensed Carbon",
+				"Quantity": 10
+			},
+			{
+				"Id": "WATER2",
+				"Name": "Chlorine",
+				"Quantity": 5
+			}
+		],
+		"Output": {
+			"Id": "REACTION2",
+			"Name": "Enriched Carbon",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "High-Speed Sublimation",
+		"Slug": "refinery/REFINERECIPE_321"
+	},
+	{
+		"Id": "REFINERECIPE_322",
+		"Inputs": [
+			{
+				"Id": "GAS3",
+				"Name": "Nitrogen",
+				"Quantity": 100
+			},
+			{
+				"Id": "FUEL2",
+				"Name": "Condensed Carbon",
+				"Quantity": 10
+			},
+			{
+				"Id": "WATER2",
+				"Name": "Chlorine",
+				"Quantity": 5
+			}
+		],
+		"Output": {
+			"Id": "REACTION3",
+			"Name": "Nitrogen Salt",
+			"Quantity": 1
+		},
+		"Time": "20.0",
+		"Operation": "High-Speed Sublimation",
+		"Slug": "refinery/REFINERECIPE_322"
+	},
+	{
+		"Id": "REFINERECIPE_323",
+		"Inputs": [
+			{
+				"Id": "SAND1",
+				"Name": "Silicate Powder",
+				"Quantity": 40
+			}
+		],
+		"Output": {
+			"Id": "FARMPROD3",
+			"Name": "Glass",
+			"Quantity": 1
+		},
+		"Time": "10.0",
+		"Operation": "Silicate Forging",
+		"Slug": "refinery/REFINERECIPE_323"
+	},
+	{
+		"Id": "REFINERECIPE_324",
+		"Inputs": [
+			{
+				"Id": "AF_METAL",
+				"Name": "Tainted Metal",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "TECHFRAG",
+			"Name": "Nanite Cluster",
+			"Quantity": 2
+		},
+		"Time": "90.0",
+		"Operation": "Doom Cycling",
+		"Slug": "refinery/REFINERECIPE_324"
+	},
+	{
+		"Id": "REFINERECIPE_325",
+		"Inputs": [
+			{
+				"Id": "WORMDUST",
+				"Name": "Cursed Dust",
+				"Quantity": 2
+			}
+		],
+		"Output": {
+			"Id": "SPACEGUNK1",
+			"Name": "Residual Goop",
+			"Quantity": 1
+		},
+		"Time": "10.0",
+		"Operation": "Doom Cycling",
+		"Slug": "refinery/REFINERECIPE_325"
+	},
+	{
+		"Id": "REFINERECIPE_326",
+		"Inputs": [
+			{
+				"Id": "WORMPROD",
+				"Name": "Vile Spawn",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "TECHFRAG",
+			"Name": "Nanite Cluster",
+			"Quantity": 50
+		},
+		"Time": "90.0",
+		"Operation": "Loosen Bonds",
+		"Slug": "refinery/REFINERECIPE_326"
+	},
+	{
+		"Id": "REFINERECIPE_327",
+		"Inputs": [
+			{
+				"Id": "WORMCORE",
+				"Name": "Flesh Rope",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "TECHFRAG",
+			"Name": "Nanite Cluster",
+			"Quantity": 50
+		},
+		"Time": "90.0",
+		"Operation": "Loosen Bonds",
+		"Slug": "refinery/REFINERECIPE_327"
+	},
+	{
+		"Id": "REFINERECIPE_328",
+		"Inputs": [
+			{
+				"Id": "DRONE_SHARD",
+				"Name": "Radiant Shard",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "TECHFRAG",
+			"Name": "Nanite Cluster",
+			"Quantity": 50
+		},
+		"Time": "1800.0",
+		"Operation": "Subjugation of Glass",
+		"Slug": "refinery/REFINERECIPE_328"
+	},
+	{
+		"Id": "REFINERECIPE_329",
+		"Inputs": [
+			{
+				"Id": "DRONE_SALVAGE",
+				"Name": "Inverted Mirror",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "TECHFRAG",
+			"Name": "Nanite Cluster",
+			"Quantity": 95
+		},
+		"Time": "2200.0",
+		"Operation": "Purge Corruption",
+		"Slug": "refinery/REFINERECIPE_329"
+	},
+	{
+		"Id": "REFINERECIPE_330",
+		"Inputs": [
+			{
+				"Id": "SHIPBRAIN",
+				"Name": "Hyaline Brain",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "TECHFRAG",
+			"Name": "Nanite Cluster",
+			"Quantity": 230
+		},
+		"Time": "3200.0",
+		"Operation": "Sentience Extraction",
+		"Slug": "refinery/REFINERECIPE_330"
+	},
+	{
+		"Id": "REFINERECIPE_331",
+		"Inputs": [
+			{
+				"Id": "ROBOT2",
+				"Name": "Atlantideum",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "ROBOT1",
+			"Name": "Pugneum",
+			"Quantity": 2
+		},
+		"Time": "30.0",
+		"Operation": "Restore Harmony",
+		"Slug": "refinery/REFINERECIPE_331"
+	},
+	{
+		"Id": "REFINERECIPE_332",
+		"Inputs": [
+			{
+				"Id": "ROBOT2",
+				"Name": "Atlantideum",
+				"Quantity": 1
+			},
+			{
+				"Id": "ROBOT1",
+				"Name": "Pugneum",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "SPACEGUNK2",
+			"Name": "Runaway Mould",
+			"Quantity": 3
+		},
+		"Time": "60.0",
+		"Operation": "Reality Pollution",
+		"Slug": "refinery/REFINERECIPE_332"
+	},
+	{
+		"Id": "REFINERECIPE_333",
+		"Inputs": [
+			{
+				"Id": "ROBOT2",
+				"Name": "Atlantideum",
+				"Quantity": 5
+			},
+			{
+				"Id": "CREATURE1",
+				"Name": "Mordite",
+				"Quantity": 5
+			}
+		],
+		"Output": {
+			"Id": "SPACEGUNK4",
+			"Name": "Living Slime",
+			"Quantity": 1
+		},
+		"Time": "3600.0",
+		"Operation": "Slime/Echo Infusion",
+		"Slug": "refinery/REFINERECIPE_333"
+	},
+	{
+		"Id": "REFINERECIPE_334",
+		"Inputs": [
+			{
+				"Id": "DUSTY1",
+				"Name": "Pyrite",
+				"Quantity": 1
+			},
+			{
+				"Id": "LAND3",
+				"Name": "Magnetised Ferrite",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "LAVA1",
+			"Name": "Basalt",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Volcanic Transmutation",
+		"Slug": "refinery/REFINERECIPE_334"
+	},
+	{
+		"Id": "REFINERECIPE_335",
+		"Inputs": [
+			{
+				"Id": "HOT1",
+				"Name": "Phosphorus",
+				"Quantity": 1
+			},
+			{
+				"Id": "LAND3",
+				"Name": "Magnetised Ferrite",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "LAVA1",
+			"Name": "Basalt",
+			"Quantity": 2
+		},
+		"Time": "90.0",
+		"Operation": "Volcanic Transmutation",
+		"Slug": "refinery/REFINERECIPE_335"
+	},
+	{
+		"Id": "REFINERECIPE_336",
+		"Inputs": [
+			{
+				"Id": "LAUNCHSUB",
+				"Name": "Di-hydrogen",
+				"Quantity": 1
+			},
+			{
+				"Id": "SAND1",
+				"Name": "Silicate Powder",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "LAUNCHSUB2",
+			"Name": "Deuterium",
+			"Quantity": 1
+		},
+		"Time": "60.0",
+		"Operation": "Di-hydrogen Cycling",
+		"Slug": "refinery/REFINERECIPE_336"
+	},
+	{
+		"Id": "REFINERECIPE_337",
+		"Inputs": [
+			{
+				"Id": "EX_PURPLE",
+				"Name": "Activated Quartzite",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "STELLAR2",
+			"Name": "Chromatic Metal",
+			"Quantity": 4
+		},
+		"Time": "30.0",
+		"Operation": "Extract Chromatic Material",
+		"Slug": "refinery/REFINERECIPE_337"
+	},
+	{
+		"Id": "REFINERECIPE_338",
+		"Inputs": [
+			{
+				"Id": "EX_PURPLE",
+				"Name": "Activated Quartzite",
+				"Quantity": 1
+			},
+			{
+				"Id": "LAND1",
+				"Name": "Ferrite Dust",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "LAND3",
+			"Name": "Magnetised Ferrite",
+			"Quantity": 8
+		},
+		"Time": "90.0",
+		"Operation": "Chromatic Metal Fusion",
+		"Slug": "refinery/REFINERECIPE_338"
+	},
+	{
+		"Id": "REFINERECIPE_339",
+		"Inputs": [
+			{
+				"Id": "EX_PURPLE",
+				"Name": "Activated Quartzite",
+				"Quantity": 1
+			},
+			{
+				"Id": "LAND2",
+				"Name": "Pure Ferrite",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "STELLAR2",
+			"Name": "Chromatic Metal",
+			"Quantity": 8
+		},
+		"Time": "90.0",
+		"Operation": "Chromatic Metal Fusion",
+		"Slug": "refinery/REFINERECIPE_339"
+	},
+	{
+		"Id": "REFINERECIPE_340",
+		"Inputs": [
+			{
+				"Id": "PURPLE2",
+				"Name": "Quartzite",
+				"Quantity": 2
+			}
+		],
+		"Output": {
+			"Id": "STELLAR2",
+			"Name": "Chromatic Metal",
+			"Quantity": 4
+		},
+		"Time": "25.0",
+		"Operation": "Extract Chromatic Material",
+		"Slug": "refinery/REFINERECIPE_340"
+	},
+	{
+		"Id": "REFINERECIPE_341",
+		"Inputs": [
+			{
+				"Id": "PURPLE2",
+				"Name": "Quartzite",
+				"Quantity": 1
+			},
+			{
+				"Id": "STELLAR2",
+				"Name": "Chromatic Metal",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "PURPLE2",
+			"Name": "Quartzite",
+			"Quantity": 2
+		},
+		"Time": "90.0",
+		"Operation": "Chromatic Expansion",
+		"Slug": "refinery/REFINERECIPE_341"
+	},
+	{
+		"Id": "REFINERECIPE_342",
+		"Inputs": [
+			{
+				"Id": "PURPLE2",
+				"Name": "Quartzite",
+				"Quantity": 1
+			},
+			{
+				"Id": "LAND1",
+				"Name": "Ferrite Dust",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "LAND3",
+			"Name": "Magnetised Ferrite",
+			"Quantity": 4
+		},
+		"Time": "90.0",
+		"Operation": "Chromatic Metal Fusion",
+		"Slug": "refinery/REFINERECIPE_342"
+	},
+	{
+		"Id": "REFINERECIPE_343",
+		"Inputs": [
+			{
+				"Id": "PURPLE2",
+				"Name": "Quartzite",
+				"Quantity": 1
+			},
+			{
+				"Id": "LAND2",
+				"Name": "Pure Ferrite",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "STELLAR2",
+			"Name": "Chromatic Metal",
+			"Quantity": 4
+		},
+		"Time": "90.0",
+		"Operation": "Chromatic Metal Fusion",
+		"Slug": "refinery/REFINERECIPE_343"
+	},
+	{
+		"Id": "REFINERECIPE_344",
+		"Inputs": [
+			{
+				"Id": "ASTEROID1",
+				"Name": "Silver",
+				"Quantity": 1
+			},
+			{
+				"Id": "ASTEROID2",
+				"Name": "Gold",
+				"Quantity": 1
+			},
+			{
+				"Id": "PURPLE2",
+				"Name": "Quartzite",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "STELLAR2",
+			"Name": "Chromatic Metal",
+			"Quantity": 30
+		},
+		"Time": "1200.0",
+		"Operation": "Chromatic Stellar Fusion",
+		"Slug": "refinery/REFINERECIPE_344"
+	},
+	{
+		"Id": "REFINERECIPE_345",
+		"Inputs": [
+			{
+				"Id": "GASGIANT1",
+				"Name": "Crystallised Helium",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "LAND1",
+			"Name": "Ferrite Dust",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Ferrite Dust Extraction",
+		"Slug": "refinery/REFINERECIPE_345"
+	},
+	{
+		"Id": "REFINERECIPE_346",
+		"Inputs": [
+			{
+				"Id": "PURPLE2",
+				"Name": "Quartzite",
+				"Quantity": 1
+			},
+			{
+				"Id": "GASGIANT1",
+				"Name": "Crystallised Helium",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "WATERWORLD1",
+			"Name": "Lithium",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Environmental Element Transfer",
+		"Slug": "refinery/REFINERECIPE_346"
+	},
+	{
+		"Id": "REFINERECIPE_349",
+		"Inputs": [
+			{
+				"Id": "EX_PURPLE",
+				"Name": "Activated Quartzite",
+				"Quantity": 1
+			},
+			{
+				"Id": "GASGIANT1",
+				"Name": "Crystallised Helium",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "WATERWORLD1",
+			"Name": "Lithium",
+			"Quantity": 2
+		},
+		"Time": "90.0",
+		"Operation": "Environmental Element Transfer",
+		"Slug": "refinery/REFINERECIPE_349"
+	},
+	{
+		"Id": "REFINERECIPE_352",
+		"Inputs": [
+			{
+				"Id": "GASGIANT1",
+				"Name": "Crystallised Helium",
+				"Quantity": 1
+			},
+			{
+				"Id": "LAND1",
+				"Name": "Ferrite Dust",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "RADIO1",
+			"Name": "Uranium",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Loosen Bonds",
+		"Slug": "refinery/REFINERECIPE_352"
+	},
+	{
+		"Id": "REFINERECIPE_353",
+		"Inputs": [
+			{
+				"Id": "GASGIANT1",
+				"Name": "Crystallised Helium",
+				"Quantity": 1
+			},
+			{
+				"Id": "LAND2",
+				"Name": "Pure Ferrite",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "RADIO1",
+			"Name": "Uranium",
+			"Quantity": 2
+		},
+		"Time": "90.0",
+		"Operation": "Loosen Bonds",
+		"Slug": "refinery/REFINERECIPE_353"
+	},
+	{
+		"Id": "REFINERECIPE_354",
+		"Inputs": [
+			{
+				"Id": "GASGIANT1",
+				"Name": "Crystallised Helium",
+				"Quantity": 1
+			},
+			{
+				"Id": "LAND3",
+				"Name": "Magnetised Ferrite",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "RADIO1",
+			"Name": "Uranium",
+			"Quantity": 3
+		},
+		"Time": "90.0",
+		"Operation": "Loosen Bonds",
+		"Slug": "refinery/REFINERECIPE_354"
+	},
+	{
+		"Id": "REFINERECIPE_357",
+		"Inputs": [
+			{
+				"Id": "PURPLE2",
+				"Name": "Quartzite",
+				"Quantity": 1
+			},
+			{
+				"Id": "GASGIANT1",
+				"Name": "Crystallised Helium",
+				"Quantity": 1
+			},
+			{
+				"Id": "GAS4",
+				"Name": "Methane",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "EX_PURPLE",
+			"Name": "Activated Quartzite",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Loosen Bonds",
+		"Slug": "refinery/REFINERECIPE_357"
+	},
+	{
+		"Id": "REFINERECIPE_358",
+		"Inputs": [
+			{
+				"Id": "EX_PURPLE",
+				"Name": "Activated Quartzite",
+				"Quantity": 1
+			},
+			{
+				"Id": "GASGIANT1",
+				"Name": "Crystallised Helium",
+				"Quantity": 1
+			},
+			{
+				"Id": "GAS4",
+				"Name": "Methane",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "CATALYST2",
+			"Name": "Sodium Nitrate",
+			"Quantity": 2
+		},
+		"Time": "90.0",
+		"Operation": "Loosen Bonds",
+		"Slug": "refinery/REFINERECIPE_358"
+	},
+	{
+		"Id": "REFINERECIPE_361",
+		"Inputs": [
+			{
+				"Id": "WATERWORLD1",
+				"Name": "Lithium",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "LAND1",
+			"Name": "Ferrite Dust",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Ferrite Dust Extraction",
+		"Slug": "refinery/REFINERECIPE_361"
+	},
+	{
+		"Id": "REFINERECIPE_362",
+		"Inputs": [
+			{
+				"Id": "PURPLE2",
+				"Name": "Quartzite",
+				"Quantity": 1
+			},
+			{
+				"Id": "WATERWORLD1",
+				"Name": "Lithium",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "GASGIANT1",
+			"Name": "Crystallised Helium",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Environmental Element Transfer",
+		"Slug": "refinery/REFINERECIPE_362"
+	},
+	{
+		"Id": "REFINERECIPE_365",
+		"Inputs": [
+			{
+				"Id": "EX_PURPLE",
+				"Name": "Activated Quartzite",
+				"Quantity": 1
+			},
+			{
+				"Id": "WATERWORLD1",
+				"Name": "Lithium",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "GASGIANT1",
+			"Name": "Crystallised Helium",
+			"Quantity": 2
+		},
+		"Time": "90.0",
+		"Operation": "Environmental Element Transfer",
+		"Slug": "refinery/REFINERECIPE_365"
+	},
+	{
+		"Id": "REFINERECIPE_368",
+		"Inputs": [
+			{
+				"Id": "WATERWORLD1",
+				"Name": "Lithium",
+				"Quantity": 1
+			},
+			{
+				"Id": "LAND1",
+				"Name": "Ferrite Dust",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "DUSTY1",
+			"Name": "Pyrite",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Loosen Bonds",
+		"Slug": "refinery/REFINERECIPE_368"
+	},
+	{
+		"Id": "REFINERECIPE_369",
+		"Inputs": [
+			{
+				"Id": "WATERWORLD1",
+				"Name": "Lithium",
+				"Quantity": 1
+			},
+			{
+				"Id": "LAND2",
+				"Name": "Pure Ferrite",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "DUSTY1",
+			"Name": "Pyrite",
+			"Quantity": 2
+		},
+		"Time": "90.0",
+		"Operation": "Loosen Bonds",
+		"Slug": "refinery/REFINERECIPE_369"
+	},
+	{
+		"Id": "REFINERECIPE_370",
+		"Inputs": [
+			{
+				"Id": "WATERWORLD1",
+				"Name": "Lithium",
+				"Quantity": 1
+			},
+			{
+				"Id": "LAND3",
+				"Name": "Magnetised Ferrite",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "DUSTY1",
+			"Name": "Pyrite",
+			"Quantity": 3
+		},
+		"Time": "90.0",
+		"Operation": "Loosen Bonds",
+		"Slug": "refinery/REFINERECIPE_370"
+	},
+	{
+		"Id": "REFINERECIPE_371",
+		"Inputs": [
+			{
+				"Id": "PURPLE2",
+				"Name": "Quartzite",
+				"Quantity": 1
+			},
+			{
+				"Id": "WATERWORLD1",
+				"Name": "Lithium",
+				"Quantity": 1
+			},
+			{
+				"Id": "GAS4",
+				"Name": "Methane",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "EX_PURPLE",
+			"Name": "Activated Quartzite",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Loosen Bonds",
+		"Slug": "refinery/REFINERECIPE_371"
+	},
+	{
+		"Id": "REFINERECIPE_374",
+		"Inputs": [
+			{
+				"Id": "EX_PURPLE",
+				"Name": "Activated Quartzite",
+				"Quantity": 1
+			},
+			{
+				"Id": "WATERWORLD1",
+				"Name": "Lithium",
+				"Quantity": 1
+			},
+			{
+				"Id": "GAS4",
+				"Name": "Methane",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "CATALYST2",
+			"Name": "Sodium Nitrate",
+			"Quantity": 2
+		},
+		"Time": "90.0",
+		"Operation": "Loosen Bonds",
+		"Slug": "refinery/REFINERECIPE_374"
+	},
+	{
+		"Id": "REFINERECIPE_378",
+		"Inputs": [
+			{
+				"Id": "GAS4",
+				"Name": "Methane",
+				"Quantity": 3
+			}
+		],
+		"Output": {
+			"Id": "GAS3",
+			"Name": "Nitrogen",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Gas Transfer",
+		"Slug": "refinery/REFINERECIPE_378"
+	},
+	{
+		"Id": "REFINERECIPE_379",
+		"Inputs": [
+			{
+				"Id": "GAS4",
+				"Name": "Methane",
+				"Quantity": 1
+			},
+			{
+				"Id": "LAUNCHSUB",
+				"Name": "Di-hydrogen",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "HOT1",
+			"Name": "Phosphorus",
+			"Quantity": 1
+		},
+		"Time": "40.0",
+		"Operation": "Organic Fusion",
+		"Slug": "refinery/REFINERECIPE_379"
+	},
+	{
+		"Id": "REFINERECIPE_380",
+		"Inputs": [
+			{
+				"Id": "GAS4",
+				"Name": "Methane",
+				"Quantity": 1
+			},
+			{
+				"Id": "OXYGEN",
+				"Name": "Oxygen",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "GAS3",
+			"Name": "Nitrogen",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Gas Transfer",
+		"Slug": "refinery/REFINERECIPE_380"
+	},
+	{
+		"Id": "REFINERECIPE_381",
+		"Inputs": [
+			{
+				"Id": "GAS4",
+				"Name": "Methane",
+				"Quantity": 1
+			},
+			{
+				"Id": "STELLAR2",
+				"Name": "Chromatic Metal",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "GAS3",
+			"Name": "Nitrogen",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Gas Catalysation",
+		"Slug": "refinery/REFINERECIPE_381"
+	},
+	{
+		"Id": "REFINERECIPE_382",
+		"Inputs": [
+			{
+				"Id": "GAS4",
+				"Name": "Methane",
+				"Quantity": 1
+			},
+			{
+				"Id": "CATALYST1",
+				"Name": "Sodium",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "CATALYST2",
+			"Name": "Sodium Nitrate",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Gas Catalysation",
+		"Slug": "refinery/REFINERECIPE_382"
+	},
+	{
+		"Id": "REFINERECIPE_383",
+		"Inputs": [
+			{
+				"Id": "GAS4",
+				"Name": "Methane",
+				"Quantity": 1
+			},
+			{
+				"Id": "CATALYST2",
+				"Name": "Sodium Nitrate",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "CATALYST2",
+			"Name": "Sodium Nitrate",
+			"Quantity": 2
+		},
+		"Time": "90.0",
+		"Operation": "Gas Catalysation",
+		"Slug": "refinery/REFINERECIPE_383"
+	},
+	{
+		"Id": "REFINERECIPE_384",
+		"Inputs": [
+			{
+				"Id": "GAS4",
+				"Name": "Methane",
+				"Quantity": 1
+			},
+			{
+				"Id": "LAND1",
+				"Name": "Ferrite Dust",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "CATALYST2",
+			"Name": "Sodium Nitrate",
+			"Quantity": 1
+		},
+		"Time": "120.0",
+		"Operation": "Gas Catalysation",
+		"Slug": "refinery/REFINERECIPE_384"
+	},
+	{
+		"Id": "REFINERECIPE_385",
+		"Inputs": [
+			{
+				"Id": "GAS4",
+				"Name": "Methane",
+				"Quantity": 1
+			},
+			{
+				"Id": "LAND2",
+				"Name": "Pure Ferrite",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "CATALYST2",
+			"Name": "Sodium Nitrate",
+			"Quantity": 2
+		},
+		"Time": "120.0",
+		"Operation": "Gas Catalysation",
+		"Slug": "refinery/REFINERECIPE_385"
+	},
+	{
+		"Id": "REFINERECIPE_386",
+		"Inputs": [
+			{
+				"Id": "GAS4",
+				"Name": "Methane",
+				"Quantity": 1
+			},
+			{
+				"Id": "LAND3",
+				"Name": "Magnetised Ferrite",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "CATALYST2",
+			"Name": "Sodium Nitrate",
+			"Quantity": 3
+		},
+		"Time": "120.0",
+		"Operation": "Gas Catalysation",
+		"Slug": "refinery/REFINERECIPE_386"
+	},
+	{
+		"Id": "REFINERECIPE_387",
+		"Inputs": [
+			{
+				"Id": "GAS1",
+				"Name": "Sulphurine",
+				"Quantity": 3
+			},
+			{
+				"Id": "GAS2",
+				"Name": "Radon",
+				"Quantity": 3
+			},
+			{
+				"Id": "GAS3",
+				"Name": "Nitrogen",
+				"Quantity": 3
+			}
+		],
+		"Output": {
+			"Id": "GAS4",
+			"Name": "Methane",
+			"Quantity": 1
+		},
+		"Time": "40.0",
+		"Operation": "Organic Fusion",
+		"Slug": "refinery/REFINERECIPE_387"
+	},
+	{
+		"Id": "REFINERECIPE_388",
+		"Inputs": [
+			{
+				"Id": "GAS4",
+				"Name": "Methane",
+				"Quantity": 1
+			},
+			{
+				"Id": "TOXIC1",
+				"Name": "Ammonia",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "PLANT_TOXIC",
+			"Name": "Fungal Mould",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Organic Expansion",
+		"Slug": "refinery/REFINERECIPE_388"
+	},
+	{
+		"Id": "REFINERECIPE_389",
+		"Inputs": [
+			{
+				"Id": "GAS4",
+				"Name": "Methane",
+				"Quantity": 1
+			},
+			{
+				"Id": "COLD1",
+				"Name": "Dioxite",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "PLANT_SNOW",
+			"Name": "Frost Crystal",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Organic Expansion",
+		"Slug": "refinery/REFINERECIPE_389"
+	},
+	{
+		"Id": "REFINERECIPE_390",
+		"Inputs": [
+			{
+				"Id": "GAS4",
+				"Name": "Methane",
+				"Quantity": 1
+			},
+			{
+				"Id": "RADIO1",
+				"Name": "Uranium",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "PLANT_RADIO",
+			"Name": "Gamma Root",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Organic Expansion",
+		"Slug": "refinery/REFINERECIPE_390"
+	},
+	{
+		"Id": "REFINERECIPE_391",
+		"Inputs": [
+			{
+				"Id": "GAS4",
+				"Name": "Methane",
+				"Quantity": 1
+			},
+			{
+				"Id": "DUSTY1",
+				"Name": "Pyrite",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "PLANT_DUST",
+			"Name": "Cactus Flesh",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Organic Expansion",
+		"Slug": "refinery/REFINERECIPE_391"
+	},
+	{
+		"Id": "REFINERECIPE_392",
+		"Inputs": [
+			{
+				"Id": "GAS4",
+				"Name": "Methane",
+				"Quantity": 1
+			},
+			{
+				"Id": "HOT1",
+				"Name": "Phosphorus",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "PLANT_HOT",
+			"Name": "Solanium",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Organic Expansion",
+		"Slug": "refinery/REFINERECIPE_392"
+	},
+	{
+		"Id": "REFINERECIPE_393",
+		"Inputs": [
+			{
+				"Id": "GAS4",
+				"Name": "Methane",
+				"Quantity": 1
+			},
+			{
+				"Id": "LUSH1",
+				"Name": "Paraffinium",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "PLANT_LUSH",
+			"Name": "Star Bulb",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Organic Expansion",
+		"Slug": "refinery/REFINERECIPE_393"
+	},
+	{
+		"Id": "REFINERECIPE_394",
+		"Inputs": [
+			{
+				"Id": "GAS4",
+				"Name": "Methane",
+				"Quantity": 1
+			},
+			{
+				"Id": "GASGIANT1",
+				"Name": "Crystallised Helium",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "PLANT_CAVE",
+			"Name": "Marrow Bulb",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Organic Expansion",
+		"Slug": "refinery/REFINERECIPE_394"
+	},
+	{
+		"Id": "REFINERECIPE_395",
+		"Inputs": [
+			{
+				"Id": "GAS4",
+				"Name": "Methane",
+				"Quantity": 1
+			},
+			{
+				"Id": "WATERWORLD1",
+				"Name": "Lithium",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "PLANT_WATER",
+			"Name": "Kelp Sac",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Organic Expansion",
+		"Slug": "refinery/REFINERECIPE_395"
+	},
+	{
+		"Id": "REFINERECIPE_396",
+		"Inputs": [
+			{
+				"Id": "GAS4",
+				"Name": "Methane",
+				"Quantity": 1
+			},
+			{
+				"Id": "CREATURE1",
+				"Name": "Mordite",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "PLANT_POOP",
+			"Name": "Faecium",
+			"Quantity": 1
+		},
+		"Time": "90.0",
+		"Operation": "Organic Expansion",
+		"Slug": "refinery/REFINERECIPE_396"
+	},
+	{
+		"Id": "REFINERECIPE_397",
+		"Inputs": [
+			{
+				"Id": "RUINSUB",
+				"Name": "Polished Stone",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "LAND2",
+			"Name": "Pure Ferrite",
+			"Quantity": 2
+		},
+		"Time": "60.0",
+		"Operation": "Recycle Stone",
+		"Slug": "refinery/REFINERECIPE_397"
+	},
+	{
+		"Id": "REFINERECIPE_398",
+		"Inputs": [
+			{
+				"Id": "EX_PURPLE",
+				"Name": "Activated Quartzite",
+				"Quantity": 1
+			},
+			{
+				"Id": "FUEL1",
+				"Name": "Carbon",
+				"Quantity": 1
+			}
+		],
+		"Output": {
+			"Id": "PURPLE2",
+			"Name": "Quartzite",
+			"Quantity": 1
+		},
+		"Time": "60.0",
+		"Operation": "Chromatic Alchemy",
+		"Slug": "refinery/REFINERECIPE_398"
+	}
+]

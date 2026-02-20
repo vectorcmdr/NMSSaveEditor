@@ -70,6 +70,10 @@ public class VehiclePanel : UserControl
         layout.SetColumnSpan(_invTabs, 2);
 
         Controls.Add(layout);
+
+        _inventoryGrid.SetMaxSupportedLabel("");
+        _techGrid.SetMaxSupportedLabel("");
+
         ResumeLayout(false);
         PerformLayout();
     }

@@ -61,7 +61,7 @@ public class DiscoveryPanel : UserControl
         ("^AUTO_", 8),   // Autophage
     };
 
-    // Total race count in the Races boolean array (matches Java eU enum length)
+    // Total race count in the Races boolean array
     private const int TotalRaceCount = 9;
 
     public DiscoveryPanel()
@@ -150,7 +150,7 @@ public class DiscoveryPanel : UserControl
             Dock = DockStyle.Fill,
             Height = 70,
         };
-        string[] raceIconFiles = { "UI-GEK.PNG", "UI-VYKEEN.PNG", "UI-KORVAX.PNG", "UI-GEK.PNG", "UI-KORVAX.PNG" };
+        string[] raceIconFiles = { "UI-GEK.PNG", "UI-VYKEEN.PNG", "UI-KORVAX.PNG", "UI-ATLAS.PNG", "UI-KORVAX.PNG" };
         string[] raceLabels = { "Gek", "Vy'keen", "Korvax", "Atlas", "Autophage" };
         _raceIcons = new PictureBox[raceLabels.Length];
         _raceLabels = new Label[raceLabels.Length];
@@ -306,7 +306,7 @@ public class DiscoveryPanel : UserControl
     private void LoadRaceIcons()
     {
         if (_iconManager == null || _raceIcons.Length == 0) return;
-        string[] raceIconFiles = { "UI-GEK.PNG", "UI-VYKEEN.PNG", "UI-KORVAX.PNG", "UI-GEK.PNG", "UI-KORVAX.PNG" };
+        string[] raceIconFiles = { "UI-GEK.PNG", "UI-VYKEEN.PNG", "UI-KORVAX.PNG", "UI-ATLAS.PNG", "UI-KORVAX.PNG" };
         for (int i = 0; i < _raceIcons.Length && i < raceIconFiles.Length; i++)
         {
             var icon = _iconManager.GetIcon(raceIconFiles[i]);
@@ -498,19 +498,73 @@ public class DiscoveryPanel : UserControl
 
     // --- Tab 1: Known Technologies events ---
 
-    private void AddTech_Click(object? sender, EventArgs e) => AddItemToGrid(_techGrid);
+    private void AddTech_Click(object? sender, EventArgs e)
+    {
+        if (_database == null) return;
+        var knownIds = new HashSet<string>(
+            _techGrid.Rows.Cast<DataGridViewRow>().Select(r => r.Cells["ID"].Value as string ?? ""),
+            StringComparer.OrdinalIgnoreCase);
+
+        var unknownTechs = _database.Items.Values
+            .Where(item => string.Equals(item.ItemType, "technology", StringComparison.OrdinalIgnoreCase)
+                        && !knownIds.Contains(item.Id))
+            .OrderBy(item => item.Name)
+            .Select(item => (
+                icon: GetScaledIcon(item.Id) ?? (object)PlaceholderIcon as Image,
+                name: item.Name,
+                id: item.Id,
+                category: item.Category
+            )).ToList();
+
+        using var picker = new ItemPickerDialog("Add Technology", unknownTechs);
+        if (picker.ShowDialog(this) == DialogResult.OK && !string.IsNullOrEmpty(picker.SelectedId))
+        {
+            var item = _database.GetItem(picker.SelectedId!);
+            if (item != null)
+            {
+                _techGrid.Rows.Add(GetScaledIcon(item.Id) ?? (object)PlaceholderIcon, item.Name, item.Category, item.Id);
+            }
+        }
+    }
     private void RemoveTech_Click(object? sender, EventArgs e) => RemoveSelectedFromGrid(_techGrid);
 
     // --- Tab 2: Known Products events ---
 
-    private void AddProduct_Click(object? sender, EventArgs e) => AddItemToGrid(_productGrid);
+    private void AddProduct_Click(object? sender, EventArgs e)
+    {
+        if (_database == null) return;
+        var knownIds = new HashSet<string>(
+            _productGrid.Rows.Cast<DataGridViewRow>().Select(r => r.Cells["ID"].Value as string ?? ""),
+            StringComparer.OrdinalIgnoreCase);
+
+        var unknownProducts = _database.Items.Values
+            .Where(item => string.Equals(item.ItemType, "product", StringComparison.OrdinalIgnoreCase)
+                        && !knownIds.Contains(item.Id)
+                        && !string.Equals(item.Category, "TechBox", StringComparison.OrdinalIgnoreCase)) // Exclude TechBox
+            .OrderBy(item => item.Name)
+            .Select(item => (
+                icon: GetScaledIcon(item.Id) ?? (object)PlaceholderIcon as Image,
+                name: item.Name,
+                id: item.Id,
+                category: item.Category
+            )).ToList();
+
+        using var picker = new ItemPickerDialog("Add Product", unknownProducts);
+        if (picker.ShowDialog(this) == DialogResult.OK && !string.IsNullOrEmpty(picker.SelectedId))
+        {
+            var item = _database.GetItem(picker.SelectedId!);
+            if (item != null)
+            {
+                _productGrid.Rows.Add(GetScaledIcon(item.Id) ?? (object)PlaceholderIcon, item.Name, item.Category, item.Id);
+            }
+        }
+    }
     private void RemoveProduct_Click(object? sender, EventArgs e) => RemoveSelectedFromGrid(_productGrid);
 
     // --- Tab 3: Known Words ---
 
     /// <summary>
     /// Checks if a word group is known for a specific race in KnownWordGroups.
-    /// Matches Java gz.d(String, int) method.
     /// </summary>
     private bool IsWordKnown(string groupName, int raceOrdinal)
     {
@@ -529,7 +583,6 @@ public class DiscoveryPanel : UserControl
 
     /// <summary>
     /// Sets a word group's known state for a specific race in KnownWordGroups.
-    /// Matches Java gz.a(String, int, boolean) method.
     /// Creates entries as needed, removes entries with no known races.
     /// </summary>
     private void SetWordKnown(string groupName, int raceOrdinal, bool known)
@@ -630,7 +683,7 @@ public class DiscoveryPanel : UserControl
 
     /// <summary>
     /// When a race checkbox is toggled, immediately update KnownWordGroups in the save data.
-    /// This matches the Java app behavior where changes are written immediately.
+    /// Changes are written immediately.
     /// </summary>
     private void WordGrid_CellValueChanged(object? sender, DataGridViewCellEventArgs e)
     {
@@ -724,7 +777,7 @@ public class DiscoveryPanel : UserControl
 
     private void LoadKnownGlyphs(JsonObject playerState)
     {
-        // Java stores KnownPortalRunes as a single integer bitfield (each bit = one glyph)
+        // KnownPortalRunes as a single integer bitfield (each bit = one glyph)
         int runesBitfield = 0;
         try
         {
@@ -744,7 +797,7 @@ public class DiscoveryPanel : UserControl
 
     private void SaveKnownGlyphs(JsonObject playerState)
     {
-        // Write back as integer bitfield (matching Java format)
+        // Write back as integer bitfield
         int runesBitfield = 0;
         for (int i = 0; i < 16; i++)
         {

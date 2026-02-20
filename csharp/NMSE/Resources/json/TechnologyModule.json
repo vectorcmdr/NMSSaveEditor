@@ -1,0 +1,940 @@
+[
+	{
+		"Id": "U_SENTGUN",
+		"Icon": "U_SENTGUN.png",
+		"IconPath": "textures/ui/frontend/icons/u4products/proctech/proctech.sentinel.gun.dds",
+		"Name": "Sentinel Weapons Shard",
+		"Group": "Forbidden Multi-Tool Module",
+		"Description": "An anomalous upgrade for the Multi-Tool's Weapon Systems. Use FE_ALT1 to begin upgrade installation process.\n\nThis eerie, glassy shard has been extracted from Sentinel debris. Its exact effect upon the Multi-Tool will not be known until after installation is complete.",
+		"AltDescription": null,
+		"Hint": null,
+		"BaseValueUnits": 480,
+		"CurrencyType": "Credits",
+		"Level": 0,
+		"ChargeValue": 0,
+		"MaxStackSize": 1,
+		"DefaultCraftAmount": 1,
+		"CraftAmountStepSize": 1,
+		"CraftAmountMultiplier": 1,
+		"Colour": "1A2733",
+		"WorldColour": null,
+		"CdnUrl": "",
+		"Usages": [],
+		"BlueprintCost": 1,
+		"BlueprintCostType": "None",
+		"BlueprintSource": 0,
+		"RequiredItems": [],
+		"StatBonuses": [],
+		"ConsumableRewardTexts": [],
+		"HeroIconPath": null,
+		"PriceModifiers": {
+			"SpaceStationMarkup": 0.0,
+			"LowPriceMod": -0.1,
+			"HighPriceMod": 0.1,
+			"BuyBaseMarkup": 0.2,
+			"BuyMarkupMod": 0.0
+		},
+		"SpecificChargeOnly": false,
+		"NormalisedValueOnWorld": 3.07051305e-05,
+		"NormalisedValueOffWorld": 3.07051305e-05,
+		"EconomyInfluenceMultiplier": 0.25,
+		"Rarity": "Rare",
+		"Legality": "Legal",
+		"TradeCategory": "None",
+		"ProductCategory": "Consumable",
+		"SubstanceCategory": "Special",
+		"WikiCategory": "NotEnabled",
+		"WikiEnabled": false,
+		"FossilCategory": "GcFossilCategory",
+		"CorvettePartCategory": "None",
+		"CorvetteRewardFrequency": 0.0,
+		"Consumable": true,
+		"CookingIngredient": false,
+		"GoodForSelling": false,
+		"EggModifierIngredient": false,
+		"DeploysInto": "UP_SENGUN",
+		"BuildableShipTechID": null,
+		"GroupID": null,
+		"PinObjective": "UI_BUY_OBJ",
+		"PinObjectiveTip": null,
+		"PinObjectiveMessage": null,
+		"PinObjectiveScannableType": "None",
+		"PinObjectiveEasyToRefine": false,
+		"NeverPinnable": false,
+		"GiveRewardOnSpecialPurchase": null,
+		"FoodBonusStat": null,
+		"FoodBonusStatAmount": 0.0,
+		"IsTechbox": false,
+		"CanSendToOtherPlayers": true,
+		"Slug": "technology/U_SENTGUN"
+	},
+	{
+		"Id": "U_SENTSUIT",
+		"Icon": "U_SENTSUIT.png",
+		"IconPath": "textures/ui/frontend/icons/u4products/proctech/proctech.sentinel.suit.dds",
+		"Name": "Sentinel Exosuit Fragment",
+		"Group": "Forbidden Exosuit Module",
+		"Description": "An anomalous upgrade for Exosuit. Use FE_ALT1 to begin upgrade installation process.\n\nThis strange fragment of debris has been extracted from Sentinel technology. Its exact effect upon suit performance is impossible to predict before the nantite foam has fully spread within the Exosuit's systems.",
+		"AltDescription": null,
+		"Hint": null,
+		"BaseValueUnits": 480,
+		"CurrencyType": "Credits",
+		"Level": 0,
+		"ChargeValue": 0,
+		"MaxStackSize": 1,
+		"DefaultCraftAmount": 1,
+		"CraftAmountStepSize": 1,
+		"CraftAmountMultiplier": 1,
+		"Colour": "1A2733",
+		"WorldColour": null,
+		"CdnUrl": "",
+		"Usages": [],
+		"BlueprintCost": 1,
+		"BlueprintCostType": "None",
+		"BlueprintSource": 0,
+		"RequiredItems": [],
+		"StatBonuses": [],
+		"ConsumableRewardTexts": [],
+		"HeroIconPath": null,
+		"PriceModifiers": {
+			"SpaceStationMarkup": 0.0,
+			"LowPriceMod": -0.1,
+			"HighPriceMod": 0.1,
+			"BuyBaseMarkup": 0.2,
+			"BuyMarkupMod": 0.0
+		},
+		"SpecificChargeOnly": false,
+		"NormalisedValueOnWorld": 3.07051305e-05,
+		"NormalisedValueOffWorld": 3.07051305e-05,
+		"EconomyInfluenceMultiplier": 0.25,
+		"Rarity": "Rare",
+		"Legality": "Legal",
+		"TradeCategory": "None",
+		"ProductCategory": "Consumable",
+		"SubstanceCategory": "Special",
+		"WikiCategory": "NotEnabled",
+		"WikiEnabled": false,
+		"FossilCategory": "GcFossilCategory",
+		"CorvettePartCategory": "None",
+		"CorvetteRewardFrequency": 0.0,
+		"Consumable": true,
+		"CookingIngredient": false,
+		"GoodForSelling": false,
+		"EggModifierIngredient": false,
+		"DeploysInto": "UP_SNSUIT",
+		"BuildableShipTechID": null,
+		"GroupID": null,
+		"PinObjective": "UI_BUY_OBJ",
+		"PinObjectiveTip": null,
+		"PinObjectiveMessage": null,
+		"PinObjectiveScannableType": "None",
+		"PinObjectiveEasyToRefine": false,
+		"NeverPinnable": false,
+		"GiveRewardOnSpecialPurchase": null,
+		"FoodBonusStat": null,
+		"FoodBonusStatAmount": 0.0,
+		"IsTechbox": false,
+		"CanSendToOtherPlayers": true,
+		"Slug": "technology/U_SENTSUIT"
+	},
+	{
+		"Id": "UA_PULSE1",
+		"Icon": "UA_PULSE1.png",
+		"IconPath": "textures/ui/frontend/icons/technology/bio/biotech.heart.mod.dds",
+		"Name": "Pulsing Heart",
+		"Group": "C-Class Pulsing Heart Node",
+		"Description": "A moderate upgrade for the Pulsing Heart. Use FE_ALT1 to trigger node growth and begin the grafting process.\n\nEach node is genetically unique, and exact upgrade statistics are unknown until installation is complete.\n\nPotential improvements include: manoeuvrability and speed.",
+		"Quality": "Normal",
+		"NumStatsMin": 1,
+		"NumStatsMax": 2,
+		"WeightingCurve": "MaxIsRare",
+		"StatLevels": [
+			{
+				"StatType": "Ship_PulseDrive_MiniJumpFuelSpending",
+				"Name": "Ship Pulse Drive Mini Jump Fuel Spending",
+				"ValueMin": 0.9,
+				"ValueMax": 0.95,
+				"WeightingCurve": "MinIsUncommon",
+				"AlwaysChoose": false
+			},
+			{
+				"StatType": "Ship_Boost",
+				"Name": "Ship Boost",
+				"ValueMin": 1.01,
+				"ValueMax": 1.1,
+				"WeightingCurve": "MaxIsUncommon",
+				"AlwaysChoose": false
+			},
+			{
+				"StatType": "Ship_BoostManeuverability",
+				"Name": "Ship Boost Maneuverability",
+				"ValueMin": 1.01,
+				"ValueMax": 1.075,
+				"WeightingCurve": "MaxIsRare",
+				"AlwaysChoose": false
+			},
+			{
+				"StatType": "Ship_Maneuverability",
+				"Name": "Ship Maneuverability",
+				"ValueMin": 1.005,
+				"ValueMax": 1.005,
+				"WeightingCurve": "NoWeighting",
+				"AlwaysChoose": true
+			}
+		],
+		"Slug": "technology/UA_PULSE1"
+	},
+	{
+		"Id": "UA_PULSE2",
+		"Icon": "UA_PULSE2.png",
+		"IconPath": "textures/ui/frontend/icons/technology/bio/biotech.heart.mod.dds",
+		"Name": "Pulsing Heart",
+		"Group": "B-Class Pulsing Heart Node",
+		"Description": "A significant upgrade for the Pulsing Heart. Use FE_ALT1 to trigger node growth and begin the grafting process.\n\nEach node is genetically unique, and exact upgrade statistics are unknown until installation is complete.\n\nPotential improvements include: manoeuvrability and speed.",
+		"Quality": "Rare",
+		"NumStatsMin": 2,
+		"NumStatsMax": 2,
+		"WeightingCurve": "NoWeighting",
+		"StatLevels": [
+			{
+				"StatType": "Ship_PulseDrive_MiniJumpFuelSpending",
+				"Name": "Ship Pulse Drive Mini Jump Fuel Spending",
+				"ValueMin": 0.85,
+				"ValueMax": 0.9,
+				"WeightingCurve": "MinIsUncommon",
+				"AlwaysChoose": false
+			},
+			{
+				"StatType": "Ship_Boost",
+				"Name": "Ship Boost",
+				"ValueMin": 1.1,
+				"ValueMax": 1.15,
+				"WeightingCurve": "MaxIsUncommon",
+				"AlwaysChoose": false
+			},
+			{
+				"StatType": "Ship_BoostManeuverability",
+				"Name": "Ship Boost Maneuverability",
+				"ValueMin": 1.01,
+				"ValueMax": 1.12,
+				"WeightingCurve": "MaxIsRare",
+				"AlwaysChoose": false
+			},
+			{
+				"StatType": "Ship_Maneuverability",
+				"Name": "Ship Maneuverability",
+				"ValueMin": 1.005,
+				"ValueMax": 1.005,
+				"WeightingCurve": "NoWeighting",
+				"AlwaysChoose": true
+			}
+		],
+		"Slug": "technology/UA_PULSE2"
+	},
+	{
+		"Id": "UA_PULSE3",
+		"Icon": "UA_PULSE3.png",
+		"IconPath": "textures/ui/frontend/icons/technology/bio/biotech.heart.mod.dds",
+		"Name": "Pulsing Heart",
+		"Group": "A-Class Pulsing Heart Node",
+		"Description": "An extremely powerful upgrade for the Pulsing Heart. Use FE_ALT1 to trigger node growth and begin the grafting process.\n\nEach node is genetically unique, and exact upgrade statistics are unknown until installation is complete.\n\nPotential improvements include: manoeuvrability and speed.",
+		"Quality": "Epic",
+		"NumStatsMin": 2,
+		"NumStatsMax": 3,
+		"WeightingCurve": "MaxIsRare",
+		"StatLevels": [
+			{
+				"StatType": "Ship_PulseDrive_MiniJumpFuelSpending",
+				"Name": "Ship Pulse Drive Mini Jump Fuel Spending",
+				"ValueMin": 0.8,
+				"ValueMax": 0.85,
+				"WeightingCurve": "MinIsUncommon",
+				"AlwaysChoose": false
+			},
+			{
+				"StatType": "Ship_Boost",
+				"Name": "Ship Boost",
+				"ValueMin": 1.1,
+				"ValueMax": 1.2,
+				"WeightingCurve": "MaxIsUncommon",
+				"AlwaysChoose": false
+			},
+			{
+				"StatType": "Ship_BoostManeuverability",
+				"Name": "Ship Boost Maneuverability",
+				"ValueMin": 1.05,
+				"ValueMax": 1.16,
+				"WeightingCurve": "MaxIsRare",
+				"AlwaysChoose": false
+			},
+			{
+				"StatType": "Ship_Maneuverability",
+				"Name": "Ship Maneuverability",
+				"ValueMin": 1.005,
+				"ValueMax": 1.005,
+				"WeightingCurve": "NoWeighting",
+				"AlwaysChoose": true
+			}
+		],
+		"Slug": "technology/UA_PULSE3"
+	},
+	{
+		"Id": "UA_PULSE4",
+		"Icon": "UA_PULSE4.png",
+		"IconPath": "textures/ui/frontend/icons/technology/bio/biotech.heart.mod.dds",
+		"Name": "Pulsing Heart",
+		"Group": "S-Class Pulsing Heart Node",
+		"Description": "A supremely powerful upgrade for the Pulsing Heart. Use FE_ALT1 to trigger node growth and begin the grafting process.\n\nEach node is genetically unique, and exact upgrade statistics are unknown until installation is complete.\n\nPotential improvements include: manoeuvrability and speed.",
+		"Quality": "Legendary",
+		"NumStatsMin": 3,
+		"NumStatsMax": 3,
+		"WeightingCurve": "NoWeighting",
+		"StatLevels": [
+			{
+				"StatType": "Ship_PulseDrive_MiniJumpFuelSpending",
+				"Name": "Ship Pulse Drive Mini Jump Fuel Spending",
+				"ValueMin": 0.8,
+				"ValueMax": 0.8,
+				"WeightingCurve": "NoWeighting",
+				"AlwaysChoose": false
+			},
+			{
+				"StatType": "Ship_Boost",
+				"Name": "Ship Boost",
+				"ValueMin": 1.1,
+				"ValueMax": 1.25,
+				"WeightingCurve": "MaxIsUncommon",
+				"AlwaysChoose": false
+			},
+			{
+				"StatType": "Ship_BoostManeuverability",
+				"Name": "Ship Boost Maneuverability",
+				"ValueMin": 1.05,
+				"ValueMax": 1.18,
+				"WeightingCurve": "MaxIsUncommon",
+				"AlwaysChoose": false
+			},
+			{
+				"StatType": "Ship_Maneuverability",
+				"Name": "Ship Maneuverability",
+				"ValueMin": 1.0065,
+				"ValueMax": 1.0065,
+				"WeightingCurve": "NoWeighting",
+				"AlwaysChoose": true
+			}
+		],
+		"Slug": "technology/UA_PULSE4"
+	},
+	{
+		"Id": "UA_LAUN1",
+		"Icon": "UA_LAUN1.png",
+		"IconPath": "textures/ui/frontend/icons/technology/bio/biotech.brain.mod.dds",
+		"Name": "Neural Assembly",
+		"Group": "C-Class Neural Assembly Node",
+		"Description": "A moderate upgrade for the Neural Assembly. Use FE_ALT1 to trigger node growth and begin the grafting process.\n\nEach node is genetically unique, and exact upgrade statistics are unknown until installation is complete.\n\nImproves take-off efficiency.",
+		"Quality": "Normal",
+		"NumStatsMin": 1,
+		"NumStatsMax": 2,
+		"WeightingCurve": "MaxIsRare",
+		"StatLevels": [
+			{
+				"StatType": "Ship_Launcher_TakeOffCost",
+				"Name": "Ship Launcher Take Off Cost",
+				"ValueMin": 0.95,
+				"ValueMax": 0.9,
+				"WeightingCurve": "MaxIsSuperRare",
+				"AlwaysChoose": false
+			}
+		],
+		"Slug": "technology/UA_LAUN1"
+	},
+	{
+		"Id": "UA_LAUN2",
+		"Icon": "UA_LAUN2.png",
+		"IconPath": "textures/ui/frontend/icons/technology/bio/biotech.brain.mod.dds",
+		"Name": "Neural Assembly",
+		"Group": "B-Class Neural Assembly Node",
+		"Description": "A significant upgrade for the Neural Assembly. Use FE_ALT1 to trigger node growth and begin the grafting process.\n\nEach node is genetically unique, and exact upgrade statistics are unknown until installation is complete.\n\nImproves take-off efficiency.",
+		"Quality": "Rare",
+		"NumStatsMin": 1,
+		"NumStatsMax": 2,
+		"WeightingCurve": "MaxIsUncommon",
+		"StatLevels": [
+			{
+				"StatType": "Ship_Launcher_TakeOffCost",
+				"Name": "Ship Launcher Take Off Cost",
+				"ValueMin": 0.9,
+				"ValueMax": 0.85,
+				"WeightingCurve": "MinIsRare",
+				"AlwaysChoose": false
+			}
+		],
+		"Slug": "technology/UA_LAUN2"
+	},
+	{
+		"Id": "UA_LAUN3",
+		"Icon": "UA_LAUN3.png",
+		"IconPath": "textures/ui/frontend/icons/technology/bio/biotech.brain.mod.dds",
+		"Name": "Neural Assembly",
+		"Group": "A-Class Neural Assembly Node",
+		"Description": "An extremely powerful upgrade for the Neural Assembly. Use FE_ALT1 to trigger node growth and begin the grafting process.\n\nEach node is genetically unique, and exact upgrade statistics are unknown until installation is complete.\n\nImproves take-off efficiency.",
+		"Quality": "Epic",
+		"NumStatsMin": 2,
+		"NumStatsMax": 2,
+		"WeightingCurve": "NoWeighting",
+		"StatLevels": [
+			{
+				"StatType": "Ship_Launcher_TakeOffCost",
+				"Name": "Ship Launcher Take Off Cost",
+				"ValueMin": 0.85,
+				"ValueMax": 0.8,
+				"WeightingCurve": "MinIsRare",
+				"AlwaysChoose": false
+			}
+		],
+		"Slug": "technology/UA_LAUN3"
+	},
+	{
+		"Id": "UA_LAUN4",
+		"Icon": "UA_LAUN4.png",
+		"IconPath": "textures/ui/frontend/icons/technology/bio/biotech.brain.mod.dds",
+		"Name": "Neural Assembly",
+		"Group": "S-Class Neural Assembly Node",
+		"Description": "A supremely powerful upgrade for the Neural Assembly. Use FE_ALT1 to trigger node growth and begin the grafting process.\n\nEach node is genetically unique, and exact upgrade statistics are unknown until installation is complete.\n\nImproves take-off efficiency and enables auto-recharging.",
+		"Quality": "Legendary",
+		"NumStatsMin": 2,
+		"NumStatsMax": 2,
+		"WeightingCurve": "NoWeighting",
+		"StatLevels": [
+			{
+				"StatType": "Ship_Launcher_TakeOffCost",
+				"Name": "Ship Launcher Take Off Cost",
+				"ValueMin": 0.8,
+				"ValueMax": 0.8,
+				"WeightingCurve": "MinIsUncommon",
+				"AlwaysChoose": false
+			},
+			{
+				"StatType": "Ship_Launcher_AutoCharge",
+				"Name": "Ship Launcher Auto Charge",
+				"ValueMin": 1.0,
+				"ValueMax": 1.0,
+				"WeightingCurve": "NoWeighting",
+				"AlwaysChoose": false
+			}
+		],
+		"Slug": "technology/UA_LAUN4"
+	},
+	{
+		"Id": "UA_HYP1",
+		"Icon": "UA_HYP1.png",
+		"IconPath": "textures/ui/frontend/icons/technology/bio/biotech.eyecluster.mod.dds",
+		"Name": "Singularity Cortex",
+		"Group": "C-Class Singularity Cortex Node",
+		"Description": "A moderate upgrade for the Singularity Cortex. Use FE_ALT1 to trigger node growth and begin the grafting process.\n\nEach node is genetically unique, and exact upgrade statistics are unknown until installation is complete.\n\nPotential improvements include: warp-drive efficiency and jump distance.",
+		"Quality": "Normal",
+		"NumStatsMin": 1,
+		"NumStatsMax": 1,
+		"WeightingCurve": "MaxIsRare",
+		"StatLevels": [
+			{
+				"StatType": "Ship_Hyperdrive_JumpDistance",
+				"Name": "Ship Hyperdrive Jump Distance",
+				"ValueMin": 50.0,
+				"ValueMax": 100.0,
+				"WeightingCurve": "MaxIsUncommon",
+				"AlwaysChoose": false
+			}
+		],
+		"Slug": "technology/UA_HYP1"
+	},
+	{
+		"Id": "UA_HYP2",
+		"Icon": "UA_HYP2.png",
+		"IconPath": "textures/ui/frontend/icons/technology/bio/biotech.eyecluster.mod.dds",
+		"Name": "Singularity Cortex",
+		"Group": "B-Class Singularity Cortex Node",
+		"Description": "A significant upgrade for the Singularity Cortex. Use FE_ALT1 to trigger node growth and begin the grafting process.\n\nEach node is genetically unique, and exact upgrade statistics are unknown until installation is complete.\n\nPotential improvements include: warp-drive efficiency and jump distance.",
+		"Quality": "Rare",
+		"NumStatsMin": 1,
+		"NumStatsMax": 1,
+		"WeightingCurve": "MaxIsUncommon",
+		"StatLevels": [
+			{
+				"StatType": "Ship_Hyperdrive_JumpDistance",
+				"Name": "Ship Hyperdrive Jump Distance",
+				"ValueMin": 115.0,
+				"ValueMax": 165.0,
+				"WeightingCurve": "MaxIsUncommon",
+				"AlwaysChoose": false
+			}
+		],
+		"Slug": "technology/UA_HYP2"
+	},
+	{
+		"Id": "UA_HYP3",
+		"Icon": "UA_HYP3.png",
+		"IconPath": "textures/ui/frontend/icons/technology/bio/biotech.eyecluster.mod.dds",
+		"Name": "Singularity Cortex",
+		"Group": "A-Class Singularity Cortex Node",
+		"Description": "An extremely powerful upgrade for the Singularity Cortex. Use FE_ALT1 to trigger node growth and begin the grafting process.\n\nEach node is genetically unique, and exact upgrade statistics are unknown until installation is complete.\n\nPotential improvements include: warp-drive efficiency and jump distance.",
+		"Quality": "Epic",
+		"NumStatsMin": 1,
+		"NumStatsMax": 1,
+		"WeightingCurve": "NoWeighting",
+		"StatLevels": [
+			{
+				"StatType": "Ship_Hyperdrive_JumpDistance",
+				"Name": "Ship Hyperdrive Jump Distance",
+				"ValueMin": 165.0,
+				"ValueMax": 220.0,
+				"WeightingCurve": "MaxIsUncommon",
+				"AlwaysChoose": false
+			},
+			{
+				"StatType": "Ship_Hyperdrive_JumpsPerCell",
+				"Name": "Ship Hyperdrive Jumps Per Cell",
+				"ValueMin": 1.0,
+				"ValueMax": 1.0,
+				"WeightingCurve": "NoWeighting",
+				"AlwaysChoose": false
+			}
+		],
+		"Slug": "technology/UA_HYP3"
+	},
+	{
+		"Id": "UA_HYP4",
+		"Icon": "UA_HYP4.png",
+		"IconPath": "textures/ui/frontend/icons/technology/bio/biotech.eyecluster.mod.dds",
+		"Name": "Singularity Cortex",
+		"Group": "S-Class Singularity Cortex Node",
+		"Description": "A supremely powerful upgrade for the Singularity Cortex. Use FE_ALT1 to trigger node growth and begin the grafting process.\n\nEach node is genetically unique, and exact upgrade statistics are unknown until installation is complete.\n\nPotential improvements include: warp-drive efficiency and jump distance.",
+		"Quality": "Legendary",
+		"NumStatsMin": 2,
+		"NumStatsMax": 2,
+		"WeightingCurve": "NoWeighting",
+		"StatLevels": [
+			{
+				"StatType": "Ship_Hyperdrive_JumpDistance",
+				"Name": "Ship Hyperdrive Jump Distance",
+				"ValueMin": 220.0,
+				"ValueMax": 265.0,
+				"WeightingCurve": "MaxIsUncommon",
+				"AlwaysChoose": false
+			},
+			{
+				"StatType": "Ship_Hyperdrive_JumpsPerCell",
+				"Name": "Ship Hyperdrive Jumps Per Cell",
+				"ValueMin": 1.0,
+				"ValueMax": 1.0,
+				"WeightingCurve": "NoWeighting",
+				"AlwaysChoose": false
+			}
+		],
+		"Slug": "technology/UA_HYP4"
+	},
+	{
+		"Id": "UA_S_SHL1",
+		"Icon": "UA_S_SHL1.png",
+		"IconPath": "textures/ui/frontend/icons/technology/bio/biotech.scales.mod.dds",
+		"Name": "Scream Suppressor",
+		"Group": "C-Class Scream Suppressor Node",
+		"Description": "A moderate upgrade for the vessel's pain suppression systems. Use FE_ALT1 to trigger node growth and begin the grafting process.\n\nEach node is genetically unique, and exact upgrade statistics are unknown until installation is complete.\n\nSignificantly improves living ship strength for increased combat endurance.",
+		"Quality": "Normal",
+		"NumStatsMin": 1,
+		"NumStatsMax": 1,
+		"WeightingCurve": "NoWeighting",
+		"StatLevels": [
+			{
+				"StatType": "Ship_Armour_Shield_Strength",
+				"Name": "Ship Armour Shield Strength",
+				"ValueMin": 0.05,
+				"ValueMax": 0.1,
+				"WeightingCurve": "MaxIsSuperRare",
+				"AlwaysChoose": false
+			}
+		],
+		"Slug": "technology/UA_S_SHL1"
+	},
+	{
+		"Id": "UA_S_SHL2",
+		"Icon": "UA_S_SHL2.png",
+		"IconPath": "textures/ui/frontend/icons/technology/bio/biotech.scales.mod.dds",
+		"Name": "Scream Suppressor",
+		"Group": "B-Class Scream Suppressor Node",
+		"Description": "A significant upgrade for the vessel's pain suppression systems. Use FE_ALT1 to trigger node growth and begin the grafting process.\n\nEach node is genetically unique, and exact upgrade statistics are unknown until installation is complete.\n\nSignificantly improves living ship strength for increased combat endurance.",
+		"Quality": "Rare",
+		"NumStatsMin": 1,
+		"NumStatsMax": 1,
+		"WeightingCurve": "NoWeighting",
+		"StatLevels": [
+			{
+				"StatType": "Ship_Armour_Shield_Strength",
+				"Name": "Ship Armour Shield Strength",
+				"ValueMin": 0.05,
+				"ValueMax": 0.1,
+				"WeightingCurve": "MaxIsUncommon",
+				"AlwaysChoose": false
+			}
+		],
+		"Slug": "technology/UA_S_SHL2"
+	},
+	{
+		"Id": "UA_S_SHL3",
+		"Icon": "UA_S_SHL3.png",
+		"IconPath": "textures/ui/frontend/icons/technology/bio/biotech.scales.mod.dds",
+		"Name": "Scream Suppressor",
+		"Group": "A-Class Scream Suppressor Node",
+		"Description": "An extremely powerful upgrade for the vessel's pain suppression systems. Use FE_ALT1 to trigger node growth and begin the grafting process.\n\nEach node is genetically unique, and exact upgrade statistics are unknown until installation is complete.\n\nDramatically improves living ship strength for increased combat endurance.",
+		"Quality": "Epic",
+		"NumStatsMin": 1,
+		"NumStatsMax": 1,
+		"WeightingCurve": "NoWeighting",
+		"StatLevels": [
+			{
+				"StatType": "Ship_Armour_Shield_Strength",
+				"Name": "Ship Armour Shield Strength",
+				"ValueMin": 0.1,
+				"ValueMax": 0.2,
+				"WeightingCurve": "MaxIsUncommon",
+				"AlwaysChoose": false
+			}
+		],
+		"Slug": "technology/UA_S_SHL3"
+	},
+	{
+		"Id": "UA_S_SHL4",
+		"Icon": "UA_S_SHL4.png",
+		"IconPath": "textures/ui/frontend/icons/technology/bio/biotech.scales.mod.dds",
+		"Name": "Scream Suppressor",
+		"Group": "S-Class Scream Suppressor Node",
+		"Description": "A supremely powerful upgrade for the vessel's pain suppression systems. Use FE_ALT1 to trigger node growth and begin the grafting process.\n\nEach node is genetically unique, and exact upgrade statistics are unknown until installation is complete.\n\nDramatically improves living ship strength for increased combat endurance.",
+		"Quality": "Legendary",
+		"NumStatsMin": 1,
+		"NumStatsMax": 1,
+		"WeightingCurve": "NoWeighting",
+		"StatLevels": [
+			{
+				"StatType": "Ship_Armour_Shield_Strength",
+				"Name": "Ship Armour Shield Strength",
+				"ValueMin": 0.2,
+				"ValueMax": 0.2,
+				"WeightingCurve": "MaxIsUncommon",
+				"AlwaysChoose": false
+			}
+		],
+		"Slug": "technology/UA_S_SHL4"
+	},
+	{
+		"Id": "UA_SGUN1",
+		"Icon": "UA_SGUN1.png",
+		"IconPath": "textures/ui/frontend/icons/technology/bio/biotech.lumps.mod.dds",
+		"Name": "Spewing Vents",
+		"Group": "C-Class Spewing Vents Node",
+		"Description": "A moderate upgrade for the Spewing Vents. Use FE_ALT1 to trigger node growth and begin the grafting process.\n\nEach node is genetically unique, and exact upgrade statistics are unknown until installation is complete.\n\nPotential improvements include: damage, fire rate and overheat times.",
+		"Quality": "Normal",
+		"NumStatsMin": 1,
+		"NumStatsMax": 2,
+		"WeightingCurve": "MaxIsRare",
+		"StatLevels": [
+			{
+				"StatType": "Ship_Weapons_Guns_Damage",
+				"Name": "Ship Weapons Guns Damage",
+				"ValueMin": 8.0,
+				"ValueMax": 16.0,
+				"WeightingCurve": "MaxIsUncommon",
+				"AlwaysChoose": false
+			},
+			{
+				"StatType": "Ship_Weapons_Guns_Rate",
+				"Name": "Ship Weapons Guns Rate",
+				"ValueMin": 1.001,
+				"ValueMax": 1.011,
+				"WeightingCurve": "MaxIsUncommon",
+				"AlwaysChoose": false
+			},
+			{
+				"StatType": "Ship_Weapons_Guns_HeatTime",
+				"Name": "Ship Weapons Guns Heat Time",
+				"ValueMin": 1.001,
+				"ValueMax": 1.01,
+				"WeightingCurve": "MaxIsUncommon",
+				"AlwaysChoose": false
+			}
+		],
+		"Slug": "technology/UA_SGUN1"
+	},
+	{
+		"Id": "UA_SGUN2",
+		"Icon": "UA_SGUN2.png",
+		"IconPath": "textures/ui/frontend/icons/technology/bio/biotech.lumps.mod.dds",
+		"Name": "Spewing Vents",
+		"Group": "B-Class Spewing Vents Node",
+		"Description": "A significant upgrade for the Spewing Vents. Use FE_ALT1 to trigger node growth and begin the grafting process.\n\nEach node is genetically unique, and exact upgrade statistics are unknown until installation is complete.\n\nPotential improvements include: damage, fire rate and overheat times.",
+		"Quality": "Rare",
+		"NumStatsMin": 1,
+		"NumStatsMax": 2,
+		"WeightingCurve": "MaxIsUncommon",
+		"StatLevels": [
+			{
+				"StatType": "Ship_Weapons_Guns_Damage",
+				"Name": "Ship Weapons Guns Damage",
+				"ValueMin": 12.0,
+				"ValueMax": 20.0,
+				"WeightingCurve": "MaxIsUncommon",
+				"AlwaysChoose": false
+			},
+			{
+				"StatType": "Ship_Weapons_Guns_Rate",
+				"Name": "Ship Weapons Guns Rate",
+				"ValueMin": 1.006,
+				"ValueMax": 1.016,
+				"WeightingCurve": "MaxIsUncommon",
+				"AlwaysChoose": false
+			},
+			{
+				"StatType": "Ship_Weapons_Guns_HeatTime",
+				"Name": "Ship Weapons Guns Heat Time",
+				"ValueMin": 1.01,
+				"ValueMax": 1.02,
+				"WeightingCurve": "MaxIsUncommon",
+				"AlwaysChoose": false
+			}
+		],
+		"Slug": "technology/UA_SGUN2"
+	},
+	{
+		"Id": "UA_SGUN3",
+		"Icon": "UA_SGUN3.png",
+		"IconPath": "textures/ui/frontend/icons/technology/bio/biotech.lumps.mod.dds",
+		"Name": "Spewing Vents",
+		"Group": "A-Class Spewing Vents Node",
+		"Description": "An extremely powerful upgrade for the Spewing Vents. Use FE_ALT1 to trigger node growth and begin the grafting process.\n\nEach node is genetically unique, and exact upgrade statistics are unknown until installation is complete.\n\nPotential improvements include: damage, fire rate and overheat times.",
+		"Quality": "Epic",
+		"NumStatsMin": 2,
+		"NumStatsMax": 3,
+		"WeightingCurve": "MaxIsUncommon",
+		"StatLevels": [
+			{
+				"StatType": "Ship_Weapons_Guns_Damage",
+				"Name": "Ship Weapons Guns Damage",
+				"ValueMin": 16.0,
+				"ValueMax": 24.0,
+				"WeightingCurve": "MaxIsUncommon",
+				"AlwaysChoose": false
+			},
+			{
+				"StatType": "Ship_Weapons_Guns_Rate",
+				"Name": "Ship Weapons Guns Rate",
+				"ValueMin": 1.016,
+				"ValueMax": 1.021,
+				"WeightingCurve": "MaxIsUncommon",
+				"AlwaysChoose": false
+			},
+			{
+				"StatType": "Ship_Weapons_Guns_HeatTime",
+				"Name": "Ship Weapons Guns Heat Time",
+				"ValueMin": 1.02,
+				"ValueMax": 1.03,
+				"WeightingCurve": "MaxIsUncommon",
+				"AlwaysChoose": false
+			}
+		],
+		"Slug": "technology/UA_SGUN3"
+	},
+	{
+		"Id": "UA_SGUN4",
+		"Icon": "UA_SGUN4.png",
+		"IconPath": "textures/ui/frontend/icons/technology/bio/biotech.lumps.mod.dds",
+		"Name": "Spewing Vents",
+		"Group": "S-Class Spewing Vents Node",
+		"Description": "A supremely powerful upgrade for the Spewing Vents. Use FE_ALT1 to trigger node growth and begin the grafting process.\n\nEach node is genetically unique, and exact upgrade statistics are unknown until installation is complete.\n\nPotential improvements include: damage, fire rate and overheat times.",
+		"Quality": "Legendary",
+		"NumStatsMin": 3,
+		"NumStatsMax": 3,
+		"WeightingCurve": "NoWeighting",
+		"StatLevels": [
+			{
+				"StatType": "Ship_Weapons_Guns_Damage",
+				"Name": "Ship Weapons Guns Damage",
+				"ValueMin": 20.0,
+				"ValueMax": 28.0,
+				"WeightingCurve": "MaxIsUncommon",
+				"AlwaysChoose": false
+			},
+			{
+				"StatType": "Ship_Weapons_Guns_Rate",
+				"Name": "Ship Weapons Guns Rate",
+				"ValueMin": 1.021,
+				"ValueMax": 1.021,
+				"WeightingCurve": "NoWeighting",
+				"AlwaysChoose": false
+			},
+			{
+				"StatType": "Ship_Weapons_Guns_HeatTime",
+				"Name": "Ship Weapons Guns Heat Time",
+				"ValueMin": 1.03,
+				"ValueMax": 1.03,
+				"WeightingCurve": "MaxIsUncommon",
+				"AlwaysChoose": false
+			}
+		],
+		"Slug": "technology/UA_SGUN4"
+	},
+	{
+		"Id": "UA_SLASR1",
+		"Icon": "UA_SLASR1.png",
+		"IconPath": "textures/ui/frontend/icons/technology/bio/biotech.eye.mod.dds",
+		"Name": "Grafted Eyes",
+		"Group": "C-Class Grafted Eyes Node",
+		"Description": "A moderate upgrade for the Grafted Eyes. Use FE_ALT1 to trigger node growth and begin the grafting process.\n\nEach node is genetically unique, and exact upgrade statistics are unknown until installation is complete.\n\nPotential improvements include: damage output, and overheat tolerance.",
+		"Quality": "Normal",
+		"NumStatsMin": 1,
+		"NumStatsMax": 2,
+		"WeightingCurve": "MaxIsRare",
+		"StatLevels": [
+			{
+				"StatType": "Ship_Weapons_Lasers_HeatTime",
+				"Name": "Ship Weapons Lasers Heat Time",
+				"ValueMin": 1.1,
+				"ValueMax": 1.35,
+				"WeightingCurve": "MaxIsUncommon",
+				"AlwaysChoose": false
+			},
+			{
+				"StatType": "Ship_Weapons_Lasers_Damage",
+				"Name": "Ship Weapons Lasers Damage",
+				"ValueMin": 30.0,
+				"ValueMax": 40.0,
+				"WeightingCurve": "MaxIsUncommon",
+				"AlwaysChoose": false
+			},
+			{
+				"StatType": "Ship_Weapons_ShieldLeech",
+				"Name": "Ship Weapons Shield Leech",
+				"ValueMin": 0.05,
+				"ValueMax": 0.1,
+				"WeightingCurve": "MaxIsUncommon",
+				"AlwaysChoose": false
+			}
+		],
+		"Slug": "technology/UA_SLASR1"
+	},
+	{
+		"Id": "UA_SLASR2",
+		"Icon": "UA_SLASR2.png",
+		"IconPath": "textures/ui/frontend/icons/technology/bio/biotech.eye.mod.dds",
+		"Name": "Grafted Eyes",
+		"Group": "B-Class Grafted Eyes Node",
+		"Description": "A significant upgrade for the Grafted Eyes. Use FE_ALT1 to trigger node growth and begin the grafting process.\n\nEach node is genetically unique, and exact upgrade statistics are unknown until installation is complete.\n\nPotential improvements include: damage output, and overheat tolerance.",
+		"Quality": "Rare",
+		"NumStatsMin": 1,
+		"NumStatsMax": 2,
+		"WeightingCurve": "MaxIsUncommon",
+		"StatLevels": [
+			{
+				"StatType": "Ship_Weapons_Lasers_HeatTime",
+				"Name": "Ship Weapons Lasers Heat Time",
+				"ValueMin": 1.35,
+				"ValueMax": 1.55,
+				"WeightingCurve": "MaxIsUncommon",
+				"AlwaysChoose": false
+			},
+			{
+				"StatType": "Ship_Weapons_Lasers_Damage",
+				"Name": "Ship Weapons Lasers Damage",
+				"ValueMin": 40.0,
+				"ValueMax": 50.0,
+				"WeightingCurve": "MaxIsUncommon",
+				"AlwaysChoose": false
+			},
+			{
+				"StatType": "Ship_Weapons_ShieldLeech",
+				"Name": "Ship Weapons Shield Leech",
+				"ValueMin": 0.1,
+				"ValueMax": 0.15,
+				"WeightingCurve": "MaxIsUncommon",
+				"AlwaysChoose": false
+			}
+		],
+		"Slug": "technology/UA_SLASR2"
+	},
+	{
+		"Id": "UA_SLASR3",
+		"Icon": "UA_SLASR3.png",
+		"IconPath": "textures/ui/frontend/icons/technology/bio/biotech.eye.mod.dds",
+		"Name": "Grafted Eyes",
+		"Group": "A-Class Grafted Eyes Node",
+		"Description": "An extremely powerful upgrade for the Grafted Eyes. Use FE_ALT1 to trigger node growth and begin the grafting process.\n\nEach node is genetically unique, and exact upgrade statistics are unknown until installation is complete.\n\nPotential improvements include: damage output, and overheat tolerance.",
+		"Quality": "Epic",
+		"NumStatsMin": 2,
+		"NumStatsMax": 2,
+		"WeightingCurve": "NoWeighting",
+		"StatLevels": [
+			{
+				"StatType": "Ship_Weapons_Lasers_HeatTime",
+				"Name": "Ship Weapons Lasers Heat Time",
+				"ValueMin": 1.55,
+				"ValueMax": 1.75,
+				"WeightingCurve": "MaxIsUncommon",
+				"AlwaysChoose": false
+			},
+			{
+				"StatType": "Ship_Weapons_Lasers_Damage",
+				"Name": "Ship Weapons Lasers Damage",
+				"ValueMin": 50.0,
+				"ValueMax": 60.0,
+				"WeightingCurve": "MaxIsUncommon",
+				"AlwaysChoose": false
+			},
+			{
+				"StatType": "Ship_Weapons_ShieldLeech",
+				"Name": "Ship Weapons Shield Leech",
+				"ValueMin": 0.15,
+				"ValueMax": 0.2,
+				"WeightingCurve": "MaxIsUncommon",
+				"AlwaysChoose": false
+			}
+		],
+		"Slug": "technology/UA_SLASR3"
+	},
+	{
+		"Id": "UA_SLASR4",
+		"Icon": "UA_SLASR4.png",
+		"IconPath": "textures/ui/frontend/icons/technology/bio/biotech.eye.mod.dds",
+		"Name": "Grafted Eyes",
+		"Group": "S-Class Grafted Eyes Node",
+		"Description": "A supremely powerful upgrade for the Grafted Eyes. Use FE_ALT1 to trigger node growth and begin the grafting process.\n\nEach node is genetically unique, and exact upgrade statistics are unknown until installation is complete.\n\nPotential improvements include: damage output, and overheat tolerance.",
+		"Quality": "Legendary",
+		"NumStatsMin": 3,
+		"NumStatsMax": 3,
+		"WeightingCurve": "NoWeighting",
+		"StatLevels": [
+			{
+				"StatType": "Ship_Weapons_Lasers_HeatTime",
+				"Name": "Ship Weapons Lasers Heat Time",
+				"ValueMin": 1.75,
+				"ValueMax": 1.95,
+				"WeightingCurve": "MaxIsUncommon",
+				"AlwaysChoose": false
+			},
+			{
+				"StatType": "Ship_Weapons_Lasers_Damage",
+				"Name": "Ship Weapons Lasers Damage",
+				"ValueMin": 60.0,
+				"ValueMax": 70.0,
+				"WeightingCurve": "MaxIsUncommon",
+				"AlwaysChoose": false
+			},
+			{
+				"StatType": "Ship_Weapons_ShieldLeech",
+				"Name": "Ship Weapons Shield Leech",
+				"ValueMin": 0.2,
+				"ValueMax": 0.3,
+				"WeightingCurve": "MaxIsUncommon",
+				"AlwaysChoose": false
+			}
+		],
+		"Slug": "technology/UA_SLASR4"
+	}
+]

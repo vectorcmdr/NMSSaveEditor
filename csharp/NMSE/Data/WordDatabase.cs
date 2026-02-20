@@ -55,7 +55,7 @@ public class WordEntry
 /// </summary>
 public class WordDatabase
 {
-    // Race name → ordinal mapping (matches Java eU enum ordinals)
+    // Race name → ordinal mapping (enum ordinals)
     private static readonly Dictionary<string, int> RaceNameToOrdinal = new(StringComparer.OrdinalIgnoreCase)
     {
         ["TRADERS"] = 0,    // Gek
@@ -107,7 +107,7 @@ public class WordDatabase
             _words.Add(entry);
         }
 
-        // Sort alphabetically by display text (matching Java eT comparator)
+        // Sort alphabetically by display text
         _words.Sort((a, b) => string.Compare(a.Text, b.Text, StringComparison.OrdinalIgnoreCase));
     }
 }

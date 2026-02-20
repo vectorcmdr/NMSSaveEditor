@@ -12,16 +12,18 @@ public class MilestonePanel : UserControl
     private readonly Dictionary<string, PictureBox> _sectionIcons = new();
 
     private static readonly Dictionary<string, string> SectionIconMap = new()
-    {
-        { "Milestones", "UI-MILESTONES.PNG" },
-        { "Kills", "UI-CREATURES.PNG" },
-        { "Gek", "UI-GEK.PNG" },
-        { "Vy'keen", "UI-VYKEEN.PNG" },
-        { "Korvax", "UI-KORVAX.PNG" },
-        { "Traders", "UI-TRADERS.PNG" },
-        { "Warriors", "UI-WARRIORS.PNG" },
-        { "Explorers", "UI-EXPLORERS.PNG" },
-    };
+{
+    { "Milestones", "UI-MILESTONES.PNG" },
+    { "Kills", "UI-CREATURES.PNG" },
+    { "Gek", "UI-GEK.PNG" },
+    { "Vy'keen", "UI-VYKEEN.PNG" },
+    { "Korvax", "UI-KORVAX.PNG" },
+    { "Traders", "UI-TRADERS.PNG" },
+    { "Warriors", "UI-WARRIORS.PNG" },
+    { "Explorers", "UI-EXPLORERS.PNG" },
+    { "Autophage", "UI-BUILDERS.PNG" },
+    { "Pirate", "UI-PIRATE.PNG" }
+};
 
     public MilestonePanel()
     {
@@ -75,6 +77,10 @@ public class MilestonePanel : UserControl
         AddField(col2Inner, "Standing", "^EXP_STANDING");
         AddField(col2Inner, "Missions", "^EDONE_MISSIONS");
         AddField(col2Inner, "Systems Visited", "^ESEEN_SYSTEMS");
+        AddSectionTitle(col2Inner, "Autophage");
+        AddField(col2Inner, "Standing", "^BUI_STANDING");
+        AddField(col2Inner, "Missions", "^BDONE_MISSIONS");
+        AddField(col2Inner, "Systems Visited", "^DISC_SYSTEMS");
 
         // Column 3: Guilds
         var col3 = CreateColumnPanel();
@@ -91,6 +97,10 @@ public class MilestonePanel : UserControl
         AddField(col3Inner, "Standing", "^EGUILD_STAND");
         AddField(col3Inner, "Missions", "^EGDONE_MISSIONS");
         AddField(col3Inner, "Rare Creatures", "^RARE_SCANNED");
+        AddSectionTitle(col3Inner, "Pirate");
+        AddField(col3Inner, "Standing", "^PIRATE_STAND");
+        AddField(col3Inner, "Missions", "^PDONE_MISSIONS");
+        AddField(col3Inner, "Systems Visited", "^PIRATE_SYSTEMS");
 
         outerLayout.Controls.Add(col1, 0, 0);
         outerLayout.Controls.Add(col2, 1, 0);

@@ -72,11 +72,6 @@
 
 		<!-- Write the generated partial class that defines Build -->
 		<WriteLinesToFile File="$(GeneratedFile)" Overwrite="true" Lines="namespace NMSE.UI&#xD;&#xA;{&#xD;&#xA;    public partial class MainFormResources&#xD;&#xA;    {&#xD;&#xA;        public const string Build = &quot;$(BuildString)&quot;%3b&#xD;&#xA;    }&#xD;&#xA;}" />
-
-		<!-- Ensure the generated file is compiled -->
-		<ItemGroup>
-			<Compile Include="$(GeneratedFile)" />
-		</ItemGroup>
 	</Target>
 
 	<PropertyGroup>
@@ -101,7 +96,7 @@
 	</Target>
 
 	<Target Name="ZipBuildOutput" AfterTargets="Build">
-		<ZipDirectory SourceDirectory="$(OutputPath)" DestinationFile="$(MSBuildProjectDirectory)\bin\NMSE-$(Version)-$(Configuration)-$(RuntimeIdentifier).zip" Overwrite="true" />
+		<ZipDirectory SourceDirectory="$(OutputPath)" DestinationFile="$(MSBuildProjectDirectory)\bin\NMSE-$(Version)-$(CurrentPatch)-$(Configuration).zip" Overwrite="true" />
 	</Target>
 
 </Project>

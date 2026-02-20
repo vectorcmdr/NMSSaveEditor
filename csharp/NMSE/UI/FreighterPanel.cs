@@ -8,7 +8,7 @@ public class FreighterPanel : UserControl
     private static readonly string[] FreighterClasses = { "C", "B", "A", "S" };
 
     private readonly TextBox _freighterName;
-    private readonly TextBox _freighterType;
+    private readonly ComboBox _freighterType;
     private readonly ComboBox _freighterClass;
     private readonly TextBox _homeSeed;
     private readonly Button _generateHomeSeedBtn;
@@ -26,26 +26,32 @@ public class FreighterPanel : UserControl
     private JsonObject? _freighterBase;
     private readonly Random _rng = new();
 
+    private static readonly Dictionary<string, string> FreighterTypes = new(StringComparer.OrdinalIgnoreCase)
+    {
+        { "Tiny",    "MODELS/COMMON/SPACECRAFT/INDUSTRIAL/FREIGHTERTINY_PROC.SCENE.MBIN" },
+        { "Small",   "MODELS/COMMON/SPACECRAFT/INDUSTRIAL/FREIGHTERSMALL_PROC.SCENE.MBIN" },
+        { "Normal",  "MODELS/COMMON/SPACECRAFT/INDUSTRIAL/FREIGHTER_PROC.SCENE.MBIN" },
+        { "Capital", "MODELS/COMMON/SPACECRAFT/INDUSTRIAL/CAPITALFREIGHTER_PROC.SCENE.MBIN" },
+        { "Pirate",  "MODELS/COMMON/SPACECRAFT/INDUSTRIAL/PIRATEFREIGHTER.SCENE.MBIN" }
+    };
+
     public FreighterPanel()
     {
         SuspendLayout();
 
-        var layout = new TableLayoutPanel
+        // Main layout: 1 column, 3 rows (title, details+stats+buttons, inventory)
+        var mainLayout = new TableLayoutPanel
         {
             Dock = DockStyle.Fill,
-            ColumnCount = 2,
-            RowCount = 13,
+            ColumnCount = 1,
+            RowCount = 3,
             Padding = new Padding(10)
         };
-        layout.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize));
-        layout.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100));
-        for (int i = 0; i < 12; i++)
-            layout.RowStyles.Add(new RowStyle(SizeType.AutoSize));
-        layout.RowStyles.Add(new RowStyle(SizeType.Percent, 100));
+        mainLayout.RowStyles.Add(new RowStyle(SizeType.AutoSize)); // title
+        mainLayout.RowStyles.Add(new RowStyle(SizeType.AutoSize)); // details+stats+buttons
+        mainLayout.RowStyles.Add(new RowStyle(SizeType.Percent, 100)); // inventory
 
-        int row = 0;
-
-        // Row 0: Title
+        // Title
         var titleLabel = new Label
         {
             Text = "Freighter",
@@ -53,24 +59,46 @@ public class FreighterPanel : UserControl
             AutoSize = true,
             Padding = new Padding(0, 0, 0, 5)
         };
-        layout.Controls.Add(titleLabel, 0, row);
-        layout.SetColumnSpan(titleLabel, 2);
-        row++;
+        mainLayout.Controls.Add(titleLabel, 0, 0);
 
-        // Row 1: Name
+        // Details+Stats+Buttons layout: 2 columns, 3 rows (details, stats, buttons)
+        var detailsStatsLayout = new TableLayoutPanel
+        {
+            Dock = DockStyle.Top,
+            ColumnCount = 2,
+            RowCount = 3,
+            AutoSize = true
+        };
+        detailsStatsLayout.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50));
+        detailsStatsLayout.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50));
+
+        // Details panel (left)
+        var detailsPanel = new TableLayoutPanel
+        {
+            Dock = DockStyle.Fill,
+            ColumnCount = 2, // FIX: 2 columns for label and field
+            RowCount = 5,
+            AutoSize = true
+        };
+        detailsPanel.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize)); // Label
+        detailsPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100)); // Field
+        detailsPanel.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+        detailsPanel.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+        detailsPanel.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+        detailsPanel.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+        detailsPanel.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+
         _freighterName = new TextBox { Dock = DockStyle.Fill };
-        AddRow(layout, "Name:", _freighterName, row); row++;
+        AddRow(detailsPanel, "Name:", _freighterName, 0);
 
-        // Row 2: Type (read-only)
-        _freighterType = new TextBox { Dock = DockStyle.Fill, ReadOnly = true };
-        AddRow(layout, "Type:", _freighterType, row); row++;
+        _freighterType = new ComboBox { Dock = DockStyle.Fill, DropDownStyle = ComboBoxStyle.DropDownList };
+        _freighterType.Items.AddRange(FreighterTypes.Keys.ToArray());
+        AddRow(detailsPanel, "Type:", _freighterType, 1);
 
-        // Row 3: Class (editable ComboBox)
         _freighterClass = new ComboBox { Dock = DockStyle.Fill, DropDownStyle = ComboBoxStyle.DropDownList };
         _freighterClass.Items.AddRange(FreighterClasses);
-        AddRow(layout, "Class:", _freighterClass, row); row++;
+        AddRow(detailsPanel, "Class:", _freighterClass, 2);
 
-        // Row 4: Home Seed with Generate button
         var homeSeedPanel = new Panel { Dock = DockStyle.Fill, Height = 26 };
         _homeSeed = new TextBox { Dock = DockStyle.Fill };
         _generateHomeSeedBtn = new Button { Text = "Generate", Dock = DockStyle.Right, Width = 70 };
@@ -82,9 +110,34 @@ public class FreighterPanel : UserControl
         };
         homeSeedPanel.Controls.Add(_homeSeed);
         homeSeedPanel.Controls.Add(_generateHomeSeedBtn);
-        AddRow(layout, "Home Seed:", homeSeedPanel, row); row++;
+        AddRow(detailsPanel, "Home Seed:", homeSeedPanel, 3);
 
-        // Row 5: Model Seed with Generate button
+        detailsStatsLayout.Controls.Add(detailsPanel, 0, 0);
+
+        // Stats panel (right)
+        var statsPanel = new TableLayoutPanel
+        {
+            Dock = DockStyle.Fill,
+            ColumnCount = 2, // FIX: 2 columns for label and field
+            RowCount = 4,
+            AutoSize = true
+        };
+        statsPanel.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize)); // Label
+        statsPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100)); // Field
+        statsPanel.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+        statsPanel.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+        statsPanel.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+        statsPanel.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+
+        _hyperdriveField = new NumericUpDown { Dock = DockStyle.Fill, DecimalPlaces = 2, Minimum = 0, Maximum = 999999, Increment = 0.01m };
+        AddRow(statsPanel, "Hyperdrive:", _hyperdriveField, 0);
+
+        _fleetField = new NumericUpDown { Dock = DockStyle.Fill, DecimalPlaces = 2, Minimum = 0, Maximum = 999999, Increment = 0.01m };
+        AddRow(statsPanel, "Fleet Coordination:", _fleetField, 1);
+
+        _baseItemsField = new TextBox { Dock = DockStyle.Fill, ReadOnly = true };
+        AddRow(statsPanel, "Items:", _baseItemsField, 2);
+
         var modelSeedPanel = new Panel { Dock = DockStyle.Fill, Height = 26 };
         _modelSeed = new TextBox { Dock = DockStyle.Fill };
         _generateModelSeedBtn = new Button { Text = "Generate", Dock = DockStyle.Right, Width = 70 };
@@ -96,45 +149,11 @@ public class FreighterPanel : UserControl
         };
         modelSeedPanel.Controls.Add(_modelSeed);
         modelSeedPanel.Controls.Add(_generateModelSeedBtn);
-        AddRow(layout, "Model Seed:", modelSeedPanel, row); row++;
+        AddRow(statsPanel, "Model Seed:", modelSeedPanel, 3);
 
-        // Row 6: Base Stats separator
-        var statsLabel = new Label
-        {
-            Text = "Base Stats",
-            Font = new Font(Font.FontFamily, 10, FontStyle.Bold),
-            AutoSize = true,
-            Padding = new Padding(0, 8, 0, 4)
-        };
-        layout.Controls.Add(statsLabel, 0, row);
-        layout.SetColumnSpan(statsLabel, 2);
-        row++;
+        detailsStatsLayout.Controls.Add(statsPanel, 1, 0);
 
-        // Row 7: Hyperdrive
-        _hyperdriveField = new NumericUpDown { Dock = DockStyle.Fill, DecimalPlaces = 2, Minimum = 0, Maximum = 999999, Increment = 0.01m };
-        AddRow(layout, "Hyperdrive:", _hyperdriveField, row); row++;
-
-        // Row 8: Fleet Coordination
-        _fleetField = new NumericUpDown { Dock = DockStyle.Fill, DecimalPlaces = 2, Minimum = 0, Maximum = 999999, Increment = 0.01m };
-        AddRow(layout, "Fleet Coordination:", _fleetField, row); row++;
-
-        // Row 9: Base Info separator
-        var baseInfoLabel = new Label
-        {
-            Text = "Base Info",
-            Font = new Font(Font.FontFamily, 10, FontStyle.Bold),
-            AutoSize = true,
-            Padding = new Padding(0, 8, 0, 4)
-        };
-        layout.Controls.Add(baseInfoLabel, 0, row);
-        layout.SetColumnSpan(baseInfoLabel, 2);
-        row++;
-
-        // Row 10: Items
-        _baseItemsField = new TextBox { Dock = DockStyle.Fill, ReadOnly = true };
-        AddRow(layout, "Items:", _baseItemsField, row); row++;
-
-        // Row 11: Backup/Restore buttons
+        // Backup/Restore buttons (span both columns)
         var buttonPanel = new FlowLayoutPanel
         {
             Dock = DockStyle.Fill,
@@ -147,11 +166,12 @@ public class FreighterPanel : UserControl
         _restoreBtn.Click += OnRestore;
         buttonPanel.Controls.Add(_backupBtn);
         buttonPanel.Controls.Add(_restoreBtn);
-        layout.Controls.Add(buttonPanel, 0, row);
-        layout.SetColumnSpan(buttonPanel, 2);
-        row++;
+        detailsStatsLayout.Controls.Add(buttonPanel, 0, 1);
+        detailsStatsLayout.SetColumnSpan(buttonPanel, 2);
 
-        // Row 12: Inventory tabs (fill)
+        mainLayout.Controls.Add(detailsStatsLayout, 0, 1);
+
+        // Inventory tabs (fill remaining space)
         _generalGrid = new InventoryGridPanel { Dock = DockStyle.Fill };
         _techGrid = new InventoryGridPanel { Dock = DockStyle.Fill };
 
@@ -162,10 +182,13 @@ public class FreighterPanel : UserControl
         techPage.Controls.Add(_techGrid);
         _invTabs.TabPages.Add(generalPage);
         _invTabs.TabPages.Add(techPage);
-        layout.Controls.Add(_invTabs, 0, row);
-        layout.SetColumnSpan(_invTabs, 2);
 
-        Controls.Add(layout);
+        mainLayout.Controls.Add(_invTabs, 0, 2);
+
+        _generalGrid.SetMaxSupportedLabel("");
+        _techGrid.SetMaxSupportedLabel("");
+
+        Controls.Add(mainLayout);
         ResumeLayout(false);
         PerformLayout();
     }
@@ -203,9 +226,15 @@ public class FreighterPanel : UserControl
             try
             {
                 var currentFreighter = _playerState.GetObject("CurrentFreighter");
-                _freighterType.Text = currentFreighter?.GetString("Filename") ?? "";
+                string filename = currentFreighter?.GetString("Filename") ?? "";
+                // Find display name by filename
+                string? displayName = FreighterTypes.FirstOrDefault(x => x.Value.Equals(filename, StringComparison.OrdinalIgnoreCase)).Key;
+                if (displayName != null)
+                    _freighterType.SelectedItem = displayName;
+                else
+                    _freighterType.SelectedIndex = -1;
             }
-            catch { _freighterType.Text = ""; }
+            catch { _freighterType.SelectedIndex = -1; }
 
             // Class from FreighterInventory.Class.InventoryClass
             try
@@ -280,6 +309,14 @@ public class FreighterPanel : UserControl
             // Name
             if (!string.IsNullOrEmpty(_freighterName.Text))
                 playerState.Set("PlayerFreighterName", _freighterName.Text);
+
+            // Save type (filename) if needed
+            if (_freighterType.SelectedItem is string selectedType && FreighterTypes.TryGetValue(selectedType, out var filename))
+            {
+                var currentFreighter = playerState.GetObject("CurrentFreighter");
+                if (currentFreighter != null)
+                    currentFreighter.Set("Filename", filename);
+            }
 
             // Class - write to both inventories
             if (_freighterClass.SelectedIndex >= 0)

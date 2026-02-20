@@ -82,7 +82,7 @@ public class JsonArray
         return -1;
     }
 
-    // Type-safe accessors (ported from Java V/W/X/Y/Z/aa/ab methods)
+    // Type-safe accessors
     public JsonObject GetObject(int index) => (JsonObject)Get(index)!;
     public JsonArray GetArray(int index) => (JsonArray)Get(index)!;
     public string GetString(int index) => (string)Get(index)!;

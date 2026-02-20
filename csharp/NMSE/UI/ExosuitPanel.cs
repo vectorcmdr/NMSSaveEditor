@@ -46,6 +46,11 @@ public class ExosuitPanel : UserControl
         layout.Controls.Add(_invTabs, 0, 1);
 
         Controls.Add(layout);
+
+        // Set Max Supported labels
+        _generalGrid.SetMaxSupportedLabel("Max Supported: 10x12");
+        _techGrid.SetMaxSupportedLabel("Max Supported: 10x6");
+
         ResumeLayout(false);
         PerformLayout();
     }

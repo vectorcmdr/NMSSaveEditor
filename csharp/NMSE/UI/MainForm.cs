@@ -10,9 +10,11 @@ public partial class MainFormResources : Form
     public const string AppName = "NMSE (NO MAN'S SAVE EDITOR)";
     public const string VerMajor = "1";
     public const string VerMinor = "0";
-    public const string SuppGameRel = "6.10 Breach";
+    public const string SuppGameRel = "6.20 Remanant";
     public const string IconResource = "NMSE.Resources.app.NMSE.ico";
-    public const string GitHubUrl = "https://github.com/vectorcmdr";
+    public const string GitHubUrl = "https://github.com/vectorcmdr/NMSE";
+    public const string SponsorUrl = "https://github.com/sponsors/vectorcmdr";
+    public const string GitHubCreatorUrl = "https://github.com/vectorcmdr";
 
     // Strips + buttons
     private readonly MenuStrip _menuStrip;
@@ -29,7 +31,7 @@ public partial class MainFormResources : Form
     private readonly MainStatsPanel _mainStatsPanel;
     private readonly ExosuitPanel _exosuitPanel;
     private readonly MultitoolPanel _multitoolPanel;
-    private readonly ShipPanel _shipPanel;
+    private readonly StarshipPanel _shipPanel;
     private readonly FreighterPanel _freighterPanel;
     private readonly FrigatePanel _frigatePanel;
     private readonly VehiclePanel _vehiclePanel;
@@ -59,7 +61,7 @@ public partial class MainFormResources : Form
         _tabControl = new TabControl();
         _statusLabel = new ToolStripStatusLabel("Ready");
         _directoryCombo = new ToolStripComboBox { AutoSize = false, Width = 448 };
-        _saveSlotCombo = new ToolStripComboBox { AutoSize = false, Width = 64 };
+        _saveSlotCombo = new ToolStripComboBox { AutoSize = false, Width = 164 };
         _loadButton = new ToolStripButton("Load");
         _saveButton = new ToolStripButton("Save") { Enabled = false };
 
@@ -67,7 +69,7 @@ public partial class MainFormResources : Form
         _mainStatsPanel = new MainStatsPanel();
         _exosuitPanel = new ExosuitPanel();
         _multitoolPanel = new MultitoolPanel();
-        _shipPanel = new ShipPanel();
+        _shipPanel = new StarshipPanel();
         _freighterPanel = new FreighterPanel();
         _frigatePanel = new FrigatePanel();
         _vehiclePanel = new VehiclePanel();
@@ -90,6 +92,7 @@ public partial class MainFormResources : Form
 
         LoadConfig();
         LoadDatabase();
+        PopulateSaveSlots();
     }
 
     private void InitializeForm()
@@ -158,6 +161,8 @@ public partial class MainFormResources : Form
         var helpMenu = new ToolStripMenuItem("&Help");
         helpMenu.DropDownItems.Add(new ToolStripMenuItem("&GitHub Page", null, OnGitHub));
         helpMenu.DropDownItems.Add(new ToolStripSeparator());
+        helpMenu.DropDownItems.Add(new ToolStripMenuItem("&Sponsor Development", null, OnSponsor));
+        helpMenu.DropDownItems.Add(new ToolStripSeparator());
         helpMenu.DropDownItems.Add(new ToolStripMenuItem("&About", null, OnAbout));
         _menuStrip.Items.Add(helpMenu);
     }
@@ -179,9 +184,12 @@ public partial class MainFormResources : Form
         _directoryCombo.SelectedIndexChanged += (_, _) => PopulateSaveSlots();
     }
 
+    private readonly ToolStripProgressBar _progressBar = new ToolStripProgressBar() { Visible = false, Minimum = 0, Maximum = 100 };
+
     private void InitializeStatusBar()
     {
         _statusStrip.Items.Add(_statusLabel);
+        _statusStrip.Items.Add(_progressBar);
     }
 
     private void InitializeTabs()
@@ -189,12 +197,12 @@ public partial class MainFormResources : Form
         _tabControl.TabPages.Add(CreateTab("Main Stats", _mainStatsPanel));
         _tabControl.TabPages.Add(CreateTab("Exosuit", _exosuitPanel));
         _tabControl.TabPages.Add(CreateTab("Multitools", _multitoolPanel));
-        _tabControl.TabPages.Add(CreateTab("Ships", _shipPanel));
+        _tabControl.TabPages.Add(CreateTab("Starships", _shipPanel));
         _tabControl.TabPages.Add(CreateTab("Freighter", _freighterPanel));
         _tabControl.TabPages.Add(CreateTab("Frigates", _frigatePanel));
         _tabControl.TabPages.Add(CreateTab("Vehicles", _vehiclePanel));
         _tabControl.TabPages.Add(CreateTab("Companions", _companionPanel));
-        _tabControl.TabPages.Add(CreateTab("Bases", _basePanel));
+        _tabControl.TabPages.Add(CreateTab("Bases & Storage", _basePanel));
         _tabControl.TabPages.Add(CreateTab("Discoveries", _discoveryPanel));
         _tabControl.TabPages.Add(CreateTab("Milestones", _milestonePanel));
         _tabControl.TabPages.Add(CreateTab("Settlements", _settlementPanel));
@@ -265,6 +273,7 @@ public partial class MainFormResources : Form
             _discoveryPanel.SetDatabase(_database);
             _settlementPanel.SetDatabase(_database);
             _frigatePanel.SetDatabase(_database);
+            _basePanel.SetDatabase(_database);
 
             _exosuitPanel.SetIconManager(_iconManager);
             _shipPanel.SetIconManager(_iconManager);
@@ -273,6 +282,7 @@ public partial class MainFormResources : Form
             _vehiclePanel.SetIconManager(_iconManager);
             _discoveryPanel.SetIconManager(_iconManager);
             _milestonePanel.SetIconManager(_iconManager);
+            _basePanel.SetIconManager(_iconManager);
 
             // Load rewards database for Account panel
             _accountPanel.LoadRewardsDatabase(dbPath);
@@ -333,7 +343,11 @@ public partial class MainFormResources : Form
                     bestPath = autoPath;
 
                 saveFiles.Add(bestPath);
-                _saveSlotCombo.Items.Add($"Slot {i + 1}");
+                string difficulty = DetectDifficulty(bestPath);
+                string label = string.IsNullOrEmpty(difficulty)
+                    ? $"Slot {i + 1}"
+                    : $"Slot {i + 1} - {difficulty}";
+                _saveSlotCombo.Items.Add(label);
             }
         }
 
@@ -346,7 +360,11 @@ public partial class MainFormResources : Form
             for (int i = 0; i < ps4Files.Length; i++)
             {
                 saveFiles.Add(ps4Files[i]);
-                _saveSlotCombo.Items.Add($"Save {i + 1}");
+                string difficulty = DetectDifficulty(ps4Files[i]);
+                string label = string.IsNullOrEmpty(difficulty)
+                    ? $"Save {i + 1}"
+                    : $"Save {i + 1} - {difficulty}";
+                _saveSlotCombo.Items.Add(label);
             }
         }
 
@@ -367,17 +385,98 @@ public partial class MainFormResources : Form
         }
     }
 
-    private void LoadSaveData(string filePath)
+    /// <summary>
+    /// Detect the difficulty/game mode from a save file by scanning the raw JSON text.
+    /// Uses regex patterns on the decompressed JSON.
+    /// Game modes (1-indexed): Normal, Survival, Permadeath, Creative, Custom, ...
+    /// </summary>
+    private static string DetectDifficulty(string filePath)
     {
         try
         {
-            _statusLabel.Text = "Loading save file...";
-            Application.DoEvents();
+            // Load and decompress the save to get raw JSON text
+            var data = SaveFileManager.LoadSaveFile(filePath);
 
-            _currentSaveData = SaveFileManager.LoadSaveFile(filePath);
+            // Try via parsed data: check ActiveContext → BaseContext/ExpeditionContext → GameMode
+            string? activeContext = null;
+            try { activeContext = data.GetString("ActiveContext"); } catch { }
+
+            int gameMode = 0;
+            if ("Main".Equals(activeContext, StringComparison.Ordinal))
+            {
+                try { gameMode = data.GetInt("BaseContext.PresetGameMode"); } catch { }
+            }
+            else if ("Season".Equals(activeContext, StringComparison.Ordinal))
+            {
+                try { gameMode = data.GetInt("ExpeditionContext.PresetGameMode"); } catch { }
+            }
+
+            if (gameMode > 0)
+                return GameModeToString(gameMode);
+
+            // Fallback: check DifficultyPresetType
+            string? preset = null;
+            try { preset = data.GetString("PlayerStateData.DifficultyState.Preset.DifficultyPresetType"); } catch { }
+            if (!string.IsNullOrEmpty(preset))
+                return preset.ToUpperInvariant();
+        }
+        catch { }
+        return "";
+    }
+
+    /// <summary>
+    /// Map a 1-based game mode integer to a display string.
+    /// </summary>
+    private static string GameModeToString(int mode)
+    {
+        return mode switch
+        {
+            1 => "NORMAL",
+            2 => "SURVIVAL",
+            3 => "PERMADEATH",
+            4 => "CREATIVE",
+            5 => "CUSTOM",
+            6 => "SEASONAL",
+            7 => "RELAXED",
+            8 => "HARDCORE",
+            _ => $"MODE {mode}"
+        };
+    }
+
+    private async void LoadSaveData(string filePath)
+    {
+        try
+        {
+            _progressBar.Visible = true;
+            _progressBar.Value = 0;
+            _statusLabel.Text = "Backing up and loading save file...";
+
+            // Simulate progress for backup (10%)
+            await Task.Run(() => { System.Threading.Thread.Sleep(100); });
+            _progressBar.Value = 10;
+
+            // Load file in background and report progress
+            var progress = new Progress<int>(v => _progressBar.Value = v);
+
+            _currentSaveData = await Task.Run(() =>
+            {
+                // Step 1: Read file (simulate 30%)
+                System.Threading.Thread.Sleep(100);
+                ((IProgress<int>)progress).Report(30);
+
+                var data = SaveFileManager.LoadSaveFile(filePath);
+
+                // Step 2: Parse and transform (simulate 60%)
+                System.Threading.Thread.Sleep(100);
+                ((IProgress<int>)progress).Report(60);
+
+                return data;
+            });
+
             _currentFilePath = filePath;
 
-            // Update all panels
+            // Step 3: Update panels (simulate 90%)
+            _progressBar.Value = 90;
             _mainStatsPanel.LoadData(_currentSaveData);
             _exosuitPanel.LoadData(_currentSaveData);
             _multitoolPanel.LoadData(_currentSaveData);
@@ -391,31 +490,52 @@ public partial class MainFormResources : Form
             _milestonePanel.LoadData(_currentSaveData);
             _settlementPanel.LoadData(_currentSaveData);
             _accountPanel.LoadData(_currentSaveData);
-            // Also try to load account data from the same directory
             string? saveDir = Path.GetDirectoryName(filePath);
             if (saveDir != null) _accountPanel.LoadAccountFile(saveDir);
             _rawJsonPanel.LoadData(_currentSaveData);
 
+            // Step 4: Done (100%)
+            _progressBar.Value = 100;
+            await Task.Delay(200); // Let user see 100% for a moment
+            _progressBar.Visible = false;
+
+            // Enable save controls
             // Enable save controls
             _saveButton.Enabled = true;
-            foreach (ToolStripItem item in ((ToolStripMenuItem)_menuStrip.Items[0]).DropDownItems)
+
+            // File menu
+            if (_menuStrip.Items.Count > 0 && _menuStrip.Items[0] is ToolStripMenuItem fileMenu)
             {
-                if (item is ToolStripMenuItem mi && (mi.Text?.StartsWith("&Save") == true || mi.Text?.StartsWith("Save") == true))
-                    mi.Enabled = true;
+                foreach (ToolStripItem item in fileMenu.DropDownItems)
+                {
+                    if (item is ToolStripMenuItem mi && (mi.Text?.StartsWith("&Save") == true || mi.Text?.StartsWith("Save") == true))
+                        mi.Enabled = true;
+                }
             }
-            foreach (ToolStripItem item in ((ToolStripMenuItem)_menuStrip.Items[1]).DropDownItems)
+            // Edit menu
+            if (_menuStrip.Items.Count > 1 && _menuStrip.Items[1] is ToolStripMenuItem editMenu)
             {
-                if (item is ToolStripMenuItem mi) mi.Enabled = true;
+                foreach (ToolStripItem item in editMenu.DropDownItems)
+                {
+                    if (item is ToolStripMenuItem mi)
+                        mi.Enabled = true;
+                }
             }
-            foreach (ToolStripItem item in ((ToolStripMenuItem)_menuStrip.Items[2]).DropDownItems)
+            // Tools menu
+            if (_menuStrip.Items.Count > 2 && _menuStrip.Items[2] is ToolStripMenuItem toolsMenu)
             {
-                if (item is ToolStripMenuItem mi) mi.Enabled = true;
+                foreach (ToolStripItem item in toolsMenu.DropDownItems)
+                {
+                    if (item is ToolStripMenuItem mi)
+                        mi.Enabled = true;
+                }
             }
 
             _statusLabel.Text = $"Loaded: {Path.GetFileName(filePath)}";
         }
         catch (Exception ex)
         {
+            _progressBar.Visible = false;
             MessageBox.Show($"Failed to load save file:\n{ex.Message}", "Error",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
             _statusLabel.Text = "Failed to load save file";
@@ -443,6 +563,34 @@ public partial class MainFormResources : Form
         }
     }
 
+    private void OnLoadSlot(object? sender, EventArgs e)
+    {
+        int slotIndex = _saveSlotCombo.SelectedIndex;
+        if (slotIndex >= 0 && slotIndex < _saveSlotFiles.Count)
+        {
+            string filePath = _saveSlotFiles[slotIndex];
+            string? saveDir = Path.GetDirectoryName(filePath);
+            if (saveDir != null)
+            {
+                try
+                {
+                    SaveFileManager.BackupSaveDirectory(saveDir);
+                }
+                catch (Exception ex)
+                {
+                    // Log or show a warning, but do not block loading
+                    _statusLabel.Text = $"Backup failed: {ex.Message}";
+                }
+            }
+            LoadSaveData(filePath);
+        }
+        else
+        {
+            MessageBox.Show("No save slot selected. Please select a directory with save files first.", "Info",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+    }
+
     private void OnLoadFile(object? sender, EventArgs e)
     {
         using var dialog = new OpenFileDialog
@@ -452,20 +600,22 @@ public partial class MainFormResources : Form
         };
 
         if (dialog.ShowDialog() == DialogResult.OK)
+        {
+            string? saveDir = Path.GetDirectoryName(dialog.FileName);
+            if (saveDir != null)
+            {
+                try
+                {
+                    SaveFileManager.BackupSaveDirectory(saveDir);
+                }
+                catch (Exception ex)
+                {
+                    // Log or show a warning, but do not block loading
+                    _statusLabel.Text = $"Backup failed: {ex.Message}";
+                }
+            }
+                
             LoadSaveData(dialog.FileName);
-    }
-
-    private void OnLoadSlot(object? sender, EventArgs e)
-    {
-        int slotIndex = _saveSlotCombo.SelectedIndex;
-        if (slotIndex >= 0 && slotIndex < _saveSlotFiles.Count)
-        {
-            LoadSaveData(_saveSlotFiles[slotIndex]);
-        }
-        else
-        {
-            MessageBox.Show("No save slot selected. Please select a directory with save files first.", "Info",
-                MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 
@@ -608,16 +758,76 @@ public partial class MainFormResources : Form
         catch { }
     }
 
+    private void OnSponsor(object? sender, EventArgs e)
+    {
+        try
+        {
+            System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+            {
+                FileName = SponsorUrl,
+                UseShellExecute = true
+            });
+        }
+        catch { }
+    }
+
     private void OnAbout(object? sender, EventArgs e)
     {
-        MessageBox.Show(
-            $"No Man's Sky Save Editor\n" +
-            $"Build {Build} ({SuppGameRel})\n" +
-            $"\n" +
-            $"Ported to C# .NET 10\n" +
-            $"Original: {GitHubUrl}",
-            "About NMS Save Editor",
-            MessageBoxButtons.OK, MessageBoxIcon.Information);
+        using var aboutForm = new Form
+        {
+            Text = $"About",
+            FormBorderStyle = FormBorderStyle.FixedDialog,
+            StartPosition = FormStartPosition.CenterParent,
+            ClientSize = new Size(340, 160),
+            MaximizeBox = false,
+            MinimizeBox = false
+        };
+
+        var label = new Label
+        {
+            Text = $"{AppName}\n{VerMajor}.{VerMinor}.{Build} ({SuppGameRel})\n\nby vector_cmdr",
+            AutoSize = true,
+            Location = new Point(16, 16)
+        };
+
+        var link = new LinkLabel
+        {
+            Text = GitHubCreatorUrl,
+            AutoSize = true,
+            Location = new Point(16, 80)
+        };
+        link.Links[0].LinkData = GitHubCreatorUrl;
+        link.LinkClicked += (s, args) =>
+        {
+            try
+            {
+                var linkData = link.Links[0].LinkData?.ToString();
+                if (!string.IsNullOrEmpty(linkData))
+                {
+                    System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+                    {
+                        FileName = linkData,
+                        UseShellExecute = true
+                    });
+                }
+            }
+            catch { }
+        };
+
+        var okButton = new System.Windows.Forms.Button
+        {
+            Text = "OK",
+            DialogResult = DialogResult.OK,
+            Anchor = AnchorStyles.Bottom | AnchorStyles.Right,
+            Location = new Point(aboutForm.ClientSize.Width - 90, aboutForm.ClientSize.Height - 40),
+            Size = new Size(75, 25)
+        };
+
+        aboutForm.Controls.Add(label);
+        aboutForm.Controls.Add(link);
+        aboutForm.Controls.Add(okButton);
+        aboutForm.AcceptButton = okButton;
+        aboutForm.ShowDialog(this);
     }
 
     private void OnFormClosing(object? sender, FormClosingEventArgs e)

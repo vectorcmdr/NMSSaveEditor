@@ -115,7 +115,7 @@ public class MainStatsPanel : UserControl
                 if (value == null) return;
             }
 
-            // Convert the value, treating negative ints as unsigned 32-bit (Java: & 0xFFFFFFFFL)
+            // Convert the value, treating negative ints as unsigned 32-bit (0xFFFFFFFFL)
             decimal numericValue;
             if (value is int i)
                 numericValue = (decimal)(uint)i;

@@ -9,14 +9,14 @@ public class FrigatePanel : UserControl
     private readonly Label _countLabel;
     private GameItemDatabase? _database;
 
-    // Frigate type names (gr enum from Java)
+    // Frigate type names
     private static readonly string[] FrigateTypes =
     {
         "Combat", "Exploration", "Mining", "Diplomacy", "Support",
         "Normandy", "DeepSpace", "DeepSpaceCommon", "Pirate", "GhostShip"
     };
 
-    // Frigate grade names (gN enum from Java - based on beneficial trait count)
+    // Frigate grade names
     private static readonly string[] FrigateGrades = { "C", "B", "A", "S" };
 
     public FrigatePanel()

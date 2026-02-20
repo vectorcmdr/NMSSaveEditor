@@ -10,15 +10,13 @@ namespace NMSE.UI;
 /// with item icons and a side detail panel for viewing and editing slot properties.
 /// Supports right-click context menu for adding/removing items, and a cascading
 /// item picker (Type → Category → Item) for selecting items from the game database.
-/// Mirrors the Java original's grid-based inventory display (bO.java / bS.java).
 /// </summary>
 public class InventoryGridPanel : UserControl
 {
+    // Cells / grid items
     private const int GridColumns = 10;
-    // Doubled cell size/padding to increase grid icon & UI scale by 2x
-    // Split width/height so we can make cells taller than they are wide.
-    private const int CellWidth = 112;
-    private const int CellHeight = 156;
+    private const int CellWidth = 72;
+    private const int CellHeight = 104;
     private const int CellPadding = 4;
     private const string SuperchargeIndicator = "⚡ ";
 
@@ -49,6 +47,8 @@ public class InventoryGridPanel : UserControl
     // Resize controls
     private readonly NumericUpDown _resizeWidth;
     private readonly NumericUpDown _resizeHeight;
+    private readonly Label _resizeWidthLabel;
+    private readonly Label _resizeHeightLabel;
     private readonly Button _resizeButton;
 
     // Context menu
@@ -62,19 +62,60 @@ public class InventoryGridPanel : UserControl
     private readonly ToolStripMenuItem _superchargeSlotMenuItem;
     private readonly ToolStripMenuItem _superchargeAllSlotsMenuItem;
     private readonly ToolStripMenuItem _fillStackMenuItem;
+    private readonly ToolStripMenuItem _copyItemMenuItem;
+    private readonly ToolStripMenuItem _pasteItemMenuItem;
 
     // State
     private readonly List<SlotCell> _cells = new();
     private SlotCell? _selectedCell;
     private SlotCell? _contextCell; // Cell that was right-clicked
+    private SlotCell? _copiedItemCell;
     private JsonArray? _slots;
     private JsonObject? _currentInventory;
     private GameItemDatabase? _database;
     private IconManager? _iconManager;
+    private Label? _maxSupportedLabel;
 
     // Cached item lists for filtering
     private List<GameItem> _allItems = new();
     private bool _suppressFilterEvents;
+
+    // Identify storages that can't be resized
+    private bool _isStorageInventory = false;
+    public void SetIsStorageInventory(bool isStorage)
+    {
+        _isStorageInventory = isStorage;
+    }
+
+    /// <summary>
+    /// Sets or updates the Max Supported label next to the Resize button.
+    /// </summary>
+    public void SetMaxSupportedLabel(string text)
+    {
+        if (_maxSupportedLabel == null)
+        {
+            _maxSupportedLabel = new Label
+            {
+                Text = text,
+                AutoSize = false,
+                ForeColor = Color.Red,
+                TextAlign = ContentAlignment.MiddleLeft,
+                Margin = new Padding(12, 0, 0, 0),
+                Height = 28,
+                MinimumSize = new Size(160, 28), // adjust width as needed
+                Anchor = AnchorStyles.Left | AnchorStyles.Top
+            };
+            var resizePanel = _resizeButton.Parent as FlowLayoutPanel;
+            if (resizePanel != null)
+            {
+                resizePanel.Controls.Add(_maxSupportedLabel);
+            }
+        }
+        else
+        {
+            _maxSupportedLabel.Text = text;
+        }
+    }
 
     public InventoryGridPanel()
     {
@@ -96,23 +137,28 @@ public class InventoryGridPanel : UserControl
         };
 
         // Left: resize controls above the grid
-        var resizePanel = new Panel
+        var resizePanel = new FlowLayoutPanel
         {
             Dock = DockStyle.Top,
-            Height = 32,
-            Padding = new Padding(4, 4, 4, 0)
+            Height = 36,
+            MinimumSize = new Size(0, 36),
+            MaximumSize = new Size(int.MaxValue, 36),
+            Padding = new Padding(4, 4, 4, 0),
+            FlowDirection = FlowDirection.LeftToRight,
+            AutoSize = false,
+            WrapContents = false
         };
-        var resizeWidthLabel = new Label { Text = "Width:", AutoSize = true, Dock = DockStyle.Left, Padding = new Padding(0, 4, 2, 0) };
+        _resizeWidthLabel = new Label { Text = "Width:", AutoSize = true, Dock = DockStyle.Left, Padding = new Padding(0, 4, 2, 0) };
         _resizeWidth = new NumericUpDown { Minimum = 1, Maximum = 20, Value = 10, Width = 50, Dock = DockStyle.Left };
-        var resizeHeightLabel = new Label { Text = "Height:", AutoSize = true, Dock = DockStyle.Left, Padding = new Padding(8, 4, 2, 0) };
+        _resizeHeightLabel = new Label { Text = "Height:", AutoSize = true, Dock = DockStyle.Left, Padding = new Padding(8, 4, 2, 0) };
         _resizeHeight = new NumericUpDown { Minimum = 1, Maximum = 20, Value = 6, Width = 50, Dock = DockStyle.Left };
         _resizeButton = new Button { Text = "Resize", Width = 60, Dock = DockStyle.Left };
         _resizeButton.Click += OnResizeInventory;
-        resizePanel.Controls.Add(_resizeButton);
-        resizePanel.Controls.Add(resizeHeightLabel);
-        resizePanel.Controls.Add(_resizeHeight);
-        resizePanel.Controls.Add(resizeWidthLabel);
+        resizePanel.Controls.Add(_resizeWidthLabel);
         resizePanel.Controls.Add(_resizeWidth);
+        resizePanel.Controls.Add(_resizeHeightLabel);
+        resizePanel.Controls.Add(_resizeHeight);
+        resizePanel.Controls.Add(_resizeButton);
         // Note: Dock=Left controls are added in reverse visual order
 
         // Left: grid of slot cells
@@ -159,10 +205,9 @@ public class InventoryGridPanel : UserControl
         detailLayout.RowStyles.Add(new RowStyle(SizeType.AutoSize));
         row++;
 
-        // Icon preview (scaled up 2x)
         _detailIcon = new PictureBox
         {
-            Size = new Size(128, 128),
+            Size = new Size(96, 96),
             SizeMode = PictureBoxSizeMode.Zoom,
             BackColor = Color.FromArgb(40, 40, 40),
             BorderStyle = BorderStyle.FixedSingle
@@ -176,7 +221,7 @@ public class InventoryGridPanel : UserControl
         _detailItemName = new Label
         {
             Text = "(no slot selected)",
-            Font = new Font(Font.FontFamily, 10, FontStyle.Bold),
+            Font = new Font(Font.FontFamily, 11, FontStyle.Bold),
             AutoSize = true,
             ForeColor = Color.DarkBlue
         };
@@ -360,6 +405,8 @@ public class InventoryGridPanel : UserControl
         _superchargeSlotMenuItem = new ToolStripMenuItem("Supercharge Slot", null, OnSuperchargeSlot);
         _superchargeAllSlotsMenuItem = new ToolStripMenuItem("Supercharge All Slots", null, OnSuperchargeAllSlots);
         _fillStackMenuItem = new ToolStripMenuItem("Fill Stack", null, OnFillStack);
+        _copyItemMenuItem = new ToolStripMenuItem("Copy Item", null, OnCopyItem);
+        _pasteItemMenuItem = new ToolStripMenuItem("Paste Item", null, OnPasteItem);
         _cellContextMenu.Items.Add(_addItemMenuItem);
         _cellContextMenu.Items.Add(_removeItemMenuItem);
         _cellContextMenu.Items.Add(new ToolStripSeparator());
@@ -373,11 +420,32 @@ public class InventoryGridPanel : UserControl
         _cellContextMenu.Items.Add(_superchargeAllSlotsMenuItem);
         _cellContextMenu.Items.Add(new ToolStripSeparator());
         _cellContextMenu.Items.Add(_fillStackMenuItem);
+        _cellContextMenu.Items.Add(new ToolStripSeparator());
+        _cellContextMenu.Items.Add(_copyItemMenuItem);
+        _cellContextMenu.Items.Add(_pasteItemMenuItem);
         _cellContextMenu.Opening += OnContextMenuOpening;
+
 
         Controls.Add(splitContainer);
         ResumeLayout(false);
+        DisableControlsOnInit();
         PerformLayout();
+    }
+
+    private void DisableControlsOnInit()
+    {
+        // Disable NUDs and buttons before inventory is loaded
+        _resizeWidth.Enabled = false;
+        _resizeHeight.Enabled = false;
+        _resizeButton.Enabled = false;
+        _detailAmount.Enabled = false;
+        _detailMaxAmount.Enabled = false;
+        _detailDamageFactor.Enabled = false;
+        _applyButton.Enabled = false;
+        _searchButton.Enabled = false;
+        _typeFilter.Enabled = false;
+        _categoryFilter.Enabled = false;
+        _itemPicker.Enabled = false;
     }
 
     private static Label CreateLabel(string text) =>
@@ -543,9 +611,26 @@ public class InventoryGridPanel : UserControl
         _applyButton.Enabled = _selectedCell != null;
     }
 
+    private void EnableControlsAfterInventoryLoad()
+    {
+        // Enable controls after inventory is loaded
+        _resizeWidth.Enabled = !_isStorageInventory;
+        _resizeHeight.Enabled = !_isStorageInventory;
+        _resizeButton.Enabled = !_isStorageInventory;
+        _detailAmount.Enabled = true;
+        _detailMaxAmount.Enabled = true;
+        _detailDamageFactor.Enabled = true;
+        _applyButton.Enabled = false;
+        _searchButton.Enabled = true;
+        _typeFilter.Enabled = true;
+        _categoryFilter.Enabled = true;
+        _itemPicker.Enabled = true;
+    }
+
     public void LoadInventory(JsonObject? inventory)
     {
         _gridContainer.Controls.Clear();
+        EnableControlsAfterInventoryLoad();
         _cells.Clear();
         _selectedCell = null;
         ClearDetailPanel();
@@ -556,7 +641,7 @@ public class InventoryGridPanel : UserControl
         _slots = inventory.GetArray("Slots");
         if (_slots == null) return;
 
-        // Determine grid dimensions from inventory Width/Height fields (matching Java gt.java)
+        // Determine grid dimensions from inventory Width/Height fields
         int width = GridColumns;
         int height = 1;
         try
@@ -611,6 +696,19 @@ public class InventoryGridPanel : UserControl
                     height = (_slots.Length + width - 1) / width;
                 }
             }
+            // Set NUDs to current inventory dimensions
+            _resizeWidth.Value = Math.Clamp(width, _resizeWidth.Minimum, _resizeWidth.Maximum);
+            _resizeHeight.Value = Math.Clamp(height, _resizeHeight.Minimum, _resizeHeight.Maximum);
+            _resizeWidthLabel.Visible = !_isStorageInventory;
+            _resizeHeightLabel.Visible = !_isStorageInventory;
+            _resizeWidth.Visible = !_isStorageInventory;
+            _resizeHeight.Visible = !_isStorageInventory;
+            _resizeButton.Visible = !_isStorageInventory;
+            _resizeWidthLabel.Enabled = !_isStorageInventory;
+            _resizeHeightLabel.Enabled = !_isStorageInventory;
+            _resizeWidth.Enabled = !_isStorageInventory;
+            _resizeHeight.Enabled = !_isStorageInventory;
+            _resizeButton.Enabled = !_isStorageInventory;
         }
         catch { }
 
@@ -703,6 +801,53 @@ public class InventoryGridPanel : UserControl
         }
     }
 
+    /// <summary>
+    /// Convert a BinaryData item ID to its display string form,
+    /// Binary format: ^(hex-encoded-bytes)#(variant-digits)
+    /// </summary>
+    private static string BinaryDataToItemId(BinaryData data)
+    {
+        var bytes = data.ToByteArray();
+        var sb = new System.Text.StringBuilder();
+        bool afterHash = false;
+        for (int i = 0; i < bytes.Length; i++)
+        {
+            int b = bytes[i] & 0xFF;
+            if (i == 0)
+            {
+                if (b != 0x5E) // '^'
+                    return data.ToString();
+                sb.Append('^');
+            }
+            else if (b == 0x23) // '#'
+            {
+                sb.Append('#');
+                afterHash = true;
+            }
+            else if (afterHash)
+            {
+                sb.Append((char)b);
+            }
+            else
+            {
+                const string hexChars = "0123456789ABCDEF";
+                sb.Append(hexChars[(b >> 4) & 0xF]);
+                sb.Append(hexChars[b & 0xF]);
+            }
+        }
+        return sb.ToString();
+    }
+
+    /// <summary>
+    /// Extract an item ID string from a raw value that may be a string or BinaryData.
+    /// </summary>
+    private static string ExtractItemId(object? rawId)
+    {
+        if (rawId is BinaryData binData)
+            return BinaryDataToItemId(binData);
+        return rawId as string ?? "";
+    }
+
     private void LoadCellData(SlotCell cell)
     {
         if (cell.SlotData == null) return;
@@ -712,9 +857,9 @@ public class InventoryGridPanel : UserControl
         {
             var idObj = cell.SlotData.GetObject("Id");
             if (idObj != null)
-                itemId = idObj.GetString("Id") ?? "";
+                itemId = ExtractItemId(idObj.Get("Id"));
             else
-                itemId = cell.SlotData.GetString("Id") ?? "";
+                itemId = ExtractItemId(cell.SlotData.Get("Id"));
         }
         catch { }
 
@@ -914,6 +1059,9 @@ public class InventoryGridPanel : UserControl
 
         // Hide Fill Stack for "single item" types (Amount == -1 or 1/1 or 100/100 or special 1/100 procedural tech)
         _fillStackMenuItem.Visible = hasItem && cell.MaxAmount > 0 && !cell.IsSingleItem;
+
+        _copyItemMenuItem.Visible = cell.SlotData != null && !string.IsNullOrEmpty(cell.ItemId) && !cell.IsValidEmpty;
+        _pasteItemMenuItem.Visible = _copiedItemCell != null && (cell.IsValidEmpty || !cell.IsEmpty);
     }
 
     private void OnContextMenuOpening(object? sender, CancelEventArgs e)
@@ -1049,9 +1197,14 @@ public class InventoryGridPanel : UserControl
         bool shouldBeSingle = false;
         if (gi != null)
         {
-            shouldBeSingle = gi.ItemType.Equals("technology", StringComparison.OrdinalIgnoreCase)
-                             || gi.ItemType.Equals("proceduralTechnology", StringComparison.OrdinalIgnoreCase)
-                             || gi.ItemType.Equals("procedural-technology", StringComparison.OrdinalIgnoreCase);
+            //shouldBeSingle = gi.ItemType.Equals("technology", StringComparison.OrdinalIgnoreCase)
+            //                 || gi.ItemType.Equals("proceduralTechnology", StringComparison.OrdinalIgnoreCase)
+            //                 || gi.ItemType.Equals("procedural-technology", StringComparison.OrdinalIgnoreCase);
+            shouldBeSingle = (gi.ItemType != null && (
+                gi.ItemType.Equals("technology", StringComparison.OrdinalIgnoreCase)
+                || gi.ItemType.Equals("proceduralTechnology", StringComparison.OrdinalIgnoreCase)
+                || gi.ItemType.Equals("procedural-technology", StringComparison.OrdinalIgnoreCase)
+            ));
 
             // Special-case: ships inventory procedural tech items stored as 1/100 and category ALLSHIPSEXCEPTALIEN should be treated as single items
             if (!shouldBeSingle &&
@@ -1279,9 +1432,14 @@ public class InventoryGridPanel : UserControl
         bool shouldBeSingle = false;
         if (gi != null)
         {
-            shouldBeSingle = gi.ItemType.Equals("technology", StringComparison.OrdinalIgnoreCase)
-                             || gi.ItemType.Equals("proceduralTechnology", StringComparison.OrdinalIgnoreCase)
-                             || gi.ItemType.Equals("procedural-technology", StringComparison.OrdinalIgnoreCase);
+            //shouldBeSingle = gi.ItemType.Equals("technology", StringComparison.OrdinalIgnoreCase)
+            //                 || gi.ItemType.Equals("proceduralTechnology", StringComparison.OrdinalIgnoreCase)
+            //                 || gi.ItemType.Equals("procedural-technology", StringComparison.OrdinalIgnoreCase);
+            shouldBeSingle = (gi.ItemType != null && (
+                gi.ItemType.Equals("technology", StringComparison.OrdinalIgnoreCase)
+                || gi.ItemType.Equals("proceduralTechnology", StringComparison.OrdinalIgnoreCase)
+                || gi.ItemType.Equals("procedural-technology", StringComparison.OrdinalIgnoreCase)
+            ));
 
             // Special-case: ships inventory procedural tech items stored as 1/100 and category ALLSHIPSEXCEPTALIEN should be treated as single items
             if (!shouldBeSingle &&
@@ -1434,7 +1592,7 @@ public class InventoryGridPanel : UserControl
 
         if (_contextCell.IsActivated)
         {
-            // Disable: only allowed if slot has no item (matches Java gt.java j() method)
+            // Disable: only allowed if slot has no item
             if (_contextCell.SlotData != null && !string.IsNullOrEmpty(_contextCell.ItemId)
                 && _contextCell.ItemId != "^" && _contextCell.ItemId != "^YOURSLOTITEM")
             {
@@ -1456,7 +1614,7 @@ public class InventoryGridPanel : UserControl
         }
         else
         {
-            // Enable: add to ValidSlotIndices (matches Java gt.java i() method)
+            // Enable: add to ValidSlotIndices
             var newIdx = new JsonObject();
             newIdx.Add("X", x);
             newIdx.Add("Y", y);
@@ -1635,6 +1793,91 @@ public class InventoryGridPanel : UserControl
             _detailAmount.Value = max;
     }
 
+    private void OnCopyItem(object? sender, EventArgs e)
+    {
+        if (_contextCell == null || _contextCell.SlotData == null || string.IsNullOrEmpty(_contextCell.ItemId)) return;
+        // Store a reference to the copied cell (deep copy not needed, values will be read on paste)
+        _copiedItemCell = _contextCell;
+    }
+
+    private void OnPasteItem(object? sender, EventArgs e)
+    {
+        if (_contextCell == null || _copiedItemCell == null || _slots == null) return;
+
+        // Read item values from copied cell
+        string itemId = _copiedItemCell.ItemId;
+        int amount = _copiedItemCell.Amount;
+        int maxAmount = _copiedItemCell.MaxAmount;
+        double damageFactor = _copiedItemCell.DamageFactor;
+
+        // Determine inventory type from database
+        string invType = "Product";
+        if (_database != null)
+        {
+            var gameItem = _database.GetItem(itemId) ?? _database.GetItem("^" + itemId);
+            if (gameItem == null)
+            {
+                var m = Regex.Match(itemId, @"#\d{5,}$");
+                if (m.Success)
+                {
+                    var baseId = itemId.Substring(0, m.Index);
+                    gameItem = _database.GetItem(baseId) ?? _database.GetItem("^" + baseId);
+                }
+            }
+            if (gameItem != null)
+            {
+                invType = gameItem.ItemType switch
+                {
+                    "substance" => "Substance",
+                    "product" => "Product",
+                    "technology" or "proceduralTechnology" => "Technology",
+                    _ => "Product"
+                };
+            }
+        }
+
+        // Create new slot object for paste
+        var newSlot = new JsonObject();
+        var typeObj = new JsonObject();
+        typeObj.Add("InventoryType", invType);
+        newSlot.Add("Type", typeObj);
+
+        var idObj = new JsonObject();
+        idObj.Add("Id", itemId);
+        newSlot.Add("Id", idObj);
+
+        newSlot.Add("Amount", amount);
+        newSlot.Add("MaxAmount", maxAmount);
+        newSlot.Add("DamageFactor", damageFactor);
+        newSlot.Add("FullyInstalled", true);
+
+        var indexObj = new JsonObject();
+        indexObj.Add("X", _contextCell.GridX);
+        indexObj.Add("Y", _contextCell.GridY);
+        newSlot.Add("Index", indexObj);
+
+        // Replace or add slot in inventory
+        if (_contextCell.SlotData != null && _contextCell.SlotIndex >= 0)
+        {
+            _slots.Set(_contextCell.SlotIndex, newSlot);
+        }
+        else
+        {
+            _slots.Add(newSlot);
+            _contextCell.SlotIndex = _slots.Length - 1;
+        }
+
+        // Update cell
+        _contextCell.SlotData = newSlot;
+        _contextCell.IsValidEmpty = false;
+        _contextCell.IsEmpty = false;
+        LoadCellData(_contextCell);
+        _contextCell.UpdateDisplay();
+
+        // Select the pasted cell
+        SelectCell(_contextCell);
+    }
+
     private void OnResizeInventory(object? sender, EventArgs e)
     {
         if (_currentInventory == null) return;
@@ -1759,7 +2002,7 @@ public class InventoryGridPanel : UserControl
     }
 
     /// <summary>
-    /// MarqueeLabel replacement copied from existing marquee.cs implementation.
+    /// MarqueeLabel.
     /// Provides a label that horizontally scrolls when the text width exceeds the control width.
     /// </summary>
     public class MarqueeLabel : Label
@@ -1768,8 +2011,8 @@ public class InventoryGridPanel : UserControl
         private int _offset;
         private bool _shouldScroll;
 
-        [DefaultValue(60)]
-        public int ScrollSpeed { get; set; } = 60; // ms per tick
+        [DefaultValue(90)]
+        public int ScrollSpeed { get; set; } = 90; // ms per tick
 
         public MarqueeLabel()
         {
@@ -1934,9 +2177,9 @@ public class InventoryGridPanel : UserControl
             {
                 Dock = DockStyle.Top,
                 BackColor = Color.FromArgb(160, 0, 0, 0),
-                Font = new Font("Segoe UI", 11f, FontStyle.Regular),
+                Font = new Font("Segoe UI", 9f, FontStyle.Regular),
                 ForeColor = Color.White,
-                Height = 26,
+                Height = 18,
                 TextAlign = ContentAlignment.MiddleCenter,
                 Visible = false
             };
@@ -1965,9 +2208,9 @@ public class InventoryGridPanel : UserControl
                 Dock = DockStyle.Bottom,
                 ForeColor = Color.White,
                 BackColor = Color.FromArgb(128, 0, 0, 0),
-                Font = new Font("Segoe UI", 11f, FontStyle.Bold),
+                Font = new Font("Segoe UI", 9f, FontStyle.Bold),
                 TextAlign = ContentAlignment.MiddleCenter,
-                Height = 22,
+                Height = 14,
                 AutoEllipsis = true
             };
 
@@ -2043,7 +2286,9 @@ public class InventoryGridPanel : UserControl
 
             // Set background color by item type
             Color baseColor;
-            if (_isSelected)
+            if (IsSupercharged)
+                baseColor = Color.Gold; // Match the supercharged text color
+            else if (_isSelected)
                 baseColor = Color.FromArgb(80, 120, 200);
             else if (ItemType.Contains("technology", StringComparison.OrdinalIgnoreCase))
                 baseColor = Color.FromArgb(40, 60, 120);

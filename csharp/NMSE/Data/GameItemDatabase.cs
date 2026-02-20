@@ -49,6 +49,30 @@ public class GameItemDatabase
 
             if (!string.IsNullOrEmpty(item.Id))
                 _items[item.Id] = item;
+
+            // Load techbox child elements (TechBox products nested inside technology/procedural-technology).
+            // These have a separate id (^+12 hex chars) and are treated as products.
+            foreach (XmlNode child in element.ChildNodes)
+            {
+                if (child is XmlElement techboxEl && techboxEl.Name == "techbox")
+                {
+                    string tbId = techboxEl.GetAttribute("id");
+                    if (!string.IsNullOrEmpty(tbId) && !_items.ContainsKey(tbId))
+                    {
+                        var tbItem = new GameItem
+                        {
+                            ItemType = "product",
+                            Id = tbId,
+                            Name = !string.IsNullOrEmpty(item.Name) ? item.Name + " Package" : tbId,
+                            Subtitle = item.Subtitle,
+                            Category = "TechBox",
+                            Icon = techboxEl.GetAttribute("icon"),
+                            Description = item.Description
+                        };
+                        _items[tbId] = tbItem;
+                    }
+                }
+            }
         }
     }
 

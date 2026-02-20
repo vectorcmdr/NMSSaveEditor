@@ -204,7 +204,7 @@ public class AccountPanel : UserControl
             PopulateRewardGrid(_platformGrid, _platformRewardsDb, platformUnlocked);
 
             int total = seasonUnlocked.Count + twitchUnlocked.Count + platformUnlocked.Count;
-            _statusLabel.Text = $"Account data: Loaded from {Path.GetFileName(accountPath)} ({total} unlocked rewards)";
+            _statusLabel.Text = $"Account data: {total} unlocked rewards";
         }
         catch (Exception ex)
         {
@@ -263,18 +263,25 @@ public class AccountPanel : UserControl
     }
 
     /// <summary>
-    /// Legacy LoadData for compatibility - tries to load from save data (won't find rewards there).
-    /// The real loading is done via LoadAccountFile() called from MainFormResources.
+    /// LoadData stub.
+    /// The real loading is done via LoadAccountFile().
     /// </summary>
     public void LoadData(JsonObject saveData)
     {
+        // Stub for uniformity.
         // Account rewards are in accountdata.hg, not in the save file.
         // LoadAccountFile() handles the actual loading.
     }
 
+    /// <summary>
+    /// SaveData stub.
+    /// The real saving is done via OnSaveAccount().
+    /// </summary>
     public void SaveData(JsonObject saveData)
     {
-        // Account data is saved separately via OnSaveAccount
+        // Stub for uniformity.
+        // Account rewards are in accountdata.hg, not in the save file.
+        // OnSaveAccount() handles the actual saving.
     }
 
     private void OnSaveAccount(object? sender, EventArgs e)
