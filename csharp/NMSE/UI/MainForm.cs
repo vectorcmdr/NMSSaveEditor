@@ -245,7 +245,17 @@ public partial class MainFormResources : Form
         {
             string basePath = AppDomain.CurrentDomain.BaseDirectory;
             string dbPath = Path.Combine(basePath, "Resources", "db");
-            _database.LoadItems(Path.Combine(dbPath, "items.xml"));
+
+            // Load items from JSON first, fall back to XML
+            string jsonPath = Path.Combine(basePath, "Resources", "json");
+            bool jsonLoaded = _database.LoadItemsFromJsonDirectory(jsonPath);
+            if (!jsonLoaded)
+            {
+                string xmlItemsPath = Path.Combine(dbPath, "items.xml");
+                if (File.Exists(xmlItemsPath))
+                    _database.LoadItems(xmlItemsPath);
+            }
+
             _database.LoadInventoryData(Path.Combine(dbPath, "inventory.xml"));
 
             // Load word database for Known Words feature
@@ -257,8 +267,8 @@ public partial class MainFormResources : Form
                 _discoveryPanel.SetWordDatabase(wordDb);
             }
 
-            // Load icon images
-            string iconsPath = Path.Combine(basePath, "Resources", "icons");
+            // Load icon images from Resources/images
+            string iconsPath = Path.Combine(basePath, "Resources", "images");
             if (Directory.Exists(iconsPath))
             {
                 _iconManager = new IconManager(iconsPath);

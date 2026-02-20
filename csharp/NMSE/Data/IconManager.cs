@@ -3,8 +3,8 @@ using System.Drawing;
 namespace NMSE.Data;
 
 /// <summary>
-/// Loads and caches item icon images from the Resources/icons/ directory.
-/// Icon filenames are stored in items.xml (e.g., "SUBSTANCE-FUEL1.PNG").
+/// Loads and caches item icon images from the Resources/images/ directory.
+/// Icon filenames in the JSON data match image filenames directly (e.g., "CASING.png").
 /// </summary>
 public class IconManager : IDisposable
 {

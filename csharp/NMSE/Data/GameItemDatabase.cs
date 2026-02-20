@@ -1,10 +1,11 @@
+using System.Text.Json;
 using System.Xml;
 
 namespace NMSE.Data;
 
 /// <summary>
-/// Loads and manages game item data from XML database files.
-/// Reads items.xml, inventory.xml, etc.
+/// Loads and manages game item data from JSON and XML database files.
+/// Prefers JSON files from Resources/json/, falls back to XML items.xml.
 /// </summary>
 public class GameItemDatabase
 {
@@ -13,6 +14,68 @@ public class GameItemDatabase
 
     public IReadOnlyDictionary<string, GameItem> Items => _items;
 
+    /// <summary>
+    /// Loads game items from all JSON files in the specified directory.
+    /// Each JSON file is an array of item objects. The filename (without extension)
+    /// becomes the ItemType for all items in that file.
+    /// Returns true if at least one JSON file was loaded successfully.
+    /// </summary>
+    public bool LoadItemsFromJsonDirectory(string jsonDirectory)
+    {
+        if (!Directory.Exists(jsonDirectory)) return false;
+
+        bool anyLoaded = false;
+        foreach (string jsonFile in Directory.GetFiles(jsonDirectory, "*.json"))
+        {
+            try
+            {
+                string itemType = Path.GetFileNameWithoutExtension(jsonFile);
+                string content = File.ReadAllText(jsonFile);
+                using var doc = JsonDocument.Parse(content);
+
+                if (doc.RootElement.ValueKind != JsonValueKind.Array) continue;
+
+                foreach (var element in doc.RootElement.EnumerateArray())
+                {
+                    // Skip entries that lack core item fields (e.g. recipes)
+                    if (!element.TryGetProperty("Id", out var idProp)) continue;
+                    string id = idProp.GetString() ?? "";
+                    if (string.IsNullOrEmpty(id)) continue;
+                    if (!element.TryGetProperty("Name", out _)) continue;
+
+                    var item = new GameItem
+                    {
+                        ItemType = itemType,
+                        Id = id,
+                        Name = element.TryGetProperty("Name", out var nameProp) ? nameProp.GetString() ?? "" : "",
+                        Subtitle = element.TryGetProperty("Group", out var groupProp) ? groupProp.GetString() ?? "" : "",
+                        Icon = element.TryGetProperty("Icon", out var iconProp) ? iconProp.GetString() ?? "" : "",
+                        Symbol = element.TryGetProperty("Symbol", out var symbolProp) ? symbolProp.GetString() ?? "" : "",
+                        Description = element.TryGetProperty("Description", out var descProp) ? descProp.GetString() ?? "" : ""
+                    };
+
+                    if (element.TryGetProperty("CookingIngredient", out var cookProp) && cookProp.ValueKind == JsonValueKind.True)
+                        item.IsCooking = true;
+
+                    if (element.TryGetProperty("MaxStackSize", out var stackProp) && stackProp.TryGetDouble(out double stackVal))
+                        item.Multiplier = stackVal;
+
+                    _items[item.Id] = item;
+                    anyLoaded = true;
+                }
+            }
+            catch
+            {
+                // Skip files that fail to parse
+            }
+        }
+
+        return anyLoaded;
+    }
+
+    /// <summary>
+    /// Loads game items from an XML file. Used as a fallback when JSON loading fails.
+    /// </summary>
     public void LoadItems(string xmlPath)
     {
         if (!File.Exists(xmlPath)) return;
