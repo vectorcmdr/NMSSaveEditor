@@ -167,7 +167,18 @@ public class GameItemDatabase
         }
     }
 
-    public GameItem? GetItem(string id) => _items.GetValueOrDefault(id);
+    public GameItem? GetItem(string id)
+    {
+        if (_items.TryGetValue(id, out var item))
+            return item;
+
+        // Save files use ^-prefixed IDs (e.g. ^FUEL1), but JSON data stores
+        // IDs without the prefix (e.g. FUEL1). Try stripping the ^ prefix.
+        if (id.Length > 1 && id[0] == '^')
+            return _items.GetValueOrDefault(id[1..]);
+
+        return null;
+    }
 
     public int GetStackSize(string itemId, string inventoryType)
     {
