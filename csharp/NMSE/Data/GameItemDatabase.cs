@@ -41,13 +41,13 @@ public class GameItemDatabase
                     if (!element.TryGetProperty("Id", out var idProp)) continue;
                     string id = idProp.GetString() ?? "";
                     if (string.IsNullOrEmpty(id)) continue;
-                    if (!element.TryGetProperty("Name", out _)) continue;
+                    if (!element.TryGetProperty("Name", out var nameProp)) continue;
 
                     var item = new GameItem
                     {
                         ItemType = itemType,
                         Id = id,
-                        Name = element.TryGetProperty("Name", out var nameProp) ? nameProp.GetString() ?? "" : "",
+                        Name = nameProp.GetString() ?? "",
                         Subtitle = element.TryGetProperty("Group", out var groupProp) ? groupProp.GetString() ?? "" : "",
                         Icon = element.TryGetProperty("Icon", out var iconProp) ? iconProp.GetString() ?? "" : "",
                         Symbol = element.TryGetProperty("Symbol", out var symbolProp) ? symbolProp.GetString() ?? "" : "",
@@ -64,9 +64,9 @@ public class GameItemDatabase
                     anyLoaded = true;
                 }
             }
-            catch
+            catch (Exception ex)
             {
-                // Skip files that fail to parse
+                System.Diagnostics.Debug.WriteLine($"Failed to parse JSON file {Path.GetFileName(jsonFile)}: {ex.Message}");
             }
         }
 
