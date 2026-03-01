@@ -18,7 +18,7 @@ You can check on progress [here](https://github.com/vectorcmdr/NMSSaveEditor/iss
 ## 🔽 Installation
 
 Requirements:
-- <a href="https://java.com/en/download/manual.jsp" target="_blank">Java Runtime Environment 8</a> ( + for PS4 saves: <a href="https://www.savewizard.net/" target="_blank">Save Wizard</a>).
+- <a href="https://www.oracle.com/java/technologies/downloads/" target="_blank">Java RE / SDK installed</a> ( + for PS4 saves: <a href="https://www.savewizard.net/" target="_blank">Save Wizard</a>).
 
 ### Grab the latest release
 
