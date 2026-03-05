@@ -1,5 +1,8 @@
 # Change Log
 
+## 1.20.4 - Update (5 March 2026)
+- Add missing scrap items.
+
 ## 1.20.3 - Update (17 February 2026)
 - Add newer 6.20 mappings.
 - Add fossil curiosities parts.

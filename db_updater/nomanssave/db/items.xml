@@ -476,6 +476,15 @@ Collected from the fine layers it forms around hotspots in the loop. Of great va
 
 Extracted from a creature caught within a repeating circuit of time. Of great value to Specialist Polo as they research the loop.</description>
   </substance>
+  <substance category="SPECIAL" icon="SCRAP_RAD.PNG" id="^SCRAP_RAD" multiplier="4" name="Radioactive Hazard" subtitle="Reward Item" symbol="-">
+    <description>Currency or faction standing, given as a reward.</description>
+  </substance>
+  <substance category="SPECIAL" icon="SCRAP_TOX.PNG" id="^SCRAP_TOX" multiplier="4" name="Toxic Containment" subtitle="Reward Item" symbol="-">
+    <description>Currency or faction standing, given as a reward.</description>
+  </substance>
+  <substance category="SPECIAL" icon="SCRAP_EXP.PNG" id="^SCRAP_EXP" multiplier="4" name="Potentially Explosive" subtitle="Reward Item" symbol="-">
+    <description>Currency or faction standing, given as a reward.</description>
+  </substance>
   <product category="COMPONENT" icon="PRODUCT-CASING.PNG" id="^CASING" multiplier="2" name="Metal Plating" subtitle="Crafted Technology Component">
     <requirement id="^LAND1" quantity="50"/>
     <description>A lightweight metal product, heavily used in the manufacture of starship parts and deployable technology. A mainstay of the construction industries of all known primary species.
