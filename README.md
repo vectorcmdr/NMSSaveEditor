@@ -5,7 +5,7 @@
 
 No Man's Sky Save Editor is a java based save editor for No Man's Sky (duh! 😉).
 
-This is a hotfix fork of the original (_occasionally maintained_) project by [goatfungus](https://github.com/goatfungus/NMSSaveEditor) that aims to keep the program up to date when possible.
+This is a hotfix fork of the original (_occasionally maintained_) project by [goatfungus](https://github.com/goatfungus/NMSSaveEditor) that aims to keep the program up to date until my new (replacement) editor is complete.
 
 _It is no longer contributing PRs back to the original. This editor is divergent._
 
