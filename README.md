@@ -1,19 +1,17 @@
-# No Man's Sky Save Editor <br> (vector_cmdr hotfix ver)
+# No Man's Sky Save Editor (vector_cmdr hotfix ver)
 
+<br />
+
+> ### This editor is being replaced by the new save editor [NMSE - No Man's Save Editor](https://github.com/vectorcmdr/NMSE).
+> Preview builds are now available for testing via the [repo](https://github.com/vectorcmdr/NMSE) or via the [NMSE website](https://nmse.vectorcmdr.xyz/)!
+
+<br />
 
 ## Introduction
 
 No Man's Sky Save Editor is a java based save editor for No Man's Sky (duh! 😉).
 
 This is a hotfix fork of the original (_occasionally maintained_) project by [goatfungus](https://github.com/goatfungus/NMSSaveEditor) that aims to keep the program up to date until my new (replacement) editor is complete.
-
-_It is no longer contributing PRs back to the original. This editor is divergent._
-
-## Future Goals:
-
-A modernized C# replacement editor with **way more functionality** is currently underway that will be **completely open source** and encourage the community to help keep it up to date as there are sadly little to no up-to-date open source save editors, only closed source or semi source available ones.
-
-You can check on progress [here](https://github.com/vectorcmdr/NMSSaveEditor/issues/20)!
 
 ## 🔽 Installation
 
