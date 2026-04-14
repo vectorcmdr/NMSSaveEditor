@@ -1,11 +1,12 @@
-# No Man's Sky Save Editor (vector_cmdr hotfix ver)
-
-<br />
-
-> ### This editor is being replaced by the new save editor [NMSE - No Man's Save Editor](https://github.com/vectorcmdr/NMSE).
+### This editor has been replaced by the new save editor [NMSE - No Man's Save Editor](https://github.com/vectorcmdr/NMSE).
 > Preview builds are now available for testing via the [repo](https://github.com/vectorcmdr/NMSE) or via the [NMSE website](https://nmse.vectorcmdr.xyz/)!
 
 <br />
+
+
+<details><summary>Unfold for old readme...</summary>
+
+# No Man's Sky Save Editor (vector_cmdr hotfix ver)
 
 ## Introduction
 
@@ -78,3 +79,4 @@ A massive thanks to [goatfungus for creating the original editor](https://github
 If you want to donate to him to say thank you, please head to his [Patreon](https://www.patreon.com/goatfungus)!
 
 **The updates would not exist without it (obviously!).**
+</details>
